@@ -5,8 +5,9 @@ import streamlit as st
 from rag_pipeline import RAGPipeline
 
 
+
 st.set_page_config(
-    page_title="Striver A2Z DSA Navigator",
+    page_title="Project Gandalf - Striver A2Z DSA Navigator",
     page_icon="🎯",
     layout="centered",
 )
@@ -26,10 +27,18 @@ pipeline = load_pipeline()
 st.title("🎯 Striver A2Z DSA Navigator")
 st.write("Find exactly where Striver explains a DSA topic.")
 
-query = st.text_input(
-    "Search",
-    placeholder="Example: Rain Water Trapping optimal solution",
-)
+with st.form("search_form"):
+
+    query = st.text_input(
+        "Search",
+        placeholder="Enter a DSA topic or problem (e.g., '4Sum Optimal Solution')",
+    )
+
+    submitted = st.form_submit_button(
+        "Submit",
+        use_container_width=True,
+    )
+
 
 
 def parse_response(response: str):
@@ -75,7 +84,7 @@ def parse_response(response: str):
     return recommendations
 
 
-if st.button("Search"):
+if submitted:
 
     if not query.strip():
         st.warning("Please enter a query.")
@@ -95,7 +104,7 @@ if st.button("Search"):
 
         latency = time.perf_counter() - start
 
-        st.success(f"Completed in {latency:.2f} seconds")
+        # st.success(f"Completed in {latency:.2f} seconds")
 
         recommendations = parse_response(response)
 
@@ -116,7 +125,24 @@ if st.button("Search"):
 
                 if rec["url"]:
                     st.link_button(
-                        "▶ Watch from this timestamp",
+                        "▶ Watch on YouTube",
                         rec["url"],
                         use_container_width=True,
                     )
+
+st.markdown("""
+<style>
+.custom-footer{
+    position:fixed;
+    left:0;
+    bottom:10px;
+    width:100%;
+    text-align:center;
+    color:#888888;
+    font-size:14px;
+}
+      </style>      
+<div class="custom-footer">
+Built with ❤️ for learners
+</div>
+""", unsafe_allow_html=True)
