@@ -6,6 +6,12 @@ Instead of answering DSA questions directly, Project Gandalf retrieves the most 
 
 ---
 
+## Live Demo
+
+🌐 https://your-app.streamlit.app
+
+---
+
 ## Features
 
 - Semantic search across 315 Striver A2Z lecture transcripts
