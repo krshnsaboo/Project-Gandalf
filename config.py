@@ -3,12 +3,35 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+try:
+    import streamlit as st
+except ImportError:
+    st = None
 
-if OPENAI_API_KEY is None:
-    raise ValueError("OPENAI_API_KEY not found in .env")
 
-# Change this whenever you want to switch models
+def get_openai_api_key():
+    # Local development (.env)
+    api_key = os.getenv("OPENAI_API_KEY")
+
+    if api_key:
+        return api_key
+
+    # Streamlit Cloud (Secrets)
+    if st is not None:
+        try:
+            return st.secrets["OPENAI_API_KEY"]
+        except Exception:
+            pass
+
+    raise ValueError(
+        "OPENAI_API_KEY not found. Configure it in a .env file "
+        "or in Streamlit Secrets."
+    )
+
+
+OPENAI_API_KEY = get_openai_api_key()
+
+# OpenAI model
 OPENAI_MODEL = "gpt-4.1-mini"
 
 # Retrieval settings
