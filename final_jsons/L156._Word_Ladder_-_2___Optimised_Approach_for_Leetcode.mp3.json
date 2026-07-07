@@ -1,0 +1,148 @@
+{
+  "lecture_id": "L156",
+  "lecture_number": 156,
+  "lecture_title": "G-31. Word Ladder - 2 | Optimised Approach for Leetcode",
+  "youtube_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I",
+  "chunks": [
+    {
+      "chunk_id": "L156_C1",
+      "start": 0.0,
+      "end": 75.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. In the previous videos, we solved the word ladder problem one and the word ladder problem two. But you would have seen this, the solution that we wrote in the word ladder two, when you try to submit it on lead code, it was giving you TLE. Why did that happen? So first of all, if you're just preparing for interviews, you can skip this video. Do not watch this particular video. If you're preparing for interviews, it's of no use because for interviews, the approach that I have taught in the previous video for the word ladder two, that is what you need to tell in the interview. Do not try this. I'm just teaching you this so that you have some extra sense of observation and sense of way like problem solving gets, I'm just teaching you because I want your problem solving to get improved. So first of all, lead code, the solution that I taught was accepted till a certain interval. After that, they changed the test cases and the time limit was stricter. So apparently the solutions, most of the solutions on the discussion forum are giving you TLE."
+    },
+    {
+      "chunk_id": "L156_C2",
+      "start": 75.92,
+      "end": 155.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=75s",
+      "text": "time limit was stricter. So apparently the solutions, most of the solutions on the discussion forum are giving you TLE. And the only way to solve this is I went through a lot of discussion forums, a lot of threads. The only way to solve this is break the problem and solve it in by using a hack, which you usually don't do in interviews. So you're going to follow the CP way of solving this. Okay. So we're going to solve this the CP way. So if you're just preparing for interviews, please, please drop off, please. That is my earnest request because at the end of the video, you'll be like, I'm going to teach something related to like CP way. So the explanation might be faster. So how do we solve this problem? It's very simple. We're going to break this problem into two steps. So what is the problem? Hit to cock and print out all the ways in which you can convert from hit to cock. You have to print out all the ways that in which you can do it. So the step one is follow ladder. Remember this, follow what ladder one and find the minimum steps. That is the step one and store the steps for every string, like store where every string occurred on the left. I'll tell you. Okay. That's the step one. So let's quickly do the step one for this particular game. I'm assuming"
+    },
+    {
+      "chunk_id": "L156_C3",
+      "start": 155.16,
+      "end": 221.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=155s",
+      "text": "on the left. I'll tell you. Okay. That's the step one. So let's quickly do the step one for this particular game. I'm assuming you have seen the previous two videos. I'll be going super fast. So we know this is the BFS queue. So where do we start? We start from hit, right? So this time what you'll do is instead of storing comma one, instead of that, what you'll do is you will probably store some map data structure in that you can have it something like, okay, hit is initially zero. That is what you will do. Okay. Done. So take out hit. So you'll take out hit. What can hit be converted to? Try to convert it. So hit will be converted to hot. Is that possible? Is it possible to convert it to anything else? Have a quick check. And we see that it is not possible. So hit will be converted to hot. So what you'll do is you'll put hot into the queue. At the same time, you will store it into the map as one more because at step one, you got it right. So done. Next you get hot. So what you'll do is you'll take hot and you'll be like, okay, we have hot. So let's try to convert hot into something. So when you try to convert hot into something, you'll actually get dot and you'll get lot."
+    },
+    {
+      "chunk_id": "L156_C4",
+      "start": 221.76,
+      "end": 291.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=221s",
+      "text": "try to convert hot into something. So when you try to convert hot into something, you'll actually get dot and you'll get lot. So you'll get dot and you'll get lot. By the way, make sure you remove hot and dot and lot. So you got dot and lot. So dot you got at the second level and the lot you got at the second level. Perfect. Done. Next time, please take the next one out. Dot. So when you take dot out, you try to convert it and you can actually convert it into dog. Can you convert it to something else? I don't think so. So you'll take the dog and you'll put it into the queue. At the same time, you'll say dog to have a three in the map. So dot is done. Next time, please take out lot. So when you take out lot, what you'll do is you'll say, okay, fine. Lot will be nothing but can be converted by the dog is done. Lot can be converted to log, right? So you'd be like, okay, log. And this log is that how many steps lot was at. If you see lot was a two, so this will be also at three. Perfect. So this is also done. Log is also done. Next, take the dog out and how does dog three, the dog can be converted into cog. Dog can be converted into cog. So you'll convert it to cog and"
+    },
+    {
+      "chunk_id": "L156_C5",
+      "start": 291.64,
+      "end": 371.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=291s",
+      "text": "how does dog three, the dog can be converted into cog. Dog can be converted into cog. So you'll convert it to cog and it'll be level four and you'll put that into over here and you'll erase it. Next, you get the log again. This time, log cannot be converted. So done. Next time you'll get cog, cannot be so the queue is ultimately empty. And this is the, you can store it in any data structure that you wish to. I'll really store it in a map data structure. Done. Right? So step one is done. Step one is very simple. And we figured out that the minimum number of steps that we required was four or the sequence length was five. So let's erase this now. Let's erase everything. So that was step one. Step one stated, give me the minimum steps. And we saw that the minimum step was nothing but four in this case. So just go ahead and store it. So the minimum step was four. That means four transformations. Step one is completed. Now the step two, backtrack. I repeat backtrack in the map. Backtrack in the map. Yes. From end to begin to get the answer. Now you might be thinking, but Trevor, why from end to begin?"
+    },
+    {
+      "chunk_id": "L156_C6",
+      "start": 371.44,
+      "end": 446.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=371s",
+      "text": "Yes. From end to begin to get the answer. Now you might be thinking, but Trevor, why from end to begin? I'll give you that explanation. But you first need to understand the algorithm. I'll give you the reason why end to begin, but right at then, but before that you need to understand the explanation in depth. So you have seen what is the step two from the end to the beginning. So what I'll do is fine. I'll say, I'll do a simple enough DFS calls from the cog with saying the sequence contains cog. We're going to travel in the backward directions. So what can be cog converted to? Cog can be converted into a lot of things, right? So we're trying to convert cog. The only valid things that are there in the world list or in the map are lock or dock. I can convert cog to lock or dock. Do you agree with this or not? You do, right? So lock and dock. Can we convert this cog into, can we convert this cog into something else? We probably can, but we will only have two options, which is the lock. Now while converting, if you're trying to convert it into lock, you know, the cog was at the level four. So the conversion that you're doing is a lock. It has to be at level"
+    },
+    {
+      "chunk_id": "L156_C7",
+      "start": 446.36,
+      "end": 522.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=446s",
+      "text": "know, the cog was at the level four. So the conversion that you're doing is a lock. It has to be at level three. It has to be a level three. Is log at level three. It is. It is there at level three. They'll say yes, possible. Log. And then the sequence will be cog and lock. Perfect. Another DFS or another chain that you can do is DFS of, I said dog as well. Dog. And this will become cog and dog. Now, is dog possible? Let's see. This was four. Dog is three. Possible. Right before the level, right before the level, we actually encountered it. So this is possible. So a couple of DFS calls that you can do, you can try out changing cog as you did, and then you can call these two DFS calls. First, this will be executed according to recursion. Then this will be executed. If your recursion is weak, please, please go back and watch the recursion series. So this is something which you have figured out. Next, we have a lock, right? What can we lock converted to? Lock can be converted into a lot of things like lock, dog again, and can be converted into a lot of other things as well. Now, lock can be converted into dog. But what is the value of lock? The lock's"
+    },
+    {
+      "chunk_id": "L156_C8",
+      "start": 522.24,
+      "end": 600.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=522s",
+      "text": "a lot of other things as well. Now, lock can be converted into dog. But what is the value of lock? The lock's value is three. The dog's value has to be two. But we see that the dog's value is three and the lock's value is three as well. So it cannot be converted back to dog. This is how we stop extra conversions or unnecessary. We just follow the right path because we just want to move where the conversion is. So that's not possible. So lock will be like, okay, can I be converted into locked? I'll be like, yes. Why? Because if you convert the G to T, lock can be converted into lock. Why? Because this was three and lock was two. So this is right before this conversion. So lock can be converted or traced back to lock. This is nothing but simple backtracking. So this is like cog, lock, and a lock. Perfect. Right. Next, what can be locked converted to? Lock can be again converted into a lot of things. But what's the value of lock? Two. So when we try to convert it into something like let's say lock trying to, let's say we try lock to dot. Is this possible? Yes. L can be done to D but what's the value of lock? Two. And what's the value of dot? Two."
+    },
+    {
+      "chunk_id": "L156_C9",
+      "start": 600.4,
+      "end": 680.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=600s",
+      "text": "this possible? Yes. L can be done to D but what's the value of lock? Two. And what's the value of dot? Two. So lock cannot be converted into dot because they're of the same level. You're backtracking. So lock was two. We'll try to convert it into hot. Yes. DFS of hot, which is cog, lock, lock and hot. Perfect. So we are at hot. At the moment the call comes to hot. The moment the call comes to hot, hot will not try to convert itself. Hot will not try to convert itself. And we'll try to convert it itself to a lot of things. But the only possibility will be DFS of hit. Why? Because the hit is at zero and hot is at one, one before that. So that is possible. So we see the new one will have cog, lock, lot, hot and hit. Now the moment this DFS call is made, the moment this DFS call is made, we get a hit, which is nothing but the beginning word. The moment you're getting the beginning word, the moment you're getting the beginning word, you're like, we have got our answer. And if we have got our answer, we say, fine, this is a particular answer. So we're like, we can store this in our answer. One of them. So go back, go back, go back, go back because there were no further"
+    },
+    {
+      "chunk_id": "L156_C10",
+      "start": 680.08,
+      "end": 755.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=680s",
+      "text": "can store this in our answer. One of them. So go back, go back, go back, go back because there were no further things execute this. And again, go and execute, execute, execute. And you'll again get another sequence, which you can actually put it into the answer. And you can actually put into the answer. Now, why did this run? The first reason is while we did the previous solution, we were actually storing sequences, which ended up resulting in DLE because imagine, imagine you want to go from a point to another point, right? And you're trying a lot of possibilities. And then you figured out that there's only two possibilities to reach there. You tried out a lot of possibilities, a lot of them, but you figured out that there were two correct possibilities to reach there. Right? So what did you do in the step one? At first you figured out the shortest path. So when you figured out the shortest path, you don't need to store the sequence, which was consuming a lot of time. Just did a simple DFS on the queue, according to step one, as you did over here. And you easily, yes, you easily were able to store this thing. Who were at which level? Level zero was this guy's level. One is this guy level two, where these guys level three, where these guys level four was this guy's"
+    },
+    {
+      "chunk_id": "L156_C11",
+      "start": 755.96,
+      "end": 828.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=755s",
+      "text": "was this guy's level. One is this guy level two, where these guys level three, where these guys level four was this guy's you were easily able to store that. Right? So we know one thing that we have stored and we did not require to store the sequence. Now, you're trying to figure out the sequence starting from the start, you'll actually explore a lot of parts, but if you try from the end, then you know, there are only two parts to explore. So the exploration of parts will be minimal when you start from the back, because on the back, there's only some answers. Like for an example, you're having a four. So when you start from back, you know, there'll be lesser amount of answers. There'll be lesser amount of answers. I hope that makes sense because over here, you see a lot of things like it goes to hot. In a lot of examples, there might be a lot of other words in the level, which will not lead anywhere, which will not lead anywhere. Like you might convert it to hot, it to let's say him, him to dim and then hot goes on and gets the answer. And this dim did not go anywhere, but this will still be in the map. This will still be in the map. So you don't want to explore these parts unnecessarily. That is why step two says, that is why the intuition of step"
+    },
+    {
+      "chunk_id": "L156_C12",
+      "start": 828.12,
+      "end": 906.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=828s",
+      "text": "the map. So you don't want to explore these parts unnecessarily. That is why step two says, that is why the intuition of step two is start from the end to the begin so that you unnecessarily stop exploring the extra parts. You know, there are two parts, you know, there are two parts, you'll only explore two parts. So you'll only carry two sequence. You'll only carry two sequence throughout the, throughout the journey. So unnecessarily carrying of sequences will be reduced, which indirectly saves a lot of time, which indirectly saves a lot of time. Again, this is not a CP stuff. If you are into competitive programming, this will be cakewalk for you. If you're just into interview preparation, you might find this stuff. So guys, I hope you understood the explanation because that is where the gist of the solution lies. Understanding step one and step two in depth. So since we are dealing with TLE issues, I'll not following the interview standards of not declaring anything global and all these things. I'll not be following that. Okay. So queue string of queue, that's the first thing. We need a map. So TLE I'll declare it over here. Unordered map of string int. This will be storing the distance. So I can probably see queue dot push of the begin word. That's something which I'll do. Once"
+    },
+    {
+      "chunk_id": "L156_C13",
+      "start": 906.8,
+      "end": 975.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=906s",
+      "text": "will be storing the distance. So I can probably see queue dot push of the begin word. That's something which I'll do. Once I've done this, what's the next thing that I'll do? I'll say, okay, begin word can be set to have a zero thing. I can see that now or I can mark it as one. That is your choice. You can keep it as zero or one, whichever you wish to. Next I'll say, okay, let's start off the queue. What do you do in the queue? As very simple, the same thing, queue dot front, queue dot pop. And now what you can say is, okay, fine. This is what we have got. Now we need to traverse and change every character. So let's traverse in the word. So I equal to zero. Again, please make sure that we don't write this. Usually in C++ it does store it. Like it just computes it once, but still I'll not take the risk. I'll probably compute the size over here because I want to be absolutely sure that it doesn't give me TLE. I'll do all the optimizations that are possible from my end. This is something which I'll do. No more repetitive calculations of dot size again and again. So char of original equal to word of I and when we come back, word of I equal to original. So that all the changes are reverted."
+    },
+    {
+      "chunk_id": "L156_C14",
+      "start": 975.08,
+      "end": 1047.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=975s",
+      "text": "original equal to word of I and when we come back, word of I equal to original. So that all the changes are reverted. Next I'll do a character ch equal to a, character less than equal to z, character plus plus. That's the first thing we'll do. Right. Next I know one thing, word of I will be ch. Perfect. I'll try to see, okay, fine. I have a word list. I need to quickly check. How do I quickly check? I need an unordered set. So quickly do an unordered set. So word list dot begin. Like this. Dot word list dot end. That's the first thing you'll do. Next, let's have a quick check if it does exist or not. So I'll be like, okay, fine. Set. Do you have this word? If it says yes, I do have, which means it'll be a greater than zero value. I'll say you have this word. Can you please take it? I'll say map word. What'd we answer? I'm like, this is a new word, right? And the previous word had some value. I can keep the steps equal to MBP of word because that is where I'm storing it. I can say MBP of, sorry, I can rather say steps plus one. So I store the steps over here. Perfect. This is how I can easily store the steps. Once I've stored the steps, I know everything is stored in"
+    },
+    {
+      "chunk_id": "L156_C15",
+      "start": 1047.44,
+      "end": 1119.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=1047s",
+      "text": "steps over here. Perfect. This is how I can easily store the steps. Once I've stored the steps, I know everything is stored in this map. I just need to backtrack. So I need a vector of vector string as an answer. So I'll store it here only. And I can return the answer here. Again, declaring everything globally. So what you'll do is, okay, remember one thing, you need to find the answer, right? You need to find the answer. So if in case, just make sure, also please make sure you erase it from the set. It's very important that you erase the value. Otherwise you will reiterate on it. Okay, cool. What's the next thing? Once you've done everything, what is the next thing that you'll do? You'll just quickly check if you actually reached there. So just in case, like you reached the last guy, which is end word, it's fine. Like it should not be equal to end. That means you reached it and the map is storing a value. If you reached it, it's perfect. Call the DFS from the end word and have the answer. And if it doesn't get scored, then you return an empty list as the answer. Now let's go back and read the DFS. I'll quickly do a private function for DFS. Now string word, I can get a sequence over here. So I'm not sure if this will DLE, but let's give it a try. String"
+    },
+    {
+      "chunk_id": "L156_C16",
+      "start": 1119.64,
+      "end": 1197.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=1119s",
+      "text": "string word, I can get a sequence over here. So I'm not sure if this will DLE, but let's give it a try. String sequence. And you can say sequence.pushback. If it gives a DLE, what we'll do is, yes, very simple. We will just go across and do it a global variable. So sequence has been passed over here. So please make sure you always carry these things in reference as a sequence. Perfect. Now, if this word is equal to begin word. So again, I don't want to do a lot of these things. So I'll just go across and say begin word. So if this is B, which is the begin word, I say we've got our answer. And this can be a part of our answer, which is the sequence. But I can return. This is where the recursion ends. Otherwise, I go across and do the same thing, which is character change. I go across and do the same thing, which is character change. And coming back to this, same thing again. But over here, we are trying to backtrack. You need to understand. We need to backtrack. And in order to backtrack, we have to check. We're going back to a word, which is word of I equal to CH. So the word has changed. I need to check. Okay. Is this word in the dictionary? That's the first thing"
+    },
+    {
+      "chunk_id": "L156_C17",
+      "start": 1197.84,
+      "end": 1267.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=1197s",
+      "text": "equal to CH. So the word has changed. I need to check. Okay. Is this word in the dictionary? That's the first thing that I need to check. Let's quickly have a check. Is this word in the dictionary, which is nothing but your map data structure, by the way, what's map declared as MPP. Yeah. So I'll be like, okay, cool. I'll go like mpp.find of the word. If this is in the dictionary, that's the first thing. If this is in the dictionary, the next thing that I need to check is, okay, you are in the dictionary. Now, do you have a value? Do you have a value, which is exactly lesser than my word? Which is lesser than my word. I need to check it. How do you check it? Firstly, probably you can store the steps in some variable like this. Now let's have a quick check. If this plus one is equal to equal to the steps that I'm looking for, because this is the word that I'm going to go back one step back. So plus one should be equal to steps. If that is the case, you are fine. You can go and do the DFS with a new word and with a new sequence. Okay. New sequence. What does that mean? This word will be a part of your sequence, isn't it? So you'll say, okay, this word will"
+    },
+    {
+      "chunk_id": "L156_C18",
+      "start": 1267.08,
+      "end": 1340.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=1267s",
+      "text": "sequence. What does that mean? This word will be a part of your sequence, isn't it? So you'll say, okay, this word will be, but when you come back, you need to take it back because the next step, you don't want the word to be added. Simple, basic backtracking. This is what you do. And whenever you push back the answer, make sure you reverse because as of now, the answer is stored from end to begin and you need to store the answer from the opposite direction. This is how you will compute the step two. So before compiling this code, do you think that there is an error? There is an error. Now you're reversing the sequence over here, storing it into the answer, but the recursion doesn't want that the sequence is disturbed because you have to go back and you have to do a pop back. So the wrong guy will be popped back. So make sure you're reversing it to put it into the answer, but you re-reverse it before returning. Simple, basic. So before submitting this code, there are some minor mistakes that I have done. So first of all, when you're using the begin, you need to, yes, this is a mistake. And the other thing is once you reach the word, just to optimize, once you've reached the end word, there's no need to do anything because you marked all the levels and your job is done. So these"
+    },
+    {
+      "chunk_id": "L156_C19",
+      "start": 1340.8,
+      "end": 1397.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=1340s",
+      "text": "you've reached the end word, there's no need to do anything because you marked all the levels and your job is done. So these are the two things that you need to add it. And once you've done this, try compiling this and it should give us a correct answer. Yes, it does. Let's quickly try to submit it. Now you must see that. Okay. I've tried it a lot and I figured out, okay, okay. Faster than 99.96. I do not believe on late code, these things. So this is how you can actually use some trick like this is an hack because the standard way is the one that I have taught in the previous video. And that is what you have to tell in the interview. Don't be oversmart and don't tell this one. This is just for lead code purpose because a lot of people do solve lead code. They want their problem solving skills to be right up there. So this is a problem where you learn various methods of problem solving. And I absolutely loved this problem. So I hope I was able to explain you this tough problem. So just in case I was, please, please, please make sure you like this video. And if you're new to our channel, I think you should definitely subscribe to us because I do put up a lot of content"
+    },
+    {
+      "chunk_id": "L156_C20",
+      "start": 1397.92,
+      "end": 1410.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=AD4SFl7tu7I&t=1397s",
+      "text": "if you're new to our channel, I think you should definitely subscribe to us because I do put up a lot of content which is related to DS algo and lead code as well. So if you haven't checked out our DP series and these G sheet, I think you're missing out on a lot of stuff. The links are in the description. With this, I'll be wrapping up this video. Let's meet in some other video until then. Bye bye. Take care."
+    }
+  ]
+}

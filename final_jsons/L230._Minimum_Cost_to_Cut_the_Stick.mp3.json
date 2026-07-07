@@ -1,0 +1,183 @@
+{
+  "lecture_id": "L230",
+  "lecture_number": 230,
+  "lecture_title": "DP 50. Minimum Cost to Cut the Stick",
+  "youtube_url": "https://www.youtube.com/watch?v=xwomavsC86c",
+  "chunks": [
+    {
+      "chunk_id": "L230_C1",
+      "start": 0.0,
+      "end": 76.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=0s",
+      "text": "Hey everyone, welcome back to TakeUForward. Today we will be solving an interesting problem on partition dp which is minimum cost to cut the stick. Now what does the problem state? The problem state, you'll be given a cut array and you'll be given a length of the stick. Now what do you mean by a length of the stick? This is a stick of length 7. Now we'll just write them down. This is how the stick looks like. Okay, this is a stick of exactly length 7 and this is first 2, 3, 4, 5, 6, 7. So a length of 6, 7. Now they're asking you to cut these at these portions. You can cut it at 1, you can cut it at 3, you can cut it at 4, you can cut it at 5. You can cut it as you wish. Okay, you have to find me the minimum cost, very important. You have to find me the minimal cost to cut the stick. Now you can follow any order. So what is cost? Cost is the length of the stick you're cutting. Length of the stick you are cutting. So if I start by cutting at 1, what is the initial length of the stick? If you just write down the length of the stick, it's 7. So if I decide"
+    },
+    {
+      "chunk_id": "L230_C2",
+      "start": 76.2,
+      "end": 154.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=76s",
+      "text": "the initial length of the stick? If you just write down the length of the stick, it's 7. So if I decide to cut at 1, the initial length of the stick is 7. So I do a cut at 1. So when I'm doing a cut at 1, I will have a stick of length 1 and I also have a stick of length 6. Okay, this is 1, 2, 3, 4, 5, 6, 7. A length 6. Now if I decide to cut a length 3, where is length 3? Length 3 is here, which is saying this. So what is the length of this stick? Because this stick is no more connected to this. What is the length of the stick? 6. So you'll require a cost of 6 now and you decide to cut it here at 3. So now you will have a stick of length 1, a stick of length 2 and a stick of length starting from 3, 4, 5, 6, 7. A length 4 stick. So now I say cut it at length 4. Where is length 4? This is 4. So what's the length of this particular stick? 4. So the costing that you'll require is 4. Now I decide that I'm going to make a cut here. So if I decide to make a cut here, I will have 0, 1. I will have 1, 2, 3. I will have"
+    },
+    {
+      "chunk_id": "L230_C3",
+      "start": 159.48,
+      "end": 225.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=159s",
+      "text": "here. So if I decide to make a cut here, I will have 0, 1. I will have 1, 2, 3. I will have 3, 4 which is length 1 and I will have 5, 6, 7 which is somewhere around length 3. Perfect. So let's write it properly. My bad. Let me write this properly. We will have 4, 5, 6, 7. So it will be of length 3. Next I say cut it at 5. So if I'm cutting at 5, which is this, and this stick length is of 3. So I'll be requiring a cost of 3 and I'll cut it here and I will have a stick of length 1. I will have a stick of length 3. I'll have a stick of length 1. I'll have a stick of length 1 and I'll have a stick of length 2. So this, when you cut at 5, was of length 3. So the total costing that you'll require is 7 plus 6, 13 plus 4, 17 plus 3 equal to 20. This is the costing you required if you went on by cutting it at 1, 3, 4, 5. The cost came out to be 20. The question states you have to minimize this 20. I don't want 20 because it's a lot. I want to minimize it. So the question states minimize the cost. So what we will do is we'll"
+    },
+    {
+      "chunk_id": "L230_C4",
+      "start": 225.88,
+      "end": 298.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=225s",
+      "text": "because it's a lot. I want to minimize it. So the question states minimize the cost. So what we will do is we'll go across by minimizing it. So you can follow the cuts in any order. So in this case, if I cut it like 3, 5, 1, 4, like it was given to us as 1, 3, 4, 5, but I rearranged the cuts to say I'll first do a cut on 3, then I'll do a cut on 5, then I'll do a cut on 1, then I'll do a cut on 4. Okay. So, okay, fine. So that means initially we had something like, let's quickly write this off. Initially we had a length 7. So just write this off. We had a length 7. Perfect. And the, so if I'm making a cut at 3, which is this portion, if I'm making a cut at 3, which is this portion, it has initially of length 7. So 7 will be added. Now we will have a length 3. It goes like 0, 1, 2, 3. We will also have a length 4. It goes like 3, 4, 5, 6, 7. Perfect. Length 4. I'm saying cut at 5, which is, I'm saying cut it over here. So this stick is of length 4. So answer added will be, the cost added will be 4. So after this, we will again have this"
+    },
+    {
+      "chunk_id": "L230_C5",
+      "start": 298.28,
+      "end": 360.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=298s",
+      "text": "is of length 4. So answer added will be, the cost added will be 4. So after this, we will again have this 0, 1, 2, 3, right? We will again have 3, 4, 5. We will again have 5, 6, 7. Perfect. So we have made sure that we have done the cut at 5. I'm saying cut it at 1. So I'm cutting at 1, which is this. This is a length 3 stick. This is a length 3 stick, which I'm cutting. So the costing will be this. So I'll be left out with 0, 1. I'll be left out with 1, 2, 3, which is of length 2. I'll be of 3, 4, 5, which is again of length 2. I'll be of 5, 6, 7, which is again of length 2. So the costing is 3. Next I'm saying cut it at 4. So I'm cutting at 4, which is definitely this. This is a length 2 stick. It's length 2 stick. So the total cost that comes up is 7 plus 4, 11 plus 3, 14 plus 2, 16. So I got a lower cost. I got a lower cost. You can try out all orders and you see if you follow the order of 3, 5, 1, 4, this is the lowest cost that you'll get, which is of 16. Yes, this is the lowest that you'll get is of length 16. You can't go"
+    },
+    {
+      "chunk_id": "L230_C6",
+      "start": 360.36,
+      "end": 425.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=360s",
+      "text": "lowest cost that you'll get, which is of 16. Yes, this is the lowest that you'll get is of length 16. You can't go lower than this. So before moving to the solution of this question, let me tell you about the sponsor of this video, which is Hyrex. Now this is the time of the year where you expect appraisals. Now is appraisals all about salary hikes? Definitely not. Now when you're looking out for an appraisal, you mean that you're valued, you are promoted, you're given much more opportunities, much more freedom to do a work. But when all of these doesn't happen, that is when you start looking for a job switch or career hike. So that is where something like startups come in because with startups, you get a lot of liberty to work, a lot of salary hikes. And how do you find startups? Obviously, in order to find startups, you can download Hyrex. Yes, Hyrex is India's first hiring app, which allows you to directly consult with CEOs and founders of the startups. At Hyrex, we have over 1,20,000 plus startups which are hiring. Now what do you need to do? You don't need to do anything special. There's a link in the description. You need to download the Hyrex app. Once you've downloaded the Hyrex app, you have to fill up all this relevant information about yourself. And once you've filled it up, the Hyrex apps algorithm"
+    },
+    {
+      "chunk_id": "L230_C7",
+      "start": 425.88,
+      "end": 493.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=425s",
+      "text": "the Hyrex app, you have to fill up all this relevant information about yourself. And once you've filled it up, the Hyrex apps algorithm makes sure that you're connected to relevant job profiles. And yes, one more thing, there is no consultancy involved in between. You are directly chatting with the co-founders or the founders or the CEOs of the startups and you can directly ask them whatever you have in mind. And also, your data will be staying private without your permission. It will not be shared anywhere. So what are you waiting for? There's a link in the description. Go and download Hyrex and just look for a switch. So how do you approach this problem? Because you will be given something like one, three, four, five, like this is in cuts. You'll be given the length of the stick. So how do you start approaching? Because you can either start with one as the cut. You can either start with three as the cut. You can either start with five as the cut. So you have a lot of options to start with. You have a lot of options to start with. So can I treat this as a complete stuff? Can I treat this as one, three, four, five as a complete stuff? I can. And then can I say, if I make a cut at four, if I make a cut at four, if I'm making a cut at four for sure,"
+    },
+    {
+      "chunk_id": "L230_C8",
+      "start": 495.16,
+      "end": 563.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=495s",
+      "text": "say, if I make a cut at four, if I make a cut at four, if I'm making a cut at four for sure, I can also make, I can also start with five or I can say I can also start with three. So I know if I treat this as a partition, like if I treat this as an I and J, like an entire array, I can say I can either start with one. I can either start with three. I can either start with four. I can either start with five. So what if I start with four? What if I start with four? I know the initial length of the stick. I know the initial length of the stick is seven. So I'll add up seven to the answer. How we will find this, we will get to know. But if I start with four, for an example, I say I'll make the first cut at four. Can I say if I'm making the first cut at four, the answer that I'll add is seven, because that is the initial length of the stick. At least at the first step, the length will be the complete stick. So can I say now I'm solving only these cuts and only these cuts. I'm solving only these cuts. Right? Like a one, three and a five. I'm just solving these cuts. Now, if I solve them independently, solve them independently, will this work?"
+    },
+    {
+      "chunk_id": "L230_C9",
+      "start": 563.88,
+      "end": 642.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=563s",
+      "text": "Like a one, three and a five. I'm just solving these cuts. Now, if I solve them independently, solve them independently, will this work? Solve them independently, will this work? Yes. Why? Because it is sorted. Because it is sorted. Let's understand what does this mean? Now, if you have made a cut at four, you have made a cut at four, you know that you have something like zero, one, two, three, four now. And you also know you have something like four, five, six, seven, because you've made a cut at four. So you've segregated them. No matter if you perform five at first or three at first, they won't matter because even if you're performing five, it's nowhere connected to the stick. Even if you're performing the cut at one and three, it's nowhere connected to the stick. The sticks have been separated. The sticks have been separated. And why are like, why can you solve this sub problem independently? And why can you solve this sub problem independently? Because they're not connected. But if I just do one thing, I just do one shuttle change and I say, I will, I'll just change this test case to this. And imagine I was having something like this. And the right sub problem would have been five comma two. Imagine this was the right sub problem and this was the left sub problem. Now you cannot solve them independently because"
+    },
+    {
+      "chunk_id": "L230_C10",
+      "start": 642.6,
+      "end": 716.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=642s",
+      "text": "five comma two. Imagine this was the right sub problem and this was the left sub problem. Now you cannot solve them independently because this is dependent on this because this two, this two, the two on the right will be over here. So you're dependent, you're dependent on the left stick. Thereby, it's very important to have it sorted so that whenever you solve a problem, sub problem, they will not be dependent. They will not be dependent. You can just go over and see whether you're going to make a cut at four or five, you won't be dependent on this. You don't have to decide whether you want to make a cut at one, three, then two, or at one, two, then three, you will not be dependent. So it's very important that you make sure that the array is sorted. Okay. That is something which you have to do. Now, how do you find the length of the sticks? Very important. So let me, let me just visualize it again. I'm having one, three, four, five. Okay. I know this is a partition that I'm solving. This is a partition that I'm solving. Okay. This is an entire partition that I'm looking to solve. I want to find a, how are these cuts going to give me the minimal cost? I'll just put in a zero and the length of the stick right at the left and right at the,"
+    },
+    {
+      "chunk_id": "L230_C11",
+      "start": 718.68,
+      "end": 791.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=718s",
+      "text": "me the minimal cost? I'll just put in a zero and the length of the stick right at the left and right at the, I just put a zero on the left and I'll just put the length of the stick on the right. Why do I do this? You'll understand. Imagine I'm making a cut at four. I know I can make a cut at three or at five or at one, anywhere. Imagine I'm making a cut at four. I'm making a cut at four, but what is the cost? The cost is the length of that stick, length of that stick in which four is, in which four is, the cost is the length of that stick in which four is, that is for sure. How do I get the cost? I minus one, cuts of I, J plus one rather, which is this J plus one, minus cuts of I minus one, which is this seven minus zero is seven. This is the length of the stick. This is the length of the stick. If I apply this formula, it'll give me the length of the stick. I will show you why in future. So we have understood that this is giving me the length of the stick. Now, if I'm taking this guy as the first cut,"
+    },
+    {
+      "chunk_id": "L230_C12",
+      "start": 791.72,
+      "end": 865.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=791s",
+      "text": "have understood that this is giving me the length of the stick. Now, if I'm taking this guy as the first cut, then I need to solve this guy. So imagine this is at index. I need to solve this portion, this sub problem, which is I to index minus one. I need to solve the right of sub problem, which is index plus one from the right to the last, because I did a partition on index. I solve it from I to index minus one, this smaller partition and index plus one to J, this partition. So I just took and cut and I'll be solving these couple. And since they are sorted, they're independent. And since they're independent, I can just solve them independently and add up the answer with the current answer, which is this. Now you might ask, how is this working? I'll show you after I, after I write the code, how is this exactly working? You'll get a clear cut idea, but before that, let's start writing the code. So you have understood that it's going to be a partition, like one, three, five, eight was initially given to you. You will just, sorry, one, three, four, five was given to you. You will insert a zero at the front. You'll insert a length of the stick at the back. And if I write down the indexing, it'll be like zero, one, two, three, four, five."
+    },
+    {
+      "chunk_id": "L230_C13",
+      "start": 865.72,
+      "end": 937.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=865s",
+      "text": "a length of the stick at the back. And if I write down the indexing, it'll be like zero, one, two, three, four, five. So start of I from here and J from here, which you can call it as F of one or whatever was the initial length, like, whatever is this initial length was four, right? Initial length was four. So you can just start off with four. So that's what the initial partition will start off with. So F of one I comma J. Now I know, I know I can start with this. I can start with this. I can start with this. I can start with this, which eventually means I can take anyone as the first cut. Anyone as the first cut, I can take anyone as the first cut. So thereby, what I say is, okay, now in partition DP, you know, if, because you're solving a portion, if it, if it crosses over, there is nothing to solve. So you can just return a zero. The cost will be zero. If there is no partition to be solved. I know one thing for sure. I can take anyone from I to J. And when I'm taking anyone, the costing that I'll incur is cuts of J plus one. I've already showed you why, and I'll prove it again. This is the cut. This is the cost. If I cut it at that index and I have to solve the left guy,"
+    },
+    {
+      "chunk_id": "L230_C14",
+      "start": 938.2,
+      "end": 1014.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=938s",
+      "text": "again. This is the cut. This is the cost. If I cut it at that index and I have to solve the left guy, which is I of index minus one. I have to solve the right guy, which is index plus one comma J for sure. The left guy and the right guy is what I need to solve. Perfect. And since I need the minimal cost, probably I can keep it as int max. And I can just say minimal equal to minimal of mini comma cost. And at the end of the day, I can just return the mini and I should be done. This is how the simple enough code looks like. What I do is I take the current cut at any of the index, and then I go to the left sub problem to the right sub problem, get it for every index, I get the cost and take the minimal of all the indexes. And that is what I return. So I try all partitions and I return the partition that gives me the minimal answer. Okay. Now coming back to this portion, which a lot of you probably did not understand. So let's take a bigger example just to make it clear enough. Okay. Imagine this is the stick and the length is somewhere around 12. Imagine the length is somewhere around 12 and you are starting off by solving this portion of partition. Okay. So just for an example,"
+    },
+    {
+      "chunk_id": "L230_C15",
+      "start": 1014.76,
+      "end": 1083.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=1014s",
+      "text": "Imagine the length is somewhere around 12 and you are starting off by solving this portion of partition. Okay. So just for an example, imagine the first cut that you made was at five. The first cut that you made was at five. For that reason, the first cut that you made was at three. So we're making a cut at three. You know, the length is definitely because this is I and this is J. The length is definitely 12 minus zero. So J plus one and I minus one for sure. That is for sure. But whenever you're making cut at three, you are having a sub problem as one, two. This is your sub problem. And the right of it as the last cut was at three and this was zero. And this right sub problem will be three, five, seven, eight, and 12. And this will be the partition that you'll be solving. This will be the IJ and this will be the IJ over here. Okay. Now if you carefully observe, yes, if you carefully observe, if you're making a cut at three, if you're making a cut at three, you'll be of zero, one, two, three. And the length will be three. So again, if you carefully see three, because that was the last cut and the last cut on the left was zero. So three minus zero again gave you"
+    },
+    {
+      "chunk_id": "L230_C16",
+      "start": 1084.04,
+      "end": 1153.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=1084s",
+      "text": "three, because that was the last cut and the last cut on the left was zero. So three minus zero again gave you the length of the stick. Similarly, if you made a cut at three, three, four, five, six, seven, eight, nine, 10, 11, 12. Okay. So we just write this four, five, six, seven, eight, nine, 10, 11, one, two, three, four, five, six, seven, eight, nine, nine is the length. And if you again take 12 and three, you get the length as nine, because this is the last portion where you made the cut. And this is the right last portion where the cut was. So 12 minus three will give you nine. Imagine, imagine I take this five, seven, eight, and I say, I will do a cut at seven. I'll do a cut at seven. So I will have a left guy as three, five, seven, and this will just be the partition that I'll be solving. I'll have the right guy as seven, eight, 12. And this is the partition that I'll be solving I and J, I and J. Now, if you're doing a cut at seven, if you're doing a cut at seven, you are hypothetically, yes, you're hypothetically left with three, four, five, six, seven, which is a length of four. And this is seven, eight, nine, 10, 11, 12. So just write"
+    },
+    {
+      "chunk_id": "L230_C17",
+      "start": 1153.0,
+      "end": 1220.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=1153s",
+      "text": "three, four, five, six, seven, which is a length of four. And this is seven, eight, nine, 10, 11, 12. So just write it across seven, eight, nine, 10, 11, 12, one, two, three, four, five. So again, if you see 12 minus seven gives you the length five, seven minus three gives you the length four. So this is the reason J plus one and I minus one, because if you know the left last cut, right last cut, and if you just subtract it, you get the length. Yes, that is how you get easily the length. So I hope I was able to explain you why this and why the left subproblem and the right subproblem. Once you've understood this, I think this becomes a very simple cakewalk partition DP. So now what I'll do is I will just go back to the code. Okay. Cost to cut a chocolate. And what are we given? We are basically given N the C, which is basically cuts of size C given an array. So this is a size C and this is N. Okay. Perfect. So what's the first thing that we always do? Remember the C is the size of the C. So we know the function that will be called will be for the partition of one to C and we have the cuts. And this N is the length of the stick. So cuts dot push back is the length of the stick"
+    },
+    {
+      "chunk_id": "L230_C18",
+      "start": 1221.0,
+      "end": 1299.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=1221s",
+      "text": "we have the cuts. And this N is the length of the stick. So cuts dot push back is the length of the stick cuts dot push or rather insert at the front, which is cuts dot begin, right? Please insert at the front, which will be easy and you can just sort it. Cuts. To avoid complications, I've inserted these couple of guys so that we can easily get the length. Because we know the first partition, the left partition initially will be at zero and the right partition initially will be at N. That's why I have just inserted it. Make sure it is sorted because that is something that you have proved in order to make two sub problems independent, we have to sort it. Okay. So please make sure you sort it. And we're using sort, we know we have to use hash includes. Please add hash include. Please add hash include that. Now let's write F I N D I N D J and you can write vector of int of and cuts. Perfect. And now what you'll do is, you know, if this exceeds, you're going to return a zero and mini, you can keep it as int max. Perfect. And you know, any of the indexes can be from this till this and index plus plus and the costing. Okay. Let's see if the constraints will get into the five, 10 to the power three, even if I add up all of them,"
+    },
+    {
+      "chunk_id": "L230_C19",
+      "start": 1300.52,
+      "end": 1377.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=1300s",
+      "text": "costing. Okay. Let's see if the constraints will get into the five, 10 to the power three, even if I add up all of them, it still works. That's off this cuts of this perfect. Plus the left one, which is I have index minus one cuts plus the right one, which is index plus one comma G comma cuts. Perfect. And you can say mini equal to minimal of mini comma cost, and you can just return mini. Amazing. So that is how you will be doing this. Let's really check if you have done any mistake. I don't think so. Let's run this up and see if this is running fine. It does give me some issue. Okay. It looks like we have, okay, over here, we have an issue. Okay. It is giving me correct answer. And definitely this is recursion. This is recursion. So I have already taught you in all the previous lectures, if you are doing something as recursion, what is the time complexity? It's going to be exponential because you're trying out all partitions and that's going to take a lot of time. So, you know, in order to optimize this, there's only one way recursions. I've been teaching that throughout the entire DP playlist memo I Asian. And how do you do my motion? You look at the changing parameters. We have one parameter as I have another parameter as G."
+    },
+    {
+      "chunk_id": "L230_C20",
+      "start": 1378.04,
+      "end": 1454.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=1378s",
+      "text": "how do you do my motion? You look at the changing parameters. We have one parameter as I have another parameter as G. So I can be from one to N or other one to the size of the cuts, size of the cuts, and G can also be from one to cuts. So can I say, uh, the DP will be the size of the cuts, like the size of the cuts, sorry, call it M. That's it. This will be the DP size. Just look at the changing parameter, have it on the DP and right on the code over here. You'll say DP of IJ equal to whatever mini you make and right over here, you insert a line. If this state has been previously visited, that's it. So we just write these couple of lines. I think you should be able to solve this. So what I'll do is I'll just keep a vector, vector, ain't DP off. Definitely C plus one cuts vector in C plus one of minus one. Amazing. Now you can just take this DP and just copy paste this and you can say, and of DP. And over here, you can say DP of IJ equal to this. And right away, you can say DP of IJ is not equal to minus one. You can return DP of IJ. Amazing."
+    },
+    {
+      "chunk_id": "L230_C21",
+      "start": 1454.76,
+      "end": 1531.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=1454s",
+      "text": "And right away, you can say DP of IJ is not equal to minus one. You can return DP of IJ. Amazing. So I just make sure you pass DP over here, pass DP. And now you can just run this. So if you're on this, this should be running fine. Yeah, this is, and if I submit this, you'll see, this is giving you an accepted answer. I hope it does. It does. It does. So what is the time complexity? Two changing variables of C plus one and C plus one, C square and a for loop C cube. Yeah. Two changing parameters will yield to N square number of states. Now two changing, like if I discuss the time complexity, we just quickly write the time complexity. Two changing parameters, I and J will give you N square or cut square M square into another looping variable, which is near about M cube. Space complexity, we go off M square for the array and auxiliary stack space. And I'm not interested in the stack space. So how do you optimize this? Tabulation. Tabulation is the way to optimize this. Yes. Tabulation is the way. And how have I taught you tabulation? Copy the base case. Step one, copy the base case,"
+    },
+    {
+      "chunk_id": "L230_C22",
+      "start": 1532.52,
+      "end": 1607.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=1532s",
+      "text": "Tabulation is the way. And how have I taught you tabulation? Copy the base case. Step one, copy the base case, write down the changing parameters in opposite, copy the recurrence. So if I go and copy the base case, do I have a base case? I do have, what are the base case? Let's go back. It's I greater than zero. It's I greater than zero. It's zero. So instead of doing anything, what you can do is you can just declare a DP of C plus one and C plus one and make it entirely zero. Two changing variables. Where is I being called? Just go and look. You're calling it from one comma N. This is your I, this is your J. You're calling I from one. This is, this happens to go like this. So I will go from one to N in recursion. I will go from one to N in recursion. So in tabulation, it will be opposite because tabulation is bottom up. You take those bottom answers and you compute it. So N to one, what will be J? J is going from N, shrink, J is N to one. So I'll take it from opposite. Just you have to write it in opposite. Make sure tabulation is writing in opposite. So take it from"
+    },
+    {
+      "chunk_id": "L230_C23",
+      "start": 1607.24,
+      "end": 1678.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=1607s",
+      "text": "it from opposite. Just you have to write it in opposite. Make sure tabulation is writing in opposite. So take it from one to N and then copy the recurrence as the last thing that you will do. So if you have followed the DP series entirely, you know this pattern. I've taught you how to make tabulation easy. So if you know this pattern, it is, it's going to be a cakewalk. So don't worry about that. So what I'll do is I'll get back here. I'll get back to the code and we'll keep everything the same. This will make this as zero. The DP will be zero and let's write the same thing. So no base case. So the changing parameters will be written in opposite. So please make sure you write it in opposite, which is this. And then you write INTJ, INTJ in opposite again, J less than equal to N and J plus plus. Perfect. You know, the base case is this, which will be zero always. So you can say this, we don't need to perform because already everything is assigned to zero. Copy every stuff over here. Copy the recurrence. Now this copy paste the recurrence. See how, sorry, see how easy it is. I just copy pasted the recurrence. I removed the return over here, DP of index plus one J. So yeah, that's what the first thing I'll do over here. DP of I of index"
+    },
+    {
+      "chunk_id": "L230_C24",
+      "start": 1678.36,
+      "end": 1743.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=1678s",
+      "text": "over here, DP of index plus one J. So yeah, that's what the first thing I'll do over here. DP of I of index minus one. DP of I of index minus one is what I will do. Okay. Perfect. So what I've done is I've taken the left and right and I've taken this and this will be DP of one C. DP of one C. Now something very important to understand over here. If J is at the moment taking index minus one, and if I is N it's still taking I plus one index plus one. Okay. So N plus one might go N plus one as index. So this will be C plus two. Just make sure to for safety, take it C plus two because index plus one, when I is N will tend to give you an entire mirror. So we've done this, try running this and you will see that this is indeed giving you the correct answer. Oh, it did not. Why it did not. Let's quickly check why it is giving you an entire mirror. Because they've taken the cause, uh, cuts. Okay. By the way, it will not be N, my bad. It'll be from C and it'll be from C because N is basically, uh, the size of the cuts array, the size of the cuts array. So it will be very important that you take it. They'll see. Okay, cool. Uh, now it should"
+    },
+    {
+      "chunk_id": "L230_C25",
+      "start": 1743.72,
+      "end": 1800.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwomavsC86c&t=1743s",
+      "text": "the size of the cuts array. So it will be very important that you take it. They'll see. Okay, cool. Uh, now it should be fine. Yeah, it is fine now. And if you submit this, it'll give you the correct answer. Time complexity, definitely N cube space complexity is definitely N square. When is basically the cut size array and there's no auxiliary stack space. So guys, I hope I was able to explain you this hard problem. So thank you guys for watching this video till the end. So just in case you have liked this video, please make sure you give a like to this. And if you're new to the channel, please, please do consider subscribing to us and it is the season of appraisal. So what are you waiting for? Download the HiRack app from the link in the description. And yes, one more thing, you get 1,20,000 plus startups in the HiRack app and there is no consultancies. So what are you waiting for? There's a link in the description. Make sure you download the HiRack app. With this, let's wrap up this video. Bye-bye. Take care. Bye."
+    }
+  ]
+}

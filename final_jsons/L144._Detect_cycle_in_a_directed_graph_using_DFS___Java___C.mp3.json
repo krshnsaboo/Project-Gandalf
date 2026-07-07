@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L144",
+  "lecture_number": 144,
+  "lecture_title": "G-19. Detect cycle in a directed graph using DFS | Java | C++",
+  "youtube_url": "https://www.youtube.com/watch?v=9twcmtQj4DU",
+  "chunks": [
+    {
+      "chunk_id": "L144_C1",
+      "start": 0.0,
+      "end": 79.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we are going to learn about how to detect a cycle in a directed graph using this depth first search algorithm. Now you know what is a directed graph when two nodes are connected by our directed edge. So this is a particular directed graph. Now does this graph have a cycle is my question and the answer to that is yes. You cannot call this a cycle. No, you cannot call this a cycle. This is not a cycle because it is something like this and something like this, like you're going like this and like this. This is not a cycle, but at the same time, this is a cycle because this is going completely. You started from here and you reached back here. Thereby we can say that this is a cycle. So yes, a cycle does exist and that is what you have to tell me. So we have already solved how to detect the cycle in an undirected graph using the DFS algorithm, but this is a directed graph. Now why will the same algorithm not work? Let's understand. So I'll take this. Imagine you start the DFS call from one. So you mark this as visited. Then you go to DFS call of two. You mark this as visited. Now for two, the adjacent neighbors is three."
+    },
+    {
+      "chunk_id": "L144_C2",
+      "start": 79.84,
+      "end": 143.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=79s",
+      "text": "this as visited. Then you go to DFS call of two. You mark this as visited. Now for two, the adjacent neighbors is three. So you'll go the DFS to three. So you'll go and mark it as visited. From three, you can go to four or you can go to seven. So let's go to four. So you go to four and you mark it as visited. Next from four, you can go to five. So you go to five and you mark it as visited from five. You can only go to six. So you go to six and you mark it as visited. Beyond six, can you go? If I show you beyond six, can you go? No. So you will come back from five. Can you go to seven? No. So you'll go back. So apparently what will happen is you come back from six, you come back from five, you come back from four and you come back to three. So the moment you come back to three, three went to four to one of its adjacent nodes and did the DFS. Now there is another adjacent node remaining seven. So it will call a DFS for seven. Yes, it'll call a DFS for seven. Now what will happen is when it goes to seven, it tends to mark it as visited. It tends to mark it as visited. But the next moment when you are"
+    },
+    {
+      "chunk_id": "L144_C3",
+      "start": 143.76,
+      "end": 215.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=143s",
+      "text": "goes to seven, it tends to mark it as visited. It tends to mark it as visited. But the next moment when you are standing at seven, it finds a nearby adjacent node, which is already visited and thereby the same algorithm will say that this is a cycle because you know the logic. If we visit an adjacent node, which is not the parent, if we visit the adjacent node, which is not the parent and it is already visited, we call that as a cycle. We call that as a cycle. This would have been true. Yes, this would have been true. If you did not have directed edges, yes, you would have edges like this. This would have been true because you go here and then from this direction, you go here. So you meet, since these are undirected edges, you can say that this is a cycle. But since over here we are dealing with something as directed edges, thereby I cannot say something that you visited in this path. And again, if you visit in this path, you cannot say that this is a complete cycle. This is not a complete cycle. Thereby this visited algorithm using the DFS technique will fail. Yes, thereby this visited algorithm using the DFS technique will fail. So why did the technique fail? Because it is very simple. You started from here,"
+    },
+    {
+      "chunk_id": "L144_C4",
+      "start": 215.6,
+      "end": 281.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=215s",
+      "text": "visited algorithm using the DFS technique will fail. So why did the technique fail? Because it is very simple. You started from here, then you went to here, then you went to here, then you went to here, then you went to here, then you went to here, then you came back and then you took this path. So it was a different path. It was a different path. In undirected, it works because these are undirected edges. So even if you go via this, you can say this is a cycle. In directed, on that path, you have to visit that same node again. On that path, like if you start from eight, then you go, then you go see on the path, you visited eight again on the path, you visited eight again. But over here, if you're going, here you go, but then the path comes back. So that's not the same path. So again, you start a new path. Got it. So on the same path, very important line. You'll understand when I do on the same path, node has to be visited again. Then it is a cycle node has to be visited again. Then I can say that it is a cycle on the same path. The node has to be visited again. Then only I can say that it has a cycle in order to solve this problem using DFS algorithm. What I'll do is"
+    },
+    {
+      "chunk_id": "L144_C5",
+      "start": 281.2,
+      "end": 358.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=281s",
+      "text": "again. Then only I can say that it has a cycle in order to solve this problem using DFS algorithm. What I'll do is I'll draw this, uh, adjacency list for this particular graph, and we will take two visited areas. One is the visited area itself. And the other one is the path visited area. Now we see that we have 10 nodes. Let's take it off a 10 size. So as of now, our visited area is ready and the path visited area is ready as well. So remember this, we're going to do this as component wise, because you know, one can visit all of these guys, but then this is kind of, you have to again, do a traversal. So what we will always do is we will do it component of kind of stuff where we go from I to V one to V rather. And we see if not visited off I then call the DFS to check if there is a cycle, give us a by, if there is a cycle, then you return true. So a pretty simple code, you have already learned this in component stuff. So what is the first value of I one is that unvisited that is. So what do you do is you will start calling the DFS from one. And what you will do is you will see a one is visited. And at the same time, what you'll do is you'll see one is"
+    },
+    {
+      "chunk_id": "L144_C6",
+      "start": 358.88,
+      "end": 425.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=358s",
+      "text": "you will do is you will see a one is visited. And at the same time, what you'll do is you'll see one is path visited as well. What does path visit means it's being in the same path. It's been on the same path. Okay. So one is visited. Now who are the adjacent nodes of one? Let's quickly check it out. It's two. So what you'll do is you'll go to two at the same time, you'll mark two as visited and path visited because it is in the same path. And what the adjacent nodes of two, it is three, just three. It is just three. So you'll go to now three. You see two over here. It is just having three. So we'll go to three and you'll see that as visited and path visited. Very good. Next. Now you see three has two guys. One is four. One is seven, again, four and seven. So first we will complete it for four. Then we'll come back and complete it for seven. So seven can wait. Let's complete it for four as of now. So we will go to four and market as visited and path visited. So visited and path visited marked, right? Next, what will happen is four will say I have five. So we will go to now five and in my five is visited and path visited. Very important. Next,"
+    },
+    {
+      "chunk_id": "L144_C7",
+      "start": 425.84,
+      "end": 494.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=425s",
+      "text": "say I have five. So we will go to now five and in my five is visited and path visited. Very important. Next, five will say, Hey, listen, five. I just have six. So I'll say, okay, go to six and please market as yes, path visited and visited marked next six days. I do not have any adjacent node. Six days. I do not have any adjacent nodes. So I'm like, okay, I'm done. I'm done. My journey is done. So I will return. And remember, whenever you return, you see that there has been no cycle. So this guy will always return a false. Now what happens is when you go back from DFS of six, when you go back from six, you keep it as visited because you don't want to call a DFS again for six. There is no point again, calling for the DFS for six, but you omit the six from a path visited. Yes. You omit the six from a path visited. That means you make it zero again. That means you make it zero again. And now you go back. Now you are at five over the omit this from path visited and make it zero again. Now you go back to four and you omit this from path visited. Now you go back to three. Three will not be omitted from path visited because, because, because it did a call"
+    },
+    {
+      "chunk_id": "L144_C8",
+      "start": 494.08,
+      "end": 563.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=494s",
+      "text": "path visited. Now you go back to three. Three will not be omitted from path visited because, because, because it did a call for four, but it still has a call for seven band pending. Four is done. Seven is still remaining. So what will happen is I will now go for seven. Now I'll say seven visit seven path visit. Okay. So seven is done. Now seven checks who are my adjacent nodes and seven says my adjacent node is five. And now I see, Hey, listen, five is already visited. Five is already visited, but wait, this is zero. It's not path visited. It's not in the same path. It's not in the same path. It went in some other path, but we don't care because we are not looking for something like this. We're looking for a circle. Thereby it's in the new it's as of now the new path is this and five is not in the path. So thereby I will not call it as a cycle. I will not go beyond five. That's why visit will help us. I don't want to again, travel five. I don't want to again, travel six. So that is where the visit will stop us and say, Hey, listen, seven, do not go to DFS of five, because we have already checked for five. We have already checked for five by going to six"
+    },
+    {
+      "chunk_id": "L144_C9",
+      "start": 563.44,
+      "end": 624.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=563s",
+      "text": "not go to DFS of five, because we have already checked for five. We have already checked for five by going to six as well. We have already done that. You don't need to do it again. You just check a five is visited, but wait, it's not visited in the same path. Thereby this is not a cycle. So it now goes back now, both of the call came back. So this also now we'll see, I did not find a cycle to, we'll say, I did not find a cycle. One will say, I did not find a cycle and everyone will go back. And while going, everyone will say, we are done with the path. Yes, we are done with the path. So everyone will turn themselves to be zero. Everyone will turn themselves to be zero, but the visited guys will be marked, but the visited guys will be marked, but the path visited guys will be turned to zero. Right? So the DFS call is over. Yes. The DFS call is over. Let's see. Now what is the next thing? So I will not become two. Now comes the twist. Whenever you see two, you don't need to again, do it. You don't need to again, do it. You don't need to again, do it. There's no point in doing it. This is where the visited says, Hey, I'm already visited. Don't do"
+    },
+    {
+      "chunk_id": "L144_C10",
+      "start": 624.16,
+      "end": 696.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=624s",
+      "text": "need to again, do it. There's no point in doing it. This is where the visited says, Hey, I'm already visited. Don't do for me. And it's not part of this. This is fine. It's, but I've already gone through it and I did not find a cycle. No need to do it. Same. It'll be three. Three will be also like, I'm already done. I'll go on till eight, because if you see from one to seven, every one of them has been visited, but we did not find a cycle. So we do not go. So the next one is eight. The next one is eight. The moment we have eight, we say, okay, let's change the color visited and path visited. So DFS of eight says visited and path visited. So visited and path visited. Now DFS of eight says, oh, my address is DFS of nine. So I'm like, okay, nine visited and path visited nine visited and path visited. Perfect. Next nine can go to DFS of 10 because for nine, then it's the action. It says visited and path visited, visited and path visited. That goes to 10. Here comes the original gangster. So whenever you add 10, you see eight as the adjacent node, which is visited and path"
+    },
+    {
+      "chunk_id": "L144_C11",
+      "start": 696.24,
+      "end": 772.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=696s",
+      "text": "comes the original gangster. So whenever you add 10, you see eight as the adjacent node, which is visited and path visited, visited and path visited, which means you started and you're on the path and you re-entered the same path because your path visited. So thereby you say, Hey, listen, I got an eight, which was visited and path visited. So please return. We have a cycle. This nine called DFS of 10 and it got a true, please return true. This eight called a nine and got a true, please return a true. So ultimately this guy got a true thereby equal to equal to true. So please return a true, no further occurrence of nine, 10. We don't need to check because we have returned a true. That's how you check visited and a path visited. And we just simply do a backtrack. So as usual, the C plus plus code is going to be on the right and the Java code, you can check it out on your left. So we're given the adjacency list and the vector. So we need a visited of the size, by the way, it's a zero based indexing. So we can keep it something like this. At the same time, we need a path visit, right? So we can keep it as zero based. Perfect. So if taken visited and we have taken path visited. Now our task is to go from here to here and we say,"
+    },
+    {
+      "chunk_id": "L144_C12",
+      "start": 772.64,
+      "end": 841.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=772s",
+      "text": "Perfect. So if taken visited and we have taken path visited. Now our task is to go from here to here and we say, Hey, listen, if this is not visited, can you call the DFS check? Can you call the DFS check with this node? Really? We will need the adjacency. We will need the visited and we will need the path visited. And if this is a true, that means there is a cycle and you return, or else you can just go on checking. At the end of the day, if you did not find a cycle, there is no cycle return a false. Now over here, what do you write is private Boolean DFS check. And you say, okay, this is my node. Let's see the adjacency vector of int adjacency. Let's take the visited and visited. Let's take the path visited. Perfect. And we say visited of node is equal to one. We say path visited of node is equal to one. And remember, whenever we are going back at that time, we need to make sure this guy is unmarked because the visiting has been done and we can return a false saying we did not find a stuff. So this is the simple thing over here. We traverse for adjacent nodes is over here. We do a traverse for adjacent nodes. So how do you traverse for adjacent nodes?"
+    },
+    {
+      "chunk_id": "L144_C13",
+      "start": 841.52,
+      "end": 918.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=841s",
+      "text": "We traverse for adjacent nodes is over here. We do a traverse for adjacent nodes. So how do you traverse for adjacent nodes? Very simple. You say adjacency of node and you say, okay, listen, if this guy is not visited, just go and do a DFS for this guy with the adjacency with the visit and with the path visit. Perfect. But if this DFS call that I made, if this guy in the future goes across and finds a cycle, if it finds a cycle, then I am going to return a true. If it doesn't, then I'll just keep on doing for the next adjacent node. This is when the node is not visited. And what if the node is visited? If then it goes to an else and goes to an else. If the node, if the node has been previously visited, but it has to be visited on the same path, right? It has to be visited on the same path. So what do you do as you say, okay, listen, if it has been visited, but has it been path visited? Has it been visited on the same path? If it has been, feel free to return a true or else that's how you do it. So this is how you do it. And if you quickly run this off, this will run by. Remember if any of your calls says it has a cycle,"
+    },
+    {
+      "chunk_id": "L144_C14",
+      "start": 918.16,
+      "end": 985.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=918s",
+      "text": "do it. And if you quickly run this off, this will run by. Remember if any of your calls says it has a cycle, there's no need to check for further adjacent nodes. There is absolutely no need to check for further adjacent nodes. Okay. DFS was not declared. Oh, my bad. Let me DFS check. So you don't need to check for any further adjacent nodes. That is what you need to take care of. Also, one more thing, if it is path visited, no need to do for any further, just return false, sorry, return true. And if after checking for all adjacent nodes, you did not find anything, then you return a false, right? So this is how you can easily write it. And if I ask you the time complexity of this particular code, again, we are plainly implementing a DFS algorithm. So it's a DFS like V plus 2E that we generally take for undirected, but this is a directed graph. So you can call it as V plus E because every node will have a single edge. So you can call it as V plus E as the time complexity. And if at all, so what about the space complexity, the space complexity, we can call it as 2N. You might argue, why we can't use a single visited array? Yes, you can use it. I'll give you that as a homework. Think on how can you"
+    },
+    {
+      "chunk_id": "L144_C15",
+      "start": 985.04,
+      "end": 1041.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=9twcmtQj4DU&t=985s",
+      "text": "we can't use a single visited array? Yes, you can use it. I'll give you that as a homework. Think on how can you use as a single visited array. The hint is you can just mark visit as one and to mark path visit, mark it as two. So that's how you can use a single visited array as well. I'll give you that as a homework. If you are able to do it, post the code in the comment section so that people can also figure that out. I'll give you that as homework. I've been teaching already a lot of things. So guys, I hope I was able to explain you this particular problem. So just in case I was, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And if you haven't checked out our DP series and the HDC, the links are in the description. And with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

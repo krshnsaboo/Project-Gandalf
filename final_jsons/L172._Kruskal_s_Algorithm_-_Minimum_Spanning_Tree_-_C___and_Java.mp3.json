@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L172",
+  "lecture_number": 172,
+  "lecture_title": "G-47. Kruskal's Algorithm - Minimum Spanning Tree - C++ and Java",
+  "youtube_url": "https://www.youtube.com/watch?v=DMnDM_sxVig",
+  "chunks": [
+    {
+      "chunk_id": "L172_C1",
+      "start": 0.0,
+      "end": 73.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=DMnDM_sxVig&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be learning about the Kruskal's algorithm. But wait, before starting this video, please go back and watch my video on disjoint set. It's a bit long video, but you'll get a lot of clarity about the concept that will be used in order to solve the Kruskal's algorithm. If you do not know disjoint set, you will not understand anything. I'm assuming you have seen my disjoint sets video and then I'll be teaching you Kruskal's algorithm. Right before this video, whichever you'll find in the graph series is the disjoint sets video. So what does Kruskal's algorithm help us to find? It helps us to find the minimum spanning tree. Now what is a spanning tree? All of us know it. We have already discussed it in our previous lectures, right? So this is the given graph and you have to find the minimum spanning tree. We know we can implement Prim's algorithm to find it and we have done it in the previous videos. But in this video we will be applying the Kruskal's algorithm in order to find the minimum spanning tree of this particular graph. What is the minimum"
+    },
+    {
+      "chunk_id": "L172_C2",
+      "start": 73.36,
+      "end": 149.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=DMnDM_sxVig&t=73s",
+      "text": "be applying the Kruskal's algorithm in order to find the minimum spanning tree of this particular graph. What is the minimum spanning tree? If this graph can be represented in N nodes and N minus one edges such that you can reach from one node to every other node, that is what you call as minimum spanning tree. So you will be given a graph like this. You might be given the adjacency list. You might be given edges. You can be given anything. The first task that you need to do is sort all the edges. Remember this. Sort all the edges according to weight. Very, very important. According to weight, you have to sort all the edges. So let's quickly write down all the edges and sort them according to weight. So once you've sorted all the edges, you'll find all the edges like this and you see the minimum weight at the front and then it keeps on increasing. Okay. So you know the data structure, disjoint set that we are going to use. What does disjoint set provide us with? It provides us with two things. Find ultimate parent and it also provides us with union by rank. And we know if two guys belong to the same component, they will always have the same ultimate parent of the boss. Right?"
+    },
+    {
+      "chunk_id": "L172_C3",
+      "start": 149.16,
+      "end": 223.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=DMnDM_sxVig&t=149s",
+      "text": "we know if two guys belong to the same component, they will always have the same ultimate parent of the boss. Right? So remember, initially when you declared the disjoint set with all these nodes, over here we have six nodes. If you carefully observe, if you define a disjoint set with six nodes, everyone will be a single guy. Everyone will be a single guy with the parent pointing to themselves. So everyone is single with the parent pointing to themselves. So the first node is what you take. So let's quickly take the first node, which is saying one comma four. So you say, okay, one, four, four is your ultimate parent. One says one, four says four. So do they belong to the same component? No, they do not belong to the same component. What you'll do is you will go ahead and say, okay, since they do not belong to the same component, I can take it. And this will be part of my MST because this is the most minimal edge in the graph. So let's take it. Right? So I've taken it. Perfect. Next is one comma two. So you have a one and you have a two. So two's parent is himself. And one is this component. Do they belong to the same component? Again, disjoint set will say, no, they do not belong to the same component. So you'll go ahead and update one comma two with the"
+    },
+    {
+      "chunk_id": "L172_C4",
+      "start": 223.72,
+      "end": 287.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=DMnDM_sxVig&t=223s",
+      "text": "disjoint set will say, no, they do not belong to the same component. So you'll go ahead and update one comma two with the edge. So this will also be a part of your MST. And you can also keep on counting the weight. The weight will be one plus two because there are two edge which have been added. So this is done. Next is two comma three. This time there is two who will have an ultimate parent and there is three who will have an ultimate parent as three itself. Three has the ultimate parent as itself. And two is here in this component. They definitely do not belong to the same component. So you can go ahead and add three. Yes, you can go ahead and add three into your MST as well. And that will be the edge weight. Perfect. This is also done, which is the next one. The next one is two comma four. Now this time when you try to find the ultimate parent of two and four, it will come out to be the same because they belong to a same component. So you'll be like, I will not take this into my MST because they're already connected. This will not make sense because you can all already reach everyone. Like every node can be reachable to every other node. So what's the point of making a cycle and introducing an extra edge because our goal is to find"
+    },
+    {
+      "chunk_id": "L172_C5",
+      "start": 287.0,
+      "end": 348.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=DMnDM_sxVig&t=287s",
+      "text": "reachable to every other node. So what's the point of making a cycle and introducing an extra edge because our goal is to find minimum. So including an extra edge will not help us. Right. What's the next thing? One comma five. So one is here and five is a single guy. Again, they do not belong to the same component. This joint set will help you to find this. So go ahead and add this. Perfect. So next thing, the next thing is three comma four. So we have a three, we have a four and the definitely belong to the same component. This giant set will again help you to find this. So you'll not add this because there's no point in adding this. We'll go ahead and discard it. Next you have two comma six. So you have a two over here and you have a six over here. So six is alone and two is a part of this component. They can go ahead and say, okay, I'll take up six and that will be seven. So by the way, I forgot to write four and now seven. So this will be a part of it. What's the next? It's three comma six. Where is three? Where is six? They belong to the same component. So not to be taken. What's the next four comma five to the four and five belong to the same component. So again, I"
+    },
+    {
+      "chunk_id": "L172_C6",
+      "start": 348.04,
+      "end": 419.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=DMnDM_sxVig&t=348s",
+      "text": "So not to be taken. What's the next four comma five to the four and five belong to the same component. So again, I will end up not taking it. So apparently I can say this is, this is my MST and the summation of weights will be one plus two, three plus three, six, 10, 17 is the summation of weights. Very simple, isn't it? You just need to know this giant set data structure and you can easily find MST from any given graph, the weight as well as well as the MST. Got it? So guys, I hope you have understood the entire explanation of Twizzle's algorithm. Now it's time to code it up. So as usual, the C++ solution is on the right and the exact similar Java code will be on the left of the Java people. So what are we given? We're not given the edges. We are rather given an adjacency list and remember it's an adjacency list. So it will be containing the graphs in bi-directional edges. Like if you look at the driver code as well, they're basically taking the edge with UVW and they're basically storing it in two versions. Carefully see. So since it is a bi-directional edge, it will be stored in two ways. So it's pretty simple. No need to panic. So since we are storing a tuple, what you can do is you can say, okay, vector of pair, this will be the weight and then"
+    },
+    {
+      "chunk_id": "L172_C7",
+      "start": 419.8,
+      "end": 495.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=DMnDM_sxVig&t=419s",
+      "text": "since we are storing a tuple, what you can do is you can say, okay, vector of pair, this will be the weight and then I'll go ahead and store the two other nodes. So this will be my edges where I'll be storing. Now I will be going across all the nodes. Yes, I'll be going across all the nodes. So let's say zero based indexing. That is absolutely no problem. So I'll be going across all the nodes. Right now in every node, they're storing a vector, which is basically storing the, if you look at the driver's code again, basically storing U and W basically the adjacent node and the weight. So I can go ahead and say, okay, I'll go ahead with this adjacent of I and I can get the adjacent node, which will be at the idea of zero. I'll get the weight, which will be at idea of one. Right. And I know the node is nothing but the eye. Correct. I know the node is nothing but the eye just in order to improve understanding of return it. So can I say edges? Can I say edges? Maybe I'll just remove this. Maybe I can say edges dot push back. What should I say? I say, wait, I know it's from node to adjacent node. Now you might see, but since it's a bidirectional edge, you will insert this twice. Like if"
+    },
+    {
+      "chunk_id": "L172_C8",
+      "start": 495.16,
+      "end": 572.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=DMnDM_sxVig&t=495s",
+      "text": "know it's from node to adjacent node. Now you might see, but since it's a bidirectional edge, you will insert this twice. Like if there is an edge between one to two with a weight of five, then one at one, there will be two comma five, like on the adjacency list on one, you will have two comma five. And even at the place of two, you will have, if you remember the address is one comma five. So you'll apparently insert two edges. It is okay. We're using disjoint set. It will automatically discard it. If you've taken one edge, it will automatically discard the next edge. Right? So it definitely goes ahead and adds twice this edge, like one into led add is first time it'll add is five comma one to two edge. And then the second time it will add as five comma two comma one. So it'll definitely add twice, but that is none of my concern because we're using a data structure, which is going to ignore it. So edges dot begin edges, right? But we have sorted the edges. Now we need a data structure for sure. But before that, let's see what else we need. We need to find the MSD weight. So maybe MSD weight will be zero and we need to go across all the edges. So let's quickly find the weight. Weight will be at ID dot first, and then we will have a you, which"
+    },
+    {
+      "chunk_id": "L172_C9",
+      "start": 572.2,
+      "end": 634.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=DMnDM_sxVig&t=572s",
+      "text": "all the edges. So let's quickly find the weight. Weight will be at ID dot first, and then we will have a you, which will be ID dot second dot first. We will be having a view, which will be a V rather it dot second dot second. And then going ahead, we need to figure out if they belong to the same component or not. This we will implement the data structure. And if they belong to the, like if they do not belong to the same data structure, we will take the weight and add it. If they would have asked us to store MSD, we can, we know the edges between you and V. You can also store the MSD, but over here they just need the MSD weight. So I'll go ahead and return the MSD weight. But now how do you figure out if they're belonging to the same component or not? If you remember, we have already discussed something like disjoint set data structure, and this was the snippet of code. So just copy paste, and I'll go to the solution. Yes. And I'll paste this class. So I have this disjoint set data structure already ready with us. So I'll go ahead and declare disjoint set DS with V vertices. Done. I'll say DS, can you find the ultimate parent? Because this is the function if you see find"
+    },
+    {
+      "chunk_id": "L172_C10",
+      "start": 634.44,
+      "end": 698.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=DMnDM_sxVig&t=634s",
+      "text": "DS with V vertices. Done. I'll say DS, can you find the ultimate parent? Because this is the function if you see find ultimate parent. So I will be like, okay, cool. Can you find me the ultimate parent of you? If that's not equal to DS dot find ultimate parent of you, that means they belong to the different component. So I'll go ahead and take it to the MST. And at the same time, I'll say you can use union by rank or union by size, whichever you wish to. You can go ahead and say union by size, and you'll go U comma V. That's it. You make it a union. Simple as that. Now I'll go ahead and compile and see if it is running fine. Indeed it is. Now let's quickly submit this and see if it is giving us correct answers or not. It is indeed running for all the test cases. Yes, it is. So now I've understood most of the algorithm. What about the time complexity? First you're figuring out all the edges. So this is definitely going to take a big go off and plus the number of edges because you're going across, right? Then you're sorting it. Imagine you have images, M log of the M to sort it. And then you're moving across all the edges and you're using a disjoint set"
+    },
+    {
+      "chunk_id": "L172_C11",
+      "start": 699.08,
+      "end": 768.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=DMnDM_sxVig&t=699s",
+      "text": "images, M log of the M to sort it. And then you're moving across all the edges and you're using a disjoint set structure, which we know is four cross alpha. So we can write it as M cross four plus alpha. And what external space am I using? This disjoint set data structure will be using a parent and a size. You can omit the rank because we are not using union by rank, but yeah, we're using a parent and a size that is the extra space. And we are using an extra space to store edges as well. So we go off M over here. So this is the time and the space complexity I am using. If you carefully see like four alpha is used twice. So probably another twice you can add because this will be executed very limited number of times, like very, very rare case where the find you parent and union by size will always be executed. So yeah, for safety, you can just add a cross two because it's twice. So this is what the time complexity and the space complexity of Kruskal's algorithm is. So guys, before wrapping up this video, I would like to request you something as checking out our statistics, nearly 50% of the users who watch our video, do not subscribe to us. So it's an earnest request that please hit that subscribe button."
+    },
+    {
+      "chunk_id": "L172_C12",
+      "start": 768.52,
+      "end": 787.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=DMnDM_sxVig&t=768s",
+      "text": "of the users who watch our video, do not subscribe to us. So it's an earnest request that please hit that subscribe button. And if you understood the algorithm, the code and everything, do it that like button. And if you haven't checked out our DPCs and the SD sheet, the links will be in the description. Please make sure you check them out. With this, I'll be wrapping up this video. Let's put in some other video. Okay, don't ever forget your golden"
+    }
+  ]
+}

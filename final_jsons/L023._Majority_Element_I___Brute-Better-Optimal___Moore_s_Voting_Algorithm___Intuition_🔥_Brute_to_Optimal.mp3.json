@@ -1,0 +1,120 @@
+{
+  "lecture_id": "L023",
+  "lecture_number": 23,
+  "lecture_title": "Majority Element I | Brute-Better-Optimal | Moore's Voting Algorithm | Intuition 🔥|Brute to Optimal",
+  "youtube_url": "https://www.youtube.com/watch?v=nP_ns3uSh80",
+  "chunks": [
+    {
+      "chunk_id": "L023_C1",
+      "start": 0.0,
+      "end": 75.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=0s",
+      "text": "Hey Viewer, welcome back to the channel, I hope you guys are doing extremely well. So this is another video from the Stryver's A to Z DSA course. Just in case you are for the first time here, this is the world's most in-depth course in DSALGO. Why do I say that? This course has 456 modules. By the end of the course, you would have solved more than 400 plus problems in DSALGO and you can go across the entire internet, you can buy any of the paid courses. None of them will be covering DSALGO in such depth. So one thing that I can assure you is, once you complete the entire course, you can actually clear any of the DSALGO rounds in any of the companies in any part of the world. So till now we have covered till certain arrays of certain array of zeros, ones and twos. In this video, I'll be covering majority element. So what does the problem majority element states? It states that you'll be given an array of integers. Now your task is to find me the element that appears more than n by 2 times. Very important. Lining, more than n by 2, not equal to n by 2. It has to be more than n by 2. Imagine n is 8, then it should appear more than 4 times. Imagine n is 9. In that case, 9 by 2 will take the floor value. It is 4."
+    },
+    {
+      "chunk_id": "L023_C2",
+      "start": 75.54,
+      "end": 139.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=75s",
+      "text": "should appear more than 4 times. Imagine n is 9. In that case, 9 by 2 will take the floor value. It is 4. So it should appear more than 4 times. Got it? So in this array, if I ask you which is the majority element? How many, like what's the length of the array? 3, 4, 5, 6, 7. 7 is the length of the array. Can I say 2 appears for 4 times, which is greater than n by 2. So 4 over here is your answer. And this is what you have to tell me. Given an array, tell me the element that appears more than n by 2 times. So what will be the brute force solution to this particular problem? It's going to be very simple. I pick up an element and then I'll scan through the entire array. Basically do a searching through the entire array. And I'll count plus plus. And at the end of the day, the count appears to be greater than n by 2 for any of the element. That is my answer. First I'll pick up 2. Next I'll pick up 2. Next I'll pick up 3 and scan through the entire array. Next I'll pick up 3 and scan through the entire array. This is what the brute force solution will be. And the board will look something like this. So it's very simple. You just iterate through the entire array."
+    },
+    {
+      "chunk_id": "L023_C3",
+      "start": 139.52,
+      "end": 205.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=139s",
+      "text": "brute force solution will be. And the board will look something like this. So it's very simple. You just iterate through the entire array. For the first time pick up 2 and scan through the entire array. And keep a check. And count. After you have scanned through the entire array, by taking array of i, you check if the count is greater than n by 2. If it is, then you return array of i. And for like, out of the for loop you can return minus 1 just in case there is no majority element. So this is how the brute force solution will look like. What will be the time complexity? Obviously we are using couple of loops. So it is b go of n square. And when you give the solution to the interviewer, the interviewer will not be happy and he'll ask you to optimize it. This is when you'll be giving the better solution. So what will be the better solution? The brute is taking n square. So we know one thing for sure, the better solution will be somewhere of the order n log n or b go of n or 2n. But it is definitely going to be better than n, n square. So if I have to think, what are we actually doing? We are counting, we are counting and we are looking for which element appears more than n by 2 times. So yes, yes, we get to use hashing."
+    },
+    {
+      "chunk_id": "L023_C4",
+      "start": 205.52,
+      "end": 281.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=205s",
+      "text": "we are counting and we are looking for which element appears more than n by 2 times. So yes, yes, we get to use hashing. It's very simple. If there is a count, we have to keep a track of how many times it occurs. The only technique that comes up to my mind is hashing. That is what I will be doing. So what I'll do is I will declare a hash map with the element and the count where the element is my key and the count is my value. So this will be the representation in the map for a key and value. Now what I'll do is I'll be like, let's scan through the array. It is two. So I'll put that two and I'll probably tell him you occur once. Then I'll move and then I'll say you occur twice. Then I'll move and there's a three. I will say it occurs once. Then I'll move and there's a three. It occurs twice. Then I'll move one occurs once. Then I'll move to occurs thrice. Then I'll move to occurs four times. So once you have completed the entire iteration, now it's time to iterate in the map. Yes, it's time to iterate in the map. So if I iterate in the map, you will see that this particular guy to occurs four times, which is greater than n by two, which is three. So two is your answer."
+    },
+    {
+      "chunk_id": "L023_C5",
+      "start": 281.56,
+      "end": 344.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=281s",
+      "text": "see that this particular guy to occurs four times, which is greater than n by two, which is three. So two is your answer. Just iterate in the map and see which element is occurring more than n by two times. So let's quickly put the better solution of the problem link will be in the description. So we need a map to keep the count. So I'll declare a map. Okay, what is the next thing we have to iterate? So let's quickly iterate. And now once I'm iterating, I'll say map, what's the element? We are fine. Do a plus plus. So with this iteration, I will be marking it in the map. Now what is the next job? I iterate in the map and see which is more than n by two times. So this is how you iterate in the map and see plus plus the Java code and the Python code is in the description. And now you say I did not second because that is the value is greater than are you greater than V dot size by two. If you are the near the majority element and you know the key is very simple, it's at the first place. So the key will be the first place. If after this, there was no one, you can simply say return minus one. And now we will quickly go and run this off and see if it is running fine. Okay, looks like is not."
+    },
+    {
+      "chunk_id": "L023_C6",
+      "start": 344.48,
+      "end": 409.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=344s",
+      "text": "return minus one. And now we will quickly go and run this off and see if it is running fine. Okay, looks like is not. Why is it not? App was not declared. Let's quickly go and declare hashing loop. Everything is running absolutely fine now. So what about the time complexity? Can I say the first loop is running for big off n and there's a ordered map used which is which is going to take logarithmic of n. If you use something like unordered map, then this logarithmic of n will go off only in case of average and best case. In case of worst case, another map ends up taking big off n time within itself. So that is an n log in. And what is how many elements are there in the map? Imagine you're given an array something like this, then each of these elements will be in the map. So thereby, at the worst case, the map might end up taking n. So what is the total time complexity? Can I say it is big off n log in again, depending on which map you're using and a big off n to traverse in the map. And what is the space complexity? Big off n because you're storing all the elements in a map data structure. So this will only happen if the array contains all unique elements. Remember this."
+    },
+    {
+      "chunk_id": "L023_C7",
+      "start": 409.84,
+      "end": 482.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=409s",
+      "text": "storing all the elements in a map data structure. So this will only happen if the array contains all unique elements. Remember this. The moment you give this hashing solution to the interview, he'll be like, hey, wait, you are using an additional space complexity. Can we please optimize this? That's when you'll be talking about the most optimal algorithm. And that will be using something as the most voting algorithm. Now sitting in an interview, you cannot invent this algorithm. So you have to know this algorithm beforehand. So you might be thinking, but does that mean we have to mug it up? No, the interviewer will be grilling you on thought process and intuition. If you mug up the algorithm and you just present it line by line, you'll understand that you mugged up the algorithm. So please make sure you understand the thought process, intuition and the algorithm in depth. So please make sure you watch the video till the end because you're going to take away a lot of things when the video ends. So how will I be explaining this particular algorithm? What I'll do is I'll do a dry run of the algorithm and during the dry run, I'll be sharing the thought process and the intuition behind every step that this algorithm does so that it sticks to your mind. Okay. So what is the algorithm all about? It's very simple. It's about two variables, element and count."
+    },
+    {
+      "chunk_id": "L023_C8",
+      "start": 482.24,
+      "end": 562.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=482s",
+      "text": "that it sticks to your mind. Okay. So what is the algorithm all about? It's very simple. It's about two variables, element and count. Initially count is zero and you can say initially the element is not initialized and we start iterating. So whenever we are iterating and we are at the first element or whatever, if the count is zero, that means we haven't taken any array. Please hear this out properly. We still haven't taken any array. So you will be like, okay, I will take seven and I'll increase the count to one. So what I did was I said, I will consider this seven to be my answer. I'm just taking a hypothetical assumption that seven is my answer and the count is one. And now let's start moving. We again move to seven, like seven. Now this occurs twice. Five. No, it is not seven. So you reduce the count. Remember this count is not storing how many times seven appears. It doesn't. It has some other significance, which I'll see. Next again, seven. Increase. Again, five. Decrease. Next, one. Decrease. So whenever you find seven, you increase because seven was your element. Whenever you find anything apart from seven, you decrease. Now you are reaching zero. Until how much? Till this portion. Let's understand what. So if you take seven, seven, five, seven, five, one. This is an array. Rather, this is an array."
+    },
+    {
+      "chunk_id": "L023_C9",
+      "start": 562.06,
+      "end": 631.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=562s",
+      "text": "this portion. Let's understand what. So if you take seven, seven, five, seven, five, one. This is an array. Rather, this is an array. And the count over here is zero. What does the count signify? So you took the element seven. How many times does it appear? Three times. How many times the other elements appears? Where other includes five and one. The other element appears three times. This is the reason when there was a seven, you did a plus plus. So there were three plus plus plus done. And when there was five, five, one, there was a minus minus minus done. So three plus three minus ended up giving you a count of zero. Can I say something for sure? If I just consider this array, just consider this array. Seven is definitely not my majority element. Why? If seven was my majority element, how can you cancel? Because if an element appears more than n by two times, there is only one element which appears more than n by two times. And you cannot cancel it off. If there are six elements and seven appears four times, can you cancel four? To cancel four, you need four more. So it's not possible. Since seven appeared three times in a six length array, which is not greater than n by two, it is equal to equal to n by two. So it got cancelled."
+    },
+    {
+      "chunk_id": "L023_C10",
+      "start": 631.04,
+      "end": 708.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=631s",
+      "text": "length array, which is not greater than n by two, it is equal to equal to n by two. So it got cancelled. So something that I can surely see is till here, seven is not my majority element. Till here it's not. So this cannot be considered as an answer. But what I'll do is I'll move ahead. I'll move to five. Okay. The moment I move to five, I find count is zero. So what I'll do is I will just quickly say, okay, listen, count is zero. So can you please take this as my new majority element? And probably I'll start checking from here and my count will be one. Perfect. So I will take five. I'll make the count one. Let's move seven. It's not equal. So I'll just make it zero. I'll just make it back zero. So this time the array finishes here and the count becomes zero. Again eminent. If I just take this particular array, can five be the majority? No, that's why. Next we'll move ahead. The moment we move ahead, what will happen? Since count is zero, it will again initialize count to one and element to be five. And we will start the array again from here. And this time again, let's move. It's five. Increment. It is seven. Decrement. It is seven. Decrement. So can I see in this particular area what happened? Five, five, seven, seven. What I can say is, hey, five was occurring twice."
+    },
+    {
+      "chunk_id": "L023_C11",
+      "start": 708.72,
+      "end": 779.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=708s",
+      "text": "Decrement. So can I see in this particular area what happened? Five, five, seven, seven. What I can say is, hey, five was occurring twice. Seven was occurring twice. So it got cancelled. Thereby count was zero. Thereby five also cannot be my answer. So till now, whoever I have considered as a majority got cancelled by similar elements. So till now no one has dominated. We are still looking for someone who is dominating. Got it? Everyone has still now cancelled. Let's go ahead. What is the count value? Count's value is zero now. So let's move ahead. We are at a count zero. So again we start. So count will again become one. And this element still stays as five. This time we'll move ahead. Count becomes two. This time we'll move ahead. Count becomes three. This time we'll move ahead. Count becomes four. And we can say we have ended the iteration. We have ended the iteration. Because since we have ended the iteration, there is an element five. This count has no significance. But we have an element five. This element five will be our maturity element if there exists a maturity element. Why? Because everyone else got cancelled off within itself. So if there is someone still remaining who did not got cancelled, then that is my answer. But am I sure that element five is the maturity element? What I said?"
+    },
+    {
+      "chunk_id": "L023_C12",
+      "start": 779.94,
+      "end": 852.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=779s",
+      "text": "did not got cancelled, then that is my answer. But am I sure that element five is the maturity element? What I said? If there exists a maturity element, it will be five and no one else. If there is a maturity element, it will be five and no one else. If there doesn't, then okay fine. For an example, if the last portion was something like one, one, one. In that case, you would have got one and the count would have been four. But is one the maturity element? If you see, one just appears four times, maybe five. That's it. One appears five times. And when you look at the length of the array, it is six, two, four and four, which is eight plus four, twelve. It's a 16 length array. One has to appear more than eight times to be maturity. And since it is five, let's see five is. So let's see how many times five appears. Once, twice, thrice, four, five, six, seven, eight, nine, five appears. Nine times, out of which four times were not cancelled. Four times were not cancelled. But the other times it was cancelled. So the other five times it was cancelled. Got it? So I can say five is my maturity element. It's a very simple process. The first process is to apply Moore's voting algo. OK, I was the second process."
+    },
+    {
+      "chunk_id": "L023_C13",
+      "start": 852.82,
+      "end": 917.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=852s",
+      "text": "my maturity element. It's a very simple process. The first process is to apply Moore's voting algo. OK, I was the second process. Verify if the element that you got, the element that you got is the maturity or not. How do you do it? Whatever the element is, in this case, the element was five. Just iterate through the array again and see how many times five appears. This time it will come out to be nine, which is greater than the length 16 by two. So that's why the five is. If it doesn't, then it is not. Got it? So I hope you've understood the intuition. It's very simple. If someone appears more than n by two times, it will not get cancelled. Quite simple, right? That's the intuition. So coming back to the code editor again, the problem link will be in the description. So what do we need? We need a count zero and we can keep an element normally. And now let's quickly start off with zero and probably read out size. Yes. And now can I say first thing that I will check is what if the count is zero? If the count is zero, I know for sure this is where I'm starting a check for a new section. So count will be one and the element will be V of I. Right. But what if the count is not zero?"
+    },
+    {
+      "chunk_id": "L023_C14",
+      "start": 917.34,
+      "end": 995.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=917s",
+      "text": "section. So count will be one and the element will be V of I. Right. But what if the count is not zero? In that case, I will check if V of I is equal to equal to the element that I was thinking it's is the maturity. If it is, please increase. If it is not, let's reduce. Simple. Three lines. If the count is zero, we just assign and we move I plus plus. If it is equal, equivalent, we just increase count and we move. If it is not, then we decrease and then we move. So what will happen is when you're decreasing, if the count becomes zero, when you increase and when you come back, the count will be checked with zero and it will be replaced with the new element and it will start a new section. Quite simple. And once you've got the element, just iterate over here and V dot size and I plus plus. And you say, hey, listen, if V of I is equivalent to element, probably you can keep something like counter one equal to zero. And you can say counter one plus plus. If at the end of the day, counter one is greater than V dot size by two. Again, you can store V dot size in some variable. This particular element is the answer or else you can say the answer is minus one or whatever they are asking you to return."
+    },
+    {
+      "chunk_id": "L023_C15",
+      "start": 995.86,
+      "end": 1061.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=995s",
+      "text": "This particular element is the answer or else you can say the answer is minus one or whatever they are asking you to return. So what I'll do is now I'll quickly go and run this off and see if it is running fine. No, it does. It'll be counter one plus plus. Counter one done. And let's quickly submit this off. I hope it does run. Now, remember one thing, whatever is the value of counter at the end, it doesn't represent anything. So I have to talk about the time complexity. How much a single loop and three fell. So it's a single loop. So whenever it's a single loop, you know, the time complexity is very simple. It's big often for the first iteration of the most voting algo. And if they are stating that the the array might have or might not have a majority element, then you go and verify. This step will not be done if the problem states that there always exist a majority element, then this step will never be done. OK, you only do the step in the prop if the array might not have a majority element. Got it. So this will be the time complexity and we are not using any extra space. So this will be the space complexity of the most optimal solution. Coming back to the sheet, I can say that this particular problem is done. And if you've understood everything, please, please do it."
+    },
+    {
+      "chunk_id": "L023_C16",
+      "start": 1061.06,
+      "end": 1091.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=nP_ns3uSh80&t=1061s",
+      "text": "solution. Coming back to the sheet, I can say that this particular problem is done. And if you've understood everything, please, please do it. That like button is just one like it won't cost you anything. Please do consider hitting that like button. And to continue our tradition, do comment understood so that I understand that you understanding everything. And if you're new to our channel, please, please do consider subscribing to us because it's like one twenty three in the morning and after my office hours, I'm recording this video. So if you if you consider subscribing to me, that will motivate me to make such more videos. And with this, I'll be wrapping up this week. Let's make some other videos. Bye. Take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

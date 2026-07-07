@@ -1,0 +1,127 @@
+{
+  "lecture_id": "L300",
+  "lecture_number": 300,
+  "lecture_title": "L4. Implement Min Stack | Stack and Queue Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=NdDIaH91P0g",
+  "chunks": [
+    {
+      "chunk_id": "L300_C1",
+      "start": 0.0,
+      "end": 77.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=0s",
+      "text": "So let's continue with our stack and queue playlist. Today we're starting off. Hey, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is designing a minimum stack. The question is asking you to design a stack that allows you with the pop operation, the top operation, the push operation, the size operation, along with it, a get min operation as well. Now the inbuilt stack that you use doesn't allow you with the get min operation. So you'll have to design it in your way. Let's understand what does it mean. So I'm asking you to push 12. That means the stack will have 12. After that, I'm asking you to push 15. That means the stack will have 15. After that, I'm asking you to push 10. That means the stack will have 10. After that, I'm asking you, hey, what is the minimum of all the values that you have in the stack? It'll be like it is 10. After that, I'm asking you to pop out. So 10 will be gone. 10 is gone. After that, I'm asking you top. Top is 15."
+    },
+    {
+      "chunk_id": "L300_C2",
+      "start": 77.78,
+      "end": 156.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=77s",
+      "text": "to pop out. So 10 will be gone. 10 is gone. After that, I'm asking you top. Top is 15. Very basic stack stuff. After that, get minimum. Now throughout the stack, the minimum is 12. So the one possible way is scanning through the stack. Obviously, you're not gonna design it because if I scan through the stack to figure out the minimum element, that is gonna take a big off in complexity. It'll not be going in that direction. I'll be thinking of something else. As of now, the stack is only storing a single element, a single element. I need to keep a track of the minimum. What if I can modify the stack? What if I can modify the stack and I can store a pair of element? So basically pair of integer, integer, where the first integer will be the value that is pushed, whereas the second integer will keep a track of the minimum that I've seen till now, the minimum that I've seen till now. Okay, perfect. Let's check it out. The first operation is asking me to push 12. The stack is empty. So do I have any minimum till now? No. So what I can do is I can take 12 and I can say that 12 is the minimum because I don't have any element till now."
+    },
+    {
+      "chunk_id": "L300_C3",
+      "start": 156.9,
+      "end": 233.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=156s",
+      "text": "is I can take 12 and I can say that 12 is the minimum because I don't have any element till now. Push it across, okay? After that, I have something as push of 15. What is the minimum that you've seen till now? Can I just go to the top, get the second element and I know the minimum that I've seen till now, that is 12 and you're asking me to push 15. So even if I push 15, will the minimum of the stack change? Will the minimum of the stack change? No, no, right? So what I can do is I can take 15 and since I compared with the previous minimum, my minimum doesn't change. So I push 15, 12. Okay, perfect. Next one is push of 10. What I do is, again, I get the minimum till now of the stack, that's 12. I'm trying to push 10. If I push 10, will the minimum change? Yup. So I'll push 10, 10 because the minimum of the stack has now changed to 10. Got it, perfect. After that, I'm asking you to get the min. So what I'll do is I'll go to the top and I'll get the second most element because that is where I'm storing the min of the stack till now. Got it, perfect. I've got 10. That's amazing. After that, I'm asking you to pop. Whenever I am asking you to pop,"
+    },
+    {
+      "chunk_id": "L300_C4",
+      "start": 233.98,
+      "end": 309.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=233s",
+      "text": "till now. Got it, perfect. I've got 10. That's amazing. After that, I'm asking you to pop. Whenever I am asking you to pop, what will happen is the pair will go out. The pair that you're storing will go out. After that, the top, again, if I want the top, I can get the first element that is 15. So the top will be 15. After that, the get min. I don't have to scan through the entire stack. I can straight away look at the top.second because that is where I'm storing the minimum. I'll get the value as 12. So done and dusted, right? Time to quickly write down the pseudocode. So I'll be designing a stack. So it's better that I write a class solution. So class of stack. We can use the internal stack instead of using the linked list or whatever. In case the interviewer is asking you to design it from scratch, you can use the linked list method that I have already taught you in my first introduction lecture. So I have a stack which is gonna store pair, right? So let's write the push operation. The push operation is gonna take a value. I know one thing, if the stack is empty, that means that this is the first element. There is no doubt in it. And if this is the first element, I can use the standard stack.push. And what will I be pushing? The first element will be value"
+    },
+    {
+      "chunk_id": "L300_C5",
+      "start": 309.86,
+      "end": 387.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=309s",
+      "text": "And if this is the first element, I can use the standard stack.push. And what will I be pushing? The first element will be value and the second element will also be value. If it is not empty in that scenario, I'm gonna push first element as value, correct? And the second element will be the minimum of, my bad, the minimum of the current value and the minimum that I've seen till now, which is stored in the tops second. Perfect, will that be good? That should be good. You can write the top, you can write the pop. That's very simple. You don't have to write it because internally you already get a pop and et cetera, so you can write it accordingly. I just need to write the get min. So maybe I can write the get min. It's going to be super simple. How's gonna, like how will get min look like? It's gonna be super simple. You're gonna call stack.top, the internal function and then the second element from it. This stack.top is the internal library stack.top. So what it will give you is the entire pair. And then when you say a second, kind of gives you the one, right? Now over here, if they're asking you to implement"
+    },
+    {
+      "chunk_id": "L300_C6",
+      "start": 387.3,
+      "end": 466.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=387s",
+      "text": "when you say a second, kind of gives you the one, right? Now over here, if they're asking you to implement a top function in the class, in an interview, you can again internally call stack.top and you can return the first function. So this will automatically do it. At the same time, you can rename this to something like stack or something else because this is named as stack. We can write the other functions similarly as well. So what will be the time complexity? Can I say all of the operations are done in big open? They are. And the space complexity is big O of two into one because I'm storing a pair of data structures in order to get the getmin operation running. But the interviewer is like, hey, I want a stack which runs in a better space complexity, probably a big O of n space complexity. This is where we will optimize. So I cannot store two elements in a stack. This is clearly giving us an indication that we'll have to store one element in the stack and at the same time, make sure that getmin works in a big O of one time complexity. So how's this gonna work? The one thing I'll do is, I always do is, I take a very simple stack and I start doing it so that I get a vision where will the approach fail"
+    },
+    {
+      "chunk_id": "L300_C7",
+      "start": 466.5,
+      "end": 545.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=466s",
+      "text": "is, I take a very simple stack and I start doing it so that I get a vision where will the approach fail and then I start correcting it. So I'll do the same over here. I'll take a minimum and I'll assign it integer max as of not n to the bar nine, a very big value. And I'll take a stack data structure. First operation is push 12. So I'm gonna push it to the stack. I'm gonna update my minimum to the value 12. After that, I've been asked to push 15. I know this is not going to replace minimum. I'm gonna just push it to the stack. After that, I've been asked to push 10. Now over here, I know one thing. When I push 10 into the stack, this is going to replace my minimum. This is going to replace my minimum. If the previous minimum was 15, it will be written over. After that, I've been asked to get the minimum. I'm gonna easily give them the minimum as 10. After that, someone is asking me to pop out. Now when I try to pop out, 10 will be popped out. But will the minimum be 10? The minimum is still storing 10. I'll have to go back to 12, but I cannot store the past history because that will lead to space complexity. Can I go back to 12? No."
+    },
+    {
+      "chunk_id": "L300_C8",
+      "start": 545.7,
+      "end": 623.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=545s",
+      "text": "to 12, but I cannot store the past history because that will lead to space complexity. Can I go back to 12? No. So the problem arises over here. There is a problem if I go this direction. So I'm not gonna store 10. Anytime, remember, anytime I get a value which is going to replace my minimum, which is going to replace my minimum, I'm not going to store 10. Instead, instead, I'm gonna store this 2 into the val that has been given to me, that has been given to me, minus the current value, the current minimum, which is basically the previous minimum. Why previous minimum? Because I've got a new minimum. 10 is my new minimum if I have to insert it. 10 is my new minimum. So this is the previous minimum, which is a new val that has to be inserted. How much is that? 2 into 10 has been asked and previous minimum is 12. So this boils down to 8. So this is the value that you will insert. Anytime you get a new minimum, you don't insert it into the stack. Instead of it, you insert a modified value. Remember this, remember this. You insert a modified value. And at the same time, you replace minimum to 10. You replace minimum to 10. So you can say this, that the minimum is storing the minimum"
+    },
+    {
+      "chunk_id": "L300_C9",
+      "start": 623.5,
+      "end": 703.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=623s",
+      "text": "time, you replace minimum to 10. You replace minimum to 10. So you can say this, that the minimum is storing the minimum and at the same time storing the top as well because this is your current top element. Makes sense? We'll come to this afterwards. And about this mathematical formula, I'll come to the intuition, but again, you'll have to know this method. You cannot discover or invent that method in an interview. So don't get worried about it. Okay, next thing. Get minimum. Very simple. 10, yes. Pop out. So whenever someone is asking me to pop out, it's gonna be super simple. I'm gonna take out, I'm gonna take out. Okay, just take it out. What else do I need to do? I need to make sure the minimum goes back here. Okay. Do I have the formula which I used to insert into the stack? I do have. Can I probably put those values and try to see if I can get the previous minimum? Okay, let's see. If I have to get the previous minimum, what will the formula look like? Previous minimum if I have to get, because I'll have to go back from 10 to my previous minimum. Formula will look like two interval minus the new value that you inserted. You know the value of new one? That's eight. You can easily get it at the top of the stack."
+    },
+    {
+      "chunk_id": "L300_C10",
+      "start": 703.02,
+      "end": 781.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=703s",
+      "text": "that you inserted. You know the value of new one? That's eight. You can easily get it at the top of the stack. But what about this value? Can you see the current minimum is the value that originally came to be inserted? It did. That's just 20 minus eight, that's 12. So you would actually go back to 12. You could actually go back to 12. That's super simple. You could actually go back to 12. Okay. I went back to 12 after doing this pop operation. I popped out eight and I went back. Okay, I'm able to do it. I'm able to do it. What's the next one? Get min. Okay, the minimum is 12. That's correct. The top. Is your top 12 or is your top 15? If you remember, the top is 15, not 12. Because this value was not modified. Perfect. So I'll just take the top to be 15. Okay. Next. Next is push of 10. Again, will you push 10? No, because it is going to modify your minimum. It is going to modify your minimum. So what you will do is, instead you push eight. After pushing, you update your minimum to 10. Remember, whenever you modify, the minimum is your top value. Okay. After this, top. Whenever someone is asking you the top,"
+    },
+    {
+      "chunk_id": "L300_C11",
+      "start": 781.62,
+      "end": 861.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=781s",
+      "text": "10. Remember, whenever you modify, the minimum is your top value. Okay. After this, top. Whenever someone is asking you the top, what will that be? Will it be eight? No, you don't take eight. Instead you take 10. You might have a question. Hey, how do I know? Because, because over here you took 15 and over here you're taking 10. Simple answer is, if 15 is greater than 12, that means you didn't modify. But if eight is smaller than 10, that means you modified. How is the question? The question arises how, right? Why were you modifying the value? Because 10 was lesser than 12, where 12 was the previous minimum and you had to replace it, right? Correct? That was lesser than this. So can I say, if this is my value greater than my previous minimum, whatever, okay. So can I say, val minus minimum is going to be lesser than zero? So val minus minimum is lesser than zero. Can I add val to both the sides? If I do that, it will be val plus val minus minimum lesser than val. I can. That will be typically two into val"
+    },
+    {
+      "chunk_id": "L300_C12",
+      "start": 861.18,
+      "end": 939.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=861s",
+      "text": "will be val plus val minus minimum lesser than val. I can. That will be typically two into val minus minimum lesser than val. Correct? So if you remember, this is nothing but, what was this? Yes, this was your new value. This was your new value, if you remember. So can I replace this with new value? So I'm very sure that the new value, which is to be inserted, is always gonna be lesser than your value, which is going to replace this. I know it. Thereby, at any moment, this is lesser. You always take the, yes, you always take the minimum and return. Super simple. We got that, right? And you also got the mathematical proof while I was doing the dry run, right? How I took it out and how I got back to the previous state. So you know both of them now. What should we do now? Yeah, we'll be writing the pseudocode. So let's quickly write down the pseudocode. So I'll be designing the class, minimum stack, and inside it, I'll be taking a stack data structure. I'll have to write down the push, top, getmin, and pop operation. So the push operation will be taking a val. So let's try to write that down first."
+    },
+    {
+      "chunk_id": "L300_C13",
+      "start": 939.46,
+      "end": 1018.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=939s",
+      "text": "getmin, and pop operation. So the push operation will be taking a val. So let's try to write that down first. First condition would be, what if the stack is empty? Make sure you take a minimum as well, which can be long max, intermax, whatever you wanna define it. Okay, stack is empty. In that scenario, you can just assign the minimum to be the val, and you can ask the stack to push it. Perfect, so I'll push this value. Otherwise, you'll have to compare. You'll have to compare if this particular element that has been coming across is greater than minimum. In that scenario, you don't do anything because it's a greater element, so the minimum doesn't get modified. So you simply push the val. Otherwise, the minimum will get modified. So you don't push this value. Instead, yes, instead, you end up pushing stack.push two into, yes, two into the current val that's given to you minus the current minimum. And once that is done, you could go ahead and update the minimum to val because that's gonna be a top element and that's gonna be a minimum. Okay, and that would be it for minimum. So I'm done with the minimum. Can I write the other thing? I think I can."
+    },
+    {
+      "chunk_id": "L300_C14",
+      "start": 1018.62,
+      "end": 1098.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=1018s",
+      "text": "would be it for minimum. So I'm done with the minimum. Can I write the other thing? I think I can. The next one will be the, maybe I'll use this one here. The next one will be to get the pop, yeah, to do the pop operation. So I'll have to pop it out. First thing, if the stack is empty, we don't do anything. So edge case, if the stack is empty, I don't do anything and I return, okay? But what if the stack is not empty? In that scenario, I'll have to check. First, just make sure you do a stack.top. And after that, you do a stack.pop. So you've taken it out. We'll have to make sure the element that you've taken out is the element that you have taken out is that lesser than your minimum. If that is lesser than your minimum, you know one thing, this was a modified value. Eight greater, lesser than 10, modified value, right? So if it is a modified value, we need to get back our previous minimum. The previous minimum would be the current minimum, two into current minimum, minus the value that was popped out. So that is X, correct? Super simple maths. And once that is done, you could end it over."
+    },
+    {
+      "chunk_id": "L300_C15",
+      "start": 1098.06,
+      "end": 1176.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=1098s",
+      "text": "was popped out. So that is X, correct? Super simple maths. And once that is done, you could end it over. It's time to write down the top operation as well. So let's try to write down the top operation. Top is again, the stack is empty. Maybe you can return a minus one, stating there's no elements. Handle that case, okay. Or else what? Or else it's gonna be a very simple check. Get the top element, stack.top, perfect. And now have a check. If the minimum is lesser than X, you're gonna return the X itself. Otherwise you're gonna return the minimum. Super simple, if the element stored is greater, so you haven't modified. So you can straight away return the value that you found at stack. But if that is not the case, the minimum is storing your current value, the minimum value, the top value, whatever you can call it. Perfect. What about the getmin? The getmin is, I think that's the simplest function to write over here. You simply return the minimum, in case it is not long max. Apparently you can handle those cases if it is long max. In that case, there is no getmin. All of these things, probably you can handle it yourself."
+    },
+    {
+      "chunk_id": "L300_C16",
+      "start": 1176.3,
+      "end": 1252.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=1176s",
+      "text": "it is long max. In that case, there is no getmin. All of these things, probably you can handle it yourself. Perfect, I think we're done. What is the time complexity? I'm doing every operation in BeagleFN. Some mathematical operations here and there, but every operation is BeagleFN. What about the space complexity? I'm using a BeagleFN, just one element per operation at max will be stored, nothing beyond it. So you have optimized. And this is the optimized approach. But the thought process, there are a lot of videos on internet, but not a lot of them would be telling you, how do you think about this transition and coming back thing? The crunch over here is to understand that you'll have to come back. And in order to come back, you'll have to preserve that value somewhere. And we preserve it using this formula. Again, this mathematical formula, you'll have to know it. If you can derive well and good, solving a very good problem. But yeah, that's it. That will be for, yeah, that will wait for this one. So if you're still now watching, and if you understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's speed in some of the video. Till then, bye-bye, take care. ♪ Whenever your heart is broken ♪ ♪ Don't ever forget you're golden ♪"
+    },
+    {
+      "chunk_id": "L300_C17",
+      "start": 1252.9,
+      "end": 1254.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=NdDIaH91P0g&t=1252s",
+      "text": "in some of the video. Till then, bye-bye, take care. ♪ Whenever your heart is broken ♪ ♪ Don't ever forget you're golden ♪ ♪ I will find the light in you ♪"
+    }
+  ]
+}

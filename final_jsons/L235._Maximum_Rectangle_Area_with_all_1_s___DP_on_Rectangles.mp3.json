@@ -1,0 +1,78 @@
+{
+  "lecture_id": "L235",
+  "lecture_number": 235,
+  "lecture_title": "DP 55. Maximum Rectangle Area with all 1's | DP on Rectangles",
+  "youtube_url": "https://www.youtube.com/watch?v=tOylVCugy9k",
+  "chunks": [
+    {
+      "chunk_id": "L235_C1",
+      "start": 0.0,
+      "end": 75.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=tOylVCugy9k&t=0s",
+      "text": "Hey everyone, welcome back to Techie Forward. So today we will be solving this interesting problem which is maximum rectangle area with all 1s. Okay so what does the problem state? You will be given an n x m matrix okay that will be filled up with 1 and 0s as you can see over here. I need to figure out the maximum rectangle. Like for an example this is the maximum rectangle over here. Like this is the rectangle which has a length of 2 and the breadth of 3 which is in short an area of 6. Like if you carefully see 1, 2, 3, 4, 5, 6 so the area is 6 with all 1s. Like there are other rectangles like this is one of the rectangles also this is one of the other rectangles of 1 into 4. Again probably this is one of the other ones. This is one of the other ones. I can say this is again one of the other ones. Can I say something else? Obviously not. This is not a rectangle because all 1s we still have a 0. So again this rectangle is having all 1s so the length into breadth is 6 and that is the maximum that you can get. This is the maximum that you can get. So there is a prerequisite that you need to know before understanding the approach to this particular"
+    },
+    {
+      "chunk_id": "L235_C2",
+      "start": 75.68,
+      "end": 142.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=tOylVCugy9k&t=75s",
+      "text": "the maximum that you can get. So there is a prerequisite that you need to know before understanding the approach to this particular problem. It is very simple. You have to solve this problem area of largest rectangle in histogram. Like you are given a histogram of height 2, height 1, height 5, height 6, height 2, height 3. You have to find out the largest rectangle and the largest rectangle is this one. Like if I shade this up this is the largest rectangle of width 2 and height 5 which makes it an area of 10. This is the largest that you can get. You don't have to worry I have already made a video on this. Like if you see on the screen there is a video which is already made and this is the part 1 solution which will involve couple of solution which is the brute force and then a space complexity solution. Then there is a part 2 as well of the same video which has again a simple code and it has a very very simple code. Like if I just go back to the code the very very short code. So we will be using this portion and please go back and watch this. Once you have seen this you can come across over. So I'm assuming that you've seen the video for largest rectangle in a histogram. So assume I am on the first column or rather"
+    },
+    {
+      "chunk_id": "L235_C3",
+      "start": 142.48,
+      "end": 220.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=tOylVCugy9k&t=142s",
+      "text": "So I'm assuming that you've seen the video for largest rectangle in a histogram. So assume I am on the first column or rather first row and I said this is a building of 1 size, 0 size, 1 size, 0 size and 0 size. Assume 1 size, 0 size, 1 size, 0 size and another 0 size. So can I treat this as the same question like I've been given in histograms and I need to find the largest rectangle. It's the same question and the largest that I'll get is 1 over here. Let's go to the next column. The moment I go to the next column can I treat it as a 2 length building, a 0 length building, a 2 length building, a 1 length histogram, a 1 length histogram which again makes it something like 2, 0, 2, 1 and 1 and this is the histogram. So this is the histogram. Can I again find the largest rectangle? Can I again find the largest rectangle area? I can because it's the same histogram. I'm getting another histogram. So I'll again pass on to that problem and that will give me the answer. Perfect. Now if I just go across to the next guy. Over here I have a 3 building, 1 building, 3 building, 2 building, 2 building. So can I say I have a 3 building which is again"
+    },
+    {
+      "chunk_id": "L235_C4",
+      "start": 220.84,
+      "end": 286.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=tOylVCugy9k&t=220s",
+      "text": "a 3 building, 1 building, 3 building, 2 building, 2 building. So can I say I have a 3 building which is again a histogram. I have a 1 building, I have a 3 building, I have a 2 building and I have again a 2 building. So all of these are histograms. Again I'm forming a histogram which can again give me the largest rectangle and this time the largest rectangle will be this which is 2 into 3 which is 6. So I get 6 from here which is ultimately this one which was our answer. So we got it right. Now what I'll do is I'll now try to move to the next column. The moment I move to the last, I have an height of 4. I have for this guy an height of 0, 0 again and this time 3 and again a 0 because this is 4, this is 0, 0, this is 3 and this is again 0. So again a histogram and if I pass on the largest rectangle will be this one of 4 length. So I get a length 4 but eventually the maximum that I got was this portion. So thereby I get my answer as 6. Pretty straightforward. That means for every row if someone can give me for every row, for every row if someone can give me the histogram I can easily solve the problem"
+    },
+    {
+      "chunk_id": "L235_C5",
+      "start": 286.68,
+      "end": 354.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=tOylVCugy9k&t=286s",
+      "text": "someone can give me for every row, for every row if someone can give me the histogram I can easily solve the problem because we know we have already written a function to find the largest rectangle in histogram. We have already written a function. So what we need is when we go over here I know there are 5 columns. I know there are 5 columns. So for 5 columns this guy is height 1, height 0, height 1, height 0, height 0. So height 1, 0, 1, 0, 0. So this is my height of all histograms. So if I just pass on this to the function, this function will give me the maximum area as of now as 1. This will give me the maximum area as of now as 1. Perfect. Next I will move on to here. This is a 1. Can I say previously it was a 1. So if there is another 1 coming across the height of the histogram will ultimately increase only. Ultimately increase only. So what I'll do is I'll just go across and increase it. And if there is a 0 it will still stay as 0. If there is a 1 the height will again increase. If there is a 1 previously there was a 0. Now there is a 1. So height will again go across to"
+    },
+    {
+      "chunk_id": "L235_C6",
+      "start": 355.64,
+      "end": 426.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=tOylVCugy9k&t=355s",
+      "text": "increase. If there is a 1 previously there was a 0. Now there is a 1. So height will again go across to 1. And if there is a 1 the height will again go across to 1. This time again I'll pass on to the function. And this time across we will get the maximum area as 2. Which one? Either this one or this one or this one. So we get the maximum area as 2. Next we move to here. Again we get another 1 which means the height is increasing. So this will increase to 3. Now this time there is a 1. So what we will do is we'll make it 1. Again there is a 1 so 3. Again there is a 1 so 2. Again there is a 1 so 2. Again pass on. This time the maximum area we will get is 6. And as of now we have a 3, 1. 3, 2, 2. That is what we have as of now. So next we move to the last one. Now we have a 1. So again we previously had 3 so again another addition of 1 will make it 4. But this time we have a 0. So the addition is no more taken into account and we will just make it 0. We'll just make it 0. Again a 0 will make it 0. Again a 1 we'll make it 3. Again a 0 will make"
+    },
+    {
+      "chunk_id": "L235_C7",
+      "start": 426.12,
+      "end": 495.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=tOylVCugy9k&t=426s",
+      "text": "We'll just make it 0. Again a 0 will make it 0. Again a 1 we'll make it 3. Again a 0 will make it 0. So we have 4, 0, 0, 3, 0. And this time when we pass it we get the max as 4. So among all the calls for every row the max that we got was 6 and that is what our answer will be. So we don't need to do anything every time. We just need to if it's a 1 we increase the height. If it's a 0 keep the height as it is because that is how because if it's a 1 previous height will be added. If it's a 0 the height will get back to 0. So let's try to code this up. So what are we given? We're given the matrix, we're given the n, we are given the m. So what I'll do is at first I'll go over here and this is the part 2. So the part 2 what I'll do is I'll just take the problem right across here. What we will do is we'll just quickly take the code and we will paste it over here. So what I've done is I've just taken the code from the video because we know that is the function that we will use and now we will keep the max area. Imagine"
+    },
+    {
+      "chunk_id": "L235_C8",
+      "start": 495.96,
+      "end": 561.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=tOylVCugy9k&t=495s",
+      "text": "from the video because we know that is the function that we will use and now we will keep the max area. Imagine the max area to be 1 or you can just keep it as 0 assuming there is no rectangle and now what I can do is I just need to go across all the rows. So go across all the rows. Perfect. So we will go across all the rows. What's the next thing? We need something like the height histogram right which will carry on all the columns. Now I know one thing for sure I have to go through all the columns. So this is something which you will do and if matrix of i j is equal to 1 what we do is we say height at the position j to be plus plus increase it or else we say okay you can just take it as 0. Once we have done this we will say what is the area that you can give me. For this we will call this function. What is the area that you can give me if I'm giving you this histogram and I can say okay whatever you give me can you just compare that with this particular guy like across all and once you have got it can you please return that same thing. Now what I'll do is I'll try to run"
+    },
+    {
+      "chunk_id": "L235_C9",
+      "start": 561.08,
+      "end": 628.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=tOylVCugy9k&t=561s",
+      "text": "all and once you have got it can you please return that same thing. Now what I'll do is I'll try to run this and see if this is running fine. Stack was not included definitely because hash include is not there. So let's quickly take the hash include. We've just taken the hash include. Indeed it does give you all the correct answer. If I try submitting this let's see if it is working or not. It does and what is the time complexity? It is n into m. So what is the time complexity? As we are running couple of loops n into m and this if you remember the approach this takes a big of n because we are using a monotonic stack. So what I can say is it's a big of n into m plus n like we go off n and inside we are running couple of loops one is for m and one is for calling the function. It's n into m and what is the space complexity? We're using an height vector and over here we are using a stack every time. So it's a big of n space complexity as well. So why did I put this problem into the DP playlist? Because if you see the height we are trying to memorize the past height and then we are doing plus plus. So we are remembering the past heights in order to increase"
+    },
+    {
+      "chunk_id": "L235_C10",
+      "start": 628.84,
+      "end": 654.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=tOylVCugy9k&t=628s",
+      "text": "trying to memorize the past height and then we are doing plus plus. So we are remembering the past heights in order to increase the length of the histogram. So somewhere down the line we are using the past stuff. So that's why dynamic programming can be this problem can be tagged as DP. So guys I hope I was able to explain you this hard problem. So just in case I was please please please make sure you like this video and if you're new to the channel please do consider subscribing to us because that is the only thing that keeps me motivated to make these kind of content and with this I'll be wrapping up this video. Let's meet in the next one where I'll be solving the next problem. Till then bye bye."
+    }
+  ]
+}

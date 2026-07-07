@@ -1,0 +1,57 @@
+{
+  "lecture_id": "L115",
+  "lecture_number": 115,
+  "lecture_title": "L43. Insert a given Node in Binary Search Tree | BST | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=FiFiNvM29ps",
+  "chunks": [
+    {
+      "chunk_id": "L115_C1",
+      "start": 0.0,
+      "end": 72.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=FiFiNvM29ps&t=0s",
+      "text": "So before starting the video, I would love to thank Relevul for sponsoring this entire three series. So, if you're tired of waiting for companies to respond to your applications through different job portals, the next few seconds are very very important for you. Because Relevul by Unacademy is India's first hiring platform that can get you a job within a week itself. Yes. All you have to do is to register for the Relevul test and within a week, your interview will be scheduled with India's top companies and the top budding unicorns. So what are you waiting for? Make sure you check out the links in the description and apply for the Relevul test because it is free. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, insert a given node in a binary search tree. Yes. So what does this question states? You'll be given a node, right? You'll be given a value 5 and you need to insert this value 5 anywhere in the binary search tree such that the property of binary search tree that is left is smaller than the node and the right is greater than the node and the left sub tree is BST and the right sub trees BST is maintained. Now you can, you can actually create like you can insert this node any way you wish."
+    },
+    {
+      "chunk_id": "L115_C2",
+      "start": 72.34,
+      "end": 142.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=FiFiNvM29ps&t=72s",
+      "text": "the right sub trees BST is maintained. Now you can, you can actually create like you can insert this node any way you wish. One of the insertions that you can do is definitely over here. Once you've done the insertion, you can just return the root of the binary tree. So that's one of the insertions that you can do. What are the other insertion that you can do? What if I say I'll keep 5 here and then I'll keep 4 here. I let 7 be here and then I can have 2, I can have 1, I can have 3. That looks good, right? This binary search tree is also possible. Yeah, the height, height is a bit lengthier, but yeah, this is also possible. So this is one more insertion that you can think of. The other one that you can think of is you have 4 over here, you can have 5 over here and after that you can have 7. So basically insert 5 in between of 4 and 7. That's also possible. So there can be multiple possibilities of entering this particular given node. You need to find out one, any one, yes, I repeat any one, and you need to return the root of like, you have to just modify the binary tree and you have to return the root of this modified binary tree. That's the question. The problem link is in the description."
+    },
+    {
+      "chunk_id": "L115_C3",
+      "start": 142.86,
+      "end": 214.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=FiFiNvM29ps&t=142s",
+      "text": "binary tree and you have to return the root of this modified binary tree. That's the question. The problem link is in the description. You can try this question out and if you cannot solve it after that, you can watch the solution. Okay, so how do you solve this question? Let's not complicate the question. What if I say insert the node 5 at whichever leaf it is possible? What does that mean? Like, try to figure out where this 5 could have been in this particular tree. Let's try to figure that out. So you will be like, hey, Stryver, I'll go to here. I know 5 will be on the right. So I'll go to here. It's 7. I know it will be on the left. So that doesn't exist. So you will say that I will put that into the left and then I can just return the root of the binary tree and that's going to be my answer. Now, okay, it works for 5. What if I give you a number which is something as 0? How will you enter that into your binary search tree? So again, just try to figure out where the node 0 ideally would have been. So you start over here. 0 should have been on the left. You start over on 2. 0 should have been on the left. Go to 1. 0 should have been on the left. There doesn't exist a left. Insert 0 over here."
+    },
+    {
+      "chunk_id": "L115_C4",
+      "start": 214.74,
+      "end": 289.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=FiFiNvM29ps&t=214s",
+      "text": "should have been on the left. Go to 1. 0 should have been on the left. There doesn't exist a left. Insert 0 over here. Pretty simple. Yeah, pretty simple. What if the node's value is, for an example, a 9 for that reason? Again, let's keep it standard. Let's start over here. 9 should have been on the right. Go to the right. 7. 9 should have been on the right. There's nothing on the right. Insert it. So ideally, I try to figure out where it should be. And the moment I end up getting to a null place, I just make a node and insert this new node. That's it. So I try to figure out where it could have been. And I just go there and insert it. Nothing new, man. As simple as that. Now, the question stated that whatever node number is given to you, it does not exist in the binary tree. They will never ask you to insert 4 or 7 or 2 or 1 or 3 for that reason. Like anything that's already in the binary search tree will never be asked to be inserted. Whatever value will be given, be it 5, be it 0, be it 9, that will always be a new value. So the logic is very simple. Find where it can be and insert. Find where it can be and insert. And this where will always be some leaf position."
+    },
+    {
+      "chunk_id": "L115_C5",
+      "start": 289.1,
+      "end": 361.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=FiFiNvM29ps&t=289s",
+      "text": "simple. Find where it can be and insert. Find where it can be and insert. And this where will always be some leaf position. This where will always be some leaf position. Very standard, very straightforward. Right? Okay, let's take this BST. Let's take a node which is being given a value 5. Let's try to insert this 5 using this code. Let me first explain you the code. So basically you are given the root and the value. Again, the C++ is on the left and the Java is on the right. So you're given the root and you're given the value. So if the root is null, like if the binary search tree that's given to you is empty, so you just make the node itself the root and you return that. Right? Super simple. And after that you create a copy of root. Why do you create a copy of the root? Because at the end you have to return the root itself. So you create a copy of the root. And after that you keep on traversing. And if the val that you've been asked to insert, if that is on the right side, this means it's on the right side. And if the right side by any chance is not null, you move to the right. You keep on searching where this could have been. If it is null, which means it should have been on the right side, but it's null."
+    },
+    {
+      "chunk_id": "L115_C6",
+      "start": 361.98,
+      "end": 432.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=FiFiNvM29ps&t=361s",
+      "text": "on searching where this could have been. If it is null, which means it should have been on the right side, but it's null. So what you do is you just point the right by creating a new node which has this value. And after that you can say break. Hey, it's over. I've inserted it. Similarly, you'll do for the left. If there exists a left, you go on the left checking, hey, where does it exist? And similarly, if it doesn't like it's null on the left, you create a new node and you insert that. And after that you break and you return the root of the tree. That's as simple as that. Let me do a dry run on this particular example that I've taken. So assuming the val to be five, this is the root. So initially root is not null. Curve is here. So I'm saying val is five. Five is not greater. So it'll come to this line. Correct. Curve left is not null. So curve will come here. Perfect. Again comes back. The value five, is it a greater than curve val? Value five is greater than three. So this time we will go to the right. So curve will go here. Again comes back. This time the value five, is it a greater than a curve? It is greater. So on the right, it's actually else. That's null."
+    },
+    {
+      "chunk_id": "L115_C7",
+      "start": 432.02,
+      "end": 489.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=FiFiNvM29ps&t=432s",
+      "text": "time the value five, is it a greater than a curve? It is greater. So on the right, it's actually else. That's null. So what do you do is, we say curve right, why don't you create a new node and insert this value five. Okay, perfect. I inserted this value five. Once I've done this, I break. The moment I break, the root was pointing to the six. So I return the root. So I've made the new tree and I've returned it. As simple as that. As was the time complexity. Again, assuming the binary search tree to be height balanced, I can set the time complexity to be log base to n. Okay, that's what the time complexity indeed will be for a height balanced binary search tree. So I hope you've understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to this channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

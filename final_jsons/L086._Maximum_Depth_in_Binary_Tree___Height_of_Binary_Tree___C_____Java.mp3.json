@@ -1,0 +1,57 @@
+{
+  "lecture_id": "L086",
+  "lecture_number": 86,
+  "lecture_title": "L14. Maximum Depth in Binary Tree | Height of Binary Tree | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=eD3tmO66aBA",
+  "chunks": [
+    {
+      "chunk_id": "L086_C1",
+      "start": 0.0,
+      "end": 74.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=eD3tmO66aBA&t=0s",
+      "text": "So before starting this video, I would love to thank Relible for sponsoring this entire three series. So do you wish to work with companies like CRED, UpGrad, Urban Company, Raise Your Pay but you are not able to apply because of your lack of experience and lack of opportunities? So here's the solution to this problem. Relible by Unacademy is a hiring platform that helps freshers and experienced people to get jobs in India's top companies. All you need is skills. So what you need to do is you just need to give the Relible test that is completely based on your skills. Depending on your performance, your interview will be scheduled and you will be hired from the Relible platform. And the best thing about this is it's absolutely free. So what are you waiting for? Please make sure you check out the links in the description. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, find maximum depth of any given binary tree. So for this binary tree, what's the maximum depth? One, two, three, four. So I can say the maximum depth or height of this binary tree is nothing but four. So we're going to figure that out. So in order to do that, what is the traversal that we can use? We can either use the recursive traversal or else we can use the level ordered traversal"
+    },
+    {
+      "chunk_id": "L086_C2",
+      "start": 74.62,
+      "end": 152.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=eD3tmO66aBA&t=74s",
+      "text": "what is the traversal that we can use? We can either use the recursive traversal or else we can use the level ordered traversal which doesn't require any recursion. Now what's the disadvantage of using that? We have to use a queue data structure, which at the worst case might end up taking a space complexity of big O of n. The recursive doesn't use any space complexity, but it does use the auxiliary space. And the auxiliary space can go up to as high as big O of height of the binary tree. Again, the recursive and the level order might end up taking a similar kind of space complexity if you consider the worst case. Like for this level order, the worst case will be when you're given a complete binary tree. When the last level is completely filled, then this level order will end up taking big O of n near about space because the last level is going to have a lot of nodes. But if you talk about the recursive solution, then whenever you're given a skew tree, this is what you call a skew tree, a linear tree. Whenever you're given a linear tree, the recursive traversal will end up taking a stack space as equal to the number of nodes. So both have their worst cases. You can use any of the traversal in order to compute the maximum depth."
+    },
+    {
+      "chunk_id": "L086_C3",
+      "start": 152.98,
+      "end": 222.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=eD3tmO66aBA&t=152s",
+      "text": "number of nodes. So both have their worst cases. You can use any of the traversal in order to compute the maximum depth. You can use the recursive or you can use the level order traversals. Generally people tend to use the recursive traversal because generally in binary tree, trees are not skew. Rather trees end up having a very, very small height of log n. In almost all the cases. That is the reason we use recursive. But again, you can use any of them. As I said, both of them have their own worst cases. So if I think of a logical answer, can I say if I'm standing at any given node and the answer will be one plus maximum height of this left side and the maximum height of the right side, like whichever is having the maximum height, can I say one plus because one for the current node and the maximum on left or the maximum on the right can give me the answer. Like logically this should be the answer, isn't it? So why can't we use a recurrence and try to figure out like for the left tree, for the right tree every time? Let's see. So initially we started the root of the tree. Now we do not know the left height or neither do we know the right height."
+    },
+    {
+      "chunk_id": "L086_C4",
+      "start": 222.2,
+      "end": 290.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=eD3tmO66aBA&t=222s",
+      "text": "started the root of the tree. Now we do not know the left height or neither do we know the right height. So what we will do is at first we will move to the left and then we will move to the right. But at first we will move to the left. So when you move to the left, this guy doesn't have a left. So one plus max of left will be zero for this guy max because for this two, if I write one plus max of left will be zero comma. What's the right again? Zero. So can I say for this two guy, the height is indeed like if you're standing over here, the height is indeed one plus max of zero on left or zero on right. That's one. So can I say this guy got me a height of one? Perfect. Now I came across with the height one from this side. Now I'm on the right side. So I come across three and I know the answer will be one plus max of left and max of right. So we again go to the left and we again go to the right. Now when we come across over here, I know one thing for four, the answer will be one of max plus left max plus a right. So again, we go to the left. So on left for five, we know the answer will be one plus max of left."
+    },
+    {
+      "chunk_id": "L086_C5",
+      "start": 290.84,
+      "end": 358.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=eD3tmO66aBA&t=290s",
+      "text": "right. So again, we go to the left. So on left for five, we know the answer will be one plus max of left. That's zero comma right. That's zero. So we can see it's going to be one for this five. Perfect. So whenever you're standing at four, you actually said one plus max of left. What did left give you? One. What did, what will right give you? Zero. So can I say for this four, the answer came out to be one plus max of one comma zero. That's one plus one two. So for this four, I ended up getting a height of two. Now when I come to six, when I'll come to six for six, the answer will be one plus max of for six, the left will be zero. The right will be zero. So can I say for six, the answer will be one. Perfect. So when I'm at three, can I say for three, the answer will be one plus max of now the left has been completed. That's two. And the right has been completed. That's one. That's one. So can I say one plus max of this? That's one plus two, three. So can I say from the left, I got a three from, from the right, I got a three from the left. I got a one. So for this guy, one, can I say the answer will be one plus the left guy came out to"
+    },
+    {
+      "chunk_id": "L086_C6",
+      "start": 358.24,
+      "end": 434.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=eD3tmO66aBA&t=358s",
+      "text": "I got a one. So for this guy, one, can I say the answer will be one plus the left guy came out to be one. The right guy came out to be three. Hence the answer is one plus three. That's four. So ultimately using this simple recurrence of one plus max of left comma right, I was able to figure out the maximum depth of any given binary tree. That's how you do it. So if you carefully observe this, uh, we actually traversing all the nodes, right? So this is, we cannot, we cannot improve this because we have to find out the maximum depth. So you have to ultimately go through all the nodes that that cannot be avoided. The C++ code can be find on the left. The Java code can be found on the right. So as you can see, I'm given a root and you know, whenever the root is null, I'm going to return a zero or else I figure out the left height by going to the root left. I figured out the right height by going to the root right. And once I figured that out, what I'll do is one plus max of left height and right height. Simple as that. It's a simple recurrence that I've already shown you by try run. What's the time complexity of this? Again, you have to travel all the nodes."
+    },
+    {
+      "chunk_id": "L086_C7",
+      "start": 434.74,
+      "end": 476.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=eD3tmO66aBA&t=434s",
+      "text": "recurrence that I've already shown you by try run. What's the time complexity of this? Again, you have to travel all the nodes. So you, you cannot reduce that anything lesser than big of n and the space complexity at the worst case. If it's a skew tree, it'll go on till big of n for this kind of traversals and you cannot do better than this. So that's, that's what the time complexity and space complexity will be for the solution. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye bye. Take care."
+    }
+  ]
+}

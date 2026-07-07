@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L108",
+  "lecture_number": 108,
+  "lecture_title": "L36. Serialize and De-serialize Binary Tree | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=-YbXySKJsX8",
+  "chunks": [
+    {
+      "chunk_id": "L108_C1",
+      "start": 0.0,
+      "end": 78.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=0s",
+      "text": "Before starting this video, I would love to thank Relible for sponsoring this entire tree series. The placement season is here. I know a lot of you are planning to sit for companies which come on campus. In case you are disappointed that the top startups like Cred, UpGrad, Razorpay are not hiring directly from your campus, there is an easier way to work here. Just register for the Relible test conducted by Relible by Unacademy and you will get a chance to apply for front-end, back-end and business development roles at India's top startups and unicorn companies. Relible has 1000 plus openings by 50 plus companies and the best thing is it's absolutely free. So please make sure you check out all the links in the description and give the Relible test as soon as possible. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be discussing serialize and deserialize a binary tree. What does this signify? So basically you need to write a couple of functions. The first one is the serialize function that you have to write. So let's call this serialize and the next one is again a function that you have to write and let's call this as deserialize. So basically what the compiler will do, he will give you a root of a binary tree."
+    },
+    {
+      "chunk_id": "L108_C2",
+      "start": 78.06,
+      "end": 153.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=78s",
+      "text": "and let's call this as deserialize. So basically what the compiler will do, he will give you a root of a binary tree. He will give you a root of a binary tree. So assuming this is the binary tree, he'll give you this root. So your serialize function, you can write it on your wish, like how you write that is none of my concern. You have to write such a serialize function that it returns a string in return. Now how do you write, what logic you implement, that is on you. I want a string. And the moment I give this string to deserialize, I'll take the same string that you gave me and I'll give this to deserialize. And this deserialize code should also be written by you. Like you have written both the codes. So the code that you have written, you have to again apply the reverse logic. You have applied some logic to convert the root to the string. Now you have to apply the reverse logic in the deserialize and get the same root of the binary tree, not just the root, basically the entire binary tree again. I want this root of this binary tree again constructed. So whatever logic you're using over here in order to convert the root to a string, you have to use the reverse logic over here. You have to use a reverse logic over here. This problem can be solved by multiple, multiple ways."
+    },
+    {
+      "chunk_id": "L108_C3",
+      "start": 153.62,
+      "end": 224.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=153s",
+      "text": "use the reverse logic over here. You have to use a reverse logic over here. This problem can be solved by multiple, multiple ways. You can use any logic, in order, pre-order, post-order, level order, that's on you what logic you want to use. I'll be solving this problem using the level order. You can try this out using the in order, post order, pre-order, whatever you want to do. You can definitely do that out. The C++ and the Java code, both will be different. So I'll be explaining both the codes separately. So let's check this out. So since you're following level order traversal to serialize, it's very simple. Now you know the level order traversal. Again, I'm not doing a level order traversal. You know that, right? If you don't know level order traversal, please watch my previous videos. I've already taught about level order traversal. The first note that you traverse is one. The moment you have one, you attach comma. Next, the node, next, the next node that you traverse is two. Two comma. The next node that you traverse is 13. 13 comma. Ideally, two should have had a left, right? Ideally, two should have had a left. So there is no left of two. So this guy will be null. The left will be null. So whenever there is a null, you can have a hash or you can have it any length. You can have any character apart from a number."
+    },
+    {
+      "chunk_id": "L108_C4",
+      "start": 224.1,
+      "end": 297.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=224s",
+      "text": "is a null, you can have a hash or you can have it any length. You can have any character apart from a number. And ideally, two should have had a right, right? But I don't have. So what this will have is again a hash. Okay. Now four. So because this left is null, this right is null. And after that we have a four. So we will have four comma. After that five. Five comma. Now remember, these nulls cannot have left and right. But this four can have a null. This four can have a right null. This five can have a null. This five can have a right null. So just make sure there are null for the left of four. Hash for the right of four. Hash for the left of five. Hash for the right of five. And then a comma. So this is the string that I will send while serializing. Okay. While serializing, this is the string which I will return. Now since I've serialized, it's time that I deserialize. Now how do you deserialize? This is very, very interesting. Let's see. So basically what you'll do is, you will initially like, if the string is null, then you can say that there is no tree. But if the string is not null, you will, you can like, I'll show you in the code. Basically before the comma, pick up the first guy. That's one."
+    },
+    {
+      "chunk_id": "L108_C5",
+      "start": 297.38,
+      "end": 369.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=297s",
+      "text": "not null, you will, you can like, I'll show you in the code. Basically before the comma, pick up the first guy. That's one. I'll show you in the code how to do that in C++ and Java. Pick up the first guy. Put that into a Q data structure. Okay. Put that into a Q data structure. At the same time, make sure you create a root node with a value one. Okay. Done. Next. Who's the next? Start iterating on the Q. So you get one. Okay. The moment you get one, you say, okay, one's left will be the next guy. That's two. So one's left is the next guy. So you create another node two, and you say one's left is two, and you insert that. And you say one's right is the next guy. That's 13. So I say 13 is one's right. And you insert 13. So one is done. And you've taken 13 also. Next when you come across, you have two, right? You have two. So you take across two. And you say two, your left guy is the next guy. That's hash. So that's null. Two, your right guy is the next guy. That's hash. So that's a null. Perfect. So two is done. Next, you'll take 13. 13 will say my left is the next guy. That's four. And 13 will, the moment you take this, you create a node and you insert that."
+    },
+    {
+      "chunk_id": "L108_C6",
+      "start": 369.94,
+      "end": 446.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=369s",
+      "text": "my left is the next guy. That's four. And 13 will, the moment you take this, you create a node and you insert that. Whenever you create a node, make sure you insert that into the queue data structure. Okay. Next, 13 says my right will be the next guy. That's five. So again, you create a node and you insert five. Next time when you come across, you will take this guy four. Remember queue is first in first out. So it'll take four. So if you take four, four will say my left guy will be the next guy. That's hash. That's null. Four will say my right guy will be the next guy. That's again null. Four is done. Next, it'll take out five. Five will say the next guy is hash. That's null. And the right guy is again hash. That's null. So ultimately, if you see, you have completed the traversal in the string and you have your queue is ultimately empty. So once you have created the entire thing, the root is what you will return. So you saw that using this tree, I created the string and using this string, I created back the binary tree. That's as simple as that. Just keep on picking everything after string and keep on attaching it to the left, to the right, to the left, to the right, to the left, to the right of whatever you're taking out of the queue."
+    },
+    {
+      "chunk_id": "L108_C7",
+      "start": 446.1,
+      "end": 512.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=446s",
+      "text": "left, to the right, to the left, to the right, to the left, to the right of whatever you're taking out of the queue. That's as simple as that. So now I'll be showing you the code and the C++ and the Java code. This time I'll tell you differently because both are absolutely different. So let's first discuss the C++ code and after that I'll be discussing the Java code. So the timestamp you can check out over here and you can jump to the Java code. So let's first talk about the serialized. So in a serialized, you're given the root. So what I've done is if the root is null, then I'll return an empty string. That's very, very straightforward. After that, I've declared an empty string. And as usual, I've started doing the level order traversal, taken a queue, inserted the root and then started iterating on the queue till it is not empty. Took out the first node from the queue. After that, if the node is null, then I've appended. As you know, if the node is null, then I've appended. Anything else, hash is something which I've appended. And what I've done is if it is not null, then I've appended the value, converted to a string and then a comma. So either hash or comma. And then the only thing that I've slightly done differently in level order traversal"
+    },
+    {
+      "chunk_id": "L108_C8",
+      "start": 512.22,
+      "end": 581.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=512s",
+      "text": "and then a comma. So either hash or comma. And then the only thing that I've slightly done differently in level order traversal is instead of checking left and right, okay, instead of checking left and right to be null, I have inserted the left and right. Even if it's null, it'll go inside because if it's coming out as null, I'm appending else hash. So that is the only difference that I've done in level order. Once everything is done, what I've done is I've returned s. This you can ignore. I was just debugging. So I've returned a ds. So this is how the serialize will look like. So this serialize function will give me like, I'll give him a root. He will give me a string. Now this string will be passed on to this deserialized. This string is passed on to this deserialized and I have to return the, I have to return like this will be passed and I have to return the root. So let's check out the deserialized. So in order to understand deserialized, you have to know string, stream and get line. Okay. So what I've done is if the string that has data that is given to you, if that data is empty, that means the, there is no binary tree. So I'll return a null. Okay. So what I'll do is I'll do a string stream."
+    },
+    {
+      "chunk_id": "L108_C9",
+      "start": 581.24,
+      "end": 647.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=581s",
+      "text": "means the, there is no binary tree. So I'll return a null. Okay. So what I'll do is I'll do a string stream. It basically allows the string to be iterated over as objects so you can read about it. So what I've done is assuming it to be like one comma two comma 13 comma hash a comma something like four dot dot dot. So basically after that, the moment I do a get line, okay, that's the, that's a format. The moment I do a get line on the stream and with a string STR and I'm saying the delimiter, the separation is comma. First it'll go over here. Again if I do a get line, next time it'll automatically go over to, again if I do a get line, it'll automatically go over 13. So you have to just check out like you have to do a stream and after that if you do keep on doing get line using the separator, then it will automatically just iterate over the strings using the separator. Okay. That's, that's what I've done over here. After that, what I've done is I've created the root with STOI STR because first time the STR will be pointing here, right? One. So I just made sure that the root is created. After that simple, whatever I've done in the dry run, took a queue, started with root and after that took out that value, correct?"
+    },
+    {
+      "chunk_id": "L108_C10",
+      "start": 647.4,
+      "end": 712.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=647s",
+      "text": "After that simple, whatever I've done in the dry run, took a queue, started with root and after that took out that value, correct? And got whatever is on the left, like whatever is the next guy and made sure it is attached. Like if it is a number, if it is a number, okay, then I've created a new node on the left. I've attached it to the nodes left and I've pushed it into the queue. Very, very simple. Okay. Similarly, the next time I'll take this 13 and now again, I'll create the new node as 13. That's what I've done over here. And again, I pushed that just in case it was a null, then I've assigned null or right to the null. If it was not, how do you know it's a null? If it's a hash or if it's a hash, okay. In that case, it's a nut. Once you have done this throughout the queue, you can easily return the root of the binary tree, which is going to be your root after deserializing. That's how the C++ code will look like. If I discuss the time complexity of C++ code, can I say in serializing, it's a level order traversal that I'm doing. So it's a big off N and the space that I'm using is definitely big off N for a queue and a string. So I can say level order deserialize, everything is a level order."
+    },
+    {
+      "chunk_id": "L108_C11",
+      "start": 712.96,
+      "end": 779.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=712s",
+      "text": "using is definitely big off N for a queue and a string. So I can say level order deserialize, everything is a level order. So this can be overall the time complexity. Yeah. Like I'm just, I'm just taking it together, like not to end and all. I'm just writing it all over as big off N. So that was about the C++. So now it's time to check out the Java code. So as you know, you'll be given a root and you need to return a string. Okay. And that string, again, someone will pass you and then you have to return a root. That's what you have to do. So this part is, which is called serialization. So let's talk about the serialization. So root is given to you. Okay. So what I've done is I've take, if the root is null, I can say that I'll just return an empty string. Very straightforward. If after that root is not now, I'll go, I'll just declare a queue at first. Okay. So I've declared a queue, a string, res, string builder res has been taken. In the queue I add root. After that I'll keep on iterating till the queue is not empty. Basically I'll start doing the level order traversal. Okay. So this time the difference that I will do is I'll take the topmost of the queue, general level order."
+    },
+    {
+      "chunk_id": "L108_C12",
+      "start": 779.92,
+      "end": 840.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=779s",
+      "text": "order traversal. Okay. So this time the difference that I will do is I'll take the topmost of the queue, general level order. If the left is not null, then only you add, and the right is not null, then only you'll add. Since I'm adding null, I'm adding nulls to it. Like I'm adding hash if it is a null. So always add left and right, even if it's a null, always add left and right. And if the node comes out to be null, I will append an N like this can be any, any delimiter. As I said, again, it can be any delimiter. It can be hash. It can be N. It can be anything. Okay. So I've taken N over here. You can take hash, you can take and you can take anything. And if it is not like, if it is, I'll continue by adding N and N hash. Again, you can keep a comma over here. That's your choice. Depending like you have to just keep a separate type. Either it can be comma, it can be space, anything. And for null I've assigned it N. You can keep it as a hash also. So if it is not null, then I'll add the node.val. Okay. Into the string. And then I'll just move across. Perfect. In a string builder I'm adding. Right. So that's about the serialization. Once this entire thing is done, I can return to string."
+    },
+    {
+      "chunk_id": "L108_C13",
+      "start": 840.44,
+      "end": 908.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=840s",
+      "text": "Perfect. In a string builder I'm adding. Right. So that's about the serialization. Once this entire thing is done, I can return to string. Like I'll just convert the string builder to string and it'll easily return. So this is how the serialization will work. What about the deserialization? We're getting data, right? How's the data looking? So as of now, it should be looking like one space, two space, 13 space, null space, null, something like this. Ideally, that's how I've serialized. Again, you can just serialize it as you wish. So if I've serialized it like that, if the string is empty, that's the first thing, then I can say that there is no binary tree. So I can return a null. That's perfect. If it's not, then I'll declare a queue just to do the level order traversal. I'll take a string of values. Basically a values array is what I'm taking. I'm saying data.split on space. So basically I'll have an array with one, two, 13, N. So I'll have an array like this. Perfect. Now I can easily access these values, right? So after that, what I'll do is you can either traverse till the queue is not empty or you can traverse since this is the first guy that you will take and you will create the root, right? That's the first guy. Then the remaining guys has to be traversed."
+    },
+    {
+      "chunk_id": "L108_C14",
+      "start": 908.44,
+      "end": 974.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=908s",
+      "text": "that you will take and you will create the root, right? That's the first guy. Then the remaining guys has to be traversed. So you can either traverse on this stuff or you can either traverse till the queue is not empty. That's your choice. Okay. After that, I get the parent. That's q.pull. I'll get the one. So I've got the one. Now on its left, I'll add this two. So what I've done is on its left, if it's not null, if it's not null, what I've done is I've created a new node with the next value i, basically with the two. So I've created a new node with the value two. And after that I've said parent.left. Your left is two. And after that I've added this two to the queue. Similarly, I'll take the next guy, 13 and create a new node and then point the right pointer. Create a new node, right? And the right pointer to the right. And after that, add it to the queue. If both the cases are not maintained, then automatically the left is pointing to the null and the right is pointing to the null. If it is n, then we will not do that. And once you have completed the entire level order traversal, I can return the root, which will ultimately be the root of my binary tree for the given string. This is how the DC relation will look like."
+    },
+    {
+      "chunk_id": "L108_C15",
+      "start": 974.6,
+      "end": 1031.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=-YbXySKJsX8&t=974s",
+      "text": "root, which will ultimately be the root of my binary tree for the given string. This is how the DC relation will look like. The time complexity overall can be big off and I can summarize it to be go off. And in the space complexity, I can summarize that to be go off. And as usual, because I'm just doing a level order traversal. So guys, you can solve this using level order. You can also use in order, post order, pre order, whichever order, whichever traversal you want to use, you can use it. The logic, just make sure whatever logic you're using, the reverse logic should be implementing the same reverse logic, not someone else. So I hope you have understood the entire explanation as well as the code. Just in case you did, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also if you're new to this channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care. Bye."
+    }
+  ]
+}

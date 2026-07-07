@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L102",
+  "lecture_number": 102,
+  "lecture_title": "L30. Print all the Nodes at a distance of K in Binary Tree | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI",
+  "chunks": [
+    {
+      "chunk_id": "L102_C1",
+      "start": 0.0,
+      "end": 77.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=0s",
+      "text": "Before starting this video, I would love to thank Relible for sponsoring this entire tree series. The placement season is here. I know a lot of you are planning to sit for companies which come on campus. In case you are disappointed that the top startups like Cred, UpGrad, Razorpay are not hiring directly from your campus, there is an easier way to work here. Just register for the Relible test conducted by Relible by Unacademy and you will get a chance to apply for front-end, back-end and business development roles at India's top startups and unicorn companies. Relible has 1000 plus openings by 50 plus companies and the best thing is, it's absolutely free. So please make sure you check out all the links in the description and give the Relible test as soon as possible. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, nodes at a distance k from any given target node from the Freeca tree series. This is the binary tree that is given to you and the target node is 5 as you can see. So this is your target node and the distance is given as 2. So I want you to print all the nodes that is at a distance of 2. So basically from this node 5, the distance 2, I can say this is one node because if I"
+    },
+    {
+      "chunk_id": "L102_C2",
+      "start": 77.16,
+      "end": 147.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=77s",
+      "text": "at a distance of 2. So basically from this node 5, the distance 2, I can say this is one node because if I measure the distance, the distance is going to be 2. I can say this is another node. Again if I measure the distance, this is going to be a distance of 2 and I can say again this is another node which is again taking a distance of 2. Hence the 3 nodes that are at a distance 2 are 7, 4, 1. So I want you to return these 3 nodes and again you can print them in any order as you wish. So in order to solve this problem, the first thing that comes to my mind is, if we know that this is the target node, then I'm requiring a distance 2 and that can be at the top of this node 5 or it can be at the bottom of the node. The nodes that I'm searching for can be at the top or can be at the bottom. So we know that the binary trees are pointed in the bottomward fashion like 3 will be pointing to 5 but from 5 there will be no pointer to 3. So we cannot actually travel from 5 to 3 or we cannot travel from 2 to 5 or we cannot travel from 0 to 1. So we cannot travel towards the parent."
+    },
+    {
+      "chunk_id": "L102_C3",
+      "start": 147.5,
+      "end": 219.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=147s",
+      "text": "or we cannot travel from 2 to 5 or we cannot travel from 0 to 1. So we cannot travel towards the parent. So that's our main concern because if I'm looking for a 2 distance node from 5, we require to travel in the upward direction as well as the downward direction. So in order to travel to the upward direction, what we will do is, we will mark parent pointers. So let's do that. So at first what we will do is, we can simply do a BFS traversal. So as you know, in order to do a BFS traversal, the first thing that I'll be requiring is a queue data structure. And let's take a queue data structure and initially have this root of the node, insert it into the queue. So once that is done, what I will do is, I'll start iterating in the queue. So first time I'll take 3. So I've taken 3. Now 3 is left. Do we have a left of 3? Yes, we have a left as 5. So can I say if 3 is left as 5, I can definitely put it into my queue data structure, level order traversal. And at the same time, can I say, hey 5, your parent is 3 indeed? Yes. And can I check who's 3 is right? 3 is right as 1. So I'll push on 1 into the queue and at the same time I'll say 1, hey, your parent is"
+    },
+    {
+      "chunk_id": "L102_C4",
+      "start": 219.6,
+      "end": 287.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=219s",
+      "text": "3 is right as 1. So I'll push on 1 into the queue and at the same time I'll say 1, hey, your parent is 3. So I can definitely use a map or something like that in order to store the parent of 5 and parent of 1. Perfect. Let's go forward and do the iteration in the queue again. So at the next time I'll get 5. So when I have 5, 5's left is 6. So I'll take 6. And can I say again, 6, your parent is 5. Perfect. For 5, the right one is 2. So I'll take the right one too. And can I say 2, your parent is 5. Perfect. So in the next iteration, I'll get a 1. So when I get a 1, I know on the left of 1 there is a 0. So I'll put that 0 into the queue. At the same time I'll say 0, your parent is 1. Perfect. The right of 1 is indeed 8. So can I say 8 will be entered into the queue and 8, your parent will be 1. Perfect. So 1 is done. Next, I'll get 6. So the moment I get 6, does it have a left? No. Does it have a right? No. So 6 is done. Next, I'll get 2. 2, does it have a left? Yes, that's 7. So I'll take 7 and put it into the queue data structure."
+    },
+    {
+      "chunk_id": "L102_C5",
+      "start": 287.44,
+      "end": 346.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=287s",
+      "text": "I'll get 2. 2, does it have a left? Yes, that's 7. So I'll take 7 and put it into the queue data structure. At the same time, I'll mark 7's parent as 2. 2, does it have a right? 4. Yes, it does have. 4 will be taken into the queue and 4 will be marked over here. Like the parent of 4 will be 2. So I've done with 2. So 2 is also done. Next, I have a 0. So when I take 0, does it have a left and does it have a right? No. Next, I have 8. Does it have a left? Does it have a right? No. Next, I have 7. Does it have a left? Does it have a right? No. Next, I take 4. Does it have a left? Does it have a right? No. So once I have done one level order traversal, I think I can have all the parent pointers. Like from 5, I know who's the parent. From 2, I know who's the parent. So if I have to move from 2 to the upper direction, 2 can go to 5, 5 can go to 3, and then I can go on from 3 to 1. So I can actually traverse in the bottom as well as in the topward direction. So we're sorted with that. So the parent pointer is done. Now we will move to finding out the nodes at a distance k."
+    },
+    {
+      "chunk_id": "L102_C6",
+      "start": 346.56,
+      "end": 411.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=346s",
+      "text": "So we're sorted with that. So the parent pointer is done. Now we will move to finding out the nodes at a distance k. So the first step is marking the parent pointers. And you can use a hash map in order to store the parents of every node. Now since we have marked our parent pointers, now we can move upward and downward. Now the task is to figure out the nodes at a distance 2 from this target node. So there can be two kinds of questions. They can directly give you the address of this node. They can directly give you the tree node reference or pointer, whatever you can call it. They can directly give you that. Or they will just give you the value 5. So in case they just give you the value 5, you can do any traversal in order, pre-order, post-order, whatever traversal you want to do, you can do it. And you need to figure out this pointer or address, whatever you can call it, or reference. You just need to figure out that. So assuming that you're given the address, and if it is not given, you can definitely search it and find it. Not a big deal. So assuming you're given this node 5. So what you will do is, you'll do a BFS traversal. That is, standing at this node 5, you'll try to move radially upwards, downwards, always."
+    },
+    {
+      "chunk_id": "L102_C7",
+      "start": 411.56,
+      "end": 488.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=411s",
+      "text": "you will do is, you'll do a BFS traversal. That is, standing at this node 5, you'll try to move radially upwards, downwards, always. You're going to try to move radially upwards, downwards, always. The BFS traversal. And while moving, you're going to count distance. So initially, you had 5. So radially move to 3, move to 6, move to 2, and increase the distance. So you're going to increase the distance till it doesn't reach 2. And the moment it reaches 2, you can actually radially reach all the nodes that are at a distance 2. Did you understand? Not an issue. Let's do a dry run and understand this algo. So initially, you'll require a QData structure, which will have the target node. You'll require a distance which is 0. And at the same time, please make sure you carry a visited hash. Yes. Please make sure you carry a visited hash, which actually tells you which nodes have been visited. So whenever you have a 5, like you have visited 5, so you'll make sure that the visited contains the same node 5 and the distance is 0, because the node 5 is at a distance 0 from the node 5 itself. So let's start off from the QData structure. So I'll take off 5. I'll take 5. And what I'll check is, what's the upward node? The upward node is 3. Perfect. The downward node is 2. Perfect."
+    },
+    {
+      "chunk_id": "L102_C8",
+      "start": 488.52,
+      "end": 567.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=488s",
+      "text": "I'll take 5. And what I'll check is, what's the upward node? The upward node is 3. Perfect. The downward node is 2. Perfect. The left node, the right node is 2 and the left node is 6. Can I say they are all at a distance of 1? I'll linearly increment the distance to 1. I'll just increase the distance to 1 when I'm doing a radially outward direction movement. So first 2, then 6, then 3. The order can be anything. The order can be anything. Parent, left, right, left, right, parent. You can take it in any order. So when you've taken these nodes, please make sure you have them in your visited array, which means you have visited the node 3, visited the node 6, visited the node 2. Why are you storing in the visited? I'll explain to you as I do the next step. Now in the next step, what you will do is, you will take all these 3 nodes. Yes, take all these 3 nodes together. That's 2, 6, 3. And now try to move radially outwards from all these 2 nodes. Now can I say, from 2, why are you at 2? Logically speaking, why are you at 2? Because from 5, you came downwards. So from 2, when you want to move radially outwards, one will be the upward direction, that is the parent, one will be the left, one will be the right."
+    },
+    {
+      "chunk_id": "L102_C9",
+      "start": 567.64,
+      "end": 634.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=567s",
+      "text": "to move radially outwards, one will be the upward direction, that is the parent, one will be the left, one will be the right. So when you try to move to the upward direction, that actually takes back to 5. From 2, if you go to the parent, it takes back to 5. So there's no need to move backward in that direction because that's not logical. That is where the visited node will help you. Visited node says, from 2, if you want to go to 5, you have already gone. So the parent is something which you will not go. So 2 will say, okay, I'll go to my 7, I'll go to my 4. So I'll go to 7 and I'll go to 4. That is absolutely perfect. So once you've gone to 7 and 4, please make sure you have that in your visited array. Now next time you come to 6, 6 says, my parent is 5, which has already been visited because I came from 5. So there's absolutely no point to go back to 5. Does it have a left? No. Does it have a right? No. Perfect. 3, the 3 doesn't have a parent. It doesn't have a parent. So it will not go. Does it have a left? Yes. 3's left is 5 itself. So will it come to the left? Obviously no, because that's already visited. Will 3 go to the right? Yes, that's 1 because that's not visited."
+    },
+    {
+      "chunk_id": "L102_C10",
+      "start": 634.36,
+      "end": 706.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=634s",
+      "text": "it come to the left? Obviously no, because that's already visited. Will 3 go to the right? Yes, that's 1 because that's not visited. So I'll go to 1. Yes, I'll go to 1. And the moment I go to 1, I can push that into the queue and I can mark that as visited. So I can say from all these 3 nodes, yes, all these 3 nodes in the next iteration, I made sure I did radially move outward by a distance 1. Hence, the distance will increase by 1. That means the distance will now be 2. So this iteration is over. Let's move to the next iteration. Now the moment I try to move to the next radially outward nodes, I see that the distance is already 2. So will it make sense to move radially outwards? No, because I actually wanted the nodes at a distance 2 and I've moved by a distance 2 as of now. So there's no need to move any further upward, leftward or downward. Hence I can say the nodes currently, yes, I repeat the nodes currently in your queue data structure can be said as the nodes at a distance of 2. Hence I can just take out the elements from the queue data structure. I can put them into some array list or a vector or whatever you can call and I can return them as the answer. That's what my answer is going to be. Perfect."
+    },
+    {
+      "chunk_id": "L102_C11",
+      "start": 706.32,
+      "end": 774.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=706s",
+      "text": "a vector or whatever you can call and I can return them as the answer. That's what my answer is going to be. Perfect. So if I summarize the approach, first point was to make sure that you have parent pointers. Second point was to make sure you keep on moving by 1 distance every time upward, leftward and downward. And at the end, whenever the distance was equivalent to K, you stop and the nodes you have reached will be your nodes that are your answer. So this is how you get the nodes at a distance of K. So as usual, the C++ code is on the left and the Java code is on the right. So you can follow any of the codes and you can easily understand because they are almost identical. So we have this vector of int, we are requiring the distance of K, we are given the root, we are given the target and we are given the K. So as you can see, the address or reference or pointer, whatever you can call according to C++ and Java, the target is given to you. So what we initially do is we create a map. So this is the parent pointer map. Like I told you, we have to store every node's parent. So we just have a map for that and I call this MarkParents function. So let's check out this MarkParents function."
+    },
+    {
+      "chunk_id": "L102_C12",
+      "start": 774.24,
+      "end": 849.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=774s",
+      "text": "every node's parent. So we just have a map for that and I call this MarkParents function. So let's check out this MarkParents function. So what we do is we simply do a level order traversal by taking a queue. We insert the root and we get the, like we do an iteration on the node and every time I get a left, I mark the left parent as the node itself and then I push the left. Similarly, I do it with right. So once I have done this function, I can say my parent is ready. My parent is ready. So first step is completed. That is getting the parent ready. For example, mark the left, mark the right parent. So we're done with that. Next, what is the next step? Radially traverse upward, leftward, and rightward by a distance one every day. Let's see how we do that. So we have a visited map at first. Then we have a queue. Initially we started with target and we had that in the visited. So we will start with the target and we have that in the visited. This is our distance like this. Make sure that how much radially have you moved that is curl level. Right after that, I do the iteration in the queue. So how am I doing the iteration? First I take the size. So if you remember for the first time you had a five, right?"
+    },
+    {
+      "chunk_id": "L102_C13",
+      "start": 849.32,
+      "end": 913.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=849s",
+      "text": "how am I doing the iteration? First I take the size. So if you remember for the first time you had a five, right? Next time you had some nodes and you took all of them, remember? And then you moved radially outward, leftward, rightwards into all of them. So that's what I've done. I've taken the size. I've run a for loop. So basically I'm traversing in all of them together. And at the same time I'm making sure if the curl level, like as of now, initially the curl level will be zero. After that curl level will become one, after that two. So if the curl level at any time becomes K. So in order to understand this better, you can watch this out. You'll understand. If it is equivalent to K, you'll break out or else you'll just increase the radial outward and then move. Right? So that's done. Now over here we have a size. So we, we travel in all of them. And what we do is we check on left, we check on right, and we check on the parent. If a left exists, if a right exists, if a parent exists, and if they are not visited and if they're not visible. So what I'll do is I'll take it into the queue and I'll mark them as visited. I'll take it into the queue, mark them as visited, take it into the queue, mark them as visited."
+    },
+    {
+      "chunk_id": "L102_C14",
+      "start": 913.26,
+      "end": 992.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=913s",
+      "text": "I'll mark them as visited. I'll take it into the queue, mark them as visited, take it into the queue, mark them as visited. Once this is done, once this is done, that means once I have iterated totally and I've reached the distance K, I'll break out. So once I've broken out, whatever is on the queue, I'll take that into some vector. So I've taken that into some vector. At the end I can return that vector or list, whatever you can call it. So once I've done that, I can easily say, I repeat, I can easily say that I have figured out all my nodes at a distance K. So if I talk about the time complexity, can I say at first I'm using a traversal to find out the parents? That's a bigot of n complexity. After that, I am actually traversing on all the nodes that are at a distance of K, right? That are at a distance of K. That's the second, that's the second stuff. So the worst case, I might end up traversing through the entire tree. So that's again a bigot of n traversal, right? And since you're using a HashMap, so we can argue on that for C++, HashMap can have a log in complexity. For Java it can have a bigot of 1 complexity. So I'm not considering the HashMap complexity. You can consider that in your interview and you can tell the interviewer, depending on"
+    },
+    {
+      "chunk_id": "L102_C15",
+      "start": 992.74,
+      "end": 1053.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=i9ORlEy6EsI&t=992s",
+      "text": "1 complexity. So I'm not considering the HashMap complexity. You can consider that in your interview and you can tell the interviewer, depending on the language that you're coding in. So I can say for traversal, this is this. And if you're using HashMap log in, you can log in, you can just do it. What is the space complexity? First you're using a parent track, right? So that's a bigot of n for that. Then you're using another queue, that's another bigot of n. And using a visited, another bigot of n. So overall, I can say the complexity is bigot of n only, right? Overall, I can just summarize that to bigot of n. So I can say the prime complexity is bigot of n, the space complexity is bigot of n for this solution. So I hope you've understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire three series. Also if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

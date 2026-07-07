@@ -1,0 +1,176 @@
+{
+  "lecture_id": "L261",
+  "lecture_number": 261,
+  "lecture_title": "L25. Merge K Sorted Lists | Multiple Approaches",
+  "youtube_url": "https://www.youtube.com/watch?v=1zktEppsdig",
+  "chunks": [
+    {
+      "chunk_id": "L261_C1",
+      "start": 0.0,
+      "end": 78.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=0s",
+      "text": "So, we will be continuing with our playlist and for that, hey welcome back to the channel and I hope you guys are doing extremely well. So, the problem that we will be solving today is merge k sorted list. So, what is the problem exactly stating? It is stating that you will be given k sorted list and your task is to take all the values and the values will be integers. All the integers together, sort them up and put them into a new list. Once you have done that, you will have to return the head of that new list. Got it? So, if this problem comes up in an interview, what is the extreme naive solution that you can think of? I will be thinking, okay I will take all the elements from the first list, from the second list, from the third list and so on till the kth list. I will put them into an array. Once I put them into an array, I will have all the numbers or all the integers in an array. I will be sorting that array. So, I will now get a sorted array. So, all the numbers, all the integers will be in a sorted fashion in that array. Once I have all the numbers, I can apply the convert array to link list that we have already done in our previous videos."
+    },
+    {
+      "chunk_id": "L261_C2",
+      "start": 78.84,
+      "end": 153.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=78s",
+      "text": "I have all the numbers, I can apply the convert array to link list that we have already done in our previous videos. I will apply that convert array to link list logic and I will get the new list and whenever you apply the convert array to link list logic, you get the head of that new link list. Once you have the head, you can simply return that head. Quite simple. So, this will be the extreme naive solution. So, I will be writing down the pseudocode now. In case you want the C++, Java, Python or JavaScript codes, it will be given below. So, I will be writing down the function. The function will be taking a list of node. So, what you are given is a list having all the heads. So, you are given this, you are given this, you are given this, you are given this, head 1, head 2, head 3 so on till head, kth head. Because if you are given the head, you can easily access the entire list. If you are given the head, you can easily access the entire list. That's why a list of heads is given to you. So, you have all the heads of all the list. Now, what is your task? You have to put them into an array like all the integers into an array. The first thing I will do is, I will take an array and it's an empty one."
+    },
+    {
+      "chunk_id": "L261_C3",
+      "start": 153.32,
+      "end": 231.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=153s",
+      "text": "like all the integers into an array. The first thing I will do is, I will take an array and it's an empty one. After that, I will have to go through each and every list. Correct? Let's go through them. First, let's access every head. So, I will be going from i equal to 0 till i list.size. And I know the head will be at the index. So, list of i will give me the head. So, I can take a temporary and this will be my node. Now, I have the head. I have a temporary standing at the head. So, initially when i is 0, temporary will be here. After that, temporary will be here. After that, temporary is here. After that, temporary is here. Now, what is your job? So, take this one, this one, this one. Right? And put them into an array. After that, take this one, this one, put them into an array. Traverse. Right? You can do a simple traversal. That's super simple. I can write a while loop which goes on till temporary is not null. And I can say array, can you add this temporary value data whatever it is. And then, can I say temporary, temporary. Next super simple, the traversal is completed."
+    },
+    {
+      "chunk_id": "L261_C4",
+      "start": 231.2,
+      "end": 311.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=231s",
+      "text": "this temporary value data whatever it is. And then, can I say temporary, temporary. Next super simple, the traversal is completed. Once the traversal is completed, you have all the elements in the array. What is the next step? Sort them. So, call the sort function and that will be sorting the entire array. Once the entire array is sorted, I have to convert it into a list. Call the convert function, we've already done that. So this will be calling the convert function and it will be returning the head of that new list. So, basically I can say head equal to convert of array. Once that is done, I can straight away return the head of that new list, none interested. Now what will be the time complexity? Can I say this is taking a bigot of k because I've been given k sorted list. Now what is the next thing? I need to compute for the traversal. I have to ease out computations. What I will be assuming is each and every list is of length n, hypothetical observation or assumption. This traversal will be taking bigot of n. So the overall complexity for this portion is nothing but n into k. Correct? After that you are sorting it. So the sort usually takes m logarithmic of m. If the size of the array is m. Now what is the size of the array?"
+    },
+    {
+      "chunk_id": "L261_C5",
+      "start": 311.2,
+      "end": 387.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=311s",
+      "text": "sort usually takes m logarithmic of m. If the size of the array is m. Now what is the size of the array? The size of the array will be all the elements combined. How many elements are there? If there are k list and each of its size is n, can I say the number of elements are n into k? I can. So m is nothing but n into k. That's the total number of elements assuming each list is of length n. After that I'm converting. So in order to convert, it will be a linear traversal. So the complexity again will be m where m is n into k. After that, I think we're done. So the overall time complexity will be n into k plus m logarithmic of n plus bigot of m where m is n into k. What would be the space complexity? I'm using an array. So it will be storing all the elements which is bigot of m. After that I'm creating a new list in order to store all the elements like all the merged elements. So that's another bigot of m. So this is the overall time complexity and the space complexity for the brute force. Obviously, the interviewer will not be happy with this and he'll ask you to optimize this. So in order to optimize our previous solution, you should have seen my previous video that"
+    },
+    {
+      "chunk_id": "L261_C6",
+      "start": 387.88,
+      "end": 460.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=387s",
+      "text": "and he'll ask you to optimize this. So in order to optimize our previous solution, you should have seen my previous video that is on merge two sorted list. If you have seen that and you know how to merge two sorted list in place, this will be easy. So what I'll do is I'll take the first list. I'll take the second list. I'll try to merge them together. So I have two lists, right? I can merge them together, right? I know how to do it in place. When I say in place, I'll be using the same nodes. So we'll be pointing to this, this will be pointing to this and this will be pointing to this and this will be pointing to this and this will be pointing to null. I know how to do it in place. So let's quickly merge them into a new list. So after merging them, I have something like this. The next step will be to go to the third list, take this up and take the previous list. Can I merge them together? I think I can, right? Same process. Let's do it. So once the merge is completed, I have something like this. After this, you'll move on to the fourth list and again you can take both of them and again do a merge. Can I do it? I can. So let's do it. Once the last list is merged, I have something like this."
+    },
+    {
+      "chunk_id": "L261_C7",
+      "start": 460.16,
+      "end": 537.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=460s",
+      "text": "do a merge. Can I do it? I can. So let's do it. Once the last list is merged, I have something like this. I don't have any further list and I need to merge. So I can simply return the head of the overall merged list. Now remember, all of these nodes are the same nodes that were given to us. I've not used any extra nodes. Done it in place. So let's quickly write down the pseudocode in case you want the C++, Java, Python or JavaScript code, it will be given below. First of all, you'll have a function which will be taking a list of nodes. So this is nothing but all the heads given to you in a list. After that, you'll have to merge them. How do you merge it? First thing we did was, we took first two lists and we tried to merge them into one. So I'll be smart and what I'll do is, I'll place a head node on the zeroth list. On the zeroth list, I'm talking in terms of zero based index. I'll be like, okay, head is list of zero. Perfect. The next thing I'll do is, I'll start traversing from the first. I'll start traversing from the first. Let's try to do it."
+    },
+    {
+      "chunk_id": "L261_C8",
+      "start": 537.68,
+      "end": 613.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=537s",
+      "text": "thing I'll do is, I'll start traversing from the first. I'll start traversing from the first. Let's try to do it. For i equal to one, I'll go on to the last which is list.size. Perfect. This is what I'm writing. After this, can I say, list of i is my first list and head is my zeroth list. Can I merge them? Yes, I can. I'll call merge to list. I'll pass on the head and I'll pass on the list's i. So what will happen is, head is nothing but the zeroth list and I say list of i in the first iteration. That is the first. So I'm sending the first to list. It will get merged. I'll get the new head. I'll get the new head of the merged list. So what I can do is, that new head, I can store it in the head itself. Done. So if I do this, what will happen at the next step is, this will get omitted and whatever merged list you will get, the head will be here."
+    },
+    {
+      "chunk_id": "L261_C9",
+      "start": 613.8,
+      "end": 693.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=613s",
+      "text": "step is, this will get omitted and whatever merged list you will get, the head will be here. Again in the next iteration when i is at 2, you can again merge them. Simple. So what I've done is, I've taken the zero, then I've taken the first and I merged them into a new list and that is stored here. Next time when i is 2, this merged, the before merged list will go and list of 2 will go. Again you'll get a merged. So at the end of the day, the head will be the head of your merged list. Done and dusted. Super small code. So let's analyze the time complexity. In order to do that, what I will do is, we'll assume the first list is of length n1, the second is of length n2, n3 and n4. Okay. What is the first step of iteration doing when i is 1? What's happening? You're merging the zeroth list with the first list in terms of zero based indexing. Agreed. So first list is of size n1. The second list is of size n2. They are being merged, you're merging them. Correct. And what is the time complexity while merging two lists? That's very easy."
+    },
+    {
+      "chunk_id": "L261_C10",
+      "start": 693.76,
+      "end": 773.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=693s",
+      "text": "are being merged, you're merging them. Correct. And what is the time complexity while merging two lists? That's very easy. That's n1 plus n2. Done. That is for the first iteration. That is for the first iteration. Done and dusted. After this, I will be to, what will happen? You'll have them merged into a new list, which will be of size n1 plus n2. That will be a single list and that single list will try to get merged with this because this is where your iteration is standing. You try to merge this into this. Correct. So can I say this time the list that you're trying to merge will be of length n1 plus n2 because it is a combination of the zeroth and the first. Now you're trying to merge with the third list. Agreed. So the overall time complexity to merge them will be n1 plus n2 plus n3. Very simple. Done and dusted. You can just remove them. What is the next step? The next step will be, I will be three, which means you're standing at this one. So you'll have a single list, which will be, which will be a merge of these three."
+    },
+    {
+      "chunk_id": "L261_C11",
+      "start": 773.68,
+      "end": 848.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=773s",
+      "text": "at this one. So you'll have a single list, which will be, which will be a merge of these three. So basically n1 plus n2 plus n3 in length, right? And you'll try to merge it with this one. So this and this will try to get merged. So can I say the next step, this one will be n1 plus n2 plus n3 and this one will be n4. I can, right? I can say that. So what will happen? Again, the time taken will be n2 plus n3 plus n4. And this is when the iteration will get completed. Now I cannot figure out the time complexity. So what I will do is I'll assume all of them to be equal in length, assume it to be of the maximum length. So let's assume that each of them is of size n, the maximum possible. I can write this as 2n, I can write this as 3n, I can write this as 4n. Right? Probably if I'm adding so much, if I add a very small n, it won't matter that much because I'm already doing a lot of iterations. Agreed? Agreed? Right? So I can write this as n plus 2n plus 3n till kth of n because I'll be doing it till k less. Right? I'll be taking n common."
+    },
+    {
+      "chunk_id": "L261_C12",
+      "start": 848.92,
+      "end": 928.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=848s",
+      "text": "plus 2n plus 3n till kth of n because I'll be doing it till k less. Right? I'll be taking n common. So it'll be 1 plus 2 plus 3 plus dot dot dot till k. So in short, it will be n into k into, how much is it? n into n plus 1 by 2, right? So I can say that this will be my like near about time complexity. I cannot pinpoint the exact time complexity because the link list might be different in length. What about the space complexity? I'm not using any extra space. I'm using everything in place. I'm reusing the same nodes given to me. I'm just changing the links. So the space complexity will be big O of 1. If you look at the time complexity, it has nk into k. Somewhere, somewhere near about n cube. If just in case I assume k to be n. It's in the power of cubes. Obviously, the interviewer will not be happy with this and he'll again ask you to optimize. So in order to optimize our previous solution, what I will be doing is, I'll be using the concept of minimum heap. In case you don't know about it, nothing to worry about. Just remember, it's a data structure that returns you the minimum value. If you are storing 10 values, it will give you the minimum value. That is it. That is all that you need to know about."
+    },
+    {
+      "chunk_id": "L261_C13",
+      "start": 928.04,
+      "end": 1006.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=928s",
+      "text": "you are storing 10 values, it will give you the minimum value. That is it. That is all that you need to know about. In C++ Java, priority queue is a data structure that implements minimum heap. So I'll be using priority queue. Got it? So let's quickly define a priority queue. So we're defining a priority queue. And this priority queue will be in terms of minimum heap. Got it? And I'll be storing two values. One is the integer at the first and then I'll be storing a node. So I'll be storing a pair. I'll be storing a pair. One is integer, the other is node. Initially the priority queue will be containing all the nodes that are head. All the nodes that are head. I'll take all the heads and store it into the priority queue. Let's do it. The first one is 2. So I'll be taking 2 and the node. Taken. The next one is 1 and the node. The next one is 1 and the node. The next one is 8 and the node. So what I've done is, I've taken all the heads and stored them into the priority queue. What is my next step? I need to merge all of them and create a new list."
+    },
+    {
+      "chunk_id": "L261_C14",
+      "start": 1006.58,
+      "end": 1086.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=1006s",
+      "text": "into the priority queue. What is my next step? I need to merge all of them and create a new list. So what I will do is, I'll use the concept of dummy node now. And use the concept of dummy node. I'll have a temporary assigned to it and initially it will be pointing to null. Okay. Now in your result, like in your answer list, you always had your first element as the smallest one. And you know the smallest one will be 1 among it. One among it. And you have all of them in the priority queue. So if you ask, the minimum, you'll always get either this or this. Right? If you're storing two values, it is always sorted in terms of the first one. So if you ask, hey, minimum heap, give me the minimum. It will give you. It will give you either this or this. Doesn't matter. Because both of them are 1. So you'll get one of them. What you can do is, you can take it out. Sorry my bad. You can just take it out. And once you've taken it out, you can have it here. Here means here. Perfect. And you can have temporary pointed to it. Once you've done it, you can take temporary to this one. Done and dusted. Can I say, taken one out. This is gone."
+    },
+    {
+      "chunk_id": "L261_C15",
+      "start": 1086.26,
+      "end": 1165.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=1086s",
+      "text": "Once you've done it, you can take temporary to this one. Done and dusted. Can I say, taken one out. This is gone. This is gone. So you can take the next value, which is 5. And simply say, okay, give me your next. So it'll give the next. Because one is done. You need someone from it. So taken. Perfect. What is your next step? Again figure out the minimum. Because in your resultant list, you'll have the minimum after it. After this, you'll have the next minimum. The next minimum is this. Agreed. Just take it out. So just take it out. And I'll again place it here. Again have temporary pointed to it. I'll move temporary here. So can I say this is taken? Right. Take the next value and put it into the variety queue. So what I've done is I've taken this and put it into the variety. Again get the next minimum, which is this. Take it out. Put it here. Make temporary point here. And go temporary here. So this is also taken. If this is taken, you take the next value. So you take this and put it over here. You need the next minimum. What will be the next minimum? This one. Take it. Make temporary point here."
+    },
+    {
+      "chunk_id": "L261_C16",
+      "start": 1165.06,
+      "end": 1242.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=1165s",
+      "text": "over here. You need the next minimum. What will be the next minimum? This one. Take it. Make temporary point here. Temporary goes here. So this two is gone now. Which means this is gone. What is the next? Four. Place four here. Sorry, this four goes here. Perfect. What is the next minimum? We'll get three. Keep on doing this. Keep on doing this. Till all the elements are into the variety queue. Like all of them are done. So what is the next step? You will get three. Let's take it. So three is now done. So you can just move three. If three is done, it will go as seven. Perfect. What is the next step? We'll get the next minimum, which is four. So it will have four. Maybe I can just write it here. And you can make sure that this is pointed. And then temporary moves. Perfect. What is the next thing? You omit four from here. You can just erase it. And the next one will be six. Six. Perfect. Which is the next minimum? Five. So take five. Make sure temporary points to it. After this, you can just remove five. If you're removing five, delete from here. Once it is deleted, it doesn't have anything next. No need to put it again. No need to put it again. Let's do our next travesal. Which one is the smallest? Six. Make sure you take out six and make temporary point to it."
+    },
+    {
+      "chunk_id": "L261_C17",
+      "start": 1242.1,
+      "end": 1308.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=1242s",
+      "text": "it again. Let's do our next travesal. Which one is the smallest? Six. Make sure you take out six and make temporary point to it. After this, take out six. If six is taken, done. Does it have a next? No. Nothing to put. Which is the next small? Seven. Take it out. Make sure this is pointing to it. Temporary goes. Take out seven as well. One seven is taken. Does it have a next? No. None and dust. Perfect. What is the next step? You can just move it. You can just move it. Perfect. What is the next step? You can just move it. No. None and dust. What is the next? You just take out the next eight. Make sure temporary points to it. Temporary is done. And eventually this is done. This is done. Again it's null. Over. No need to put it. So there will be a point where when you look at the priority queue, when you look at your minimum heap, you'll see that there are no more elements in that minimum heap. If that is the case, you stop then and there. You stop then and there. What I've done is I've reused the same nodes. I've reused the same nodes. If I ask you what is like, where is my head? Can I say dummy node dot next is my head? Dummy node dot next is my head. Correct? So you'll be returning dummy node dot next."
+    },
+    {
+      "chunk_id": "L261_C18",
+      "start": 1308.42,
+      "end": 1388.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=1308s",
+      "text": "say dummy node dot next is my head? Dummy node dot next is my head. Correct? So you'll be returning dummy node dot next. So let's write all the pseudocode. Again this is not in C++ or Java. In case you want the C++ Java Python or JavaScript code, it will be given below. We'll have a function. I'll have a function which is taking a list that is containing all the heads. Right? So the first thing, I need a priority queue. Depending on your language, you can define a priority queue. Let's have its variable naming as pq. What is the first thing that I did? I took all the heads and I did put them into the priority queue. Let's do it. I'll be iterating through all the heads. So I can go from 0 to lists dot size. I can just run a follow. And I can say pq, can you add, I need to store the integer at first and then the node. So I can easily say list of i dot value. That will give me the value. And I can simply say lists dot i. Now that will be my node itself done. What after that?"
+    },
+    {
+      "chunk_id": "L261_C19",
+      "start": 1388.02,
+      "end": 1466.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=1388s",
+      "text": "value. And I can simply say lists dot i. Now that will be my node itself done. What after that? I need to create a new list. So I need definitely a dummy node. So you can create a dummy node. And you can have that dummy node assigned to a temporary in order to traverse. Now I need to go through that priority queue till it has nothing left. I'll be writing a while loop and I'll say, okay, till priority queue is not empty. I need to get the minimum. You can use something as pq dot top. Again, according to language, you can figure out how to get minimum. So it's basically getting the minimum from the priority queue. Got it? So you can be storing this in a pair of integer and a node. So you can call it as p, the pair, right? What after that? You need to make sure the temporary is pointing to this p dot second. Why second? Very obvious. If you are getting the top, the minimum, you need to make sure that the temporary is pointing to this. So this is one. What after that? You need to remove it from the priority queue. That's super simple."
+    },
+    {
+      "chunk_id": "L261_C20",
+      "start": 1466.3,
+      "end": 1542.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=1466s",
+      "text": "this. So this is one. What after that? You need to remove it from the priority queue. That's super simple. You can say pq dot pop. Again, this deletion might be different according to language. You can figure out how to delete in your language. If you say pq dot pop, it deletes it. So I have deleted it. Now what is my next job? If I have deleted, if I've deleted it, I need the next to get into the priority queue, right? I can do that. Can I say if p dot second, it's next is still there, it might be null. What if you're standing here and it doesn't have? So please make sure you check that there is a next. If there is a next, you say pq dot add. Can you take p dot second next dot val because that is the integer part and p dot second dot next as the node, it will get into the priority queue. Do you have anything left? You have. You have to make sure temporary goes to the next as well because you made temporary point to that and you have to go to that node itself to change the link."
+    },
+    {
+      "chunk_id": "L261_C21",
+      "start": 1542.3,
+      "end": 1619.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=1542s",
+      "text": "because you made temporary point to that and you have to go to that node itself to change the link. Now understood at the end of the day, you can return the dummy nodes next because that will be your head of the new newly created list. Super simple. Yeah, that was the code. Once your priority queue gets empty, you would have created your new list. That will be done. Now let's discuss about the time complexity. I have a for loop. I have an add operation. The add operation technically takes logarithmic of size of the priority queue. So that's logarithmic of k and I have a for loop running and it's running for the size that's k into logarithmic of k because the add takes logarithmic of k. That will be the time complexity for the first half. So the for loop is done. The next one is the while loop. What is the time complexity inside the while loop? First of all, let's analyze for how many times is the while loop running. It's running till the priority queue is empty. At every iteration, it is getting a new node and attaching to the new list. So eventually can I say I'm getting elements from the priority queue and what does priority queue have?"
+    },
+    {
+      "chunk_id": "L261_C22",
+      "start": 1619.46,
+      "end": 1694.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=1619s",
+      "text": "the new list. So eventually can I say I'm getting elements from the priority queue and what does priority queue have? It will eventually have all the elements, all the elements into it. So assuming each of the list is of size n, an assumption, can I say the total number of elements is k into n? I can. So can I say that the while loop is running for k into n? Correct. Nice. How many operations am I doing inside it? pq.top, pq.pop and pq.add. So there are three operations on the priority queue and I have already told you priority queue's operations do take logarithmic of k, where k is the size of the priority queue. So can I say I have three operations? That's three of logarithmic of k. So the overall time complexity is somewhere near about k into logarithmic k for the for loop plus n into k into logarithmic of k. Again n is assuming that all of the lists are of size n. n can be the worst possible length that can be given to you for that reason. What about the space complexity? Can I say it is bigot of k?"
+    },
+    {
+      "chunk_id": "L261_C23",
+      "start": 1694.28,
+      "end": 1774.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=1694s",
+      "text": "be given to you for that reason. What about the space complexity? Can I say it is bigot of k? I can because I'm just using the priority queue and at max it is storing k elements. I'm reusing the nodes so nothing extra over there. So this will be the overall time complexity and the space complexity. The previous solution, the better solution was taking somewhere in terms of q. If you look over here, it's somewhere in terms of square. Square into log. Right? So it's, this is the optimal solution. Got it? So let's quickly get back into the code editor. I give it the function signature. This is how you can define a minimum heap or a priority queue in C++. I basically have an extra check over here just in case if the list is not null, like it should not be null. It should have a head. Then only I'm pushing it. Right? After that I have a dummy node. I have a temporary. I go till priority queue is not empty. I get the top. I'm using the auto. I'm not defining it as pair. You can define it as a pair as well. After that pq.pop. If there is something after it, I add it to my priority queue again. Make sure temporary is pointing to it. Once you've done this, move temporary to the next. And at the end of the day, return dummy node.next."
+    },
+    {
+      "chunk_id": "L261_C24",
+      "start": 1774.0,
+      "end": 1792.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=1zktEppsdig&t=1774s",
+      "text": "temporary is pointing to it. Once you've done this, move temporary to the next. And at the end of the day, return dummy node.next. So I can go ahead and submit this and this will be running fine. So if you're still watching, I'm very sure that you've understood the brute, the better and the optimal. And if that is the case, please, please do consider giving us a like. And if you're new to our channel, please do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "lecture_id": "L071",
+  "lecture_number": 71,
+  "lecture_title": "BS-26. Find Peak Element-II | Binary Search",
+  "youtube_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g",
+  "chunks": [
+    {
+      "chunk_id": "L071_C1",
+      "start": 0.0,
+      "end": 78.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=0s",
+      "text": "Okay, so let's continue with our binary search playlist. But before that, hey, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we're going to solve today is finding a peak element, the second. Now before watching this video, please go back in the playlist and watch the part one where we have figured out the peak element in a 1d array. So what does this particular problem state, it states that instead of a 1d array, it will be given a 2d array. And it is clearly stated that none of the two adjacent cells will be similar. What does that mean? If it is two, it cannot be two, it cannot be two, it cannot be two, it cannot be two. So the problem is stating you're given a 2d matrix, where none of the two adjacent cells can be similar. Your task is to figure out the peak element and the part one of the problem, we had a 1d array, where the peak element was an element that is greater than its left counterpart, and it is greater than its right counterpart. So any element that was greater than its left and greater than its right was called as a peak element. Now in this particular problem, since a 2d matrix is involved, we will call an element a peak element only if it is greater than its left"
+    },
+    {
+      "chunk_id": "L071_C2",
+      "start": 78.96,
+      "end": 152.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=78s",
+      "text": "particular problem, since a 2d matrix is involved, we will call an element a peak element only if it is greater than its left counterpart, greater than its right counterpart, greater than its top counterpart and greater than its bottom counterpart. For an example, I can say 9 as a peak element. Why? Because it's greater than its top counterpart, greater than its right, greater than its bottom, greater than its left. Can I say 7 to be a peak element? Yes, I can see 7 to be a peak element. Why? Because 7 is greater than 3, the left, greater than 1, the top, greater than 2, the right. But on the bottom, we don't have anything. If you do not have anything, then it will be considered as minus 1. So the problem is clearly stating all the outer parts will be having minus 1. So thereby 7 can also be called as a peak element. Now in a 2d matrix, they can be simultaneous, like there can be multiple peak elements. Your task is to determine the row and column of any one of them. Yes, any one of them. For an example, you decide to return this peak element, it is on the row 1 and it is at the column 1. So you'll have to return 1, 1 in case you decide that you have to return for this one. So it's on the"
+    },
+    {
+      "chunk_id": "L071_C3",
+      "start": 152.36,
+      "end": 223.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=152s",
+      "text": "So you'll have to return 1, 1 in case you decide that you have to return for this one. So it's on the third row and it's on the fourth column. So you'll have to return 3, 4. So this is what the problem is stating. Now, if this problem comes up in an interview, what is the first solution? The first solution that I can think of is like the extreme brute force. I scan through every element. Yes, I will be scanning through every element in a 2d matrix. And whenever I'm standing at an element, I check for its left counterpart, check for its top, check for its right, check for its bottom. If it is greater than all the four counterparts, I will be calling that element as a peak element. So if I'm scanning through every element, I'm scanning through every element. What can be the worst possible scenario? I'll be scanning through everyone in the last element, isn't it? So it will be n cross n because that is the number of elements in a 2d matrix. And if I'm checking, whenever I'm standing on an element, I'm checking for four directions. So for every element, I'm checking in four directions. So can I say that the overall time complexity, the worst possible case will be n cross n cross 4. I can, right? Can I optimize this? I can, but by a slight margin."
+    },
+    {
+      "chunk_id": "L071_C4",
+      "start": 223.96,
+      "end": 297.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=223s",
+      "text": "worst possible case will be n cross n cross 4. I can, right? Can I optimize this? I can, but by a slight margin. For the best possible case, it will be, you just find out the first element to be the peak element. On an average, it'll be somewhere in between. Only in the worst case scenario, the last possible element will be a peak element. And that is when this particular complexity will appear. I can only optimize the worst case scenario. I cannot optimize the best case. I cannot optimize the average case. I can definitely optimize the worst case scenario. How can I say if I just return the largest element in the matrix, that will be my answer. Over here, nine, yeah, nine is the largest. If I simply return nine, that will suffice. So if I go by the approach of finding the largest element in a 2d matrix, even in the best case, I'll have to scan through every element from the first to the last. Even in the average case, I have to scan through every element. Even at the worst case, I have to scan through every element. So the complexity will boil down to n cross m, but this will be a complexity for best average and the worst case complexity. So not that much of optimizations. Now will this be accepted in an interview? No, they'll ask you to optimize this. So I've"
+    },
+    {
+      "chunk_id": "L071_C5",
+      "start": 297.72,
+      "end": 362.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=297s",
+      "text": "complexity. So not that much of optimizations. Now will this be accepted in an interview? No, they'll ask you to optimize this. So I've been asked to optimize n cross m and this particular problem, we have a 2d matrix and the total number of elements in the 2d matrix says n cross n. So the algorithm that we have figured out is equivalent to the search space, right? So we're searching for a peak element and they're asking us to optimize. I cannot go through every element because I've been asked to optimize n cross m. That technically means I have to trim down n cross m, which means I cannot go through every element. If I cannot go through every element, which means I have to delete, I have to skip some portion of the search space. And that is when you start thinking of algorithms and that's when binary search comes in because searching algorithm cannot go through everyone, have to skip. I think binary search is a potential candidate and I start thinking in the direction of binary search. So before I move on to the binary search approach, please, please make sure that you should have seen the part one of this particular problem in case you haven't seen it or is in case it has been a very long time. Please pause this video right away. Find the link in the description, go back"
+    },
+    {
+      "chunk_id": "L071_C6",
+      "start": 362.48,
+      "end": 437.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=362s",
+      "text": "is in case it has been a very long time. Please pause this video right away. Find the link in the description, go back and watch it, get the intuition again back in your head and then start watching it because whatever intuition I've used in the part one, I'll be reusing that over here. So if you remember in part one, I stated this thing that we're going to use binary search and whenever we are standing on the mid, that mid will be the peak element only if it's greater than both of its left and right counterpart. And that is very obvious because if you're standing at a peak and it's greater than left and right, that's a peak element. You stop. In case this mid element was smaller than the right part, which means imagine you're standing here and the right part, this is the right part. So it's smaller than the right part, it's smaller than the right part, which means there is definitely a peak. There's definitely a peak on the right. Just think it as a mountain range. Think it as a mountain range. If you're standing here, the mountain has to go up, has to go up before it goes down. Somewhere it will go down because it is clearly stated outside of the array, it is minus one. So even if, even if it"
+    },
+    {
+      "chunk_id": "L071_C7",
+      "start": 437.6,
+      "end": 516.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=437s",
+      "text": "it will go down because it is clearly stated outside of the array, it is minus one. So even if, even if it doesn't, doesn't goes down, I'm very sure there'll be a minus one at the outer portion of the array because that is stated. Thereby, whenever I'm standing here and the right portion is actually greater, I eliminate the left half, right, in the part one. And similarly, if the wind is smaller than the left, which means you're standing here, yes, you're standing here and this is your left and it is smaller than the left. Thereby, I'm very sure that this is the inclination of the mountain. Thereby, you delete the right half. This is the intuition that we followed in part one. We'll follow the similar intuition in part two as well. So let's try to solve it. What I'll try to do is, I have six rows. I'll take low to be standing at the zeroth row and the high to be standing at the fifth row. I'll try to have the algorithm. What is mid for the first scenario? The mid will be zero plus five by two. That's the second row. Which is the second row? Can I say this is the second row? Tell me one thing. In the second row, which element has the highest possibility of being the peak"
+    },
+    {
+      "chunk_id": "L071_C8",
+      "start": 516.12,
+      "end": 594.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=516s",
+      "text": "this is the second row? Tell me one thing. In the second row, which element has the highest possibility of being the peak element? Just think. Can I say whoever is the largest has the highest probability? Yes, someone else might have, mind me, but who has the highest probability? Can I say six definitely has the highest probability because that's the largest element? So I'll be like, okay, fine. Who's the max? Max is six. Where is it? Here. Let's see if this can be a peak element. I stand at six. It's greater. It's greater. It's greater. It's greater than all its three counterparts, but it's not greater than its left counterpart. Thereby, six cannot be a peak element. Hence, you say that six cannot be a peak element. I need to omit some portion because six can never be a peak element. And if you go on checking every element, you will not be able to optimize. So you don't go and check every element. You check for six and you say that this is not my peak element. Now the question arises. You took zero and five to be low and high. Now you're standing at second column. Do you delete the left half or do you delete the right half? Is the question because that is how we have"
+    },
+    {
+      "chunk_id": "L071_C9",
+      "start": 594.6,
+      "end": 674.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=594s",
+      "text": "Do you delete the left half or do you delete the right half? Is the question because that is how we have been doing binary search. I start going back to this particular intuition and I think, hey, listen, why is six not a peak element? The only reason is there is someone on the left who is greater is greater. There is someone on the left who is greater. Can I say if this is six and this is seven, is someone on the left who is greater? So maybe delete the right half. Yes. I go ahead and I say delete the right half. Yes, I delete the right half. The moment I delete, the high will add. The high will come here. Yes. So low will be at zero. High will be at one. Let me quickly erase it. So can I say low is at zero and high is at one. Thereby the mid will be zero plus one by two. That's zero. So if the mid is zero, who has the highest probability? Again, technically, if I take the max element, that will always have the highest probability. And four. Yes. Now I see four is greater than its left. Four is greater than two. Four is greater than its bottom. And at the same time, four is greater than its top. Thereby I say. The max element four"
+    },
+    {
+      "chunk_id": "L071_C10",
+      "start": 675.16,
+      "end": 750.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=675s",
+      "text": "is greater than its bottom. And at the same time, four is greater than its top. Thereby I say. The max element four is mine. Yes, is my peak element. And we stop. Yeah, I know nine nine could have been an answer. Seven could have been an answer. But we figured out an element and that is what we require. Just one. And that is where we stop. The part one was simple because it was a 1D array. It was easy to visualize. And the part two, you might have a couple of questions. The first one is why are we taking the max element? And the second one might be might be I'm not sure if you have this question. You said six is not the peak element and you eliminated the right half and you moved left on the basis that seven is greater than six. Taking that fellow might be your peak. But wait, wait, someone nine might be my peak. Seven might not be because seven is smaller than nine. So how are you managing this vertical alignment? Not vertical. How are you managing this alignment? Whatever it is. So let me first answer this question. Why am I taking max? So whenever I'm taking an element. When when do I call it a peak element? If it's greater than its top, greater than its bottom, left and right. Now, if I'm taking max in this case six,"
+    },
+    {
+      "chunk_id": "L071_C11",
+      "start": 751.24,
+      "end": 825.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=751s",
+      "text": "peak element? If it's greater than its top, greater than its bottom, left and right. Now, if I'm taking max in this case six, am I very sure that it will be greater than its top and bottom? I'm very much sure about it. I'm left out with two cases, which is the left and the right. That's what I have to check. That kind of kind of boils down to a 1D array case because I don't need to check for these cases. Kind of boils down to a 1D array scenario. Right. That is why I'm taking max because I'm trying to go in the direction of 1D. Got it. Now you're on the second question comes in. But Shreya, then how do you manage seven? Because it has a vertical alignment as well. This is what I'll now explain. Tell you one thing. If seven is greater than six, I'm saying seven might be my peak, according to the intuition. Thereby, I'm going left. Seven might be my peak, but seven is not. There's someone nine, which is greater. Tell me one thing. If seven is greater than six, which technically means, I repeat, which technically means seven is greater than everyone here. Right. Hence, nine is also greater than everyone here. Right. Hence, nine is also greater than everyone here. Indeed, because if seven is greater than six, anyone greater than seven will also be greater"
+    },
+    {
+      "chunk_id": "L071_C12",
+      "start": 825.64,
+      "end": 894.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=825s",
+      "text": "Hence, nine is also greater than everyone here. Indeed, because if seven is greater than six, anyone greater than seven will also be greater than this. Hence, this alignment is maintained. Even if you cancel off everyone, you're considering, I'm not saying seven is definitely my peak. I'm considering it to be my peak. And if it is not, someone else is greater than seven, it will always be greater than its right part and the bottom part is to check out the other parts. And eventually the algorithm will flow. You can take a bigger matrix, but just think on it. You'll start understanding it. The core is if the intuition for the part one is crystal clear, you'll understand this as well. So as usual, I'll be writing code in pseudocode. I'm not sure why people on Twitter, on Linden say that my courses in C++, I don't write code in C++. I write pseudocode. You have to understand this is a pseudocode. This is not C++ Java. Please, please, if someone is saying I teach in C++, correct them, tell them that Raj teaches in pseudocode version, and then you can write any code in any language. Got it? So we'll be writing the code. So I have a function which is given a matrix and assume it's given an N M. If not given, you can find it out. Can I say the low will be"
+    },
+    {
+      "chunk_id": "L071_C13",
+      "start": 894.92,
+      "end": 969.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=894s",
+      "text": "a matrix and assume it's given an N M. If not given, you can find it out. Can I say the low will be zero and the high will be the last column, which is M minus one. Very much sure. Let's quickly write down the binary search. The binary search will go from low, lesser than high. Correct? What will I do? And the first time I'll do low plus high by two to get them mid column. Can I say this will be the mid column? What am I doing? What am I doing? I'm trying to figure out where I get which row is my max element. Figure out that Rona, figure out the row where your max element is. Maybe write a function which gives you the max element. Send them the matrix, send, send them the N M and the column number. So I think you can write a function that returns the row number that returns this row number to stating the row number two as the max element. You can do that, right? So I'll write that. I'll show you afterwards in case you cannot. So I have the row at the mid. What is my next job? The check the left and the right. That's what I have to check. Can I say on the left, what will be left? What did we let think, think, think, think it's on"
+    },
+    {
+      "chunk_id": "L071_C14",
+      "start": 969.96,
+      "end": 1049.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=969s",
+      "text": "have to check. Can I say on the left, what will be left? What did we let think, think, think, think it's on the same row. So if I'm standing at mid, the left will be made minus one and the right will be made plus one. So I'll take the left and I'll take the right. So the left left, can I say that if made minus one is greater than zero in case I can easily take the left to be whatever row we are at and made minus one or else we can simply say minus one because that's a small number on the right. If mid plus one is still lesser than the boundary, in that case, we can take matrix of row of mid plus one or else on the outer part, we will always take minus one. So can I say if, if, if my value at matrix of mid, sorry, row and the mid column is greater than left and and greater than right, can I say this is my peak element? Yes, I can. And thereby you can always return the row and the mid as the column. Perfect. Else if the matrix is smaller than the left, which indicates the left one is greater, there is a possibility that the peak is on the"
+    },
+    {
+      "chunk_id": "L071_C15",
+      "start": 1049.72,
+      "end": 1111.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=1049s",
+      "text": "is smaller than the left, which indicates the left one is greater, there is a possibility that the peak is on the left. I say high equal to mid minus one or else I will go the opposite saying low equal to mid plus one. That's how it is done because if these condition is false, either this is false or this is that is how it is done. If this if is false, which means either this is false or this is false. So we just check for else if and the next else will be following. And at the end, you can just give a dummy return of minus one minus one. Why? Because it's a function, it will be it'll be expecting you to return something. So just give a dummy one. So in all the cases, you will be finding a peak element. That is what the question is stating. So don't worry about this. This is just a dummy line that you have to write in order to complete the execution of code. So let's quickly jump into the code editor. You can find the C++ code on the screen in case you want the Java, Python and JavaScript code. The article link will be in the description. You can definitely check it out. I am opening this because I wanted to show you how to find the max index."
+    },
+    {
+      "chunk_id": "L071_C16",
+      "start": 1112.44,
+      "end": 1181.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=1112s",
+      "text": "description. You can definitely check it out. I am opening this because I wanted to show you how to find the max index. It's very obvious. Just go through this entire column, which is having n rows. And then you figure out whatever is the max value, you store it at the end, you return the index. Pretty simple. And apart from that, everything is self explanatory. We have written the same on the iPad and we're returning the dummy. What I'll do is I'll quickly go ahead and submit this. What will be the time complexity of this? I'm doing a binary search. So can I say I'm doing a binary search on the number of columns? I can. So what will be it? It will be logarithmic base to m for sure for binary search. And on every binary search, I'm scanning through entire, yes, entire column to find out the max. So the column length is n. Can I say me go off n into logarithmic base to m is my time complexity. What about the extra space? I'm not using any extra space. So me go fun is my space complexity and this will be the most optimal solution. So this will wait for this problem. In case you've understood the entire intuition, the solution, please do consider giving us a like. And if you haven't checked out our merchandise store, the link will be in the description."
+    },
+    {
+      "chunk_id": "L071_C17",
+      "start": 1181.72,
+      "end": 1201.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGGp5XBzC4g&t=1181s",
+      "text": "solution, please do consider giving us a like. And if you haven't checked out our merchandise store, the link will be in the description. And yeah, if you're new to our channel, do consider subscribing to us. If you haven't followed me on Twitter, Instagram, LinkedIn, all the profile links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye, take care."
+    }
+  ]
+}

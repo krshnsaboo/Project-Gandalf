@@ -1,0 +1,127 @@
+{
+  "lecture_id": "L315",
+  "lecture_number": 315,
+  "lecture_title": "Implement LFU cache in C++/Java  | Leetcode(Hard)",
+  "youtube_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE",
+  "chunks": [
+    {
+      "chunk_id": "L315_C1",
+      "start": 0.0,
+      "end": 73.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=0s",
+      "text": "So please make sure before understanding the coding implementation of the LFU cache, you watch out the explanation of the LFU cache, like how have I implemented it. I will be leaving the link of the explanation in the description. And also before watching out the LFU cache code implementation, it's highly recommended that you should definitely watch out my LRU cache coding implementation because it's an extension of that LRU cache. So what we will do is we'll initially keep a struct node and this node will be containing key, value as well as count. So these are the three stuffs that we will keep. So this node has an X pointer as well as a previous pointer. And I've written a constructor which initializes key as a given key and value as given value and make sure the frequency is one. So this is the node. Now we will be requiring a list. Now you can definitely use a list in C++ STL, but if you're in an interview, they will ask you to implement that list. So it's better that we check out the implementation of list also. So what I'll do is I'll create a list. And I'll keep the size of that list just in order to understand what is the size of the list at every moment. So initially what I'll do is I'll have a head tail."
+    },
+    {
+      "chunk_id": "L315_C2",
+      "start": 73.0,
+      "end": 134.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=73s",
+      "text": "to understand what is the size of the list at every moment. So initially what I'll do is I'll have a head tail. As you know, in the LRU cache, we had a head and we had a tail and the head was initially pointing to tail and the tail's previous was pointing to head. So that is what we will do and we'll keep the size of the list as zero. Now this head and tail was taken just to avoid, if you remember, writing a multiple if else check conditions of null. So this is add front when we try to add in front. Remember when you try to add in front, you have to increase size. Now this thing I've already explained. This is a simple add front when you are given a node and you have to add it right after head. And this is remove node. When you're given a node and you have to remove that node, any node you're given, you have to remove it. So size will decrease. So this is your list's implementation where you have add front function and the remove node function, which gives you any node and you can easily remove it. Now, as you know, in the explanation, I told you we will be using a couple of maps. One is the keynote map while the other one is the frequency list map. So this is the keynote map and this is the frequency list map."
+    },
+    {
+      "chunk_id": "L315_C3",
+      "start": 134.0,
+      "end": 201.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=134s",
+      "text": "keynote map while the other one is the frequency list map. So this is the keynote map and this is the frequency list map. And I also know there is a maximum size of cache that we can have, which will be given to us and will be storing a minimum frequency, which is always a minimum frequency and the current size of the cache. So these are the declarations that you have to do before starting to implement. So the constructor will be called of LFU cache and they will give you the capacity. So make sure you initialize that to maximum size cache and these things are initialized to zero. Right after that, we know there will be a couple of functions get as well as put. So in order to implement the get function, what we do is if it's present, as you know, if it's present, then what we did. So we will get the node. And where can we get the node's address? Directly, we can access the hash map and we will tell them, please give me the node address and you'll give it. And after that, we can easily get the value from node.value because the node was storing the value. But if you remember, what did we do? We made sure that that node was updated in our hash map of frequency list because it has been accessed. So the frequency will be changed and the frequency will change."
+    },
+    {
+      "chunk_id": "L315_C4",
+      "start": 201.0,
+      "end": 269.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=201s",
+      "text": "updated in our hash map of frequency list because it has been accessed. So the frequency will be changed and the frequency will change. It will move to the other doubly linked list. So just assume this is update frequency list map. We can see the implementation. Let's check out the implementation as of now only. So this is a node that we have passed on and we are asking you to update it to the next frequency. So at the first step, what we do is we take it out of our keynode map because it was storing a node. So let's just take it out. And right after that, what we do is wherever that node was present and the hash map in the list, please make sure you remove it. And the list is very simple to access. Just get the frequency. Once after you get the frequency, so frequency of list of map of frequency will give you the list. Of that list, make sure you remove node and the node you can pass it. So you can easily get the list and out of that you can remove it. You know one thing, after removal, if that node's count was minimal frequency, and after removal, if the list size becomes zero. So let's say you're removing from the least frequency, like whichever was the least frequency guy from there, you have removed this node. So that guy will no more be a least frequency, correct?"
+    },
+    {
+      "chunk_id": "L315_C5",
+      "start": 269.0,
+      "end": 337.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=269s",
+      "text": "like whichever was the least frequency guy from there, you have removed this node. So that guy will no more be a least frequency, correct? And the next guy will be a least frequency. So just increase it by plus one. So that's the condition check. Right after that, what you'll do is you'll create a next higher frequency list. And you'll check if there exists. Yes, if there exists the next frequency, because you have now removed. The current frequency has been removed. You have to check for the next. So you'll check if there exists. And if there exists, you'll simply initialize that to this guy. So the list is ready of the next frequency. Once it is ready, you can increase the nodes count. And once you've increased it, where did you insert it in the list starting? So you inserted into the list starting. Once that is done, you have to go to the, uh, your frequency list map. And you have to tell that this is my list because now I've added someone. So the list has been modified. This is my new list. So you can definitely store it according to your frequency. Right after that, since this is the node that you have done, you can definitely just assign it to keynote back again. So that's how the update frequency will be. Anytime you are basically trying to access, like you're accessing a node. So the frequency will change."
+    },
+    {
+      "chunk_id": "L315_C6",
+      "start": 337.0,
+      "end": 393.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=337s",
+      "text": "that's how the update frequency will be. Anytime you are basically trying to access, like you're accessing a node. So the frequency will change. So make sure this logic is implemented. Let's come back to over here. So after you have implemented the logic, you have to return the value. Now, just in case this if would not have been executed, that means that a key is not present and you can definitely return minus one. That's how you'll implement the get function. And that's a big of one function, isn't it? Because we're just using a hash map. I know the hash map is login, but what are we using? We're using an integer, right? So that can be also converted to an array that you keep an array of list. So that is okay. We can call it as a big of one hash map because the integer sizes are not that big. The frequency will not go so big. So once you've seen that, let's come back to the put function. So in the put function, we can see that we have a key as well as we have a value. So we're given the key and value. Now, you know, one thing, if just in case of the maximum size of cache allowed is zero, that means you cannot enter an element. This is one of the edge cases that lead code you have to give this."
+    },
+    {
+      "chunk_id": "L315_C7",
+      "start": 393.0,
+      "end": 463.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=393s",
+      "text": "is zero, that means you cannot enter an element. This is one of the edge cases that lead code you have to give this. So you'll return because it's not possible if the cache doesn't have any size, like maximum size allowed is zero. You cannot write after that. What you'll say is, is it, is it already present? If it is, if it is already present, it becomes a very simple task. What you'll do is you'll just take the occurrence of that. So you'll get where that node exists from keynote map. Once you've got that, you just update the value. And since you're accessing this node, we'll again use the same logic that we used during the get because you're accessing it. So the frequency will increase and it will go to the next frequency list. So this will make sure that it goes to the next frequency list. What if it, if it doesn't exist, if it doesn't exist. So we'll come to this else and it'll check is our current size equivalent to the max size. If it is, you will get the list. OK. And what we have got is the list of the minimal frequency, which was the minimal frequency. Get it. Once you've got it, make sure you erase. Yes, you erase list.tail.previous.key. Why? Because you've got the list of minimum frequency and there might be a lot of elements in that list."
+    },
+    {
+      "chunk_id": "L315_C8",
+      "start": 463.0,
+      "end": 529.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=463s",
+      "text": "Yes, you erase list.tail.previous.key. Why? Because you've got the list of minimum frequency and there might be a lot of elements in that list. You know, you have to delete the LRU, the least recently used and which is the least recently used. If you remember LRU's explanation is the least tail the previous and that key you can easily erase. So once you've erased it, you know, one thing, the node has to be removed. So remove that node from the list. This is the list frequency list of map of frequency. And out of that, remove the previous node of tail because that is the LRU node. Once you have removed, you can definitely decrease the size. OK. So that is how you will make sure that you have removed it from your list of minimum frequency. OK. Now it's time to check out the next thing. So once you have removed it, right. And you know, you are in this else. Can I say if the element was not found, then only I'll come to this else. What does that signify? That signifies the minimum frequency will definitely be one because it's a new element. And every time a new element comes, the minimum frequency becomes one. So you'll do that. Right. And what about curve size plus plus? Because you're inserting an element. So it's a new element. So the curve size will increase again. So please make sure the curve size is increased."
+    },
+    {
+      "chunk_id": "L315_C9",
+      "start": 529.0,
+      "end": 588.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=529s",
+      "text": "inserting an element. So it's a new element. So the curve size will increase again. So please make sure the curve size is increased. So right after that, you have to insert a new element, create a list and make sure that if the minimum frequency one is not there, if it is, if it is there, just take that list or if it is not there, you can create a new list. Very simple. Once you've done that, create a new node. And you know, whenever inserting it, you have to insert it into the front. Insert it. Once you've inserted it, store the address at key node. Once you've done that, please make sure you initialize that list to the corresponding frequency. So this is how you'll do the put operation. Again, a big O of one because the hash maps can work in big O of one. Since the key values are very small, if you think it will be log in, you can definitely use something like arrays because integers are very, very small. So you can use arrays of nodes in order to store. Arrays of a node and arrays of a list you can definitely use in order to access them in big O of one. But in an interview, hash map will also work. So that's not a big deal. So this, this is how you can implement the C++ code. And this is a tested and lead code."
+    },
+    {
+      "chunk_id": "L315_C10",
+      "start": 588.0,
+      "end": 658.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=588s",
+      "text": "that's not a big deal. So this, this is how you can implement the C++ code. And this is a tested and lead code. You'll find the code link in the description. So in order to implement the Java solution, I'll highly recommend that you should watch the LFU's explanation as well as the code explanation of LRU because the idea of LFU cache implementation has been derived from LRU. So what we do is we keep a capacity, we keep a current size, minimum frequency. Capacity tells you what's the maximum frequency that a cache can have. Current size tells you what is the initial, like present size of your cache. Minimum frequency tells you which is the minimal frequency, which is the minimal frequency that is currently present. And we keep a map. One is the cache map and the other one is the frequency map. The cache map is basically saying the key is present at this node. And this is saying this frequency is having this link list. So what we will do is we will implement the link list. So first of all, let's see the constructor. Constructor takes the capacity and what it does is it initializes capacity to capacity and current size to zero, minimum frequency to zero, creates the hash map. So that's a basic constructor that will be called. Right after that, let's check out the get function."
+    },
+    {
+      "chunk_id": "L315_C11",
+      "start": 658.0,
+      "end": 724.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=658s",
+      "text": "zero, creates the hash map. So that's a basic constructor that will be called. Right after that, let's check out the get function. So what we do in get is we will say, can you cache, can you just check out if this exists, this key exists. If it doesn't exist, we are going to return one. And if it does exist, we definitely need to update the node. What does update the node means? It means we have to, because this is a node which has been accessed, right? So the frequency will increase of this node. So that is what we will do. Let's check out the update function. So what we did was we took the frequency of that node, right? Once you've taken this frequency, we took out the list that belonged to that frequency. Correct? And we removed this node because the guy will be having a frequency increased. So it will get removed from its current list. So please make sure you remove it. After removal, it got removed from a frequency, right? Frequency list. So if that frequency was the minimum frequency and the list turned out to be zero after removal, that means it was removed from a list, which was the minimal frequency list, and now it doesn't have any element. So the minimum frequency will be the next minimum frequency. It'll just increase by one. So you increase it by one."
+    },
+    {
+      "chunk_id": "L315_C12",
+      "start": 724.0,
+      "end": 785.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=724s",
+      "text": "have any element. So the minimum frequency will be the next minimum frequency. It'll just increase by one. So you increase it by one. And what we will do is right after that, you know, the current node frequency will increase because it has been accessed. This node has been accessed. So the frequency will increase. So once you've increased it, now you know the frequency has increased. So this node will go to the increased frequency. So get the link list, get the doubly linked list from your frequency map for this given frequency. If it exists, you will get this. If it doesn't exist, you'll get a empty doubly linked list. Once you've got this, you know you have to add node. So just add it on to the front of your new list. Once you've added it, make sure you put it into your frequency map saying this frequency has a new list because I've added a add node. So this is how you will say update node. So once you have updated the node, you need the value. So you can definitely say current node.value will return the get. So that's, that is how this is implemented. Assuming that the hash map generally works in Big O of one, if the keys are very small, as in this case, I can call it as a Big O of one, get function."
+    },
+    {
+      "chunk_id": "L315_C13",
+      "start": 786.0,
+      "end": 847.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=786s",
+      "text": "one, if the keys are very small, as in this case, I can call it as a Big O of one, get function. If you think it's a login, you can definitely implement an array of integer doubly linked list node and an array of integer and a list so that you can access in Big O of one. Now let's come back and check out. So in the put stuff, what we can see is we have a key and a value. So we are given a key and a value. So what we do is we basically check the capacity initialization. If the capacity is given as zero, the initial capacity of the hash is given as zero. So we will say it's not possible. Okay. The next step we do is does our cache contains this key? Does it contain? And if it contains, it's a very simple thing. We will just take it. Correct. And we will just initialize the new value. Done. And after that, since you have accessed this key, so the frequency will increase. If it increases, it will go to the next frequencies list. So, you know, you have already written a function for that. Let's call this because you're accessing a key. Let's call it. That will do its job. And right after that, what you'll do is you'll go to the else. In the else, what you'll do is, you know, your curve size will increase because there"
+    },
+    {
+      "chunk_id": "L315_C14",
+      "start": 847.0,
+      "end": 912.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=847s",
+      "text": "you'll do is you'll go to the else. In the else, what you'll do is, you know, your curve size will increase because there is new element that has come in. Once it has come in, if you see the curve size has increased, like it's greater than its capacity. Okay. It's greater than its capacity. What do you know is it's already full. So you have to remove someone. So in order to remove someone, what you'll do is whichever is the LFU, the least frequent. So you'll get that frequencies list. And you'll say in that frequency list, there might be multiple variables, correct? There might be multiple guys. So you make sure you remove the previous, else the previous, because if you remember LRU's implementation, that tailed the previous was the guy that was the least recently used. So first get the frequency list out of them. There will be many. Remove the last guy. So once you have removed the last guy from your cache, make sure you remove that from the list as well. And once you have removed that, your curve size will decrease by one because you have now removed it. Now can I say the mean frequency will be reset to one? Why can I say that? Because if it was present, it would have gone to this if. If it comes to this else, don't you think it's a new element which doesn't exist previously."
+    },
+    {
+      "chunk_id": "L315_C15",
+      "start": 912.0,
+      "end": 974.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=912s",
+      "text": "it would have gone to this if. If it comes to this else, don't you think it's a new element which doesn't exist previously. So obviously if it's a new element, the frequency will be one and that will definitely be my minimum frequency. So I'll update it. What I'll do is I'll keep the key and value into a doubly linked list node. So once I've done this, I know I have to put this node in correspond to frequency one. So make sure you make a current list with either we will take the existing list or we will make a new list. So if there exists a list which has a frequency one, so we'll take it or we will make make a doubly linked list. Once you've done this, we'll take the curl list and we will add, yes, we will add this node. Once you've had this, we'll put it into a frequency map and we'll put it into a cache. This is how the put function will look like. And this is again a beacon of one solution. So now you must be thinking, how's this remove node looking? How's this add node looking? So it's a very simple thing. You create a doubly linked list node, right? And this is the normal node of class where you have key, value, frequency and a previous and a next. So if you remember, we always have a previous and a next of a node."
+    },
+    {
+      "chunk_id": "L315_C16",
+      "start": 974.0,
+      "end": 1037.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=974s",
+      "text": "key, value, frequency and a previous and a next. So if you remember, we always have a previous and a next of a node. So you create this very simple stuff and make sure the initial frequency is always one. So just make sure you keep it. Okay. Right after that, what you'll do is you'll create this doubly linked list. This doubly linked list will have its current size, will have its head, tail. If you remember the LRU cache, we always had head next pointing to tail. We had tails previous pointing to head, right? And this add is basically add at front. Okay. Add at front. So I've already explained this in LRU cache. How do you add it front? And after that, the list size will increase and remove is basically remove node. Remove is basically remove node. So you will remove the node, correct? So please make sure you remove the node. Once it has been removed, the list size will decrease. Added list size will increase, removed list size will decrease. So that's how you can implement the doubly linked list. This is how the node will be implemented. And that's how the get and update functions, get input functions will be implemented in a big O of one. So guys, I'll be leaving this code link in the description below. And this is a tested code at lead code."
+    },
+    {
+      "chunk_id": "L315_C17",
+      "start": 1037.0,
+      "end": 1063.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mzqHlAW7jeE&t=1037s",
+      "text": "of one. So guys, I'll be leaving this code link in the description below. And this is a tested code at lead code. So make sure that you can follow this code because it's a very, very clean code. So guys, I hope you've understood the C++ as well as the Java implementation. Just in case you did, please, please, please, please make sure you like this video. And if you're new to our channel, do consider subscribing. With this, let's wrap up this one. Bye bye. Take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L253",
+  "lecture_number": 253,
+  "lecture_title": "L17. Find the starting point of the Loop/Cycle in LinkedList | Multiple Approaches",
+  "youtube_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc",
+  "chunks": [
+    {
+      "chunk_id": "L253_C1",
+      "start": 0.0,
+      "end": 78.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=0s",
+      "text": "So let's continue with our playlist but before that, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is finding the starting node in a loop of a linked list. So what is the problem stating? It is stating that you'll be given a linked list. It might have a loop, it might not have a loop. In case it has a loop, you'll have to return me the starting point of that loop. Like in this particular example, I can say that this is my loop and this is my starting point. So you'll have to return me the entire node. You'll have to return me the entire node, not the value. What if it doesn't have a loop? In case it is a linear linked list and it doesn't have a loop, you will be returning null. This is what the problem states. Before I move on to the solution, please, please go back and watch my video on detecting a loop in a linked list. In that video, I have used the hashing technique for the brute force and for the optimal, I've used the tortoise and the hare algorithm. And in that video, I've discussed the intuition as well. So please, please go back and watch that video because the intuition is going to be extremely important if you want to solve this particular problem of starting node."
+    },
+    {
+      "chunk_id": "L253_C2",
+      "start": 78.16,
+      "end": 155.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=78s",
+      "text": "and watch that video because the intuition is going to be extremely important if you want to solve this particular problem of starting node. So I'll be leaving the video link in the description. Go back and watch it and then start this video. So what if this problem comes up in an interview? Your brain should always think of the extreme solution and that is maybe I start traversing. I go to the next, I go to the next, I go to the next, next, next, next, next, next, next, and the moment I reach a node twice, that is my starting point, isn't it? 15 is my starting point. Any moment I reach a node twice, that is my starting point. So I'll have to remember that I've seen it previously during the traversal. And what is the technique that helps you? Yes, hashing is the technique. So I'll be using the technique hashing in order to remember that I've seen this node previously. So maybe I can define a map data structure. What will be my key in map? I'm not storing values, I'm storing the entire node. So the entire node in Java node in C++ node star and integer. This is what I'll be storing. Why not the values? Why not 15? Why the entire node? What if this is 15? What will happen? It'll be like, okay, visit, visit, visit, visit, visit, visit, visit, visit, visit."
+    },
+    {
+      "chunk_id": "L253_C3",
+      "start": 155.48,
+      "end": 230.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=155s",
+      "text": "the entire node? What if this is 15? What will happen? It'll be like, okay, visit, visit, visit, visit, visit, visit, visit, visit, visit. You see a 15 which you have seen previously. So this is wrong because this is not your starting point. So you cannot store the data. You'll have to store the entire node into the map. So this will become your key. Yes, this will become your key. Remember this perfect will be given the head, right? This head will be given to us. We will not tamper it. Instead of it, we will take a temporary node. Let's start traversing. The first node will be one second, put it and then I can go to the next. The next node will be two. I can put it into the map. The next node will be three. I can put three into the map. The next node will be 15. I can put 15 into the map. The next node will be four. I can put four into the map and similarly I can keep going and you just keep putting it into the map. Keep traversing, keep traversing. And the moment you reach 15, the moment you reach 15, just make sure whenever you are putting it into the map, before putting it into the map, have a check, have a check. Is that node previously there? Is that node previously there?"
+    },
+    {
+      "chunk_id": "L253_C4",
+      "start": 230.18,
+      "end": 307.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=230s",
+      "text": "map, before putting it into the map, have a check, have a check. Is that node previously there? Is that node previously there? Whenever your temp reaches this 15, you check it and you find that this is already there. This is already there. You say, hey, it's already there. And this is the first node. This is the first node which is already there. I know if I keep traversing, I'll again find this also over there. But the first node which is already there is my starting point. This will be the hashing technique. If I have to write the code, it's very simple. What do you basically do is you take a map data structure and it'll be storing a node, node star in C++ and an integer. You can define your map as you wish. You take a temporary equal to head. What is the next step? You start traversing something like till temporary is not null. And after that, what's the first thing? Before you put it into the map, you check, hey, map, do you have this person? .find temp. Again depending on your language, you can use your functionality of map. You'll check in the map. Hey, are you there in the map? If he says yes, I'm there. I'm there in the map already. That means this is my starting point."
+    },
+    {
+      "chunk_id": "L253_C5",
+      "start": 307.62,
+      "end": 384.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=307s",
+      "text": "in the map? If he says yes, I'm there. I'm there in the map already. That means this is my starting point. That means this is my starting point. So this temporary is my starting point and I will be returning. What if it is not in the map? In that case, you will say map, can you just put this value in Java it has put. So you can write put and you can say, hey, can you put this value temporary and a value one with it? Or in C++ you can straight away say map of temporary equal to one, your wish. Once you have done this, it's time to go to the next. So you have a temporary equal to temporary.next and you'll keep traversing. Can I say one thing? This temporary equal to null will be executed if it is a linear linked list. So if it is executed in that case, you will be returning a null because it is a linear linked list. If the while loop is completed, if this is completed, you end up returning a null stating there is no loop in the linked list. So what will be the time complexity? Can I say it's a big O of n for the traversal because your temporary is basically starting from here and going across every node. So that is definitely big O of n."
+    },
+    {
+      "chunk_id": "L253_C6",
+      "start": 384.56,
+      "end": 455.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=384s",
+      "text": "the traversal because your temporary is basically starting from here and going across every node. So that is definitely big O of n. And if I go back to the inner section of the while loop, there's a find function, there's the insert function, two functions. So basically two operations. Two operations. And if your map is taking logarithmic, it will be logarithmic. If your map takes constant time, it will be constant time. I'll be leaving this empty because language to language, it varies. And I've discussed this in depth in the hashing lecture. Go back and watch it. What about the space complexity? Can I say it's a big O of n? Why? Because if you traverse, if you traverse, you end up putting everything into the map data structure. So that is a big O of n. So I can say that this will be my time complexity and the space complexity. This is where the interviewer will not be happy with this extra space and he'll ask you to delete this extra space. Can you do it? So how can we optimize it? In order to apply the optimization, we have to use the Tortoise and the hair algorithm. I've already discussed this algorithm in the previous lecture, that is detection of a loop. In case you haven't seen it, the link is in the description. Go back and watch it, please. So Tortoise and the hair algorithm."
+    },
+    {
+      "chunk_id": "L253_C7",
+      "start": 455.04,
+      "end": 532.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=455s",
+      "text": "In case you haven't seen it, the link is in the description. Go back and watch it, please. So Tortoise and the hair algorithm. And if you remember the slow was moving by one and the fast pointer was moving by two steps simultaneously. So initially the slow and the fast pointers were pointing to the head. So what was the first step? It was the slow was moving by one and the fast was moving by two. So let's do it. The slow moves by one. So it goes to the next node. The fast moves by two. So it goes to the next, next node. So this will be the first step. Done. Let's do the next step. Slow will again move by one and the fast will move to next of next. Two steps. Perfect. Let's quickly erase this. What is the next step? Slow and fast will again move. Let's quickly erase it. What is the next? Again, same. The slow moves here and the fast will move here. Perfect. Again, I'll be raising this. What is the next step? The slow moves by one and the fast pointer moves by two. Perfect. Let's quickly erase it. What is the next step? Slow moves by one and the fast moves by two. Perfect. They're closing by."
+    },
+    {
+      "chunk_id": "L253_C8",
+      "start": 532.28,
+      "end": 607.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=532s",
+      "text": "quickly erase it. What is the next step? Slow moves by one and the fast moves by two. Perfect. They're closing by. If you carefully see, they're closing by. What is the next step? The slow moves by one and the fast moves by two. Do you observe something? So basically they have collided. They have collided. So after the last step, we can see that the slow and the fast pointer are colliding and they're colliding at the same node. And if that happens, we know what does that mean? It means that there's a loop in that particular linked list. If they never collide, that means there is no loop. This lecture link is in the description. So the step one, yes, the step one of the algorithm is detecting a loop. That is very important because if there is no loop, there is no starting point. First we have to make sure that there is a loop in that linked list. So that is the step one of this algorithm. The step two is finding the starting point and this will depend if there is a loop. In case there is no loop, there is no starting point. So the step two is finding the starting point. I'll first tell you about the algorithm and then about the proof or intuition. So what I will do is in the step two, I'll take one of slow and fast pointer, one of"
+    },
+    {
+      "chunk_id": "L253_C9",
+      "start": 607.68,
+      "end": 685.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=607s",
+      "text": "the proof or intuition. So what I will do is in the step two, I'll take one of slow and fast pointer, one of them, and I'll place it at the head of the linked list. So the fast is standing at the collision point. The fast is standing at the collision point. Remember this. And the slow is standing at the head of the linked list. Now what I will do is I'll take the slow and the fast and move them simultaneously by one, one. Slow moves by one and the fast moves by one. That's the first step. In the second step, again move them by one, one. So slow moves here and the fast moves here. In the next step, slow moves by one, fast moves by one. And this is where you will see the magic. Yes, the slow and the fast pointers recollide. They're colliding again. And the point they're colliding is your starting point of the loop. Why? I'll tell you that. Do not worry. But as of now, did you understand the second step? I'll repeat. The second step is finding the starting point. What we did previously, the slow was here. We took it and placed it at the head. And then we move the slow and the fast by one step, one step, one step, one step. And eventually they collide and eventually they collide."
+    },
+    {
+      "chunk_id": "L253_C10",
+      "start": 685.96,
+      "end": 763.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=685s",
+      "text": "move the slow and the fast by one step, one step, one step, one step. And eventually they collide and eventually they collide. And it is guaranteed that they will collide. The place or the node where they collide is your starting point. Got it? So, before I move on to the intuition, I'll be writing down the code. Why? Because I want the code to be in your head so that when I explain the intuition, you can easily map it. Got it? So, what I will do is I'll try to write down the code. Step one, detecting a loop. Slow and fast pointers, slow pointing to head and the fast pointing to head. Let's keep them moving. And we know that we'll keep them moving till fast is not null. Already done in the previous lecture. Link is in the description. And fast of next is not null. It's for the linear linked list. And what do we do is, we basically say slow, can you move by one? So, slow says yes, why not? And we say fast, can you move by two? Says yes, why not? So, that's next and next. In case they are colliding, because they might collide at some point. That means there is a loop. That means there is a loop if they collide. And in case they don't collide, I can finish my while loop and I can go ahead and write"
+    },
+    {
+      "chunk_id": "L253_C11",
+      "start": 763.04,
+      "end": 841.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=763s",
+      "text": "a loop if they collide. And in case they don't collide, I can finish my while loop and I can go ahead and write return null which is stating that, hey, they never collided. And one of these were true, which means it's a linear linked list. Thereby you can return a null. So, we will be returning null in case there is no loop. What if there is a loop? In that case, we'll have to perform the step two. And what was the step two? The step two, if you remember, fast and the slow pointers were standing at the collision node. So, we took the slow and we moved it to the head and then we moved them simultaneously 1, 1, 1 till they collide. Same thing we will do. What we will do is, we will take the slow pointer, you can also take the fast pointer and place it at the head. And then we will try to move it step by step till they collide. So, I'll be like, hey, till they collide, which is basically stating slow is not equal to fast because if they haven't collided, can you move the slow to slow next? And hey, fast, can you move to next? So, this is what it will be. If I have to write it here. My bad. Yes."
+    },
+    {
+      "chunk_id": "L253_C12",
+      "start": 841.16,
+      "end": 918.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=841s",
+      "text": "can you move to next? So, this is what it will be. If I have to write it here. My bad. Yes. And in case, in case this collides, what do you know? The point at which they collide is your yes. You can return slow or fast because they are standing at the same node and this will be your starting point. We will discuss about the time complexity, everything, but I hope you have understood the code. Now it is time to understand the intuition. So the big question, why? Why is this algorithm working? If I go back to the code, we know this section, this section is for detecting a loop and we know the intuition of it because we have discussed it in the previous video. In case you haven't seen it, please, please, the link is in the description. But what about this one? This is the new section of code, which is the step two, that is finding the starting point. Over here, we're taking the slow and placing it at the head. And then we are saying we will move the slow and the fast pointer by one, one step. And we are sure that they will collide here. So the first question is, how are we so sure that they will collide? What if they don't collide? They might not collide, right? So the first thing is, how are we so sure that they will collide? That's the first question."
+    },
+    {
+      "chunk_id": "L253_C13",
+      "start": 918.24,
+      "end": 990.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=918s",
+      "text": "collide? They might not collide, right? So the first thing is, how are we so sure that they will collide? That's the first question. The second question, even if they're colliding, starting point, how are you so sure that that's the starting point? It might not be the starting point, right? So two questions. Why, like, how do you prove that they will collide? And the second, the collision point is the starting point. So let's try to prove it. I'm assuming that you have seen the intuition of detection of a loop. So you know that concept, right? So what did we do in the step one? We took the slow and the fast pointer and placed it at the head. And then according to the tortoise and the hare algorithm, slow moved by one and the fast moved by two steps. So if I ask you a very simple question, during that algorithm, like the tortoise and the hare algorithm, whenever slow is here, where will fast be? You'll be like, hey, slow is at a distance of three. So fast will be at a distance of six, twice. So it'll be like another three, another three, three plus three. Can I say this? So the fast pointer will be somewhere here. Step one, understood. Point to observe here is, if this distance, my bad, point to observe over here is, if"
+    },
+    {
+      "chunk_id": "L253_C14",
+      "start": 990.96,
+      "end": 1065.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=990s",
+      "text": "be somewhere here. Step one, understood. Point to observe here is, if this distance, my bad, point to observe over here is, if this distance is three, which is, let's assume this to be L1 from head to starting point. This is also three, which is the starting point to the initial of the fast pointer. I'm just taking L1. So L1 and L1 are same because if this is three, this will also be three. Proved. Proved. Rather taken. So if I ask you, what is the distance between the fast and the slow pointer? You'll be like, it is D. Let's assume it to be D. Right? We did it in the intuition of detection of a loop. So the distance is D and this distance is between fast and slow. So the distance is D. Tell me one thing, in which direction is fast moving? Fast moving towards slow, towards slow by a distance of two. Correct? So ideally, if it moves by two, the D should reduce by D minus two. But slow is saying, I will move away by one. I'll move away because slow is moving in this direction. So it'll move away."
+    },
+    {
+      "chunk_id": "L253_C15",
+      "start": 1065.06,
+      "end": 1141.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=1065s",
+      "text": "will move away by one. I'll move away because slow is moving in this direction. So it'll move away. So the overall distance between slow and between fast and slow is now D minus one after one step. What do I mean by one step? If the fast goes here and the slow goes here, you will see the distance now is three. Whereas previously the distance was one, two, three, four. Got it? Previously it is four. That has reduced to three. Why? Fast is moving to towards slow, where slow is moving one away from fast. So the overall reduction is minus one. Minus one. Got it? So we'll keep on doing this. It'll go to D minus two and eventually the distance between fast and slow will be zero. And that is the place where they will collide here. Yes, please mark it. They will collide here. Correct? They will collide here. Tell me one simple thing. Tell me one simple thing. Till they collide, so basically from D to zero, this is basically stating from here to here, right? That's when the movement was. So tell me one thing."
+    },
+    {
+      "chunk_id": "L253_C16",
+      "start": 1141.38,
+      "end": 1215.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=1141s",
+      "text": "this is basically stating from here to here, right? That's when the movement was. So tell me one thing. When the fast and the slow are moving and eventually the net distance between them is zero, what is the total distance that the fast pointer has covered? If I ask you, it'd be like 2D. It'd be like 2D because if the net distance was D, which was to be covered, it's getting reduced by one, one, one, one. And every time I was taking two steps. So the overall steps, the fast would have taken is 2D. It's 2D. Okay, perfect. What about slow? It would have taken D steps because I'm just taking one step at a time. So D to reduce to zero. So slow would have taken D steps. So can I now go back and see this, that hey, from here to the collision point, very important, from here to the collision point, the distance is D because slow was moving, sorry, because slow was moving away, away, away, away, four steps, D, I can. Let's see the initial configuration. L1, D. So can I say the length of the loop is L1 plus D? I can."
+    },
+    {
+      "chunk_id": "L253_C17",
+      "start": 1215.98,
+      "end": 1295.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=1215s",
+      "text": "the initial configuration. L1, D. So can I say the length of the loop is L1 plus D? I can. The length of the loop is L1 plus D. So the length of the loop is L1 plus D. And if this is D now, if the distance between this starting point to the collision point is D, what is this distance? It's simple, L1 because the length of the loop is L1 plus D. It's simple, L1. Now tell me one thing. I've written down all the distances. You have understood the distances. What was the step two of the algorithm? The step two was we took slow over here and then we moved both by one and eventually they collided here. Eventually they collided here. Why? Because we are moving them by one, one, one. This is L1, this is L1. The distance is same. The distance is same because the distance is three, because the distance is three, they will collide. They will collide. I hope you have understood the proof. So I have answered both of your questions. In case you're still finding it tough, take a pen and paper and again re-watch it. You will understand this in depth. So the one thing I can challenge you is you can check out all the other YouTube videos and none of them. None of them will be teaching you this particular intuition with this much of clarity and most"
+    },
+    {
+      "chunk_id": "L253_C18",
+      "start": 1295.52,
+      "end": 1352.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=2Kd0KKmmHFc&t=1295s",
+      "text": "other YouTube videos and none of them. None of them will be teaching you this particular intuition with this much of clarity and most of them are like step one, detecting a loop, step two, moving them one, one place and wherever they collide, that's the starting point. That's not how you learn. You need to understand the intuition because that is the only thing that will open up your brain and that is very, very important. So please watch lectures where people explain your intuition rather than step one, step two. Avoid those kinds of lectures. Got it? So without wasting time, let's quickly get back into the code editor. It's the exact same code. Let the submit button and it will be submitted in case you want to try out the Java code. It's very simple. Just remove these pointers and the null will go at lower caps and this will become this. That's it. That's the only change. The entire code stays the same. In case you want the Python and JavaScript code, the link will be in the description. So if you're still watching, I'm very, very sure that you've understood everything and if that's the case, please do consider giving us a like and if you're new to our channel, do consider subscribing as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

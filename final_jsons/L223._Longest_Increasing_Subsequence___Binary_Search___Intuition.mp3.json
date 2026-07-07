@@ -1,0 +1,106 @@
+{
+  "lecture_id": "L223",
+  "lecture_number": 223,
+  "lecture_title": "DP 43. Longest Increasing Subsequence | Binary Search | Intuition",
+  "youtube_url": "https://www.youtube.com/watch?v=on2hvxBXJH4",
+  "chunks": [
+    {
+      "chunk_id": "L223_C1",
+      "start": 0.0,
+      "end": 79.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=0s",
+      "text": "Hey everyone, welcome back to take you forward. So today we will be solving the problem longest increasing subsequence Using binary search in the previous two videos. We have solved using recursion memorization space optimization tabulation and an algorithmic approach These approach has been covered in the previous couple of videos, but we did see that the constraint was n equal to 10 to the power 5 and The best we could do was time complexity of big O of n square and a space complexity of big O of n this was the best that we Had done till now, but if n is 10 to the power 5 n square is N to the power 5 square is 10 to the power 10 operations, which is definitely giving you RTLE So we definitely cannot do this, right? So That's where something like binary search comes in. Can we find LIS using binary search? Now you'll find a lot of videos where the intuition is missing like I I went through a lot of videos But the intuition was missing So in this video My main focus will be to give you the thought process because once you get the thought process the algorithm is very very simple so prerequisites are you should be knowing binary search and There is a low bound and there's an upper bound video in"
+    },
+    {
+      "chunk_id": "L223_C2",
+      "start": 80.56,
+      "end": 154.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=80s",
+      "text": "simple so prerequisites are you should be knowing binary search and There is a low bound and there's an upper bound video in My channel I'll be putting the link in the description go back and watch it and after that come back and watch this video If you know low bound it's well and good so let's let's get started what is first of all, what is LIS? You know, what is longest increasing subsequence like? You can call a subsequence like 1 8 4 6. This is a subsequence not increasing You can call something like 1 8 9 as an increasing subsequence increasing, okay Similarly you can call something like 1 4 5 6 9 as the longest increasing subsequence of length 5 Subsequence, you know a contiguous or a non contiguous part, but it should follow the order like you can't be like 1 8 7 6 this is not a subsequence because 8 is Before 7 but actually 7 is before 8. So this is not a subsequence Okay, so we saw that the longest increasing subsequence over here was 1 4 5 6 & 9 Okay. So, how do you actually? Solve this particular problem. That's that's a big so how do you approach this problem? So what I will say is okay"
+    },
+    {
+      "chunk_id": "L223_C3",
+      "start": 154.12,
+      "end": 232.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=154s",
+      "text": "this particular problem. That's that's a big so how do you approach this problem? So what I will say is okay Let's let's try to go across every element and try to form subsequences. That's that's my thinking So I'll be like, okay initially when I'm at 1 Okay, let's form a subsequence with 1 Makes sense. Next. Let's go to 7 Do I need to form a new subsequence with 7 or can I just attach over like attach it over here? The answer to that is let's attach it over here Why because if you form a new it will be of length 1 but if I attach it it is still increasing It is still increasing and it is having a length 2 Perfect. Let's move to 8 now if you're having 8 Can you attach it over here or will you prefer this you can because 8 is still greater than 7 perfect It is still greater than 7 so I've attached next I go to 4 So I see there is 4 I see there is 4 but if I attach it over here It will not be increasing because 8 is greater than 4. It will not be increasing So I can either start with 4 but my brain says but Trevor There is one which you can take and you can attach with 4. So like, okay Make sense"
+    },
+    {
+      "chunk_id": "L223_C4",
+      "start": 232.68,
+      "end": 312.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=232s",
+      "text": "my brain says but Trevor There is one which you can take and you can attach with 4. So like, okay Make sense Next I go to 5 the moment I go to 5 Can I attach it here? The answer to that is no, Trevor. You cannot Can I attach it over here? Yes, Trevor you can Perfect Next I go to 6 I Have a 6 can I attach it over here? No, can I attach it over here? Yes Perfect Next I go to minus 1 Where can I attach it? Now my brain says we can't attach it. We cannot attach a minus 1 here We cannot attach a minus 1 here, but we can start fresh Will minus 1 have anything before No, it's the smallest So I will have minus 1 right before this perfect Next I go to 9. So when I go to 9 when I go to 9, I Can attach 9 here. I can attach 9 here. I can attach 9 here. So Assuming I attach to everyone assuming it's over. So once you end it you see this is a length 4 You see this is a length 5 you see this is a length 2 and Eventually the length 5 is the longest one and that is the length of the alias"
+    },
+    {
+      "chunk_id": "L223_C5",
+      "start": 314.72,
+      "end": 393.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=314s",
+      "text": "this is a length 2 and Eventually the length 5 is the longest one and that is the length of the alias But will you actually go across and Generate all these subsequences because it's it's gonna be very hectic and it's gonna be taking a lot of time because if you make New subsequences at every junction. It's gonna take up a lot of space because if you're aiming to Make a new subsequence at every step. It's gonna take up a lot of space So we will definitely not move this way, but this is an intuition which helps us to think of binary search So tell me one thing like I don't need I don't need to print LCS. I just need 5. I just need 5 So can I do something like this? When I was carrying 1 7 8 and This was done when 4 came in. Can I say 1 7 8? Let's rewrite 4 over here. Can I do something like this? Rewrite rewrite the same subsequence. Can I do something like this? The answer to that is yes, right? We can do it and let me show you what I am actually talking about Because we're just concerned about the length We just concerned about the length We are at 1. Let's have 1 we are at 7. Let's have 7 we are at 8"
+    },
+    {
+      "chunk_id": "L223_C6",
+      "start": 394.24,
+      "end": 470.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=394s",
+      "text": "just concerned about the length We are at 1. Let's have 1 we are at 7. Let's have 7 we are at 8 Let's have 8 we are at 4 instead of making 1 4 Instead of making 1 4 since we are actually not concerned about the alias and we're concerned about the length we will say Where can 4 fit in in the existing? subsequence I say 4 can fit in here So what you do is remember what you do is you take the 7 out? You take the 7 out and you say 4 can fit in here Remember this that it does not mean 1 4 8 is a subsequence. No, I'm just making sure instead of storing 1 4 separately I stored 1 4 right over there to save space even if someone like 9 comes in and Because I know if 8 is there why is 8 here because previously 7 was there because previously 7 was there That's the reason 8 is here. That is something which we definitely know. So We are sure that before 8 there is something smaller, which is 7 Yeah, we have overwritten it, but we are not concerned about the subsequence That's why what I did is instead of creating a new I overwrote the 7 I overwrote the 7 to 4 because it's okay to overwrite because you're not"
+    },
+    {
+      "chunk_id": "L223_C7",
+      "start": 470.68,
+      "end": 546.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=470s",
+      "text": "instead of creating a new I overwrote the 7 I overwrote the 7 to 4 because it's okay to overwrite because you're not We're not concerned about the alias. We're concerned about the length. So I overwrote it at that place itself. Let's move across to the next which is 5. Okay, where can 5 be? I either go and create like 1 4 5 or I either say let's not create and instead of that let's Omit 8 and write 5 because either you're carrying 1 7 8 or either you are carrying 1 4 5. It still makes same sense, right? Perfect. Let's go to 6. The moment I go to 6, I'm like, okay fine. Where can I have 6? Right after this Amazing. The moment I have minus 1, where can I have it? I can definitely have it right over here Replace it. So I replace it over here saying not 1 it's going to be minus 1. Perfect. Where can I have 9? I say right after this So this is not the subsequence This is definitely not the subsequence but this gives you the length. The length of the final array will be your answer which is 5 Because you replicate it by putting those values. You replicated the same space by putting those values That's how you can easily do it. Now, why binary search?"
+    },
+    {
+      "chunk_id": "L223_C8",
+      "start": 546.68,
+      "end": 626.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=546s",
+      "text": "putting those values. You replicated the same space by putting those values That's how you can easily do it. Now, why binary search? Again, very straightforward if you like if I again just omit this off I'll be just omitting this Why binary search? Again a very simple one because initially you had 1 then you had 7 then you had 8 The moment you got 4 you want to insert 4 if there is a 4 you insert it at that place or you say hey Listen, there is no 4 So please go across and insert it right after 4 right at the first element after 4 at the first element After 4. Can you please do it for me? Right at the first element after 4. So you since you know, this is sorted Since you know, this is sorted in order to insert 4 here You can simply do a binary search and binary search will say 4 will go here. Next you go to 5 binary search will say First element after 5 that's 8. Binary search will say I'll go here 6 First element after 6 no one so goes here. First element after minus 1 That's this first element after 9. That's this that's how you get the length. That's how you replicate. That's the thought process simple thought process behind the binary search solution So in C++"
+    },
+    {
+      "chunk_id": "L223_C9",
+      "start": 627.12,
+      "end": 695.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=627s",
+      "text": "you get the length. That's how you replicate. That's the thought process simple thought process behind the binary search solution So in C++ There exists a function like lower bound like you might argue. Okay, let me just give you one more example Okay, so let me give you one more example if array is given something like 1, 4 5 then a 4 then a 2 then a 8. So what will happen in this case because you see repeated elements So initially you are at 1 so you don't have anything. So you put it across here Perfect. Next you have a 4. Yes next you have a 4. So you again right after 4 So that's where you put. Next you have a 5 you put here. Now when you look for 4 again If there exists a 4 you just rewrite it over there because that's what you do You don't put it across anywhere else. Next you give a 2 so this is where it goes. Next you get a 8 This is where it goes. So this is the length. Length is going to be 4. Again, is it practical enough? Yes, because 1, 4, 5, 8 can be the subsequence Can you regenerate the subsequence via binary search? The answer is no then you have to store a lot more things but you can easily get the length by accessing the length because"
+    },
+    {
+      "chunk_id": "L223_C10",
+      "start": 696.0,
+      "end": 772.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=696s",
+      "text": "answer is no then you have to store a lot more things but you can easily get the length by accessing the length because You optimize space instead of carrying different subsequences you reuse that space and you created it So it's time to actually now go back and code it So in order to find remember this our main intention of binary search is If there is an element as array of I Find array of I Like in this case if you see when I insert it 4 I insert it at the place of 4 I insert it at the place of 4 right? So either find array of I and if this is not found find first greater Again the first element that's greater than array of I that's it and in C++ this can easily be done using a function a lower bound the lower bound if you are doing a lower bound on any array it gives you the first index it gives you the index of array of I if exist or Gives you the first index Which is greater than array of I in order to understand it in depth you can watch the video link in the description Okay. So guys it's time to check out the code now"
+    },
+    {
+      "chunk_id": "L223_C11",
+      "start": 772.88,
+      "end": 840.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=772s",
+      "text": "depth you can watch the video link in the description Okay. So guys it's time to check out the code now So in the in the iPad if you see there is one initially, right? So what I'll do is I'll put this one into some temporary. Okay temporary So as I can know that what I'll do is I'll just declare a temporary as the initial stuff that I'll do and Let's put the first guy into the temporary because I know that's where I start off so array of 0 will go in and now I can initially start from I and I equal to 1 and I can just go on till I plus this Now whenever in the next step I get 7, what do I do? I just take 7 added next time whenever I get 8 I add it Why because 7 was greater than 1 8 was greater than 7 So just make sure if this guy is greater than the last guy now this guy is greater than the last guy Don't do anything just go across and say hey listen, can you just go across? This guy that's perfect. If it is not then you need to put a binary search on the index so I in the index you can easily do a binary search like lower bound and The temporary space is this so just do a begin"
+    },
+    {
+      "chunk_id": "L223_C12",
+      "start": 841.0,
+      "end": 899.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=841s",
+      "text": "the index you can easily do a binary search like lower bound and The temporary space is this so just do a begin Comma temporary dot end and you're looking for array of I that's what you'll do a binary search and you can just subtract it That's how easy the binary search will be looking perfect Once you've got the index just go to temporary index and say this is where this guy will replace Once you have done this you can directly return the temp dot size Perfect. And in this way if you run this code, it should be I think it should give you the correct answer My bad temp dot begin this will be temp dot begin now it should give you the correct answer So we did a mistake. This will be array of I and I should be fine now And you see all the test cases are running absolutely fine Like this will take some more space So what you can do is you you know Every time you're pushing this is like the initial length is 1 and every time you're inserting 1 the length will always increase So yeah, that's that's how you can also maintain the length of the alias and you can just run this like I don't want to Do a temp dot size right at the end because it might end up taking a bit more space"
+    },
+    {
+      "chunk_id": "L223_C13",
+      "start": 900.2,
+      "end": 970.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=900s",
+      "text": "like I don't want to Do a temp dot size right at the end because it might end up taking a bit more space So bit more time rather so now if I submit this you will see that this is indeed running absolutely fine Yeah, this is how you get the hundred percent solution. So That's what the time complexity that we did use it was B go of n into a binary search login What is the space? B go of n now a lot of people will say that Shriver. Why don't you? Use the same array to rewrite but in interviews is generically not perfect Not preferred to use the same array instead of that try to create a new temp But please please keep in mind the temporary array at the end of the day is not the alias is not the alias Okay, we're just using it to store like instead of creating one seven eight one four We're just using this for to be stored here. That's it. We are not Generating the alias. We're just generating the length of the alias over here. So guys, I hope you've understood the Longest increasing subsequence using binary search and just in case you did, please please Please make sure you like this video and if you're new to this channel, please do consider subscribing and to continue our tradition"
+    },
+    {
+      "chunk_id": "L223_C14",
+      "start": 970.72,
+      "end": 983.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=on2hvxBXJH4&t=970s",
+      "text": "Please make sure you like this video and if you're new to this channel, please do consider subscribing and to continue our tradition Please make sure you write it in the comment section if you understood this or not And ever this let's wrap up this video. Let's meet in the next one. Till then. Bye. Bye. Take care Don't ever forget your golden"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "lecture_id": "L079",
+  "lecture_number": 79,
+  "lecture_title": "L7. Postorder Traversal of Binary Tree | C++ | Java | Code Explanation",
+  "youtube_url": "https://www.youtube.com/watch?v=COQOU6klsBg",
+  "chunks": [
+    {
+      "chunk_id": "L079_C1",
+      "start": 0.0,
+      "end": 79.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=COQOU6klsBg&t=0s",
+      "text": "So before starting the video, I would love to thank Relevul for sponsoring this entire three series. So, if you're tired of waiting for companies to respond to your applications through different job portals, the next few seconds are very very important for you. Because Relevul by an Academy is India's first hiring platform that can get you a job within a week itself. Yes. All you have to do is to register for the Relevul test and within a week, your interview will be scheduled with India's top companies and the top budding unicorns. So what are you waiting for? Make sure you check out the links in the description and apply for the Relevul test because it is free. Hey everyone, welcome back to another lecture of Free Cut Three Series. As you know, in the Traversal video, I've already discussed about the post-order traversal. In this video, I'll be talking about the code implementation of this post-order traversal. So what is post-order traversal? It's left, right, root. As the name suggests, post, so root comes at the end. So again, let's keep it simple. We take a node, if it's a null, we will return. Or else, left, right, root, whatever it's stated. Let's see how it works. First, the node call will come for the root of the tree."
+    },
+    {
+      "chunk_id": "L079_C2",
+      "start": 79.66,
+      "end": 147.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=COQOU6klsBg&t=79s",
+      "text": "right, root, whatever it's stated. Let's see how it works. First, the node call will come for the root of the tree. So we're going to start over here. That's where the first call starts. Right after here, we go node left. We will go to node left. We will come here. Again, we will come back. Node left. So I'll again go to node left. For 4, again we'll come back. We'll go to node left. And this will come as null. The moment it comes back as null, we will return. This line will execute, we will return. So 4 says, I went to left. Now why don't I go to right? So we'll go to right. And I'll again see a null. And the moment it sees a null, it returns. So 4 says, I went to left, I went to right, and it came back. Now why don't I print my data? So just print the data. So 4 will be printed. So for 4, left is over, right is over, print is over. So 4 is over. It's time to go back. Now 2 says, I have gone to my left. Now I'll go to my right. So I'll come to my right. 5 says, okay, I have to go to the left. So I'll go. 6 says, I have to go to my left. So I'll go. And when 6 goes to the left, it sees a null. Yes, it sees a null."
+    },
+    {
+      "chunk_id": "L079_C3",
+      "start": 147.32,
+      "end": 205.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=COQOU6klsBg&t=147s",
+      "text": "to go to my left. So I'll go. And when 6 goes to the left, it sees a null. Yes, it sees a null. So since it is seeing a null, what it will do is, it will come back. 6 says, I went to the left, I saw a null. So now it's time to go to the right. So I will go to the right. And again, I'll see a null. So I will make sure I come back. So as I come back, I have gone to the left, I've gone to the right. And I say, I'm the guy left. So I'll print myself. Right? Now 6 says, I'll go back. 5 says, I went to the left. Now I'll go to the right. And it's a null. Since it's a null, I'll return. So 5, as of now, has gone to the left, has gone to the right. And since it has gone, it's time to print it. So I'll print it. Correct? So 5, it's over. Go back. When you go back, 2 has gone to the left, 2 has gone to the right. It's time to print 2. So please print it. Once you've printed, it's over. So for 1, you've only done the left portion. So the right is left. So let's go to the right. So when you go to the right, you come to the 3. Correct? You come to the 3."
+    },
+    {
+      "chunk_id": "L079_C4",
+      "start": 205.64,
+      "end": 263.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=COQOU6klsBg&t=205s",
+      "text": "So let's go to the right. So when you go to the right, you come to the 3. Correct? You come to the 3. So when you come to the 3, you have to go to the left. Go to the left. And when you come to 7, go to the left. No 1. Come back. Go to the right. No 1. Come back. So you're currently at 7. Went to left, went to right. So now print. Once you've printed, go back. Now 3 went to the left. It's time to go to the right. Go to the right. Again at 8, go to the left. Correct? At 9, go to the left. No 1. Go back. Go to the right. No 1. Go back. So 9 says I've gone to the left. I've gone to the right. And I have no 1. So it's time to print myself. Printed. Now 9 goes back. 8 says I've done my left. Time to do my right. So go to the 10. 10 says time to do my left. No 1. 10 says time to do my right. No 1. Goes back. So 10 has done his left, has done his right. So it's over. So time to print it. So once you've printed, go to the left. No 1. Go back. Go to the right. No 1. So once you've printed, 10 is over. Go back. 8 says I've done my left. I've done my right."
+    },
+    {
+      "chunk_id": "L079_C5",
+      "start": 263.32,
+      "end": 319.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=COQOU6klsBg&t=263s",
+      "text": "to the right. No 1. So once you've printed, 10 is over. Go back. 8 says I've done my left. I've done my right. Now time to print myself. I'll print it. 8 will go back. So 3 says I've done my left. I've done my right. Let's print 3. So 3 says I'm over. I'll go back. So 1 says I've done my left. I've done my right. It's time to print myself. So once you've done, you will go back. So that's how the recursion will work. And this is what the post-order traversal will be for this 3. Again, I'm not going to repeat this. I'm just going to show you the post-order traversal. So I'm going to go to the left. I'm going to go to the right. So that's how the recursion will work. And this is what the post-order traversal will be for this 3. Again, do not complicate things. Keep it simple. It will automatically traverse as you saw. It automatically traversed. You don't have to complicate it. Just remember this 3 techniques and this will help you to solve almost every binary tree problems. So guys, I hope you've understood the entire coding implementation as well as this wonderful recursion flow. So just in case you did, please make sure you like this video. And if you're new to our channel, do consider subscribing. I'll be leaving the C++ as well as the Java code link in the description."
+    },
+    {
+      "chunk_id": "L079_C6",
+      "start": 319.06,
+      "end": 322.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=COQOU6klsBg&t=319s",
+      "text": "if you're new to our channel, do consider subscribing. I'll be leaving the C++ as well as the Java code link in the description. With this, let's wrap up this video and meet in the next one. Bye-bye. Take care."
+    }
+  ]
+}

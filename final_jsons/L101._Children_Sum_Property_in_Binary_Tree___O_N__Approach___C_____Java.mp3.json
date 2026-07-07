@@ -1,0 +1,106 @@
+{
+  "lecture_id": "L101",
+  "lecture_number": 101,
+  "lecture_title": "L29. Children Sum Property in Binary Tree | O(N) Approach | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=fnmisPM6cVo",
+  "chunks": [
+    {
+      "chunk_id": "L101_C1",
+      "start": 0.0,
+      "end": 76.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=0s",
+      "text": "So before starting this video, I would love to thank Relevel for sponsoring this entire video. A hiring platform with no degree required, no experience required, mentoring sessions available feels like a dream, isn't it? What if I say all of this is for free? Well, Relevel by Unacademy is here to make your dream come true. With job opportunities in front-end, back-end and business development from India's top companies for freshers and people in the early career, Relevel is here to make the entire hiring process super simple and super quick. All you have to do is to give the Relevel test and based on your score, interviews will be scheduled and you will be hired. So what are you waiting for? Make sure you check out all the links in the description and apply for the Relevel test as soon as possible. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, children sum property from the Frica Tree series. So what does the problem state? The problem state that you will be given a binary tree. It can be complete, it can be full, it can be any shape binary tree. And in this binary tree, you have to maintain the children sum property. Now what is this property? It basically states that for any node, the value at the node should be equivalent to"
+    },
+    {
+      "chunk_id": "L101_C2",
+      "start": 76.32,
+      "end": 153.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=76s",
+      "text": "children sum property. Now what is this property? It basically states that for any node, the value at the node should be equivalent to its left node's value plus the right node's value. If the binary tree does not follow the children sum property, what you can do is you can basically increment, yes, you can increment any node by the value of plus one by any number of times. Yes, I'm repeating. You can increment the value of any node by plus one any number of times. Also you cannot change the structure of the binary tree. So assume this is the binary tree that is given to you. So in order to maintain the children sum property, this node is having a value two. So this two is not equivalent to 35 plus 10. It's not equivalent. So what you will do is you will basically increment two. Yes, this node value, you will increment to something as 45. Okay. So if you increment this two to 45, you'll get 35 plus 10 to 45. Now just assume this is 35, right? So this guy is two, this guy is three. So if you increment two, if you increment three, for an example, what I do is I have incremented two to 30, three to five. Again, you could have done it either way."
+    },
+    {
+      "chunk_id": "L101_C3",
+      "start": 153.12,
+      "end": 225.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=153s",
+      "text": "example, what I do is I have incremented two to 30, three to five. Again, you could have done it either way. You could have done this to 32, you would have led this to be like, this could have been 32, this could have been three itself also. It completely depends on you how you want to increment the node. Just make sure whenever you are incrementing the node, the node value should be equivalent to the left child value plus right child value. That's the main criteria. So what I've done is I've incremented this node, I've incremented this node and I've incremented this node. So once I've incremented this, now you can see it follows. 45 is a summation of 35 plus 10. 35 is a summation of 30 plus 5. 10 is a summation of 8 plus 2. So this binary tree, after modification, is following the children sum property. Now you might be thinking, what is the big deal in this? Take this 35, take this 10, add them up and if this is 2, just increase it to whatever is the addition. That is what you're thinking. So this problem is not that simple. So I'll walk you through some of the test cases and we will see some edge cases so that you understand why this problem is not as simple as it looks from the first sight."
+    },
+    {
+      "chunk_id": "L101_C4",
+      "start": 225.82,
+      "end": 293.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=225s",
+      "text": "will see some edge cases so that you understand why this problem is not as simple as it looks from the first sight. So a lot of you would be thinking, what is the big deal in having a children sum property? So I can say that if I'm giving you this binary tree, you will find it tough to convert this into a binary tree which follows the children sum property. Now let's assume you start from here. So you have 3 and 5. So what you will do at the worst case? What will you think of? You'll say, I'll add 3 plus 5, I'll make this guy 8. That is what you will think of. And again, if you take this 1 and if you take this 30, you'll add this and you'll make this 31. But over here, when you have this 8 and over here, if you have this 31, so 31 plus 8 will be actually 39 which you cannot make because this node is having a value 50. And if you remember the property that I said was, you can increase the value by plus 1. You cannot decrease the value. So ideally, if this is 50, this should have something which is relatable. So I hope you're getting a sense what I'm trying to say. You cannot just simply add it up and put it over here."
+    },
+    {
+      "chunk_id": "L101_C5",
+      "start": 293.68,
+      "end": 362.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=293s",
+      "text": "I hope you're getting a sense what I'm trying to say. You cannot just simply add it up and put it over here. You cannot simply add 1 and 30 and put it over here because it doesn't guarantee you that while you move upwards, you have 8, you have 31. You are going to get that. So there's no guarantee to that. Also there is no guarantee that if you have 50 and it is like 7 and 2, you increase this value. Then also there is no guarantee that these guys will help you out. So it's not a simple problem as it looks like. The problem is you have to convert the binary tree into a binary tree which follows the children's sum property. So if you look at the solution that's given at GFG, that's the solution which follows the Big O of n square. So if you read a lot of articles, you'll find that the solution that every article proposes is Big O of n square. But I'm going to teach you a solution which is linear in nature, yes, and which can be done by a single traversal and the time taken will be Big O of n. That is what I'm going to teach you in this video. So before moving to the solution, we need to take the advantage of this that it has been clearly stated that any binary tree is accepted as long as that binary tree follows"
+    },
+    {
+      "chunk_id": "L101_C6",
+      "start": 362.24,
+      "end": 437.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=362s",
+      "text": "take the advantage of this that it has been clearly stated that any binary tree is accepted as long as that binary tree follows the children's sum property. So I have the liberty to increase by plus one as many times as I want. It isn't that make the binary tree as minimal as possible. The question is not that. The question is convert a binary tree to any binary tree that actually follows the children's sum property by increasing the node by a value plus one as many times as you want. That is the question. So guys, let's see the solution. So in order to solve this problem, I'll be smart and I'll be using the recursive traversal, okay, where I move left and then I move right and then I come back from left and then I come back from right. So that's what I am going to use this kind of traversal where I go left, go right and then I come back. How? Let's understand. So I'll start with root, right? And I know roots left has 10, roots right has 20. So if I sum them up, I'll get a value 30, okay? I'll get a value 30, which is apparently lesser than 40. So what I'll do is if it's lesser than 40, okay, I'll just take this 40 and I will say left, why don't you take 40? Hey, right? Why don't you take 40?"
+    },
+    {
+      "chunk_id": "L101_C7",
+      "start": 438.46,
+      "end": 511.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=438s",
+      "text": "40, okay, I'll just take this 40 and I will say left, why don't you take 40? Hey, right? Why don't you take 40? And I can do all this, I can do all this because the question doesn't state that you have to create a minimum kind of a tree. You can increase it by plus one as many times as you want. That's the question. You can increase it by plus one as many times as you want. So I made it 40, I made it 40, okay? Right after that, I'll move to this left, right? This is where I'll move. So when I move to this left, I have a 40. So on the left, I have a two, on the right, I have a five. So two plus five is nothing but seven, which is again lesser than 40, okay? That's lesser than 40. So what I'll do is I'll do nothing. If it's lesser, I'll just reassign these guys to be 40 and I'll move left. And the moment I move left, this guy doesn't have a left, this guy doesn't have a right. So it will go back. And when it goes back, this time it'll move left. Again this guy doesn't have a left, doesn't have a right. So it'll come back. Now while coming back, we have a 40. We have a 40. So whatever it has, whatever it has, I'll just add them up and I'll reassign this guy"
+    },
+    {
+      "chunk_id": "L101_C8",
+      "start": 511.56,
+      "end": 586.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=511s",
+      "text": "have a 40. We have a 40. So whatever it has, whatever it has, I'll just add them up and I'll reassign this guy to that value. Perfect. Now, I'll come back. The right travesal was left. Let's go to the right travesal. So when I go to the right travesal, what do I see? I see that I have a 40, right? I'm over here. I see I have a 40. The left guy has a 30. The right guy has a 40, which is indeed 70. That's greater than equal to 40. So if these two guys are greater than equal to 40, so what you will do is you will simply make this guy similar to the summations at least. So you will make it 70. Make this equivalent to the summation. After that, move to the left. Again 30 doesn't have a left, doesn't have a right. Come back. 40 doesn't have a left, 40 doesn't have a right. So go and come back. Now, when you're coming back, just see whatever it is. Just assume there were some trees beneath it. So if this 30 was changed, if this 40 was changed, just in case it was changed. Over here we do not have a tree beneath, so it won't be changed. But just in case it was changed, take this 30, take this 40, whatever is the left value, right value, add them up and replace this 70."
+    },
+    {
+      "chunk_id": "L101_C9",
+      "start": 586.24,
+      "end": 662.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=586s",
+      "text": "case it was changed, take this 30, take this 40, whatever is the left value, right value, add them up and replace this 70. So as of now 30 plus 40 is 70. So 70 stays as it is. Go back. When you're going back, take this 80, take this 70 and add them up and make this 150. So this is how you can convert any given binary tree to a binary tree that follows the children sum property. Now you might be asking, why does this work? So if you remember, in this example that we took, why it did not work? The only reason it did not work was whenever you're going down and while coming back you took this 3, you took this 5, you made it 8. Then again you took this 1, you took this 30, you made it 31. Then this 8 and this 31 on addition is 39. So we felt short. We felt short of 50 and we know 50 cannot be reduced. Reduction is not allowed. So that is the reason what I did was while going down, I made sure there will be never a shortage and I just made sure whatever is over here, if the addition is lesser, I assign that guys. Like if this was 40, I assigned these guys 40."
+    },
+    {
+      "chunk_id": "L101_C10",
+      "start": 662.32,
+      "end": 740.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=662s",
+      "text": "is over here, if the addition is lesser, I assign that guys. Like if this was 40, I assigned these guys 40. So that while I'm going back, while I'm going down, I'm making these guys greater. I'm making these guys greater already. So even if when they come back, even if when they come back, this plus this will be something greater than 50 and we will never feel short of it. So the whole intuition is very simple. While going down, increase the nodes value. Increase the nodes value to the maximum possible that I have done. And while coming back, just add the node value to get this value and we are very much sure that we will never be short because we have already increased these values while going down. So while coming back, we will never be short. Got this? Like over here you have a 50. So you will do this guy 50, you'll do this guy 50. While going down, this automatically is 50. This automatically is 50. While going down, this automatically is 50. This automatically is 50. So you have increased the bottom guys to a very big value. Now while we come back, you're making 50, like you take those big values and you add up and the addition will definitely be greater than this 50, which is 100. This 50 plus 50 will give you 100."
+    },
+    {
+      "chunk_id": "L101_C11",
+      "start": 740.6,
+      "end": 813.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=740s",
+      "text": "add up and the addition will definitely be greater than this 50, which is 100. This 50 plus 50 will give you 100. This 100 plus this 100 will give you 200. So yeah, this does not guarantee you that the transition will be with smaller values, but it does guarantee you that any given binary tree can be converted to a binary tree which follows the children sum property. And I have done this in one simple traversal. So if you did not understand the intuition, I will highly recommend that you go back and repeat this again. And even after that, if you still do not understand, take some examples and try to follow the algorithm that I am following. And slowly and slowly, after you have done three, four examples of your type, you will see that it actually makes sense to increase the values as we go down. And while coming back, we just sum it up so that we never feel short of numbers. So let's discuss the C++ as well as the Java solution. C++ code is on the left, Java code is on the right. So you're given a root of the binary tree. So what I do is I do a left-right traversal. So initially I check if the root is null, I'll return. Or else what I do is I take child equal to zero. And if there exists a left, I'll add it to the child."
+    },
+    {
+      "chunk_id": "L101_C12",
+      "start": 813.14,
+      "end": 879.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=813s",
+      "text": "Or else what I do is I take child equal to zero. And if there exists a left, I'll add it to the child. If there exists a right, I'll add it to the child. And it's a very simple step that I do before going left and right. Before going left and right, I just take whatever is over here, whatever is over here. Like for an example, if this is 50 and this is two, this is seven. So I've taken two plus seven and that's nine. That is what is across like this is what the child variable will contain, nine. Right after that I see, does this child, is this child greater than root? It is not. So I'll go to this else and I'll say, hey 50, why don't you assign yourself to the left? That is what is done here. Hey 50, why don't you assign yourself to the right? That is done here. So if it is lesser, if it is lesser, I assign and if it is not lesser and if the left plus right is greater, I increase the roots value. Yes, I increase the roots value so that we do not feel short of anything. After that, I move to the left, I move to the right. And when I come back, yes, I move and when I come, I move and when I come. So when I come back, I simply sum up left and right."
+    },
+    {
+      "chunk_id": "L101_C13",
+      "start": 879.22,
+      "end": 942.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=879s",
+      "text": "I move and when I come, I move and when I come. So when I come back, I simply sum up left and right. I sum up left and right and what I do is I assign that to the root, like whatever is on the left, whatever is on the right. Assume it's a hundred, it's a hundred. So I take hundred, I take hundred and I add it to get 200 and there is a check like it should not be leaf node. In case of a leaf node, you don't update it. If it is not a leaf node, then only you update the upper gap. Like this is when you move up, right? And this is when you move down. Simple enough. This is the traversal part. This is down when you like you just modify the values, you move and when you come back, backtrack, when you backtrack, that's when you re-update the roots value. So the time complexity is super simple. Big O of n because you're doing a recursive traversal on the number of nodes on the tree, the space complexity will be big O of height of the tree. Height of the tree can be as worst as big O of n, like it can be as worst as big O of n. If it's a skew tree. So I hope you have understood the entire explanation as well as the code."
+    },
+    {
+      "chunk_id": "L101_C14",
+      "start": 942.46,
+      "end": 964.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=fnmisPM6cVo&t=942s",
+      "text": "as big O of n. If it's a skew tree. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also if you're new to this channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

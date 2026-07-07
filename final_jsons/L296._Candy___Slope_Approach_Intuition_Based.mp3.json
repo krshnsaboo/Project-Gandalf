@@ -1,0 +1,176 @@
+{
+  "lecture_id": "L296",
+  "lecture_number": 296,
+  "lecture_title": "L12. Candy | Slope Approach Intuition Based",
+  "youtube_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY",
+  "chunks": [
+    {
+      "chunk_id": "L296_C1",
+      "start": 0.0,
+      "end": 79.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=0s",
+      "text": "So, let's continue with our greedy algorithm playlist. Before starting off, Avery, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is the problem candy. So, what is the problem stating? The stating that you're given n number of children and every children has a rating value. So, if you take this example, the first children has a rating value of 1. The third children has a rating value of 2. So, you're given n children and n rating values. Now, your task is to distribute candies to each and every children, keeping in mind the rating values. Now, there are two conditions. The first one, each child should get at least one candy. That is the bare minimum that every child should get. The second condition is the children with a higher rating should get more candies than its neighbor. Let's understand. So, if I want to distribute candies for this first example, so the first child has a rating value of 1. So, what I can do is I need to distribute candies. So, greedily like I will try to give him as minimal as possible because that is what the problem is asking us."
+    },
+    {
+      "chunk_id": "L296_C2",
+      "start": 79.6,
+      "end": 153.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=79s",
+      "text": "greedily like I will try to give him as minimal as possible because that is what the problem is asking us. Give minimum candies, but make sure that the conditions are met. So, what I will do is I will give him 1. And then for this 2, I'll be like, can I give him 1? I cannot because this will satisfy the first condition, but this will violate the second condition. Why? Because the second child has a rating greater than the first child. So, you should have more candies than the first child. So, what I will be doing is I'll be going over there. I'll be saying, okay, I'll give you more. I'll give you more, but I'll not give you like 5, 10. I'll give you slightly more because I have to minimize. So, I'll give him 2. What about this 3? Can I give him 1 candy? No, I cannot because the rating 3, the rating 3 is greater than 2. So, I cannot give him 1 or 2. I need to give him more. So, can I give him 1? No. Can I give him 2? No. Can I give him 3? Yes. I'll give him 3. So, overall, I've minimized the number of candies that I gave. So, what is the summation of candies that I gave? 6. And this is what you will have to return. Perfect. Understood. So, you have to minimize the total number of candies that you are distributing."
+    },
+    {
+      "chunk_id": "L296_C3",
+      "start": 153.56,
+      "end": 232.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=153s",
+      "text": "And this is what you will have to return. Perfect. Understood. So, you have to minimize the total number of candies that you are distributing. Let's check out one more example. So, in this particular example, let's just think of one neighbor. The question is stating both the neighbors, left and right. Let's as of now, just think of the left neighbor. Can I give him 1 candy? I can. I can because there is no one on the left. Can I give him 1? No, I cannot because it is greater. Sorry, my bad. It is greater than 1. It is greater than 1. So, I definitely cannot give him 1. How much will I give him? I'll try to give him 2. Will that be okay? That will be okay because 3 is greater than 1. And since 3 is greater than 1, I have given him more candies. I'm not thinking about the right as of now. I'm just thinking about the left neighbor. What about this? The 2 is smaller than 3. So, maybe I can greedily give him just 1 candy. I'll just give him 1 candy. Perfect. What about this one? This is also smaller than 2. So, again greedily, I don't need, I don't have to give him more. I'll just give him 1. So, I did this distribution keeping in mind the left neighbors. I'll try to think about the right neighbors. Let's try to think."
+    },
+    {
+      "chunk_id": "L296_C4",
+      "start": 232.24,
+      "end": 307.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=232s",
+      "text": "1. So, I did this distribution keeping in mind the left neighbors. I'll try to think about the right neighbors. Let's try to think. Can I give him 1? I can. Can I give him 1 now? I cannot because 2 is greater than 1. So, I'll give him 2. Can I give him 1? No. Can I give him 2? No. Can I give him 3? Yes. Over here what? 1. 1 should be okay. So, if you see, if I consider the left neighbors, I will get this much. If I consider the right neighbors, I'll get this much. So, typically, to satisfy left and right, what will you do? Yes. You'll eventually give this 1, 3 more because 3 satisfies right and since 2 was satisfying left, 3 will also satisfy left and over here 2, over here 1. So, this is the distribution and if you add it up, that is going to give you 7. Is it 7? 3, 5, 6, 7. Yeah, that's 7. So, this is the bare minimum chocolates that you need in order to satisfy both the conditions. Got it, right? Now, how will I solve this particular problem? Okay. Let's think of the extreme naive brute force. What was the extreme naive brute force? I think about the left neighbors, I think about the right neighbors. Let's start off. I know one thing for sure."
+    },
+    {
+      "chunk_id": "L296_C5",
+      "start": 307.96,
+      "end": 380.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=307s",
+      "text": "brute force? I think about the left neighbors, I think about the right neighbors. Let's start off. I know one thing for sure. The first person will always have 1 because it doesn't have a left neighbor. So, I can always give him the bare minimum. What about the next? It's more. So, I'll give him 2. What about the next? It's more. So, I'll give him 3. It is lesser. It is lesser. I'm just thinking about the left neighbors, just about the left neighbors. So, I can keep him limited to 1. What about this? Lesser. Lesser than the left. So, I can again limit him to 1. What about it? Lesser than the left. I can again limit him to 1. Limit him to 1. What about this? This is greater. So, can I limit him to 1? No. I have to give him 2. What about this? More. I'll give him. What about 6? Again more. What about 4? Going lesser. So, can I give him 1 and that works. That works if I just consider the left neighbors. So, I'll give him 1. What about next? Again, I can limit him to 1. What about next? I can again limit him to 1. So, this is a correct distribution if I just consider the left neighbors. They are having more than the left. If you take any case, 5, 3. 3 is getting 2 and 5 is getting 3. So, it's getting more."
+    },
+    {
+      "chunk_id": "L296_C6",
+      "start": 380.24,
+      "end": 450.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=380s",
+      "text": "more than the left. If you take any case, 5, 3. 3 is getting 2 and 5 is getting 3. So, it's getting more. For the left, it works. So, maybe you can create a left array and this is how it will be. Okay. Can I do a right? Probably, I can. Can I give him 1? I can. Can I give him 1? I can because it is still not greater. So, I can limit him to 1. Can I give him 1? Can I give him 1? No, I cannot because that's 4. That's more. I'll have to give him more 2. Can I give him 2 or 1? No. I can't give him 3 because 6 is greater than 4. So, it should have by minimal 3. What about the next? It's 5. I can limit him to 1 again. What about the next? Lesser than 5. So, I can limit him to 1. What about next? Lesser than 3. So, I can limit him to 1. Again, 1. But this 2 is greater. So, I'll just give him more. What about this 3? Greater than 2. What about this 4? Greater than 3. What about this 2? Lesser. So, I can limit him to 1. What about this? Zero. Lesser. So, I can limit him to 1. So, this is if I consider the right neighborhood. If I consider the right neighborhood. Understood? Perfect. So, let me take a quick example. Okay."
+    },
+    {
+      "chunk_id": "L296_C7",
+      "start": 450.84,
+      "end": 529.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=450s",
+      "text": "this is if I consider the right neighborhood. If I consider the right neighborhood. Understood? Perfect. So, let me take a quick example. Okay. Over here, for this 4, it's greater than its left. It's greater than its right. And if you give him 3, the left is satisfied. If you give him 4, the right is also satisfied. So, typically, you will try to assign the maximum of it so that both the left and both the right neighbors are satisfied. So, what I'll do is, what will be my answer? My answer will be max of this, max of both of these, max of both of these, max of both of these, max, max, max, max, max, max, max, max, max, max, max, max, max, max, max, max, and I can add it up. And I can add it up. Super simple. Done and dusted. Can I write down the pseudocode? I think I can. So, let's quickly write down the pseudocode. So, I'll be writing down a function which is going to take a ratings array. So, we require two arrays, right? One is left. So, I can have a left of a size n and I'll require a right of a size n. I know one thing. If I'm comparing left neighbors, the left of 0, because it doesn't have a left neighbor, will always be 1. And the right of last, which is n minus 1, will always be 1, because it doesn't have"
+    },
+    {
+      "chunk_id": "L296_C8",
+      "start": 529.2,
+      "end": 607.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=529s",
+      "text": "left neighbor, will always be 1. And the right of last, which is n minus 1, will always be 1, because it doesn't have a right neighbor. Correct? Now, for the left, I can start comparing from the first index till n minus 1. Why first index? Because the 0th index will never have a left neighbor. Now, the first thing I'll do is, if the ratings of i is greater than the ratings of i minus 1, that means of the left neighbor, in that scenario, I'll be like left of i is equal to left of i plus 1. Done? Rather, left of i minus 1 plus 1. One more than it's left. Quite simple. Otherwise, because it is not greater than its left neighbor, I can be very, very greedy. I'll be like, I'm not going to give you a lot. So hence, my handwriting has gone very bad. So I can straight away write left of i is equal to 1. And that is done for the left one. Can I write a similar thing for the right one? Yes. That's going to be for i equal to n minus 2, i greater than 0, i minus minus. And this time I'll be right."
+    },
+    {
+      "chunk_id": "L296_C9",
+      "start": 607.22,
+      "end": 686.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=607s",
+      "text": "for i equal to n minus 2, i greater than 0, i minus minus. And this time I'll be right. If ratings of i is greater than the ratings of i plus 1, because the right neighborhood is i plus 1, in that scenario, the right, very important, the right of i will be equal to right of i plus 1, the right neighbor plus 1, or else the right guy will be taking a value of 1. Done? So that is done for the right. So right and left are ready. What is the next step? Take the maximum of both. So what I can do is, I can assign a variable sum equal to 0, and I can run a loop from i equal to 0 till n minus 1. I'll be like sum is equal to sum plus max of left of i comma right of i. Perfect. And once this is done, I can straight away do return of sum. Done and dusted. Is it done? It's done, right? What about the time complexity? I have one for loop, I have another for loop, I have three for loops. So can I say that the time complexity will be bigot of 3n?"
+    },
+    {
+      "chunk_id": "L296_C10",
+      "start": 686.86,
+      "end": 765.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=686s",
+      "text": "for loop, I have three for loops. So can I say that the time complexity will be bigot of 3n? And what about the space complexity? You have to look at the space complexity. I'm using a left array, I'm using a right array. So can I say that the space complexity is bigot of 2n? So can I further optimize this? Yes, I can. I can probably reduce this bigot of 2n into something better. Let's see how. What I will be doing is, I'll be like, do I need the right array? That is a question that I'll ask myself. Probably not. So what I will do is, I will get rid of this right array. And it'll be like, how will we solve it? The solution had three steps. First one was computing left. The second one was computing right. And the third one was taking the max of left and right. Can I say that since I need the summation, I don't need the distribution. Since I just need the summation, I will probably not require a right array. I can do it on the fly. During the second step, I can do it on the fly. I can compute the right and then I can take the max at the same iteration. That is what I'll be doing. I'll be like, hey, listen, let's remove this."
+    },
+    {
+      "chunk_id": "L296_C11",
+      "start": 765.18,
+      "end": 842.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=765s",
+      "text": "I can take the max at the same iteration. That is what I'll be doing. I'll be like, hey, listen, let's remove this. Let's remove the concept of right array. Instead of it, let's take a current concept, which is one. And let's take a right concept, which is one. So what I'm saying is, I'll take a variable right, which means the last element has been given the value one. Now my current is standing over here. And if it is same, it's fine. I'll keep it as one. I'll keep it as one. I don't care. So if it is normal, I'll keep it as one. But if it is greater, what I'll say current, hey, can you just increase your value by plus one? Can you increase your value by plus one? Can you also update right to current? Because for the next iteration, right will be your current. So the current will be right. Okay, done. So what I'm doing is, I'm using a current variable, which always tells you what is the index i. Now can I take a summation zero and can I say summation will be summation plus max of left of i, max of left of i, comma what, comma what, yes, the current. That's it. I did it on the fly."
+    },
+    {
+      "chunk_id": "L296_C12",
+      "start": 842.7,
+      "end": 922.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=842s",
+      "text": "of i, max of left of i, comma what, comma what, yes, the current. That's it. I did it on the fly. I computed the right, and I did a max and I summed it up. Now, is it correct? We missed out one element. We missed out one element. That is the last element. Please make sure you take the summation as, because n minus one of the index is what you missed out. You missed out adding this. So what will be this value? Initially you assign it one. Maybe you can say it as max of one, comma left of whatever is assigned by left. That's it. So if you assign this, it's fine. Overall, what you can do is you can take this off. If you take this off, you can straight away return sum. I didn't go in depth because I'm assuming as of now, your implementation skills are good and you understand this. So if I'm doing this, what will be my time complexity? Can I say I'm now running two for loops? Okay. So my time complexity is now B go of two n, but, but, but I still have a space complexity of B go of n. So the interviewer will not be happy with this and he'll ask you to optimize the extra space that you're using. So we need to optimize B go of n extra space. That means we are not allowed to use any extra space complexity."
+    },
+    {
+      "chunk_id": "L296_C13",
+      "start": 922.58,
+      "end": 997.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=922s",
+      "text": "using. So we need to optimize B go of n extra space. That means we are not allowed to use any extra space complexity. Okay, fine. So what I've done is taken this example, thought it through. I'll be explaining you the optimal approach now. Just a quick disclaimer. If you don't know it, you'll not be able to think about it in an interview. So you will have to do it. So nothing to get discouraged. Okay. So the concept that we will be using in the optimal approach is the concept of slope. Again we'll be greedy as we were, but we'll be using the slope concept. Let's see how. So we have a point as zero. So I'll write the zero. So I'll kind of draw the slope whenever it increases and whenever it decreases. After that I have a two. After that I have a four. After that I have a seven. So fine. Slope is increasing. I'll not write down the numbers. I'll not write down the numbers because what matters to us is if it is greater than its neighbor by how much that we don't care. Okay. But after seven, there's a six. So there's a downfall after that. There's a five. There's a downfall after that. There is a four. There's a downfall. There's a three. There's a two. There's a one. So the slope decreases. And after that, there's another one. There's another one."
+    },
+    {
+      "chunk_id": "L296_C14",
+      "start": 997.58,
+      "end": 1077.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=997s",
+      "text": "a downfall. There's a three. There's a two. There's a one. So the slope decreases. And after that, there's another one. There's another one. And then there's two, three, four, two, one, one, one. So this is how the slope looks like. If I ask you to give them candies, irrespective of their ratings, because you know, one thing, this person is greater than this. How much? We don't really care. So you'll be like, okay, if I have to distribute candies, I'll start by giving. One candy to the first person. That's. That is the bare minimum that I will do. Okay. What about the next? It is greater. So I'll give him two. What about the next? It is greater. So I'll give him three. What about the next? It is greater. So I'll give him four. What about the next? I don't know. You don't know because you cannot give him one lesser. You cannot do something like this because then you'll have to go like minus. So till the increasing slope, it was super easy. Till the increasing slope, it was super easy to distribute candies. Can I do the same? If I look from here, can I do the same? Probably yes. One, two, three, four, five, six. And this will be seven."
+    },
+    {
+      "chunk_id": "L296_C15",
+      "start": 1077.22,
+      "end": 1156.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=1077s",
+      "text": "look from here, can I do the same? Probably yes. One, two, three, four, five, six. And this will be seven. This will be seven. And this peak, this peak will take seven, not four. Because if you take seven, it satisfies the right neighbor. It satisfies the left neighbor. This is easy. But if I start from here, I start from here, I'll be like, how does it matter? Because the question is not asking me the distribution of candies. The question is asking me summation of candies. So what you saw was one to six was distributed. So if I start from back, can I do the same? I'll be like, okay, it is decreasing. I know it is decreasing. But I'll still start from one. I'll give him two. I'll give him three. I'll give him four. I'll give him five. I'll give him six. I know it is the wrong distribution. But if I look at the summation of candies, it is still one to six. Irrespective, it is still one to six. Okay, wow. Wait. I don't care if it is decreasing. I just start from one and I keep on going. Technically, it should have been one, two, three, four, five, six. But we don't care about the distribution. We care about the summation of candies. And one to six is what matters. So till the decreasing, we're able to do one to six."
+    },
+    {
+      "chunk_id": "L296_C16",
+      "start": 1156.26,
+      "end": 1230.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=1156s",
+      "text": "care about the summation of candies. And one to six is what matters. So till the decreasing, we're able to do one to six. Now I know one thing. After this, there is no decreasing slope. It's more like a platter. It's more like a flat surface. So if it is six, I know one thing, the peak would have been seven. The peak would have been seven. How much more? Three more? Three more than this four? So I know one thing. If this, this is an entire curve, I'll always solve it for curves. I'll always solve it for curves. So in this entire curve, I know I can go like this, then I can go like this. And this is the peak that I'll have to consider. This is the peak that I'll have to consider. And the peak will take seven. The peak will take seven, not four. I'll come to that afterwards. How can we compute? But you got the gist, right? You got the gist. Perfect. So I have a six. I have a six. And these are plateaus. These are flat surfaces. Why give them six? No, there's, you can give them one because the left and right neighbors are equal. So what I'll do is I'll give them one. I'll give them one. Again, I start the upper curve. Again I start the upper curve. I'll be like, okay, maybe I can again go ahead and do one, two, three, four. Perfect."
+    },
+    {
+      "chunk_id": "L296_C17",
+      "start": 1230.74,
+      "end": 1304.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=1230s",
+      "text": "upper curve. Again I start the upper curve. I'll be like, okay, maybe I can again go ahead and do one, two, three, four. Perfect. I need to do the downward. I ideally, I should have started from one, two, and three. And out of three and four, I should have taken four. Ideally, I should have done this. But do I care? As long as I get one to two, as long as I get candies, one plus two, that is what I care. So what I'll do is I'll start the decreasing slope from one and then I'll go to two and done. So what should have been the peak? The peak should have been one more than two, three, but I've taken four and four is the peak that I have to consider. Four will be considered. Perfect. Four will be considered. What after this? I can just give them one, one, and we are done. Yes, we are done. Quite simple. But now, how do I code this? Super simple. Let's try that out. So let's quickly do a dry run so that you can visualize how am I converting my thought process into code. So I'll be trying to solve the problem in terms of slope. First the increasing slope, then the decreasing slope. Now you might ask me a question, hey, what if the question is not starting with an increasing slope? What if it starts with a decreasing slope and then an increasing?"
+    },
+    {
+      "chunk_id": "L296_C18",
+      "start": 1304.94,
+      "end": 1384.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=1304s",
+      "text": "question, hey, what if the question is not starting with an increasing slope? What if it starts with a decreasing slope and then an increasing? Doesn't matter. You first solve the decreasing part. You can do a dry run. It will still be valid. It will still be valid because you'll still assign the numbers like one, two, three, four. It will still be valid. So I'll be trying to solve this problem in terms of slope concept. Got it? Fine. So I know one thing, the first element in the increasing slope will be one. So I'll do the summation to be one. Done. I'll start the slope concept. This will take the value of two. So I'll add these sum two, like I'll add two to the sum because I'm accumulating the sum, not the distribution. Fine. After this, this will be three so I can add up three. After this, this will be four so I can add up four. Increasing slope is done. The increasing slope is done. So can I say that the summation is now 10 and when the increasing slope was over, the peak was four, the peak was four and if the peak was four, how does it matter? It matters. Let's do the next step. For the next step, you will again start with one because it is a decreasing slope. So you start by giving one. Maybe I can use some other color. Yeah. Start by giving one."
+    },
+    {
+      "chunk_id": "L296_C19",
+      "start": 1384.54,
+      "end": 1463.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=1384s",
+      "text": "because it is a decreasing slope. So you start by giving one. Maybe I can use some other color. Yeah. Start by giving one. You give one, you add up one, then you give two, then you give three, then you give four, then you give five and then you give six. Right? So you've given six, you can stop. So ironically, it would have been one, two, three, four, five, six and this peak should have been seven. Only then it satisfies both the conditions. So can I say that down because I'm going down, the down ends up at one more than six, one more than six. Again, the summation can get added like this. You can add it up. You're understanding, right? So this down is seven. Now if you carefully notice in the summation, this 10 was nothing but one plus two plus three plus four. So you added four as the peak, but logically it should not be four. It should be seven. So you'll have to change the four and add seven. Only if the down is greater than peak, only if the down is greater than peak, what will you add to the sum? You'll basically say sum equal to sum plus whatever is the difference because I've already added four. So if I add another three, if I add another three, that will do my job because I just"
+    },
+    {
+      "chunk_id": "L296_C20",
+      "start": 1463.08,
+      "end": 1538.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=1463s",
+      "text": "I've already added four. So if I add another three, if I add another three, that will do my job because I just need to add peak as seven. Now you understood what after this. I'm looking at a flat surface. Whenever you look at a flat surface, you add one to the answer. You simply add one to the answer. Okay, done. Sum is adding up one. The sum is adding up one and so on. You can just keep on adding the sum. Just omit the sum. Okay, fine. What after this? Again, the same. What I'll do is I'll be like, okay, two, three, four. This time the peak stops at four. The peak stops at four. What after this? You have a downward curve so you can start it. You assign one, you assign two and it stops. So technically it should have been one, two and a three. So which peak will you consider? Three or four? Maybe you can write that down. Down will end up at three. Down will end up at three. So what I can say is peak four is okay. So you do not do anything. If the right peak is less, you don't do anything. You can just take four. Fine. After this, one, one. Quite simple, right? Time to convert this into code. And it's going to be interesting. Trust me on that. Function and the function is going to take ratings. Okay, fine. What after this?"
+    },
+    {
+      "chunk_id": "L296_C21",
+      "start": 1538.12,
+      "end": 1614.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=1538s",
+      "text": "And it's going to be interesting. Trust me on that. Function and the function is going to take ratings. Okay, fine. What after this? Do I need any array? No. We're going to do it in Bico of one complexity. So I know one thing. We're going to do an increasing and a decreasing slope. So summation can be one and I can straight away start I equal to, yeah, I can start I equal to one. If that's where I will be starting. And what I can do is I'll be like, okay, let's keep on going till I is lesser than N. First thing you should do is if it's a flat surface, might be a flat surface. So you'll be like, okay, if it's a flat surface, which typically means that the ratings of I is equal to equal to ratings of I minus one. If that is the case, you basically say, hey, some, can you again add one to yourself? Can you again add one to yourself? At the same time, can you do I plus plus at the same time? Can you just go ahead to the next one, which is continue means let's go over to the while loop and go to the next because I've done I plus plus. Okay, fine. But if it is not equivalent, which means we are starting a slope, slope can be in two directions. The slope can be in two directions."
+    },
+    {
+      "chunk_id": "L296_C22",
+      "start": 1614.24,
+      "end": 1693.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=1614s",
+      "text": "it is not equivalent, which means we are starting a slope, slope can be in two directions. The slope can be in two directions. Now we know one thing, we have assigned one to the first value, which is the zeroth index, which is the zeroth index. So after that, the slope starts. So maybe it's an increasing slope, maybe. So I'll be like I lesser than N and, and ratings of I should be greater than ratings of I minus one. That's all. Sure. Right. So it's greater than I minus one. What will we do? The peak increases and as for sure the peak will increase by one. The summation will add up peak and I will increase. Quite simple. Don't forget to write I lesser than N. It might be just an increasing slope, might just be an increasing slope. You might just run out. Perfect. I have the peak value till the slope runs. After this, we're assuming there might be a decreasing one. So let's quickly check it. So what I'll do is I'll do a down and we know the down starts from, or you can start it from one as well. That is your choice. Okay, fine. So what I'll write is while again, please make sure you do I lesser than N and ratings of I is smaller than ratings of I minus one because then only it is going through a decreasing"
+    },
+    {
+      "chunk_id": "L296_C23",
+      "start": 1693.44,
+      "end": 1772.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=1693s",
+      "text": "lesser than N and ratings of I is smaller than ratings of I minus one because then only it is going through a decreasing slope. And if that is the case, if that is the case, what I'll do is I'll say, okay, some plus equal to rather down I plus plus. At the same time, down plus plus. Perfect. Done and dusted. What after this? The decreasing slope is over. As the decreasing slope is over, you basically see, okay, if the down was greater than peak and if that was the case, you'll be like the summation will take an extra of down minus peak. That's it. That should be it. Yeah, that should be. And after that you can just end up the while loop and you can go ahead and return the summation. Done and dusted. So let's quickly analyze the time complexity. Can I say that this is definitely going to run for B go of N. Now you might be thinking there is an inner while loop, one more inner while loop. But if you look at the logic, this doesn't matter because at the end of the day, every while loop is making sure that I is moving. So overall you're traversing every element once."
+    },
+    {
+      "chunk_id": "L296_C24",
+      "start": 1772.32,
+      "end": 1800.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=IIqVFvKE6RY&t=1772s",
+      "text": "end of the day, every while loop is making sure that I is moving. So overall you're traversing every element once. So thereby the time complexity will be B go of N and the space complexity will be B go of 1. And this is the most optimal solution. You cannot optimize it further. Right. So yeah, that will be it for this one. I hope you understood everything. So if you're still now watching and if you've understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's speed in some other video till then bye bye. Take care."
+    }
+  ]
+}

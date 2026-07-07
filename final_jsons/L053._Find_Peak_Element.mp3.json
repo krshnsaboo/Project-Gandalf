@@ -1,0 +1,197 @@
+{
+  "lecture_id": "L053",
+  "lecture_number": 53,
+  "lecture_title": "BS-9. Find Peak Element",
+  "youtube_url": "https://www.youtube.com/watch?v=cXxmbemS6XM",
+  "chunks": [
+    {
+      "chunk_id": "L053_C1",
+      "start": 0.0,
+      "end": 74.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we will be continuing with our binary search playlist, which is the part of the Strigos A to Z DSA course, just in case you haven't checked it out yet. Please make sure you check it out from the link in the description because this is world's most in-depth DSA course. So till now I have covered up this particular problem and this video I'll be covering up the problem, find peak element. So what does the problem state? It states that you have to find the peak element. What is the definition of peak? It states if you take any element at an index I, it should be greater than the left element and it should be greater than the right element. Very important greater, not greater than equal to, it should be greater than the left and should be greater than the right. So I'll be taking four different examples in order to explain you the problem statement in a much better way. So imagine if you take this particular array. So over here, one, two, three, four, five, six, seven, eight. So I can say it's linearly increasing till here and then at five one it drops. I can say, so can I say this is the element? Can I say this is the element which is basically greater than seven and greater than five?"
+    },
+    {
+      "chunk_id": "L053_C2",
+      "start": 74.4,
+      "end": 148.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=74s",
+      "text": "can I say this is the element? Can I say this is the element which is basically greater than seven and greater than five? Thereby the eight, the element eight is your peak. Got it? So over here the answer will be eight. Now will the array only have one peak because in this example we just had one peak. Now remember one thing, the array can have multiple peaks. Let's take this particular example. So we have one, two and then one, then three, five, six and then four. Can I say this? And over here can I say this is a peak? Can I say probably this is a peak? Yes there are two different peaks. If I carefully observe, why do I say that? Because two is greater than one and two is greater than one. Six is greater than five and six is greater than four. So there are two different peaks. Now you can return any one of them. They don't care about that. You can go ahead and return any one of the peaks. So imagine I'll return two. That is absolutely okay. So if they're asking you to return the index, it is okay. If they're asking you to return the number, then also it is okay. So let's take the third example. Over here if I have to draw the graph, it's linearly increasing. So if I ask you about the peak, I can't see one."
+    },
+    {
+      "chunk_id": "L053_C3",
+      "start": 148.72,
+      "end": 224.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=148s",
+      "text": "Over here if I have to draw the graph, it's linearly increasing. So if I ask you about the peak, I can't see one. So what they have told in the problem statement is, maybe take minus infinity on the left and minus infinity on the right. So you will always be under this assumption that there's a minus infinity to the left of the first element and there's a minus infinity to the right of the last element. So if I see this, now can I say five is a peak? Can I say this, that five is a peak? Why can I say that? Five is greater than four and five is greater than minus infinity as well. So for this case, your peak will be five. Yes. Let's take another example. Over here it's reducing. So if it is reducing, again let's assume this to be minus infinity and minus infinity because the problem statement clearly states that. In this case, can I say this to be our peak? Why? Because it's greater than minus infinity and it is greater than four as well. So that's the only index where it is greater and greater. So over here also I can say that the zeroth index is containing the element five, which is my peak index of peak element. So I hope you have understood all the examples. It's time to think how can we solve this. So this problem comes up in an interview."
+    },
+    {
+      "chunk_id": "L053_C4",
+      "start": 224.64,
+      "end": 292.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=224s",
+      "text": "hope you have understood all the examples. It's time to think how can we solve this. So this problem comes up in an interview. What is the first solution that you should always give? Now what is the extreme solution that you can think of? I can probably think of doing a linear iteration. Yes we can. What we will do is we will start with one and we will check on the left and we will check on the right. So on the left we are sure that it's minus infinity. So that is for sure greater than that. But on the right we do not have one. Then we move to two and we again check for the left and for the right. Then we move to three and we again check for the left and for the right. Then we again move to four and we check for the left and for the right. Then we again move to five we check for the left and then the right and so on. Whenever you reach eight you'll find it out that it's greater than the left and it's greater than the five. So if that's the case that is absolutely okay. And this can be my peak element. So can I say this? I'll probably start with index zero. I will go on to the last index and I will be like hey listen if it is index zero I don't need to check for the left."
+    },
+    {
+      "chunk_id": "L053_C5",
+      "start": 292.8,
+      "end": 365.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=292s",
+      "text": "on to the last index and I will be like hey listen if it is index zero I don't need to check for the left. If it is not in that case the left one has to be greater than array of i sorry has to be smaller than array of i. Perfect that's one of the cases. Can I say this? Either it is left in that case it doesn't checks for the left because on the left we have minus infinity. And if it is not then I go ahead and check is the left one smaller than this. That's one of the case it has to be true. And can I say and and either it is the last in that case if it is the last I don't need to check for the right because the right is always minus infinity according to the problem statement. If that's the case I will say fine otherwise this has to be greater than the right. Can I say this is another case? This is one case where we check for left. This is another case where we check for right. And this will be the overall if statement. If that is the statement can I say this is my peak index. So probably I can say this is my peak index. Very simple linear iteration. What will be the time complexity of this particular code?"
+    },
+    {
+      "chunk_id": "L053_C6",
+      "start": 365.36,
+      "end": 435.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=365s",
+      "text": "probably I can say this is my peak index. Very simple linear iteration. What will be the time complexity of this particular code? Can I say it's a big O of n because we are just simply traversing what is the space complexity a big O of one. Obviously the interviewer will not be happy with big O of n and he'll ask you to optimize this. Now this is when we start thinking if big O of n is not working what will work like what is better than big O of n. We can probably think of something as logarithmic of n. If I'm thinking about logarithmic of n I know there are only certain number of algorithm that comes to my brain and one of them is definitely binary search. And why do we think of binary search here? The sole reason is what are we looking for? We're looking for something as search which is kind of like search search. And where are we looking at? We're looking at an array which is kind of kind of having a sorted tendency if you carefully look it will either be like this then probably go down if it has multiple peaks again go up go down in case of multiple peaks. But something I'm for sure is it always has a sorting tendency. Some portion of it is in a sorted order this other some portion is again in the sorted order."
+    },
+    {
+      "chunk_id": "L053_C7",
+      "start": 435.76,
+      "end": 514.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=435s",
+      "text": "always has a sorting tendency. Some portion of it is in a sorted order this other some portion is again in the sorted order. So I can relate I can relate there is something as find which is search it is kind of sorted and the big O of n is not accepted. So all of these factors will kind of push me to think in the direction of binary search. So this is how you think of binary search it's not that you just memorize all of these factors you try to submit the brute force it doesn't get submitted then you start thinking about logarithmic of n and that is when you kind of go towards binary search got it? So how can we solve this? First of all let's assume that the array has one peak. I'll first solve the problem where we are taking this assumption that the array has just one peak. First I'll try to solve the problem where the array has one peak then we will try to expand it to the problem where the array has multiple peaks which is has greater than one peaks. So let's first try to solve this. Can I say one thing for sure? If the array has one element just in case there's a minus infinity on the left there's a plus infinity on the right can I say for sure that if the array is having one element"
+    },
+    {
+      "chunk_id": "L053_C8",
+      "start": 514.54,
+      "end": 593.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=514s",
+      "text": "infinity on the left there's a plus infinity on the right can I say for sure that if the array is having one element that one element will be your answer that is very obvious. So something I know for sure is if the array has one element the zeroth index will always be my peak element done and dusted. What about if the array has more than one element that is when we start thinking and that is when we start solving the problem. So let's quickly erase this. So I've taken this particular assumption that the array has one peak and I'll try to solve it and then we can expand it okay. Now tell me one thing what is the standard procedure of binary search? The standard procedure is have a low have a high and then have a mid somewhere here and then start looking for it we know for sure. So if I have to write down the indexes it will be 0 1 2 3 4 5 6 7 8 9. Let's analyze how can we apply binary search. Can I say since the array just has one peak so if I have to draw the graph of the increasing versus decreasing it will be something like this where till some portion the array will be increasing and then till after some portion the array will be decreasing."
+    },
+    {
+      "chunk_id": "L053_C9",
+      "start": 593.74,
+      "end": 672.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=593s",
+      "text": "something like this where till some portion the array will be increasing and then till after some portion the array will be decreasing. Just a hypothetical scenario to understand it better we know this for sure. Now can I say one thing that if this is happening and if we are doing low at the starting point and we are keeping high at the last point and imagine mid is pointing here imagine mid is pointing here then either the peak will be on the right what can be the case? Either if your mid is pointing here the peak will be on the right if your mid is pointing somewhere the peak is on the left or if your mid is pointing to somewhere the peak is also that index itself. I've kind of figured out certain cases because if mid is here the peak is on the right if mid is pointing here the peak is on the left if mid is pointing here the peak is the mid. So let's we have kind of got our observations where we know the cases can be on the right on the left and on itself we know these can be the three cases if we just have one peak."
+    },
+    {
+      "chunk_id": "L053_C10",
+      "start": 672.06,
+      "end": 746.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=672s",
+      "text": "right on the left and on itself we know these can be the three cases if we just have one peak. Let's try to solve this now so I'll keep a low and I'll keep a high and I've written down the indexes at the top what will be the mid the initial mid will be 0 plus 9 by 2 which will lead me to 4 integer value and this will be pointing here can I say over here I have a 5 so mid is standing at 5 the first and foremost thing we will check is is this a peak element because according to the question you just need to find one peak is this the peak element you're like hey you're greater than 4 but no no no no this is a problem so you are definitely not my peak element the first check fails now I have to think hey peak are you lying on the right hey peak are you on the left we have to think in that direction correct so if I'm standing here hyper like by the naked eye I can see that 8 is on the right right but how can I write it in terms of coding I'll be like 5 was greater than 4 which means it's in a linear curve it's an it's in a linearly increasing curve"
+    },
+    {
+      "chunk_id": "L053_C11",
+      "start": 746.06,
+      "end": 818.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=746s",
+      "text": "I'll be like 5 was greater than 4 which means it's in a linear curve it's an it's in a linearly increasing curve can I say this it's in a increasing curve it's an increasing curve if the mid is pointing to an increasing curve then the peak will always be on the right very obvious so can I say I will never have the peak over here never ever because if it is increasing how can an increasing curve have a peak so the peak will always be on the right so what I will do is I will take this and I will just eliminate the left search space we will move very standard binary search what is the next index 5 plus 9 by 2 which is 14 by 2 7th index so let's point here I straightaway point there and what do I get is I'm like I have a 8 I have a 8 and this 8 is greater than 7 and greater than 5 I got my peak finish over that's my answer so that is for one of the examples let's take another example with one peak let's understand this in a much better way so I've taken one more example where you can see that the peak is 13 in this case let's again start the same thing I will have a low here I will"
+    },
+    {
+      "chunk_id": "L053_C12",
+      "start": 818.06,
+      "end": 895.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=818s",
+      "text": "see that the peak is 13 in this case let's again start the same thing I will have a low here I will have a high here where will the midpoint to the mid will initially point to this place is this the peak that's greater but not greater than this so this is not a peak if you carefully observe one thing let's try to analyze it's a linearly increasing increasing increasing and then it starts decreasing so apparently the mid is somewhere in the decreasing curve how do you realize that it's in the decreasing curve it's super simple you take 6 if that's basically smaller than the left element or you can say you take 6 if that's greater than the right element that means it's in the decreasing curve because it has to be smaller than the left and it has to be greater than the right then only it's at the decreasing element so can I say it's on the decreasing curve if it's on the decreasing curve do I do I like can I surely say I have a peak on the left I do have so thereby can I say that the peak will never be here if I have one peak it will never be here thereby the high moves here that is one lesser than mid standard binary search standard"
+    },
+    {
+      "chunk_id": "L053_C13",
+      "start": 895.06,
+      "end": 968.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=895s",
+      "text": "one peak it will never be here thereby the high moves here that is one lesser than mid standard binary search standard binary search time what is the next job again finding out the mid this time the mid will be this portion why because 0 plus 3 by 2 is 1.5 integer is 1 let's see is this the peak element I don't see it is definitely not the peak element because it's greater than 1 but not greater than 13 that's not the peak element okay let's see the curve 1 10 13 and 7 right that's the curve 1 sorry my bad 13 and 7 that's the curve so 10 is on the increasing curve because 10 is greater than 1 so it's on the increasing curve so obviously the peak will be on the right so just go ahead and move it the peak will be on the right so low will be pointing here and just erase it what is the next job the next job will be something like finding out the mid so the mid this time points to here again standard thing doing a 2 plus 3 by 2 which is how much 5 2.2 yeah that's the mid this time when your mid is standing at 13 13 greater than 10 greater than 7 you got your mid done and dusted"
+    },
+    {
+      "chunk_id": "L053_C14",
+      "start": 968.18,
+      "end": 1045.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=968s",
+      "text": "this time when your mid is standing at 13 13 greater than 10 greater than 7 you got your mid done and dusted so apparently I got my mid quite simple now you might be thinking but stranger you are kind of checking for left sorry you're kind of checking for the left and the right but what happens when the first element is the peak or the last element is the peak so if you remember we had examples where we had something like this let's say 1 2 3 4 5 6 7 8 9 10 in this case if you remember 10 was considered to be the peak why because 10 is greater than 9 and it is always greater than the hypothetical minus infinity on the right and there was the other case where we had like 10 9 8 7 6 5 4 3 2 1 in this case this index was considered to be the peak why because it is greater than the hypothetical minus infinity on the left and it is greater than the 9 present on the array so how do we deal with such cases where we are sure that the peak element can be the first and the last because I don't want to go on there and check on the left because there is no one on the left so while starting"
+    },
+    {
+      "chunk_id": "L053_C15",
+      "start": 1045.66,
+      "end": 1122.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=1045s",
+      "text": "I don't want to go on there and check on the left because there is no one on the left so while starting what you can do is just for the sake of ease like just for the ease of writing code because you will always check with is mid greater than mid plus 1 and you will always check is mid greater than mid minus 1 and you don't want you don't want your mid to be index 0 or you don't want your mid to be index n minus 1 because in both the cases if you take index 0 0 minus 1 will be minus 1 you don't want to go and check with array of minus 1 also you don't want to go and check with array of n because they are not there so how can you prevent this checking because I don't want to get into complications of writing too many edge cases so let's analyze what I can say is can this element be a peak I know this first element will always be greater than the left guy because left is minus infinity the only thing I need to check is is it greater than this so while starting I will say hey one are you greater than two he says no and I'll check 10 hey 10 are you greater than 9"
+    },
+    {
+      "chunk_id": "L053_C16",
+      "start": 1122.22,
+      "end": 1195.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=1122s",
+      "text": "will say hey one are you greater than two he says no and I'll check 10 hey 10 are you greater than 9 and it states I am so you do not perform my research no need to perform my research just at 10 you are the peak and return just check for one variable just check for the first and check for the last if either of this or this either of this or this is your peak return return return no need to do binary search for the same for this one is this greater than 9 yes no need binary search return 10 return 10 simple as that so you will always check for the first and the last element separately while coding it up got it now a question might arise but striver then how to perform the binary search you will see the binary search will always start from this and this why because I have manually written the code for the first element and the last element and I I was sure that they were not if they were I would have returned if I am now performing a binary search I'll just do for this section of the array I'll just do for this section of the array because if I do for this section of the array when I perform the left when I perform the right they will always"
+    },
+    {
+      "chunk_id": "L053_C17",
+      "start": 1195.86,
+      "end": 1275.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=1195s",
+      "text": "because if I do for this section of the array when I perform the left when I perform the right they will always be there because low will at minimum will be one high at maximum will be n minus 2 got it so I shrinked it so that the overflow cases are handled so if I have to write the code I will go to multiple peaks but let's write the code it's very important to keep the code in your brain now so I'll see function of array of n what is the first thing if n is equal to equal to 1 I know that there will be like the only element the 0th index will be a peak return what's the next thing I'll be like okay maybe array of 0 is my peak maybe so if that's greater than array of let's say 1 I'll say you are my peak perfect because if it's greater than this it's already greater than minus infinity or else I'll say if array of n minus 1 greater than array of n minus 2 then n minus 1 is my peak so I've written three manual cases one is for the size one array the other I've written for where I'm sure that the first element will be the peak the other I've written"
+    },
+    {
+      "chunk_id": "L053_C18",
+      "start": 1275.42,
+      "end": 1350.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=1275s",
+      "text": "one array the other I've written for where I'm sure that the first element will be the peak the other I've written with the last element I'm sure that that will be the peak now what will I write in the next I'll be like okay let's take low equal to 1 let's take high equal to n minus 2 I will not check for the first I will not check for the last and then I will go ahead and say let's perform the standard binary search low lesser than equal to high right and then I'll be like mid equal to low plus I by 2 was the next step just check if you are greater than the left again minus 1 see I don't have to check for if mid minus 1 is greater than 0 all these corner cases I've gone and and array of mid are you greater than the right again I don't have to check if right is overflowing no need to check if that's the case please go ahead and return the mid because that is my peak index that is my peak index or else what can be the case maybe the peak index on there is on the right can I say if you are lying on the increasing curve which means you will be greater than your left"
+    },
+    {
+      "chunk_id": "L053_C19",
+      "start": 1350.34,
+      "end": 1425.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=1350s",
+      "text": "the right can I say if you are lying on the increasing curve which means you will be greater than your left that means you're lying on the increasing curve in that case the peak will always be on the right perfect or else there is only one case because if this feels like either of these fields and then if this also fails there's only one thing that will be true which will be the opposite one so it'll be something like if I have to write the condition it will be something like mid is what is the case if you're on the decreasing curve it's actually greater than the right element perfect in that case you will have to search on the left half if it's in the decreasing curve if it's in the decreasing curve it will be greater than the right element so you'll have to do this since the problem clearly states there will always be a peak they will they will always be a peak why because the left is minus infinity and the right is infinity no matter which are they give you they will always be a peak so this line will always be executed but if the function is having a int return type you will have to give a hypothetical return type return minus 1 this line"
+    },
+    {
+      "chunk_id": "L053_C20",
+      "start": 1425.58,
+      "end": 1503.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=1425s",
+      "text": "the function is having a int return type you will have to give a hypothetical return type return minus 1 this line will never be executed but just because the function demands an integer return type and I know there's a return type but it is inside a conditional statement so the program thinks it's inside a conditional so the condition might never happen so program things in that way so program wants you to write an return statement because the data type is integer so you'll have to write a minus 1 but it will never happen the program will always get terminated over here always it is just for the sake of this that you have to write because any return statement under the conditionals is not considered for this got it so you might be having a self-doubt that is hey we can think of this but then thinking about these couple of cases might be tricky now let me tell you one thing since I have a lot of experience I can think in that direction so if you are new then you can also solve it using like 0 and n minus 1 the only change that will happen is you directly cannot check for mid minus 1 you kind of have to write other statements where you have to check for this case and you also have to check for this case you have to write additional conditional statements"
+    },
+    {
+      "chunk_id": "L053_C21",
+      "start": 1503.46,
+      "end": 1576.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=1503s",
+      "text": "where you have to check for this case and you also have to check for this case you have to write additional conditional statements thereby like thereby that's the only reason I've written it and that comes from experience I did not want to write that additional conditional statements that is why I thought what if I can trim it down because I know this will only happen for 0 and this will only happen for n minus 1 so if I can write those cases right at the start I think my job is done and if I can trim down the search space then I don't have to write additional conditional statements again it will come from experience you you just cannot write like this these things straight away so do not worry about that so coming back to the code this code will work for one peak but will this code work for multiple peaks let's ask ourselves that question and I'll be like will it and the answer to that is yes it will with just a single change but before moving to that single change let me explain you why the concept of either finding the peak on the right or either finding the peak on the left will work over here let's analyze so let me draw a graph and explain you why this will work for"
+    },
+    {
+      "chunk_id": "L053_C22",
+      "start": 1576.26,
+      "end": 1651.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=1576s",
+      "text": "on the left will work over here let's analyze so let me draw a graph and explain you why this will work for multiple peaks as well so imagine I have multiple peaks in that case it will be something like increasing then decreasing then increasing then decreasing then increasing and then decreasing so on and they have already stated the consecutive numbers can never be equal so we will never have a flat line now tell me one thing how was the original like for one peak how was the original graph looking there's something like this and in this case the low was here and the high was here and we knew if this was the mid then this was the peak if this was the mid which is basically this section so whenever you were on the decreasing like whenever you were on the decreasing slope the peak was on the left whenever you were on the increasing slope the the peak was on the right we knew that can that solution be applied here let's analyze the first case imagine low is here high is here what was the first case if your mid is on the peak that case will always be true because if you are standing at a peak and you get it you don't need to change that case in your binary search"
+    },
+    {
+      "chunk_id": "L053_C23",
+      "start": 1651.14,
+      "end": 1727.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=1651s",
+      "text": "because if you are standing at a peak and you get it you don't need to change that case in your binary search what was the next case imagine your mid is on the decreasing slope on the decreasing slope in that case whenever your mid was here you knew that the peak will be on the left can that case still be true can that case still be true yes this case will still be true why because even if you are standing here you're discarding the right saying that you're on the decreasing slope and the peak will be on the left you're discarding the right which has a peak it still works why because the left has peaks the left has peaks it will find it it will find it during during the search what if the mid is on the let's not take it here what if the mid is sorry my bad what if the mid is somewhere on the increasing slope which is on this one in that case you are saying your peak is on the right you're saying the peak is on the right somewhere on the right somewhere and that still works because even if you're on the increasing slope you end up discarding the left half you will find some peaks on the right that is where the binary search works because even though you're eliminating a"
+    },
+    {
+      "chunk_id": "L053_C24",
+      "start": 1727.02,
+      "end": 1801.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=1727s",
+      "text": "left half you will find some peaks on the right that is where the binary search works because even though you're eliminating a search space with peaks you're sure that the right search space will still have peaks similarly even if you're eliminating the right half with peaks you're sure that the left search space will have peaks so eventually when you trim down the search space you will end up getting into a search space which will have one peak which will have one peak when you're trimming down the search spaces you will end up you will end up being on a search space which will have one peak and it will fall back to the previous problem but but but this particular code requires one change I'll give you an example by a way by a which you'll understand why does it require one change so let's take this array let's take this array so you know for this you'll do the manual checks and a hope and the low will be here and the high will be here and the mid will be this we know for sure so mid is pointing to one let's see this this will not be true because it's not the peak let's check this is one greater than the left five is one greater than the two so none of the cases was"
+    },
+    {
+      "chunk_id": "L053_C25",
+      "start": 1801.74,
+      "end": 1878.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=1801s",
+      "text": "peak let's check this is one greater than the left five is one greater than the two so none of the cases was executed so it will fall on an infinite loop why because on this graph on this graph you were sure that either it will be the peak or either it will be on the increasing curve or either it will be on the decreasing curve but over here there is additional case where you might be having a mid on on this case like what do you call this this is not a peak this is like reversal of peak this is like reversal of peak you might have this case you have to take care of this so you don't need to separately take care because if you are standing here even if you eliminate the right half the left half will have a peak even if we eliminate the left half the right half will have a peak so just go ahead and remove this check or just write an else and say I can either go to the left or I can either go to the right doesn't matter doesn't matter because if these cases are failing even if I go to the left because even if I'm here even if I go to the left there's a peak even if I go to the right there will be peaks I'm sure about that thereby just adding this will work or you can just"
+    },
+    {
+      "chunk_id": "L053_C26",
+      "start": 1878.86,
+      "end": 1949.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=1878s",
+      "text": "even if I go to the right there will be peaks I'm sure about that thereby just adding this will work or you can just eliminate this thing because if you're not going to the right you'll come to the left it still works so just a slight change and I've explained you with a classical example I hope you understood this so going back to the code editor I have written the exact same code so you have to write this otherwise this dummy return statement otherwise it might fail so I just written an else no else if and all of these things so this is how the code looks like super clean and you've understood the entire concept using the graphs so what is the time complexity logarithmic base to n simple binary search isn't it so I will go back to the sheet and I will say this one is done I hope you have understood this lecture and I hope you enjoyed this because it's important to visualize binary search using graphs because the moment you start visualizing it using graphs of increasing decreasing then you start applying binary search in different different problems easily so it's very important to understand this concept I hope you did just in case you did please please please do consider giving us that like because it highly motivates me and if you're new"
+    },
+    {
+      "chunk_id": "L053_C27",
+      "start": 1949.66,
+      "end": 1972.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=cXxmbemS6XM&t=1949s",
+      "text": "just in case you did please please please do consider giving us that like because it highly motivates me and if you're new to our channel what are you waiting for hit that subscribe button and if you haven't checked out striver c2z ds of course please do check it out and if you haven't followed me on instagram twitter and linkedin all the links will be in the description with this I'll be wrapping up this video let's create some other video till then bye bye take care whenever your heart is broken don't ever forget your golden"
+    }
+  ]
+}

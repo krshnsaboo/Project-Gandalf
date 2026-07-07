@@ -1,0 +1,288 @@
+{
+  "lecture_id": "L015",
+  "lecture_number": 15,
+  "lecture_title": "Merge Sort | Algorithm | Pseudocode | Dry Run | Code | Strivers A2Z DSA Course",
+  "youtube_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8",
+  "chunks": [
+    {
+      "chunk_id": "L015_C1",
+      "start": 0.0,
+      "end": 77.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another lecture from the Stryber's A to Z course. In case you're for the first time here, this is India's most in-depth DS-ALGO course. Why do I say that? Because this course has 456 modules and we will be solving more than 400 plus problems in this particular DS-ALGO course. You can buy any of the paid courses on the market. You can check out all the free courses on YouTube. You will not find such a comprehensive course on DS-ALGO throughout the market. So in case you haven't checked it out, there's a link in the description. You can check out the entire course. So in the previous video, we have covered the step 2.1 module. In this video, we will be covering the algorithm merge sort, but there is a slight prerequisite to this algorithm. You should have covered the step 1.5 module just in case you haven't. Please go and check it out. And guys, we are attaching the notes to all the problems and the video solution will be coming over here. Like if you see this one, the video solutions are attached and we'll soon be attaching all the notes. So please make sure you follow this particular sheet. The link will be in the description. So without waiting, let's get started with the problem merge sort. So what is merge sort?"
+    },
+    {
+      "chunk_id": "L015_C2",
+      "start": 77.34,
+      "end": 145.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=77s",
+      "text": "sheet. The link will be in the description. So without waiting, let's get started with the problem merge sort. So what is merge sort? It is nothing but one of the other sorting algorithms. You must be thinking, but Stryver, till now you have taught us bubble sort, insertion sort, selection sort. So why this another algorithm? If you remember all of these three algorithms, we're taking big O of n square in order to sort an array. This is where merge sort is better. Merge sort takes a much, much better time complexity. We will be discussing the time complexity at the end of this video. But as of now, you need to understand that merge sort is a much more optimized sorting algorithm. Now, you know, sorting algorithm is nothing but it will sort a given data structure. If it has numbers, it will sort it according to numbers. If it has characters, it will sort it according to characters. If it has strings, it will sort it according to these strings. So as of now, we know that merge sort is a sorting algorithm. So what will be the flow of the lecture? The flow of the lecture will be, first I'll explain the algorithm completely. Then I'll go to the pseudo code. And since this is a recursive algorithm, I will go to dry run the recursion so that it gets into your head."
+    },
+    {
+      "chunk_id": "L015_C3",
+      "start": 145.36,
+      "end": 222.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=145s",
+      "text": "code. And since this is a recursive algorithm, I will go to dry run the recursion so that it gets into your head. So after this three steps, you will be able to code this particular algorithm in any of the languages because I will be writing the pseudo code. Post this, I'll be taking one of the languages and I'll be writing the main code. Again, this is something which is not that important. I will be focusing more on the first three steps. So without waiting, let's get started with the first step. That is the explanation of the algorithm. So in order to explain the algorithm, I will take this particular example of an array which has a size of nine. You need to remember two words. In merge sort, please remember that the algorithm means divide and merge. Please remember this divide and merge. So as you can see that this array consists of nine elements. If I have to ask you a question, how do you divide nine elements into two parts? You'll be like, okay, there are two ways in which I can do it. One is I'll see four numbers and five numbers. That's one of the ways. The other way you can say is five numbers and four numbers. That's two ways in which you can divide nine. Why? Because nine is a odd number. So that cannot be splitted into two equal parts."
+    },
+    {
+      "chunk_id": "L015_C4",
+      "start": 222.78,
+      "end": 292.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=222s",
+      "text": "two ways in which you can divide nine. Why? Because nine is a odd number. So that cannot be splitted into two equal parts. That's why either you have to go four by five or five by four. Now you can follow any of the path. I'll follow the five by four path. So if I follow the five by four path, what happens is this algorithm divides the array hypothetically very important word. This algorithm divides the array hypothetically into two parts and says three, one, two, four, one and five, two, six, four. What do you mean by hypothetically? When I will write the pseudo code, I'll explain you. Okay. So as of now, this algorithm has divided the array into two parts, one which has five elements and the other which has four elements. I can say left part and the right part. Now what I will do is I'll always take the left part and I'll try to divide it again. So let's try to divide it again. If I try to divide it again, what happens is it has five numbers. Remember this, it has five numbers. So you can divide it like two by three or three by two. Now since, since in the first step I divided nine into five and four bigger, smaller, I'll follow the same pattern. I'll follow the same pattern so that I can easily write a repeated of code."
+    },
+    {
+      "chunk_id": "L015_C5",
+      "start": 292.42,
+      "end": 370.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=292s",
+      "text": "and four bigger, smaller, I'll follow the same pattern. I'll follow the same pattern so that I can easily write a repeated of code. Now what I'll do is I'll try to divide it something like three, one, two and four, one. Remember one thing you can also divide it as smaller, greater. That is completely okay. How you divide it doesn't matter as long as you divide it. But make sure you follow the same pattern. Like over here it was like over here, if you see it was five, four, that is greater, smaller. So follow the same pattern of division in the future as well for odd numbers. Okay. So next three, one, two, go ahead and divide it. I follow the same pattern and it's three, one and two. So it's like two slash one. Again I'll try to divide it and this time it has two numbers. It's even. So it gets divided into two equal parts. So I'll divide it something like three and one. Now tell me one thing, can this be divided further? The answer to that is no, we cannot because it's a single number and you cannot divide a single number. So this is where you stop. You say the moment I get a single number, I stop and you perform the second half of the algorithm that states, please merge them. So what do you mean by merge? It is three. So I'll write three. It's one."
+    },
+    {
+      "chunk_id": "L015_C6",
+      "start": 370.74,
+      "end": 446.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=370s",
+      "text": "of the algorithm that states, please merge them. So what do you mean by merge? It is three. So I'll write three. It's one. So they're basically two hypothetical array consisting of one numbers. So if there are two hypothetical arrays of one numbers and I want to make it a single array, what will I do? I'll say, okay, let's merge it. And you try to merge it into a single array consisting of these two numbers, but in a sorted way. So if I have to say, okay, I have three, I have one. And if I have to fill the first position, I have to make it sorted. Who will I take? Will I take one? Will I take three? The answer to that is I will take one. So I take one. Next two is remaining three. So I've merged it. I'll explain merge in detail as the array gets bigger. But as of now, what you can say is, okay, we come back, we come back. Whenever it's a single element in both sides, we come back, we take them and we merge. And on merging, this will become one, three, this will become one, three. Perfect. Now this three, one, two was divided into this portion and was divided into this portion. Can I see the left portion got itself sorted and on the right portion has a single element. Can a single element be further divided? The answer to that is no."
+    },
+    {
+      "chunk_id": "L015_C7",
+      "start": 446.82,
+      "end": 524.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=446s",
+      "text": "itself sorted and on the right portion has a single element. Can a single element be further divided? The answer to that is no. So your next step will be very simple. You will take one, three and two. So can I say these are two hypothetical arrays? One is one, three on the left, one is two on the right, and you'll try to merge them into a single because there are two hypothetical arrays. And if you carefully observe the left array in itself is sorted and the right array in itself is sorted. So now I will go across and hypothetically try to merge them. If I try to merge them, they will give me three elements in the sorted order. Now tell me one thing, do you take one or do you take two in order to fill this first position? It will be like, Hey Strivo, I will take one. So you took one and you did not take two. So the moment you've taken one, the next you will say, do I take three? Do I take two? Like I'll take two. So you took two. Next year just left with one. So you will take three. Again, I'll explain this algorithm in depth. Do not worry. So we basically merge them again, merge them. So we get one, two, three, the merging has completed. So can I say initially when I went to the left, we had one, two, three."
+    },
+    {
+      "chunk_id": "L015_C8",
+      "start": 524.82,
+      "end": 602.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=524s",
+      "text": "get one, two, three, the merging has completed. So can I say initially when I went to the left, we had one, two, three. And when you went to the right, we had four, one. So the left portion has divided and merged itself into a single sorted area. It has, it's time to go to the right. Let's go to the right. So the moment you look at the right, it has four, one. So we again try to divide it. So if you're trying to divide it, it will be four and one. Can I see, we can stop over here because they are single elements and they cannot be further divided. Yes. So we have to divide them. So what we do is we stop. Now if it is four, if it is one, and if you have to merge them into a single sorted area, first one will come, then four will come. So what will happen is they will try to merge them and you will get one comma four. So can I say, can I say that this one went, got it sorted. This one went and got it sorted. So basically now they both will come back because the left half is sorted and the right half is sorted. If both of them are completely sorted, what will happen? So can I say it went left and it got itself sorted? It went right. It got itself sorted. It's time to come back."
+    },
+    {
+      "chunk_id": "L015_C9",
+      "start": 602.82,
+      "end": 675.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=602s",
+      "text": "happen? So can I say it went left and it got itself sorted? It went right. It got itself sorted. It's time to come back. So they will get merged. Very simple. Let's write it again. One, two, three, and one, four, and they will try to merge themselves into how many elements? Definitely. Yes. Five elements. So let's kind of now try to get into the algorithm. And you know, this is the smallest element on the left half. If I say there are two hypothetical areas, can I say on the left, the smallest element is definitely on the beginning because both the areas are sorted. So we will take one. We will take one. We have one over here. We have one over here. I have to ask you, which one will occupy this? It can be any of the ones. If I take any of the ones, maybe I'll just move it. Now if I have to ask you out of two, out of one, which will occupy this? You know the answer. It's one. So you now move the pointer. Next, if I ask you out of two, out of four, which one will occupy this? You will be saying two. So I'll move the pointer. Next if I ask you out of three, out of four, which one does occupy this particular guy? You'll be like three. And this will move out."
+    },
+    {
+      "chunk_id": "L015_C10",
+      "start": 675.74,
+      "end": 754.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=675s",
+      "text": "you out of three, out of four, which one does occupy this particular guy? You'll be like three. And this will move out. Next, if I ask which one will occupy this, you'll be like four. And this moves out. So apparently you've got this entire thing sorted. So can I say this will become one, one, two, three, four. Done. So this half is sorted. So we started with nine numbers. We split them into five on this side, four on this side. Five guys have been sorted. By the algorithm divide, divide, divide and merge, merge, merge, they got themselves sorted. Now it's about these four elements. Can I perform the same algorithm of divide and merge on these four? I can. So what I'll do is I'll again start because now it's the right half's turn to get sorted. So I'll not again divide the four elements and if there are even elements, how do they get divided into equal number of elements? So it will become five comma two and six comma four, five comma two will become five, two. So again, can I say they will be sorted back into two, five. And now this one will take place. So it'll be like six, four. Again it'll come back. I'll say four, six."
+    },
+    {
+      "chunk_id": "L015_C11",
+      "start": 754.98,
+      "end": 829.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=754s",
+      "text": "And now this one will take place. So it'll be like six, four. Again it'll come back. I'll say four, six. Perfect. Now can I say this portion is sorted? This portion is sorted. So now they will come back and how will they come back? Let's write it out. Two, five, four, six. So both of them will get merged into how many elements? Four elements, two or four. Which one goes at the first? Two. Four or five? Four or five? Four. Sorry. Now six or five? Yes. Five. Next six. It's like two, four, five, six. Very simple. So this becomes two, four, five, six. We can go ahead and erase this as well. Got a bit clumsier, but I'm assuming you're getting the explanation. Now where are we? Can I say we went to the left? What? We got everything sorted. We went to the right. We got everything sorted. The left, the left five elements are sorted. The right four elements are sorted. What is that we need to do? We need to merge them. We need to perform the last step that is merge. These one, one, two, three, four, one, one, two, three, four. And on the right we have two, four, five, six. We have two, four, five, six."
+    },
+    {
+      "chunk_id": "L015_C12",
+      "start": 829.18,
+      "end": 903.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=829s",
+      "text": "one, one, two, three, four. And on the right we have two, four, five, six. We have two, four, five, six. They will get merged into nine elements and that will be my ultimate sorted array. How do we merge? Let's now understand the algorithm in depth. So what we do is we keep a couple of pointers, one here, one here. Okay. And then we create an array of size, let's say nine, one, two, three, four, five, six. We created an array of size nine, or you can create an empty area and keep on piling it up. That's your choice. We will take care of that during the implementation. So we know this entire left array is sorted. We know the entire right array is sorted. So we have to combine them to get a sorted array. So out of one and out of two, because both of them are smallest, I know I've taken the two smallest guys from left, from right, which one will take this place? You say one. you take one and the place I take one and I merge at other two. I can take two or i can take three."
+    },
+    {
+      "chunk_id": "L015_C13",
+      "start": 903.04,
+      "end": 980.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=903s",
+      "text": "place I take one and I merge at other two. I can take two or i can take three. I can move the pointer. pointer. So we can see the left array has been exhausted. Please hear me properly. I can see the left area is completed. It doesn't have any more elements that can go over here. So what I will do is without doing any further comparisons, I'll pick up everyone from the right and I'll just put it over here. I'll pick up everyone from the right and I'll put it over here because there is no one left on the left. Got it? If something similar happened that the right element got completed, then you would have taken this and you'd have put it in. It doesn't matter. So it's very simple. If I have to define the merge algorithm, it's very simple. You take two pointers, compare, put, put, put. One gets completed. The other one gets put. We will implement this. Do not worry. So we have done the sorting. So the last step, what will happen? They come back, they come back and this will be one, one, two, two, three, four, one, one, two, two, three, four, four, five, six, four, four,"
+    },
+    {
+      "chunk_id": "L015_C14",
+      "start": 980.56,
+      "end": 1057.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=980s",
+      "text": "and this will be one, one, two, two, three, four, one, one, two, two, three, four, four, five, six, four, four, five, six. So can I see after I have completed all the steps of divide and merge, you carefully notice the last step was merge in the entire algorithm. So once I performed both of them completely on all the parts of the array, the array that I get will always be sorted. This was the algorithm. I hope you have understood the explanation. So I hope you have understood the explanation. It's time to understand the pseudocode. First thing that we have to observe is what are we doing? We are dividing. We're dividing the array into two halves, but logically speaking, if you're going to break the, uh, break the array down into two new areas, and then again, this area into two new areas, again, this area into two new areas, will it make sense? No. This is where in the pseudocode, we will try to play around with index instead of breaking them down into two new areas. We will try to play around with indexes. Okay. So in order to write the pseudocode, what I've done is I've taken a very small array of size five. I know the array indexing starts from zero and it will go to four if the size"
+    },
+    {
+      "chunk_id": "L015_C15",
+      "start": 1057.04,
+      "end": 1135.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=1057s",
+      "text": "small array of size five. I know the array indexing starts from zero and it will go to four if the size is five. So what I will say is, see, this index will be referred as my low, this index will be referred as high. So what does low and high means is a starting point of an hypothetical array and high is the ending point of an hypothetical array. So initially we have an entire array that has to be sorted. So low is the starting point of that entire array and high is the ending point of that hypothetical array. Got it. Okay. So let's try writing the pseudocode for this merge sort algorithm. So I'll go ahead and write the function name as merge sort and initially I'll pass the array and I will say in this area initially, please consider the entire area that you have to sort. So the hypothetical starting point of this area is low and this is high, which means take the entire area. So I'll pass them low and I'll pass them high and initially when this is called low will be passed as zero high will be passed as four. Very simple. Let's go on and as of now I will not write any condition. I'll keep conditions apart. So how do I write this algorithm? Let's try"
+    },
+    {
+      "chunk_id": "L015_C16",
+      "start": 1135.92,
+      "end": 1202.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=1135s",
+      "text": "as of now I will not write any condition. I'll keep conditions apart. So how do I write this algorithm? Let's try to observe something. What are we doing repeatedly? Are we doing something repeatedly? Yeah. Divide, divide, divide, divide. We're kind of doing divide, divide, divide, divide. And at the last step we're trying to come back, come back. Does it give you an idea that you have to apply something like a recursion? Like if the go divide, divide, divide, and then you have to come back. That's kind of like recursion backtracking. If you've seen the lectures you can try to relate it with recursion and backtracking. That's what we will be using. So what I will say is, okay, now what is the thing that I'll do? I'll try to take this array and try to break it down into two parts. That is what I'm doing. I'll try to take this array and I'll try to break it down into two parts where I will take the first one to be three to four. That's how I was doing the greater like three numbers at the first and then the two numbers at the back. So I'll say I'll divide it into two parts, the left and the right. That's what I'm doing. And then I'll ask, can you please sort this? Can you please sort this? Once both of them are sorted, I can actually again merge them. That's"
+    },
+    {
+      "chunk_id": "L015_C17",
+      "start": 1202.52,
+      "end": 1277.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=1202s",
+      "text": "ask, can you please sort this? Can you please sort this? Once both of them are sorted, I can actually again merge them. That's what the algorithm was. So I'll be like, okay, do I need to make a new array? No, this is where low and high comes in. I say, Hey, listen, this is array indexing. So can I say this array is nothing but an array where the low is at zero, an array where the high is at two. Can I see this? I can. So if I have to look properly, the low is at zero, the high is at two. That's what I'm doing. So I'll go and say that, Hey, listen, maybe find a middle index. So middle is going to be low plus high by two. Very simple. So if you see over here, what will be this? Zero plus four by two will give you two. So where is the first half of the array? It's from zero till two. And where's the second half? It's from three to four. So can I say, Hey, please go ahead and try to sort this array, sort this array, which starts from zero, which is apparently low. And this goes on till two, which is apparently middle because in the first time, the middle is two. And can I say,"
+    },
+    {
+      "chunk_id": "L015_C18",
+      "start": 1277.88,
+      "end": 1353.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=1277s",
+      "text": "this goes on till two, which is apparently middle because in the first time, the middle is two. And can I say, okay, this means I'm, I'm asking him to do for this one, right? But I have to also ask him to do for this one, because if he sorts this, if he doesn't sort this, how will I merge them? Because both of them have to be sorted in order to be merged. So what I will do is I'll again say merge sort. And I'll say, array, can I get the right half of the array sorted? I'll be like, okay, in this array, which portion are you telling me to sort? I'm saying from three to four, what is three? That's nothing but mid plus one because mid was two till high. So what I've done is instead of making two new arrays, I told the indexes I told in this area, take from low to mid, which is take from zero to two, which is this in this area, take from three to four, which is this. Instead of dividing them into two areas, I passed on the indexes and sent them to one, sent them to sort themselves. Now assuming that this functions are getting sorted by themselves. Once the portion from low to mid, once the portion from low to mid is sorted, once the portion from mid one to"
+    },
+    {
+      "chunk_id": "L015_C19",
+      "start": 1353.24,
+      "end": 1425.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=1353s",
+      "text": "Once the portion from low to mid, once the portion from low to mid is sorted, once the portion from mid one to high is sorted, what is the next step? If you remember, the next step is merge. So probably I can say that, hey, please go ahead and merge the array. The first half of the array is very simple. It goes from low to mid and the second half will be from mid plus one to high. So take these things and can you please merge this particular array? That's what I'm saying. That's what I'm saying. Very simple. Now, when do we stop? When do we stop is my question. We have to write that over here because if you know, if this is nothing but a recursion, merge shot calling itself, merge shot calling itself. It's a recursion. In order to stop recursion, you write something as base case. I hope you know that in order to stop recursion, you write something as base case. So I have to write that base case. Let's analyze what is the base case. Let's go back to this example. What is the base case? Can I see when your array has one element, when your array has one element. So if I have to index it, can I say this is index zero, this is index one, this is index three, two, three, four, five,"
+    },
+    {
+      "chunk_id": "L015_C20",
+      "start": 1425.32,
+      "end": 1501.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=1425s",
+      "text": "have to index it, can I say this is index zero, this is index one, this is index three, two, three, four, five, six, seven, eight. Can I say these are the last indexes? And if I have to ask what array is this, it'll be like this array is something like from index one to index one, where index one is the low index one is the high. Can I say this is the array that represents this? Yes, because we are not creating a new array. I am saying this array is from index one to index one, which is this. Right? So can I say the moment we have the low, the left point, we have the high, the right point to be seen. That's when we do not go and divide. We do not divide. We just go back. So that's what the base case will be. We write, Hey, if at any moment, the low tends to be equal to equal to high or exceeds high for that reason, or maybe it's some how like it will never, but still there's no safety reasons. If it exceeds high, please do not, because there's no need to do any of the further algorithms. It's a single element array and it will always be sorted. Please go back. Please go back. So this is how the pseudocode will look like. Might seem a bit confusing, but now when I"
+    },
+    {
+      "chunk_id": "L015_C21",
+      "start": 1501.8,
+      "end": 1577.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=1501s",
+      "text": "Please go back. Please go back. So this is how the pseudocode will look like. Might seem a bit confusing, but now when I run by taking an example, it'll straight away get to your head. Okay. So we can see that the pseudocode has been completed, but in order to understand this algorithm with clarity, we have to do a dry run of this recursive algorithm. Then only it will get clarified. So let's try to do a dry run by taking this particular example. So remember one thing, whenever this algorithm is called, it is called with the complete array. So the entire array is always been passed with this algorithm and the initial low and high will be zero and four because that's what for this particular example it will be because initially I will pass on this entire array and ask MerShot to sort it. So what will happen? Will this first base case operate? Because no, low is still smaller than high. So it doesn't. Mid comes up. What will be the value of mid? Can I say the value of mid will be two. So what happens is it goes ahead and calls the MerShot. It goes ahead and calls the MerShot. So let's copy paste the same algorithm. Let's do it. So I've copy pasted. So what we can say is this particular recursion call will call this particular function again, but this time it"
+    },
+    {
+      "chunk_id": "L015_C22",
+      "start": 1577.36,
+      "end": 1652.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=1577s",
+      "text": "So I've copy pasted. So what we can say is this particular recursion call will call this particular function again, but this time it will pass the low as zero and pass the high as two. So apparently what happens is it calls for this guy. Remember how recursion works is first this will get operated, comes back, then this line gets operated. That's how recursion works. So that's why first the left portion will get operated. So the recursion called for zero to goes. Now what happens? Does this line operate? No, this line doesn't operate. What happens? Tries to find the mid and this time the mid comes out to be one because zero plus two is two and two by two is one. So one comes up. So this time again, this MerShot gets called. But if the MerShot gets called, what will happen? It gets called for what? From zero to one. So it's like three to two is what it is getting called. And then it will be called for the only number four, which is just two. So we will go ahead and maybe again, call this recursion. Let's go ahead and call the recursion again. So the recursion is again called. What happens this time? The MerShot is called with zero one, which means this particular example, right? So this time the low is zero, the high is one. So what happens? The mid is zero plus"
+    },
+    {
+      "chunk_id": "L015_C23",
+      "start": 1652.0,
+      "end": 1726.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=1652s",
+      "text": "means this particular example, right? So this time the low is zero, the high is one. So what happens? The mid is zero plus one by two, which is nothing but zero. So again, the MerShot is called. So let's again copy paste this same algorithm. The MerShot this time is called for zero zero. If I go into the diagram, it's something like for three and something like for just one. So this time it's called for three. So what happens is it's called for zero and zero. So apparently this particular base case gets executed and it returns. So I can say it's done. It's done. If I have to go back into the chart, this goes back. Similarly, another MerShot will be called. Let's try to write this as well. And this time it will be called for from mid plus one to high. So mid was zero. So it'd be like one comma one because high was one mid was zero. So mid plus one is one high is one. So high is one. It's called for one comma one. Again, the low, the base case operates and it calls back. Apparently both of these recursive functions are completed. Once both of these recursion functions are"
+    },
+    {
+      "chunk_id": "L015_C24",
+      "start": 1726.48,
+      "end": 1806.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=1726s",
+      "text": "case operates and it calls back. Apparently both of these recursive functions are completed. Once both of these recursion functions are completed. Can I see this? That I'm going back from here and now we have this as sorted. We have this as sorted. It's two sorted arrays. It's two sorted arrays. What will happen? Let's go back here. This merge happens. So it takes a three, it takes a two and it tries to merge it. Now we will write the merge algorithm afterwards, but let's understand. Just imagine merges merging two arrays. That's it. That's a very simple algorithm. Just understand this. So two comma three happens. So what would have happened? Two comma three, right? So this would have become two comma three. Perfect. Let's go back to the recursion. So can I see this? Now we can go back from here to here and we can say the zero one is sorted. So this time this recursion will again be called. Let's try to write it. So what will be this recursion? If zero one is done, sorry, my bad. If zero one is done, what's the next mid plus one? That's two. I is two. So we'll call it for two comma two. And if we call it for two comma two, what will happen? Yes, they are the same numbers. So it will return. And if it returns this time, what will happen? It called for two comma two. This guy has"
+    },
+    {
+      "chunk_id": "L015_C25",
+      "start": 1806.32,
+      "end": 1879.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=1806s",
+      "text": "same numbers. So it will return. And if it returns this time, what will happen? It called for two comma two. This guy has done the recursion and this guy has done the recursion. So apparently again, the merge happens this time. The merge happens from zero to one till the two. The merge this time happens for two comma three and maybe four or whatever it is. Yes. And this will become two comma three comma four. Hope you're getting the gist. So can I say after this, I'll again go back and when I go back, I'll try to just come back. When I go back, can I see this? That zero comma two would have been sorted. And if zero comma two is sorted, I'm done with this. And I'll go to the right part, which is having this. And similarly, this is done. So this will call it right. And I will let call it let's copy paste and show it. If zero comma two has been done. So can I say next is mid plus one. So this is nothing but three highest four. This time it goes and calls for three comma four. Again, the same thing will happen. The mid will be like three plus four, seven by two, three. So it will be called for three comma three. And then it'll come back. This will be called"
+    },
+    {
+      "chunk_id": "L015_C26",
+      "start": 1879.8,
+      "end": 1954.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=1879s",
+      "text": "four, seven by two, three. So it will be called for three comma three. And then it'll come back. This will be called for four comma four. It'll be come back. And then this will merge both of these two elements. It's like, it'll be called for one. It'll be called for three. Then they will be merged as one three. And once this is done, what do we have? We have zero comma two sorted. We have three comma four sorted. The last merge takes place between this zero comma two, that is two comma three comma four and one comma three. So apparently they are merged together. When merged, you will get one, two, three, three, four. That is what happens at the last step. I hope that does make sense. So, so I hope that Ryan is clear in terms of the pseudo code. It was very simple. First, the entire array goes to the left, goes to the left, goes to the left, goes to the left, and then merges. It always performs this recursion first, this recursion first, this recursion first. Once this is completed, then this, once both are completed, then the merge happens. You need to understand that this is how the flow works. In order to understand this in much more depth, what I'll recommend to you is take a pen and paper, write this code, try doing it all over again. Got it? So what"
+    },
+    {
+      "chunk_id": "L015_C27",
+      "start": 1954.64,
+      "end": 2020.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=1954s",
+      "text": "what I'll recommend to you is take a pen and paper, write this code, try doing it all over again. Got it? So what have we completed? We have completed the dry run, the pseudo code as well. But before going into the code, we still are left with the merge pseudo code. If we are able to write the merge pseudo code, I think we will be done. So let's take a bigger example in order to understand the merge pseudo code. Can I say the indexing is like zero, one, two, three, four, five, six, seven, eight. And this is like zero, one, two, three, four. And this is like five, six, seven, and eight. And if the merge will happen, I will call it like merge these two arrays. Because if you know this array, when it goes into depth, it will be sorted. It will be sorted like one, one, two, three, four. And this also will go into the depth and it will be sorted like two, four, five, six. This is something which all of us know for sure that both of them will be sorted. And both of the array will be something like one, one, two, three, four. And this will be like two, four, five, six. This is something we know. And this will be indexed from zero to four. This will be from five"
+    },
+    {
+      "chunk_id": "L015_C28",
+      "start": 2020.16,
+      "end": 2099.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=2020s",
+      "text": "two, four, five, six. This is something we know. And this will be indexed from zero to four. This will be from five to eight. That's something we know. We just have to write an algorithm to do it. So we're writing the algorithm. Okay. So we're saying merge. I'll give you the array and I'm stating you that the first half is from low to mid, and then you can go from mid plus one to high. So I'm giving you all the three parameters required. What I'll do is maybe I'll just keep an empty data structure. It can be a vector, it can be a list. As of now, just imagine this is an empty data structure where we can add elements. Okay. Now can I see that the left array will be from low to mid? And can I say the right area will be from mid plus one to high? I can. So I will keep a couple of pointers. So I'll say, okay, left pointer is at the low. So that means left comes over here and I'll say right pointer is nothing but at mid plus one. So what happened? I'll say right is here. Now what will I do? I will try to compare these two and try to fill in this bigger array, the bigger array. I'll try to compare these two and try to fill in the bigger array. So what I will do is"
+    },
+    {
+      "chunk_id": "L015_C29",
+      "start": 2099.32,
+      "end": 2176.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=2099s",
+      "text": "array, the bigger array. I'll try to compare these two and try to fill in the bigger array. So what I will do is I will now try to iterate till what? Till we have elements on the left or till we have elements on the right. Can I say, that means I will say while left is smaller than equal to mid, which means I still have element. I'll see. And, and right is lesser than equal to high, which means I still have elements on the right. Very simple. Now what I'll do is, okay, this is what I'll do. Till I have elements on the left, till I have elements on the left, on the right. So I'll not try to compare. I will say, hey, listen, if array of left is smaller than equal to array of right. So what happens? This and this gets compared and if one is smaller than two, I'll take one and I'll add it to our resultant guy. I'll add it to our resultant guy. So I'll say, okay, maybe we can name this as something else. Let's go and name this as maybe let's say temporary. That's a better name. As a temporary, can you please add yourself the smaller guy, array of left. And once you have done this, can you move ahead the pointer, which means the left pointer"
+    },
+    {
+      "chunk_id": "L015_C30",
+      "start": 2176.92,
+      "end": 2252.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=2176s",
+      "text": "the smaller guy, array of left. And once you have done this, can you move ahead the pointer, which means the left pointer goes to the next again. So basically what will happen is the temporary will have one with itself. Again, the comparison between one and two will happen and this one will come here. So temporarily again takes it. And now the left moves here. Again, the comparison between two and two will happen and it comes here and the left moves here. This time when you compare three and two, when you compare three and two, two will come, but the if only compares for lesser. So there will be a else else will state, can you please add the right guy? Can you please add the right guy? That is take from the array and add the right guy. And once you have added, can you move the right plus plus. So what I'll do is I'll move the right to ahead. Now that's how this will work and it'll keep on comparing and it'll keep on adding till this is not completed. So what will happen? This two will come and the right will move here. Now the comparison between four and three happens. So three comes and the left moves here. Now four comes and the left is exhausted. Left exceeds mid left exceeds mid. So we see that the left has exceeded mid. There is no one on the left. So what"
+    },
+    {
+      "chunk_id": "L015_C31",
+      "start": 2252.08,
+      "end": 2326.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=2252s",
+      "text": "Left exceeds mid left exceeds mid. So we see that the left has exceeded mid. There is no one on the left. So what I will say is after the end, if there is anyone on the left, which means if there is anyone on the left, because if this while, if this while loop is false, either it will be false because this is true or this is true. So if there are on the left, if there are on the left, I will still add it. I'll just take everyone from the left and add it to my stuff. And if there are people on the right, because anyone will be true, either there will be on the left, either there will be on the right. If there are people on the right, which will be right high. And then I'll say temporary.add array of right. And I'll do right. Plus, plus quite simple. If that means if on left, copy them, if on right, copy them as simple as that. So can I say at the end of the day, I would have four, four, five, six, all of them in the temporary array. Now we need to place them into the original array. So"
+    },
+    {
+      "chunk_id": "L015_C32",
+      "start": 2326.24,
+      "end": 2406.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=2326s",
+      "text": "five, six, all of them in the temporary array. Now we need to place them into the original array. So what have we completed till this step? We can see the left sorted array and the right sorted array have been put into a third array temporary, but we actually need to put it from low to high because that's the original array because the original array is from zero to eight. And you'll take these elements and put it there because it is in temporary. So what I'll do is I will probably loop. Yes, let's loop. I'll say for I from low to high is where I'll loop. Please loop from there. And I'll say array of I, that means who's the first element temporary, temporary must be keeping because it's a temporary array. It'll always keep in the zero index. So I'll always say temporary. I minus low. That's it. First time I will be low. So what will this happen? Low minus low. That'll be zero. Next time I will be low plus one. So low plus one minus two. That'd be one. Next time I will be low plus two low plus two minus two. It'll be two. So it'll get all these indexes because it will be stored in a temporary array. It'll pick up all these indexes and store in the correct order. So it'll pick up all these indexes at zero one two and it'll store"
+    },
+    {
+      "chunk_id": "L015_C33",
+      "start": 2406.2,
+      "end": 2468.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=2406s",
+      "text": "up all these indexes and store in the correct order. So it'll pick up all these indexes at zero one two and it'll store it in the correct order from low to high because, because this was little bit, this was mid plus one to high and they got together from low to high. That was the original area. Got it. This is how the merge will look like. I hope that does make sense. So now I can confidently say that you've understood the explanation, the pseudo code and the dry run. So you can code it in C plus plus Java and Python. So I'll just go across and code it in C plus plus or the Java and Python codes. You can find them in the links in the description. It will be updated very, very soon. Just in case it is not there as of now, let's come to the compiler and try to code it. So we are given a function, we're given the array and we're given this. So assume we are going to write this function and we say void, uh, more short and I'll see, let's take the array, which is this. Please make sure you pass it by reference low and high. That's what we require. And we know one thing, if low is equal to high, we're going to return. That's it. Otherwise we are going to find a middle,"
+    },
+    {
+      "chunk_id": "L015_C34",
+      "start": 2468.2,
+      "end": 2547.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=2468s",
+      "text": "we know one thing, if low is equal to high, we're going to return. That's it. Otherwise we are going to find a middle, which is low plus high by two. And then we will be calling the MS with Eric, comma, low, comma, mid and MS, Eric, comma, mid plus one, comma, high. And then we will be calling something like merge, where you'll be passing, add a low, mid and high. That's what the algorithm will be. And we can call MS where the array and zero comma and minus one, because that's the initial starting and the end position of the entire area. Just have to write the merge function. And I think we will be done. So let's write the void merge. And again, make sure you take everything by reference, and then low, and then you can take mid and then you can take high. So can I just take a temporary area? We can, and we can take the left pointer to be low plus one, sorry, low rather. And you can take the right pointer to be made plus one, because we know the first area will be like, if I have to comment it, it will be from low to mid. And the second area, if you remember, it will be mid plus one. Then hi. So let's see, let's write this. So we say left is less than equal to mid and,"
+    },
+    {
+      "chunk_id": "L015_C35",
+      "start": 2547.04,
+      "end": 2626.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=2547s",
+      "text": "will be mid plus one. Then hi. So let's see, let's write this. So we say left is less than equal to mid and, and made and, and right is less than equal to high. Very simple. We need a temporary edit that is defined over here. We say, Hey, I of left, are you smaller than array of right? If you are, can you please go ahead and get attached, push back to array of left. Very simple. Same time you can do a left plus plus, and you can write an else and you can temporary dot push back array of right. And you can say right plus plus, this is what you will do for comparing and putting it. After that, if there are still elements left on the left, please take it because if this is false, then this must be having some elements on the left. So go ahead and just copy paste this. Perfect. And if there are still elements on the right, then go ahead and copy paste everything from the right. Quite simple. Once you have done this, make sure you put them into the array, which is for I and D I equal to low, I less than equal to high and I plus plus. And you can say, I will be temporary"
+    },
+    {
+      "chunk_id": "L015_C36",
+      "start": 2626.28,
+      "end": 2698.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=2626s",
+      "text": "I equal to low, I less than equal to high and I plus plus. And you can say, I will be temporary of I minus low. So once you've done this, since everything is by reference, the, the numbers will rearrange themselves in the array itself. Now I can go ahead and go ahead and run this and see if it is running fine. I hope it does. It does. And now I'll quickly submit this. I write codes in one go. Wow. Nice. No syntax errors. So we have understood everything, but there's only one thing that is left, which is the time complexity of this merge short algorithm. Remember one thing, what's happening. There's an N size array, which is getting divided to N by two N by two. Then this N by two is getting divided to N by four N by four N by four and N by four. So at every step, they're getting divided by two by two by two by two. And if you remember the time complexity lecture, I have already told whenever it gets divided by by two, the time complexity is log based when remember this, now you might ask me, but Trevor, why you're dividing it by by two by two, but why it is log based when it's very simple. If I have to write 16 and I have to divide it"
+    },
+    {
+      "chunk_id": "L015_C37",
+      "start": 2698.48,
+      "end": 2777.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=2698s",
+      "text": "two, but why it is log based when it's very simple. If I have to write 16 and I have to divide it by two, it'd be like eight and eight. It'd be like four and four, right? Like if there are four, like if there are 16 added elements gets divided into eight and eight, it gets divided into four and four, four gets into two and two, and then two gets into one and one. So apparently this is nothing but one step, two step, three step, four step. And 16 is nothing but two to the power of four. And that's nothing but four steps, right? Four steps log base to 16 is nothing but four steps. So it's approximately logarithmic number of times the division happens. It's approximately logarithmic number of times that the division happens. That means it gets broken down into logarithmic of end time. And you're also performing something like a merge every time. So every time division by like, this is div, this is half and this is half. This half will go on till log base to an near about again, everything is in terms of near about, okay. Time complexities goes till near about log base two. And then there is a merge happening. How much is merge taking? If I have to think of the extremist"
+    },
+    {
+      "chunk_id": "L015_C38",
+      "start": 2777.32,
+      "end": 2849.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=2777s",
+      "text": "base two. And then there is a merge happening. How much is merge taking? If I have to think of the extremist case, if I have to think of the extremist case, can I say this is of size three, this is of size two. So in order to merge three and two elements, I'm going to require five steps at minimum one comparison. It's like everyone is comparing in itself. It's like a near about bigo of N that's the worst case because for this I'll end up taking at minimum of five steps because every element is compared one by one and then it is put over here. It takes minimum of five steps, which is nothing but the length of the array at the worst case. So can I say the merge, I have to go back to this. There's so many things written man. I have to go back this. Can I say this at the worst case takes bigo of N this time. Over here it might take bigo of N by two. Over here it might take N by four, something like this. But at the worst case it is taking N. So thereby I can actually see that the time complexity is nothing but N into log base two N. Now you might ask me a question, but Shriver wait, one step, two step, three step, four step. Who will be counting"
+    },
+    {
+      "chunk_id": "L015_C39",
+      "start": 2849.76,
+      "end": 2927.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=2849s",
+      "text": "N. Now you might ask me a question, but Shriver wait, one step, two step, three step, four step. Who will be counting these steps? Wait, that is actually compensated. How? Because the merge over here takes bigo of N. The merge over here takes N by two. The merge over here will take N by four. So the merge is taking lesser. So in overall, if you try to add it up in mathematical, you will actually get somewhere near about N into log base two N as the merge starts time complex. So N log N is the best average and the worst case. But if I have to ask, Hey, what is the space complexity of the algorithm? How much extra space are we using? So if you remember the algorithm, the algorithm is actually using indexes, no separate arrays. Is this the given array that they're using? Are they using any extra additional space? They are during merge. In every merge step, they're creating a temporary array, which at the worst case might take bigo of N. So the space complexity at the worst case is bigo of N, near about bigo of N for this particular algorithm. So with this, I will be completing merge shot and the time is 328 AM in the morning. As you can see, I cannot record in the day because there's a lot of background noise. So just in case you understood everything, please,"
+    },
+    {
+      "chunk_id": "L015_C40",
+      "start": 2927.52,
+      "end": 2973.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=ogjf7ORKfd8&t=2927s",
+      "text": "you can see, I cannot record in the day because there's a lot of background noise. So just in case you understood everything, please, please consider hitting that like button. And if you haven't checked out Striver C2Z DSA course, the link will be in the description. Please make sure you check it out because we have notes for everything. We will be attaching video solutions to everything. Yes. Most of the advanced topics have been covered previously. I'm starting to cover the basic topics now. So you can definitely proceed ahead with the advanced topics in case you need for advanced as well. So guys, if you're new to our channel, please do consider hitting that subscribe button because that is the only thing that keeps you motivated to make these kind of videos and you have to follow our tradition. Please make sure you comment understood in the comments so that I get a vibe that you guys are understanding everything. So with this, I'll be wrapping up this video. If you haven't followed me on Instagram, Twitter, LinkedIn, the links will be in the description. With this, let's wrap up this video and meet in some other video. Till then, bye-bye."
+    }
+  ]
+}

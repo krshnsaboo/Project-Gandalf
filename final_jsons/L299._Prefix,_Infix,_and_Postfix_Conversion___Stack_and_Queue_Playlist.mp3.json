@@ -1,0 +1,288 @@
+{
+  "lecture_id": "L299",
+  "lecture_number": 299,
+  "lecture_title": "L3. Prefix, Infix, and Postfix Conversion | Stack and Queue Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk",
+  "chunks": [
+    {
+      "chunk_id": "L299_C1",
+      "start": 0.0,
+      "end": 77.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=0s",
+      "text": "So let's continue with the stack and cube playlist. It was starting off. Hey, welcome back to the channel. I hope you guys are doing extremely well. So the topic for today's lecture is arithmetic expressions. So be reading about what is an operator, what is an operand, the priority order will be knowing about prefix, infix, postfix, arithmetic expressions. And once we know about it, we'll be doing conversions like infix to postfix, infix to prefix and so on. So the first one is what is an operator and what is an operand? Let's understand what is an operator. So this is an operator. Now, what is this? Whenever I say two to the power three, usually you write something like this two to the power three, but if you have to write it in arithmetic expressions, we'll be writing it as two to the power three. Agreed. The other one is the multiplication operator. Everyone knows that. Then there is a division operator and there is an addition operator and then there is a subtraction operator. So these are all the operators we have. So now we know what is an operator. And the second thing, what is an operand?"
+    },
+    {
+      "chunk_id": "L299_C2",
+      "start": 77.56,
+      "end": 156.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=77s",
+      "text": "the operators we have. So now we know what is an operator. And the second thing, what is an operand? Now usually when we write arithmetic expressions, usually we have operands like capital A to capital Z, small a to small z and the numbers zero to nine. These are the numbers we generally use. We generally use for most of the arithmetic expressions. Okay, perfect. The first one is done. After that we have a simple question. What is the priority order? Now priority order of what? Priority order of operators. You need to know it because this is going to be useful while we convert from infix to postfix and fix to prefix and so on. The priority order is very simple. The power operator is having the maximum priority. So maybe we can give it a priority of three. This has a slightly lesser priority, the multiplication and the division operator, but they have similar priorities. So maybe to both of them I can give a priority order of two. After that I have an addition and a subtraction of operator. So I can give both of them a priority order of one. So I've written them down in the decreasing order, in the decreasing order of priority. Anything apart from it, you can give them a priority order of minus one."
+    },
+    {
+      "chunk_id": "L299_C3",
+      "start": 156.44,
+      "end": 233.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=156s",
+      "text": "decreasing order, in the decreasing order of priority. Anything apart from it, you can give them a priority order of minus one. They have the least priority. Got it? So, okay, we know about priority now, but before doing the conversions, we need to understand what is prefix, what is infix and what is a postfix. So whenever you write mathematical expressions, you have to write it in a certain way. Now, the most generic way that we follow is this one, right? We write something like b plus q and then a multiplication and then an m minus n. That is the most generic way to write it. And this is nothing but infix expression, infix as the name has something as in. If you see all the operators, what are the operators? The plus, the multiplications, the subtraction, everything is in between. Thereby this can be termed as infix mathematical expression or infix arithmetic expression. Got it? What about prefix? As the name is recommending pre, pre, all the operators will be pre. So over here you have multiply plus and then a pq. After that you have a subtraction and then a mn. So this is pre. The operators are before the operand. What are the operand? You know, these are the operand. Got it? What about the postfix?"
+    },
+    {
+      "chunk_id": "L299_C4",
+      "start": 233.58,
+      "end": 308.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=233s",
+      "text": "The operators are before the operand. What are the operand? You know, these are the operand. Got it? What about the postfix? Again, as the name recommends, you have first this one and after it, post it, you have the operators. Similarly, the operands over here and then the operators. Again, how do you arrive at this? That is something we are going to do afterwards. That's very important for you to understand what is postfix, what is prefix, what is infix operators. You might have a question, infix. And this is something that most of the programming languages understand. And we use infix heavily in C++, Java and other programming languages. What about postfix? These are used in stack based calculators. Yes, these are used in stack based calculators. So what about this prefix? Where is it used? It is used in a programming language extensively, which is known as Lisp. It is also used in tree data structures. But the most common one is infix one. Got it? So the first conversion that I will be doing is infix to postfix. As you can see that this is an infix expression. Why? Because the operators are between the operands. Got it? So what we will be doing is we'll be converting this into postfix. How? That's very simple."
+    },
+    {
+      "chunk_id": "L299_C5",
+      "start": 308.9,
+      "end": 379.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=308s",
+      "text": "between the operands. Got it? So what we will be doing is we'll be converting this into postfix. How? That's very simple. I'll be taking a iterator i, which is going to be initially at the 0th index of the string. The infix expression is the string. I'll be taking the stack, which is initially empty. I'll be taking the answer, which is initially an empty string. I'll start by iterating at the 0th index. Now remember, if this is an operand, if this is an operand, the stacks, I'll not put anything into the stack, so it'll stay as empty. I'll add it to the answer. If it is an operand, I'll add it to the answer. After that, I'll move to the next one. It is a plus. Whenever I see an operator, whenever I see an operator and the stack is empty, I'll just put it into the stack. So I saw an operator. I'll put it into the stack and my answer still stays as a. After that, I see an operand. Remember this? I see an operand. If I see an operand, my stack still stays as it is because I don't put it into the stack and I add it to my answer. After that, I see a multiplication. This time, I'm seeing a multiplication which is an operator. If I'm seeing an operator, what I will do is I will look at the stack. What does the stack have?"
+    },
+    {
+      "chunk_id": "L299_C6",
+      "start": 379.38,
+      "end": 457.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=379s",
+      "text": "is an operator. If I'm seeing an operator, what I will do is I will look at the stack. What does the stack have? The top of the stack has an operator which has a lesser priority than what I have. If that is the case, because the priority is greater, if the priority is greater, I will not be, sorry, I'll be entering that into the stack. I'll be putting that into the stack and I'll be continuing with the answer. Perfect. After that, I get an opening bracket. Remember, whenever you get an opening bracket, you don't think anything. You will just be putting that into the stack and the answer stays as it is. After that, I have an C which is an operand. Stack stays as it is and it gets added to the answer. After that, I have a power operator. Now again, it's a power operator. Will that get into the stack? Yes. Why? Because the top of the stack is something which has a lesser priority than this power operator because the power operator has the maximum priority. So what I'll do is plus into open bracket and the power goes and the answer stays as ABC. After that, I have a D. So whenever the D comes in, I'll not be putting that into the stack because it is an operand. I'll be just adding it to my answer. After that, I have a negative sign which is a subtraction operator."
+    },
+    {
+      "chunk_id": "L299_C7",
+      "start": 457.46,
+      "end": 535.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=457s",
+      "text": "it is an operand. I'll be just adding it to my answer. After that, I have a negative sign which is a subtraction operator. This negative sign has a lesser priority than what is there at the top. If that is the case, you pop this out. Yes, you pop this out and you add it to the answer. So once that is popped out, my bad. Once this is popped out, you look at the next top. Is the priority of opening bracket greater than this? No, it is not. So you don't pop it out. What you do is you simply say plus into this and you put that minus into the stack data structure and the answer stays as it is. After that, I go to the E. So whenever I go to the E, this time what will happen is, again, it is an operand. So the stack stays as it is and you're going to do A, B, C, D, power and then it goes over here. After that, I go to a closing bracket. Again, quite important, the moment you see a closing bracket, you just take out everything till you encounter an opening bracket. So the answer was A, B, C, E. So you pop out minus, you pop out opening, you got an opening, so you stop. You got an opening, so you stop. So basically you are at plus into and the opening was out."
+    },
+    {
+      "chunk_id": "L299_C8",
+      "start": 535.92,
+      "end": 612.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=535s",
+      "text": "an opening, so you stop. You got an opening, so you stop. So basically you are at plus into and the opening was out. So this is where you're at and you don't push that closing bracket. Got it? Perfect. And this is where you will be like, okay, I'm done with the iteration. If you're done with the iteration, whatever is left on the stack, whatever is left on the stack, you can simply take it and pop it out. First multiplied will be popped out, then a plus will be popped out. So this will be your postfix expression. Understood? If you didn't, while I write the code, you'll understand this in a very, very simple manner. Perfect. This is nothing but some steps that you'll have to memorize. Okay, I'll be writing down the code. So maybe I can say infix to postfix and we'll be taking a string. What do we need? We definitely need a I, I equal to zero. We definitely need a stack which is empty and we definitely need an answer which is initially storing nothing. Perfect. After that, I'll be going on till I don't get to the size of the string that is given to me. I know one thing for sure."
+    },
+    {
+      "chunk_id": "L299_C9",
+      "start": 612.56,
+      "end": 689.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=612s",
+      "text": "till I don't get to the size of the string that is given to me. I know one thing for sure. If this is an operand, sorry, if this is an operand, yeah. If this is an operand, which means S of I has to be greater than capital A and an S of I has to be lesser than capital Z. That's if it is in caps, that's one of the conditions or it has to be S of I greater than smaller A and an S of I smaller than smaller A. Okay, that's one more condition or S of I is greater than this O, sorry, zero and an S of I is smaller than equal to not 10, 9. So if any of these three conditions are valid, I know it is an operand. I definitely know it is an operand. In that scenario, I'll just ask, sorry, I'll just ask the answer to add it to itself. Answer plus S of I. That's it. Done with the operand. What other cases do we have? Can you think of it? Yes, you can."
+    },
+    {
+      "chunk_id": "L299_C10",
+      "start": 689.52,
+      "end": 766.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=689s",
+      "text": "Done with the operand. What other cases do we have? Can you think of it? Yes, you can. The other cases are if this is, this is a opening bracket. You know about it, right? If this is an opening bracket. So maybe I can write else if S of I is equal to equal to an opening bracket. If that is the scenario, I'll say stack dot push. Can I just push it across? Perfect. Or S of I. What is the other case? If it is a closing bracket, correct? So I'll be writing, hey, what if it's a closing bracket? In that scenario, we'll have to do something. Let's check it out. If it is a closing bracket, in that scenario, please keep popping out. Yes, please keep popping out. Till you don't make the stack empty. And stack stop is not equal to a close, an opening bracket. I want to take everything out till I get an opening bracket. And whatever I take out, I'm going to add it to the answer. And at the same time, I'm going to delete it from the stack as well. Done. So whenever I get an opening bracket, I stop."
+    },
+    {
+      "chunk_id": "L299_C11",
+      "start": 766.4,
+      "end": 845.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=766s",
+      "text": "I'm going to delete it from the stack as well. Done. So whenever I get an opening bracket, I stop. So at the end of the day, please make sure to pop out the opening bracket. So that will be it for the closing one. So we're done with the operand. We're done with the opening. We're done with the closing. So now we are left out with one thing that is an operator. So maybe I can write an else, which definitely means it's an operator. If it is an operator, I know one thing for sure. First thing I'll do is I'll go in the stack and check, does the stack have anything? Perfect. And if it has anything, I'll ask, hey, priority of S of I, if this is smaller than the priority of ST.top, if that is the case, if the priority is smaller, I cannot push it in. I'll have to take out that thing from stack. And whatever I take it out, I can add it to the top. And once I've added, I can do a stack.pop. I'm going to just keep taking out all the greater priority things because in stack, if you're pushing it, the previous one has to have a lesser priority. Perfect. And once this is done, what you can simply do is stack.push. You can just go ahead and push the current one, which is S of I. Perfect. Done. That'll be it for else."
+    },
+    {
+      "chunk_id": "L299_C12",
+      "start": 845.38,
+      "end": 920.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=845s",
+      "text": "is stack.push. You can just go ahead and push the current one, which is S of I. Perfect. Done. That'll be it for else. And after that, you can do a I++. That means go to the next one and the while loop can end. Once this is ended, right at the end of the day, you can do while, if the stack is not empty, the stack is not empty. Please keep popping out. Please keep popping out and keep adding it to the stack.top and then you do a stack.pop. Perfect. And at the end of the day, you can return the answer. And this will be nothing but your postfix expression. If I have to analyze the time complexity, I think you know that. We have a big O of N over here for sure. And this is a big O of one operation. This is another big O of one operation. This might take up. This might take up a big O of N if you have all the operators in, because you might just keep taking it out, keep taking it out. But you know this throughout the journey, cannot take out more than N elements, because at max you have N elements. So, throughout your journey, it cannot take out more than N elements. Similarly, there is a while loop over here."
+    },
+    {
+      "chunk_id": "L299_C13",
+      "start": 920.92,
+      "end": 997.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=920s",
+      "text": "N elements. So, throughout your journey, it cannot take out more than N elements. Similarly, there is a while loop over here. Throughout the journey, this cannot pop out more than N elements from the stack throughout. If your string is of length 10, it cannot pop out more than 10 throughout the iterations. Got it? So, can I say that the time complexity will be big O of N for the outer while loop and the inner while loop at the worst possible scenario can take a big O of N. Correct? Similarly, with the outer one as well. Even if you're popping out all, that's going to take big O of N. What about the space complexity? The stack might end up storing all the elements. And there is an answer variable as well, which is required to store the answer. So, this is something which you need. You cannot deny it. So, this is the time complexity and the space complexity in order to convert an infix to a postfix expression. So before I move on to the next conversion, I'm very sure you know how to write the priority function. You're going to write an integer function, which is going to return 3 if the character is a power function. If it is a multiply or a division, you're going to return 2. If it is a minus or a plus, you're going to return 1. Anything apart from it, the priority will be minus 1."
+    },
+    {
+      "chunk_id": "L299_C14",
+      "start": 997.96,
+      "end": 1075.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=997s",
+      "text": "return 2. If it is a minus or a plus, you're going to return 1. Anything apart from it, the priority will be minus 1. Remember this. Got it? Perfect. So, this is the next conversion. It is infix to prefix operation, prefix expression rather. So, it has very simple three steps. It's slight twist here and there. The first step is you're going to reverse the given infix. That is from right to left. After you have reversed, you have to do an infix to a postfix conversion. There will be one conditional change that you'll have to do. I'll tell you about that as well. And after this, what you'll be doing is whatever answer you get, whatever postfix you get, you're going to reverse that answer. You're going to reverse that answer. Perfect. So, what is the first step? The first step is very simple. You basically do a reversal of this. So, when I do a reversal of this, what I get is F plus D minus C multiplied with closing bracket B plus A and an opening bracket. So, once I've reversed it, you'll have to scan through it and make the closing bracket"
+    },
+    {
+      "chunk_id": "L299_C15",
+      "start": 1075.64,
+      "end": 1154.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=1075s",
+      "text": "an opening bracket. So, once I've reversed it, you'll have to scan through it and make the closing bracket to an opening bracket and make the opening bracket to a closing bracket. What do I mean by that? This is a closing bracket, so I'll convert it into an opening bracket. This is an opening bracket, I'll convert it into a closing bracket. So, done and dusted. Once I'm done and dusted with reversing, what I can do is I can start converting this into a postfix expression under some controlled condition. Remember this, under some controlled conditions. The first one is done. So, again, very simple. I take an iterator, I take a stack and I take an answer variable. I can start iterating. The first one is an operand. The stack will stay empty and this operand will get added to the answer. The next one is operator, gets inserted into the stack and the answer still stays as F. Operand, you take the operand and you add it to the answer and the stack still has plus. The next one is an operator and this is where the controlled conversion comes in. If it is an operand, if it is an operator, apart from this one, apart from this one, what you will do is you will straight away insert this. Remember this, you'll straight away insert this."
+    },
+    {
+      "chunk_id": "L299_C16",
+      "start": 1154.52,
+      "end": 1226.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=1154s",
+      "text": "one, apart from this one, what you will do is you will straight away insert this. Remember this, you'll straight away insert this. In the previous, in the infix to postfix, you would have taken this out. Remember why? You just go back. Even if the priority of this one is smaller than equal to, even if it's equal to, you take and then you pop it out. But over here, this will be exactly smaller. I'll show you in the code, but as of now, understand this. If it is not a power one and I get anything which is even similar, just put it into the stack. Similar or greater, I'll put it into the stack. Next, by the way, the answer will still stay as Ft. My next is C, which is an operand, so I add it to this one. So the stack still has this one. After that, I have a multiplier with it. So whenever I get a multiplier, it has a greater priority. So this goes in and it still stays as Fdc. After that, I have an opening bracket. So anytime you get an opening bracket, you just put it in and it still stays as Fdc. After that, I have a B. So whenever you get a B, you basically take FdcB and the stack still has minus, plus minus, into an opening bracket. Then you have a plus, you have a plus, and this is of a lower priority."
+    },
+    {
+      "chunk_id": "L299_C17",
+      "start": 1226.28,
+      "end": 1299.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=1226s",
+      "text": "has minus, plus minus, into an opening bracket. Then you have a plus, you have a plus, and this is of a lower priority. So this gets in. So FdcB. And after that, you have an A. So if you see an A, what you do is FdcB A, and the stack will still stay as it is. And right after this, you have a closing bracket. Whenever you get a closing bracket, you take out everything that you have until you encounter a opening bracket. And after that, the stack still has this much left with it. And you're done with the iteration. When you're done with the iteration, you basically pop out, basically pop out, and you basically pop out. So this is your controlled postfix expression. And what you do is, so the second step is done. And the third step is to reverse this particular answer. So this will be plus, minus, multiplied, and then a plus again, and then A, B, C, D, F. And this is your prefix expression. Got it? So I'll be writing down the pseudocode. Again, super simple. A function which is going to be infix to a prefix. Obviously, I'm going to get a string. What is the first step?"
+    },
+    {
+      "chunk_id": "L299_C18",
+      "start": 1299.72,
+      "end": 1376.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=1299s",
+      "text": "which is going to be infix to a prefix. Obviously, I'm going to get a string. What is the first step? The first step I'll do is, I'll call the reverse function, which is going to reverse the string, as well as after reversing, it is going to change the brackets, make the opening one the closing, and the closing one the opening. So I'm assuming you can write this. Super simple. After this, the very generic one, the iterator, the stack, and the answer variable. So we can start iterating. So when I start iterating, I can iterate till the length of the string. Perfect. What is the first condition? First condition is super simple. I say, hey, listen, if it is an operand, you know how to write the condition? We did write it while we were converting infix to postfix. So you can do that. And you know what happens in that scenario? Use answer plus equal to S of I. What is the other step? Else if, if this is not the case, and it is an opening bracket, in that scenario, you ask the stack to push it. Remember? So I'll push it into the stack. What is the other scenario? Else if it is a closing bracket. It can be a closing bracket. Right? So you know what to do if it is a closing bracket. You take out everything till you encounter an opening bracket."
+    },
+    {
+      "chunk_id": "L299_C19",
+      "start": 1376.08,
+      "end": 1451.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=1376s",
+      "text": "bracket. Right? So you know what to do if it is a closing bracket. You take out everything till you encounter an opening bracket. So I'll be like, while, I need to make sure the stack is having elements. I'll put a check stack dot empty. I'll say, hey, listen, if you are not an opening bracket, if you are not an opening bracket, you got to pop yourself out. And whatever you pop out, you're going to add it to the answer. Perfect. And whenever you encounter an opening bracket, the while loop will stop. So please make sure you pop it out as well. That would be it for the closing bracket. I have these three conditions. These three conditions are exactly equivalent to what we did in an infix to a postfix conversion. Right? So we're done with the first three conditions. The last one is going to be, what if it is an operator? In that scenario, I said, I'll do a conditional stuff. It's going to be if the operator is a power one. In that scenario, you're going to always take out anything which has a priority similar to it. There's a priority similar or greater than it. Okay. So what you'll do is you'll say, while the stack is not empty."
+    },
+    {
+      "chunk_id": "L299_C20",
+      "start": 1451.88,
+      "end": 1530.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=1451s",
+      "text": "a priority similar or greater than it. Okay. So what you'll do is you'll say, while the stack is not empty. So the stack has elements and the priority of my current element is smaller than equal to the priority of the st.top element. So you're going to take this and I'm going to say, please add it to the answer. So basically what I'm saying is you cannot store two powers in a stack together. That's what I'm doing. Perfect. Done. So this was for greater. This is for power. What if it's not a power? In that scenario, we'll come to this particular else. And I like the exact same thing. Okay. Hey, if the stack is not empty, that means it has elements. And if it has elements, if the priority of my current element is smaller than the priority of st.top in that scenario, only in that scenario, for equal priority or for greater priority, you push it in. For that scenario, you take it off and you add it to your answer. At the same time, you say stack.pop."
+    },
+    {
+      "chunk_id": "L299_C21",
+      "start": 1530.6,
+      "end": 1608.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=1530s",
+      "text": "you take it off and you add it to your answer. At the same time, you say stack.pop. This will do with the else. So either this while loop or this while loop, controlled conversion. And once the conversion is done, you can take that element because you have done the removals and take that element and you can push it into the stack. That would be done with the else part. And after this, you can do I plus plus and the while loop can be completed. And right at the end, you've got to check if the stack still has elements. If the stack still has elements, you're going to do answer plus equal to stack.top and you're going to do stack.pop. Perfect. Done and dusted. Are we? No. Right at the end, please make sure answer equal to reverse of answer. And once this is done, you could return this particular answer. Done. Please make sure to do one thing. For the first time when you do a reverse, just don't reverse. Convert the brackets into the opposite as well. Time to talk about the time complexity. This reverse is going to take me a big O of n."
+    },
+    {
+      "chunk_id": "L299_C22",
+      "start": 1608.42,
+      "end": 1683.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=1608s",
+      "text": "well. Time to talk about the time complexity. This reverse is going to take me a big O of n. I can do a reversal and big O of n. Okay. A big O of n by 2. You apply your brains. This is going to take me a big O of n. At this internally or this internally or this internally at the worst possible case throughout is going to take me a big O of n throughout, throughout. Okay. And then I'm again doing a reverse. So I have to compute the overall time complexity. That's a big O of n by 2 for a reverse. A big O of n by 2 for the end reverse. And then a big O of 2n for the stack iteration. That's near about a big O of 3n which is as good as big O of n. What about the space complexity? Again I'm using a stack which can end up storing all the elements. So big O of n complexity. Remember you can reverse and big O of n by 2. Yeah. Go back to my earlier lectures. You know how to do it. Done and dusted. So that will be it for your infix to prefix conversion. So the next conversion that I will be doing is postfix to the infix expression. So I'll be given a postfix expression and the same format. I'll be taking an iterator i."
+    },
+    {
+      "chunk_id": "L299_C23",
+      "start": 1683.5,
+      "end": 1760.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=1683s",
+      "text": "doing is postfix to the infix expression. So I'll be given a postfix expression and the same format. I'll be taking an iterator i. But this time I'll be taking a stack, not an answer variable. So I'll be starting off with the first like the zeroth index element. It's an operand. Remember whenever you encounter an operand, push it into the stack. Perfect. After that I again encounter an operand. Again push it into the stack. After that I encounter an operator. Very critical. Whenever you encounter an operator, you pick up the last two elements, last two elements from the stack. So you get something B and A. And whatever is the operator, you put it in between them, in between them. And after this, you wrap it up around, wrap it up around a bracket and you put it back into the stack. So now the stack will have A minus B together. Remember this? It will have A minus B together, wrapped up around a bracket. After that I get a D. So I get a D. It's an operand. So what I'll do is the stack still has A minus B. After that it will have D. After that again, I have a E. So this time I'll put it into the stack."
+    },
+    {
+      "chunk_id": "L299_C24",
+      "start": 1760.78,
+      "end": 1840.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=1760s",
+      "text": "that it will have D. After that again, I have a E. So this time I'll put it into the stack. So it will be A minus B comma D comma E is what the stack will have. Like these three elements will be there in the stack. After that I have something as a plus. This is an operator. Again the same thing. If it is an operator, you pick up the last two elements, that is D and E, D and E, and you add a plus and you wrap it around a bracket and you put it back. So what will happen is A minus B will stay as it is, D will go out, E will go out, and then they'll wrap it around the operator you have and wrap it around a bracket and put it back. Okay? After that I have a F. I have a F. So when I just put it back, A minus B comma D plus E comma F. After that I have a multiply. Now whenever you have a multiply, it's an operator. So what you'll do is you'll pick up this, which is D plus E. You'll do a multiply and you'll pick up this. So basically first top and the second top. So T2 with the operator and T1. Remember the second top operator, the first top. Okay? Wrap it around and then put it back."
+    },
+    {
+      "chunk_id": "L299_C25",
+      "start": 1840.74,
+      "end": 1918.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=1840s",
+      "text": "T2 with the operator and T1. Remember the second top operator, the first top. Okay? Wrap it around and then put it back. So this will be something like D plus E multiplied with F and wrapped around a bracket and put back into the stack. Perfect. The last one is a division operator. Same thing. You pick up A minus B, which is the second top. You put the operator in between and then there's D plus E multiplied with F and then you wrap it around and put it back. So typically what will happen is A minus B. Correct? And then there will be, by the way, this is under bracket. Remember? Divided by D plus E as it was multiplied with F and wrapped around a bracket. That's it. And the iteration is over. Whenever the iteration is over, you'll see that the stack.top only has one element in it and that is going to be your infix expression. Done? Yeah. Super simple. So I have to write down the pseudocode. It's going to be a postfix to an infix. Again you'll be given a string. I'll take an iterator which is zero. I'll take a stack which is initially empty."
+    },
+    {
+      "chunk_id": "L299_C26",
+      "start": 1918.26,
+      "end": 1987.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=1918s",
+      "text": "you'll be given a string. I'll take an iterator which is zero. I'll take a stack which is initially empty. I can just loop over till I lesser than N. Very basic. If it is an operand, you know how to check for an operand now. You can write that condition in a function. If it is an operand, you don't do anything. You just take it and you say, hey stack, can you just keep it? And like, why not? Otherwise, if it's an operator, you basically get the first top which is st.top. Basically get the second top as well. So post it, please make sure you pop it out. And then you get the second top which is st.top. And then make sure you pop it out. And once that is done, you basically create the new string. Please make sure the stack can store strings instead of characters. Should be able to store strings. What you do is, you basically say opening bracket plus whatever is the operator, sorry,"
+    },
+    {
+      "chunk_id": "L299_C27",
+      "start": 1987.86,
+      "end": 2064.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=1987s",
+      "text": "store strings. What you do is, you basically say opening bracket plus whatever is the operator, sorry, plus T2 plus whatever is the operator which is S of I plus the top one plus enclosing bracket. So this will be your, you can say the converted string. Maybe you can call it as con. And after this, you can just take it back to the stack. And you can say this is your converted one. So please push it across. Once this is done, you can do an I plus plus and the while loop is over. And at the end of the day, you can head over and return st.top because the top element will be your infix expression. The top element will only not be the infix expression if the given postfix is a wrong one. But over here it is stated that you're given a valid postfix expression. So this algorithm is going to work. So we have to figure out the time complexity. You have a while loop that's going to take a big O of n because we are iterating over. And after that, every operation that I specifically see is being done in a big O of one."
+    },
+    {
+      "chunk_id": "L299_C28",
+      "start": 2064.54,
+      "end": 2135.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=2064s",
+      "text": "iterating over. And after that, every operation that I specifically see is being done in a big O of one. You might argue we are doing addition operators over here. And this top, like the top element that you're getting from the stack, this is nothing but a string because you're keeping strings in the stack. And this top one is also a string. This operation might, because when you add strings, it does take time. In some programming languages, addition of two strings can take n1 plus n2, where n1 is the length of the first string and n2 is the length of the second string. So it might end up taking some time. This is an additional thing that you'll have to mention it to the interview. So the time complexity will be big O of n for the while loop and the worst possible scenario because you're adding up strings and there will be a point where you add up all the strings. So at the worst possible scenario that can go up to big O of n, again language specific. What about the space complexity? The space complexity will be big O of n because I'm storing all the characters in a stack to the end. That will be the time complexity and the space complexity. And that will be it for this one. So the next conversion that I will be doing is a prefix expression to an infix expression."
+    },
+    {
+      "chunk_id": "L299_C29",
+      "start": 2135.86,
+      "end": 2212.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=2135s",
+      "text": "that will be it for this one. So the next conversion that I will be doing is a prefix expression to an infix expression. Again, given a valid prefix expression. So the same format we will follow an iterator and a stack. The differences this time will be, we'll be iterating from the back and whenever we get an operand, we put it into the stack. After that, we get to the next one. Again an operand, we put it back into the stack. After that, we get an operator. After that, we get an operator. This time what you will do is, you'll get the first top and then the second top and then put the operator in between, surround it with a bracket and put it back into the stack. This is different from the previous one. The previous one, we did the top two operator and then the top one. Over here, this is the first top and this is the second top if you carefully observe. This one was your first top and this is your second top. So you put, first you take the first top, then put the operator and then this and put it back. So done with the minus, we have a Q. So whenever you have a Q, again the same thing, you put Q over there. After that, we have a P. So again, same thing, M minus N, a Q and a P. After that, you get"
+    },
+    {
+      "chunk_id": "L299_C30",
+      "start": 2212.96,
+      "end": 2292.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=2212s",
+      "text": "over there. After that, we have a P. So again, same thing, M minus N, a Q and a P. After that, you get to the plus. So you get a plus. What we do is, M minus N, but you take the last two out and you basically do P, Q and the plus and then surround it with a bracket and put it back. After that, you have a multiply. If you have a multiply, you take the first one out, which is P plus Q. You take the operator, put it back and M minus N, that's the second top and then you surround it with a bracket, put it back and the iteration is over. When the iteration is over, whatever is at the top of the stack, that is going to be your answer. Got that? So let's quickly now try to write down the pseudocode. Going to be very similar. Given a prefix, you'll have to convert this into its infix. So we can take the string. First thing we'll do is, I should be initially at N minus one. We can take a stack, which is initially empty. After that, we can do a while I greater than equal to zero. Right. And we know one thing, if it is an operand, if it is an operand, we don't do anything. We say stack dot push the operand. If it is not an operand, that is when the logic comes in."
+    },
+    {
+      "chunk_id": "L299_C31",
+      "start": 2292.08,
+      "end": 2368.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=2292s",
+      "text": "we don't do anything. We say stack dot push the operand. If it is not an operand, that is when the logic comes in. We get the top one, which is ST dot top, and then we can do a pop so that the top element is deleted. We get the second top, which is ST dot top. Again we can do an ST dot pop so that it is deleted. And then we get the element, the converted element will be this time. It's an opening bracket plus the T2, sorry, plus the T1, plus the operator, plus the T2, plus the closing bracket. So this is the converted string. And after that, what you can do is you can go to the stack and say, can you just store this converted string? Remember the stack stores string and that's it. And after that, can you do an I minus minus right at the end of the day, you could go ahead and say return stack dot top. Done and dusted. What about the time complexity? Again, we're iterating over. So this is going to take a big go of N. And as I said in the last example, you're connecting strings and in certain programming languages, when you connect, like when you add two strings, it will end up taking a big go of N1 plus N2."
+    },
+    {
+      "chunk_id": "L299_C32",
+      "start": 2368.56,
+      "end": 2445.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=2368s",
+      "text": "languages, when you connect, like when you add two strings, it will end up taking a big go of N1 plus N2. So the worst possible case you'll be connecting, you know, big of N length strings. So can go up to big of N plus N. Can go up to that length. What about the space complexity? It's going to be somewhere around big of N because I'm going to store the entire string along with some brackets in the stack. This will be the overall time complexity and space complexity for a prefix to an infix conversion. So the next conversion that we will be doing is given a postfix expression, we'll have to convert that into a prefix expression. Again, you'll be given a valid postfix expression. So this is the one that will try to convert. Again, similar tactics, going to take an iterator. We're going to take a stack and this time we start with left to right. So it has a, so whenever we see an operand, just put it into the stack. Whenever we see an operand, we just put it into a stack. Whenever we see an operator, now over here, this is going to be slightly different. Whenever we see an operator, we take that operator, top two, top one, and we put that back into the stack."
+    },
+    {
+      "chunk_id": "L299_C33",
+      "start": 2445.78,
+      "end": 2523.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=2445s",
+      "text": "different. Whenever we see an operator, we take that operator, top two, top one, and we put that back into the stack. So typically the operator and then top two, and then this, this is the overall string that you'll put back into the stack, overall string. Don't surround it with brackets. After that, again, we see an operand. So whenever we see an operand, we put it back into the stack. Again, we see an operand. So please make sure you put it back into the stack. After that, we see an operator. Again, you see an operator. So the first, like AB would stay, minus AB would stay as minus AB, but you write down the operator. Second top is D and the first top is this one. This is basically operator plus top two plus top one, pretty simple. After this, you get across and there is an F. So you don't do anything. You just take that F and you put it into your stack. After that, you have a multiplication. So whenever you have a multiplication, you write multiplication and then the second top which is plus D and then the first which is F. It's going to be into plus D E F. It's"
+    },
+    {
+      "chunk_id": "L299_C34",
+      "start": 2523.1,
+      "end": 2601.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=2523s",
+      "text": "which is plus D and then the first which is F. It's going to be into plus D E F. It's going to be into plus D E F and the minus AB stays as it is. And then there is a division operator. So there is a division operator. You write the operator, then you write minus AB because that is top two and then you write into plus D E F because that is the top one, top two, top one and the operator, quite simple. So I write operator top two and then the top one as a single string in the stack and then the iteration is over. Once the iteration is over, you want to pick out the top of the stack. You want to pick out the top of the stack and that will be your prefix expression. Understood? Quite simple. Can we write down the pseudocode? I think we can. It's going to be postfix to prefix. Again, a very generic way like this was the optimized approach. A very generic way would have been you convert postfix to infix. We already know how to do it and then infix to prefix. So it's going to be a two layer step. You can do that as well. But this is a easier one. So I'll prefer this one."
+    },
+    {
+      "chunk_id": "L299_C35",
+      "start": 2601.74,
+      "end": 2677.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=2601s",
+      "text": "be a two layer step. You can do that as well. But this is a easier one. So I'll prefer this one. So given a string, we take the iterator to be at zero. We take an empty stack and then we start iterating till we do not exceed the length. Okay. So what is the first condition? First condition is very simple. If S of I is an operand, we don't do anything. We simply say stack.push S of I. Okay. Otherwise, if it is not an operator, so you're going to write the else. The first thing that we'll write is top one. So you're going to do a stack.top and then a stack.pop. Then I'll get the top two as well. So stack.top again and a stack.pop. So we have the T1 and T2. What we're going to insert into the stack is super simple. It's going to be the operator, which is S of I plus the T2 plus the T1 is what we are going to enter into the stack. And that will be done with the else I++ and the while loop is completed. Once it is completed, your answer will be stored at stack.top. So you can simply return that one. Okay. None undusted."
+    },
+    {
+      "chunk_id": "L299_C36",
+      "start": 2677.38,
+      "end": 2756.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=2677s",
+      "text": "Once it is completed, your answer will be stored at stack.top. So you can simply return that one. Okay. None undusted. Time complexity, again, a big O of N to traverse through the string. And if you're adding it up, and the worst case can go up to two length of strings. I can say the time complexity would be somewhere near about big O of 2N, near about N. And the space complexity to be somewhere on big O of N because I'm storing the entire string in a stack data structure. That will be it for postfix to a prefix conversion. So the last conversion for the day, that is prefix to a postfix expression. Again, given a valid prefix expression, same format, going to take an iterator. We're going to take a stack. And since it is a prefix to postfix, we're going to start from the back, right? And if it is an operand, if it is an operand, you're going to add it to the stack. Again, go to the next. If it is an operand, add it to the stack. If it is an operand, please add it to the stack. After that, you encounter an operator. Remember, whenever you encounter an operator, you get the top one, you add it to the top two, and then you add the operator."
+    },
+    {
+      "chunk_id": "L299_C37",
+      "start": 2756.46,
+      "end": 2836.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=2756s",
+      "text": "you encounter an operator, you get the top one, you add it to the top two, and then you add the operator. That is how it is. T1 plus T2 plus operator. So basically what this will be F, what is top one D, what is top two E. So D, E, and what is the operator plus. So this is what will be entered into the stack. After that, you have a multiplication. So if you have a multiplication, what you will do is again top one, which is D, E plus F and then the multiplication. Perfect. After that, you have a B. So I'll take the B. So it's going to be D, E plus F star as a single string and then a B and then you get a A. It's going to be D, E plus F star comma B comma A. After that, it's going to be a minus that's an operator. So what do you do is top one, which is this and then top two and then the minus and the first element like this one stays as it is. Perfect. After that, we have a division. So if we have a division, again, same thing. First one, then D, E plus F star and then followed by the division and that's it. The iteration is over."
+    },
+    {
+      "chunk_id": "L299_C38",
+      "start": 2836.18,
+      "end": 2914.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=2836s",
+      "text": "thing. First one, then D, E plus F star and then followed by the division and that's it. The iteration is over. Once the iteration is over, whatever is at the top, that is going to be your postfix operation, postfix expression. And if you compare, like if you go back, remember this, we started with this A, B minus D plus F star division. So again, got the same thing back. So I'm going to write down the pseudocode again, going to be super simple. We are doing a prefix to a postfix. I take out the string, Travis from right to left, so N minus one, an empty stack, obviously, and the while loop is going to go like I greater than zero. You know, one thing, if this is an operand and that scenario, we're going to do a stack dot push of S of I. Quite simple. If it is not, you're going to take the top one from stack, just stack dot not pop. It's going to be top. And then you're going to do a stack dot pop. We're going to take out the top two as well. I'm going to do a stack dot pop."
+    },
+    {
+      "chunk_id": "L299_C39",
+      "start": 2914.82,
+      "end": 2993.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=2914s",
+      "text": "dot pop. We're going to take out the top two as well. I'm going to do a stack dot pop. Once that is done, we are going to do a stack dot push of very important, a string, which is going to be. The one plus the two plus the operator, which is as I done else is completed, I can go to the next, which is I minus minus. And at the end of the day, we can do a stack dot pop because that is going to be my answer. And we are done. I have to take out the time complexity again, some is near about B, go off to N Y and for iteration and adding it up. So another N. What about the space complexity? You're storing the entire strings in a stack data structure. That's going to take a big off N and this will be the most optimized approach. That is how we do a prefix to a postfix conversion. Let's head back. Let's head back to the. So let's head back to the starting of the lecture. Yes. So I can say that we are done with prefix to postfix and postfix to prefix as well. So I've covered up everything about arithmetic expressions over here. It required stack. That is why we are doing it in the stack and queue playlist. I hope we have understood everything."
+    },
+    {
+      "chunk_id": "L299_C40",
+      "start": 2993.06,
+      "end": 3039.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=4pIc9UBHJtk&t=2993s",
+      "text": "here. It required stack. That is why we are doing it in the stack and queue playlist. I hope we have understood everything. Again, will this come up in an interview? Very limited chances. The reason we are doing all of these problems are so that your concept about stacks gets right into your head. That is the critical reason. Got it? Like if an interviewer is asking this, I'll not be a big fan of that interview because you need to memorize all of these and you don't expect an interview to ask questions that requires memorization. Got it? So yeah, that will be it for this one. So if you're still watching and if you understood everything, please, please do consider giving us a like and if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye. Take care. Bye."
+    }
+  ]
+}

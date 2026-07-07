@@ -1,0 +1,190 @@
+{
+  "lecture_id": "L217",
+  "lecture_number": 217,
+  "lecture_title": "DP 37. Buy and Sell Stocks III | Recursion to Space Optimisation",
+  "youtube_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ",
+  "chunks": [
+    {
+      "chunk_id": "L217_C1",
+      "start": 0.0,
+      "end": 73.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=0s",
+      "text": "Hey everyone, welcome back to take you forward. So today we will be solving the third problem in the buy and sell stock category. And what does the third problem state? Before understanding this, the prerequisites are that you should have done the part one and the part two. What was part one? The part one stated that you will be given a prices and you are just allowed to do one yes, one transaction. So probably you could have bought over here and you could have sold it over here. Whereas the profit that you'd have made was four, correct? And what was part two? Part two said that you can do as many like infinite transactions, but just make sure you don't engage in multiple transactions together. So you could have said, I will buy here, I'll sell it here. So this is where you could have done a two profit, buy here, sell here, three profit, buy here, sell here, three profit. So you could have made a total of eight profit if you'd have gone by the part two, because in part two, you can do unlimited number of transactions. Just make sure none of the two transactions are overlapping. What is part three?"
+    },
+    {
+      "chunk_id": "L217_C2",
+      "start": 73.72,
+      "end": 148.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=73s",
+      "text": "can do unlimited number of transactions. Just make sure none of the two transactions are overlapping. What is part three? Part three states at max two transactions. At max, what you can do is two transactions, not more than two transactions. So we are basically limiting the number of transactions that we are doing. So apparently if there was unlimited transactions, you could have gone this, then this, and then this. So you could have done three transactions to get the maximum profit, but over here you're limited. So how can you do at max two transactions? Probably you can say, I can do this, I can do this. Then you'll get two, then you'll get three, which makes it a total profit of five. In this way, you can do two transactions or you can say, I'll do a transaction here, which will give me a profit of two. I'll do a transaction here, which will give me a profit of three. Hence I'll get a total profit of five. Basically buy the stock here, sell the stock here, buy the stock here, sell the stock here. It will give you a profit of five. Or I can say, hey listen, buy here, sell here to get a profit of three. Then buy here and again sell here to get a profit of three. In total, you can make a profit of six."
+    },
+    {
+      "chunk_id": "L217_C3",
+      "start": 148.62,
+      "end": 223.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=148s",
+      "text": "three. Then buy here and again sell here to get a profit of three. In total, you can make a profit of six. That means you can do these couple of transactions and you can make a profit of six. And that's the maximum you can make. That's three minus zero equal to three and four minus one equal to three, which makes it a total sum of six. And that is the maximum profit that you can make. Yes, that is the maximum profit you can make by buying here, selling here, buying here, selling here. So you'd have done at max two transactions. Now this problem is an extension of the buy and sell stock two problem that we did. Over there, if you remember, let's get back to the code. Over there, if you remember the recursive code, how did the recursive code look like? We started with the zeroth index, right? And we took the buy initially to be, you're allowed to buy, right? You took it as true. So you started with the zeroth index and you said that you're allowed to buy. So that's how you started, correct? And then what you did was, if you're allowed to buy, you took that guy, you took that guy. And when you took it, it did add a negative value to you. It did add a negative value to you. Why? Because if you're taking that stock, that means you're investing money into the market."
+    },
+    {
+      "chunk_id": "L217_C4",
+      "start": 223.62,
+      "end": 284.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=223s",
+      "text": "you. It did add a negative value to you. Why? Because if you're taking that stock, that means you're investing money into the market. So the money is gone. Thereby a minus. And then you said, I'll go to the next guy. I'll go to the next day and this guy is, this guy will be sell. That means you're not allowed to buy. Zero means no more buy. Now you have to sell. Okay. And what is the other thing you say that I'll not buy on this day and I'll go to the next day with still giving him permission to buy. So if you're allowed to buy, either you can buy or either you cannot buy. That's all you will do if you are allowed to buy, right? And if you're asked that, Hey, listen, I'm not allowed to buy. I'm allowed to just sell. So either you can sell. So if you sell from the market, you'll get this value back. So this is the value that you'll get back and it'll go to the next day. So if you have sold on the next day, you're again allowed to buy, again allowed to buy, right? And if you say that, Hey, listen, I'm not interested to sell today. That means the amount that you'll get from the market is zero. It'll go to the next day and is still able to sell and not able to buy."
+    },
+    {
+      "chunk_id": "L217_C5",
+      "start": 284.96,
+      "end": 360.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=284s",
+      "text": "you'll get from the market is zero. It'll go to the next day and is still able to sell and not able to buy. So that's how you can see sell or not sell. This is how the code was looking for the case where we have, where we had infinite transactions, where we had infinite transactions. That is the reason we just keep, we just kept a track of day and buy. Now if I am introducing something as an infinite transactions, I can do as many transactions as I wish and I'm doing. But now instead of infinite, I'm saying, make it a true transactions. I'm putting a bound. So can you relate this to the knapsack problem where I'm saying, Hey, listen, you can just do this much. You cannot do more than this. It just allowed to do two transactions. So can I say, okay, fine. If I'm allowed to do two transactions, can I rewrite the same code into something like similar code? When I say index and buy, and I put a cap, like this is the maximum number of transactions I can do. I cannot exceed these cap of transactions. So let's forget about the base case. Let's write the buy case. If I'm allowed to buy, and let's write the other case if I'm not allowed to buy. So if I'm allowed to buy, what will I do?"
+    },
+    {
+      "chunk_id": "L217_C6",
+      "start": 360.0,
+      "end": 431.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=360s",
+      "text": "buy, and let's write the other case if I'm not allowed to buy. So if I'm allowed to buy, what will I do? I will say if I buy, this is what I lose out on to the market for sure, because this is the price that I'll give it to the market. So that is gone from me. So minus prices of index plus F of index plus one, and I'm not allowed to buy. I'm not allowed to buy. So zero in the next step, I'll go and do a normal sell. So the initial cap is the initial cap that you can pass is two and buy will be one and index will be zero. Where zero resembles a zero day. Now tell me if you're performing a buy, is the transaction complete? The answer to that is no, the transaction is yet not completed because you're performing a buy for a transaction to be completed. It has to be a buy sell. It has to be a buy sell. So the transaction is yet not completed. So what do you do is you say, hey, the transaction is yet not completed. So please go on with the number of transactions that you had. Or else I can say, hey, listen, on this given day, I'm not interested to buy. I'm not interested to buy. So I'm not interested to buy. Can I say I'll take a zero?"
+    },
+    {
+      "chunk_id": "L217_C7",
+      "start": 431.32,
+      "end": 509.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=431s",
+      "text": "day, I'm not interested to buy. I'm not interested to buy. So I'm not interested to buy. Can I say I'll take a zero? Can I say I'll take a zero plus F of, I'll go to the next day, right? And I'll say, I'll still be able to buy because I did not buy anything. And the transaction cap will be like, I'll still have the similar number of transactions. And what I will return is max of these couple of elements. As simple as that, I return the max of this or the max of this is what I return back. Correct? Now what is about else? Let's quickly check out. What about else? Else means, you know what does else means? Sell. So let's try to sell. So if I'm selling, I can definitely sell. So if I sell, this is what I'll add up to my value. Correct? And I'll go to the next index saying I've sold. So on the next day, you're allowed to buy. So please go across and give him one. You're allowed to buy. Perfect. What will happen to the cap? So if you're performing a sell, so obviously in the previous past, you would have performed a buy and now you're performing a sell. So can I say, can I say you're completing one complete transaction, which eventually means the number of transaction will get reduced by one, which eventually means the number of transactions will get reduced by one."
+    },
+    {
+      "chunk_id": "L217_C8",
+      "start": 509.8,
+      "end": 583.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=509s",
+      "text": "transaction, which eventually means the number of transaction will get reduced by one, which eventually means the number of transactions will get reduced by one. Or else you say that, hey, listen, I'm not interested to sell as of now. So you go to the next day with the same sell allowance and you say the number of transactions to be same. And what do you return is the max of these two. That's how a shuttle change will happen on the cap of transactions. So whenever you complete the number of transactions, just make sure you reduce it by one so that you can keep a track. Like how long will you perform the transactions? Keep a track of it. Right. Over here, you are given the function. Now what will you do next? I can say that, okay, I have to write the base case. So I know I will end up the transactions when I reach n. That's when I reach n. And what did we write the base case over here, if you remember, it simply returned a zero because when you're reaching the like you have exhausted all the days, you'll not get anything from the market. Will you get anything from the market? Definitely not. So you get a return zero. What's the other case? If I also exhaust the transactions, will I get anything back from the market? No. So can I say these couple of staffs will be my base case."
+    },
+    {
+      "chunk_id": "L217_C9",
+      "start": 583.36,
+      "end": 662.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=583s",
+      "text": "the transactions, will I get anything back from the market? No. So can I say these couple of staffs will be my base case. I will not get anything from the market. I cannot perform anything. So that's over. Or if I've exhausted the number of days, I'll not get anything from the market. So this is what I will be doing. A shuttle change on the cap of the transactions will enable me to convert the previous code to this problem where we are bounded with certain number of transactions, which says at most two. I hope you have got the fair bit of idea. So we are doing as of now recursion. Right. And you know, you will be trying out all possibilities. So the time complexity will be exponential. I'll give you a TLE. But the space complexity that you will be using will have auxiliary stack space of V go of N because you're performing on index plus one. So the depth of the recursion will go on to index plus one. So this is the auxiliary stack space that you will be involving. But, but we need to optimize this. And how can you optimize this? If there are overlapping. Yes, I have taught this in the previous 34 lectures. So if you're joining this video for the first time, please go back and watch out all the lectures because this playlist is sequential. You cannot just start from anything in between."
+    },
+    {
+      "chunk_id": "L217_C10",
+      "start": 662.96,
+      "end": 741.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=662s",
+      "text": "first time, please go back and watch out all the lectures because this playlist is sequential. You cannot just start from anything in between. So if there are overlapping sub problems, you can draw the recursion tree and you'll see that there are certain overlapping sub problems. Hereby what we can do is we can definitely apply something as memoiation to stop precomputation of the repeated states. So what are the states? We have an index. We have a by. We have a gap. Let's analyze what are the maximum value of index can be. This index can be from zero to N minus one, which makes it a total of N different states from zero to N minus one. What can be by? By can be either you are not allowed to buy or either you're allowed to buy. Two different states of by. What can be cap? Either you have zero transactions remaining, one transactions remaining or two transactions remaining. Thereby, you can have three different set of transactions. So I see three changing parameters or three changing states. Thereby you just need to create a DP state of N cross two cross three. And if you're able to do this, you will, yes, you will be able to go to the sub. Now this is kind of a 3d DP. You can call it. Just make sure you memoize in terms of index by and cap before returning."
+    },
+    {
+      "chunk_id": "L217_C11",
+      "start": 741.44,
+      "end": 817.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=741s",
+      "text": "is kind of a 3d DP. You can call it. Just make sure you memoize in terms of index by and cap before returning. That's what you just need to do in order to convert this into a memoiation solution. And if you're able to convert this into a memoiation solution, the time complexity of that solution will be N cross two cross three, because that's what you have over here. N cross two cross three. And the space complexity will be obviously N cross two cross three plus the auxiliary stack space plus the auxiliary stack space of the recursion. So yeah, without actually waiting, let's quickly code this up and see if this is working. So you can see, uh, this is the question with states you have at most two transactions. So given the prices you are given the N. So what do you need to do? You basically have to call the function, right? And the function will start from zero with the initial buy and transaction cap as two. And you can send the prices and the N as the external variables. Make sure you write index, index buy, which allows you to buy or not. And the cap is, which tells you how many are there. Vector, end prices and end N is what you'll take. Right over here, you can say if index has reached N or, or if the cap has been becoming"
+    },
+    {
+      "chunk_id": "L217_C12",
+      "start": 817.32,
+      "end": 875.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=817s",
+      "text": "N is what you'll take. Right over here, you can say if index has reached N or, or if the cap has been becoming zero, then you can say you'll return a zero or else you'll be like, okay, if the buy is true, like if you're allowed to buy, please go across and perform these couple of transactions. Either you buy, which makes, uh, makes you take something like prices of index. And if you're buying, then you're moving to the next day and you're not allowed to buy anymore. And the transaction cap is still the same. Or what you can say is, okay, I'm, I'm having nothing, which is zero. Plus I moved to the next day. I'm still allowed to buy and I'll have the same cap. That's what I can do. So if, uh, the buy happens, it's fine. If the buy does not happen, so you automatically come to the sell. So there's no need to write else. You will automatically come over here. So if you're selling it, you need to be very careful. If you're selling it, what happens? Basically you sell it, which means you'll get this from the market and you'll move to the next day with saying that you can now buy, but if you are selling it, you complete a transaction. So that's what will happen. And if you're not selling it, this is what you'll get from the market."
+    },
+    {
+      "chunk_id": "L217_C13",
+      "start": 875.96,
+      "end": 951.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=875s",
+      "text": "it, you complete a transaction. So that's what will happen. And if you're not selling it, this is what you'll get from the market. You'll go to the next, you'll still have selling authority and the transaction still stays the same. This is what you will return. Right? And if you just quickly run this off, you will see the answer is coming. Absolutely fine. Indeed, it does run. Now what's the next thing that we will do? We'll definitely try to have a 3d DP array. So generally you can define something like vector, vector. This is how you define 3d DBS done right after this. You can say the first state is N. Then just make sure you define the second state. Let's go across and the same way. Just define the second state or the second state. The second state, like I'll just, yeah. The second state is something like. If you look inside the 3d, there is a 2d right of size 2 cross 3. So yeah, just make it of size 2 cross 3. That's it. That's what you just need to make sure. And if you've done this, this is how you will define a DP and yeah, make sure you carry this across everywhere. That's all. Please make sure you carry by reference. And before returning, just make sure you have it memorized. So make sure you memorize it."
+    },
+    {
+      "chunk_id": "L217_C14",
+      "start": 951.08,
+      "end": 1030.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=951s",
+      "text": "Please make sure you carry by reference. And before returning, just make sure you have it memorized. So make sure you memorize it. So once I've memorized it, also make sure this is memorized index by gap. Perfect. And also before visiting, if any of these states are revisited, just make sure you do a return of DP of index by gap. Perfect. It does run. Let's quickly submit this and see if the memization code is running fine. Okay. So we see that we are getting around 90% of score and it is giving us time limit exceeded. The problem reason is because we are having still auxiliary stack space. So let's try to optimize this into the tabulation format and then we will see. So we saw that the tabulation, so we saw that the memization code gave you a TLE, right? So what's the next step? Definitely we have to convert this into a tabulation, right? So how do you convert this into tabulation code? It's very straightforward. I told you the cases, you write the base cases, just make sure you write all the base cases. The second changing parameters. What are the changing parameters? I buy and gap. If you properly see these three are the changing parameters. When you have an I, you have a buy, you have a gap, right? You write them in the reverse order."
+    },
+    {
+      "chunk_id": "L217_C15",
+      "start": 1030.4,
+      "end": 1107.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=1030s",
+      "text": "changing parameters. When you have an I, you have a buy, you have a gap, right? You write them in the reverse order. You just make sure you copy the recurrence. Just make sure you copy paste the recurrence. Nothing different you have to do. Cool. Let's look at the base cases that you wrote. Let's come back into the memization code. What are the base cases that you wrote? You said for any cap zero, any index n, either cap zero, either n. That means whenever cap is zero, index and buy can be anything. Index I repeat, index and buy can be anything. If index is n, index and cap can be anything. Please hear me out properly. If index is n, index and cap can be anything. So let me write it states if cap is zero, which means index and buy can be anything. So index can be anything from zero to n minus one. Buy can be anything from zero to one. So thereby the dp of index, buy and cap is zero because cap will be zero."
+    },
+    {
+      "chunk_id": "L217_C16",
+      "start": 1107.12,
+      "end": 1184.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=1107s",
+      "text": "to one. So thereby the dp of index, buy and cap is zero because cap will be zero. That's the first base case that you'll write. Perfect. What is the second base case? The second base case is very simple, just go across and say that, hey, for any n, index equal to equal to n, buy and cap can be anything. So I'll be like, okay, buy can be from zero to one, cap can be from zero to one, sorry, zero to two. Thereby dp of indexes n, buy is right from here, cap is right from here and that will be zero. That's the second base case. That's how you write the base cases. Once you've written the base cases, this is the opposite. So it starts from yes, n minus one till zero. This starts from the opposite, zero to one. This starts from the opposite, that is zero to two. So just run these three loops and then copy paste the recurrence and your answer will be at the initial call. The call was made for zero, buy, two transactions allowed. This is where your answer will lie. That's how you convert this into a proper tabulated code. So it's time to write the tabulation code."
+    },
+    {
+      "chunk_id": "L217_C17",
+      "start": 1184.88,
+      "end": 1255.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=1184s",
+      "text": "answer will lie. That's how you convert this into a proper tabulated code. So it's time to write the tabulation code. So what we will do is we'll just make it zero, right? And we know there are base cases and the base cases will also have values as zero. So practically thinking like there's no point because it's already assigned as zero initially. So the writing conditions for base case will not make any sense. Yes, I did write them in the iPad, but will it make sense because it's already zero only. If this would have been one or something else you would have written, right? So let's not write it. Let's quickly write the first thing, which is index. Where are we actually starting it from? Zero. So we started from the opposite one, which is one and we go until zero and we do index minus minus and make sure this is somewhere around n plus one. Okay. And you know, there's other thing, which is buy. Where are we starting buy from? One. So you can just do it buy equal to zero, buy lesser than equal to one and buy plus plus, right? What was the other thing? Cap. So you can also run a loop for cap. So you know, the cap will start from zero and the cap will go till two and cap plus plus. Now you need to be very careful, very careful about cap in one thing."
+    },
+    {
+      "chunk_id": "L217_C18",
+      "start": 1255.46,
+      "end": 1327.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=1255s",
+      "text": "the cap will go till two and cap plus plus. Now you need to be very careful, very careful about cap in one thing. You can start cap from zero, but you know, for every cap zero, if you look at the base case for every cap zero, the value is going to be zero. So do you need to compute for cap zero? The answer to that is no. So you can just compute for cap one. Okay. So you can ignore zero. You can start from one and you can go on to two. So now what's the next thing that you'll do? You will simply take this and copy paste over here. So let's quickly take this and copy paste with some tabulations. Okay. Done. Now, instead of a return, it'll be DP of this, and this will go under the else portion. Again, instead of return, this will be this and what will be this F of index plus one zero cap. It will definitely be DP of index plus one zero cap. Okay. And right over here, you can just omit this portion and you can have the other thing, which is DP of index plus one cap. And this is what you can easily do. And now you can omit this off. So that's how you can give this one."
+    },
+    {
+      "chunk_id": "L217_C19",
+      "start": 1327.96,
+      "end": 1403.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=1327s",
+      "text": "this is what you can easily do. And now you can omit this off. So that's how you can give this one. And this one also, you can rewrite as a DP of index plus one, one, and then you can write cap minus one. And this portion is something which you can definitely remove. And you can write this as again, DP of index plus one and zero, and you can write cap. And this is something which you can easily do. And I can definitely remove this. So once you've removed this, you know, this will be DP of zero, one and two, right? So let's quickly omit this off as well. I'll try to run this and see if this is running fine. Indeed it is. Now let's try to submit this off and see if it is accepted. Indeed it is accepted. So this is how you can easily change it into the tabulation format. So this is how the tabulation code looks like. Now you need to space optimize this. And I've told you whenever you see something like this index plus one, index plus one, index plus one, index plus one, you can just take it off and you can replace it with the after guy. Now over here, we are, we are using a 3d array as n cross two cross three, right? And so this is the row."
+    },
+    {
+      "chunk_id": "L217_C20",
+      "start": 1403.12,
+      "end": 1475.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=1403s",
+      "text": "over here, we are, we are using a 3d array as n cross two cross three, right? And so this is the row. And then these are the couple of guys can be treated as a, like you can treat them as single and you can treat them as single. Now you can visualize this as a 2d DP. So you just need to memorize this guy. So index plus one is what do you need to memorize index plus one. And this guy will be constant because these guys are constant. So you will just keep them. So what you'll do is you'll just go across and you will declare an after guy. Yes, you'll just declare an after gap. So we just make sure you declare an after gap. So this is your after gap. copy paste this and say, this is going to be my current, perfect. And instead of DP of index plus one, you say after, instead of DP of index plus one. You say after, instead of again, DP of index plus one, you say after I don't know where you also, you say after perfect. And instead of DP of index, you say current, instead of a DP of index, you say current. Once you have done the entire 2D calculation for this index, you say previous will get swapped, sorry after rather, after will get swapped with current. And once it is swapped, you can say this is your answer, right?"
+    },
+    {
+      "chunk_id": "L217_C21",
+      "start": 1475.92,
+      "end": 1548.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=1475s",
+      "text": "get swapped, sorry after rather, after will get swapped with current. And once it is swapped, you can say this is your answer, right? Or current, whatever you can call. So simple thing, I just made sure I did not change it. Same space optimization technique that we have been using in all the problems. We just make sure we are taking care of these 2D variables instead of 1D. So once you do this, you can submit this and you will see that this is giving you a correct answer. So this is the space optimized solution where you are definitely using a 6 size array, which is as good as a constant array. So I can say the time complexity is n into 2 into 3 and the space complexity is constant because 2 into 3 is just a 6 size array. It's as good as a constant size array, right? So I can say the space complexity is constant as of now. So that's how you can do it. So there is another way of solving this as well. Let's understand that in the next part of the lecture. So guys, I hope you have understood this solution of memorization, which was n cross 2 cross 3, right? And this was the day or index. This was the buy and this was the cap on the transactions, right? So that's one of the ways to do it."
+    },
+    {
+      "chunk_id": "L217_C22",
+      "start": 1548.36,
+      "end": 1621.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=1548s",
+      "text": "or index. This was the buy and this was the cap on the transactions, right? So that's one of the ways to do it. But if you go to the discussion forum or if you just go across solutions in different sites, what you'll see is there are a couple of other solutions which are also discussed. One of them is where they do not use this. Instead of that, they use an n cross 4 DP. They use an n cross 4 DP. That is one of the solutions. And the other one is where they use four different variables. You heard that right? They use four different variables. Now this is something which I'll not teach. Why? Because this is not intuitive. I don't find this intuitive. I find the solution as something which someone tells me and I'm like, haan sahi hai. He's saying it correct. So that's why I like try to be like, yes. But I don't think the solution should be even discussed in an interview. We should not come up with this because the interview will never expect you to come up with this. Either you say the n cross 2 cross 3, either you say that or either you go across and say the n cross 4 DP solution. They might be asking, hey Shreya, what is n cross 4? Now as of now, what did we do?"
+    },
+    {
+      "chunk_id": "L217_C23",
+      "start": 1621.8,
+      "end": 1698.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=1621s",
+      "text": "cross 4 DP solution. They might be asking, hey Shreya, what is n cross 4? Now as of now, what did we do? We stated, let's start at the day zero, give him a permission of buy and have a maximum cap of two transactions and then keep on doing buy a cell, buy a cell and whenever the cell is happening, do a cap minus one. That's what we do in, that's what we have done in this particular solution, but I'll not change it. I'll not code it. I'll just explain you the theory part. You can code and submit. What if I say I will not have buy. Instead of that, I will have an f of index and a transaction number and a transaction number. So if I'm performing two transactions, if I'm performing two transactions, can I say this means buy, sell, buy, sell. Can I say this? And if I number them, can I say them as zero, one, two, three? Can I? I can. I can. So I'm performing a buy that's zero or two or in short, can I say it's an even index? It's an even number when I perform the buy portion and can I say it's the odd when I'm performing the sell? It's the odd when I'm selling the stock. Make sense?"
+    },
+    {
+      "chunk_id": "L217_C24",
+      "start": 1698.52,
+      "end": 1777.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=1698s",
+      "text": "and can I say it's the odd when I'm performing the sell? It's the odd when I'm selling the stock. Make sense? So I can start from zero and then I can go one, then I can go to go three and whenever I'm performing a transaction, I move to the next. If you carefully see, I move to the next. So instead of carrying a buy, which tells me whether to buy and sell, what I did was I converted this cap, this two cap into four guys and just try to express buy and sell via the transaction numbers. That is the slight change that I'll do. So can I say I will have to perform all the three transactions? So the base case will definitely turn to if I have reached the end or if I have performed all the transactions, which is four in this case, because zero, one, two, three, the moment you perform the third transaction, you'll come up to four. So whenever you perform all the four transactions or you have come to the end, that's when you return zero. Perfect. What about the other thing? Can I say if the transaction number is even? This means it's a buy or else it's a sell or else it's a sell. And whenever it is a buy, how can you do a buy? You know, you have to invest this much into the market. You move to the next day."
+    },
+    {
+      "chunk_id": "L217_C25",
+      "start": 1777.96,
+      "end": 1855.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=1777s",
+      "text": "buy, how can you do a buy? You know, you have to invest this much into the market. You move to the next day. And what about the transaction number? You move to the next transaction number. So transaction plus one. And if you're not buying, you move to the next day, but the transaction number will not change. Perfect. So what you return is the max of them. What you return is the max of them. And if you're performing a sell, then you sell it. So this is what you get across to yourself. And you go to the next day and you increase the transaction by plus one. And this is zero. You go to the next day and the transaction remains same. And you again return the max of it. That's a shuttle change that will happen. And then you can see the memorization can easily be done in n cross four because there are four transactions. So what I did was I just converted them into a transaction number to convert it into a different set of n cross four DP. So guys, I could have coded this, but I'm giving you like I've written the recursive code. I will want you to write the memorization code, then convert it into the tabulation, then convert it into the space optimization. And please post the space optimization or the tabulation code in the comment section."
+    },
+    {
+      "chunk_id": "L217_C26",
+      "start": 1855.36,
+      "end": 1902.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=-uQGzhYj8BQ&t=1855s",
+      "text": "the tabulation, then convert it into the space optimization. And please post the space optimization or the tabulation code in the comment section. Like I can do this, but let's, let's have some homework for you. So let's post the tabulation and the space optimization of this portion where we use couple of variables, index and transaction in the tabulation in the comment section. So guys, I hope you have understood this one as well as this one. You have understood both the solutions, right? Now if you have understood both the solution, no need to understand this. I tell you, no need to understand this. Ignore. And if you've understood this, this problem is done and dusted. Just in case you have understood this, please, please, please make sure you like this video. And if you're new to this channel, please do consider subscribing to us. And here with this, let's wrap up this video and meet in the next one. Till then, bye bye. Take care. Bye bye."
+    }
+  ]
+}

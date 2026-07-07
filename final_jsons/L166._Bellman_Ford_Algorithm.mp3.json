@@ -1,0 +1,169 @@
+{
+  "lecture_id": "L166",
+  "lecture_number": 166,
+  "lecture_title": "G-41. Bellman Ford Algorithm",
+  "youtube_url": "https://www.youtube.com/watch?v=0vVofAhAYjc",
+  "chunks": [
+    {
+      "chunk_id": "L166_C1",
+      "start": 0.0,
+      "end": 74.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we are going to learn about the Bellman-Ford algorithm. Now this is again an algorithm which will help you to find the shortest path. Yes, I might be thinking but Shreybo we already know an algorithm like Dijkstra which helps us to find the shortest path. How is this different? It is the exact similar algorithm which will help you to find the shortest path from a source to all the other nodes. Yes, to all the other nodes. But the only difference is if you remember the video of the Dijkstra, the Dijkstra algorithm fails when the graph has negative edges. Please remember if the graph has negative edges, the Dijkstra algorithm will fail. And there was another point if the graph has negative cycle, the Dijkstra algorithm goes for a TLE like it will keep on running, it will keep on running, keep on minimizing the distance, it keeps on running forever. So Dijkstra does not help you to detect negative cycle. So Bellman-Ford is an algorithm that helps you"
+    },
+    {
+      "chunk_id": "L166_C2",
+      "start": 74.12,
+      "end": 148.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=74s",
+      "text": "forever. So Dijkstra does not help you to detect negative cycle. So Bellman-Ford is an algorithm that helps you to detect, remember this, that helps you to detect negative cycles as well. That's the specialty about Bellman-Ford and it is applicable and it is applicable only in DG. What is DG? Directed graphs. Now you might be thinking what if it's an undirected graph and how do you apply Bellman-Ford algorithm to it? Very simple. Remember this is how a directed edge looks like. So the edge weight will be 5. So there is an edge from 1 to 2 and the edge weight will cost you 5. But imagine if I give you an undirected graph and I say 1 to 2 and the edge weight is 5. So in order to implement Bellman-Ford, you need to convert this into something like 1, there is a directed edge from 1 to 2 which will cost you 5 and there is a directed edge from 2 to 1 which will cost you 5. So you just need to represent the undirected graph in form of a directed graph in order to implement the Bellman-Ford algorithm. The Bellman-Ford algorithm will only work if you are given a directed graph. Remember this. So if you're given an undirected graph, just change it to a directed graph"
+    },
+    {
+      "chunk_id": "L166_C3",
+      "start": 148.4,
+      "end": 225.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=148s",
+      "text": "you are given a directed graph. Remember this. So if you're given an undirected graph, just change it to a directed graph by having two side edges with the same edge weights. That is how you can always implement Bellman-Ford for any of the questions. The only difference from Dijkstra is it helps you to detect negative cycles. What do you mean by negative cycles? Imagine I draw you a graph which goes from 1 to 2, 2 to 3 and 3 to 1 and the edge weight is minus 2, minus 1 and something like 2. So if I ask you the path weight, what will be the path weight? The path rate will be very simple. It will be minus 2, minus 1 plus 2. So minus 2 plus 2 will go and the path weight is basically minus 1. So if you apply Dijkstra, it will keep on rotating, like sorry, keep on encircling in the path because the path reduces at every stage. So thereby Dijkstra will fall under the TLE loop for such an example. But when you talk about Bellman-Ford, Bellman-Ford is an algorithm specifically designed such that it will tell you that, hey listen, this particular graph has a negative cycle. This is what you call as a negative cycle. If a path weight is lesser than zero, if a graph has any path weight, which is lesser than zero, then I can say that the graph has a"
+    },
+    {
+      "chunk_id": "L166_C4",
+      "start": 225.82,
+      "end": 299.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=225s",
+      "text": "lesser than zero, if a graph has any path weight, which is lesser than zero, then I can say that the graph has a negative cycle. Now let's try to implement the Bellman-Ford algorithm. So I will be taking this particular DG, which is the directed graph in order to implement the Bellman-Ford algorithm and we know that it is a single source shortest path algorithm. So the starting point is zero and these are the edges given to you. So the edges will be given like U and V, which means there's an edge from three to two with an edge weight of six. There's an edge from five to three with an edge weight of one, which is very obvious. If you see, this is this particular edge. And if you look at three to two, this is nothing but this particular edge. So all the edges are given to you. Now something very, very important to note down edges can be given in any particular order. Yes, edges can be in any order. Like it's not necessary that you have to follow any particular order. If you carefully see, you can have three to six at the top. You can have it here. You can have it here. You can have it at the bottom. The edges can be jumbled. It can follow any order. What matters is you have to have all the edges of the directed graph. The order can be anything"
+    },
+    {
+      "chunk_id": "L166_C5",
+      "start": 299.82,
+      "end": 376.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=299s",
+      "text": "It can follow any order. What matters is you have to have all the edges of the directed graph. The order can be anything very, very important edges can be in any order. Now what does Bellman-Ford state? The Bellman-Ford will state you have to relax all the edges. Remember this relax all very, very important. Relax all the edges. N minus one times sequentially. Very, very important point. Now what do you mean by relax? Why N minus one? Everything you will understand if you watch the video till the end. So what they're saying is relax all the edges N minus one times sequentially. Now what is the definition of relax? Let me write that as well. So the definition of relax states if you have a distance array and if the distance taken to reach you plus the edge weight that you require, for an example, you're standing at five and you want to go to three, the edge weight is one. So this is the edge weight that I'm talking about. So if the distance of U plus WT is lesser than very, very important is lesser than the distance of V, which means as of now you are at five, you're trying to go to three with a one. So whatever distance you took to reach this U which is five. So basically distance"
+    },
+    {
+      "chunk_id": "L166_C6",
+      "start": 377.66,
+      "end": 451.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=377s",
+      "text": "to go to three with a one. So whatever distance you took to reach this U which is five. So basically distance of five plus this one, if that is smaller than this, whatever you took to reach three, then you got a better guy similar to Dijkstra. So what you'll do is you will simply go ahead and say, okay, I got a better guy. So I'll be like distance V is equal to the new distance, which is distance U plus W. This is what I call as relaxation of edges. This will be done for N minus one times. What do you mean by N minus one times? If you go over here and look at the N, N over here is six because there are zero, one, two, three, four, five, like zero based indexing nodes. So thereby N is six. So you have to relax it for five times. Five iteration of relaxations has to be done. Now how to do it? Let's understand that. But before that, since you're calculating shortest path, what do you require? You require a distance array with everything initialized to infinity. So let's do that. So initially when you initialize the distance array, the source will be marked as zero and everything else will be marked as infinity because you haven't reached anywhere. So as of now, you know, you're starting from here and that is always going to be taking a distance of zero,"
+    },
+    {
+      "chunk_id": "L166_C7",
+      "start": 451.92,
+      "end": 522.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=451s",
+      "text": "reached anywhere. So as of now, you know, you're starting from here and that is always going to be taking a distance of zero, but you haven't reached something like one, two, three, four, five. So what do you do is you just initialize them with infinity. Now how many iterations or how many relaxations have you need to do? N minus one. What is N? Six. So remember you have to do five relaxation is what you need to do. Now on the first relaxation, let me explain you. If I say first relaxation, what do you need to do is now on the first iteration, what you'll do is you'll go across the first edge, second edge, third edge, and so on to the last edge. You have to go across all the edges and that is when you say first iteration is done. On the second iteration, you have to go across again, third iteration again, fourth iteration again, fifth iteration again, to keep on going, keep on going, keep on going for five times. Okay. So when I say first iteration, what does that mean? That's very, very simple. You have to perform this thing on every edge one by one. That is what you call as one complete iteration. Okay. So the first iteration, what will happen? The relaxation of this edge will happen. Then this, so let's do the relaxation of the first edge. Very simple. I know I'm starting like"
+    },
+    {
+      "chunk_id": "L166_C8",
+      "start": 522.44,
+      "end": 590.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=522s",
+      "text": "relaxation of this edge will happen. Then this, so let's do the relaxation of the first edge. Very simple. I know I'm starting like distance of three. I will take six in order to reach the distance of two because from three to two is where I need to go and I'll take a six. So what is three? If I look at three, the value of three is nothing but infinity. So if I haven't reached, if I haven't reached three, is there a point in going ahead with three? I haven't reached three. So there's no point, right? So the relaxation of this edge is done. Next you go to this edge as like from five to three. Cool. Let's again do the relaxation from five. You take one and you reach three, right? So can I say five is still infinity. So you haven't reached, you haven't reached five. So if you haven't reached five, there's no point. Next is this one, which is zero to one. So you're like, you can start from zero. You will take five and you will reach one. So when you see distance of zero, it says, yes, I have reached myself. It's a zero distance because I'm the source. Plus I'll take another five and I'll reach the one which was previously reached with infinity means not reached. So I've got five."
+    },
+    {
+      "chunk_id": "L166_C9",
+      "start": 590.92,
+      "end": 667.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=590s",
+      "text": "Plus I'll take another five and I'll reach the one which was previously reached with infinity means not reached. So I've got five. So I can go and update this to five. So on relaxation, I update one of the nodes to five. Next is this guy, which has to be relaxed, which is distance of one minus three, lesser than distance of five. Very, very important distance of one minus three, lesser than distance of five. So if you carefully see, we have a one here, right? Do you see, we have a one here. So how much has one taken as of now? One has taken a five. So it's like five minus three, lesser than distance of five, which is infinity. So two lesser than infinity. So I can reach five in distance of two. So go and update this with a distance of two. And I can say the relaxation of this particular edge has been done. Next is this guy. So let's quickly relax this as well. This is nothing but you can write distance of one minus two, lesser than distance of two. Again, what is distance of one? If you carefully see, it's nothing but five, five minus two is three, which is lesser than infinity. So you get three. So go and update this to three. Perfect. Done. Next, you will go across and do this"
+    },
+    {
+      "chunk_id": "L166_C10",
+      "start": 667.08,
+      "end": 743.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=667s",
+      "text": "than infinity. So you get three. So go and update this to three. Perfect. Done. Next, you will go across and do this particular iteration. So this is nothing but three. So you can again, write distance of three minus two, again, lesser than distance of four. That's what you can easily write. Can I say if you, why is this coming up again and again? So what I can say is what is distance of three? Can I see this? That distance of three is still infinity. So this will not be done. Next is the last edge, which has to be relaxed. Let's quickly relax the last edge, which is nothing but distance of two plus three, lesser than distance of four. What is distance of two? Let's see is three. So three plus three is six. What is four? Infinity. So can I say this will be updated to six? So what I can say is the first iteration has been completed and on the first iteration, we have got the updated distance values. Okay. Now you have to again do it, which is the second iteration. At the second iteration, what you'll do, you'll again start. Yes. You'll again start from the first. Now what is distance of three? Infinity. Not reach. What is distance of five? This time you'll"
+    },
+    {
+      "chunk_id": "L166_C11",
+      "start": 743.64,
+      "end": 823.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=743s",
+      "text": "again start from the first. Now what is distance of three? Infinity. Not reach. What is distance of five? This time you'll find five has been reached with a distance of two. Why did you find? Because in the first iteration, when you went, five was updated somewhere here. And now again, when you come back and restart that five value, which you updated here will be in use here. So what is the five value? Two plus one, which is three lesser than infinity. So this will go as three, go across and update three as three. Perfect. Next one. This one. What's the value of zero? Zero. So zero plus five, lesser than one. It's still five. Not to be done. What is one five, five minus three is still two, which is lesser than not lesser. So not to be done again. Let's check out this. What is one five minus two, which is three, which is still not lesser. What is distance of three? This time, this time distance of three has been computed. What is distance of three? This time three minus two, which is one says four. Is it less than four? Yes, because four is six. So four is if you see four or six, what I'll do is I'll say distance of three was three minus two is one, which is better than the current distance. So I'll go and update this to one. Very simple because I"
+    },
+    {
+      "chunk_id": "L166_C12",
+      "start": 823.4,
+      "end": 902.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=823s",
+      "text": "three minus two is one, which is better than the current distance. So I'll go and update this to one. Very simple because I started with three and I'll take a minus two distance in order to reach this guy. Again, the last guy is this, which is nothing but three plus three, again, six, which is not better than this. So I can say the second iteration is also done. Similarly, you will do the third, fourth and fifth, basically again, ramp again, ramp again, ramp. And once you've done this, this particular distance array will be storing all your shortest distance. Yes, it will be storing all your shortest distance. And if you carefully look at this, it does not have a negative cycle. It does have negative edges, which is allowed, but it does not have a negative cycle. So ultimately after all the five iterations or N minus one iterations, your distance array will be giving you the shortest path from the source zero to all other nodes. Remember this, which will be stored in this distance array. Now, a couple of questions, why N minus one iterations? That's the first question. And the second question will be definitely how to detect negative cycles. What if the graph has negative cycles? How will I know about that? So because the entire algorithm is pretty much similar"
+    },
+    {
+      "chunk_id": "L166_C13",
+      "start": 902.6,
+      "end": 980.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=902s",
+      "text": "cycles. What if the graph has negative cycles? How will I know about that? So because the entire algorithm is pretty much similar to Dexter because this portion is similar to Dexter. The only thing that we are doing is we are just doing N minus one iteration. So obviously I want to know N minus one iteration because the thought process is kind of clear. But why N minus one is my question. The thought process must be clear. Why? Because we just move ahead and this guy was updated. This updated one. Then with the help of the one, I got updated five. Then again, when I came back with the help of five, I updated three. Then again, when I went with the help of three, I updated four and it went on moving. So eventually everyone was getting updated, updated, updated, updated on all the iterations ultimately. But how did I know that on N minus one iterations, I will get my answer. That's my question because what if I would have done two iterations? What if I would have done three iteration? The question still lies, why exactly N minus one iteration has been done? So let's understand that as of now. So in order to understand the intuition or why N minus one, because that is the critical question here because we have understood the thought process. We knew one held me to compute because we knew"
+    },
+    {
+      "chunk_id": "L166_C14",
+      "start": 980.84,
+      "end": 1056.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=980s",
+      "text": "because that is the critical question here because we have understood the thought process. We knew one held me to compute because we knew zero was the source which helped me to compute one. One helped me to compute five and two and similarly two helped me to compute four. Right? And when I came back, when I came back, since I had computed five, this five helped me to compute three and eventually this three helped me to compute four and so on. It'll just go on on this loop. Thought process is clear, but why N minus one is still the question. Let's understand this with this particular directed graph. So in this directed graph, if you remember while explaining, I did tell you edges can be in any order. Edges can be in any particular order is what I always stated, right? So imagine I give you the edges in this particular order. So how many nodes are there? The number of nodes are five. So how many iterations will we have? We will have one, two, three, and four iterations because edges are five. So I have to do N minus one, which is four iterations. Correct? So now what I'll do is I will start off with the distance array. So let's quickly have the distance array. So again, to ease out"
+    },
+    {
+      "chunk_id": "L166_C15",
+      "start": 1056.84,
+      "end": 1128.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=1056s",
+      "text": "do is I will start off with the distance array. So let's quickly have the distance array. So again, to ease out understanding I have kept zero as the source and made it a distance of zero. Okay. Now let's do the iterations. So the first iteration states, this is the first edge. So it states, okay, distance of three plus one, are you lesser than distance of four? And it's like distance of three is still infinity. No. Goes to the next one and says distance of two plus one, are you lesser than three? And I see distance of two is still infinity. No. Next one will be distance of one plus one is lesser than distance of two. I'm like one is still infinity. No. Next I will be like distance of zero plus one is lesser than distance of one. I'd like, wait, zero is zero plus one is lesser than infinity. So one goes as one to go and update one as one. So in one iteration, at the end of the day, this one was updated. So first iteration done. Now let's talk about the next iteration. Next iteration, what is"
+    },
+    {
+      "chunk_id": "L166_C16",
+      "start": 1128.6,
+      "end": 1204.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=1128s",
+      "text": "this one was updated. So first iteration done. Now let's talk about the next iteration. Next iteration, what is three infinity? Next iteration, what is two infinity? Next iteration, what is one? One. So one plus one, two. So this will be updated to two. So let's update it to two. Next zero plus one not to be done. So second iteration done. So did you see what happened in the first iteration? The zero got the value of one in the next iteration. Since you had the value of one, since you had the value of one, that one held you to get two. So the third iteration, what will happen? Come on. What will happen? Think. Yes, you're correct. Yes, you're correct. In the third iteration, we don't have three, but the second iteration gave me two. When I go to relax the next edge, this two was a value of two plus one. We'll go ahead and update three. So three will be updated to three. Perfect. Amazing. So I see this is done. Next, no more updates, no more relaxation. Third iteration done. Third iteration. Now what happened in the first zero updated one? What happened in the second one updated"
+    },
+    {
+      "chunk_id": "L166_C17",
+      "start": 1204.92,
+      "end": 1276.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=1204s",
+      "text": "iteration done. Third iteration. Now what happened in the first zero updated one? What happened in the second one updated to what happened in the third two updated three. But what will happen in the fourth? What will happen in the fourth? Yes, yes, yes. The three that you got will help you to update four. So what did you get? Three says three plus one, four. So this will go as four. So ultimately on four iterations, can I say ultimately on four iterations, the distance array is ready. And this is your shortest path. Yes. This is your shortest path. Can I see this? I can. So thereby, did you understand why N minus one? Because of the worst case, you can have the guy at the bottom who will give you this. Then this will give you this. And then this will give you this. And then this will give you this. That is why N minus one. That is why N minus one. Yes. I hope that's clear. I find a lot of content over YouTube, but no one will say you why N minus one. They'll be like N minus one. Let's do it. Let's do it. We got the answer coded and that's done. This is very important. The thought process, the intuition and the clarity about an algorithm is very, very, very important. Now the question is how to detect negative sign. Again, thought"
+    },
+    {
+      "chunk_id": "L166_C18",
+      "start": 1276.8,
+      "end": 1356.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=1276s",
+      "text": "the intuition and the clarity about an algorithm is very, very, very important. Now the question is how to detect negative sign. Again, thought process. Since I knew negative cycle means if I keep on, because this will give you minus one. Again, if I rotate, it'll give you another minus one. If I rotate another minus one on every rotation, you are decreasing the path value by minus one. So what will happen if there is a negative cycle? So what will happen is if there was five iterations, if there was five iterations, if you do the sixth iteration, the values will still reduce. The values will still reduce on an it's iteration. The relaxation will be done. And if the distance at a gets updated because we have proved that at max we will be requiring N minus one iterations approved. But even after that, if I require on the end of the iteration, if I do a relaxation and even if I see distance gets reduced, sorry, distance gets reduced. I will be right. Negative cycle exists because I know at N minus one iterations, I should"
+    },
+    {
+      "chunk_id": "L166_C19",
+      "start": 1356.56,
+      "end": 1425.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=1356s",
+      "text": "gets reduced. I will be right. Negative cycle exists because I know at N minus one iterations, I should have gotten my answer. But if at the end of the iteration, if there is still a reduction, it means we are running in the loop. We're running in the loop. That's why the distances are reducing, are reducing. So both the questions answered. So it's now time to put it up. So I hope you've understood the entire algorithm. Now it's time to code it up. So as usual, I'll be coding the C++ on the right and you can figure out the exact similar Java solution on the left. So given a weighted directed and a connected graph of V vertices and E edges, find the shortest distance of all the vertex from the source. So they'll be giving you a source. If the graph contains a negative cycle, then return an array consisting of only minus one. And I think they've also stated if you cannot reach anyone, you have to assign it with one E eight. So what I will do is I have all the edges, so I need the distance array. So let's quickly have the distance array of V comma one E eight because I'm assuming I cannot reach them. But that's what I'll give. And now what I'll do is I will do the iteration on the relaxation for V minus one time because that is what I have clearly stated"
+    },
+    {
+      "chunk_id": "L166_C20",
+      "start": 1425.68,
+      "end": 1503.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=1425s",
+      "text": "I'll do is I will do the iteration on the relaxation for V minus one time because that is what I have clearly stated that I'm going to do the relaxation for V minus one times on all the edges. Remember this, I'm going to do it on all the edges. So this is zero. This will be V and the WT will be ID of two. Very, very simple. Okay. Now what's the next thing that I'll do? I'll have to do the relaxation of edges. So it's something like distance. Remember, you have to give the distance of source as zero. Otherwise you'll have an issue. So remember, distance of zero should be reachable, which means it should not be infinity. It should not be one eight and, and distance of you plus WT less than distance of V. If that's the case, if it's reachable and if it's the case, I see, okay, cool. This is a view. Let's WD is what I'll do. So this is how the Bellman Ford will make sure the distance has the answer. Ideally, you should have returned this, but in the question they have stated what would have finished here, but they have stated if it contains a negative cycle, then return an array consisting of only one. So if you do one more relaxation, this is the last, or you can see the Nth relaxation to check negative cycle is what you have to do. Return an array"
+    },
+    {
+      "chunk_id": "L166_C21",
+      "start": 1503.2,
+      "end": 1575.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=1503s",
+      "text": "this is the last, or you can see the Nth relaxation to check negative cycle is what you have to do. Return an array consisting of only one. Remember this. So basically do one more relaxation, which is nothing but this. So you can say, I D U equal to a ID of zero. You can say I D V equal to ID of one. You can again, the same thing, ID of two, and you can go ahead and write the same if conditions of parallel copy piece. I don't want to write it again. And if that's the case, you have to return an array which consists of only one. That's it. And if that's not the case, because you cannot reduce at the end of that region, all you should have computed all the shortest path in N minus one iterations at the worst case. So what I'll do is I'll go and compile this and see if it is running fine. It is now let's quickly submit this. Looks like all the test cases do pass. So guys, that is about the Bellman Ford algorithm. What about the time complexity? V into E. Very simple. V cross E is the time complexity. The space is you're using an external V space and the edges are stored. So pretty simple. Now this is, this, this is kind of a quadratic time where as the Dexter was E"
+    },
+    {
+      "chunk_id": "L166_C22",
+      "start": 1575.12,
+      "end": 1640.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=1575s",
+      "text": "the edges are stored. So pretty simple. Now this is, this, this is kind of a quadratic time where as the Dexter was E log V. So this is taking a bit more time than Dexter, but it is very useful if your graph does has, does have negative edge weights because Dexter does not work. So make sure if your graph has negative edge weights or if the graph has negative cycles, that's when you should implement the Bellman Ford algorithm. Do you get follow up problems on this? Usually not in interviews. They will generally ask you to tell about the Bellman Ford, or maybe they will ask you about Dexter. And at the end of the day, they will ask, what if the graph has negative edges or the cycles, what will you do? So it might be a follow up question on Dexter. So very, very important, but I do not think the questions like you will find questions straightly related to Bellman Ford because most of the questions are solved using Dijkstra's algorithm in shortest path. So guys, I hope you have understood everything. So just in case you did, please, please, please make sure you like this video. And I was checking our statistics. Half of our audience does not subscribe to us. They just watch our playlist and go. So if you are watching this playlist, please, please, please make sure you subscribe"
+    },
+    {
+      "chunk_id": "L166_C23",
+      "start": 1640.16,
+      "end": 1654.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=0vVofAhAYjc&t=1640s",
+      "text": "subscribe to us. They just watch our playlist and go. So if you are watching this playlist, please, please, please make sure you subscribe to us because that does matter to me a lot. So please make sure you hit that subscribe button and yeah, if you haven't checked out our DPCs and the HD sheet, the links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye teamk."
+    }
+  ]
+}

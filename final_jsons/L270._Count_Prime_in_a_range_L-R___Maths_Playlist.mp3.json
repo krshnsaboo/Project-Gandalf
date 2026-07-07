@@ -1,0 +1,99 @@
+{
+  "lecture_id": "L270",
+  "lecture_number": 270,
+  "lecture_title": "L7. Count Prime in a range L-R | Maths Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=os82DjD2-MA",
+  "chunks": [
+    {
+      "chunk_id": "L270_C1",
+      "start": 0.0,
+      "end": 78.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=os82DjD2-MA&t=0s",
+      "text": "So, let's continue with the math section in striver's A to Z DSA course. But before that, hey, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is printing the count of primes for a given range L to R. Now, this will be a query based problem. I'm not sure if you have solved a query based problem before this or not. But I'll explain you the problem statement. So, you'll be given q queries. Assume I give you q equal to 3. And for every query, I'll be giving you L and R. So imagine for the first query, I give you L as 3, R as 10. For the next query, I give you L as 8, R as 20. For the next, I might give you L as 1 and R as 5. The value of q can be as large as 10 to the power 5. And L and R. So, L will always be lesser than R. And R can go as big as 10 to the power 6. Okay. So, it is already stated."
+    },
+    {
+      "chunk_id": "L270_C2",
+      "start": 78.92,
+      "end": 158.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=os82DjD2-MA&t=78s",
+      "text": "R. And R can go as big as 10 to the power 6. Okay. So, it is already stated. So, these are the constraints of this particular problem. So, this is the first query, second query and third query. q equal to 3 means 3 queries will be given to you. Now your task is to count the number of primes for every query. So for the first query, 3 to 10, how many primes are there? 3 is a prime, 5 is a prime, 7 is a prime. Yeah, there are 3 primes. So, you'll be printing 3 in the first line. After that, you have 8 to 20. How many primes are there? 11 is 1, 13 is 1, 17 is 1, 19 is 1. So, there are 4 primes, if I'm not wrong. From 1 to 5, 2 is 1, 3 is 1, 5 is 1. 3 primes. This is what you'll have to print. If I have to write down the extreme, like the extreme range solution, what will be that? First of all, I'll be like, okay, I'll be taking the input of q. That is basically the number of queries. Or maybe you'll be given something like a function. Let's assume you're given a function. You're given a function which has a list of integer comma integer."
+    },
+    {
+      "chunk_id": "L270_C3",
+      "start": 158.44,
+      "end": 233.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=os82DjD2-MA&t=158s",
+      "text": "something like a function. Let's assume you're given a function. You're given a function which has a list of integer comma integer. And these are queries. So, this is what is given to you. So basically, what will be q? q will be queries dot size because you'll be getting them in pair. Now what you can do is, you can simply run a loop from i equal to 0 till q minus 1 and you can say l will be list of i 0 because in a pair the zeroth index will be this. R will be list of i of 1. Very simple, simple pseudocode. Again depending on language, if it is C++ this will be vector. If it is Java it can be array list or list. So you have the l, you have the r and this is for every query where i is the query number. Now what I can do is, I can simply say, okay, I'll keep a count equal to 0 as if for, I need to count from l to r, right? So I'll run a j loop from l to r and I'll call the prime function. I'll call the prime function and I'll ask, hey, is this a prime number? If it is, can you do a counter plus plus?"
+    },
+    {
+      "chunk_id": "L270_C4",
+      "start": 233.2,
+      "end": 307.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=os82DjD2-MA&t=233s",
+      "text": "the prime function and I'll ask, hey, is this a prime number? If it is, can you do a counter plus plus? And at the end of the day I can say print my counter and that will be done. So I can finish the for loop and the function is completed. So every time I can print the count for every query, correct? So what will be the time complexity? I'm very sure that this is b go of q, right? This is running from l to r. So I can say r minus l plus 1 where r and l will be varying multiplied with, there's a prime j. For every number we can say a number to be n. So for every number it's a square root of n. It will be varying because j is varying so I cannot pinpoint the time complexity, but this is somehow, this is what the time complexity will be. And this is something multiplied with something multiplied with something. So probably if I have to approximate, it's something to the power q in terms of q. And if I look at the numbers, it is 10 to the power 5 and 10 to the power 6, something to the power like maybe even if I take 10 to the power 5, if I say all the queries are"
+    },
+    {
+      "chunk_id": "L270_C5",
+      "start": 307.98,
+      "end": 382.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=os82DjD2-MA&t=307s",
+      "text": "something to the power like maybe even if I take 10 to the power 5, if I say all the queries are like 1 comma 10 to the power 6, all the queries are from 1 to 10 to the power 6. In that scenario, this will be taking 10 to the power 6 and this will again be a lot. That's a lot, right? If I have to approximate this, how much is this? Q at max will be 10 to the power 5. This r minus l. Imagine all the queries are, all the queries are the extremist queries. In this scenario, this will be taking big O of 10 to the power 6 loop and this is a square root of n. At this in itself is such a huge quantity. It's still multiplying a prime j. So obviously this is not accepted. Now can I optimize this? I can. One thing I can do is I can optimize this prime check and I've already done it in my previous video where we did learn about sieve, the sieve technique. Maybe I can optimize this prime check to a big O of 1. I can do it and for that what I've done is I've written down a function that gives me the sieve."
+    },
+    {
+      "chunk_id": "L270_C6",
+      "start": 382.52,
+      "end": 462.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=os82DjD2-MA&t=382s",
+      "text": "I can do it and for that what I've done is I've written down a function that gives me the sieve. I've basically taken the value n and I'm saying create a list or an array of size this, assign everything as one loop and then if it is one, mark all its multiples as zero. And once you have done it, return this list. So I can easily get the sieve. I can easily get the sieve. So what I can say is, okay, fine. Maybe I can say prime equal to get sieve. I know that the maximum possible, maximum, maximum possible number is r and r can be 10 to the power six. So I'll pass on 10 to the power six and it will be returning me an array, an array or a list. And now what I can do is I can remove this. I'll not be calling the function that checks in square root of n. Instead of it, I'll be simply checking with this array if this is one or not. If this is one, that means it is a prime. So what I did was I introduced a n log of log n where n is 10 to the power six because that is the size that I'm looking for. And over here, what I did was q into r minus l plus one."
+    },
+    {
+      "chunk_id": "L270_C7",
+      "start": 462.04,
+      "end": 540.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=os82DjD2-MA&t=462s",
+      "text": "because that is the size that I'm looking for. And over here, what I did was q into r minus l plus one. It is still humongous. What I omitted was just the prime complexity. So this can be termed as a better solution. Now can I think in the direction of optimizing it? Maybe yes, but for that we'll be requiring the prefix some method. So let's move into the optimal solution. So I need to optimize our previous solution. First of all, one thing I know for sure is I cannot optimize q because if there are q queries, I'll have to go through them. There's no other way. I'll have to go through each and every query. I have to print the number of frames. So I cannot optimize q. What I can optimize is this one. Instead of iterating from l to r, if I can optimize this, I think my job will be done. If I can somehow say, okay, listen, I'm not going to loop. Can I do some precomputation so that I can get the answer in bigot of one? If I can do that, I'll be able to optimize this. So that's what we will be trying to do. So in order to understand, what I'm trying to do is we will be taking a value 10. Okay. I'll be creating a array of size 10."
+    },
+    {
+      "chunk_id": "L270_C8",
+      "start": 540.42,
+      "end": 618.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=os82DjD2-MA&t=540s",
+      "text": "understand, what I'm trying to do is we will be taking a value 10. Okay. I'll be creating a array of size 10. So let's create an array of size 10. So I've taken this array of size. So what I've done is for n equal to 10, I've taken a size of 11 so that I have the 10th index as well. Now this is my array, right? So assume I ask, hey, get seen for 10. So this will be returning me a list and that is this particular list. So we filled with zero zero one because two is a prime, three is a prime, five is a prime, seven is a prime and everything else will be filled with zeros. Remember the C, right? So this is what the current prime array will look like. If I call get sieve with the value 10, so we have our sieve array ready. Now this is telling me which number is prime and which number is not prime. Now if I ask you, till five, how many primes are there? It will be like three, two, three, five. There are three primes and that is nothing but one plus one plus one. That's what I'll try to do. At the index five, I will try to store three, which is the summation of the number of primes"
+    },
+    {
+      "chunk_id": "L270_C9",
+      "start": 618.74,
+      "end": 690.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=os82DjD2-MA&t=618s",
+      "text": "try to do. At the index five, I will try to store three, which is the summation of the number of primes till the number five. Got it? Okay. How can I do it? It's a very simple thing. I will say count equal to zero and if I go here, this is a zero. I'll add it to count zero plus zero zero. I'll assign it zero. Perfect. Next I'll go here. I'll add a zero, zero plus zero zero. So I'll again assign zero. Next I'll go here. It's one. I'll add one and that becomes one. So count becomes one. Okay. So I'll assign one to here. Perfect. Next I'll go here, which is the third index and I have a one. So one plus one will be two and I'll assign two. Perfect. Next I'll go here. I have a zero. So if I add two to zero, it will be two and I'll add it to. Next I'll go here. There's a one. If I add a one, that will be three. Put a three. Next I'll go here. It's a zero. So assign three. Next I'll go here. That's a one. So this will be four. Assign four. Next I'll go here. That's a zero. So assign four. Next I'll go here. That's a zero. Assign four. Next I'll go here. That's a zero. Assign four. So what I've done is I've assigned the summation."
+    },
+    {
+      "chunk_id": "L270_C10",
+      "start": 690.98,
+      "end": 766.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=os82DjD2-MA&t=690s",
+      "text": "here. That's a zero. Assign four. Next I'll go here. That's a zero. Assign four. So what I've done is I've assigned the summation. So at the end of the day, you will be seeing that you have the count ready. Okay, perfect. I have the count ready. Now if someone is asking me, hey, till nine, how many primes are there? You will be like, okay, prime nine. What is your value? He says, my value is four. You get the number. Perfect. Amazing, right? So if someone is asking you, how many primes are there from three to nine? You know one thing, prime nine. What's the value? Four. We know it. Till nine, I have four primes. Okay. But I need from three to nine. Not because this is nothing but one to nine. Okay. But what do I need? I need from three to nine. What do I need? What is the thing that I don't need? That's from one to two. I don't need this. But can I say, figure out prime of two, figure out prime of two, and that'll come out to be one and do a subtraction because you don't need it. So it'll turn out to be three. It'll turn out to be three."
+    },
+    {
+      "chunk_id": "L270_C11",
+      "start": 766.62,
+      "end": 840.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=os82DjD2-MA&t=766s",
+      "text": "do a subtraction because you don't need it. So it'll turn out to be three. It'll turn out to be three. So can I say if I do this computation, the answer will be prime of R minus prime of L minus one. Yes, it will be. This will be the answer. Can I write the code? I can. It's going to be super simple. I'll start writing the pseudocode. Again, I'm writing down the pseudocode. This course is not in C plus plus. It is in pseudocode. Spread this across. Function. We'll be given a list of queries. So let's take all the queries. First thing, compute the sieve. So maybe compute this array by calling get sieve. And we know one thing that we will be requiring till 10 to the power six because the maximum value of R can be 10 to the power six. So it will be giving me a sieve. We'll have the prime ready. What is the next thing? Compute, compute, do the prefix sum. So maybe I can keep a counter as zero. And what I can do is I can start from one. Or maybe I can start from two because I know the first prime is two. Two to the 10 to the power six because that is the maximum number."
+    },
+    {
+      "chunk_id": "L270_C12",
+      "start": 840.66,
+      "end": 920.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=os82DjD2-MA&t=840s",
+      "text": "because I know the first prime is two. Two to the 10 to the power six because that is the maximum number. And I'll be like counter is equal to counter plus prime of I. And then you can say prime of I will be counter. Done. Very simple. Right? So I have my three computations ready. What is my next thing? I have to go through all the queries. So primarily go through all the queries now. I equal to zero in query size. So go through all the queries. Query size minus one because that's the last index and get the L. L will be queries, ith query, zero. R will be queries, ith query and one. Perfect. What is my answer? What is my answer? The answer is pretty straightforward. I'll require the primes till R and I'll not be requiring the primes till L minus one. So that's my answer. None understood. Now what is the time complexity? Let's analyze. Get C is working in N logarithmic of log N. Okay. This is doing in bigot of 10 to the power six. Okay."
+    },
+    {
+      "chunk_id": "L270_C13",
+      "start": 920.66,
+      "end": 999.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=os82DjD2-MA&t=920s",
+      "text": "N logarithmic of log N. Okay. This is doing in bigot of 10 to the power six. Okay. And this is bigot of Q. So the overall time complexity is bigot of N log of log N where N is 10 to the power six log of log of 10 to the power six plus bigot of 10 to the power six plus bigot of Q. Q can vary and the maximum Q that you can have is 10 to the power five. Now we're not multiplying Q into N. This is extremely optimized. Now the entire intention of solving this problem was that you understand how to pre-compute, how to use the sieve. They might twist the problem in some other way, but the overall idea is we know that there is a black box which is in terms of N log of log N which tells us the primes in the easiest possible manner. This is the black box. Got this. So this will be it for this one. So I hope you have understood this entirely. And if that is the case, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's spend some of the video. Till then, bye bye. Take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

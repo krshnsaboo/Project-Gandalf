@@ -1,0 +1,64 @@
+{
+  "lecture_id": "L111",
+  "lecture_number": 111,
+  "lecture_title": "L39. Introduction to Binary Search Tree | BST",
+  "youtube_url": "https://www.youtube.com/watch?v=p7-9UvDQZ3w",
+  "chunks": [
+    {
+      "chunk_id": "L111_C1",
+      "start": 0.0,
+      "end": 76.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=p7-9UvDQZ3w&t=0s",
+      "text": "So before starting off this video, I would love to thank Relevil for sponsoring this entire free series. We need experienced candidates. How many times has this sentence shattered your dream to work in a good company or a job description which requires experience? You won't ever have to listen to the sentence ever again. If you use a platform like Relevil by unacademy, he conducts a test which is completely based on skills and you need to perform in your chosen field. Relevil has around 1000 plus job openings by 50 plus top Indian companies and unicorn startups. What you need to do is you just need to register for this test, apply on the test and after that your interview will be scheduled and you will be hired. And the best thing about this is the Relevil tests are free and you can check out all the links in the description below. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be starting off with binary search trees. Now the prerequisite before starting this playlist is you should definitely have seen the binary tree playlist. You should be knowing what is in order traversal. I've taught that in binary tree. You should be knowing what is a preorder traversal. You should be knowing what is a post order traversal and you should be knowing what is a level order traversal."
+    },
+    {
+      "chunk_id": "L111_C2",
+      "start": 76.88,
+      "end": 156.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=p7-9UvDQZ3w&t=76s",
+      "text": "a preorder traversal. You should be knowing what is a post order traversal and you should be knowing what is a level order traversal. These four techniques and the binary tree playlist should have been completed before starting off with a binary search tree. So I'll be leaving the link of the binary tree playlist in the description. Make sure you check that out before starting off with this playlist. What is a binary search tree? How is that different from binary tree? In binary tree, it doesn't matter what node was on the left, what node was on the right. In binary tree it never mattered. In binary search tree it matters. This left guy, this right guy, like if this is the node, this left guy should be lesser than the node. Very, very important. It should be lesser than the node and this right guy should be greater than the node. That's what a binary search tree signifies. Everything on the left, yes I repeat, everything on the left should be lesser than the node's value and everything on the right should be greater than the node's value. You cannot say it should be equal to like, there is no presence of equal to in any case. Now let's understand this binary tree, like why is this a binary search tree? So if you carefully see, we have an 8 over here."
+    },
+    {
+      "chunk_id": "L111_C3",
+      "start": 156.02,
+      "end": 232.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=p7-9UvDQZ3w&t=156s",
+      "text": "understand this binary tree, like why is this a binary search tree? So if you carefully see, we have an 8 over here. And if you see everything on the left, like 3, 1, 6, 4, 7, everything's lesser than 8. You have 10, 14, 13 on the right, that's actually greater than 8. So everything on the right is greater. Now there's one more condition. The entire left subtree, I repeat, the entire left subtree should in itself be a BST and the entire right subtree should in itself also be a BST. That's also very, very important. So as you can see, this is another subtree. So if I say this is the node, the left guy is 1, which is smaller than 3. The right guy is 6, which is greater than 3. Again, this is a subtree. So this 4 is smaller than 6. The 7 is greater than 6. Again, this entire thing is a subtree. So this is a 10. The 14 is greater than 10 and this 13 is smaller than 14. So each subtree should be a BST and the entire tree should also be a BST. So I can say that this is the first condition. The left should be smaller than the node and the right should be greater than the node. The left subtree should itself be a BST. That means again, it should follow this condition. The right subtree should again be a BST."
+    },
+    {
+      "chunk_id": "L111_C4",
+      "start": 232.04,
+      "end": 303.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=p7-9UvDQZ3w&t=232s",
+      "text": "The left subtree should itself be a BST. That means again, it should follow this condition. The right subtree should again be a BST. That means again, it should follow this condition. So that's overall the definition of binary search tree. Now you might ask me, now Striver, what if are duplicates allowed? That's a question that you can ask. Are duplicates allowed in binary search tree? Ideally, duplicates are not allowed. But if you go through a lot of books, like in some books, in MIT's lecture, they say that for general implementation, we will take that duplicates are not allowed. But what if we want to have duplicates? There can be a couple of ways in order to integrate that. One of that is, let's assume in this binary search tree, we have a couple of 8s and I want to implement a binary search tree. Then we will slightly change the condition to something else. I'll just make it L greater than equal to N and I can keep it as greater than R. So I'll just slightly modify the condition of binary search tree to be like this if I want duplicates. Ideally, there will be no duplicates just in case I want duplicates. Now what I'll do is if there are a couple of 8s, I'll put one 8 here. I'll just make sure I have one more node. I've just one more node like this and that will work."
+    },
+    {
+      "chunk_id": "L111_C5",
+      "start": 303.18,
+      "end": 375.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=p7-9UvDQZ3w&t=303s",
+      "text": "put one 8 here. I'll just make sure I have one more node. I've just one more node like this and that will work. So I'll just add one more left node and from 8, then I'll elongate 3. That can be one of the ways to do it. Or the other way is like we are storing a single node, right? 8. We can probably have a counter or something like that. And we can say 8 happens to occur twice. We can have node, frequencies in order to determine how many times 8 appears. Now everything that depends on a programmatic implementation. But ideally we will go off with without duplicates. But if there are duplicates, then we can either integrate another node or we can have node, frequency stored in a single node in order to maintain a counter of every variable that occurs. So that's, these are the conditions. The next question that you will ask is why binary search tree and why not something like DT is followed. Now if you have seen my binary tree playlist, a binary tree can be like this, right? And then we can have a left pointer to 2, then we can have a left pointer to 3 and this can go on, right? And if I take such a tree, that's basically degenerate tree. And I can say the length of the tree, the length of the tree appears to be BGO of N, right?"
+    },
+    {
+      "chunk_id": "L111_C6",
+      "start": 375.1,
+      "end": 443.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=p7-9UvDQZ3w&t=375s",
+      "text": "basically degenerate tree. And I can say the length of the tree, the length of the tree appears to be BGO of N, right? And if you do any traversal, be it pre-order, be it in order, be it any traversal, the time complexity will end up being BGO of N, like any search time complexity. In binary search tree, generally, generally, I'm not saying always, generally in a binary search tree, all the heights, heights of the tree are log N. Like if you carefully observe, if you carefully observe, this is not a degenerate tree. This is not a degenerate tree. So the height of the binary tree is generally kept as log base 2N. Again, it's not a necessity, but in almost all the cases, the questions that we will be doing everywhere, the height is always log base 2N. So the height is always kept as log base 2N. Why if you carefully observe, like generally that's the case, the height between left subtree and right subtree is kept as minimal as possible. And we make sure that the height doesn't exceed log base 2N. Why is it kept log N? In the next lecture, when we learn about search in BST, you will understand that because search in BT is BGO of N traversal, right? If you do a search in binary tree, that will take you a BGO of N because you have to do"
+    },
+    {
+      "chunk_id": "L111_C7",
+      "start": 443.92,
+      "end": 507.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=p7-9UvDQZ3w&t=443s",
+      "text": "N traversal, right? If you do a search in binary tree, that will take you a BGO of N because you have to do an entire in-order or a pre-order or a post-order or a level order in order to find out any node X. But we can do that in log N in binary search tree only because, only because I'll give you a hint, only because if you carefully observe, if I'm looking to find X equal to six, I don't have to actually traverse the entire tree. I know this is not equivalent to six. So I end up moving left because six is smaller than eight. I end up moving left. So it's kind of a binary search. You know, everything to the right of eight is greater than eight. So six can never appear on the right. So binary search, right? It can always appear on the left. Three. Three is not equivalent to six. Will it be on the left or right? Definitely on the right. So left, it'll never be there. So we go to the right. That's kind of a binary search that we do. That's why the name comes up binary search tree because we know either it appears on the left or on the right. As simple as that. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took"
+    },
+    {
+      "chunk_id": "L111_C8",
+      "start": 507.48,
+      "end": 526.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=p7-9UvDQZ3w&t=507s",
+      "text": "the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

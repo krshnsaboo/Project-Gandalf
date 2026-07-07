@@ -1,0 +1,127 @@
+{
+  "lecture_id": "L059",
+  "lecture_number": 59,
+  "lecture_title": "BS-15. Capacity to Ship Packages within D Days",
+  "youtube_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY",
+  "chunks": [
+    {
+      "chunk_id": "L059_C1",
+      "start": 0.0,
+      "end": 75.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we will be continuing with our binary search playlist which is the part of the Strainverse A to Z DSA course in case you haven't checked it out yet. There's a link in the description. Make sure you check it out because it is something extremely special. So the problem that we're going to solve is finding the least capacity in order to ship packages within given D days. Very important to note least and D. This will help us to solve this problem. What is the problem state? You have one ship, okay, and you have N items or products with you. Each of these products has a certain weight, okay, and you're given 5 days. Remember one thing, you have one ship and this ship will run once per day. This ship will run once per day, got it? And you have to make sure that all of these products are shipped within 5 days and in order to do so, you have to find out what is the least, least weight of products that"
+    },
+    {
+      "chunk_id": "L059_C2",
+      "start": 75.64,
+      "end": 146.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=75s",
+      "text": "in order to do so, you have to find out what is the least, least weight of products that you load into the ship such that you can do it in 5 days. Let's understand. If I say I'll take the capacity of the ship to be 100, can I say if I take the capacity of the ship to be 100, I'll take the one, I'll load it in the ship. I'll take the item in the way to load it into the ship item with the weight 3 loaded into the ship item with the weight 4 loaded into the ship and everything I load it into the ship. If I load everything into the ship, what will be the total weight that I will load? 55 because if you sum it up, the weight will be 55. If you just sum all of these up, the weight will be 55 and the ship can have a capacity of 100. So, apparently if I take a capacity of 100, I will be able to ship everything in one day because I just put everything and it will take me one day and I'll ship everything and it was given me I can take 5 days but I'll be able to do in one day. So if I take a capacity of 100, I'll be able to do it in one day. But the question is strictly asking me, find the least capacity."
+    },
+    {
+      "chunk_id": "L059_C3",
+      "start": 146.52,
+      "end": 218.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=146s",
+      "text": "a capacity of 100, I'll be able to do it in one day. But the question is strictly asking me, find the least capacity. So if you take 100, that is not sensible because you have to find the minimal. Let's probably try out with a capacity of 10 and let's see if it is possible. So if I take 10, what will happen? First I'll put 1, then I'll put 2, then I'll put 3, then I'll put 4. The moment I put these 4 products, the capacity of this ship is 10 which I have taken. So I cannot put anything beyond these 4 products. So on the first day, I can say on the first day, I'll ship the products 1, 2, 3, 4 like with the weights 1, 2, 3, 4 that is what I'll ship. So these products are done. And the next day what will I ship? Can I say I'll just be able to put 5. Why? Because if I put 6, 5 plus 6 will be 11 which is exceeding the capacity of this ship. Thereby on the second day, I'll be able to just put the product with weight 5. Perfect. What about the third day? Can I say on the third day, I'll just be able to put up the product with weight 6 because I cannot take 7. On the fourth day, I'll be able to put the product with 7."
+    },
+    {
+      "chunk_id": "L059_C4",
+      "start": 218.72,
+      "end": 294.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=218s",
+      "text": "up the product with weight 6 because I cannot take 7. On the fourth day, I'll be able to put the product with 7. On the fifth day, I'll be able to put the product with the weight 8. On the sixth, the product with weight 9. And on the seventh, the product with weight 10. Do you see something? The given number of days were 5. I ended up taking 7 days. So if I take the capacity of 10, it's not going to be possible. Thereby, what I'll do is, I'll probably try with a better capacity and I'll take 15. Let's take 15 in this case. So if I take 15, let's see what will happen. Can I, okay, let's quickly erase this as well. So on the first day, I can go ahead and say I'll put 1, 2, 3, 4 and 5. Yes, because if you add it up, it's still 15 which fits the limit. And I can say on the second day, I will, like this is done. On the second day, I can go 6 and 7 because even if I add 6 and 7, that's 13. On the third day, I can go 8. I cannot go 8, 9 because that will exceed. On the fourth day, I can go 9. And on the fifth day, I can go 10."
+    },
+    {
+      "chunk_id": "L059_C5",
+      "start": 294.28,
+      "end": 373.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=294s",
+      "text": "9 because that will exceed. On the fourth day, I can go 9. And on the fifth day, I can go 10. So eventually, on five days, if I take a capacity of 15, I was able to do every, like ship all the packages. Hence, 15 is possible. You can try with 14, 13, 12 and you have to tell me the least. And if you try with 14, it's not possible. With 13, not possible. With 12, not possible. Anything less than that is not possible. 15 is the least capacity with which it is possible. Thereby, the answer will be 15. Got the question? So how do we solve this problem? First of all, we have to figure out the capacity that can be our answer and then we will think about the least. Can I say one thing for sure? If I take any capacity lesser than the maximum weight of any product, imagine I take the capacity as 8, I'll not be able to ship 9 and 10 because the question was to ship all the packages. So if I take a capacity of 8, I'll not be able to ship 9 and 10. So one thing I'm sure is, whatever is the maximum weight, minimum the ship has to be of that capacity. Otherwise, I'll not be able to ship each and every product."
+    },
+    {
+      "chunk_id": "L059_C6",
+      "start": 373.72,
+      "end": 452.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=373s",
+      "text": "the maximum weight, minimum the ship has to be of that capacity. Otherwise, I'll not be able to ship each and every product. Something we are sure. So I know the answer will start with the max element. Now we have to think about the least. But before that, what is the maximum it can go to, if I ask you? Can I say one thing? If I sum it up, everything, if I sum it up, over here the summation is 55. If the ship is having a weight of 50, like capacity of 55, then at one day or rather in one day, I can put everything in. You don't need a capacity of 100 because even if you take 55, you'll be able to put everything in. So one thing I'm sure is, the answer will be between the max element and the summation of the array. The answer will always be between the max element and the summation of the array. So we have figured out the possible range of answers. Now what is the next step? How do I solve this problem? Because I have analyzed that the answer can be between the max element in the array and the sum. Now the question is asking me to figure out the least. So max to sum, maybe we can go. Let's go. So maybe we can say capacity equal to from max to sum. This is what we will do a traversal."
+    },
+    {
+      "chunk_id": "L059_C7",
+      "start": 452.32,
+      "end": 530.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=452s",
+      "text": "can go. Let's go. So maybe we can say capacity equal to from max to sum. This is what we will do a traversal. Let's quickly run a for loop from, so we have figured out our range. In this case, the range is from 10 to 55. What do we need? Least. Maybe you can start looking from 10. So what I'll do is, I'd like, okay, let's start looking from 10. I'll say capacity, can you run a loop from max till sum in an increasing order? He says, yes, I can. And now let's probably write a function, write a function and ask him to find out the days required and pass him the weight, pass him this capacity and ask him to give the days. Okay. So he'll tell you that these many days are required. If you go with this particular capacity and if you see the days required fits in my days, fits in my days, then this is my answer. And this is what I'll return. Quite simple linear search, quite simple linear search. But the thing is to write a function which figures you out the number of days required. Maybe we can write that. Let's quickly write that. That's going to be super easy."
+    },
+    {
+      "chunk_id": "L059_C8",
+      "start": 530.54,
+      "end": 608.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=530s",
+      "text": "out the number of days required. Maybe we can write that. Let's quickly write that. That's going to be super easy. You will say int or rather int days required, or you can just write a function where you take the weight and you take the capacity. So you're saying, please find me on the number of days required. Can I say initially on the first day, which is basically saying day equal to one, as of now the ship hasn't loaded anything. So the load capacity will be zero as of now. Let's start from the first item, which is from zero till n minus one. Let's go. And I'll be like, hey, listen, let's load it into the ship. But wait, while loading into the ship, this particular item, while loading into the ship, if this particular item is crossing my capacity of the ship, is crossing my capacity of the ship. In that case, I will go to the next day. I'll go to the next day. And I'll load it to the next day. I'll load it to the next day. So I'll be like, load will be equal to weight i. Got it? If it is not going, if the capacity is not exceeded, then whatever day I am in, load"
+    },
+    {
+      "chunk_id": "L059_C9",
+      "start": 608.62,
+      "end": 685.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=608s",
+      "text": "i. Got it? If it is not going, if the capacity is not exceeded, then whatever day I am in, load it into the same day. Load it into the same day. And once you have done, you can simply go ahead and return the number of days that you took. The number of days, maybe you can just write days, that will be a better thing. The number of days that it took. If I have to do a dry run, I can show you as well. It is like 1, 2, 3, 4, 5, 6, 7 and so on. Let me take a capacity of 10. If I take a capacity of 10, what will happen? Let's see. Initially the days are 1. So let's keep the days as 1 and the load is 0. What do we do? We start with 1. This is like load is 0 plus 1, exceeding the capacity. No, goes here and puts it into the day 1 load. Hence the load will be 1. Next 2, what's the load as of now? Ship is containing 1. 1 plus 1, exceeding. No, goes over here, puts it into the load. Summation will be 3. Let's go to the next. 3 plus 3 is 6. So 3 plus 3, 6, exceeding. No, so put it into the current day load. 3 plus 3 will be 6. Let's go to the next. What is it? 4."
+    },
+    {
+      "chunk_id": "L059_C10",
+      "start": 685.86,
+      "end": 763.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=685s",
+      "text": "No, so put it into the current day load. 3 plus 3 will be 6. Let's go to the next. What is it? 4. 6 plus 4, exceeding the capacity. No, because it is still 10. Let's put it into the current day load. Goes in. Let's move to the next. 5th. The moment you move to the 5th, currently on day 1, currently on day 1 the load is 10. 10 plus 5 exceeds the capacity. So what do you say? Let's move to the day 2. This is what it does. And then let's update the load to 5. New day, new load. And again start iterating from the next. This is how this will work. Got this? This will give you the number of days. And once you have the number of days required, if that fits in your agenda, you say this is my answer. And you return. What will be the time complexity of such a solution? I'm going from max to sum. So that's sum minus max. What's the length? Plus 1 definitely. Definitely plus 1 is the length. Into, you're kind of going b go of n. So b go of n. This is the time complexity. So we are having something like linear into linear, near about a quadratic time complexity. Because assuming this to be a big value and this is also b go of n, that's a quadratic time complexity."
+    },
+    {
+      "chunk_id": "L059_C11",
+      "start": 763.22,
+      "end": 841.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=763s",
+      "text": "quadratic time complexity. Because assuming this to be a big value and this is also b go of n, that's a quadratic time complexity. Obviously the interviewer will not be happy and he'll ask you to optimize this. So let's quickly look at the optimized solution. So we have to optimize the quadratic time complexity. How can we? The first hint is this one. If you remember in all the problems which is asking you to find minimum answer. What do you apply? Binary search on answers. And it is only possible when you know the range. You know the range. Yes. The answer is always going to be between max and sum. And the max is 10. So the answer will always be between 10 and the sum. And the days are given as 5. You know like at 55, you will be able to do it in one day. So can I say for this particular example, this is not possible, not possible, not possible, not possible, not possible, possible, possible, possible and possible. So we know the section where it is not possible and we know the section where it is possible. And we have already written a function which tells me like whenever we give him the capacity, it tells me what is the number of days, what is the number of days it takes. Since we have a function, can we use it to figure out possible and non-possibility? We can."
+    },
+    {
+      "chunk_id": "L059_C12",
+      "start": 841.18,
+      "end": 918.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=841s",
+      "text": "is the number of days it takes. Since we have a function, can we use it to figure out possible and non-possibility? We can. Hence, we do the binary search by saying low and high. So we are again having low and high. What will be the first mid? 10 plus 55 is 65. 65 by 2 will be 32.5 which is 32. Whenever you pass the capacity as 32, it will come as possible. So if it is possible, assuming it is somewhere here, mid is here, this assumption, I cannot write down all the numbers. I am saying it is possible. If this is possible, this can be a possible answer. Similarly you can use a variable to store it in case you need. And then you say I am looking for least. If I am looking for least, binary search is all about elimination. So you eliminate everything. I need smaller. I need smaller. So what will I do? I will come back one place before the mid. And now I am having 10 and 23. I will be like 10 plus 23 by 2. That is 33 by 2. That is 16.5. That is 16. So my mid will be pointing to 16. And at this time, 16 says I am also possible."
+    },
+    {
+      "chunk_id": "L059_C13",
+      "start": 918.3,
+      "end": 995.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=918s",
+      "text": "That is 16. So my mid will be pointing to 16. And at this time, 16 says I am also possible. Thereby I will say the answer to update itself by 16. And I can say all the right elements can be cancelled because I am looking for a minimum. So what will I do by taking 17, 18? Thereby the high will now come across to this value 15. Let's take the high to 15. This time when I try to find 10 plus 15 by 2, that gives me 12.5 which is 12. So when I take 12, it tells me not possible. I say okay not possible. Thereby 10 is not possible. 11 is not possible. 12 is not possible. Everything on the left is not possible. Hence the low will be here. Let's quickly erase this getting untidy. Okay perfect. I have erased it. Where am I? 13 and 15. Where will the mid be? The mid will be pointing to 14. So when the mid points to 14, it again says not possible. Thereby the left side will be eliminated and the low will go here. I am at 15 and the mid will also be pointing to 15. If the mid is pointing to 15, it says possible, possible. Hence the answer will be updated to 15. Again you know how to find the possibilities. I am not explaining that."
+    },
+    {
+      "chunk_id": "L059_C14",
+      "start": 995.06,
+      "end": 1074.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=995s",
+      "text": "possible, possible. Hence the answer will be updated to 15. Again you know how to find the possibilities. I am not explaining that. If it is possible, I need a smaller answer. Eliminate the right half and move the high to one place before the mid. One place before the mid. This is where you stop because the high has crossed the low and we stop. And if you carefully observe, low has stopped at 15 and the high has stopped at 14. Again the opposite polarity concept. The low started at possibly not possible and the high started at possible. And if you carefully observe, high ended up at a not possible place and the low ended up at a possible place. Thereby your answer will always be low. You don't need to take another answer variable. If you just return low, that will be your answer. Time to write the pseudocode. We will have a function which takes the weights and which takes the days. What is the first thing? We know the low will always be the max element because you need at least that much capacity to carry everyone. So maybe you can find out the maximum element. You know how to find it. What will be the high? The summation. The summation of the entire array. So yeah, both of them you can find it out yourself."
+    },
+    {
+      "chunk_id": "L059_C15",
+      "start": 1074.42,
+      "end": 1149.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=1074s",
+      "text": "will be the high? The summation. The summation of the entire array. So yeah, both of them you can find it out yourself. You write while low lesser than equal to high. Again carefully observe. I'm making sure every problem we are doing with lesser than equal to and mid minus one and mid plus one. So that to maintain like I've seen a lot of solutions where they do low lesser than high somewhere they do mid somewhere they do mid plus one. It's quite confusing but we are making sure that we have the same concept across. If you're conceptually clear, trust me you can write anything. You'll understand everything what to eliminate. It's just about understanding what to eliminate and what not to. So if taken the mid, what's the next thing? Find out the number of days. Hence you can call the function that you have written and you can pass on the weight and the mid which will be your capacity. And if the number of days is under the given number of days again equal to equal to in that case what will happen? You're saying it's possible. If it's possible maybe we should find a smaller answer. Simple or else maybe we should find a bigger number if it is not possible. Let's increase the capacity and at the end of the day you can return the low which will be your answer."
+    },
+    {
+      "chunk_id": "L059_C16",
+      "start": 1149.7,
+      "end": 1211.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=1149s",
+      "text": "is not possible. Let's increase the capacity and at the end of the day you can return the low which will be your answer. Now you understood this is how the binary search code will look like. If I ask you the time complexity what will be it? We just replace the linear search. Thereby it will be logarithmic of because the range is from max to sorry from sum to max so it will be like logarithmic of sum minus max plus one that is the length of the range into a big O of n because you're still using this function to compute the number of days. You cannot eliminate that. So this will be the time complexity. Am I using any space? No. So the big O of one is the space complexity. So let's quickly go back into the code editor. By the way you can find out the problem link in the description and I'm showing you the C++ code. You can find out the Java, Python, JavaScript code from the notes. The link will be in the description. So I figured out the low by using the STL. I've also figured out the sum by using the accumulate function in the C++ STL and it's pretty same like the same thing that we wrote as the pseudocode and if you go across and submit this this will be running fine."
+    },
+    {
+      "chunk_id": "L059_C17",
+      "start": 1211.86,
+      "end": 1227.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=MG-Ac4TAvTY&t=1211s",
+      "text": "like the same thing that we wrote as the pseudocode and if you go across and submit this this will be running fine. So in case you're still watching till here, please please do consider giving us that like and if you're new to our channel, what are you waiting for? Hit that subscribe button and if you haven't followed me on Instagram, Twitter and LinkedIn, all the profile links will be in the description. With this I'll be wrapping up this video. Let's meet in some other video till then bye bye take care."
+    }
+  ]
+}

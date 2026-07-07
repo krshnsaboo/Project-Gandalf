@@ -1,0 +1,127 @@
+{
+  "lecture_id": "L134",
+  "lecture_number": 134,
+  "lecture_title": "G-9. Flood Fill Algorithm | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=C-2_uSRli8o",
+  "chunks": [
+    {
+      "chunk_id": "L134_C1",
+      "start": 0.0,
+      "end": 79.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. A lot of you told me that you were missing this line. So from now onwards, we are going to start every video with this line. Okay. So the problem that you're going to solve today is the flood fill algorithm. Again this can be solved using BFS or DFS, but you need to understand the core concept. How are we approaching this problem? Because it is again going to be a problem which is based on matrix. So it states that an image is represented by 2D array of integers, each integer representing the pixel value of the image. Given a coordinate SR, SC, representing the starting pixel. So basically SR is the row and SC is the column. So this is the starting pixel of the flood fill and a pixel value, new color. Flood fill the image. Now to perform a flood fill, consider the starting pixel plus any pixels connecting four directionally to the starting pixel of the same color as the starting pixel plus any pixels connected four directionally to those pixels and so on. Replace the color of all of the aforementioned pixels with the new color. A bit confusing, right? Not an issue. Let's come back to the iPad and understand the question. So the question states, you'll be given something like this."
+    },
+    {
+      "chunk_id": "L134_C2",
+      "start": 79.52,
+      "end": 148.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=79s",
+      "text": "Not an issue. Let's come back to the iPad and understand the question. So the question states, you'll be given something like this. Okay. And this matrix can be filled up, filled up with anything. It can be zero, one, two, three, four, any numbers. Okay. Over here, they will be giving you a starting row and a starting column. So over here I can say this is the starting row and this is the column because if I number them, it's like zero, one, two. So this is the starting row and the column. What is the color of that starting? So I can see the initial color is one. Okay. Now what I want is flood fill says, okay, one, that's your initial color. It's connected to one and has the same color. This is connected to one and has the same color. This is not in, not in this direction. They only allow you in four direction. So I can say this guy is connected to this guy and this guy, not to this because it is zero and this is not allowed. So it is connected to two guys. Remember this, this one is connected to two guys. So what you will do is the first color you will color that with two because that is what they're asking you to color. Then whoever is connected with it, you color them with the same color."
+    },
+    {
+      "chunk_id": "L134_C3",
+      "start": 148.72,
+      "end": 220.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=148s",
+      "text": "two because that is what they're asking you to color. Then whoever is connected with it, you color them with the same color. So these couple of guys were the same pixels, pixels, same one pixel. So you colored them with the new color that is two, right? After that, these tools are connected to these four directions. So you can color this and this. So again, make sure you color this and this, that this pixel is again connected to these. So you can color this, thereby color this. As of now, this is the final configuration. We could not reach this, so we will keep it as it is. So this is how you flood fill the algorithm. So let me give you one more example. So assume you have something like one, one, one, and you had something like two and this was two. This was zero, assume, and this was two, this was two, and this was two. And they said, the new color that you have to pick up, the new color rather that you have to do is three. And they're saying the starting row to be two and the starting column to be zero, assume that this is the case. So if I draw the matrix, let's draw the matrix. So this is the matrix, right? If I row number them, this will be zero, one, two. If I column number them, this will be zero, one, two."
+    },
+    {
+      "chunk_id": "L134_C4",
+      "start": 220.02,
+      "end": 294.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=220s",
+      "text": "matrix, right? If I row number them, this will be zero, one, two. If I column number them, this will be zero, one, two. Starting row two, starting column zero, which is basically this one. Okay. And the initial color is two. The initial color is two. You need to make sure everyone that is connected to two and has the same color is colored with three. The first of all, you color this with three because that is what the new color is. You go to adjacent. So this is the adjacent. You color them with three. Perfect. So you color this three. This is an adjacent. This is an adjacent. This is an adjacent. This is an adjacent. But only this guy is having the same initial color. So thereby you color this with three. Perfect. Now this three is connected to four directions, but only this guy is having the same initial color too. So you color this. Apparently this will be the final configuration because these guys are connected, but this is one, one, one, zero. So you do not color them. You only color the guy who's connected by the same initial color that you're coloring this particular guy. This is how you can blood fill any given matrix by starting from a row and a column. So how do you solve this? So as of now we can see that this is the starting row and this is the starting column, which"
+    },
+    {
+      "chunk_id": "L134_C5",
+      "start": 294.1,
+      "end": 373.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=294s",
+      "text": "do you solve this? So as of now we can see that this is the starting row and this is the starting column, which is this particular guy. So what are we looking for? We are looking to basically extend this to these guys, then to these guys and then to these guys. That is what we are looking for. So which algorithm can we follow? We can follow one kind of algorithm, which is breadth first search and breadth first search says that we start at the given point. We go on level wise. So first we go to this simultaneously and we color them like first we color this, then we go simultaneously on the same level and color them. Then we go simultaneously on every level and color them. So it is level wise. We can definitely do that and you have done that in the previous problem. So we can definitely use something like a BFS algorithm where we go simultaneously on all its neighbors. Or what I can do is I can use something like a DFS algorithm because the previous problem we solved using BFS. So this problem we will be focusing to solve using DFS so that you understand that why does DFS work over here. So over here it's nothing like that you have to color them in a minimum time or something like that. The question says at the end of the day I need the final configuration."
+    },
+    {
+      "chunk_id": "L134_C6",
+      "start": 373.48,
+      "end": 447.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=373s",
+      "text": "color them in a minimum time or something like that. The question says at the end of the day I need the final configuration. So the requirement is at the end of the day, you just need to make sure everything that is touched to this two and is two is colored with three. That is what you want at the end. Everything that is touched to two and is three and is two rather should be colored with a new color three. So it basically means if I start with this and I try to do a DFS, so basically this guy will have two neighbors. One is this guy and one is this guy. So either it can go like this and then come back and go like this or either it can do the other way. It's like this, come back and go like this. So you can do it both the ways. So what I'll do is I will try to have the DFS so I can see the initial DFS. I'll start from the first guy that is the starting row and the starting column and make sure you store the initial color as two. That's the initial color. Remember this, that is the initial color two. So you say DFS of two comma zero is where you start off with. And when you're starting off, you need the final color, right? You need the final color."
+    },
+    {
+      "chunk_id": "L134_C7",
+      "start": 447.1,
+      "end": 521.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=447s",
+      "text": "comma zero is where you start off with. And when you're starting off, you need the final color, right? You need the final color. So either you can use the same matrix, but I generally do not prefer to alter the input matrix. Why? Because whenever you go into the industry, whenever data is given to you, you work on that data. You do not tamper with the data because data is very, very important. So we always have to treat the data as the data and we do not tamper with it. Something that is given to us, we should never tamper with it. We should always solve the problem without doing any alteration to that particular data. That is something which we follow in software engineering a lot. So what we will do is we will create a copy of this data. Okay. We will create a copy of this data and we will just fill up everything with the same numbers. Okay. So we are starting with DFS of two zero, which means at this portion. So what you will do is when you go inside, you say, Hey, can you take the new color three? And you're like, okay, I'll take the new color three. He has taken the new color three. Now he knows he has two neighbors or two people who are connected to him. One is the DFS of one comma zero. The other one is the DFS of two comma one."
+    },
+    {
+      "chunk_id": "L134_C8",
+      "start": 521.82,
+      "end": 591.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=521s",
+      "text": "people who are connected to him. One is the DFS of one comma zero. The other one is the DFS of two comma one. So basically one comma zero is this two comma one is this. So either it can go here, either it can go here. So if you remember what is the DFS algorithm goes first in the depth, goes first in the depth. So we'll try to go first in this portion of depth. It could have gone the either way, depending on how you are writing the code, it can go on this or on this. So we will see that it goes on this DFS of one zero. So again, you go to one zero, which is this and you color that with the new color. Now this one zero is having one children and these children are not having the same color. It's not two and this is invalid and this has already been visited. It is not having the initial color two. So you only go to this direction. Remember this, you only go to this direction, which is DFS of one one. So now we will go to DFS of one one. So we are at DFS of one one, which is this guy. So this guy will be colored with the new color three. So let's color that with the new color three. Now since it is colored, it will look for its neighbor. No it is one."
+    },
+    {
+      "chunk_id": "L134_C9",
+      "start": 591.9,
+      "end": 669.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=591s",
+      "text": "So let's color that with the new color three. Now since it is colored, it will look for its neighbor. No it is one. No it is zero. This one already visited this one. Yes, it is two and it has not been visited. It will be visited, but that DFS has not been called yet. It will be visited, but it was supposed to take two sides. But since it is DFS, since it is DFS, it will go like this, then like this, then like this DFS depth first search at first. Okay. So what will happen is this DFS of one will now call for DFS of two comma one and it will mark this as three. Now this, this guy looks at its neighbor, already visited, looks at it, neighbor not visited. So does a visit for this, which is DFS of two comma two goes there and marks it. Now when we go on the DFS of two next time, we see this is having no one, no one, no one. This guy already visited. Done. So what you will do is you will see, I do not have neighbors. Please go back. This guy did not have any other neighbors. It goes back. This guy did not have any other neighbors. Goes back."
+    },
+    {
+      "chunk_id": "L134_C10",
+      "start": 669.26,
+      "end": 747.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=669s",
+      "text": "This guy did not have any other neighbors. It goes back. This guy did not have any other neighbors. Goes back. Now DFS of one zero says I am done. So DFS of two, which started with two guys, went into one, came back. It's time that it goes to the next, but before going, we will check. Is it worth going? No, it's already colored. It is not having the initial color too. That means someone came and colored it. There is no point in going to this guy. Yes. Again, recursion has to be strong. The question has to be super strong. So we apparently went something like this and had you done something like a DFS on this side, what would have happened? You would have gone from here to here. And probably here came back and then here, then here, if you'd have done DFS on this portion first, so it depends how your code works. It will go and touch it in that manner. It does not matter how you touch it because at the end of the day, if all the tools that are attached to these, this two are colored like trees, that is what matters to me. So you can go like BFS or DFS. That is completely your choice. So as usual, I'll be writing the C++ code and the Java code is on the left so you can follow that as well."
+    },
+    {
+      "chunk_id": "L134_C11",
+      "start": 747.94,
+      "end": 820.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=747s",
+      "text": "So as usual, I'll be writing the C++ code and the Java code is on the left so you can follow that as well. So we're given the image, we're given the SR, we're given the starting this. So the first thing that we do is we keep the initial color. What will be the initial color? Definitely this. There's no doubt in this. What is the next thing that we do? We copy this particular image because we need to flood fill it and return it. So we will copy this into some answer. Okay, perfect. Do we need something else? Really? We can think about that afterwards. Let's call the DFS starting from the starting row, starting column, give him the answer, give him the image. And if you require something else, we will take that afterwards. Okay. So we read a private function and the private function will have wide DFS. It knows it has added a row. It has added a column and it has this particular answer at first. Okay. And then it has this particular image. So that is something which it always has initially. Now what we will do is if you remember well enough, whenever we entered, whenever we entered on this row column, we always colored it with the new color. We need the new color as well. So please carry the new color as well."
+    },
+    {
+      "chunk_id": "L134_C12",
+      "start": 820.66,
+      "end": 894.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=820s",
+      "text": "we always colored it with the new color. We need the new color as well. So please carry the new color as well. So they like IND new color and you can always pass the new color over here. Perfect colored right after that it checks for its neighbor, the upper neighbor, the left, the right, the down guy. Right? So how do, how will you check for the upper neighbor and all of these? So if I try to write it properly, there is like something like row column and the upper neighbor is row minus one column. Correct? And the one on the right is row comma column plus one. The one at the bottom is row plus one column. The one at the left is row comma column minus one. So apparently these are the four neighbors. Apparently these are the four neighbors. So either you can write four calls separately, one by one by one, but to maintain readability, what you'll do is we will try to figure out a way. So we see there is a change of minus one in the row, a change of plus zero in the row, a change of plus one in the row, a change of plus zero in the row. So what I can say is Delta change in row is minus one, zero plus one and zero."
+    },
+    {
+      "chunk_id": "L134_C13",
+      "start": 894.1,
+      "end": 972.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=894s",
+      "text": "plus zero in the row. So what I can say is Delta change in row is minus one, zero plus one and zero. And similarly I can say Delta column changes plus zero, plus one, plus zero and minus one for this guy. So for the first time, if I add this to row and add this to column, I will get my upper coordinates. But the next time if I add these guys, I'll get the right course for the next time. If I add these guys, I'll get these coordinates for the next time. If I add these guys, I'll get these coordinates. So this is how we can easily do it. So what I'll do is I'll create something like Delta row. Okay. And over here I can just do something like minus one, sorry, minus one, zero plus one and zero. This can be done. And I can also create something like Delta column and Delta column is going to be something like zero plus one, zero and minus one. So this is something which you have done. So we definitely need the Delta row and the Delta column for sure. Let's take it again, carry them Delta row and Delta column. So this is going to be an array. So please carry this as an array. Done. It travels on all its neighbors. How many neighbors are there? There are exactly four neighbors. So please carry them. Perfect."
+    },
+    {
+      "chunk_id": "L134_C14",
+      "start": 972.02,
+      "end": 1040.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=972s",
+      "text": "an array. Done. It travels on all its neighbors. How many neighbors are there? There are exactly four neighbors. So please carry them. Perfect. Now, what is the next thing that you'll do? You need the neighbor row. So neighbor row, you know what is that? Row plus del row of I, correct? And you know what is the column? It is column plus del column of I, right? We know that. So once you have got the neighbor row and the neighbor column, what should be our main focus? Your main focus should be, first of all, is this a valid guy? Because if it is not a valid guy, there's no point in doing it. The first thing we need this as a valid guy. you can do is you can always compute or you can carry it from there. That is your choice. Image of zero dot size. Okay. So over here, n row should be less than n and an n column should be greater than zero and an n column should be less than m. Perfect. And add. So once you've checked for validity, I need to check, is this guy, yes, is this guy having the same initial color? Then only they will be connected. And at the same time, has this previously been visited and colored? If it has been previously visited, then it will definitely have the new color."
+    },
+    {
+      "chunk_id": "L134_C15",
+      "start": 1040.82,
+      "end": 1120.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=1040s",
+      "text": "same time, has this previously been visited and colored? If it has been previously visited, then it will definitely have the new color. If it does not have the new color yet and it is the same color, then I go and just color it. Yes. Simple. It's a new column. And then what we can do is we can pass the answer image. And you color del row, del column and the initial color. Perfect. And this should be it. And we can return the answer. Oh yeah. Now let's super quickly compile this and see if this is running fine. It is having some compilation error. And he was not declared. Okay. Initial color. Okay. It does. Let's quickly submit this. Okay, perfect. All the test cases are running. So if I ask, what is the time complexity? So you know that the time complexity is generally like you have in nodes. So for an nodes you'll be calling like imagine for the worst case, how many nodes will it have? All the matrixes are connected. Imagine this is two. This is two. this is 2, this is 2, this is 2, this is 2, this is 2. All of them have same pixel colors. So the worst case I can say there are these many, like call it as X, X number of nodes."
+    },
+    {
+      "chunk_id": "L134_C16",
+      "start": 1120.7,
+      "end": 1200.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=1120s",
+      "text": "pixel colors. So the worst case I can say there are these many, like call it as X, X number of nodes. So there are X number of nodes for every node you're traversing for four neighbors, right? That's into like X into four is what you are traversing into. So I can say you're calling the code for like X nodes and for every node you're traversing for four guys. So it's like you're calling DFS for X times because at max there will be these many DFS calls and for every X guy you're calling like four, like you're running a four loop. So it can again be written as we go off X, which is somewhere we go off N cross M. So this will be the time complexity. And if we discuss about the space complexity, we are using an external matrix to store the answer. Again, you can say that you will store the answer in the given matrix only. That is your choice. Apart from that, there is something as a stack space that you're using. So that is like in the recursive stack space that is we go off N cross N. Imagine you start the DFS from here and the recursion will go here, here, here, here, here, here, here, here. There'll be the recursion stack space will be complete N cross M. That is the another space that you're using. And apart from that, you're"
+    },
+    {
+      "chunk_id": "L134_C17",
+      "start": 1200.58,
+      "end": 1225.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=C-2_uSRli8o&t=1200s",
+      "text": "be the recursion stack space will be complete N cross M. That is the another space that you're using. And apart from that, you're using this Delta row and Delta column so you can compute that easily. So guys, I hope I was able to explain to you the flood fill algorithm. Just in case I was, make sure you hit that like button. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And yeah, if you haven't checked out our DP series and the HD sheet, the links are in the description. Please make sure you check them out. And with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L226",
+  "lecture_number": 226,
+  "lecture_title": "DP 46. Longest Bitonic Subsequence | LIS",
+  "youtube_url": "https://www.youtube.com/watch?v=y4vN0WNdrlg",
+  "chunks": [
+    {
+      "chunk_id": "L226_C1",
+      "start": 0.0,
+      "end": 77.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=y4vN0WNdrlg&t=0s",
+      "text": "Before starting off with the video I would love to tell you that I have been taking a lot of free life classes at an academy. This Saturday, that is April 9th, I will be taking an Ask Me Anything session on Career Guidance. You can ask me anything and it's based on first come first basis. Also in future I will be taking a lot of other free life classes as well where you can interact with me live. So in order to stay updated you can follow me on Instagram. My ID goes as striver1disco79. Hey everyone, welcome back to Take U Forward. So today we will be solving another problem, Longest Bitonic Subsequence. And this problem will be DP 46. What are the prerequisites? Definitely DP 41 and DP 42 which is based on LIS. So if you have not seen it, please go back and watch it. Then we can start with DP 46. So what does the question state? Longest Bitonic Subsequence. What does it actually mean? So you're given an array, right? And bitonic over here means you can pick something as increasing and then it can decrease. And then it can decrease. So something like this in a graph, increase and then decrease. For example, in this particular array, if I pick 1, 2, 10, it's increasing till here."
+    },
+    {
+      "chunk_id": "L226_C2",
+      "start": 77.0,
+      "end": 153.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=y4vN0WNdrlg&t=77s",
+      "text": "a graph, increase and then decrease. For example, in this particular array, if I pick 1, 2, 10, it's increasing till here. And if I decide I'm going to pick 4, 2, 1, it's decreasing. Similarly, I can pick something like 1, 2, 10 and then I can pick something like 5, 2, 1. If you carefully see this is increasing and this is decreasing. Similarly, I can pick something like 1, 11, 10, 4, 2, 1. And you can see this is increasing till here and then it is decreasing. Similarly, I can pick something like 1, 11, 10, 5, 2, 1. Again, increase and decrease. So all of these are bitonic subsequences. All of these are bitonic subsequences. And among all the bitonic subsequences, you have to tell me the longest. And this is the longest length, which is 6. Yes, the length will be 6. And I want you to return the longest length. But wait, does bitonic only mean increase and then decrease? No, it can just be increase. It can just be increase or it can just be decrease. Any way, like it can just be increase or it can just be decrease. Got it? So for an example, let's take an example."
+    },
+    {
+      "chunk_id": "L226_C3",
+      "start": 153.0,
+      "end": 229.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=y4vN0WNdrlg&t=153s",
+      "text": "can just be increase or it can just be decrease. Got it? So for an example, let's take an example. If I take an array like 1, 10 and then probably I can take 2, 3, 4, 5, 6. Now this is an array, right? And I'm asking you the longest increasing subsequence. So you can be like, okay, longest bitonic rather. You can be like, so the answer to this will be 1, 2, 3, 4, 5, 6. I don't, I don't pick up 10. I don't pick up 10. And the length will be 6. But you'll be like, but this is not bitonic because this is just increasing. This is just increasing in a graph. Where is the decreasing portion? As I said, it cannot have a decreasing portion. That's okay. So this is again a perfect bitonic. A longest increasing subsequence is also a bitonic subsequence. Got it? So I can say a longest increasing subsequence is also a bitonic. Similarly, the longest decreasing subsequence is also a bitonic. For an example, if I just take an array to be 5, 4, 3, 100, 2, 1. And over here, I can say 5, 4, 3, 2, 1. This is of length 5. That means I omitted 100. This is of length 5."
+    },
+    {
+      "chunk_id": "L226_C4",
+      "start": 229.0,
+      "end": 309.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=y4vN0WNdrlg&t=229s",
+      "text": "say 5, 4, 3, 2, 1. This is of length 5. That means I omitted 100. This is of length 5. And this is an LDS, longest decreasing subsequence. And it is still bitonic. Why? Because it has the decreasing portion. As I said, it can either have both. It can either have increasing or it can either have decreasing. As long as it is having either of them or both of them, I'm absolutely okay. So I hope you have pretty much understood this portion. So I hope you have understood this question. Now, how do you approach this question? What do we know? We know subsequence increasing or something like this can be related to longest increasing subsequence. So can I relate this? What does dp of i? If you remember the longest, let's go back to the longest increasing code. If you remember the LIS code, it was something like i equal to 0. And you moved on till i lesser than n, i++. And you always knew that dp of any guy will be 1. And then you move like j equal to 0, j lesser than i, j++. And you said, hey, listen, if array of i is greater than array of previous because it is longest increasing subsequence. And if I add 1 to it, it will be like dp of i."
+    },
+    {
+      "chunk_id": "L226_C5",
+      "start": 309.0,
+      "end": 386.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=y4vN0WNdrlg&t=309s",
+      "text": "of previous because it is longest increasing subsequence. And if I add 1 to it, it will be like dp of i. And then I can just replace dp of i is equal to 1 plus dp of j. And if I can replace that, that is how the LIS was. What does this dp signified? What does this dp signified? So if you remember the dp signified, the longest increasing subsequence till index i. That is what it signified. Longest increasing subsequence till the index i. So for an example, if for this array, I have to write the dp. Can I say the dp will be definitely 1 for this, 2 for this? Why? Because at this guy, the longest increasing will be this. So length 2. And again, at this guy, if you just take this array, 1 and 2 will be the longest. So this is what for this, it will be like 1, 2, 10. So 3. For this, it will be 1, 2, 4. So again 3. For this, it will be 1, 2, 4, 5, which is 4. So 4. Again for this, it will be just 1 and 2. So 2. For this, it will be nothing but 1. So this is what the dp will be."
+    },
+    {
+      "chunk_id": "L226_C6",
+      "start": 386.0,
+      "end": 461.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=y4vN0WNdrlg&t=386s",
+      "text": "1 and 2. So 2. For this, it will be nothing but 1. So this is what the dp will be. So can I say till here, the longest length is 3 again justifies. Similarly, if you carefully observe, I can say the longest increasing subsequence is of length 4, which is 1, 2, 4, 5. That's the longest increasing subsequence of length 4. Now can I say, what am I looking for? I am saying, okay, 1 to 10 and then 4 to 1. Just have your eyes from this portion. Can I say this is increasing? This is increasing. And if you're having your eyes from this portion, this is increasing. Can I similarly, jolt down an opposite LIS array, reverse of LIS? That means I will look from here. I will look from here. And can I similarly jolt down an LIS array? I can. So I'll be like, okay, let's call this as dp1. And what I'll do is, I'll call a dp2. It's an opposite one where I will be, this was like 1, 2, 4. This was from this side. I'll be doing the dp from this side. Okay. So if I just take this array, if I just take this array, the length will be 1."
+    },
+    {
+      "chunk_id": "L226_C7",
+      "start": 461.0,
+      "end": 534.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=y4vN0WNdrlg&t=461s",
+      "text": "this side. Okay. So if I just take this array, if I just take this array, the length will be 1. If I take this, the length will be 1 and 2. So 2. If I take this, the length will be 1, 2, 5, which is 3. If I take this, it'll be 1, 2, 5, or it'll be 1, 2, and 4. Like if I just take this, it'll be 1, 2, 4, or it can be the opposite way, which I set. Correct? So, perfect. So I know that the length is 3 again. If I talk about this, so I'll take this. What's the longest? 1, 2, 4, 10, a length 4. So increasing in this order, if I check out this, it'll be 1 and 2. It'll be 1 and 2. So a length of 2. If I check out this, it'll be 1, 2, 4, 10, 11 of a length 5. If I check this out, it'll just be 1. So what I did was, DPI is in this order. DP2 is in this order. Done?"
+    },
+    {
+      "chunk_id": "L226_C8",
+      "start": 534.0,
+      "end": 612.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=y4vN0WNdrlg&t=534s",
+      "text": "be 1. So what I did was, DPI is in this order. DP2 is in this order. Done? Now, can I say if I have two DP tables, one is the forward increasing, one is the backward increasing. Right? Now, if I'm standing here, I know till here, the longest length, including 10, including 10, the longest will be 3, which is 1, 2, 10. And from here, the increasing will be 4. So can I say the overall length will be 3 plus 4 equal to 7. 1, 2, 10 will be 3 length and the 4 will be 10, 5, 2, 1. So 4. So I know till here, it's a 3, till here it's a 4. But there is a guy who is common, who is 10 itself. Because 1, 2, 10 is for increasing, 10 is common. 10, 5, 2, 1 is for decreasing, 10 is common. 7 minus 1. So at 10, you got the bitonic to be of length 6. At 10, you got the bitonic to be of length 6. So can I say, in this way, I can figure out the entire bitonic. I can. So let's figure out the entire bitonic. So I'll be like, let's figure out the entire bitonic. So 1 plus 1, itself minus 1. So 1 length."
+    },
+    {
+      "chunk_id": "L226_C9",
+      "start": 612.0,
+      "end": 691.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=y4vN0WNdrlg&t=612s",
+      "text": "entire bitonic. So I'll be like, let's figure out the entire bitonic. So 1 plus 1, itself minus 1. So 1 length. 2 plus 5, 7 minus 1. 2 plus 2, 4 minus 1. 3 plus 4, 7 minus 1. 3 plus 3, 6 minus 1. 4 plus 3, 7 minus 1. 2 plus 2, 4 minus 1. 1 plus 1, 2 minus 1. So this is the bitonic. This is the bitonic. And if this is the bitonic, and if this is the bitonic, which is the longest bitonic that you get? 6, 6, 6. So the length is 6. So, as simple as that. If you can figure the LIS from the front, from the back, and you can combine them, you get your bitonic. Yes. That is how you can easily use the LIS to solve this particular problem. So what are you waiting for? Let's get started to the code. Okay, so we are given the array and then, so what I'll do is, I'll just go back and copy paste. The longest increasing subsequence code. Copy pasted. I'll also copy paste this because I'm using vectors. Okay, so perfect. Now this is dp of 1 that we will call the front portion. What I'll do is I'll just change it. And we will be like, this is for dp of 1, definitely dp of 1. dp of 1. This is no more required."
+    },
+    {
+      "chunk_id": "L226_C10",
+      "start": 691.0,
+      "end": 759.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=y4vN0WNdrlg&t=691s",
+      "text": "And we will be like, this is for dp of 1, definitely dp of 1. dp of 1. This is no more required. We are not requiring any max length. We'll just compute the dp array. Perfect. And similarly, we can again just copy paste this portion and we can have dp. Now over here, what will happen is this will start from the back because we're doing the exact reverse. Okay. And this time the previous will be from back and the previous this time will be greater than i. Just the reverse, nothing else. Previous minus means once you've done this, you will be writing the exact similar thing. Exact similar thing. Remember this? It's the exact similar thing. No change. And you can just omit this. Once you've omitted this, this will be dp of 2. This will be dp of 2. This will be dp of 2. And this will also be dp of 2. This will be dp of 1. So I can say the dp of 2 is computed. The dp of 1 is computed. Now you need the max length. Okay, you need the max length. So what are you going to do is for int i equal to 0, i less than n, i plus plus. And you can have int maxi equal to 0 or rather 1 because that's a minimal, but that's fine."
+    },
+    {
+      "chunk_id": "L226_C11",
+      "start": 759.0,
+      "end": 816.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=y4vN0WNdrlg&t=759s",
+      "text": "n, i plus plus. And you can have int maxi equal to 0 or rather 1 because that's a minimal, but that's fine. Maxi equal to max of maxi comma dp of 1 of i plus dp of 2 of i minus 1. At the end of the day, you can return the maxi as the answer. That's how you can easily solve this. So it does run fine on all the custom S cases. Let us quickly submit and see if it is giving us a correct answer. So guys, this is how you will be solving this longest bitonic subsequence. It's a very simple one, bigot of n square, another bigot of n square. And then this bigot of n could have been done over here as well. Like you can just, just put this over here as well because every time the i is getting computed, you can also put it over there. That's still okay. Like if you want to do it on the same line, you can still do it. So yeah, this is how we can easily solve this. So guys, I hope I was able to explain you the bitonic subsequence. So just in case I was able to explain you, please make sure you like this video. And if you're new to this channel, please, please do consider subscribing to us. That does mean a lot."
+    },
+    {
+      "chunk_id": "L226_C12",
+      "start": 816.0,
+      "end": 823.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=y4vN0WNdrlg&t=816s",
+      "text": "you like this video. And if you're new to this channel, please, please do consider subscribing to us. That does mean a lot. With this, let's wrap up this video and meet in the next one where we'll be discussing another video from the LIS. Till then, bye bye. Take care."
+    }
+  ]
+}

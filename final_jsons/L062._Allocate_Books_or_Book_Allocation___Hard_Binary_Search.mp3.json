@@ -1,0 +1,162 @@
+{
+  "lecture_id": "L062",
+  "lecture_number": 62,
+  "lecture_title": "BS-18. Allocate Books or Book Allocation | Hard Binary Search",
+  "youtube_url": "https://www.youtube.com/watch?v=Z0hwjftStI4",
+  "chunks": [
+    {
+      "chunk_id": "L062_C1",
+      "start": 0.0,
+      "end": 78.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we will be continuing with our binary search playlist. Now this is a part of the Stryver's A to Z DSA course. In case you're for the first time here, there's a link in the description. Make sure you check it out because it is something extremely special when it comes to DSL. I'll go do not miss it. So what is the problem that we're going to solve today? Allocate books. Now this is an extremely hard question when it comes to binary search. So make sure that you watch the video till the end. So what does the problem state? The problem states that you'll be given an array and the array will be containing number of pages of n books. Like over here you're given five books. The zero book has 25 pages. The first book has 46. The second has 28. The third has 49. The fourth has 24. So this is what will be given to you. Along with that, you'll be given n number of students. So over here the number of students are four. Your task is to allocate books. That means you have to distribute these books among four students. But there are some certain conditions that you have to keep in mind. What are the conditions? Each student must get at least one book. What does that mean? There are four students, right?"
+    },
+    {
+      "chunk_id": "L062_C2",
+      "start": 78.7,
+      "end": 151.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=78s",
+      "text": "keep in mind. What are the conditions? Each student must get at least one book. What does that mean? There are four students, right? You cannot do this that you take two books, give it to student one, then take the next two, give it to student two, and then take the last one and give it to student three. So if you do this, the student four will not get any book. But the first condition is stating every student must at least get one book. So this condition is not satisfied. So you have to make sure that you have to allocate books in such a way that this condition is satisfied. Got it? So what is the next condition? It states that each book should be allocated to only one student. What does that mean? You cannot take this book with 25 pages and give it to student one and to student three. That is not possible. One book can only go to one student, right? What is the next one? Book allocation should be done in a contiguous manner. So you're given one, two, three, four, like four students. You can give 25 here. You can give 46 here, but then you cannot give 28 here. Why? Because 25 was given to one and then 28 was given to one and they're not in a contiguous manner. Thereby, this is not possible."
+    },
+    {
+      "chunk_id": "L062_C3",
+      "start": 151.28,
+      "end": 231.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=151s",
+      "text": "was given to one and then 28 was given to one and they're not in a contiguous manner. Thereby, this is not possible. You have to make sure that if you're giving books, either you give 25, 46 to one and then move ahead and give 28 and then to three, you can give 49 and then 24 to four. That is possible. But if to make sure that you give books in a, in a contiguous manner. So these are the three conditions that you have to keep in mind. Why allocating books? So according to the question, you have to allocate the book to end students such that the maximum number of pages assigned to any particular student, very importantly, maximum number of pages assigned to any particular student is the minimum possible. Otherwise you have to return minus one. So what does that mean? Let me explain you. So let's try to allocate books. There are five books to allocate somehow to four students. Imagine I see you that, okay, 25 with student one, okay. 46 with student two, okay. 28 with student three, okay. 49 and 24, this one will go to student four. So student one, two, three, four. And if I ask you, what is the maximum number of pages that has been assigned over here? Student one has just got 25. Student two has just got 46. Student three has just got 28."
+    },
+    {
+      "chunk_id": "L062_C4",
+      "start": 231.02,
+      "end": 310.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=231s",
+      "text": "that has been assigned over here? Student one has just got 25. Student two has just got 46. Student three has just got 28. Student four has just got 73. So what is the maximum? So can I say that this student four has got the maximum number of pages assigned to him? Thereby the maximum is 73. If I allocate the books in this particular order, right, let's try out some other possible orders. 25 to student one, 46, 28, 49 to student three and then 24. Can I allocate in this possible order? I can. Student one will have 25, 246. Can I say over here, the student three has the maximum. I can. And what is the maximum? 77 is the maximum, right. So okay, can I have any other configurations? I can. 25 to student one, 46, 28 to student two, 49 to student three and 24 to student four. What is the maximum number of pages in this case? It is with student two, isn't it? And what is the number? The number is 74. The number is 74. Can I try any other configurations? I can. Maybe I can allocate 25, 46 to student one and then 28 to student two, then 49 to student three, 24 to student four."
+    },
+    {
+      "chunk_id": "L062_C5",
+      "start": 310.68,
+      "end": 383.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=310s",
+      "text": "allocate 25, 46 to student one and then 28 to student two, then 49 to student three, 24 to student four. In this one, if I add this, it will be 71. It will be 71. Can I have any other possible allocations? I cannot. Let's read the question again. If to allocate the book to M students, yeah, I can allocate in four ways. Nothing apart from this maximum number of pages assigned to a student. I figured out the maximum in every allocation is minimum. Which is the minimum 71? Which allocation will you consider? We'll consider this possible allocation. Yes, this is your answer. And what is the answer? 71. So the answer will go as 71. Got that? So let's try to solve this particular question. First thing that I'll do is I'll try to solve it for this condition where you have to return minus one. So when is it not possible? I'm having five books. It's possible to allocate to four students, right? When is it not possible? It's very simple. If the number of students were six and I just had five books, then each of these students would not have got at least one book because it's not possible. I just have five books. I cannot give it to each of them."
+    },
+    {
+      "chunk_id": "L062_C6",
+      "start": 383.72,
+      "end": 450.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=383s",
+      "text": "got at least one book because it's not possible. I just have five books. I cannot give it to each of them. Nearby at any case, when the number of students is greater than the number of books, the answer is not possible. So somewhere I have solved a mini part of the question, but still the majority is still left. So how do I solve that? I know one thing for sure. Whenever we have something like max of min or min of max, binary search will be applied, but I'll not go straight away to binary search. I'll start thinking. Okay. So this is a standard like brute force. The brute force is like, okay, I'll take maybe one can be my answer and I'll try it. Maybe two can be my answer. I'll try it. Maybe three can be my answer. I'll try it. Four can be my answer. I'll try it. Five can be my answer. I'll try it. I'll keep on trying. The first number which says that, yes, I am your answer. Yes, I am your answer. You stop then and there. You stop then and there, right? Because the question is treating to find out the minimum, but I'm asking you a question. Do you start from one and then go to two, then go to three? Do you need to start from one? No, you don't need to. Why?"
+    },
+    {
+      "chunk_id": "L062_C7",
+      "start": 450.92,
+      "end": 526.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=450s",
+      "text": "one and then go to two, then go to three? Do you need to start from one? No, you don't need to. Why? Because if you take one as your answer, like you're saying one is the maximum pages someone has, one of the maximum pages someone has. Dude, if someone has just one maximum pages, he cannot even hold a book. He cannot even hold a book because even to hold one book, someone needs 24 pages. Even to hold one book, someone needs 24 pages. Something I've got for sure is, something I've got for sure is, at least I need 24. At least I need 24, right? But if I take 24, does it make sense? Because even if I take 24, I'm saying the maximum someone is holding is 24. Then no one will be able to hold 26. No one will be able to hold 28, like all these numbers. So technically, where should you start from? You should start from the biggest number 49. You should start from the biggest number 49, isn't it? Something like, okay, maybe let's start from 49 because if I take 49, at least everyone can hold one book because I'm looking for maximum number of pages assigned to a stool. What I'm saying is, take 49. That's the maximum someone can be assigned to. Perfect. I'm thinking in this way because if you just straight away say binary search, it will not help you to learn problem solving."
+    },
+    {
+      "chunk_id": "L062_C8",
+      "start": 526.9,
+      "end": 604.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=526s",
+      "text": "to. Perfect. I'm thinking in this way because if you just straight away say binary search, it will not help you to learn problem solving. This is how you think of problem solving. Got it? So I'm saying, maybe 49. I'm not sure. I'm not sure. Okay. Let's go with student one. He's at 25. He says, I can take 25 because I'm allowed to take 49 because I'm thinking at the maximum as 49. Okay. Can I take 46? If I add 46, I'll exceed my maximum. I don't want to exceed. I don't want to exceed. Thereby, the student two will take 46. Can he take 28? He cannot because it will exceed. The student three will take 28. Can he take 49? No. So 49 will go to student four. And then, can he take 24? No. So 24 will go to student five. But what was the question stating? To make sure that the books are allocated to four students. So what I observed was, if I'm taking 49, which is a very small number, hence I exceeded the number of students because the number was such so small that I ended up having more students but I cannot afford that. So what I have to make sure is that to somewhere maybe, maybe fit it in, fit it in 20, like fit it in four students. Thereby, I'll try to increase this. Then I'll try to increase this. Then I'll try to increase this."
+    },
+    {
+      "chunk_id": "L062_C9",
+      "start": 604.82,
+      "end": 680.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=604s",
+      "text": "like fit it in four students. Thereby, I'll try to increase this. Then I'll try to increase this. Then I'll try to increase this. Then I'll try to increase this. Then I'll try to increase this. Then I'll try to increase this. Then I'll try to increase this. I'll go ahead on increasing this and there will be a point. Aha, where am I? This is again. Yeah. There will be a point where I'll reach 70 because I'll show you for 70 what happens. For 70, what will happen is, let me erase this as well. For 70, again, I'm at 25. It takes 25 but the moment it tries to take 46, it is actually 71. So it is exceeding 70. So he cannot. At 2, it will take 46. Can he take 28? Because if he tries to take 28, that will exceed 70. So he cannot. At 3, he will take 28. Can he take 49? No, it will exceed. So the student 4 will take 49 and the student 5 will again take 24. Again with 70 also, I'm taking 5 students. Hence not possible. Next the moment you increase it to 71, the moment you increase it to 71, see what will happen. Aha, too many color changes."
+    },
+    {
+      "chunk_id": "L062_C10",
+      "start": 680.54,
+      "end": 756.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=680s",
+      "text": "you increase it to 71, the moment you increase it to 71, see what will happen. Aha, too many color changes. Anyways, student 1 says I can take 25 and he says I can also take 46 because the highest permissible number of pages is 71 and that's possible. So I can take it. I can take it. I'm like, okay, if you can take it, that's fine. Can you take 28? He says no, I'll exceed. Okay, maybe the second guy will take 20. Yes, he can. Can he take 49? I'm like, no, no, no, that will exceed. Okay, 3. Can you take 49? He says yes. Can you take 24? He says no, no, no, I'm exceeding. Give it to the next guy. Give it to the next guy. He says, okay. And you are done with, you have distributed all of them when it was 71. With 71, you have made sure that it is distributed among 4 and thereby your answer is 71. So what I did was, I started with the maximum value because that's what the thought process is. I have to make sure that everyone can take at least one book. That's the thought process. That's why I started from 49 because if I would have, I would have taken 24, these books, like they could not have gone to anyone, right? That's why I started with 49. I kept on increasing. I kept on increasing. I kept on increasing."
+    },
+    {
+      "chunk_id": "L062_C11",
+      "start": 756.66,
+      "end": 826.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=756s",
+      "text": "not have gone to anyone, right? That's why I started with 49. I kept on increasing. I kept on increasing. I kept on increasing. And this is how I'll go. But if I ask you, what is, what like, till what can be the maximum possible answer? Because what if I don't get it? I just can't keep on going, right? What can be the maximum possible answer for any of the case? Just try to think of the range. What can be the maximum possible answer? What if I ask you what is the worst possible scenario? That's when you're given one. In that case, what will you do? It will be like all the books will go to one because we don't have anyone and we have to allocate all the books. In that case, can I say it'll be the summation of the array, which will be your answer? Because there's only one possible configuration that is goes to the student one. Hence, your answer will always lie between high to summation of the array. Got it? I kind of figured out the range. Now I will be doing a linear search. So let's quickly write down the linear search because you've understood the thought process, right? So can I say that the lowest possible answer will be the max of the array? Indeed. And the highest possible answer will be, I'm not writing my research. I'm writing linear search."
+    },
+    {
+      "chunk_id": "L062_C12",
+      "start": 826.42,
+      "end": 900.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=826s",
+      "text": "will be the max of the array? Indeed. And the highest possible answer will be, I'm not writing my research. I'm writing linear search. The highest possible answer will be the summation of the array. I can definitely say that, right? And the maximum pages allowed will be from low to high because first I'll start with 49 in this case and then 50, 51, right? And can I say I'll write a function which counts the number of students, which counts the number of students I'll pass on the array, which contains the pages. I'll say that this is the maximum pages allowed. And I'll also tell him that these are the, not like you don't need to find the, don't need to send the number of students. Yeah. You can say, uh, add a and the number of pages. And can I see if I was able to allocate exactly M students, if I was able to allocate to exactly M students, my job is done. This is my answer. This is my answer. Written pages. Why simple? This is a linear search. I just need to make sure that I write this particular favorite in the linear search, but somehow we have to write this particular function which computes the number of students when you are sending the maximum pages allowed. So what I'll do is I'll go across and say function, please take an array and this is the maximum pages allow."
+    },
+    {
+      "chunk_id": "L062_C13",
+      "start": 900.58,
+      "end": 978.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=900s",
+      "text": "pages allowed. So what I'll do is I'll go across and say function, please take an array and this is the maximum pages allow. Please remember that this is the maximum someone can hold. I'm thinking that this can be the answer or not. So what I'll say is, okay, initially I'm at the student one and the pages that the student has, maybe I can see pages on that student is as of now zero. So I'm saying student one is holding zero pages as of now and I'm probably passing on a pages and imagine, just, just imagine for this case I'm passing on 71. Let's quickly write down this. So I'll be going through all the books, but just from zero to N minus one, what do I see? When can I take this 25? If this zero plus 25 is under 71, is under 71 because that is the maximum he can hold. So can I see if the pages that the student is currently holding plus whatever is on the current book, if that is under the pages that I'm allowed to hold, I can take it. If I'm taking it, can I write pages plus equal to, or rather my bad, pages student plus equal to area of I can, I'll still stay in the same student. I don't need to go to the next one."
+    },
+    {
+      "chunk_id": "L062_C14",
+      "start": 978.3,
+      "end": 1049.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=978s",
+      "text": "plus equal to area of I can, I'll still stay in the same student. I don't need to go to the next one. So imagine I'm coming at 25, goes to 25, I'm going to 46, goes to 46 and makes it 71. What happens at the next case? When it comes to 28, it sees 28. It says, okay, 71, like 28 or at the 71 plus 28 is less than 70. And he says, no, you cannot hold. And if you cannot hold this time, it'll go to the else. It'll say, Hey, can you go to the next room? He says, okay, maybe I'll just go to the next student, which is like doing a plus plus. We'll go to the next student and make sure that you restart with zero. And if you're restarting with zero, take this 28 with you. Take this 28 with you because I have to give this 28 to someone. I'm standing in 28 to give it to someone. So I'll just give it to that there. So it'll be like, Hey, you've gone to the next. Can you please hold this? In this, I was adding in that student. Now I've moved to the next student and I've given him that. That's it done. At the end of the day, you just need to return. How many students did you take? So just return the number of students. So this will return the number of students given this particular condition."
+    },
+    {
+      "chunk_id": "L062_C15",
+      "start": 1049.78,
+      "end": 1118.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=1049s",
+      "text": "How many students did you take? So just return the number of students. So this will return the number of students given this particular condition. And then you can simply check if that's equivalent to your number of students. You say, fine, this is my answer. I'm done in dust. Got it. So what would be the time complexity? Can I say that the time complexity is big off? I'm running a loop from some to max, some minus max plus one is the length of the linear search at the worst case. And I'm also running a function and the function is running for a big off and that's a big off it. Obviously the interview will not be happy with this. It'll ask you to optimize. This is when we will move to binary search. Okay. So binary search. And the question is, uh, Hey, how do we think of binary search? First reason is a linear search did not work out. So the next solution is definitely binary search. And the second reason is maximum minimum. Whenever the question is revolving in our max min min max, find the min, you know, there's a potential to apply binary search. These are the two reasons like, because that was not accepted and you see max min, you will tell towards binary search. Got it. So we have one thing. The answer will be from maximum, which is 49 in this case, and the summation, which"
+    },
+    {
+      "chunk_id": "L062_C16",
+      "start": 1118.62,
+      "end": 1196.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=1118s",
+      "text": "search. Got it. So we have one thing. The answer will be from maximum, which is 49 in this case, and the summation, which is basically one 72. So I know that the answer will be from 49 to one 72. If I ask you a very simple question, how many students were required? If you kept a barrier of 79, if you remember the linear search, the number of students required was five. If I keep a barrier of one 72, how many students will be required? If I just take one student, I'll be able to give everyone like all the books to that one student. So if I take a barrier of one 72, one student will do my job. How many students do I have? I have four students. There have been the answer will lie somewhere in between, which was 71 in this case, and the number of students were required was four. The number of students required were four in this case. So maybe a binary search will help. Why? Because to the right of it, the number of students will be like one, two, three, because the number is larger. The number is larger. So the number of students will be lesser and lesser. And over here, since the number like the barrier is very small, you cannot distribute a lot of books. Thereby the number of students required will be larger. So maybe I can do an elimination based on this factor."
+    },
+    {
+      "chunk_id": "L062_C17",
+      "start": 1196.1,
+      "end": 1273.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=1196s",
+      "text": "distribute a lot of books. Thereby the number of students required will be larger. So maybe I can do an elimination based on this factor. So what I'll do is I'll try to have a low over here. I'll try to have a high over here. Quite simple. Let's I know the answer is at 71. So I'll just erase it as of now. Let's try to find out the first mid. What is the mid? 49 plus 172 by two. That's 110. So let's take 110 and let's try to see how many students does it require. So can I take 25? I can. Can I take 46? I can. Can I take 28? I can. Can I take any? No. On student two, can I take 49? I can. Can I take 24? I can. So if I keep 110, I'm able to do it to students, but I need to do it for it's less. So maybe I need to decrease the barrier. Maybe I need to decrease the barrier. This is where you say, hey, listen, at 110, the number of students required with two. So it doesn't work. So anything on the right is not possible. Thereby, you will move the high to somewhere here, which is 109. Pretty simple. The next time we'll try to figure out the mid, the mid will be 49 plus 109 by two. Got it? So it's 78. Okay. Let's try to do it 78."
+    },
+    {
+      "chunk_id": "L062_C18",
+      "start": 1273.86,
+      "end": 1351.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=1273s",
+      "text": "out the mid, the mid will be 49 plus 109 by two. Got it? So it's 78. Okay. Let's try to do it 78. With 78, let's try to do it. Can I give 25? I can. Can I get 46? I can. It is 71. I cannot give more because the barrier is 78. With two, can I give 28? Maybe I can. Can I give 49? I can. Why? Because if I give 49, it will still be 77. The barrier is 78. With three, can I give 24? I can. So I'm seeing over here with 78, I can do it with three students. But how many students do I need? I need exactly four. So what I'll do is I'll say, okay, anything on the right is not possible because it's too big a number. Thereby, I'll move this high to 77. I'll move this high to 77. This time, the mid will come to be 49 plus 77 by two. It is 63. So if you try with 63, you'll get five students and thereby, this is not possible. Hence, you'll move the low to 62. Thereby, you'll move the low to 62. So I'll just quickly erase everything because it's getting too clumsy."
+    },
+    {
+      "chunk_id": "L062_C19",
+      "start": 1351.06,
+      "end": 1429.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=1351s",
+      "text": "to 62. Thereby, you'll move the low to 62. So I'll just quickly erase everything because it's getting too clumsy. So the low is standing at 62 and the high is standing at 77. What will be the mid in this case? It'll be 69. How many students? It'll still require five. Thereby, I'll say, I'll eliminate the left half and the low will move to 70. So maybe I'll just quickly erase this. Yes. And this time, if I try to figure out the mid, 70 and 77, the mid will be 73. Yes, the mid will be 73. And for 73, you'll figure out that you are being able, like you can do it with four students. For 73, when you try to distribute, you can do it with four students. You'll be like, I can do it. But remember the question, minimum, try still to go, try still to reduce the number. Thereby, so maybe I can still reduce it. Maybe I can still reduce it. And this is when you take the 77. So take this high and put it to 72. Yes. If you want, you could have stored the answer as 73, whatever you had, you can store it as well. Okay. So this time the mid is 71. And again, you'll say that four students like this is also possible. So maybe I'll just update the answer to 71. I'll still try to reduce."
+    },
+    {
+      "chunk_id": "L062_C20",
+      "start": 1429.56,
+      "end": 1503.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=1429s",
+      "text": "you'll say that four students like this is also possible. So maybe I'll just update the answer to 71. I'll still try to reduce. I'll still try to reduce. So the high will come to 70. The high will come to 70. But this time when you try with 70, the number of students comes out to be five. And this is not possible, not possible. So you say it's a smaller number. So eliminate the left half and move the low. So the low will come out to stand at 71 and the low would have crossed high. So you stop your binary search. So remember when you stop your binary search, when you stop your binary search, low will be standing at 71 and high will be standing at 70. So if you remember, where did you start off with? Maybe I'll use some other colors. You started off with 49 and if I remember 172. So the low was here, which was not possible case. And the high was here, which was fairly possible. Like I know the number of students were less, but yeah, somewhere you can say that. Yeah. Kind of. Yes. So do you see something? I have the opposite polarity. It went over here and this went over here. So since it went to the opposite polarity, you can simply return low as your answer. Just return low as your answer. No need to store any answer variable."
+    },
+    {
+      "chunk_id": "L062_C21",
+      "start": 1503.24,
+      "end": 1575.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=1503s",
+      "text": "the opposite polarity, you can simply return low as your answer. Just return low as your answer. No need to store any answer variable. Again, this opposite polarity concept I have explained in the entire binary search. Don't worry about that. Like in case you're watching for the first time, maybe you should watch the binary search playlist. You'll get this opposite polarity concept. If you don't want to watch the binary search playlist, no worries. Just focus on this, that the low ended here. That's where the low is the answer. Otherwise you can also carry an answer variable and store it. Okay. So time to write this piece of code. So can I say while it will be low, lesser than high, quite simple and mid will be low plus high by two. Uh, it's so simple nowadays. And maybe I can just count the number of students. Number of students required would be the function. I'll pass on the array and the barrier will be mid. It gives me the number of students. And I say, Hey, listen, if the number of students is more is more than what I'm being given to eliminate the left half, because this is not possible or else, or else if it is less or equal to, if it is less or equal to, I look for the minimum. I look for the minimum. And if I'm looking for the minimum, I'll eliminate the right half done."
+    },
+    {
+      "chunk_id": "L062_C22",
+      "start": 1576.84,
+      "end": 1640.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0hwjftStI4&t=1576s",
+      "text": "to, I look for the minimum. I look for the minimum. And if I'm looking for the minimum, I'll eliminate the right half done. At the end of the day, what will be your answer? Your answer will be yes, yes, yes. Low. No need to store anything different. Low will be your answer. Then understood. What are the time complexity? Time complexity stands out to be bigot of logarithmic of the range and the ranges from sum to max sum minus max plus one multiplied with a bigot of N where you're checking for the student distribution. This is the time complexity space. Nothing extra. This will be the overall time complexity and the space complexity. So let's quickly jump into the code editor. What I've done is I've written the exact same code. And if you remember, this is the impossible case. And after that, a simple max element is still in the accumulate function, which gets me the sum and then a simple binary search. And if I go ahead and submit this, this will be accepted. So if you're still watching till here, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. If you haven't followed me on Instagram, Twitter and LinkedIn, all the profile links will be in the description. By this I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

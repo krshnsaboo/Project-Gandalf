@@ -1,0 +1,176 @@
+{
+  "lecture_id": "L061",
+  "lecture_number": 61,
+  "lecture_title": "BS-17. Aggressive Cows | Binary Search Hard",
+  "youtube_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo",
+  "chunks": [
+    {
+      "chunk_id": "L061_C1",
+      "start": 0.0,
+      "end": 73.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we will be continuing with our binary search playlist. Now this is the part of the ongoing strivers A to Z DSA course. In case you're for the first time here and you haven't checked it out yet, there's a link in the description, you can definitely check it out because it is something extremely special. So today's problem will be aggressive cows. But before moving on to the problem, I have covered up binary search on 1d arrays where we did binary search on sorted arrays, rotated sorted arrays, and similar to that. And then we moved on to binary search on answers where most of the problems where find the minimum of something or find the maximum of something. It had just one term find min or find max. So the problem that we are going to solve today will be aggressive cows. But before moving on to that, I've covered up binary search on 1d arrays where we did all the problems on sorted arrays, rotated sorted arrays, right? After that, we move to binary search on answers where we did all the problems where we had to figure out find min or find max. Now we will be moving to the other pattern of binary search on answers where we'll be asked to find min of max or"
+    },
+    {
+      "chunk_id": "L061_C2",
+      "start": 73.28,
+      "end": 143.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=73s",
+      "text": "we will be moving to the other pattern of binary search on answers where we'll be asked to find min of max or max of min. So we'll be doing around four to five problem on this particular pattern so that this particular pattern sticks to your head. And the first problem on that pattern is aggressive cows. So what does the problem state? It states that you'll be given an array which does consist of n stalls. Each of the stall coordinates is given to you. The first stall is at the coordinate zero. The next one is at coordinate three, the next one at coordinate four, the next one at coordinate seven, the next one at coordinate 10, and the next one at coordinate nine. Your task is to place four cows. If you take one cow, that one cow can go to either of any of the stalls, any of the stalls it can go to. Your task is to place four cows in such a way that the minimum distance between any of the two cows, very important, the minimum distance between any of the two cows is the maximum. Might be confusing, but it is of this pattern. If you carefully see minimum and then maximum, that is of that pattern. Minimum distance between any two cows is the maximum possible. And you have to tell me that minimum distance. It's confusing for the first time, but when"
+    },
+    {
+      "chunk_id": "L061_C3",
+      "start": 143.76,
+      "end": 209.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=143s",
+      "text": "any two cows is the maximum possible. And you have to tell me that minimum distance. It's confusing for the first time, but when you understand the question, you'll understand it in a much better way. So basically what it states is, these are the stalls given. If I have to maybe write the stalls in the correct order, the first stall is at zero, three, and then four, then seven, and then nine and then 10. Just I've written down them in the sorted order. If I tell you, can you place four cows, it'll be like, okay, cow one, cow two, cow three, cow four. This is one of the ways in which you can place cows, right? If I ask you, what is the distance between any of the two cows? It'll be like the distance between them is three, the distance between them is one, distance between them is three, and maybe the distance between them and them is four, and maybe the distance between them and them is four. So what is the minimum distance among all the cows, any two cows? You can take C1, C3, C1, C4, C2, C3, any combination. What is the minimum? Can I say the minimum is one? And that will always be between consecutive cows. Like if you just figure out three, if you just figure out one, if you just figure out three, you don't need the distance between these two because you're looking for the minimum."
+    },
+    {
+      "chunk_id": "L061_C4",
+      "start": 209.82,
+      "end": 285.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=209s",
+      "text": "you just figure out one, if you just figure out three, you don't need the distance between these two because you're looking for the minimum. And the minimum will always happen to be between consecutive stalls. The minimum will always happen to be between consecutive stalls. That is the reason I sorted the stalls. Got it? So I know that the minimum is between this one. So if I place it like this, I'll get the distance as one. And that's what they're asking you. What is the minimum distance between any two cows? That is what they're asking. What is the minimum distance between any two cows? You'll be like, okay, fine. Can I place it something like C1, C2, maybe C3, and maybe C4? I can, I can. Even if you place it like this, the distance between this is four. The distance between this is five. The distance between this is one. You can take this as well. You can take this as well. It doesn't matter. What's the minimum? That's one. Still keeping it as one. Still keeping it as one. Can I place it something like maybe a C1 here, maybe a C2 here, maybe a C3 here, maybe a C4 here, maybe. And then if I figure out the distance, the distance between this is four, between this is three, and between this is three. What is the minimum between any of the two cows? You can take C2, C4 as well."
+    },
+    {
+      "chunk_id": "L061_C5",
+      "start": 285.56,
+      "end": 355.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=285s",
+      "text": "is three, and between this is three. What is the minimum between any of the two cows? You can take C2, C4 as well. What's the minimum? Four, three, three. What's the minimum? Three. So you can place the four cows in any configuration you like. But the core is figure out the minimum distance between any of the two cows in that configuration. And over here it is three. So I write it. Now the task is saying, you have to place it in such a way that this minimum distance is maximum. This minimum distance is maximum. So if I have placed in this configuration, the distance that I'm getting is one. If I place it in this configuration, the distance that I'm getting is one. If I place it in this configuration, the distance that I'm getting is three. Which one will you prefer? If you're looking for max, I prefer this because in this configuration, the minimum is very big, is very big. So they are kind of at a distance. So I can take this configuration and this will be my answer. You can try out other configurations as well. You will not be able to manage more than three. Like you can also try out something like, maybe you can place a C1 here and you will say, I'll place a C2 here, which is basically at zero."
+    },
+    {
+      "chunk_id": "L061_C6",
+      "start": 356.2,
+      "end": 423.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=356s",
+      "text": "something like, maybe you can place a C1 here and you will say, I'll place a C2 here, which is basically at zero. And at 10, so if you're trying to place this, the distance is quite big, 10. And you can say that, that is the minimum distance. But the question is clearly stating, there are four cows. You cannot get away by putting just two cows. You have to put four cows, exactly four cows, not more, not less, exactly four cows. In placing four cows, whatever minimum you get, that is what you consider. So this is not a valid configuration. This is not a valid configuration. So you can try out all the valid configurations and the minimum distance that you see, whatever you get between any of the two cows, you have to maximize that value. So what is the first thing that we noticed? Since we require minimum distance between two cows, we just need the consecutive stall distances. There's no point in computing the farther stall distances because that will be big, big. I need min. So just computing the consecutive stall distances will make it work. The first thing that you'll do is, this array will be non-sorted. The stalls are in non-sorted order. Just go ahead and say, can you please sort yourself? Can you please sort yourself? Because if I can place the"
+    },
+    {
+      "chunk_id": "L061_C7",
+      "start": 423.48,
+      "end": 487.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=423s",
+      "text": "non-sorted order. Just go ahead and say, can you please sort yourself? Can you please sort yourself? Because if I can place the cows and then I can easily compute the consecutive distances. Can I say, maybe I can try out with one, let's try out with one and see if that is possible. I'll try to keep a minimum distance of one. I will not place cows before one distance. Okay. What is the ideal scenario? Where should you place your first cow? You will be like, I can place it here. I can place it here. I can place it here. I can place it here. I can place it here. Or I can either place it here. In either of the stalls, the cow one can go. But what is the ideal scenario? Where should you put it? You want to put four cows. You want to put four cows. So like greedily, you will try to take the first place and then look for the distance increase. There's no point in putting it here because if you put it here, you'll not be able to place four cows. So the faster you put, the better it is for you because there is no cow before it. So there is no need to think of the distance. So that is why the ideal scenario will be to put the first cow at the first stall, which is whatever index is given to you. What's the next?"
+    },
+    {
+      "chunk_id": "L061_C8",
+      "start": 488.2,
+      "end": 548.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=488s",
+      "text": "ideal scenario will be to put the first cow at the first stall, which is whatever index is given to you. What's the next? I need to put the cow two and I need to make sure that the distance is one. Can I put a cow two here? I can because the distance is three. I'm trying to keep a minimum distance of one. I can. So let's put a cow two. Can I put a cow three here? I can because the distance is one. So I can put a cow three over here. Can I put a cow four? I can because the distance is three and I can stop. Yeah, I can go ahead and put cow six as well. There is no need. I stop the moment I'm able to put four cows. So what I see is if I'm keeping a minimum distance of one also, if I'm keeping a minimum distance of one also, the distance is three. It's one. It's three. It's still maintaining a one. So I can, one can be done. One can be done with this possible configuration. So I'll be like one can be done. Okay. One can be done, but I'm looking, what am I looking for? I'm looking for max. So let's maybe take two and see if it is possible. Let's try. Can C1 be here? Yes."
+    },
+    {
+      "chunk_id": "L061_C9",
+      "start": 549.64,
+      "end": 613.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=549s",
+      "text": "for? I'm looking for max. So let's maybe take two and see if it is possible. Let's try. Can C1 be here? Yes. Again, ideally always at the first place, because I want to place more cows. Can I place C2 here? Yes, because the distance will be three and I need to maintain a distance of two. So I can. Okay. Let's see. Can I put a C3 here? If I put a C3 here, the distance is one, but I've been asked to maintain a distance of two. I have been asked to maintain a minimum distance of two. So ideally C3 cannot be put here. Okay. Can a C3 be put here? Yes, because I need to maintain a distance of four. Sorry, I need to maintain a distance of two and the distance is four. So possible. Can I put a C4 here? Yes, because the distance is two. I've been asked to maintain a distance of two. So done. Apparently after putting all the cows, I see that this is three, this is four, and this is two. I'm not violating. I'm making sure that each of the cows is at least having a distance of two. Perfect. So the minimum distance I get is two. So I can say two is also possible. But what am I looking for? I'm looking for big, big numbers. So now I'll have to try with three."
+    },
+    {
+      "chunk_id": "L061_C10",
+      "start": 613.96,
+      "end": 678.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=613s",
+      "text": "is also possible. But what am I looking for? I'm looking for big, big numbers. So now I'll have to try with three. Now I'll have to try with three. Let's try with three. C1 goes here. Can C2 go here? Yes, because the distance is three. Can C3 go here? No, because the distance is one. Can C3 go here? Yes, because the distance is four. So C3 will go here. Can C4 will go here? No, because the distance is two. Maintain three. Can C4 go here? I'll say yes. Why? Because the distance is three and that is what I'm requiring for. Four cows placed. Thereby three is also possible. Okay, with three also I can place four cows. The configurations can be numerous. We need to just keep on making sure that it is possible or not. I'm not looking for configuration. I'm looking for if it is possible or not. Okay, so time to increase the value because I'm looking for max. Let's check if it is possible for four or not. So what I'll do is I will kind of try to put a C1 here. Can I place a C2 here? No, because the distance is three. Maintain a minimum distance of four. Not possible. Can I put a C2 here? Yes, because the distance is four and I've been asked to maintain a distance"
+    },
+    {
+      "chunk_id": "L061_C11",
+      "start": 678.12,
+      "end": 749.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=678s",
+      "text": "four. Not possible. Can I put a C2 here? Yes, because the distance is four and I've been asked to maintain a distance of four. Can I place a C3 here? No, because I've been asked to maintain a distance of... Can I put a C3 here? Yes. So C3 goes here. Can I put a C4 here? No, because the distance is one. So if I maintain a distance of four, if I maintain a distance of four, I'm able to make sure the distance of four is maintained. But I'm not able to place all cows. I'm not able to place all cows. Not possible. Not possible. So what are we observing? It's possible till three and after four do you need to check for five? Do you need to check for five? The answer is no. Why? Very simple yaar. Why will you check for five? Just tell me this. Why will you check for five? Because if at four it was not possible. If at four you could not place four cows, at distance five you'll never be. At distance six you'll never be. At distance seven you'll never be. It's not possible. So I figured this out that we have to start from one and we have to keep on checking, keep on checking till the max value. If I ask you what is the max possible answer? Now remember one thing, the"
+    },
+    {
+      "chunk_id": "L061_C12",
+      "start": 749.64,
+      "end": 821.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=749s",
+      "text": "checking, keep on checking till the max value. If I ask you what is the max possible answer? Now remember one thing, the question clearly states that at minimum, at minimum the question will always have two cows. Like you'll never be given one cow because if you have one cow you cannot find distance between two. At minimum you'll always have two cows. That is what the question clearly states. If I ask you what is the maximum distance till which you can go? Just think of test cases. I can think of test cases where the number of cows is two and the worst like the farthest configuration can be which is the minimum minus maximum. This can be the maximum distance possible that I can place some cow because whenever you're solving a problem you cannot check for the value of cow. You can look for the extremest case. Thereby you're saying the minimum distance we know can be one and the farthest distance can be the max minus min. Again this can be optimized as well. The range can be optimized as well if you start thinking but that's not our main criteria. Main criteria is to solve the problem. So we'll try to solve the problem in the least complexity. You can optimize this but that will not affect the time complexity much. But yeah I'm sure that if I"
+    },
+    {
+      "chunk_id": "L061_C13",
+      "start": 821.72,
+      "end": 894.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=821s",
+      "text": "the least complexity. You can optimize this but that will not affect the time complexity much. But yeah I'm sure that if I take this range the answer will always be between this range. You can also take something like 1 and 10 to the power 9. That's also correct. That's also correct. You can take 1 and 10 to the power 9 and we are sure that the answer will be between them. That is also correct. But yeah we are very much sure that even if cows are given us two this range will make sure that the answer is between them. So we know the range. If I have to write the linear search can I write it like for i equal to something like maybe 1 and then we can go on till max minus min and then i plus plus. What do we need to check? Can we place cows? If can we place and we will pass on the array which has the stalls. Just make sure before the this you just sort the stalls in a possible order. You just see this and you pass on that. This is what this is the minimum distance that you have to maintain. If this is making sure that we can place by the way also make sure that you pass in the number of cows because that is what he has to place. If it is"
+    },
+    {
+      "chunk_id": "L061_C14",
+      "start": 895.16,
+      "end": 970.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=895s",
+      "text": "the way also make sure that you pass in the number of cows because that is what he has to place. If it is if it is able to place this much we continue. We continue if it is not able to place. If you notice in the last example one is possible two was possible three was possible four was not possible. So on four it will be true. It will be false. Whenever it is false you say return the previous value because the previous value was possible. That is your answer. Quite simple. What about the time complexity? We need to figure that out after we have implemented can we place. If we can implement the can we place it is pretty much done. Let's quickly do the can we place. So I'll have to write a Boolean function and it will say can we place cows and it will take these stalls. It will take the minimum distance that you have to maintain and it will take the number of cows that you have to place. Can I see initially I can keep the count of cows to be one because I know the first cow will always go at the first index. So which is like where is the where is the coordinate you can say coordinate. Where is the first coordinate when the cow goes array of zero because that is where you place the first cow. That's very much obvious that"
+    },
+    {
+      "chunk_id": "L061_C15",
+      "start": 970.36,
+      "end": 1042.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=970s",
+      "text": "the first coordinate when the cow goes array of zero because that is where you place the first cow. That's very much obvious that you place the first cow here. You have to look for the next. So you start from here. This cow one is here you check can a cow to be placed. So what do you do is you basically start iterating from i equal to one and you go until the last value of the stall. Let's try to place it. If array of i minus the coordinate in which the last cow is wherever the last cow is maybe you can call it as last that will make much more sense. The last cow was at this if the last cow array of i minus last cow is exceeding at least in maintaining that distance. Can I say I'll be able to place this particular cow here. Imagine I have a distance of four and place a cow one here and the cow two goes here and checks that the distance is three not possible. Cow one is here cow two possible possible. So now this is your last this is your last where it was possible. So you placed one more cow. So can I say I have placed one more cow I placed one more cow and now the last cow was placed at this index and now the last cow was"
+    },
+    {
+      "chunk_id": "L061_C16",
+      "start": 1042.12,
+      "end": 1121.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=1042s",
+      "text": "more cow I placed one more cow and now the last cow was placed at this index and now the last cow was placed at this index and you can terminate it. You can terminate it at the end of the day. At the end of the day if the number of cows or at the count of cows if you are able to place more than the required number of cows that means you were able to place cows by maintaining a minimum distance by maintaining a minimum distance thereby you go ahead and return that it is possible or else you say it is not possible where you can say return false and by the way this particular statement can return inside the for loop as well so that you don't do a lot of iterations. The moment you reach the number of cows you say return true return I don't want to place more cows. If done cows return and this is making sure that you keep a track where it was the last placed because in order to compute distance in order to compute distance imagine you are placing it here you have to compute it with c2 not with c1 that is why just keep a track where the last was placed. I hope this can we please makes sense. What if now if I ask you the time complexity what what is it I'm going till max minus 10 so that's like going till"
+    },
+    {
+      "chunk_id": "L061_C17",
+      "start": 1121.24,
+      "end": 1187.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=1121s",
+      "text": "What if now if I ask you the time complexity what what is it I'm going till max minus 10 so that's like going till max minus min multiplied by big O of n because you're going through the entire thing what about the space that's a big O of 1 obviously the interviewer will not be happy with this one because you're utilizing some extra like it's a quadratic time complexity and I'll ask you to optimize it this is when we will move to the binary search solution. So can we apply binary search we can because we have already done similar problems if you remember 1 was possible 2 was possible 3 was possible 4 is not possible 5 is not possible 6 is not possible and it will go on till 10 which is also not possible why 10 because the maximum that you can have is 0 minus so it's not possible we know a section where it is possible we know a section where it is not simple what are we looking for by the way this will be cross and what are we looking for we're looking for the max possible answer so go ahead and do it you're at low you are at the high can we perform the binary search we can so the low is pointing to the first possible answer that is 1"
+    },
+    {
+      "chunk_id": "L061_C18",
+      "start": 1187.8,
+      "end": 1253.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=1187s",
+      "text": "the high can we perform the binary search we can so the low is pointing to the first possible answer that is 1 and the high is pointing to the last possible answer that is 10 if I have to figure out the mid it is 1 plus 10 by 2 5.5 so the mid will be 5 is 5 possible no so everything on the right is also not possible yes so basically the high will move to this place perfect I can omit this mid and what I can do is I can also keep an answer variable as minus 1 okay now what is the mid the value of mid will be 1 plus 4 by 2 that's 2.5 so that's 2 as an integer is 2 possible he says yes it is possible and if you remember if it is possible you're looking for max so anything on the left will be small so what you do is you store the 2 you store the 2 and you say hey can you move to one place ahead so he moves to one place ahead so he moves to one place ahead now what would be the mid 3 plus 4 by 2 is 3.5 so the mid is there is 3 possible whether this is eliminated is 3 possible yes 3 is possible 3 is possible you update your answer to 3 and what you do is you just say that"
+    },
+    {
+      "chunk_id": "L061_C19",
+      "start": 1253.72,
+      "end": 1319.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=1253s",
+      "text": "3 possible yes 3 is possible 3 is possible you update your answer to 3 and what you do is you just say that okay 3 is possible I'm looking for max increase so the left portion will go because on the left you'll get smaller values so increase and when you're increasing where will the low go low will go to 1 plus mid so that's one place ahead next when you try to find the mid the mid will also be pointing to this is it possible not possible if it is not possible you eliminate you eliminate the right and whenever you eliminate the right the high moves to one place before mid so this is here the low is pointing here and that's when you stop the binary search and that's when you stop the binary search and on stopping the answer is stored as 3 which will be a possible answer but do we need the answer variable no if you have been seeing the playlist you know how to find it yes yes you know it first one low was at a possible point high was at a impossible point most of in most of the cases so low will always go to the opposite polarity not possible high will always go to a possible polarity so which one will be answer high is always going to be your answer I hope that"
+    },
+    {
+      "chunk_id": "L061_C20",
+      "start": 1319.72,
+      "end": 1385.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=1319s",
+      "text": "always go to a possible polarity so which one will be answer high is always going to be your answer I hope that makes sense so no need to use an extra variable answer so we don't need to store any particular answer variable and for anyone who's watching my playlist from the first he knows the polarity process and if in case you're watching it for the first time it's very simple the low is pointing to high like possible case the high is pointing to non-possible case binary search will make sure that it ends up at a not possible place and this ends up at a possible place it just changes polarity possible goes to non-possible not possible goes to possible since we are looking for a possible answer hence high will be my answer got it so we just need to return the high no need of storing any extra variable answer got that so let's quickly write down the pseudocode it's going to be super simple I take the array I take the number of cows yeah that's it I say low will be zero and the high will be pointing to max minus min which is which can be straight away written as a of n minus one minus of a of zero and I can say sort array comma array plus n this is in c"
+    },
+    {
+      "chunk_id": "L061_C21",
+      "start": 1385.32,
+      "end": 1453.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=1385s",
+      "text": "of n minus one minus of a of zero and I can say sort array comma array plus n this is in c plus plus you you can figure out the alternative in java as well and the other languages just figure out your sort method and then what I can do is while low is lesser than equal to high what do we do we figure out the mid because that is what we have to maintain as a distance and we say can we place we call the function that we have written in the linear search we call the function that we have written in the linear search can we place in the array with the distance of mid and these many cows if you can place if you can place this is a possible answer this is a possible answer maybe you can store it in an answer and we need bigger values so look for the right half because the right half has bigger values or else look for smaller values because that's not possible at the end of the day the while loop will end here and then you can return the high or you can return the answer as well your wish either high or either answer and then you end up the function this is how easy it is this is the reason at first I do the linear"
+    },
+    {
+      "chunk_id": "L061_C22",
+      "start": 1453.08,
+      "end": 1514.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=1453s",
+      "text": "and then you end up the function this is how easy it is this is the reason at first I do the linear search because once you understand the linear search is super simple to convert it into a binary search so it will be the time complexity sorting at first so that's an n login plus we're doing a binary search so that's a log base 2 and the range is this so goes to this multiplied with a big of n because we are calling it can we place which takes a big often so this will be the overall time complexity this multiplied with this plus the sorting and login and what is the external space nothing big often sorry big of one is the external space that we're using so let's quickly get back into the code editor and check out the code by the way you can figure out the c++ java python javascript codes from the notes in the description and also you can find out the problem link in the description itself to try it out so I've written the exact same code and I've just taken the conditional statement inside the for loop the moment you get the number of calls that you require stop or after the after it if you don't find it just return false there's other thing low I've written as one you can experiment and you can actually increase"
+    },
+    {
+      "chunk_id": "L061_C23",
+      "start": 1514.6,
+      "end": 1585.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=1514s",
+      "text": "if you don't find it just return false there's other thing low I've written as one you can experiment and you can actually increase the value of low the low can go to something like min of all consecutive distills differences what do I mean by that so if I go to this example not yeah not this one yeah this one so the difference between this is three the difference between this is one the difference between this is three the difference between this is three the difference between this is one so if you take the consecutive differences and whatever is the minimum of that you can just change it to that as well but I don't want to complicate it you can think and trim down the range more as well but that's not required because the core of the problem is to solve it unless like if you're taking it 10 to the power 9 then the interview might have an issue if you're taking it like this it's okay he will not care that much so yeah you can try trimming it down as well but yeah this one will be working fine in interviews as well if you're still watching I hope you've understood everything and in case you have please please do consider giving us that like and if you're new to our channel what are you waiting for hit that subscribe button right away and yes if you haven't"
+    },
+    {
+      "chunk_id": "L061_C24",
+      "start": 1585.96,
+      "end": 1595.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=R_Mfw4ew-Vo&t=1585s",
+      "text": "like and if you're new to our channel what are you waiting for hit that subscribe button right away and yes if you haven't followed me on Instagram Twitter and LinkedIn you can find out all the profile links in the description make sure you follow me there as well and with this I'll be wrapping up this video let's meet in some other videos and then bye bye take care"
+    }
+  ]
+}

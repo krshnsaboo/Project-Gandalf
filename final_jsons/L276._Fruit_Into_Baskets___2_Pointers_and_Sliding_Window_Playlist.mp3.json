@@ -1,0 +1,176 @@
+{
+  "lecture_id": "L276",
+  "lecture_number": 276,
+  "lecture_title": "L5. Fruit Into Baskets | 2 Pointers and Sliding Window Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ",
+  "chunks": [
+    {
+      "chunk_id": "L276_C1",
+      "start": 0.0,
+      "end": 78.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=0s",
+      "text": "So let's continue with the strivers A to Z DSA course and the problem that we will be solving today will be involving the concepts of two pointer and sliding window. But if you're starting, hey, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is fruit into baskets. That's a huge problem statement. You can go through it. I'll be explaining the problem statement in short. So you go to a farm and you're given two baskets. Okay. And in the farm, there are trees and these are the fruits that they produce. Okay. Tree zero produces this tree. One produces this tree to produces this and so on. Now every tree is producing a fruit. So tree zero is producing a fruit of type three of type three. So it's an individual type. This particular tree is producing a fruit of type two. Now you're allowed to collect fruits. You're allowed to collect fruits, but there is a condition. You have two baskets. Okay. Now each individual basket can hold only unique types, sorry, only a single type."
+    },
+    {
+      "chunk_id": "L276_C2",
+      "start": 78.8,
+      "end": 156.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=78s",
+      "text": "You have two baskets. Okay. Now each individual basket can hold only unique types, sorry, only a single type. That means if you're putting the type three fruit here, it can only store apples. For an example, it cannot store apples plus oranges. It can only store apples like one type of fruit. Three, three, three, you can put as many apples as you want. The other one can store any other type like two, two, two, a lot of oranges. Got it? Now your task is to make sure that you pick up the maximum fruits using these two baskets. Got it? But there's a catch. If you're picking this, you're picking this, you're picking this, after this, you cannot decide that you'll pick up this and this and this. That is not allowed. You cannot skip. You cannot skip. If you have once started picking up, you'll have to pick up, pick up, pick up. For an example, if you pick up these four, that is absolutely okay because what you can do is you can take three, three, three in one basket and one in another basket. At the same time, you cannot pick up this. Why? Because you can take three, three, three, you can take one, but how will you take two? Because you have just two baskets. Got it? So what, so the question is stating, what is the maximum fruits that you can pick?"
+    },
+    {
+      "chunk_id": "L276_C3",
+      "start": 156.32,
+      "end": 232.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=156s",
+      "text": "Because you have just two baskets. Got it? So what, so the question is stating, what is the maximum fruits that you can pick? So can I say that maybe this one I can pick and that will be four fruits? Okay. Maybe I can pick this one that is four fruits or maybe I can pick up this one and that's going to be five fruits. Why? Because I'll put two, two over here and one, one, one over here. So I can pick up five fruits from this particular example. So can I trim down the question to finding the max length subarray with at most two types of fruits? Can I say this? Two types of numbers? In short, I can. Why am I saying at most, even if the array contains all threes, you can still take up all of them, put it into one basket and keep the other basket empty. That is also allowed. So can I trim down the question to max length subarray because subarray is a consecutive portion of the array with at most two type of, two type of numbers like one comma two, two unique numbers rather. Makes sense?"
+    },
+    {
+      "chunk_id": "L276_C4",
+      "start": 232.98,
+      "end": 310.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=232s",
+      "text": "with at most two type of, two type of numbers like one comma two, two unique numbers rather. Makes sense? So if this problem comes up in an interview, like what is the extreme naive solution that you can think of? There is subarray and wherever there is subarray, the extreme naive solution that I can think of is generate all the subarrays. How can I do it? I know that the first subarray starts from three. So I can standard three and take that first subarray. The next subarray keeping this three as the starting point will be this one. The next will be this one. The next will be this one. The next will be this one and so on. And after that, the next set of subarrays will be starting from this element. Thereby this, this, this, this, this, and so on. Agreed? Maybe I can do this. So what I can say is, hey, listen, maybe I can keep a very simple, uh, data structure as set and I can start from this three. Okay. That's one number. I can put it over here. Perfectly fine. That means I can take this subarray. I can take this because I have one type of clue. Okay. What is the next? I'll be taking this much, which means I'll again pick up this three, put it over here. Same type doesn't matter. So I can also take up this particular subarray. Perfect. Let's take the next three."
+    },
+    {
+      "chunk_id": "L276_C5",
+      "start": 310.48,
+      "end": 379.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=310s",
+      "text": "three, put it over here. Same type doesn't matter. So I can also take up this particular subarray. Perfect. Let's take the next three. I can take the next three, put it into the subarray. Doesn't matter because I can still take it. Perfect. Next, I'll take this one. Can I still take this subarray? I can. Why? Because I have two type of clues. I have two unique numbers. So thereby I can take this. Okay. Let's move ahead. The moment I put up this two over here, what happens to the set data structure is this is three in size. So if it is three in size, I cannot because the max I'm allowed is two types of numbers. Can I go beyond? Even if I go beyond and check for all the other subarrays, they'll at least have three types in it. They will at least have three types in it. So I cannot take beyond it. So can I say starting like keeping the starting point as three, I can only take subarrays till this portion, not beyond it. I can stop, I can break only to iterate further. And for the next thing, what you can do is you can trim down the subarray, sorry, trim down the set and you can start from here. That is the three and again do the same. Right. So that will be my brute force."
+    },
+    {
+      "chunk_id": "L276_C6",
+      "start": 379.16,
+      "end": 448.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=379s",
+      "text": "and you can start from here. That is the three and again do the same. Right. So that will be my brute force. So what I'll do is I know that I always start from this element, then this, then this and so on till the end. So I'll use a for loop and the for loop will be I equal to zero and it goes till n. Correct. I'll keep a set data structure which is going to store all my numbers so that I know how many types of groups or how many unique numbers do I have. And after that, what I can do is I can take a for loop and I can start from j and it will go from i to n. Why from i to n? Because I'm starting from here, this is the first number. I'm starting from here, there's the first number, then this, then this, then this. So always starts from the number itself or the starting position itself. So what I can do is I can say, okay, set dot add or insert according to the programming language you're using, array of j. So I've added it. So once I've added it, how do I know that I can pick this subarray from i till j? How do I know it? I'll be like, okay, he said, what is your size? If your size is less than two, that means you have two unique numbers."
+    },
+    {
+      "chunk_id": "L276_C7",
+      "start": 448.2,
+      "end": 526.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=448s",
+      "text": "I'll be like, okay, he said, what is your size? If your size is less than two, that means you have two unique numbers. If you have two unique numbers, maybe I can take that length and I can compare with the max length I had and this length will be j minus i plus one. And what I can do initially is I can assign a max length to be zero. Pretty simple. But what if the set size is greater than equal to two? In that scenario, I'll have to break and I'll have to stop and the inner follow will end and then the outer follow will end and that will wait. What will be the time complexity of this brute force? A big O of n, somewhere near about big O of n. And now you might be thinking there is a set that we are using and we are trying to do set.add, set.size. There's one thing that you have to keep in mind. Set.add definitely takes logarithmic of n. I do agree. But what is this n? n is the size of the set. And if you remember, the size of the set, the size of the set at maximum was three size, not beyond it. The logarithmic of three is as good as a constant time. So thereby you can say that the overall time complexity is big O of n because the set is"
+    },
+    {
+      "chunk_id": "L276_C8",
+      "start": 526.12,
+      "end": 601.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=526s",
+      "text": "good as a constant time. So thereby you can say that the overall time complexity is big O of n because the set is a very, very small set with only two numbers. So the time in set is, can be ignored. What about the space complexity? Am I using an external space? Again, you'll say there is a set data structure. Okay. I'm storing three elements, not more than that. So this will be a brute force. Now obviously the interviewer will not be happy with this because you're taking a big O of n square and he'll ask you to optimize. So we'll have to optimize n square into something better. That means somewhere near about n and the problem is involving sub-arrays. So whenever the problem involves sub-array, which means find a window, which algorithm? Yes. So I'll have a solving window and I'll have to use two pointer in order to solve it. So let's try to use two pointer. It's going to be very simple. You know, initially we take L and R to be at the starting, which is the zeroth index. And then what we take is, let's take a map data structure. Why am I taking a map data structure? Because I'll have to keep a check on the number of unique counts, something like a set of the like a map. Okay. So I'll take a map. I'll keep the number along with that. I'll keep a frequency."
+    },
+    {
+      "chunk_id": "L276_C9",
+      "start": 601.8,
+      "end": 675.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=601s",
+      "text": "a set of the like a map. Okay. So I'll take a map. I'll keep the number along with that. I'll keep a frequency. What do I need? I need the length. So what I can do is I can take a max length as well. Perfect. So initially, what is the value of max length? It's going to be zero. So let's keep it as zero. So let's start. I'll start the window. This is the initial window. So at first, this three has to go into the map. Let's take it into the map. 3 comma 1. Now you'll be asking yourself a question. Hey, is this window a valid window or a valid subarray? How do I know it's a valid subarray? At most, it should have two types of numbers. So I'll go to the map and I'll say, hey, how many unique numbers do you have? The map says, I just have one unique number. If I have one unique number, that means it is possible because at most I can have two types. So this segment is possible. What is the length of this segment? One. So I'll update the max length to one. So let's quickly update the max length to one. Perfect. Let's move on to the next. So when I move on to the next, this time I'm seeing this three, correct? I'll have to put it into the map. So the frequency will increase. Now you'll ask yourself a question."
+    },
+    {
+      "chunk_id": "L276_C10",
+      "start": 675.72,
+      "end": 739.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=675s",
+      "text": "time I'm seeing this three, correct? I'll have to put it into the map. So the frequency will increase. Now you'll ask yourself a question. Hey, since the three is in the map, can this be a possible answer? So I'll go to the map and I'll say, hey, how many unique elements do you have? It still says I have one. Hereby it is possible because at most two are allowed. So what I'll do is I'll increase the length to be two because this possible thing is allowed. Perfect. Let's move the R to the next. The moment I move the R to the next, I have a new element. So the new element gets into the map data structure and the frequency increases to three. Again I'll ask the same question. Hey, can this be a possible answer? Look into the map and it says yes. Thereby I'll increase the length to be three. I'll again move this R to here. I'll have a new element. Put it one comma one number and the frequency. Now ask yourself a question. Can this be a possible segment? Ask the map. Map says the length is one and the length is one. Sorry, length is two. And if the length is two, it's possible because you have two unique elements that is allowed. So thereby this is possible."
+    },
+    {
+      "chunk_id": "L276_C11",
+      "start": 739.68,
+      "end": 808.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=739s",
+      "text": "And if the length is two, it's possible because you have two unique elements that is allowed. So thereby this is possible. Hence what I can do is I can update the length to four and I can take this R and I can move it to over here. Where am I? I'm at two. Okay. I'll have to put it into the map two comma one and I'll ask myself a question. Hey, is this possible? I'm like, okay, let's check. Map map says three. No, not possible. It cannot update. So this window is not possible. This window is not possible. So you'll try to do is in sliding windows, you trim it down from the left. You trim it down from the left. Let's try to trim it down from the left. So this will go off from your window. So when it goes off from your window, that means it goes off from the map. That's what you will do. You just take it out from the map and you'll reduce the number to three comma two and it'll take R to here. Sorry, L to here. Now this is your window. I'll ask again, is this possible? I says no, because I still have three unique elements. Like fine, I'll have to take this out as well. So please go ahead and take this out, which is three comma one and move L to here. Again, ask yourself a question. Is this possible?"
+    },
+    {
+      "chunk_id": "L276_C12",
+      "start": 808.92,
+      "end": 885.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=808s",
+      "text": "go ahead and take this out, which is three comma one and move L to here. Again, ask yourself a question. Is this possible? Again, go to the map map says size three. Huh? Not possible. Take this out again. So if you take it out three comma zero and after that the L moves ahead. Ask yourself a question. Is this possible? It says yes, this is possible. Why? Please remember, whenever someone turns as zero, please remove it. It's no more in the map. Please remove it. So when you go over here and ask, it says my size is two, which is possible. But this length, length of the segment is two. I already have a max length of four. No need. I'll elongate. I'll again move. So when I move this time, R will be here. So I'm over here. I have a one, take it in, take it in. So one comma two is the segment possible. Ask the length is two possible, but this particular length of the segment is three. I already have a segment of length four. Perfect. Let's move on. Again, go to one, increase, increase, increase the frequency to three and ask yourself the same question. Is this possible? It says yes. Why? Because the map contains only two unique elements that this is possible. Can I update the max length? I cannot because the length is four."
+    },
+    {
+      "chunk_id": "L276_C13",
+      "start": 885.56,
+      "end": 961.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=885s",
+      "text": "map contains only two unique elements that this is possible. Can I update the max length? I cannot because the length is four. So point next move on to the next. What do you have? You have to take the two, put it in. The frequency will increase. Ask yourself if this is valid. It says yes, I'm valid because the max, the number of unique are two. The length is five of the segment reduce or increase it to five. Okay. Next move to three. So when you are at three, what happens? You're asking, is this segment possible? But before that, please put the three into the map. Now you're asking, is this segment possible? It says no, not possible. Why? Because the map is saying I have three unique elements, not possible. What do you need to do? You trim, trim, trim, trim. Hey, you can, let's start trimming, start trimming the one. So one will get trimmed to two. So one will get trimmed to two and will happen to L, L will move. What do you have? You have a two, correct? Again, go ahead and trim two. So it'll trim now to one. Move L. What do you have? You have one again, go ahead and trim one. So that will become like one, correct? And then again, go here. And this time it will be here again. It's a one."
+    },
+    {
+      "chunk_id": "L276_C14",
+      "start": 961.88,
+      "end": 1041.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=961s",
+      "text": "So that will become like one, correct? And then again, go here. And this time it will be here again. It's a one. So go back and trim my bad. Trim this one, make it zero. The moment it is zero, it goes off. The moment it is zero, it goes off and the L goes ahead. So this time, this possible segment, you can keep on going. The moment R exceeds, you stop then and there. And the max length you'll find out is five. This is the sliding window. Very simple, very obvious. So what we will do is, we'll try to write down the pseudocode. And in case you want your language specific code, you can find them below. So what will you be given? You'll be given the function, correct? You'll be given the array, just the array, nothing else. You'll keep the L to be zero. You'll keep the R to be zero. You'll keep the max length to be zero. And you can keep a map data structure depending on your language. So let's start. Sliding window is like, okay, I will go till the array.size, not beyond it, because that's the maximum I can go on the right. I'm like, okay, let's put this because it's a new element addition into my window. So let's put this into my map. I'm like plus plus. So in Java, you can just get the value."
+    },
+    {
+      "chunk_id": "L276_C15",
+      "start": 1041.8,
+      "end": 1109.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=1041s",
+      "text": "addition into my window. So let's put this into my map. I'm like plus plus. So in Java, you can just get the value. And if it is zero, you can add a one. If it is not there, you can put it as one. You can do it. After this what? I've added into the map. I have to check in this segment, is possible or not. So I go ahead and ask the map, hey map, is it possible to have you? Is it possible to have you? And I'm asking, is the size lesser than equal to K? I say, yes, it does. That means it is possible. So I'm saying, okay, if it is possible, if it is possible, then I'll have to take it as max length. But what if it is not possible? I'll have to make it possible. So thereby, first you'll write the other case. If it is not possible, make it possible and then come. Okay, perfect. And if it is not possible, what do I do? To trim down L, I have to trim down L. So I'm like, okay, let's maybe write it as a while MPP.size is greater than K, which means not possible. So I can ask the map to delete it. I can ask the map to delete it. I can ask the map to delete it. If it is not possible, MPP of array of L minus minus."
+    },
+    {
+      "chunk_id": "L276_C16",
+      "start": 1109.96,
+      "end": 1189.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=1109s",
+      "text": "map to delete it. I can ask the map to delete it. If it is not possible, MPP of array of L minus minus. And I can check, hey, if MPP of array of L is zero, we can ask the map to erase or delete whatever you call it. MPP of array of L, just ask to delete it or maybe I can write it below. You can ask the map to delete it. MPP dot erase of array of L. So what I'm doing is I'm deleting, correct? What after this? I'll have to move it. I'll keep on moving this. That's how my while loop will look like. Once this condition is satisfied, you can finish up the if loop. After that, you can have a simple check. Hey, listen. If at any moment, like now I know the segment is valid. I know the segment is valid, but still put a check and you say, okay, let's take this valid segment and compare the length with the max length. Which is like max length comma J minus or rather R minus L plus one. That is the length. And once you're done with this, you can move the right plus plus for the next iteration. You can complete the while loop and then you can move the next iteration. And then you can return the max length. And that's how the function ends."
+    },
+    {
+      "chunk_id": "L276_C17",
+      "start": 1190.2,
+      "end": 1269.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=1190s",
+      "text": "loop and then you can move the next iteration. And then you can return the max length. And that's how the function ends. That will be the code. And you might be thinking, okay, what is the time complexity of this one? So for the time complexity, let's analyze what is contributing to it. So first of all, there is a R that is moving. The R starts from here and goes absolutely till the end. So I know there is a big O of N for sure, because right is right as moving at every step. What apart from that, there's another while loop that is contributing, but it'll have to keep in mind that this while loop is always not running. Play is not running for N always. Why do I see it? If you see L was starting from here or some occurrence, it might run from here to here, then from here to here, then from here to here. So overall, when R moves from here to here at the worst possible scenario, L might move from here to here, not beyond it. Not beyond it. It won't move every time N. Overall, it will move N. So can I say the R moves for N and the internal L also moves for N at the worst possible case. And what is the worst possible case? You have 3, 3, 3, 3 and then a 1, 2."
+    },
+    {
+      "chunk_id": "L276_C18",
+      "start": 1269.24,
+      "end": 1344.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=1269s",
+      "text": "N at the worst possible case. And what is the worst possible case? You have 3, 3, 3, 3 and then a 1, 2. So what happens is when the R reaches here, L is still here and the L has to move, move, move, move, move till it reaches here. So L moves the entire way, but that is the worst possible scenario. Got it? So the time complexity is big O of 2N. What about the space complexity? The space complexity again at the worst possible scenario can be big O of 3. It is storing 3 elements because every time there's an increment, I am erasing elements from the map. I am ending up erasing elements from the map. You'll have to keep that in mind. Got it? And there is one more thing. I'm accessing the map. I'm erasing from the map. I'm not adding a logarithmic. Why? Because the size of the map is extremely small. So the time taken will be extremely small, somewhere near about big O of 1 or big O of 2, constant. Thereby do not consider it. So 2N is the solution for this one. Again, a lot of interviewers will be okay with it. Some, only some, 1 out of 10 might not be happy with big O of 2N. They might ask you to optimize it to big O of N. So let's check out the big O of N solution."
+    },
+    {
+      "chunk_id": "L276_C19",
+      "start": 1344.52,
+      "end": 1418.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=1344s",
+      "text": "of 2N. They might ask you to optimize it to big O of N. So let's check out the big O of N solution. So we need to optimize big O of 2N into big O of N. But for that, we need to understand what was taking big O of 2N. So if you remember, there was a point when L was here, R was here, and the max length was 4. And the map was having 3, 2, and 1, 3 of the elements. And then I checked if this segment could be a possible answer. And the map said, no, I have 3 unique elements, thereby this cannot be a possible answer. After that, what I did was, I took off this 3, I moved L, I took off this 3, I moved L, I took off this 3, I moved L. And then I got this segment and I said, this is a valid segment. And then we moved R, then we moved R, then we moved R. And eventually this was the longest. Right? So what we did was, whenever there was an invalidity, I moved L straight away. Till it was valid, till it was valid. And that was taking that extra big O of N time. So what I'll try to do is, I'll try to omit that thing. So in order to do that, I'll be using the same concept that I've used in my previous lecture."
+    },
+    {
+      "chunk_id": "L276_C20",
+      "start": 1418.84,
+      "end": 1495.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=1418s",
+      "text": "try to omit that thing. So in order to do that, I'll be using the same concept that I've used in my previous lecture. In case you haven't seen my previous video, which is max consecutive ones, part 3, please go back and watch it. I've explained the intuition in depth over there. So what I will do is, I'll take L, I'll take R over here. Maybe in order to just simplify things, I'll take L and R to be over here. I'll skip the initial steps. And I know I'll take a map data structure. So you'll be having 3 times, 1 is 1s, L2 is 1s. And max length will be how much? 4. Now this is the moment I have a segment and I'm asking, hey, can this be a possible answer? The map says I have 3 elements. So this cannot be a possible answer. And if this cannot be a possible answer, we'll have to move in. But over here, I'll say, hey, listen, 4 was my max length. And you tried to increase that length to 5. So what I'll do is, I'll not allow you to go beyond 5. I'll ask you to stay at 5. So what I'll do is, I'll just remove 1, 3. So if I remove 1, 3, this will become 2 and the L will go over here. Now I'll check for the same length 4. Is it a possible answer? It says no. Perfect. Move R."
+    },
+    {
+      "chunk_id": "L276_C21",
+      "start": 1497.8,
+      "end": 1576.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=1497s",
+      "text": "the L will go over here. Now I'll check for the same length 4. Is it a possible answer? It says no. Perfect. Move R. So I am not allowing the length to get increased more than 4. Again, at 5, I'm not going to 6, the length is still 5. And again, it says not possible. Please make sure whenever you go to this, you insert this. Now I'm checking this one. Is it possible? It says no, not possible. If it is not possible, I'll again reduce 1. So when I reduce 1, this becomes as 1 and the L goes over here. Correct? Next step will be to take this R and move one step ahead, which is 1. So you can increase this one, which is typically 3. And this is 1. Okay. Now again, you'll ask, hey, can this be a possible answer? And it says, no, because the map still has 3 unique elements. Perfect. Again, reduce this. So you'll go over here, this will be 0. So it goes off. And now when you check for this length, this is possible. Why? Because it has 2 elements. The length is 4. The length is 4. It is possible. After that, you move R. After that, you move R. Now, the moment you move R, this is having 2. So please insert it."
+    },
+    {
+      "chunk_id": "L276_C22",
+      "start": 1576.76,
+      "end": 1651.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=1576s",
+      "text": "you move R. After that, you move R. Now, the moment you move R, this is having 2. So please insert it. And now when you want to check if this is possible, it says, yes, this is possible. Yes, this is possible. And the length is 5. And the length didn't jump from 4 to 6. Why? Because I didn't allow it. I didn't allow it. I said, okay, this is not possible. You move. I'm not going to let you increase. I will move along with you. I'll move along with you till you are a valid proposition. Got it? And after this, I'll take this R. I'll move here, which is a 3. What will happen is I'll again insert 3. Again, not possible. Again, the same algorithm happens. So instead of moving the L completely using a while loop, like complete from here to here at one step, you just move it by one step. So that's the optimization. In order to understand it better, please go back and watch the max consecutive ones part three. We explained it in depth. I've taken time over there. I'm sure you've understood it over here as well. Just in case you haven't, please go back over there. Okay. I'll have to write down the pseudocode. It's going to be super simple function array. You'll require an L, you'll require R, you'll require a max length and you'll require a map data structure."
+    },
+    {
+      "chunk_id": "L276_C23",
+      "start": 1651.96,
+      "end": 1731.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=1651s",
+      "text": "be super simple function array. You'll require an L, you'll require R, you'll require a max length and you'll require a map data structure. You're going to do the exact same thing while R greater than N, which is N is the array size map of array of R plus plus you increase. And now instead of the while loop, if the L and R is not a valid segment, what you do is you say, hey, listen, if mempp.size is a greater than K. Remove it. Remove. And if MPP of array of L is now zero, which means you can just trim it off from the map as well. Map.erase MPP of array of L. Perfect. And right after this, you can move the left to plus plus. Over here, there'll be no while loop. You just trim it off once. In the previous, we kept on doing it. We kept on doing it. Once you've done this, you can have a simple check. Hey, listen, after doing this, if MPP of size is lesser than equal to K, maybe the max length can be updated to max of max length comma R minus L plus one. Done. And you can move the R plus plus."
+    },
+    {
+      "chunk_id": "L276_C24",
+      "start": 1731.72,
+      "end": 1792.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=e3bs0uA1NhQ&t=1731s",
+      "text": "to max of max length comma R minus L plus one. Done. And you can move the R plus plus. And that will be end of the while loop. And then you can straight away return the max length and then you can end the function. So what will be the time complexity? Very simple. There's one while loop, which is a big O of N. That's not going to take any other time. What about the space complexity? Again, you're putting elements into the map, but you're making sure that it is not more than two. So this will be the time complexity and the space complexity for this particular solution. And if you say this in an interview, the interviewer will be super, super impressed. Only if you're able to explain your thought process. That is the key over here. So if you're still now watching, I'm very sure you've understood everything. And that is the case. Please, please do consider giving us a like. And if you're new to our channel, please do subscribe to our channel. And we'll see you in the next video. Bye. Do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye."
+    }
+  ]
+}

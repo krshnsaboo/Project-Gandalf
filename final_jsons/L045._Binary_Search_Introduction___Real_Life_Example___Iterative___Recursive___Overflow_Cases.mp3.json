@@ -1,0 +1,218 @@
+{
+  "lecture_id": "L045",
+  "lecture_number": 45,
+  "lecture_title": "BS-1. Binary Search Introduction | Real Life Example | Iterative | Recursive | Overflow Cases",
+  "youtube_url": "https://www.youtube.com/watch?v=MHf6awe89xw",
+  "chunks": [
+    {
+      "chunk_id": "L045_C1",
+      "start": 0.0,
+      "end": 72.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=0s",
+      "text": "Okay, so let's get started with binary search. I'm not going to teach you the typical binary search where I take an array and I tell you that, okay, this is what binary search means. I'm going to follow a very structured path in this video and that is why the video might be slightly longer than the other videos on the platform. So we will be starting off with a real life example and I'll explain you how binary search works in a real life. Post that I'll be giving you a coding problem example to show you how binary search is implemented. After that I'll be writing the iterative code. Again, it won't be any language based. I'll be writing the pseudo code for the iterative version. Post that I'll be writing the recursive code as well to show you the recursive implementation. Again, that will be language independent and I will be writing the pseudo code. After that I'll be explaining the time complexity by showing you the proof of it. At the end I'll be talking about the overflow case which is very very important when it comes to interviews. Now in case you want the C++, Java, Python and JavaScript code, you can find the link in the description. You can open that article, you can scroll down and you'll find the C++, Java, Python, JavaScript, all the code links"
+    },
+    {
+      "chunk_id": "L045_C2",
+      "start": 72.2,
+      "end": 138.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=72s",
+      "text": "the description. You can open that article, you can scroll down and you'll find the C++, Java, Python, JavaScript, all the code links over there. So make sure in every video in this particular playlist, you check out the link in the description, go to the article and find out your code. Just in case you're uncomfortable, you can have the code open with parallel with this video so that you can follow as well. So what is binary search? It is nothing but a searching algorithm in a limited search space. Let me give you an example. So if I ask you that I'm giving you a dictionary, okay, I'm giving you a very very simple dictionary and you know dictionary contains all the words. Now in what order are the words placed? In the dictionary first you'll find all the words with the letter A, then with the letter B, then with the letter C, then with the letter D, then with the letter E and so on. At the end you'll find all the words with the letter Z, correct. If I ask you in the dictionary, can you find me out the letter Raj? Now what is one of the basic ways to do it? One of the basic ways is, let's assume this is dictionary, I know this is not, but let's assume. One of the basic ways"
+    },
+    {
+      "chunk_id": "L045_C3",
+      "start": 138.64,
+      "end": 215.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=138s",
+      "text": "of the basic ways is, let's assume this is dictionary, I know this is not, but let's assume. One of the basic ways is go to the first page and you say is Raj there? No. Then you go to the second page, is Raj there? Third page, is Raj there? Fourth page and you go on, go on by every page and at some point you will find out Raj in the dictionary. Now this algorithm is known as linear search where you basically traverse from the first till the end in the search space where the search space is the dictionary entirely. But does the dictionary have any specific property? Yes it does have. It has a property of being sorted. All the words in the dictionary are in the sorted order. So binary search is an algorithm which is always applicable whenever we are performing a search in a sorted area. In a sorted area binary search is applicable, keep that in mind. So if I have to find out Raj, if I have the dictionary, I have the dictionary, I will just open it into two halves. If I open it into two halves, I will see some words over here, see some words over here as well. Now imagine on this side I see something as the words with S, the words with S. So can I say something for sure? If this side has words with S, this side will always have words with"
+    },
+    {
+      "chunk_id": "L045_C4",
+      "start": 215.92,
+      "end": 286.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=215s",
+      "text": "the words with S. So can I say something for sure? If this side has words with S, this side will always have words with maybe S, maybe the alphabets after S. Can I say that? I can. So I know the left side has S. So the right side will either have S or these things, correct? And everything on the left might be A, B, C, D, E, F. All the left side might have A, B, C, D, all the words with that. So can I definitely say this portion will never have Raj, will never have Raj. I can. Which portion will have Raj? The left portion. So can I trim down my search space to this much? Only this much. I can. And now again I can do a split on it. So this is a real life example of binary search where we split the dictionary into half and we're like, no, it's not on the right. Let's split on the left half. Let's split. So that is how binary search works. So if you split it into half and you did not find because S you found out S. So you will now take the left half and you'll split the left half. And again you perform the same algorithm till you end up at Raj, right? Now that's a classical example of binary search which we use in day to day life. But when I take the coding problem example,"
+    },
+    {
+      "chunk_id": "L045_C5",
+      "start": 286.28,
+      "end": 347.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=286s",
+      "text": "Now that's a classical example of binary search which we use in day to day life. But when I take the coding problem example, you'll get to know the algorithm in much depth. But as of now, it's an overview where to use binary search, wherever the search space is. Search space, the search space was the entire dictionary is sorted. It can be an array related problem. It can be any problem statement. It doesn't necessarily have to be an array. It can be anything. As long as the search space is sorted, I can probably apply binary search in order to find out my answer. Keep that in mind. So what I can say is we have kind of got a real life example. It's time to go to a coding problem example. Let's go. So for the coding example, what I've done is I've taken an array and again, as you know, it will always be sorted. So the array is sorted. Imagine I ask you, hey, if I give you a target of five, can you help me find out five in this given array? So what is the generic way that you can do? Again, you'll start from three, then you'll go to four, then you'll go to six, then you'll go to seven, then you'll go to nine, then you'll go to 12, then you'll go to 16, then you'll go to"
+    },
+    {
+      "chunk_id": "L045_C6",
+      "start": 347.08,
+      "end": 414.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=347s",
+      "text": "you'll go to seven, then you'll go to nine, then you'll go to 12, then you'll go to 16, then you'll go to 17. And you will say that five is not there, right? Imagine if I give you the target as something like six. In this case, I give you the target as six. In that case, you'll go to three, four, six, and you found out. So I'm asking you to find out the target. Again, we are taking into consideration this thing that this is a unique array, it will not have duplicates. So if target does exist in the array, it will only exist at a particular index. So I want the index number. So if I have to write down the index number, can I say it'll be 01234567 for sure. So I'm asking you to find out the target six. So over here, you got the six. So it is like 123 steps. But what if the target was 17? In that case, you would have ended up iterating the entire array. And the time complexity would have been a big O of n, where n is the length of the array because you have iterated through the entire array. This is where something like binary search comes in. But as of now, let's understand binary search by taking this particular example where target is six. So"
+    },
+    {
+      "chunk_id": "L045_C7",
+      "start": 414.04,
+      "end": 479.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=414s",
+      "text": "like binary search comes in. But as of now, let's understand binary search by taking this particular example where target is six. So binary search says, which is my search space and I know the entire array is where you have to perform the search. So in order to store the search space, we use couple of variables in binary search. It's basically like we keep a pointer as low at the first index, which is the zeroth index, we keep a pointer high at the last index, which is basically n minus 1th index. And we say everything between low and high, very, very important. Everything between low and high is considered as my search space, got it. So as of now, my search space is this much, I'm looking to find out six, if you remember the dictionary example, we have to split it into half. So probably split it into half. So if I have to split it into half, we can introduce another variable middle. And I can say what is the value of low that is zero, what is the value of high that is seven, can you divide it by three, that is 3.5, which is, we'll take an integer. So that's three. So the third index, very important, it's the third index. So the third index is this, and you're writing the index over here, just in case you're confused. So third index is this. So I've figured out the"
+    },
+    {
+      "chunk_id": "L045_C8",
+      "start": 479.16,
+      "end": 543.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=479s",
+      "text": "is this, and you're writing the index over here, just in case you're confused. So third index is this. So I've figured out the mid and I pointed it. And let's see what is at the mid seven, is seven equivalent to the target? No. So can I say the six will always lie on the left half, will always lie on the left half. And if seven is not equivalent, nothing on the right will be equivalent to six because it's a sorted array. And if seven is not, everything on the right of seven will be greater than seven. Thereby you can never find six on the right, thereby you can never find six on the right. Correct? So I'll never find it here. I'll never find it here. So why to keep the search space similar to dictionary, why to keep the search space. This is why I will say, hey, hi, can you move back to this portion? Can you trim down your search space? That means come to one place before mid, very important. Come to one place before mid. So if I come to one place before mid, I cannot, I cannot delete the array, but I can trim down the search space. Now can I say the search space is this much? If you remember at the starting, I told you everything between low and high is your search space."
+    },
+    {
+      "chunk_id": "L045_C9",
+      "start": 543.92,
+      "end": 613.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=543s",
+      "text": "search space is this much? If you remember at the starting, I told you everything between low and high is your search space. So I'm sure that my search space is this much. I'm very much. Okay, fine. So again, we have a limited search space. Again, we'll do the same thing, split it into half. Let's split it into half. So we go mid equal to low plus high, low is index zero, high is index two by two equal to one. So the mid will be pointing to index one. Again, we do the same thing. Is this four equivalent to six? I'm like, no, it is not. This four is not equivalent to six. So what can I do? Like not possible. So I have to eliminate a search space. So six is greater than four. So it will be on the right. So everything on the left of four, it can never be there. So I'll kind of eliminate this portions. Thereby, the low will say, probably I'll move ahead and I'll move to one place ahead of mid, ahead of mid. Thereby, this will be my trimmed search space. This will be my trimmed search space. Thereby, low and high are pointing to the same index because we already have figured out that it will never be here. After that, we figured out it will never be here. Then we are over"
+    },
+    {
+      "chunk_id": "L045_C10",
+      "start": 613.86,
+      "end": 680.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=613s",
+      "text": "have figured out that it will never be here. After that, we figured out it will never be here. Then we are over here. Let's do the same thing again. And say mid equal to low plus high. This time low is two, high is two by two, index is two. So the mid will also point to six. And this is the point we say six is equivalent to six. Thereby, we found it. We found it at the index two and that is my answer. So in this example, you figured out six at the last point like where the search space was the least. What if the target was something like seven? In that case, you would have figured out right at the starting. When you took the low here and high here, you would have directly figured out seven. So whenever you figure out, you stop, you don't do any further because it's a unique sorted array and you have to find just one occurrence of that element. Got it? Let's probably change the example. What I'll do is I will change the target this time. Let's keep the target as 13 so that we see if we can figure out 13 is there. So if you see in the array, 13 is not there. So let's see how it works. If an element is not there. So initially, where is low? Low"
+    },
+    {
+      "chunk_id": "L045_C11",
+      "start": 680.86,
+      "end": 745.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=680s",
+      "text": "array, 13 is not there. So let's see how it works. If an element is not there. So initially, where is low? Low is here. Where is high? I will be here because initially we start with the entire search space. So let's quickly start off with mid. What will be mid? Zero plus seven by two. That's three point five. That's equivalent to three. So mid will be here. This time what will happen? We will compare seven with 13 and we'll figure out it's not. And 13 is greater. 13 is greater than seven. So it will never be on the left. It will never be on the left. So low will come to one place ahead of mid and we'll re-update mid. What will be the re-updation of mid? Low is four, high is seven by two, 11 by two, five point five. That's five. So mid will be pointing to 12. Perfect. Let's again do the same thing. 12, 13. No. So anything on the left of 12 is not possible. So basically what will happen? The low will go to one place ahead of mid and the low will go here. Perfect. Very good. What's the next search space? This much. I have to figure out the middle. What will be the middle? Six is low, seven is high, six by seven is six point five, which is equivalent to six. So"
+    },
+    {
+      "chunk_id": "L045_C12",
+      "start": 745.6,
+      "end": 813.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=745s",
+      "text": "will be the middle? Six is low, seven is high, six by seven is six point five, which is equivalent to six. So the mid points to the sixth index. Perfect. What will be the next thing? If the mid is pointing to the sixth index, like, okay, 16, 13 is kind of lesser than 16. So thereby the right portion gets eliminated. Thereby the right portion gets eliminated. So the high will move to one place before mid. So it moves here and I'll again eliminate mid. So this time, before we go to the next step, do you observe something? I do. The high has gone to the left of low. Thereby the search space is, there's no more search space because we know the search space is always between low to high. But if high has gone here, there's no search space. So we have ran out of search space. If that happens, that means element is not there and we can return minus one stating we cannot find it out. It's not present. So this is how the binary search works. So you have understood binary search with the coding problem example. It's time to write the iterative code. Again, I'll be writing the pseudocode so that you can write in either of these languages. If you want either of these languages, you can find the link in the description and you can open it in parallel"
+    },
+    {
+      "chunk_id": "L045_C13",
+      "start": 813.52,
+      "end": 886.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=813s",
+      "text": "these languages. If you want either of these languages, you can find the link in the description and you can open it in parallel as well to just have a comparison. So if you write the pseudocode, I know I'll always have a function and it will always give me an array. It will give me the size of the array and it will give me the target. That is something which I know for sure. What is the initial search space? I know the initial search space is between low and high. So we'll keep low as zero and high as size minus one. That's my initial search space, which is basically low here and high will be here. That is something which we know. What are we doing? We're kind of keeping on searching, keeping on searching. So it's a repetitive process. So whenever repetition comes, looping comes. Correct? So we will keep on looping. Can you tell me till how? Like till what time will I loop? Till I run out of search space? And you remember, if you remember, till low is lesser than high, we are still having search space. The moment low cross, like high crosses low or low crosses high, the search space is done and dusted. So I know the condition. And now I'll write mid equal to low plus high by two. That's what I'll write. Very obvious. Because at first time, the mid will be pointing here"
+    },
+    {
+      "chunk_id": "L045_C14",
+      "start": 886.46,
+      "end": 959.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=886s",
+      "text": "mid equal to low plus high by two. That's what I'll write. Very obvious. Because at first time, the mid will be pointing here and then we will do a comparison of this seven with this target. So the first thing I'll do is I'll say, hey, array of mid, are you equivalent to the target? If you are, I found my element. I found my element. Why do I go further? My element is present at the mid index. So I'll straight away return. Straight away return. Otherwise, what can be the case? We have seven. Over here we have a target. So 13 is greater than seven. So either the target is greater. In that case, the left search space will be eliminated. Or what if the target was six? In that case, six was lesser than this. So the right will be eliminated. So if this is not the case, the other case will be what if the target is lying on the right? That means target will be greater. Target will be greater than array of mid. That is why it is lying on the right. So low will move to one place ahead of mid. So basically if mid was here, I'll just take the low and I'll move it here. This line will do it. If the target is 13, this line will move the low to here. And again, it will come back"
+    },
+    {
+      "chunk_id": "L045_C15",
+      "start": 959.1,
+      "end": 1027.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=959s",
+      "text": "This line will do it. If the target is 13, this line will move the low to here. And again, it will come back and do the search on this. Same process goes on because of the while loop. So let's emit this. What if the target was six? In that case, do I need to write the condition where I say, hey, is six lesser than seven? Do I need? Because we have already checked for equal to. We've already checked for greater. So what's the other case? It'll always be So I'll go to else and I'll say in that case, high will be made minus one. Why? Because imagine if target is six and this will get eliminated, this high will come out to be here, which is made minus one. Quite simple. And once the while loop is completed, imagine this line never got executed. That means the search space was exhausted and I'll end up at this line. In that case, I'll end up returning minus one. That's how the iterative pseudocode will look like. Quite simple, isn't it? So I've written the same code in the code editor. Again, you can find the problem link in the description. You can try it out from there. So what I'll do is I'll quickly go and submit it in case you want the JavaScript, Python, everything is there in the description. So this runs quite simple. But this one was the"
+    },
+    {
+      "chunk_id": "L045_C16",
+      "start": 1027.82,
+      "end": 1097.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1027s",
+      "text": "it in case you want the JavaScript, Python, everything is there in the description. So this runs quite simple. But this one was the iterative one because we were using a while loop. So I can say I have understood the iterative code as well. It's time to understand the recursive code. So let's go ahead and understand the recursive implementation of binary search. So just a disclaimer, please, please make sure that you should have seen the step 1.5 where I've covered up basic recursion. If you have seen that, then only come up and see the recursive implementation. Otherwise, you can skip the recursive implementation. As of now, you can watch it afterwards. You have an idea about recursion, got it? So you have to do the recursive implementation. When is recursion applicable? Again, when we perform same task repeatedly, right? Because if you're performing the same number of steps repeatedly, because over here, we're kind of taking the mid, then we are comparing or else we're comparing greater or else we're comparing smaller. So these three steps is what we are doing. We're basically taking the mid. If it's equal, we found it. Otherwise, we say greater, trim down the search space or smaller, trim down the search space. It's a repetitive step that we are doing. Initially, we start with this, then probably if the target is 13, then we eliminate this, then we have"
+    },
+    {
+      "chunk_id": "L045_C17",
+      "start": 1097.14,
+      "end": 1165.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1097s",
+      "text": "that we are doing. Initially, we start with this, then probably if the target is 13, then we eliminate this, then we have this. So it's a trimming down of search space, but the steps are same. So whenever the steps are same, we can reuse the code, we can reuse the code. And that is when a recursion comes in. So probably I can say, what if there's a recursive function? There's a function which takes an array and takes a low and takes a high. So there's an array which takes a low and takes a high. So initially, can I see the low is here and the high is here for this target 30. Just imagine for this target 30. So low goes as 0th index and high goes as 7th index. What's the first step if you remember? For the mid, it will take up 7 and figure it out that 7 is not equivalent to 13. So the left has to be trimmed. So thereby, this low will kind of move to this. Do you agree that low will move to here? You do because the left search space will be trimmed because you have to find 13. So you again call the same function, you'll again call the same function. But this time you'll call it with array, a different search space. This time you'll say the search space is between 4 and"
+    },
+    {
+      "chunk_id": "L045_C18",
+      "start": 1165.5,
+      "end": 1227.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1165s",
+      "text": "But this time you'll call it with array, a different search space. This time you'll say the search space is between 4 and 7. So what you did was you trimmed down the search space, you trimmed down the search space. Again, you can do the same thing because the recursive function is performing the same steps. So you'll be like, what is mid? The mid will be this. Again, you'll compare 12, 13. No. So the search, this low will go and the low will be somewhere here. So this time again you'll call f of array with the search space as 6, 7. And when you try to find out the next time the high will be here. So it kind of ends, it's kind of repeated thing that I'm doing. So that's why I can write a recursion because I'm going to call the same function with different values of low and high and it will perform the same number of tasks. Got it? So what I'll do is I'll try to write the recursive code now. Can I say the recursive code? I'll just try to write it for one instance and that will make sure that it solves for all the other instance. How I'll explain you. So can I say I'll write a function and I know it will have an array, it will have a low, it will have a high. Can"
+    },
+    {
+      "chunk_id": "L045_C19",
+      "start": 1227.86,
+      "end": 1302.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1227s",
+      "text": "I'll write a function and I know it will have an array, it will have a low, it will have a high. Can you tell me, you know, in recursion, what is the first thing that you have to write? The base case. Over here, what is the base case? When it stops. When did it stop? When the search space was exhausted. So can I say at any moment low is greater than high, it means it's over. There's nothing to do. It's over. So at that moment we will say return one minus one. That's our base case. That is our exhaustion case. Done. What is the next thing? Mid equal to low plus high by two. Can I say that's our next thing? I can. What's the next step we were doing? We were checking if we are finding the element at that mid index. I'll be like, okay, if array of mid is equal to equal to, obviously we have to have a target as well. I forgot to carry the target, but yeah, you'll carry the target. So I'll have to have a target. If I find it, can I say, okay, I found it at the mid index, so you can go back. Quite simple. Now what was the other case? The other case was what if the target was supposed to be lying on the right of the mid? In that case, the left search space will"
+    },
+    {
+      "chunk_id": "L045_C20",
+      "start": 1302.3,
+      "end": 1363.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1302s",
+      "text": "was what if the target was supposed to be lying on the right of the mid? In that case, the left search space will be eliminated. So I have to, in the next step, I have to perform a search space on the right half. And how do I do this? I know this function will do it for me. So I'll kind of call this function. We'll call this function, hey function, take the array, but this time the low will be mid plus one because you have to perform on the right half. High will be this and the target will be this. And please give me. So when you give me, I will return that. When you give me, I'll return that. So if this is happening, if this is, so this is not happening. And if this is not happening, there's only one other case where the target will be on the left because greater, so it will be lesser so that we don't have to write in condition for it. I'll always, that'll go to else. So I can simply write, this line will be always executed, right? So I'll write return, array, hey, can you search on the left half, which is mid minus one and target. And when you find it, please return it. When you find it, please return it quite simple. And that's how the recursive code will"
+    },
+    {
+      "chunk_id": "L045_C21",
+      "start": 1363.18,
+      "end": 1427.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1363s",
+      "text": "when you find it, please return it. When you find it, please return it quite simple. And that's how the recursive code will look like. That is how the recursive code will look like. You want a dry run? Let me quickly give you a dry run. So let's quickly do a dry run for the target 13 and let's understand how it works. So if low is here and high is here initially, the first call will go for when low is zero and high is seven. What happens? It finds out the mid to be at this portion, which is this line, correct? Because this line is not executed. And then this is false. Then it says target 13 is greater than the element seven. So can you please call this? So it says, call the function with mid plus one, basically with low pointed here and high pointed here. So it kind of calls another recursive function where it passes the low as four and the high as seven. That is what it passes. Let's go and perform the next set of recursion. So can I say this time low comes as four and high comes up as seven, right? So if I have to solve it, maybe I'll just erase it. And can I write low as here? So this time where will be mid? Mid will be somewhere here. Mid will"
+    },
+    {
+      "chunk_id": "L045_C22",
+      "start": 1427.66,
+      "end": 1490.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1427s",
+      "text": "erase it. And can I write low as here? So this time where will be mid? Mid will be somewhere here. Mid will be somewhere here. So if mid is here, what do I need to check? If 12 is equivalent to target? No, it is not. Is 13 greater than 12? Yes, it is. So it will again go and call another recursion. It will again go and call another recursion. And this time it will call with, this low will go here. So six comma seven is what it will call with. So let's quickly erase this. And low is here and high is here because it found here. So from this line, it will go and call. So let's write the next set of recursion. So when this time recursion is called, low is six and high is seven, right? And this time the mid will be performed. And what will be mid? Mid will be this element, 16. What happens? Is it equivalent? No. Is it greater? No. Is it lesser? Yes. So this time, this call will be done. So it will go ahead and call it. So let's quickly call it. This time, what call will be done? This high will move to one place back. This high will move to here. Hence, the call will be made for six comma five. Very, very important. Hence, the call will be"
+    },
+    {
+      "chunk_id": "L045_C23",
+      "start": 1490.86,
+      "end": 1557.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1490s",
+      "text": "high will move to here. Hence, the call will be made for six comma five. Very, very important. Hence, the call will be made for six comma five. So this time when the call is made for six and five, what happens? The base case is executed and it returns minus one. So this returning of minus one goes here and I can quickly erase this. So hence, the entire function will get erased and it'll get a value of minus one. So this gets a return minus one. So this time, this will return minus one. And again, this will get erased with minus one. Let's quickly erase with minus one. And this return minus one will now return minus one. So what will happen? This will get erased with minus one because it got a value of minus one. Thereby, this will return minus one. And thereby, this function will return minus one stating it was never found. This is how recursion works. Magic, right? Wonderful. This is how I've taught the entire recursion. So please make sure you check out the recursion playlist as well as a proper in-depth playlist. So I've written the recursive code over here. Now we have been asked to write a function. So what I'll do is I'll just call the recursive code. I'll pass on the nums. The low will always be zero. The high will be size minus"
+    },
+    {
+      "chunk_id": "L045_C24",
+      "start": 1557.82,
+      "end": 1630.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1557s",
+      "text": "I'll just call the recursive code. I'll pass on the nums. The low will always be zero. The high will be size minus one. That's the last index. And I'll pass on the target as well. Once I've done this, I'll quickly go ahead and run this and see what is running fine. Should be running fine. It does. It's quickly submitted and it will be submitted again. You can try out the problem from the link in the description so I can say that the recursive code is done as well. What is the next thing? Time complexity is very important to understand the time complexity. Let's analyze what is happening. Can I see when I have a 32 size array? What am I doing? I'm saying the entire search space is of 32 length. And then I'm putting a mid. Then I'm putting a mid. I'm either eliminating the right half or either I'm eliminating the left half. So kind of kind of I'm trimming 32 down to somewhere near about 16. Somewhere near about 16. Might not be 16. Might not be 16. Why? Let me give you an example. Imagine in this case low was here, high was here and mid was here. So when we trim down the left search space, we're still left off with four elements. When we trim down the left search space. But when we trim down, when low is here and high is here and mid is here, when we"
+    },
+    {
+      "chunk_id": "L045_C25",
+      "start": 1630.46,
+      "end": 1700.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1630s",
+      "text": "trim down the left search space. But when we trim down, when low is here and high is here and mid is here, when we trim down the right search space, we're left with three elements. So it might be half or might be slightly lesser than half. Might be slightly lesser than half. Got it? So might be 16 or might be 15 but somewhere near about that. Just taking some approximations to find out the time complexity. 16 will be trimmed down to 8. Somewhere near. 8 will be trimmed down to 4. 4 will be trimmed down to 2. 2 will be trimmed down to 1. And whenever the size is 32, how many steps are you performing? You're just performing some one, two, three unit operations. There is no for loop. It's like either there or there or there. That's it. That's what you're doing. Correct? It's kind of unit operations. Unit operations. All one, one atomic operations. So how many steps exactly you did? Probably one, one more here, one searching here, one searching here, one searching here, one searching here, which is an overall of six steps. Right? So if you see something, 32 is written as 2 to the power 5. So if you do for 64, for 64 to come down to one, you'll find seven steps and 64 is 2 to the power 6."
+    },
+    {
+      "chunk_id": "L045_C26",
+      "start": 1702.3,
+      "end": 1778.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1702s",
+      "text": "you do for 64, for 64 to come down to one, you'll find seven steps and 64 is 2 to the power 6. So the time complexity is actually logarithmic of base 2 of n. That's the time complexity. Why? Because imagine if the size is 32. Can I write log base 2 32? Can I write log base 2 2 to the power 5? Can I write 5 into log 2 base 2? Because the power comes ahead. You know, base is same and this is same. So this will be 5 into 1. Hence it will be 5, which is kind of near about to 6. Kind of near about to 6 approximation. Five steps. That's why time complexity is logarithmic base 2 n because you're dividing it by 2. Hence the time complexity is logarithmic base 2 n. I hope you've understood the time complexity as well. It's time to understand the overflow case. Now we have taken an example of a coding problem. Thereby the example taken was an array and we always know an array will always have a size of 10 to the power 5, 10 to the power 6 or 10 to the power 7. Nothing more than that. So what if it's not an array and I'm giving you some random problem statement. The dictionary one. Just imagine. Just take an example of dictionary itself."
+    },
+    {
+      "chunk_id": "L045_C27",
+      "start": 1778.54,
+      "end": 1856.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1778s",
+      "text": "not an array and I'm giving you some random problem statement. The dictionary one. Just imagine. Just take an example of dictionary itself. Imagine I give you such an example where the search space starts from zero and the search space is still int max, which is the maximum the integer variable can store. The maximum the integer variable can store. Remember binary search is not only limited to the search in an array. It can be a search in a dictionary. It can be search in answers. We will be solving a bunch of problems and you'll see it's just not limited to searching in an array binary searches way more than that. So we're taking such cases where imagine your search space is not an array and it is somewhere between zero and int max. Imagine I take this dictionary where the page number one is or the dictionary is closed. The page number one is zero and the last page is int max. Imagine. So what are you writing mid as? Let's see. You're writing mid as low plus high by two. What if while performing binary search, you're trimming, trimming, trimming down and the low comes down to this portion. There's a portion where the search space is only this much. Might happen. Might happen. You add the last element. Even in the array it can"
+    },
+    {
+      "chunk_id": "L045_C28",
+      "start": 1856.3,
+      "end": 1931.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1856s",
+      "text": "where the search space is only this much. Might happen. Might happen. You add the last element. Even in the array it can happen. No, you're just in the last element. The last element is your search space. Might happen if you're searching for something might happen. Right? So imagine the search space is just the last. So what are you giving low as? Low you're giving as int max. High you're giving as int max. So it's like int max plus int max. So it will overflow. Why? Because it is two into int max and that cannot be stored in an integer. Cannot be stored in an integer. So the solutions are either you take long long while assigning low and high. Just assign long long to low and high. That's one of the solutions. Or the other solution is if you're very sure that your search space is between zero and int max. You're very sure. Because if it is still int max you don't need a long long. If you're very sure about that you should write it. You should write the mid as like this. Low plus high minus low by two. That's an alternative way of writing. Finding out mid. Why does this work? Simple maths. If I just take the denominator then I can spread it across and this will be it. And then I can write two low minus low will be low plus high by two. It's it's"
+    },
+    {
+      "chunk_id": "L045_C29",
+      "start": 1931.9,
+      "end": 1993.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1931s",
+      "text": "across and this will be it. And then I can write two low minus low will be low plus high by two. It's it's the same as this. It's the same as this. The only difference is we are subtracting. So int max minus int max will be zero. Thereby it will not go into two into int max. So the alternative is. So if you are seeing the search spaces around int max. Please make sure you assign mid as low plus high minus low by two. In that case you don't have to take long long or long. Integer will work. But this is only valid if the search space is still int max not beyond that. So I hope you have understood the overflow case as well. So I hope you have enjoyed the entire lecture. So I'll go back to the sheet. I'll mark this as done. As I said during the start that I'll not just be solving this problem. I'll be explaining your binary search in depth. I hope I have kept my promise. So just please please make sure that you hit that like because it's a small thing for you. But it's something that highly motivates me. If you're new to our channel, please please do consider subscribing to us. And if you haven't followed me on Instagram, Twitter and LinkedIn, you can find all my profile links in the description."
+    },
+    {
+      "chunk_id": "L045_C30",
+      "start": 1993.66,
+      "end": 1997.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=MHf6awe89xw&t=1993s",
+      "text": "to us. And if you haven't followed me on Instagram, Twitter and LinkedIn, you can find all my profile links in the description. With this I'll be wrapping up this video. Let's meet in some other video till then bye bye take care."
+    }
+  ]
+}

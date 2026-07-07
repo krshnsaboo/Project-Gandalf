@@ -1,0 +1,64 @@
+{
+  "lecture_id": "L196",
+  "lecture_number": 196,
+  "lecture_title": "DP 15. Partition Equal Subset Sum | DP on Subsequences",
+  "youtube_url": "https://www.youtube.com/watch?v=7win3dcgo3k",
+  "chunks": [
+    {
+      "chunk_id": "L196_C1",
+      "start": 0.0,
+      "end": 75.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=7win3dcgo3k&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is the 15th lecture of the dynamic programming playlist and we are continuing on the pattern DP on sub sequences or subsets with a target. So today we will be solving the problem partition equal subset sum. So what is the problem statement? You're given an array of N positive integers. Your task is to find if we can partition the given array into two subsets. So given an array, you have to partition them into two subsets such that the sum of the elements in both the subsets are equal. For an example, if I've been given two double three, three, four, five as the array, I can divide them into a subset which is two, three, five and the other subset as three, three, four, and both of them will be having equal sum 10. So the task is to tell them true or false, like can you partition or can you not? So if you carefully see this two, this three and this five belongs to the subset one and you can call it a sub sequence as well. And this is the subset two, which is three, three, four. This is sub array, but yeah, you can also call the subset sub"
+    },
+    {
+      "chunk_id": "L196_C2",
+      "start": 75.92,
+      "end": 151.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=7win3dcgo3k&t=75s",
+      "text": "is the subset two, which is three, three, four. This is sub array, but yeah, you can also call the subset sub sequence because every sub array is a sub sequence. So can you do this? Now the prerequisite to solve this problem is the lecture 14 of the DP playlist. So if you have not seen the lecture 14 of the DP playlist, right now, pause this video, go back and watch the lecture 14, then come back. So in the lecture 14, we did solve a problem where we were given an array. Yes, we were given an array and we were given a target. And the question was, can we have a subset with a sum which is equivalent to the target? That was the question in the lecture 14. Now over here it states you need to take the array. Yes, you need to take the array and you need to divide them into two subsets, exactly two subsets. This is where the catches divide them into exactly two subsets. That's where the catches. So if I'm saying, can you divide them into exactly two subsets such that the someone is equal to some two, that is what they're basically saying. So can I see this? Can I say this?"
+    },
+    {
+      "chunk_id": "L196_C3",
+      "start": 151.58,
+      "end": 227.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=7win3dcgo3k&t=151s",
+      "text": "someone is equal to some two, that is what they're basically saying. So can I see this? Can I say this? If I'm saying the entire array sum is S the entire array sum is S and I'm dividing them into two blocks. Yes, I repeat. I'm dividing them into two blocks. Then one of the blocks, like one of the subsets will have some as S1 and the other one will have subset as subset sum as S2 and I know S1 is equal to S2 will be equal to S by two where S is the total sum. Do you agree or do you not agree? You have to, because if I'm dividing an entire array into two different subsets, the sum of a single subset will be half of it. Right? So we have figured out that we need to make sure that the subset has to have a sum of S by two. The first thing is very short. If S is odd is if S is having an odd sum, then the division is not possible because you cannot have an odd sum divided into two subsets with equal sum. That is definitely not possible. So if it is odd, it's not possible. Now, if it is even, then what is the problem? Can I say I'm looking for a subset with a sum"
+    },
+    {
+      "chunk_id": "L196_C4",
+      "start": 227.12,
+      "end": 305.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=7win3dcgo3k&t=227s",
+      "text": "possible. Now, if it is even, then what is the problem? Can I say I'm looking for a subset with a sum S by two? Can I say I'm looking for a subset with a sum S by two? Now you will be like striver if I'm looking for a subset, then how will I get the second subset? Are a logic logic. If one subset you got as S by two, for an example over here, if you took two, if you took three, if you took five and you got, because over here the total sum was 20 and you can just do the total summation and the total sum comes out to be 20. So if you're saying these three elements are giving you some as 10, then if those elements in subset one gives you some 10, the remaining elements are bound to give you the remaining sum, which is S minus S by two. That's S by two. So you get the remaining sum as 10 also. So I just need to check if I can get one subset because if I can get one subset, that automatically means that I can get the second subset as well. So the question boils down given an array, yes, given an array, check if we can have a subset or subsequent with a sum S by two where S is equal to the total sum. And where have we done this problem? Subset sum"
+    },
+    {
+      "chunk_id": "L196_C5",
+      "start": 305.64,
+      "end": 379.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=7win3dcgo3k&t=305s",
+      "text": "subsequent with a sum S by two where S is equal to the total sum. And where have we done this problem? Subset sum equal to target. This same problem was done in the lecture 14 where we were given a target, we were given an array and we were asked, can we get a subsequence with the sum target? So that's what you just need to do. So very simple. You just make sure whatever is given to you, you check for odd condition. If it is odd, then the answer will be false. Otherwise take the sum as a total sum by two and you can call the lecture 14 function, call the lecture 14 function with the array and S and if this gives a true, it's true. Otherwise it's going to be false. Simple as that. So if you just do this, this will solve this problem. So without actually wasting any time, let's get started into the coding. So this was the lecture 14 which stated subset sum equal to K. So what I'll do is I'll just copy paste the function and I'll bring it over here to, oh yeah. So we have brought that in and we are given the array, we are given the N. So let's have the sum as zero and we can definitely run across i equal to zero, i less than N, i plus plus and we can say"
+    },
+    {
+      "chunk_id": "L196_C6",
+      "start": 379.12,
+      "end": 452.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=7win3dcgo3k&t=379s",
+      "text": "sum as zero and we can definitely run across i equal to zero, i less than N, i plus plus and we can say sum plus equal to array of i. So we have made sure that the summation is there or we can say like to be very precise, we can say total sum. That will sound much better total sum. Now can I say the target that I'm looking for is tot sum by two? I am. But before that, can I say if the tot sum is an odd number? Yes. If it is an odd number, then in that case I will have to return a false because the odd number cannot be divided into two subsets with equal sum. So that's what we will do. And over here, can I say, I will just call this function if subset of sum, what is the first thing? N. So I know the size of the array is N. The target that I'm looking for is the target and I have the array. So I'll pass on this and if this gives me a true, it's a true or else it's a false. So basically whatever this guy gives you, you return that. Yes. Whatever this guy gives you, you simply return that and that will be your answer. So we just run it off. Let's see if it is running fine. It is. And if I submit this, you will be seeing that this"
+    },
+    {
+      "chunk_id": "L196_C7",
+      "start": 452.58,
+      "end": 520.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=7win3dcgo3k&t=452s",
+      "text": "just run it off. Let's see if it is running fine. It is. And if I submit this, you will be seeing that this absolutely works fine. You see, I'm getting a score of a hundred. So something to observe here as I directly took the space optimization solution. So I just copy pasted. So what will be the extra time complexity? And the lecture 14, we were using a time complexity of big O of N into target. Right. And over here we have taken an array. So at max, you're just adding a time complexity of summing it up. So that's a big O of N will be added to the time complexity and there'll be no addition to the space. Now someone did have a comment where he stated that striver, if you are declaring the previous to be of size K plus one, which is basically the target and you are saying array of zero, what if, what if the array of zero is greater than the target? So he had a valid point. So if that's the case, just guys make sure if array of zero has to be lesser than equal to K, then only this will be working. So he had a valid point and this is the just similar slight change that we have to do in the lecture 14 as well. It did pass the constraints because the constraints"
+    },
+    {
+      "chunk_id": "L196_C8",
+      "start": 520.9,
+      "end": 572.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=7win3dcgo3k&t=520s",
+      "text": "just similar slight change that we have to do in the lecture 14 as well. It did pass the constraints because the constraints were making sure that all the elements were kind of a lesser than like the target was always greater than the elements, but just make sure that whatever area of zero is, it has to be lesser than equal to the target because we're declaring the arrays of size K plus one. Right. So just make sure you just need to do this because then only it's possible. Otherwise it's not possible in the previous lecture 14. That was the only mistake that I did. Thank you to whoever commented that I don't remember the name, but someone did comment it. So thank you for that. So guys, I hope you have understood the explanation. So just in case you did, please, please, please make sure you like this video and to continue our tradition, make sure you comment understood under the video. And yes, if you are new to our channel, please, please, please, please, please do consider subscribing to us because we do put a lot of DSL content and with this, let's wrap up this video and meet in the next one."
+    }
+  ]
+}

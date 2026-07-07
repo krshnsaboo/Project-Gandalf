@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L125",
+  "lecture_number": 125,
+  "lecture_title": "L53. Largest BST in Binary Tree",
+  "youtube_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo",
+  "chunks": [
+    {
+      "chunk_id": "L125_C1",
+      "start": 0.0,
+      "end": 76.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, finding the largest BST in a given binary tree. So you will be given the root of a binary tree and you have to find the largest BST among that. Now, when I say BST, what does that mean? If you have given node, everything to the left of that node is smaller and everything to the right of that node is greater than that node. That is what we refer to the definition of BST. Now if you're given this binary tree, is this a BST? The answer to that is no. Why? Because if you see this 10, there is something on the right which is 7. Like 7 is smaller than 10 and that's not allowed. Everything to the right of 10 should have been greater. Correct? So which is the largest BST? Is this a largest BST? I don't think so. Because this is 15 and everything to the right of 15 should have been greater. Is this a largest BST? This is because 7 itself is a BST. So I can say I got someone of size 1 which is a BST. Is"
+    },
+    {
+      "chunk_id": "L125_C2",
+      "start": 76.0,
+      "end": 152.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=76s",
+      "text": "because 7 itself is a BST. So I can say I got someone of size 1 which is a BST. Is this a BST? Again, yes, because 5 to the right is greater to the left is smaller. So the largest BST that you got was of size 3. So what they want you is to return this size to them. So yeah, how will you solve this? Now if you ask this question in an interview, the first solution that should come to your brain is definitely the brute force approach. What is the brute force approach? Now I hope you have seen my previous video of this playlist which is validate a BST. Like I give you a root of the tree and you tell me if that's a valid BST or not. If you have seen that video, this is a cakewalk for brute. For brute, for brute it is like you go to first 10 and you pass on the 10 to the validate BST. The validate BST says, hey listen, it's not a valid BST. So I'm like, okay. Next I go to five, I pass on five to validate BST and it says me, yes, it's a valid BST. The moment it says me that, hey, it's a valid BST. I then again pass this five to someone who finds"
+    },
+    {
+      "chunk_id": "L125_C3",
+      "start": 152.4,
+      "end": 221.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=152s",
+      "text": "BST. The moment it says me that, hey, it's a valid BST. I then again pass this five to someone who finds me the number of notes. Again, you can do any traversal to figure out the number of notes. What I'm saying is five will be my root of the tree. So it will give me the number of notes. So I can say I can just go across to every node and pass that to validate and BST and that will tell me now validate a BST takes big O of N. If you've seen my video and going to every node will take big O of N. So it is technically a big O of N square or a quadratic solution, which is the brute. So you can give this to the interviewer. The interviewer would be happy, but he will ask you to optimize this. And this is where the better approach comes in. So let's quickly discuss the better approach, intuition and the thought process. Now, what is the intuition and thought process behind getting to the algorithm of the better process? Something that I did observe was if I have a node on the left, no matter how many notes I have, if I can figure out among them, which is the largest and if, if, if the node, we just read it over here, if the node is greater"
+    },
+    {
+      "chunk_id": "L125_C4",
+      "start": 221.18,
+      "end": 299.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=221s",
+      "text": "among them, which is the largest and if, if, if the node, we just read it over here, if the node is greater than the largest, then, then I can surely see all the notes on the left are smaller than this. No, make sense. Similarly, if on the right, I can get the smallest, again, largest of all notes, smallest of all notes on the right. If I can get the smallest of all notes and I can say the node is smaller than the smallest, I guess smallest is greater. If the smallest is greater, everyone on the right will be greater. So that makes sense. If I can just carry the largest as well as the smallest, I think, I think I can, I can now what's the other thing that's, that's coming into my mind. How do I check for size? Again, that's pretty simple. If I say the left guy is having X elements and the right guy is having Y elements, the number of elements, this, this BST will have, because this is having X, this is having Y. So the number of elements, this entire stuff is very simple. One for itself and X from left and Y. That's how you can do this. Now the question might arise, but Shraiva, how do you make sure that these guys are BST? So can I say, if"
+    },
+    {
+      "chunk_id": "L125_C5",
+      "start": 299.78,
+      "end": 376.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=299s",
+      "text": "this. Now the question might arise, but Shraiva, how do you make sure that these guys are BST? So can I say, if you do a traversal and you start from the bottom, if the bottom guy is BST, and then if it connects to this and it satisfies the condition, this is a BST. Then if it connects to this, then this is a BST. And then if it connects to this and satisfies the condition and this is a BST, you can just go on. If you just built it from the bottom and then you can, you can do it. So makes sense, makes quite a lot of sense. So what I will do is, I'll take a bigger binary tree and try to have this intuition and thought process into an algorithm. Now what I require is largest and smallest. So I will create a container or a class or a struct or a pair of pair, whatever you wish to. And I'll store the largest, the smallest, because you need both the smallest and the largest. And the size. These are the things that I will always carry. Now let's quickly check out for this particular example. Now what I know is, if you're standing at a node, in order to check for a BST, the left has to be computed because I need the largest on the left and I need the smallest on the"
+    },
+    {
+      "chunk_id": "L125_C6",
+      "start": 376.5,
+      "end": 453.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=376s",
+      "text": "for a BST, the left has to be computed because I need the largest on the left and I need the smallest on the right. So the left has to be computed and the right has to be computed. Now which traversal will you follow so that the left and the right both are computed? The answer to that is, yeah, very obvious. That's a post-order traversal because in post-order, you go to left, then you go to right, and then you do the business with the node. Then you visit the node. That's what you do. So yeah, you're going to follow the post-order traversal. Post-order says left, left. This guy does not have a left. So no left, no left. This guy has a right. This guy is a leaf node. Now for a leaf node, if it's a single node, can I always see that, hey, it's a single node, so this is definitely a BST? I can. So if it is a BST, I repeat, if it is a BST, you say size 1 and the guy itself will be the largest and the guy itself will be the smallest. Perfect. Now for 14, the left was no one and the right has been computed. So for left, for left, where I see that there is no one, what you can do is you can probably pass a dummy node. Like if it's null on the left or right, what you do is"
+    },
+    {
+      "chunk_id": "L125_C7",
+      "start": 453.34,
+      "end": 526.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=453s",
+      "text": "you can do is you can probably pass a dummy node. Like if it's null on the left or right, what you do is you pass a dummy node with size 0 because there's no one on the left. And what you do is for the largest, since there is no one, for the largest, keep an extreme small value. For the largest, you can keep it as int mean, int mean. And for the smallest, keep a very larger value so that you can easily compare. That is int max. So I'm saying for 14, on the left, I got 0 and I got the largest as int mean and I got the smallest as int max. And from the right, I got as 1, 17 and 17. So for 14 to be a valid BST, for this 14 sub tree to be a valid BST, so for 14 to be a BST, it has to be greater than the largest and the largest is a very minimal number. And from here, the 17, so it's a valid one. So can I say this guy forms a size 2 because size 0, size 1 will form a size 2 and this time the minimal will be himself. The larger will be 17 and the minimal will be 14. So I've said the larger is 17 and the minimal is 14. Again, makes absolute sense. So what"
+    },
+    {
+      "chunk_id": "L125_C8",
+      "start": 526.7,
+      "end": 595.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=526s",
+      "text": "the minimal will be 14. So I've said the larger is 17 and the minimal is 14. Again, makes absolute sense. So what I'll do is I'll take this and I'll move across to the next. Now for 15, the left is computed. It's time for the right. So let's go to the right. You go to 18 and then you go to 16. So 16 will say 1, 16 and 16. 19 will say 1, 19 and 19. So the moment you come to 18, 18 says on the left, who is it? It's 16. On the right, who is it? It's 19. So I say that, okay, that's pretty much correct. So I can say this is also correct. So size will be 3 because size was 1, size was 1. So size will be 3 and the minimal will be 16 and the maximum will be 19. Again, makes absolute sense because that is what it will be. The minimal will be 16 and the maximum will be 19. Now comes out to be 15. When I'm at 15, I look at the left. I look at the left, which is the largest on the left. That's 17. That's 17 on the left. Problem, problem. And on the right, who is the smallest? That's 16. Right"
+    },
+    {
+      "chunk_id": "L125_C9",
+      "start": 599.94,
+      "end": 672.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=599s",
+      "text": "left. That's 17. That's 17 on the left. Problem, problem. And on the right, who is the smallest? That's 16. Right is okay, but the left is not okay. So I can say this sub-tree cannot be a BST. So what you will do is, just to make sure this can never be a BST, you will pass the size 3 because you got a size 3 over here. So let's carry size 3. No harm in carrying size 3. But make sure you pass int max as such a big number so that in future, no one can be compared with that. So int max will be passed now in largest and int mean on the minimal. Just make sure you pass on very large numbers and very small numbers so that comparisons cannot like these comparisons cannot be done because if you're passing, you need the largest. So if you're passing the largest and extreme large, this comparison will never be true. Correct? So make sure you pass it. Perfect. So I passed it. Let's go to the right now. So go to the right 40, we'll go to the left. This is 1, 30 and 30. Similarly, this will be 1, 50 and 50. So this 60 says that's correct. So 60 will be like, I can be like 2 and the largest will be 60 and the minimal will be 50. Whenever you come to 40, 40 says on the"
+    },
+    {
+      "chunk_id": "L125_C10",
+      "start": 672.26,
+      "end": 747.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=672s",
+      "text": "be like 2 and the largest will be 60 and the minimal will be 50. Whenever you come to 40, 40 says on the left, I have 30 on the right. I have 50, which is again, correct. So this guy will say, okay, 2 plus 1, 3. So it's a 4 and the minimal will be, sorry, the maximum will be 60 and the minimal will be 40. Quite simple. Now you've got a size 4 again. You've got a size 4. Next, whenever you come to 20, 20 says from the left, what's the biggest number from the left? Int max. And you pass that int max. You remember, because this was not satisfying. On the right, it says, give me the smallest 40. Again, this is satisfying, but this tends out to be not satisfying. So I'm like, oh, it isn't satisfying. So if it is not satisfying, you'll be like, okay, it's not, it's okay. If it is not satisfying, I will not be doing anything. What I will say is I need the largest BST. Okay. I need the largest BST. So logically, what should I do? Shall I take three or shall I take four? Which one will I take? Oh, it's the larger one. That's four, four. And then again, int max and int mean passed. So ultimately when you, you are ending up the traversal over here,"
+    },
+    {
+      "chunk_id": "L125_C11",
+      "start": 747.58,
+      "end": 820.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=747s",
+      "text": "four, four. And then again, int max and int mean passed. So ultimately when you, you are ending up the traversal over here, when you're ending up the traversal over here, you've got the size 4, which was ultimately BST. So I started from the bottom and I started building it up. Right. And what I did was very, very simple. I just made sure that I was getting largest, smallest, and the size was very simple to add. It was nothing but one plus X plus Y. And if it's not matching, if, if, if, if not BST, then what I did was on size, I carried max of left size, comma right size and made sure the max was assigned to very max and the min was assigned to very min. That is what I made sure whenever it was not a BST. So that at the end of the day, I would be having whatever I got at the bottom, either at the left or the right, whatever I got, like over here, I got the four over here that was easily found out. Even I was carrying three. So it will always be found out and it will always make sure he himself is no more involved because I'm passing int max and int min. So this is how you can do it. And since we are doing a post-order traversal, the complexity is straightaway BGO of n. And"
+    },
+    {
+      "chunk_id": "L125_C12",
+      "start": 820.58,
+      "end": 887.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=820s",
+      "text": "So this is how you can do it. And since we are doing a post-order traversal, the complexity is straightaway BGO of n. And the space complexity, if you avoid the recursion, it will be BGO of 1. And that's, that's what you require. Yes, you are using three variables, but yeah, that's not a big concern. This is what the space complexity will be. So guys, I hope you have understood the explanation. That's time to check out the code. So as usual, the C++ code is on the left and the Java code on the right, and they're extremely identical. So just follow the C++ code or the Java code, and then you can check out the other language code and the code links are in the description. So what I've done is I've created a class node value. And as I said, we will be getting size, which is the maximum size possible of BST, minimal value and a max value. They've also created a constructor so that we can easily assign them. Okay. And we're given a root as what we're given to us. What we're writing is, okay. So initially this is what is given to us. That's root. And we're calling this subtree helper that I've written. I'm passing on the root and I'm saying, giving the max size. Okay. And over here, largest BST subtree helper. I'm calling the root. I'm doing the post-order traversal. I'll be"
+    },
+    {
+      "chunk_id": "L125_C13",
+      "start": 887.58,
+      "end": 950.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=887s",
+      "text": "saying, giving the max size. Okay. And over here, largest BST subtree helper. I'm calling the root. I'm doing the post-order traversal. I'll be like, if it's a null, if it's a null, that means it's a null. And if you remember, we passed on the size as zero and we said int mean to be very, very, very large number and int max to be a very small number because it's, there is null, there's nothing. So I pass that on. And then we simply go to the left and we simply go to the right. Nothing special. We simply go to the left and simply go to the right. Once the post-order is done, this is where the business is done. Now the business is very simple. If I'm standing at the root, I see what's the left's greatest. What's the left's greatest. If it is greater than it's okay. And also right's minimal. If it's smaller, it's okay. So that means it's a valid BST. And if it's a valid BST, pass on the new minimal, because the new minimal, there was a previous minimal, right? From the left. And you know, if you're doing a BST, whatever is coming out from the left is whatever is coming out from the left. It'll always be the minimal. Correct? And you just need to compare it with the current root, just in case there was a null over there. That's why you have to compare it with the"
+    },
+    {
+      "chunk_id": "L125_C14",
+      "start": 950.58,
+      "end": 1009.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=950s",
+      "text": "to compare it with the current root, just in case there was a null over there. That's why you have to compare it with the root and whatever is the minimal, you take it. Correct? And you take the max of the right or the root value. Why of the right and why not of the left? Because right will always be greater than left. That's why of the right and for minimal of the left. And the size will be left plus right plus one. And this is what you pass on if it's a valid one. What if it's not a valid one? Because if this if is not executed, so this return statement will not be executed. In that case, you'll come to this return. I'll say, okay, that means it's not a valid. Size will be either the left's max or right's max. But I will say, I'll give you such a range so that the next time, whenever you do a comparison, that will never be satisfied. So I give them a range of extreme min, extreme max so that they can never be compared. And once you're done with this, I think it's very straightforward. You can just return the max size of that call. And this is how it can easily be done. And this code was taken from the solution in the lead code. It was extremely well written."
+    },
+    {
+      "chunk_id": "L125_C15",
+      "start": 1009.58,
+      "end": 1037.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=X0oXMdtUDwo&t=1009s",
+      "text": "how it can easily be done. And this code was taken from the solution in the lead code. It was extremely well written. That is why I did not put in my code. So you can definitely check out the solution tab of lead code discussion forum. It's extremely well written. So I hope you have understood the entire explanation as well as the code. So guys, just in case you did understand, please, please make sure you like this video. And if you're new to this channel, please, please do consider subscribing because I do put a lot of content related to data structure and algorithms. So yeah, with this, I'll be wrapping up this video. Let's meet in the next one where I'll be probably solving something else. Bye bye, take care."
+    }
+  ]
+}

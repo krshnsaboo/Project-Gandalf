@@ -1,0 +1,57 @@
+{
+  "lecture_id": "L119",
+  "lecture_number": 119,
+  "lecture_title": "L47. LCA in Binary Search Tree",
+  "youtube_url": "https://www.youtube.com/watch?v=cX_kPV_foZc",
+  "chunks": [
+    {
+      "chunk_id": "L119_C1",
+      "start": 0.0,
+      "end": 76.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=cX_kPV_foZc&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, find the LCA in a binary search tree. Now you must be knowing what is a binary search tree. A binary search tree is a tree where you have a node and everything, yes, everything on the left of that node is smaller than the node's value and everything to the right of that node is greater than the node's value, not greater than equal to. That is what a binary search tree is. If you want to know about binary search tree in deep, you can check out my entire playlist, you will get to know about that. Now, LCA in binary search tree. So what is LCA? LCA is known as lowest common ancestor. Okay. So for an example, if I say, can you please find out the LCA of 5 and 0. For 5, if I draw down the path till the root of the tree, this is what the path will be. For 0, if I draw down the path till the root of the tree, this is the path. The first point or the last point, if you see from the top, from the bottom, the first insertion point, intersection point is what the LCA will be. Now, if I say LCA of 2,5."
+    },
+    {
+      "chunk_id": "L119_C2",
+      "start": 76.88,
+      "end": 151.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=cX_kPV_foZc&t=76s",
+      "text": "top, from the bottom, the first insertion point, intersection point is what the LCA will be. Now, if I say LCA of 2,5. 2 is this, 5 is this. So first intersection point. So I hope the definition of LCA is clear to you. First intersection point in the path or the last intersection point, if you look from the top, from the bottom, the first one, from the top, it's the last one. Right. Now, LCA is clear. What's the naive approach for this problem? Now, I have already discussed how to find LCA in a binary tree. You can check that video out. It's already there in the playlist. Now, this required a time complexity of big O of n, where n is the traversal time that you generally take in the binary tree. But this question is a bit different. Over here, it has been exclusively mentioned that it is a binary search tree. So you have to, you have to take care of that. Now, you know, whenever it is binary search tree, you generally don't apply big O of n. It's on the height that you do something to solve the problem. Right. So how can you solve this problem? So let's, let's take this binary search tree and try to figure out the LCA of 5 and 9. Now, it's a binary search tree. Now, can I say, if I'm looking for two nodes, what can be the possibilities? If I'm"
+    },
+    {
+      "chunk_id": "L119_C3",
+      "start": 151.52,
+      "end": 222.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=cX_kPV_foZc&t=151s",
+      "text": "9. Now, it's a binary search tree. Now, can I say, if I'm looking for two nodes, what can be the possibilities? If I'm standing at a place, what can be the possibilities if I'm looking for two nodes? There can be a couple of possibilities. Either both of them lie to the right, both of them lie to the right, right. Or both of them lie to the left, right. Or what's the other possibility? One lies to the left, one lies to the right. That can be the possibility. Or the node itself is one among them. The node itself is one among them. These can be the possibilities. So can I say, let's just talk about the portion where one U, that is the first node, lies on the left. The other V lies on the right. Let's talk about that possibility. So can I say, in that case, I can say that this guy is my LCA. The first, the last point where I can say one lies on the left, one lies on the right. Can I say that is my LCA? I think I can. So let's follow that pattern of algorithm. If I am at 10, yes, if I am at 10, I am looking for 5 and 9. 5 and 9, both are smaller than 10. So I will move to the left because I surely"
+    },
+    {
+      "chunk_id": "L119_C4",
+      "start": 222.48,
+      "end": 300.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=cX_kPV_foZc&t=222s",
+      "text": "looking for 5 and 9. 5 and 9, both are smaller than 10. So I will move to the left because I surely know that this is the path that I have to move. Next, 5 and 9 are both greater than 4. So I will move to the right. Next, on 8, can I say 5 is on the left, 9 is on the right. Can I say that? I think I can. So if I can say that, can I be like, hey listen, I was following a path and suddenly the path split. So can I say this is the last point of split? Indeed. If that's the last point of the split, can I say the point where you split is what your LCA will be? So I easily got my LCA node, right? That's indeed correct. What if I just change it and I say, hey, can you figure me out the LCA of 1 and 2? How will that work out? Let's see. You start at 10, you're looking for 1 and 2. So both will lie on the left. You're at 4, 1 and 2 again on left, 1 and 2 again on left. This is the moment you cannot say that 1 is on the left or like both of them are on the left"
+    },
+    {
+      "chunk_id": "L119_C5",
+      "start": 300.12,
+      "end": 359.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=cX_kPV_foZc&t=300s",
+      "text": "This is the moment you cannot say that 1 is on the left or like both of them are on the left and right. You'll be like, okay, this is the guy who is itself the LCA. So since both of them do not lie on the left and both of them do not lie on the right, hence I can say this guy is my LCA. So it's very simple. Left, right, left, right. And the moment you cannot say, okay, one is on the left, one is on the right. The moment you can say that, that both of them are not on the left or both of them are not on the right, you can say that this guy is my LCA. Because if both of them are on the left, you move. If both of them are on the right, you move. As simple as that, right? So in this way, you can figure this out. Now since you're moving left, right, left, right, you will be moving the height of the tree. So can I say the time complexity, can I say the time complexity will be Bigo of height of the tree. Yes, the height of the tree can be n if it's a linear tree, but assuming it's a binary search tree, generally it's not a linear tree. So I can say Bigo of h, which is much, much better than Bigo of n. And the space complexity will be Bigo"
+    },
+    {
+      "chunk_id": "L119_C6",
+      "start": 359.68,
+      "end": 427.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=cX_kPV_foZc&t=359s",
+      "text": "tree. So I can say Bigo of h, which is much, much better than Bigo of n. And the space complexity will be Bigo of one. I'm not considering stack space into consideration. You can do that by yourself. If you want to consider stack space, if you're doing a recursion call, you can do that. Even if you do a normal, I mean a normal while loop, if you just run a while loop, then you will not be using the recursion stack space, correct? So depending on you or whichever algorithm you want to use, you can easily judge the times complexity and space complexity, right? So now it's time to check out the code. So I have written the recursive code. You can also write the while loop code, which will not take an extra space like the recursion stack space. You can write that by yourself. I'll be discussing the Java code, the C++ and Java code are identical because instead of root, it will be a star of root, star of P, star of Q, root dot val. Instead of that, it will be a root, a dash and greater than sign in C++. So apart from that, everything is identical. So you can follow the score as well. So given the root, you're given the note P and the note Q. How do you find the LCM? I say, but it's not, then, then I don't do anything. Then I say, Hey, listen, uh,"
+    },
+    {
+      "chunk_id": "L119_C7",
+      "start": 427.68,
+      "end": 475.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=cX_kPV_foZc&t=427s",
+      "text": "note Q. How do you find the LCM? I say, but it's not, then, then I don't do anything. Then I say, Hey, listen, uh, I find out the root value. Do both of them lie, do both of them lie on the right? If they lie on the right, let's go to the right. Okay. Do both of them lie on the left? If it is, then go to the left. If that's not the case, I cannot determine if both of them are on the left or both of them are on the right. If that's the case, I return that, Hey, this is the first point. This is the first point of the last point of intersection. You can just return that root of the P and that will be your answer. So, uh, guys, I hope you have understood the entire explanation as well as the code. Just in case you did, please, please make sure you like this video. And if you're new to this channel, please do consider subscribing. Yeah. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L146",
+  "lecture_number": 146,
+  "lecture_title": "G-21. Topological Sort Algorithm | DFS",
+  "youtube_url": "https://www.youtube.com/watch?v=5lZ0iJMrUMk",
+  "chunks": [
+    {
+      "chunk_id": "L146_C1",
+      "start": 0.0,
+      "end": 79.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=5lZ0iJMrUMk&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we are going to learn about topological sorting and we're going to solve this using the DFS algorithm which is the depth first search. Now what is topological sorting? In order to define it I can say it only exists on DAG which is directed acyclic graph. That means any directed graph which does not have a cycle. Why I will tell you that. So basically the definition states any linear ordering of vertices means these nodes, any of the linear ordering such that if there is an edge between U and V, you always appears V in that ordering. You always appears before V in that ordering. So this is the particular DAG. So let me write down the edges that we have. I think we have an edge from five to zero. We have an edge from four to zero. We have an edge from five to two. We have an edge from two to three. We have an edge from three to one and we have an edge from four to one. So one, two, three, four, five, six, we have all the six edges. So this can be a possible linear ordering. Why? Let me tell you that. Five to zero, five appears before zero."
+    },
+    {
+      "chunk_id": "L146_C2",
+      "start": 79.36,
+      "end": 155.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=5lZ0iJMrUMk&t=79s",
+      "text": "edges. So this can be a possible linear ordering. Why? Let me tell you that. Five to zero, five appears before zero. Four to zero, four appears before zero. Five to two, five appears before two. ... 2 to three, 2 appears before 3 31, three appears before one, four to one, four appears before one. So thereby, this is a valid linear ordering. Similarly, this can also be a valid linear ordering. So if you see five appears before 0, five appears before zero, four appears before zero. Yes. Five appears before two. Yes. Two appears before three. Yes. Three appears before one. Yes, four appears before one. Yes. So this is also a valid ordering. They can be multiple valid orderings, but we just need to figure out one of the topological sortings and that should be good enough. Now coming across, we will understand how to find it, but why only in directed a cyclic graph? Why? So let's, let's understand why in directed graph. So what does the definition state? If there is an edge between you and V, you appears before V. So if you take undirected graph and you see that there is an edge between one to two, it actually means there is an"
+    },
+    {
+      "chunk_id": "L146_C3",
+      "start": 155.8,
+      "end": 235.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=5lZ0iJMrUMk&t=155s",
+      "text": "take undirected graph and you see that there is an edge between one to two, it actually means there is an edge between one to two and there's an edge between two to one. So how can you write the ordering such that one is before two and two is also before one and is not practically possible. Thereby the line, thereby the, uh, directed graphs are only possible. Now why a cyclic means no cycle means no cycle. Why is that? Now imagine if you have a cycle in a directed graph one to two, two to three, three to one. Okay. So what I'm stating is one is having a edge to two, which means one should be before two in that ordering. Two to three is an edge, which means two should be before three in that ordering. Three to one has an edge, which means three should be before one in that ordering. That is not possible. Why? Because there is a cyclic dependency happening because there is a cyclic dependency happening. Thereby, if there is a cycle, you cannot have an ordering says that everyone follows that. So thereby a cyclic and graph. Yes. So I hope you got the reason why is topological sorting valid or why can you just write a linear ordering for a directed, a cyclic graph, which is nothing but a deck. Okay. So the reason is clear."
+    },
+    {
+      "chunk_id": "L146_C4",
+      "start": 235.0,
+      "end": 310.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=5lZ0iJMrUMk&t=235s",
+      "text": "just write a linear ordering for a directed, a cyclic graph, which is nothing but a deck. Okay. So the reason is clear. Now let's quickly jump up to the algorithm. So we have this particular deck and we have the corresponding adjacency list for this particular deck. So what does this particular topological sort algorithm in DFS states? Now what we will always do is, you know that, right? We always have this particular stuff for components and that is the same thing we will be following over here as well. So over here, how many nodes do we have? We have five nodes to run till five and we will see if not visited. Yes. Very, very important. If not visited of I, then we will call the DFS for I is that is how we will do it. I'll explain you slowly. So this is what we will take and we will always declare a visited array. So let's quickly declare the visited arrays. Probably we can do that over here. So we have declared the visited array and make sure everything is marked as zero initially marked as zero initially. Now let's quickly start off. What is the value of I? The value of I is zero initially. Is that visited? No. So what do you do is you start the DFS call from zero. Remember this, you start the DFS call from zero at the same time, just declare a stack. Yes. Declare a stack."
+    },
+    {
+      "chunk_id": "L146_C5",
+      "start": 310.72,
+      "end": 376.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=5lZ0iJMrUMk&t=310s",
+      "text": "DFS call from zero. Remember this, you start the DFS call from zero at the same time, just declare a stack. Yes. Declare a stack. Now what is a stack? It is a last in first out operation, a data structure, last in first out operation data structure. If you don't know, please read about stack. So DFS of zero is there. So what do you do is you say, okay, this guy is visited. Does zero have any adjacent nodes? No. So the DFS will not call any for the DFS and it will go back. But remember before going back, take this zero and put it into the stack before going back, take the zero and put it into the stack. Done. So DFS for zero is completed. Next, I'll tell you the intuition going forward. Don't worry. Next is one. So again, you write the same thing. DFS of one. The first thing you do is you mark it as visited. Does one have any adjacent nodes? No. So there'll be no for the DFS calls, no for the DFS calls. So before going back, put this into the stack. So you'll put this into the stack and now you'll go back. So the DFS is completed. Next, it comes for two. So what happens is you call the DFS for two, you mark it as visited. Now two has an adjacent node. So you go and call it for three."
+    },
+    {
+      "chunk_id": "L146_C6",
+      "start": 376.2,
+      "end": 438.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=5lZ0iJMrUMk&t=376s",
+      "text": "call the DFS for two, you mark it as visited. Now two has an adjacent node. So you go and call it for three. And what do you do is you mark for three as visited as well. Now does three have an adjacent node? It checks that three has an adjacent node one. But if we carefully see, we cannot call for DFS of one. Why? Because it is already visited. Yes, because it is already visited. So thereby what we will do is we will be like, okay, it is already visited. So let's quickly just not call any for the DFS calls and go back. But if we're going back, take that three and put it in. Now we go over here, no for the DFS calls, go back. Before going back, put that into the stack. So we have put that into the stack and we are now done. Right now, the value will be three. Three is already visited. Next value will be four and that is not visited. So what we will do is we will go and check out for four. Now for four, we will mark it as visited and we will check if there are adjacent nodes. Zero is visited. One is visited. So both of the adjacent nodes are visited. So there'll be no for the DFS calls. So you go back. Now what do you do is you take this four and you put it into the stack."
+    },
+    {
+      "chunk_id": "L146_C7",
+      "start": 438.12,
+      "end": 510.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=5lZ0iJMrUMk&t=438s",
+      "text": "the DFS calls. So you go back. Now what do you do is you take this four and you put it into the stack. You take this four and you put it into the stack, right? So next it'll be five. And now next the DFS call will be happening for five. So you'll mark it as visited. Does five have any adjacent nodes? Yes. Zero already visited. Two already visited. So thereby no further DFS calls for five and you'd put five into the stack. Done. Now I can see that the DFS call is over. Once the DFS call is over, whatever you stored in the stack, take it one by one. The first thing that you take out is five. Next thing you take out is four. Next thing, two. Next thing, three. Next thing, one. Next thing, zero. This is one of the linear orderings. Yes. This is one of the linear orderings that you can get. Very, very important. This is one of the linear orderings that you can get. And this is what is known as topological sort of this particular graph. I hope that does make sense. Now you must be thinking about a striver, but what is the intuition behind this algorithm? The algorithm looks pretty simple, but what is the intuition? I'll tell you the intuition, but let's first write the code, absorb the code, absorb the logic, and then I'll tell you the intuition. The intuition is very small."
+    },
+    {
+      "chunk_id": "L146_C8",
+      "start": 510.32,
+      "end": 590.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=5lZ0iJMrUMk&t=510s",
+      "text": "but let's first write the code, absorb the code, absorb the logic, and then I'll tell you the intuition. The intuition is very small. Don't worry about that. So guys, as usual, I'll write the C++ code on the right and you can find the Java code on the left. So given the V and the adjacency matrix, we will be declaring the visited guy. So let's quickly declare the visited guy and mark everyone as you done. Next we need a stack. So please go and declare a stack. What's the next thing that we do? We iterate from zero till V. Next we say, Hey, listen, not visited of I, then we call the DFS with this particular node and the visited and the stack. Perfect. At the end of the day, we know that we have to store the answer in a vector. So vector of answer, and we need to just keep on doing till the stack is non-empty. So answer.pushbackstack.top and you can do stack.pop. Perfect. And at the end of the day, you can return the answer. Now what do you just need to write is the DFS function. So you can go over here and say, Hey, listen, void DFS, int node, int visited. And we also need the stack. So stack, whether we visited is an array. We need the stack. So stack of int stack, and we need this particular adjacency matrix as well. So adjacency matrix."
+    },
+    {
+      "chunk_id": "L146_C9",
+      "start": 590.0,
+      "end": 659.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=5lZ0iJMrUMk&t=590s",
+      "text": "is an array. We need the stack. So stack of int stack, and we need this particular adjacency matrix as well. So adjacency matrix. Now what we will do is we will say visited node equal to one. And over here we will say auto of ID adjacency node. And we will plain call the DFS, nothing fancy. Call the DFS for this particular node with this visited stack and the adjacency. So make sure you pass on the adjacency over here as well. And right at the end of the day, when the DFS is over, you do not have any further DFS calls to make. Take on the stack and say, Hey, can you please store the node? So that's how you will do it. And now let's quickly compile this and see if it is running. But it says there is some issue with it. Let's quickly check it out. Okay. Now if you read the question, find any topological sorting, you can find any topological sorting and it will work fine. So it does run. Now, if I discuss about the space complexity, we're using a visited and a stack. So we go off and plus be go off and about the time complexity, similar to DFS algorithm, which is V plus E for directed graph. So the time complexity is V plus E for directed graphs at the worst case. Now coming back to the intuition, what is the intuition of this particular stuff?"
+    },
+    {
+      "chunk_id": "L146_C10",
+      "start": 659.56,
+      "end": 723.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=5lZ0iJMrUMk&t=659s",
+      "text": "V plus E for directed graphs at the worst case. Now coming back to the intuition, what is the intuition of this particular stuff? Now if I give you a simple enough directed graph, like one, two, three, four, five, and six. Okay. So what will you do? You know, if I ask you to write the linear ordering, you'd be like, the linear ordering is very simple. You can either write five or you can either write six, vice versa. You can do either of them. Like you can write one, two, you can either write one, two, three, four, five, sorry, one, two, three, four, five, six, or you can write one, two, three, four, six, five. Both of the linear ordering are true. So how did you get this? Very simple. You call the DFS from here. Then you went here, then you went here, then you went here. If you went here, five was coming first. If you went here, six was coming first. Now when you come back, what I did was I just stored the six in a stack. And then from four, when I went to five, and when I came back from five, I stored it here. And I went from four, I stored the four here. Then for three, I stored it here. Then for two, I stored it here. Then for one, I stored it here."
+    },
+    {
+      "chunk_id": "L146_C11",
+      "start": 723.4,
+      "end": 791.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=5lZ0iJMrUMk&t=723s",
+      "text": "four here. Then for three, I stored it here. Then for two, I stored it here. Then for one, I stored it here. So what I did was the people whose DFS was complete, I just stored it. I just stored it. I just stored it. I just stored it. Now what happens is I know the DFS of three is completed, which means this entire portion has been visited, which means this entire portion has been visited. So everything would have been here and the linear ordering will be followed. Three is before four, four is before six, six is before five. Just because I know if I have done the DFS for three, then everything would have been done. Everything would have been done. Thereby, whenever I complete the DFS, then only I put it because I know everything would have been done. So if everything would have been done, everything would have been stacked below. If I get it back, I'll get the linear ordering as a simple intuition, nothing special. Whenever the DFS is completed, everyone is touched. They just picketed. And the next guy would have called it. You will be now coming in. So simple intuition. So guys, I hope I was able to explain you this particular algorithm. So just in case I was, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away."
+    },
+    {
+      "chunk_id": "L146_C12",
+      "start": 791.28,
+      "end": 800.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=5lZ0iJMrUMk&t=791s",
+      "text": "make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And if you haven't checked out our DPCDs and the HD sheet, the links are in the description. Please make sure you check it out. With this, I'll be wrapping up this video. Let's meet in the next one. Till then, bye bye, take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

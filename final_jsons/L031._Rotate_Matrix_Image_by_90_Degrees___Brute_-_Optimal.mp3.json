@@ -1,0 +1,120 @@
+{
+  "lecture_id": "L031",
+  "lecture_number": 31,
+  "lecture_title": "Rotate Matrix/Image by 90 Degrees | Brute - Optimal",
+  "youtube_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU",
+  "chunks": [
+    {
+      "chunk_id": "L031_C1",
+      "start": 0.0,
+      "end": 66.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another lecture from the Striver's A to Z DSA course. Just in case if for the first time here, this is world's most in-depth course when we talk about DSL Go. Why do I say that? 455, this course has 455 modules. By the end of the course, you'll have solved more than 400 plus problems when it comes to DSL Go. You can go over the entire internet. You can buy any of the paid courses in the market. None of them will be teaching you DSL Go in such depth. Something that I can give you as an assurance is, once you complete this entire course, you can clear any of the DSL Go rounds in any of the companies in any part of the world. So till now we have covered till this particular problem and this video I'll be covering the problem, rotate matrix by 90 degrees. So this problem also goes by the name rotate image. And what does the problem state? The problem states you'll be given an N cross N matrix. So that is a square matrix. So imagine you're given this square matrix. Your task is to rotate it in the clockwise direction by 90 degrees. So if you rotate it in the clockwise direction by 90 degrees, this is what you will get and this is what"
+    },
+    {
+      "chunk_id": "L031_C2",
+      "start": 66.08,
+      "end": 133.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=66s",
+      "text": "90 degrees. So if you rotate it in the clockwise direction by 90 degrees, this is what you will get and this is what you have to print. That is what the question states. So this question comes up in an interview. The first solution. So this question comes up in an interview. The first solution that you'll give to the interviewer should be of the brute force solution. And what is that? So you're given a matrix of N cross N size. So what you will do is you will create an answer matrix of N cross N size and that is where you'll store the answer. So what do you say is you'll pick up one and you'll try to place it at it's correct place. You'll pick up two and then you'll try to place it at it's correct place. Pick up three, place it at it's correct place, pick up four, place it at it's correct place. Pick up five, place it at it's correct place. Six, place seven, eight, then nine, then 10, then 11, then 12, 13, then 14, then 15, then 16 and then this is your answer and this you can print out. So, how do you place all the elements at its correct place? So, to do that you have to do some observations. So, can I say the first row always goes to the last column? It does. The second row always goes"
+    },
+    {
+      "chunk_id": "L031_C3",
+      "start": 133.62,
+      "end": 203.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=133s",
+      "text": "to do some observations. So, can I say the first row always goes to the last column? It does. The second row always goes to the second last column? It does. The third row goes to the third last and the fourth row goes to the fourth last column. This is something we can definitely observe. So, what I'll do is, in order to map it in terms of indexes, I'll try to write the row index and this is how the row index will be. Always starts from zero and since the size of the matrix is four, last one will be three, right and the column index will be 0, 1, 2, 3. So, this is the normal indexing in a 2D matrix. Now, let's try to map it. So, can I say the one who is at the 0, 0 index is always going over here which is basically 0, 1, 2, sorry 0, 0, 1, 2, 3 and over here 1, 2, 3. So, can I say the 0, 0 always goes to the 0, 3? I can and can I say this is done and can I say over here it's 0, 1 who always goes to over here which is 1, 3. Can I say the 0, 2 which is this one always goes over here which is 2, 3? Let's try to observe after this and then can I say 0, 3 which is this one"
+    },
+    {
+      "chunk_id": "L031_C4",
+      "start": 203.7,
+      "end": 281.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=203s",
+      "text": "goes over here which is 2, 3? Let's try to observe after this and then can I say 0, 3 which is this one goes here which is 3, 3. So, this is something which I've done for the first row and let's try to do for the second row. So, can I say 1, 0 goes over here which is 0, 2, perfect. Then can I say 1, 1 goes over here which is 1, 2. Then can I say 1, 2 goes over here which is 2, 2. Can I say over here this is 1, 3 which goes over here which is 3, 2. Let's try to observe something. So, I've written for a couple of rows and assume you are traversing in the matrix in this possible way and this is the generic way to traverse in the matrix and for traversal you are using i and j index. Now, this i is 0, this j is 0. Where is it going? Let's try to map it in terms of i and j itself. So, can I say this is 0, this is 0, this is 0 but this is 1. So, I cannot find any matches but do you observe something. Whatever j is, the same thing is on the row over here. So, can I say"
+    },
+    {
+      "chunk_id": "L031_C5",
+      "start": 281.94,
+      "end": 351.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=281s",
+      "text": "matches but do you observe something. Whatever j is, the same thing is on the row over here. So, can I say this j goes to this j? I can and similarly you can see over here this j goes to this j. Do you observe that this j is also going to this one? You do. But how do you map this one because over here it is 0, 0, 0. Over here it is 3, 3, 3. Over here it is 1, 1, 1. It is 2, 2, 2. But do you see something? Yes, it's constant. This is also constant. So, something I can see is for 0, for the 0th row it is going to the 3rd one which is basically this and for this first it is going to the second. So, can I say if this is i, it will be n minus 1. So, this is the last index because n was 4. So, this is the last index and can I say if it is 1 which is i, this is n minus 1 minus i. Can I say this? Yes, I can because if it is 1, just write. If it is 1, 1 goes to n minus 1, 1. So, 1 goes to n minus 2, n is 4. So, this overall becomes 2. So, can I say the formula is if it is i,"
+    },
+    {
+      "chunk_id": "L031_C6",
+      "start": 352.34,
+      "end": 422.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=352s",
+      "text": "to n minus 2, n is 4. So, this overall becomes 2. So, can I say the formula is if it is i, the other one will be n minus 1 which is the last index minus i. Very obvious because if it is 0, this will be n minus 1 minus 0 which is n minus 1 which is 4 minus 1 which is 3. Very simple. So, i will always go to n minus 1 minus i. So, over here I can say this will be n minus 1 minus i. Simple as that. And this is what it will be. For every i j, you put it to j and n minus 1 minus i and that is the brute force. So, how will the brute force code look like? What I will do is, I will declare an n cross n answer matrix which is going to store the answer. Then I will start iterating from 0 to n. Then the inner loop will start iterating from 0 to n again and this will make sure that I traverse the entire matrix element by element. Now, what I am saying is, in answer of j n minus 1 minus i, I will put whatever is in the matrix of i j. Whatever is the element i j, it will always go to this place and that's it. And I go to every"
+    },
+    {
+      "chunk_id": "L031_C7",
+      "start": 422.18,
+      "end": 490.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=422s",
+      "text": "i j. Whatever is the element i j, it will always go to this place and that's it. And I go to every element i j and I put it to its correct place in the answer. So, eventually this particular answer array will be created and we can return. So, the time complexity of this particular approach is big O of n square and the space complexity of this particular approach is also big O of n square because we are using an external 2D matrix in order to store the answer. Now, this is where the interviewer will not be happy because we are using an extra space and he will ask you to optimize it. Now, as the interviewer is not happy with the big O of n square space that we are using, that clearly tells us that we have to solve this problem in place. What does in place means? It means that you have to solve it within the given matrix itself. We cannot use an additional matrix. So, how can we solve in the given matrix itself? So, the first observation is the key. Let's try to observe something. Can I observe one thing? Now, the first column is over here. It is, but it's in the reverse order. It's in the reverse order. If you see, it's like 39, 51. And if you again carefully see, the second column is over"
+    },
+    {
+      "chunk_id": "L031_C8",
+      "start": 490.26,
+      "end": 564.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=490s",
+      "text": "It's in the reverse order. If you see, it's like 39, 51. And if you again carefully see, the second column is over here. But again, it is in the reverse order like 2, 6, 10, 14. Even the third column is over here, but it is in the reverse order. And this is the observation that will help you to solve it. So, it's very simple. What do you do is, you say, let's transpose the matrix. Why? You'll understand very easily. So, you know what does transposing of matrix means. It means the column becomes the row and the row becomes the column. That is what transpose means. So, 1, 5, 9, 13 will become the row. So, let's write 1, 5, 9, 13 becomes the row. Then this one will become the second row. So, it will be like 2, 6, 10, 14. Next, this one will become the third row, 3, 7, 11, 15. Next, this one will become the fourth row, 4, 8, 12, 16. So, we did transpose the given matrix. And if you carefully see, the first column is now the first row and the first row is the first column. And similarly, the second column is the second row and the second row"
+    },
+    {
+      "chunk_id": "L031_C9",
+      "start": 565.06,
+      "end": 640.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=565s",
+      "text": "and the first row is the first column. And similarly, the second column is the second row and the second row is the second column over here. So, we have successfully transposed the matrix. And now, if you see, it's 39, 5, 1. So, it's the reverse of this. Now, what you'll do is, you will reverse every row. You will reverse every row. So, if you reverse every row, so this is 1, 5, 9, 13, reverse it. So, you'll get this. This is 2, 6, 10, 14, reverse it, you'll get this. This is 3, 7, 11, 15, reverse, you get this. So, why did we do the transpose? It has a very simple reason. Because 1, 5, 9, 13, this was the first column and this was appearing in the first row, yes. And that is a sign that please go ahead and transpose it. And then you can easily reverse because it's clearly visible. So, two steps. First, transpose the matrix, then reverse every row. If you do this, it will be done in the matrix itself without using any extra space. So, we know that our optimal approach is going to take couple of steps. The first one is transposing of the matrix and the second one is reversing every row. But we need to first figure out how do we transpose something. So, let's observe. This is the original matrix and this is"
+    },
+    {
+      "chunk_id": "L031_C10",
+      "start": 640.18,
+      "end": 709.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=640s",
+      "text": "But we need to first figure out how do we transpose something. So, let's observe. This is the original matrix and this is the transposed matrix. Let's try to observe something. We have a 1 and it stays over here. We have a 6, it stays over here. We have 11, it stays over here. We have a 16, it stays over here. So, all the diagonals, if you see 0, 0, 1, 1, 2, 2, 3, 3, all the diagonals on these indexes are staying wherever they were. So, the diagonals will stay wherever they were. So, what I'll do is, I'll try to probably draw a line for the diagonal. So, let's draw a line for the diagonal. Now, which are the things that are not staying at their place? Let's try to observe. We have a 2, we have a 5 and if you carefully see, they are swapped places. Okay, perfect. So, can I say the 0 and 1 index, this is 0, this is 1, so this is the 2, has gone to the 1, 0 index. Can I say this? 1 to 1 and 0, I can. Next, we have a 3 and we have a 9. Let's observe what has happened to them. We have a 9 and we have a 3. They have swapped as well. So, can I say the 0, 2 has gone to 2, 0,"
+    },
+    {
+      "chunk_id": "L031_C11",
+      "start": 709.38,
+      "end": 786.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=709s",
+      "text": "9 and we have a 3. They have swapped as well. So, can I say the 0, 2 has gone to 2, 0, if you carefully observe because this is 0, 2, sorry my bad, this is 0, 2 and this is 2, 0. So, we did see that 2 did have a swap, 3 did have a swap. Let's look for 4. So, if we look for 4, look for 13. Can I say again the same thing has happened? Yes, it's like 0, 3 has swapped to 3, 0. Okay, we can see that everything in this column, sorry this row got swapped with everything in this column. Done. Next, we have a 7, right, we have a 7 and we have a 10. So, again they have swapped. Okay, so 7 is at 1, 2 and it got swapped to 2, 1. Interesting. Next, we have a 8 and where did 8 go over to 14? If you carefully see, it does. So, can I say we have 1, 3 this time going over to 3, 1. Perfect. So, first row done with the first column. Next, we have a 12. So, can I say 12 is at 2, 3 and that goes to 3, 2 which is this. So, again the second row will be done with the"
+    },
+    {
+      "chunk_id": "L031_C12",
+      "start": 786.9,
+      "end": 860.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=786s",
+      "text": "at 2, 3 and that goes to 3, 2 which is this. So, again the second row will be done with the second column. Do you observe something? Every index, yes, rather every index goes to the opposites like 01 will go to 10, 12 will go to 21, 23 will go to 32, opposites and we just have to traverse for the right half and we have to look at this. For the 0th row, you have to travel till 1 to 3. So, for 0, you have to travel from 1 to 3. For the first row, you have to travel from 2 to 3. Observe something. For 0, you travelled from 1 to 3 which is meaning like, can I say if it is i, this is i plus 1 and this is n minus 1. Yes, because for 1, you travelled from 2 to 3. So, if this is i, this will become i plus 1 and this is the last index which is n minus 1. So, I have to write a pseudocode. Can I say we started from 0 and we went on till 2 because that is where our last element was. So, can I say I will start from 0 as i and I will go on till n minus 2 index, not n minus 1. We will not go on till last, we will just go on till second last. And the j,"
+    },
+    {
+      "chunk_id": "L031_C13",
+      "start": 860.42,
+      "end": 923.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=860s",
+      "text": "2 index, not n minus 1. We will not go on till last, we will just go on till second last. And the j, where is the j starting in from? If you carefully see, this half is this half of the matrix will always start from one element ahead which is i plus 1. So, i plus 1 and it will go on till the last and over here can I say it will be a swap of a of i j comma a of j i, very obvious. And if you swap them, you will actually get your transpose matrix. So, once we have transposed the matrix, we will have something like this. What was the step 2 of the optimal approach? Pick up every row and try to reverse it. So, if you reverse every row, you will ultimately get your rotated matrix and that will be your answer. So, let us come back to the editor and try to put it up. In case you want to try out the problem, please do consider trying out the problem from the link in the description. So, what is the first thing? Let us find out the size. Two steps, transpose and reverse. So, let us perform the first step. Transpose, it is like going from here till the second last and we only traverse in the first half. So, we will be going"
+    },
+    {
+      "chunk_id": "L031_C14",
+      "start": 923.86,
+      "end": 983.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=923s",
+      "text": "it is like going from here till the second last and we only traverse in the first half. So, we will be going something like from here to here and j plus plus and it will be saying swap of mat of i j with mat of j i. So, we just swap it. So, the step 1 is done. What is the step 2? Reverse every row. So, every row is basically from 0 to n minus 1. So, we go from here to here and we try to reverse every row. So, what is every row? Can I say every row is basically mat of z, mat of i. That's the row. So, we say reverse of mat of i. Since it's a vector, we said begin and we said mat of i dot n. In case your language doesn't have a reverse function, what you can do is, you can use this method where you take one one swap, then you take the next swap, then you move. So, it's basically a two-pointed approach. I will be leaving the article link in the description. You can go ahead and try out the small function which reverses any given array in the go of n by 2 complexity. So, this is how you will reverse it and ultimately you can go ahead and try to run it up. I think it"
+    },
+    {
+      "chunk_id": "L031_C15",
+      "start": 983.7,
+      "end": 1046.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=983s",
+      "text": "So, this is how you will reverse it and ultimately you can go ahead and try to run it up. I think it should be running fine. It does and now we will quickly sum it up. So, what will be the time complexity? Can I say this is basically traversing one half of the array? So, I can say it's basically n by 2. That's what the first loop runs for and the second one nearly runs about n by 2 again. So, it's like n by 2 into n by 2 for the transpose. What about the reverse? Can I say it's basically running for n for all the rules and then we are reversing and we did see for reversing we can just use the two-pointed approach which basically reverses till going half of the array. So, can I say the interval runs for n by 2? So, this is the overall time complexity. This plus this. Are we using any extra space? No, we are doing it in place. So, we are not using any extra space in order to solve this particular problem. So, coming back to the sheet, I can say that this particular problem is also done and if you have understood everything about this video, please consider giving us that like because it won't cost you anything but it will keep me motivated to make these kind of videos and if you're new to our channel, what"
+    },
+    {
+      "chunk_id": "L031_C16",
+      "start": 1046.9,
+      "end": 1066.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z0R2u6gd3GU&t=1046s",
+      "text": "won't cost you anything but it will keep me motivated to make these kind of videos and if you're new to our channel, what are you doing? Hit that subscribe button right away and if you haven't followed me on Instagram, LinkedIn and Twitter, you can find all the ID links in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

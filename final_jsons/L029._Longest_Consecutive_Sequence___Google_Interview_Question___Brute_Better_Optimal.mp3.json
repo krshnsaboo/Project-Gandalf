@@ -1,0 +1,162 @@
+{
+  "lecture_id": "L029",
+  "lecture_number": 29,
+  "lecture_title": "Longest Consecutive Sequence | Google Interview Question | Brute Better Optimal",
+  "youtube_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM",
+  "chunks": [
+    {
+      "chunk_id": "L029_C1",
+      "start": 0.0,
+      "end": 70.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another lecture from the Striver's A to Z DSA course. Just in case you're for the first time here, this is world's most in-depth course when it comes to DS-ALGO. Why do I say that? Because this course has 456 modules. By the end of the course, you will have solved more than 400 plus problems when it comes to DS-ALGO. You can go over the entire internet. You can buy any of the paid courses in the market. None of them will be teaching you DS-ALGO in such depth because for every problem, I tell you the brute, the optimal solutions with code and you find C++, Java, Python code, everything in the description as well. Something that I can give you as guarantee is once you complete this entire course, you can clear any of the DS-ALGO rounds in any company in any part of the world. So till now we have covered till this particular problem. In this video, I'll be covering the problem longest consecutive sequence. Now what does the problem state? The problem states you'll be given an array of integers and your task is to find me the longest consecutive, the word is very very important, consecutive sequence. Now you're given integers, right? You can rearrange them, reorder them in any manner. Imagine I say that I'll pick up one, okay? Then I say I'll pick"
+    },
+    {
+      "chunk_id": "L029_C2",
+      "start": 70.16,
+      "end": 127.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=70s",
+      "text": "integers, right? You can rearrange them, reorder them in any manner. Imagine I say that I'll pick up one, okay? Then I say I'll pick up two. Then I say I'll pick up three. Then I say I'll pick up four. So it's consecutive, right? The numbers are consecutive and the length of the sequence is four. I cannot pick up five because it's not in the array. So the length that I can form is four. Can I pick up 100? I can. Can I pick up 101? I can. Can I pick up 102? I can. So the length is three. So if you try out all the other elements, longest consecutive sequence that you can form will be of length four and that is one, two, three, four. So your task is to return me the length of the longest consecutive sequence. So this question comes up in an interview. The first solution that I'll give to the interview will definitely be of the brute force solution. But what is the extreme mean solution that first comes to your mind? It's like, probably if I pick up an element x, I look for x plus one, I look for x plus two. I'll see what's the longest that I can form by looking around the array. That's the extreme mean solution. So imagine I say that, okay, cool. Let's keep the longest sequence length"
+    },
+    {
+      "chunk_id": "L029_C3",
+      "start": 127.92,
+      "end": 195.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=127s",
+      "text": "by looking around the array. That's the extreme mean solution. So imagine I say that, okay, cool. Let's keep the longest sequence length as one because I know one thing for sure. Even if I pick up one element from the array, the longest will always be one. So that is something which I'll keep and I'll start iterating in the array. So I'm at 102. Now what I'll do is I'll keep the counter as one and I'll assign probably x as 102. So if I'm starting with 102, what's the next? 103? But how do you figure out if 103 is in the array or not? I'll go in the array. Are you 103? Are you 103? 103, 103? No, no one is. So we cannot extend the sequence from 102. Thereby I'll say, fine, let's move to the next. So I go to the four. Now my x becomes four. Now I'll try to extend it to five and I'll look around. Do I have five, five, five, five, five? Simple linear search. No, not a five. So I cannot extend. Fine. Then I'll move around, move to the next and I'll be at a hundred. So I'm at a hundred. What I'll do is, okay, do I have 101? Do I have, do I have, do I have, do I have? Yes, I have. Yes, I have. So I can extend it to 101."
+    },
+    {
+      "chunk_id": "L029_C4",
+      "start": 195.6,
+      "end": 257.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=195s",
+      "text": "have, do I have, do I have, do I have? Yes, I have. Yes, I have. So I can extend it to 101. If I can, I'll increase my counter. I'll increase my counter. Fine. Can I extend it to 102? I'll be like, cool. 102, 102. Yes, 102. I can. So I can. I'll increase my counter. Can I extend it to 104? Let's see. 104, 104, 104. No, I cannot. So the count stays as three when I start from 100. So basically the longest that I'll get is three. Similarly, you can go to the next and you can start from one, then you will look for two, then you look for three, then you look for four, and eventually the count will become four and that will be your eventual longest. And you can go across to the next, then to the next, then to the next, then to the next. And eventually you'll find your longest. This is the extreme brute force solution that you can think of. So what will be the code for this brute force solution? It's going to be very simple. What I say is I'll say longest equal to one. And then I'll start the iteration from i equal to zero, i lesser than n, i plus plus, because every time I pick up one element, right, and then I'll store it in x, maybe array of i,"
+    },
+    {
+      "chunk_id": "L029_C5",
+      "start": 257.68,
+      "end": 316.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=257s",
+      "text": "i plus plus, because every time I pick up one element, right, and then I'll store it in x, maybe array of i, and then I'll say the counter to be one because initially we have one element. Now I will say, while, can you look for it, probably linear search in the array for the element x plus one, if it is found, if it is found, then what you'll do is you will say x, can you increase your to x plus one and count, can you increase yourself to count plus one, simple brute force solution. And this is linear search. You can write it yourself. So what will be the time complexity of this brute force solution? Can I say it's a big of n for the first loop and near about big of n for the internal loop. So it's a near about n square. I give you take an example like one, two, three, four, five. What will happen is the first time when it picks up one, it goes for like one, two, three, four, five. Next time when it picks up two goes for two, three, four, five. So it's like near about big of n square. Are we using any space? No. So the space complexity is big of one for the brute force solution. Obviously, the interview will not be happy with this extreme"
+    },
+    {
+      "chunk_id": "L029_C6",
+      "start": 316.0,
+      "end": 382.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=316s",
+      "text": "So the space complexity is big of one for the brute force solution. Obviously, the interview will not be happy with this extreme time complexity. And I'll ask you to optimize. That is when we will move to the better solution. So let's quickly understand the better solution. Now in order to understand the better solution, I've taken a longer array. Why you'll understand when I'll do the dry run. First step of the better solution will be to sort it. Why? Very simple. We see something as consecutive. And you know when you sort it, we had a consecutive sequence of one, two, three, four. The other consecutive sequence is a hundred, hundred, one, hundred, two. And if you carefully see, they're kind of clubbed together. I know there are repetitions, but they're somewhere together in the array, right? Over here also they're somewhere together. So that is the intuition behind sorting so that I want to bring them together to apply our simple algorithm. Now, the algorithm is very, very simple. We will say longest is one, assuming that the longest length that you can get is one. And we will keep a track of, uh, rather last smaller. Now, what is the meaning of last smaller? It will keep a track. What was the last smallest guy that you have seen? And as you mean, we are just starting off. We haven't seen anything. So you'll keep it as"
+    },
+    {
+      "chunk_id": "L029_C7",
+      "start": 382.56,
+      "end": 446.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=382s",
+      "text": "smallest guy that you have seen? And as you mean, we are just starting off. We haven't seen anything. So you'll keep it as integer minimum. And I will say count current. So you'll always, uh, taken the sequence with us. And I'll initially say, we don't have any sequence when you're starting off. So the count current is zero. And now we start the iteration. Now, when we are starting the iteration, now just imagine this. If this one had to be a part of our sequence, the before element has to be zero. And the last smaller says, no, we have integer min. So you cannot be a part of my, you cannot be a part of my sequence is like fine. If I cannot be a part of my sequence, I will be the new sequence. And he says, okay, I will be the new sequence. And I'll start off with the length one. Perfect. Let's move. The next one is one. So if I'm saying one has to be somewhere next, a part of a sequence before one has to be zero and we see the before smallest is one. So maybe this will be a part of sequence, but this will not be. So what I'll say is, no, you don't need to be because you're the same, you're the same. So whatever sequence I'm running, whatever sequence I'm going with,"
+    },
+    {
+      "chunk_id": "L029_C8",
+      "start": 446.96,
+      "end": 509.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=446s",
+      "text": "no, you don't need to be because you're the same, you're the same. So whatever sequence I'm running, whatever sequence I'm going with, we are the same. So we don't need another same element. So we'll not go with you. Perfect. Let's move ahead. Will you increase the count? No, because this won't be included. Again, you get a one and this one will require zero, but it doesn't have. And the last smaller is one. And the last smaller is one. This cannot be part of my sequence as of now. So this one is taken as the sequence. The count is one. So this one cannot be. Now the moment I move to two, this is where you understand you have a two. Now for two to be the part of the sequence, what will you look for? Look for one. And you have a one because the last smaller in your sequence is one. Now you have a two. So can I say this can be the part of my sequence and the last smaller will be two. So you've got the count as two. Hence the longest can be updated as two. Next you move to two. Now this time, remember the count is two, which you know means you have taken this one and you've taken this particular two. Now you're standing at this two. Can you take this two?"
+    },
+    {
+      "chunk_id": "L029_C9",
+      "start": 509.44,
+      "end": 571.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=509s",
+      "text": "means you have taken this one and you've taken this particular two. Now you're standing at this two. Can you take this two? No. Why? Because the last smaller was two. So if you take, it's a repetition and you need consecutive. So you cannot and you'll move forward. Can you again take this two? No. So you'll move forward. Can you take this three? Yes. Why? Because three says the last smaller is two. And that is what when I say consecutive means the last element has to be one lesser. So he is. So I'll say count will increase by three. Longest will get updated by this. The last smaller gets updated by three. I move forward. The next element is again three. Three says I'm equivalent to last smaller. No need to do anything. Please go. He's like, okay, I'll go. Next I have four. This time I have four. The last smaller is three. So I can take the four into the consecutive sequence. Thereby the count current will be four and the longest will be updated to four. Next I'll update the last smaller to four and I'll move to a hundred. The moment I move to a hundred, this is a very, very critical point to understand. The moment I move to a hundred, it looks at the last smaller. It's four. But can this be a"
+    },
+    {
+      "chunk_id": "L029_C10",
+      "start": 571.68,
+      "end": 628.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=571s",
+      "text": "point to understand. The moment I move to a hundred, it looks at the last smaller. It's four. But can this be a part of consecutive sequence? He says no. It had to be 99 and it is four. So this cannot be a part of the consecutive sequence. So I say fine, we start new. We start fresh. We start fresh from here. So let's start off with a length one. Let's say the last smaller to be a hundred and then we'll move forward. So you'll always start fresh if the last smaller is not equal or not one lesser. Next we have again a hundred. The same applies. We have a hundred one. So what will happen? A hundred one will look at the back and we have a hundred. So we can take the hundred one and the length will increase to two and the last smaller will be updated to a hundred one. Next we have again a hundred one. Nothing happens. Next we have a hundred two. So the hundred two says who's the last? He says a hundred one. So the sequence increases by one and this won't be the longest because longest is already four and then you complete the iteration. Once you complete the iteration, you see that the longest is store as four and this is going to be your answer. Got it?"
+    },
+    {
+      "chunk_id": "L029_C11",
+      "start": 628.72,
+      "end": 697.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=628s",
+      "text": "you complete the iteration, you see that the longest is store as four and this is going to be your answer. Got it? So if I have to write the code, what will it be? The first step will definitely be for sorting and then we say longest we can store as one. Count current we can probably store as zero and the last smaller we can definitely store as this very small number which is integer min. Once we have done this, we are iterating in the array. So the iteration will go from zero to n. This is something we know for sure. And now we know one thing. If array of i has to be a part of the sequence, then one lesser than that has to be the last smaller. If that is the case, I will say count. Can you increase yourself by one and last smaller? Can you get updated to this because this is the new term in the sequence? This is the new term in the sequence. Perfect. And if this does not works out, that means it's a different element. It's a different element. And can I say if array of i is equal to equal to the last smaller, will we do anything? In this case, whenever we add a one, did we do anything? No, the last smallest state as one, the count state because this we will never"
+    },
+    {
+      "chunk_id": "L029_C12",
+      "start": 697.36,
+      "end": 764.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=697s",
+      "text": "whenever we add a one, did we do anything? No, the last smallest state as one, the count state because this we will never pick up. So we will not do anything. We will not do anything in this case. Nothing to be done when it is equal to but when it is not equal to that's when you do something when it is not equal to then then you do something is unequal to you don't do anything on one less you have done. So only only remaining operation is whenever you get something like hundred, which is for sure, like the 99 is not there because that is already checked with this if so when it is not equal to what do you do? You say let's start a new sequence and let's take the hundred as the new smaller guy which is array of i and you move ahead and after this if after this else if you can just go ahead and say longest equal to max of longest comma whatever is your current count. Perfect. That's how easy it was. In case you want to try out the problem, the link will be in the description. What would be the time complexity and login and going forward a big of n. So over here you're distorting the array. Yes, you're distorting the array. So the interview might not like it."
+    },
+    {
+      "chunk_id": "L029_C13",
+      "start": 764.72,
+      "end": 831.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=764s",
+      "text": "a big of n. So over here you're distorting the array. Yes, you're distorting the array. So the interview might not like it. So this is where he might ask you to maybe not distort the array or maybe get rid of the n login stuff that you're doing and then you should move to the next solution which is the optimal one. So the optimal solution is only optimal under some constraints and I'll be discussing them when I discuss the time complexity of the optimal solution. The optimal solution is very simple and what we need to do is first step will be put everything into a set data structure. So what I'll do is I'll iterate in the array. It's like hundred and two. So I'll put that into the set data structure for I'll put that into the set hundred. I'll put that into the set one. I'll put that into one. I'll put that into the set hundred one. I'll put that into the set three. I'll put that into the set two. I'll put that into the set one. No more because set only stores unique elements one again. No more because set only stores unique element. Once I've put everything into the set data structure and over here we will be taking an unordered set in C++. If you're using Java, then you'll be taking hash set which will be ordering them. But in C++ I'll be taking an"
+    },
+    {
+      "chunk_id": "L029_C14",
+      "start": 831.52,
+      "end": 898.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=831s",
+      "text": "in C++. If you're using Java, then you'll be taking hash set which will be ordering them. But in C++ I'll be taking an unordered set. So assuming these are the elements like unordered like they are not sorted. So the elements will look something like this in a set data structure. What I will now do is I will now start iterating element by element in the set data structure and the first element that I'll get is hundred and two. When you look for hundred and three, when you look for hundred and four, logically if you start looking then it kind of becomes similar to the brute force. This is where we will have a hack. Yes we'll have a hack. Now remember one thing. Over here the sequence that we have is hundred, hundred and one, hundred and two. So if I start looking from hundred and two again it's more like looking from somewhere mid in the sequence. Isn't it? Isn't it better if you look right from hundred, right from the starting point itself. I'm like yes. So what I'll do is I'll see do we have a hundred and one in the array in the set data we have. So we'll say it's not the starting point. It's not the starting point. So let's not start. So I'll not start because we"
+    },
+    {
+      "chunk_id": "L029_C15",
+      "start": 898.08,
+      "end": 964.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=898s",
+      "text": "we'll say it's not the starting point. It's not the starting point. So let's not start. So I'll not start because we have a hundred and one. So thereby we do not start. Fine. Let's move to the next. We have four. Will we start looking from four? So if you remember one, two, three, four was the longest sequence. Right. So if you start looking from four again not not needed because three is already there. If you look in the set, if you look in the set three is already there. So you don't start. Fine. Let's move to the next hundred. Now you look around. Is ninety nine there? And you find ninety nine is not there. Ninety nine is not there. So you are sure that this is probably probably a starting point. And that's when you see do we have hundred and one? And it says yes. Then you say do you have a hundred and two? It says yes. Then you ask do you have a hundred and three? And you know in order to check do we have it in the set or not? It's a very logarithmic of n or big of an operation of if you are using unordered set. So it's there. It's there. So you move. Do we have hundred three? No we do not have. We stop. How many elements did we have? Three. So this will become your longest as"
+    },
+    {
+      "chunk_id": "L029_C16",
+      "start": 964.88,
+      "end": 1030.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=964s",
+      "text": "have hundred three? No we do not have. We stop. How many elements did we have? Three. So this will become your longest as now three becomes. Perfect. Let's move to the next. We have one. Okay. What's the before? Zero. Do we have a zero? No. So zero is not there. So we're sure that it's probably a starting point. Fine. Let's look at the next. Two. Do we have? Yes. Let's look at the next. Three. Do we have? Yes. So move. Next four. Do we have? Yes. So we move. Next five. Do we have? No. So you say we don't have. What is the length that you generated over here? Four. And thereby the longest gets updated to four. Perfect. So let me quickly erase this. Now what is the next element? Hundred one. Let's start from hundred one. What's the previous of hundred one? Hundred is there. Is it in the set? It is. So you don't start. Again the same reason because if you start you'll unnecessarily start checking from hundred one. You'd have already done it from hundred or you will do it from hundred. So there's no need to do for hundred one. No need to start from the mid because that's an unnecessary event. So I'll avoid it by checking one before. So I avoided it. Perfect. Next three. So again for"
+    },
+    {
+      "chunk_id": "L029_C17",
+      "start": 1030.8,
+      "end": 1092.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=1030s",
+      "text": "because that's an unnecessary event. So I'll avoid it by checking one before. So I avoided it. Perfect. Next three. So again for three you just check for previous which is two and you see that two is already there in the set. So no need to go because if you if you go what will happen is you'll start going for three then you'll go to four. That's a time waste. So next is two. Now when you start from two you'll check for one and you'll see that one is already there. So do you need to start because if you start what will happen is you'll start from two you'll go to three you'll go to four. Unnecessary three steps. Unnecessary three steps. So you do not go. So apparently you don't go any further and that's a complete iteration in the set. Once you have done the complete iteration in the set what is the longest total? That will be your answer. And again even if the set is sorted it still works fine because what we are making sure is let's analyze what how many iterations we did if you have to ask. So there was one sequence one two three four and there's the other sequence hundred hundred one hundred two. We did four iterations for this. We did three iterations for this. Did we do any other"
+    },
+    {
+      "chunk_id": "L029_C18",
+      "start": 1092.72,
+      "end": 1158.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=1092s",
+      "text": "sequence hundred hundred one hundred two. We did four iterations for this. We did three iterations for this. Did we do any other iteration for anyone else like two three four hundred one hundred two. No. How did we prevent that? By just checking if the previous one was there. If the previous one was there we did not because we know in a consecutive sequence the first element will never have a previous one. We'll never have a previous one. So we always start looking from the first element. Got it? So let's quickly code it up. The problem link will be in the description. Make sure you try it out from there. For Java and Python code there's an article link in the description. Scroll through the article and you'll get C++ Java and Python code. You can have it on the side just in case you're using any other language. So this is how you declare the size. We know if the size is empty there will be no longer sequence or else we will have a minimum of one for sure. At the end of the day we will have to return this and we need a set. So we will declare an unordered set assuming there are no collisions and this will take the least time complexity. And let's quickly iterate in the vector. So in the list rather. So we will go ahead and say insert of a of i. Perfect."
+    },
+    {
+      "chunk_id": "L029_C19",
+      "start": 1158.88,
+      "end": 1224.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=1158s",
+      "text": "let's quickly iterate in the vector. So in the list rather. So we will go ahead and say insert of a of i. Perfect. Done. Once you've done we need to iterate in the set. This is how we iterate in the set for Java. The code link is in the description. So we say set dot find. Okay. Are you the first element? If you're the first element your previous one will not be in this. Okay I am. Then you are a part of this sequence that I'm trying to count and you're the first element. Perfect. X is the first element. And let's look if you have your next that's x plus one. Something similar to the brute force. And if you are if you have you will not have this. So instead of linear search now I'm using the set data structure. That's how I modified the brute force. Instead of linear search I'm using the set data structure. I'll say if you have fine let's go to the next sequence which is x plus one. That's the next element. Let's increase the count by count plus one. Once you've done everything can I say longest. Can you update yourself by longest comma whatever the count this particular sequence gave you and then return it. Let's quickly run it up and see if it is running fine. It is and I'll quickly submit it up. Now for time complexity we know one thing. If we use"
+    },
+    {
+      "chunk_id": "L029_C20",
+      "start": 1224.32,
+      "end": 1288.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=1224s",
+      "text": "see if it is running fine. It is and I'll quickly submit it up. Now for time complexity we know one thing. If we use unordered set it will end up taking big of one in an average at the best case. But the worst case when collisions happen it's a very very rare case. Then the set will end up taking big of it. So in the interview clearly state that. Okay. So assuming it the set takes big of one. First you're iterating and putting everything into the set. That's a big of one. Assuming the set is taking big of one. So that is what the time complexity for the first iteration this loop will be. Then we are iterating through the set. Then we are iterating through the set and then for every element we are iterating. You might think this while loop is like another n but this is not another n. Why let me tell you. So if you looked for this example let's see how many iterations we did. So we did one two three four five six seven iterations. We did a total of seven iterations for sure. Right. That is through the set. And then when you figured out hundred you move from hundred one then to hundred two. So that's another three iterations. And then when you figured one you move from one two three four."
+    },
+    {
+      "chunk_id": "L029_C21",
+      "start": 1288.08,
+      "end": 1355.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=1288s",
+      "text": "one then to hundred two. So that's another three iterations. And then when you figured one you move from one two three four. So that's another four iterations which is fourteen which is near about two n iterations that you did. Because we did implement the logic where you never started from two n check. You never started from three n check. You never started from four. That is why it's a two n and not a big of n. Because we are not starting from every one. We're starting just from the first guys. So thereby this will be two n. You can take out a you can try out another examples as well. You will find at the max it will go for two n. So two n plus n will be three n. Two n plus n will be three n. And that is the time complexity under the assumption that the set is taking big of one. If if they say that there's a worst case then you have to take the logarithmic and then then then then the brute force is better. Because over here you're still taking the logarithmic of n and a space complexity of big of n assuming all the elements are unique. So that's the time complexity and the space complexity for this particular solution. Going back to the sheet I can say that this is done and I hope you have understood the brute the better and the optimal"
+    },
+    {
+      "chunk_id": "L029_C22",
+      "start": 1355.28,
+      "end": 1390.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=oO5uLE7EUlM&t=1355s",
+      "text": "back to the sheet I can say that this is done and I hope you have understood the brute the better and the optimal along with the code. Just in case you did please please consider giving us a like because that is something that does motivate me. And if you're new to our channel what are you waiting for? Kill that subscribe button because this channel has a bunch of resources that might be beneficial for you. And to continue our tradition please make sure you come and understood so that I understand that you are understanding everything. And if you haven't followed me on Instagram Twitter LinkedIn all the profile links will be in the description. With this I'll be wrapping up this video. Let's meet in some other video till then bye bye take care."
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "lecture_id": "L189",
+  "lecture_number": 189,
+  "lecture_title": "DP 8. Grid Unique Paths | Learn Everything about DP on Grids | ALL TECHNIQUES 🔥",
+  "youtube_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw",
+  "chunks": [
+    {
+      "chunk_id": "L189_C1",
+      "start": 0.0,
+      "end": 74.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be starting with something which is known as DP on grids or you can say DP on 2D matrix or something similar to which has n rows and probably not m columns but similar to that is what we will be starting with. So to start off with we will be solving problems how to count paths then we will be solving problem how to count paths with obstacles then obviously we will be doing something as minimum path sum. Now these questions are all asked in big big tech giants. Okay so right after that we will be doing something like max path sum but this will be under certain conditions it won't be the standard way. Right after that we will be doing the triangle problem and after that again we will be doing one similar problem which will be having two start points with two people just to understand how to elongate. So I'm very much"
+    },
+    {
+      "chunk_id": "L189_C2",
+      "start": 74.48,
+      "end": 144.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=74s",
+      "text": "having two start points with two people just to understand how to elongate. So I'm very much sure after you do all these six problems because all these six problems are of different types. If you have done all these six problems you can do any problem on DP on grids or on 2D matrix this is my promise to you. So you just need to make sure all the six problems is what you need to watch and submit. Now I'll be leaving the code studio link out over there in the description you can definitely submit over there just in case if you want any other platform you can just take up the question in the title and you can do a google search if you want any other links but yeah I'll highly recommend you to try out code studio because it's a wonderful platform and something which is from India so we should definitely support it. Now what are the prerequisites for DP on grids I will highly recommend you to watch the lecture 7 as I always say because over here I've taught you a trick where I've told you that if you're writing a recursion function and you have to count ways how do you do that you write a base case and in that base case you either return a 1 or either you return a 0 depending on if your conditions are met or not and then you take whatever"
+    },
+    {
+      "chunk_id": "L189_C3",
+      "start": 144.16,
+      "end": 216.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=144s",
+      "text": "either return a 1 or either you return a 0 depending on if your conditions are met or not and then you take whatever recursions you have like how many number of recursions and then you return L plus R so if you remember these ways that's how you count ways in the lecture 7 I've deeply taught you this so if you don't know about this please please watch it out because without this recursion on grids or DP on grids will not be easy for you so please watch it before starting off with DP on grids. So to start off with let's check out the first problem which is total unique parts now what are they saying they're saying you're present at point A okay which is the top left cell of an m cross n matrix top left cell of an m cross n matrix your destination is point B which is the bottom right cell of the same matrix something like 0 comma 0 will be the top cell and the bottom will be m minus 1 and n minus 1 for short your task is to find the total number of unique paths from point A to point B in other words you will be given the dimensions of the matrix as integers m and n and your task is to find the total number of unique paths from the cell 0 0 like the point 0 0 to n"
+    },
+    {
+      "chunk_id": "L189_C4",
+      "start": 216.72,
+      "end": 285.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=216s",
+      "text": "and your task is to find the total number of unique paths from the cell 0 0 like the point 0 0 to n minus 1 and m minus 1 for an example if I give you a matrix of 2 cross 2 size the number of unique paths will be 2 let's understand this question in deep okay so if I'm saying that I'm giving you a 2 cross 2 matrix okay this is the 2 cross 2 matrix definitely and over here if I'm saying you you started this this is your starting point this is your ending point because if I write down it states from 0 0 to 1 comma 1 because that is the right bottom most cell so how can you basically move this okay now remember in the question it clearly states you can only move right or you can only move down no other movement is allowed only right or only down so if you move right you will end up reaching here and then again if you move right you will end up reaching here so that's one of the ways and I can see the other way is you can decide you will move here and you will reach here so I think there are a couple of unique ways unique ways in which you can reach from 0 0 to 1 to 1"
+    },
+    {
+      "chunk_id": "L189_C5",
+      "start": 285.12,
+      "end": 354.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=285s",
+      "text": "I think there are a couple of unique ways unique ways in which you can reach from 0 0 to 1 to 1 okay so if there are two two ways two unique ways you have to return me too so how do you do this problem now if you remember how to write recurrence that is something which I taught you how to write a recurrence that that is something which I taught you but before that we have to analyze why recursion right so what are you doing starting from something like 0 comma 0 and if I just write it in a generic way you're starting from 0 comma 0 and you're wanting to go till m minus 1 and n minus 1 that is what you are looking to do am I correct right I'm absolutely correct now can I say you're basically trying out all possible ways to go from 0 0 to m minus 1 n minus 1 all possible ways now whenever you try out all possible ways what have I taught you till now all possible ways means apply recursion as simple as that because if you have to count all possible ways I'll try all ways and I'll count them as simple as that after that dp and all that comes afterwards but if I'm being asked to count all ways I'll try all ways as simple as"
+    },
+    {
+      "chunk_id": "L189_C6",
+      "start": 354.96,
+      "end": 433.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=354s",
+      "text": "that dp and all that comes afterwards but if I'm being asked to count all ways I'll try all ways as simple as that I'll try one way two way three way I'll keep counting in this way I can get the total number of ways right so that is what I'll do so what is the question how to write records now in our 1d dps I've taught you how to write records what is the step one express everything in terms of indexes remember this express everything in terms of indexes but over here instead of index what will you do it's a 2d matrix so obviously indexes will be two uh two uh two indexes one is the index i which will represent the row number one will be the index j will which will represent the column number so slight change in the three rules over here express everything in terms of i and j where i is basically row number j is basically column number right next explore all paths or do all stuffs whichever you call it do all stuffs the point number two stays the same if I'm counting always sum up always if I'm looking for max or minimal I'll take the max or minimal depending on the question if you are being asked to count all the ways you sum up all the ways if I'm being asked to count max and minimal you'll count the max and minimal okay"
+    },
+    {
+      "chunk_id": "L189_C7",
+      "start": 433.04,
+      "end": 503.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=433s",
+      "text": "the ways you sum up all the ways if I'm being asked to count max and minimal you'll count the max and minimal okay depending on your question you're going to do this so simply follow these three steps and you can write the recurrence for any 2d grid and after that you know the steps are very easy to convert a recursion to dp to rather memoration and then to tabular dp and probably after that to space optimization right so let's get started so what was the question the question was stating how many ways are there in order to reach from 0 0 to n minus or rather m minus 1 n minus 1 that was the question correct so can I say let's assume I write a recursion f of i j I write a recurrence f of i j where it tells me the number of unique ways the number of unique ways in which I can reach from 0 0 to i comma j specifically what I'm saying is if I'm taking a grid like this and assume this is my i j I'm asking in how many ways so what I'm saying is in how many ways can you reach from here to here so basically I'm trying to figure out the answer for this particular matrix that is what f of i j is signifying it's trying to figure out in how many ways can you"
+    },
+    {
+      "chunk_id": "L189_C8",
+      "start": 503.44,
+      "end": 573.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=503s",
+      "text": "for this particular matrix that is what f of i j is signifying it's trying to figure out in how many ways can you reach from here to here if i and j is this right so where will we start off with we will definitely start off with f of m minus 1 and n minus 1 because this is f of n minus 1 and I want to find in how many ways can I reach from here to here so the entire matrix right so I can say I'll start off with i comma j where the initials of i comma j will be m minus 1 and n minus 1 this is generically how you determine where to start off with okay so that's what I've done what's the first step in recursion it's the base case right so if you remember if you remember the lecture 7 in lecture 7 I think I told you how do you count ways in order to count ways you have to determine a base case that returns one correct so in the base case if you have reached your destination you return one or you return zero if you haven't reached your destination that's that's your base cases if you have reached your destination you return one if you haven't reached your destination you return zero that's what I've"
+    },
+    {
+      "chunk_id": "L189_C9",
+      "start": 573.12,
+      "end": 642.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=573s",
+      "text": "base cases if you have reached your destination you return one if you haven't reached your destination you return zero that's what I've taught you in the lecture 7 so why don't you do that over here so what I'll say is okay I know my destination is very straightforward if I'm starting from n minus 1 m minus 1 or rather the opposite m minus 1 and m minus 1 I will have to go in such a way that I reach this particular guy from here correct so I know this is the base case where I reach zero and zero so straight away say if I is equal to equal to zero and j is equal to equal to zero if that's the case I definitely know I have reached my b like the destination and if I've reached my destination I know the recursion would have taken a path and it would have reached here so why don't I count that path so I will say return one because on returning one it gets counted lecture 7 guys lecture 7 of recursion series okay so that's that's how you can easily count it correct now what is the other base case assume you are standing at m minus 1 m n minus 1 and there is 0 comma 0 and you kept moving up kept moving up kept moving up kept moving up and you exceed the boundary or it might be the other"
+    },
+    {
+      "chunk_id": "L189_C10",
+      "start": 642.24,
+      "end": 710.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=642s",
+      "text": "you kept moving up kept moving up kept moving up kept moving up and you exceed the boundary or it might be the other way you kept moving left you kept moving left and you exceeded the boundary so you can either exceed the boundary in the upper direction which means the row number row number goes lesser than zero or the column number goes lesser than zero very straightforward so what I can say is if the row number goes lesser than zero or the column number goes lesser than zero that path is something which is not a path because it took you out of the boundary and I wanted to travel inside the matrix in order to reach from m minus 1 n minus 1 to 0 so it you got out of the boundary right so what you will do is you will say I will not count this path this path is not under my count so I will return 0 make sense that's what I've done so the base cases have been written remember this these are the base cases that I've written so express in terms of index and write base cases that's a step one so what I've done is I made sure the step one is complete what is this explore do all stuffs now what is all stuff over here let's analyze the question stated the guy can move in"
+    },
+    {
+      "chunk_id": "L189_C11",
+      "start": 710.96,
+      "end": 782.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=710s",
+      "text": "what is this explore do all stuffs now what is all stuff over here let's analyze the question stated the guy can move in the rightward direction or in the bottomward direction so if you are moving from the bottom yes if you are moving from the bottom we can say it's the opposite yes we can say it's the opposite if you're moving from here to here I can say the right one will be either you can move left either you can move upward it is exactly the opposite so if it's exactly the opposite just do because there are two ways one is up one is left instead of bottom and right over here it's up and left why don't you explore it so I can say okay I have couple of ways one is the upper way where I will say okay I will move to if I go up if I go up what happens the row reduces again very basic stuff the row reduces and the column stays same if I go left what happens the rows because if I'm going left we are still in the same row but we are moving a column back so thereby j minus one correct so we have done this and so explore all possible paths is also done what's the next step sum all the ways because you've been asked to count the total ways so kindly sum up all the"
+    },
+    {
+      "chunk_id": "L189_C12",
+      "start": 782.32,
+      "end": 861.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=782s",
+      "text": "done what's the next step sum all the ways because you've been asked to count the total ways so kindly sum up all the ways so why don't you sum up all the ways so what I will do is I will say return up plus left so what I've done is I have returned up plus left so I've summed up all the possible ways over here and this is what a recurrence will be yes this is how you can easily yes this is how you can easily write a recursive solution so very straight so very straightforward express explore sum up or whatever is the question stating that's how you do db on drifts so since I've done this we have done recursion right and we know that for every index yes and for every index we are exploring uh two possible paths correct so I can say the time complexity of recursion how many ways are there like how many boxes are there in the matrix m into n boxes and for every box you are taking two two paths up left up left up left up left so if for every boxes you are taking two paths can I say can I say all the boxes in total yes all the boxes in total will be having two into two into two into two into two into two paths which is two into m into n parts so the time"
+    },
+    {
+      "chunk_id": "L189_C13",
+      "start": 861.92,
+      "end": 938.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=861s",
+      "text": "having two into two into two into two into two into two paths which is two into m into n parts so the time complexity is this which is exponential in nature right space complexity is a recursive stack space which will be uh the path length which will be the path length remember the space complexity will be the path length why because if you're wanting to reach here let's say from uh three comma three the path length will be you will go to two comma two then you will uh sorry or two comma three rather then it'll go to one comma three then it'll go to zero comma three then it'll go to zero comma two then you'll go to zero comma one and then you'll go to this so the path length contains one length two length three length four length five length six length so it's basically the path length is nothing but m minus one plus n minus one is the path length because over here you took if you see carefully over here if the length was four you ended up taking three upward directions and you ended up taking three leftward directions right thereby the path length is uh this this is the recursion's time complexity and the stack space complexity now what's the next step what's the next step in recursion i have told you easily how do you optimize recursion in order to"
+    },
+    {
+      "chunk_id": "L189_C14",
+      "start": 938.48,
+      "end": 1010.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=938s",
+      "text": "now what's the next step what's the next step in recursion i have told you easily how do you optimize recursion in order to optimize recursion what you generally do is you try to convert that into a possible dp solution correct and how do you do this in order to do this you try to do something which is known as memo iation correct but when can you apply memo iation if there are overlapping sub problems yes if there are overlapping sub problems you tend to apply something like a memo iation so why don't we do that so what i'll do is i will take m equal to uh let's say three i'll take n equal to three and i'll try to figure out how many total ways are there correct so practically speaking this is how the grid will look and you want to find how many ways are there to reach from this particular position to this particular position right so let's do that so this is zero one two this is again zero one two so we start with f of two comma two correct now where can f of two comma two go it can either go to the upward direction which is definitely f of the row numbers reduces by one and the column stays the same or it goes in the leftward direction where the row number"
+    },
+    {
+      "chunk_id": "L189_C15",
+      "start": 1010.08,
+      "end": 1073.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1010s",
+      "text": "the row numbers reduces by one and the column stays the same or it goes in the leftward direction where the row number stays same and the column number reduces by one correct and if you know in recursion if this is the upward direction this is the leftward direction which recursion will be occurring first obviously this recurrence will be occurring first so let's do this recurrence now f of one two where can it go it can definitely go to something as f of zero two and it can definitely go to something as f of one comma one this is the upward direction this is the left direction this is the up this is the left now where can f of zero to go it can again go to the up so if it goes to the up it's minus one comma two and if it goes to the left it's basically zero comma one correct so what happens over here whenever you reach f of minus one comma two what happens over here so if you remember the moment the row goes lesser than zero there was a base case as i lesser than zero or or j lesser than zero if any of these things happen you end up returning a zero so you end up returning a zero over here correct over here there is something like f of zero one again it can go up"
+    },
+    {
+      "chunk_id": "L189_C16",
+      "start": 1073.6,
+      "end": 1142.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1073s",
+      "text": "you end up returning a zero over here correct over here there is something like f of zero one again it can go up which is minus one comma one or it can go to the left which is zero comma zero correct so minus one comma one will again is the upward direction which will return zero and this guy ends up returning one because this is where your destination is because this is where your destination is you have reached f of zero comma zero so that thereby this is your destination so how will the recursion be like f of zero comma one would have called up would have called left so the up would have been minus one comma one and the left would have been f zero comma zero this guy gets one this guy gets zero and in order you return the summation of both which is zero plus one thereby this guy gets a value of one so i can say this guy gets a value of one so you can easily return that value one correct so thereby thereby let's quickly erase this and try to solve this recursion so now you're at f of zero two at f of zero two would have happened you would have gone to up which is f of minus one two which gave him zero which gave him zero it have gone to left"
+    },
+    {
+      "chunk_id": "L189_C17",
+      "start": 1145.2,
+      "end": 1216.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1145s",
+      "text": "gone to up which is f of minus one two which gave him zero which gave him zero it have gone to left which would have gave uh gave him f of zero one which is one so thereby it returns zero plus one makes it a value of one so it returns a one so let's quickly erase it so this is how it will be and in the next step yes in the next step what happens there is something like f of one two it goes up and now it goes left so f of one one will be something like f of zero one because it has to go up and similarly it will be like i have to go left which will be f of one zero correct so if you carefully see we get our first sub problem zero one has been solved here so there is no need to go further down into f of minus one one which is the top and there is no need to go to the left so i got my first sub problem thereby i see there are overlapping sub problems and if there are overlapping sub problems what can we apply we can definitely apply memoization and what is the shortest what is the shortest trick that i've told you to apply my machine just figure out which is the changing parameters so there are"
+    },
+    {
+      "chunk_id": "L189_C18",
+      "start": 1216.16,
+      "end": 1284.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1216s",
+      "text": "is the shortest trick that i've told you to apply my machine just figure out which is the changing parameters so there are a couple of parameters correct one parameter was i the other parameter was j so if there was a parameter i which is changing there is a parameter j which is changing so what is the eyes maximum value i can say it's m minus one because that is where we start the recursion call what is the j's maximum value n minus one because that is where we start the recursion call so i can say if i require the index m minus one i will have to declare an array of size m because if i declare an array of size m i will get the index m minus one similarly similarly in order to get an index n minus one i have to declare an array of size n so basically i can say i will be requiring a dp of m cross n which is a 2d dp of m cross n so if i have a 2d dp i can convert this into a memo iation solution so how do you convert this into a memo solution again very straightforward step one declare the dp declare the dp of size m n if you're using java you can easily do this if you're using c plus plus you can declare a vector and make sure everything is initialized with minus one"
+    },
+    {
+      "chunk_id": "L189_C19",
+      "start": 1284.96,
+      "end": 1360.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1284s",
+      "text": "can easily do this if you're using c plus plus you can declare a vector and make sure everything is initialized with minus one that that is something which we have to do to make sure that we understand that these values have been previously stored after this what is the step two store the answer that you're returning store the answer that you're returning so kindly go across and store the answer so let's store the answer over here dp of i j equal to up plus left next step three whenever there is a call to the answer if the answer has been previously stored or not if yes kindly return dp of i j that's how yes that's how you can easily convert a recursive solution to a memo iation solution and if you've converted a recursive solution to a memoration solution the time complexity will be no more exponential rather it will be the number of states because at max you can have a call for zero zero zero one zero two like what calls can you have if i ask you on a very generic term you can have a call for zero zero you can have a call for zero one you can have a call for zero two zero three similarly you can have a call for one zero one one one two one three two zero"
+    },
+    {
+      "chunk_id": "L189_C20",
+      "start": 1360.4,
+      "end": 1430.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1360s",
+      "text": "call for zero two zero three similarly you can have a call for one zero one one one two one three two zero and so on so i can say at max you can have n cross m like what are the maximum calls of f of i j you can have you can have at max of n cross m calls for recursion thereby the time complexity is this and the space complexity is still a recursion stack space which is the path length and the path length is n minus one plus m minus one that's the path length plus a big O of n cross m for the dp array that you are using so we have boiled the time complexity into much better than exponential and this will be accepted so if you are in if you are in an interview you can stop over here but i will highly recommend if you get these kind of problems go to the tabulation go to the space optimization eat as much as time as possible because if you know the problem if you can solve the problem it's better you impress the interview by that one problem in such a way that he'll be like wow okay but if you stop at memorization he might start asking instead of him asking you impress him all right so we have we have pretty much done the memorization form what's the next one tabulation"
+    },
+    {
+      "chunk_id": "L189_C21",
+      "start": 1434.88,
+      "end": 1507.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1434s",
+      "text": "of him asking you impress him all right so we have we have pretty much done the memorization form what's the next one tabulation the next one is tabulation why because we still have a recursion stack space that is being used and this somewhere might give you tl so i don't want this extreme recursion stack space to be used so i want to omit this that's where we have to think of something as tabulation so what did i teach you for tabulation if you remember whatever is the base case in recursion just write that what is the base case over here it's uh states i equal to zero j equal to zero return one so go over here first of all to declare an array of size dp of n m first of all declare an array of size dp of n and m what is the next thing that you will do is very straightforward it's you will be like declare the base case of zero zero to be one okay so that's one of the things what are the other base case the other base case stated i lesser than zero or or j lesser than zero now this cannot be expressed in dp so ignore this we will deal it uh deal with it separately so what is tabulation what is tabulation now a lot of people will say tabulation is going"
+    },
+    {
+      "chunk_id": "L189_C22",
+      "start": 1507.04,
+      "end": 1581.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1507s",
+      "text": "it uh deal with it separately so what is tabulation what is tabulation now a lot of people will say tabulation is going from bottom up but do you understand the meaning of bottom up do you understand the meaning of top down that's very very important so do you understand the meaning of tabulation now a lot of people will say tabulation is bottom up and they have a tendency key bottom up means going from zero to n or something like this let's understand what is tabulation so tabulation is basically what is recursion why do we call a recursion a top-down approach let's understand if you carefully observe in the recursion the call was made from here you went down you went down you went down and then you solved this base case then you accumulated the answer accumulated the answer and came back and this got its answer so you went down down down down and you got your answer and the top guy got his answer by going down thereby top down the top guy got his answer by going down but in tabulation it's the opposite you start from f of zero zero one then you accumulate then you take this accumulate take this accumulate take this accumulate and you ultimately reach f of two two so you start from the down which is bottom and you go to the up"
+    },
+    {
+      "chunk_id": "L189_C23",
+      "start": 1582.32,
+      "end": 1645.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1582s",
+      "text": "and you ultimately reach f of two two so you start from the down which is bottom and you go to the up so you go from down down down down to up so down upper bottom up that's why tabulation is known as bottom up all right don't it's not you go from zero to n it's basically you start from the base case you accumulate you accumulate and you go and reach at the top and you get your answer that's why we call uh tabulation as the bottom-up approach so we have done this right what's the next thing we have to understand so we have written the base case in 2d dp it's very important to understand what are the states i'm saying the states are i j what can be the possible first value of i that you have to think you'll be like striver the first value of i will be zero i'll be like yes but for this rho zero what can be the j value it can be zero it can be one it can be two it can be three dot dot dot till n minus one right next what can be the value of i it can be one for this j will be zero one two dot dot dot dot n minus one what can be the next i's value it can be two for this j"
+    },
+    {
+      "chunk_id": "L189_C24",
+      "start": 1645.12,
+      "end": 1724.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1645s",
+      "text": "one two dot dot dot dot n minus one what can be the next i's value it can be two for this j can be zero one two dot dot dot dot till n minus one so you're getting the states are like there is a state of rho that's for sure there is a state for the rho number which starts from zero goes on till n minus one and for every rho number there is a particular column number correct for every row number there is a particular column number which goes from zero to n minus one correct so we know this for sure we know this for sure so just write express the states remember the step one to convert i'll write the steps so that it gets easy the steps to convert a memo to a tabulation is very simple declare base case express express rather express various states in for loops or rather all states in for loops three copy the recurrence and write so step one is done which is declare base case step two express all states in for loop over here"
+    },
+    {
+      "chunk_id": "L189_C25",
+      "start": 1724.96,
+      "end": 1792.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1724s",
+      "text": "step one is done which is declare base case step two express all states in for loop over here there are two states so two nested loops will go copy the recurrence let's copy the records what are the records so can i say can i say i know one thing if i will be zero and j will be zero we have already expressed it so probably we can say if i is equal to equal to zero and and j is equal to equal to zero there is uh there is no need to do anything you can just continue or you can probably write this only the better way will be to write this only dp of zero zero will be one instead of over here you can directly write it or else if it's not the case then probably you can think of now let's let's analyze over here in the record in the recurrence in the recurrence we see if i is equal to equal to zero j is equal to equal to zero we stop here but if it's not then what we do we go to this line which says f equal to f of i minus one j left is equal to f of i j minus one correct just copy these two lines just copy these two lines okay don't think"
+    },
+    {
+      "chunk_id": "L189_C26",
+      "start": 1792.64,
+      "end": 1866.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1792s",
+      "text": "is equal to f of i j minus one correct just copy these two lines just copy these two lines okay don't think just copy up is equal to it states instead of f it will be dp i minus one j just write it left will be dp i comma j minus one so instead of f instead of parameters i express them in two d arrays because in recursion what happened was in recursion it went down solve this then again went down solve this but over here this guy is already solved and it is stored in a dp array it is already stored in a dp array so just use those values now instead of going and calling and solving it use those values what you did after this up plus left in recursion so up plus left and where did you store it in dp of i j right that's what you do and this is how you can easily write the tabulation easy super easy isn't it so i've written the tabulation quite simply again c plus plus java doesn't matter pseudocode matters so i've written the tabulation very very easily now the question arises a straightforward question will arise but striver what if i is"
+    },
+    {
+      "chunk_id": "L189_C27",
+      "start": 1866.64,
+      "end": 1939.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1866s",
+      "text": "written the tabulation very very easily now the question arises a straightforward question will arise but striver what if i is zero this i minus one will be a problem i agree i agree so just make sure you probably can give something like if i is greater than zero and probably something like if j is greater than zero simply then only we will take these cases otherwise no simple and if i is greater than zero we will take it or we will take upward to be zero like i'll show that in the code when we do the code i'll show it we can initially keep upward equal to zero left equal to zero and if if if these these two cases are true then it will modify those answers and this is how you'll do it if you remember in the recurrence we started with f of m minus one n minus one and then we split and got the answers so if m minus one and n minus one is the ultimate answer over here the ultimate answer will be stored in dp of m minus one and n minus one only thereby you get your answer that's how you do tabulation so once you've done tabulation what is the time complexity time complexity is now n into m because you're just running couple of nested loops what is the space complexity"
+    },
+    {
+      "chunk_id": "L189_C28",
+      "start": 1939.84,
+      "end": 2015.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=1939s",
+      "text": "the time complexity time complexity is now n into m because you're just running couple of nested loops what is the space complexity just n cross m for the space used no recursion stack space none of it that's how you get the time complexity and the space complexity right what's the next step the next step is space optimization can we do a space optimization what did i tell you in space optimization i told you striver if you see at any moment we are using the previous row we're just using the previous row and we're using previous column if there is a case of previous row and previous column then we can definitely space optimize so remember the space optimizations concept if there is a a previous row and previous column we can space optimize it remember this that's the golden rule that's the golden rule yes now uh do you need uh this for"
+    },
+    {
+      "chunk_id": "L189_C29",
+      "start": 2015.04,
+      "end": 2090.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=2015s",
+      "text": "golden rule that's the golden rule yes now uh do you need uh this for interview the answer is no i will recommend if if you don't want to learn it you can stop over here you can stop over here there is not an it's not a necessity you know space optimization just because i used to do cp i know this so well but it's not required in interviews generally the interviewers will also not be knowing space optimization so you can ignore it because they won't be rejecting you on the basis of this so you can stop the video if you don't want to learn space optimization i'll still recommend you to learn who knows the interview might be yeah understand right okay cool let's understand so what am i writing i'm specifically writing like if i write dp of i j i'm basically saying what am i using i'm using dp of the up which is j this is basically the up and the left which is basically i and j minus one this is the left that's what i'm using correct so when i'm starting off let's draw the matrix when i'm starting off if this is the matrix in the dp array how is the for loop running the for loop is like i equal to"
+    },
+    {
+      "chunk_id": "L189_C30",
+      "start": 2090.64,
+      "end": 2167.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=2090s",
+      "text": "this is the matrix in the dp array how is the for loop running the for loop is like i equal to j and j equal to j so the follow will be like first it will go here then here then here then then here then here then here then here then here then here yeah yeah yeah yeah yeah yeah yeah yeah yeah yeah yeah and so on so and so on so the follow up basically goes in this way and fills up the dpr in this version correct and we know this value we know this value for sure we definitely know this value when just one then we go across and figure this value but for this value will there be an up for this value Will there be enough? No. So, probably we can keep it as zero. Right. We can initially, remember this, we can initially start off with a dummy DP guy, dummy DP of n size, and we can initially keep it as 0, 0, 0, 0, 0. Yep. Next, we can probably say this as temporary, and we can start storing it. Whatever value you get over here, assume you get 1, assume you get 1, assume you get 1, assume you get 1, just assume you're getting 1. So, you store it over there. Right. Next, this is the value that you have to compute. Thereby, you come to the next row. When you come to this pink row,"
+    },
+    {
+      "chunk_id": "L189_C31",
+      "start": 2168.96,
+      "end": 2239.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=2168s",
+      "text": "Right. Next, this is the value that you have to compute. Thereby, you come to the next row. When you come to this pink row, and when you try to compute this guy, who is your up? This guy is your up. So, can I say, you no more require this, you no more require this. You just require for this guy you require the value stored at here, for this guy, you record the value here and here, for this guy, this is upward, this is the left for this guy, this is the point and leftward for this guy, this is the upward and left. So, you just require this green. So, can I see, I will now see this guy to be DP and this guy to be the temp and I can easily do my job. Once this is computed, assume this is computed like one, two, assume something like this three, three, four, assume this I'm randomly picking up values. Next, if you go to this guy and you're trying to compute this, you'll look at this guy's this value and this value, and by this becomes DP. So can I just store the previous row? Can I just store the previous row because if I'm storing the previous row, whenever I'm at the current row and I'm trying to compute, let's say this guy, I'll require this guy"
+    },
+    {
+      "chunk_id": "L189_C32",
+      "start": 2239.54,
+      "end": 2312.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=2239s",
+      "text": "storing the previous row, whenever I'm at the current row and I'm trying to compute, let's say this guy, I'll require this guy and this guy, this guy can easily get by row and this guy I'll easily get by previous row because in order to compute this, there is no requirement of this guy. There's only requirement of this up and this left. Thereby, we can always space optimize it. Got it? So we can always space optimize. That's the proof. Now what I'll do is I'll try to show you how to space optimize. So the best way to space optimize is this. Initially you declare a DP of n initialize it with zero because initially what did you require? You required this portion. So DP of n declared, right? DP of n declared. Next you're trying to compute this. So let's quickly write the same code without, without doing any further stuffs. Let's write the same code, which is J equal to zero to n minus one. And I know for sure if I is equal to equal to zero and, and J is equal to equal to zero, you're going to say DP of i, J equal to one. And you're going to continue else. What was I actually writing?"
+    },
+    {
+      "chunk_id": "L189_C33",
+      "start": 2312.62,
+      "end": 2390.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=2312s",
+      "text": "going to say DP of i, J equal to one. And you're going to continue else. What was I actually writing? I was writing something as a DP of i, J, DP of i, J, right? Equal to DP of i minus one. I'm not writing the cases like it might exceed, but I'm not writing. This is what I'm writing. Right? Now let's analyze. Instead of DP of i, J, let's try to compute this particular row only. Yes. Let's try to compute this particular row only. So it's a row. So this is the row. This is the particular row that it's computing. So what I'll do is I will now say temporary of n equal to zero. And instead of this, instead of this, I will write temporary of J. So I'm computing that particular row. Now over here, it's the previous guy. Remember this, it's the previous guy. DP of i minus one means previous row. And I know the previous row is DP. So what I can say is I can directly go to previous row. I don't need i minus one any further. Because the previous row is DP itself. So I can write DP of J, the previous row, previous row, or I can just declare it as previous. Right?"
+    },
+    {
+      "chunk_id": "L189_C34",
+      "start": 2390.78,
+      "end": 2469.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=2390s",
+      "text": "So I can write DP of J, the previous row, previous row, or I can just declare it as previous. Right? And this DP, it's saying on the current row, on the current row, the previous column. So what's the current row? The current row is temporary. Current row is temporary. So you can be like, okay, I do not require, I do not require to go any like DP something. I can just call the temporary to get the previous. So DP of J plus temporary done. Once remember this, once you have computed this particular for loop, the entire row has been computed. And next the i will increase. So this temporary becomes the next previous. So you can just store it. You can just store it. Right? So what you'll do is when this is getting computed, next, when you go to the next i, you make this temporary to the previous or DP, whatever you can call it. In this way, you can easily space optimize in an 1D array. Yes, you can easily space optimize in an 1D array. It is as simple as it can get. Now most of you would, might not have understood this. I'm not sure if I was so good that you have understood in one go. Just in case you did not, what I'll recommend is do a dry run of the for loop by yourself."
+    },
+    {
+      "chunk_id": "L189_C35",
+      "start": 2469.54,
+      "end": 2543.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=2469s",
+      "text": "in one go. Just in case you did not, what I'll recommend is do a dry run of the for loop by yourself. Do a dry run of for loop by yourself. Okay. And fill up and fill up. You will understand everything and fill up. You will understand everything. Why we do not require the entire grid. You will understand yourself. Okay. So as usual, now let's try to code it and show all of the codes just to have a quick revision. So what did I say? You're given M and N right? So you can say, I N T F I N T I N T J. And you can be like, okay, if I is equal to equal to zero and N J is equal to equal to zero, we return zero. We return one rather. So just return one to count the steps. Or else this is the case. You'll say it's not possible to return zero. Up will be quite simple. And left will be again, quite simple. Where it says I comma J minus one, and you can easily return up plus left by this check. If the answer do they require a modulated answers? No. So it should be fine. You can say return F of what? M minus one and N minus one. If you just do this simply, I think you should be getting an answer. So let's quickly run this code."
+    },
+    {
+      "chunk_id": "L189_C36",
+      "start": 2543.46,
+      "end": 2617.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=2543s",
+      "text": "and N minus one. If you just do this simply, I think you should be getting an answer. So let's quickly run this code. You see, it's running fine, but it'll give you a TLE. So it's better. We just make sure to have a 2D array. So in C plus plus, this is how you basically declare a 2D in Java. People just can carry, what to say? You can carry a 2D array that will work. Just carry a 2D array. In C plus plus we have to declare the sizes. That's why there's a problem in carrying 2D arrays. Otherwise I would have done. So first step is this, right? Next step is initializing. How's the next step? Checking if that state has been previously computed. Done. So what I can say is let's quickly run this off. Should be fine. We get some problem. Oh, we're not passing a DP here. Let's quickly pass it. Okay. We get a wrong answer. Why is that? Okay. We have a assigned MN. So yeah, sorry. That's my bad. Let's do it. MNN. Yeah. Working fine. If you submit this, so that's the first time I'm submitting. Cool. Time limit exceeded. So it still says our time limit exceeded. Probably due to the stack space that we're using. So let's quickly optimize this. So let's run this. So we have a 2D array. We have a 2D array. We have a 2D array. We have a 2D array."
+    },
+    {
+      "chunk_id": "L189_C37",
+      "start": 2617.58,
+      "end": 2681.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=2617s",
+      "text": "let's run this. So we have a 2D array. We have a 2D array. We have a 2D array. We have a 2D array. We have a 2D array. We have a 2D array. We have a 2D array. We have a 2D array. We have a 2D array. stack space that we're using. So let's quickly optimize this portion and a try to have it as a 2D array as I and D DP of MN. And I know one thing for sure. The number of states will be something like I equal to zero or I lesser than M. Again, Java people, please don't cry. It's the exact same, same code. If you're Java, you can also follow this. G lesser than. G plus plus. We know one thing if i is equal to equal to 0 and j is equal to equal to 0 you can be like dp of i j is equal to 1 else you can be like you can assign an up 0 you can assign a left as 0 if i is greater than 0 then there will always be an up which is dp of i minus 1 j if the j is greater than 0 the left will always be dp of i of j minus 1 at the end of the day instead of returning dp of i j equal to you can say up plus left so as simple"
+    },
+    {
+      "chunk_id": "L189_C38",
+      "start": 2681.7,
+      "end": 2750.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=2681s",
+      "text": "at the end of the day instead of returning dp of i j equal to you can say up plus left so as simple as that and what's the answer where's the answer stored at guys the answer is definitely stored at return dp of m minus 1 n minus 1 so let's quickly run this off which we find runs let's submit this let's see if we are getting a tl now okay it's still giving time limit exceeded interesting the time complexity is m cross n okay fine let's optimize this let's further optimize this and let's see so what did i say how to time how to space optimize this the space optimization is quite simple we can say temporary of other number of columns the number of columns are n you can definitely do zero so instead of temp i just make sure it's a previous dp right and over here you can definitely have vector of int of temp which is the current row that is being computed because this is the current row which is going so kindly have it as zero right now can i say uh this is if i is equal to equal to zero j is equal to equal to zero you're computing the current row so the current row is not temporary understand the current row is not temporary it's temporary of j will"
+    },
+    {
+      "chunk_id": "L189_C39",
+      "start": 2750.7,
+      "end": 2829.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=2750s",
+      "text": "computing the current row so the current row is not temporary understand the current row is not temporary it's temporary of j will be one right instead of off left let's let's uh let's try to write this instead of dp of i minus 1 what does i minus 1 the previous previous what is dp of i the current which is temp correct so if i if i name it better you probably can name it current so the current is this and that's it perfect and once you've computed the temp yes once you've computed the temp what you can do is you can say okay fine i've computed the temp i can be like now i can just swap it i can now swap it because the current the current guy when i will increase it will become the previous so previous will be current and can i say the answer will be stored at what is this m minus one this previous in previous is n minus one the answer will be stored if i run this i should be fine getting it dp was not assigned have i defined okay sorry that's my bad so dp of i means temporary or current rather so we just run this you see this running fine and if you submit this uh it will again not be running all the cases and the reason is quite simple it gives me 91 score and everything is not"
+    },
+    {
+      "chunk_id": "L189_C40",
+      "start": 2829.14,
+      "end": 2896.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=2829s",
+      "text": "it will again not be running all the cases and the reason is quite simple it gives me 91 score and everything is not running the reason is i'll tell you so if you google the same question great unique paths take you forward channel itself you'll find a solution which is of combinatorics and the time complexity is bigger of a number of columns or number of rows whatever you wish to and it works in better than m into n that's why we are getting the daily i'll not teach this you can definitely watch this video again like this video i've already recorded so you can watch the solution over there and you can try submitting it so why did i teach this question in complete dp because i wanted to teach you deeply not how to solve this problem the concept was to teach you recursion in 2d then memorization in 2d then tabulation in 2d then space optimization in 2d and i'm very much sure that you have understood each each bit of this lecture just in case you have please please please make sure you like this video and if you're new to the channel please do consider subscribing to us it will be of immense immense help and as our tradition goes if you understood this lecture in the comment section put up a understood comment that will do me a world of good and with this"
+    },
+    {
+      "chunk_id": "L189_C41",
+      "start": 2896.94,
+      "end": 2907.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=sdE0A2Oxofw&t=2896s",
+      "text": "you understood this lecture in the comment section put up a understood comment that will do me a world of good and with this let's wrap up this video let's meet in the next one bye bye"
+    }
+  ]
+}

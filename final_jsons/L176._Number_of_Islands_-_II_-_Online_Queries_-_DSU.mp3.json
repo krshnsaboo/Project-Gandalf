@@ -1,0 +1,155 @@
+{
+  "lecture_id": "L176",
+  "lecture_number": 176,
+  "lecture_title": "G-51. Number of Islands - II - Online Queries - DSU",
+  "youtube_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA",
+  "chunks": [
+    {
+      "chunk_id": "L176_C1",
+      "start": 0.0,
+      "end": 71.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem number of islands 2 and it's a problem which is kind of an online query problem. What do you mean by online query? I give you a query, you tell me the answer. I give you a query, you tell me the answer. I give you a query, you tell me the answer. I give you something, you do some changes, you tell me the answer. The changes what you need to do, I will tell you. Okay. So every time I'll give you something, you do the changes as according to the question and then you return the answer. So give answer, give answer, give answer. That's what you call as online queries. Okay. So this is the part two of this problem. I've already solved part one in this particular series. You can go back and watch it as well. So the prerequisite for this video is disjoint set data structure. I've already discussed this in the previous video in this particular graph series, just in case you don't know about it, go back and watch it. The reason I'm asking you to go back and watch it is because I'm going to reuse the snippet of the code that I've coded in the disjoint set video. Okay. So let's understand the question. Zero is C,"
+    },
+    {
+      "chunk_id": "L176_C2",
+      "start": 71.44,
+      "end": 146.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=71s",
+      "text": "to reuse the snippet of the code that I've coded in the disjoint set video. Okay. So let's understand the question. Zero is C, one is island. Keep it in mind. Okay. Initially all are like we have an entire C. Someone comes up and says, Hey, can you create an island? I have zero comma zero. I'll be like, let me create an island at zero comma zero. So you just create an island at this position. Okay. Now remember, what do we mean by components kind of this? So if I have one, one, one, it's a component. If the share a similar side, they can share a similar, this side, this side, this side, this side. You can't see these two be connected because they're sharing a diagonal. No, they have to share a side. Okay. You'll understand as we move. So as of now we have a single component. So after the placement of the first guy, the answer is one because I just have a single group of islands, a single group of islands. Okay. The next guy is zero comma zero, but we, we already have an island there, so there's no need to place the island again. Thereby we still have one island. So remember this, if there is an island already, you do not place another island. Okay. Next one comma one. Let's place an island there. One comma one. Now can I call this as a group of islands?"
+    },
+    {
+      "chunk_id": "L176_C3",
+      "start": 146.28,
+      "end": 215.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=146s",
+      "text": "island. Okay. Next one comma one. Let's place an island there. One comma one. Now can I call this as a group of islands? I said, you know, they're individual groups, the individual groups. So we have two groups after this placement. So we have two groups after this placement. Perfect. Next one comma zero. Where's one comma zero? Yeah. Let's quickly place it. Now this and this share a side, this and this share a side. So this is a single group. So after the placement of this, you have one group. Nice. Next zero one. Where's zero one? Yeah. So you can place it over here. But if you see this, it's a single group. So you still have a single group. Amazing. What's the next zero comma three. Go ahead and put it over here. So this time, can I see, I have one group over here, one group over here, because in between there are C's, you cannot connect them because they need to share a side. Thereby we have now again to next we have one comma three. Where's one comma three? Yeah. So can I see, even if I put it here, it's still going to be the same. It's still going to be the same. So thereby I can say, Hey, listen, it's still having two group of islands, which is pretty decent. Zero comma four. Where's zero comma four? Which is here. So even if I place it"
+    },
+    {
+      "chunk_id": "L176_C4",
+      "start": 215.68,
+      "end": 284.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=215s",
+      "text": "two group of islands, which is pretty decent. Zero comma four. Where's zero comma four? Which is here. So even if I place it here, remember this, even if I place it here, it's still going to be in the same group. Even if it is still in the same group, can I say it doesn't matter to us. It's still in the same group. So thereby I still have two. Perfect. Next, what three comma two. Where's three comma two? Here. Let's quickly place it. I place it. The moment I place it there, can I say I have now three, one here, one here and one here. Yes. Next I have two comma two. Let's place it. The moment I place two comma two, again, this is separate. This is separate. Be very careful because you cannot connect them diagonally. We still have three. Next one comma two. Okay. Now is the point. The moment you place it here, everyone is an individual group now. So it's one right from three. You boil down to one right from three. You boil down to one. Next we have zero comma two. Where's zero comma two? Yeah. Even if you place it here, it still stays as a single thing. So you still have a single thing. So I can say I still have a single thing. So ultimately you need to return out"
+    },
+    {
+      "chunk_id": "L176_C5",
+      "start": 284.84,
+      "end": 360.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=284s",
+      "text": "you still have a single thing. So I can say I still have a single thing. So ultimately you need to return out of first query. Answer is one, one, two, one, one. We can put them into a list and this is the list you have to return the online query list. This is what you have to return. Right? Understood the question. So how will you solve this problem? Which algorithm to the algorithm which connects, connects, connects and is used in dynamic graphs. It's a dynamic graph. It is changing every now and then. So dynamic graph connections. There's only one data structure that is the disjoint set data structure. So you know in disjoint set data structure, we have notes. The zero node will be the parent of himself. The first node will be the parent of himself. The second node will be the parent of himself. So until and notes. So if we are representing every cell as a node, you have to give every cell"
+    },
+    {
+      "chunk_id": "L176_C6",
+      "start": 360.52,
+      "end": 437.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=360s",
+      "text": "notes. So if we are representing every cell as a node, you have to give every cell a number which will be represented in disjoint set. So can I see cell zero cell one cell two cell three cell five cell six cell seven cell eight cell nine 10 11 12. Can I say I can go on till 19 which is kind of like four. This was four which is M equal to five. This was three and equal to four five into four like we need 20 positions because zero to 90 is 20 position. Can I say it's like N cross N but how do I figure out because this is zero one two three four five six seven eight nine 10 11. How do I figure it? 11 is representing two comma one. How do I figure this out or vice versa? Two comma one means 11th node. How will you figure this out? Now very very easy. You know every column has five nodes. This column has again five. So five plus five till here will be 10 nodes because first column will consume five nodes. Second column will consume five nodes again. So when you add the third column which is the second index, can I see two into five the previous two columns"
+    },
+    {
+      "chunk_id": "L176_C7",
+      "start": 437.64,
+      "end": 510.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=437s",
+      "text": "So when you add the third column which is the second index, can I see two into five the previous two columns would have consumed till here 10 nodes which is very obvious which is very obvious. They would have already consumed 10 nodes which is nothing but two into five two is the row number because it is zero based indexing. Previously there was two rows. So two into five 10 nodes have been consumed. Now I'm looking for the first position which means it's got it which means two into five plus one will give you 11 because if you like nine this will be 10 right because very simple and this will be 11. So you just because if you're looking at this it's a plus two you're looking at this as a plus three it's a plus four. So can I see the formula to compute the node? The formula is very simple. Any row column can be said as row into M. Why M? Because every column sorry every row has five guys which is nothing but the column length right. So can I say row into M plus the column number is what the node ID will be signified or the node number will be signified. So you figured this out very simple right. Before implementing disjoint cell data structure"
+    },
+    {
+      "chunk_id": "L176_C8",
+      "start": 510.84,
+      "end": 587.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=510s",
+      "text": "signified or the node number will be signified. So you figured this out very simple right. Before implementing disjoint cell data structure remember one thing if there are multiple same cell numbers you don't mark it again and again remember. So what you can do is you can maybe use a visited array to keep a track that you do not reuse a cell number because if you're getting twice it doesn't make sense. Okay. So first thing when you're starting off can I see the initial number of islands are zero I can right. So the moment I have the first guy I see is it marked in the visited array it's not. So I'll maybe mark it as true. It's quickly market as true. So I marked the zeroth guy as true. What is my next thing. Once I mark the zeroth guy as true my next thing will be to take this node zero. I take this node zero and see if there is an island on the right. No. If there is an island on the bottom no. On the left and the upper guys are not there. So apparently this guy himself will contribute to the island. So the count will increase and it did not have anyone on the right or on the bottom. So it could not get connected to the other islands. Perfect. Next I have zero comma zero. I see this is"
+    },
+    {
+      "chunk_id": "L176_C9",
+      "start": 587.76,
+      "end": 657.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=587s",
+      "text": "on the bottom. So it could not get connected to the other islands. Perfect. Next I have zero comma zero. I see this is already visited. So I'll say hey the count will still be one. So see first we got one Now the count still stays at one. Next we'll go to one comma one. The moment we go to one comma one we are like it's not visited. So let's mark it as visited. And now let's look at it. Is there an island. No. Let's look at it. Is there an island. No. Is there an island. No. Is there an island. No. So no island. So this guy himself himself contributes one to that. So I increase the contribution to two and I can see the answer till here will be two and I'll mark it as visited. Next will be one comma zero. This is where the twist comes. One comma zero is this which is unvisited. So first mark it as visited. Right. That means it's an island. So we have an island here. Right. Imagine this one comma zero would have contributed one to the answer. Just imagine it would have contributed one to the answer if it was not surrounded by anyone. But now I look at the surroundings. I'll be like OK. The answer is three till now because it was not surrounded by anyone."
+    },
+    {
+      "chunk_id": "L176_C10",
+      "start": 657.28,
+      "end": 730.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=657s",
+      "text": "now I look at the surroundings. I'll be like OK. The answer is three till now because it was not surrounded by anyone. I imagine when I got this island. Now this guy looked at the front top and said hey I can go and connect with you. If I can go and connect with you. I myself will no more be an answer. I myself will no more be a single individual island. So maybe reduce. Like OK reduce fine. So I'll not have the connection between zero and five in the disjoint set. I just ask them to connect zero and five and they'll get connected. Right. Next I will look at the right and I'll have another guy. I want to do. OK. I'll also connect with this guy. So this will also reduce to one. Why. Previously it was two individual guys. This guy connected to this. Reduce them by one. Again connected to one. Reduce by one. Eventually connected two guys. The reduction will be two. He himself got plus one but he actually reduced two guys and made them connected. Got it. Simple. So the answer is one. The answer is to be one. One comma zero is next. Zero comma one is this guy. Let's mark it as visited and imagine it is a low and increase the value by plus one to two. Now let's see."
+    },
+    {
+      "chunk_id": "L176_C11",
+      "start": 730.84,
+      "end": 804.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=730s",
+      "text": "Let's mark it as visited and imagine it is a low and increase the value by plus one to two. Now let's see. This guy says there's no one on the top. Like OK. There's no one on the right. OK. And there's someone on the bottom. Remember this is someone on the bottom. So we like. Can I go and get connected with this guy. I can because we were not connected previously. We were not connected previously. So if I go and connect with themselves I'll reduce my answer to my one. Next this done this done this done this. OK. Wait. I can connect. Will it make sense to connect. Aren't they already connected. And the disjoint set will say yes. You guys are already connected. So what's the point of connecting here. What's the point of connecting here. You're already connected by this. And if you find the ultimate boss you find the boss to be zero for this as well as zero for this. So there's no point in connecting. So not connect. They might still say there's one. If you're not connecting. Keep the answer as it is. Perfect. Next zero comma three zero comma three. It is here. Mark it as visited. Does it and increase the answer by plus one. Increase the answer by plus one. Why. Imagine itself to be alone. Imagine itself to be alone. Does it have anyone on the top. No. Does it"
+    },
+    {
+      "chunk_id": "L176_C12",
+      "start": 804.72,
+      "end": 883.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=804s",
+      "text": "by plus one. Why. Imagine itself to be alone. Imagine itself to be alone. Does it have anyone on the top. No. Does it have anyone here. No. Does it have anyone here. No. Does it have anyone here. No. So the. You consider himself to be alone. Yeah. That plus one vote. If it would have got connected to someone. Minus one would have been done. But since it has no one. Plus one state. And you got an answer as. Two. Perfect. Next. One comma three. Where's that. Here. Mark it as visited. Increase the answer by plus one. So eventually like initially individual. Connected. We can. We can. Go and connect. The moment you connect. Reduce. Can you connect to the right. Can you connect to the bottom. No. No. So the answer is to. Actually make sense. Next zero comma four. So let's analyze zero comma four. It's here. Again do the same thing. Increase the answer by one. And mark it as visited. Now. Top. No. No. No. Can I connect. Yes. They're not connected. The moment you connect. Reduce the answer by one. Two. Perfect. Next. Three comma two. So next is three comma two. So let's go to three comma two and mark it. Again increase the answer by one. Considering itself as individual. When it came. Does it have anyone at the top. No. Does it have anyone on the this. No. On this. No. On this. No."
+    },
+    {
+      "chunk_id": "L176_C13",
+      "start": 883.76,
+      "end": 957.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=883s",
+      "text": "it came. Does it have anyone at the top. No. Does it have anyone on the this. No. On this. No. On this. No. On this. No. So. We consider itself as alone. That worked. Thereby the answer for this will be three. Perfect. Next. Two comma two. Which is this. So. Consider itself to be alone. Increased. But the moment it saw. No. No. No. But the moment it saw it downwards. It found someone to be connected to. Already an existing guy. So it gets connected and reduces the answer. Make sense. Gets connected to another island. So why will it be considered individual. Right. What's next. One comma two. Very very very important. You have to understand this. Once you understand this you understand everything. Okay. One comma two. Where is that. This is somewhere here. Right. So what I do is. I'm like okay. Let's consider this as an individual. Let's consider this as an individual. So the answer should be four. Answer should be four if individuals should have been considered. Should have been. But we will now start connecting. Can it connect to the top. No. Can it connect to the right. Yes. Go and connect. Connected. Answer reduced by one. Can it connect to the bottom. Yes. They're not connected by any means. Nice. Answer reduced by one. Can it connect to the left. Yes. Go and connect it to the left."
+    },
+    {
+      "chunk_id": "L176_C14",
+      "start": 957.8,
+      "end": 1036.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=957s",
+      "text": "connected by any means. Nice. Answer reduced by one. Can it connect to the left. Yes. Go and connect it to the left. Which is this. Answer reduced by one. The answer is one. And market is visited. Nice. So if you see everyone got connected and it reduced three and it got it just did a plus one for himself. So eventually it's a plus one. Got it. Nice. So we have one as the answer. Next is zero comma two. This is this. So you say visited and you increase the answer by one because for himself. Just in case it doesn't get connected to anyone. Now. No. It gets connected to this guy. And says I've reduced myself by one. Next the moment it tries to get here. It is already connected. Finds it's already connected. So there's no point in connecting here. It's already connected. There's connecting here. It's already connected. There's no point in connecting here. So the answer is one over. And this is the list that you can easily return. Pretty simple. Four directions travels. Just connect, connect, connect, connect. And whenever you're connecting to someone, reduce minus one. That's it. Pretty simple. I hope you have understood the entire explanation. It's time to code it up. So as usual, we'll be coding the C++ solution on the right. And you can figure out the exact similar Java code on the left. What do we require?"
+    },
+    {
+      "chunk_id": "L176_C15",
+      "start": 1037.16,
+      "end": 1110.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=1037s",
+      "text": "coding the C++ solution on the right. And you can figure out the exact similar Java code on the left. What do we require? Obviously the disjoint set data structure. So let's quickly take it off. Okay. We will just get rid of all the functions. Okay. So disjoint set. Now I need the size. What was the size? If you remember? Yes. And into those were the total number of notes. Okay. Let's have it. What's the next thing we require? We require a visited. So maybe we can keep it as this, and we can use the mem set like visited zero and sorry, a size of visitor. This will make sure everything is marked as zero initial number of count. Maybe we can keep it as zero saying that initial number of count of islands is zero. And we can have a list where it will store all the answers. And at the end of the day, after performing the operations, we can return this particular answer. Now I'll be like, okay, fine. What's the step? You have to go through all these queries. So let's go through all these queries. Now I know one thing, the row will be it of three. I know one thing, the column will be it of one. And something I know for sure is a visited. Like if this guy has previously been visited, like it's, it's already an island."
+    },
+    {
+      "chunk_id": "L176_C16",
+      "start": 1110.6,
+      "end": 1174.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=1110s",
+      "text": "one. And something I know for sure is a visited. Like if this guy has previously been visited, like it's, it's already an island. So it's not going to add up or delete anything from the answer if it's already an island, because everything would have been previously computed. Correct. So what I can say is, hey, listen, there's, there's going to be no change whatsoever in the account of islands. So you can just do it and go to the next query. Perfect. But if it is not, then I'll be like, okay, let's mark this as visited. And at the same time, say let's count it as an individual island. Then we can do the subtractions up, right? And everything. So can I say the upward guy will be row minus one column? Can I say upward guy will be row minus one column. I can row minus one column. Right. So, and then can I say the right guy will be row comma column plus one. I can, can I say the bottom guy will be row plus one and there'll be no change in the column. Right. And can I say the left guy will be row comma column minus one. I can. So if you see, I can either write four different statements or I can combine them into a DX and a D Y where, or you can say DR,"
+    },
+    {
+      "chunk_id": "L176_C17",
+      "start": 1174.44,
+      "end": 1244.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=1174s",
+      "text": "either write four different statements or I can combine them into a DX and a D Y where, or you can say DR, which is the change in the rows and the change in the columns. Now, how do you figure this out? So if you see it's a minus one on the row for the first time, it's a plus zero. It's a plus one. It's a plus zero. So it's like minus one, zero plus one and a zero. So I just took the changes in the row. And then there was a change in column as plus zero for the first time, change as plus one, change as zero changes, minus one, if you carefully notice, right? So if you see column is minus one and we have a minus one, if you see column is just column and it is a zero over here, column is plus one plus one. So if you see minus one, like this zero and minus one will be the first guy, then zero plus one plus one, zero and zero minus one. So I've already taught this technique. That's why I did not use the iPad. So index lesser than four and index plus plus. Can I say the new rule? That means that just in true, or maybe you can say, I just in true will be the current rule plus the change in the DR, which is the R index, right? And can I see"
+    },
+    {
+      "chunk_id": "L176_C18",
+      "start": 1244.2,
+      "end": 1318.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=1244s",
+      "text": "just in true will be the current rule plus the change in the DR, which is the R index, right? And can I see the adjacent column? It will be nothing but column plus the DC, the change, the Delta C, right? So this is, this is the new ones. I need to check the validity. It might be crossing the grid, right? So just make sure you check out the validity of this thing. So first make sure is valid is what you will call. So go across and say, our decisions are adjacent column and the NNM. Once you've checked the validity, then you can do the other things. So maybe you can write a private Boolean function. Yeah, that's what I will do. Private Boolean check or rather is valid. And I will say, okay, I, and the adjacent row, I, and the adjacent column, I, and the N, I, and the M. Okay. And I can say, when will it be valid? If it is this, if it is this, if it is, sorry, adjacent, I'm editing, adjacent, adjacent R, adjacent R. And then it will be for column, adjacent column, and an adjacent column, which is less than M. Can I see, it'll be valid for this. So just return it. If this is true, it'll go as true. If any of the conditions are false,"
+    },
+    {
+      "chunk_id": "L176_C19",
+      "start": 1318.12,
+      "end": 1395.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=1318s",
+      "text": "be valid for this. So just return it. If this is true, it'll go as true. If any of the conditions are false, it'll go as false. So is valid will be checked by this. Once is valid is checked. The other thing I need to check is, is the adjacent guy actually an island? Then only I'll connect. So it has to be an island. So on visited on adjacent row, an adjacent column, it has to be an island. If it is not an island, there's no point in getting understood. So it has to be an island. If it's not an island, then I do not do anything. What after this? Check for validity, check for island. I need to connect but will you connect if they're already connected? I'll be like, no. So let's check for connectivity as well. DS dot, how do you check for connectivity? If their parents are same or not, right? Find parent of whom? You have to find the node numbers now. So can I say the node number, current node number will be row into M plus column. I can. And can I say the adjacent node will be adjacent row into M plus adjacent column. So I need to connect these two guys. So node number, if the find parents are not equal, very, very important. If the find parents are not equal. So you can just write this."
+    },
+    {
+      "chunk_id": "L176_C20",
+      "start": 1399.16,
+      "end": 1466.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=1399s",
+      "text": "number, if the find parents are not equal, very, very important. If the find parents are not equal. So you can just write this. Take the adjacent number. If they are not equal, can I say, okay, they're not equal. So they're connecting, reduce minus one. If you remember and say, DS dot, call the union. Let's do some connections. Union by size. Who will you connect? One is the node number, right? What's the other one is the adjacent node number. Go ahead and connect these guys. So once this entire for loop has been computed, can you see the answer will be stored because you will have the number of islands and then you can go ahead and return it. This is how simple it was. Make sure you end the disjoint set and ended with a semicolon. So if you see the answer is coming fine, so let's quickly submit this and see if it is running fine. So all the test cases do run, but do you notice something? Look at the code quality, look at the variable naming, and also see how I wrote like an error free code. So these things are very, very important. If you look at all the other lectures on YouTube, they will not be having this level of code quality. Not using a class of disjoint set. They'll probably be using a find union parent and"
+    },
+    {
+      "chunk_id": "L176_C21",
+      "start": 1467.16,
+      "end": 1531.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rn6B-Q4SNyA&t=1467s",
+      "text": "be having this level of code quality. Not using a class of disjoint set. They'll probably be using a find union parent and inside the solution. This is something you should not do in interviews. In interviews, these things stand out, make you stand out apart from the rest of the crowd who watch all these crap motivational videos. This is where you can actually be like, Hey, you got to hire me because my code quality is of supreme nature. Got it? So make sure you focus on these small things because these things do matter when you go for an interview. So before wrapping up this video, I have a very, very earnest request to make. Please do consider subscribing to us. I did check out our statistics, nearly 50% of the users who watch our video do not subscribe. So please do consider subscribing to us because that is the only thing that keeps you motivated to make videos at like 324 AM in the night. So please, if you've watched the video till here, consider subscribing, hit that like button. If you haven't checked out our DP series and the SDC, the links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

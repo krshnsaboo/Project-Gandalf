@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L048",
+  "lecture_number": 48,
+  "lecture_title": "BS-4. Search Element in Rotated Sorted Array - I",
+  "youtube_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs",
+  "chunks": [
+    {
+      "chunk_id": "L048_C1",
+      "start": 0.0,
+      "end": 73.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we will be continuing with our binary search series which is the part of the strivers A to Z DSC course. Just in case you haven't checked it out yet, there's a link in the description I'll highly recommend you to check it out. So till now I've covered up till this particular problem. In this video, I'll be covering up the problem search in a rotated sorted array. So what does the problem state, it states that you have to search in a rotated sorted array. Now what is the definition of rotated sorted array? Let's understand. Imagine I give you an array like one, two, three, four, five. Now this is a sorted array. Now I ask you, can you rotate it at this point? So what do you do is basically take this four five and you rotate it to the front and this one will move ahead. So this is what will be the rotator sorted array. So basically just, uh, stand one, a standard one element and take it to the front and then you shift it. So this is the definition of a rotator sorted array. So if you look at this particular example, over here you can see that this is the area and then you can just go over like this. So it's like one, two, three, four,"
+    },
+    {
+      "chunk_id": "L048_C2",
+      "start": 73.96,
+      "end": 138.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=73s",
+      "text": "you can see that this is the area and then you can just go over like this. So it's like one, two, three, four, five, six, seven, eight, nine, but it has been rotated at seven. That is why seven, eight, nine is at the front and then you have one, two, three, four, five, six. Now your task is to find out the target. So if I ask you where is the target, it is at the index three. That is what you have to tell me. Now there's one other thing. This entire area will just have unique elements. Now this is the first part of the problem we will be solving for unique elements and the next part we will be solving for duplicates as well. So this problem comes up in an interview. What is the first solution that comes to your mind? Definitely linear search will be like I'll iterate through the entire array. I'll check element by element and the moment it gets compared with the target, I return the index three and the worst case scenario will be if the target is given a six, I end up going to the last element and that is where I found it out. So big off N will be the time complexity. If I go through the linear search approach, I'm not going to write it down. If you want the code, you can find it in the notes. So a very simple linear search"
+    },
+    {
+      "chunk_id": "L048_C3",
+      "start": 138.12,
+      "end": 206.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=138s",
+      "text": "I'm not going to write it down. If you want the code, you can find it in the notes. So a very simple linear search will find me out the occurrence of target. But over here it's clearly stated search. It's stated, rotate it, uh, rather sorted search and sorted. Whenever you hear about these two terms, what comes to your brain? Obviously binary search, obviously binary search comes to your brain. Now in an interview, the interview might not give you a hint about binary search. So it's better to just tell him that I'm thinking of a big off end solution, but I know there is sorted. That is why I have to think of binary search. You have to tell them in this way. You cannot say, okay, this, uh, this problem will be solved by binary search. If you tell him, why are you thinking of binary search? And the answer is because you have to search and there's a property as sorted and whenever it is sorted, we can eliminate portions. We can just go from a end size added to end by two size, then to end by four size. This is what happens in binary search. You either eliminate the left half or the right half. So let's for a moment pause on this particular problem and go back to our binary search thing. So if you remember in a binary search, if you have one, two,"
+    },
+    {
+      "chunk_id": "L048_C4",
+      "start": 206.08,
+      "end": 279.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=206s",
+      "text": "this particular problem and go back to our binary search thing. So if you remember in a binary search, if you have one, two, three, four, five, and you have a target of one or if you have a target of five, so what you did was you took a low at the zero index and you took a higher the last index and then you figured out the mid. So what did you do at the first step? You took three and you compared with the target. It's not equal. And then what you did was you were like three target. One is lesser than three. So I'm very much sure that the right element will be eliminated. Uh, sorry, the right half will be eliminated. I was very much short. Why? Because the entire area was sorted and I'm very short. Everything on the right will be greater than three will be greater than three. Thereby target one cannot exist on the right. Fair enough. Similarly, I just checked for five and I was like five greater than a lesser than three. No, some short that the left half will be eliminated and five will be on the right. So just checking on one half, very critical point. Just checking on one half made us sure. Just checking on one half was okay. Like if I just check, if one is lesser than three,"
+    },
+    {
+      "chunk_id": "L048_C5",
+      "start": 279.72,
+      "end": 353.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=279s",
+      "text": "one half made us sure. Just checking on one half was okay. Like if I just check, if one is lesser than three, I know it always lies on the left. I just checked five lesser than three. I know it lies on the right. Just one half of the checking was okay. So this is what we did in binary search. Keep this in mind that if we check for one half, I was very sure where my target will be. Will that work over here? Let's analyze. Let's go the standard binary search way. So I'll just write down the indexes for easing it out. And we know initially low will be pointing here and high will be pointing here. Where does mid start with? The mid starts from here, which is basically zero plus eight by two. So that's four. So the mid stands at the fourth index. What is the value at the fourth index? Two. Is that equal to the target? No, it isn't. So we haven't found out our element. What's the next step of binary search? It kind of eliminates one half. Very important to note this down. It kind of eliminates one half. Now this one half can either be left or can either be right. Now you're not sure about which half to eliminate, so it can either be the left half or it can either be the right half. So if you're standing"
+    },
+    {
+      "chunk_id": "L048_C6",
+      "start": 353.08,
+      "end": 422.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=353s",
+      "text": "which half to eliminate, so it can either be the left half or it can either be the right half. So if you're standing at two, now can you surely say one thing? If one is lesser than two, then can you surely say that it will lie on the left hand side? Can you surely say it? Over here, that is true because one is on the left. Over here, that is true if one is on the left. So ideally, according to that logic, if I just remove this and for a moment, I just change it to eight. In that case, can I say since eight lesser than two is false because your middle element was two and this is false. So I can surely say that it will never lie on the left half and it will always be on the right half according to binary search. But that is false. Why? Because over here, the left half might not be completely sorted which is the case over here. So there is eight because the left half is not completely sorted. So you just cannot check on one half. That is the key point over here. Just cannot check on one half and be very sure that it will lie on the right half. That works in binary search because the left half and the right half, both are sorted. In this case, if you do some observations,"
+    },
+    {
+      "chunk_id": "L048_C7",
+      "start": 423.08,
+      "end": 498.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=423s",
+      "text": "That works in binary search because the left half and the right half, both are sorted. In this case, if you do some observations, the left half is not sorted and the right half is sorted. So first key point over here is please identify. You have to identify. Identify the sorted half. That is the key point over here. Go ahead and identify the sorted half. Is it the left half or is it the right half? Once you've identified, then you can perform a check. So let's identify. So if you're standing at two, how do you recognize that the left half is not sorted? It's very easy because the lower value is not smaller than two because we have unique numbers. The lower value should ideally be smaller than two, which is not the case. Thereby, the right half is something which is sorted for sure. I know that the right half is sorted for sure. This is where I'll say, okay, since I know the right half is sorted, I can do a check for one. I'm like, hey, one, are you between two and between six? Why do I see this? Because all the elements will be between two and"
+    },
+    {
+      "chunk_id": "L048_C8",
+      "start": 498.52,
+      "end": 577.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=498s",
+      "text": "you between two and between six? Why do I see this? Because all the elements will be between two and six in this portion because it is sorted. Are you there? He says, no, bro, I'm not there. I'm like, okay, fine. In that case, I'll eliminate, I'll eliminate this half. I can surely eliminate this half. It was not equal to this and now the right half is eliminated. Thereby, the high goes here. Perfect. So the high goes to one. Let's again find out the mid. What will be the mid? It'll be zero plus three by two, 1.5, which is an integer value of one. Thereby, the mid is this. Let's write this. Again, what's the first thing? You cannot straight away go and check out. First thing, though, obviously, you'll check with this and that's not the case. The first thing, always check with mid. The same thing you did in binary search. You have to eliminate, you have to eliminate. That's the next step. Eliminate either left or right, but you don't know where to check. So you'll be like, this is my left half and this is my right half. What's the step? Identify the sorted half because unless and until you identify, you cannot straight away check. So I'm like, seven, eight, are you sorted? He says, yes, I'm sorted. How did you recognize? Because this element at low and this element at mid were following the property of sorted."
+    },
+    {
+      "chunk_id": "L048_C9",
+      "start": 577.96,
+      "end": 652.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=577s",
+      "text": "says, yes, I'm sorted. How did you recognize? Because this element at low and this element at mid were following the property of sorted. They're following the property of sorted. Thereby, they are sorted. If I look at the right half, they're not following the property of sorted. Ideally, for the sorted property to being followed, one should have been greater than eight, which is not the case, which is not the case. Thereby, I can safely assume the right half is not sorted. And the left half is sorted, I can, right? So thereby, the left half is sorted. Hence, you check, are you there on the left? Are you there on the left? He's like, uh, no, if I was there, then I would have eliminated the right half, but I'm not there. So please eliminate yourself. So eliminate yourself. If you eliminate yourself, the low will be pointing to this. Thereby, please go ahead and omit this and write the low. So now I'm left off with just two elements. This time, I will the midpoint. I'm not writing any further. Mid is here. Which is the element? This, which is the left half? This, which is the right half? This because mid is here. Thereby, let's see which is which portion is sorted because I have to check the left portion is sorted because low and mid are nine. And that's true. And that's true."
+    },
+    {
+      "chunk_id": "L048_C10",
+      "start": 652.84,
+      "end": 712.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=652s",
+      "text": "sorted because I have to check the left portion is sorted because low and mid are nine. And that's true. And that's true. So the left portion is sorted. I know the left portion is sorted. Thereby, what I'll say is, since the left portion is sorted, hence, I can see one can be compared with nine and nine, and it is not there. So you eliminate the left half this time, eliminate the left half, and low goes here. This time, mid goes here. And the mid is at one, which is, which is, which is equivalent to this one. Hence, the element is found. Hence, the element is found. And if the element is found, you can straight away return the index three, and that will be your answer. So it's very important to identify the sorted half, then only you can perform a check. You cannot just straight away say not lying on the left, it will be on the right or not lying on the right, it will be on the left that cannot be said over here. Got it. It's time to write down the code. So I have to write down the code. Can I say I'll always take an array, I'll take an n, and I will take the element that I have to search. So probably I can call it as target or k,"
+    },
+    {
+      "chunk_id": "L048_C11",
+      "start": 712.28,
+      "end": 782.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=712s",
+      "text": "an n, and I will take the element that I have to search. So probably I can call it as target or k, whatever you wish to have taken it. What's the first thing that I'll do? I'll take the low to be zero. I'll take the high to be n minus one. Perfect, I've taken the low to be zero, and high to be n minus one. What's the next thing? I'll be like, let's probably do an while of low, lesser than equal to high. That's what I'll write low less than equal to one. The next thing will be mid. Can you figure out your value? And middle will say, sure, why not? Low plus high by two. Click. Perfect. Now the first thing I'll be like, okay, if I find it, there's no need to do any elimination. I can straight away stop. So if you find it straight away, stop your searching. In case you don't find it, what's the next thing you have to do? Identify the sorted half. How do you identify the sorted half? Either the portion has to be left sorted. Like either the left half has to be sorted or the right half has to be sorted. For the left half to be sorted, can I say the array of low, it has to follow the sorted property, which is this. If that's the case,"
+    },
+    {
+      "chunk_id": "L048_C12",
+      "start": 782.84,
+      "end": 855.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=782s",
+      "text": "be sorted, can I say the array of low, it has to follow the sorted property, which is this. If that's the case, the left half is sorted or else if that's not the case, the right half will be sorted. That is guaranteed. Either of one half will be sorted. You can take up all the areas because the, the point of pivot, like where you rotated will just be at one section. So it is guaranteed. So if you look, so if you look over here as well, the left was not never sorted and the right was always sorted. It is guaranteed. Either the left or the right will always be sorted. So you can take out examples and you can try it out. It will always be sure either this or this portion will be sorted. So can I say this, that either this or this portion will be sorted. So if the left is sorted, we will just go ahead and do the elimination similarly. So we go and say, okay, you are sorted now. So tell me if the target is lying within you. So this should be the case. And, and target should also be lesser than the mid. If that's the case, the target lies within you within the left half, thereby, please go ahead and eliminate the right half or else the target doesn't lies on the left half, thereby eliminate"
+    },
+    {
+      "chunk_id": "L048_C13",
+      "start": 855.32,
+      "end": 922.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=855s",
+      "text": "the left half, thereby, please go ahead and eliminate the right half or else the target doesn't lies on the left half, thereby eliminate the left half and move right. So either I move right or either I move left. Quite simple. Same thing you'll do over here on else you'll say, okay, the right half is sorted. So can I say array of mid has to be lesser than equal to target for the target to lie on the right half and the target has to be lesser than equal to array of I for the target to right, lie on the light right half. If that's the case, and the left portion will be eliminated because the target lies on the right half or else the right portion will be eliminated because it doesn't, I'm sure it doesn't. So I'll go to the left and that's when we end. This end is for this particular while loop and this if will contain these couple of fifths, this else will contain this. So after this, in case you don't find it, you say return minus one, why this minus one, in case the element is not there, the search space will be exhausted and you'll end up being here and you can straight away return it. This is how it will be. In case you want to try out the problem, you can find the problem link in the description. What I've done is I've written this exact similar"
+    },
+    {
+      "chunk_id": "L048_C14",
+      "start": 922.36,
+      "end": 984.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=922s",
+      "text": "you want to try out the problem, you can find the problem link in the description. What I've done is I've written this exact similar code in C plus plus. You can figure out the Python, Java and JavaScript codes from the link in the description and what will be the time complexity. But this simply performing a binary search, reducing half of a logarithmic base to end. Yes, that will be the time complexity. And now going back to the sheet done. I hope you have understood the entire problem. It's just not about going left or going right. Like I could have just written the code and said, this is the this is the logic. Go left, go right. No, I explained to you how do you basically approach the problem. It's important to understand elimination is the key in most of the problems. You have to identify which portion you are short to eliminate. So be sure if you just identify the portions to be eliminated and then you can write binary search for anything. So I hope you have understood the entire problem solving approach. Just in case you have. Please, please, please do consider giving us that like and if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And yes, if you haven't followed me on Instagram, Twitter and LinkedIn,"
+    },
+    {
+      "chunk_id": "L048_C15",
+      "start": 984.12,
+      "end": 997.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=5qGrJbHhqFs&t=984s",
+      "text": "what are you waiting for? Hit that subscribe button right away. And yes, if you haven't followed me on Instagram, Twitter and LinkedIn, all the profile links will be in the description. With this, I'll be wrapping up this video. Let's finish some of the video and then we'll be back."
+    }
+  ]
+}

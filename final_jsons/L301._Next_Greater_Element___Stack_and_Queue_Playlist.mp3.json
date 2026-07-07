@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L301",
+  "lecture_number": 301,
+  "lecture_title": "L5. Next Greater Element | Stack and Queue Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I",
+  "chunks": [
+    {
+      "chunk_id": "L301_C1",
+      "start": 0.0,
+      "end": 78.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=0s",
+      "text": "So, let's continue with the stack and queue playlist today for starting off. Everyone, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is next greater element. So, from this problem onwards, we'll be starting off with monotonic stack. So, what is monotonic stack? Till now, I've been using stack to store elements. But the moment we use stack to store elements in a specific order, in a specific order, that is when we call it as a monotonic stack. So, maybe I can store elements in an increasing order in the stack or maybe in a decreasing order or maybe in some other order. So, whenever we are following a specific order, that's when we call it as a monotonic stack. Got it? So, this problem is next greater element or commonly known as NGE. So, what is the problem statement? It's stating that you are given an array for every element. For every element in the array, you'll have to tell me which one is the next greater element as the name is telling you what it is all about."
+    },
+    {
+      "chunk_id": "L301_C2",
+      "start": 78.84,
+      "end": 156.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=78s",
+      "text": "me which one is the next greater element as the name is telling you what it is all about. So, you basically stand at 6 and then you look at the next elements. Is 0 greater than 6? No, it is not. Is 8 greater than 6? Yes, it is. The first element that is greater than the element. So, you see that 8 is the NGE of 6. So, what I can do is I can write 8. If you stand at 0 and if you look at the right, if you look at the right, 8 is the next greater element. So, again I can write 8. If I stand at 8 and if I look on the right, I do not have an element that is greater than 8. In such scenario, I'll print minus 1. If I stand at 1 and if I look at the right, I have a 3 which is greater than 1. So, I'll write 3. If I stand at 3 and if I look at right, there's nothing. So, I'll have minus 1. So, this is what you'll have to return. This array is what you will have to return. Straightforward, isn't it? What is the first approach that comes to my mind? For every element, go to the right and find the next greater element. Okay, fine. So, in order to traverse for every element, I know one thing for sure, I need a loop 0 to N minus 1."
+    },
+    {
+      "chunk_id": "L301_C3",
+      "start": 156.04,
+      "end": 236.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=156s",
+      "text": "Okay, fine. So, in order to traverse for every element, I know one thing for sure, I need a loop 0 to N minus 1. So, I'll iterate on the array. I'll go to every element. Now, for every element, I need the next greater element. So, one thing I know for sure, the next greater element will be on the right. Thereby, I'll start from the next index which is i plus 1. I'll go until N minus 1. Again, straightforward. If at any moment I say array of j is greater than array of i, can I surely say that this is my next greater element? I can. Maybe I need an array, NGE, which initially can be of size, it will be of size N. And then you can say that NGE of the index i will be array of j. And at the same time, you can say, can you just break off? And once you're done with this, for loop ends, the external for loop ends, and I could end up returning the NGE array. Done and dusted. Again, you cannot use this NGE array and maybe you can modify the given array itself. In an interview, it is not encouraged to modify the given input. Don't do it. It's not a good practice. What about the time complexity?"
+    },
+    {
+      "chunk_id": "L301_C4",
+      "start": 236.04,
+      "end": 306.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=236s",
+      "text": "it is not encouraged to modify the given input. Don't do it. It's not a good practice. What about the time complexity? Can I say I'm running a couple of loops? Yes, I am. So, b go of N square near about, near about b go of N square. What about the space complexity? Can I say that the amount of space that I'm taking is around b go of N? Again, this space is not used in order to solve the problem. Rather, it is used to return the answer. So, it is something that you cannot avoid. At this moment, the interviewer will not be happy with the b go of N square and he'll ask you to optimize it. So, we need to optimize b go of N square. That really gives us an indication that we are looking something around, something around b go of N or b go of 2N or b go of 3N or N log N, right? Fine. So, imagine you are standing at this element 3 and I'm asking you what is the NGE of 3. Now, in order to know the next greater element of 3, you will look towards the right. So, you should be knowing the right elements. You should be knowing the right elements beforehand. But the generic way of traversal is starting from the left. You start from here, then you go here, then you go here."
+    },
+    {
+      "chunk_id": "L301_C5",
+      "start": 306.16,
+      "end": 380.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=306s",
+      "text": "beforehand. But the generic way of traversal is starting from the left. You start from here, then you go here, then you go here. So, there is no way that when you reach 3, that when you reach 3, you would be knowing what are the elements on the right. There is no way when you reach 3, you would be knowing what are the elements on the right. So, will it not be better if you traverse from the back? If you traverse from the back and if you reach 3, at that moment, you will be knowing what are the elements on the right and that is what you need. The first optimization or first thought process that I can think of is maybe I will start from the back, so that at any particular index, I would be knowing what are the elements on the right and then I can think of a solution, then I can think of a solution, ok. Now, I know where to start from, that is a back traversal. So, what I will do is, I will be taking a stack and this stack will be storing elements in a specific order. Why you will understand as I explain. The first element is 6. So, what you do is, you look in the stack and you do not have anything and if you do not have anything, that means there are no right elements."
+    },
+    {
+      "chunk_id": "L301_C6",
+      "start": 380.08,
+      "end": 446.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=380s",
+      "text": "look in the stack and you do not have anything and if you do not have anything, that means there are no right elements. So, what you can do is, you can simply say minus 1 divided. You can simply say minus 1 divided, got it. What after that? After that, you take the element 6 and you put it into the stack and then you move back. So, now when you move back to 4, you look in the stack and you see that there is a 6, there is a 6. So, you can say that that can be my next greater element because 6 is greater than 4. So, you say, ok, I have my next greater element and you take 4 and you put it into the stack. After that, you move back. Now you have something as 2. Again you look into the stack and you have a 4 which can be your next greater element or which is your next greater element. So, you take 4 and you place it over here. Again you take 2, put it into the stack and you move back. This time you are at 1 and you look into the stack and the topmost element is 2. So, you say that, ok, this is my next greater element. I will take 1 and put it back and I will move across 3. I will move across 3. Now this is something where you need to understand."
+    },
+    {
+      "chunk_id": "L301_C7",
+      "start": 446.44,
+      "end": 523.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=446s",
+      "text": "and put it back and I will move across 3. I will move across 3. Now this is something where you need to understand. What is stack storing as of now? It is storing something of a length, like a 6 size. Just imagine light poles, you know, light poles of a length 6. After that it is storing something of a length 4. After that something of a length 2 and after that something of a length 1. Now suddenly you are at 3, suddenly you are at 3, which is typically you can say somewhere around this, correct? Now tell me one thing, for this 3 which will be your next greater element? It will be 4. For that you will have to take them out. Now you might say, if I take them out for the future elements, I will lose out on some of the right elements. No, you will not lose out. Let me explain you why. I imagine I come up with something like 1 over here. After 3, just imagine, just imagine, after 3 there is an element which is of length 1. Tell me one thing, even if you lose out on 1 and 2 in order to get 4, because in order to get 4 you will have to take out 1 and 2, you will have to take out 1 and 2, so that is gone. Just imagine this is gone."
+    },
+    {
+      "chunk_id": "L301_C8",
+      "start": 523.8,
+      "end": 596.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=523s",
+      "text": "to take out 1 and 2, you will have to take out 1 and 2, so that is gone. Just imagine this is gone. For this 1, if this 3 is your answer, will 1 and 2 contribute to your answer? The answer is no. It will never contribute because for an element like 1, if 3 is the answer, 1 and 2 can never contribute because this is a light pole which sees this and beyond this it can never see this. Beyond this it can only see a larger element. Beyond this it can only see a larger element and beyond this a larger element. So will it not be, will it not be sensible to store the elements in this decreasing order, in the decreasing order which is like 6, 4, 2, 1 and now when 3 came up, you do not need to store 1 and 2, you do not need to store 1 and 2 because if 3 is the answer of someone, 1 and 2 can never be, 1 and 2 can never be. Got it? Perfect. So, what I will do is, I am at 3, right? I am at 3. So, I am saying 1 can never be my answer because that is lesser. Like, okay, remove. Can 2 be your answer? No. Remove. Can 4 be your answer? Yes. So, what you say is, 4 is my answer, take up 3 and put it into your stack."
+    },
+    {
+      "chunk_id": "L301_C9",
+      "start": 596.2,
+      "end": 659.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=596s",
+      "text": "Can 4 be your answer? Yes. So, what you say is, 4 is my answer, take up 3 and put it into your stack. After that, move across to 5. Now, when you are at 5, you are again looking at 3, no. You are looking at 4, no. So what you do is, you basically take both of them out. 6 can be your answer. So, you write 6 and you put back 5. After that, you move to 2. Now, when you move to 2, the top of the stack is your answer. So, you just take it across. After that, you take 2, put it back and you move back. 1, the top of the stack is your answer. 2, again you take 1 and put it back and you move back. This time when you are at 3, can 1 be your answer? No. Can 2 be your answer? No. So, you take both of them out. You take all the elements which are lesser than that element and after that, 5 can be your answer. So, you write 5 and you put back 3 and you move back. You are at 5. When you are at 5, can 3 be your answer? No. Can 5 be your answer? No. You are looking for greater, greater. So, I will end up deleting both of them. Can 6 be your answer? Yes. So, I will write 6."
+    },
+    {
+      "chunk_id": "L301_C10",
+      "start": 659.88,
+      "end": 733.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=659s",
+      "text": "looking for greater, greater. So, I will end up deleting both of them. Can 6 be your answer? Yes. So, I will write 6. After this, I will insert 5 and I will move back. When I am at 12, I look on to the stack. No. No. So, both of them can go off and the stack will be empty. The stack is empty. You say that the answer is minus 1 and you put back 12 and now you go back. 4, the top of the stack is 12. That can be your answer. Put back 4 and then go off. You are done. And this is your next greater element. This is your answer. Yes. So, what did I do over here? I did use a monotonic stack. Why? Because I was storing the elements in a specific order and that specific order was the decreasing order. Yes, the decreasing order. If you carefully notice, I stored 6 which is typically let's say here and I stored 5 let's say typically here and I stored 2 let's say typically 2 is here and I stored 1 which is typically here. So, that was a decreasing order. That was a decreasing order. And then whenever there was a 3, 3 would have been somewhere here. That order would have been distorted."
+    },
+    {
+      "chunk_id": "L301_C11",
+      "start": 733.72,
+      "end": 811.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=733s",
+      "text": "a decreasing order. And then whenever there was a 3, 3 would have been somewhere here. That order would have been distorted. That is why what I did was I removed 2 and 1 so that the decreasing order is still maintained. So, that the decreasing order is still maintained because I am decreasing it. I am decreasing it. Got it? So, I hope you got next like you got the concept of next greater element, the intuition. The intuition comes from the light poles. If you are if you are a human being and you are looking on the rightward direction, it is obvious that you will only see increasing stuff, nothing in between them, nothing in between them. You will just see the increasing curve, correct? So, the intuition comes from there. Perfect. So, time to write down the pseudocode. So, we will be returning a list or a vector according to the language that you are writing in. So, I will be returning a list of integer and I have to find the next greater element. So, what will I be given? I will be given an array for sure. So, what do I need? I need an array which stores all the next greater elements. So, maybe an NGE of size N or 2. Perfect. I need to traverse backwards and I also need a stack. So, maybe I can define a stack ST. I am not writing the syntax, that is pseudocode."
+    },
+    {
+      "chunk_id": "L301_C12",
+      "start": 811.52,
+      "end": 888.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=811s",
+      "text": "backwards and I also need a stack. So, maybe I can define a stack ST. I am not writing the syntax, that is pseudocode. So, let us quickly traverse from the back. So, that is going to start from N minus 1 till 0, backward traversal. So, I know one thing, if there are elements in the stack and there is something which is smaller, I just take them off. So, I will say, hey listen, if the stack has elements, that is very, if the stack is not empty and the stack.top is something which is lesser than equal to, very important, you have to remove the lesser and the equal elements as well, lesser than equal to array of height. So, can you please do me a favor, just do a stack.top and keep on doing till the stack is either empty or you have removed all the smaller elements. Once this is done, that means you have removed the smaller elements for sure. Correct? So, after this, what you say is, okay listen, if the stack is empty now, because after removing, if the stack does not have anything, which means all the elements in the stack were smaller, which clearly tells me that NGE of i should be minus 1 or else the NGE of i should be array or rather the stack.top, isn't it?"
+    },
+    {
+      "chunk_id": "L301_C13",
+      "start": 888.48,
+      "end": 967.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=888s",
+      "text": "NGE of i should be minus 1 or else the NGE of i should be array or rather the stack.top, isn't it? Because that is the element that was not removed. Why? Because it was greater. Okay, done. What after this? I say stack.push. What? The current element and the for loop is completed. And once that is completed, you end up returning the NGE list. Perfect. Am I done? I think I am done. It is time to analyze the time complexity. What do you think? A lot of people will say there is still a big O of N square, a big O of N here and then you are iterating on the stack. Another big O of N over here. No, it is not. Instead it is a big O of 2N at the worst possible case. Big O of 2N at the worst possible case. Why? So, imagine, like understand this is for sure running for big O of N. But if I ask you how many times is the while loop running, what will be that? Is it running for N every time? Is it running for N every time? No, it is not. It is not running for N every time. Correct? You need to understand this. Okay. Then how many times is it running?"
+    },
+    {
+      "chunk_id": "L301_C14",
+      "start": 967.48,
+      "end": 1039.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=967s",
+      "text": "It is not running for N every time. Correct? You need to understand this. Okay. Then how many times is it running? So, if you look at the example, what is the stack containing? Stack is containing nothing but these elements, but these elements. So, whenever you are at 3, what the stack contained was 4 elements. So, at the worst possible scenario, at the worst possible scenario, you will end up removing 4 elements. You will end up removing 4 elements for this element, right? So, throughout, throughout the journey, you might remove this, this, this, this, this, this, this, this, this, this, this, this from the stack. Throughout the journey, this is what at max you can remove from the stack. So, can I say this stack.pop at max can be performed for B go of N? Not beyond it, because I will only remove the elements that I have inserted into the stack and I have only inserted at max of N elements. So, I will remove at max of B go of N elements itself. Maybe sometimes I remove 3 elements, maybe sometimes I remove 2, maybe sometimes I remove 1. So, the summation of it will sum up to be B go of N. Got it? Okay. So, that is why the time complexity at the worst possible case will be B go of N for"
+    },
+    {
+      "chunk_id": "L301_C15",
+      "start": 1039.76,
+      "end": 1096.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=e7XQLtOQM3I&t=1039s",
+      "text": "N. Got it? Okay. So, that is why the time complexity at the worst possible case will be B go of N for this one and throughout it might end up taking a B go of N, which ends up making it a B go of 2N. Okay. What about the space complexity? I'm using a stack. So, that's a B go of N and I'm using another B go of N in order to store the answer. Again, this is something which I'll have to use in order to return the answer. I don't want to modify the given input. We don't do that in an interview. Usually use a different array in order to store all my answers. So, that will be the time complexity and the space complexity. I hope you understood the thought process of traversing from the back. I hope you understood the intuition of storing in a decreasing order the light pool concept. Got it? That will wait for this one. So, if you're still now watching and if you've understood everything, please, please do consider giving us a like and if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye. Take care."
+    }
+  ]
+}

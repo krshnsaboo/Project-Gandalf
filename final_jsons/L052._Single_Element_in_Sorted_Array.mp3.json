@@ -1,0 +1,141 @@
+{
+  "lecture_id": "L052",
+  "lecture_number": 52,
+  "lecture_title": "BS-8. Single Element in Sorted Array",
+  "youtube_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ",
+  "chunks": [
+    {
+      "chunk_id": "L052_C1",
+      "start": 0.0,
+      "end": 75.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we will be continuing with our binary search playlist, which is the part of the strivers A to Z DSA course in case you haven't checked it out yet. I think you should definitely check it out from the link in the description. Otherwise, you'll be missing out on a lot of things. So in today's video, I'll be covering up the problem, finding single element in a sorted array. So what does the problem state? It states that you will be given an array and the array will be containing integers. Now most like all of the numbers will be appearing twice, like all of the numbers will be appearing twice. Only one number will be there, which will be appearing once and all the appearing twice numbers will be together because it is a sorted array. If you carefully see double one, double two, double three, double five, double six, and there's this one element who is single. So you have to find me that single element. So everyone appears in a couple and there's one who is single. Find me out that single element. That is what the problem states and it is guaranteed that there will"
+    },
+    {
+      "chunk_id": "L052_C2",
+      "start": 75.94,
+      "end": 146.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=75s",
+      "text": "is single. Find me out that single element. That is what the problem states and it is guaranteed that there will always be a single element and it is guaranteed that all of the numbers will always appear twice and since it is sorted, the twice elements will be in couples. So these things are guaranteed. This problem comes up in an interview. What is the naive solution that I can think of? The extreme naive solution that I can think of is if I'm standing at a particular index, either index plus one will have that element or either index plus sorry, index minus one will have that element like on either side, that element should be there. Then it appears twice and if at either sides, the element is not there, then I can say that it is a single element. So if I start over here, it doesn't have a left, but it does have a right and it does have the same element. If you go here on the left, it is the same on the right. It is not, but on the left it is. If I go here on the right, it is same on the left. It is not. So I just need one to be similar. If I go to the two, the left is similar. If I go to the three, the right is similar. If I go to this three, the left is similar."
+    },
+    {
+      "chunk_id": "L052_C3",
+      "start": 146.38,
+      "end": 220.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=146s",
+      "text": "the left is similar. If I go to the three, the right is similar. If I go to this three, the left is similar. If I go to this four, neither the left, neither the right is similar. So any index whose left and right both are not same, that can be called out as the single element. So if I have to write the brute force code, it's going to be super simple. I equal to zero, I lesser than n, I plus plus and the element is array of I. So I know one thing, if like if I is equal to equal to zero, then it's the first element. Else if the I is equal to equal to n minus one, then it is the last element or else one of the middle elements. So this is a case when I'm at the first element. This is a case when I'm at the last element and this case is for all elements in between. So I'm like, okay, if I'm the first element, if this element is not equivalent to the right element, very important to the right element, then I can say this, like if that's not equivalent, so maybe I can just erase this equal to and I can say it's not equal to the right. I can say that this array at the zero index"
+    },
+    {
+      "chunk_id": "L052_C4",
+      "start": 220.18,
+      "end": 295.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=220s",
+      "text": "this equal to and I can say it's not equal to the right. I can say that this array at the zero index is my answer. Similarly, I can write if array of I is not equal to array of I minus one, that means someone on the left, then this array of I is my, over here also you can write array of I is my answer or else if it is anywhere in the middle, then that array of I can never be equal to array of I plus one and an array of I can never be equal to array of I minus one. In that case, this particular array of I will be my answer. Very, very easy, but be careful that this is if n is equal to equal to one, like if you are given a size one array, the answer will always be array of zero. This is an exception. If the array has one element, it will need to have its right, it will need to have its left. In that case, the array itself, like the element in the array itself will be the answer that is for one size array. So this will be the brute force code. If I have to ask you the time complexity, the brute force code time complexity is big O of one. Now I want you to observe something over here."
+    },
+    {
+      "chunk_id": "L052_C5",
+      "start": 295.18,
+      "end": 367.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=295s",
+      "text": "the time complexity, the brute force code time complexity is big O of one. Now I want you to observe something over here. Please observe that for I equal to zero, there exists a right, but there doesn't exist a left for I equal to n minus one. There doesn't exist a right and there exists a left. So you have to be careful about these edge cases. You cannot bluntly check on the left because this index will be minus one and this index will be n which might be out of bound, which might be out of bound and it will throw you runtime error. So it is very important to write separate cases. You directly cannot write this because you might have overflow of index cases. Got it? Obviously the interviewer will not be happy with the big O of n solution and we need to optimize it. What, what are we looking for? We're looking for a single element. So we are searching for that and in a sorted array, whenever sorted is there, we can actually think of a binary search. How do we apply binary search? We know one thing for sure that in order to apply binary search, we have to think of elimination because binary search starts with an n size array and then it trims down to half, then it trims down to another half and it trims down to another half. So it has to eliminate one half."
+    },
+    {
+      "chunk_id": "L052_C6",
+      "start": 367.78,
+      "end": 445.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=367s",
+      "text": "down to half, then it trims down to another half and it trims down to another half. So it has to eliminate one half. It has to eliminate one half. So we have to somehow figure out how can we eliminate? What are we searching for? We're searching for a single element. So we have to find a property of that single element that helps us to justify the elimination. So let's find out that property. So we've written down the index. Let's try to have some observations. So if I point this out, this is the single element and all the elements to the right, sorry, to the left and to the right. Let's find out some observations. We have a one comma one, we have a two comma two, we have a three comma three. And if you carefully look around, this is an even index. This is an odd index. This is an even index. This is an odd index. Even odd, even odd, even odd, correct? Even odd. But if you look at five comma five, this is an odd index and this is an even index. If you look at six comma six, this is an odd index. This is an even index. So I think we have somehow got a heck of it that, okay, fine. We know one thing for sure. If we are standing at the even index and on the right, there's the"
+    },
+    {
+      "chunk_id": "L052_C7",
+      "start": 445.22,
+      "end": 520.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=445s",
+      "text": "it that, okay, fine. We know one thing for sure. If we are standing at the even index and on the right, there's the same element, there is the same element, then I can surely say I'm standing on the left half of the single element. And if I'm standing at an odd and on the right there's an five, I can surely say that I'm standing on the right half of the single element. So kind of I've figured out that, hey, listen, if I'm talking about even comma odd, even comma odd, I'm on the left half. And my element is on the right half. My element is on right half. Can I surely say element is on right half. And if I'm talking about odd comma even, I can say I am on the right half or rather I can say the element is on the left half to be very, very, because we're just concerned about the element. Element is on the left half. So I'll just erase this as well. Perfect. So these are the conclusions that we have drawn. So once I've drawn the conclusion, we have some observations. What is the next thing we will do? We will try to, maybe we'll try to do the binary search because we know how can we eliminate and we know a lot of things. But before starting off the binary"
+    },
+    {
+      "chunk_id": "L052_C8",
+      "start": 520.92,
+      "end": 584.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=520s",
+      "text": "the binary search because we know how can we eliminate and we know a lot of things. But before starting off the binary search, how can you figure out that we have a single element? You know, one thing, whenever you are standing at the single element, the left will not be equal and the right will not be equal. Both the left and right will not be equal to that particular element. At that junction, you can see that this element is just single element. At every other instance, it will not be a single element. It's the other thing that we have to also focus about. We are checking about the right and we are checking about the left. So imagine, imagine you're standing your mid index because binary searches usually on the mid index and then you have to check on the left, then you have to check on the right. So might be a case of concern because what if you are standing here, it doesn't have a left. So you have to write a lot of edge cases. What if you are at zero? What if you are at the last index? There will not be a left, there will not be a right, a lot of edge cases. So whenever you have a binary search problem where you're facing this left and right thing, you have to write a lot of conditional cases. Try to eliminate those conditional cases. We have"
+    },
+    {
+      "chunk_id": "L052_C9",
+      "start": 584.64,
+      "end": 664.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=584s",
+      "text": "you're facing this left and right thing, you have to write a lot of conditional cases. Try to eliminate those conditional cases. We have already done a similar problem previously. What I know for sure is if an array of size one is given, that single element will be my answer. So what I'll do is I'll just write the pseudocode at first. Array comma n and I will be like if n is equal to equal to one, please return array of zero because that's going to be my answer. Now I'll be like, ideally low should have been here. Ideally a high should have been here. But I know if I take this search space and zero is there, then n is there. Then in order to check for right, in order to check for left, I always have to write conditional cases. Thereby what I'll do is I will trim down my search space to this and this. I will never ever take the first element and never take the last element. I'll not take the first, I'll not take the last so that I can, I can easily get rid of those conditional cases. So if I'm not taking the first, please check for the first in separate way. If array of zero is not equal to array of one, that means that element is your single element. Same if array of n minus"
+    },
+    {
+      "chunk_id": "L052_C10",
+      "start": 664.24,
+      "end": 734.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=664s",
+      "text": "of zero is not equal to array of one, that means that element is your single element. Same if array of n minus one is not equal to array of n minus two, return array of n minus one, that is your single element. So what I've done is I've written separately for the first and the last element. Again, these things will come up with experience as you gain more and more experience, you'll start observing that how can we eliminate the extra conditional statements. I can also write a binary search with low and high being here, but then I have to write additional conditional statements and the code might be like, it might not be that good to read. So I'm trying to write a readable code, which is like clean to the interview. So that is why I'll try to tell him that I want to write a clean code. So let's do a separate check for these people. And once I'm done with these checks, let's try to perform a binary search in this search space. So where am I? I'm at one, I'm at nine. So if I do a mid, so what will be mid one plus nine by two, that is fifth index. So I made, we'll be pointing to fifth index. So we are standing at three. The first thing that you will check is, is that the single element because you're searching. So let's perform the search at"
+    },
+    {
+      "chunk_id": "L052_C11",
+      "start": 734.48,
+      "end": 811.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=734s",
+      "text": "at three. The first thing that you will check is, is that the single element because you're searching. So let's perform the search at first. Is this the single element? No. Why? Because for this to be single element, both should be not equal to three and there is one element which is equal to three. So this cannot be a search element. Thereby you say it's not my search element. Hence I'll move to the elimination. I have to eliminate either this half or this half. I have to eliminate one half, but I only eliminate that half where the element is not present. I only eliminate that half, eliminate the part where your search is, where your element is not there, where your element is not there. So how can I eliminate that? Let's first try to figure out if this is the left half or not, because I can, from my naked eye, I see that my answer is four, which is here. Thereby this will be eliminated. But how can you figure out that this portion will be eliminated? So if you remember, if the element is on the right half, then you eliminate the left. And if the element is on the left, then you eliminate right. So how did you figure out that this is the left half? Very simple. We are standing at an odd"
+    },
+    {
+      "chunk_id": "L052_C12",
+      "start": 811.6,
+      "end": 879.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=811s",
+      "text": "you eliminate right. So how did you figure out that this is the left half? Very simple. We are standing at an odd index. We are standing at an odd index. And if for this odd index, the previous number, which is the even index, has the number itself, that means we are on the left half. That means we are on the left half. And if we are on the left half, we can easily eliminate, we can easily eliminate. So what I'll do is, I'll go ahead and eliminate and I will move here. So I'm eliminated and moved here and thereby this will go off. Perfect. Let's do the next step. You'll understand it in a much better way. Med equal to six plus nine by two. That's 15 by two. That's 7.5. That's seven. So what will happen? The mid will be pointing here. Again, the first thing that you will do is, is this not equal to this? Is this not equal to this? No, it's equal to one up there. So thereby what you can say is, hey, listen, this is not my single element. This is not my single element. Now my search space is limited to this much. So I have to figure out whether to eliminate left or whether to eliminate right. So I am standing at an odd index. I'm standing at an odd index. So"
+    },
+    {
+      "chunk_id": "L052_C13",
+      "start": 879.4,
+      "end": 952.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=879s",
+      "text": "to eliminate left or whether to eliminate right. So I am standing at an odd index. I'm standing at an odd index. So logically if I'm on the left half, the previous index is even, the previous index is even and that should be containing the five. But it doesn't. Thereby it means I'm on the right half. That means four is on the left and I am on the right half of the four. Thereby I will eliminate this. Hence this high will move here. I can just quickly erase this and the high will move here. And this time when I tried to compute the mid, the mid will also be pointing to this. Let's stand here. If the mid is, if the mid is pointing to this, what is the first step you'll do? Because they're searching. Is that equivalent to the left? No. Is that equivalent to the right? No. Search over. This is my single element. This is my single element and I return that. Quite simple. So what you do is you identify whether you are on the left half or whether you are on the right half. If you're on the left half, eliminate the left half. If you're on the right half, eliminate the right half. Very simple. So this was a case where we saw that we were standing at an odd index. What"
+    },
+    {
+      "chunk_id": "L052_C14",
+      "start": 952.64,
+      "end": 1032.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=952s",
+      "text": "eliminate the right half. Very simple. So this was a case where we saw that we were standing at an odd index. What if you are standing at an even index? If you are standing at an even index, you will simply check the right element is the same number or not to identify if you're on the left half or not. But I have to write the code. I'll go back. I'll try writing the code. So we know we have trimmed down our search space to this low equal to one, high equal to n minus two. And I'll write while low lesser than equal to high. That's what I'll write. And I'll write mid equal to low plus high by two. The first thing we always do is a search. So it's like search. If array of mid is not equal to array of mid plus one and an array of mid is not equal to array of mid minus one. We are very sure that this element is my single element because not equivalent to the left, not equivalent to the right. Thereby this particular element is my mid element. I'm very much sure about that. So done and dusted. I might be thinking, okay, we're done. Now we have to go to the elimination part. So what I will think is, hey, listen, we have to write a condition. So we'll write"
+    },
+    {
+      "chunk_id": "L052_C15",
+      "start": 1032.2,
+      "end": 1109.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=1032s",
+      "text": "to go to the elimination part. So what I will think is, hey, listen, we have to write a condition. So we'll write the condition. Are you on the odd index? If you're on the odd index, let's go back. If you're on the odd index, I have to eliminate something. So your left part should be this, should be this. So I'll be like, if you're on the odd index and, and, and, and your left which is mid minus one is equal to equal to mid. What does that mean? What does this statement mean? It means you are at the odd index and the left is equivalent, which means I am on the left half. Like I'm standing on the left half. I'm standing on the left half and the element is on the right half. Thereby you have to eliminate the left half. You have to eliminate the left half, eliminate the left half. Very obvious because again, let's go back. Imagine you're standing at the odd index and at the even index, you still have the same number. You can never have your answer in this half. Never ever. Thereby you go ahead and eliminate this. There can be other case as well. Let's try to debug this. So what"
+    },
+    {
+      "chunk_id": "L052_C16",
+      "start": 1109.24,
+      "end": 1183.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=1109s",
+      "text": "Thereby you go ahead and eliminate this. There can be other case as well. Let's try to debug this. So what you said, whenever you are at the odd index, what if you're standing at the even index because it might happen. You stand at the even index. In that case, you check for the right because you're checking for left half, right? So you'll be like either this or, or, or you can just write or, or mid to you're standing at the even index. And let's go back. If you're standing at the even index and you have to check for the right, check for the right. So please check for right. And an array of mid is equal to equal to array of mid plus one. So either this will be the left case where you're standing at the odd and the left is equal or you're standing at the even and the right is equal. This means you're standing on the left half and then you eliminate the left half. Any other case apart from this will mean you're standing on the right half. I do not need to again go and write for even and then odd and odd and even. No need to write because if these cases are not satisfying, that means you're not on the left half. You're on the right"
+    },
+    {
+      "chunk_id": "L052_C17",
+      "start": 1183.08,
+      "end": 1252.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=1183s",
+      "text": "need to write because if these cases are not satisfying, that means you're not on the left half. You're on the right half. Thereby you will eliminate the right half. Quite simple. Elimination done. This is what we do in binary search. We eliminated the left half over here. We eliminated the right half and binary search is over. And since it is guaranteed that the answer is present, this will for sure be executed. And if, if just in case, because you're writing a function, you have to return a dummy statement of minus one. This will never be executed, but this is a dummy statement because you're writing a function which returns an integer. So this will be a dummy statement after the while loop, but always this return statement will work and this will always give you an answer. Got it? So let's go back to the code editor. By the way, in case you want to try out the problem, the link will be in the description. So I hope you've understood why did I trim down the search space? If you will not trim it down, then for this, you have to do a check if mid plus one is crossing the boundary. For this, you have to do a check as mid minus one crossing about boundary. Again, for this, you have to do a check. Again, for this, you have to do a check. So write extra additional"
+    },
+    {
+      "chunk_id": "L052_C18",
+      "start": 1252.28,
+      "end": 1323.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=1252s",
+      "text": "about boundary. Again, for this, you have to do a check. Again, for this, you have to do a check. So write extra additional conditions. That is okay. You can go ahead and write it, but I prefer trimming down to avoid like unreadable code because this code is far more readable than those conditional codes. So try to write a readable code and again, it will come up with experience. It will not come up straight away in the first day. Okay. So also we have made sure that we maintain our consistency of using low, lesser than equal to high. The same concept of mid plus one and mid minus one in a lot of discussion forums, you'll find that they change it to low, lesser than high, and then they do some low equal to mid. We will be focusing on keeping things consistent. The main focus is elimination. Once we understand what is needed to be eliminated, binary search is super easy. So I'll go ahead and submit this and if I have to ask you, what is the time complexity? Logarithmic base 2n because you're eliminating one half. So I hope you have understood everything that I've taught in this particular video. Just in case you have, please, please, please consider giving us that like, and if you're new to our channel, please do consider subscribing to us. And if you haven't followed me on Instagram, Twitter, and LinkedIn, all the profile links will be"
+    },
+    {
+      "chunk_id": "L052_C19",
+      "start": 1323.84,
+      "end": 1335.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=AZOmHuHadxQ&t=1323s",
+      "text": "our channel, please do consider subscribing to us. And if you haven't followed me on Instagram, Twitter, and LinkedIn, all the profile links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Bye, bye."
+    }
+  ]
+}

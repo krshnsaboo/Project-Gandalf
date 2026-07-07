@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L251",
+  "lecture_number": 251,
+  "lecture_title": "L15. Find the length of the Loop in LinkedList",
+  "youtube_url": "https://www.youtube.com/watch?v=I4g1qbkTPus",
+  "chunks": [
+    {
+      "chunk_id": "L251_C1",
+      "start": 0.0,
+      "end": 79.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=I4g1qbkTPus&t=0s",
+      "text": "So, let's continue with our playlist but before that, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is finding out the length of a loop in a given linked list. So what is the problem stating? It is stating that you'll be given the head of the linked list and if there is a loop, and if there is a loop, you'll have to return me the length of the loop. What is the length of the loop? What is the definition of a loop? If there exists one node, if there exists a minimum of one node where you can start and end. So let's take one node, let's assume 5, 1, 2, 3, 4, 5, 6, 7. So the length is 7. You can take any node and it is guaranteed that there will be one loop. So the length of the loop is 7. You can start counting at any node. It can be 3, it can be 4, 5, 6. Each of them will be giving you a length of 7 and this is what we want you to return. What if you're given a linear linked list, something like this. In this case, is there any loop? No. In such cases, you'll be returning a length of 0. Yes, that is what you'll be returning because there is no loop. So how can we solve this problem?"
+    },
+    {
+      "chunk_id": "L251_C2",
+      "start": 79.48,
+      "end": 156.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=I4g1qbkTPus&t=79s",
+      "text": "returning a length of 0. Yes, that is what you'll be returning because there is no loop. So how can we solve this problem? What if this problem comes up in an interview? We will be following the exact same method that we followed while solving the previous problem which is detection of a loop in the linked list. In case you haven't seen that lecture, I'll be leaving out the link in the description. Please go back and watch it because I did use the hashing concept in order to solve it and after that we optimized using the Tortoise and the Hare algorithm. We'll be using the exact same concept over here. So there is a link in the description. Go back and watch it. In case you haven't seen it yet. So this problem comes up in an interview, we will be starting off with the same technique and that is using the hashing concept. Why hashing? It's very obvious because if you're talking about a loop, it means any particular node will be revisited. So we need to remember and the only technique that helps us to remember is hashing. So we will be using the hashing concept. Can I say, I'm traversing from here, I'm going here, then I'm going here, then I'm going here, then I'm going here. How do I find out the length of the loop? What if I can keep a track like the timer? Maybe yes."
+    },
+    {
+      "chunk_id": "L251_C3",
+      "start": 156.88,
+      "end": 229.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=I4g1qbkTPus&t=156s",
+      "text": "going here. How do I find out the length of the loop? What if I can keep a track like the timer? Maybe yes. So what I'll do is I'll keep the temporary at the head and I'll set the timer to be one. I'll set the timer to be one and I'll start moving. I'll go here temporary, I'll make the timer two. I'll go here temporary, make the time of three, go here temporarily may be the time of four, go here temporarily make the time to five, go here temporarily make the time 6, go here temporarily make the time 7, go here temporarily, make the time 8, go here temporarily, make the time 9, go here Temporary make the time 10 and this is when you realize you visited a node twice, you visited a node twice. Previously you visited at three. Now you're visiting at it at 10. So what will be the overall length? Can I say seven? Because it took you seven seconds. Kind of thereby. If I, if I compute that one step is taking you one second. Can I say this seven, the length of seven? I can, but I need to remember this timer. I need to remember this timer. So what I will do is I will take a data structure and the best data structure is to use a map and what will we be and what will we be storing?"
+    },
+    {
+      "chunk_id": "L251_C4",
+      "start": 229.9,
+      "end": 299.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=I4g1qbkTPus&t=229s",
+      "text": "a data structure and the best data structure is to use a map and what will we be and what will we be storing? We will be storing the node, the entire object, not the values, the object and the timer. This will be an integer. This will be an integer, plain integer. And now we will be starting with the head. So initially the object is having one. And I'll put the timer as one. We'll move the temporary to the next and the timer will increase to two. So next will be two. And it will be two. Next we'll move it to 15. So temporary will go to 15. Remember do not store 15, store the entire node three. After that, the temporary will move to four. And you keep it moving and there will be a point when like it will move here. Then it will move here. Then it will move here. Then here, then here. After that, it will reach here when the timer is 10. The moment the temporary reaches 15, it checks out what is the value and it gives you a value of three. So you pick out that value three, you take the current value, you subtract and you get the length. Isn't that easy? That's easy, right? That's what you have to do. Slight modification and you're done with your brute force. So let's quickly write down the pseudocode in case you want the code for C++,"
+    },
+    {
+      "chunk_id": "L251_C5",
+      "start": 299.46,
+      "end": 375.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=I4g1qbkTPus&t=299s",
+      "text": "Slight modification and you're done with your brute force. So let's quickly write down the pseudocode in case you want the code for C++, Java, Python or JavaScript, all the links will be in the description. So what do we need? We need a map data structure, which will be storing the node and the timer. Can be stored in an integer. We need a temporary, which will be used for traversal and we need a timer, which will be initially one. Perfect. This is what we start off with. And we know that we will be traversing till the temporary node is not null. Why not null? In case it is a linear linked list, it will end up reaching the null. Only in case of loop, it will never have a null. Whenever you add a node, you first check, was this previously visited? Was this previously visited? So we say map, where you previously having this temporary node in case he says yes, again, this line will depend on your language. You look at the map, was temporary there. If he says yes, I get the value for that key. I get the value for that key. Map, give me the value for this particular key. Again, depending on language, you can write it. It'll give you the value. And then you'll be saying return. What is the current timer? It's stored in your timer minus value. This is what the length will be."
+    },
+    {
+      "chunk_id": "L251_C6",
+      "start": 376.22,
+      "end": 455.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=I4g1qbkTPus&t=376s",
+      "text": "then you'll be saying return. What is the current timer? It's stored in your timer minus value. This is what the length will be. And you straight away return. You straight away return. And in case, in case it's not in the map, it's a new node. It's a new node. So probably put it into the map, mpp.put or whatever. You put it into the map. You say temporary. You are at this particular timer. Put it into the map. And after that, increase the timer for the next iteration, for the next iteration. And also please make sure you move to the next node. Just temporary.next and you end it up here. Once it is ended, you can go ahead and return zero. Why return zero? Because yes, because if it is reaching now, it means it is a linear linked list and there is no loop. So you return zero. What is the time complexity? Big O of n to traverse the entire linked list for sure. Into couple of operations of map. One is here. The other one is here. Two operations. So into two into logarithmic of n. In case your map is taking logarithmic. In case your map works in big O of one, it'll be big O of one. So I've explained the time complexity of map in the hashing lecture. Please go back and watch it. So depending on your maps time complexity, it will vary."
+    },
+    {
+      "chunk_id": "L251_C7",
+      "start": 455.82,
+      "end": 524.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=I4g1qbkTPus&t=455s",
+      "text": "time complexity of map in the hashing lecture. Please go back and watch it. So depending on your maps time complexity, it will vary. What about the space complexity? I'll end up storing all the nodes. So big O of n. This is where the interview will not be happy with this big O of n. And I'll ask you to optimize it. And this is when we will move to the optimal algorithm of. Tortoise and the hair algorithm. Please go back and watch it in case you haven't. The link is in the description. So let's quickly have a recap of the tortoise and the hair algorithm, which was used to detect a loop, because if you understand that in depth, finding the loop is super simple. So if you remember, we took a slow pointer. We took a fast pointer and we placed it at the head. Then we moved the slow by one, which means it goes to the next and the fast by two. It means goes to the next next again. The next step, same thing. Slow and fast moves by one and two steps simultaneously. After that, again, the same thing. Slow moves by one step. The first pointer will move by two steps. And after that, let's quickly raise this. Yes. After that, again, the same thing. Slow moves by one. The fast moves by two steps. It's good. Lease this and this. After that, again, the same thing."
+    },
+    {
+      "chunk_id": "L251_C8",
+      "start": 524.7,
+      "end": 596.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=I4g1qbkTPus&t=524s",
+      "text": "same thing. Slow moves by one. The fast moves by two steps. It's good. Lease this and this. After that, again, the same thing. Slow and fast moves by one and one. Sorry, one and two, not one and one. Done. After that, again, the same thing. The slow moves by one and the fast moves by two. It's clear is this and erase this. After that, the slow moves here. After that, the fast moves here and this is where they collide. This is where they collide. So this is the node where the slow and the fast pointers collide. Hence, I can definitely see that there is a loop. I've talked about the intuition in the previous video. In case you haven't seen the link is in the description. So I'm sure that there is a loop. Now, what is the next step? I need to figure out the length. Can I see if I start at 8, I will reach back at 8. If it starts at eight, I will reach back at it. I'll use this. Yes, I'll keep my counter. And I'll start moving the first pointer. You can move the slow as well. Fast moves to the next. The counter increases. The fast moves to the next, the counter increases. The fast moves to the next. The counter increases. The fast moves to the next. The counter increases. the next the counter increases the first moves to the next the counter increases"
+    },
+    {
+      "chunk_id": "L251_C9",
+      "start": 596.38,
+      "end": 672.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=I4g1qbkTPus&t=596s",
+      "text": "increases. The fast moves to the next. The counter increases. the next the counter increases the first moves to the next the counter increases the first moves to the next the counter increases the first moves to the next the counter increases This is when you stop you reach back at the same node because it was a loop you are bound to reach back at the same node and the moment you stop whatever value your counter has that will be yes that will be your length of the loop of the link list can I write the code? I can So this was the code which was detecting the loop in a linked list. You basically started by taking slow and fast pointers pointing to head and you know this conditions in case it is a linear linked list You need to check if you are reaching null or if you are reaching the last node again discussed in the previous video So we know this that the slow will move by one and the fast pointer will move by two The moment this happens, this is where I have to find the loop This is where I have to find the length rather. So can I say if the slow equal to equal to first return find length and maybe just pass on the slow and fast pointers here That's it and it will find you the length"
+    },
+    {
+      "chunk_id": "L251_C10",
+      "start": 672.56,
+      "end": 746.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=I4g1qbkTPus&t=672s",
+      "text": "first return find length and maybe just pass on the slow and fast pointers here That's it and it will find you the length So we just need to write the find length function which is taking a slow pointer and the fast pointer and it should return me The entire traversal length. So what I'll do is I'll write the find length function. So find Length will be taking a slow pointer and it will be taking a fast pointer So initially what you can do is you can keep the counter equal to one and you can see the fast pointer to move one step Not two steps in just one step and now you'll say let's keep on moving them till they're not equal Let's keep moving them till they're not equal and now you can do counter plus plus So every time you move you count and let's move it fast equal to fast next Done. Once this is done. You can return the count Because that will be the length of the loop So once you've returned the count, this is what it will return straight away and in case in case There is no loop will be returning a zero quite simple And if I quickly go back into the code editor, you can see that you'll have to complete this function definition I've written the exact same code the exact stuff. I'll quickly submit the submit button"
+    },
+    {
+      "chunk_id": "L251_C11",
+      "start": 746.56,
+      "end": 822.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=I4g1qbkTPus&t=746s",
+      "text": "see that you'll have to complete this function definition I've written the exact same code the exact stuff. I'll quickly submit the submit button Rather click the submit button and see if it is running fine. It is so the C++ code runs I'll copy paste the same piece of code. I'll go to Java now and in Java What I'll do is I'll copy paste it and over here. Let's quickly give a tab Let's remove the pointers removed low caps and Done, let's remove this. Let's make it dot. Let's make it dot Done we need the fine length function. So let's quickly go back to C++ and get the fine length function So come back to Java and over here, please make sure it is private static And then over here remove the pointer concepts because it is Java Once I've done this Should be good. Let's quickly try to run this and see if it is running fine should be There are issues Why because this will be low caps my bad Perfect, let's quickly try to run this it is running now. Let's see if it is running Let's quickly try to run this it is running now. Let's quickly try to submit this and it should be fine So I hope you have understood everything and in case you did"
+    },
+    {
+      "chunk_id": "L251_C12",
+      "start": 822.76,
+      "end": 837.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=I4g1qbkTPus&t=822s",
+      "text": "quickly try to submit this and it should be fine So I hope you have understood everything and in case you did Please do consider giving us a like and if you need to our channel, please please consider subscribing to us And with this I'll be wrapping up this video. Let's put in some of the video Don't ever forget your golden"
+    }
+  ]
+}

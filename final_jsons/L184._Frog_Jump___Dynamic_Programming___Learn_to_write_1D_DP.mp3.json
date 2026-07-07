@@ -1,0 +1,232 @@
+{
+  "lecture_id": "L184",
+  "lecture_number": 184,
+  "lecture_title": "DP 3. Frog Jump | Dynamic Programming | Learn to write 1D DP",
+  "youtube_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ",
+  "chunks": [
+    {
+      "chunk_id": "L184_C1",
+      "start": 0.0,
+      "end": 76.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So welcome to the third lecture of the dynamic programming playlist. It's a wonderful question. Frog jump. So just to make sure you have watched the previous couple of lectures before attending this one, because I have a perfect flow, which I will continue. So if you're like, if you're just watching this lecture three, suddenly you might feel alienated. So please watch out the previous couple of lectures. So what are the, what is the problem statement? So there's a frog on the first step of a n stairs long staircase. So the frog wants to reach the nth stair. Height i is the height of the i plus 1th stair. So the array is given in terms of zero based indexing. So the energy lost in the jump is given by height i minus 1 and height j minus 1. So basically the frog can jump from the ith stair to the jth stair and the energy will be a height of i minus 1 minus height of j minus 1. In the frog, if the frog is in the ith staircase, he can jump from either, he can jump either to i plus 1th stair or to i plus 2th stair. Basically he can take a jump to the plus 1"
+    },
+    {
+      "chunk_id": "L184_C2",
+      "start": 76.76,
+      "end": 152.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=76s",
+      "text": "either to i plus 1th stair or to i plus 2th stair. Basically he can take a jump to the plus 1 index or to the plus 2 index. Your task is to find the minimum total energy used by the frog to reach the first stair to the nth stair. Okay. So that is what the question states. So for an example, I'll just take the first example, 10, 20, 30 and 10. Okay. And I'll try to explain you this. Let's take the first example, which is 10, 20, 30 and 10. So basically there's a frog. Now, if I consider this as zero, one, two, three, the frog wants to reach from zero to three. I have converted the problem into zero based indexing. So even if n is four, uh, it's ideally the question was from one to four, but I've converted it into zero based indexing. Okay. So if the frog starts from here and he can only jump one or two places, what is the minimum energy that you'll require? Okay. So for example, if the frog is here, the frog is here and the frog says that, okay, I will jump from here to here. Then the energy that you'll require is 10. Okay. And then he decides that he'll jump from here to here. And then energy again required will be n. It's a difference of them, absolute difference of them. So if after that, he decides that he'll jump from"
+    },
+    {
+      "chunk_id": "L184_C3",
+      "start": 152.04,
+      "end": 218.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=152s",
+      "text": "again required will be n. It's a difference of them, absolute difference of them. So if after that, he decides that he'll jump from here to here, that's again the absolute difference, which is 20. So this path will give him a 40. The energy that he'll take will be 40. Uh, let's, let's try out some other parts. What if I decide I will jump from here to here, which will take me 10. What if I decide I'll jump from here to here. So that again takes me a plus 10. Correct? So this part gives me 20, which is definitely better than the previous one. What if I decide I'll take this a couple jump because I cannot jump more than a couple of steps. So this will be 20 and then I'll decide I'll jump a one step. So that'll be a plus 20 again. This is again 40. So if you see, I've tried out one possible way, two possible way, three possible way, and the minimum that I encounter is 20 and you have to tell me which is the minimal, what is the minimal energy that you can take? And that is what the question is. Now, uh, can I say this, can I say this, that, uh, this question again, uh, gives me an idea that you are trying all ways. So if you remember the previous lecture, I told you, if you're"
+    },
+    {
+      "chunk_id": "L184_C4",
+      "start": 218.72,
+      "end": 284.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=218s",
+      "text": "again, uh, gives me an idea that you are trying all ways. So if you remember the previous lecture, I told you, if you're trying all possible ways, then it's a recursion, right? And then you can either count all ways or you can find the best. So can I say over here, you're trying all possible ways, way number one, way number two, way number three, and you're taking the best possible and that's 20. Why will a greedy solution not work over here? That, that might be a question that comes to your head. So that's the first thing that I will be talking about. Why a greedy solution doesn't work. Let's understand that. Then after that, we'll think why we need to try all possible ways and need to take the best way out. So when I say greedy, that means you're, you are standing from 10. So, you know, from 10, you can go to 20 or go to 30. So you saw that if you jump to 20, that's the minimal. So you jumped and from 20, uh, you could have either jumped to 30 or to 10, both are taking 10, both are taking 10. So you can jump anyway. So you jump this, this is greedy. Basically when you are moving, you try to jump the minimal possible jumps possible, whichever takes minimal energy, you try to jump that. But why a greedy solution doesn't work. Let's check that out. Now, when"
+    },
+    {
+      "chunk_id": "L184_C5",
+      "start": 284.56,
+      "end": 350.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=284s",
+      "text": "jumps possible, whichever takes minimal energy, you try to jump that. But why a greedy solution doesn't work. Let's check that out. Now, when I say a greedy solution doesn't work, so let's check this test case. So if the frog was here, if the frog was here, greedily from here, he will try to move here because in moving here, it'll take him 30, it'll take him 20. The greedy option will be to move to 10. So let's greedily move to 10, which will cost him a 20. Okay. Now, again, from here, he can move here, which is 50 or he can move here, which is zero. So greedily, he'll move to zero. So let's move to the zero. This will take him zero energy. Again, from here, greedily, he can move here, which will cost him 40 or this will cost him 50. So greedily, he'll take the 40 stuff. So he will move from here to here, which will be again 40. So in total, the costing will be 60. Now, what if I try some other way? Let's try that out. If the frog is here and he decides he will be going till 60, that will cost him a 30 buck. And if he decides after that, he'll go to 60 again, that'll cost him zero. And after that, he decides he'll go 50, that'll cost him 10. So a total of"
+    },
+    {
+      "chunk_id": "L184_C6",
+      "start": 350.2,
+      "end": 425.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=350s",
+      "text": "to 60 again, that'll cost him zero. And after that, he decides he'll go 50, that'll cost him 10. So a total of 40 will be the costing. A total of 40 will be the costing. So we did realize the greedy way did not give you the correct path because you started greedily, but you lost out probably somewhere. Right? So that's why, that's why. It's better if you try all possible ways, because sometimes it will happen that initially you took the better way, but you lost out on something significant like this 60 to 60 would have been zero. You lost out in future. So in such cases, greedy doesn't work and you have to try recursion. Now, when I say recursion, boils down to the second lecture. What is over here? Recursion is try all possible ways. So you have to try all possible ways. Okay. So in order to try all possible ways, you have to write recursion. Correct? Over here, they're asking you which path did take the minimum energy. So you have to find the path with the minimum energy. Correct? And do you remember the previous lecture? What was the step number one? Express the problem in terms of index. Do all stuffs on that index. Remember this?"
+    },
+    {
+      "chunk_id": "L184_C7",
+      "start": 425.64,
+      "end": 503.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=425s",
+      "text": "What was the step number one? Express the problem in terms of index. Do all stuffs on that index. Remember this? To write recursion, do all stuffs on that index. Step three, over here, they're asking you to find the minimum energy, minimum energy that you took. So take the minimal of all stuffs, take the minimal of all stuffs. This is how you write recursion. Okay. So can I say, I'm wanting to reach the index n minus one. I'm assuming zero based indexing. So I'm wanting to reach the index n minus one. So what do I want? What does f of n minus one signify? Minimum energy required, minimum energy required to reach n minus one from zero index. That is what the recursion will signify. Can I, can I express the recursion in terms of index? That's my first step. I'd like, yes, you can. How? There are array indexes. There are array indexes till n minus one. So I'll consider every array index as an index. So, okay, that's fine. So I can be like, okay, that's, that's absolutely fine. So let's do it. So can I say, what will be f of zero? Like common sense. What will be the costing in order to reach from zero to zero? That's going to be zero. Because"
+    },
+    {
+      "chunk_id": "L184_C8",
+      "start": 503.4,
+      "end": 574.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=503s",
+      "text": "Like common sense. What will be the costing in order to reach from zero to zero? That's going to be zero. Because f of n minus one was stating the costing from n minus one to zero. So in order to reach zero to zero, the costing will be zero. So I know one thing for sure that the costing for this guy will be zero, no matter what you do, no matter what you do. Now let's, so we have figured out what is the index that will be the array index. Next thing is do all stuffs on that index. Yes. Do all stuffs on that index. Now, what is, what, what I, what does the frog allowed to do? The frog is allowed to either jump plus one or to either jump plus two. So why don't you do that? Do all stuffs on that index, please do it. So what you will do is you'll say, okay, I will do all stuffs on that index. So if I do a single jump, like I can say it as the left recursion. So the single jump will say f of index minus one. I'm doing this, but if I'm jumping, yes, the question arises, if I'm jumping from an index to an index minus one, what is the energy that is being consumed? I know in order to jump from index to index minus one, the energy consumed"
+    },
+    {
+      "chunk_id": "L184_C9",
+      "start": 574.6,
+      "end": 646.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=574s",
+      "text": "one, what is the energy that is being consumed? I know in order to jump from index to index minus one, the energy consumed is array of index minus array of index minus one. That is what the energy is consumed. Can I say, this is what the energy will be consumed to jump from index to index minus one. And then I can ask the recursion, hey recursion, I have reached index minus one. Now it's your job to tell me from index minus one to zero, how much it will cost you. Recursion will do the job. I'll ask the recursion tell what will be the costing from index minus one to zero, because I know the costing from index to index minus one. I've taken that. So that's what I'll do. First I've done. Now, can I say the right recursion will be very simple? It will be, if I take a couple of jumps, the costing this time will be a of index minus a of index minus two. Absolutely makes sense. So I've done all the stuffs, but I need to be slightly careful. Can I do an index minus two always? The answer to that is yes, you can do it if it is not the first index, because if you are standing at the first index, you cannot jump to, because that will take you to minus one. You cannot jump"
+    },
+    {
+      "chunk_id": "L184_C10",
+      "start": 646.6,
+      "end": 722.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=646s",
+      "text": "if you are standing at the first index, you cannot jump to, because that will take you to minus one. You cannot jump to. So you need to write a case like this. If index is greater than one, then only I can take the right jump. Otherwise I cannot like make sense because if you had the first index, you'll not be able to take the right job. So that is absolutely making sense. So I'm like, okay, fine. That's fine. Now what's the next step? Take the minimal, because the question stated minimum energy at the question stated maximum energy, you would have done it at the question state of something else you have done it. But in this, the question stated find the minimum energy. So there is a way in which you jumped from index to index minus one. There's a way in which you jump from index to index minus two and ask the recursion to find out the remaining answer. So can I say you need the minimal answer? So you're going to return the minimal of left comma right. That's how you can write the recurrence. As I told you, follow three techniques. You'll be able to write any recurrence relationships. Yes. Now you have written the recurrence relationship that is absolutely perfect. So we have understood the recurrence relationship. Now it's time to see if there are overlapping sub problems and how is this recursion actually working? Right? So we know,"
+    },
+    {
+      "chunk_id": "L184_C11",
+      "start": 722.68,
+      "end": 781.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=722s",
+      "text": "recurrence relationship. Now it's time to see if there are overlapping sub problems and how is this recursion actually working? Right? So we know, we know we are at F of five because if I write down the indexes, it's like zero, one, two, three, four, five. So we know we are at F of five. Now at F of five, where can we go? We know that either we can take a jump to F of four or either we can take a jump to F of three. That's definitely known to us. So I can be like, okay, if I'm at F of five and there's this recursion call, then the left recursion will be like, okay, F of four plus absolute of whatever height there is. So what is the height? 60 minus 50. There's this height of absolute 10. And then there's a recursion of right, which is F of three plus again, and height difference of these couple of guys, which is three and five, 10 minus 50 is 40. So you can be like absolute of 40. Now at first, this recursion will go, come back, and then this will go and come back. Then you'll return the minimum of these, right? This is how the recursion is actually working. So that's how I'm drawing the recursion"
+    },
+    {
+      "chunk_id": "L184_C12",
+      "start": 781.96,
+      "end": 856.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=781s",
+      "text": "you'll return the minimum of these, right? This is how the recursion is actually working. So that's how I'm drawing the recursion So F of four will say F of three and F of two. F of three will say F of two and F of one. F of two will say F of one and F of zero. Understood? Right? So do you observe overlapping subproblems? At least I'm able to do it. By the way, F of one will go to F of zero as well. I'm able to do it. So if I mark the overlapping subproblems, there is one. First one. Another one. So I have figured out if F of three answer, if F of three's answer I'm figuring out, then F of three's answer, why will I again figure out? So there are overlapping subproblems. So if there are overlapping subproblems, can I say the answer to those subproblems will be similar? Thereby, I can apply memoization to this particular recursion. Got it? So I'm understanding that, okay, I can definitely apply memoization. So you can easily apply memoization, but just in case to complete the recursion, I'll quickly draw it. So in order to reach zero, I'll take zero amount. Correct? So F of one, what would have, what it would have done ideally? In F of one was this recursion. So F of one went and there was a left recursion call of F of zero"
+    },
+    {
+      "chunk_id": "L184_C13",
+      "start": 856.92,
+      "end": 926.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=856s",
+      "text": "ideally? In F of one was this recursion. So F of one went and there was a left recursion call of F of zero plus the jump from one to zero. So absolute of something, a jump from one to zero. So absolute of something. Let's see. One to zero will cost you 20. So you can add a 20. What about the right recursion? Can I see, since we are standing at the first index, there will be no right recursion because you cannot jump couple of index. So I can say right is probably some bigger value. Now F of zero will return you zero for sure. This will return you zero. So the left took 20 and the right took 20. So what will you return? You'll return the minimum of both of them, which is 20 comma, let's assume this to be some int max. So it's 20 what you return as F of one. Again, makes sense because if you're standing at F of one, what is the cost that you'll take from one to zero? That's one way. There's only one way, which is 20. So that is what we have stored. Cool. So I have drawn this particular recursion. Nice. Now we are at F of two. So F of two would have called the left recursion as F of one plus"
+    },
+    {
+      "chunk_id": "L184_C14",
+      "start": 926.84,
+      "end": 999.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=926s",
+      "text": "Now we are at F of two. So F of two would have called the left recursion as F of one plus a jump from two to one plus a jump from two to one, which will cost him 50. So that costed him 50 and there'll be a right jump, which will be directly to F of zero. Now there will be a jump from two to zero, which will cost him 30. So there'll be a 30. Now you remember F of one, this had a value of 20. So it'll return with a 20. So this guy gave him 20. So 20 plus 50 will give him 70. F of zero will be how much? Zero. So zero plus 30 gives him 30. Which one will F of two give? The minimum. So it'll return 30. So F of two got 30. Perfect. So again, make sense? Because if I logically explain you, let me erase this. If I logically give you an explanation, will this make sense? Yes, this will make sense because if I'm standing at F of two, yes, if I'm standing at F of two, there are a couple of ways. One is this, one is this, which will cost him 20 plus 50, which is 70. Or the other one is this, which is 30. So 30 is what you have got right now. Again, similarly, F of three, when you're at F of three,"
+    },
+    {
+      "chunk_id": "L184_C15",
+      "start": 1000.28,
+      "end": 1080.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1000s",
+      "text": "this, which is 30. So 30 is what you have got right now. Again, similarly, F of three, when you're at F of three, understand there is a left call of F of two plus the absolute difference, which is from three to two. So if you're doing from three to two, it's 50. So you can just take a plus 50. So what is F of two? It has returned you as 30. Correct? What's the right jump? The right jump is about F of one plus what? Now will you, F of one, so from one to three will be zero, one to three will be zero. So plus zero. Now, will you go and do the recursion call of F of one? Will you go and do again F of zero? F of one is already computed. You see, this overlapping sub problem. You can directly take the value from the DPRA as 20. This gives you 20. This gives you 80. Which one will you take? 20 obviously. So F of three becomes 20. Perfect. So remember, I'm storing the values of F of three, F of two, F of one in probably some DPRA as you have seen in my lecture one. Next you're at F of four. So if I'm at F of four, what is that doing? It's again calling F of three plus absolute of three to four will be 50. So 50 and it's calling F of two plus"
+    },
+    {
+      "chunk_id": "L184_C16",
+      "start": 1081.88,
+      "end": 1156.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1081s",
+      "text": "It's again calling F of three plus absolute of three to four will be 50. So 50 and it's calling F of two plus four to two will be zero. So I can do zero. What's F of three? If I write, what's F of three? 20. What's F of two? 30. So 20 plus 50, 70. This is 30. Which one will you take? 30. Again, an overlapping sub problem ignored. You did not, F of two will not go deep into recursion because the moment you call F of two, it will directly get the value 30 and return 30. So you got the minimum as 30. So F of four becomes 30. Perfect. Next step is this particular step F of three. So when I'm at F of five, what's happening? I'm saying, okay, I can definitely go to F of four plus absolute of jumping from four to five, which is 10. So let's take 10. Similarly, if I am jumping from five to three, if I'm jumping from five to three, can I say it's 40? Yes. So plus 40 of F of three. Now carefully observe F of four is already 30. F of three is already 20. 30 plus 10 gives you 40, 20 plus 40 gives you 60. Which one will you take 40 or 60? Definitely 40. So this value is 40."
+    },
+    {
+      "chunk_id": "L184_C17",
+      "start": 1157.08,
+      "end": 1237.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1157s",
+      "text": "you 40, 20 plus 40 gives you 60. Which one will you take 40 or 60? Definitely 40. So this value is 40. Thereby this recursion is also solved. So did you observe something? There were multiple sub problems that I ended up solving repeatedly, overlapping sub problems, as I said. So this is how generally recursion tends to work. It goes on, goes on. Because if a problem has been solved, if you have already, like if you already know what's the summation from zero to three, why do you want to recompute it again? Just reuse it. That's what I've done. And I've got the answer as 40, which was indeed the answer. This is how the recursion tree works and how you get the minimal possible way. Generally, if you draw this recursion tree by yourself, you'll understand much more. But in general, if you can remember these three stuffs, three lines, explain the problem in terms of index, do all stuffs on that index, take the minimum of all those stuffs and then write the recurrence. Now, once you've written the recurrence, how do you convert a recurrence into a dynamic programming solution? That's the next question. How do you convert a recurrence into a DP? So that's when you see memoization. So trick to apply memoization. Look at the parameters changing. Yes. Look at the parameters changing,"
+    },
+    {
+      "chunk_id": "L184_C18",
+      "start": 1237.0,
+      "end": 1316.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1237s",
+      "text": "DP? So that's when you see memoization. So trick to apply memoization. Look at the parameters changing. Yes. Look at the parameters changing, like which, which parameters are changing. Just look at them. It'll be like, Stryver, there is only one parameter changing, which is the one parameter. Let's come back. It's index. What is the maximum value of index? Let's look at the recursion tree. Five. So you'll require a six size array because in a six size array, there'll be index five. So you can definitely create a DP size of six over here, which is indirectly DP of n plus one. Remember three steps. Step one is this, declare an array of size n plus one. Step two, before returning, add it up. DP of index. Before returning, add it up. Store it and return. Step. So this is step two. What's step three? Whenever you call an index, yes. Whenever you call a recursion, check if it has been previously computed or not. If DP of index has been previously computed, no need to solve it again. Return DP of index. Done. Line number three, converts a recursion to a memoization. So I've converted a DP solution. It's converted a recursion solution into a dynamic programming. And if I talk about the time complexity,"
+    },
+    {
+      "chunk_id": "L184_C19",
+      "start": 1317.24,
+      "end": 1385.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1317s",
+      "text": "converted a DP solution. It's converted a recursion solution into a dynamic programming. And if I talk about the time complexity, what will be it? One step, two step, three step, four step, five steps. These steps are constant because these sub problems are not solved. So these steps are constant. Five steps or n steps. So I can say the time complexity to be big O of n because there are n steps. I can say there is recursion stack space of big O of one and in array size of big O of n used. This is how the recursion will look like. So it's now time to code it and probably submit it. And after that, we can optimize this into tabulation. And after that, probably into space optimization. Okay. So in the code, you're basically given n and you're given the heights. So I know I have to write a recursion solution. So probably I have to turn that in terms of index and let's carry the height as well. But the Java people, you can easily code it because I've explained the pseudo code while explaining. So it should not be a big issue for Java people as well. So I'll take anti-function. Now I know the edge cases, if index reaches zero, I know the answer will be zero. And I know there'll be electric recursion call. And I know there'll be a right recursion call,"
+    },
+    {
+      "chunk_id": "L184_C20",
+      "start": 1385.64,
+      "end": 1461.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1385s",
+      "text": "I know the answer will be zero. And I know there'll be electric recursion call. And I know there'll be a right recursion call, but we know one thing, the right recursion call will always not happen. So probably we can initially store that as int max, because this is not going to happen always. If index is greater than one, then we can have the right as a F of index minus two and pass on the heights and then a plus of absolute of heights. Like you can do this heights of index minus heights of index minus two. There's something which you can definitely do. And over here, what you can do is the same stuff. Just make sure you copy paste. And instead of index minus two, do all the stuffs. And that's how you do it. And at the end of the day, what do you do? You return minimum of left comma, right. Correct. Now the question is very simple. So you can probably say return F of N minus one, because that's the last index and you can do an heights. So if I run this, well, this one, let's check it out. Okay. So it says, okay, so intermax, it is not picking. So probably we have to use hash include bits, STD C plus plus not H. Generally, like generally it is added over"
+    },
+    {
+      "chunk_id": "L184_C21",
+      "start": 1461.24,
+      "end": 1537.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1461s",
+      "text": "picking. So probably we have to use hash include bits, STD C plus plus not H. Generally, like generally it is added over there. Not sure why they have not added it, but not an issue. Let's quickly run this off. So if I run it, you can see, so if I run it, you can see the first three test cases are running fine. And then there's a time limit exceeded because it's the simple recursive solution. So how do you convert this into a DP convert, create a DP array of size N plus one, because that's the maximum initialize that with minus one. Now pass a DP over here. Just make sure you have a vector of int and you can just create a DP by reference. Make sure always carry the DP. That's the next step done. So step one of initialization and carrying on the parameters is done. What's the next step? Step two is storing the answer before returning for the sub problem F done. What's the next step? If the answer has come across, just check this and return DP of index. So if I just do these changes and if I now run, bingo works fine. All the test cases, if I submit them, you will see it's absolutely correct. So this is how you can do the memoization stuff very,"
+    },
+    {
+      "chunk_id": "L184_C22",
+      "start": 1537.72,
+      "end": 1616.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1537s",
+      "text": "cases, if I submit them, you will see it's absolutely correct. So this is how you can do the memoization stuff very, very easily. So in the first lecture I told you after memoization, it's very important to understand how do we do the tabulation one. And after that we will do the space optimization. What is memoization? Top down. Why? Let's understand. So in the recursion, if you observe, what did you do? You had a top portion, but first the down answers like you went from top to down. Correct? What is tabulation? It's the exact opposite. Yes. I repeat. It's the exact opposite bottom up. Okay. That means you'll start from the bottom and it'll go up. So always look at the recursion tree. Always look at the recursion tree. What's at the bottom? Yes. So you'll go up and then you'll fill it. You'll take zero. You'll fill one. Then you'll fill two. Then you'll fill three. Then you'll fill four. You'll fill five. You'll go from the bottom to the top. So that's tabulation. Understood? Now, what did I tell you in tabulation? What's the first step? Step one is to see in memoization, how much DPRA did you use? We know we used a DP array of size N plus one. So just without thinking anything, you can initialize that."
+    },
+    {
+      "chunk_id": "L184_C23",
+      "start": 1617.8,
+      "end": 1686.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1617s",
+      "text": "use? We know we used a DP array of size N plus one. So just without thinking anything, you can initialize that. Okay. So without thinking anything, you can initialize that. By the way, it will be N, like even if you initialize N, it'll work because we have used a zero based indexing. So make sure everything is initialized with minus one or you can initialize that with zero. Doesn't matter over here. So first thing is done. What's the next step? Look for the base case, because in recursion, it has stopped down. It overheats down top, like bottom up. So what's the base case? Let's look at it. The base case states index equal to equal to zero returns zero. Index equal to equal to zero. Index equal to equal to zero. So whatever is that, you'll write that. DP of zero is equal to zero. Just write it. After that, just look at the recursion state. These lines, when will it be executed? It can be like it'll be executed at one, two, three, four, and so on till N minus one of the index. Make sense? Because the worst call that I'll make will be N minus one. So it will be executed for sure. I'll be like, yes. So please write it. I equal to one till N minus one. Run a for loop. Perfect. What's the next step? Just go and look"
+    },
+    {
+      "chunk_id": "L184_C24",
+      "start": 1686.44,
+      "end": 1763.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1686s",
+      "text": "write it. I equal to one till N minus one. Run a for loop. Perfect. What's the next step? Just go and look at the recursion. What am I doing? What's the stuff done on the index? Yes. Replace this with DP and write it. So the first step is very simple. I can say if I take first step, it will be DP of index minus one plus absolute of array of index minus array of index minus one. Simple. I can say second step will only implicate if I is greater than one. Remember, super, super simple. Second step will only implement if that's true. So DP of index minus two plus absolute of A of index minus A of index minus two, as simple as it gets. And what do you store? Store it. DP of index will be minimum of DP of index minus, sorry, DP of first step and second step. As simple as it can get. And if you write this, it's definitely going to work wonders."
+    },
+    {
+      "chunk_id": "L184_C25",
+      "start": 1763.08,
+      "end": 1841.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1763s",
+      "text": "As simple as it can get. And if you write this, it's definitely going to work wonders. So I'll try to show you over here. Like I'll just erase this. And over here, if I just write the same thing, like you'll see over here, if I try to write the same thing, like I'll write DP of zero to be zero for I equal to one I lesser than N I plus plus. Okay. And I can write, I and the first step will be very simple. DP of I minus one plus absolute of heights. DP of I minus one plus absolute of heights. I minus heights of height. I minus one. Right. And what about the second step? I can say the second step will be very simple. I can initially keep it as in the max. Correct. And what I can say is second step will only be implicated if index is greater than one. And the second step will be nothing but DP of I minus two plus absolute of heights of I minus heights of I minus two as simple as it gets. And the DP of I will be minimum of DP of I minus one, sorry, minimum of first step"
+    },
+    {
+      "chunk_id": "L184_C26",
+      "start": 1841.24,
+      "end": 1911.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1841s",
+      "text": "gets. And the DP of I will be minimum of DP of I minus one, sorry, minimum of first step comma second step. And what do you need to return? You need to return. The answer will always be stored at the last index. And thereby, if I just take this off now, and now if I try to run, you see it's running and I'm going to try to submit. What's fine. So we can convert this into tabulation so easily by a record, like a recursion can be converted into a tabulation. Now the question arises, can we reduce the space? Because over here, we are, we are, we are definitely reducing the stack space that we used over here. This is reduced, but there's still a big of N being used because as I can see, we are still using a DP of N array and the time complexity cannot be reduced, but can I omit this? Let's let's see. Can we omit this? I did tell you one thing. Anytime there is something like index minus one index minus two, there can always be an space optimization. Take this as a thumb rule. There will always be in space optimization. If there is something like index minus one and index minus two, always these states can be. Now let me tell you something. Assume you are at index zero,"
+    },
+    {
+      "chunk_id": "L184_C27",
+      "start": 1911.08,
+      "end": 1984.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1911s",
+      "text": "minus one and index minus two, always these states can be. Now let me tell you something. Assume you are at index zero, one, two, three, four, and so on to N minus one. Okay. Initially, initially, as you just assume you are over here and this is nothing but DP of I. And you're saying this as DP of I minus one. And you're saying this as DP of I minus two. You're saying correct. In the next step, whenever I will increase, can I say that I will go over here and this will be DP of I, this will be DP of I minus one. This will be DP of I minus two. Indeed I can, there's no doubt I cannot. In the next step, can I say this will be DP of I, this will be DP of I minus one. This will be DP of I minus two. There's no doubt. So do you observe a pattern? The guy who was DP of I minus one for this particular I in the next step, in the next step, when the I increases to the next index three, the guy who was I minus one, that means he was the previous. He'll become the second previous of the next. He'll become the second previous of the next. Make sense? So he'll become this. So can I say DP of I minus two will become this, right? So do you need to carry an"
+    },
+    {
+      "chunk_id": "L184_C28",
+      "start": 1984.84,
+      "end": 2053.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=1984s",
+      "text": "So he'll become this. So can I say DP of I minus two will become this, right? So do you need to carry an array? Can't I do this using a couple of variables? Like think, can't you do this using a couple of variables? And the answer to that will be, yeah, I think we can, because what we require at any particular instance, I is the previous guy and the second previous guy. I don't need anything more. Why the hell do I need to declare a DP array? I don't need anything else. Thereby I can say, okay, so that makes sense. Let's assume I do it this way. This is car I. I say this is previous I and I say this is previous to I. Instead of storing them into an array. In the next step, I know this will become car I. I know the car I will become previous I. I know the previous I will become previous to I. So can I just use a couple of variables where I say previous to I for the next step, whenever you have done all the steps, the previous I will become the previous to I because whoever is previous will become second previous for the next step. And whoever is the current guy, like whatever is the value of DP of I, that will become"
+    },
+    {
+      "chunk_id": "L184_C29",
+      "start": 2053.0,
+      "end": 2125.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=2053s",
+      "text": "previous for the next step. And whoever is the current guy, like whatever is the value of DP of I, that will become the previous for the next step. So if you just keep on doing this, you will no more require anything. So can I say this, can I say this instead of DP of zero, can I carry a previous equal to zero? Makes sense. I can. And can I carry a previous two equal to a probably zero as well. Because for the first, for the first, you'll require DP of index minus one, which I can represent as previous now. Correct. And this I can represent as previous to, because that is what we recommend. And after that, can I see in the next step, the previous two will be previous and the previous will be nothing but car I and this guy will be car I. Makes sense. Makes sense. And what will be the answer at the end? Whenever you exceed, I will go beyond n minus one. And whenever this for loop ends, the value of I will be n is the value of I will be over here. And for this guy, for this guy, previous will be at n minus one. And you always required the answer of n minus one. So you can say, whatever is the answer for previous will be your answer. So you"
+    },
+    {
+      "chunk_id": "L184_C30",
+      "start": 2125.88,
+      "end": 2204.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=2125s",
+      "text": "required the answer of n minus one. So you can say, whatever is the answer for previous will be your answer. So you can easily print the answer as three V S. So if you do this, you will be able to get your space optimized and you'll no more be requiring a DP array. So if I try to write this in the code, probably I'll delete this and I can keep a previous or equal to zero. I can keep a previous or two as well as zero. And I can just omit this to previous. And I can just omit this to previous two. And I can be like this to be car I, and I can see the previous two will become previous now. And the previous guy will be for the next step will be car I correct. And at the end of the day, instead of DP of N, because I will be at N minus one. So I can definitely return something as previous. So we're on this. Yeah, it works. Let's submit. And it's working fine. So we have done a space optimization. Yes, we have done a space optimization. So this is how this problem can be easily solved. So this is how I can space optimize it. I hope you have understood the space optimization. Now there's a follow up to this wonderful problem. Okay. Now this question"
+    },
+    {
+      "chunk_id": "L184_C31",
+      "start": 2204.04,
+      "end": 2270.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=2204s",
+      "text": "optimize it. I hope you have understood the space optimization. Now there's a follow up to this wonderful problem. Okay. Now this question stated, you can jump to I plus one and you can jump to I plus two. That's the maximum that you put. Now the follow up states, the follow up states, they can be K jumps. Yes. The follow up states that they can be K jumps. Now instead of I plus one, you can jump to I plus one, I plus two, I plus three, till I plus K. That's what I'm seeing. So if I change the question to this, can you solve this problem? Now I'll give you this as a homework. Okay. So take this question as a homework. I want you to do K jumps. If you, if you are using K jumps, then probably you cannot use space optimization because then there will not be a couple of stuff. There'll be K previous elements that you have to carry. You will not be able to use stuff that I told you. But yeah, the stuff that I gave you was, the follow up is very simple. Try to do it using K jumps. I will expect the quotes in the comment section and I'll be discussing this problem right before starting the lecture four, right before starting the lecture four. I'll definitely be discussing this"
+    },
+    {
+      "chunk_id": "L184_C32",
+      "start": 2270.92,
+      "end": 2320.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=EgG3jsGoPvQ&t=2270s",
+      "text": "and I'll be discussing this problem right before starting the lecture four, right before starting the lecture four. I'll definitely be discussing this problem, K jumps, where I'll tell you how to change this problem slightly, and you'll be able to do this problem for K jumps. So guys, if you have watched this video till now, and if you've understood everything, you know what to do. This is what I expect. Even if you're very, very, very lazy, please comment US. US means understood. And this is something which you should always do when you're watching these videos, because it takes a hell lot of effort to make these kinds of videos. And yes, if you're new to this channel, please, please do consider subscribing and please do share this channel among your college mates, friends, wherever you can. And if you haven't checked out our SD sheet yet, oh man, what are you doing? There's an SD sheet link in the description. Go and check it out. That's the ultimate resource for placements, man. And yeah, with this, let's wrap up this video and probably meet in the next one tomorrow. Bye-bye."
+    }
+  ]
+}

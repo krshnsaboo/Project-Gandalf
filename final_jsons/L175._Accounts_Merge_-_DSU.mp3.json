@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L175",
+  "lecture_number": 175,
+  "lecture_title": "G-50. Accounts Merge - DSU",
+  "youtube_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw",
+  "chunks": [
+    {
+      "chunk_id": "L175_C1",
+      "start": 0.0,
+      "end": 74.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we are going to solve the problem merging details. This also goes by the name account merge on lead code. So if you look at the question, it's a massive one. So I'll quickly jump over to the iPad in order to explain you the question accounts merge. So you're basically given a lot of arrays. Yes. A lot of arrays. What do they contain? They contain a name followed by the accounts, the email accounts of that name. So John has these three email accounts. Another John has this one email account. Raj has these couple of accounts. The question states merge the similar accounts. Merge the similar accounts. What does that mean? So if you see John, John has an email ID, J1 at the rate, com J2 at the rate, com J3 at the rate, com. Okay. Now if you see this, John has J4 at the rate, com names are same of these two guys, but their accounts used are different. So these two are two different Johns. She'll not merge them. But if you carefully observe this John,"
+    },
+    {
+      "chunk_id": "L175_C2",
+      "start": 74.62,
+      "end": 150.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=74s",
+      "text": "are different. So these two are two different Johns. She'll not merge them. But if you carefully observe this John, this John has a J1 and this John also has a same mail ID of J1. So what you'll do is you'll take this entire thing and merge it to this. So apparently the J1 is common. So you'll not take this and the J5 is what you will take and merge. So let's quickly take the J5 at the rate, com and this array will be expanded. Yes. The array will be expanded to J5. Perfect. Once you've expanded this, this John will be no longer in existence. One was common. So you did not expand it. The other one was an extra one. So you just added it. So this is how John merged all his accounts into one. And it's very critical and it's very important that the name will be there, but all the email IDs should be in the sorted order. So if you see this is already J1, J2, J3 and J5, all of them are in the sorted order. Then there is John with J4. He's alone. So let him be. Then there is Raj. Raj is like I have R1, R2 and there is another Raj who has R2 and R3. So I see a overlap. I see a same account being used by both the Raj. So if a same account is being"
+    },
+    {
+      "chunk_id": "L175_C3",
+      "start": 150.3,
+      "end": 225.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=150s",
+      "text": "R3. So I see a overlap. I see a same account being used by both the Raj. So if a same account is being used by both the Raj, so that means they are same person. If the same person, this R2, R2, no need to merge them. This R3 will go here. So go ahead and say, Hey, can you just take R3 at the rate com and merge it? If you're taking it, can you just omit this guy? So I took this and merged with Raj and again R1, R2, R3 are in the sorted order. Next we have Mary. Mary has M1 at the rate com and there is no other Mary over there. So if there is no other Mary over there, we're done. So after merging, you have 1, 2, 3, 4. So this is an array of strings. Name followed by accounts merged. In which order do you need to return it? You can return John at first, this John at first, Raj at first. This ordering doesn't matter. This ordering matters. The males matter. Males should be in sorted. The accounts merge ordering do not matter. Mary can be at first, Raj can be at first, they can be at last, it doesn't matter. As long as you are returning these four merged accounts, that is what matters to us. This is the question. Okay. You need to solve this. So you must be thinking, how"
+    },
+    {
+      "chunk_id": "L175_C4",
+      "start": 225.98,
+      "end": 305.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=225s",
+      "text": "merged accounts, that is what matters to us. This is the question. Okay. You need to solve this. So you must be thinking, how do I approach such a problem? Because at first looks daunting. It's tagged as medium, but I definitely think it's a wrong tag. Should be tagged as hard instead of medium. Not an issue. So how do we approach this? Let's break the problem. What is the problem demanding? Problem is saying, if there is a J one, first of all, we know one thing, this is kind of connected to this. This is kind of connected to this. And if there is a J one, it gets connected to this. And if it gets connected, this also gets connected. So it's kind of getting into component shape, getting an union, like merging. And you know, the data structure that helps us in merging or connecting thing, which dynamically, dynamic, because at every stage, someone else is getting connected. That is the disjoint set data structure gives us an option of union as well. Right? So we know the data structure because anything that relates to merging or maybe connecting, that's when we think of this data structure. In case you do not know about disjoint set data structure, go back. I've made a detailed video on this, and I've also prepared a code snippet, which can be used to solve across all problems."
+    },
+    {
+      "chunk_id": "L175_C5",
+      "start": 305.1,
+      "end": 384.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=305s",
+      "text": "I've made a detailed video on this, and I've also prepared a code snippet, which can be used to solve across all problems. So go back and watch it and learn that code snippet, then come back to this. So what I will initially do is I'll be like, okay, let's do one thing. Let's make this zero, like assume this to be zero, one, two, three, four, five, because these are the indexes. So, so once I've assigned these indexes to the entire thing, basically everyone like John, this John is represented by zero, who has all these meals. This John is represented by one who has this meal. So I have made sure that the indexes represent the name. Okay. Now, so what is the initial configuration of disjoint set? It states that each of them will be the parent of themselves. So I'll be like zero, the parent of himself, one, the parent of himself to the parent of himself, three, again, four, again, the parent of himself and five, also the parent of himself. Now, what I'll do is I know J one belongs to John who is the node zero. So I'll say J one, you belong to the node zero. So I probably can keep something as a map where I'll say J one at the rate, com belongs to zero. Perfect. Next J two at the rate. Com. This also belongs to zero done next J three at the rate. Com"
+    },
+    {
+      "chunk_id": "L175_C6",
+      "start": 384.1,
+      "end": 458.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=384s",
+      "text": "belongs to zero. Perfect. Next J two at the rate. Com. This also belongs to zero done next J three at the rate. Com J three at the rate. Com. This also belongs to zero done next. J four at the rate. Com. This belongs to one perfect. Next R one at the rate. Com. This belongs to two. Again. Next is where it one. Next comes J one at the rate. Com, which ideally should belong to the node three, which ideally should belong to the node three. But we see that J one at the rate. Com J one at the rate. Com already exists at node zero. So apparently this guy or this entire guy who is nothing but the node three should be apart or connected to node zero. So what I'll do is I will just go ahead. And since this J one was already there at zero, I will connect zero and this current guy. And I will try to connect it because they'll merge. Because I know one thing, if J one and J one matches, it goes"
+    },
+    {
+      "chunk_id": "L175_C7",
+      "start": 458.9,
+      "end": 533.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=458s",
+      "text": "it because they'll merge. Because I know one thing, if J one and J one matches, it goes in merge to this zero and three, whoever is here now gets merged to this. I'll just go and connect three to this and the three will get merged. It goes off from here. So J one is done. We do not need to assign J one again here because it's of no use. Next we see J five. We see J five is not here. So we can go ahead and say, okay, J five is not here and we can definitely assign it to three, which is okay. Because even if you assign J five to three, it's not a part of three because three is ultimate parent is zero and that is the boss. So he's already under zero. He's already under zero. So even if you assign J five to three, it's already under zero. Doesn't matters. Perfect. Next we'll go to R two. The moment I go to R two, I see R two is already a part of two is already a part of two. But over here, R two says I'm a part of four, but wait, that means the four will go and merge to two. I'll just take four and merge it to two. Perfect. Done. Next R three. So there's R three next. I will just take R three at the rate calm and say four."
+    },
+    {
+      "chunk_id": "L175_C8",
+      "start": 533.78,
+      "end": 607.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=533s",
+      "text": "two. Perfect. Done. Next R three. So there's R three next. I will just take R three at the rate calm and say four. Do I need to connect four again? There's no need. It's a new meal. I just write it over here. It's a new meal. I just write it over here. So I've written it and fought and we see that four is already connected to two, which means this guy is already a part of this. Perfect. Next M one at the rate calm and it's not there. So M one, we can definitely write this M one at the rate calm is fifth. It's probably, I'll just erase this so that it doesn't get clumsy. Five is here. Perfect. So apparently all the meals have been assigned their numbers. All the meals have been assigned their numbers. Done. Very simple. So disjoint said data structure as of now looks something like this where one is alone. Zero is connected to three. Basically it means this and this is connected. This means two and four is connected. This means alone done. Now it's about merging the meals. It's about merging the meals. So what I will do is I know I will go one by one on this meal. So first is on zero J one"
+    },
+    {
+      "chunk_id": "L175_C9",
+      "start": 607.02,
+      "end": 677.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=607s",
+      "text": "I will do is I know I will go one by one on this meal. So first is on zero J one at the rate. So I will go across and put this J one at the rate calm to zeros parent because I want to see where zero is. He says I'm a part of zero itself. So I'll take J one at the rate calm and I'll attach it. I'll attach it to zero because zero is the parent. They'll attach it to J one at the rate calm. I'll attach it to the zero then next done. Next I'll take J two at the rate calm. He says I'm a part of zero. Who is the parent of himself? He's the boss. So I'll take it and attach it to zero. No need to attach names as of now. Okay. Done. Next J three at the rate calm again zero. So J three at the rate calm again zero. Perfect. Done. So maybe I'll just quickly move it a bit. So what's the next thing? It's J four at the rate calm. So if you see J four belongs to one and one is the parent of himself. So I'll just take one and I'll see J four at the rate calm. Correct. Done. Next R one at the rate calm belongs to two. So two says R one at the rate"
+    },
+    {
+      "chunk_id": "L175_C10",
+      "start": 677.9,
+      "end": 757.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=677s",
+      "text": "the rate calm. Correct. Done. Next R one at the rate calm belongs to two. So two says R one at the rate calm. Next two again says R two at the rate calm. Carefully observe something to is the parent of himself. So it's fine. What is the next carefully see J five J five says I belong to three. Will you take a three and add J five? That's my question. No, you will go to three and say, who is your parent? He actually belongs to zero. He actually belongs to zero. I'll take this J five and add it to zero. Done. Next R three at the rate calm belongs to four and four actually belongs to two. I'll take R three at the rate calm and insert it to the ultimate parent. R three is also done. R one says I'm five. So there is no one at three or four. There is no one at three or four. They'll go to five and there will be M one at the rate calm on the fifth index because five's parent is he himself. So this is how it will look after merging. This is how it will look after merging. So what you can do is you can simply sort it, sort this individually, sort this individually, sort this individually. And in order to create the answer, it's pretty simple. In order to"
+    },
+    {
+      "chunk_id": "L175_C11",
+      "start": 757.38,
+      "end": 826.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=757s",
+      "text": "it, sort this individually, sort this individually, sort this individually. And in order to create the answer, it's pretty simple. In order to create the answer, you have a zero, go to zero, figure out the name, take the name, John, and then whatever is this entire thing where you have stored, just put it over here. J one at the rate calm dot, dot, dot. Similarly for one, take the name at one again, it's John. So take John again. And since the other thing is sorted, take it and put next, take the two at two. If you see there is Raj, so take Raj and whatever is that Raj, sort it and put it. So similarly you will get the entire answer which you can return. I said the question is hard. It is hard. Once I've explained it, it might look easy because you have a decent idea about this joint set data structure. And if you have a decent old on this data structure, these kind of questions kind of are easier to solve because they just need shuttle implementation. They usually implementation heavy. So without wasting time, let's move on to the code. I hope you have understood how to use the disjoints and data structure in order to solve this problem. So I'll be coding the C++ solution on the right and you can figure out the exact similar Java code on the left for the Java people."
+    },
+    {
+      "chunk_id": "L175_C12",
+      "start": 826.78,
+      "end": 900.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=826s",
+      "text": "coding the C++ solution on the right and you can figure out the exact similar Java code on the left for the Java people. So before starting it, we will be copying the disjoint set template that we have. So in case you don't know about this, please go back and watch my previous videos. I have written this template, which is a pretty pretty clean and useful template for all the problems. So we're given the details. Let's, uh, let's see what are we doing at first. Then we can probably analyze how to code it. The first step that we did was we iterated through all the emails and made a mapping of the mail to the node, which they are belonging to. And in the meanwhile, if there was overlapping something like three overlapped with zero, we connected zero with three if there was an overlapping. So something for sure is we have to overlap across all the meals and something to notice is the first is always a name. So since we're overlapping on the meals, we will always start from the index after the first. So let's quickly have details, start sites. Okay. We have now I know for INDI equal to zero. I less than an I plus plus is where we will be. Now Jay will be this time starting"
+    },
+    {
+      "chunk_id": "L175_C13",
+      "start": 900.66,
+      "end": 974.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=900s",
+      "text": "equal to zero. I less than an I plus plus is where we will be. Now Jay will be this time starting on from one because the first one contains the name. So details of I dot size and I can go across and say, J plus plus. What's the next thing that I'll write? The next thing will be string of meal and it will be details of IJ. Now we need a mapping. So probably I can take an unordered map of string integer and I can say mapping of mail and no, that's, that's a bit good. Map meal. Note. So if map meal load contains does not, that is something like dot find. If it does not contains this, it will be pointing to the end. And if it is, that means it does not appear somewhere else. So I can definitely put this to this particular node, which is I because I is the node. If you carefully see zero is the node for the first guy. One is the node for the first guy, right? And this joint set will do a job, but I have to put it into the node, right? If it is for the first time, but if it is previously seen, one example, it's seen. John has a J one, which was seen at zero."
+    },
+    {
+      "chunk_id": "L175_C14",
+      "start": 974.98,
+      "end": 1050.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=974s",
+      "text": "first time, but if it is previously seen, one example, it's seen. John has a J one, which was seen at zero. So the map will contain zero and this belongs to three. If it is seen at zero, that means the three and zero have too much, right? Because they're the same guys accounts. So three will be pointing to zero union union. So DS dot union by size will be called and I'll see the current node and map meal node. So I can definitely take map meal node and I can say, just go ahead and get it. So once I've done this, can I see the disjoint set is kind of created and you have all these things in the disjoint set. Also you have the map data structure. What is the next job? Rather the next job is pretty simple. The next job is to take these meals and put them into a list of merged strings. So you have to go across, put it into zero, put it into zero, put it into zero, put it into one, put it into two, put it into two. But when there's a three, you do not put it into three because three is ultimate parent is zero. You always put to the ultimate parent. So I need to create a vector of like"
+    },
+    {
+      "chunk_id": "L175_C15",
+      "start": 1050.9,
+      "end": 1125.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=1050s",
+      "text": "three is ultimate parent is zero. You always put to the ultimate parent. So I need to create a vector of like list of merged males of all these guys. Remember there might be people who are empty. Like three is empty, four is empty. It might happen. That's not an issue. So now I will go across to the map meal node because that is where all the males and the no numberings are. So again, let's get the male. It's stored in the first position in the map and I need the node which it belongs to. And remember the node will always, yes, the node will always be the ultimate parent because if you're finding J five, J five will be three, but actually you put it into zero because that is where it will be merged. So DS dot let's take the find ultimate parent and say find ultimate parent of this index done. Once this is done, I can say much to me. So probably I can take much meal and I can say, okay, much meal of node. Can you store this particular meal? Perfect. So what this will do is this will kind of create, what is the next step? I need the answer. That's the third step. I just need the answer. So this merged males"
+    },
+    {
+      "chunk_id": "L175_C16",
+      "start": 1125.14,
+      "end": 1204.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=1125s",
+      "text": "what is the next step? I need the answer. That's the third step. I just need the answer. So this merged males will be attached with a name. The zero, the name will be found at zero zero position for one, one zero for two, two zero for three empty, no much males do not do anything. So they need a list of list to be returned. So the list of list is what I'll return this and an answer. Now I'll go across and say, okay, I need to go across all the merged meals, but what if this guy or this node does not have any merged meals? It got merged to someone else. In that case, I do not have anyone. Let's go back. But in all the other cases, first case is sort much to me. First I'll sort all the merged meals. That is very, very important. Go ahead and sort all of them sorted. So much meal will be sorted. Next vector string of temporary temporary will be like, okay, cool. Temporary pushback. The first thing that it pushed back is details. I and the name, that is how a list is created. First the name and then everything, which is in the merged meal. So maybe you can go across the merge to male. I go across the merge male. I, and simply say"
+    },
+    {
+      "chunk_id": "L175_C17",
+      "start": 1204.34,
+      "end": 1280.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=1204s",
+      "text": "the merged meal. So maybe you can go across the merge to male. I go across the merge male. I, and simply say temporary dot push back, whatever is there because you've already sorted it next. The answer will be storing it. So go across and see the answer to store it. Once you've done this, you can simply return the answer. So this is all the first step of connecting nodes and making the disjoint set, making the ultimate parent next merging the meals according to the disjoint set data structure. Next, just rearranging them in order to send the merged with the names as the list of list, right? So let's quickly compile this and see if it is actually compiling because it's a long implementation code. Okay. We have some issues. So it says DS was not declared in the scope. Okay. Uh, we did not declare the disjoint set data structure. So go ahead and declare the disjoint set data structure with the size end. So yeah, this will be after the sling. Cool. I think this should be fine. Let's see if we have any other compiling errors. Okay. Node was not declared. Let's see why I was okay. It will be INT my bad small typos. Let's have a compile. Okay. On compilation. It seems fine. Let's quickly submit this. I hope"
+    },
+    {
+      "chunk_id": "L175_C18",
+      "start": 1280.98,
+      "end": 1320.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=FMwpt_aQOGw&t=1280s",
+      "text": "be INT my bad small typos. Let's have a compile. Okay. On compilation. It seems fine. Let's quickly submit this. I hope you have understood the entire explanation as well as the code. So before wrapping up, I have a small request. I was going through the statistics of our channel and I see that 50% of the viewers who watch my videos do not subscribe to our channel. So it's a very, very earnest request that please do consider subscribing to us because that is the only thing that keeps you motivated to make these kinds of videos. So please do subscribe. And if you understood everything about this video, please hit that like button. And if you haven't checked out our DPC and the HDC, the links will be in the description with this, I'll be wrapping up this video. Let's meet in some other video. Take care."
+    }
+  ]
+}

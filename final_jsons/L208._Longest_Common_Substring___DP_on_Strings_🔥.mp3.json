@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L208",
+  "lecture_number": 208,
+  "lecture_title": "DP 27. Longest Common Substring | DP on Strings 🔥",
+  "youtube_url": "https://www.youtube.com/watch?v=_wP9mWNPL5w",
+  "chunks": [
+    {
+      "chunk_id": "L208_C1",
+      "start": 0.0,
+      "end": 79.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=_wP9mWNPL5w&t=0s",
+      "text": "Hey everyone, welcome back to Techie Forward. So, in this video we will be solving a bit different problem and the problem is longest common substring. Substring, not subsequence. Okay, so what is actually a substring? In the previous video we did learn about subsequence. The definition of subsequence was, it can be something like a, j, p. That is a subsequence when you say it's not consecutive. A subsequence cannot be consecutive. But a substring, whenever I say substring, it has to be consecutive. Remember this, it has to be consecutive. That means either a, b, c, either b, c, either c, j, k, either j, k, l. It has to be consecutive. It cannot have any characters left in between. So, the definition of a substring is any portion, the consecutive portion of a string taken out is known as a substring. Now, given a string s1, given a string s2, the question is different. Longest common is same, but it is not subsequence, it is substring. Because if I was talking about longest common subsequence, you would have said a, c, j, k, a, c, j, k, and p as well. This is longest common subsequence"
+    },
+    {
+      "chunk_id": "L208_C2",
+      "start": 79.68,
+      "end": 150.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=_wP9mWNPL5w&t=79s",
+      "text": "have said a, c, j, k, a, c, j, k, and p as well. This is longest common subsequence of a length 5. But I'm talking about substring. So, if I'm talking about substring, the longest common substring will be c, j, k, and c, j, k, c, j, k. It can be the entire string as well. But over here, we are seeing a length 3. Yes, over here, we are seeing a length 3. So, the question arises is how do you solve this particular problem? Can you solve this using the previous formula? You can, but you have to do certain modifications. Yes, you can, but you have to do a certain modification. So, let's actually look back at what did we do in LCS, the longest common subsequence. How did we solve this problem? Let's actually write the dp. So, what did you write? You wrote dp of i, j is equal to 1 plus dp of i minus 1 and j minus 1. That does make sense if they're matching. Yes, if they're matching. That is what you wrote. And if they're not matching, then you wrote something like dp"
+    },
+    {
+      "chunk_id": "L208_C3",
+      "start": 150.26,
+      "end": 229.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=_wP9mWNPL5w&t=150s",
+      "text": "if they're matching. That is what you wrote. And if they're not matching, then you wrote something like dp of i, j is equal to max of dp of i minus 1, j and dp of i, j minus 1. Now, why does this not work? Why does this longest, why does this not matching not work? Let's analyze by taking a very, very shorter version of the example. So, if I take a, c, d and c, let's say a, c, d and probably something as a, x, d. So, in the longest common subsequence, what will happen is initially it will have dd common and it will end up doing 1 and then it will say let's shrink the string to a, c and a, x. Now, when it does not find c and x, what it says is let's omit one portion, let's omit one portion, then still compare a and x. That is what it says. Let's omit one portion, let's compare a and a, x and let's try to see if we can figure out something. Or it says, hey, let's omit x, let's compare a, c and a. And over here it is like, okay, x, a. So,"
+    },
+    {
+      "chunk_id": "L208_C4",
+      "start": 229.7,
+      "end": 307.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=_wP9mWNPL5w&t=229s",
+      "text": "hey, let's omit x, let's compare a, c and a. And over here it is like, okay, x, a. So, let's omit a and try to compare which gets it. If you're omitting a, you're getting ax and other way it says let's omit x and compare a and a and eventually it compares a and a and gives a plus one. This is the problem. This is the problem. And why does this happen? Because, because of the omitting that you're doing, you're omitting this and you're still comparing with the entire thing. So, you're doing a disruption. You are breaking the consecutive rule. Now, if there's a comparison between a and a and this d and d was compared, you know, there is someone in between who was, was there. That's why you omitted this. You shrink one portion of the string, not the both, not both the portions. Thereby in else in the longest common subsequence, this works because you're allowed to have not consecutive, but over here, there is a line which says you have to have consecutive. Thereby this line does not work because you cannot omit it. You cannot omit it. You need to be consecutive in nature. Okay. So how do you solve this particular problem? So can we write a recursion? We can, but then we have to use one more third variable."
+    },
+    {
+      "chunk_id": "L208_C5",
+      "start": 307.3,
+      "end": 385.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=_wP9mWNPL5w&t=307s",
+      "text": "you solve this particular problem? So can we write a recursion? We can, but then we have to use one more third variable. Thereby there'll be three states, which I will not recommend. Thereby what we will do is we'll try to write the tabulation format, but in order to write the tabulation format, you have to understand how does actual the longest common subsequence tabulation works. So please watch out two videos. One is the DP 25 where I've taught the tabulation. The other is the DP 26 where I've taught what does the tabulation like? What does the tab, what does the table rather table exactly mean? I've taught that in DP 26 where I printed the LCS. So let's take an example of ABCD and ABZD. Okay. So over here, the longest common subsequence is ABD and ABD, but the longest common substring is let's see, how will you find this out? So as usual, we will be following one based indexing. So 0, 1, 2, 3, 4 and 0, 1, 2, 3, 4. So this is what we have written and this is our DP table. Okay. This is our DP table. So ABZD will be on the column and I will be over here, which is ABCD. Okay. So how do you usually fill up? You usually fill up on the column wise, because this is, means this portion and this means this portion. So this is the DP table that we will fill up."
+    },
+    {
+      "chunk_id": "L208_C6",
+      "start": 385.46,
+      "end": 463.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=_wP9mWNPL5w&t=385s",
+      "text": "the column wise, because this is, means this portion and this means this portion. So this is the DP table that we will fill up. So whenever I'm at here, let's see, what string do you have? A and D are the matching, are they matching? So you can definitely put up a one over here. How did you put up a one over here? Remember this, if they are matching, what did it was you said one plus the previous guys and the previous guys will be zeros. These are non-usable rows and columns. So zeros. Okay. Perfect. Now you go over here and you say A and AB. Okay. So does this A match with this B? No. So thereby zero. Next you go to Z and you say A. Does this A match with Z? No. So a zero. Next you go to A and D. Does this match? No. So a zero. Perfect. Let's come to the next portion. You're over here and you're over here, which is A. A and B for here. So does this B match with this A? No. Ideally, ideally, since this is consecutive, since this is consecutive, you are not dependent on the previous guys. Since this is consecutive, you're not dependent on the previous guys. Remember this because you don't want any interruption because if they do not match, I don't want any interruptions to be carried forward. In the previous longest common subsequence, you would have taken the"
+    },
+    {
+      "chunk_id": "L208_C7",
+      "start": 463.22,
+      "end": 531.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=_wP9mWNPL5w&t=463s",
+      "text": "if they do not match, I don't want any interruptions to be carried forward. In the previous longest common subsequence, you would have taken the maximum of this or this. Why? Because, because this A was matching over here. So you were like, okay, in this AB and this A, the longest common subsequence is of length one because that is the longest one. But in substring, you don't carry anything because we don't have a substring. We don't have a substring. Thereby a zero. So you'll put a zero. Remember this, you'll put a zero. Perfect. Next you'll come over here and there is B and there is B, right? But they're matching. They're matching. So you're like, okay, they're matching. Let's see. In the previous guy, did they match? They did. There was a one. If they matched and they had a length of one, why can't I take that one? One for himself and previous one. So I'll be like, okay, I can put a two. So whenever they are matching, I can actually take the previous guy because I don't need any break. There is no breaking. I can directly go to the previous guy and ask, did you guys match? And if you match, you must have some value. So why don't I take this? Perfect. Next, you come over here. This is Z. This is B. They're not matching. Just put a zero. Next, you come across here. B and D"
+    },
+    {
+      "chunk_id": "L208_C8",
+      "start": 531.14,
+      "end": 603.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=_wP9mWNPL5w&t=531s",
+      "text": "come over here. This is Z. This is B. They're not matching. Just put a zero. Next, you come across here. B and D not matching. Just put a zero. Next, C and A not matching. Just put a zero. Next, C and B not matching. Put a zero. Next, C and Z not matching. Put a zero. Next, C and D not matching. Put a zero. No one is matching. Next, D and A not matching. D and B not matching. D and Z not matching. Zero, zero, zero. D and D matching. So one. Why one? Because D and D was matching. So you went to the previous guy. You went to the previous guy. C and Z, since they did not match, they had a zero value. Thereby, there's no one. There's no one from the previous consecutive. You only had a one. If this C, like over here we had a C. Over here we had a C. Then what would have happened? This C would have matched this C. And I said, okay, I'm having a match. So go to the previous. Go to the previous and see. So they're saying they have a two match. They have a two match. So if they have a two match, you take this two and you say two plus one over here. Thereby, you would have said three. Then again, you come over D and D. They're matching. So like,"
+    },
+    {
+      "chunk_id": "L208_C9",
+      "start": 603.7,
+      "end": 676.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=_wP9mWNPL5w&t=603s",
+      "text": "say two plus one over here. Thereby, you would have said three. Then again, you come over D and D. They're matching. So like, okay, they're matching. So one. Go to the previous. Go to the previous and see how many are they matching. They're saying we have a three match. Three consecutive match. So take this three and a four. So this becomes four. So what I analyzed was, since it is for consecutive, thereby, this guy can be said, we do not need to do any breakings. Like we did a breaking here and we moved to AX. We did a breaking here. We moved to ACX. There is no need to do any breaking. Yes. Thereby, you can directly put a zero. This is the slight change that you have to do in the previous code and you'll be able to code this. Okay. So coming back to the table. Coming back to the table. So let's actually come back to the original stuff, which was actually ABCD and this was something like Z or something like this. Okay. So if I again, redo the table, what the, what is the value that it will have? It will have a value like zero and it will have a one. What is the longest common substrate? Can I say the maximum value in the entire matrix, the maximum value in the entire DP, because this two signifies AB is equivalent to"
+    },
+    {
+      "chunk_id": "L208_C10",
+      "start": 676.9,
+      "end": 742.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=_wP9mWNPL5w&t=676s",
+      "text": "I say the maximum value in the entire matrix, the maximum value in the entire DP, because this two signifies AB is equivalent to AB. Can I say the maximum value in the matrix is indeed the answer I can, I can, and that is the answer, the max value. So without waiting, let's get started to the code. So we are in the longest common substring. So what I'll do is I'll just copy paste the code for longest common subsequence. Let's copy paste that. And what we'll do is we'll just put a zero via, and this is STR. Let's keep it S and D. Okay. What's the other thing? What is the answer? The answer is the maximum value. You can reiterate and find the maximum value. What you can do is, you know, DP of IJ is just getting filled over here. This is the value whenever it is getting a value. Otherwise it's zero every time. So what you can do is you can be like, okay, I can keep the answer equal to zero and I can be like, okay, answer equal to max of answer comma DP of IJ. Right. And I'll be like, fine, let's return the answer. And I can be like, fine, let's now run this off and see if this is running. It is, it is. And now let's quickly submit this. So you understood, there's just a"
+    },
+    {
+      "chunk_id": "L208_C11",
+      "start": 742.9,
+      "end": 816.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=_wP9mWNPL5w&t=742s",
+      "text": "off and see if this is running. It is, it is. And now let's quickly submit this. So you understood, there's just a minor change. If you do this minor change, I think you will be able to solve any particular problem. So this is N into M. Again, there is something like I minus one. And whenever there is something like I minus one, what do you do? You have space optimization. There's no need to carry two rows. Just do space optimization. Again, I've been teaching space optimization from lecture one. Please go back and watch it. If you have not. M plus one comma zero is something that you can and curve M plus one comma zero is again, something which you can over here. It'll be previous. This is DP of I. So this will become curve. This will be again curve. And this will be curve again. And over here what you can simply do is you can replace previous and again simply run this. So, okay. I'm sorry, my bad. You have to also replace over here. You can actually omit this because you're actually initializing everything with zeros. There's no need of these guys. You know, I'm at this. I think this should be fine. Yeah, it is. So if you submit this, we actually solve this using a two, like two one dimension arrays and an N into M cross space, the longest common substring gets solved. So guys, I hope"
+    },
+    {
+      "chunk_id": "L208_C12",
+      "start": 816.02,
+      "end": 831.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=_wP9mWNPL5w&t=816s",
+      "text": "a two, like two one dimension arrays and an N into M cross space, the longest common substring gets solved. So guys, I hope you have understood the longest common substring. There's a variation of the longest common subsequence. So just in case you did, please, please, please, please, please make sure you like this video. And if you're new to the channel, please do consider subscribing to us. And with this, I'll be wrapping up this video. Let's be in the next one."
+    }
+  ]
+}

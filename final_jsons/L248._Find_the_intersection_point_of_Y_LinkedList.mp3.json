@@ -1,0 +1,190 @@
+{
+  "lecture_id": "L248",
+  "lecture_number": 248,
+  "lecture_title": "L12. Find the intersection point of Y LinkedList",
+  "youtube_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4",
+  "chunks": [
+    {
+      "chunk_id": "L248_C1",
+      "start": 0.0,
+      "end": 76.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=0s",
+      "text": "So let's continue with our playlist. So before that, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is finding the intersection point of a given Y linked list. So what is the problem exactly stating? It's stating that you'll be given two linked lists. So basically head one and head two. So if I look at the first linked list, this one is the first linked list. If I look at the second linked list, this is the second linked list. Now your task is to figure out the first common node. Can I say this entire portion is the common portion between the first linked list and the second linked list? So this is the first common node. This is the second common node and the third common node. So your task is to return the first common node or the first intersecting point of two given linked list. But you might be thinking, hey, what if they never collide? What if you are given an example, something like this? This can be a linked list and then I can have another linked list, something like this. They're never colliding. It's not a Y linked list. In this case, you'll be returning null stating that they never collide. In case they collide, then you will be returning the first node. Got it?"
+    },
+    {
+      "chunk_id": "L248_C2",
+      "start": 76.6,
+      "end": 152.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=76s",
+      "text": "you'll be returning null stating that they never collide. In case they collide, then you will be returning the first node. Got it? So if this problem comes up in an interview, we will be starting off with the extreme naive solution and what will be that? Can I say this, that I'm looking for a node which is in the linked list one and which is in the linked list two? So can I do this? I will go through the first linked list and probably memorize the nodes that I've seen or that are there in the linked list one. Just remember in your memory somewhere and then what you'll do is you will again traverse the second linked list and if you see any node which you memorized has been visited again, that means this is your first point. How can you memorize things? How can you store it? Yes, we will be using the concept of hashing. Very, very important concept. So what I can do is I can declare a map data structure and I can store the node, the entire node as the key. Do not store the value, please. Why? Because if you see a four here, there is a four here as well. So if you store the values, it will be wrong. Instead of it, try to store the node and along with it, maybe you can store integer, boolean, whatever you wish to do."
+    },
+    {
+      "chunk_id": "L248_C3",
+      "start": 152.52,
+      "end": 224.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=152s",
+      "text": "wrong. Instead of it, try to store the node and along with it, maybe you can store integer, boolean, whatever you wish to do. Let's take two variables, temp one and temp two, where temp one will be at the starting point of linked list one and temp two will be at the starting point of linked list two. Let's probably traverse the first linked list. So what I'll do is I'll start traversing. So whatever is the first node, let's put it over here and say one and then move it. Whatever is your second node, again, put it and move. Let's go to the next. We have four. Let's try to put it and move. Let's again take this six and put it and move. Let's take two and put it and move and then temporary will reach null. The moment you reach null, that means the traversal on the first linked list is completed. Once it is completed, what I can do is I can probably take this temporary off and I'll do the traversal of the second linked list. So after the first traversal, all the nodes of the linked list one has been stored into the map data structure. Now your next job is to go through the second linked list and check if there is a repeating node or not. So let's do it. We are over here. Is this particular node in the map data structure? We don't have it."
+    },
+    {
+      "chunk_id": "L248_C4",
+      "start": 224.32,
+      "end": 293.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=224s",
+      "text": "node or not. So let's do it. We are over here. Is this particular node in the map data structure? We don't have it. Yes, we have a node with value one. We have it, but that is this node. That is why I said, please store the entire node. Got it. So it is not there. Let's move to the next. When I move to the next, it is, it is also not there in the map. Let's move to the next. This one is not there in the map. Let's move to the next. This one is not there on the map. Let's move to the next. And we will see that this exact same node is over here in the map. If it is there and while traversing the first node, which is repeating will be our first point of intersection. So what you can do is you can stop over here and you can straight away return in case you traverse, you traverse and you end up reaching null. That means they were separate linked list and you did not find an intersecting point. Got it. So this will be the simple hashing method. So let's quickly write down the pseudo code in case you want the C plus plus Java, Python or JavaScript code. All the links will be in the description. Initially we will be taking a map data structure which will be storing a node and an integer."
+    },
+    {
+      "chunk_id": "L248_C5",
+      "start": 293.28,
+      "end": 371.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=293s",
+      "text": "links will be in the description. Initially we will be taking a map data structure which will be storing a node and an integer. Right after that, you'll be taking a temporary placing it at the head one. Okay. And let's traverse on the first link list, which is basically till it reaches null. And let's say map, map dot put or whatever, according to your language, hey map, can you store this entire node, not the data, entire node. And after that you lost them. Hey, can you move ahead? Then dot next. Perfect. This is my first traversal, which will basically store all the nodes in your memory. Let's do the second traversal. I can say temporary will be head again, but this time head two. Let's do a traversal again. The temp is not equal to null and I will be traversing. What will I check? I will check, hey map, do you have this? Probably find whatever according to your language. Hey map, do you have this temporary? If he says yes, I do have it. Yes, I do have it. That means this is your first repeating node, which means this is your inter intersection point. Return this particular temp. Perfect. What else? You can straight away go to the next node, which is temporary of next."
+    },
+    {
+      "chunk_id": "L248_C6",
+      "start": 371.92,
+      "end": 444.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=371s",
+      "text": "point. Return this particular temp. Perfect. What else? You can straight away go to the next node, which is temporary of next. And this one, and if the entire traversal is completed and you never executed this if statement, which means yes, there were no common or repeating or intersection point. Thereby I will end up returning null. What will be the time complexity? Can I say that the first traversal will be taking big off end into whatever time your map takes? If your map takes logarithmic, it will be analog and if your map takes constant time, it will be an into one depends on your maps time complexity. I've discussed this. I've discussed this in depth in the hashing lecture. Go back and watch it again. The same thing over here. We go off into probably this will be n one and two into if your map is taking logarithmic, if your map is taking big off one depends on that. So can I say that the overall time complexity will be big off n one into on the map plus big off n two into whatever the map takes logarithmic n or big off one depending on what language are you using, what kind of map you're using, what will be the space complexity? If I'm going through the first link list and storing everything, it'll be big off n one."
+    },
+    {
+      "chunk_id": "L248_C7",
+      "start": 444.58,
+      "end": 509.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=444s",
+      "text": "what will be the space complexity? If I'm going through the first link list and storing everything, it'll be big off n one. If I go through the second link list and store everything, it'll be big off n two depending on which link list you're storing. Like in our example, we took this entire link list and we stored it. Thereby the space used will be big off n one. You could have done in the opposite manner. You could have stored this entire one and then you could have traversed in this one. Depending on that, it doesn't matter because what if in the worst case you might have same length link list, so it doesn't matter. So this will be a time complexity and the space complexity. Now this is where the interviewer will not be happy because we're using an external space to store these things and ask you to optimize this. So we need to optimize the space complexity. This gives me an idea that, hey, you cannot store the notes. You need to solve it during the traversal itself. Can I solve it during the traversal? Okay. If T one is standing here, which is the head one, and if T two is standing here, can I straight away draw a comparison? I cannot. I cannot because this is the shorter link list and this is the longer link list. Can I, can I do a comparison? I cannot."
+    },
+    {
+      "chunk_id": "L248_C8",
+      "start": 509.7,
+      "end": 587.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=509s",
+      "text": "cannot because this is the shorter link list and this is the longer link list. Can I, can I do a comparison? I cannot. For comparison to happen, T two should stand here and I should compare them and then move T one here and T two here, compare them, move T one and T two here and the comparison will succeed. But they need to be standing at the same vertical level. I cannot stand two steps behind and have a comparison done. Can I move T two by two steps and make it stand here and then start the comparison and then start the comparison and then do the comparison? Can I do this? Yes, I can. So my goal will be to make sure whichever is the longer link list, whichever is the longer link list, I will make sure it goes in, in the same level as the shorter one. I'll try to do that. How can I do that? Let's take T one, let's take T two. Okay. Let's first traverse in the first link list and compute the length of that link list. So N one can be taken as zero. T one moves one, T one moves two, T one moves three, T one moves four, T one moves five, T one moves, reaches none."
+    },
+    {
+      "chunk_id": "L248_C9",
+      "start": 587.74,
+      "end": 667.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=587s",
+      "text": "one, T one moves two, T one moves three, T one moves four, T one moves five, T one moves, reaches none. And eventually the length of the link list is five. Can I do the same for this one? I can. And what will be the length? Seven. So when T two will reach here, the length will be seven. You can simply traverse in both the link list and find out the length. Once you've done for the length, what is the next job? Can I say one of them will definitely be larger? If they're equal, it's fine. You just start. If they're equal, you start comparing. are not equal, which is in this case, N one is five, N two is seven. What is the difference? N two minus N one? Two. Two is the difference. If the difference is two, what you will do is you will take T two and make it move by D steps. One step, two step. Now T two stands at the same level as T one does. T one is at head, standing at the same level. Now you can do a simultaneous movement. T one not equal, not equal. Do a simultaneous movement. Is it equal? Not equal. Do a simultaneous movement. Is it equal? Yes, it is equal. Stop then and there and say that this is my collision node and you can straight away return it."
+    },
+    {
+      "chunk_id": "L248_C10",
+      "start": 667.66,
+      "end": 744.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=667s",
+      "text": "equal? Yes, it is equal. Stop then and there and say that this is my collision node and you can straight away return it. Quite simple, isn't it? So can I write down the code? I can. Maybe I can take T one to be head and I can take N one to be zero and I can take T two to be head and N two to be zero. Let's do travesal to compute the length, which is T one is not equal to null and you can say N one plus plus and T one can go to T one dot next. Very simple. At the same time you can do it for the second linked list as well. Let's move it. So you can do N two plus plus and T two can go to T two dot next. Once you have figured out the length, what is your next job? The next job is to make sure that the longer linked list travels the remaining distance, right? So can I say, hey, what if N one is smaller than N two? In that case, the linked list two will traverse, right? So maybe, maybe I can write a function where I say collision point of, I need to find it off head one, head two. I'm assuming, I'm assuming that this is the greater linked list. This is the greater linked list and this is the smaller one because that is what I'm writing over here."
+    },
+    {
+      "chunk_id": "L248_C11",
+      "start": 744.14,
+      "end": 823.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=744s",
+      "text": "is the greater linked list. This is the greater linked list and this is the smaller one because that is what I'm writing over here. And I'm saying, please cover a distance of N two minus N one. Please cover a distance of N two minus N one and find me out the collision point and find me out the collision point or else I will say, hey, return collision point of this time the smaller is head two. The linked list two is the smaller and can be equal as well, head one and N one minus N two. So what I've done is I've written down a function collision point, which takes the smaller, which takes the greater, and it also takes the distance that you have to traverse, right? And either of them will return you the collision point. So I need to write a function collision point that is accepting a smaller linked list head, that is accepting a larger linked list head and the difference of distance between them, right? So if I go back, what do I need to write? I need to write a function which starts at the larger linked list, covers the D steps, covers the D steps. Once it is aligned, once it is aligned, starts comparing, starts comparing, and the moment it compares and finds the same, it returns that collision point. Otherwise it will reach now. Otherwise it will simultaneously reach now."
+    },
+    {
+      "chunk_id": "L248_C12",
+      "start": 823.42,
+      "end": 898.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=823s",
+      "text": "the moment it compares and finds the same, it returns that collision point. Otherwise it will reach now. Otherwise it will simultaneously reach now. Got it? So let's quickly write down the function collision point. Collision point can be written as, it'll take a smaller linked list head. So maybe I can say small head or small, or maybe let's call it temporary one. Let's take temporary two and D. Perfect. What is the first thing? Larger will go at the same level. So let's move it D steps while D, D minus minus and T two equal to T two dot next. So now T one and T two are at the same level. Let's start comparing. If they're same, I will stop then there. If they're same, I will stop. Otherwise I will keep moving them. Otherwise I'll keep moving them. T one goes to T one dot next and T two goes to T two dot next. And whenever they meet, they will somehow meet. If they're not colliding, it will be null and null will be equal to null. So you will be returning T one or T two, whichever you want to return, you can because you can return any one of them because the while loop will only terminate when they're equal. They can be equal at a colliding node or they can be equal at a null. So you can return straight away."
+    },
+    {
+      "chunk_id": "L248_C13",
+      "start": 898.48,
+      "end": 972.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=898s",
+      "text": "they're equal. They can be equal at a colliding node or they can be equal at a null. So you can return straight away. So this will be a collision point and either head one is the smaller and head two is the larger or the opposite. Depending on that, this function will execute for both of them. You don't have to write repeating lines of code. Time to discuss the time complexity. This is taking B go of N one. This is taking B go of N two for sure because I'm traversing the entire linked list in order to find out the length. After that, this D is nothing but B go of N two minus N one, assuming N two is greater. Assuming because that is how much it will traverse. After that, I'm doing another while loop. How much will this be? Let's go back to the example. I'm standing over here. I will end up traversing these nodes in case it doesn't collides, which is basically the shorter length, which is basically the shorter length. So I can say another B go of N one. So I have to write it as B go of N one plus B go of N two plus B go of N two minus N one plus B go of N one minus N one plus N one goes. So it's B go of N one plus two N two. Can I write this? I can."
+    },
+    {
+      "chunk_id": "L248_C14",
+      "start": 972.06,
+      "end": 1048.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=972s",
+      "text": "minus N one plus N one goes. So it's B go of N one plus two N two. Can I write this? I can. So this will be my time complexity and the space complexity will be B go of one because I'm not using any external space. This is where the interviewer will not be happy with this time complexity and he will ask you to optimize it. So the optimal approach will not be using any fancy algorithm. Rather, we will be traversing through the linked list and we will find out a way to find the common intersection point. Let's see how. We need to traverse both the linked list together. So we will be taking temporary one and temporary two. Remember we will not alter the head. We will take two separate variables. Temporary one placed at the head one of the linked list one, temporary two placed at the head two of the linked list two. Got it? After that, we will simultaneously move them one, one, one place. That is basically traverse together. Temporary one will go here at the same time. Temporary two will go here. Temporary one will go here at the same time. Temporary two will go here. After that, temporary one will go here. Temporary two will go here. At the same time, temporary one will go here and temporary two will go here. Stop here. Stop okay and I will erase everything."
+    },
+    {
+      "chunk_id": "L248_C15",
+      "start": 1048.42,
+      "end": 1123.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=1048s",
+      "text": "At the same time, temporary one will go here and temporary two will go here. Stop here. Stop okay and I will erase everything. So you stop at a point when you reach the last node. Why? Because after this movement, temporary one will reach null. Temporary one will reach null. So remember whenever you're traversing and any of the pointers, any of the pointers reaches null, you will not take it to null. Instead, instead you will take temporary one to second head opposite the other linked list head. So you'll basically say temporary one go to the head of the other one. So temporary one will be over here and you will move temporary two as it is. So this is how the movement will look like after the step. I'll explain you why. Again keep moving them one step, one step. Next step will be temporary one will move one, temporary two will move two places. Sorry, one place. Remember that again to the same thing, temporary one moves here and temporary two will go to the head one. Why? Why? Because temporary two was going to be null."
+    },
+    {
+      "chunk_id": "L248_C16",
+      "start": 1123.62,
+      "end": 1198.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=1123s",
+      "text": "and temporary two will go to the head one. Why? Why? Because temporary two was going to be null. And if you remember, I told you while traversing, if anyone reaches null, it goes to the opposite as temporary one went to the opposite. Temporary two will also go to the opposite. Just take them to the opposite. Perfect. If you carefully observe what has happened now is they are aligned. They're aligned on the same, isn't it? Let's perform the next steps. But before that, I'll erase this. Again take them one step together. So temporary one will be here and temporary two will be here. Again take them one step together. Temporary one is here. Temporary two is here. The first point of contact, the first point of similarity is where you will see that this is the repeating node or this is the first node where my intersection starts. And you straight away return this node. Why does it work? I'll be giving you a proof. But as of now, understand that we traverse and if the temporary one reaches the null, we take it to the opposite linked list. If temporary two reaches the null, we take it to the opposite and then move it. Let's talk about some edge cases before I move on to the code. So if you look at the example that we did take, the length of L1 was not equivalent"
+    },
+    {
+      "chunk_id": "L248_C17",
+      "start": 1198.02,
+      "end": 1277.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=1198s",
+      "text": "I move on to the code. So if you look at the example that we did take, the length of L1 was not equivalent to the length of L2 and that is the reason T1 which is basically temporary one that we took at head one and temporary two that we took at head two, they were traversing in a different manner. What does it mean? Temporary one reached the last node before the temporary two did. Why? Because there was a difference of length. There was a difference of length of two. That is why T1 reached the last node and then you basically took it to the opposite end when it reached the last node. That is what you did. But what if the length of both the linked list are same? What will happen in that case? You can keep T1 here, T2 here. Let's traverse. T1 and T2 will traverse simultaneously. T1 and T2 will traverse simultaneously. T1 and T2 will traverse simultaneously. T1 and T2 will traverse simultaneously and if you observe, they will collide. They will not reach the end. You don't need to move them to the opposite heads. They will collide and this will be an intersection point. So if length is equal, you don't need to do the opposite. You don't have to write separate conditions for it. What I'm trying to explain is, in case they are of same length, it will collide before you move to the end."
+    },
+    {
+      "chunk_id": "L248_C18",
+      "start": 1277.88,
+      "end": 1356.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=1277s",
+      "text": "for it. What I'm trying to explain is, in case they are of same length, it will collide before you move to the end. Got it? If there is a collision point, obviously. Let's look at one more example. We have L1 and we have L2. They are never colliding, right? So if they are not colliding, how do we figure out that we need to stop traversing? Because they are not colliding. There is no collision node. How do we stop? Let's understand how the algorithm works over here. We take a temporary 1, place it at the head of the linked list 1. We take a temporary 2, place it at the head of the linked list 2. Let's start traversing. T1 and T2 will simultaneously move one place. Right? Then again T1 and T2 will simultaneously move one place. At this moment, when T1 moves to null, you say, hey, go to the opposite head. Go to the opposite head. So T1 will be here and T2 will move. So T1 moves to the front and T2 will move here. Perfect. I'll just erase this. After this, again, they will be moving simultaneously. T1 moves here. T2 moves here. After that, again, they will move simultaneously. T1 moves here and T2 moves to the opposite head. And if you carefully observe, they are again aligned. They are again aligned. Same thing happened over here as well. The same thing is happening over here as well."
+    },
+    {
+      "chunk_id": "L248_C19",
+      "start": 1356.4,
+      "end": 1425.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=1356s",
+      "text": "they are again aligned. They are again aligned. Same thing happened over here as well. The same thing is happening over here as well. Let's try moving there. T1 and T2 will move together. T1 and T2 will move together. If you carefully observe, they have reached the last node. They have reached the last node. Does it mean that you again take them to the opposite heads? Does it mean that? No, you will not take it to the opposite head. Rather, you will say, hey, both of them are at their last node. If I move them one step, they will reach null. If I move them one step, they will reach null, which means both of them collided simultaneously and have reached null, which means there is no collision point, which means there is no collision point. Got it? Now, you might be thinking, hey, what is the proof? How are they aligning? I will come to that. Let's first write down the code, get the algorithm or get this traversal into a head, and then we will understand why is that happening because it is very, very simple. Don't worry. So I will be writing down the pseudocode in case you want the C++, Java, Python or JavaScript code. All the links will be in the description. So what will we be given? We will be given head one and head two, right? What is the first step?"
+    },
+    {
+      "chunk_id": "L248_C20",
+      "start": 1425.16,
+      "end": 1502.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=1425s",
+      "text": "in the description. So what will we be given? We will be given head one and head two, right? What is the first step? H case, what if the first linked list is empty? It cannot collide with anyone. Or what if the second linked list is empty? Same thing, it cannot collide. So it will never have a collision point. So we can return null. Apart from that, we have to write down the code. Can I say I will take a temporary one and place it at head one? I will take a temporary two and place it at head two. And we can traverse, probably let's leave down the while condition for afterwards. What are we doing? We're basically doing temporary one equal to temporary one dot next. And we're saying temporary two, temporary two dot next. This is what we are doing, right? And we know one thing, if, if, if this temporary one while traversing, just assume, just imagine T1 was here and we know after traversing, it will reach the null. I cannot take it to null. I'll have to take it to the opposite head. I'll have to take it to the opposite head. So what I will write is, if after traversal, if after traversal by any chance it has moved on to the null."
+    },
+    {
+      "chunk_id": "L248_C21",
+      "start": 1502.92,
+      "end": 1582.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=1502s",
+      "text": "So what I will write is, if after traversal, if after traversal by any chance it has moved on to the null. In that case, I will say, hey, T1, can you basically go to the opposite head that is head of two? The same thing that I write for T2. Hey, T2 while traversing, if you have reached null, if you have reached null, can you go to the opposite head, which is head one? Perfect. Am I missing out on a case? Yes. While traversing, what if they collide? They might collide. I will say, hey, if T1 appears to be T2, same, at the same node, then this is my collision point. You can return T1 or T2. Perfect. Have I written down all the edge cases? Probably I have. So we need to think about the exit conditions, right? So what are the exit conditions? In terms of collision, I'm very sure that this will be my exit condition. If it collides, the nodes will be same and I will exit. Can I say that if there is no collision, if there is no collision, in that case, there will be a point when T2 will reach null and T1 will reach null and null will be equal to null. Null will be equal to null because that is what I'm writing. If this is equal to this and I will be returning null. So both the exit conditions are satisfied. If they collide, fine."
+    },
+    {
+      "chunk_id": "L248_C22",
+      "start": 1582.84,
+      "end": 1656.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=1582s",
+      "text": "writing. If this is equal to this and I will be returning null. So both the exit conditions are satisfied. If they collide, fine. If they do not collide, they will reach null. So what will be the exit condition? Am I missing out on a case? I am. Look at these conditions. Rather look at these lines. What am I doing? T1 goes to the next. T2 goes to the next. So when I'm starting off, I'm not checking the first node. I'm not checking the first node. What if you're given a linked list which looks something like this and I'm saying this is my head one and this is my head two. It is the same linked list. It will be the collision point. The first head will be the collision point. The first head will be the colliding point. So what I can say is, hey, maybe I can just write T1 not equal to T2 just for the sake of it because just in case it's for the first time because after that this will take care or just in case it is for the first time. In that case, I will end up returning T1 or T2 because they are same nodes, the same starting point. Apart from that, it will never be executed. Why? Because the code will get terminated over here. It will get terminated over here. Got it? So we have seen the code."
+    },
+    {
+      "chunk_id": "L248_C23",
+      "start": 1656.92,
+      "end": 1732.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=1656s",
+      "text": "executed. Why? Because the code will get terminated over here. It will get terminated over here. Got it? So we have seen the code. Now it's time to understand that why are temp one and temp two aligning at the same level load after some steps of traversal. Let's understand it. T1 initially is at head one. T2 initially is at head two. What is the difference between them? If I say the difference is D, can I say it is two? Why? Because I need to take two steps in order to reach T1. T2 is two steps behind T1. Understood? Let's perform the algorithm. T1 and T2 moves simultaneously to the next node. T1 and T2 again moves simultaneously to the next node. T1 and T2 again moves simultaneously to the next node. T1 and T2 again moves simultaneously to the next node. And this is happening because of these two lines. Right? After that what will happen? Again, T1 will move to the next and T2 will move to the next. Let's let's erase all of these things. Now whenever T1 reaches null. So whenever T1 reaches null, what happens? Let's analyze. You said T1 equal to T1 dot next. It will reach null, right? After that, it will go ahead and check if it is null."
+    },
+    {
+      "chunk_id": "L248_C24",
+      "start": 1733.48,
+      "end": 1811.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=1733s",
+      "text": "equal to T1 dot next. It will reach null, right? After that, it will go ahead and check if it is null. If it is null, it ends up going to head 2. But before that, let's visualize something. How many steps is T2 behind T1? 1, 2. It is still two steps behind T1. So T1 goes here. Goes to the opposite head. So can I say T2 is still two steps behind? Right? And T1 is at the head which is still two steps behind this particular place. Right? What happens? T2 takes one step, takes two steps. Whenever it reaches null, it means it will reach here. It means it will reach here. Which means T2 will take two steps to reach here. And that's how many T1 will take. That is why they align. The proof is very simple. Since you are moving them simultaneously, T2 is bound to be same number of steps behind whenever T1 reaches the opposite head. So after this, you again move T1 and T2. T2 reaches here, covers up. And then T2 reaches here. T1 reaches here. Here means here."
+    },
+    {
+      "chunk_id": "L248_C25",
+      "start": 1811.76,
+      "end": 1886.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=1811s",
+      "text": "T1 and T2. T2 reaches here, covers up. And then T2 reaches here. T1 reaches here. Here means here. So hence they align. Because it was these steps behind, you made sure that this T1 goes to the opposite. So that you can cover that these steps. That is the proof behind this algorithm. So what will be the time complexity for this particular algorithm? Can I say B go of N1 plus N2? Why can I say that? We took T1, right? We took T2. Now this is the case when it never collided. How much did T1 traverse? It went from here to here, then from here to here, then from here to here, then from here to here, then from here to here, then from here to here. How much did T2 traverse? From here to here, from here to here, from here to here, from here to here and from here to here. Eventually T2 will move here and they stopped. So ultimately T1 will traverse each of the nodes of the both linked list, which means N1 plus N2. And after that, whenever it reaches null, T2 will be at null and T1 will be at null and they will collide and it will stop. So it ends up touching every possible node. So, the time complexity is N1 plus N2 and the space complexity is B go of 1. So let's quickly get back into the code editor and check out the code."
+    },
+    {
+      "chunk_id": "L248_C26",
+      "start": 1886.34,
+      "end": 1915.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=0DYoPz2Tpt4&t=1886s",
+      "text": "N2 and the space complexity is B go of 1. So let's quickly get back into the code editor and check out the code. So you're given the first head and the second head. I'll write down the edge case. After that, the same code that I've written on the iPad. And if you hit the submit button, this will be accepted. The Java code is pretty much similar and you can find out the Python and JavaScript code links in the description. And if you're still watching, I'm very sure that you've understood the brute, the better and the optimal approach. And if that is the case, please, please do consider giving us a like. And if you're new to our channel, what are you waiting for? Hit that subscribe button. And with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

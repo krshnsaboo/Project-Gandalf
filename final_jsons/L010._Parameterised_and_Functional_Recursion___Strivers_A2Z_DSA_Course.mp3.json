@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L010",
+  "lecture_number": 10,
+  "lecture_title": "Re 3. Parameterised and Functional Recursion | Strivers A2Z DSA Course",
+  "youtube_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo",
+  "chunks": [
+    {
+      "chunk_id": "L010_C1",
+      "start": 0.0,
+      "end": 73.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=0s",
+      "text": "So before starting this video, I'd love to thank the sponsor of this video which is CodeStudio. Now if you are willing to practice interview problems topic wise, this is the place where you should look for because CodeStudio has over 2000 plus problems and has all the problem solution in C++, Java as well as Python. If you're looking for a guided path, then you can find for Python, for DBMS, for object-oriented programming, operating system, computer networks, system design, web development, any other thing that you're looking for, you'll find guided paths for every other thing over here. Also, if you're looking for any top company questions, let's say if you have an interview at Amazon, if you're looking for Amazon questions, you can get all the top Amazon coding questions via tag and all the solutions in C++, Java as well as Python. Also, if you have an interview schedule, you can read their interview experiences where there are 600 plus interview experiences from companies like Amazon, Microsoft, Adobe, Google, etc. So what are you waiting for? CodeStudio has a lot of free resources for interview preparation. The link will be in the description. Make sure you check it out. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. Today, we will be solving a very, very interesting problem in recursion, which is"
+    },
+    {
+      "chunk_id": "L010_C2",
+      "start": 73.68,
+      "end": 150.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=73s",
+      "text": "channel. I hope you guys are doing extremely well. Today, we will be solving a very, very interesting problem in recursion, which is the summation of the first n numbers. Now, this can be done using a very simple for loop, but I want you to do this using recursion because that will create your base of recursion very, very strong. I want to teach you a couple of ways. The first way being the parameter wise ways, where I'll be showing you how to do this using parameter. The next one will be functional way, where the function itself returns the answer. So to start off with, I hope you have understood the question, sum of first n numbers. Assume n is given as three, then the summation will be definitely six because one plus two plus three is equal to six. Sum of the first three numbers is what the question states. So to start off with, let's learn the parameterized way. Now, when I say a parameterized way, what does that mean? That means, assume I write a function and I say i and I carry a variable sum. That's the recursive function that I'm writing. I say that, I'm going to think this as a loop. In the previous lecture, we saw that we started"
+    },
+    {
+      "chunk_id": "L010_C3",
+      "start": 150.48,
+      "end": 227.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=150s",
+      "text": "writing. I say that, I'm going to think this as a loop. In the previous lecture, we saw that we started from one, we went on to two, we went on to three. We're going to do this till we don't reach n or probably we can do it the opposite way from n to one. Let's assume we do it from n to one. We can say if at any moment i is lesser than one, I can definitely print the summation and then try a return. Apart from this, what I'm going to say is, f of i minus one sum plus i is what I'm going to pass. This is what my recursive statement will be. The main will be very simple again. The main will be taking an n as the input and then we can just call f of n comma initial summation as zero. Now this is what I have taken. For an example, let's assume this is the output screen and let's assume n is given as three. What I'm calling for the first time is, I'm saying i to be three, sum to be zero."
+    },
+    {
+      "chunk_id": "L010_C4",
+      "start": 228.88,
+      "end": 306.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=228s",
+      "text": "three. What I'm calling for the first time is, I'm saying i to be three, sum to be zero. That is what I'm saying. I to be three and sum to be zero. This line is not executed. This line is executed and it thereby calls another function in the same way. The same function is called in the memory and it passes i minus one which is two because i was three. It ends down to three minus one which is two and sum plus i. Sum was zero. If you see sum was zero. Zero plus three will become three. It goes as three. Again, is the if line executed? No, the if line is not executed. The functional line will be executed and that's i minus one which means something. And then sum was three plus i. This time is two. This time, this function again calls a function which says function i minus one. So i was two. It becomes one and the summation three plus two becomes five. Is the if statement executed? No, because the if statement, if you carefully observe, it's i greater than one and that's not the case. So it's not executed. Thereby,"
+    },
+    {
+      "chunk_id": "L010_C5",
+      "start": 306.32,
+      "end": 381.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=306s",
+      "text": "statement, if you carefully observe, it's i greater than one and that's not the case. So it's not executed. Thereby, it goes again and calls the same function with i minus one comma sum plus i. This time i minus one, i was one. So this time the functional call is made to f of i minus one. One minus one becomes zero. Then summation. Summation was five plus i. i was one. So it calls it as six. What was the if statement? If statement stated i lesser than one. i less than one. Is that the case? Yes. So what it does is print the summation. Summation was six. So on the output screen, the six is printed and it says return. So thereby this functional line is no more executed and it directly returns from here. So if it returns, this function is done and now it returns. Thereby saying this function is done. So this guy again returns. Thereby this function is done. Thereby this guy returns. So we did a parameterized function where we can say that our recursive tree was three comma zero, where this being the i and sum."
+    },
+    {
+      "chunk_id": "L010_C6",
+      "start": 382.24,
+      "end": 454.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=382s",
+      "text": "where we can say that our recursive tree was three comma zero, where this being the i and sum. We went on to f of two comma added this three. We went on to f of one comma added this two. We went on to f comma zero added this one. So whenever we ended up at zero, we just printed this because we were adding the i, adding the i every time to the parameter. And that is what we printed. This could have been done in the other way where you could have done i plus one as well, but I'm just teaching you the parameter way in how can you actually carry the parameters. Yes, because over here we increase the parameters and at the end of the day, at the end of the day, we came here and print this particular parameter, which is six. So this is all the recursion tree will be. And at the end, it came back, came back, came back and went back. This is how you can do it using parameterized. Okay. Now, if you want to do the parameterized, it's time to understand the functional. How do you generally write the functional? Because functional means you don't want the parameter to do the work. You want, you write a recursive function where you say that, Hey, listen, this is my value of n, take n as three and give me"
+    },
+    {
+      "chunk_id": "L010_C7",
+      "start": 454.4,
+      "end": 516.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=454s",
+      "text": "you write a recursive function where you say that, Hey, listen, this is my value of n, take n as three and give me the summation of six. So if I'm asking you to write such a function, that's when you cannot use parameter right? Because you want the function to return the answer. You don't want it to print. You want it to return. Why? There will be a lot of cases when you learn dynamic programming that you want the function to give you back something instead of printing. Right? So basically to understand the concept before writing the recursive code, let's, so these are all patterns that I'm teaching. It's not that I'm just writing the codes. These are patterns I'm teaching. If you learn these patterns, if parameters are there, then you have to do it in such a way. If there's return, then you have to do it in such a way to learn these patterns. Once you're very confident about these patterns, you can solve any problem in recursion. That is my word. Okay. To go with functional. Let's understand when I say functional, what does that mean? Now, if n is given as a three for a reason, if n is given as three, can I say this? Can I say this? I can say, I'll do a three. I'll do f of two where I know where I know f of n means"
+    },
+    {
+      "chunk_id": "L010_C8",
+      "start": 517.36,
+      "end": 587.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=517s",
+      "text": "say this? I can say, I'll do a three. I'll do f of two where I know where I know f of n means summation of first n numbers. Okay. I know this. So if I write three plus f of two makes sense, then when I'm calling for f of two, can I say, okay, that can be written as two plus f of one. And when I'm at f of one, can I write this as one plus f of zero? And everyone knows that f of zero is nothing but zero. So I can think it in such a way that, okay, whenever there is an f of n, I know n will be there. I know n will be there, which is three, because if I'm saying f of three, I know the summation will contain three, but I need the summation of the rest of the two numbers. So this is the idea that I'm going to follow. So what I'll say is, okay, let them give me the n. If at any moment n is equal to zero, I'm going to return a zero, because if n is zero, I know the summation of the first zero numbers is zero. Or else I'm going to return simply n plus f of n minus one. Okay. I'm going to simply return"
+    },
+    {
+      "chunk_id": "L010_C9",
+      "start": 587.28,
+      "end": 658.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=587s",
+      "text": "is zero. Or else I'm going to return simply n plus f of n minus one. Okay. I'm going to simply return n plus f of n minus one. Done. Now question might arise, how will this work? Let's understand. Let's write the main function again. So if I write main and I say n is given as three, and I call f of three or f of n rather, and I write print, print this f of n. So what is being done? This f of n goes and calls this. So let's call this. With what value? With the value three. f of three is called. Is this line executed? No. n means three plus f of n minus one is called. Remember this. There's a line, incompleted line, three plus something, incompleted. That incompleted will be called in recursion. Till it does not comes, I'm waiting three plus three plus something, something I'm waiting. Got that? So f of two now goes. It states if n is equal to zero,"
+    },
+    {
+      "chunk_id": "L010_C10",
+      "start": 658.24,
+      "end": 738.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=658s",
+      "text": "waiting. Got that? So f of two now goes. It states if n is equal to zero, it says no. So I'm like, okay, return two plus f of one. This time two plus this line waits for f of one to be done. So I go and call f of one. If n is equal to equal to zero, again, I say no. Remember this, you could have written n equal to equal to one. That's your choice. You can write it. I'm just teaching you patterns. That's it. Return zero. Doesn't works. Return one plus f of zero. Again, this line awaits. I am awaiting. Let him come back. So let's go. f of zero. When you go for f of zero, let's understand what happens. If n equal to equal to zero, returns a zero. This guy comes in with a value zero, returns a zero. This time I'm returning something. I'm giving back something. So it's returning a zero. I hope that makes sense. So whenever this function is called, this function is called, it came back with zero, came back with zero. So can I say now, instead of writing this f of zero, I can actually write the zero because this function yielded you a value zero. So thereby one plus zero is one."
+    },
+    {
+      "chunk_id": "L010_C11",
+      "start": 738.64,
+      "end": 815.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=738s",
+      "text": "zero, I can actually write the zero because this function yielded you a value zero. So thereby one plus zero is one. Hence return. This guy returns a one. One plus zero returns a one. So can I say now, instead of writing f of one, can I write one because one has been returned. Thereby two plus one. Can I say this guy returns a three? Indeed I can say. Thereby f of n minus one goes away. And I can write three. So thereby three plus three is six. Thereby this guy returns six. And you say print. So output is six. This is how you can write a functional stuff. When the problem is broken down into smaller parts. Yes. The problem gets broken down into smaller, smaller parts. And once it is broken down, it easily gives you the output. So coming across to the code, the code's very, very simple. You say int sum, you can call int n. And you can simply write if n is equal to zero, please return a zero. Else return an n plus sum of n minus one. And over here, probably I can just keep n equal to three. You can take this as input as well. See out sum of n. So if I just write it, you'll see this, this perfectly works."
+    },
+    {
+      "chunk_id": "L010_C12",
+      "start": 816.64,
+      "end": 892.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=816s",
+      "text": "this as input as well. See out sum of n. So if I just write it, you'll see this, this perfectly works. It's not perfectly. It's a very simple one. Okay. So I hope you have understood how to get the sum of first n numbers. Now, if I give you a very simple task, task is factorial of n. What is factorial of n? Whenever I give you n equal to three, it is a six. Whenever I give you n equal to four, it's 24. Basically one into two into three. This time it's one into two into three into four. Correct? Multiplication instead of addition. Multiplication instead of addition. So how will you do this? I think that's very simple this time. Very simple. If I write the code, so I'll leave the parameterized, you can do it yourself. I'll try to write the recursive code. Okay. Now, you know, one thing for sure in the recursive code, this will become a factorial. Correct? And this will become into because five into four into three, and this will become n minus one. But we need to understand, will the base case change? Will it be n equal to equal to zero this time? Let's see if I write this and if I run this, what happens? Let's understand."
+    },
+    {
+      "chunk_id": "L010_C13",
+      "start": 892.88,
+      "end": 971.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=892s",
+      "text": "equal to equal to zero this time? Let's see if I write this and if I run this, what happens? Let's understand. If I just give it a run, see, okay, sorry. Let's give it a run. So if I, let's change it factorial. Okay. Now let's give it a run. So if I give it a run, you see the output being zero. So you see the output being zero. Why? Due to this base case. Let's understand how, why did this base case, why did this base case give you zero? So if I write f of n and I write the base cases n equal to equal to zero, and I say return zero, and I'm saying return n into factorial of n minus one. If this is the code and I am writing the main function as n is given as three and I'm saying print f of n. So basically this guy goes and calls this with three not executed three into f of two not executed. If line is not executed. So return two into f of two minus one, which is one. So this is gone f of one. Again, you're writing n equal to equal to zero, not executed return one into f of zero. F of zero is going."
+    },
+    {
+      "chunk_id": "L010_C14",
+      "start": 973.28,
+      "end": 1048.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=973s",
+      "text": "you're writing n equal to equal to zero, not executed return one into f of zero. F of zero is going. And this time the if is executed and you return a zero and you return a zero, which is absolutely wrong because the moment you return a zero, this guy returns a zero. And if I just strike it off, instead of f of zero, you end up writing a zero, which means one into zero is zero. You get a zero thereby. This is straight up zero two into zero zero zero. This gets zero three into zero zero, you get a three. So what should you have returned? Yes, you should have written ideally one or, or, or you should have done this. This is also correct. Or even if you keep this, this is also good. You should return one because in case of multiplications, if you're returning zero, the overall product gets multiplied to zero, thereby giving you a wrong answer. So this is what I wanted to explain you again. What about the time complexity? You're basically doing one call, two call, three call till n calls. So I can say big of n is the time and the space complexity is an auxiliary space stack space, because this awaits, then this awaits. So there'll be big of n, n functions will be awaiting to be"
+    },
+    {
+      "chunk_id": "L010_C15",
+      "start": 1048.24,
+      "end": 1093.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=69ZCDFy-OUo&t=1048s",
+      "text": "auxiliary space stack space, because this awaits, then this awaits. So there'll be big of n, n functions will be awaiting to be completed. So stack space will be taken. So in stack, this is what the time and space complexity will be. Why big of n as the time complexity? First time this function is called, next this time. And these functions are all unit functions. You don't take a lot of time inside these functions. The number of function calls will be equal to the number of time complex, is equal to the time complexity. So guys, I hope you have understood the entire lecture. Just in case you did, please, please, please make sure you like this video. And if you're new to the channel, please do consider subscribing. Please, please do consider subscribing. And yeah, with this, let's wrap up this video and meet in the next precaution video. Bye bye."
+    }
+  ]
+}

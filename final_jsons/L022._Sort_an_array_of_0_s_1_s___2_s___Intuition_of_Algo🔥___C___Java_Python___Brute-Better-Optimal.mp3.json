@@ -1,0 +1,162 @@
+{
+  "lecture_id": "L022",
+  "lecture_number": 22,
+  "lecture_title": "Sort an array of 0's 1's & 2's | Intuition of Algo🔥 | C++ Java Python | Brute-Better-Optimal",
+  "youtube_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU",
+  "chunks": [
+    {
+      "chunk_id": "L022_C1",
+      "start": 0.0,
+      "end": 72.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another video from the Stryber's A to Z DSA course. Just in case you're for the first time here, this is world's most in-depth course in DS Algo. Why do I say that? Because we are covering 456 modules. By the end of the course, you would have solved 400 plus problems in DS Algo. You can go over the entire internet, you can buy any of the paid courses. None of them will be teaching you DS Algo in such depth. One thing that I can give you as a guarantee from my end is, if you complete this course, you can actually clear any of the DS Algorand in any of the companies in any part of the world. So till the last video, we have covered the two sum problem. In this video, I'll be covering the problem, sort an array of zeros, ones and twos. What does the problem state? You'll be given an array, but the array only consists of zero, one, two, nothing else. Only these three integers, zero, one and two. And your task is to sort it. You might be thinking it's an easy problem. No, it is not. When you'll hear about the most optimal solution, your mind will be like, wow. So what's the first solution that you'll give to the interview? That's definitely the brute force solution."
+    },
+    {
+      "chunk_id": "L022_C2",
+      "start": 72.56,
+      "end": 132.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=72s",
+      "text": "solution, your mind will be like, wow. So what's the first solution that you'll give to the interview? That's definitely the brute force solution. And we know what is that. That is to use any of the sorting algorithms. If we end up using merge sort, it'll take a time complexity of n log n and it will take a space complexity of big O of n, which is the temporary array that we use during the merge sort. If you do not know merge sort, I've already made a video on that. You can go back and watch it. Obviously, the interview will not be happy with n log n time complexity and the extra space that you're using. So he'll ask you to optimize it. That's when you'll be telling the better solution. Now, what is the better solution that comes up? Now, something I can say is, hey, listen, one thing I know for sure is the array contains zero, one and two. So what I'll be doing is, I will do a single iteration and I'll keep three variables, count zero, count one and count two. And in all of the iterations, so when I reach zero, it's a zero. So I'll increase it by one. And when I reach one, I'll increase this by one. When I reach two, I'll increase this by one. When I reach zero, I'll increase this by two."
+    },
+    {
+      "chunk_id": "L022_C3",
+      "start": 132.5,
+      "end": 196.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=132s",
+      "text": "I'll increase this by one. When I reach two, I'll increase this by one. When I reach zero, I'll increase this by two. And eventually I will keep on going and I'll reach the end of the array. Once I've reached the end of the array, the count zero will be containing the number of zeros. The count one will be containing the number of ones and the count two will be containing the number of twos. In this case, the count zero will be five, count one will be four, count two will be three. So once you have done this, what you can do is very simply run a loop from zero to four because we know the first five places will be occupied by zero because if you are sorting an array of zero, one and two, the first place will only have zeros. The next place will only have ones and the next place will only have two. So you will run a loop which runs five times and you will just manually overwrite the first five values to zero. Then you'll run a loop for four times and you'll manually overwrite the next four elements to one. Then you'll run a loop for three times and you'll manually overwrite the last three elements as two. So once you have done this, I can say that the array is sorted according to zeros at first, then ones and then twos."
+    },
+    {
+      "chunk_id": "L022_C4",
+      "start": 196.7,
+      "end": 255.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=196s",
+      "text": "So once you have done this, I can say that the array is sorted according to zeros at first, then ones and then twos. So what I can say is the better solution will be running a loop in order to count the zeros once and twos. That will be taking a big O of n time complexity. Then we will be running a first loop, then a second loop and a third loop, which overall is actually big O of n because the count of zero plus count of one plus count of two is equal to n. So overall, I can say the time complexity that I'll end up taking is n plus n to n. Am I using any extra space? I can say that no, I'm not using any extra space. We're just modifying the given array, which is the given task because we've been asked to sort an array. So we are modifying the given array. So by the way, this will go from zero to count zero in order to fill up the first count zero places. Once you've filled up the first count zero places, the next place will start from count zero index and will go on till count zero plus count one because till then you'll fill up. Then the next will start from count zero because these many have been filled up. So it starts from there and it goes on till the end."
+    },
+    {
+      "chunk_id": "L022_C5",
+      "start": 255.68,
+      "end": 328.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=255s",
+      "text": "will start from count zero because these many have been filled up. So it starts from there and it goes on till the end. So that's how the better solution will be looking like. Now the interview will be like, hey, you're taking big O of 2n which is two iterations. I don't need two iterations. Can you further optimize this? This is when the most optimal solution will come in and this is going to blow your mind off. Now let's talk about the most optimal solution and that will be using the Dutch national flag algorithm. Now across all the lectures on YouTube, I've seen something very common. People are just giving you the algorithm that rattle and then the code. No one is talking about the indention. No one is talking about the thought process. So in this video, I'll be focusing on the thought process and the indention behind the algorithm. So make sure you watch the video till the end because one thing I can assure you is you are going to take away a lot of things when you end this particular video. So the algorithm will be using three pointers. That is where the thought process starts. Low, mid, high. And the algorithm is revolving around three rules and the rules are very simple. It states everything from zero to low minus one will be zeros. Everything between zero to low minus one, not low, low minus one will be zeros, which"
+    },
+    {
+      "chunk_id": "L022_C6",
+      "start": 328.34,
+      "end": 403.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=328s",
+      "text": "zero to low minus one will be zeros. Everything between zero to low minus one, not low, low minus one will be zeros, which is nothing but the extreme left. And then it states everything from low, again very important, everything from low to mid minus one, minus one should be one. Then it states high plus one, plus one to n minus one should be two. This is something which is extreme right. These are the three rules on which the algorithm is based. Now let me explain you all the three rules in diagram. Imagine this is the zero pointer of the array and imagine this is low minus one. So these are the indexes, hypothetical index. So they are filled with zeros. That's what they are stating. Then from the low index, which is the right next index after low minus one, till the mid minus one index, everything is filled with one. Then right after mid minus one, there's a mid index and at the high index, everything is filled with random numbers in an unsorted way, in an unsorted way."
+    },
+    {
+      "chunk_id": "L022_C7",
+      "start": 403.42,
+      "end": 482.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=403s",
+      "text": "at the high index, everything is filled with random numbers in an unsorted way, in an unsorted way. And right after high comes high plus one till n minus one, everything over here is filled with twos. So it's like two, two, two. So again, it's a hypothetical array where zero to low minus one is zeros, low to mid minus one is ones, mid to high is zero one twos, and high plus one to n minus one is just twos. These are the three rules on which we will be using this three pointers to sort the array. So we have understood the three rules clearly. Now let's have some observations. Can I say from this portion to this portion, the array is sorted. From this portion to this portion, the array is sorted. If I can somehow manage to sort this particular unsorted portion, then my task will be easy. So can I say initially we're starting with an entire array. So can I say the mid, rather I'll take the yellow colour, can I say the mid will be pointing here and the high will be pointing here. Why? Because the entire array is unsorted. Because the entire array is unsorted. And that is what we were looking to sort, the entire array is unsorted. And thereby I can say the low can be just put over here. Why?"
+    },
+    {
+      "chunk_id": "L022_C8",
+      "start": 482.9,
+      "end": 552.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=482s",
+      "text": "were looking to sort, the entire array is unsorted. And thereby I can say the low can be just put over here. Why? Because that's the starting index. And we know from zero to low minus one, everything is zero. So that is still valid, still valid even if I put a low here because zero to zero to low minus one is nothing. So this is still valid. The main thing that we are looking at is from mid to high, everything should be containing zero one and two and everything should be unsorted. That is valid. Now our algorithm will work on a of mid. You can also make it work on a of high and it's okay. But I'll try to tell you in terms of a of mid. If I tell you in terms of a of mid, you can actually write it in terms of a of high as well. So I'll try to tell you in terms of a of mid. So what can be the possible values of array of mid? It can be zero or it can be one. Or what is the other thing? Or it can be two. Now these are the three possible values of array of mid. Right. Let's analyze what happens if it is zero. What happens if it is one? What happens if it is two? Now we know one thing, we are taking pointers and whenever we are applying a pointer algorithm,"
+    },
+    {
+      "chunk_id": "L022_C9",
+      "start": 552.94,
+      "end": 631.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=552s",
+      "text": "one? What happens if it is two? Now we know one thing, we are taking pointers and whenever we are applying a pointer algorithm, the pointers will always move. That is the use of pointers. So coming back to the algorithm, something to think about. We're talking about mid, we're talking about high and this portion is what we are looking to sort. Now what is the first case when array is said to be the array of mid, array of mid is said to be having zero because that is the first case when I'm saying array of mid has a zero. So array of mid has a zero. If I have to ask you, how do you make sure that this zero is in a sorted order? You'll be like, hey, wait, I know one thing. The left portion is unsorted. So the zero has to be somewhere on the left and if I have to hypothetically think, can I say the zero will be somewhere here so that this still stays in a sorted order? Yes. So what I will do is I'll say, okay, zero, can you go here? But then if I take the zero here, what will happen to one? I'd like, wait. If I take this zero here and if I take this one here, it's like, what will happen? So it'll be like zero, zero, zero, zero, zero, zero, one, one, one, one and one. It will still be sorted."
+    },
+    {
+      "chunk_id": "L022_C10",
+      "start": 631.5,
+      "end": 710.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=631s",
+      "text": "what will happen? So it'll be like zero, zero, zero, zero, zero, zero, one, one, one, one and one. It will still be sorted. It'll still be sorted. What I did was since it was zero, I just brought it to the correct place and I know what is the correct place. It will be low. Why? That is where the section contains the first one. So I'll bring it to the correct place and I know this will still be sorted. Now can I say something? If this is sorted, if this is sorted, what is now unsorted? The element after mid plus one till high is unsorted because now this portion is entirely sorted because you did swap one and zeros. So they are completely sorted. Let's do the swap and then think about the other steps. So what I'll do is I'll quickly do the swap. So I've done the swap. Now can I say this, that the mid can easily move to the next because now we are looking for this portion to be sorted. Like this portion is unsorted now because this is now sorted. So mid has moved. But now can I say one more thing? What are the first law? Zero to low minus one, everything zero. But as of now, zero to low is everything zero. So what will happen? This low will also move a step. This low will also move a step. Yes."
+    },
+    {
+      "chunk_id": "L022_C11",
+      "start": 710.54,
+      "end": 781.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=710s",
+      "text": "to low is everything zero. So what will happen? This low will also move a step. This low will also move a step. Yes. And the low pointer will be now pointing to this. So now zero to low minus one will be this. Low to mid minus one will be this, which is valid. So what did we do? First thing we did was very simple. We said, can you go ahead and swap a of low and a of mid so that that zero comes into its correct order. Then I know if there is a addition of zero, if there is an addition of zero, so this range will increase, the low will increase. And since mid is, the element at mid is not at a sorted position. Let's wait. Done. So with the first step, I know how to move the pointer. With the first step, I will be easily able to move my mid pointer, right? So we are back to our initial configuration because this is the rule that we are following in order to deduce the algorithm. So now next two, what if it was one? Let's now think. Let's go back again. What if there was a one here? Then what would have happened? Can I say it's a one? I heard this was sorted. Can I say this is also sorted? Yeah, it is sorted."
+    },
+    {
+      "chunk_id": "L022_C12",
+      "start": 781.42,
+      "end": 853.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=781s",
+      "text": "happened? Can I say it's a one? I heard this was sorted. Can I say this is also sorted? Yeah, it is sorted. We don't need to do anything with that one because that one is attached right after one. So this is already sorted. So the elements that are not sorted are in this category. So just move mid because mid is sorted. So I'll not do anything. If it's a one, I will say two. I don't care. You can just move ahead. That's what I will do. So the second step is also done. Let's talk about the third step. So in the third step, I'm saying what if at the area of mid there is two? So if there is two, where should you put two? Like logically, I know all the twos are over here and in the sorted fashion and all the zeros and ones are over here. So you can say maybe I can put two at the end. Maybe I can take two and put it somewhere in between. But think logical. Just think logical. We have to take two and I, what am I looking for? I'm looking to make sure that this portion is sorted. So can I say something? I know this portion is sorted. What if I take this two and put it right before this, right before this? Then what will happen? This portion will get sorted and this will shrink to this much."
+    },
+    {
+      "chunk_id": "L022_C13",
+      "start": 853.9,
+      "end": 919.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=853s",
+      "text": "put it right before this, right before this? Then what will happen? This portion will get sorted and this will shrink to this much. So I will be able to sort one more element. I'll be able to sort one more element. Can I say this? I can. This is what I'll do. No matter if there is a zero, if there's a zero, there's a one, there's a two at this index, no matter. I will take this two and I'll say, can you go over here? So what will happen is this two will go over there and whatever is there, even if it's a zero, it will come over here. So now what will happen is if you have swapped it, now you can say this portion is sorted. Now which portion is still unsorted? Can I say from mid to high minus one, like one less than high because high is now sorted. So we shrink the right half this time. We shrink the right half this time. Got it? So, so did you understand this? We are not moving mid. Now in the next step, since you got a zero from here, this zero will be treated according to the first condition. I will show you that in the trial. But as of now, can I say what I did was very simple. I said swap of A of mid and A of high."
+    },
+    {
+      "chunk_id": "L022_C14",
+      "start": 919.86,
+      "end": 995.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=919s",
+      "text": "as of now, can I say what I did was very simple. I said swap of A of mid and A of high. And then I'll say, since high is getting a correct, correct guy of two, so we can just move high one place back and it will be sorted. So these are the three rules and I hope you have understood the entire thought process when all these three rules. So keeping all the three rules in the mind, let's do a dry run so that the algorithm sticks to your brain. Remember one thing, whenever I do a dry run, try to visualize in terms of this particular diagram. Okay. Let's do the dry run. We have a zero. What do we do in terms of zero? We swap A of low and A of mid. So zero and zero are at the same place. They get swapped and low and mid both will move. So let's quickly move both. So low will go here and mid will go here and erase the other things. Okay. What's the next step? It's a one. So area of mid is one. So mid plus plus. You don't do anything. You just move. So mid will reach here. What is the next? It's again one. You don't do anything. You just move mid. So mid will reach here this time. So can you visualize, so can you relate this to the diagram that we did draw?"
+    },
+    {
+      "chunk_id": "L022_C15",
+      "start": 995.9,
+      "end": 1068.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=995s",
+      "text": "mid. So mid will reach here this time. So can you visualize, so can you relate this to the diagram that we did draw? Zero to low minus one, all zeros. Low to mid minus one, all ones. Mid to high, all unsorted. Correct? Let's move and see if the diagram is still being relatable or not. So we have a mid. It's a zero. We know what do we do in terms of zero. We take it here and we take it here. Let's do it. So it's like zero will go here and one will come here. And after that, yes, low will move one place ahead and mid will move one place ahead. Let's quickly erase this because they have moved one place ahead. Now what's the next job? Yes, mid is one. No need to do anything. Just move mid one place ahead. If you have moved, erase this. What is that? Now again, try to relate. Zero to low minus one, all zeros. Low to mid minus one, all ones. Mid to high, unsorted. Still relatable, right? What's the next? We have to, if we have to, we have to put it on the back. That was the thought process. So if there's a two, what will you do? It'll be like, okay, this two will go here. The zero will come here. Let's do this. So this two will become a bad, this two will become zero and two will go here."
+    },
+    {
+      "chunk_id": "L022_C16",
+      "start": 1068.26,
+      "end": 1132.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=1068s",
+      "text": "zero will come here. Let's do this. So this two will become a bad, this two will become zero and two will go here. You just swap both the places. Once you have done this, this portion is sorted. So what will happen to this high? This high will come here. Let's do this. Once I've done this quickly, erase this for, okay. Now we have a zero. Again we fall back to the step one. This zero has to be here and this one has to be here. Let's quickly do this. The zero has to be here and probably erase this and I'll bring the one here. If I've done this, what's the next job? We just move the mid here and we move the low here. Quite simple. I'll erase this as well. Now can I say again, if I have to relate it, zero to low minus one, all zeros. Low to mid minus one, all ones. Mid to high, unsorted. Now again, it is one. So you do not do anything. Just say we will move the pointer ahead. Let's move the pointer ahead. Where are we? We are at a two and this portion is unsorted. So this time this will go here and this will go here because if it's a two, put it at the extreme right. So you put it at the extreme right. So this will go here and we will get a zero here."
+    },
+    {
+      "chunk_id": "L022_C17",
+      "start": 1132.5,
+      "end": 1202.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=1132s",
+      "text": "at the extreme right. So you put it at the extreme right. So this will go here and we will get a zero here. And what will happen to this high? It will just shrink. So let's quickly shrink it. So if you shrink it, it shrinks like this. So we have a mid and high as zero, zero. If it's a zero, what will happen? Yes, it will go here. This will come here. Please do it. Zero. And this will be one. So it quickly raises. It will be like zero. It will be like one. Once you've done this, what will you do? You will move the low and you'll move the mid as well. So the low and mid will move and I can quickly raise the previous occurrences of low and mid. Done. What's the next job? There is a zero. So if it's a zero, it swaps with one. So let's quickly swap it one and done. Once you've done this, you move low and you move the mid and the mid goes here. And if I just quickly, it is the last occurrence of mid and the last occurrence of low. This is how it looks like. And there's a point where you see the mid has gone past high, which means the area that you are trying to sort is the over. That's why your mid passed high. And if that is the case, can I say that the area is sorted?"
+    },
+    {
+      "chunk_id": "L022_C18",
+      "start": 1202.02,
+      "end": 1273.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=1202s",
+      "text": "to sort is the over. That's why your mid passed high. And if that is the case, can I say that the area is sorted? And if you carefully look around from zero to no minus one, everything is zero from low to mid minus one, everything is one and from high plus one to last, everything is two and it is sorted. So we are still following the condition. I hope this diagram helped you to visualize the Dutch national flag algorithm. And it is very important to understand the thought process. Most of the videos will be like three steps, dry run, code and done. No, this is indeed important. So it is very important to understand if there is a zero, why it is moving here and why the one is moving here. If there's a one, we are not doing anything. If there's a two, why is it moving back? All the three steps are very, very important to understand so that you can explain it to the interviewer. Also, your problem solving skills will grow if you understand these problems in very depth. So let's quickly jump into the code editor and try to code it up again. The problem link will be in the description. So we have two or rather three pointers. So let's mark all the three pointers. We know this is the starting points. And I'll keep on going till this is till we have an unsorted section."
+    },
+    {
+      "chunk_id": "L022_C19",
+      "start": 1273.88,
+      "end": 1345.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=1273s",
+      "text": "the three pointers. We know this is the starting points. And I'll keep on going till this is till we have an unsorted section. And we know we are working on array of mid. If that is zero, it can be one case. If array of mid is one or else it will be always two because the array only consists of zero one. If it is zero, what are we doing? We are seeing array of low. Can you please swap with array of mid? And once you've done this, can you move yourself and mid ahead? In this case, I'm saying just move mid ahead. In this case, I'm saying swap array of rather mid and array of high. Once you've done this, since this two is at the back, high will shrink. Once this is done, I can say that the array which is passed by reference is indeed sorted now. So we can see this and now we can quickly go and run. Again it's a void function, you don't have to return anything. You have to just work it on the particular given array. So we see that this is submitting. So let's go back to the iPad and discuss the time complexity. Now we know one thing, we have to go from the mid and till the high and make sure the unsorted section is sorted. And initially the mid was here if you remember and the high was here."
+    },
+    {
+      "chunk_id": "L022_C20",
+      "start": 1345.12,
+      "end": 1415.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=1345s",
+      "text": "the high and make sure the unsorted section is sorted. And initially the mid was here if you remember and the high was here. So there's an entire length of n that you have to sort. That is something which we know and we know at every step we perform either this, either this or either this. So if we perform this, the mid increases by one. So it's like on one iteration that you're doing. So you are shrinking the mid onto the right. So that's like plus one iteration. If you do this, if you do this, it is still shrinking the mid, which is like plus one iteration. But if you're doing this step, the mids is staying where it is. Then the high is shrinking and the high is shrinking by this section. How does it matter? Because at the end of the day, if you're moving the mid by onto the right, one of the elements will be sorted. And if you're moving the high to the left, again, one of the elements will be sorted. So in each of the three steps, in each of the three steps, you are actually sorting one element. So the end of the day, overall, if at every step you are sorting one element and all the elements and all the elements were unsorted, can I say at the end of the day, we'll end up sorting n elements by taking n, n cases like n those cases."
+    },
+    {
+      "chunk_id": "L022_C21",
+      "start": 1415.54,
+      "end": 1480.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=1415s",
+      "text": "unsorted, can I say at the end of the day, we'll end up sorting n elements by taking n, n cases like n those cases. That's why the time complexity is B go of n, a single iteration. And the space complexity is B go of 1. Just in case you did not understand the time complexity, what I usually did in my initial years was taken, take this particular array. And whenever I'm moving, whenever I'm doing an iteration, I count plus one, I count plus one, I count plus one. And then I can visualize how many iterations were done by using this particular example. And then I can relate why does B go of n. Please do dry runs. Please count one iteration. And please count one iteration that will help you to analyze the time complexity in a much, much better way. So coming back to the sheet, I can mark this as done. And I hope you have understood the thought process and the intuition behind the Dutch national flag algorithm. I know the algorithm is easy, but you have to understand the thought process, right? So if you've understood everything to continue our tradition, please do comment understood so that I understand that my effort was worth it because I really did put a lot of time onto this video. And if you're new to our channel, please, please do consider subscribing."
+    },
+    {
+      "chunk_id": "L022_C22",
+      "start": 1480.74,
+      "end": 1497.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=tp8JIuCXBaU&t=1480s",
+      "text": "I really did put a lot of time onto this video. And if you're new to our channel, please, please do consider subscribing. It's two eight a.m. in the night and I have an office tomorrow. So please do consider subscribing because that does motivate me to make such kind of videos late in the night. And if you haven't followed me on Instagram, LinkedIn and Twitter, the links will be in the description. With this, let's wrap up this video and make some other videos. Till then, goodbye, take care."
+    }
+  ]
+}

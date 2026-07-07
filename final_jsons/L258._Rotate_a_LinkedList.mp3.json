@@ -1,0 +1,78 @@
+{
+  "lecture_id": "L258",
+  "lecture_number": 258,
+  "lecture_title": "L22. Rotate a LinkedList",
+  "youtube_url": "https://www.youtube.com/watch?v=uT7YI7XbTY8",
+  "chunks": [
+    {
+      "chunk_id": "L258_C1",
+      "start": 0.0,
+      "end": 78.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=uT7YI7XbTY8&t=0s",
+      "text": "So let's continue with our playlist, but before that, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is rotating a given linked list. So you'll be given a linked list and you'll be given the value k. Your task is to rotate the linked list by k times. So over here k is 2. I'll have to rotate it two times. So if I rotate it one time, this is how the linked list will look like. So what happens is from the back, one element comes out, comes to the front and this gets shifted rightwards by one place each. So this is how it will look like after one rotation. So on this, if I do one more rotation, the last element will come at the front and the front elements will get shifted by one place ahead. So can I say after two rotations, this is how the updated linked list will look like. So your task is to return the updated head after doing k rotations. So you might have a question, hey, what is the range of k? So the range of k can be anything like in this particular example, the length is 5. k can be 1, k can be 5, k can be 10, k can be 100, k can be 1000 as well. k can be anything."
+    },
+    {
+      "chunk_id": "L258_C2",
+      "start": 78.8,
+      "end": 155.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=uT7YI7XbTY8&t=78s",
+      "text": "be 1, k can be 5, k can be 10, k can be 100, k can be 1000 as well. k can be anything. But as of now, we will try solving this problem for smaller values of k. Once we have done that, we will see how can we solve it for larger values. So k is given as 2. Let's observe what is happening. The last two nodes are at the front, but this is linked list. We don't care about that. If we can see the link changes, I think our job will be done. So this is the tail node. Its next is pointing to null. After two rotation, after two rotations, the tail node, its next is pointing to the initial head. This is the initial head. So the first job is to recognize the tail node. We can easily do it by doing a simple traversal. We start from here and we reach here. So we can easily recognize the tail node. Once you have done that, its next is pointing to null. Instead of it, instead of it, I'll make sure this is pointing to the head. This is pointing to the head. So we can do that. Let's try to do it. Instead of this, I'll make sure that this is pointing to the head. Done. What after this? Let's visualize. We have a three, it's pointing to null. We have a three here, which is pointing to four. Correct?"
+    },
+    {
+      "chunk_id": "L258_C3",
+      "start": 155.28,
+      "end": 223.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=uT7YI7XbTY8&t=155s",
+      "text": "What after this? Let's visualize. We have a three, it's pointing to null. We have a three here, which is pointing to four. Correct? So I'll have to change this link. K is given as two. So if you see the last two nodes are eliminated, if you eliminate the last two nodes from your vision, this is the node, right? Right before the last two nodes. So can I say if the total length is five, if I eliminate two, I need the third node. I need the third node. First second third, I need the third node. So I'll have to get into that third node. Again by traversal, I can reach the third node. Imagine you are standing at this node, which is the third node. What is your job? Your job is to make sure this is pointing to null. This is pointing to null. But wait, wait. Need to return the updated head. Need to return the updated head. So what you can do is once you're standing over here, you can straight away say, hey, this will be my updated head. You can change the head from here and you can take it there. Once you have done that, once you have done that, you can remove it. Yes, you can remove it and you can make sure temporary next is pointing to null. Temporary next is pointing to null. Done. What will happen? So your head is here."
+    },
+    {
+      "chunk_id": "L258_C4",
+      "start": 223.94,
+      "end": 292.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=uT7YI7XbTY8&t=223s",
+      "text": "can make sure temporary next is pointing to null. Temporary next is pointing to null. Done. What will happen? So your head is here. Is it like four, five, then goes to one, then goes to two, then goes to three, which is exactly this particular linked list. Done and dusted. You might be thinking, hey, what if the value of K is large? What if the value of K is more than the length or its equivalent to length? So let's go back a couple of steps. So we know how to solve this particular problem for smaller values of K. Now we need to think about larger values of K. What if the value of K is given as five, which is basically the length of the linked list? What will happen? Can I say if the length is given as five and if I try rotating, if I try rotating, I'll come back to the original configuration. You can try rotating it for five times. You will see that you come back to the original configuration. So we see that if K is equivalent to the length, we don't need to do anything. We return the head. What if K is 10? It's basically you rotate once for five, you'll come back to the original. Again you rotate for five times, you'll again come back to the original. So you eventually come back to the original, even if you rotate it for 10 times."
+    },
+    {
+      "chunk_id": "L258_C5",
+      "start": 292.44,
+      "end": 364.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=uT7YI7XbTY8&t=292s",
+      "text": "times, you'll again come back to the original. So you eventually come back to the original, even if you rotate it for 10 times. If you rotate it for 15, rotate for five, another five, another five, each, like every time you come back to the original configuration. If it is a multiple, if it is a multiple of the length, if it is a multiple of the length, very important, if it is a multiple of the length, it comes back to the original configuration. So you don't need to do anything. Just return the given head. So that's something that you have to do. If your K is modulated with lengths, you don't need to do anything. You straight away return the head. That's an edge case that you have to handle. What if K is given as 13? Can I say I can write it as 5 plus 5 plus 3, which technically means coming back to its original, coming back to its original, and you just need to do three rotations. You don't need to do 13 rotations. You just need to do three rotation. A three is a smaller number for which we have solved. We've solved this particular problem for smaller numbers. None industry. Got it? So you have solved this problem for smaller values of K and for larger values of K as well. So what is the next thing that we need to do?"
+    },
+    {
+      "chunk_id": "L258_C6",
+      "start": 364.32,
+      "end": 437.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=uT7YI7XbTY8&t=364s",
+      "text": "for smaller values of K and for larger values of K as well. So what is the next thing that we need to do? We need to make sure that the algorithm works. What do we need? What do we need? We need the length so that we can determine this and also we can reduce the value of K in case it's a larger value. Also we need the tail because we need to do the changes in the length. So let's take a tail to be at the head initially. Let's take the length to be one. Let's try moving. Tail will go here and length will be updated to length two. Let's move. Tail and length will go to the next. Length will be updated to three. Tail will go to the next and length will be updated to four. Tail will go to the next and length will be updated to five. Understood? So tail is standing at the tail and the first traversal is completed. So you have the length. Depending on the length, you can perform your edge case. If K is given as, let's say 14, K is given as 14, doesn't matter. What you need to do is 14 modulo five, you'll get it. So this is your length. Perfect. You have the tail. What is the next thing that you'll do? The next thing that you'll do is you'll make sure that the tails next is pointing to the head."
+    },
+    {
+      "chunk_id": "L258_C7",
+      "start": 437.84,
+      "end": 508.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=uT7YI7XbTY8&t=437s",
+      "text": "next thing that you'll do? The next thing that you'll do is you'll make sure that the tails next is pointing to the head. Very simple. Tails next to head. So one step is done that is taking the tail and making sure it's next is pointing to the initial head because after rotation, that is how it will look like. What is the next job? The new last node or rather the new tail node, it should be pointing to null. So let's first locate the new tail node. That's very simple. You have to leave out the last two elements. So if the length is five minus K, so you have to find the third element. You'll have to find the third element. You can easily do by traversal. Like you can keep a temporary here and you can keep a counter equal to one. Let's try moving. Temporary will move here. Counter will increase. Let's again try moving. Temporary will move here. Counter will increase. And this is where you reach. And once you have reached here, you know that temporary like is standing at that new last node. Once this is done, you can update your head to this one. And that's very simple. Temporaries next will be a new head. Once this is done, make sure temporary is next is pointing to null. None and dusted. Quite simple. So I'll be writing down the pseudo code."
+    },
+    {
+      "chunk_id": "L258_C8",
+      "start": 508.48,
+      "end": 581.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=uT7YI7XbTY8&t=508s",
+      "text": "is done, make sure temporary is next is pointing to null. None and dusted. Quite simple. So I'll be writing down the pseudo code. It won't be language specific in case you want the C++, Java, Python or JavaScript codes. The link will be in the description. What do we need initially? We need the length. Let's assign the length to be one and we detail. So let's assign the deal to be head. Correct? Let's try to Travis while deals next is not null because I need to make sure I reach that deal, not beyond it. So till it's not null, I can do a length plus plus. And at the same time I can say deal equal to deals next. Perfect. After this, what will happen is I'll have the length. I'll also have the deal. In case, in case K is directly divisible by length, we don't do anything. We will return the head. If it is not the case, then we do the link changes. How will we do the link changes? But before that, please make sure that K is modulated by length in case K is a larger value. What is the first thing that we will do? We'll make sure that the deals next is pointing to head. Done. So I can say that the first step of the operation is done. The first step is done."
+    },
+    {
+      "chunk_id": "L258_C9",
+      "start": 581.76,
+      "end": 656.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=uT7YI7XbTY8&t=581s",
+      "text": "is pointing to head. Done. So I can say that the first step of the operation is done. The first step is done. Now, what is your next step to locate the new last node, which will basically be your new deal. Can I probably write a function that finds me the nth node? I'll pass on the head. I need to find a length minus K five minus two. The third node, the third node, write a function like a generic function that will find me it. Once I've done this, what is the job? My head will be updated. If you remember, the head will be updated because four will be my new head. Please update your head. The head will be new last node next. Perfect. What after this? This new last node is a this is a new last node, right? It has to point to null. That is why it's the last node, right? Done. Once this is done, you can return the head of the linked list. Perfect. Quite simple. So, this is the entire pseudo code. It's time to go back into the code editor and you can see that I've written down the edge case. What if the linked list is empty or if there are zero rotations in that case, return the given head itself and I've written down the generic nth node function where you take the"
+    },
+    {
+      "chunk_id": "L258_C10",
+      "start": 656.92,
+      "end": 720.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=uT7YI7XbTY8&t=656s",
+      "text": "zero rotations in that case, return the given head itself and I've written down the generic nth node function where you take the count equal to one and if it's equivalent to your K, return that node. Otherwise you move ahead, increase the count and you move ahead. Quite simple. And this stays the same. What I'll do is I'll hit the submit button and this will be accepted. Let's analyze the time complexity. I can say this is definitely a big open for sure. Am I using anything else? Probably here. What if at the worst case, K is one and that case find the nth node, you'll have to traverse the entire linked list near bone. So I can say big open over here and this nth node at the worst case might take big open. So the overall complexity is big off to end an extra space. No. So that's big off one. So the time complexity is big off to end and the space complexity is big off one. So if you're still watching, I'm very sure that you understood everything. And if that is the case, please, please do consider giving us a like. And if you're new to our channel, what are you waiting for? Hit that subscribe button with this. I'll be wrapping up this video experience. I want the video to remember. I take care."
+    }
+  ]
+}

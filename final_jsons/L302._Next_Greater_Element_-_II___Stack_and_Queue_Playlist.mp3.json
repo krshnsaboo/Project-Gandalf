@@ -1,0 +1,99 @@
+{
+  "lecture_id": "L302",
+  "lecture_number": 302,
+  "lecture_title": "L6. Next Greater Element - II | Stack and Queue Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ",
+  "chunks": [
+    {
+      "chunk_id": "L302_C1",
+      "start": 0.0,
+      "end": 74.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ&t=0s",
+      "text": "So, let's continue with the Stack and Queue playlist. Before starting off, Avery, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is next greater element, but the second part of it. So, before starting off this one, please, please make sure that you would have solved the first part for sure. You know the intuition, you know monotonic stack and everything. So, what is the problem stating? Saying that you are given an array of integers, I will have to find me the next greater element, but there is a twist. So, what is the next greater element? For every element, you look towards the right and whichever is the first element that is greater. So, over here 10 is greater. So, you say that for 2, 10 is the greatest. Okay, fine. For 10, you look on the right and you see that 12 is the greatest. That is fine. For 12, you look on the right and do you find the greatest? No. Now, this is the twist over, like the twist over here is you just do not look on to the right."
+    },
+    {
+      "chunk_id": "L302_C2",
+      "start": 74.84,
+      "end": 148.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ&t=74s",
+      "text": "this is the twist over, like the twist over here is you just do not look on to the right. If you do not find something on the right, you look in the circular direction as well, which is 2 and 10. Did you find something over here? No, I did not find it. Thereby, the answer will be minus 1. For 1, you look on to the right and you figured out 11. So, there is no need to look on the circular direction. Perfect. So, that will be 11. For 11, you looked on to the right and there was no 1. So, what you will do is you will again look on to the circular direction. Is 2? No. Is 10? Yes. Thereby, 12 will be my next greater element for 11. So, the only change is you will have to think it as a circular array whenever you are trying to figure out the next greater element for every element. So, what is the first solution that comes to my mind? The first solution is for sure, what I will do is I will stand at each and every element and then look on to the right. The problem is if there is nothing on the right, I will have to look over here as well. So, what is the best way to do it?"
+    },
+    {
+      "chunk_id": "L302_C3",
+      "start": 148.84,
+      "end": 227.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ&t=148s",
+      "text": "nothing on the right, I will have to look over here as well. So, what is the best way to do it? One of the ways is I could iterate i equal to 0 till n minus 1 and for every i, first I will look from j equal to i plus 1 till n minus 1 which means I am standing at 10, I will look from here to here which is this particular loop and if it is not found there, I will again run loop from j equal to 0 till i minus 1 which is nothing but this one. That's one of the ways like that is the extreme naive solution that you can think of. But can I do better? Maybe I can use the concept of circular array over here. So, how do I use the concept of circular array? It is very simple. So what we do is we double the array, not by doubling it in a real coding stuff, we just think it virtually. So what I do is I double the array in my mind which is I again write 2, 10, 12, 1, 11. I have doubled the array, I have doubled the array virtually again. Now imagine if I stand at 10, if I stand at 10, I will ask you what will be the entire"
+    },
+    {
+      "chunk_id": "L302_C4",
+      "start": 227.28,
+      "end": 305.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ&t=227s",
+      "text": "again. Now imagine if I stand at 10, if I stand at 10, I will ask you what will be the entire circular array? Can I say, can I say if I take n elements from here, if I take n elements from here, that will be my entire circular array? n elements, why? Very simple. A given array has n elements, over here n is given as 5. So I'm standing at 10, if I can take the 5 elements, if I can take the 5 elements which is this one, this will be my circular array for sure, for sure. Right? Okay. Do I need to double the array? That is the question. I don't need to. I don't need to. What I will do is I'll try to think hypothetically. Okay. Let's see how n is 5. If n is 5, this index is 0, this is 2, this is 1, this is 2, this is 3, this is 4, this is 5, hypothetically fifth index, hypothetically 6, hypothetically 7, hypothetically 8, hypothetically 9. So whenever, whenever the value of i comes out to be 5, whenever the value of i comes out to be 5, right, whenever you're traversing, I don't have a fifth index. So what you will do is you will say 5 modulo n, which is 5, that will be 0 because the"
+    },
+    {
+      "chunk_id": "L302_C5",
+      "start": 305.72,
+      "end": 383.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ&t=305s",
+      "text": "fifth index. So what you will do is you will say 5 modulo n, which is 5, that will be 0 because the value of n is 5 and 0 is nothing but this index. And if you look at 6, 6 modulo 5 is 1, which is this. If you look at this 7 modulo 5, where 5 is n, is 2, which is this. So if you can just play with the indexes, you don't need to double the array in a data structure. You can just do it hypothetically. Okay, fine. You understood this, right? So what I'll try to do is I'll try to do it in the code that will get into your brain in a much better way. Okay, so what I'll try to do is I'll try to go for each and every element. So first, I'll take an nge, which is of size n. After that, I'll try to traverse from i equal to 0 till n minus 1 because I need for each and every element. So I need to traverse each and every element. So in a circular array, so it will start from i plus 1. And I can say that it will go till i plus what? That is my question. Let's see. I'm standing at 1, I'll go till 5, which is typically 1 plus n minus 1, where n is 5, i plus n minus 1. Yes, it is."
+    },
+    {
+      "chunk_id": "L302_C6",
+      "start": 383.4,
+      "end": 461.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ&t=383s",
+      "text": "I'll go till 5, which is typically 1 plus n minus 1, where n is 5, i plus n minus 1. Yes, it is. So I'll go till i plus n minus 1. Why minus 1? Because you're traversing from here. So basically, you've got one element. Okay, done. So I see, okay, what is my original, like what is my index? Can I say the index hypothetically is j modulo n? That is my hypothetical index. Because whenever I'm at 1, that's fine. Whenever I'm at 2, that's fine. 2 modulo 5 is okay. 3 modulo 5 is okay. 4 modulo 5 is okay. But whenever I'm at 5, I need a 5 modulo 5 to get the value, to get the value. Okay. So can I say, can I say if array of index is greater than array of i, I have got my nge for this i, which is array of index. And at the same time, I can do a break. I can do a break. Perfect. So I've done a circular array. Very clean, very, very clean. Right? What will be the time complexity? Definitely a big of n over here and definitely another big of n over here. So I can say that the overall complexity is a big O of n square and the space complexity"
+    },
+    {
+      "chunk_id": "L302_C7",
+      "start": 461.08,
+      "end": 535.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ&t=461s",
+      "text": "n over here. So I can say that the overall complexity is a big O of n square and the space complexity is big of n just in order to store the answer. Nothing else. So I was able to solve this using big of n square. Obviously the interviewer will not be happy because we are taking big of n square and he'll ask you to optimize it. So we need to optimize n square and we've already done the optimization in the next greater element. Now this is next great element part two. So I know for sure I could go somewhere near about big O of 2n by using the monotonic stack concept. So I need the monotonic stack concept. By using the monotonic stack in the next greater element, we were starting from the last element and for the 11 as looking in the right, but this is a circular array. So I need these elements in the stack. I need these elements in the stack, but then not. So what I'll do is hypothetically double the array. So if I hypothetically double the array, it will be 2, 10, 12, 1, 11. I have to write down the indexes. You know, this will be zero, the next first index, second index, third index, fourth index, fifth, sixth, seventh, eighth, ninth index. That is what it will be."
+    },
+    {
+      "chunk_id": "L302_C8",
+      "start": 535.88,
+      "end": 610.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ&t=535s",
+      "text": "zero, the next first index, second index, third index, fourth index, fifth, sixth, seventh, eighth, ninth index. That is what it will be. Maybe I can simply draw another square box so that it doesn't get mixed. Perfect. So what is the last index? The last index is nothing but two into n minus one at the next, where n is five basic maths. Fine. Now can I see whenever I'm at 11, I'll have these elements, travels only if when I started the last element. Fine. So what I'll do is I'll take the stack. I'll be storing everything in the decreasing order as we did in the next greater element. So this is my stack. So let's start from the last element. What do we have? We have 11. Do we have anything in the stack? No. So maybe I can just put it into the stack and the next greater element for this one. Do I need? No. I need for this one. I need for this one. I need for this one, this one, and this one. I need the next greater elements of these elements. Nothing else. Fine. I'll move to one. What is the top of the stack? 11. That's greater than one. That's greater than one. Perfect. I'll put one over there. I go to 12. The top of the stack is smaller than 12. The top of the stack is smaller than 12."
+    },
+    {
+      "chunk_id": "L302_C9",
+      "start": 610.76,
+      "end": 679.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ&t=610s",
+      "text": "over there. I go to 12. The top of the stack is smaller than 12. The top of the stack is smaller than 12. I just take both of them off and I put off 12 into it. Perfect. After that I go to 10. It is okay. Yeah. After that I go to 2. Still okay. Perfect. After that, when I go to 11, I have a 2 in the top of the stack, which is smaller. I have a 10, which is smaller. So what I will do is I'll take them off. For this element, I need the NGE. How do you know it? Because this index, which is lesser than 5, the index is lesser than the N. If I need the next greater element of this one. Fine. So what will be it? That will be 12. I can take up 11 and I can put it over there. And after that I go to 1. Okay. 11 is okay. That can be my next greater element. So I'll take it and I'll put it 1 into the stack. After that I go to 12. I've got 12. This cannot be, this cannot be, this cannot be. So I take all of them off. Yes, I take all of them off. One goes, 11 goes, 12 goes in three steps. Thereby the answer will be minus 1 because the stack is empty."
+    },
+    {
+      "chunk_id": "L302_C10",
+      "start": 679.36,
+      "end": 756.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ&t=679s",
+      "text": "them off. One goes, 11 goes, 12 goes in three steps. Thereby the answer will be minus 1 because the stack is empty. Right after that, I go to 10 and whenever I go to 10, oh by the way, before going to 10, please make sure you put 12. After that I go to 10. And when I go to 10, the stack has 12. So 12 will be my answer. Put 10 and then go back to 2. Whenever I go to 2, the stack has 10. That can be my answer. Put 2 and the traversal is completed. So yeah, that will be it. Super simple hypothetical stuff. Okay. So what will I do? I'll do a very simple thing. I'll write the code. Yeah. So I need to return a list. So a vector list, whatever, whichever language you're using. I'll say find NGE again. And I'll be given an array. How do we do it? We need a NGE array which stores all the next reader elements. We need a stack for sure. So we can define it as stack ST. We traverse from the last index in the circular array, hypothetical. That's 2N minus 1 and we go on till 0. Perfect. Okay. What is the next thing? I look in the stack and I try to maintain its monotonic nature. Okay."
+    },
+    {
+      "chunk_id": "L302_C11",
+      "start": 756.36,
+      "end": 832.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ&t=756s",
+      "text": "0. Perfect. Okay. What is the next thing? I look in the stack and I try to maintain its monotonic nature. Okay. So I say while stack is non-empty, while the stack is non-empty and, and whatever is at the top of the stack, whatever is at the top of the stack, that should be less than equal to array of whatever index modulo N because that will give you the value because I is a hypothetical index. You haven't doubled the array. Okay. And this is the case I do a stack.pop and we are done and dusted. The small elements go and the monotonic stack order is preserved. What after this? Okay. You're done with this. We need the NGE for sure. I know one thing. If I is lesser than N, then only I'm looking for a NGE. Correct? So if the stack is empty, if the stack is empty, if it is, we say NGE equal to, or maybe we could write it in a better way. We could say NGE of I because if I is lesser than N, that's fine. If the stack is empty, that will be minus one or else it will be whatever value is at the top. Done and dusted."
+    },
+    {
+      "chunk_id": "L302_C12",
+      "start": 832.1,
+      "end": 911.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ&t=832s",
+      "text": "is empty, that will be minus one or else it will be whatever value is at the top. Done and dusted. And right at the end, we say stack.push what array of I, please make sure modulo N because you are dealing with hypothetical indexes. We didn't do a modulo N over here because it is lesser than N. While loop is complete, sorry, the for loop is completed. At the end of the day, I could end up returning NGE and that is done. Function is completed. What about the time complexity? Again, this at max can be two N elements and at max you could end up removing two N elements from the stack. You remove those elements that you push. At max you push two N elements. So at max you could remove two N elements. So the time complexity is BGO of four N. Please mention that explicitly to the interviewer. It will be super impressive. What about the space complexity? We are ending up taking BGO of two N in the stack. In the stack, by the worst case it might be, it will not be, but it might be. I'm just saying. And another BGO of N in order to store this one. Again, this cannot be ignored. Please don't modify the array in order to return the answer. Please don't do it. So yeah, that will be it for this one. I hope you understood the concept of circular array."
+    },
+    {
+      "chunk_id": "L302_C13",
+      "start": 911.98,
+      "end": 932.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=7PrncD7v9YQ&t=911s",
+      "text": "the answer. Please don't do it. So yeah, that will be it for this one. I hope you understood the concept of circular array. You do not double it. Rather, you hypothetically use indexes in order to have the circular array in your mind. So that will wait for this one. So if you're still now watching, if you understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. But this I'll be wrapping up this video. Let's meet in some other video. Till then, bye team. And I'll see you in the next video. Bye."
+    }
+  ]
+}

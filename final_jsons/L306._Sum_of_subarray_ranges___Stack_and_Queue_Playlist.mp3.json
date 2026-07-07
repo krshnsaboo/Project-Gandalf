@@ -1,0 +1,71 @@
+{
+  "lecture_id": "L306",
+  "lecture_number": 306,
+  "lecture_title": "L10. Sum of subarray ranges | Stack and Queue Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=gIrMptNPf5M",
+  "chunks": [
+    {
+      "chunk_id": "L306_C1",
+      "start": 0.0,
+      "end": 78.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=gIrMptNPf5M&t=0s",
+      "text": "So, we will be continuing with our stack and cube playlist. It was starting off. Avery, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is sum of sub-array ranges. Let's understand the problem statement. You're given an array of numbers. You'll have to generate all the sub-arrays. Once you have done that, you'll have to return the sum of sub-array ranges. What is a sub-array? It is a contiguous part of an array. What is a sub-array range? It is the difference between the largest and the smallest element in a particular sub-array. Let's understand. So, I have to write down all the sub-arrays. Can I start with the first one, which is 1? That's a sub-array. Can I write the next one, which is 1, 4? Yes. Can I write the next one, which is 1, 4, 3? Can I write the next one, which is 1, 4, 3, 2? I can. What about the other sub-arrays? Can I say the other one is 4, 4, 3, 4, 3, 2? Can I say the other one is 3, 3, 2? Can I say that the other one is 2? I can. If I have to write down the sub-array range for every sub-array, can I say for this, the greatest element, like the largest is 1 and the smallest is 1?"
+    },
+    {
+      "chunk_id": "L306_C2",
+      "start": 78.18,
+      "end": 148.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=gIrMptNPf5M&t=78s",
+      "text": "sub-array range for every sub-array, can I say for this, the greatest element, like the largest is 1 and the smallest is 1? So, 1 minus 1 will be 0. For this, it will be 4 as the largest. 1 is the smallest, 3. For this, 4 is the largest. 1 is the smallest, 3. For this, 4 is the largest. 1 is the smallest. Thereby, again 3. For this, 0. For this, 1. For this, 2. For this, 0. For this, 1. And for this, 0. If I sum it up, the value will be 9, 10, 12 and 13. So the summation boils down to be 13. And this is what you have to return, the sum of sub-array ranges. So how do I solve this particular problem? I think I have written down the brute force. You will have to generate all the sub-arrays and you know how to do it. You basically keep a loop at i, then you take a j. So the first sub-array is this, then you move j. The second is this, then you move j. There is a third, then you move j. This is the fourth. So in this way, you can generate all the sub-arrays starting at the first element. After that, you move i. Again, you can keep a j, then you can move j, then you can move j. Again, you end up generating all of them."
+    },
+    {
+      "chunk_id": "L306_C3",
+      "start": 148.24,
+      "end": 225.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=gIrMptNPf5M&t=148s",
+      "text": "Again, you can keep a j, then you can move j, then you can move j. Again, you end up generating all of them. And while traversing in that sub-array, you keep a track of the largest and the smallest. So it's a mixture of sub-array generation and finding the largest and the smallest element. So if I have to write down the brute force, I'll start with sum equal to 0. And then I'll start traversing from 0 till n minus 1. So we start generating the sub-array from every element. And what I can do is I can keep the largest element to be array of i initially. And I can keep the smallest element to be array of i. Now if you carefully observe, the element itself is not contributing to the answer. The element itself is not contributing to the answer. Like this sub-array is of no use. This sub-array is of no use. So what I could do is I could just start off from j equal to i plus 1. And I could head over till n minus 1. And over here, I could update the largest to be max of the previous largest, which is largest, and the current element, which is array of i. Similarly, I can update the smallest to be smallest minimum of smallest comma array of"
+    },
+    {
+      "chunk_id": "L306_C4",
+      "start": 225.02,
+      "end": 301.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=gIrMptNPf5M&t=225s",
+      "text": "current element, which is array of i. Similarly, I can update the smallest to be smallest minimum of smallest comma array of i, sorry, array of j, my bad, array of j. Yes. Once that is done, because this is a sub-array like i to j is a sub-array. So what I could do is I could say sum equal to sum plus, you definitely can do a largest minus smallest. And then you could end up the first for loop and then the next for loop. Once that is done, you can return the sum. But what about the time complexity? Can I say that the time complexity for this one will be big O of n squared and the space complexity will be big O of 1. Now this is where the interviewer will not be happy because we are using two nested, right? We are using nested loop and he'll ask you to optimize it. So we have to optimize n squared. This is a clear indication that we are looking somewhere around big O of n or near about that. Okay. So how do I solve this particular problem? In order to solve this particular problem, you should have solved the problem, which is sum of sub-array minimum. Now this is a problem which I have already done in this particular playlist. Please go back and watch it."
+    },
+    {
+      "chunk_id": "L306_C5",
+      "start": 301.68,
+      "end": 380.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=gIrMptNPf5M&t=301s",
+      "text": "of sub-array minimum. Now this is a problem which I have already done in this particular playlist. Please go back and watch it. Now that particular problem was from every sub-array, from every sub-array, you pick up the minimum. You don't do a largest minus smallest. You just pick up the smallest and you add all of these smallest. Got it? If you can solve sum of sub-array minimums, you can also solve sum of sub-array maximums. Can you also solve the sub-array maximum? I'll not do this for you. I think you can do this. I think you can do this. So I've already done this, the minimum one. So you can also do the sub-array maximum one. Okay. So I know both of these problems. I can solve both of the individual summations. I can do that. I think we have solved the problem. You know it, right? Yes. So can I say, can I say this, that what I'm writing over here is like, maybe I'll just erase it. I'll erase this as well. Since you know how to solve sum of sub-array maximum, sum of sub-array minimum, this problem becomes a cakewalk. Let's understand how. Now this is nothing but one minus one, which is largest minus smallest. Now this becomes four minus one. Now this becomes four minus one."
+    },
+    {
+      "chunk_id": "L306_C6",
+      "start": 380.36,
+      "end": 455.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=gIrMptNPf5M&t=380s",
+      "text": "nothing but one minus one, which is largest minus smallest. Now this becomes four minus one. Now this becomes four minus one. This becomes four minus one. This becomes four minus four, four minus three, four minus two, three minus three, three minus two and a two minus two. So eventually when you sum it up, you end up writing one minus one plus four minus one plus four minus one plus so on till two minus two, which is nothing but summation of the largest. Can I say this? Can I say this? This is nothing but summation of all largest, like all the sub-arrays largest minus summation of all sub-arrays smallest. And if I can do that, I think I've solved the problem. This is nothing but the problem sum of sub-array maximums, which you can solve because you've already done an addition of sum of sub-arrays minimals. So whatever answer you get from this one and from this one, you basically subtract and this is what you will be returning. Simple."
+    },
+    {
+      "chunk_id": "L306_C7",
+      "start": 455.74,
+      "end": 530.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=gIrMptNPf5M&t=455s",
+      "text": "one and from this one, you basically subtract and this is what you will be returning. Simple. The problem, like if you solve this addition, you can figure out the maximums and then you could just subtract both of their summations and you should be done. So if I have to write down the code, I'm assuming you have done sum of sub-array maximum and minimum. So we'll be doing this one. Let's try to do this one. So we have a function and you will be given an array. So all you need to do is you need to write those functions. Assume you write a sum max. So you pass on the array to it. Again, you'll find the complete code. I repeat, you'll find the complete code given below in case you're still having problem, refer to the complete code given below. And after this, you could write the sum of minimum. You would have solved that as well. Add an array and then you return this. And if you remember the individual complexities, this was taking how much. Let's go back and check it out. So I've already solved this problem. I think, yes, over here. That's taking a big O of 5n time complexity, somewhere around that and a big O of 5n space"
+    },
+    {
+      "chunk_id": "L306_C8",
+      "start": 530.46,
+      "end": 596.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=gIrMptNPf5M&t=530s",
+      "text": "over here. That's taking a big O of 5n time complexity, somewhere around that and a big O of 5n space complexity, which is as good as big O of n, I can say, like near about that. So I can again come back to this one. Where is it? Here. So this is going to take big O of, I'm writing an estimate, which is near about big O of n and the space complexity. I know it's 5n. I'm trying to, you know, write the nearest one because 5n is much, much better than n square. And this is also going to take the similar amount. So even if I add it up, it's going to be somewhere like somewhere near about big O of 10n, which is as good as big O of n because this will take 5n as well. This will take 5n as well. Like if you just add it up, it will be 10n, which is okay, like much, much better than big O of n square. You need to understand this. And the space complexity will also be somewhere around big O of 10n. Again, if you write super clean code, if you don't, you know, reuse stuffs, it will be 10n and then there'll be big O of n near about. This is what we have optimized n square. It's important to understand concepts because sometimes in interviews, people might tweak the question. Like this was a very simple question."
+    },
+    {
+      "chunk_id": "L306_C9",
+      "start": 596.98,
+      "end": 624.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=gIrMptNPf5M&t=596s",
+      "text": "optimized n square. It's important to understand concepts because sometimes in interviews, people might tweak the question. Like this was a very simple question. It was just tweaked, like just found it tough. If you just think it combining both of them, you'll be like, how do I figure this out? How? There's no other way instead of generating all the subarrays. It's very important to keep all the concepts intact. I hope you understood everything. So if you're still now watching and if you've understood everything, please, please do consider giving us a like. If you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's spin some of the video till then bye."
+    }
+  ]
+}

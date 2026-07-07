@@ -1,0 +1,211 @@
+{
+  "lecture_id": "L216",
+  "lecture_number": 216,
+  "lecture_title": "DP 36. Buy and Sell Stock - II | Recursion to Space Optimisation",
+  "youtube_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs",
+  "chunks": [
+    {
+      "chunk_id": "L216_C1",
+      "start": 0.0,
+      "end": 78.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=0s",
+      "text": "Hey everyone, welcome back to AK Forward. So we will be continuing with DP on stocks and it is the second problem. Best time to buy and sell stock part 2. So what does the problem state? You have been given prices of stocks on each day. Yeah, so you have been given the prices on each day. Now you're allowed to buy and sell stocks as the name suggests. You're allowed to buy and sell stocks. Now in this part 1, what we did was you were allowed to buy once, sell once. But over here, you can buy as many times as you want and you can sell as many times as you want. Okay, so what you can do is you are going into the market. You say I'm going to buy it on this day. So I'll say okay, I'll buy it on this day and I'll sell it on this day. So over here, I'll make a profit of 4. I buy it with rupees 1, I sell it with 5. I make a profit of 4. Then I say, hey listen, I'm going to again buy it over here and I'm going to again sell it over here, which gives me a profit of 3, which in turn gives me a total profit of 7. Right? I could have gone other ways"
+    },
+    {
+      "chunk_id": "L216_C2",
+      "start": 78.2,
+      "end": 151.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=78s",
+      "text": "me a profit of 3, which in turn gives me a total profit of 7. Right? I could have gone other ways like if I write down again 7, 1, 5, 3, 6, 4, I could have gone other ways as well. I could have said, hey listen, I'll buy it over here, I'll sell it over here. Right? Now the thing that you cannot do is you cannot go something like this. You cannot buy, buy. If you're buying, before performing the next buy, you have to sell. So buy and then you have to sell. Then again you can buy any day. So this buy sell has to be done before performing the next buy sell. You can't be like buy, buy, buy, then sell, sell, sell. That is strictly not allowed. Got this? So performing this buy sell can be anywhere. Like you could just do a one sell as well. This is one where do you say, okay, the profit that I'll make is 5. So you can perform buy sell as many times as you want, only with the condition that before buying a stock, you should have sold out the previous holding stocks. That is the clear instruction given to you. So you can perform this as many times"
+    },
+    {
+      "chunk_id": "L216_C3",
+      "start": 151.6,
+      "end": 225.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=151s",
+      "text": "out the previous holding stocks. That is the clear instruction given to you. So you can perform this as many times as you want. And if to give me the maximal profit, you have to maximize this profit. In this example, the answer is 7. So you have to just make sure you do this. Right? So how will you actually solve this particular problem is my question to you. So let's analyze this problem and try to figure out how will I try to approach these kind of problems. So what was I given? I was given 7, 1, 5, 3, 6, 4. Okay. So let's assume, let's assume that I will be starting over here. Okay. Let's assume I'll be starting over here. It's, it's kind of a one DRA. And when I'm starting off, when I'm starting off, generally, what can I do? I can be like, I can buy it or I can sell it, not buy it. Let's move. I can buy it and then I can sell it or I'll not sell it. I'll sell it here. So what am I seeing? A pattern of a lot of ways, like you can do a buy sell, you can probably do a buy sell. You can do it on numerous occasions. Right? And whenever there's a lot of ways, what do you do? You"
+    },
+    {
+      "chunk_id": "L216_C4",
+      "start": 229.64,
+      "end": 307.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=229s",
+      "text": "buy sell. You can do it on numerous occasions. Right? And whenever there's a lot of ways, what do you do? You try always. Yes. You try always. And you get the best possible answer from always. Now when I say try always, what comes to your brain? What comes to your brain? Recursion. Recursion, because there can be a lot of ways. So recursion comes to your brain, right? So how do you write recurrence in DP? How do you write recurrence? Again, we will follow a standard procedure. What is the standard procedure of writing recurrence? Just like a standard procedure is pretty straightforward. It is express everything in terms of index. Now over here, yes, over here we have a plain array and you know, whenever we have a plain array, we can have the index working right across here. So what I will say is, okay, express everything in terms of index. That is something which I'll do. So I'll do it. We will be expressing everything in terms of index. Now, do I need any other parameters is my question. We need to think of this. Now we have done problems like knapsack, if"
+    },
+    {
+      "chunk_id": "L216_C5",
+      "start": 307.64,
+      "end": 386.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=307s",
+      "text": "other parameters is my question. We need to think of this. Now we have done problems like knapsack, if you remember. And in that we have to, we have to take care if our baggage was full or not. Right? Now over here, if I'm standing at here, what decision can I make on it? I can buy or I cannot buy. How did you understand? Because you know, before this, you have not bought anything, but if you're standing here, what decision can you make? What if you have, if you have bought someone here, then you cannot buy here for sure you can sell it. So what idea I'm getting is on any index, I have to know whether I have bought anything previously or not, because if this guy was bought here, I cannot buy this again. I definitely cannot. Or if this guy was sold here, then I can buy. So I have to know if any guys were bought right before this or any guys were sold. Right? So do I have an allowance of buying? So I can say, probably I can carry something like buy a variable like buy, which tells me, can I buy or not? If someone has bought this and he has not sold it. So over here, I definitely"
+    },
+    {
+      "chunk_id": "L216_C6",
+      "start": 386.56,
+      "end": 465.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=386s",
+      "text": "me, can I buy or not? If someone has bought this and he has not sold it. So over here, I definitely cannot buy. So I have to carry a variable as buy, which tells me, can I buy that stock? If I can, I'll either decide it to buy or I'll skip it and go across. And if I cannot buy, then there are two options, either sell it off or don't sell it off. So I'll be like, okay, we have understood. We need one more variable, which tells me on that particular index, can I buy or can I not? Right? Perfect. Explore possibilities. Explore possibilities on that day. What am I looking for? I'm looking for best possible answer. So try to add up. What are you trying to make? Profits. Try to add up. If you're buying, then it is as a minus. If you're selling, it is as plus. I'll explain you when I write the records. X or you're looking for profits, right? So take the addition of states or whatever you are wanting to do. Take the maximum of all profits made because you are looking for profits. And then if you follow these and then there will be a base case. If you follow all of these conditions, I think you will be able to write very easily. So without actually"
+    },
+    {
+      "chunk_id": "L216_C7",
+      "start": 465.84,
+      "end": 533.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=465s",
+      "text": "a base case. If you follow all of these conditions, I think you will be able to write very easily. So without actually wasting any time, let's try to write the records. Okay. So what did I say? Express everything in terms of index and buy. Okay. So let's analyze. F of index and buy. So assuming, the array is 7, 1, 5, 3, 6, 4. So assuming you start at the zero earth index. So this is the price array and it's starting at the zero index. So can I say at F of zero, you have complete liberty of buying because that's the first guy. That's the first guy. I'm giving you complete liberty of buying. So I'd be like, okay, I get the complete liberty of buying, which is one. Assuming liberty by one means you can, zero means you cannot. So I'm giving them complete liberty. So what I'm asking you is F of zero one, starting on zero day with buy, what max profit you can give me? What max profit you can give"
+    },
+    {
+      "chunk_id": "L216_C8",
+      "start": 540.6,
+      "end": 616.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=540s",
+      "text": "zero day with buy, what max profit you can give me? What max profit you can give me? That is what it signifies. Starting on this day, you're starting to do your trading on the zero day. What maximum profit can you give me is the question. Okay, fine. So what can be the states? So we have understood these two states of index buy. So let's tick mark the first thing. Explore possibilities on that day. So let's analyze what can you do? One thing I know for sure is there can be two possibilities. Whether, like if there will be a buy, like I'm allowed to buy, I'm allowed to buy or else I'm not allowed to buy. That is for sure. The possibilities will be this. And on those basis, I can make two profits. There'll be two profits that I'll make. Right? So let's assume if I'm allowed to buy, what will I do? Let's come back to this. What can I do with this seven? I will like, Stryver, I'll definitely buy this. There's no other way around. I will definitely buy this. Or I'll say, hey Stryver, this is too costly. Let's not buy this and move to the"
+    },
+    {
+      "chunk_id": "L216_C9",
+      "start": 616.04,
+      "end": 690.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=616s",
+      "text": "definitely buy this. Or I'll say, hey Stryver, this is too costly. Let's not buy this and move to the next guy and see if I can do a trading on the next day. So I'm saying you can buy or you cannot buy. Back to the previous days of DPO and sub-sequences. Take not kick. Buy or don't buy. So assume, just for an example, assume if you decide to buy over here and you decide to sell it over here, what is the profit that you make? Five minus seven is the profit that you make, which is minus two. So you're adding minus seven to the answer whenever you're buying. You're actually adding minus seven to the answer when you're buying. And when you're selling, you're adding plus five. Got this? Because if you're doing a buy over here and if you're doing a sell over here, it's basically three minus seven is the profit. So minus seven is added to the answer. So can I say, if I decide to buy on that day, the profit that I'll add is this guy. And if I bought on that day, I'll move to the next day, which is index plus one. And if I bought or I bought in the next, he cannot buy. He has to sell. So you cannot buy. Make sense? Make sense. What if I decide,"
+    },
+    {
+      "chunk_id": "L216_C10",
+      "start": 691.28,
+      "end": 763.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=691s",
+      "text": "bought in the next, he cannot buy. He has to sell. So you cannot buy. Make sense? Make sense. What if I decide, hey listen, I'm not interested to buy on this day because the price looks huge. I'm not interested to buy. I'm like, okay, fine. You are not interested to buy. So why don't you don't buy and you go across to the next day and you see, you still go with one saying, hey listen, I will still go with the buy because in the next day I still have the liberty to buy. So, you know, this can be one way, which is take, if I just write this, this is take case, this is not take case. And I definitely know what I require is max of all profits made. So the profit will be max of these couple of guys. Either I buy or either I don't buy as simple as that. What about sell? Because if I come across to the next guy, it is sell, right? So again, we'll try to sell because I know we cannot buy. If I come into else, we cannot buy. We have to sell. Again, assume you are somewhere, oh, where was the example? Assume you are somewhere over here and I'm like, hey, I'm not interested to sell because the price is very, very low. The price is very, very low. I'm not interested to sell."
+    },
+    {
+      "chunk_id": "L216_C11",
+      "start": 763.76,
+      "end": 830.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=763s",
+      "text": "hey, I'm not interested to sell because the price is very, very low. The price is very, very low. I'm not interested to sell. Or you can be like six, if you're over here, but the price is very high, let's sell it. So there can be again two ways. I decide I'll sell it. I'll say, hey, don't sell it. Let's move to the next day. So two ways again. So I'll be like, fine, let's go across. If I decide to sell it, I know the profit will be plus because I'm selling. The money is coming to me. The money is coming to me. So I'll be like, fine, let's sell it. So if I'm selling it, I will be getting something around prices of index plus function. If I've sold a stock, if I've sold a stock, I will move to the next day and I still have liberty to buy. I still have liberty because I've sold it. Now I'm free. In the next junction, I can buy. But if I don't sell it, then the profit made will be this. I'll go to the next and I'll say, hey, listen, you're still holding a stock. You don't have a liberty to buy. And I know the max of this is what you take. And you return the profit at the end of the day. So can I say, can I say this is what the possibilities will be and you're returning"
+    },
+    {
+      "chunk_id": "L216_C12",
+      "start": 830.72,
+      "end": 903.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=830s",
+      "text": "profit at the end of the day. So can I say, can I say this is what the possibilities will be and you're returning the max of profits. So what I can say is, okay, fine. We have explored possibilities on that day. What's the next? Take the max profits has been done. Base case. You're trying, you're trying on every day. When do you end up? When? When? You've tried on every day. You've exhausted the days. You've exhausted the days. So I can be like, when you exhaust the days, that means when you reach this index, because you started here, you go here, you go here, you go here, you go here, you go here. And ultimately you'll come to the Nth index. So whenever you come to the Nth index, there's no profit to be made. The array is over. There's no profit to be made, but you have to be careful over here. What if you actually bought a stock? What if you bought a stock and did not sell it? So there will be a problem, right? So coming across, when you end all the days, there's no profit to be made. You have invested some money, even if buyers, even if buyers zero, that means they're still holding a stock. But if you're holding a stock, that means you have gone, you've invested a money minus. So"
+    },
+    {
+      "chunk_id": "L216_C13",
+      "start": 904.32,
+      "end": 978.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=904s",
+      "text": "means they're still holding a stock. But if you're holding a stock, that means you have gone, you've invested a money minus. So that won't matter. So you will return zero. No more, no more money you'll get from the market because you're done. No more money you'll get from the market. So if you have gone with something, it will be a negative value. So that will not be considered into your answer. This is how you can easily write the recursion. So if you have written the recursion, what is the time complexity? The time complexity will be very simple. 2 to the power N because for every index, you can either sell like take or not take. So 2 to the power N. Space complexity will be B go of N to auxiliary stack space. And you can definitely optimize this because there will be overlapping sub problems. There will be overlapping sub problems. If you try to draw the recursion tree, you will see that there are overlapping sub problems of F of index and buy. So you can definitely apply the memoization technique. And in order to apply the memoization technique, what do you apply? The changing parameters are index and the buy. What are the values of index? 0, 1, 2, 3, N. So N different values. What is buy? Either you say 0 or 1. 1 for"
+    },
+    {
+      "chunk_id": "L216_C14",
+      "start": 978.72,
+      "end": 1055.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=978s",
+      "text": "values of index? 0, 1, 2, 3, N. So N different values. What is buy? Either you say 0 or 1. 1 for you are allowed to buy, 0 for you're not allowed to buy. So there are two values, 0 or 1. So this will be the DP state that you need to optimize. So if you use this DP states, you will be easily able to write it. So just make sure just insert a couple of lines, DP of index and buy. And one more line. If DP of index and buy is not equal to minus one, you return DP of index and buy. Again, I have explained these steps in the entire DP playlist. So if you're watching this video right from anywhere in between, it's not my fault. So yeah, without wasting any time, let's get started and code this. So let's quickly code this up. You're given the values and the N. So I'll just write the function. We know it will be an index. It will be a buy. And we can definitely get it the same. And, and yeah, perfect. So we know if index reaches N it's over, so you can return zero. There is no more profit that you can make once that is over. Or else there can be a couple of ways you can say, okay, listen, if buy is there or else"
+    },
+    {
+      "chunk_id": "L216_C15",
+      "start": 1055.84,
+      "end": 1125.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=1055s",
+      "text": "that is over. Or else there can be a couple of ways you can say, okay, listen, if buy is there or else a buy is not there. And then the profit can be easily made. So you can just keep the profit to be zero and make sure it's long rather because they want the answer to be in long probability to constraints. So profit will be max of a couple of guys, you know? So either you decide to sell it off, like you're buying. So this is the cost that it will cost you and you cannot buy any further. Right. Or you can be like, okay, I'm not buying. So I'll move to the next. And you still have the liberty to do whatever, or if you can not buy, then you can sell. So if you can sell, then there'll be a plus that will, that is something that you'll get. And it'll go across and you say, now you can buy it's now you can buy. And over here, or you can say, okay, listen, I'm not going to sell as of now. So go. And the liberty is sell zero. Like you cannot buy. And at the end of the day, you can return the profit. Over here, you can say return F of zero comma, the bias one values and N is what you return."
+    },
+    {
+      "chunk_id": "L216_C16",
+      "start": 1126.48,
+      "end": 1204.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=1126s",
+      "text": "return the profit. Over here, you can say return F of zero comma, the bias one values and N is what you return. Indeed, it does run fine. So what is the next step that we will do? We will try to optimize this by DP. So vector of vector end DP, N comma vector end two size. So two size minus one and please make sure you pass it over here, but just DP. And over here, you can write vector of end DP. And right over here, before returning, you can write DP of index and buy again, very straightforward. And right over here, you can just check if this guy has been previously visited. If not, why don't you return that guy, which is index and buy, just make sure you return it. And I think once you've done this, this should be running super fine. Okay. It will not run because we forgot to pass the parameters over here. My bad. So just make sure you declare the DP to be long, long, otherwise it will give you a wrong answer. That's how you can easily solve this problem. But now it's time to convert this into a tabulation code. So we have done the memetian code and we know the complexity of the memetian code will be Bico of n cross a two. The space complexity will be n cross a two plus an auxiliary stack space."
+    },
+    {
+      "chunk_id": "L216_C17",
+      "start": 1204.08,
+      "end": 1279.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=1204s",
+      "text": "memetian code will be Bico of n cross a two. The space complexity will be n cross a two plus an auxiliary stack space. And you know, I'm not a big fan of this. So you know, there's that in order to remove the auxiliary stack space, we have to apply tabulation. What are the steps of tabulation? The steps are very, very straightforward. You have to write the base case and then you write all the changing parameters. This is I, and then there is by right. And then you copy the records. That's what you do, right? So let's write the base case. What are the base case? The base case was index equal to equal to n. So you can say that, Hey, listen, you will be creating a DP of n plus one this time, and we will be starting off with DP of n equal to zero. That's what you will be starting off with. Right? And right after that, what is I, how did you run the recursion? If you remember the recursion, it went in from zero to n. So it's the reverse that you will do in tabulation. You start from n minus one till zero. What about by it will be from zero to one. You can go from one to zero as well,"
+    },
+    {
+      "chunk_id": "L216_C18",
+      "start": 1279.52,
+      "end": 1356.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=1279s",
+      "text": "one till zero. What about by it will be from zero to one. You can go from one to zero as well, but it'll be from zero to one. So just write this and copy the recurrence. And if you do this, it will be running fine. And after that, we will do another space optimization on that. So I'll go back to here and we'll make it zero. Okay. And right here, we can say, uh, just make sure it is n plus one so that we can be like DP of n of zero DP of n of one is equal to zero. That's for sure. Because index equal to go to n by can be anything, but it has to be zero. Now next is let's run the for loops. So we know the loops will be running from here to here, and we know there will be a buy. So probably it'll be better if you write index, because you're going to copy paste the recurrence. So let's write index. Okay. Buy can be from zero till one. Perfect. Next, please make sure you copy paste the records. There's no need to apply a brains. Just copy paste the records because tabulation is bottom up, right? It's the opposite of recursion. So you have copy pasted that. And over here, just make sure you remove this instead of, uh, this entire thing. It'll be DP"
+    },
+    {
+      "chunk_id": "L216_C19",
+      "start": 1356.32,
+      "end": 1423.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=1356s",
+      "text": "you have copy pasted that. And over here, just make sure you remove this instead of, uh, this entire thing. It'll be DP of index plus one and it was by one. And this will be DP of index plus one and zero. So DP of index plus one, and it'll be zero. This will be DP of index plus one and zero DP of index plus one and zero. Perfect. This will be DP of index plus one and one. So just write this. If you have index plus one and one. Perfect. So that's what you have written. And right away, you have written this and this will be DP of zero one is what you return DP of zero one. Now try to run this and see if this is running in the tabulation mode. It is indeed running. Let's quickly submit this and see if this is working fine. It is indeed working fine. Now, what is the next step? We know that whenever we are dependent on the previous, like this is the previous row, like index plus one is the previous index plus one is the previous. So we are dependent on the previous guy, right? So if I, if I try to show you in the iPad, you'll get a much clearer picture. Now, if you are following the space optimization technique from the first lecture, I think this is very easy for"
+    },
+    {
+      "chunk_id": "L216_C20",
+      "start": 1423.36,
+      "end": 1485.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=1423s",
+      "text": "a much clearer picture. Now, if you are following the space optimization technique from the first lecture, I think this is very easy for you, but for anyone who's coming out to you, what are we doing? You were assigning these guys as zero and zero, which is the nth index. Then we went on to n minus one at the index, and we tried to find this and find this. And in order to, in order to find this, what am I using? Let's go back to the code. We are using index plus one. Like if you are standing at n minus one, if you're looking at, at the code, you're using index plus one, which means you're just using these couple of guys, right? And you're filling this easily. Similarly, you are also filling this easily by using these couple of guys. That is what you're doing in next plus one and index plus one, using these couple of guys to fill this. And then you go to the next, which is n minus two. And in order to fill this, you're using these couple of guys. So do you actually need to store this now? No. Again, you'll fill this. And then again, you'll go to n minus three order fill this, you will use this and this, and I don't fill this, you'll use this. And this,"
+    },
+    {
+      "chunk_id": "L216_C21",
+      "start": 1485.36,
+      "end": 1557.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=1485s",
+      "text": "to n minus three order fill this, you will use this and this, and I don't fill this, you'll use this. And this, so there's no need to store this. So just need to store two variables. One is this, and the one is this just need to store two variables. One is this and the other one is this. So you can say this as the one variable, this is the other variable. So I can say this as the ahead because it's, it's at the front or you can say whatever you can call it I'll try to call it let's because this is not Dubai right you can call it whatever you wish to or you can take a two variable array as well you can take two variable array as well that's your choice or you can take variables as well so what I'll do is I will be like okay I'll go back to the code what I'll do is I'll try to carry just two variables vector int or rather vector long of the ahead guy because it's the head and I'll be like two comma zero I know one thing for sure the ahead is this is the head guy and I know there will be current which I'll compute because the current has to be computed right and these are the ahead so let's take it from ahead let's take it from ahead let's take"
+    },
+    {
+      "chunk_id": "L216_C22",
+      "start": 1557.84,
+      "end": 1631.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=1557s",
+      "text": "current has to be computed right and these are the ahead so let's take it from ahead let's take it from ahead let's take it from ahead let's take it from ahead and this will be the current guy and once you've done this just interchange because in the next step if I if I show you the iPad whenever you go to the next n minus two this guy will be the ahead and now you will use these guys so just interchange once you have done this you know this at the end of the day is previous so you just change this off and you never try to run this okay my bad okay my bad it will be ahead not previous so yeah let's just make sure it is ahead I've been so habituated to use previous and current that uh I wrote it okay that's fine uh submit this it will be running fine okay so this is uh the most optimized stuff that you can do but in the discussion forum you will see that people not using the two-vala array and they will be using variables you can also use variables instead of the two-sized array that is there's a similar stuff and if you use uh the the studio that then also dissimilar like over here"
+    },
+    {
+      "chunk_id": "L216_C23",
+      "start": 1631.76,
+      "end": 1700.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=1631s",
+      "text": "array that is there's a similar stuff and if you use uh the the studio that then also dissimilar like over here what are you using you're using uh two space over here and two so that's four so you'll see a lot of solutions having they're using four variables to write it it does not optimize it it's still the same thing if you're using four variables to solve this the same as using a two and two size array it's four space that you're using right so so in leetcode discussion forum you will see that uh people uh using four different variables to solve this again I will not say that it is wrong you can still use four different variables that is your choice like what are we doing over here if you carefully see we're basically running a loop from n minus one till zero and then there is a by which is like from zero to one it's like zero once there is a zero and once there is a one so whenever it's a zero the else part gets executed whenever it's a one the if part gets executed so you will see in the leetcode forum what they will do is they'll omit this yes they'll omit this and since by is zero and one both will get executed once and once so what they will do is they will first execute"
+    },
+    {
+      "chunk_id": "L216_C24",
+      "start": 1701.44,
+      "end": 1779.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=1701s",
+      "text": "and since by is zero and one both will get executed once and once so what they will do is they will first execute the zero guy then they'll execute the one guy right and they'll store it so you can also do the same thing so what you can do is you can say this guy to be ahead ahead like this is the not case so you can say ahead not by and you can say ahead by case and you can say this guy to be cur not by and you can say this guy to be cur by okay so let's come back to whenever by is zero what happens let's go back and check what happens i'm saying profit goes to the cur by whenever by is zero so let's write this cur not by because by zero means cur not by what happens on cur not by let's go back i'm saying the value of index plus ahead of one ahead of one means ahead of by head of one means ahead of by so let's write max of values of index plus ahead of by is what you write"
+    },
+    {
+      "chunk_id": "L216_C25",
+      "start": 1780.32,
+      "end": 1856.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=1780s",
+      "text": "ahead of by so let's write max of values of index plus ahead of by is what you write and what's the other thing zero plus ahead of zero means ahead of not by add of not by so if you write this can i say the cur not by because what are you generating cur of zero cur of zero right cur of zero and what is cur of zero if you carefully observe cur of zero is cur not by so you've generated that perfect what's the next thing that you'll do cur of not by is done and this is also done next thing that you will do is you will take cur of by and you will write max because the next thing will be one which means this guy will generate which is cur of by and for this what's the formula let's see let's go back whenever you add by which is one which is one this is one right this is one so whenever you add this what's the formula minus value of index plus ahead of zero so let's write it minus values of index plus ahead of zero head of zero means not by ahead not by comma zero plus ahead of one"
+    },
+    {
+      "chunk_id": "L216_C26",
+      "start": 1857.2,
+      "end": 1934.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=1857s",
+      "text": "of index plus ahead of zero head of zero means not by ahead not by comma zero plus ahead of one zero plus ahead of one means ahead of by and in this way you can easily get the current by not by and current by which means you have filled up this guy and this guy and in the next step when you go across you'll be like okay these guys will serve as ahead not by and ahead by in order to compute this and this so you can just storm at this and say okay listen next step ahead of not by will be cur of not by so instead of 2d array you'll just do this and ahead of by will be cur of by and you actually solve this using this wonderful variables and this is the solution that you always find in a lot of discussion forums but you don't understand so this was the entire intuition behind this possible solution so now what i will do is i'll now go back to the code and now i'll try to omit this portion okay and let's try to write it long zero means not by you"
+    },
+    {
+      "chunk_id": "L216_C27",
+      "start": 1934.88,
+      "end": 2012.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=1934s",
+      "text": "now i'll try to omit this portion okay and let's try to write it long zero means not by you know this not by one means by you also know this right so by so this is what you write perfect let's quickly declare this as well long of ahead not by and long of ahead by perfect i've declared both and i've assigned them to be zeros amazing instead of this i'll omit this now let's omit this let's omit this entire stuff so and i need one other variable so just curve by and curve not by for sure okay so i know i'll have to switch so instead of this i'll say okay ahead by will be curve by and ahead not by will be curve not by for sure that's the first switch that i'll do perfect now let's come over here i know whenever by is zero this is executed right so what i'll do is i'll say okay this is definitely going to be executed and the profit goes and stores in curve by which is curve by curve not by the else one the else one is curve not by and whenever it buys it's curve by for sure and i can remove this i'll"
+    },
+    {
+      "chunk_id": "L216_C28",
+      "start": 2012.56,
+      "end": 2092.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=2012s",
+      "text": "else one is curve not by and whenever it buys it's curve by for sure and i can remove this i'll make sure that both of them gets executed so this guy goes this guy also goes so i'm left off with curve by right i'm left off with curve by i'm left off with curve not by perfect this is over because i've assigned them so both of i'm executing both of them without actually running a for loop because i know both of them will execute it so first the curve of not by was executing you can execute that at first or at end doesn't matter and you can execute the curve of back perfect now let's come back to changing this slowly ahead of one means head of by head of zero means not by perfect head of zero means not by perfect head of one means by perfect i think we have done this and one means at a buy amazing amazing isn't it and we run this hopefully it runs yes yes it does it does let's submit this wow that is how you generate the variable solutions from a recursion from a"
+    },
+    {
+      "chunk_id": "L216_C29",
+      "start": 2092.0,
+      "end": 2133.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=nGJmxkUJQGs&t=2092s",
+      "text": "it does let's submit this wow that is how you generate the variable solutions from a recursion from a tabulation from a space optimization this is how you generate the variable solutions just don't mug it up have the intuition and it's 541 am in the morning so as i hope you have understood the entire stuff just in case you did and just in case you did not please take a pen and paper and try to do it and just in case you did understand please please please give it a like and if you're new to this channel please do consider subscribing to us it is very very important for us and here with this i will be wrapping up this video let's meet in the next let's meet in the next one till then bye bye take care good bye whenever your heart is broken don't ever forget your golden i will find the light"
+    }
+  ]
+}

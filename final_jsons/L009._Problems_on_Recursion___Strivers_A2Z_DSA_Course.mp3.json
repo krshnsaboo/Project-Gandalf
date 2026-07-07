@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L009",
+  "lecture_number": 9,
+  "lecture_title": "Re 2. Problems on Recursion | Strivers A2Z DSA Course",
+  "youtube_url": "https://www.youtube.com/watch?v=un6PLygfXrA",
+  "chunks": [
+    {
+      "chunk_id": "L009_C1",
+      "start": 0.0,
+      "end": 74.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=0s",
+      "text": "So before starting this video, I'd love to thank the sponsor of this video which is CodeStudio. Now if you are willing to practice interview problems topic wise, this is the place where you should look for because CodeStudio has over 2000 plus problems and has all the problem solution in C++, Java as well as Python. If you're looking for a guided path, then you can find for Python, for DBMS, for object-oriented programming, operating system, computer networks, system design, web development, any other thing that you're looking for, you'll find guided paths for every other thing over here. Also, if you're looking for any top company questions, let's say if you have an interview at Amazon, if you're looking for Amazon questions, you can get all the top Amazon coding questions via tag and all the solutions in C++, Java as well as Python. Also, if you have an interview schedule, you can read their interview experiences where there are 600 plus interview experiences from companies like Amazon, Microsoft, Adobe, Google, etc. So what are you waiting for? CodeStudio has a lot of free resources for interview preparation. The link will be in the description. Make sure you check it out. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today will be the lecture two of recursion playlist, which is basic recursion problems."
+    },
+    {
+      "chunk_id": "L009_C2",
+      "start": 74.0,
+      "end": 152.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=74s",
+      "text": "I hope you guys are doing extremely well. So today will be the lecture two of recursion playlist, which is basic recursion problems. Now, in the previous video, we did learn about recursion in depth. So please make sure you watch out the previous video and after that only you start this video. So in this video, we are going to solve some problems. The first one being print name five times. I'm assuming you can do that. Print linearly from one to one using recursion. Definitely print linearly from end to one, then print linearly from one to end, but in some backtracking. Over here, I'll teach you how can you do stuffs using backtrack, kind of backtrack and print from end to one again using backtracking. So I'm assuming you can do the first three, but still I'll recommend you to watch the entire video because the concepts gets more clear the more you watch the videos. So let's take the first problem and do it. That is a print name n times. Let's keep it n times. So the generic way is definitely to run a for loop and print the name n times, but I want you to print your name n times using recursion. Yes, that's, that's a catch here using recursion. So how can you do this?"
+    },
+    {
+      "chunk_id": "L009_C3",
+      "start": 153.2,
+      "end": 232.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=153s",
+      "text": "to print your name n times using recursion. Yes, that's, that's a catch here using recursion. So how can you do this? You know, there will definitely be a main, which will be calling print. Okay. So I'm saying n times. So what you can do is you can take the n from the user. Yes, you can take the n from the user. So input as n in Java, it will be integer dot parsey n and then you can say a function with probably zero and n. So over here, I'm going to teach you something, which is very important, one and n. So this is the first time. And I'm saying till n you print it. Okay. Over here, I'm going to teach you something, change of parameters, which is very important. So I'm writing a void f. Okay. No global variables this time. I'm taking an integer I, and I'm taking an integer n. Okay. Over here, I know the base cases. If I start from, yes, if I start from one, I have to go till n. That's for sure. Like I have to print it n times. So I know the base case is definitely going to be till I haven't printed n times. So if at any moment I exceeds n, I'm going to say return because I'm going to just print it n times. That's very simple. Coming from the previous class, it's very, very simple. This is what we call it"
+    },
+    {
+      "chunk_id": "L009_C4",
+      "start": 232.88,
+      "end": 307.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=232s",
+      "text": "going to just print it n times. That's very simple. Coming from the previous class, it's very, very simple. This is what we call it as the base case. Remember? So base case is decided on the problem statement. So this is the base case. Okay. What after that? After that, I will be like, okay, let's print it. So you will simply say print. Let's assume my name is Raj. So I'll print Raj and then I'll call f. I printed it once. I did came up as one. So the next time I will call it as I plus one comma n. Okay. So let's understand how does the flow works so that you get a better perspective. So initially you'll be taking integer n. Assume n is given as three. Assuming n is given as three. And again, I'll put the output screen over here. Assuming n is given as three. So n becomes three. Function says one and n. So this guy calls this particular guy with i's value as one, n's value as three. So the function call is the first function call that you make is of f of one comma three. That's the first function call you made. Is the base case true? No, because"
+    },
+    {
+      "chunk_id": "L009_C5",
+      "start": 308.0,
+      "end": 386.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=308s",
+      "text": "is of f of one comma three. That's the first function call you made. Is the base case true? No, because one is not greater than three. One is not greater than three. No. Thereby you say print Raj. So Raj gets printed. Okay. Next you're saying function of i plus one. So this guy calls a function with i plus one. I was one over here. I gets incremented by one and calls the function by two and n is still three. And over here, you write the same line of code. I greater than n, because it's the same function which has been called. So in memory, it's the same one. Print Raj and then f of i plus one comma n. Okay. This time, let's understand if this base case is executed. I is two, n is three. So this will not be executed. Print Raj. Again, you print Raj. Right? Remember this function of one of three called this f of two, three. So in recursion tree, it will be f of two comma three. This is how you create the recursion tree. Now f of two, three, this is printed and now this portion. So this guy goes and again calls f of i plus one. So three comma three. And again, you write the same lines is I greater than n. Then you say"
+    },
+    {
+      "chunk_id": "L009_C6",
+      "start": 386.56,
+      "end": 462.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=386s",
+      "text": "of i plus one. So three comma three. And again, you write the same lines is I greater than n. Then you say return. Definitely. This is false. So thereby you again go and say, print Raj and you say f of i plus one comma n. So this is false. So this gets executed. So Raj is again printed f of i plus one. So this time f like f of two, three called f of three, three. So I can just draw that f of two, three called f of three, three. Now f of three, three calls i plus one, which is f of four comma three. And this moment I can say, if I greater than n, then return becomes true. Why? Because, because I is four, n is three, and this guy comes out to be true. Thereby you're returning. So the moment you're returning, these lines will be of no use anymore. These lines will be of no use anymore. So you return. Now this is done. Now remember f of three, three called f of four, three. So you can do it in the recursion tree as well. F of three, three called f of four, three. Okay. So this is done. This is over. So I can say this function is over. Thereby you can return. This is done."
+    },
+    {
+      "chunk_id": "L009_C7",
+      "start": 462.88,
+      "end": 538.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=462s",
+      "text": "So this is done. This is over. So I can say this function is over. Thereby you can return. This is done. So this function is over. Thereby this is over. You can return. Thereby this is over. You can definitely return back to where it was called. And now the function, the program terminates. So this is how easily the recursion did work and we did it in the parameters and not using any global variables. So I was able to print my name n number of times. Yes, I was able to print my name n number of times and at f of four, three, I returned. So this got completed, this returned. So this got completed, this returned. So during the course, this guy printed one Raj, this guy printed one Raj, this guy printed one Raj, and this guy hit the base condition and returned. So this is how you can easily do the first problem, which is print the name n times using recursion. I hope you have understood this. So if I talk about the time complexity, space complexity, it's very, very simple. I can say the time complexity to be big O of n, because inside the functions, these lines are big O of one, they don't take any time."
+    },
+    {
+      "chunk_id": "L009_C8",
+      "start": 538.8,
+      "end": 608.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=538s",
+      "text": "be big O of n, because inside the functions, these lines are big O of one, they don't take any time. So apparently you're calling one function, that guy calls one more function, that guy calls one more function. So you're calling n functions. If you carefully observe, one, two, three, four, so you're calling n functions, like linear about n functions. So I can say the time complexity to be big O of n. Yes, I can say the time complexity to be big O of n. And what is the stack space? So in space complexity, we generally assume the stack space. Now this guy would have been in the stack when you called f of one comma three would have been in the stack and f of two comma three would have been in the stack and f of three comma three would have been in the stack. So they were waiting in the stack till this base case returned. They were waiting to be completed. So thereby I can say the space complexity is also big O of n. Now this space complexity is hypothetical. Like you're not using an array internal, the computer's internal memory uses the stack space. So thereby making the time complexity and the space complexity to be big O of n and big O of n. I hope that makes sense. So guys, we have done the first problem,"
+    },
+    {
+      "chunk_id": "L009_C9",
+      "start": 608.96,
+      "end": 687.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=608s",
+      "text": "be big O of n and big O of n. I hope that makes sense. So guys, we have done the first problem, which is print the name n times or five times. Okay. Now let's do the next problem, which is print linearly from one to n. So basically, if n is given as four, I want you to print one, two, three, four. Yeah. This is what I want as the output. Okay. So how will you do this again? Very much similar to the previous problem. If I write down the function, it's going to be I comma n and it's going to be I greater than n and you're saying return. And this time the print statement will be executing I, and then you can call f of I plus one n is a similar one just in place of the name. You can print I right. So that in the main, yes. So that in the main, when you call the function, like you can take the input of n, you can take the input of n. And then when you call the function with one comma n first time prints I, which is one next time goes I plus one. So two,"
+    },
+    {
+      "chunk_id": "L009_C10",
+      "start": 687.68,
+      "end": 760.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=687s",
+      "text": "function with one comma n first time prints I, which is one next time goes I plus one. So two, similarly, you can just go on printing till whatever your n is. So it was quite similar to the previous one where I'm easily able to print one, two, n. Correct. Now it's a time to think it in the reverse order and do the next problem, which is print in the opposite fashion, print in a terms of n to one. So like, if I give you n equal to four, you're going to bring me four, three to one. Now, can you do this? Can you do this? I think you can. Yes, you can. It's very simple. As of now, the code that we wrote started from I equal to one, and then you did I plus one, then you did again, I plus one and you kept on calling. So if I'm, if I have to print from four, I can understand that the first I has to be four and the last has to be one after one before one, you don't print. So I can say, I'll just write the function and the opposite order. It's going to be seen I comma n, but this time it's going to be, if I becomes lesser than one,"
+    },
+    {
+      "chunk_id": "L009_C11",
+      "start": 760.48,
+      "end": 835.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=760s",
+      "text": "order. It's going to be seen I comma n, but this time it's going to be, if I becomes lesser than one, then I don't need to print and I can print the I. And this time I can call it I minus one comma n. And during the start, yes, I repeat during the start of main, I can take the input of n. Definitely. I can take the input of n and I can say F of n comma n to be called. Yes, I can say F of n comma n to be called so that if, if assume n is given as four, the first time or assume the n is given as three to have a better understanding. The first time you call it three comma three, and this goes, calls it like three comma three, correct? This line doesn't execute, print three. So the output screen will definitely have something like three, and then you call it as F of two comma three. And again, then you will call it as F of one comma three. And again, at the end, you'll call it F of zero comma three and the zero comma three will be executed. And you'll come back, you'll come back and you'll come back. So automatically you print three to one"
+    },
+    {
+      "chunk_id": "L009_C12",
+      "start": 835.68,
+      "end": 913.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=835s",
+      "text": "three will be executed. And you'll come back, you'll come back and you'll come back. So automatically you print three to one as simple as that. So it's the main stuff is you just change it over here, where you say, I'm going to do a I minus one. This is the main stuff where you change, where you say, I'm going to do a I minus one, correct? So again, we have also done the next problem, which is print in terms of n is to one. So three problems have been done. Now, these are very basic. I want you to change it and think it in the reverse order. What if I want to print from one to when, but I don't want to do I plus one. Instead, I say that the recursion call starts from n comma n usually like to give a better brief. Let me just explain. I'm saying print from one to n, print from one to n, but I am not going to allow you to use plus one. Like generally from one to n was meaning F of I plus one comma n was the function call was the recursive function call that you are making. I'm not allowing you to do that. I'm not allowing you to do plus one."
+    },
+    {
+      "chunk_id": "L009_C13",
+      "start": 913.92,
+      "end": 990.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=913s",
+      "text": "recursive function call that you are making. I'm not allowing you to do that. I'm not allowing you to do plus one. So how will you do this? So over here, I'm going to teach you something as backtracking. Okay. So let's understand backtracking. Since I'm not allowing you to use plus, you have to use minus. So what I'll do is I comma n. Okay. As usual, this time it'll be like, if I at any time goes less than one, you return F of I minus one comma n. And right after that, I'm writing print of I. Okay. So over here, I'm writing the main function over here. I'm writing the main function and what I'm writing is, okay. Mean let's take the input of n and let's call F of n comma n. So basically what I did was I said that you cannot use this plus thereby you can use minus one. Why? Because I wanted to, I wanted you, I wanted me to teach you what if I write the print line after the recursion call, what happens? Let's understand. So again, let's quickly give the output screen and assume n is given as three. So the first call is three comma three. Thereby the first call goes as three comma three. The first call goes as three comma three. Now"
+    },
+    {
+      "chunk_id": "L009_C14",
+      "start": 990.16,
+      "end": 1067.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=990s",
+      "text": "is three comma three. Thereby the first call goes as three comma three. The first call goes as three comma three. Now let's understand this. Does this line execute? I lesser than one? No, because I is three and it doesn't execute. Okay. Next I'm saying F of I minus one. So this function call will go. Remember this, the print line will not be executed. The function call will go. Okay. Let's call the function call and I'm saying I minus one. That's two comma three. And again, let's write, if I is lesser than one, then return and it's like F of I minus one comma n. And then let's write the print of I and then this. Okay. So let's see if the first line executes again. No, because I is two. Doesn't. This time again, you call the function with I minus one, which is two minus one, one, comma three. And this time you write, if I is lesser than one, you return and you say F of I minus one comma n print of I. Okay. Let's see what happens this time. F of one comma three. I is one doesn't execute F of I minus one goes and calls this with F of I minus one means zero"
+    },
+    {
+      "chunk_id": "L009_C15",
+      "start": 1067.04,
+      "end": 1144.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=1067s",
+      "text": "is one doesn't execute F of I minus one goes and calls this with F of I minus one means zero comma three. If I lesser than one return, I'm not writing the remaining couple of lines. I is zero. So this line, this time is indeed true is indeed true. And if this line is true, what happens? You basically say return executes. So you return. So this function line has been executed. Correct. Now the print comes over here because after this, the line of execution comes over here and it says print I what's the value of I one. So the output will be one. Next, the execution line comes over here, which means the function has been executed. Correct. Go back. Went back. This line has been executed. Thereby the function line comes to the next. This print is I what's the value of I? Two. Printed. Next, the line of execution goes here, which means this function has been executed. Go back. This line, this has been executed. You go to the next print I, I's value is three. Thereby this line has been executed."
+    },
+    {
+      "chunk_id": "L009_C16",
+      "start": 1145.2,
+      "end": 1221.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=1145s",
+      "text": "been executed. You go to the next print I, I's value is three. Thereby this line has been executed. Correct. Go here. Hence go back. So even by starting from three, even by starting from three, I was able to output in the linearly increasing order. So it's not necessary that you have to start from one in order to print from one, two, three. You can start from the back and you can do the task after the function call. So basically by doing this, what you did was you made it mandatory that this line, this print line is executed at the first because you kept it after the function call. You kept it after the function call. So unless until this function call is over, this line would have never been executed. So you made sure the last guy has been executed first. Why? How did you make sure that the last guy, because this was the last guy, has been executed first? How was this function completed first? By making sure the print line is after the function call, because this will only be executed if the base case is true. Thereby this gets executed. This then, then this gets executed. Then this, that's the opposite way you made it by writing after the function. Got it? So this is how you print from one is to end."
+    },
+    {
+      "chunk_id": "L009_C17",
+      "start": 1221.68,
+      "end": 1286.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=1221s",
+      "text": "opposite way you made it by writing after the function. Got it? So this is how you print from one is to end. Now I will be asking you to do the other one. So this is what I've done, but my backtrack, this has been done. I want you to do the other way. I want you to print from end to end. Basically, if I give you as N equal to three, I want you to print a three to one, but I don't want you to use this. I minus one comma N. I don't want you to use this. Okay. So I will not solve this. I want you people to answer in the comment section about this. Let's see if you have understood the entire concept. You should be able to do it. Yes, you should be able to do it. So remember, if I write this as a recursion tree, it's very simple. You started with F of three comma three, then you went to F of two comma three, then you went to F of one comma three, then you went to F of zero comma three, which indirectly stated I'm over. Then the print line executed of one. Then you said, after this, the print of two was executed and right at, so this is the print of three was executed. So this is all the recursion tree will look like for this particular stuff."
+    },
+    {
+      "chunk_id": "L009_C18",
+      "start": 1290.88,
+      "end": 1323.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=un6PLygfXrA&t=1290s",
+      "text": "at, so this is the print of three was executed. So this is all the recursion tree will look like for this particular stuff. So I hope guys you have understood all the problems and you've understood the recursion in depth for the basic kind of problems of one, one D recursion. So just in case you did, please, please, please make sure you like this video. And if you're new to this channel, please do consider subscribing. And if you haven't checked out a Stryver's SD sheet, the link is in the description. Please make sure you check it out. With this, let's wrap up this video and meet in the next one where I'll be discussing some other interesting problems. Bye-bye."
+    }
+  ]
+}

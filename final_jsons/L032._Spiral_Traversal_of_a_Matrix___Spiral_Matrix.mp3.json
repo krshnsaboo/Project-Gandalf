@@ -1,0 +1,106 @@
+{
+  "lecture_id": "L032",
+  "lecture_number": 32,
+  "lecture_title": "Spiral Traversal of a Matrix | Spiral Matrix",
+  "youtube_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM",
+  "chunks": [
+    {
+      "chunk_id": "L032_C1",
+      "start": 0.0,
+      "end": 68.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=0s",
+      "text": "Hey everyone, welcome back to the channel, I hope you guys are doing extremely well. So this is another lecture from the StriveWorlds A2Z DSA course just in case you are for the first time here. This is world's most in-depth course when we talk about DSL Go. Why do I say that? Because this course has 455 modules. By the end of the course, you'll have solved more than 400 plus problems. You can go over the entire internet, you can buy any of the paid courses in the market. None of them will be teaching you DSL Go in such depth. The only thing that I can give you as assurance is, if you complete this entire course, you can clear any of the DSL Go routes in any of the companies in any part of the world. So till now we have covered till this particular problem. Now in this video, I'll be covering this problem, which is the spiral matrix. Now what does the problem state? It states that you'll be given an n cross m matrix and you have to print it in a spiral form. What does it mean? You start from one, you go like this, you go like this, and in this order, this is what you have to print. Yes, in a spiral order is what you have to print. So if I go across printing, it'll start like this, go like this 26 and then ends up at 36."
+    },
+    {
+      "chunk_id": "L032_C2",
+      "start": 68.12,
+      "end": 147.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=68s",
+      "text": "you have to print. So if I go across printing, it'll start like this, go like this 26 and then ends up at 36. So this is what you have to do. And I've written the integers in such a way that you can actually track them in a spiral format. So how do you do this? So remember one thing, this particular problem doesn't have multiple solutions. It just has one solution. And that one solution is the optimal solution. And why is the interview even asking this particular question? So there are two reasons. One is to test your implementation skills. And the second one is how clean can you write the code? So our focus will be to find the easiest implementation. So how do we implement this particular problem? Because it is an implementation based question. So let's observe first we're going like this, then like this, then like this, then like this. So can I say it's a pattern? First we're moving right, then bottom, then left and then top. So this is the outer square or rectangle. Can I say this? So can I say the first will be right, then bottom, then left and then top? I can. And this will make sure it prints the outer covering. It does. Can I say the second covering is also in a similar fashion? That is right, bottom, left, top, right."
+    },
+    {
+      "chunk_id": "L032_C3",
+      "start": 147.76,
+      "end": 222.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=147s",
+      "text": "outer covering. It does. Can I say the second covering is also in a similar fashion? That is right, bottom, left, top, right. So the second layering is also printed. The third layering is right, bottom, left, doesn't have a top, doesn't have a top, but it is printed. So is the observation something like this? First, second, third, fourth, fifth. So spirals all over till the center? I can. So this is what I have to implement. So how can I implement this? Let's observe something. So if I write down the row numbers, it is 0, 1, 2, 3, 4, 5. If I write down the column numbers, 0, 1, 2, 3, 4, 5. Can I say the topmost row is 0? Can I say the bottom most row is as of now n minus 1, which is 5? And can I say the leftmost point is 0 and the rightmost point is 5? So what are we doing at first? At first we are printing this one. Then we are printing this one. Then we are printing this one. And then we are printing this one. Agreed? So if I have to print this portion and as of now, if I have to write top is here, bottom is here, left is here and right is here."
+    },
+    {
+      "chunk_id": "L032_C4",
+      "start": 222.88,
+      "end": 299.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=222s",
+      "text": "and as of now, if I have to write top is here, bottom is here, left is here and right is here. Can I say the first printing will be left to right, which will make sure this prints. So the first printing will be for loop of left to right and it will be like array of row will be top and if I am running a loop, I equal to left to right, it will be I. So can I say this will make sure the right is printed? Yes, it will. What about the bottom? Can I say the bottom will be starting from here, not 6, do not take 6, do not take 6, it will be a repetition. It will be starting from 7. So the top has to go one down. So can I say top will go one down? It will. So maybe after this for loop is complete, we can do a top plus plus. This will make sure the right is performed if there was a right. Okay, what will be the next? Top has gone down. What do we need to print from here to here? What is constant? The right is constant and you go from top to bottom. So please go ahead and do it. So we go from kind of top to bottom and right is constant, remember this. And can I say I will print A of I and right is constant. Perfect."
+    },
+    {
+      "chunk_id": "L032_C5",
+      "start": 299.44,
+      "end": 379.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=299s",
+      "text": "top to bottom and right is constant, remember this. And can I say I will print A of I and right is constant. Perfect. So this will make sure the bottom is also printed. So the bottom is also printed. Perfect. Next, you have to print this direction. Again, do not print 11. So can I say the right will move one back? It will. Now the right stands over here and I need to start from here till here. So it goes from right to left and the bottom is constant. So what you will do is you will say, okay, listen, for I will go from this portion to this portion, which is right to left. So let's go from right to left. And what will you say? print array of yes, the bottom stays constant and you just take this one. So this will make sure the left is also printed. What about the remaining portion? Remember, it starts from 17. So make sure the bottom goes up, make sure the bottom goes up. Okay. And what is the next that you will do if you've taken the bottom up? That's bottom minus minus. Perfect. Amazing. What's the next job that you will do? You will have to print from here till here. What is constant? Left from bottom to top, you have to run a loop. So you run a loop from bottom to top. Perfect."
+    },
+    {
+      "chunk_id": "L032_C6",
+      "start": 379.32,
+      "end": 448.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=379s",
+      "text": "What is constant? Left from bottom to top, you have to run a loop. So you run a loop from bottom to top. Perfect. And you say print of a of what is constant left. So keep the left as constant and this will print it. Once you have printed this, the top is standing here, the bottom is standing here, the left is standing here, the right is standing here. So this will make sure the top is printed. So can I say the first layering is printed? So let's mark the first layering. First layering is printed. Where will the next layering start from? Yes, it starts from here. It starts from 21. So after this print, the left has to move ahead. Please make sure the left moves ahead. So after this, the left is standing here, the left is standing here, the top is standing here, bottom is here, right is here. So again, the new matrix looks something like this. So I hope you're understanding the pattern that I'm trying to form. I'm first trying to print the right, then the bottom, then the left, then the top. That is why I'm using four different iteration of the loops. So once one spiral is printed, next I'll print the next, next I'll print the next. And you might ask, but straight before this, there is no top. How will you manage this? I'll show you that in the code editor."
+    },
+    {
+      "chunk_id": "L032_C7",
+      "start": 448.82,
+      "end": 507.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=448s",
+      "text": "you might ask, but straight before this, there is no top. How will you manage this? I'll show you that in the code editor. It's time to code it up, covering all the edge cases. Just in case you want to code it up, the problem link will be in the description. So make sure you try out from the problem link in the description. So at first you figure out the number of rows and then the number of columns. In case you are thinking, why is it like this? So usually you're given a list of list. So basically what make the input is basically always like this. They will give you something, a container. This will be a list. This will be a list. This will be a list. This will be a list. This will be a list. All the, all the rows are a list and they're put inside this particular container. So if you figure out the size of this particular container, that will be the number of rows. And if you take the first and you say that is at zero, the next, the first, and you did say dot size, this will give you the number of columns. That is why we usually write an N and M like this. Okay. Now what are the first thing we do? We need a left, which is at zero. We know the right will be at M minus one."
+    },
+    {
+      "chunk_id": "L032_C8",
+      "start": 507.68,
+      "end": 585.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=507s",
+      "text": "are the first thing we do? We need a left, which is at zero. We know the right will be at M minus one. We know we need a top row, which will be at zero and the bottom row will always be at the last. That's it. And we have to return this particular answer in a vector. So let's take a list. Okay. Done. What are the directions? Right, bottom, left and top. So let's perform all the directions. So at first the right is performed. So let's perform the right. So it is like I go from left, I go still right and I plus plus, and it says answer dot pushback of matrix of what is constant, the left and I perfect. Rather the top and I top and I done. Once you've done everything, once you pushed it entirely, the next starts from seven. So the top goes ahead. So top will go ahead. What is the next thing you have to go ahead and do the bottom part. So it's from top to bottom. So let's quickly iterate from top to bottom. That's from top till bottom. I plus plus and you'll again probably take this line, the same line, answer dot pushback."
+    },
+    {
+      "chunk_id": "L032_C9",
+      "start": 585.84,
+      "end": 662.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=585s",
+      "text": "from top till bottom. I plus plus and you'll again probably take this line, the same line, answer dot pushback. But this time this will be I and the constant is the column because we are going bottom. Done. Once you have done this, once you've done this, so this is printed, this is printed. Now you'll start from here. So the right goes over here. Yes. So the right goes over here. So after this, there'll be a right minus minus as well. So make sure the right moves one backward. So right minus minus. Once you've done the right minus minus, what is the next? You definitely start from the right and you go on to the left. Please go ahead and do this. And what do you say? Answer dot pushback. This time what will you pushback? You are having the bottom row as constant. So have the bottom row as constant and you will have the column as moving. Okay. So once you have put everything on this, on this one, then you start from here. So the bottom moves up. So you do a bottom minus minus. Perfect. So once you have done this, what's the next that you do? You go ahead and print from bottom to top. So please go ahead and print from bottom to top. It's like I and D I equal to bottom till top and I minus minus."
+    },
+    {
+      "chunk_id": "L032_C10",
+      "start": 662.02,
+      "end": 738.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=662s",
+      "text": "go ahead and print from bottom to top. It's like I and D I equal to bottom till top and I minus minus. And you again write answer dot push back matrix of I. What stays constant left. Once you have printed everything, the left will move here because this is the new matrix that you have to print. So the left. So what do you do is once you've printed everything, the left moves one step ahead. So can I say this will make sure that this is printed, this is printed, this is printed, this is printed. The next step starts from here again, again, right again, bottom again, left again, top. So again, the same four loops will run. So can I say if this left is smaller than this right, that means there are columns that has to be traversed or spiraled. And similarly, can I say the top is lesser than the bottom? There are still elements that has to be spiraled. Thereby what I will say is, hey, listen, while the top, if I still have any rows and if I still have one column, even even one column, then I need to do this right, left, right, left thing. I need to do it. There is no other way. I'll go ahead and do it. But will it work? We need to think, will it work?"
+    },
+    {
+      "chunk_id": "L032_C11",
+      "start": 738.54,
+      "end": 807.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=738s",
+      "text": "it. There is no other way. I'll go ahead and do it. But will it work? We need to think, will it work? At the end, we can definitely return the answer, but we need to still cover the edge cases. This is fine. This is going to go ahead and do it. Let's come back to the code. So what if we have a single line, just a single line, then it is just perform right. It has just performed right, which is the first case, which is the first case it will perform because the top was lesser than equal to bottom and the left was lesser than equal to right. So the first right case will be performed. Does it have anything to perform on the bottom, on the left, on the top? No, because it is just one row. So we have done, we have done a top plus plus. So what would have happened was top would have been here, bottom would have been here. So I'm doing top plus plus, top moves, top moves beneath bottom. So basically this condition will make sure it checks it. This condition will make sure it checks it and it will never print anything on the bottom. It will never print anything on the bottom. So we don't need to put any extra checks. We don't need to put any extra checks. So the bottom will not be printed because the for loop checks."
+    },
+    {
+      "chunk_id": "L032_C12",
+      "start": 807.38,
+      "end": 885.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=807s",
+      "text": "put any extra checks. We don't need to put any extra checks. So the bottom will not be printed because the for loop checks. So over here there was top and the bottom was also there. After the movement, the top moves beneath bottom. So the for loop checks and it doesn't print and the right decreases itself. Perfect. Initially the left was here and now the right will decrease and come over here. What is the next? It is saying right to left, please move, right to left, please move. But are we checking because we are sure the top has exceeded. So please make sure you check if the top is still under bottom. We still have a row. Otherwise, where will you print? What will you print if it doesn't have anything? Just make sure you do this. Perfect. None. So this is done. So this condition makes sure that if there was one row, yes, if there was one row, the left will not be printed, but, but the top will still be printed. So the bottom is checked and it will not print it. But if you remember, in our case, we had something like this in which there was no top. How do you make sure this works out? So the bottom is checked. What is not checked? Let's write it for that. Now, whatever is not checked, go ahead and write for that."
+    },
+    {
+      "chunk_id": "L032_C13",
+      "start": 885.86,
+      "end": 955.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=885s",
+      "text": "the bottom is checked. What is not checked? Let's write it for that. Now, whatever is not checked, go ahead and write for that. Now, if the left, we still have elements, we still have elements. It's fine to print it. But if we do not have, why will you print it? So please check for left and right. It was the bottom and check top has been checked over here. Similarly, the right and left have been checked. So you don't do it. So we have the top and bottom, which checked and the left, right, right, checked here. And after that, the left, right, never got increased. That's why you did not write an if-else over here. Over here, they are required because top changes, the right changes. Once you've done this, you can go ahead and try to run it. Hopefully it will run at one go. It does. Let's quickly submit it. So what will be the time complexity? Can I say whatever you're doing doesn't matter. You are ending up iterating for every element, for every element once. So the time complexity is nothing but big O of n cross m because the loops are written with all the conditional cases. So it will make sure every element is like this line will only be executed for every element once. So the time complexity will be big O of n cross m and you're storing the answer."
+    },
+    {
+      "chunk_id": "L032_C14",
+      "start": 955.64,
+      "end": 991.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=3Zv-s9UUrFM&t=955s",
+      "text": "only be executed for every element once. So the time complexity will be big O of n cross m and you're storing the answer. So that's another big O of n cross m. So going back to the sheet, I can mark this as done. And if you have understood everything, please give that like because it won't cost you anything, but it will highly motivate me to make these kind of content. If you're new to our channel, what are you waiting for? Hit that subscribe button and to continue our tradition, please do comment understood so that I get to know that you are understanding everything. And if you haven't followed me on LinkedIn, Instagram and Twitter, all the profile links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then bye bye. Take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

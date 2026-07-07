@@ -1,0 +1,106 @@
+{
+  "lecture_id": "L252",
+  "lecture_number": 252,
+  "lecture_title": "L16. Delete the middle node of the LinkedList",
+  "youtube_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI",
+  "chunks": [
+    {
+      "chunk_id": "L252_C1",
+      "start": 0.0,
+      "end": 72.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=0s",
+      "text": "So let's continue with our playlist. Before that, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we are going to solve today is delete the middle node. So what is the problem stating? It is stating that you'll be given the head of the linked list and your task is to delete the middle node. So let's take the first example. The length is five, which is an odd length linked list. In that case, there will be only one middle. You will go to that middle. You'll eliminate that node. Once you've eliminated that node, the previous node will be pointing to the next node. Once this is done, you'll be returning the head of this particular linked list. Got it? Now you might be thinking, what if the length is even? Let's take one more example where the length is four, which is even. In this case, there will be two middle. Middle one, middle two. Your task is to delete the second middle. Go over here, eliminate, make the previous pointer pointing to the next. Once you have done this, return the head of the linked list. Got it? So before I move on to the solution, please, please go back and watch my video on finding the middle node. I've discussed two solutions over there. One is the brute force while the other one is the tortoise and the hare algorithm."
+    },
+    {
+      "chunk_id": "L252_C2",
+      "start": 72.38,
+      "end": 137.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=72s",
+      "text": "middle node. I've discussed two solutions over there. One is the brute force while the other one is the tortoise and the hare algorithm. Go back and watch it because I'll be reusing the same algorithms over here as well. So what is the first thing that you need to do if you're thinking of a brute force? Reach the middle node or find the middle node and then delete it, right? That's what you will be thinking. But tell me one thing before I move on to the brute force and the optimal algorithm. If you reach the middle node, will it make sense? We have done a lot of deletion problems at the beginning. If I reach the middle node, will it make sense? I can eliminate that. But we have a major task in our hand. That is linking the previous node to the next node. So technically, I don't need, I don't need to reach the middle node. Technically, if I'm able to reach the node before the middle node, my job is done. Agreed? So somehow I don't need to reach the middle. If I reach the node before the middle or before the node that I want to delete, then I can easily change the link. Then I can easily change the link. Imagine this is the node. I can straight away see node next will be nodes next and next. This is what I have to do."
+    },
+    {
+      "chunk_id": "L252_C3",
+      "start": 137.62,
+      "end": 199.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=137s",
+      "text": "this is the node. I can straight away see node next will be nodes next and next. This is what I have to do. If I do this, the link is changed. You can delete this or we can, we can deal with this. If I reach M2, it will be of no use. So I have to reach M1. If I'm able to reach M1, that is basically the node before the node that has to be deleted. I can straight away change the link with node.next equal to node.next next. Got it? So first goal is to reach the node before the middle node. So now we know one thing. The next node is the middle node. So if I reach the middle node, I can easily change the link. So first goal is to reach the node before the middle node. So now we know one thing that we need to reach the node before the node that has to be deleted. So what will be the extreme solution that you can think of? Traverse to that node, right? And in order to traverse, you have to find out at what index or what position is that node that has to be reached, not deleted. That has to be reached. In this first example, we need to reach here, the node before the deletion node. And this is at the second position, correct? So, second is 5."
+    },
+    {
+      "chunk_id": "L252_C4",
+      "start": 199.96,
+      "end": 272.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=199s",
+      "text": "example, we need to reach here, the node before the deletion node. And this is at the second position, correct? So, second is 5. Can I say it is n by 2 integer division or floor, n by 2 floor? 5 by 2, 2.5, integer is 2, floor is 2, right? I need to reach n by 2th node. Agreed? Let's look at the other example. n is 4, right? I need to reach here because I don't want to reach the node that has to be deleted, before the one that has to be deleted. So this is where I want to reach. Again, second, again n by 2 integer or floor, right? So what do I need to do? Can I say if somehow I am able to reach n by 2th node, my job is done. Then I can just change the link. So I need to reach the n by 2th node and the extreme brute force is, find out n and that can easily be done by doing a single traversal. So what I will do is, I will take a temporary, place it at head, I will take a value of n to be 0 and I will start counting as the temporary moves. First n is 1, move temporary. n is 2, move temporary. n is 3, move temporary. n is 4, move temporary. n is 5, move temporary. And eventually, temporary reaches null. The moment it reaches null, you stop."
+    },
+    {
+      "chunk_id": "L252_C5",
+      "start": 272.8,
+      "end": 346.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=272s",
+      "text": "move temporary. n is 4, move temporary. n is 5, move temporary. And eventually, temporary reaches null. The moment it reaches null, you stop. First traversal is completed and the value of n is with you. So the first step of traversal is complete. So we have the value of n. What is the next step? We want to reach the n by 2th node. Over here, n by 2 means, 5 by 2, 2.5, integer is 2. So we want to reach the second node. Let's do another round of traversal. So what I will do is, I will again start from the temporary. Let's start from the temporary. This time, reduce the value and then move. Again reduce the value. The moment you reduce the value and you get 0, you don't move it. Reduce, check and if it is 0, stop. If it is not, move to the next. Move to the next. So the temporary has stopped. What is your next job? It's going to be very simple. Very, very simple. What do you do? Is it temporary? Your next, can it point to temporaries? Next, stop, next. So basically this link will go. But you need to delete it. There is still the middle node and it is still pointing to 4. But on a real world scenario, what will happen is, you will go to 1, then you will go to 2, then you will go to 4, then you will go to 5."
+    },
+    {
+      "chunk_id": "L252_C6",
+      "start": 346.84,
+      "end": 419.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=346s",
+      "text": "happen is, you will go to 1, then you will go to 2, then you will go to 4, then you will go to 5. So this 3 is no more accessible. You don't have any pointer pointing to it. So it's not in the link list, but you still need to free that node in case of C++. So what you will do is, you will keep the middle as before changing the link, temporary.next. And if you are using C++, please make sure you do free of middle. That's it. If you do this, these two lines in C++, this will be eliminated, deleted. Got that? So these are the three lines that you have to do. So I have to write down the code. Can I say it will be temporary equal to head and the value of n will be 0 initially? And we can do the simple travesal and compute the length. So temporary is not equal to null. And we will do n++ and we will do temporary equal to temporary next. Quite simple. Done. Step one is done and this will take a big O of n because we are traversing the entire link list. What is the next step? Resultant integer division of n by 2. So probably you can define it in an integer variable n by 2. And you say, okay, let's take again temporary to be standing like start at the head again."
+    },
+    {
+      "chunk_id": "L252_C7",
+      "start": 419.88,
+      "end": 496.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=419s",
+      "text": "in an integer variable n by 2. And you say, okay, let's take again temporary to be standing like start at the head again. And this time you will be like, okay, let's keep on moving while temporary is not equal to null. Let's keep on moving. And over here, you can straight away see that, hey, listen, let's do resultant minus minus. And if resultant is zero, I don't move temp. I don't move temp. I will do the required steps, which is, which is the middle node. That's basically temporary dot next. After that is a temporary dot next equal to temporary dot next dot next. Quite simple. Right after that, what you can do is, yeah, three middle and break off. Make sure you get the break statement in case the resultant is not zero. You ask temporary to go to the next and keep reducing the value of resultant. So temporary dot next. Once the while loop is completed, make sure you return the head because that has been asked in the question. Done. And also at the starting, just make sure you take care of the edge cases, like if the linked list is empty or if it is a single node linked list."
+    },
+    {
+      "chunk_id": "L252_C8",
+      "start": 496.94,
+      "end": 564.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=496s",
+      "text": "of the edge cases, like if the linked list is empty or if it is a single node linked list. Because in case of a single node linked list, it will be deleted and it will turn to an empty linked list. So you will be returning null in this case. What will be the complexity of the second half? Can I say the second half's complexity will be big O of n by 2 because you'll traverse till the node before the middle node somewhere near about n by 2, because that is what the value of resultant is. That is how much the loop will be traversing. So the overall time complexity will be big O of n plus n by 2. What will be the space complexity? Big O of 1. So at this point, the interviewer will not be happy. Why? Because at the end of the day, it is a two-pass solution. One pass to find out the length while the other pass to reach the node before the middle node. So he'll ask you to optimize this into a one-pass solution and that will be our optimal solution. Let's check it out. So if you do remember our previous video that was finding the middle node. We did solve it using the tortoise and the hare algorithm, right? And that was a one-pass solution. Can I use the same algorithm over here? I can. Why? If you remember the algorithm, it was stating that"
+    },
+    {
+      "chunk_id": "L252_C9",
+      "start": 564.96,
+      "end": 638.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=564s",
+      "text": "that was a one-pass solution. Can I use the same algorithm over here? I can. Why? If you remember the algorithm, it was stating that we will take a slow pointer, we will take a fast pointer, we will move the slow by 1, we will move the fast by 2 and they will initially start at the head. Let's do it. Slow moved by 1, fast moved by 2. That was the first step. Simultaneously by 1 and by 2. And the next step, slow moved by 1 and the fast moved by 2. Whenever the fast reaches the last, whenever the fast pointer reaches the last node and that will happen if the length is odd. If the length is odd, it is bound to reach the last because whenever the length is odd, the last node is at an odd index. Is at an odd index. First it starts with 1, then goes to 3, odd index, goes to 5, odd index. The next if there was, would have been 7. So in case of odd length, linked list, it will always end up at the last node. So whenever it reaches the last node, slow will be pointing to the middle node. Slow will be pointing to the middle node and that was done in one pass. In case of an even length linked list, we did the same thing. Slow was standing at the head, fast was standing at the head. Then we started moving."
+    },
+    {
+      "chunk_id": "L252_C10",
+      "start": 638.02,
+      "end": 707.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=638s",
+      "text": "even length linked list, we did the same thing. Slow was standing at the head, fast was standing at the head. Then we started moving. Slow moved by 1, fast moved by 2. After that, slow moved by 1 again, fast moved by 2. And this is the point you see that the fast is reaching null. In case of even length linked list, it was reaching null. Why? Because the even length, if you count the index, it's an even length index. So if the fast is jumping, it will jump to 3, then it will jump to 5. Right? That is why it will never end at the last node. So whenever the fast reaches the null, slow was pointing to the middle. So if you remember our solution, our solution is not to reach the middle node. Because if I reach the middle node, I cannot change the link. Our solution was to reach the node before the middle node. So that I can change the links. Can I do it? I think I can. Maybe I can take a third variable and while slow is traversing, I can remember the last node it was at. I can do that. But do I need a third variable? Probably not. I will do it in a simpler way. So what I will do is, I'll do slight changes. Yes, I'll do slight changes to the existing Totter's and Nehan algorithm. And that will make sure"
+    },
+    {
+      "chunk_id": "L252_C11",
+      "start": 707.06,
+      "end": 785.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=707s",
+      "text": "will do is, I'll do slight changes. Yes, I'll do slight changes to the existing Totter's and Nehan algorithm. And that will make sure that we end up being at the node before the middle node. Okay. So what are these slight changes? Tell me one thing. Where did you start? You started here. Slow and fast pointers was pointing to it. Where did they end? Slow ended here and the fast pointer ended here. What do you want? You don't want slow to end here. You want slow to end here because this is the node before the middle node. You want one step before. One step before. One step. Skip one step. Skip one step. Yes. What I'll do is, I will skip one step of slow. I will skip one step of slow. So what I'll do is, eventually I can say slow is here. Fast is here. Let's do the first step. Fast moves to two places ahead. I'll skip one step of slow. Skip. Don't move slow. Skip, skip, skipped. Let's do the same steps afterwards. Slow moves by one. Fast moves by two. Fast moves by two. Fast has reached null. And you stop. You don't do anything. Done. Done in a state. So what you see is, slow has ended up reaching one step before the middle node. Why did that happen? Because you skipped one step."
+    },
+    {
+      "chunk_id": "L252_C12",
+      "start": 785.12,
+      "end": 863.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=785s",
+      "text": "you see is, slow has ended up reaching one step before the middle node. Why did that happen? Because you skipped one step. So if you are skipping one step, it is bound that you are one place before the middle node. Makes sense, right? We can do the same thing over here. Initially we start with slow over here. Fast over here. And let's do the algorithm. Skip one step. So only fast will move. Skip the first step. After this, let's keep moving them. Fast reaches here. Slow reaches here. Since fast reaches null, your slow ends up pointing to the node before the second middle in this case. Done. So I will be writing the pseudocode in case you want the C++, Java, Python or JavaScript course. The link will be in the description. It's going to be the same as the tortoise and the hare algorithm. We started by placing slow at head and the fast pointer at head, right? Let's do one step. So that's basically fast will be fast of next next and we will not move slow because slow will be skipping. After that, move them simultaneously. That's basically stating while if it reaches the last, that's perfect. Otherwise, it has to be at the last which is this case if it is not if both the conditions are not met."
+    },
+    {
+      "chunk_id": "L252_C13",
+      "start": 863.18,
+      "end": 942.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=863s",
+      "text": "it has to be at the last which is this case if it is not if both the conditions are not met. That means it is somewhere still in the linked list. Slow will move by one and the fast will move by two. Done. What after this? End up. Once you have done this, you are guaranteed that the slow is pointing to the middle node. Do the length change. So can I say the length change will be slow next of slow next next and once you've done this, you return the current head of the linked list, which is this. That's done. You need to free up in case of C++. You need to free up that node. So that middle node, can I say the middle node will be slow dot next? Don't free it up after it. Change the link and then say free. Free middle. So in case of C++, these two lines will come in. That is basically freeing up that node. Once you've done this, you can return. So when you start, please make sure you check if the given linked list is empty or or if it is a single element linked list. In both cases, you basically return null. Because if it is a single element linked list, that will be the middle. And if you delete it, it will turn up"
+    },
+    {
+      "chunk_id": "L252_C14",
+      "start": 942.22,
+      "end": 987.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=ePpV-_pfOeI&t=942s",
+      "text": "Because if it is a single element linked list, that will be the middle. And if you delete it, it will turn up to an, it will get converted into an empty linked list. So you'll be returning null. What will be the time complexity? Same as the Totals in the head algorithm, which is b go of n by 2. Because ultimately you're going till the half of the linked list. The space complexity, b go of 1. So we were able to solve this using one pass. So let's quickly get back into the code editor. As you can see, I've written the exact same code over here. Hit the submit button and it will be submitted in case you want other languages code. It will be in the description. Please make sure you check it out. So if you're still watching, I'm very much sure that you've understood everything. And if that is the case, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

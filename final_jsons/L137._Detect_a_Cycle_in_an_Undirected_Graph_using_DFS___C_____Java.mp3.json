@@ -1,0 +1,120 @@
+{
+  "lecture_id": "L137",
+  "lecture_number": 137,
+  "lecture_title": "G-12. Detect a Cycle in an Undirected Graph using DFS | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4",
+  "chunks": [
+    {
+      "chunk_id": "L137_C1",
+      "start": 0.0,
+      "end": 74.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we're going to solve something like cycle detection in an undirected graph using DFS. So if you have not seen the previous video, go back and watch it. We have solved how to detect a cycle using BFS. But over here we will be using the depth first search algorithm. So you know what is a cycle? It's very simple. If you start from a node and you come back to that node via any path without breaking any edge, that is what you call as a cycle. So this graph definitely has a cycle. So for this graph, this will be the corresponding adjacency list. If you don't know how to draw or how to write an adjacency list, lecture two or lecture three is what you need to go back and watch. Okay. So how do you detect a cycle using DFS? What is the concept of DFS? The concept of DFS is it starts from a source, then tries to go here, then tries to go here, then tries to go here, then tries to go here, then tries to go here, then probably tries to go here, then has no way, goes back"
+    },
+    {
+      "chunk_id": "L137_C2",
+      "start": 74.52,
+      "end": 146.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=74s",
+      "text": "tries to go here, then tries to go here, then probably tries to go here, then has no way, goes back and tries to go one. And if it reaches back to somewhere, which is previously visited, because you need to understand you started from one in this direction. And if you're again coming back to one via DFS, it means you definitely have a cycle that is for sure. Right? So this is the algorithm. This is the intuition that we are going to follow. We start from somewhere and if you reach any node that has been previously visited in the path, we call it as a cycle. Okay. So let's, uh, we know how DFS works. We take a source node so we can easily take a source node. So before that, please make sure you take this particular visited array. So in the visited array, make sure everything is marked as zero apart from the source node, or you can probably keep the source node as whatever, like that is your choice. I will try to keep it as zero and in the DFS we can mark. So the fourth, for the first time, the DFS is called something like DFS of one comma, make sure you carry the parent, make sure you carry the parent. It came from one minus one. I'll tell you, why do you need to carry the parent? But this is basically the node and this is nothing"
+    },
+    {
+      "chunk_id": "L137_C3",
+      "start": 146.84,
+      "end": 219.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=146s",
+      "text": "one minus one. I'll tell you, why do you need to carry the parent? But this is basically the node and this is nothing but the parent. Why do we need to carry the parent? I will tell you that. So you are at one. So one has an adjacent node of two and has an adjacent node of three. So first the call will be made for two and then it will come back. Then the call will be made for three and then it will come back. So let's start the algorithm by having the DFS as one and we can see it as minus one. Remember this is the parent node and this is the normal node, right? So what we do is we go back and see who are the adjacents of one. But before that, whatever DFS is called, market has visited, market has visited. Now we go back and see for one, who are its adjacent nodes or the neighbor nodes and how do you know who are the neighbor nodes? Very simple. You go to the adjacency list and you get this list and we see that two is one of the neighbor nodes and three is one of the neighbor nodes. So apparently there will be a call for two at first saying that the parent is one saying that it came from one. Basically it came from one. That is what it, what do you need to"
+    },
+    {
+      "chunk_id": "L137_C4",
+      "start": 219.96,
+      "end": 291.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=219s",
+      "text": "the parent is one saying that it came from one. Basically it came from one. That is what it, what do you need to carry first? The call for two will be made once the DFS is done, then we will go for three, right? That is how the DFS works. So we can keep it as dotted. Now remember over here dotted means we will do this call after this particular call is over. Okay. So we have DFS of two. So if we have a DFS of two, this is where you'll understand the concept of parent. For two, the moment you reach two, obviously first and foremost thing. Next neighbor nodes of two, who is it? One. And you see, Hey, it's already visited. You, you touched someone, but I'm like, Hey, listen, stop. Wait, wait. You came back. You came from one. If you came from one, it's not a cycle. You can't call something like this as a cycle. This is not a cycle. This is not a thing. So since you came from one and it is visited, I will not say that you came back to a node who was previously in the path. Got it. Okay. I repeat. I cannot see, I came back to a node who was previously in the path because I just came back to the parent. So that's why we will not make a DFS call for this, but we will make"
+    },
+    {
+      "chunk_id": "L137_C5",
+      "start": 291.96,
+      "end": 365.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=291s",
+      "text": "because I just came back to the parent. So that's why we will not make a DFS call for this, but we will make a DFS call for five and we will say five. You came from two and the moment it reaches five, five will be one. So the five were the adjacent nodes. Again, two, two is marked as visited, but like wait, it was the parent. Next seven. Yes. Seven is unvisited. So you call for seven. And what do you say? Hey, listen, for seven, if you're saying the parent is five, done. The moment you reach seven, market is visited. Now for seven, what are the adjacent nodes? Five. That's the parent. That's already visited. Now we'll go to six now. DFS of six. And the parent is seven. Market is visited now. For six, who are the neighbors? Three. For six, there is a three, there is a seven. For seven, there will be no call because it's the parent, but for three, there will be a call. Do the call for three. Do the call for three saying that the parent is six. Market is visited. Let's go to three. So this is one, four, six. Just in"
+    },
+    {
+      "chunk_id": "L137_C6",
+      "start": 365.6,
+      "end": 444.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=365s",
+      "text": "that the parent is six. Market is visited. Let's go to three. So this is one, four, six. Just in order to ease out understanding, I'll do it four, one, six. It's okay. That's since it can be written as one, four, six, but I'll write it as four, one, six to be able to explain you in a better way. Okay. So as of now, we have DFS of three, six, and three is marked as visited. Three says, one of my neighbor nodes is four. I'm like, fine, fine. Go and call it. So we will go and call the DFS for four where the parent is three. Four is marked as visited. So four apparently has just one node, three, who's the parent who's already visited. No one else. So he says, I did not get, uh, so I'll return a false. I did not get a cycle. If I end up DFS calls and I don't get a cycle, I'll always return false. But this three called for four, it'll call for one. Now this was left the DFS of one comma three was left, but will it call for DFS of one, three? Will it call for DFS of one, three? No. Why? Because this one, if you see is visited over here and it's not the parent. How did it, how did it mark itself? Because it was previously in the path. It was previously in"
+    },
+    {
+      "chunk_id": "L137_C7",
+      "start": 444.92,
+      "end": 512.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=444s",
+      "text": "and it's not the parent. How did it, how did it mark itself? Because it was previously in the path. It was previously in the path here. That is why it was marked in the visited. So I see, Hey, for this one, don't call it, do not call it. Instead of that, since you've got someone return a true, but this guy who called this function sees this function is returning him a true. He says, you're returning me a true, I'll also return a true because you got a cycle. So I also go to cycle. But this guy sees you're returning a true. I'll also return a true. This guy sees you are returning me a true. I'll also return a true. This guy says you're returning me a true. I'll also return a true. This guy says I got a true. Should I go and have my brains on three one? I don't need to do any further calls. I got a true. If I'm getting a true, there's no need to do DFS for further calls. And I see true for the source node, starting with one, I got someone as true, which means I have a site, which means I have a site. Does that make sense? That's true. So if you remember the DFS algorithm, the DFS algorithm was something like node, and now you can carry the parent. I'm not writing"
+    },
+    {
+      "chunk_id": "L137_C8",
+      "start": 512.68,
+      "end": 585.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=512s",
+      "text": "if you remember the DFS algorithm, the DFS algorithm was something like node, and now you can carry the parent. I'm not writing a visited and all. I'll show that in the code. I'm trying to explain to the pseudocode. So the moment you enter, you always mark it as one. And then you go across all its neighbor nodes, right? You go across all its neighbors. Now under this, there'll be some algorithm. What would be the algorithm? One of the algorithms is very short. If it is unvisited, if the adjacent node is unvisited, we go and call the DFS for this adjacent node. And the parent will be node because for this node, this is the adjacent. It's something like node joint to IT. So if you're calling for IT, this will be the parent. So you'll call for it. But if you remember this, this call was made DFS of four three and it returned a false. It did not do anything. But when you made a call for three, six, when you made a call for three, six, it found out one was already visited. So it returned a true. So if any of the DFS calls is returning a true, you keep on returning true. So this is a DFS call that you're making. So if it by chance returns a true, remember this, if it by chance returns a"
+    },
+    {
+      "chunk_id": "L137_C9",
+      "start": 585.8,
+      "end": 665.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=585s",
+      "text": "is a DFS call that you're making. So if it by chance returns a true, remember this, if it by chance returns a true, not a false, if it's false, we keep on checking for adjacent neighbors. But if this guy says, I went to node to IT and to so on and so on, and somewhere I got a cycle somewhere, I got a cycle and I returned true, true, true. So this IT returned a true. So I'm saying this guy got a true. So if you got a true, you say, okay, in overall, I got a true. This is for any DFS call that gives you a true. But what if it's not visited? What if it's not visited? Again, interesting thing. Let's come back over here for when you started with two, you did not go to one because one was visited and one was the parent. So if it is parent, then it's not a cycle. It has to be a non-parent. It has to be non-parent. Then only I can call it as a cycle. So I'll be like, if this guy is visited, if it comes to else means visited, and if it is not a parent, if it is not a parent, dude, how did it visit itself? That means it is a cycle. That means this is the point where I encountered a cycle, something like this. When I was trying for three, I got one. How did you get"
+    },
+    {
+      "chunk_id": "L137_C10",
+      "start": 665.72,
+      "end": 737.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=665s",
+      "text": "this is the point where I encountered a cycle, something like this. When I was trying for three, I got one. How did you get one? One was visited, but it was not a parent. It's a cycle. You returned a true, you returned a true saying it got a true. So that's why, that's why over here you return a true. Perfect. And this is how this will end. And if after all the DFS calls, after traveling for all the adjacent nodes, you never got a cycle, what did you do? Yeah. And then just go and return a false. If you never got a cycle, this is how the pseudo code will look like for the DFS. You can pause it over here and check it out. If you're not understanding, if you're not understanding it properly, my suggestion to you will be draw multiple graphs, draw some multiple graphs, do the DFS calls, do a dry run of this code. Eventually it will get into your head. I'm sure that it definitely did get into your head, but just in case I'm saying just in case, okay. Again, your recursion should be strong. You can watch the recursion playlist for that. So guys, I hope you have understood the algorithm. Now it's time to code it out. So as usual, I'll be writing the code on right, which is the C++ code. And then on left, you can easily find the Java code. Okay."
+    },
+    {
+      "chunk_id": "L137_C11",
+      "start": 737.24,
+      "end": 807.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=737s",
+      "text": "I'll be writing the code on right, which is the C++ code. And then on left, you can easily find the Java code. Okay. So private. And I say, Hey, listen, I need something like a DFS. Perfect. I need the node. I need the parent. And then I need the visitor. That's for sure. And I need the adjacent as well. Do I need anything else? I don't think so. What do you do always the moment you reach there, this is something that you do. Then you say, these are the adjacent nodes, right? And you say, okay, go on. Then you're like, okay, if this guy is not visited, which is this adjacent node is not visited, then you can just roughly go on and call the DFS for adjacent node. The node will be the parent, the visitor and the adjacency. But if by chance, this returns a true, if by chance, this returns a true, it can return a false, then I'll call for the next guys. But if this returns a true, you say it has a cycle. Yes, you say it has a cycle. So this is how, if it returns a false, it's fine. Otherwise, because if it returns a fall, you're going to do a DFS for all the other things. Okay. Next, if it is unvisited, like if it has been previously visited, and it's not a"
+    },
+    {
+      "chunk_id": "L137_C12",
+      "start": 807.8,
+      "end": 885.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=807s",
+      "text": "DFS for all the other things. Okay. Next, if it is unvisited, like if it has been previously visited, and it's not a parent, if it is not a parent, then I'll be like, how did it visit? That means it's a repeated node in the path cycle, or else you say return false. Perfect. This is how you can easily get this across. Now over here, what will you write? Will you just call something like return DFS source node one minus one visited and adjacency? Well, this work, this should have worked if the graph was something like, let me do this. If it should have worked, if the graph was something like a single component graph, but over here, the graph can have multiple components. Yes. So in case of multiple components, let's take an example. So assume this is like one, two, three, and four. This is the first comp, five, six, seven, eight, nine, by the way, components in a sense, if you don't know lecture four, okay, lecture four connected components. So this is it. Yeah. So if you just call for DFS of one, it will go and it'll visit these guys and it will never find a cycle in order to find a cycle. You have to actually call DFS of seven, right? So how would"
+    },
+    {
+      "chunk_id": "L137_C13",
+      "start": 885.96,
+      "end": 956.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=885s",
+      "text": "never find a cycle in order to find a cycle. You have to actually call DFS of seven, right? So how would you do this? This is where, what do you do is you always call something like I equal to one till nine. And you see, if these guys are not visited, then call the DFS for the source. And then if this DFS call comes out as true, you can say there's a cycle. What does this mean for the first time? I will be one. So you find it not visited. You find it not visited. You call the DFS for one. So it goes, though it goes for the call of one marks, all of them and says, I did not find a cycle next. I will become two, but it'll find two as visited. No DFS calls. Next will be three again, find visited. No DFS calls. Next will be four. I find already visited. No DFS calls. Next will be five non-visited. So goes and calls the DFS of five now. So first a DFS call for one was made. Next, the DFS call of five was made. Five will make sure five is visited. Six is visited, right? So now the DFS of five will be called and five will go and mark these guys. And again, it will not get a cycle. Come back. Then it'll be six."
+    },
+    {
+      "chunk_id": "L137_C14",
+      "start": 956.6,
+      "end": 1027.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=956s",
+      "text": "called and five will go and mark these guys. And again, it will not get a cycle. Come back. Then it'll be six. Then it'll be seven. This time in DFS of seven is called seven goes and finds a cycle. It says true. So you get a true. And it says true. You get a cycle. This is the new addition that you have to do, but make sure you declare the visited array so that you don't call like DFS one, then don't call like DFS two, then DFS three. No need to visit again and again. In total, just make sure you visit like four notes, six notes, nine notes in total. You just need to make sure you visit nine notes. So what you will do is instead of this, you will say, okay, by the way, zero-based indexing, this is zero-based indexing to take care of this. So if not visited, I, then I will say if DFS of I, that will be always minus one visited. Adjacent is coming out to be true. You return a true or else at the end of the day, if you, none of them gave a cycle, you return a false. So you can just compile that and check it out. It is running absolutely fine. So it's time to discuss the space complexity. Are we using the space complexity? We are using"
+    },
+    {
+      "chunk_id": "L137_C15",
+      "start": 1027.24,
+      "end": 1099.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=1027s",
+      "text": "out. It is running absolutely fine. So it's time to discuss the space complexity. Are we using the space complexity? We are using something like recursion stack space, which can be big go off. And at the worst case, assume all the nodes are connected. It'll be a recursion of the, like, assume you get a graph, something like this. Then the recursion will go here, then here, then here, then here. So complete recursion stack space using something like a visited array. So you can just sum it up to be go off. And I'm not using like, I'm not adding the adjacency list into a column. What about the time complexity? We're using a DFS traversal and we know the DFS traversal is N plus two E because for every node you visit all the degrees or all the adjacent nodes and the summation of adjacent nodes is two E. So N plus two E plus B go off N because you're running a for loop. You're running a for loop, but the for loop does not calls like DFS one, two, three, four. No, in total it will call this for like once this, which will make sure the DFS is four times, the DFS is two times, the DFS is three times. In total, it will be called three times. And that three times will make sure it visits them nine times. It won't be like every time it's getting called. So it's not"
+    },
+    {
+      "chunk_id": "L137_C16",
+      "start": 1099.08,
+      "end": 1149.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=zQ3zgFypzX4&t=1099s",
+      "text": "And that three times will make sure it visits them nine times. It won't be like every time it's getting called. So it's not something like into overall, it will visit all the nodes and it'll be two E time that it'll take to visit all the nodes. And there is this loop that is running for loop, this for loop, which is going to take N times. That's why this is the overall time complexity. This is the overall space complex. So guys, I hope I was able to explain you this particular algorithm just in case I was, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And if you haven't checked out our dynamic programming playlist and the SD sheet, you're missing out on a lot. The links are in the description, check them out. And yeah, with this, I'll be wrapping up this video. Let's meet in some other video till then. Bye-bye. Take care."
+    }
+  ]
+}

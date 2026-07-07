@@ -1,0 +1,141 @@
+{
+  "lecture_id": "L305",
+  "lecture_number": 305,
+  "lecture_title": "L9. Sum of Subarray Minimum | Stack and Queue Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc",
+  "chunks": [
+    {
+      "chunk_id": "L305_C1",
+      "start": 0.0,
+      "end": 74.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=0s",
+      "text": "So let's continue with the stack and queue playlist. But if we're starting off, everyone welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is sum of subarray minimums. So what is the problem stating? It's stating that you will be given an array of numbers. Now your task is to tell me the sum of subarray minimums. Let's understand. So given an array, if I end up writing all the subarrays possible, so maybe I'll start off with the first one, which is three. Three is an individual element subarray. And then maybe three comma one. Then maybe three comma one comma two, then maybe three comma one comma two comma four. So these are the four subarrays that start with three. After that, maybe I can write one, and then a one, two, and then a one, two, four. So these are the three subarrays that start with one. After that, two and a two, four. These are the two subarrays that start with two. And after that, four. So what I've done is I've written down all the subarrays possible from this particular array."
+    },
+    {
+      "chunk_id": "L305_C2",
+      "start": 74.16,
+      "end": 144.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=74s",
+      "text": "And after that, four. So what I've done is I've written down all the subarrays possible from this particular array. Now your task is to figure out the minimum, if you see properly, the minimum of all the subarrays. Can I say the minimum of this is three? The minimum of this is one? The minimum of this is one? The minimum of this is one. Quite simple. Three, one, two, four. The minimum is one of the entire subarray. Give me the minimum. The minimum of this is one. The minimum of this is one. And the minimum of this is one. The minimum of this is two. The minimum of this is two. And the minimum of this is four. So you take all the minimums from all the subarrays and you sum it up. So once you've summed it up, the value that you get is 17. And that is what you will have to return. The value might be very large. So the question is stating that you are given a module, a mod value, which is 10 to the power 9 plus 7. If the value is very large, you mod the value with this particular value and then return. So usually whenever you get larger answers, because you cannot store it. So what they end up doing is they do a mod so that they can trim off the value. Perfect. So how do we solve this?"
+    },
+    {
+      "chunk_id": "L305_C3",
+      "start": 144.16,
+      "end": 216.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=144s",
+      "text": "they end up doing is they do a mod so that they can trim off the value. Perfect. So how do we solve this? See the brute force is clearly visible on the screen, right? The brute force is generating all the subarrays and figuring out the minimums and summing it up. Yeah. We will generate all the subarrays. So if you carefully observe the first subarray is this much. The next one is this much. The next one is this much. And the next one is this much, which is all the four subarrays starting with three. So maybe I can keep an eye pointer here and then I can keep adding elements and I can keep updating my minimums. After that I can keep my eye here. First one is this, then this, then this. And as I go through, I keep updating my minimum and I can keep on adding. And then I hear this is this, this is this. And then I hear this will be this. So can I say like if I have to, maybe I'll just quickly erase this so that I can write down the code. So we'll take a sum which is zero. And can I say I equal to zero till n minus one, because from every index we can have subarrays generated. After that, maybe I can do a minimum, which is array of I. Yes, I can do that."
+    },
+    {
+      "chunk_id": "L305_C4",
+      "start": 216.12,
+      "end": 289.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=216s",
+      "text": "index we can have subarrays generated. After that, maybe I can do a minimum, which is array of I. Yes, I can do that. And after that, I know the first subarray starts from, it's this much. So J equal to I, that's the first subarray. Okay. And it goes on till n minus one. So what I can do is every time I could update my minimum. So which is min of minimum comma array of J not I, array of J. So my minimum is updated. So what I'm very sure is I to J is my subarray. Then J goes, I to J is my subarray. Then J goes is my subarray. I to J is my subarray. So every time minimum is going to be my minimum of that subarray, because every time I add an element, I keep on updating my minimum. So what I could do is I could straight away say sum equal to sum plus minimum. And remember in all the mod cases, you could do a mod over here and you could probably store the mod value equal to int. And then you can write one E nine plus seven. So that's it. So that will be it. And you could end up returning whatever is your sum. Now what is the time complexity that you're taking over here? I'm ending up taking a big O of n square over here because I'm running couple of loops."
+    },
+    {
+      "chunk_id": "L305_C5",
+      "start": 289.38,
+      "end": 365.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=289s",
+      "text": "complexity that you're taking over here? I'm ending up taking a big O of n square over here because I'm running couple of loops. What about the space complexity? I'm not using an external space. I'm using constant space. Obviously this is the moment the interviewer will be not happy. They'll ask you to optimize a big O of n square. So let's check out the optimal solution. So we need to optimize big O of n square time complexity, which means we're looking something around big O of n, right? Okay. So how do I optimize? So what I'll do is I'll go to the initial drawing table. And what we did was we generated all the sub-arrays and among all sub-arrays we picked up the minimums and then we added it up. So if I ask you, what is the, like how many times this particular element contributed to my answer? You'll be like, oh I have ones and I don't see. So it contributed once to my answer, like it was minimum for once. So I can maybe write it in green color. It is minimum for once. Okay. How many time did one like contribute to your answer? It'll be like once, twice, thrice, four times, five times, six times. So it is like six times into the answer. How many times is two there in your answer? Once twice, two times. How many times is four? Once."
+    },
+    {
+      "chunk_id": "L305_C6",
+      "start": 365.82,
+      "end": 443.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=365s",
+      "text": "six times into the answer. How many times is two there in your answer? Once twice, two times. How many times is four? Once. So if three has contributed once, so I'll just add three to my answer. So I will add three to my answer. If one has contributed six times, I will end up adding six into one. That is a plus six. If two has contributed twice, I'll add two into two, four. If four has contributed once, I'll add four into one, four. And eventually I'll get 17 as my answer. So what I did was I broke down the problem from generating all the sub-arrays to finding out individual contributions and adding them up to get my answer. Okay. Is it an optimization? We still need to figure out how to find the individual contributions. So for that, we will move on to this particular example. So before we move on to this one, please, please make sure you know about next greater element and previous smaller element. And if you'd have done this, you should be able to do the next smaller element and you should be able to do everything, which is like next smaller, next greater, you know, previous greater, previous smaller. You should be able to do all the varieties. If you are not able to do this, please pause this video right now, go back and watch the"
+    },
+    {
+      "chunk_id": "L305_C7",
+      "start": 443.66,
+      "end": 519.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=443s",
+      "text": "do all the varieties. If you are not able to do this, please pause this video right now, go back and watch the video on next greater element and try to figure out previous smaller element, next smaller element, try to do it on your own and then come back to this one. Okay. That's the prerequisite. Otherwise you'll not understand anything. Fine. I'll tell you one thing. If I ask you what is the contribution of this particular three and how many sub-arrays will it be the minimum, you'll be like, Hey, uh, this can be individual sub-array. This can be three, seven. This can be three, seven, eight. Correct. But if either of these three sub-arrays in all of them, three will be the minimum. Agreed. But if I take three, seven, eight, one, will three be the minimum? No. In that scenario, one will be the minimum. The sub-arrays that I can take is three, three, seven, three, seven, eight. So there are three contributions over here that I see, but I'll not count it as of now. Maybe I can also take three, seven. Maybe I can also take three, seven, six. Maybe I can also take three, seven, six, four, but I cannot take beyond it. Maybe some sub-arrays on the left side as well, or maybe something combining them, something combining them. You never know. Maybe something combining like this. So you can combine them as well. Okay."
+    },
+    {
+      "chunk_id": "L305_C8",
+      "start": 519.7,
+      "end": 595.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=519s",
+      "text": "or maybe something combining them, something combining them. You never know. Maybe something combining like this. So you can combine them as well. Okay. So I know one thing for a fact. On the left, I can take all of these four elements as a sub-array. On the right, I can take three elements as a sub-array. Not this one, not this one. So if I can take four on the left, three on the right, what will be the total number of sub-arrays that you can generate? Simple maths, simple maths. If this is four, this is three, the total number of sub-arrays combining them will be four cross three, which is 12. I'm not going to explain how this 12 came up. It's mathematics, which has been taught in high school. So you can go back and watch it, or you can just write it using pen and paper. You'll understand how this is generated. So 12 sub-arrays is what I could possibly generate. So if I could generate 12 sub-arrays, that means three is minimum for 12 sub-arrays, which means the contribution is 12 cross three, 36. I could straight away add 36 to the answer. But now the question arises, hey, Stryver, how did you figure out that you'll have, like the right has three elements? It was super simple. What I'll do is I'll end up writing down the indexes. The index is zero, one, two, three, four, five, six, seven."
+    },
+    {
+      "chunk_id": "L305_C9",
+      "start": 595.22,
+      "end": 668.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=595s",
+      "text": "super simple. What I'll do is I'll end up writing down the indexes. The index is zero, one, two, three, four, five, six, seven. I ask you a very simple question for this three, which is the next smallest element? So if you look at this, seven is not smaller, eight is not smaller, one is smaller. So the moment you add one to your sub-array, three never remains the minimum anymore. So you cannot add one. So what do you know is for this fourth index, the next smaller index will be seven. So seven minus four will give you three elements on the right. And if I look at the previous smaller element, if you look at the previous smaller element, this is the previous smaller element. So you end up taking this one. So I ask you, what is the previous smallest, smaller element index? That is zero. So you're currently at the fourth index. The fourth index minus previous smaller index gives you four elements. And then you can multiply that, you'll get 12. So all you need to know is where is the next smaller index and where is the previous smaller index. If you're able to do this, I think we are done here. Okay. I hope you understood this. It's pretty simple because if these elements are greater, they can easily form the sub-arrays."
+    },
+    {
+      "chunk_id": "L305_C10",
+      "start": 668.44,
+      "end": 747.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=668s",
+      "text": "done here. Okay. I hope you understood this. It's pretty simple because if these elements are greater, they can easily form the sub-arrays. So again, I'm assuming you know how to write the next smaller element stuff. I'm assuming you also know how to write a previous small element. In case you don't know, the code will be given below. Please go back and watch my next greater element video. So there you got the, just if I can do that for three, I think I can do that for each and every element. I can do that for each and every element. So just make sure if, let's say if this was 10, in that case you couldn't take all the elements. So just make sure if there is no next small element. If you see for this three, there is no next small element. In such scenarios, please assign next small element to be n, like the nth index so that the subtraction holds and the previous small element to be minus one. In case, in case you don't find a previous small element. Okay. Time to probably write down the code. So I'll write down the code and then we can discuss some edge cases. So what do I need? I need the count, like the sum, so integer. I need to figure out the sum. So I'll be given an array. Perfect. So what do I need?"
+    },
+    {
+      "chunk_id": "L305_C11",
+      "start": 747.02,
+      "end": 826.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=747s",
+      "text": "like the sum, so integer. I need to figure out the sum. So I'll be given an array. Perfect. So what do I need? I definitely need a couple of stacks. One is next small element. So maybe I can say find next small element and I can write a function for that. I'll write it afterwards and that will give me, maybe I can say previous small element and I'll say find previous smaller element and I'll pass on the array and maybe that will give me it. After that I can take a total which is zero and I can take a mod value which is typically integer and then a one E nine plus seven. Okay. I'm right down the code. So what I'll do is I'll start iterating like I equal to zero. I'll go through each and every element and I need to figure out how many elements are there on the left, which is typically I can say whatever index I'm currently at, I'll do a previous small element index. That's it. I'll ask how many are there on the right, which is typically going to be previous, sorry, previous smaller, because that is the greater one. Next smaller element minus the current. That'll give me the number of elements of the right. So can I say the contribution will be added to the total? So maybe I can say total equal to total plus right multiplied with left."
+    },
+    {
+      "chunk_id": "L305_C12",
+      "start": 826.98,
+      "end": 905.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=826s",
+      "text": "I say the contribution will be added to the total? So maybe I can say total equal to total plus right multiplied with left. Make sure you do a one LL because in case it's a long multiplied with the value, which is area of I, because that is the contribution and you can do a module. So basically what you do is you do a module here and after adding you again do a module. So that's how you do the module. After every operation, you typically do modules. So that's done. And eventually you could end up returning what you'll end up returning. I think that's all good. That is it. So all we need to do is we need to write the find NSE and find PSE. So we have some edge cases that you will have to consider. So I'll tell you the edge cases now. Time to tell you the edge cases. Imagine I give you an array like 1 comma 1. So what happens is you come across this one. So first of all, let's do one thing. Let's write down the indexes. So the indexes goes as 0 and 1. And after that, let's take some time out and write the NSE. So the next small element for the first one will be, you don't have one. So you could write the last index. This also doesn't have one. So you could write the last."
+    },
+    {
+      "chunk_id": "L305_C13",
+      "start": 905.48,
+      "end": 980.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=905s",
+      "text": "will be, you don't have one. So you could write the last index. This also doesn't have one. So you could write the last. And the previous small element would be minus 1 and minus 1 because they don't have 1. Okay, fine. And now let's do the contribution part. Imagine you come up to the first element, which is the 0th index element. So when you're at this element, you say, how many do I have at left? He says, I don't like typically 0 minus of minus 1, which is I have one element. I have one element, okay, which is he himself. Okay. On left I have one. So I'll write that one. How many do I have on right? That's typically the 0th index and 0th index and the second index. So 2 minus 0, I have two elements, which is correct. I have two elements on the right. So I just two elements. What is the contribution? Twice into one. So I'll add twice contribution. And typically those sub-arrays are one itself and one comma one, like one itself and one comma one. Perfect. Done. After that, I move to the next. But the moment I move to the next, I will get some different numbers. And that will be, left will be two elements and right will be one element. You could do that yourself and the contribution comes out to be this."
+    },
+    {
+      "chunk_id": "L305_C14",
+      "start": 980.74,
+      "end": 1055.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=980s",
+      "text": "will be two elements and right will be one element. You could do that yourself and the contribution comes out to be this. This time, the sub-arrays that are considered is this, which is one. And then there is this, which is one comma one. I will be like, hey, wait, wait, wait. You already considered one comma one. You already considered one comma one. Why are you again considering one comma one? So you'll have to be very sure. You'll have to be very sure. If you're considering from here, don't consider from the back. So you could do either way. Either you consider from the back and then you don't consider from the front. So you can only consider it once. You can only consider it once. So what you could do is, you could probably consider it in the front, which is typically saying the next smaller element is correct. And you don't consider it on the back. Now, what this means is when you're looking for previous smaller element over here, when you looked for previous small element, you didn't find one and you wrote minus one. Instead of it, instead of it, you end up writing zeroth index. What you're saying is, what you're saying for this one is, this is my previous small element."
+    },
+    {
+      "chunk_id": "L305_C15",
+      "start": 1055.68,
+      "end": 1132.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=1055s",
+      "text": "end up writing zeroth index. What you're saying is, what you're saying for this one is, this is my previous small element. So it boils down to not previous small element, this time previous smaller or equal element. So when you do this, the left comes out to be just one because the previous smaller element will be updated and that updated value will be zero. So this time when you take the index one and you say previous small element zero, so you'll get the left to be zero. So you'll end up just taking this one. So you'll just end up taking this one. Previous smaller equal, so that you don't consider one, you don't consider the equals. Perfect. So now we know how to handle the edge case. So you have to figure out how to write a code for NSE. I'll have to figure out how to write a code for previous smaller equal element, PSW. Got it? So I'll have to figure out how to write a code for previous smaller or equal element. Okay. So first I'll try to write find NSE. So you'll have to return a list. So list of integer is what is returned and I'm writing find NSE. Remember I need the next smaller element. So I'll take the array. What do I need?"
+    },
+    {
+      "chunk_id": "L305_C16",
+      "start": 1132.8,
+      "end": 1205.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=1132s",
+      "text": "returned and I'm writing find NSE. Remember I need the next smaller element. So I'll take the array. What do I need? I need an NSE of size, like a list NSE or an array NSE, whatever you can take of size N. And I need a stack ST. Post it what we can do is because we are looking for next smaller element. So I can traverse from I equal to N minus one till the zeroth index. Perfect with this one. What after this? We will check the straightforward, the next great element stuff. We'll check if the stack is non-empty. Okay. And, and we will be like, we'll be storing indexes in the stack because we need indexes. Why do we need indexes? Because we are subtracting indexes. We don't need element. We need indexes to be stored. So I'll be like, okay, if indexes is stored, I will compare that with the array. So array is stack dot top. I'm looking for next smaller. So anything that is greater or equal is what will be taken off, will be taken off, which is pop. Okay. Done. I've taken it off. What after this? I'll say NSE."
+    },
+    {
+      "chunk_id": "L305_C17",
+      "start": 1205.82,
+      "end": 1281.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=1205s",
+      "text": "off, will be taken off, which is pop. Okay. Done. I've taken it off. What after this? I'll say NSE. Now either if the stack is empty, if the stack is empty, please assign N because I'm looking to assign N so that the subtraction is done. Otherwise assign whatever is at the stack dot top. At the same time, please make sure you add a stack dot push the index, not the element and the follow up is done. Please make sure to return NSE and that will be the find NSE stuff done. Okay. Perfect. I go down and I try to write the PSW list again, find or compute whatever you want to write. N S or other P S double E. Again, I'll end up taking an array. This time I require P S double E of size N. I will require a stack ST and I'll start traversing from the front because I'm looking for previous N minus one. What I write is while the stack is non-empty at the same time, please make sure array of stack dot top. I'm looking for smaller."
+    },
+    {
+      "chunk_id": "L305_C18",
+      "start": 1281.56,
+      "end": 1360.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=1281s",
+      "text": "is non-empty at the same time, please make sure array of stack dot top. I'm looking for smaller. So anything which is greater, I'll not remove equals element because I'm looking for smaller or equal. I'll just remove the greater ones. Array of I. Please make sure you pop them out. And once that is done, you say P S double E of I. If the stack is empty, please store minus one or else whatever is at the top. And once that is done, please end up pushing I to the stack and the follow up ends and you could end up returning P S double E and that will be end with the list function. So yeah, that is what it is. Time to compute the time complexity. So this computation, you know, next create element works in B go of two N with a space complexity of B go of stack, which is B go of N. Do I need anything else? Yeah. So I'm going to put that back inside. So we go off to end. Same for this one where you compute P S double E and then this one is straightforward. We go off and so I can see that the time complexity is somewhere around big of five N and the"
+    },
+    {
+      "chunk_id": "L305_C19",
+      "start": 1360.16,
+      "end": 1414.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=v0e8p9JCgRc&t=1360s",
+      "text": "We go off and so I can see that the time complexity is somewhere around big of five N and the space complexity is somewhere around big of five N. Yes. Why five N? Because I'm using NSE, a PSC, a couple of stacks, one here, the other one here, but this is all modularized code. You could probably do better. You could make five and four and or maybe three N, but we'll not focus on it because writing clean code is very important. And if you're going in an interview, try to write code like this. This is where the interviewer gets super impressed. And yeah, this will be the most optimal solution unless until you decide to optimize this to four N. So yeah, that'll wait for this one. So if you're still now watching and if you've understood everything, please, please do consider giving us a like, and if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's finish up with the video. Tell them bye, take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

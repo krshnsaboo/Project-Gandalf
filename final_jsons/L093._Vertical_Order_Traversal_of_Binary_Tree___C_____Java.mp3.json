@@ -1,0 +1,120 @@
+{
+  "lecture_id": "L093",
+  "lecture_number": 93,
+  "lecture_title": "L21. Vertical Order Traversal of Binary Tree | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw",
+  "chunks": [
+    {
+      "chunk_id": "L093_C1",
+      "start": 0.0,
+      "end": 74.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=0s",
+      "text": "So before starting off this video, I would love to thank Relevil for sponsoring this entire free series. We need experienced candidates. How many times has this sentence shattered your dream to work in a good company or a job description which requires experience? You won't ever have to listen to the sentence ever again. If you use a platform like Relevil by unacademy, he conducts a test which is completely based on skills and you need to perform in your chosen field. Relevil has around 1000 plus job openings by 50 plus top Indian companies and unicorn startups. What you need to do is you just need to register for this test, apply on the test and after that your interview will be scheduled and you will be hired. And the best thing about this is the Relevil tests are free and you can check out all the links in the description below. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. Today we will be solving the problem vertical order traversal in a given binary tree. So you must be understanding what is the problem by the name vertical order, right? So if I try to draw vertical lines in this particular binary tree, this will be the first vertical line that will be drawn. So I can say in the first vertical order we have four, right?"
+    },
+    {
+      "chunk_id": "L093_C2",
+      "start": 74.64,
+      "end": 154.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=74s",
+      "text": "will be the first vertical line that will be drawn. So I can say in the first vertical order we have four, right? Right after that we will be having a line which will have two and five. So the next vertical line should have two and five. Now if I draw the next line, if I draw the next line, I can say one is at first and ideally nine and 10 are actually overlapping. Like I've written them in the same structure, but ideally they're overlapping. So if it is overlapping, just make sure that you write the smaller value at first. After that the greater value. Okay. And after that we have the value six. The next vertical we have three and the next vertical we have again 10. Now there's something to observe. The first thing was if nodes are overlapping, just make sure you take the smaller one. If there are same nodes, it doesn't matter. Like there can be similar value nodes in the binary tree. What matters is you have to write the vertical order from left to right. And while you write a single verticals order, just write it from top to bottom, right? Write it from top to bottom whenever you write it for a single vertical. So you basically need to return a vector of vector or a list of list. Like this is what the first list contains, the second vector contains, the third list"
+    },
+    {
+      "chunk_id": "L093_C3",
+      "start": 154.24,
+      "end": 229.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=154s",
+      "text": "a vector of vector or a list of list. Like this is what the first list contains, the second vector contains, the third list contains, the fourth vector, the fifth vector. So the number of verticals, like you have to return a vector of vector or a list of list which describes the vertical order traversal of a binary tree. So in order to solve this problem, can we actually consider this as one of the verticals? This as another vertical, this as another vertical, this as another vertical, this as another vertical. If you're like, yes, Trevor, we definitely can consider that. Now, can I solve this problem using a couple of things? One is we consider this, like these linings as points on the X axis. Like what I'm saying is this is the zeroth line. This is the minus one line, this is the minus two line, this is the minus one, sorry, plus one line, this is the plus two line. Like I can have for all verticals, I can say these are the values of X, perfect, right? Now what if I consider these guys as levels? What if I say this guy is at the zeroth level? All these guys are at the first level. All these guys are at the second level. All these guys are at the third level and this guy is at the fourth level."
+    },
+    {
+      "chunk_id": "L093_C4",
+      "start": 229.34,
+      "end": 305.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=229s",
+      "text": "these guys are at the second level. All these guys are at the third level and this guy is at the fourth level. Then I can say this is at a vertical zero, level zero. This is at a vertical minus one, level one. This is at a vertical one, level one. This is at a vertical minus two and level two. Similarly, these, both of these guys are at vertical zero, level two. This guy is at level, vertical one, level two. This guy is at vertical minus one, level three. And this guy is at vertical zero, level four. Like I can definitely write this. So if I can write this, don't you think it becomes very simple? What if I can have verticals? So I can say I'll have a minus two vertical, minus one vertical, zero vertical, one vertical and a two vertical, correct? Now in this minus two vertical, can I say the first element that I have is four? So minus two vertical is done. Next I'll go to minus one vertical and I'll take it level wise. So the first level guy is two, perfect. The next level I have on this vertical is the guy at the level three, that's five. So I can say the vertical minus one is also done. Now when I come to vertical zero, vertical zero has level zero, that's one, has level two, that has nine and 10."
+    },
+    {
+      "chunk_id": "L093_C5",
+      "start": 305.46,
+      "end": 379.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=305s",
+      "text": "also done. Now when I come to vertical zero, vertical zero has level zero, that's one, has level two, that has nine and 10. Again, I can use some data structure so that this is maintained in a sorted order. Next I can say I have a six. So the vertical zero is done. So in this way, can I get every vertical? Like if I have the X, can I just iterate from the ascending orders of X and can I get the verticals? So basically I iterate in the ascending order of X, correct? And for the level, I iterate in the ascending order of level for every vertical. I just need to iterate on the levels to get these guys, these guys, and these guys. I think the job will be done. So in short, the question is very simple. I need to traverse for every node and I need to assign the verticals and the levels to every node. Perfect. So you can do that using any traversal. So what I'll do is I'll do this using the level order traversal. You can try this using in order, pre-order, post-order, whatever you feel like, you can try that. So what I'll do is I will initially take a queue data structure. And in this queue data structure, I'll be basically storing the node, the vertical and the level. That is what I will be doing."
+    },
+    {
+      "chunk_id": "L093_C6",
+      "start": 379.18,
+      "end": 457.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=379s",
+      "text": "in this queue data structure, I'll be basically storing the node, the vertical and the level. That is what I will be doing. And along with that, I'll be carrying a data structure of map, which is having integer. Again for Java people, you can carry something like tree map. And on this vertical, like assuming this guy to be vertical, so on every vertical, there will be multiple levels. So for a level, I'll again carry, because for every level, like as you see over here, for level two, there were multiple nodes. So for every level, I will be having multiple nodes. So since I need, if on a level there are multiple nodes, I need them in a sorted order. So I can use something like a set, but I'll be using a multi-set. Now why will I be using a multi-set? That's a very good question. The reason is because if you remember, the question clearly stated, I can have same values. So please make sure you use multi-set. Because if you use set, it will only store unique values. This might happen, this is nine. This also might be nine. This can also be nine. So there can be repeated values. So please make sure you store like this. So map of integer, this represents the verticals. Now each verticals, I will be representing a level, like multiple levels on every vertical. On every level, there might be multi-nodes."
+    },
+    {
+      "chunk_id": "L093_C7",
+      "start": 457.98,
+      "end": 535.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=457s",
+      "text": "the verticals. Now each verticals, I will be representing a level, like multiple levels on every vertical. On every level, there might be multi-nodes. So this is what data structure you'll be using to store all the verticals and levels marked. And in Java, what you can use is something like a tree map of int, again a tree map of integer. Instead of a multi-set, you can use something like priority queue in Java. Or you can use a list and then sort it. This can be anything. This can be a priority queue. This can be a list. And after that, you can sort it. That is completely, I'll leave that to you. So initially while starting, you have the queue. Just make sure node one, vertical zero, level zero is inserted into your queue data structure. So over here, you're currently over here. Now what you will do is, whenever you start, you start iterating by taking this first guy. So whenever you take this, that's basically node one, the vertical zero on the level is zero. So once you've taken this, just make sure you enter this into the data structure. So you're saying at vertical zero, I have someone with a level zero and at level zero, I have this node one. So that is what you have stored in your data structure. Now for node one, just do a level order traversal. Simply take the left. So the left guy is two."
+    },
+    {
+      "chunk_id": "L093_C8",
+      "start": 535.92,
+      "end": 600.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=535s",
+      "text": "in your data structure. Now for node one, just do a level order traversal. Simply take the left. So the left guy is two. Now can I say, the guy who is having a two, if you're moving to the left, the vertical will change by minus one because you're moving to the left. And the level, since you're moving left and down, the level will be plus one. So the level will become this. So can I say the left node is two, the vertical will go left, that's minus one. The right, the down guy will be, the level will increase by plus one. So left is done. What about right? Can I say in right, you have a three? Yes, I can say. And can I say the vertical will increase by plus one if you move right? It makes sense if you move right, the vertical will increase by plus one and the level will also increase by plus one. So make sure you enter that into the queue data structure. Once you have done this, just make sure this is done and again, go to the next iteration. So in the next iteration, get the next element of the queue. Okay. So what do you have is node two, the vertical is minus one and you have a level as one. So minus one will take a level one and a level one, you have a node two. Perfect."
+    },
+    {
+      "chunk_id": "L093_C9",
+      "start": 600.48,
+      "end": 660.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=600s",
+      "text": "you have a level as one. So minus one will take a level one and a level one, you have a node two. Perfect. So just have this stored into your data structure. So right after that, node two has a left, node two has a right. Correct? So if a node two has a left, it will be four. So you'll take four. And can I say the vertical will change by minus one? The vertical becomes minus two. And after that, can I say the level will also change by plus one. So the level will become two. So you got, after two, you got four, right? On the right, can I say the vertical will change by plus one because you're moving right. So the right node is 10. So you can insert that. The next node that will be inserted into your queue data structure will be 10 comma minus a one plus one will be zero and one plus one, the level will be two. So can I say 10 is at a level zero, sorry, at a vertical zero and a level two. So can I say the node two is done? I can indeed say, hence I'll move to the next node. So now when you come to the next traversal, what you'll do is you'll take three comma one comma one. So the node is three, the vertical is one, the level is one."
+    },
+    {
+      "chunk_id": "L093_C10",
+      "start": 660.72,
+      "end": 728.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=660s",
+      "text": "what you'll do is you'll take three comma one comma one. So the node is three, the vertical is one, the level is one. So at vertical one, on that level one, you will take the node three. So in this way, you can easily do it. Now can you see it on three's left, you have someone as nine. So that will be nine and the vertical will change by minus one. So it will become zero and the level will change by plus one. That will become two. So you again get this. And on the right, you have a 10. So you can again insert 10. So just after this, after this right, 10 comma, the vertical will change by plus one, two, because you're going right and the level will change by plus one. That is what you will easily get from this tree. So this tree is done. So you can keep on iterating from the queue. The sole idea is if you're moving to the left, the vertical will change by minus one, the level will change by plus one. And if you're moving right, the vertical is going to change by plus one and the level is by plus one. So every time you pop it out, just make sure you put it into a vertical, after that onto its level and after that onto its multi set or priority queue. Like if you're doing C++, you can use a multi set."
+    },
+    {
+      "chunk_id": "L093_C11",
+      "start": 728.72,
+      "end": 800.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=728s",
+      "text": "onto its level and after that onto its multi set or priority queue. Like if you're doing C++, you can use a multi set. And if you're using Java, you can use a priority queue because in Java priority queue stores the minimal element at the top. So that is how you can definitely get something as a vertical order traversal. So again, I have done using the level order traversal which uses a queue data structure. You can do this using in order. The sole idea is very simple. Whenever you move left, just vertical order and level. And whenever you move right, the vertical order and level. You can use any traversal to move left and to move right. Doesn't matter. So guys, as usual, the C++ code is on the left and the Java code is on the right. So what we have done is we have taken a route, right? Initially. As I said, in order to store the vertical orders, we have taken a map of integer map of int and multi set over here in Java. As you can see, we have taken a tree map of tree map of priority queue. Okay. And after that we have taken a queue and in queue we were storing something as node, the vertical and the level, right? So we have used pairs in C++ and in Java we have used something as couple. Okay, perfect. So initially root comma zero comma zero has been pushed."
+    },
+    {
+      "chunk_id": "L093_C12",
+      "start": 800.68,
+      "end": 877.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=800s",
+      "text": "used pairs in C++ and in Java we have used something as couple. Okay, perfect. So initially root comma zero comma zero has been pushed. Now you know that you have to do a level order traversal. Just keep on doing the level order traversal. And what you will do is you'll take the node, right? You'll take the vertical order, you'll take the level. And after that, what you'll do is at first, just make sure you insert that into your data structure. So first in vertical X of that in the level Y, just insert this guy because it's a multi set. And then you insert that right after that, if there is a left, you take that left and insert it into the queue by vertical minus one and level plus one. If there is a right, then you insert by vertical plus one and level plus one. Once this entire level order traversal has been completed, just traverse across this map nodes. Okay. Now if you're traversing, what does this P, can I say this P is basically the entire thing inside this. This becomes P dot first. This becomes P dot second, basically the map in comma multi set. Right? So if I'm saying P dot second, what does that signify? That basically signifies a map of int like levels, it's level and multi set on that. Right? So P dot second will traverse that and you have taken an answer. Right?"
+    },
+    {
+      "chunk_id": "L093_C13",
+      "start": 877.36,
+      "end": 947.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=877s",
+      "text": "like levels, it's level and multi set on that. Right? So P dot second will traverse that and you have taken an answer. Right? So what are you doing is you're taking a column and in that column, like in that level, right? In that, how many, whatever levels are there, just make sure at every level you're inserting right at the end, like column dot pushback or column dot insert, whatever you want to do, you're inserting the entire multi set. Like let's assume for a vertical traversal zero, we had level zero, we had level one. So first we traveled for zero, got the multi set, inserted into the column. Next level ones multi set we got inserted here. Next level two multi set we got, we inserted here. That is what we have done. Once you have got this entire level, like entire vertical order, entire vertical, we will insert that vertical into the answer. Simple as that. Again, you can just do it right by yourself. If your data structure is strong, you'll get it. So let's explain the Java code. Okay. So in the Java code, what we have done is we have taken a tuple, okay. Route zero zero. A similar thing we have done. We have iterated doing a level order traversal. So we have the vertical, we have the level. And right after that we have checked if it exists. If it doesn't exist, we are creating a treemap. Okay."
+    },
+    {
+      "chunk_id": "L093_C14",
+      "start": 947.48,
+      "end": 1018.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=947s",
+      "text": "we have the level. And right after that we have checked if it exists. If it doesn't exist, we are creating a treemap. Okay. And if the priority queue doesn't exist, we are again creating a priority queue. Very simple. If for a vertical, a treemap doesn't exist, we are creating this treemap. And if for an level, the priority queue doesn't exist, we are creating that priority queue. And right after that, we are getting the vertical, getting the treemap of level. And then on the priority queue, we are inserting node.val. Okay. Vertical, then level, and onto the priority queue we are inserting that. After that, it's simple. If node.left doesn't exist, sorry, it does exist, we'll go left, vertical minus one, level plus one. And on right, vertical plus one, level plus one. This will make sure it inserts. And this while loop will be an entire level order traversal. Once you have done this, we'll take a list of list integers, because for every vertical, I need a list that has to be returned. So what I'll do is, I'll iterate on the map.value. So for every vertical, I'll iterate. Because map.value means for every vertical. First for vertical minus two, minus one, zero, one, two. For every vertical, I will iterate. And over here, I'm just adding an empty list for every vertical. Empty list. And on that list, what I'm doing is, I'm iterating in the priority queue, and I'm taking the"
+    },
+    {
+      "chunk_id": "L093_C15",
+      "start": 1018.8,
+      "end": 1082.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=1018s",
+      "text": "list for every vertical. Empty list. And on that list, what I'm doing is, I'm iterating in the priority queue, and I'm taking the values and adding to the end of the list. So once this while loop is over, I can say this vertical is over. Next again, this one will go, this, this. And then I can return the list. Again, just go through the code by yourself. Once you will understand the code completely, and I will give you a task. Just make sure you do this question by in-order or a pre-order, and paste the code in the comment section. That is your homework for this. Do it using in-order or post-order, and paste it in the comment section. What's the time complexity guys? The time complexity will definitely be big O of n, because you're traversing generally. And I can say that since you're using a multi-set, you can add a login concept over here. And since you're using Practica, you can use a login. And the space complexity is, you're using every vertical and everything. So that's a big O of n, because for every vertical, you're creating a level and you're storing all the nodes. So ultimately you're storing all the nodes. So I can summarize the space complexity to be big O of n, plus big O of n for the queue data structure that you're using."
+    },
+    {
+      "chunk_id": "L093_C16",
+      "start": 1082.56,
+      "end": 1125.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=q_a6lpbKJdw&t=1082s",
+      "text": "summarize the space complexity to be big O of n, plus big O of n for the queue data structure that you're using. Again, thrice of n is somewhere that is what you're using, root and two other variables. But yeah, I can just write it as big O of n is the space complexity. Like if I summarize it, and I can say n log n to be the time complexity that I'm taking in order to do the vertical-order traversal, because of the multi-set or the Practica that you're using. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video, because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

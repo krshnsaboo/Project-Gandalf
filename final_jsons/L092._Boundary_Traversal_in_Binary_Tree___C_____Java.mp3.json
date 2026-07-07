@@ -1,0 +1,64 @@
+{
+  "lecture_id": "L092",
+  "lecture_number": 92,
+  "lecture_title": "L20. Boundary Traversal in Binary Tree | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=0ca1nvR0be4",
+  "chunks": [
+    {
+      "chunk_id": "L092_C1",
+      "start": 0.0,
+      "end": 77.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ca1nvR0be4&t=0s",
+      "text": "Hey everyone welcome back to the channel. I hope you guys are doing extremely well. So today we will be discussing the boundary traversal of binary tree from the Freecut Tree series. So basically you'll be given a binary tree. Okay. And you have to print the boundary traversal. So as of now you'll be solving the anti-clockwise boundary traversal. If you understand the anti-clockwise you can definitely do the clockwise by yourself. So basically if I take the boundary traversal first you'll start from one right then at the clockwise so you go to two then you go to three then you go to four that's boundary right then you go to five again boundary then you go to six then you go to 10 then you go to 11 then you go to nine then you go to eight then you go to seven. So basically anti-clockwise right anti-clockwise. So I want the anti-clockwise boundary traversal of any given binary tree. So how do you solve such a question? It's very simple. First, we're going to take the left boundary since it's an anti-clockwise left boundary, uh, excluding leaves, I can"
+    },
+    {
+      "chunk_id": "L092_C2",
+      "start": 77.04,
+      "end": 153.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ca1nvR0be4&t=77s",
+      "text": "First, we're going to take the left boundary since it's an anti-clockwise left boundary, uh, excluding leaves, I can say excluding the leaf nodes. That's what I'm gonna initially, uh, take after that. I'm going to take the leaf nodes. And after that, I'm going to take the right boundary in the reverse direction, right? And if I follow this method, I think I will get my boundary traversal. First I'll get the left, then I'll get the leaf, then I'll get the right in the reverse, in the reverse, very, very, very important. The right boundary should be in the reverse and also it should exclude the leaf nodes. So let's first discuss how do you get the left boundary excluding leaf nodes. So in order to get the boundary traversal, we definitely have to take a data structure which stores, uh, the boundary traversal. So the first thing that you will always do is you will take the root of the tree and you'll put it because that's, uh, that's a part of the left boundary as well as the right boundary. So in order to avoid any confusion, please make sure you put the, uh, whatever is the root of the tree into the data structure. Right after that, you'll start off with the left boundary. Now, how do you start off with the left boundary? Again, very simple. You"
+    },
+    {
+      "chunk_id": "L092_C3",
+      "start": 153.82,
+      "end": 225.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ca1nvR0be4&t=153s",
+      "text": "after that, you'll start off with the left boundary. Now, how do you start off with the left boundary? Again, very simple. You start from the roots left. So you take on two, you put that into your data structure. And if there exists a left, you will go, so you'll put it on. And if there exists a left of three, it doesn't exist. So if there doesn't exist a left, you'll go to the right. Very, very important. If there doesn't exist a left, you'll go to the right. So you'll go to the right and you'll get four. Next, does there exist a left of four? Yes, five. But the moment you see that it's a leaf node, we see that it's a leaf node, right? Five is a leaf node because it doesn't have a left, neither does it have a right. So it's a leaf node. And I want the traversal excluding leaf, the left boundary excluding leaf. So can I say I have actually gathered my left boundary excluding leaf. So the left boundary traversal has been completed. That's time for the leaf nodes. So in order to get the leaf nodes, we have to do a in order traversal. Yes. You cannot do a level order traversal because I want the leaf nodes from the bottom right. I want from left to right. So if you do a level order, it might happen. Let's say the leaf nodes are finishing some level above."
+    },
+    {
+      "chunk_id": "L092_C4",
+      "start": 225.94,
+      "end": 302.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ca1nvR0be4&t=225s",
+      "text": "want from left to right. So if you do a level order, it might happen. Let's say the leaf nodes are finishing some level above. Like before this, there is a level where the leaf nodes are finishing. So these guys will come up first if you are doing a level order traversal. That's why it's better you do a in order traversal, which is, which is basically root and then it goes to the left and then it goes to the right. Okay. So what it will do is whenever you do a in order traversal, first you'll get five, then you'll get six, then you'll get 10 and then you'll get 11. In this order, you will get all the leaf nodes. If you do an in order traversal, basically traverse for all the nodes in the tree and check which nodes are your leaf nodes and whichever are your leaf nodes, just add them into your data structure. So we are done with that right now it's time for the right boundary on the reverse excluding the leaf. So let's do that. So for the right boundary, what you'll do is you will start from roots, right? So this is where you start off. And since we want in the anti-clockwise, you want this in the reverse direction. So you can use a vector or a stack or whatever you want to use and you're getting seven, right? Next go to the right. You're getting eight. Next,"
+    },
+    {
+      "chunk_id": "L092_C5",
+      "start": 302.34,
+      "end": 369.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ca1nvR0be4&t=302s",
+      "text": "a vector or a stack or whatever you want to use and you're getting seven, right? Next go to the right. You're getting eight. Next, does there exist a right? No. So if there doesn't exist a right, very, very important. If there doesn't exist a right, you'll go to the left. So that's nine. Next, does there exist a right? Yes. But this one is your leaf node and it has clearly mentioned that I have to exclude the leaf. So we will stop because it's a leaf node. We have reached the end. So we'll stop our right boundary traversal over here. Now this is my stack or vector. Like you can take a stack, you can take a vector, whatever you want to take, you can take it. So this we have taken right now, take from the right, from the last. First you'll take nine, then you'll take eight, take from the last. Okay. Then you'll take seven. So what it will make sure is this is the entire boundary traversal. You make sure that you took nine, eight, seven. So it's already in the opposite direction, right? Already in the reverse direction. So I can see that I have taken the right boundary in the reverse direction. Hence I have completed all my three steps. So if I summarize these three steps, I can say left boundary means left, left, left. And if there doesn't exist"
+    },
+    {
+      "chunk_id": "L092_C6",
+      "start": 369.78,
+      "end": 442.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ca1nvR0be4&t=369s",
+      "text": "my three steps. So if I summarize these three steps, I can say left boundary means left, left, left. And if there doesn't exist left, then you'll go right. Leaf node means normal in order traversal and checking of node, whichever is the leaf node, you just add it. Right boundary means right, right, right. And whenever there is not a right, you move left and you exclude the leaf like whichever is the leaf node, you just do not take it. And initially you always take the root node. That's what the algorithm is in order to figure out the boundary traversal of any given binary tree. So let's check out the code. So as usual, this is the C++ code. And this is the Java code again, pretty much identical. So you can definitely follow the C++ and you can just have an eye on the Java code just if you feel like. So initially we declare a vector, the data structure, which is going to store the entire boundary traversal. So I first check if, if just in case the root is empty, okay, then we're going to just return an empty data structure. Like if we are not given a binary tree, we return an empty data structure. After that, if the root node is not a leaf, then we are going to add that into our data structure. And after that, the three steps left, leaves, right, as we did"
+    },
+    {
+      "chunk_id": "L092_C7",
+      "start": 442.26,
+      "end": 520.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ca1nvR0be4&t=442s",
+      "text": "leaf, then we are going to add that into our data structure. And after that, the three steps left, leaves, right, as we did and we return our answer, right? So we will check the left, leaves and right. So let's check the left boundary. So as I said, left means left, left, left, left, left, left, left, left. And if there is no left, then you move to the right. So initially I start with roots left. And if it's not a leaf node, then only we will add that into our left boundary, excluding leaf, right? Or else I'll move to the left. And if there doesn't exist a left, then I'll move to the right. Super simple. Left boundary, right boundary is the exact opposite. We start off with the right, right? And if it's not a leaf, we will add it and we will move to right, right, right, right, right. And if it is not a right, then I'll take the left. Simple. And this time we'll store this into some data structure temp. And right after this, we will take the reverse. Yes, we'll take the reverse. So right boundary is also done right after that we have add leaves. As I said, it's a simple in order traversal that's left, right. And whenever you're coming to the root, if it's a leaf node, please add that into your data structure. Correct? So there are three steps. I can say"
+    },
+    {
+      "chunk_id": "L092_C8",
+      "start": 520.22,
+      "end": 578.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ca1nvR0be4&t=520s",
+      "text": "to the root, if it's a leaf node, please add that into your data structure. Correct? So there are three steps. I can say the left boundary at max will take height of the tree. The right boundary will take height of the tree and the normal traversal will take big off. And so if I just summarize that I can say it's a big off and like if I just take it off and, and the auxiliary space used is big off. And I'm not considering the space used in this rest because generally when we return answers, we do not consider that we are. I'm just talking about our algorithmic complexity, not about storing answers and all that. This is these time complexity and space complexity linear in nature. So I hope you have understood the entire explanation as well as the code just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye bye. Take care."
+    }
+  ]
+}

@@ -1,0 +1,309 @@
+{
+  "lecture_id": "L228",
+  "lecture_number": 228,
+  "lecture_title": "DP 48. Matrix Chain Multiplication | MCM | Partition DP Starts 🔥",
+  "youtube_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y",
+  "chunks": [
+    {
+      "chunk_id": "L228_C1",
+      "start": 0.0,
+      "end": 69.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=0s",
+      "text": "Hey everyone, welcome back to Take U Forward. We will be starting with a new pattern of DP which is the partition DP and this is kind of like a tough pattern. It's a tough pattern. It isn't as easy as the previous patterns where we have done 1D DP, we have done 2D DP, we have done DP on grids, DP on subsequences and you after doing all the problems on those patterns you are pretty much comfortable. Similarly, I can guarantee you once you have solved all the problems that I will do on partition DP, you will be very very comfortable on partition DP. Generally, all the other creators have just solved MCM or probably the Boolean parenthesis problem and they would have stopped. But over here I will be solving I think four or five or six problems on this particular partition DP so that this gets right into your head. So let's understand what's this partition DP all about. So generally, in all the problems where you will be said to solve a problem in a particular way,"
+    },
+    {
+      "chunk_id": "L228_C2",
+      "start": 69.68,
+      "end": 147.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=69s",
+      "text": "generally, in all the problems where you will be said to solve a problem in a particular way, remember this, solve a problem in a pattern. Now what is the pattern? For an example, whenever you do mathematical calculations, so assume you are being given something like 1 plus 2 plus 3 into 5. But if you put it like this, then the answer is different. But if you put it like this, then the answer is different. Don't you agree? So whenever you will find questions similar to these, like if you solve a particular pattern, like in a particular way, you get some other answer or you solve in some other particular way, you get some other answer. That's when you can relate that to partition DP. Remember this, whenever there are multiple ways to solve and probably they will ask you to find the best possible way, that's when you relate the problem to partition DP. So generally, how will you solve a partition DP problem? So as of now, I did tell you some rules for the dynamic programming, but for partition DP, there will be a different set of rules. Let's understand. So generally in all the problems, you will have an array and almost all"
+    },
+    {
+      "chunk_id": "L228_C3",
+      "start": 147.84,
+      "end": 227.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=147s",
+      "text": "a different set of rules. Let's understand. So generally in all the problems, you will have an array and almost all the problems you will have an array. And as you saw over here, you solve this portion at first and then this portion, or you can solve this portion at first or this portion. So similarly, in partition DP problems, you'll be given an entire array and you will have to solve it probably this portion at first and this portion, or probably it can be, you have to solve this portion at first or this portion, or probably you will have to solve this portion at first and this portion. So you will have to try out given an entire array. And generally the starting point will be known as i, and this will be the ending point. And the partitions, partitions can be, this where you solve this and this. So, all the partition can be this where you can solve this and this, or the partition can be this where you can solve this and this. So there can be a lot of partitions. Partition key can be here. Partition key can be here. Partition partition key can be here, partition key can be here, it can be anywhere. So there can be multiple partitions, right? There can be a partition like this, there can be a partition like this, a partition can be like this and so on, like something like this as well."
+    },
+    {
+      "chunk_id": "L228_C4",
+      "start": 227.12,
+      "end": 301.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=227s",
+      "text": "like this, there can be a partition like this, a partition can be like this and so on, like something like this as well. So out of all these partitions, whichever will yield you the best answer, you have to tell us that. So generally, all the problems which are like in a pattern that can be solved using partition DP and you have to basically, I can say, whenever you try to partition it in this way, you have to solve this portion which you can call from i to k. So this portion, if you solve it like this, this is nothing but f of i to k and if you solve this, this is nothing but k plus 1 to j, right? So again, if you are trying a k here, this is i to k and this is k plus 1 to j. So similar pattern of problems can be solved using partition DP. So I just gave you an idea about how to approach the problem. So in order to understand partition DP, the first problem that we will solve will be MCM. What is MCM? Matrix Chain Multiplication, okay? So in order to understand this, let's first understand what is matrix multiplication, okay? So assume I give you three different matrices A, B, C and the first dimension is 10 cross"
+    },
+    {
+      "chunk_id": "L228_C5",
+      "start": 301.36,
+      "end": 379.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=301s",
+      "text": "is matrix multiplication, okay? So assume I give you three different matrices A, B, C and the first dimension is 10 cross 30, the second dimension is 30 cross 5, the third dimension is 5 cross 16. So if I ask you, there is a matrix of size 10 cross 30 and that's the A matrix. There is another matrix of B which is 30 cross 5. Can they be multiplied together is the question. Can they be multiplied together is the question and the answer to that is yes, they can definitely be multiplied. Why? Because if you have done maths in your school, you know, if this guy, if this, these guys are equal, if the column of the first matrix is equal to the row of the second matrix, then the multiplication is possible and how many operations do you require? It's how many operations do you require in order to multiply this? That's very simple. You take this guy 10, you take the common guy 30 and you take the other guy 5. So the number of operations or the number of multiplications required in order to multiply both the matrices will be 10 cross 30 into 5 which is somewhere around 1500 operations if I have done the calculations correctly. Yeah, I've done it correctly. Now what are these operations now?"
+    },
+    {
+      "chunk_id": "L228_C6",
+      "start": 379.76,
+      "end": 459.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=379s",
+      "text": "somewhere around 1500 operations if I have done the calculations correctly. Yeah, I've done it correctly. Now what are these operations now? If you know, if I'm multiplying some matrix like this, how many operations we generally do? This is nothing but a 2 cross 2 and this is nothing but 2 cross 1. So again, this is equal. So multiplication is possible. Now what will be the resultant? The resultant will be a matrix of this size 2 of this size 1. Correct? How many operations will you do? 2 cross common 2 cross 1 which is 4 operations. Why 4 operations? Because first you multiply 1 into 2 plus 2 into 3. So what do you do? 1 into 2 plus 2 into 3. Next you multiply 3 into 2 plus 1 into 3. So 3 into 2 plus 1 into 3. So how many operations did you do? 1, 2, 3, 4. So there are 4 multiplications that you did. So that's easy to find. You write the first guy, you write the common guy and you write the other guy. So if you multiply them, you easily get the number of multiplications or operations in order to multiply them. So these are the basics that you need to know. So assume I give you these 3 matrices. Let's again try to write it."
+    },
+    {
+      "chunk_id": "L228_C7",
+      "start": 459.28,
+      "end": 536.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=459s",
+      "text": "are the basics that you need to know. So assume I give you these 3 matrices. Let's again try to write it. If I give you A, B, C and I ask you to multiply them. What is A? A is 10 cross 30. B is 30 cross 5. C is 5 cross 60. Now if I ask you to multiply them, what are the ways that you can multiply? Obviously there are a couple of ways. One is you say, Stryber, I will be doing it A, B, C. First I will multiply A, B. Then I will multiply C. That makes sense. So if I do the multiplications this way, let's see what will be the number of operations. So if I'm multiplying A, B, that's 10 cross 30 and B is 30 cross 5. So what will be the number of operations? 10 cross 30 cross 5 will be the number of operations. So what will A, B give? A, B will give a matrix of 10 cross 5 again because this is 10 and this is 5. So A, B is going to give you a 10 cross 5 matrix. What is C? Let's write about C. C is nothing but 5 cross 16. So once you have multiplied A, B, it will be a 10 cross 5 matrix. Now C will be a 5 cross 16. What is the number of operations? 10 cross 5 cross 16."
+    },
+    {
+      "chunk_id": "L228_C8",
+      "start": 536.24,
+      "end": 614.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=536s",
+      "text": "a 10 cross 5 matrix. Now C will be a 5 cross 16. What is the number of operations? 10 cross 5 cross 16. So if I try to sum it up, this will be 1500 plus 3000 which gives you 4500 operations which is indeed massive. So let's write down the operations. It's 4500 operations. That's one of the ways. What will be the other way? I can just try. Well, listen, first, why don't you multiply BC and then let's multiply the resultant with A. I'm like, okay, makes sense. What does B? B is 30 cross 5. What does C? C is 5 cross 16. So if I multiply these couple of guys, I will get the number of operations to be 30 cross 5 cross 16. Makes sense? And the resultant that I will get will be 30 cross 16 because this is common. So the resultant will be 30 cross 16. What is A? A is 10 cross 30. A is 10 cross 30."
+    },
+    {
+      "chunk_id": "L228_C9",
+      "start": 614.76,
+      "end": 685.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=614s",
+      "text": "30 cross 16. What is A? A is 10 cross 30. A is 10 cross 30. So can I say this? The number of operations required will be 10 cross 30 cross 16, which this will give you the number of operations will be 9000 for this and 18,000 for this, which will give you 27,000 operations. So which way of multiplying these three matrices? So which way of multiplying these three matrices was a better way? I can say if I multiply this way, I will take 27,000 multiplication operations. But if I multiply first A, B and the resultant with C, then I'll just take 4500 operations. Is there any other way? Obviously not. So what I figured out was the minimal operations required. Yes. The minimal operations required was 4500. So I want you to print this. I want you to print this. Basically, given the dimensions, given the matrix dimensions, given the n matrix dimensions,"
+    },
+    {
+      "chunk_id": "L228_C10",
+      "start": 685.22,
+      "end": 759.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=685s",
+      "text": "print this. Basically, given the dimensions, given the matrix dimensions, given the n matrix dimensions, tell me the minimum cost to multiply them to a single one. So for an example, if I take four matrices, A, B, C, D, what can be the different ways? I can be like, Striver, I can do something like this. I will like first multiply C, D, the resultant with B and then the resultant with A. That can be one of the ways. I can be like, Striver, first multiply A, B, then multiply C, D. So first get the resultant and then multiply both of them. Or I can be like, Striver, why don't you do this? A, B, C. Okay, makes sense. Then D. So it's something like first multiply B, C, then the resultant with A and then the entire resultant with D. So there's a lot of ways. There's a lot of ways in which you can multiply. So again, which kind of DP? I told you, partition DP, whenever a problem can be solved in different patterns, because"
+    },
+    {
+      "chunk_id": "L228_C11",
+      "start": 759.78,
+      "end": 839.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=759s",
+      "text": "kind of DP? I told you, partition DP, whenever a problem can be solved in different patterns, because I saw if I was asked to multiply A, B, C, there's two ways in which I can. This or this. And when I was asked for A, B, C, D, there can be multiple different ways. So whenever such a problem arises, you think of partition DP. Yes, you think of partition DP. So what is given to you? Let's understand what is given to you. You are given an array. Remember this. You are given an array. Okay. Now, the example that I took was of four matrices. So imagine if I give you an array of N, 20, 30, 40, 50. Over here, N is five. Over here, N is five. So if N is five, this array resembles the dimensions of N minus one matrix or matrices. Let me explain it. So if I ask you, what is the dimension of A? The dimension of A will be N cross 20. If I ask you, what's the dimension of B? It will be 20 cross 30. If I ask you the dimension of C, it will be 30 cross 40."
+    },
+    {
+      "chunk_id": "L228_C12",
+      "start": 839.38,
+      "end": 919.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=839s",
+      "text": "It will be 20 cross 30. If I ask you the dimension of C, it will be 30 cross 40. If I ask you the dimension of D, it will be 40 cross 50. So basically, N cross 20, 20 cross 30, 30 cross 40, 50. So if I try to index them, so can I say for the first matrix, the dimension is A of 50 into A of one. For the second matrix, the dimension is A of one into A of two. For the third matrix, the dimension is A of two into A of three. Thereby, can I write for any given input, the Ith matrix will have a dimension AI minus one into AI. Make sense? Yeah, favorite. Like, makes sense. So I can say, I have figured out this, that the dimensions are given in this way. For any Ith matrix, the dimension is A of I minus one into A of I. Okay. So you will be given this dimensions. You know, the number of matrices are four. Tell me the minimum number of operations required in order to multiply these matrices. This is the simplest question. So I hope you have understood the question, right?"
+    },
+    {
+      "chunk_id": "L228_C13",
+      "start": 919.38,
+      "end": 994.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=919s",
+      "text": "in order to multiply these matrices. This is the simplest question. So I hope you have understood the question, right? So how do you solve this problem? Definitely the way is partitioned DP. Again, whenever there is a pattern of DP, you have certain rules. Yes, you have certain rules. Rule number one, start with entire, start with entire block. Remember this, start with entire block or array. What does this mean? Over here, we have four, we have four guys. So you see the function, hey, take the four guys and give me the answer. Yeah, you see the function, take the four guys and give me the answer. Like it will be something like this. Let me just explain. So if I'm writing A, B, C, D, so these are the four guys. You start with all the four guys and you're like, okay, hey, listen, how can I solve this? I can either go like A, B or C, D. I can either go like A, B, C, D. Probably I can go like A, B, C or D. Correct? So what you're trying to say is, okay, I was solving this."
+    },
+    {
+      "chunk_id": "L228_C14",
+      "start": 994.58,
+      "end": 1074.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=994s",
+      "text": "like A, B, C or D. Correct? So what you're trying to say is, okay, I was solving this. Now what I'll do is I'll try to break the problem down into smaller problems. How can be the smaller problems be? It can be A, B, C, D or it can be A, B, C, D. So what I did was I took the entire problem, broke it down into something smaller. I'll try to solve them and whichever way gives me the minimal will be my answer. So you will always start with the entire portion. You'll always start with the entire portion. Remember this? And you can always, always mark them by I,J where I is the start point. Like over here I will be this A and J will be the D. Over here I will be this, J will be this, I will be this, J will be this. Over here I is this, J is this. Over here I is this, J is this. Over here I is this, J is this. Over here I is this, J is this because this in itself is a problem that you are wanting to solve this in itself is a problem that you're wanting to solve so I is the start point J is the ending point remember this start point and the end point is given to you perfect so start with the block and array always represent them by IJ always represent"
+    },
+    {
+      "chunk_id": "L228_C15",
+      "start": 1074.26,
+      "end": 1147.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=1074s",
+      "text": "point and the end point is given to you perfect so start with the block and array always represent them by IJ always represent them by IJ where I is the start point and J is the end point rule number one rule number two try all partitions try all partitions very important try all partitions and how do you figure out which partitions are possible let's see over here a partition was here over here partition was here over here partition was here over here like you cannot again solve the entire thing so there are three partitions one is here the other one is the middle and the other one is here there are three partitions so probably you can run a loop to try out all partitions probably yes like so run a loop I'll explain you the loop run up loop to try all partitions remember this run a loop to try all partitions okay make sense next three return the best possible two partitions best possible two partitions what do you mean"
+    },
+    {
+      "chunk_id": "L228_C16",
+      "start": 1147.74,
+      "end": 1221.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=1147s",
+      "text": "sense next three return the best possible two partitions best possible two partitions what do you mean by two partitions let's understand this two partition two partition two partition which two partition is the best which two partition is the best you return it so three steps start with the entire block try all partitions because you're gonna try out every possible way to solve it and return the best possible two partition that's it so you take the entire problem break it down into smaller problems every possible smaller problem and you try to solve it and you return the best possible partition that was like the best possible sub problem that you could break into that's the straight funda okay so something we have understood that we have to start with f of IJ right that's for sure now what was given to us like we knew that we had ABCD but we cannot think in terms of ABCD you have to think in terms of the array let's understand you have to think in terms of the array and"
+    },
+    {
+      "chunk_id": "L228_C17",
+      "start": 1221.82,
+      "end": 1296.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=1221s",
+      "text": "think in terms of the array let's understand you have to think in terms of the array and if you remember the array was something like n 20 30 40 50 correct and can I see this a was nothing but n into 20 the second matrix was 20 into 30 third matrix was 30 into 40 the this matrix was 14 250 and I say this I can thereby thereby what I can say is hey listen if I am starting with I can say this a I can see this B I can see this D where where where if I'm looking for is size it's this guy and the previous guy if I'm looking for the B size is this guy and the previous guy I'm looking for the C size it's this guy and the previous guy something to the formula that we decoded previous into current thereby you can say thereby you can say if I am resembling thereby you can say I'm resembling ABCD because that is what I'm looking to solve my I will start here that's the starting point because that's what a is my J will be the ending point my D will be"
+    },
+    {
+      "chunk_id": "L228_C18",
+      "start": 1296.3,
+      "end": 1371.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=1296s",
+      "text": "that's the starting point because that's what a is my J will be the ending point my D will be the ending point rather thereby I can see the starting point is 1 and the ending point is n minus 1 over here can I say please solve me 1 0 1 2 3 4 1 comma 4 please solve me the matrix 1 to 4 in what way returns the minimum multiplications to multiply matrix 1 to matrix 4 remember this it is the minimum multiplications to multiply matrix 1 to matrix 4 so we have got our start point which is 1 and which is n minus 1 so every time the problem will start over here with f of 1 comma n minus 1 in other problems you have to determine in this way like over here since a was meaning this guy in like this guy into this guy thereby is I started here in some of the problems"
+    },
+    {
+      "chunk_id": "L228_C19",
+      "start": 1371.62,
+      "end": 1448.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=1371s",
+      "text": "like this guy into this guy thereby is I started here in some of the problems I might start here J might end here you have to figure where does your entire block lies once you figure that out it becomes very very easy so you have understood what f of I J means it states this is the block give me the minimum operations required okay first step done what is the next step to write the base case so what am I solving I am having an entire set of matrix for which I'm asking minimum operations what will happen to this I J let's look I J actually shrinks whenever you will do partition they will shrink they'll shrink so initially this is this much then a shrink will happen then a shrink will happen then a shrink will happen what is the minimum that you will go ask yourself it will like Trevor and the minimum that we will go is nothing but when it's a single array so the base case is very simple if I is equal to equal to J you're solving an entire block you shrink it you shrink it you shrink it and you have came down to a portion where is it is just a"
+    },
+    {
+      "chunk_id": "L228_C20",
+      "start": 1448.66,
+      "end": 1521.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=1448s",
+      "text": "it you shrink it you shrink it and you have came down to a portion where is it is just a single matrix then the number of operations what are the number of operations ask yourself it's zero the number of operations required is zero so we figured out the smallest base case the smallest case is when we just have a single piece of matrix and thereby I can say we can easily return zero because the number of operations will be zero start with the entire block done base case has also been written wow so let's talk about the second point try all partitions so let's go back and take the same example this is the example given where we have this as the starting point this as those ending points if I just write a b c d that will make you make things easier can I say I can have something like this I can do a multiplication like this where I again solve this portion or I can have something like this where I solve this and I solve this and then I just add them up or I can have something like this where I solve this and I solve this and I add them up well I yes Trevor that that actually makes sense so can I say can I say if I probably probably"
+    },
+    {
+      "chunk_id": "L228_C21",
+      "start": 1522.74,
+      "end": 1597.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=1522s",
+      "text": "add them up well I yes Trevor that that actually makes sense so can I say can I say if I probably probably if I run a loop k if I run a loop k because first partition is this the second partition that I can do is this the third way that I can try is this so can I say if I run a loop from i to j minus one if I run a loop from i to j minus one for the first time for the first time can I say it will be something like the first partition will be i to k and the other partition will be k plus one to j we need to understand why j minus one I'll explain you that let's understand this let's take this example and try to write the values 0 1 2 3 so where is k k is trying to go from 0 let's try to write down the indexes so that this gets better so k is basically running from 1 2 3 so what am I saying 1 2 1 and 2 2 what's j j is 4"
+    },
+    {
+      "chunk_id": "L228_C22",
+      "start": 1597.38,
+      "end": 1668.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=1597s",
+      "text": "1 2 3 so what am I saying 1 2 1 and 2 2 what's j j is 4 so basically the first time whenever k is for the first time whenever k is 1 what happens I'm saying 1 is to 1 which means just this guy 2 is to 4 which means this guy next step when k is 2 I'm saying 1 is to 2 and 3 is to 4 which means 1 is to 2 and 3 is to 4 or I can say if k is 3 I'm saying 1 is to 3 and 4 is to 4 does that make sense I'm basically trying to have different different partitions I'm trying to have different different partitions make sense this can be one of the ways in which you can go from i to j minus 1 I hope you understood why did I go till j minus 1 because if you go till here and there will be no one on the right there will be no one on the right thereby it's very important you go till j minus 1 because the right guy is k plus 1 so if you go till j then k plus 1 will not be valid so it's very important please make sure you go till j minus 1 or one of the other ways is you can do the other way as well you can say striver I will do k equal"
+    },
+    {
+      "chunk_id": "L228_C23",
+      "start": 1668.66,
+      "end": 1741.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=1668s",
+      "text": "or one of the other ways is you can do the other way as well you can say striver I will do k equal to i plus 1 and j till j I'm like okay if you do this then the partition will be i to k minus 1 and k to j that's it if you're running the loop from here to here which means 2 to 4 and let's see what happens if i is 2 which is the initial case then it will be like 1 comma k minus 1 so 1 comma 1 f of 2 comma 4 i is sorry rather k if k is 3 it will be 1 comma 2 3 comma 4 if k is 4 it is going to be 1 comma 3 f of 4 comma 4 it's the same way either you run till j minus 1 then you will do a partition from i to k and k plus 1 to j or if you run from i plus 1 to j you're going to do a partition from i is to k minus 1 and k is to j both of the ways are correct so what did I say do the partitions do the partitions and in order to do the partitions I know very simple what do I need to run I need to run a loop and you can run any loop so I will prefer running it from"
+    },
+    {
+      "chunk_id": "L228_C24",
+      "start": 1741.06,
+      "end": 1814.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=1741s",
+      "text": "do I need to run I need to run a loop and you can run any loop so I will prefer running it from i till j minus 1 so that's what I will prefer so I'll run a loop from i to j minus 1 that is something which I will do okay what's the next step you have to figure out the number of steps and after that we have to probably return the minimal of all steps minimal of all steps so let's understand this because uh second point is kind of half done written the best possible to partition let's understand this this will this will give me some answer this will give me some answer this will give me some answer and what do I need to take I need to take the best among them so let's understand let's understand how much answer like if I do it f of 1 1 f of 2 4 how much answer does this basically gives me so a was 10 cross 20 b was 20 cross 30 c was 30 cross 40 d was 40 cross 50 correct so we had"
+    },
+    {
+      "chunk_id": "L228_C25",
+      "start": 1814.02,
+      "end": 1892.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=1814s",
+      "text": "b was 20 cross 30 c was 30 cross 40 d was 40 cross 50 correct so we had four matrices and this was f of 1 comma 1 so 1 comma 1 means one block of a which will be 10 cross 20 and can I say if you're multiplying b c d if you're multiplying b c d at the end of the day what will be the resultant what will be the resultant matrix so if you can try multiplying it will be like b is this c is this d is 40 cross 50 so this is nothing but a but if you multiply but if you multiply something as b c d what is the resultant matrix so assume you multiply this you get 20 cross 40 assume you multiply this you get 20 cross 50 20 cross 50 that's what you get even if you do it the other way which is 20 cross 30 c is 30 cross 40 d is 40 cross 50 if even if you do it the other way it's 30 cross 50 20 cross 30 and if you again do it it's 20 cross 50 no matter in which way you do the multiplication the resultant matrix will be"
+    },
+    {
+      "chunk_id": "L228_C26",
+      "start": 1892.34,
+      "end": 1971.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=1892s",
+      "text": "again do it it's 20 cross 50 no matter in which way you do the multiplication the resultant matrix will be of size 20 cross 30 only so I can say 20 cross uh rather 50 my bad 50 so that's the resultant size of b c d so if a is this b c d is this what are the number of operations that you'll be requiring in order to multiply a and b c d because a was a part b c d was a part in order to multiply them can I say the number of operations will be 10 cross 20 cross 50 that will be the number of steps right so where is 10 actually can I say can I say if you remember well 10 20 30 40 50 I was here j was here and k would be probably here for this case right where is 10 let's see where is 10 can I say whenever you try to multiply a and b c d a and b c d where is 10 n is right before I right before I so the number of steps required will be a of i minus 1 multiplied with let's see let's come back"
+    },
+    {
+      "chunk_id": "L228_C27",
+      "start": 1971.62,
+      "end": 2048.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=1971s",
+      "text": "so the number of steps required will be a of i minus 1 multiplied with let's see let's come back where's 20 can I say 20 would be here you'll be like it's i it's actually not i it's k try taking some other partition I'll show you that it's actually k so what you can do is you can easily write array of k now the other one the last one is 50 where's 50 at j so the last one is array of j so basically that signifies is you had two parts so when you combine them the number of steps required will be this right now you had two partitions what are the two partitions f of i k now you had two partitions what are the two partitions f of i k and f of k plus 1 j because b c d in itself will take some number of steps b c d in itself will take some number of steps to get multiplied so I can say okay the i comma k will take some steps let the function give me that because I want the minimal number function will give me that or k plus 1 comma j will also the left guy will take some steps give you the minimal the right guy will give some steps give"
+    },
+    {
+      "chunk_id": "L228_C28",
+      "start": 2048.58,
+      "end": 2121.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=2048s",
+      "text": "j will also the left guy will take some steps give you the minimal the right guy will give some steps give me the minimum and these will be the steps if I do a partition on k if I do a partition on k right and what I can say is okay I need the minimal of all probably I can store a mini mini equal to a bigger value and I can say mini equal to minimal of mini comma steps because I need the minimal among all so this will make sure it gives me the minimal among all and in this way I have pretty much solved the problem yes we have so every partition dp remember this is important you will always have to do a partition always and after that this was mcm so you computed the number of steps there might be some other problem steps computations will be on the problem but the left portion and the right portion will be solved by calling the recursion steps computation will depend on the problem like an mcm we figured out this is what we are having in some of the problem it might be something else that you have to figure out so in order to"
+    },
+    {
+      "chunk_id": "L228_C29",
+      "start": 2121.86,
+      "end": 2195.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=2121s",
+      "text": "having in some of the problem it might be something else that you have to figure out so in order to understand the formula again let's write the same thing 10 20 30 40 50 imagine I was here and I'm saying k is here and I'm saying j is here okay imagine this is the starting point where I am like okay divide them into a b and divide them into c d something we know for sure is this is 10 cross 20 this is 20 cross 30 this is 30 cross 40 this is 40 cross 50 and we something like we definitely know this is going to give me 10 cross 30 this is definitely going to give me 30 cross 50 and when I multiply them I'll get 10 cross 50 as the resultant as the resultant this is what I'll get right so can I say the number of steps because at the end of the day a b was 10 cross 30 and cd was 30 cross 50 so the number of steps if you take cd and if you take a b will be n 30 and 50 so again you can relate what's 10 i minus 1 what's 30 k what's 50"
+    },
+    {
+      "chunk_id": "L228_C30",
+      "start": 2195.46,
+      "end": 2263.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=2195s",
+      "text": "will be n 30 and 50 so again you can relate what's 10 i minus 1 what's 30 k what's 50 a of j so this is how the number of steps can be easily found is just before i k and j that's what the number of steps will be no matter how you multiply and what you can do is you can solve this guy by calling the function by calling the function and you add this guy so this will be the total number of steps taken in short cool I hope uh that makes absolute sense so now what I'll do is I'll try to show you the recursion tree so that the working also gets clear because that's very very important we don't understand the working it's it's going to be very messy let's understand the working as well so what is the recursion tree we started with a b c d or we were something like okay let's take uh 10 20 30 40 50 okay and we wear something like this is a this is b this is c this is d and this is our i and this is our j that's how the recursion started this was the initial function call now what kind of partitions you did you did three kind of partitions over here one partition you called was you said hey listen I know one thing for sure"
+    },
+    {
+      "chunk_id": "L228_C31",
+      "start": 2265.86,
+      "end": 2340.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=2265s",
+      "text": "did you did three kind of partitions over here one partition you called was you said hey listen I know one thing for sure I will myself take if I do a partition something like this if I just do a partition for 20 and i is he j z and this is the a and the other one is 30 40 50 where I say this is b this is cd and i is this guy and this is j basically what I did was I said just take a and just take b c d so just take a and just take b c d there can be two kind of partitions that I can do right so that's the first partition that you can do for k where k will be initially over here and this is what the partition will take place next time if you move k here next time if you move k here then it will be a b and c d so you can again probably write okay it will be a b which is something like 20 30 and cd which is nothing but 40 50 it can make sense and this is this time this is i and this is j and this this time this is i this is j or the other one can be k is here thereby a b c"
+    },
+    {
+      "chunk_id": "L228_C32",
+      "start": 2340.26,
+      "end": 2419.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=2340s",
+      "text": "and this this time this is i this is j or the other one can be k is here thereby a b c and d if k is here so what you can do is there can be another portion of time which will be a b c which is 20 30 40 and there's another thing b which is 15 and this time i is here j is here this time i is here j is here perfect let's analyze so we have like whatever we have this whenever you run the k k is here it takes this guy then k is here takes this guy then k is here takes these guy out of all of these three partitions whichever gives you the minimal you're going to take that okay so what's the first step that will run in the recursion when k is here this will get solved and it'll have some number of steps so let's just solve this you'll get a pretty decent idea then you can solve this by yourself so what will this guy return it's a single single matrix number of multiplications will be zero perfect so i know one thing a and b c d they themselves will take 10 cross 20 cross 50 10 cross 20 cross 50 because a and b c d themselves will get multiplied to take 10 cross 20 cross 50 and there was an f of this guy which gave you"
+    },
+    {
+      "chunk_id": "L228_C33",
+      "start": 2420.58,
+      "end": 2491.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=2420s",
+      "text": "c d themselves will get multiplied to take 10 cross 20 cross 50 and there was an f of this guy which gave you zero and there's this another f guy which you have to figure out okay so you have to solve this b c now you have to solve this b c d so if i just take this b c d away again and i write 30 40 50 and this is where the i and j step now how will the k work here be like okay once i can be here and the other one i can be here so there can be two possible ways when i say i am b and i can say i am cd there can be other possible way where i'll say i am b c and i'm d perfect make sense now can i say this this time again this guy will return zero and there's cd you have to solve cd basically whenever you add this guy this is returning zero i have to solve cd again it will go and solve c and d in two possible ways i'll give you some possible answer and you will eventually get the value like which is the minimal of b c d and that will come over here and this will be added for this partition similarly you'll get for this partition similarly for this partition and you can easily get the minimal of this this"
+    },
+    {
+      "chunk_id": "L228_C34",
+      "start": 2491.14,
+      "end": 2557.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=2491s",
+      "text": "added for this partition similarly you'll get for this partition similarly for this partition and you can easily get the minimal of this this or this and that is going to be your answer now i could have done the recursion tree but it will become very very clumsy probably you can take pen and paper and try the recursion but if you're good at recursion you can visualize right so that's how you will do it let's quickly recap the exercise because i know it has been a lot of information let's quickly recap it this video is going to be long so we started with partition dp where i said uh you just have to decide in which ways you have to do and you have to figure out the minimal that's when you apply partition dp and it's a tough part so the problem that we solved was matrix chain multiplication where we are given a matrix uh n number of matrices and we are being asked in what way will you multiply them like in which order will you multiply them like you can multiply a b at first or c or you can multiply a and b c so you have to multiply and figure out the minimum number of operations minimum number of operations which of the pattern gives so i said okay i'm going to use partition dp why because"
+    },
+    {
+      "chunk_id": "L228_C35",
+      "start": 2557.38,
+      "end": 2633.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=2557s",
+      "text": "of operations minimum number of operations which of the pattern gives so i said okay i'm going to use partition dp why because there are different patterns in which we can do whenever that is that that's when we can apply partition dp so we said that okay given in dimensions tell me the minimum cost so we were like okay fine so we were given an array where we said that this is a this is b this is cd and the size went on as a i minus one into ai because if this is a the size is 10 20 if this is c the size is 30 40 thereby this is what the ith matrix size went on as now i said i'll apply partition dp so i said the rule is very simple you solve the entire block you solve the ij block i'm like okay so over here a was this b uh d was this so this is the entire block so you started from one and you went on till four rather you went on till four so you just solved it like this so i was like okay fine you've understood that f of one to n minus one is what represents the entire block from a to d so this means minimum multiplications to multiply matrix one to matrix four if this would have been f of three four minimum to multiply matrix three to matrix four"
+    },
+    {
+      "chunk_id": "L228_C36",
+      "start": 2633.62,
+      "end": 2701.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=2633s",
+      "text": "to multiply matrix one to matrix four if this would have been f of three four minimum to multiply matrix three to matrix four as simple as that got it so that's what i wrote as the first case start with the block next base case what about the base case basically very simple you know what is the smallest because you are taking the entire block to start off with and whenever you are solving if you're taking the entire block the it's the larger portion that you're starting from so top down which which is the lowest portion it's going to be a single array element so whenever it's a single matrix if it's a single matrix there is no multiplication required thereby zero steps return what is the next step i said i want to try out all partitions and how can i try out all partitions it was very simple i said okay listen one of the ways is i can go like this like this the other way is i can go like this like this the other way is i can go like this and like this okay so to call for this guy and for this guy so probably i can keep a k here and i can call ik and k plus one to j that's what i thought or probably i can keep a k here and i"
+    },
+    {
+      "chunk_id": "L228_C37",
+      "start": 2701.86,
+      "end": 2774.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=2701s",
+      "text": "can call ik and k plus one to j that's what i thought or probably i can keep a k here and i can call for kj and i can call for a of ik minus one either i can call for these couple of guys or i can call for these couple of guys depending on how am i how am i looking to place k because my main motive is to call these couple of guys doesn't matter if you call by this or by this on that basis we ran a loop from j i to j minus one or from i plus one to j simple so we ran a loop from i to j minus one and after that we figured out that if there are two portions if there are two portions to be multiplied then when they came across the steps required will be this and we got this formula but this hat has to be solved this is solved by calling f of ik and the other portion has to be solved so this is called by solving this and this is the steps for one type of partition there can be k type of partitions take all the steps and get the minimal of all the steps and that's what you return and in this way you can easily yes i repeat in this way you can easily get this problem to be done so without wasting any time let's"
+    },
+    {
+      "chunk_id": "L228_C38",
+      "start": 2774.26,
+      "end": 2851.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=2774s",
+      "text": "you can easily yes i repeat in this way you can easily get this problem to be done so without wasting any time let's quickly code this up so you're given the array and you're given the n so you remember we need to write a function which basically is from one to n minus one and array right so let's quickly write the function from this and we will have an f we will have an int j and we will have a vector of int and array right and i can say if it's a single size we can definitely return zero and what's the next step you just do the partitions so the partitions will be from i to k lesser than j and k plus plus basically till j minus one is what the partitions will be in the minimal so probably you can keep the minimal mini equal to i9 or something like this and you know and you know the steps you can easily compute the steps to be very simple it's array of i minus one into array of k into array of j and that's it once you've got this solve the first portion which is i to k comma array and solve the other portion which is f from k plus one till j till array and whatever you get if that is lesser than the previous partition steps you basically replace mini"
+    },
+    {
+      "chunk_id": "L228_C39",
+      "start": 2851.22,
+      "end": 2929.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=2851s",
+      "text": "k plus one till j till array and whatever you get if that is lesser than the previous partition steps you basically replace mini equal to steps and at the end of the day you can easily return whatever mini you have computed right and what you can do is let's quickly run this off and see if this is running fine it does run but it is giving time limit exceeded for certain cases you have to apply memo action what was memo action come on guys let's come back to the ipad and check this out okay so why did it give dl because we wrote a recursive solution right and what is the time complexity of this recursive solution let's understand what is the time complexity if i go and try to analyze this it will be somewhere near exponential it will be somewhere near very very very high because you're going across every partition right and it will be tough to compute so i'll just call it exponential but if you want to take pen and paper you can do it but that's not required so the time complexity goes as exponential obviously this is something which will not work how do you convert a recursion into something better that's memo action and i've already told if overlapping sub problems exist if overlapping"
+    },
+    {
+      "chunk_id": "L228_C40",
+      "start": 2930.1,
+      "end": 3003.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=2930s",
+      "text": "do you convert a recursion into something better that's memo action and i've already told if overlapping sub problems exist if overlapping sub problems exist you can convert this into my mesh let's see if it does exist let's see so let's uh come back to the recursion tree so you see a recursion tree it is having bcd now when you solve bcd you have a cd over here do you see when you are trying to solve bcd you are having a cd over here and if you see over here there's a cd do you see similar sub patterns similar function calls f of cd f of cd so if you've computed this if you've computed this can't you return this you can thereby i figured out that there are overlapping sub problems and i can apply my mesh in order to apply my mesh what is the first thing see the changing variables what is the state represented by the state is represented by i and j the state is represented by i and j what is the value of i the value of i is nothing but at max from zero to n minus one so i can say n this is n so if you can have an n cross n dp"
+    },
+    {
+      "chunk_id": "L228_C41",
+      "start": 3003.86,
+      "end": 3082.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=3003s",
+      "text": "n minus one so i can say n this is n so if you can have an n cross n dp then you can easily store the answer of that state like for an example this is cd right what is cd like if i ask what is cd cd is nothing but zero one two three four so f of three comma four so you can say dp of three comma four is what you'll store that's cd that's cd that is what you can easily do so couple of steps and you can easily convert this into my mesh in any particular day so what are the couple of steps just declare a vector dp n vector int dp sorry rather n minus one once you've done this just make sure you pass on the dp over here and right across here just go vector vector int dp the similar stuff call the dp here call the dp once here and before returning dp of the state can store here and has the state been previously visited if it has not been previously visited kindly return the value over here yeah and that should be fine so if you try to run this uh this"
+    },
+    {
+      "chunk_id": "L228_C42",
+      "start": 3083.62,
+      "end": 3156.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=3083s",
+      "text": "return the value over here yeah and that should be fine so if you try to run this uh this will be running and you will see that there is no further time limit exceeded because we have memorized all the states right if you you can try submitting this so guys you see that it is partially accepted now will this be accepted in an interview yeah in interviews if you tell this the interviewers are like okay they don't force you to come across the tabulation uh stuff but they are in ids it will probably give tle but again the reason of setting the time limit strict so that you go and learn the tabulation otherwise people do not go and learn the tougher part so i'll be telling about tabulation in the next video because this video is already very very long but before that let's discuss the time complexity of this particular uh method so what we have done is memoization so what is the time complexity if like strivators n into n states because i and j because i and j will have n and n states at maximum but inside that is inside the code if you see there is a loop running and there's a loop running right and you have to consider this because for every state the loop will run every state you'll have you'll do multiple partitions"
+    },
+    {
+      "chunk_id": "L228_C43",
+      "start": 3157.54,
+      "end": 3220.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=vRVfmbCFW7Y&t=3157s",
+      "text": "right and you have to consider this because for every state the loop will run every state you'll have you'll do multiple partitions thereby for every time like it's not exactly n times the loop runs but you can say near about it's a cube solution where space complexity of bigot of n square as of now plus a stack space yes there is definitely a stack space of bigot of n this is the auxiliary stack space because if you go on the recursion depth it's bigger of uh n so that's what tabulation that's what the memoization will be in the next lecture we will be doing the tabulation so guys uh if you have watched the video till now i'm definitely sure that you've understood the partition dp so just in case you did please please please make sure you like this video and if you're new to this channel please do consider subscribing to us and let me know in the comment section if you've understood this with this let's wrap up this video let's meet in the next one where we will be doing the tabulation format till then bye bye take care"
+    }
+  ]
+}

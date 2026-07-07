@@ -1,0 +1,148 @@
+{
+  "lecture_id": "L180",
+  "lecture_number": 180,
+  "lecture_title": "G-55. Bridges in Graph - Using Tarjan's Algorithm of time in and low time",
+  "youtube_url": "https://www.youtube.com/watch?v=qrAub5z8FeA",
+  "chunks": [
+    {
+      "chunk_id": "L180_C1",
+      "start": 0.0,
+      "end": 76.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video, we're going to learn about bridges in a graph. Now, what is the definition of a bridge? Very simple. Pick up any edge and if you remove it, the component gets broken into two or more components. For an example, let's remove this. So the moment you remove this, previously it was connected. Now can you see this is a single standalone component and this is a single standalone component. So they got broken down into two separate components. Right? Now imagine I say, okay, if I remove this, they're again broken down into two separate components. So it's a bridge. Now what if I say, let's remove this. If you remove this, it is not broken down into two or more components. It still stays as a single component. So that's not a bridge. Imagine I remove this, it's broken down one here and one here. So what is the definition of a bridge? Very simple. Any edge, any edge on whose removal, the graph is broken down into two or more components. That is the definition of a bridge."
+    },
+    {
+      "chunk_id": "L180_C2",
+      "start": 76.76,
+      "end": 148.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=76s",
+      "text": "on whose removal, the graph is broken down into two or more components. That is the definition of a bridge. Got it? Now which algorithm will be used to find a bridge in a graph? It's very simple. We will be using some logic in the DFS algorithm. So the prerequisite is quite straightforward. You must be knowing the DFS algorithm. Just in case you do not know the DFS algorithm, I made the, I made a detailed video on this, on this particular playlist. Scroll up, you'll find the video for DFS. Go back and watch it and come back. Okay. So the prerequisite is DFS algorithm. So we will be taking this particular graph and we know the bridges in this graph. One is this, the other one is this and the other one is this. But the problem is stating print all the bridges. That is the problem. It states print all the bridges. That is the question. So four and five is a bridge. You can write it as five and four, five and six is a bridge. Again, you can write it as six and five, 10 and eight is a bridge. You can write it as eight and 10. So there are three bridges. I want you to print all the bridges in this particular graph. That is what the question states. To implement the algorithm to find the bridges in a graph, what we will do is we will take two separate"
+    },
+    {
+      "chunk_id": "L180_C3",
+      "start": 148.16,
+      "end": 226.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=148s",
+      "text": "the question states. To implement the algorithm to find the bridges in a graph, what we will do is we will take two separate arrays. One is the time of insertion while the other one is the lowest time of insertion. Now what does that mean? Do you remember DFS traversal? How does DFS traversal work? Maybe it starts from one, goes to two, goes to three, then goes to four. So first occurrence like first time of insertion is here. Second time of insertion is here. Third time of insertion is here. Fourth time of insertion. So while doing the DFS traversal, keep a track. When are you reaching a node? In which step are you reaching a node? So the step at which you reach the node, that is what we call as time of insertion. Got it? What is the lowest time of insertion? What it does is it finds the lowest of all. So if I'm standing here, it will look at all the adjacent nodes and take the lowest among them, but it will not consider the parent. Did not understand. No worries. I'll be doing a proper dry run. You'll understand this, but remember this line apart from parent, apart from parent, this is the key point over here. Okay. So let's start on with the algorithm. So with the algorithm, how we start is we will write time of insertion and the lowest time. So let's start with one."
+    },
+    {
+      "chunk_id": "L180_C4",
+      "start": 226.36,
+      "end": 293.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=226s",
+      "text": "algorithm. So with the algorithm, how we start is we will write time of insertion and the lowest time. So let's start with one. So that's where we start. So market is visited in the DFS traversal. The time of insertion is the first step. So timer will be one and the lowest time will be one. So the first is the time of insertion. The second is the lowest time. Since initially you do not have any adjacent nodes, let's assume the current time is your lowest. Then we'll check around adjacent and we'll figure it out. Next it will go to two. So market has visited and the time of insertion is two and the lowest time is three. Next is three, three by three. Next is four, four by four. Next is five, five by five. Next is six, six by six. Please make sure your market is visited. Okay. Next is seven, seven by seven. Next is eight, eight by eight. Next is nine by nine. Now here comes a critical case that you need to understand. So at nine, when you're doing a DFS traversal of nine, it has a time of insertion as nine and the lowest time of nine, right? Can nine go to anywhere? If I ask you what are the adjacent nodes of nine, it's eight, which is where it is coming in from. If you look"
+    },
+    {
+      "chunk_id": "L180_C5",
+      "start": 293.8,
+      "end": 372.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=293s",
+      "text": "I ask you what are the adjacent nodes of nine, it's eight, which is where it is coming in from. If you look at this, so it's the parent because eight is calling the nine. So it's a parent. And if you remember, you do not consider parent. Will nine go to six? In DFS, we did not visit nodes which are visited. It will not go. It will not go. But remember of all adjacent nodes, that is what low is. But low will say, okay, I will not go there, but I'll pick up your low. Your lowest is six. I'll pick up. So I'll just pick up that and write it to myself. Now remember this eight called nine. So as of now, can I say nine has no more adjacent nodes to go? It doesn't have anything to go. So it will come back. It will come back. Let's come back. So it'll come back. Now when it comes back, can I see for sure that the nine's DFS traversal is complete, done and dusted? It is. So nine's time of insertion is nine and the lowest time is six. Now eight will say, hey, you are one of my adjacent nodes. Hey nine, you are one of my adjacent nodes and you did complete your traversal. So I'll update my low. What is your low? Six. Better than me. So I'll update my low to six."
+    },
+    {
+      "chunk_id": "L180_C6",
+      "start": 372.76,
+      "end": 449.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=372s",
+      "text": "did complete your traversal. So I'll update my low. What is your low? Six. Better than me. So I'll update my low to six. That is the definition of low. It says I will take off all adjacent nodes apart from parent. Eight did not look at its parent. It took it from its adjacent node. Six it got, it took and updated the low. Done. Now once you have updated, it states, hey, wait, you have done your job. Now can, can we, can eight and nine be a bridge? Can this be a bridge? Okay. Can this be a bridge? How do I check it? How do I check it? This is where these two arrays will help. Now he says nine is, nine has done his DFS traversal. Can eight, nine be a bridge? So he removes that. Hypothetically just remove that. Nine says, hey, you're removing, you're removing. He'll ask eight. What's your time of insertion? He says, in order to reach me, it has to be the eighth step. It has to be the eighth step. Nine says, I have an adjacent guy. I have an adjacent guy who can reach at the sixth step. And nine says, I have an adjacent guy. I have an adjacent guy who can reach at the sixth step. So even if you remove, even if you remove, I can still go to the sixth step and the sixth step"
+    },
+    {
+      "chunk_id": "L180_C7",
+      "start": 449.2,
+      "end": 525.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=449s",
+      "text": "the sixth step. So even if you remove, even if you remove, I can still go to the sixth step and the sixth step will take me to the seventh and seventh will take me to the eighth. So I can reach you. Now, if I can reach you, it's not a bridge because the definition of a bridge is split it into two components. So if I'm split into two components, I can't reach you back. I can't reach you back. So if there's a part to reach you back, it did not get split it into two components. It's not a bridge. So I am sure that it is not a bridge. But since I know eight and nine cannot be a bridge. So like hypothetically removed it. So hypothetically I'll place it back. So it has done for nine. DFS is done. It has taken its lowest value time to move ahead. Now we move to 10. So can I see it was nine at the like the last step was my step. This will be at the 10th step. So I'll write a 10 comma 10, 10 comma 10 written and mark it as visit next 11 comma 11 market as visited next 12 comma 12 market as visited. Now comes the point it's it is this and write the DFS of 12. So when I write DFS of 12, can it go somewhere? It says I have an adjacent note 10, but it's already"
+    },
+    {
+      "chunk_id": "L180_C8",
+      "start": 525.72,
+      "end": 602.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=525s",
+      "text": "of 12. So when I write DFS of 12, can it go somewhere? It says I have an adjacent note 10, but it's already visited. It's already visited. So I cannot go there. I cannot go there. It's already visited. Now, if it cannot go there because it's already visited. So you came by some part and that is the reason it is. So this is never a bridge for sure. Because if it's visited, because if it's visited, you would have visited in the previous part. So it's, it's definitely not a bridge, but what's our job? Low will say, wait, I know 12. It's your adjacent node. So why didn't you pick it's lowest time? He just picks it and makes it 10. Nice. Next. Can I see that the DFS of 11 called 12 and now 12 says I've done. I'm done complete. So whenever it's complete, what is 11? 11 says, well, you are done in the street. Your time in and low is ready. I'll just take a look because that's better than mine. So I'll take it. Once I've taken it, 11 says, can this be an hypothetical edge? It's stress removal. So 11 can be reached at the 11th step and 12 says, I have an adjacent who can be at the 10th step. So I'll just go to the 10th and then I'll reach you. If"
+    },
+    {
+      "chunk_id": "L180_C9",
+      "start": 602.66,
+      "end": 679.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=602s",
+      "text": "have an adjacent who can be at the 10th step. So I'll just go to the 10th and then I'll reach you. If I can reach you, this cannot be a bridge. This cannot be a bridge. This is not a bridge. Okay, fine. So let's erase this. Now 11 is done. Who called 11? That's right. 10 called 11. Can I see I can now 11 is done. So it will go back. When it goes back to 10, 10 says, okay, he's coming back. He's coming back. So what's my first job? Hello says, okay, this is an adjacent node who has done his DFS traversal. So as low as ready, I will just pick up, but it's already 10 years old. So 10, so there's no point of picking it up. Now next question, can this be a bridge because I'm coming back? The DFS is complete. So I'll just check for this to be a bridge. So we're trying to remove this. Then can be reached at the 10th step. And 11, if you remove this, 11 says, I still have an adjacent where I can reach you. So not possible. This is not a bridge. This is not a bridge, not a bridge again. So can I see now that the eight called 10 and not 10s DFS is completed. 10s DFS is completed. So now it'll go back. Now it'll go back to eight. When it goes back to eight,"
+    },
+    {
+      "chunk_id": "L180_C10",
+      "start": 679.9,
+      "end": 752.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=679s",
+      "text": "DFS is completed. 10s DFS is completed. So now it'll go back. Now it'll go back to eight. When it goes back to eight, it says 10, you are my adjacent. You have done your job. What's your low 10 miles or six. So there's no point in taking a look. Forget about it. Now the next step eight says is, okay, let's wait. Can we be an edge? Can we be a bridge for that eight says, what is my step? My step is eight. Then says the lowest step that I can reach to buy all my adjacent nodes is 10. So I cannot reach eight or something before it. So I cannot reach you back. If I cannot reach you back, I am stating that this guy is a bridge and stating that this guy is a bridge. Perfect. Done. We got our first bridge, got our first bridge. Now eight says I'm done with nine. I'm done with 10. I'm done with all that just notes. So now go back to seven. When it goes to seven. So seven ideally you would have called eight, right? Now eight's job is done. So it goes back to seven. Seven's first step is hello. Hello. I'll say eight, you are done. What's your lowest six. So I'll just pick you. I'll just be a big son. Now next step seven and eight check for"
+    },
+    {
+      "chunk_id": "L180_C11",
+      "start": 752.7,
+      "end": 829.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=752s",
+      "text": "What's your lowest six. So I'll just pick you. I'll just be a big son. Now next step seven and eight check for bridge. So when they check for bridge, eight says, okay, my lowest is six. I can still go to six. Seven says my step is seven. So if eight can reach six, that means it can reach back seven. So this is not a bridge. This is definitely not a bridge. So seven's if this is done, it'll not go back to six. So let's, let's write for six. Now wait, so I'll be right. DFS of six called seven and seven is done. Right? Or six was job. Hello. Hello. We'll be looking for it. Low says, okay, seven, you're done. What's your low? Six. My lowest six. No need to do anything. So if I remove this, if I remove the seven C's, I can still reach back six, which is your step, which is why this, because that's why it's a six and this is six. So even if you remove the second, still reach you back. No point, no point, not a bridge. Done. Can I say six is done? I can say six is now done. Who was called by six, five, called six. So it goes back. The moment it goes back, I see it. Your mind isn't low as again, looking for it. Six. It has five."
+    },
+    {
+      "chunk_id": "L180_C12",
+      "start": 829.18,
+      "end": 898.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=829s",
+      "text": "goes back. The moment it goes back, I see it. Your mind isn't low as again, looking for it. Six. It has five. We'll not take it. Five C's. My time of insertion is five. Six is the lowest I can get a six. I cannot reach you back. You're not reach you back. Five and six is a bridge. So I got one more bridge. I got one more bridge. Perfect. Five is done. What's the next step? Five C's. Let's go back to four. Five C's. Let's go back to four. So four, which called five, the five will go back to it. The moment it goes back to four, four slow looks for it and says, you're five, but I have four. Four C's. Hey, I need both step. Five C's. The lowest I can get is five. So four, five is a bridge again. So I can say five is done and we have figured out four, five is a bridge. And do you remember how the deepest call happened? One came here, then it go went here, but four did not check out its other adjacent node, which was one. So now it came back. Now four will try to go here, but it's already visited. So it will not go. But since it came by here, it can pick up the low and update them because he's greedy. Just look for that. Just note slope. They'll update it."
+    },
+    {
+      "chunk_id": "L180_C13",
+      "start": 898.62,
+      "end": 963.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=898s",
+      "text": "by here, it can pick up the low and update them because he's greedy. Just look for that. Just note slope. They'll update it. Now four will try to go back to three because that is where it came from. The moment it tries to go back to three, three is greedy. Three is lowest greedy. Three will look for, okay, wait, let me take a look. They'll take it slow. That's the first thing you'll do. Next, I'll try to see if four and three can be a bridge. Four and three can be a bridge. So four C's, okay, I can reach the first step. Three is entry time is three. So I can reach this, not a bridge. Similarly, you can track that and do everything. So apparently we got three bridges, one here, one here. That's how easy it was. So I hope you've got the intuition. The intuition is pretty simple. Pretty simple. The reason we have stored low apart from the parent is, is very simple. Like if I just draw it, this is the parent and this, like the parent is usually the node and this is the IT. Now, the reason, the reason this IT guy is not storing the low here is because we are removing this. So if there is someone else who can take before the parent or to the parent, that is what we need"
+    },
+    {
+      "chunk_id": "L180_C14",
+      "start": 963.1,
+      "end": 1036.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=963s",
+      "text": "removing this. So if there is someone else who can take before the parent or to the parent, that is what we need to look for. That is why we are not storing the parents low. Got it? That's, that's a simple intuition. I just look for, if there is any other way I can go back to prior, like prior to that DFS traversal or to that node. That is the simple intuition behind this like small. I hope you've understood the entire intuition and the algorithm. Now it's time to code it up. So the problem is critical connections in a network. It states the graph is zero based indexing and so on. So you have to find all the critical connections. So the definition of bridge is defined as critical connections over here. What are we given? N and the connections. So they're basically given the edges. So you have to form the graph yourself. So as usual, I'll be coding the C++ solution and you can figure out the exact similar Java code on the left. Okay. So let's quickly start coding this up. The first step is pretty simple. We'll create the adjacency list of size and let's go across the connections, which is this. And what we'll do is we'll say adjacency of IT of zero, because this is, yeah, this is a vector. So push back of ID of one, and you can just copy paste the same"
+    },
+    {
+      "chunk_id": "L180_C15",
+      "start": 1036.22,
+      "end": 1113.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=1036s",
+      "text": "zero, because this is, yeah, this is a vector. So push back of ID of one, and you can just copy paste the same line because it's undirected graph. And you can say ID of one. So off with ID of zero. So the graph is created. Once the graph is created, what do you require for the DFS traversal? Just think yourself. You will requiring, you'll be requiring a visitor array. So let's go across and mark it. It'll be requiring a TN. You can mark everything as zero and you'll be requiring in this. What's the other thing that you'll be requiring? You'll be requiring to store all the bridges. So maybe we can create a vector of vector of int, and maybe you can call this as bridges. That is what you want to store. And we require a timer. So maybe you can declare it globally. Timer equal to zero. That is a step or you can keep it as one as well. Now let's write this as void, void DFS, ID node. Okay. We need the parent and we need the visited. And then we need the graph as well. So go ahead and take the graph. That's the adjacency list. What else we require? We require the time in, and we require the lower time. Now, the moment you enter the graph, what's the first thing that you will do? The first thing"
+    },
+    {
+      "chunk_id": "L180_C16",
+      "start": 1113.34,
+      "end": 1187.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=1113s",
+      "text": "we require the lower time. Now, the moment you enter the graph, what's the first thing that you will do? The first thing that you do is market as visitor. So go across and market as visitor. What's the next thing that you'll do? You will set time of insertion of the node and the lowest time of the node is equal to timer. And then you can just increase the timer for the next step. Now go across and travel for adjacent node. Now something I know is if it is, if the adjacent node is the parent, we don't need to call the DFS or we don't need to take it into consideration. So the ID, the adjacent node is equal to parent. Let's not do anything and go ahead. And the other thing can be if it's not visited, right? Or else if it's visited, that's two of the cases. So remember, if it's not visited, what's the first thing that you'll do? We will go and traverse for it. So IT, the parent will be node, the visited, the adjacent, the TIN, and the low. Once the DFS of IT is completed, it comes back. Node is greedy. So node says, you've came back, right? Okay, wait, wait. What's your lowest time? Give it to me. And he takes it. I've taken the lowest time. He's taken it. Now he'll say, okay, can this node to IT, can this node to IT be a"
+    },
+    {
+      "chunk_id": "L180_C17",
+      "start": 1187.82,
+      "end": 1263.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=1187s",
+      "text": "I've taken the lowest time. He's taken it. Now he'll say, okay, can this node to IT, can this node to IT be a bridge? He'll ask. So for that, he'll say, Hey, hey, I just didn't know. What's your lowest time? What's your lowest time? This is, I just didn't know. We'll see. My lowest time is low of IT. If that's somewhere lesser than equal, the current nodes time of insertion, then you can reach. But if it is not, if the lowest time is greater than the time of insertion, then he cannot reach the current node. That means it's a bridge. You go across and see it as a bridge. And maybe you can just store this. It is a vector of vector, int and bridges. So you can just take this bridges. Perfect. And over here, you can say, okay, this is a bridge. So bridges dot push back. Because if you cannot reach, because of the lowest time cannot reach before or equivalent to the node, that means they got split into two different components. They can write as IT and know this is a bridge. You can edit as node and IT as well. Perfect. Done. What if it's visited? That means while the DFS traversal was being done previously, you would have visited it. So you have already"
+    },
+    {
+      "chunk_id": "L180_C18",
+      "start": 1263.26,
+      "end": 1327.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=1263s",
+      "text": "if it's visited? That means while the DFS traversal was being done previously, you would have visited it. So you have already visited it. So it's definitely in the same component, even if you remove that. So bridge, not possible because you're coming by visiting it. You're coming by visiting it. So how can it be a bridge? I'll just be considered with the lowest time. So he is just bothered about himself. He'll be like, Hey, I don't care. Just give me your last name. I'll just take it. It cannot be a bridge. I know. So it's perfect. This is how you can write it. Just take the lowest time of the addition, compare it if it can reach. And once you've done this, call the deepest, whether assuming it's a single component, we start from zero. We give the parent as initial is minus one. We need the visited. We need the adjacent. We need the time of insertion. We need the low. Okay. Make sure you pass everything correctly. Otherwise it'll be a mess. And once you've done this, you can return the bridges. So this is how you can easily get all the bridges. Now let's quickly go and run this and see if it is running fine. Okay. We have some mistake. Let's see what mistake we have. Okay. There is a breast breeze missing. Okay. We've given that. Now let's quickly run"
+    },
+    {
+      "chunk_id": "L180_C19",
+      "start": 1327.42,
+      "end": 1390.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=1327s",
+      "text": "some mistake. Let's see what mistake we have. Okay. There is a breast breeze missing. Okay. We've given that. Now let's quickly run this and see if it is running fine. It is now let's submit this and see if it is getting submitted or not. So now it's time to discuss the time complexity in the space complexity. First, let's discuss the space complexity. We're using like three and over here and a V plus three to create the graph. So V plus two E and then a three N. So you can say plus of this, the space that's the space complexity. What is the time complexity? Can I say I'm doing a DFS travels and you know, the DFS travels, it takes V plus two E. So the time complexity is V plus two E. So this is how you can easily find all the bridges in our graph. So I hope you've understood everything before wrapping up this video of a very quick request to me as going through our channel statistics, nearly 50% of the users who watch our video do not hit that subscribe button. So if you're new to our channel, please, please, please do consider subscribing to us. If you've understood the intuition, the algorithm and the code, make sure you hit that like button. And if you haven't checked out our SD sheet and the other playlist, all the links will be in the description. Make"
+    },
+    {
+      "chunk_id": "L180_C20",
+      "start": 1390.62,
+      "end": 1394.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=qrAub5z8FeA&t=1390s",
+      "text": "like button. And if you haven't checked out our SD sheet and the other playlist, all the links will be in the description. Make sure you check them out as well. With this, I'll be wrapping up this video. Let's meet in some of"
+    }
+  ]
+}

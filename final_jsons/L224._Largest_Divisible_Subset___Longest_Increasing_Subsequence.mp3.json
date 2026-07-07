@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L224",
+  "lecture_number": 224,
+  "lecture_title": "DP 44. Largest Divisible Subset | Longest Increasing Subsequence",
+  "youtube_url": "https://www.youtube.com/watch?v=gDuZwBW9VvM",
+  "chunks": [
+    {
+      "chunk_id": "L224_C1",
+      "start": 0.0,
+      "end": 74.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=gDuZwBW9VvM&t=0s",
+      "text": "Hey everyone, welcome back to Take U Forward. So today we will be solving the problem largest divisible subset which is DP 44. But before this, DP 41, DP 42 which is based on longest increasing subsequence should have been done because we are following the pattern of longest increasing subsequence. So if you know this, then only solve this problem otherwise not. So let's first understand the meaning of subset. As of now we were doing problems which are longest increasing subsequence. I am calling subset. The definition of subsequence is I can pick 1, 16, 8 and they have to be in the same order as in the array. That is what we call generically as subsequence. But the moment I attach the terms subset, I can write them as 1, 8, 16. 1, 16, 8 is also a subset. 1, 7, 16 is a subset. You generically don't need to follow an order. You can pick up any element from the array and you can write. So if you are not following the order and you are picking up any element from the array and you are writing it, that is what we call as subset. Now what is the definition of divisible? Now"
+    },
+    {
+      "chunk_id": "L224_C2",
+      "start": 74.44,
+      "end": 148.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=gDuZwBW9VvM&t=74s",
+      "text": "and you are writing it, that is what we call as subset. Now what is the definition of divisible? Now if you have picked up a subset, all the elements in itself, if you pick up any two elements, they should be dividing each other. Like if I pick up an element array of i and array of j. So either array of i should be dividing array of j or either array of j should be dividing array of i. It should satisfy either of these conditions. For an example, if I pick up a subset like 16, 8, 4. This is a subset. Now what can be all like, what all pairs can I have? I can have 16, 8 as a pair. I can have 16, 4 as a pair. I can have 8, 4 as a pair. Like I can have 16, 8. I can have 16, 4 and then I can have 8 and 4. Right? So these are the three pairs that I can have. Now if you carefully see, 16 is divisible by 8. 16 is divisible by 4. 8 is divisible by 4. So every pair is divisible. I'm not saying that 8 has to be divisible by 16. It can be either way. 16 is divisible by 8. That's okay. So that is the meaning of divisibility. That's the meaning of divisibility. So I need"
+    },
+    {
+      "chunk_id": "L224_C3",
+      "start": 148.88,
+      "end": 227.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=gDuZwBW9VvM&t=148s",
+      "text": "way. 16 is divisible by 8. That's okay. So that is the meaning of divisibility. That's the meaning of divisibility. So I need to find the largest. So I can say, if I just omit this, which will be the largest divisibility pair, then I'll be like, I can pick 1, 16, 8 and 4. This is indeed the largest divisibility pair because if I write down the pairs, 1, 16, 16 divides 1 for sure. 1, 8, 1 divides 8 for sure. 1, 4, it's still divisible. 16, 8, divisible. 16, 4, divisible. 8, 4, divisible. So I can say all the pairs are divisible. Okay? So if all the pairs are divisible, this can be a possible answer. And if you add a 7 to it, this will not. Why? Because if you add a 7, the 7 is not divisible by 4, 8, 16. So you need to be very sure that each of the pairs are divisible, which are in the subset. So divisible question, divisible you have understood. Now about largest, you have understood this is the largest. This is of size 4 and you cannot have any greater size subset. Now the question states, the array that you are given will have distinct numbers. The array that you will have, will have distinct"
+    },
+    {
+      "chunk_id": "L224_C4",
+      "start": 227.76,
+      "end": 301.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=gDuZwBW9VvM&t=227s",
+      "text": "question states, the array that you are given will have distinct numbers. The array that you will have, will have distinct numbers. Okay? That is for sure stated. And also another statement is given to you that you can print any answer. Since we're talking about subset, you can print 1, 16, 8, 4. You can jumble it up and print like 4, 8, 1, 16. Or you can also print it like 1, 4, 8, 16 in the sorted fashion. You can print any of the answers. And if they are dividing each other, you will be getting a AC, which is correct answer. Got it? So that is what the problem is all about. Now since they're saying, so print any answer, here lies a possible thought process. Since they're saying print any answer and we are looking for divisibility, we need to convert this problem into somewhere related to longest increasing subsequence because we know in dynamic programming, it's generally the subsequence where we deal with indexes and then we decide whether to pick or not pick. We generally know that. So can we relate this to somewhere around longest increasing subsequence? I'll be like, how?"
+    },
+    {
+      "chunk_id": "L224_C5",
+      "start": 301.86,
+      "end": 370.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=gDuZwBW9VvM&t=301s",
+      "text": "We generally know that. So can we relate this to somewhere around longest increasing subsequence? I'll be like, how? I'll tell you that. What if I take this example and I try to sort it because since I can print any answer and the order does not matter, even if I sort it and I try to find out an answer, it is still okay. As long as the divisibility is not compromised, I'm still okay. So I'll be like, okay, let's definitely sort it because it doesn't matter. Even if I sort it, whatever answer I get, even if I get 1, 4, 8, 16, it's still okay. Now how do you make sure that each of the pairs are divisible? How do you make sure that 1 divides 16, 1 divides 8, 1 divides 4 and then 16 divides 8, 16 divides 4? Can we have a shortcut to it? Since I have sorted it, again, please hear me out properly. Since I have sorted it, if I'm picking 1 as my first guy, and the next guy I pick up 4, and then I say that, hey listen, 4 is divided"
+    },
+    {
+      "chunk_id": "L224_C6",
+      "start": 376.74,
+      "end": 450.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=gDuZwBW9VvM&t=376s",
+      "text": "guy, and the next guy I pick up 4, and then I say that, hey listen, 4 is divided by 1. So if I'm picking up 8, the next guy I pick up 4, and then I say that, hey listen, the next guy, because I cannot pick up 7 because 7 cannot be divided by 4. This is not possible. But can I pick up 8? Can I pick up 8? Why? Because 8 is divisible by 4. Can I see this? If 8 is divisible by 4, which eventually means that 8 is also divisible by 1 because 4 is divisible by 1. So 8 has to be divisible by 1. Understand the intuition. If 4 is divisible by 1, and if 8 is divisible by 4, so the rule also follows that 8 will be divisible by 1. Next, I come to 16. Now can I say, when I come to 16, and 16 is divisible by 8, which indirectly means 16 is divisible by 4, and 16 is divisible by 1 also due to the sorted, because I've already checked for the divisibility of 4 by 8 and divisibility of 1 by 4. So I can easily say 16, if divisible by 8, means divisible by all the elements"
+    },
+    {
+      "chunk_id": "L224_C7",
+      "start": 450.98,
+      "end": 528.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=gDuZwBW9VvM&t=450s",
+      "text": "divisibility of 1 by 4. So I can easily say 16, if divisible by 8, means divisible by all the elements in the array. So I can say, I can easily pick up 16. So did you find a pattern? Did you find a pattern? You did. Whenever I'm picking up 16, since the array is sorted, since the array is sorted, I am definitely sure if 16 divides 8, like if 16 is divisible by 8, it will be divided by all the other picked up elements. Why? Because 8 is divisible by 4, which eventually means that 16 is divisible by 4 as well. So the rule, so you can try out another example and you'll see. So I got this. So can I say, now I'm looking out to figure, like can I just think this question as, once I've sorted the question, am I looking out to figure longest subsequence, and can I say divisible subsequence instead of increasing? Am I looking to figure out the longest divisible subsequence? And the answer to that is yes. Why? Because 4 divided by 1, true. 8 divided by 4, true. 16 divided by 4, true. So I'm looking at 16 divided by 8, true. Prior to this, we were solving a problem which was"
+    },
+    {
+      "chunk_id": "L224_C8",
+      "start": 528.94,
+      "end": 602.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=gDuZwBW9VvM&t=528s",
+      "text": "4, true. So I'm looking at 16 divided by 8, true. Prior to this, we were solving a problem which was increasing, like we were taking 1, 3, something like 5. This was longest increasing subsequence. Can I relate this problem to longest divisible subsequence? Instead of increasing, I'm making sure the next number that is being picked has to be divisible. So if you remember the code for LIS, do you remember? You do. So if I just rewrite the code, it was something like i equal to, it started from 1 because 0 will be not there, i less than n, i plus plus, and if you remember there was a j loop which was from 0 till i, and you went on till j plus plus, and since it was increasing, you said if array of j is equal to 1, then dp of i is lesser than array of i because you're saying array of i, LIS, plain LIS, and at the same time you said if dp of i, whatever it had, whatever it had was lesser than if I take this element because if I take this element, it will be plus 1. If it is, then you went on and said dp of i will be dp of j plus 1, and you said in the hash of"
+    },
+    {
+      "chunk_id": "L224_C9",
+      "start": 602.3,
+      "end": 676.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=gDuZwBW9VvM&t=602s",
+      "text": "you went on and said dp of i will be dp of j plus 1, and you said in the hash of i, you can keep j because that's where the dp would have been derived from. This is the if statement, this is the if statement that you wrote, and then the for loop executed. So if you remember this was the LIS, if you remember well, this was the LIS code, and in the LIS code, you checked for this, you checked for this, and that's how you stored the hash. Now I'm changing the question to divisible. Once the array is sorted, I've changed the question to divisible. I just need to check for divisibility. So can I say, because I know the array is sorted, I know the array is sorted, so can I say what I just need to do is I need to cut this guy off, and I know array of i is greater, so if array of i is divisible by array of j, then I can say it's divisible, and then I just need to check for the length because I'm looking for the longest, so this is how the length of dp will work. Slight shuttle change, and I could convert an LIS question to an LDS, which is the longest divisible subsequence. Make sense guys? So once you've done this, you can definitely use the hash array to track back, yes, you can use the"
+    },
+    {
+      "chunk_id": "L224_C10",
+      "start": 676.02,
+      "end": 751.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=gDuZwBW9VvM&t=676s",
+      "text": "subsequence. Make sense guys? So once you've done this, you can definitely use the hash array to track back, yes, you can use the hash array to track back your longest increasing, sorry, longest divisible subset, and since you need to print any answer, it works, but the key point over here is you need to sort the array, because if you don't sort the array, the logic does not bind. Like 16 is divisible by 8, and that means 16 divisible by 4, by 1 binds because it is sorted. Got it? So I hope you have understood it, so without wasting any time, let's check out the code. So if you remember in the longest increasing subsequence, in order to print it, this is how we did. We basically took up a vector dp, and basically let's copy paste this. It's the same code, it's the same code, so I'll just copy paste this over here in the divisible set question. So just copy paste it. So if you remember this was the dp and this was the hash, and initially the maximum was 1, I've taken the exact same code, exact same code. What I will do different is, I will say I will sort the array. I will sort the array, nothing different. Once I've sorted this, instead of this, I will say if array of i modulo array of previous"
+    },
+    {
+      "chunk_id": "L224_C11",
+      "start": 752.1,
+      "end": 824.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=gDuZwBW9VvM&t=752s",
+      "text": "sort the array, nothing different. Once I've sorted this, instead of this, I will say if array of i modulo array of previous is equal to equal to 0. If this is true, and this is kind of true, and this is what I write, and in this way I can store it, and this will make sure the subset is stored, and I can reverse it, and I can just make sure over here they want the subset to be returned. So just return the subset. So that's how you can do it. Just a shuttle change, and if you try running this, you will see that it is indeed running fine. My bad, n was not declared in the scope, because they did not give you n, so probably you can just go across and declare it. The other thing will be hash include is something which is again missing. Hash include bits slash std c++ h. That's what again has been taken. Perfect. Now let's run the code. So you see, all of them are giving correct answer. So easy, isn't it? So if you submit this, it will give you correct answer. So what will be the time complexity guys? It will be n squared for these couple of loops, so the time complexity is n squared, and then you're tracking back. So at the worst case, it might take you a big O of n in order"
+    },
+    {
+      "chunk_id": "L224_C12",
+      "start": 824.46,
+      "end": 869.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=gDuZwBW9VvM&t=824s",
+      "text": "is n squared, and then you're tracking back. So at the worst case, it might take you a big O of n in order to trace back the entire path, because at max the largest subset will be the array itself. So this might end up taking big O of n, and so big O of n squared. So n squared plus n is the time complexity, and you're using a big O of n space. That's what you're using. So this is how you can definitely solve this problem using the simple concept of longest increasing subsequence. So yeah, with this, I'll be wrapping up this video, but before that, if you have understood it, please, please, please make sure you like this video, and if you're new to our channel, please do consider subscribing to us. That will be of immense help. And yeah, with this, let's wrap up this video and meet in the next one where we will be solving the next problem from the longest increasing subsequence pattern. Till then, bye bye, take care."
+    }
+  ]
+}

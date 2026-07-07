@@ -1,0 +1,162 @@
+{
+  "lecture_id": "L155",
+  "lecture_number": 155,
+  "lecture_title": "G-30. Word Ladder - 2 | Shortest Paths",
+  "youtube_url": "https://www.youtube.com/watch?v=DREutrv2XD0",
+  "chunks": [
+    {
+      "chunk_id": "L155_C1",
+      "start": 0.0,
+      "end": 74.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in the previous video, we did learn about word ladder one, where we had to convert the starting word to the target word using the given word list and we have to do it in a minimum number of transformations. So what ladder two is an extension of the previous problem. So just in case you haven't checked out the previous problem, the link is in the description. Please make sure you check it out because there's a pattern in which I have taught this particular code and I'll be using that pattern only to solve this problem, word ladder two. So before starting this, I just want to give you a disclaimer that this is one of the toughest problems of the BFS. So at the end of the video, just in case you have this vibe that, how will I think about such solutions? Do not worry, do not worry. These problems are something which you have to practice so that if something similar comes up in an interview, you can answer. Okay. This will never come by yourself. Anyways, so what is word ladder two all about? So it's the same problem. You will be given a start word and you'll be given a target word and you need to convert the start word to the target word and the transformations are only allowed in this particular word list. But"
+    },
+    {
+      "chunk_id": "L155_C2",
+      "start": 74.52,
+      "end": 140.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=74s",
+      "text": "and you need to convert the start word to the target word and the transformations are only allowed in this particular word list. But over here, instead of printing like in the word ladder one, you have to print the sequence, the length of the sequence. Over here, you have to print all the possible shortest sequences. So if I go back to the iPad, imagine the beginning word is bat and the end word is cause. Okay. So, and these are the word list. So apparently, these are the couple of these. Bat can be transformed to bat, bat to pot, pot to cause and then to cause. And similarly, bat can be transferred to what, what to what, what to cause, what to cause. This portion is similar, but if you see the first transformation is different, the first transformation is different. So this is also taking like five sequence length. This is also taking like five sequence length. Since both of these are taking five sequence length and that is the shortest we can do. So you need to return me this and then you need to return me this one as well. And also you can return the list in any possible order. Like this can be at first or this can be at first, doesn't matter. What matters is you need to return both of them. Any order"
+    },
+    {
+      "chunk_id": "L155_C3",
+      "start": 140.28,
+      "end": 218.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=140s",
+      "text": "be at first or this can be at first, doesn't matter. What matters is you need to return both of them. Any order doesn't matter. So how do you do this? Because if you go back to the previous word ladder one problem, it was very straightforward. You started with the word, you kept this length and you kept on trying to change from A to Z for every alphabet and you ended up at cock. Will that method work over here? No, that method is not going to work. Why? Because you need to tell me the sequence. So this time the algorithm will be slightly different. Yes, it won't be a straightforward BFS. Instead of a straightforward BFS, we have to do some observations. Yes, we have to do some observations and while doing the dry run, I'll be telling you about the observation. So before doing the observation, first observation that I want you to have a look is first level, second level, third level, fourth level, fifth level. So the level always increases in this order in the BFS traversal. If you're doing steps, you always go level one, then you go to level two, probably two level twos and probably level threes, then level fours. That is what the BFS traversal is all about. And that is where the gist of the solution lies. Okay, let's get started. So what did we usually"
+    },
+    {
+      "chunk_id": "L155_C4",
+      "start": 218.56,
+      "end": 297.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=218s",
+      "text": "traversal is all about. And that is where the gist of the solution lies. Okay, let's get started. So what did we usually do in order to run a BFS traversal? The first thing we did was we always took a queue data structure. So please, please take a queue data structure. But this time the queue data structure will not be this big. It'll be a bigger one. Yes. Why? I'll tell you because we're going to store the sequence. We're going to store the sequence. So the sequence starts with bat for sure. So do one thing, just store bat. Do not do anything. Just store bat in a list and put that into the queue. So your queue will be storing list. Okay. So let's start the BFS call. So when the BFS call starts, you get the list with bat. So can I see if the sequence is bat, can I say the word is bat itself? Because if you are having a sequence, the last word of that sequence is the word that you want to convert into. So from bat, where can you go? From bat, you can change this B and you can make something as bat. You can change this B and you can make something as bat for sure. Do you erase bat? Now over here, very, very important. You do not erase anything right now. You do"
+    },
+    {
+      "chunk_id": "L155_C5",
+      "start": 297.32,
+      "end": 372.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=297s",
+      "text": "as bat for sure. Do you erase bat? Now over here, very, very important. You do not erase anything right now. You do not erase anything right now. Why? I'll tell you when we move forward. Do not erase bat from here. Keep it. Next. Can you change it to something else? I think I can change it to bot as well. If you carefully see, if I change A to O, that will be bot. Bot is here. Bat is here. So what I did was I took bat and I changed it to bat and bot. So bat can be changed to bat. So if a bat is changed to bat, can I see the new sequence will be bat, bat for this one. And if I'm changing bat to bot, the new sequence will be bat, bot. Can I see this? Because bat is transformed to bat. So bat gets attached. So you get bat and bat. Bat gets transformed to bot. So bot gets attached. So you get bat and bot. Clear? So the sequences are done of length two. Now comes the trick. So you use something like a bat. You used something like a bot. Once you have done everything in that level, once you have taken all the possible transformations in that level, take the"
+    },
+    {
+      "chunk_id": "L155_C6",
+      "start": 372.68,
+      "end": 449.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=372s",
+      "text": "bot. Once you have done everything in that level, once you have taken all the possible transformations in that level, take the bat and bot and delete. Then only delete. Why not when you made? I'll tell you. Do not worry about that. Done? So this is one of the little stuff. Next, take bat, bat out. Take bat, bat out. Now remember one thing, when I say level, level one only consists of this. When I say level two, level two consisted of these two things. Level two consisted of these two things. There are two guys at the level two. There are two guys in the level two. So you're going to deal with both of these two guys and then you're going to delete. And now you'll understand why. So can I see if the sequence is this, the last guy is bat for sure. So I get the last guy and this is where we'll start the transformation problem. So bat can actually be converted to something like bot. Why? Because if you carefully see, bat can be converted to bot because bot is there. Can I convert bat to something else? I don't think that. You can try converting bat to something else. Maybe something like bat could have been converted to"
+    },
+    {
+      "chunk_id": "L155_C7",
+      "start": 449.8,
+      "end": 527.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=449s",
+      "text": "I don't think that. You can try converting bat to something else. Maybe something like bat could have been converted to bat, but it's actually going back. It's actually going back to not want, and it is not in the world list as well. So bat can only be converted to bot. Will you erase bot? You could have erased bot because this level is done. This is level three. Level three is done because you got bat, bat, bot. You got bat, bat, bot. You could erase it. But I said the entire level has to be completed. The entire level two has to be completed. You just completed bat, bat. There is someone else of level two already waiting. So do not erase bot from here. Do not erase bot from here. Why? You'll understand now. So bat, bat, bot is done. Okay. Get the next guy. Bat, bot, bat, bot. So which is the last word? Bot. So take the bot. Now in bot, if you do a transformation, you can actually get bot again. Can actually get bot again. And imagine while forming this, if you'd have deleted bot, you'd have never got bot back again. So the same level, bot can happen multiple times. So if you look at the answer, what happens here? What happens here?"
+    },
+    {
+      "chunk_id": "L155_C8",
+      "start": 527.32,
+      "end": 597.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=527s",
+      "text": "So the same level, bot can happen multiple times. So if you look at the answer, what happens here? What happens here? So once you form this, you get bot. And similarly from bot also when you get, you get bot. So do not delete. Yes. Beyond this, do not take bot. Do not take because of the reason that the length will, you need the shortest length. So if you get a bot at a level, take it as many times as you're getting. After this, do not take because the length will be not the shortest one then. Thereby, again, you get a bot. This time what you do is you say bat, bot, bot. And now, since I can see all the level two guys are completed, all the level two guys are completed. Now I can clearly state that, hey listen, all my level two guys are completed. So what I will do is I will simply, yes, I'll simply now erase the bot because bot has been used in this particular level as many times as I wanted. Perfect guys. Next, next, this is level three. So there are two guys in the queue. So you can iterate for two times, pick once this, pick once this. So I did it for two times, pick up the next two elements because you know the next two elements are level three"
+    },
+    {
+      "chunk_id": "L155_C9",
+      "start": 597.16,
+      "end": 676.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=597s",
+      "text": "So I did it for two times, pick up the next two elements because you know the next two elements are level three because you know the next three elements are level three. So just go ahead and do that. First thing is bat, bot, bot. So can I see your water spot? I can. You can again try transforming bot into all of these like AOT, BOT. Then you can go for O like bat, PBT, PCT. Then you can go for T which will make it POA, POB, POC and so on. So if you try to convert bot, you'll actually get POZ. You'll actually get POZ because P can be converted to Z and you'll get POZ. So the moment you get POZ, you see POZ is here, but do not delete. It might be using some same level again. Do not delete. Just attach this POZ to here and say, okay, this is something which I'll take into the queue. Bat, bat, bot, bat, bat, bot and POZ. So level four, this is level four starting. Okay. So now what I can say is cool. This is done, but do not delete. Do not delete. Level three is yet not completed because this is done. The next guy is bat, bot and pot."
+    },
+    {
+      "chunk_id": "L155_C10",
+      "start": 677.48,
+      "end": 757.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=677s",
+      "text": "Do not delete. Level three is yet not completed because this is done. The next guy is bat, bot and pot. So who is the last guy? Pot again. So pot can again be converted into POZ. So you get bat, bot, pot and POZ. So this time across, you can see the level three has been completed. The level three has been completed. Once that level has been completed, I can go across and delete all the guys. Remember this. I can go and delete all the guys those were used. So I can probably store which were the last guys use, which is POZ and I can delete those POZ from here. Got it. Perfect. Next. These are level fours. The two guys in the level four, take those two guys again. So bat, bat, bot, POZ, right? Which is the last guy? POZ. What can POZ be converted into? POZ can definitely be converted into something like COZ. If you change P to Z, it will be COZ and COZ is already there. So you get something like bat, bat, pot, POZ and COZ as the answer. Perfect. So one done. Let's take the next level guy,"
+    },
+    {
+      "chunk_id": "L155_C11",
+      "start": 757.24,
+      "end": 830.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=757s",
+      "text": "like bat, bat, pot, POZ and COZ as the answer. Perfect. So one done. Let's take the next level guy, which is bat, bat, pot, bat, bat, pot and POZ. So again, the last guy is POZ, which needs to be transformed. This can be transformed to COZ. So you'll get again bat, bat, pot, POZ and COZ. Perfect. So apparently once the entire level has been completed, because level three, now level four has been completed. So once the level four has been completed, look at the last guy, COZ and delete it. Delete it. Done. Next time, take up the last sequence that you generated. Bat, bot, pot, POZ, COZ. And if you pick up the last word, it is COZ. So if you pick up the last one, it is COZ and you see this particular word is your ending word, which is COZ. Is your ending word, which is COZ. You can say, okay, I got my sequence. And you know, since the levels are increasing like this, this is the shortest sequence. So the sequence length is five. Store it in your answer. Store it in your answer of list of list."
+    },
+    {
+      "chunk_id": "L155_C12",
+      "start": 831.0,
+      "end": 898.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=831s",
+      "text": "the sequence length is five. Store it in your answer. Store it in your answer of list of list. So this is the answer array. Just put that into it. Next, no need to do any transformations. You get this. The moment you get this, you say, okay, this is also of length five. Let's put that in the list. Keep on taking from the queue, all the length five guys. The moment you get someone greater than length five, you say, I don't need to do any info. Let's break out. Let's break up. Just simply break out. This is what we will do. The moment we get an answer, we take all of these guys, which are of equivalent length. And after that, we can simply go out. That is how easy as it gets. The only trick over here is do not delete the moment you are using it for a single guy. Do not delete because it might be used by the similar guys on the same level. Do you see it being used at the similar levels by the same guys? So do not delete it the moment you got it. So you must have understood the dry run. Now you must be thinking, how do we code this? Not an issue. I'll go step by step. I'll be writing the C++ code. You can follow the exact"
+    },
+    {
+      "chunk_id": "L155_C13",
+      "start": 898.12,
+      "end": 969.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=898s",
+      "text": "do we code this? Not an issue. I'll go step by step. I'll be writing the C++ code. You can follow the exact similar Java code on the left in case you feel what will be the equivalent in Java. Okay. So we have a begin word. Now the first thing I'll do is yes, I noticed it. Put these words into an unordered set. So once you've done this, what is the next thing you need to do? And the queue has to store a list of strings. So that is something which you'll do. And in that queue, the first thing that you will insert is the first sequence, which is this one. Okay. What after that? Do we need anything else? Yes. What you can do is you can say for every level, yes for every level, I will keep how many strings are being used. So when you start off, if you remember well enough, when you start, you just have a bat that you've inserted into the queue data structure. And this is the guy who was used. So used on level, you can call it so that we understand the naming better. Used on level dot pushback of, what will you push back? The begin"
+    },
+    {
+      "chunk_id": "L155_C14",
+      "start": 969.96,
+      "end": 1045.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=969s",
+      "text": "it so that we understand the naming better. Used on level dot pushback of, what will you push back? The begin word is the word that has been used. The initial level is level zero. I am considering this as the first zero. Like initially we are starting with nothing in the queue. This is level one. This is level two. This is level three. So initially before starting, we are at level zero. Why I'll tell you this as well. So we know one thing we need to learn the answers in a list of lists. So this will be all. So these are the initial things that we will declare. Okay. Next we will go across to the queue and iterate on it. So let's go across and iterate till it has 90. Right. Done. Let's take the vector. So vector equal to q.front. At the same time do a q.form. Now you know these, this is a sequence. So remember one thing, this is the level one sequence. And before this you are at level zero, right? Level zero. So you are at level one. So this has been used, already has been used. So what do you see is, okay, if I'm on a newer level, if I'm on a newer level, which is very simple, if the size exceeds level, which is in this case, initially the level was zero. So the first time when you'll start off, you'll get"
+    },
+    {
+      "chunk_id": "L155_C15",
+      "start": 1045.8,
+      "end": 1124.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=1045s",
+      "text": "the size exceeds level, which is in this case, initially the level was zero. So the first time when you'll start off, you'll get this guy, which is increasing size because this is of size one. Right. So what do you say is if it increases, then I increase my level and I see whatever has been used. Yes. Whatever has been used, I will simply tell the set, Hey, can you please erase this? So the first step is at the first step, this bat will be erased. If it was on the word list, this is very simple. Erase all words that has been used in the previous levels to transform. Simple done. What is the next thing that you'll do? You need the word. Do you know what is the word? The word is very simple. You just see the last guy in that sequence will be a word. Done. Next, what will you do? You will say, okay, fine. I know one thing, I did draft this through the entire world and change every character. So the first two for that, every character will be changed from this to this, which is A to Z. And can I see character original equal to word. I can I say this? Yes. And can I at the same time say, okay, what if I equal to original so that anything that I have taken,"
+    },
+    {
+      "chunk_id": "L155_C16",
+      "start": 1124.2,
+      "end": 1193.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=1124s",
+      "text": "Yes. And can I at the same time say, okay, what if I equal to original so that anything that I have taken, I just replace it back. Why? Because every time we are going to replace the I at guy with the C. Now, what do I need to check? Does this transformed world exists on the set or not? So I can just give a count and I can say, do you exist? And if you found has to be greater than zero, definitely not zero. And if you do exist, the first thing that I'll do is, okay, this is a sequence. This is a sequence. So I'll say, Hey, sequence, can you just take it? And you're like, why not? I'll just take it. So let's take it into the sequence. So you'll be like, okay, the word goes into the sequence. And remember this, you're trying every possible word, every possible word. So if I go back to the first time, if you remember, you had a bat and bat could be converted into bat and a bot as well. So you got two sequence. So first time you include bat, you put that into the queue. So the vector that you took out was bat. You included bat in it. You need to take it out as well because for the next occurrence, you don't need it. Right? So just take it out as well. And in the meantime, what you can do is"
+    },
+    {
+      "chunk_id": "L155_C17",
+      "start": 1193.64,
+      "end": 1269.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=1193s",
+      "text": "for the next occurrence, you don't need it. Right? So just take it out as well. And in the meantime, what you can do is you can say, okay, Q, can you take this new sequence? Because this is a new sequence, which happened due to a transformation of a character. So please take this new sequence. At the same time, tell the level, tell the level that this guy was used, this word was used in this level. Tell the guy, so this is in terms of erasing from the mark as visited on the level. And whenever you reach the new levels, this will make sure it deletes it. So why pop back? If you did not understand, let me go back and again, tell you, because I'm sure you have a bit of confusion here. So when you started with bat, you can work it into bat, right? So the new sequence was formed, bat, bat, and inserted that over here. So now the next time when you say, okay, let me replace something like bot. So bat was done to bat. Here's a replace O A and get bot. So if your sequence, since you included bat, if you do not remove it, now when you add a bot, the sequence will be of three length. So that's why you add the bat, but you add only to insert"
+    },
+    {
+      "chunk_id": "L155_C18",
+      "start": 1269.64,
+      "end": 1334.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=1269s",
+      "text": "add a bot, the sequence will be of three length. So that's why you add the bat, but you add only to insert it into the queue. Then you remove it. Because for the next time, and bat gets converted to bot, you again can have a two-letter. So whenever you add something to the sequence, it's only for this particular transformation. You need to take it out as well. So this is the minor change that you'll do. And at the end, you can return the answer. We haven't stored anything in the answer. You may be thinking that is absolutely correct. So what I can say is, okay, as of now, we haven't stored anything to the answer. So I'll be like, okay, fine. If answer dot size is equal to zero, that means it's the first time. That means it is the first time. Or what you can say is, okay, let me do one thing. I can keep it super simple. Like this is, this might get complicated. Let's keep it super simple. If the word that we get is equal to the last word, which is the end word. If that is equal to the end word, but I say, hey, listen, this is equal to the end word. I'm like, okay, fine. But if the answer dot size is equal to equal to zero, it means first sequence is the first sequence where we reached the end."
+    },
+    {
+      "chunk_id": "L155_C19",
+      "start": 1334.2,
+      "end": 1404.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=1334s",
+      "text": "if the answer dot size is equal to equal to zero, it means first sequence is the first sequence where we reached the end. If it is the case, good enough. We don't need to do anything. We just take it and we say, fine. We just take it in, into vector. And if it is not, if it's not the first time, then I say, okay, not an issue. If it is not the first time, I have one of the sequence in the answer. I get that sequence then. And I see, is that equal to the sequence that I've got? If it is, my answer will be more than happy to store the same guy because we need multiple sequences. And if it is not the case, we just keep on doing, just keep on doing, just keep on doing. That's how you can easily store the answers. That's how you, so once you've written the entire code, we can just click on a submit button and see if it's working fine. So you'll see that all the test cases will be running and this is how easily you can do it. You just need to make sure that instead of deleting on every level, you delete when you reach the next level, right? You keep on doing it. For an example, you're treating the second level guys, second level guys. And when you reach the newer level, you've got a bigger level. They delete"
+    },
+    {
+      "chunk_id": "L155_C20",
+      "start": 1404.52,
+      "end": 1464.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=1404s",
+      "text": "example, you're treating the second level guys, second level guys. And when you reach the newer level, you've got a bigger level. They delete whatever has been used previously and a slight change in order to increase the time complexity. Once you've deleted everything on the level, just make sure you clear it so that it can save a lot of time. Otherwise the next time again, you'll go through them and delete it and they do not exist. So new level, new guys store. So this is what you can easily do. So guys, so let's analyze the time complexity. Now this is definitely a one length into 26, but you cannot predict the time complexity of this because depending on examples, for example, there might be multiple sequences. So predicting a time complexity for this one is next to impossible. It will vary from example to example. So this is what you can always tell to the interviewer. Okay. So before ending up this video, I'd like to mention one thing because if I do not, then my comment section will be filled up with that one. So this particular solution will be giving you TLE if you try on lead code. Why? Because over the time limit, I'm not sure what they have done, but recently they have updated their test cases and the time limit is super strict. If you go to the discussion forum,"
+    },
+    {
+      "chunk_id": "L155_C21",
+      "start": 1464.84,
+      "end": 1525.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=1464s",
+      "text": "done, but recently they have updated their test cases and the time limit is super strict. If you go to the discussion forum, you'll find people discussing about it, that the previous solutions are not working. And I checked, I checked out the solutions which are currently working. Those are only CP oriented solutions, not interview oriented. You have to optimize in a very, very large manner as you usually do in competitive programming. And since we are talking about interviews, in interviews, this particular solution is going to work absolutely fine. So I'll recommend you to submit this problem on practice platform and if it is working fine, it is absolutely fine. No need to panic if it doesn't work on lead code. Okay guys. So I think that should be it. I hope you do not mess up my comment section that not working on lead code, not working on lead code, because I've already stated why. If you are into CP, you can try optimizing it and you can read the discussion forum and this will definitely work. So guys, I hope you've understood the entire algorithm and the complex code. So just in case you did, please, please make sure you like this video. And if you're new to our channel, hit that subscribe button right away. And if you haven't checked out our DP series and the HD sheet, the links are in the description. Make"
+    },
+    {
+      "chunk_id": "L155_C22",
+      "start": 1525.16,
+      "end": 1541.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=DREutrv2XD0&t=1525s",
+      "text": "subscribe button right away. And if you haven't checked out our DP series and the HD sheet, the links are in the description. Make sure you check them out because that is something you're missing out on. With this, let's wrap up this video and meet in some other video. Till then bye bye. Take care."
+    }
+  ]
+}

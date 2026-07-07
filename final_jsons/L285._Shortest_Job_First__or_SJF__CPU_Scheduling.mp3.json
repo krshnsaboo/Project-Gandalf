@@ -1,0 +1,50 @@
+{
+  "lecture_id": "L285",
+  "lecture_number": 285,
+  "lecture_title": "L3. Shortest Job First (or SJF) CPU Scheduling",
+  "youtube_url": "https://www.youtube.com/watch?v=3-QbX1iDbXs",
+  "chunks": [
+    {
+      "chunk_id": "L285_C1",
+      "start": 0.0,
+      "end": 73.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=3-QbX1iDbXs&t=0s",
+      "text": "So let's continue with our greedy algorithms playlist. Before starting off, Avery, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is shortest job first problem. What is the problem stating? The problem is stating that you will be given n processes and every process execution time is known to you. The first process takes four units of time to execute. The third process takes seven units of time to execute. Now your task is to compute the average waiting time for all the processes following the shortest job first algorithm. What is the shortest job first algorithm? I've written it down over here. Let's quickly go through it. Scheduling policy that selects the waiting process with the smallest execution time to execute next. This is important. A scheduling policy which always executes the smallest execution time first. So if I have to write down the process numbers, this is P1, this is P2, this is P3, this is"
+    },
+    {
+      "chunk_id": "L285_C2",
+      "start": 73.52,
+      "end": 152.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=3-QbX1iDbXs&t=73s",
+      "text": "to write down the process numbers, this is P1, this is P2, this is P3, this is P4, this is P5 and each of them is arriving at time zero. So if I have to follow the SJF algorithm, it is stating that the one with the least execution time will be executed first. So can I say that P4 is the one that will be executed first because it has the least execution time. So it will occupy the time from zero to one. So it is starting at time zero. So can I say for P4 the waiting time was zero because it started at time zero. Agreed? Agreed. Which one will be after this? P5. P5 because it has the least execution time which is two. But when does P5 start? Can I say that P5 is starting at time one because that is when it starts and when will it end? It is having an execution time of two. So it's going to end at three. Perfect. Which one is going to be the next one? P2. So can I say P2 is starting at three? I can. So the waiting time for P2 is three seconds. Perfect. How much is P2 taking? Three. It's going to end up taking till the time six."
+    },
+    {
+      "chunk_id": "L285_C3",
+      "start": 152.64,
+      "end": 230.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=3-QbX1iDbXs&t=152s",
+      "text": "P2 is three seconds. Perfect. How much is P2 taking? Three. It's going to end up taking till the time six. Which one after that P2 is done? Which one after that? P1. So can I say P1 starts at six? So the waiting time is six. It is taking four seconds. So it's going to go ahead till ten. So that's for P1. Which one after that? P3. So P3 is going to be because that is the only one left. So maybe P3 starts, not maybe, P3 starts at ten and it will go on till 17. Done and dusted. Everyone's waiting time is known to me. So what I can do is I can sum up the waiting time because I need the average waiting time for all the processes. So if I sum it up, the total waiting time will be 20. How many processes did we have? N equal to five. So the average will be 20 by five. That's four. This is what you'll have to return. If it was 4.2, you still return four. If it is 4.7, you still return four. The nearest smallest integer is what you return for the average. Okay, got it. How do I solve this? It's straightforward. You execute the smallest ones at first. The first thing you do is you sort this up, simply sort this up. So that will be one, two, three, four, seven."
+    },
+    {
+      "chunk_id": "L285_C4",
+      "start": 230.98,
+      "end": 309.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=3-QbX1iDbXs&t=230s",
+      "text": "first. The first thing you do is you sort this up, simply sort this up. So that will be one, two, three, four, seven. So the execution times are sorted and then you can take a smaller timer and you can do the computations. So what I'll do is the first step is sorting it up. I'll sort it. Greedy because that's what the algorithm is stating. Smallest execution, first time. Okay. Let's take a timer equal to zero and let's take a waiting time. So let's compute the waiting time to be initially zero. I'll do this. First we are at the one and the time is zero and the waiting time will be zero plus zero. That's zero. So when we perform this one, where will the time stand? Zero plus one goes to one and then we go to the next one. When I go to the next one, it's taking time to start set time one. So the waiting time zero plus one, because this guy is taking one. So I just add up onto it. Perfect. It's gonna complete at one plus two, three, one plus two, three, done. We go to the next one. Next one is starting at three, starting at three. So can I say the waiting time will be three plus one. The total waiting time will be four. Perfect. When does it end? Six. So this is done."
+    },
+    {
+      "chunk_id": "L285_C5",
+      "start": 309.88,
+      "end": 379.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=3-QbX1iDbXs&t=309s",
+      "text": "time will be three plus one. The total waiting time will be four. Perfect. When does it end? Six. So this is done. I go to the next. When does it start? Six. So the waiting time will be 10. When does it end? It ends at 10 because I'll take another four. But after this seven, I starting at 10, so I add 10. So the waiting time will be 20 and this ends up at 17. So I can go to the next and that is how I'll do it. At the end of the day, I have the waiting time as 20. So what I can return is 20 by the size of the array and it's five. When it's four point, I just return four. Truncate it and return the integer part. Done and dusted. Super simple. Let's quickly write down the code. So it will be function. We'll be given an array. We can take the array. First thing we'll do is sort the array. Very straightforward. You can keep the timer as zero. You can keep the wait timer as zero itself and then you can start iterating from zero till n minus one and you can say, okay, the wait time initially is going to be when this current process is starting and when does it end? T plus equal to array of I. This is it. Yeah, that's it."
+    },
+    {
+      "chunk_id": "L285_C6",
+      "start": 379.04,
+      "end": 432.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=3-QbX1iDbXs&t=379s",
+      "text": "this current process is starting and when does it end? T plus equal to array of I. This is it. Yeah, that's it. And eventually you could go ahead and return the total time, which is wait time divided by n. And if it has a interlong return type, it's automatically, it will automatically get truncated to the smallest integer, leaving out the decimal part. What about the time complexity? That's a big O of n, is it? No, big O of n plus n log n because I'm sorting and then I'm iterating. What about the space complexity? That's a big O of one. We are tampering the data. We are tampering the data. So this will be the most optimal solution. I hope you have understood it. So if you're still now watching and if you've understood this one, please, please do consider giving us a like and if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's create some other video. Till then, bye-bye. Leave here."
+    }
+  ]
+}

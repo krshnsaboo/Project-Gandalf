@@ -1,0 +1,57 @@
+{
+  "lecture_id": "L173",
+  "lecture_number": 173,
+  "lecture_title": "G-48. Number of Provinces - Disjoint Set",
+  "youtube_url": "https://www.youtube.com/watch?v=ZGr5nX-Gi6Y",
+  "chunks": [
+    {
+      "chunk_id": "L173_C1",
+      "start": 0.0,
+      "end": 70.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZGr5nX-Gi6Y&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we will be solving the problem number of provinces. So what does the question state? Given an undirected graph with V vertices, we say two vertices, you and we belong to a single province. If there is a path from you to V or V to you by any means, your task is to find the number of provinces. So in short, the question is about finding the number of connected components. And so you've already solved this problem using the traversal technique. Over here, we will be solving this using the disjoint set data structure. Why? Because we are learning this data structure. We have to understand this data structure in depth so that we can always solve the harder problems. Because if you don't understand the data structure in depth and you're not conceptually clear, then it will be very, very tough to solve harder problems. So basically what this state is, they'll be giving you a graph like this and the graph will be represented by an adjacency matrix. Now if you see that between one and two, there is one, which means there is an edge between one and two, or there is an edge between two and one. If you see there is an edge between two and three, you will see at two, three, there is a one,"
+    },
+    {
+      "chunk_id": "L173_C2",
+      "start": 70.2,
+      "end": 139.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZGr5nX-Gi6Y&t=70s",
+      "text": "two and one. If you see there is an edge between two and three, you will see at two, three, there is a one, and at three, two, there is a one. So basically everywhere there's one marked, it means there's an edge between those two, I and J, because if you said this is I and this is J, and if this is one, it means there's an edge between seven and six, or six or seven. This is the meaning of the adjacency matrix. So you'll be given the adjacency matrix, which will be representing a graph, and you have to tell me the number of connected components. So if I ask you the number of connected components, this is one, this is two, this is three. So the prerequisite is definitely the disjoint set data structure. I've already taught you this in the previous video of this graph series. So go back, watch it, because if you do not watch it, it will be very, very tough for you to understand it. So if you remember the disjoint set data structure, this component, when you attach everyone, it will be something like two will be pointing to one, three will also be pointing to one, and one will be pointing to itself. Basically two's parent will be one, three's parent will be one, and one will be his parent himself. And similarly, four will be"
+    },
+    {
+      "chunk_id": "L173_C3",
+      "start": 139.96,
+      "end": 214.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZGr5nX-Gi6Y&t=139s",
+      "text": "Basically two's parent will be one, three's parent will be one, and one will be his parent himself. And similarly, four will be something like this, and five will be pointing to him, and four will be the ultimate parent. Similarly, can I say if I write six in the disjoint set data structure, we will be having something like this. If I talk about the disjoint set data structure, if you try to attach one, two, then two, three, then four, five, then six, seven, you will end up with these kinds of structures. And what do you need to do is very simple. Can I say that there will be three bosses? Or three ultimate parents, if there are three components? Because every component will have a boss, every component will have a boss. So if I say find ultimate parent of one, that will be one itself. If I say find ultimate parent of two, that will be one itself. If I say find ultimate parent of three, that will be one itself. So I get one, which means that's one of the bosses of one of the components. And then if I say find ultimate parent of four, it will be four. Then if I say find ultimate parent of five, it will be four itself. Again, four is a boss. Correct? Then if I say find ultimate parent of six, it will be six. Then if I say find ultimate parent of seven, it"
+    },
+    {
+      "chunk_id": "L173_C4",
+      "start": 214.84,
+      "end": 290.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZGr5nX-Gi6Y&t=214s",
+      "text": "Correct? Then if I say find ultimate parent of six, it will be six. Then if I say find ultimate parent of seven, it will be seven. Sorry, six rather. So can I say, if I count the number of unique ultimate parents, count the number of unique ultimate parents, or can I simply say, if a node, if a node is the parent of himself, if a node is the ultimate parent of himself, that is the boss. So for one, the ultimate parent is one. For six, the ultimate parent is six. For four, the ultimate is four. So can I see for the guys whose ultimate parent is they themselves, they are the bosses and the number of bosses, if I can count that, that is what the number of provinces will be. So can I see the disjoints and data structure? If I can simply write, if find ultimate parent of you is equal to equal to you, I can do a counter plus plus. And whereas you can go from one to N if it's a, if it's a one based indexing graph, can I say this? I definitely can. And at the end of the day, count will be my answer because the bosses is what I need because the number of bosses will always be equal to the number of connected components. Got it? So I hope you understood"
+    },
+    {
+      "chunk_id": "L173_C5",
+      "start": 290.36,
+      "end": 365.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZGr5nX-Gi6Y&t=290s",
+      "text": "need because the number of bosses will always be equal to the number of connected components. Got it? So I hope you understood how to use the disjoints and data structure in order to solve this problem. So what I'll do is I'll go to the C++ solution on the right, and you can figure out the exact similar Java solution on the left for the Java people. So before starting the solution, let's take our template. This is our code snippet. Just in case you haven't seen our previous videos, we have a union by size, union by rank and find your parent and everything initialized on the constructor. So it is a zero based indexing graph. So what I'll do is I'll go ahead and at first definitely take this class and create a constructor of the same size so that everything is created. Now I'll iterate for the adjacency matrix, which is quite simple. And then I'll say, Hey, listen, if the adjacency of IJ is equal to one, which means that there is a edge between I and J. So I'll go and say DS dot, I can definitely take union by size or union by rank, whichever you wish to. I comma J, no need to do J comma I because that will be discarded in the future run because once they are connected, if in the future they're connected, we'll just return. So once you've done this,"
+    },
+    {
+      "chunk_id": "L173_C6",
+      "start": 365.32,
+      "end": 436.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZGr5nX-Gi6Y&t=365s",
+      "text": "discarded in the future run because once they are connected, if in the future they're connected, we'll just return. So once you've done this, you'll have an ID count equal to zero and you can go ahead and say, okay, IDI equal to zero, I lesser than V I plus plus. And you can say, if yes, if DS dot, you can use the parent function, DS dot find ultimate parent of I is equal to equal to I, I can do a counter plus plus, then I can just return account. A lot of people might think no need to go to recursion to find the ultimate parent. We can use the parent added directly as well. Yes, you can use it. You have to just declare these guys under this. And once you've done this, I think you just need to make sure that DS dot parent, this also makes sense because if in the parent, ultimate parent is a parent is himself that will be stored. So you can just go ahead and compile this. Need to make sure that this is under public, otherwise it will not run. Okay. It's running fine. Let's quickly submit this and see. Find ultimate parent works. Using the parent also works. Anything works because both of them are kind of constant time. Find parent is for alpha. This is why we go off one. So I hope you've understood this portion of code. It does submit"
+    },
+    {
+      "chunk_id": "L173_C7",
+      "start": 436.12,
+      "end": 482.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZGr5nX-Gi6Y&t=436s",
+      "text": "Find parent is for alpha. This is why we go off one. So I hope you've understood this portion of code. It does submit correctly. This is N squared and this is kind of Vico of V and extra space is Vico of N is 2N is what are you using? We can omit the N by rank. So guys, I hope we've understood how to implement disjoint set data structure in order to solve this problem. So before wrapping up this video, there's a quick request that I want to make that's checking our statistics. Nearly 50% of our viewers do not subscribe to our channel. So please, please do consider subscribing to us because that does matter to me a lot and it helps me. Like it keeps you motivated to make such kind of content. So yeah, if you have understood everything about this problem, make sure you hit that like button. If you have not checked out our DPCs and the HDC, the links will be in the description. With this, I'll be wrapping up this video. Let's be in some other video until then. Bye bye. Take care."
+    }
+  ]
+}

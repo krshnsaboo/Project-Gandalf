@@ -1,0 +1,99 @@
+{
+  "lecture_id": "L244",
+  "lecture_number": 244,
+  "lecture_title": "L8. Remove Nth Node from the end of the LinkedList | Multiple Approaches",
+  "youtube_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU",
+  "chunks": [
+    {
+      "chunk_id": "L244_C1",
+      "start": 0.0,
+      "end": 70.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU&t=0s",
+      "text": "So, I will be continuing with our playlist but before that, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is, removing the nth node from the end. So what is the problem stating? It is stating that you'll be given the head of the linked list and you'll also be given a value n. You'll have to count n from backwards. So if I count it, this is the second node. You'll have to delete the second node from the end. And once you've deleted, the three that was pointing to the second node from the end will be pointing to the last node or whatever n minus 1th node. And once this is done, you'll have to return me the head of this particular linked list after modification, after deletion. So n can be anything. What if I give you n as 5? In that case, n will like, the fifth node from the end will be the head of the linked list, right? If you delete this, this will be the new head of the linked list. So you'll have to return me this one. So depending on the value of n, you'll have to give me an algorithm that does it. So if this problem comes up in an interview, what is the extreme naive solution that you can think of?"
+    },
+    {
+      "chunk_id": "L244_C2",
+      "start": 70.78,
+      "end": 148.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU&t=70s",
+      "text": "algorithm that does it. So if this problem comes up in an interview, what is the extreme naive solution that you can think of? Like what I can think of is, okay, n is given as 2. I definitely cannot traverse backwards. The first step that I can do is, maybe take a variable counter, which will count the length of the linked list, right? So let's take a temporary node or pointer pointing to the head. Let's start counting. Counter 1, let's move temp. Counter 2, let's move temp. Counter 3, let's move temp. Counter 4, let's move temp. Counter 5, let's move temp. And it will reach here, which is null. Stop. So you stop and you know the value of counter is 5. So the value of count is 5, which is the length of the linked list. I've been asked to delete the second last node. So do I need to reach this node? Just ask yourself. The answer to that is no. Why? Because if I delete this, deleting it is easy. But the original task is to make sure this is pointing to this because I have to change the links. Otherwise, it doesn't make sense. I'll have to change the links. So if I reach here, how can I change the link of the previous node?"
+    },
+    {
+      "chunk_id": "L244_C3",
+      "start": 148.7,
+      "end": 226.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU&t=148s",
+      "text": "sense. I'll have to change the links. So if I reach here, how can I change the link of the previous node? So technically, I need to reach here because if I reach here, then I can straight away change the link and point it. So I need to reach the third node. And what is this? Count minus n, 5 minus 2. I've reached the third node. So can I say I need to reach the third node, which is count minus n. So result will be count minus n. We will talk about the edge cases afterwards. But as of now, understand that the result is count minus n. So what I will do on the next step is I'll again start iterating. Let's start iterating. So temporary is at the head. And the first thing that I'll do is I'll reduce the resultant by 1. And I'll see if I've reached that and the answer is no. So I'll move temporary. Once I've moved it, again I'll reduce it. Have I reached? The answer is no. Then I'll again move it. Reduce and the moment you reduce, after that you will check. Is it zero? It is. It is."
+    },
+    {
+      "chunk_id": "L244_C4",
+      "start": 226.44,
+      "end": 305.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU&t=226s",
+      "text": "move it. Reduce and the moment you reduce, after that you will check. Is it zero? It is. It is. So if it is zero, this is your node where you want to stop at. The previous node to the node that you want to delete. Stopped. What is the job that I have to do? The first job is please make sure you take any other variable and maybe delete node, delete node and say temporary dot next. Just store it. Just store it. So what I've done is I've stored the delete node to be here. Just store it. Why? I'll explain you. Done. What is your next job? The next job is temporary your next. Can you point to, can you point to temporaries next next. So this link will now go and point to this. Done. Once you have done this, if it is C plus plus you say free node, free this particular node, Dell node. If it is Java, you don't have to free it. You do not have to free it. What will happen is the moment you do this, this will get freed. So search deleted and this will be your modified link list. Once it is modified, you can return the head of the link list."
+    },
+    {
+      "chunk_id": "L244_C5",
+      "start": 305.12,
+      "end": 371.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU&t=305s",
+      "text": "and this will be your modified link list. Once it is modified, you can return the head of the link list. Now you might be thinking about an edge case. What if N was five? In that case, the node would have been the head of the link list. So there'll be a new head. You'll end up returning head dot next end up returning head dot next. Got it. So this was the brute force. If I have to write down the code, it's going to be super simple. So time to write down the pseudo code in case you want the C plus plus Java, Python and JavaScript code for this brute force. It will be given in the description like the link. There will be article link. You can go over there and find it out. What do we need? We need a counter variable. So let's take a counter variable which is zero. This will keep a count of the length of the link list. Let's take a temporary which is pointing to the head of the link list. Done. What is the next job? Travis and count the number of nodes. So let's Travis. So I'll keep Travising till temporary is not equal to null and I'll do counter plus plus at the same time as a temporary temporary next. So it'll go ahead and compute this. Compute it. What is the next job?"
+    },
+    {
+      "chunk_id": "L244_C6",
+      "start": 371.24,
+      "end": 448.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU&t=371s",
+      "text": "at the same time as a temporary temporary next. So it'll go ahead and compute this. Compute it. What is the next job? We need to make sure, hey, if this count is equivalent to whatever like the end that I've been asked to delete, that means it is the head. It is the head that has been asked to delete. So what I will do is I'll say the new head is head next. This is my new head and I will be returning this. I will be returning this new head. If you are coding in C++, then please make sure to free the previous head. That is very, very important. This is just for C++ because in Java there is a garbage collector which will delete it. Got it? Done. You have freed that space and you have returned the new head. What if this is not the case? In that case, you'll have to move. So again, please assign something as resultant. So what will be the value of resultant? It'll be count minus n and please reassign temporary to head. Once this is done, let's again start traversing. So you can start traversing like temporary is not equal to null."
+    },
+    {
+      "chunk_id": "L244_C7",
+      "start": 448.38,
+      "end": 528.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU&t=448s",
+      "text": "Once this is done, let's again start traversing. So you can start traversing like temporary is not equal to null. And what you can do is you can say res minus minus because every time you are at a node, you just produce one. And if you see the resultant is equivalent to zero, in case you straight away break. Otherwise you say, hey, temporary can go to the next because I still, it's not the element that I'm looking for. Done. What is your next job? First thing that you'll do is which node you want to delete, please keep it delete node. So you're standing at temporary at this point, temporary would be standing here. So just take the next, just take the next. So what I'll do is I'll take the next because this is the node that I want to delete. After this, I'll say temporary dot next will be temporary dot next of next. Change the link. Once you've changed the link, return the head, return the head and please make sure you free the node. And this is again just for C++ because in Java, the garbage collector will do its job. So let's talk about the time complexity. Can I say that I'm taking a big off length of the link list in order to compute the length? Yes."
+    },
+    {
+      "chunk_id": "L244_C8",
+      "start": 528.26,
+      "end": 604.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU&t=528s",
+      "text": "complexity. Can I say that I'm taking a big off length of the link list in order to compute the length? Yes. So I'm taking length plus and then I'm traversing length minus n because that is what resulted was if you carefully look at this length minus n, right? So it's taking another length minus n in order to reach the previous node. Then we are changing the links. So this will be the time complexity. What will be the space complexity? That's a big off one because we're not using any external space. If I ask you about this one, what is the worst case? Somewhere near about big off two into length. Why? Imagine if n is given as one, this will be somewhere near about big off length. Hence the total time complexity is twice off length, right? And this is the reason the interviewer will ask you to optimize it. So the optimal algorithms intuition is based on the brute force. Now what we did during the brute force was we tried reaching the previous node, the node right before the node that was to be deleted. This node was to be deleted. We tried reaching right before that. So this was the previous node, correct? And if you carefully observe, it is like two steps to the end. So can I say this, if I traverse and if I traverse two steps lesser, so technically"
+    },
+    {
+      "chunk_id": "L244_C9",
+      "start": 604.0,
+      "end": 682.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU&t=604s",
+      "text": "is like two steps to the end. So can I say this, if I traverse and if I traverse two steps lesser, so technically to traverse the entire linked list, it will take five steps. It will take five steps because it has five nodes. If it travels two steps lesser, that is, if I traverse three steps, I will end up reaching the previous node and that is what I want to do. I want to reach the previous node. Now you'll be asking, Hey, if I don't know five, how will I know three? Because five minus two is three. Without knowing five, I cannot. I can actually, what I will do is I will take a pointer known as fast pointer and I'll move it two steps. So one step, two step. So I have moved it two step. Yes, I moved it two step. Stop there. So I moved it two step. Okay. The next point that I'll take is slow pointer. This time I'll start moving them simultaneously, slow and fast. Move them simultaneously by one, one. Fast will go here. Slow will go here. Next again, move them simultaneously. Fast will go here and slow will go here. Stop the moment you reach the last node. Stop, stop. And you will see that the slow is pointing to the previous stop. Yes, you do."
+    },
+    {
+      "chunk_id": "L244_C10",
+      "start": 682.88,
+      "end": 760.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU&t=682s",
+      "text": "you reach the last node. Stop, stop. And you will see that the slow is pointing to the previous stop. Yes, you do. Why did that happen? Because initially you did move two steps and then you cover the next set of steps. So you are technically standing at the previous node. If you're standing at the previous node, what is your next job? I think you know what to do now. The same, right? So what I will do is I'll try to write down the pseudocode now. So I'll be writing down the pseudocode in case you want the C++, Java, Python and JavaScript codes. There is an article link in the description. Open it and you'll find all the codes. What is the first thing we'll do? We will take a fast pointer for sure. And we will point it to the head. And we'll move it n steps. That is two steps over here. The for loop of i equal to zero till n and please move it fast equal to fast of next. Done. Once you have done this, what will happen? Fast will be standing here. After this, take slow, I'll point it to head. And you know you'll stop when the fast reaches the last. This is when you stop because the slow will be here. So let's do it. You basically say, hey, while I reach the last node, which is fast of next is not null. Otherwise, I'll keep moving."
+    },
+    {
+      "chunk_id": "L244_C11",
+      "start": 760.86,
+      "end": 839.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU&t=760s",
+      "text": "do it. You basically say, hey, while I reach the last node, which is fast of next is not null. Otherwise, I'll keep moving. I'll be like, hey, can you move slow equal to slow dot next? And can you move fast equal to fast dot next? Perfect. Once you have done this, what is your next job? The next job is to make sure that you take this del node that you have to delete. So del node, just store it somewhere again, just for C plus plus slow of next. Once you've done this, free it. Or rather don't free it because so after the step, do not free it. Why? Because if you try to free it, what will happen is this link will go off and you'll not be able to get this one. So do not free it now. What you'll do is you'll say slow dot next equal to slow dot next and next. So what this will do is this will not point it. Once you have done this, you are free to free it. Free deletion of node. This one is freed and then you can straight away return the head. So you'll be returning this particular head. This will work for all the cases apart from whenever n is five. Imagine I give you n as five. Let's try to do it."
+    },
+    {
+      "chunk_id": "L244_C12",
+      "start": 839.82,
+      "end": 911.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU&t=839s",
+      "text": "work for all the cases apart from whenever n is five. Imagine I give you n as five. Let's try to do it. So if n is five, let's see what happens. If n is five, I'll take the fast pointer here. One step, two step, three step, four step, five step. So if it reaches null, if it reaches null, then you'll have to write something else. So make sure you enter it over here. If you reach null, that means you've been asked to delete head. So again, repeat the same process that we have done in the brute force. Delete the head and return head dot next. So this is the condition. What you'll do is return the new head, which is head dot next. So it basically goes as return head dot next. I'm not freeing the node. You can free that yourself. I assume you can do it now. So please make sure you return head dot next in case your fast is reaching now. This will be the edge case. So let's quickly get back into the code editor. What I've done is I've written the exact same code. I'll hit the submit button and it will be submitted. Please make sure that you take the deletion, like this delete node that you have to delete and delete it after the pointer step, not before. Not before. Got it? So let's get back to the iPad and discuss the time complexity."
+    },
+    {
+      "chunk_id": "L244_C13",
+      "start": 911.62,
+      "end": 973.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=3kMKYQ2wNIU&t=911s",
+      "text": "delete it after the pointer step, not before. Not before. Got it? So let's get back to the iPad and discuss the time complexity. What will be it? Can I say it is big O of length y? We have two loops. One is the four. The other one is the y. And both of them have the fast pointer, which is moving. If I have to analyze, can I say that the fast pointer was here and then it moved till here for the first for loop. Then it took some more steps and moved till the last. So eventually if I can compute how much did the fast pointer move overall, that will be my time complexity. Can I say it moved from here to here, which is the length of the linked list? Thereby, the time complexity is big O of length. What about the space complexity? That is big O of one. Yes, because we are not using any external space. So if you're still watching, I'm sure you have understood everything. And if that is the case, please do comment understood and please do consider giving us a like. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

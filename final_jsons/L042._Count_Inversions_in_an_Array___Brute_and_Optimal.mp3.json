@@ -1,0 +1,162 @@
+{
+  "lecture_id": "L042",
+  "lecture_number": 42,
+  "lecture_title": "Count Inversions in an Array | Brute and Optimal",
+  "youtube_url": "https://www.youtube.com/watch?v=AseUmwVNaoY",
+  "chunks": [
+    {
+      "chunk_id": "L042_C1",
+      "start": 0.0,
+      "end": 78.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=0s",
+      "text": "Hey everyone welcome back to the channel, hope you guys are doing extremely well. So we will be continuing with the straight rows, A to Z, DSC course just in case you are for the first time here and you don't have an idea about what this is all about you can definitely check it out from the link in the description. So till now I have covered up till this particular problem. Now in this video I'll be covering up the problem count inversions. Now before getting into this video please please go back and watch out the video of merge sort. I have left out the video link in the description. Go back and watch it and then only resume this video because the algorithm that I will be using will be derived from merge sort. So what does the problem count inversion state? It states that you will be given an array of integers and your task is to find out the number of pairs and how like what pairs the pairs should be ordered in such a way that the left element is greater than the right element. That is what this signifies. The left element should be greater than the right element. Let me give you some examples. So I can say if I pick up 5, 3 so 5 is the left 3 is the right and 5 is greater than 3 so this can be a pair. Got it?"
+    },
+    {
+      "chunk_id": "L042_C2",
+      "start": 78.64,
+      "end": 139.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=78s",
+      "text": "3 so 5 is the left 3 is the right and 5 is greater than 3 so this can be a pair. Got it? If I pick up 5 and 2 that can also be a pair. If I pick up 5 and 4 that can also be a pair. If I pick up 5 and 1 that can also be a pair. You cannot say 1, 5 to be a pair that is not possible. Also you cannot say 4, 2 to be a pair. Why because 4 is on the right. Remember the left element should be greater than the right element. That is what you have to compute. So I've got 4 over here. The others that I can write is 3, 2 3, 1 which is basically 3 this and 3, 1. The others that I can write is 2, 1 and the last one will be 4, 1. So what is the total number of pairs? 1, 2, 3, 4, 5, 6, 7, 8. So what you have to return me is 8. I do not need the pairs. I need the count of pairs. So the count of pairs is 8 and that is what you have to return. So this problem comes up in an interview. What is the first solution that you will give to the interviewer? That is definitely the brute force solution and what is the extreme range solution that you can think of?"
+    },
+    {
+      "chunk_id": "L042_C3",
+      "start": 139.84,
+      "end": 196.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=139s",
+      "text": "will give to the interviewer? That is definitely the brute force solution and what is the extreme range solution that you can think of? You have to count the number of pairs, right? And how can we generate the pairs? If we stand at 5, we can go across all the right elements because we just need the right elements. Similarly, if I stand at 3, I can again go across all the right elements. Similarly, if I stand at 2, I can again go across the right elements. Similarly, if I stand at 4, I can go across the right elements. Quite simple. So what I'll do is I'll stand at 5 and go across every right element and who can be a pair? I'll just do a counter plus plus. So that will be my extreme range solution. So can I say since I have to basically go through every element, which is from 0 to n minus 1, so I'll run a loop from 0 to n minus 1. I can keep a counter as 0 and going forward, I now have to just consider the right elements. So I'll go from j equal to i plus 1 because that is where the right starts from and I'll go till the last and I can simply just iterate it and I know the condition. The condition is very straightforward."
+    },
+    {
+      "chunk_id": "L042_C4",
+      "start": 196.02,
+      "end": 261.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=196s",
+      "text": "and I'll go till the last and I can simply just iterate it and I know the condition. The condition is very straightforward. If a of i is greater than a of j and that's the condition, I'll do a counter plus equal to 1. That's it. That will be my extreme brute force solution. This will go through all the pairs and whoever is satisfying the condition will keep a count for it. So eventually you can get your count and that will be your answer. So what will be the time complexity of this particular solution? You can say somewhere near about like this is running for n. This is not exactly n but somewhere near about n. So can I say the time complexity is somewhere near about n square, not exactly n square. What about the space complexity? Am I using any extra space? No. So I can say constant space. So this will be the time and the space complexity. Obviously the interviewer will not be happy because we're using n square and he'll ask you to optimize this. This is when we will move to the optimal solution. So we have to reduce this n square and if I am reducing n square, that can definitely be n log n or maybe a big O of n somewhere around that. Right. So let's start thing. So what I'll do is I probably as of now not think about this question."
+    },
+    {
+      "chunk_id": "L042_C5",
+      "start": 261.3,
+      "end": 320.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=261s",
+      "text": "n somewhere around that. Right. So let's start thing. So what I'll do is I probably as of now not think about this question. I'll give you another question. Let's start analyzing that. So I'm giving you another question just to explain you the algorithm. So I'm stating that I'll give you a couple of areas. The first one is a sorted array in itself and the second one is also a sorted array in itself. So I'm giving you two different sorted areas. Now what I'm telling you is if you have two sorted areas, can you tell me how many number of pairs you can form where the left element is from the left area and the right element is from the right area and it is greater something like I can pick a five and I can pick up two. So that is a bear. Five comma two is a bear because five was picked up from the left and two was picked up from the right and five is greater than two. So how many such base can you form? You can be like, maybe I can form a bear of three comma two, this three and this two. Maybe I can again form a pair of three comma two because this three and this two, maybe I can again form a pair of five comma two five comma two again, and five comma four"
+    },
+    {
+      "chunk_id": "L042_C6",
+      "start": 320.22,
+      "end": 390.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=320s",
+      "text": "three and this two, maybe I can again form a pair of five comma two five comma two again, and five comma four and five comma four, because it can form bears with these things. Maybe I can pick up six and I can say and form a bear with two two four four everyone. So I need these bears. So how can we do it? One of the ways you know is, you stand here and you go through every element. You stand here, you go through every element. You stand here, you go through every element. You stand here and you go through every element. That is the brute force in order to solve this particular problem. But if I have to think of an efficient solution, what will be that? I'll say, take two pointers. I'll keep one pointer here. I'll keep one pointer here. I'll try to merge them. I'll try to merge them. So I'm taking the advantage of the fact that both the arrays are sorted in itself. So if I ask you, two and two, remember we have to find left greater than right. That is our main intention. Left greater than right. So I'm taking two and two. Is the left greater? I'm asking you a very simple question. Is it greater? No. So just take this two. Just take this two and move. Next I have three. Next I have three and I have a two."
+    },
+    {
+      "chunk_id": "L042_C7",
+      "start": 390.72,
+      "end": 465.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=390s",
+      "text": "So just take this two. Just take this two and move. Next I have three. Next I have three and I have a two. Can I say that this three is greater than this two? Can I say this? I can. So if I can say this, can I say this three will form a pair with this two? I can. So maybe I can add a plus one to my answer. Maybe I can. But is that the correct way? No. Why? Let me tell you. So if you just add with three and two, you'll miss out on a lot of pairs. So let's have some thinking. The array is sorted. And I'm saying three is greater than two. Does that mean every element on the right of three will also be greater than two? It will be because the array is sorted. Because the array is sorted. So if three is greater than two, can I definitely say all the elements on the right will also be greater than two? And we can form pairs like three comma two, five comma two, six comma two. Everyone can form a pair. Thereby, instead of adding one, I'll add three to the answer. I'll add three to the answer. And I'll take this particular two. I'll take this particular two and I'll move forward. Next time I have another two and I have three. Three is greater."
+    },
+    {
+      "chunk_id": "L042_C8",
+      "start": 465.74,
+      "end": 530.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=465s",
+      "text": "two. I'll take this particular two and I'll move forward. Next time I have another two and I have three. Three is greater. Can I again say all of these three elements can form a pair with this two? So I'll again add three to the answer. And this time I'll again take this two and I'll move forward. And this time there's a four and there's a three. But can I say that this three is smaller? So no need to do anything. Just move. Next I have a five. I have a five. I have a four. So can I say this five is greater than four, which is my requirement? Thereby can I say all the elements to the right of five, all the elements to the right of five can form a pair with this four, can form a pair with this four? Yes. So I'll take this five and add plus two y because there are two elements on the right and each of them can form a pair with this four. So I'll take this four and I'll move. Next I have another four. Same thing. Plus two. Next I'll take this four and I'll move. What do we have this time? Five. So I'll take this five. Next we have this six. So we'll take this six and it is exhausted. I just left out with eight, but eight cannot be compared with anyone. So eight cannot form any more pairs."
+    },
+    {
+      "chunk_id": "L042_C9",
+      "start": 530.44,
+      "end": 610.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=530s",
+      "text": "and it is exhausted. I just left out with eight, but eight cannot be compared with anyone. So eight cannot form any more pairs. So apparently I got six, eight, ten. So I know the number of pairs are ten. How many iterations did I do? I just did one, two, three, four, five, six, seven, eight, nine. I did nine iterations. Or I can say I did length of the first array plus the length of the secondary. These many iterations I did. If the left side was sorted and the right side was sorted, I just did it and I was able the number of pairs that these left elements will form with these right elements. We just, we were able to solve it in a linear time. Correct? So if I ask you, can you map this particular like this because this array is not sorted. Can we somehow map this array into some sorted form and get the left section as sorted and the right section as sorted? You'll be like, okay, I can think of merge sort algorithm. I can think of merge sort algorithm. If I remember, merge sort keeps on breaking and the left is sorted and the right is sorted and then merge it back, then the merge it. So at that point we can count, at that point we can count, right? So keep this algorithm in mind and then I'll show you how can we implement this in the"
+    },
+    {
+      "chunk_id": "L042_C10",
+      "start": 610.22,
+      "end": 683.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=610s",
+      "text": "that point we can count, right? So keep this algorithm in mind and then I'll show you how can we implement this in the merge sort. But as of now, keeping this algorithm in mind is very important. 3, 2 was compared and 3 was find out to be greater than 2. Thereby what you did was you counted every element because every element can form a pair with 2. Every element can form a pair with 2. That is the critical point over here. So what I'll do is I'll now go back, try to erase this. So as of now I've written down the array. Let's try to implement merge sort and let's see if we can integrate this logic into merge sort or not. So I've written down the array and what I'll do is I'll try to break it down because the first step of merge sort if you remember is it gets splitted into half. So it is like 5, 3, 2 and the left one will be 4, 1 and then the left side gets again splitted. So the left side is 5, 3 and the right side is 2. Again the left will get splitted. It goes as 5, it goes as 3, right? So let's wait. I will write the right section afterwards. Let's first solve the left section because in recursion the left section is solved at first. Let's try to solve. We have a 5, we have a 3."
+    },
+    {
+      "chunk_id": "L042_C11",
+      "start": 683.54,
+      "end": 756.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=683s",
+      "text": "left section because in recursion the left section is solved at first. Let's try to solve. We have a 5, we have a 3. Can I say this is an array in itself and can I say this is an array in itself? I can. I can. So if I try to write this, 5 is an array in itself, 3 is an array in itself. Can I say I have 2 arrays and both of them are sorted? I can. I have 2 arrays and both of them are sorted. I can. So I will keep 2 pointers, right? I have kept 2 pointers and what do I see? I know one thing for sure. This 3 is smaller. This 3 is smaller and this 5 can form a pair with 3. So can I say everyone on the right of 5, I know it is one element, but can form a pair with 3. So I will add plus 1 to my answer. I will add plus 1 to my answer and I will take 3 because that is what we do in MERSHOT when we merge both of the sorted arrays and then I will move forward and since it is over, we will take 5. So I have taken 5. So this gets down to 3, 5. Perfect. Done. So, while merging, while merging, found out one pair. Perfect. What is the next step of MERGE? 3, 5 and 2. So let's write it."
+    },
+    {
+      "chunk_id": "L042_C12",
+      "start": 756.52,
+      "end": 831.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=756s",
+      "text": "while merging, while merging, found out one pair. Perfect. What is the next step of MERGE? 3, 5 and 2. So let's write it. 3, 5 and 2. Let's try to merge it. Remember one thing, the 3 and 5 in themselves have got one pair. So they cannot form any further pairs within themselves. They will look for the righter partner which is 2, which is 2 and going ahead they will look for further right. So again let's try to implement the same algorithm. I will be at 3, I will be at 2. Who is the smaller? Who is the smaller? 2 is the smaller. So can 3 form a pair with 2? Yes, yes, yes, it can. So 3 can form a pair with 2. Wow! Which means all the two elements can form. Thereby you go ahead and add a plus 2 to your answer and you will take 2 and you will move the pointer. The moment you move the pointer, it's over. So you will take up all the elements, you will take up all the elements and this will be your merged array. So let's go back and write this merged array 2, 3, 5. So let's analyze something. All the elements within themselves have got the pairs. Like 3 got with 5 over in this step, 2 got with 3 and 5 in this particular step. So everyone is done. Perfect. I will just erase it. Let's do the next step."
+    },
+    {
+      "chunk_id": "L042_C13",
+      "start": 831.34,
+      "end": 905.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=831s",
+      "text": "2 got with 3 and 5 in this particular step. So everyone is done. Perfect. I will just erase it. Let's do the next step. We are at 4. I'm sorry. We are at 4. We are at 1. This time we again have two sorted arrays which is 4, which is 1. Let's observe again. We are at 4. We are at 1. 1 is smaller. Can I say everyone on the right of 4? Although it's one element, can form a pair. So I'll add another one. I'll add another one. I'll take one and this goes out of the boundary. So we will have 1, 4 as the merged. We'll have 1, 4 as the merged. So we'll go back and the merged array will look like 1, 4. Perfect. So good. What's the next step? The next step will definitely be about merging this and about merging this. So what do we have on the left? 2, 3, 5 which is again a sorted array. On the right, 1, 4. Why does this algorithm work? Because everything between 2, 3, 5 have already been figured out and you got these pairs from them. Everything between 1 and 4 have already been figured out in the lower branches. So as of now, we just need to figure out this portion of element which is somewhere this portion and the right. So we just need to figure them out. Let's try to do it."
+    },
+    {
+      "chunk_id": "L042_C14",
+      "start": 905.78,
+      "end": 978.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=905s",
+      "text": "portion of element which is somewhere this portion and the right. So we just need to figure them out. Let's try to do it. Again, the same algorithm I'll use. I'll be at 2, I'll be at 4. We'll try to erase this to have less distraction. What will you take? You will take 1. You will take 1. Why? Because 1 is smaller than 2. Can I say all the three elements can form a pair with 1? I can. So I'll go ahead and add a 3 to the answer and I'll take 1 and I'll move forward. The same what do we have? We have a 4. Can 4? No, it cannot. So what I'll do is, I'll take a 2 and I'll move. Can 3 and 4? No, I'll take a 3 and I'll move. What do we have? We have a 5, we have a 4. This time 4 is smaller. So all the elements to the right of the 5 thereby we will add plus 1 and I'll take the 4 and I'll move over. So just one element left. We'll take 5. So the array is sorted. 1, 2, 3, 4, 5. The array is sorted. So what happened was, I did perform the entire merge shot and while merging both the arrays, while merging both the arrays, I did my job. While merging both the arrays, I did my job. Let's see if we got the correct answer."
+    },
+    {
+      "chunk_id": "L042_C15",
+      "start": 978.9,
+      "end": 1051.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=978s",
+      "text": "both the arrays, I did my job. While merging both the arrays, I did my job. Let's see if we got the correct answer. If you remember the answer was, what was the answer? 8, 1 plus 2, 3 plus 1, 4 plus 3, 7 plus 1, 8. We got our answer. So apparently merge shot will be solving this. And when do we need to apply this particular algorithm? While merging it. Let's see when did we merge. We had 2, 3, 5. We had 1, 4. So this was the step, the merge step. I'm just taking a merge step. So if you remember, we had a low. This will be mid. This will be mid plus 1. Again this is the reason I'm saying, go back and watch my merge shot video. Go back and watch my merge shot video. In that the merge step has the left part as low to mid and the right part as mid to high. So if you do not, if you haven't watched my merge shot video, you'll not understand the implementation. So apparently what you can do is, you can take the initial left pointer to be at low and initial right pointer to be at mid plus 1. So over here 1 is smaller than this 2. So what happens is, since 1 is smaller than 2, you take all the numbers from here. How many numbers are there? 3."
+    },
+    {
+      "chunk_id": "L042_C16",
+      "start": 1051.9,
+      "end": 1112.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=1051s",
+      "text": "2. So what happens is, since 1 is smaller than 2, you take all the numbers from here. How many numbers are there? 3. You took 1, you took 1 and you added plus 3 to the answer. You added plus 3 to the answer. So how many numbers are there on the right? Can I say the numbers are mid minus left plus 1? Why because the number of numbers will be, if I write down the indexing 0, 1, 2, there will be 2 minus 0 which is 2 and then plus 1, 3. Simple. There are 3 elements, 2, 3, 5. So you just have to add this to your answer. You just have to add this to your answer in the merge shot code. Let's quickly go into the code editor and code this up. Again please please do try out the problem from the link in the description itself. That will help me a lot. So you have to count the number of inversions. We know we need merge shot. So I'll go to the merge shot article and I'll try to pick up the code. So this was the code. Let's try to pick it up. So let's try to pick it up. Okay, cool. I'll pick it up. So what I've done is I've just picked up the entire merge shot and okay we know this will be doing all the sorting thing."
+    },
+    {
+      "chunk_id": "L042_C17",
+      "start": 1112.24,
+      "end": 1181.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=1112s",
+      "text": "what I've done is I've just picked up the entire merge shot and okay we know this will be doing all the sorting thing. So let's call this merge shot with 0 because we need the array at first. We need 0, the starting index and we need n minus 1. So I'm calling the merge shot but we need the answer. So let's keep a global variable. As of now we are keeping global variable. I think count equal to 0. I kept a global variable as count as 0. What's the first thing? If you remember, let's go back to the example. We are comparing 2 and 1. We are comparing 2 and 1. So where is this comparison going? So this is where we compare. Either the left is smaller or the right is smaller. So this is the place where we say right is smaller. Again I've written this code in the merge shot video. That's why I'm not explaining this. We know the right is smaller. So if the right is smaller, we are taking 1. We are taking 1 and what are we adding to the answer? This portion, all the 3 elements which is this. What I'll do is, before doing anything, we are taking it and I'll add mid minus left plus 1. A simple addition in the merge shot code. A simple addition and keeping count as the global variable. Once the merge shot is performed, I'll return the count."
+    },
+    {
+      "chunk_id": "L042_C18",
+      "start": 1181.88,
+      "end": 1260.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=1181s",
+      "text": "the merge shot code. A simple addition and keeping count as the global variable. Once the merge shot is performed, I'll return the count. Let's quickly run this off. Just a one line addition. Let's see if this runs or not. Okay, did not run. Why? Array was not declared in the scope. My bad. This was A. Let's quickly run this off and see if it is running now. It should be. It does run. So a one line and it does it. But in an interview, do not keep global variables. It's highly discouraged. Let's omit this. What you should do is, just keep a simple count variable. While merging, let it count the answer. Let it count the answer. Like while you're merging two arrays, let it count. And at the end, let's return whatever it counts. Let's convert this into integer. So whenever it is merging the left and right, it will tell me how many he got. How many he got. It will tell me, right? And over here, I'm kind of calling the merge divide, divide. But while I'm merging, it will give me something. It will give me something. Correct. Maybe let's, let's keep an int count equal to zero. Let's see. While I'm merging, it's giving me like the number of pairs he got. So let's keep that. Let's keep the number of pairs he got. Whatever pairs he got, can I return them? I can."
+    },
+    {
+      "chunk_id": "L042_C19",
+      "start": 1260.4,
+      "end": 1321.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=1260s",
+      "text": "he got. So let's keep that. Let's keep the number of pairs he got. Whatever pairs he got, can I return them? I can. Because while merging, this is what he got. This is what he got. And this is the merge short. Let's convert this into integer. So it's a return type that I've converted. So this return will go as, which is zero. So if it is out of bound, the count will be zero. While merging, I'm doing something and that is what I'm returning. That is what I'm returning. But it's also calling more short for separate functions, right? Like if I go back to the example, it's calling for this and this, and it's calling for this and this. So it has to combine all the answers. Like while it's going, whatever answer it is getting, if it getting one, if it's getting two, if it is getting one, if it is getting three, it has to add up all of them. It has to add all of them while merging. So every time I call a merge short, a merge will be performed. So whatever this merge short will give me, I'll just combine. Whatever this merge short will give me, I'll combine. And then I'll combine it with the current merge. So basically what I did was, whatever this gave me, this two gave me, I combined and got the merge array as well as the answer."
+    },
+    {
+      "chunk_id": "L042_C20",
+      "start": 1321.48,
+      "end": 1382.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=1321s",
+      "text": "what I did was, whatever this gave me, this two gave me, I combined and got the merge array as well as the answer. Then whatever they got, I just kept on combining. I can simply go ahead and return it. Again, your recursion has to be strong. If you don't understand this, I'll highly recommend you to drop down the tree and try to do it on the tree. You'll understand it. It's a very basic thing. I'll not get into deep. This is an expert level problem in arrays. So if you're understanding the problem in itself, this is a very minor thing. I'll expect you to understand this as well. So over here what I'll do is, I'll just say return short instead of the global variable. And I'll go ahead and run this. So I've omitted the global variable. Let me run this, this once. So I've done the problem. What is the time complexity? The time complexity, I'm not doing any change apart from this line to the merge short. So I can say whatever the time the merge short takes, which is n log n, which is n log n. Yes. And what is the extra space? So let me write down the time complexity. So can I say n log n is the time complexity and what is the extra space? I'm using a temporary array every time in order to merge them."
+    },
+    {
+      "chunk_id": "L042_C21",
+      "start": 1382.86,
+      "end": 1439.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=1382s",
+      "text": "log n is the time complexity and what is the extra space? I'm using a temporary array every time in order to merge them. So I can say it's a big O of n for the temporary array. But please explicitly mention to the interviewer that, hey, I'm ending up distorting the array. I'm changing the array. In case you don't want me to change the array, maybe I can create a copy of the given array. So tell that why? Because in software engineering interviews, you're expected not to alter the data. So it is very important that you clearly state to the interviewer that I'm altering the data. But if you still want me to do it without altering, maybe I can create a copy of the user data and alter to it. Yes, he'll ask you to do it. But if you tell that, it will give a plus point to you that you're thinking about this edge case as well. So this is what you have to tell to the interviewer. So going back to the sheet, I can say that this one is done as well. I hope you have understood this one. Just in case you did, please, please, please consider giving us a like. And if you're new to our channel, what are you waiting for? Hit that subscribe button because it does motivate me to make a lot of content like this."
+    },
+    {
+      "chunk_id": "L042_C22",
+      "start": 1439.8,
+      "end": 1447.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=AseUmwVNaoY&t=1439s",
+      "text": "our channel, what are you waiting for? Hit that subscribe button because it does motivate me to make a lot of content like this. And yeah, if you haven't followed me on LinkedIn, Instagram, Twitter, all the links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

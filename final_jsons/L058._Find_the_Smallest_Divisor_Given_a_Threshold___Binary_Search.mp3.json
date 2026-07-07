@@ -1,0 +1,99 @@
+{
+  "lecture_id": "L058",
+  "lecture_number": 58,
+  "lecture_title": "BS-14. Find the Smallest Divisor Given a Threshold | Binary Search",
+  "youtube_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8",
+  "chunks": [
+    {
+      "chunk_id": "L058_C1",
+      "start": 0.0,
+      "end": 77.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we will be continuing with our binary search playlist, which is the part of the Stryver's A to Z DSA course. In case you haven't checked it out yet, there's a link in the description. Make sure you check it out. Otherwise, you are going to miss out on something really special. So the problem that you're going to solve today is finding out the smallest divisor, very important line, smallest, right? And the word, very important word, smallest. If to find out the smallest divisor, given a threshold value. Now what does the problem state? It will be giving you an array, which will be consisting of integers. And it will also be giving you a particular threshold value. Now your task is to find out the smallest, smallest divisor. Now imagine, I take the divisor to be 4. Just imagine, imagine. I take the divisor to be 4. Now what the problem is stating, when you divide everything by 4, when you divide everything by 4, whatever value you get, 1 by 4 is 0.25. So you take the seal of it. The seal will be 1."
+    },
+    {
+      "chunk_id": "L058_C2",
+      "start": 77.48,
+      "end": 153.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8&t=77s",
+      "text": "value you get, 1 by 4 is 0.25. So you take the seal of it. The seal will be 1. 2 by 4 is 0.5. The scene is 1. 5 by 4 is 1.25. The seal value is 2. 9 by 4 is 2.25. The scene is 3. So when you sum it up, so after individual division, you sum it up, the value will be 1 plus 1, 2 plus 2, 4 plus 3, 7. Now this 7 should be lesser than equal to the threshold value. So as you can see that it is not. Thereby this divisor cannot be a possible answer. What if I change the divisor? Just imagine I say, hey, let's take the divisor to be 5. If you take 5, this will give you 0.2, which is 1. This will give you 0.4, which is again 1. 5 by 5 is 1. Very important. What is 9 by 5? It's 1.8 and the upper value will be 2. So this is the value. And if you sum it up, it will be 5, which is lesser than the threshold value 6. Thereby this divisor is possible. You can also try out with divisor 6."
+    },
+    {
+      "chunk_id": "L058_C3",
+      "start": 153.0,
+      "end": 231.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8&t=153s",
+      "text": "is lesser than the threshold value 6. Thereby this divisor is possible. You can also try out with divisor 6. It will also give you a summation of individual divisions lesser than the threshold. You can try out divisor 7. You can try out divisor 8, divisor 9 and so on. Each of them will give you the sum of individual divisions to be lesser than the threshold. But the question was particularly asking you to find out the smallest. Thereby the answer will be 5 because for 4, the summation exceeded the threshold. Hence, this cannot be your answer. So thereby what is the smallest one? 5. And this is what the problem states. Given an array, given a threshold, find out the smallest divisor such that the summation of individual divisions should be lesser than the threshold. Quite simple. So what is going to be the first solution that comes to your brain? What I can think of is maybe I can just start off with 1 and I can divide them individually by 1 and then sum it up. And then if that is lesser than threshold, I say 1 is my answer. But if it is not lesser than threshold, then I increase the value from 1 to 2. I do a similar thing with 2. If it is, I stop or else I increase it to 3. If it is, I stop or else I increase it to 4 or else I stop."
+    },
+    {
+      "chunk_id": "L058_C4",
+      "start": 231.12,
+      "end": 310.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8&t=231s",
+      "text": "stop or else I increase it to 3. If it is, I stop or else I increase it to 4 or else I stop. But what, like till how much should I do? I know one thing for sure. The answer cannot be before 1. Why? Because you cannot divide anything by 0. It doesn't make sense. So dividing by negative, this is something which the question is not asking you. Question does ask you a positive divisor. So thereby, the answer will be somewhere between 1 and what? If I technically ask you, if I do a 100, 100, 100, 100, this will be 0 point something which will be taken as 1. This will also be taken as 1 because 0 point something's seal is 1. This will also be taken as 1. This will also be taken as 1. So the maximum sum that you can reach is 4 which is basically the size of the array, which is basically the size of the array because everyone on division might give you 1, 1, 1. You cannot, you cannot reduce it anything lesser than 1. So the minimum you can get is 1 and thereby the minimum sum that you can get is n. What is the number in on whose division you can get that value? Maybe with 9, yes. Because even if you do it with 9, this will give you 1."
+    },
+    {
+      "chunk_id": "L058_C5",
+      "start": 310.02,
+      "end": 386.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8&t=310s",
+      "text": "division you can get that value? Maybe with 9, yes. Because even if you do it with 9, this will give you 1. Again seal, you take the seal division. This will also give you 1. This will also give you 1 which is 4. Is there a need of taking 100? No. Even if you take 10, you take 10, it's still going to be this. So I know one thing for sure. The answer is going to lie between 1 and 9 or in short between 1 and the maximum element in the array. We have proved that. Okay, done. What is the next job? Let's quickly write down the code. Can I say the divisor can start from, maybe I can just write it as D. The divisor can start from 1 and go to the max in array. You'll find out the code in the notes. This is what I can do. And maybe I can keep a summation as 0 or rather let's keep the summation as 0 over here. And I need to check. So in order to check, you can write a function or you can just run it over here. What you'll do is you'll say, okay, let's run it from i equal to 0 till the last element of the array. And you'll say sum plus equal to the seal value of array of i divided by the divisor."
+    },
+    {
+      "chunk_id": "L058_C6",
+      "start": 386.3,
+      "end": 460.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8&t=386s",
+      "text": "last element of the array. And you'll say sum plus equal to the seal value of array of i divided by the divisor. And once you have gone through the entire array, if the summation is lesser than the threshold, then it's yes. I just return this answer. I just return this divisor as the answer. Otherwise I keep on going and eventually you will find your answer. And if you do not, then maybe you can return a minus 1 if the question is asking. You can just return a minus 1 after it. And if you're getting it any moment, you just return. We have done this. Now what is the time complexity? If I have to analyze the time complexity, I'm going from 1 to max element. So it's a max, whatever is the max in the array. So that's max into, I'm running a big O of n loop. So max into n is the time complexity. And do we have any extra space? No. So that's big O of 1. Obviously the moment you give the solution to the interviewer, he'll not be happy and he'll ask you to optimize it. This is when you optimize it. First hint was you have to find the smallest. And whenever you have to find answers like minimum or maximum, you know which technique to use. The binary search on answers is what you have to use. So let's analyze."
+    },
+    {
+      "chunk_id": "L058_C7",
+      "start": 460.98,
+      "end": 531.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8&t=460s",
+      "text": "like minimum or maximum, you know which technique to use. The binary search on answers is what you have to use. So let's analyze. If you see a question where it is asking you to find the minimum or the maximum, what concept? Binary search on answers. Depending on if you're able to figure out the range, because we know that the answer will always be between 1 and 9. So we have a range. And also, I've changed the threshold to 7. So let's analyze. If I do 1 by 1, 2 by 1, 5 by 1, and 9 by 1, the summation that you will get will always be greater than threshold. So this is not a possible answer. If you do by 2 by 2 by 2, it will also be greater than threshold. If you do by 3 by 3 by 3 and by 3, you'll get 7, which is smaller than equal to the current threshold. Thereby, for 3, it is possible. And according to maths, if 3 is possible, 4 will also be possible. Increasing the number, the summation is going to reduce. If you make it 5, it is possible. So can I say for 1, it is not possible, 2, not possible, 3 possible, 4 possible, 5 possible, 6 possible, 7 possible, 8 possible, 9 possible? So I know for what it is possible and for what it is not possible. I know one thing for sure."
+    },
+    {
+      "chunk_id": "L058_C8",
+      "start": 531.4,
+      "end": 606.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8&t=531s",
+      "text": "possible, 9 possible? So I know for what it is possible and for what it is not possible. I know one thing for sure. So can I say one thing? That if I know the range, and I can see a pattern where it is not possible and where it is possible, I have a pattern. Thereby, binary search can be applied. So what I'll do is I'll keep my low over here, which is at 1, and I'll keep my high over here. And remember, what do we need to find? We need to find the smallest division where it is possible. So just to, just not to confuse you, I'll keep the answer as minus 1. What will be the value of mid? 1 plus 9 by 2, which is 5. Thereby, the mid will be pointing to 5. So when you have 5, what do you do? You take 5 and you divide and you find the sum. And when you find the sum, you see that it is possible. If it is possible, you say, hey, answer. I got an answer. So he says 5. I got an answer, which is 5, which is possible. I'm like, fine. What am I looking for? Smallest, chota. I need smaller. If I need smaller, will it make sense to take 6, 7, 8, 9? No sense. Thereby, I will eliminate the right half because I need smaller. And I've already stored this as an answer."
+    },
+    {
+      "chunk_id": "L058_C9",
+      "start": 606.12,
+      "end": 671.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8&t=606s",
+      "text": "7, 8, 9? No sense. Thereby, I will eliminate the right half because I need smaller. And I've already stored this as an answer. So I reduce the right half. And I say, hey, hi, can you probably find an answer which is smaller than 5? Because I'm looking for small. If you don't find it, it's okay. But maybe you can try out. So now my low is standing at 1 and high at 4. If I try to figure out the mid, it will be 1 by 4 by 2, which is 2.5. Hence, the integer will be at 2. I will go over here and I'll see the mid to be 2. I just take this 2 and I do the same division. And I find out that this is greater than threshold. Thereby, I say it's not possible. If 2 is not possible, I'm sure 1 is also not possible. Hence, I eliminate the left half. And what I do is I ask low to go one step ahead of the mid. Perfect. And I'm standing at 3 and 4. If I try to find out the mid, it will be 3 plus 4 by 2, which is 3.5, which is 3 as an integer. So mid will be pointing to low. I take 3 and I find out on division and then on summation, it is lesser than the threshold. Thereby, I say it's possible. I got a better one."
+    },
+    {
+      "chunk_id": "L058_C10",
+      "start": 671.48,
+      "end": 750.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8&t=671s",
+      "text": "find out on division and then on summation, it is lesser than the threshold. Thereby, I say it's possible. I got a better one. So I just replace 5 by 3. Once I replace, if I've got 3, I need smaller. I ask high, I need smaller. Can you come back? He comes back. Hence, I see high has crossed low. I stop my binary search. I stop my binary search. And if you carefully observe, I'll just take the blue lines. Low initially started here. High initially started here. If you have been following my playlist, you know it goes and ends at an opposite polarity. Possible, it will always end up at not possible, opposite polarity. Not possible ends up at possible polarity. So what was I looking for? I was looking for smallest divisor. Thereby, low will be your answer because you need to be at a possible polarity. So your answer will always be low. Or you can also pick it up from the answer variable in case you are struggling to understand the movement of low and high. Got it? So let's quickly write down the pseudocode. Again, it won't be any language dependent function. What does it take? It takes a array and probably a threshold value. What's the first thing? Find out the max element."
+    },
+    {
+      "chunk_id": "L058_C11",
+      "start": 750.8,
+      "end": 825.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8&t=750s",
+      "text": "What does it take? It takes a array and probably a threshold value. What's the first thing? Find out the max element. So low will be at 1 and you can write a function which figures out your maximum element. You can do that by yourself. So low equal to 1 and high equal to max e. You start writing your binary search. Again, we will be following the same pattern of low lesser than high, lesser than equal to rather. Mid equal to low plus high by 2. Done. What's the next thing? I can probably call the function and ask to figure out the sum of divisions. Sum of divisions, pass on the array and tell him that you have to divide it by mid and the summation function can be written somewhere else. If that is smaller than the threshold value, I know this can be a possible answer. You can keep an answer as minus 1 and you can say that answer will be replaced by mid because that is the new division and you can say I'll be looking for a smaller value. So maybe a mid minus 1. Just go on the left and find a smaller value. If it is not possible, this number is extremely small. Increase it. Thereby go on the right and look for a bigger value. Simple. That's how the binary search is. You know already how to write this one because we did write that in linear search."
+    },
+    {
+      "chunk_id": "L058_C12",
+      "start": 825.52,
+      "end": 898.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8&t=825s",
+      "text": "bigger value. Simple. That's how the binary search is. You know already how to write this one because we did write that in linear search. This is how it looks. What about the time complexity now? Previously it was max into n. What did I do? I eliminated the linear search loop and I converted it into because the range is between 1 to max. So the number of elements will be max. Thereby I converted into this into n. Hence the time complexity is this one. What about the space? Constant space. I'm not using anything extra. Let's quickly jump into the code editor. Again you can find out the problem link in the description and you can find out the C plus plus Java, Python, JavaScript, all the code links from the notes in the description as well. So I've written the same code. Just make sure when you write this particular function and when you take a seal, convert it into a double because if you're passing an integer because when you divide integer by integer, it gives you an integer. So it won't work. So make sure to seal your passing a double value. That's why typecast and then divide. So if I just go ahead and submit this, this should be running fine. So by the way, the problem works under the assumption that the answer is always possible. What if it cannot have a divisor? What is the minimum sum that it can have?"
+    },
+    {
+      "chunk_id": "L058_C13",
+      "start": 898.74,
+      "end": 952.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=UvBKTVaG6U8&t=898s",
+      "text": "under the assumption that the answer is always possible. What if it cannot have a divisor? What is the minimum sum that it can have? If you divide by the max element, I go back and you divide by nine, nine, nine, nine, it'll be one plus one plus one plus one, which is four. Hence this is the size of the array. This is the minimum sum you can have. So if the minimum sum is greater than the limit, you cannot reduce the sum. Then you can straight away return minus one. If the problem was asking you to return minus one in case there is no divisor, you just do it like that. Quite simple. Over here it is not asked, but in an interview they might ask you this. So if you're still watching, please, please do consider giving us that like, and if you're new to our channel, please, please do consider subscribing as well. And you'll find out all the links in the description and make sure to follow me on Twitter, LinkedIn and Instagram. All the profile links are in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, goodbye. Take care."
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "lecture_id": "L066",
+  "lecture_number": 66,
+  "lecture_title": "BS-21. Median of two Sorted Arrays of Different Sizes | Binary Search Approach With Intuition",
+  "youtube_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ",
+  "chunks": [
+    {
+      "chunk_id": "L066_C1",
+      "start": 0.0,
+      "end": 68.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=0s",
+      "text": "Okay, so we will be continuing with our binary search playlist. Now, this is the part of the strivers A to Z DSA course. In case you haven't checked it out yet, there's a link in the description. Make sure you check it out. So before starting, hey, welcome back to the channel. I hope you guys are doing extremely well. So the problem that you're going to solve today is finding out the median of two sorted arrays. Now this word is very important sorted because that is what will help us to solve this problem. Now you can be given two arrays of equal size. You can also be given two arrays of different size. Like in this example, you can see this array is of size six and it is sorted. This array is of size four and it is sorted. Now what you have to do is you have to find the median of these two sorted arrays. So what you have to do is if you take both of those sorted arrays and you have to combine them. So if I combine them, what I get is one, two, three, three, four, six, seven, 10, 12, 15. What is the total number of elements? The total number of elements in this case is 10. Why? Because n1 was six, n2 was four. So the total number of elements is 10."
+    },
+    {
+      "chunk_id": "L066_C2",
+      "start": 68.5,
+      "end": 133.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=68s",
+      "text": "of elements in this case is 10. Why? Because n1 was six, n2 was four. So the total number of elements is 10. So if I try to find out the median, can I find a median of 10 elements? I cannot. Why? Because if I stand over at four, there are four elements on the left. There are five elements on the right. If I stand at six, there are five elements on the left, four elements on the right. So there is no specific median because median means on the left and on the right, there must be equal number of elements. Now this is not in this case, this is like five and four, they're not equal. So can I say the median will be somewhere between four and six because if I take somewhere between four and six, on the left there are five, on the right there are five, which is equal. So I can say that the median is somewhere between four and six. So it's like the middle of four and six, so four plus six by two, five is the median in this case. Now over here, the point to notice was the total number of elements was even. That is why it did not have a specific median. But what if I take this example, there's like three elements, there's like two elements. So what is the total number of elements?"
+    },
+    {
+      "chunk_id": "L066_C3",
+      "start": 133.54,
+      "end": 209.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=133s",
+      "text": "median. But what if I take this example, there's like three elements, there's like two elements. So what is the total number of elements? Can I say that the total number of elements in this case is five? I can. Now if I try to combine them in this time, what will I get? If I try to combine them, I'll get one, two, three, three, four. If I ask you what is the median, can I say this is the median? I can. Why? Because it's like two elements on the left, it's like two elements on the right. Thereby the median is pretty simple, the midpoint. So in case of the total number of elements being odd, it's very simple. In case the total number of elements is even, I have to consider two elements, I have to take the middle of it. Got it? Now this is what we have to find. We have to find the median of two sorted arrays. So both the previous solutions were taking a bigot of n1 plus bigot of n2 time and yet we did get a time limit exceeded when we tried to submit it. Now this is a linear time complexity. If we have to optimize it, what can be the optimization of it? Somewhere around square root or somewhere around logarithmic. That is how we can optimize this. Square root I will not consider as of now. I'll consider logarithmic. Why? Because of this thing, sorted."
+    },
+    {
+      "chunk_id": "L066_C4",
+      "start": 209.66,
+      "end": 272.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=209s",
+      "text": "is how we can optimize this. Square root I will not consider as of now. I'll consider logarithmic. Why? Because of this thing, sorted. We know in sorted stuffs, we probably can apply binary search and binary search is an algorithm which works in logarithmic time. So that is where the intuition comes in from because the linear did not work and it is given a sorted, I'll start thinking of a binary search solution. If it doesn't work, then we can think of something else. But the first hit point should be binary search solution. So what I've done is I've taken two arrays and if you sum up their elements, that is 10. The total number of elements is 10, which is even. So let's first understand the binary search solution in terms of even number of elements. Once you've understood the concept, then we can easily switch to odd. Once you've understood for even, it's very easy to switch to odd. So as of now, you might be thinking, but how do we apply binary search? Because till now we have seen in an array, we did a search, use binary search. If the search was on answers, we did on binary search. But over here, how do we apply binary search? First thing, we have two sorted arrays and we're trying to merge them into a third sorted array. And in doing so, we're finding out the median, right?"
+    },
+    {
+      "chunk_id": "L066_C5",
+      "start": 272.74,
+      "end": 349.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=272s",
+      "text": "two sorted arrays and we're trying to merge them into a third sorted array. And in doing so, we're finding out the median, right? If we try to draw a symmetrical line on that median, on the left, there are five elements. On the right, there are five elements. What is this symmetry? Okay. Next step. Out of these five elements, how many are coming from array one? Can I say one, three, four? So there are three elements from array one, agreed? And there are two elements from array two, right? On the right, there are three elements. The rest three are on the right and the rest two are on the right. So this is where we'll start our binary search. We will try to formulate the correct left half. We will try to formulate the correct left half. If we are able to do that, we can actually find out the median. How? Let's understand. Imagine you formulated the correct left half and you formulated the correct right half in hypothetical scenario. Then the median will be four plus six by two, isn't it? Right? So our task will be to figure out, okay, three elements from array one and two elements from array two will formulate the correct left half."
+    },
+    {
+      "chunk_id": "L066_C6",
+      "start": 349.54,
+      "end": 415.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=349s",
+      "text": "to figure out, okay, three elements from array one and two elements from array two will formulate the correct left half. Because one thing I'm very sure is the left half will be this itself only. It will be this itself only. It cannot be anything else. It cannot be anything else. Right? How to do this? Let's understand. Let's do the strategic linear search and we'll try to do it, build on it. So we're trying to build the left half and we're trying to build the right. So imagine I say you from array one, because we know we need five elements. What's the linear search? Like where does it start? Maybe pick up zero elements from array one. I'll pick up no one from array one. I'll pick up no one from array one. If I pick up no one from array one, what will happen? In that case, I'll have to pick up four elements from array two because how many do we need on the left? We need five. So if I pick up no one from array one, there are like four elements from the left. I added two. I have to pick up every one of them. Even if I pick up every one of them, I cannot get five elements. Something I know for sure is if I pick up zero elements from array one, it's not possible. Like zero elements is not possible. Like fine."
+    },
+    {
+      "chunk_id": "L066_C7",
+      "start": 415.98,
+      "end": 486.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=415s",
+      "text": "know for sure is if I pick up zero elements from array one, it's not possible. Like zero elements is not possible. Like fine. Can you pick up one element from array one? He says, why not? So pick up one element from array one, which is one the first. How many do we need to pick up from array two? Then we need to form five. We need to pick up four more. So what I'll do is I'll end up picking two, three, six, 15. I'll end up picking two, three, six, 15. Right? What will be on the right? The remaining the remaining very simple. Three, four, seven, 10, 12. So what I've done is I've said pick up one from array one. I've done this and pick up the remaining. So they were total five. The remaining four got picked up from array. Now can I say this is a valid configuration? I cannot. Why? Because if I try to sort them up, it'll be like one, two, three, six, 15 on the right. It'll be three, four, seven, 10, 12. Is this a sorted array in any means? If even if you draw symmetry, this is not why? Because 15 is greater than three. That cannot be a sorted array. It cannot be a sorted array. How do you recognize that? We'll come to that afterwards. So you'll come to that afterwards. But as of now, this, this cannot be a valid symmetry. Perfect."
+    },
+    {
+      "chunk_id": "L066_C8",
+      "start": 486.02,
+      "end": 557.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=486s",
+      "text": "that? We'll come to that afterwards. So you'll come to that afterwards. But as of now, this, this cannot be a valid symmetry. Perfect. Let's go to the next. Next is pick up two elements. Okay. Let's try to pick up two elements. It'd be like one, three from this. Perfect. So how many are remaining? There were five. We picked up two, three more. So pick up the three more from the array two. Picked up. That's the left portion. What will be the right portion? All the remaining elements? Four, seven, 10, 12 and six. Oh, sorry. My bad. 50. Is this a valid configuration? It isn't. Why? One, two, three, three, six. If I try to write them in a sorted order and this will be four, seven, 10, 12, 15. Again, the six is greater than four. This is not a valid symmetry. This is not a valid symmetry. Why? Because six is on the left. So two is also not possible. Perfect. So two is also not possible. What is the next job? The next job is maybe pick up three, maybe pick up three. So if I pick up three, it'll be one, three, four. So if I pick up three from the array one, if I pick up three from the array one, how many from array two? Two more. Pick up two more. That's two, three. How many will be left from array one? It'd be like three more left."
+    },
+    {
+      "chunk_id": "L066_C9",
+      "start": 557.7,
+      "end": 621.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=557s",
+      "text": "two? Two more. Pick up two more. That's two, three. How many will be left from array one? It'd be like three more left. So seven, 10, 12 and over here it'll be six, 15. Is this a valid symmetry? Let's look at this. If I try to write down them in the sorted order, it's like this, and this is like six, seven, 10, 12, 15. And if you carefully notice, this is a valid symmetry because four is less than six and all of these are in the sorted order. So this is a valid symmetry. So what we figured out was if I pick up exactly three elements from array one and the remaining from array two, we get a valid symmetry. You can try out picking four elements as well. Try picking out four elements. So try picking out four elements. It'll be like one, three, four, seven from array one and the remaining will be just one more we require. So that's two from the array two and on the top it'll be 10, 12 and the remaining will be three, six, 15. Again, if you try to write them down, one, two, three, four, seven, this will be three, six, 10, 12, 15. You carefully observe. This is also not a valid symmetry because seven is greater than three. It should have been on the, this portion, this should have been here. It's not a valid symmetry. This is also not a valid symmetry."
+    },
+    {
+      "chunk_id": "L066_C10",
+      "start": 621.7,
+      "end": 687.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=621s",
+      "text": "It should have been on the, this portion, this should have been here. It's not a valid symmetry. This is also not a valid symmetry. Four, like picking up four elements is not possible. So what did we notice? Picking up zero is not possible. Picking up one is not possible. Picking up two is not possible. Picking up three is possible. Picking up four is not possible. Picking up five is not possible. And that, that is the max you can pick up because, sorry, there's like six. Six is also not possible. So the only thing that is possible is three. Something we observed is there will always be one valid symmetry where you definitely know three from here, two from here. There cannot be any other configurations. Got this? It's the first thing you have to understand. How many to pick? If you have understood this, then we'll move to the next. So till now, we know one thing that this problem is being solved on the basis of symmetry where we decide three elements from the array one and two elements from array two. This is what we have to get to. After that, we'll decide how to find out the median. That is our first step. But how do we figure out that it's a valid symmetry or not? Imagine you're picking up four elements from the array one and you're picking up the remaining one from array two. So this is the left portion."
+    },
+    {
+      "chunk_id": "L066_C11",
+      "start": 687.34,
+      "end": 752.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=687s",
+      "text": "you're picking up four elements from the array one and you're picking up the remaining one from array two. So this is the left portion. This is the right portion. This is the array one. If you carefully notice, this is the array one and this is the array two. How do you determine that this is a valid symmetry or not? It's very simple. You know one thing for sure. This is array one. So this will be sorted. This is array two. So the second line will also be sorted. In order for this to be a valid symmetry, this seven is on the left. This should be smaller than this three. This seven should be smaller than this three, which is not the case. And this two should be smaller than this ten. This two should be smaller than this ten, which is not the case. That means the seven should ideally would have been here. Ideally should have been here. Right? But this side is not because seven is greater than three. So it cannot be on the left. We do not check for this. We do not check for this. No need because it's on the same array. We just check cross. We just check cross. Now this is where we pick up three elements from the array one and two elements from the array two. And this is a valid symmetry. Why?"
+    },
+    {
+      "chunk_id": "L066_C12",
+      "start": 752.58,
+      "end": 820.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=752s",
+      "text": "we pick up three elements from the array one and two elements from the array two. And this is a valid symmetry. Why? Because this three is smaller than seven, which is a valid and this four is smaller than six, which is valid. Hence, all the elements on the left are smaller than all the elements on the right. Why? Because we already checked for like this is an array one. So it is a solid. This is array two. This is solid. Just need to make sure that these cross guys are smaller. If that is all the elements on the left are smaller than all the elements on the right. Hence symmetry. Hence symmetry. Got it? Next. What if we pick up two elements from the left? Sorry, two elements from the array one and three elements from the array two. This three, this 15. Perfect. Perfect. But the cross six is not smaller than four. Six is not smaller than four. Hence not possible. Not a valid symmetry. So we have also understood how do we figure out it's a valid symmetry or not a valid symmetry. So let's quickly do a recap. Till now we have done two points. The first one is the binary search will be on the basis of symmetry where we determine how many from array one will be on the left, how many from array two will be on the right."
+    },
+    {
+      "chunk_id": "L066_C13",
+      "start": 820.54,
+      "end": 894.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=820s",
+      "text": "symmetry where we determine how many from array one will be on the left, how many from array two will be on the right. And the second one, how do we determine if it's a valid or an invalid symmetry? You just compared the cross. If they are smaller, if the entire left is smaller than the entire right, it's a valid. Otherwise not. But now the question arises, but how do we figure out the median? How do we figure out the median? Very simple. I'll tell you. And this is a valid symmetry. Over here we know these many elements from array one, these many elements from array two. How do we figure out the median? So let's call them as L1, L2, right one, right two. So L1 means left one from array one, L2 means left two from array two, R1 means right one from array one, R2 means right two from array two. How do we find out the median? Let's go back to the original sorted arrays. How do you figure out the median? We took the greatest of all on the left. We took the greatest of all on the left and we took the smallest of all on the right and we added them and divided by two to get the median. Same thing we do. We know one thing for sure. This array is sorted. So what will be like L1 will be the greatest over here."
+    },
+    {
+      "chunk_id": "L066_C14",
+      "start": 894.74,
+      "end": 963.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=894s",
+      "text": "we do. We know one thing for sure. This array is sorted. So what will be like L1 will be the greatest over here. This array is also sorted. So three will be the greatest. So it will be the total greatest. The greatest on the left will be max of L1, L2. Quite simple. And what is the smallest on the right? Because that is what you need. The smallest on the right. The entire thing is sorted. So R1 is the smallest on the top and R2 is the smallest on the array two. So plus minimum of R1, R2 divided by two. This is how you'll get the median. We'll come to odd afterwards. But as of now, please focus on understanding this particular even thing. Once you've done this, odd is going to be very simple. So till now we are following the symmetrical pattern to solve this problem where we are figuring out that we need five elements on the left. How many from the array one? How many from the array two? So if we just focus on array one, just on array one, why? Because if I can determine how many from array one, the remaining, because total was five. So if I pick up three from array one, we just need two more from array two. So from array two, we'll know how much. So let's focus on array one. How many from array one should be our focus?"
+    },
+    {
+      "chunk_id": "L066_C15",
+      "start": 963.94,
+      "end": 1034.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=963s",
+      "text": "two. So from array two, we'll know how much. So let's focus on array one. How many from array one should be our focus? How many from array two will automatically be determined? How many from array one? Zero? Not possible. One? Not possible. Two? Not possible. Three? Possible. Will I go and do a linear check? If we do, we fall back to the linear complexity. So we do not. But can I do a binary search? Four? Not possible. Five? Not possible. Six? Not possible. Because that is the maximum elements I can take. I can't see a binary search pattern. Because binary search is technically like not possible, not possible, possible, possible, possible. I can't see a binary search pattern. But I'll tell you how to apply binary search. I know one thing. In the array one, I can pick up no one or I can pick all of them. In the array one, I can pick up no one or I can pick all of them. Now how will I determine whether to go left and eliminate right? How do I eliminate right by going left or go right by eliminating left? That is what you have to figure out. Basically, if you are somewhere between four, how do you eliminate the right half? Saying four and beyond four is not possible. Go and search on the left. How do you do that is what we have to focus."
+    },
+    {
+      "chunk_id": "L066_C16",
+      "start": 1034.82,
+      "end": 1113.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1034s",
+      "text": "four and beyond four is not possible. Go and search on the left. How do you do that is what we have to focus. For that, I'll come back to this example, this example and this example. Let's come back to that. So I'll write over here, I'm picking up four elements from the left, over here three, over here two. So I know this is a possible answer. This is the left half. This is the right half. How do we determine this is the right half? Let's see. We're having seven and that's greater than three. Hence not possible. So any case, this is known as L1. If you remember L2, R1, R2. Any case, L1 is greater than R1. That means, high will be eliminated. Got this high will be eliminated. We cannot take the right, not possible. We need to reduce the value of four. Four is not possible. Reduce the value of four. This is possible. This is always possible. So we stop there. Stop there. What about if it's a smaller value? Let's look at this. In this case, the six is greater than this, which is the L2. Let me write it again. L2, R1, R2. If L2 is greater than R1, in that case, the left portion will be eliminated because if two is not possible, you cannot do for small elements. So these will be the conditions for binary search."
+    },
+    {
+      "chunk_id": "L066_C17",
+      "start": 1113.72,
+      "end": 1179.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1113s",
+      "text": "be eliminated because if two is not possible, you cannot do for small elements. So these will be the conditions for binary search. This is how you determine whether to reduce four or whether to increase two. These will be the conditions. Quite simple. Just pretty observations and we're done. So I've said to you about the thought process. Now what I'll do is I'll do a dry run by taking a couple of sorted arrays so that the thought process gets into your head and after that we'll move on to the code. So the first question that I'll ask you is, in the example that we were taking till now, we are doing a binary search on an array of size six, right? In order to determine how many elements will be fitting the symmetry and we figured out that three elements were fitting the symmetry and we were doing a binary search on a six length array. What will be the time complexity then? It will be logarithmic of six size because we are doing a binary search on a six length array. So, will it be better if I do a binary search on the smaller array because the search space is just four elements over here. So the time complexity will be logarithmic of four. So ideally, I should never do a binary search to determine how many from the longer array."
+    },
+    {
+      "chunk_id": "L066_C18",
+      "start": 1179.72,
+      "end": 1242.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1179s",
+      "text": "complexity will be logarithmic of four. So ideally, I should never do a binary search to determine how many from the longer array. Rather, I should do a binary search to determine how many from the shorter array. If I do that, time complexity will be lesser. So I know one thing for sure is I need to do a binary search on the shorter version of the array. Now if I try to combine them, we'll have one, two, three, four, which is from here and we'll have seven that is one element from the array one and at the end seven and nine is what we will take, right? This is how it looks like. So we know that we have to do a binary search on how many elements we need from the smaller array. So in this case, I can say maybe I'll not pick up anything and that will become my no. And what would be the value of high? Can I say my high will be the maximum that I can pick up from that array one, which is n one in this case, and that's basically four because four is the maximum number of elements that I can pick up from this particular array, right? Let's try to do a binary search. First time when I tried to do a binary search, the mid one, why am I calling it as mid one? Because from array one, right?"
+    },
+    {
+      "chunk_id": "L066_C19",
+      "start": 1242.08,
+      "end": 1314.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1242s",
+      "text": "when I tried to do a binary search, the mid one, why am I calling it as mid one? Because from array one, right? So I'm saying pick up two elements from array one. So I'm saying pick up two elements from array one, which is basically over here mid one. Okay. So I'm picking up two elements from array one. How many will I pick up from the array two? In total I need five, five minus two will be three. So I'll pick up three from array one, three from array two rather, three from array two. So it'll be pointing to index three. Perfect. Now if I try to segregate them, can I say two from array one, which is basically seven and 12 and three from array two, which is basically one, two, three. And can I say from the right, it'd be 14, 15 point to observe is mid one index is pointing to 14 and four, nine, 11 and mid two indexes pointing to this. And if you remember, this was called as L1, L2, R1, R2. Is this a valid symmetry? No. This is not a valid symmetry. How did you figure that out? Because L1 is greater than R2. And let's quickly go and check out the condition. L1 greater than R2, the high has to reduce, but this is not possible. This is not possible. High has to reduce. So what will you do?"
+    },
+    {
+      "chunk_id": "L066_C20",
+      "start": 1314.76,
+      "end": 1394.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1314s",
+      "text": "R2, the high has to reduce, but this is not possible. This is not possible. High has to reduce. So what will you do? You will go back and you will say, this is not possible. So the entire right half is not possible. Hence your trim off the two to four section and you'll be over here. Perfect. This is what you'll do. I'll quickly erase this off so that we have better clarity. Perfect. Done. So you're standing at zero to one. Anything from two to four is gone now. What will be the mid? This time the mid will be pointing to zero. So I'm saying I'm not going to pick up anything. The mid one is pointing to zero. What did they make to mid two will say I'll pick up five elements from you. So point to observe again. Mid one is at zero. And where's mid two? Oh, yeah, that's five. We're trying to segregate on the left of this. There is no one. There's no one. Remember this. There's no one. There's no one from anyone. And zero one, two, three, four, nine. Is it? No, sorry, my bad. One, two, three, four, nine from Mary two. I have to write down the indexes. This is made one. This is made two. And this is our one. Our two."
+    },
+    {
+      "chunk_id": "L066_C21",
+      "start": 1394.0,
+      "end": 1472.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1394s",
+      "text": "I have to write down the indexes. This is made one. This is made two. And this is our one. Our two. L2. You don't have an L1. Remember, if you don't have an L1, since this is your left portion, since this is your left portion, they always try to take a smaller values because it's not there. And you want to compare. You want to compare it with a smaller. Just take a smaller value. If there is no one on the left, you just take a smaller value. It doesn't matter. Just take a smaller value, absolute value. So that the comparison, so that the comparison is true. Okay. Eight mean lesser than 11. True. True. Nine lesser than seven. No, not true. Not true. Not possible. So by taking zero elements from everyone, it's not possible. Which is this case? Let's write down this case. L2 is greater than R1 is the case. Let's check out. L2 greater than R1. So you eliminate. Yes, you eliminate. And you say zero is not possible. Eliminate this half. So you eliminate this and the low now points to this. Please omit this again. Amazing. Perfect. What's the next thing? Okay. Before that, let's quickly erase this. What's the next thing? We need to pick up one element. So the mid will also be there. So your mid goes and this. Where is mid two? So if it is one, this will be four."
+    },
+    {
+      "chunk_id": "L066_C22",
+      "start": 1472.2,
+      "end": 1548.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1472s",
+      "text": "mid will also be there. So your mid goes and this. Where is mid two? So if it is one, this will be four. So mid two will be here. Perfect. Let's try to again segregate them. So what I'll do is I'll do a segregation. We'll do a segregation. It'll be seven on the left and one, two, three, four on the left. And let's try the seven properly. And over here it will be 12, 14, 15 and a nine and 11. So what do you basically doing is from mid one, you're taking everyone on the right from mid to everything and on this simple. So can I say this will be mid one and this will be mid two and this will be L1, L2, R1, R2. And if you carefully observe, this is smaller and this is smaller. Valid configuration. One element that you have to take. What will be your answer? Can I say L1 will be array one of mid one minus one. That's what L1 is. L2 will be array two of mid two minus one. Can I say this? I can, I can. What will be R1? R1 will be array one of mid one and what will be R2? R2 will be array two of mid two because mid one is finding a mid two and the previous elements are there."
+    },
+    {
+      "chunk_id": "L066_C23",
+      "start": 1548.2,
+      "end": 1616.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1548s",
+      "text": "R2? R2 will be array two of mid two because mid one is finding a mid two and the previous elements are there. In case there doesn't exist a previous element or in case this doesn't exist, you'll try to take these values as intervene because they do not exist. If on the right, they do not exist because you always check for smaller, greater, like in this, in this order, you always check for this order. So you'll always take this as intermax if they do not exist. If they do not exist. And what will be that case? When you take all the elements in that case, there'll be no right. That you take intermax. On the left, if there is nothing you take intermax. Got it? So that's it. I have L1, L2, everything. You know the formula. You know the formula. What is the formula? The formula is max of L1 comma L2 plus min of R1 comma R2 divided by 2.0. This is only valid. If the total number of elements is even, what if it is odd? Let's now jump into that. I might be thinking, what about odd elements? What I've done is I've taken an array where we have two and three. So the total number of elements is five, which is odd. I cannot have a symmetry like this that will take away three from the picture. So there are two ways to do it."
+    },
+    {
+      "chunk_id": "L066_C24",
+      "start": 1616.48,
+      "end": 1684.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1616s",
+      "text": "odd. I cannot have a symmetry like this that will take away three from the picture. So there are two ways to do it. Either you can form a symmetry by saying two elements from here and three elements from here. That's one of the ways. All you can say is, I'll take a symmetry by taking three elements from the left and this. And this is very simple. If you want to do a symmetry like I'll go ahead and do a symmetry like this, where I say I'll have a bit more elements on the left and slightly lesser. So what is the total number then? It's like N1 plus N2 plus 1 by 2. Why? Because 2 plus 3 plus 1 is 6 by 2. That will give you 3. So I'll have three elements on the left and I'll try to make three elements. I'll try to make three elements. Will the formula for median change? Yes, it will obviously change. Let's look at this. In this case, you have 1, 2, 3. So you have 1, 2, 3. So you have like 2 and 1, 3 from the left and you have 4 and 4 from the right. So what's your median? The median is 3. The median is 3. In this case, the formula will have median as max of L1 comma L2. That's your median. Very simple. You just have to decide that your symmetry will be either you can take three elements"
+    },
+    {
+      "chunk_id": "L066_C25",
+      "start": 1684.96,
+      "end": 1748.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1684s",
+      "text": "of L1 comma L2. That's your median. Very simple. You just have to decide that your symmetry will be either you can take three elements or two. That's your choice. So if you take 2 and 3 on that side, then the formula will become for median min of R1 comma R2. Then you'll take from the right. I'll go with this. Why do I go with this? Because this formula will be valid for everyone. Because even if I have 10 elements and I do 10 plus 1 by 2, that still says me the symmetry. I need 5. Even if I have 5 elements and I do this, it still says 3. So the formula is valid. So the formula will be how many do I like? How many will be on the left? N1 plus N2 plus 1 by 2 minus. Sorry, this is the number of elements I need on the left. On left. That's it. This is all. This is what I'll work on. So even if it's 10, I need 5 elements on the left. Even if it is 5, I need 3 elements on the left. So it works for both of them flawlessly. And everything stays the same. So I'll be writing the code in the code editor directly this time, not on the iPad, because it might get a lot messier on the iPad. And the code editor, I'll be writing it on C++ from the notes."
+    },
+    {
+      "chunk_id": "L066_C26",
+      "start": 1748.8,
+      "end": 1817.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1748s",
+      "text": "iPad, because it might get a lot messier on the iPad. And the code editor, I'll be writing it on C++ from the notes. You can find the Java, Python and JavaScript codes as well. And you can open them on the parallel. And one thing I'm writing like simple while loop if else conditions. So you will be able to understand even if you don't know the language. So don't worry about that. So the first thing that I'll do, we'll take N1, that's 8 of size. I'll take N2, right? That's the first thing we'll do. What is the next thing? I know one thing for sure. If N1 is greater than N2, I always want to perform the binary search in the smaller array. So maybe just again call this function so that it just swaps it. Because I want to make sure that A is always the smaller array. The first array is always the smaller array. Perfect. The next thing I'll do is I'll say low to be 0 and high to be N1 because that is what I'm looking for. After this, I'll go ahead and do the same condition that we have been doing throughout. After this, I'll take the mid one because the middle in the first array to be low plus high by 2. After this, I'll figure out the mid two. What will be mid two? The number of elements that I require on the left."
+    },
+    {
+      "chunk_id": "L066_C27",
+      "start": 1817.74,
+      "end": 1885.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1817s",
+      "text": "2. After this, I'll figure out the mid two. What will be mid two? The number of elements that I require on the left. How many do I require on the left? You just now saw we figured out the formula N1 plus N2 plus 1 by 2. That's how much we require. So on the left, whatever is required minus mid one is what it will be. Now I need to assign L1 and L2. So maybe initially you can do is you can keep them as int mean just in case they are not there and I'll do as int mean just in case and R2 and R1 and you can keep them as int max in case they are not there. So we have given default values to L1, L2, R1 and R2 but now we need to assign them. Let's come back to the iPad. So mid one is something which is pointing to R1 and mid two is something which is pointing to R2 and one place before mid one is L1 and one place before mid two is L2. But you need to be sure about checking their places as well. Imagine you're taking this array like just in case just in case and then like you want to pick six elements from the array one. So mid one is going to be six which is a hypothetical index in this case which is an hypothetical index in this case."
+    },
+    {
+      "chunk_id": "L066_C28",
+      "start": 1885.56,
+      "end": 1960.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1885s",
+      "text": "So mid one is going to be six which is a hypothetical index in this case which is an hypothetical index in this case. So that index might not exist. So always make sure if mid one is lesser than N1 then only you will go ahead and say R1 will be taken from array of one and mid one. If mid two is lesser than N2 then only R2 will be taken from B of mid two because otherwise that index doesn't exist. If mid one minus zero is sorry minus one is greater than equal to zero then L1 will be taken by mid one minus one otherwise they do not exist. If mid two minus one greater than zero then L2 will be taken from B of mid two minus one. That's it. Once you have done this when can I say that they are they are technically a possible solution. If L1 is smaller than R2 and L2 is smaller than R1 that is what I'll write. If L1 is smaller than equal to very important R2 and and L2 is smaller than equal to again L2 smaller than equal to R1 then this is possible and this is possible. I just need to check if the total number. So what you can do is maybe you can just write N equal to N1 plus N2."
+    },
+    {
+      "chunk_id": "L066_C29",
+      "start": 1960.34,
+      "end": 2039.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=1960s",
+      "text": "to check if the total number. So what you can do is maybe you can just write N equal to N1 plus N2. So if N is odd in that case the answer will be max of L1 comma L2. It's very obvious else the answer will be again you have to do a lot of typecasting. Max of L1 plus L2 plus min of R1 comma R2 you typecast it into double and after that you do a 2.0. That's it. Else if what are the conditions for I L1 greater than R2 L1 greater than R2 in that case high will go as mid minus one else low will go as mid plus one and you can just give a dummy zero just just because it has a double return type. So you have to give a dummy return over here. But ideally in all the cases it will be ending over here. So quickly go and run this and see if it is running fine. So make sure that this is mid one and just make sure that the typecasting is done correctly. I'll go ahead and run this and see if it is running fine. I hope it does. It does. Let's quickly submit this and see if it is running. It will. So what will be the time complexity. We are doing a binary search on somewhere a size of N1 where we're making sure that the N1 is the smaller size."
+    },
+    {
+      "chunk_id": "L066_C30",
+      "start": 2039.22,
+      "end": 2092.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=2039s",
+      "text": "complexity. We are doing a binary search on somewhere a size of N1 where we're making sure that the N1 is the smaller size. According to the problem minimum of logarithmic of N or N. So whatever is minimum will be our time complexity. Are we using any extra space? No the extra spaces we go for and we're not using any extra space and this will be the most optimal solution. So I hope you have understood the brood the better the optimal the entire thought process the intuition and everything just in case you have. I have a lot of energy still now like this video took me I think around two hours because I was spending a lot of time making sure that everyone who watches this video understands everything. So in case you're still watching, please make sure you like this video. And if you haven't checked out our strivers A to Z a DSA course, there's a link in the description. Make sure you check it out. And if you haven't followed me on Twitter, Instagram, LinkedIn, all the profile links will be in the description. With this, I'll be wrapping up this video. Let's finish some of the details and I take care. Whenever your heart is broken, don't ever forget your golden. I will find a light in the darkness. I will find a light in the darkness. I will find a light in the darkness."
+    },
+    {
+      "chunk_id": "L066_C31",
+      "start": 2092.94,
+      "end": 2095.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=F9c7LpRZWVQ&t=2092s",
+      "text": "I will find a light in the darkness. I will find a light in the darkness. I will find a light in the darkness. I will find a light in the darkness. I will find a light in the darkness. I will find a light in the darkness."
+    }
+  ]
+}

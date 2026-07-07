@@ -1,0 +1,57 @@
+{
+  "lecture_id": "L091",
+  "lecture_number": 91,
+  "lecture_title": "L19. Zig-Zag or Spiral Traversal in Binary Tree | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=3OXWEdlIGl4",
+  "chunks": [
+    {
+      "chunk_id": "L091_C1",
+      "start": 0.0,
+      "end": 79.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=3OXWEdlIGl4&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be discussing the zigzag traversal from the Freecut Tree series. Now what does this traversal means? So in the previous traversal, that is the level order traversal, you saw that the traversal was like 1, 2, 3, then a 4, 5, 6. Now this is zigzag as the name suggests. So first it will be 1, then you will go across like this, that's 3, 2. Then you will go across like this, 4, 5, 6. So that's the zigzag traversal. Like first like this, then like this, then like this, then like this. So kind of this, this, this and if there were any other levels, it would have been like this, then it would have been like this. So that's what a zigzag traversal is all about. So we're going to follow the same technique as we did in the level order traversal. So initially we will be taking a queue data structure. So let's take initially a queue data structure and we're going to store the root of the tree. There's no doubt in that. We're going to store the root of the tree in the queue data structure. Also, we're going to take a vector of vector or a list for that reason. That's the data structure where we will be storing the zigzag traversal"
+    },
+    {
+      "chunk_id": "L091_C2",
+      "start": 79.7,
+      "end": 146.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=3OXWEdlIGl4&t=79s",
+      "text": "take a vector of vector or a list for that reason. That's the data structure where we will be storing the zigzag traversal and we will be returning this as our answer. So what we will do different is we are seeing one thing that the first traversal is from left to right. Then it's like this right from right to left, then again from left to right, then from right to left. So we're going to introduce a flag kind of a variable. Okay, so let's introduce a flag variable which is going to say us if you're moving from left to right or you're moving from right to left. So probably we can keep a flag variable. Initially, let's assign it to be 0 or 1. You can do it as you wish. So let's start the iteration of the queue. So in the iteration of the queue, first time when I check out the queue, there's only one element. So we will take it out. Okay, and now what we'll do is if there is a left, there is. So we will insert it into the queue. If there is a right, there is. We will insert that into the queue. Once I've done that, once I've inserted all the bottom nodes left and right, I will take this guy and I'll insert it in the same order. Like I took it out. That's one. The flag is 0. Very important the flag is 0."
+    },
+    {
+      "chunk_id": "L091_C3",
+      "start": 146.4,
+      "end": 225.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=3OXWEdlIGl4&t=146s",
+      "text": "I'll insert it in the same order. Like I took it out. That's one. The flag is 0. Very important the flag is 0. So flag 0 says us that the direction is from left to right and the value 1 says us that the direction is from right to left in our traversal. So we are done with 1. So once you've inserted 1 into your data structure, please make sure you turn the flag to be 1 because you're going to the next iteration of the queue, right? And you'll get the next level nodes. That's 2 and 3. So let's get the next level nodes 2 and 3. Now, you're going to check for 2's left. That's 4. So kindly insert that into the queue. You're going to check for 2's right. That's 5. Insert that into the queue. So 2 is done. Next for 3's left, there is nothing. 3's right, there's a 6. Insert it. So I can say I've done for 2 and 3. So these elements are also done. Now since the value of flag is 1, what you will do is instead of inserting it like 2 and 3, you will make sure they're inserted in the reverse order. That's 3 and 2. That's why I said if flag is 1, it's right to left. So flag 1 told us that it's right to left. Now, while you move to the next level, please make sure you turn flag back to 0."
+    },
+    {
+      "chunk_id": "L091_C4",
+      "start": 225.2,
+      "end": 302.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=3OXWEdlIGl4&t=225s",
+      "text": "1 told us that it's right to left. Now, while you move to the next level, please make sure you turn flag back to 0. So every time you are switching on levels, you turn flag 0, 1, 0, 1, 0, 1, right? And the next, you get something as 4, 5, 6. And it's time to check if they have left and right. 4 doesn't have a left. 4 doesn't have a right. 5 doesn't have a left. 5 doesn't have a right. Similarly, with 6, doesn't have a left, doesn't have a right. So can I say the traversal for 4, 5, 6 has been completed and the flag value is 0? And if it is 0, I will simply take 4, 5, 6 and insert it into my data structure without reversing it. So I've inserted that into the data structure. Now, can I say if I look back at the queue, my queue is indeed empty now. Hence, we have traversed all the nodes and right after the traversal, can I say my data structure is having the zigzag traversal that I was asked to print? And I can return this data structure and this is going to be my answer. So the difference that I did from the previous question was, I just maintained a flag variable which was like 0, 1, 0. Every time I went on to the next level, I just converted 0 to 1, 1 to 0 and vice versa."
+    },
+    {
+      "chunk_id": "L091_C5",
+      "start": 302.0,
+      "end": 367.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=3OXWEdlIGl4&t=302s",
+      "text": "0, 1, 0. Every time I went on to the next level, I just converted 0 to 1, 1 to 0 and vice versa. That is what I did. So again, we're going to discuss the C++ and the Java code. So you can see the C++ code on the left and the Java people can definitely follow their code that's on the right. They're mostly identical. So you can definitely catch up. So initially, we are given the root of the tree and we declare our data structure that's result. And if the tree is empty, we're going to return the data structure which will never have any zigzag traversal. Right after that, I declare the queue and I initially push the root. And we have a flag which is initially marked as true. So basically over here, what I've done is true means left to right and the opposite will mean right to left. That is what I have been doing over here. Right after that, I traverse in the queue. So you know, always we take all the nodes of that level. So let's take all the nodes of that level. And what I do is I run a for loop. Okay, I'm running a for loop. On all the nodes of that level. And what I'm doing is I'm basically taking it, popping it out."
+    },
+    {
+      "chunk_id": "L091_C6",
+      "start": 367.2,
+      "end": 445.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=3OXWEdlIGl4&t=367s",
+      "text": "a for loop. On all the nodes of that level. And what I'm doing is I'm basically taking it, popping it out. So if your queue, for an example, has two, three, I will iterate on two and I'll iterate on three using this for loop. Got it? Right after that, I check. What I check is, is left to right true? If that's the case, like this two that I'm taking out, I'll put it in the front of my data structure. And after that, I'll put three. If the flag is true. If it is not, what I've done is I've smartly made sure that two will come at back, then three will come. Right? Depending on this flag, I'll either insert it from the front or I'll either insert it from the back. Simple enough, right? Simple enough, constructive. And the rest thing remains the same. I insert that into our vector or list. And right after that, I check left and right and I push it. Once I've done this entire iteration, right, I can always switch on the flags and I'll keep on the data structure, whatever is on the row. That's three, two, whatever is it, I'll keep on the data structure. Once that is done, I can definitely return my result. So the thing that I did different from the previous level order traversal is this one flag and this while storing in an array or a vector, whatever you can call it,"
+    },
+    {
+      "chunk_id": "L091_C7",
+      "start": 445.9,
+      "end": 493.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=3OXWEdlIGl4&t=445s",
+      "text": "from the previous level order traversal is this one flag and this while storing in an array or a vector, whatever you can call it, what I made sure is I made sure I either push it from the front or from the back. That is the logical thing that I did in order to get the zigzag order traversal. So what will be the time complexity? Again, the time complexity is going to be big O of n, similar to level order. And what will be the space complexity? That's going to be big O of n, similar to the level order traversal. So I hope you've understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of effort. To make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

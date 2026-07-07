@@ -1,0 +1,148 @@
+{
+  "lecture_id": "L243",
+  "lecture_number": 243,
+  "lecture_title": "L7. Sort a LinkedList of 0's, 1's and 2's | Multiple Approaches",
+  "youtube_url": "https://www.youtube.com/watch?v=gRII7LhdJWc",
+  "chunks": [
+    {
+      "chunk_id": "L243_C1",
+      "start": 0.0,
+      "end": 73.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=0s",
+      "text": "Let's continue with our playlist and before that, hey everyone welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is sorting a given linked list which has zeros, ones and twos in it. So what is the problem stating? It is stating that you'll be given the head of the linked list and this linked list only has zero, one and two in it. Your task is to sort this particular linked list according to the data, which means initially there will be zeros followed by ones followed by two. Once you have sorted this particular linked list, you'll have to return me the updated head of this particular linked list. So what if this problem comes up in an interview? You start off with the brute force and what is the extreme main solution that you can think of? Data replacement. What you say is we just have zeros, ones and twos. So what we can do is we can take count zero, we can take count one, we can take count zero and initially have them initialized as zero. After that we can do a single traversal. Maybe we can keep a temporary pointing to head and whatever is the value of temporary in this case it is one. First occurrence as one. So you go and increase the value. After that you move the temporary to zero. So it is zero."
+    },
+    {
+      "chunk_id": "L243_C2",
+      "start": 73.7,
+      "end": 131.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=73s",
+      "text": "one. First occurrence as one. So you go and increase the value. After that you move the temporary to zero. So it is zero. So you increase the zero by one. Let's again move it. It's one. So you increase it to two. Let's again move it. It's two. So you increase the two by one. Let's again move it. It's zero. Let's increase it. Let's again move it. It's two. Let's again increase it. Let's again move it. It's one. Let's again increase it. After that move it again. It is at null. The moment you reach null it means that traversal is completed. Once the traversal is completed I can say that the count zero is holding the number of zeros. Count one is holding the number of ones. Count two is holding the number of twos. So after the initial traversal you have count zero, count one and count two. That's time to do the data replacement. So what I'll do is I'll do another traversal. I'll take the temporary, place it at head and what I'll check is what is the value of count zero. Does it have any zeros? It says that I have two zeros. So let's take one and place it. The moment you take one you reduce the value to one and then move the temporary. Again you check hey count zero do you have something? It states that hey I have something."
+    },
+    {
+      "chunk_id": "L243_C3",
+      "start": 131.64,
+      "end": 204.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=131s",
+      "text": "to one and then move the temporary. Again you check hey count zero do you have something? It states that hey I have something. So I'll take that, place it and reduce the value and then move. After that when temporary moves here you check with count zero. Does it have any zero? It states I do not have any zero. This time I'll look at count one because after zero there is one. It has three. I'll take one yes. I'll take one and reduce. I will move. Again when temporary is at this particular node you again check is count zero there? No there is no count zero. Is count one there? Yes there is. So maybe just place it, reduce it and move it. Again do the same thing. Count one, take count one, place it, reduce it, move it. When you are standing here you check for count zero. It is zero you check for count one. There is no count one. You check for count two. So there is count two. So you take it, place it, reduce it and then move it. Again you check for zeros and ones. There are no zeros and ones. So you take the count two, take it, place it, reduce it, move it. So temporary is at null. The moment you reach at null you stop. So if you carefully look at the link list the data replacement has been done. So let's quickly write down the pseudocode."
+    },
+    {
+      "chunk_id": "L243_C4",
+      "start": 204.82,
+      "end": 275.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=204s",
+      "text": "null you stop. So if you carefully look at the link list the data replacement has been done. So let's quickly write down the pseudocode. Again you can find out the C++, Java, Python, JavaScript code. Links in the description. Make sure you check it out. So what is the first step? We have a temporary which is pointing to the head. We have counter zero which will be counting the number of zeros. We will have a counter one that will be counting the number of ones. We'll have counter two which will be counting the number of twos. Let's quickly start the traversal. So the temporary will keep moving till it reaches the last which is the null. And what will be the first step? If temporary data is equal to equal to zero, I will say counter++. Else if temporary data is one, I will say counter one plus plus. Else it will be definitely two. So I'll say counter two plus plus. Once this is done, I can move the temporary to the next which is temporary goes to temporary next and the while loop is completed. So this is my first traversal. After the first traversal, I can say that counter zero will have the number of zeros. Counter one will have the number of ones. Counter two will have the number of twos. What is the next job? Again traverse and do the data replacement. So let's quickly do it."
+    },
+    {
+      "chunk_id": "L243_C5",
+      "start": 275.3,
+      "end": 350.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=275s",
+      "text": "two will have the number of twos. What is the next job? Again traverse and do the data replacement. So let's quickly do it. What I'll do is I'll take the temporary, place it at the head of the link list, right? After this, I'll say while temporary is not equal to null because I need to re traverse this particular link list and I'll check, hey, do we have a count zero? If we have a count zero replace, so it will say temporary, your data will be replaced by zero. At the same time, counter zero will reduce itself by one. Similarly, if zero is not there, then I go to else if and I ask, hey, is there counter one? Do I have one? If I have one, that means maybe replace this to one. Perfect. At the same time, do a counter one minus minus. What if there is no zero and there is no one? It will fall to the else. If it does, I'll say temporary data equal to two because if there are no zeros and ones, it means there is two and then we will say counter two minus minus. Once this is done, once you have done the data replacement, we'll ask the temporary to move to the next, which is temporary equal to temporary dot next. And this is where the traversal will complete. So what will be the time complexity?"
+    },
+    {
+      "chunk_id": "L243_C6",
+      "start": 350.96,
+      "end": 430.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=350s",
+      "text": "next, which is temporary equal to temporary dot next. And this is where the traversal will complete. So what will be the time complexity? Can I say it will be big O of two and why? Because one traversal is here while the other one is here. So if you're traversing the entire link list twice, it will be two of n. So big O of two of n is the time complexity. What will be the space complexity? Big O of one. And this is where the interviewer will not be happy. Why? Because you're traversing it twice. It'll ask you to do it in one pass. So we need to convert a two pass solution into a one pass solution, which means I cannot do data replacement. I definitely cannot do data replacement. What can I do if I'm traversing once and I need to rearrange them? The only option is I change the given links. Yes, I change the given links. How can I do this? What was the final arrangement? The final arrangement had zeros at the start. So if I just take up the zeros, it had zeros at the start and it had one following that. If I take up the ones, these are the ones it had once after that. And also after that, it was followed by twos, right? So let's take the twos. So can I do this while traversing? Can I segregate the zeros?"
+    },
+    {
+      "chunk_id": "L243_C7",
+      "start": 430.96,
+      "end": 495.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=430s",
+      "text": "that, it was followed by twos, right? So let's take the twos. So can I do this while traversing? Can I segregate the zeros? Can I segregate the ones? Can I segregate the twos? If I can do that, once I've done that, right at the end, I repeat, right at the end, the end of the zero can be connected to one. The end of the one can be connected to two. Once you have done this, this will be my head of the linked list. And this is what you can return. I can probably do this. And this is what I look to do because I need to do it in one traversal. And this is the best that I can do. Store all the zeros, basically make a linked list of the zeros, have the ones, have the twos and then connect them. After that you can return the head of the linked list. So let's try to do it. So after I have completed the traversal, what am I looking at? I'm looking at a list zero, which will have all the zeros. I'm looking at list one, which will have all the ones. I'm looking at a list two, which will have all the twos. So I need three segregated list after I have completed the traversal. So what I will do is I will take three dummy nodes."
+    },
+    {
+      "chunk_id": "L243_C8",
+      "start": 495.24,
+      "end": 572.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=495s",
+      "text": "I need three segregated list after I have completed the traversal. So what I will do is I will take three dummy nodes. Yes, I will take three dummy nodes, one for the zero and I'll call it a zero head. I'll explain you what is dummy node. I will take one for the one. So this will be one head and I'll take one for the two. Since during the start, I don't have the list because I don't have any elements. So the list is empty. I'll initially assign a dummy, just the start with minus one. Okay. This is what I'll assign. And over here, I will call this a zero. I'll take one more pointer pointing to it. I'll take one more pointer pointing to it. I'll take one more pointer pointing to it. This is my dummy nodes. So these are my starting point for zero, one and two. So we have the L0, L1 and L2. What is your next job? To traverse and attach it. So let's traverse. If this is one, we attach it over here. If this is zero, we attach it over here. If this is one, we attach it over here. If this is two, we attach it over here and keep traversing. This is what I will look to do. Right. Let's try to do it. So I'll take a temporary and place it at the head of the linked list. Right. What is the next job?"
+    },
+    {
+      "chunk_id": "L243_C9",
+      "start": 572.9,
+      "end": 645.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=572s",
+      "text": "to do it. So I'll take a temporary and place it at the head of the linked list. Right. What is the next job? Have a check. The value is one. So that means it will go and get attached to the L1, the list one. Let's do it. How can I do it? Remember, you will not create a new node. You will not create a new node. Instead of it, you will say, hey one, because this is your dummy head, hey one dot next, can you be temporary? So what this will do is this will take the next and point to this one. Right. So for visual representation, can I say it will be pointing to this? Once you have done this, you say one, can you go here? Because I always need to stand at the last. And if this is done, I'll take temporary and move it. Perfect. Remember, this is not a new node. This is not a new node. It's actually pointing to this. It's actually pointing to this. This one is just done for a visual understanding. Okay. Let's look at the next one. What is the value? Zero. This time what you'll do is you'll go to L0 and you'll take the zero and you'll say zero dot next. You should be pointing to this, to the temp. So do it again for visual purpose and just writing it separately. Once this is done, you move zero to the next."
+    },
+    {
+      "chunk_id": "L243_C10",
+      "start": 645.76,
+      "end": 721.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=645s",
+      "text": "to the temp. So do it again for visual purpose and just writing it separately. Once this is done, you move zero to the next. You basically move zero to the next and move the temporary. Perfect. What is the next job? You look at the value, which is one. So you again say, hey, one, your next should be pointing to this. This is why I moved one. This is why I moved one. So again, for visual purpose, draw it and move the one. Perfect. Let's move temporary. What is the value? Two, which means L2. Let's take it again. Two's next will be pointing to two visual representation, visual representation. In real world, this will be pointing to this. Perfect. Let's take to move ahead. Let's take temporary move ahead. What's the value? Zero. Let's point zero and then move zero again, visual representation. And let's move temp. It's a two. Let's take two again, point it here and then move to. What's the next job? Temp will move to the last and it is one. So this will be pointing to one and then one will move here. And after this temp will move here and this is where it stops. This is where it stops. So after the travesel, if you carefully observe the dummy zero head that you did take, it's next is pointing to the head of L0."
+    },
+    {
+      "chunk_id": "L243_C11",
+      "start": 721.72,
+      "end": 790.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=721s",
+      "text": "the travesel, if you carefully observe the dummy zero head that you did take, it's next is pointing to the head of L0. The dummy one head that you did take, it's next is pointing to the first node of L1. The dummy two head that you did take, it's next is pointing to the first node of L2. Right? One more thing. The zero will be pointing to the last node of zero. The one will be pointing to the last node of one. The two will be pointing to the last node of two. Please observe this because it will be helpful while we write down the code. Where will the zero point to? Like where will the zeroes next point to? Can I say it will be pointing to the starting? It will. It will. Only if there are ones. Only if there are ones, we will look at the code. Don't worry. As of now, remember the last of zero will be pointing to the starting of ones only if there are ones. And where will the last of one point to? To the starting of two only if I repeat only if there are twos and this two will be pointing to null, which is very obvious. Right? So I'll be writing down the pseudo code and in case you want the C++, Java, Python, JavaScript codes, the link will be in the description."
+    },
+    {
+      "chunk_id": "L243_C12",
+      "start": 790.84,
+      "end": 870.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=790s",
+      "text": "writing down the pseudo code and in case you want the C++, Java, Python, JavaScript codes, the link will be in the description. So what will be the initial thing that we need to write? What if the link list is empty? We don't need to sort it. What if the link list has one element? We don't need to sort it. So make sure you write down these edge cases where if the head is null, which means it's an empty link list, or if it is a single element link list. In both the cases, you will return whatever is given to you. Please return whatever is given to you. Apart from this, what did we do? We took a dummy zero head. We took a dummy one head and we took a dummy two head. Right? And maybe you can say new node of minus one, depending on the language that you're using, new node of minus one, it can be any value, not necessarily minus one. It can be minus 50 as long as it is not zero, not one, not two. It is okay. Done. Apart from this, what did we do? We also took a zero, which was pointing to this zero head. We also took a one, which is pointing to the one head. Perfect. We also took a two, which is pointing to the two head. And this was used for traversal. Right?"
+    },
+    {
+      "chunk_id": "L243_C13",
+      "start": 870.0,
+      "end": 949.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=870s",
+      "text": "to the one head. Perfect. We also took a two, which is pointing to the two head. And this was used for traversal. Right? After that, what did we do? We took a temporary, which was pointing to the head. Perfect. And now we will be traversing. That basically means while temporary not equal to null, because that is what the traversal means. What do we do? We have a check. What if it's a zero? Right? So, let's have a check. What if it's a zero? Temporary data, if you're a zero, we will do something different. What will we do? We will take zeros next and we will point to temporarily. That's what we did. If you remember properly, this is what we did. We simply pointed to the temporary. Once you've done this, you will say zero, can you now go to the next? Zero can you go to zeros next, which is basically temporary. So, you can straight away say zero, can you go to temporarily? You basically moved to zero. What you did was, you connected and you took the zero and you took it ahead. Once you have done this, the temporary, if you remember, it moved ahead. Let's move the temporary. Temporary will always move. Maybe we can do it afterwards. As a common step, we can. Done. What if it's a one? What if it's a one?"
+    },
+    {
+      "chunk_id": "L243_C14",
+      "start": 949.62,
+      "end": 1028.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=949s",
+      "text": "Maybe we can do it afterwards. As a common step, we can. Done. What if it's a one? What if it's a one? In that case, very simple, one dot next will be temp and one will be temp. Perfect. Or else, two dot next will be temp. It's super easy, isn't it? And two will be temp. Once the conditionals are done, once you've segregated the node, connected the node, what is the next job? Make sure temporary goes to the next because I'll have to go to the next node and the while loop completes. So this will make sure, this while loop will make sure you have this, you have this and you have this. After this is the main job that you will have to do. Tell me one thing. The zeros next should be pointing to this one, which is basically one heads next. What if, what if I don't have any one? I don't have any one. In that case, I will just have the dummy one head. I'll just have the dummy one head and the next will be pointing to null and the next will be pointing to null. So I cannot point this to here because if it doesn't have any one and the zero will be connected to two. Agreed."
+    },
+    {
+      "chunk_id": "L243_C15",
+      "start": 1028.66,
+      "end": 1106.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=1028s",
+      "text": "I cannot point this to here because if it doesn't have any one and the zero will be connected to two. Agreed. Agreed. So can I say this? Can I say this? Right after this, I need to make sure zero is connected. So can I say zero because zero is the last. Zero's next will be if one head of next is there. If it is there, if it is not null, then I will connect it to one head dot next basically saying why one head dot next because one head is your dummy node. The next is your first node. Remember? So this is what I'll do. Make sure zero's next is connected to one heads next, which is this. Perfect. But what if this is null? Then you will say, hey, can you go and connect to two head next? You might have one more question. Hey, hey, Stryber, what if there is no two head? What if I don't have twos, I don't have ones? It's fine. In that case, this will be pointing to null, isn't it? This will be pointing to null. So basically zero will end up pointing to null, which is okay. Which is okay. I don't have ones. If it doesn't have twos, it will eventually point to null, which is okay. Right?"
+    },
+    {
+      "chunk_id": "L243_C16",
+      "start": 1106.46,
+      "end": 1175.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=1106s",
+      "text": "Which is okay. I don't have ones. If it doesn't have twos, it will eventually point to null, which is okay. Right? I just need to make sure if there are no ones, I connect it to two. Two can be null. I don't mind because if there are no twos, I will connect it to null. Might be thinking one more thing. Hey, Stryber, what if there are no zeros? In that case, the dummy zero head will be pointing to this. Fair enough. Okay. If there are no zeros, it will be pointing to this, which is okay because zero will be here and zeros next will be pointing to this or zeros next will be pointing to this, which is okay. Doesn't matter. We've understood this. So we have done the job for zero. We have made sure it is either connected to one or it is either connected to two and if they are null, it will be connected to null. What is the next job? It's for the one. It's for the one. So can I say one next is what I'll have to think of? Okay, let's see. The next should be connected to this should be, which is basically two heads next. Just write it. Just write it. One next will be connected to two head next. Why two head next? Why two head next? Very obvious, very obvious. Two heads next is this one. So it should be connected to this."
+    },
+    {
+      "chunk_id": "L243_C17",
+      "start": 1175.46,
+      "end": 1252.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=1175s",
+      "text": "two head next? Why two head next? Very obvious, very obvious. Two heads next is this one. So it should be connected to this. What if there are no? Fine. If there are no, that's fine. It will be connected to null, which is okay. Which is okay. Right. Okay, fine. What if there is no ones? In case there are no ones, in case there are no ones, the one head gets connected to this, which is okay. I don't mind. I don't mind. So all the cases are covered. You can take pen and paper and you can try out. What is the next job? It's for the two. Two is next, no matter what it is, it will always be null. It will always be null because the last will be pointing to null because the last will be pointing to null. What if there are no twos? Fine. The twos, this one will be pointing to null. Doesn't matter. Doesn't matter. Once this is done, what is your job? Your job is to get the new head and what will be the new head? Can I say the new head will be the zero dummy head that you took? That's next. Can I say this? I can. Why? Because either this one will be your new head or else if this is pointing to this, that"
+    },
+    {
+      "chunk_id": "L243_C18",
+      "start": 1252.74,
+      "end": 1321.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=1252s",
+      "text": "say this? I can. Why? Because either this one will be your new head or else if this is pointing to this, that will be a new head or if this is pointing to this, this will be a new head. That's why I said even if this is empty, let it point to this. It's fine. Let it point to this. It's fine because these will be the new heads if there are no zeros. So the new head will be this one. You can return the new head. And in case you're using C++, netto free, right? So make sure you delete all the dummy heads that you take. All the dummy heads should be deleted. Please make sure you delete all the three dummy heads, which is basically this one, this one, and this one. You free up the space. Done and dusted. I know you might still be thinking about this. Take a pen and paper, take multiple examples. Take examples where you just have zeros. Take examples where you just have zeros and ones. Take examples where you just have ones and twos. Try with all examples and you will understand these things in much, much deeper way. This is how I did learn. I used to take pen and paper, just wrote down multiple examples and then figured out, okay, it's working. That's how you learn. Okay. What would be the time complexity?"
+    },
+    {
+      "chunk_id": "L243_C19",
+      "start": 1321.74,
+      "end": 1390.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=1321s",
+      "text": "just wrote down multiple examples and then figured out, okay, it's working. That's how you learn. Okay. What would be the time complexity? Can I say this is nearly big of n, nearly not exactly big of n because I'm doing a single travesty. After this, these are link changes. So I won't count it. So can I say I'm actually doing it in big of n and using the same nodes. So big of one space complexity. Indeed. So I've optimized a two-pass solution into a one-pass solution. So let's quickly check out the code in the code editor. As you can see, the edge case is written right at the start. After that, the dummy nodes, right after that, the nodes for traversal. We traverse, right after that, the linking of zero to one to two, the new head and make sure this is just for C++. You delete, you free up the space. Once you've done this, you return the new head and I'll hit the submit button. The Java, the Java, Python, JavaScript codes are pretty much similar. You'll find the cool link in the description in case you want to have a reference for it. So if you're still watching, I'm very, very sure that you've understood everything. And if that is the case, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video."
+    },
+    {
+      "chunk_id": "L243_C20",
+      "start": 1390.58,
+      "end": 1393.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=gRII7LhdJWc&t=1390s",
+      "text": "a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

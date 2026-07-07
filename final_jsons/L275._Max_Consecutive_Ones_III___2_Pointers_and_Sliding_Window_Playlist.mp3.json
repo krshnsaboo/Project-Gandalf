@@ -1,0 +1,176 @@
+{
+  "lecture_id": "L275",
+  "lecture_number": 275,
+  "lecture_title": "L4. Max Consecutive Ones III | 2 Pointers and Sliding Window Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk",
+  "chunks": [
+    {
+      "chunk_id": "L275_C1",
+      "start": 0.0,
+      "end": 79.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=0s",
+      "text": "So, let's continue with the strivers A to Z DSI course and the problem that we will be solving today will be involving the concepts of two pointer and sliding window. But before starting, everyone welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is max consecutive ones part three. So what is the problem stating? The stating that you will be given an array which contains one and zeros nothing apart from it and you will be given an integer k. So your task is to return the maximum consecutive ones given that you are allowed to flip at most k zeros. You are allowed to flip at most k zeros. Let's understand. Now when I say maximum consecutive ones, can I say these three ones are consecutive? So the length is three. So I have three consecutive ones. Can I say I have four consecutive ones? Now the problem states you can flip at most of two zeros. Now assume I flip these two zeros. What will be the length? The length will be five. I have five consecutive ones now."
+    },
+    {
+      "chunk_id": "L275_C2",
+      "start": 79.54,
+      "end": 154.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=79s",
+      "text": "these two zeros. What will be the length? The length will be five. I have five consecutive ones now. Okay. What if I flip this and this? Then I'll have six consecutive ones. Okay. What if I flip this and this? I'll have six consecutive ones. Can I do better than six? Probably not. So I'll have to figure out what is the best way to flip at most of k zeros and then figure out the length. So the length is six. You don't need to print the segment. You just have to print the length of the consecutive ones. Fine. So if this problem comes up in an interview, how can I approach this? Can I just convert this problem to finding the longest subarray with max zeros as k? Like with at most k zeros. Can I say this? Probably yes. What is a subarray? It's a consecutive portion of the array. So can I say this is a consecutive portion of the array which is of length six and this has two zeros which is under the range?"
+    },
+    {
+      "chunk_id": "L275_C3",
+      "start": 154.32,
+      "end": 233.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=154s",
+      "text": "of the array which is of length six and this has two zeros which is under the range? So maybe I can just convert the question to finding the longest subarray with at most of k zeros. Maybe I can just rename this with at most k zeros. I can do that, right? So what will be the brute force? The brute force will be to generate all the subarrays and figure out which is the longest subarray that has at most k zeros, not beyond it. Okay. How can I generate all the subarrays? I know that the first subarray is one itself. The next subarray is one, one and the next subarray is triple one. The next subarray is this one. The next subarray is this. The next one is this. The next one is this. The next one is this. So basically I'm writing down all the subarrays that has the starting value as this particular one, correct? After that, I can start with this one. So this is a subarray. This is a subarray. And this is a sub array so I can generate all the subarrays. Now can I say one thing, when I have this sub array, the number of zeros are zero. When I have this about it, the number of zero zero. Still, zero. When I have this, the number of zeros is still zero."
+    },
+    {
+      "chunk_id": "L275_C4",
+      "start": 233.02,
+      "end": 301.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=233s",
+      "text": "I have this about it, the number of zero zero. Still, zero. When I have this, the number of zeros is still zero. When I have this, the number of zeros are one. When I have this, the number of zeros are two. When I have this, the numbers of zeros are three and I can stop over here because beyond this if I try to generate this one which includes this I cannot because I already have three zeros so I'll stop generating all the sub arrays beyond this point so the moment I get the number of zeros exceeding K I can stop so basically I can only take till here which has the starting value as this not beyond it because I'll have one more zero and that is not required at most two zeros okay for the next again I can start here I can take I can take I can take but I cannot take beyond this I cannot take beyond this so this is the formula or this is the logic that I will be applying so what I will do is I'll start with it's I need the maximum length right so I'll keep a maximum length as zero and I know the starting point will be I equal to zero because that is where I'll be starting the first sub array correct with this one and then this one"
+    },
+    {
+      "chunk_id": "L275_C5",
+      "start": 301.58,
+      "end": 375.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=301s",
+      "text": "I equal to zero because that is where I'll be starting the first sub array correct with this one and then this one and then this one and then this one and so on I know as I move keeping this one as the first element I'll have to count the number of zeros so initially the number of zeros are 1 sorry 0 and I can start the J from the I itself because if this is I I can start J then I can move J then I can move J then I can move J and that will be elongating the sub array correct if I'm starting I here J will be here then it will be here then it will be here then it will be here elongating the sub array understood what I can say is J equal to I till N and I know one thing if nums of or array of J is equal to equal to 0 in that scenario I will be increasing the zeros count correct one more thing if the number of zeros is lesser than equal to K what is the length the length of the sub array all of you know J minus I plus 1 typical sub array if I is here J is here this particular length is J minus I plus 1 that's what I have written and what I"
+    },
+    {
+      "chunk_id": "L275_C6",
+      "start": 375.18,
+      "end": 452.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=375s",
+      "text": "I is here J is here this particular length is J minus I plus 1 that's what I have written and what I can do is I can say okay max length equal to max of max length comma length done or else if the zeros have exceeded I can straightaway break and stop the first for loop ends and the second for loop ends and eventually you can print the max length what is the time complexity I'm running couple of loops somewhere near about n square not exactly n square because the first loop is running for n the next loop is not running for exactly n it's somewhere near about it so I can say that the time complexity is B go of n square and the space complexity is B go of 1 because I'm not using any external space and this is where the interviewer will not be happy because you're taking a lot of time and he'll ask you to optimize this so I need to optimize my brute force right the brute force was taking n square I have to optimize it somewhere near about n correct it involves sub array so what is the first algorithm that comes to your brain two-pointer and sliding window yes sub array and you'll have to figure out a complexity of around B go of n thereby you should start"
+    },
+    {
+      "chunk_id": "L275_C7",
+      "start": 452.02,
+      "end": 526.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=452s",
+      "text": "sliding window yes sub array and you'll have to figure out a complexity of around B go of n thereby you should start thinking of the sliding window okay how does sliding window work very simple we are looking for zeros so let's assign something like zeros which keeps a track initially keep it as zero left pointer right pointer correct that is how sliding window starts so we have two pointers one is the left one is the right so what am I saying as of now this portion is the sub array that I'm considering correct how many zeros does it have is it a zero no so it has zero zeros which is lesser than the maximum so can I say this is a possible sub array I can so thereby probably I can take a max length as initially zero current length comes out to be R minus L plus 1 which is 0 minus 0 plus 1 that's 1 so max length can be updated to this and what you can do next is you can take this R and you can move it to the next again what do you have you're saying that this is your sub array and this is your 1 so the zeros will not be updated what will be updated is the value of R so 1 minus 0 plus 1 that gives you a"
+    },
+    {
+      "chunk_id": "L275_C8",
+      "start": 526.9,
+      "end": 606.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=526s",
+      "text": "will not be updated what will be updated is the value of R so 1 minus 0 plus 1 that gives you a length of 2 so max length gets updated to 2 okay let's move on now so let's move on so when I move on I'll reach up again a 1 so the zeros will so the zeros will not be updated and the length will increase so thereby the max length again increases again makes sense because this is the sub array and it has zero zeros so this is possible perfect let's move this time I'm standing at this one so the zeros increase but keep in mind the zeros are still lesser than the maximum allowed so this is possible what is the length the length is 4 so I can say that the max length has been updated to 4 next time I'll take R and I'll move it here this time I'm considering this particular sub array and it has a 0 so thereby the number of zeros will increase to 2 and again can I say that the length will be updated to 5 I can so update the length to 5 next time the R moves here at the R moves here the number of zeros will increase to 3 a number of zeros will increase to 3 and thereby I cannot consider this sub array because the maximum that I'm allowed is 2 I cannot consider this sub array"
+    },
+    {
+      "chunk_id": "L275_C9",
+      "start": 606.02,
+      "end": 682.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=606s",
+      "text": "to 3 and thereby I cannot consider this sub array because the maximum that I'm allowed is 2 I cannot consider this sub array because it has 3 zeros so what do I need to do definitely if I have this portion I need to trim off some zeros so that these zeros get back to the maximum allowed I need to trim off 3 to somewhere to 2 because 2 is the maximum allowed what do I need to do this is where sliding window comes in sliding window says okay this is the window that you were considering now you cannot on your naked eye what is the window that you can consider this one this one correct never move the R point as of now try to shrink it so thereby the L has to somehow move here that's what you'll do it'll be like okay where is L? L is here is that a 0? no that's not a 0 move L to the next is that a 0? no move L is that a 0? no move L is that a 0? yes that's a 0 decrease the number of zeros decrease the number of zeros and move L so the moment you reach here the moment you reach here what do you see you see that you have the number of zeros under control and if that is the case you can again update the length what will be the"
+    },
+    {
+      "chunk_id": "L275_C10",
+      "start": 682.6,
+      "end": 755.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=682s",
+      "text": "you have the number of zeros under control and if that is the case you can again update the length what will be the length this time that's 2 and that's not greater than max length so you don't do anything and you start moving R again perfect so I'll move R to here so I'll move R to the next one it has a 1 okay so this is the sub-array that I'm considering 3, 3 is the length which is not greater nothing to do let's move R I'll move R to here okay when I move my bad I'll move R to the next when I move R to here again a 1 what is the length 4 number of zeros 2 doesn't exceeds max length so I'll move again R so when I move R to here what is the number of zeros 2 what is the length that I'm considering 5 and that's not greater than max length so I'll not be updating it perfect let's move R again so this time when I move R this is the sub-array that I'm considering and the number of zeros are still 2 what is the length 6 so I will be updating the length perfect what is the next R will be moving to 0 and this time the zeros again increase to 3 so the zeros are increasing to 3 that means I cannot consider this sub-array"
+    },
+    {
+      "chunk_id": "L275_C11",
+      "start": 755.52,
+      "end": 832.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=755s",
+      "text": "0 and this time the zeros again increase to 3 so the zeros are increasing to 3 that means I cannot consider this sub-array this sub-array cannot be considered and if it cannot be considered what do I need to do I need to remove zeros from the left from the left that is 2 pointer okay is that a 0 yes so the zeros will decrease and I'll say okay I'll get rid of you and if I get rid of you I get this sub-array just super which is possible and this is possible what is the length 6 doesn't exceeds let's move R so the moment you move R it goes beyond so you stop then in there and when you stop you'll have your max length is 6 that is your answer this is how the sliding window moves you keep on moving you keep on moving and the moment you encounter someone you trim it down trim it down trim it down you trim from the left that is 2 pointer that is sliding window always start with L and R got it so I'll have to write down the pseudocode now it'll be given the list let's call it as nums and it'll be given the value K so I'll have to write down the pseudocode how do I start I know I need max length so maybe keep max length"
+    },
+    {
+      "chunk_id": "L275_C12",
+      "start": 832.96,
+      "end": 911.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=832s",
+      "text": "so I'll have to write down the pseudocode how do I start I know I need max length so maybe keep max length as 0 I know I need L equal to 0 I know I need R equal to 0 what do I initially do I have L here I have R here correct so what I do is I start like and you know one thing we'll keep on going till it doesn't exceeds that's how the R moves R keeps on moving R keeps on moving R keeps on moving I know that for sure so initially when the R is here that's a 1 but I need to check I need to check and I need to keep a track of zeros as well so zeros will be 0 so I'll be like okay if nums of R if that is equal to equal to 0 let's increase the count of zeros perfect the handwriting is super bad so I'll be rewriting it slightly bit okay so the zeros increase now what is the next check if I've increased the zeros of it being the 0 then we'll have to check remember this condition I will be showing you that condition wait when R was here so imagine you get this one so the number of zeros will exceed so"
+    },
+    {
+      "chunk_id": "L275_C13",
+      "start": 911.64,
+      "end": 989.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=911s",
+      "text": "you that condition wait when R was here so imagine you get this one so the number of zeros will exceed so remember if the number of zeros have exceeded a in that scenario what did you do you took off L you took off L you kept it moving you kept it moving so please do it now you'll be like okay if array of left is equal to equal to 0 I'll do a 0 minus minus and the same time I'll increase left so any moment I get a 0 I'll trim down the zeros and if it comes down to lesser than equal to K lesser than equal to K I'll stop moving so eventually L will be stopping over here that's when you get the number of zeros to be lesser than equal to K perfect so this condition will make sure that the left is always in place from the left what is the next case the next case is very simple you just have a check hey listen if the zeros are lesser than equal to K in that scenario please make sure that the length is you know the length is R minus L plus 1 and at the same time compare it with the max length which is max of length comma max of length and that will be your"
+    },
+    {
+      "chunk_id": "L275_C14",
+      "start": 989.92,
+      "end": 1069.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=989s",
+      "text": "same time compare it with the max length which is max of length comma max of length and that will be your answer so I have the check and that is completed what I can do is before completing the while loop I can move the right pointer one place ahead and then I can complete the while loop because the right pointer always moves to the next and eventually I can go ahead and return the max length and I can complete the function now the question is what is the time complexity what is driving the complexity there's a while loop I'm very sure it has been driven by this capital R correct this capital R so the capital R is driving and it is going till the last so the R starts here and goes till here that's for sure so I know one thing there's a big O of n involved you might be thinking okay inside this while loop there is another while loop but the question to you is is the while loop always running for big O of n type no it doesn't what can be the possible scenario sometime this L will run for this much then for this much then for this much small small small not not a n always not n always small small small"
+    },
+    {
+      "chunk_id": "L275_C15",
+      "start": 1069.92,
+      "end": 1141.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=1069s",
+      "text": "then for this much then for this much small small small not not a n always not n always small small small right the worst possible scenario could be something like this imagine you have one one one one one one one and then a zero and then a zero so what happens is you take L you take R and eventually when the R reaches here the number of zeros are two and imagine K is one take this case what happens is when R reaches here the number of zeros are two so the L starts here L goes here L goes here L goes here here here here and for this zero it reduces this to one and then it goes here so at max it will go like big O of n overall overall so I can say at max it will be big O of n plus n which is big O of 2n because this L can at max travel for this index this index this index this till the last at max it can travel for n indexes not beyond it and n throughout the journey throughout the journey thereby the time complexity is big O of 2n and the space complexity is big O of 1 because I'm not using any external space this time the interviewer might be happy with this a lot of interviewers will be happy with this but"
+    },
+    {
+      "chunk_id": "L275_C16",
+      "start": 1141.08,
+      "end": 1217.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=1141s",
+      "text": "not using any external space this time the interviewer might be happy with this a lot of interviewers will be happy with this but again if you're going for tougher companies they might ask you to optimize big O of 2n they might ask you to remove this internal while loop and this is when we will move to the like the most optimal solution so the most optimal solution also uses a sliding window but will be slightly smarter this time so I'll start with L we'll start with R at the 0th index I'll keep the track of zeros and that's zero I'll also keep the track of max length which is initially zero so initially I'm over here and that's a one so zeros will not increase so figure out the length to be one so the max length gets updated to one and then what you do is you take the R and you move it to the next again it is a one so zeros will not increase and the length will be two so the max length gets updated to two next the R moves here and this time it's a one zeros will not be updated and the max length gets updated next time the R moves here and R moves here the zeros gets updated but but but it is still lesser than equal to 2 it's still lesser than equal to 2 so what happens the max length gets updated to"
+    },
+    {
+      "chunk_id": "L275_C17",
+      "start": 1217.2,
+      "end": 1293.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=1217s",
+      "text": "but it is still lesser than equal to 2 it's still lesser than equal to 2 so what happens the max length gets updated to 4 what is what is the next time the R moves here when the R moves there it's a zero so zeros gets updated to 2 the length gets updated to 5 because two zeros are permitted what is the next thing the R moves here now this time the zeros gets updated to 3 at the zeros get updated to 3 I'm saying that this particular sub array has three zeros I need to trim off something from the left and in the previous algorithm we took the L entirely till here to trim off this particular zero to trim off this particular zero we took the L entirely to that index but over here we will not be doing that so we did find a zero will we will increase the count right and then we see a one over here so what we will do is we will not trim down it and we'll just be moving the L by one place we will just be moving the L by one place in doing this what we have succeeded in doing is we knew that the max length is 5 I'm not exceeding that sub array length it is still length 5 it doesn't meets the condition but I am not"
+    },
+    {
+      "chunk_id": "L275_C18",
+      "start": 1293.48,
+      "end": 1367.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=1293s",
+      "text": "is 5 I'm not exceeding that sub array length it is still length 5 it doesn't meets the condition but I am not allowing it to go beyond 5 because when L was here this was of a length 6 and the answer could have been updated I will not allow the answer to be updated till I till I get a 0 under 2 I'll not allow the answer so thereby I'm saying 5 is the answer now okay I'll move here and I'll still keep the answer to be 5 I will not allow that answer to increase okay I'm like fine don't allow so let's move on when I move are here that's a 1 so the zeros are still 3 the zeros are still 3 and the sub array in picture is of length 6 but I will not be allowed to update because the zeros are still 3 so what I'll do is okay this is a 1 so zeros cannot be decreased I'll still move again I'm not allowing you to go beyond 5 I'm not allowing you okay let's move R so when R goes here it's a 1 the zeros are still 3 I cannot update so what I'll do is I'll move L I'll move L but that was a 1 that was trimmed off that was a 1 that was trimmed off so the"
+    },
+    {
+      "chunk_id": "L275_C19",
+      "start": 1367.36,
+      "end": 1446.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=1367s",
+      "text": "L I'll move L but that was a 1 that was trimmed off that was a 1 that was trimmed off so the zeros still stay as 3 so the zeros still stay as 3 and this time I have I okay I'm still not allowing it fine let's move R this time when I move R where was it yes this time when I move R here I get the length as 6 and it has zeros as 3 okay L will be like length 6 no I'll move ahead so when it moves from here to here there's a 0 there's a 0 so this will reduce and when this reduces I'm like yeah this is possible this is possible the length is 5 and I'll keep it as 5 perfect next I'll move R so when the R reaches here this time the number of zeros are 2 and the length is 6 so I can update it to 6 I'll be updating it to 6 I'll not be moving L anymore so what happened was L kept on going kept on going kept on going he's like I'm not gonna allow you to increase your size till I get a 0 and reduce myself interesting next the R goes here so when the R goes here this time again this is a 0 so the zeros will increase to 3 so"
+    },
+    {
+      "chunk_id": "L275_C20",
+      "start": 1446.02,
+      "end": 1520.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=1446s",
+      "text": "goes here so when the R goes here this time again this is a 0 so the zeros will increase to 3 so when the zeros increase to 3 what happens is I'm saying this sub array is not valid so L will be like okay I'll have to shrink I'll have to shrink but I know I can only shrink by one piece so I'll shrink by one piece and there was a 0 that was removed so decreased now this sub array can be considered because the zeros are 2 so the max length still stays as 6 pretty impressive right that's it that will be it for this one and if I have to write down the pseudo code it's very very very simple where's the exact same code we'll just be doing very minor changes so function list of nums that's given to you and the K so you take an L you take a R you take your zeros and you take the max length to be 0 this time I'll be starting from R and I'll be going till the size perfect what is the next thing that I'll do I'll be like okay I'm going till size first thing I'll do is a listen if nums of R is equal to equal to 0 can you do a zeros plus plus"
+    },
+    {
+      "chunk_id": "L275_C21",
+      "start": 1520.26,
+      "end": 1593.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=1520s",
+      "text": "I'll do is a listen if nums of R is equal to equal to 0 can you do a zeros plus plus or you can convert this statement to something like zeros plus equal to not of nums of I because not means you know 0 will be converted to 1 so that's the other way of writing you'll find a lot of people writing it but don't write that in an interview we usually write readable code that's not readable okay now what is my next step if the zeros have exceeded if the zeros have exceeded K I know one thing I'll have to take down I'll have to take it down from L so I'll be like a listen if nums of left is equal to equal to 0 I will be trimming down zeros minus minus and doesn't matter if it got trimmed or not I will be moving the left I will be moving the end and after this I'll be checking hey listen if the zeros are under K then I'll find out the length which is R minus L plus 1 and I'll"
+    },
+    {
+      "chunk_id": "L275_C22",
+      "start": 1593.78,
+      "end": 1668.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=1593s",
+      "text": "zeros are under K then I'll find out the length which is R minus L plus 1 and I'll update max length equal to max of max length comma length so after this you can simply move the right which is R plus plus and you can finish off the while loop and after that you can return the max length and that is done so this is the simple version and this is how we can eliminate the while loop it works because you're not allowing it to extend the size the R is moving but I'm saying hey I'm not gonna allow you to extend your size still stay at size 5 or size whatever it is the largest size when I get a 0 then I stay constant then you can move then you can expand that's the algorithm behind eliminating the while loop so time to discuss the time complexity what will be that so there's a while loop there's a definite big O of n now is there an inner while loop now there is no inner while loop so this time if I take an example like this where assume K is 2 so what happens is you're keeping L here you're keeping R"
+    },
+    {
+      "chunk_id": "L275_C23",
+      "start": 1668.22,
+      "end": 1743.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=1668s",
+      "text": "take an example like this where assume K is 2 so what happens is you're keeping L here you're keeping R here and R moves R moves R moves R moves the number of zeros will be 1 then R again moves the number of zeros will increase the R again moves this time the number of zeros is 3 is 3 correct so thereby you cannot consider this you'll have to trim down some zeros you'll have to trim down and this is the zero that will be trimmed correct but over here in this particular algorithm what we are doing is we are saying the max the max length is this much which is 6 okay so thereby just move L and that's not a 0 that's not a 0 that's not a 0 so let's keep the length as 6 itself and then please move R and the moment R moves out you stop you stop and in the previous algorithm what you did was you took L from here till this portion till you got a 0 and you reduce this to 2 you went till that but this doesn't helps because even if you're moving this L to here and then you're reducing and then you're moving the L here the size that you get"
+    },
+    {
+      "chunk_id": "L275_C24",
+      "start": 1743.86,
+      "end": 1796.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=3E4JBHSLpYk&t=1743s",
+      "text": "you're moving this L to here and then you're reducing and then you're moving the L here the size that you get is 2 which is never going to be greater than this so that's why the algorithm works you can take some more examples and you can try on it yourself like try it yourself thereby the time complexity is we go off n because we are not moving L extremely to the right what about the space complexity that is we go off 1 so that will be it for this one so this was the pseudo code in case you want your language specific code you can find them below so with this this will be it for this one and if you're still now watching I hope you've understood everything and if that is the case please please do consider giving us a like and if you're new to our channel do consider subscribing to us as well but this I'll be wrapping up this video let's be in some other video till then goodbye take care whenever your heart is broken don't ever forget your golden"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "lecture_id": "L186",
+  "lecture_number": 186,
+  "lecture_title": "DP 5. Maximum Sum of Non-Adjacent Elements | House Robber | 1-D | DP on Subsequences",
+  "youtube_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY",
+  "chunks": [
+    {
+      "chunk_id": "L186_C1",
+      "start": 0.0,
+      "end": 79.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So welcome to the fourth lecture of dynamic programming playlist. What's the problem? Today's problem is going to be maximum sum of non-adjacent elements. Again, one kind of 1DDP that we will be solving. I'll be following the same pattern. You might have solved this problem previously, but the way I'll be teaching you will be something very, very, very different. So please, please do watch the video till the end to understand all the logic. Don't think that if you understand memorization, it's done. You have to understand tabulation. You have to understand space optimization in order to be the best. Okay. So let's, let's understand the question. Basically it states you will be given an array of N integers. That means you're given an array, which consists of N integers. Okay. So you're supposed to return the maximum sum of the subsequence. Now remember, you have to pick up a subsequence, which gives you a maximum sum, but there's a constraint in the subsequence. None of the elements can be adjacent from the array. Okay. So for an example, if I look on this test case, which is one to four, you can't pick something like one comma two, or you can't pick something like two comma four because they're adjacent. Got it. So probably you can pick something like one and four, which gives you the maximum sum"
+    },
+    {
+      "chunk_id": "L186_C2",
+      "start": 79.84,
+      "end": 153.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=79s",
+      "text": "two comma four because they're adjacent. Got it. So probably you can pick something like one and four, which gives you the maximum sum five. That's what the maximum sum will be like over here. You can't pick something like four and nine together. You have to pick one of them. So probably I'll pick a nine and then I'll pick two to get the maximum sum as 11. So you'll be given an array and you'll be given the size of the array. You have to tell me what is the maximum sum that you can pick by picking up no adjacent elements in that subsequence. So what's the first thing that comes to your brain when you hear about this problem? It comes key, let's try out all subsequences. So that is something which comes to my brain is let's try out all subsequences with the given constraint. That's something which comes to my brain. And out of all these subsequences, let's pick the one with the maximum sum. Correct. I got to try out all subsequences and whichever subsequences gives you the maximum sum. We're going to pick that one as simple as that. Now the question arises, whenever we say"
+    },
+    {
+      "chunk_id": "L186_C3",
+      "start": 153.36,
+      "end": 225.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=153s",
+      "text": "the maximum sum. We're going to pick that one as simple as that. Now the question arises, whenever we say trying out all stuff, what comes to your brain? Obviously, one thing comes to your brain, which is recursion. So we're going to try out recursion. Correct. And after that, we are going to see if there are overlapping subproblems. And that's, that's, that's for the remaining part. But we have, we have understood that why recursion, because if they're asking you to try out all subsequences, we have to, and that is only doable by recursion. So how do you print all subsequences? That's, that's a big question. Before solving this question, how do you print all subsequences? So there's a technique which is known as pick and non-pick. Okay. So I have taught this entire technique in lecture six of recursion series and lecture seven in depth. So if you haven't seen both of the lectures, pause it right now. Yes. I repeat, pause this video right now. Go back to lecture six and lecture seven, understand the pick and non-pick, come back and then watch this video. If you don't watch lecture six and lecture seven, do not say me Keyes Stryver did not teach well. Okay. So we have to know this logic of pick and non-pick. Okay."
+    },
+    {
+      "chunk_id": "L186_C4",
+      "start": 225.92,
+      "end": 301.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=225s",
+      "text": "not say me Keyes Stryver did not teach well. Okay. So we have to know this logic of pick and non-pick. Okay. So I know how to write recurrence. What did it teach you? Express every recursion in terms of indexes. Okay. Make sense. Do stuffs on that index. Okay. Do stuffs on that index. Then return the best that you can get. Return the best that you can get. That is something which I know. Now over here, what is the problem? Pick subsequence with no adjacent. Remember this, with no adjacent elements. So where do you pick, where do you pick subsequence from? You pick subsequence from an array, right? You pick subsequence from an array and whenever there is an array, there has to be an index. So the first property has been satisfied that I will have the recurrence based on the index. Okay. Now there is a question, there's a constraint rather with no adjacent. How do I deal with it? Because I know how to print all the subsequences, but now there's a constraint which states with no adjacent elements. Right? So you want the maximum"
+    },
+    {
+      "chunk_id": "L186_C5",
+      "start": 301.12,
+      "end": 375.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=301s",
+      "text": "the subsequences, but now there's a constraint which states with no adjacent elements. Right? So you want the maximum sum, correct? So can I say our recursion to define something like this? F of index states the maximum sum, like the maximum sum that you can get. If you pick a subsequence from the index zero till the index, maximum sum that you can get by picking up a subsequence with no adjacent elements from zero to index. Make sense? So can I say, can I say this, that if I end up at index zero, if I end up at index zero, what will be the best thing that I can do? Like there can be a lot of things, but as of now, let's keep this aside. Let's think of the other cases because we know we're going to start from n minus one. Now in recursion, we know in order to print subsequence, you have a pick which states, take this element into your subsequence. Pick says, take this element into your subsequence. So if you take this element into a subsequence, the sum has to increase and the sum will increase by a of index. Perfect. Now tell me one thing, think on yourself. I'm saying do stuffs. You're saying, okay, what are the stuffs that I can do? I can say,"
+    },
+    {
+      "chunk_id": "L186_C6",
+      "start": 375.76,
+      "end": 446.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=375s",
+      "text": "thing, think on yourself. I'm saying do stuffs. You're saying, okay, what are the stuffs that I can do? I can say, this particular index element will be a part of my subsequence, or I can say, let's not take this and I will go. So if I decide that I will not pick, then it will be a zero plus. I decide that I will not take this, it will be a zero plus. So on stuffs, I can say, these are the stuffs that I can do. I can either take that element, take that element index into my subsequence, or I can say, I will not take this into my subsequence. These are the couple of things that I can only do. Now tell me one thing, if you are picking up an index, what is the question stating? You cannot pick up an adjacent element. So will you go to the previous index, which you generally did in 1D? Will you? Because if you go to the previous element, there will be a no option. There will be no option of picking that because you have picked up the index. So you cannot pick up the index minus one. So can I say, you will not pick index minus one. So can I directly go to index minus two? Think on this. Make sense? Because if I am picking index, I cannot pick index minus one"
+    },
+    {
+      "chunk_id": "L186_C7",
+      "start": 446.48,
+      "end": 526.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=446s",
+      "text": "I directly go to index minus two? Think on this. Make sense? Because if I am picking index, I cannot pick index minus one because the condition states no adjacent. So the transition, instead of going to index minus one and deciding what will we do for index minus one, instead of that, what we do is we say, go to index minus two. Go back to index minus two because index minus one cannot be. But this is how you can do. Now, if I decide that I'm not going to pick, if I'm not picking an index, can I pick an index minus one? Make sense? So I will say, okay, I will pick up the index. Now, can I say, this is for the current and the sum from index minus two to zero will be given by this recurrence. So this plus this will be the sum that you will get from zero till index, the maximum subsequent sum. Make sense? So can I say, the last step is written best because you want the maximum sum. So return max of pick and not pick. That's how you do it. But now still, there's a question. What if we reach somewhere around index equal to equal to zero? So if you're reaching at index equal to equal to zero at any moment, that means you have not picked up index equal to equal to one. Think on this. If you're"
+    },
+    {
+      "chunk_id": "L186_C8",
+      "start": 526.08,
+      "end": 598.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=526s",
+      "text": "equal to zero at any moment, that means you have not picked up index equal to equal to one. Think on this. If you're reaching index equal to equal to zero, that means you haven't picked up index equal to one. Thereby, you are reaching index equal to zero, right? Because if you would have picked index equal to one, then index minus two would have happened and you would have not reached. So thereby I can say that you have not picked index equal to one. So can I say, the best that I can do is pick this element because if I haven't picked up index one, I need to pick it because then only I can maximize my sum because remember, the array does not have any negative elements. Thereby, I can say I will return whatever there is, right? But what if, what if index was one and you did one minus two and you went on to a negative index? So you're running out of bounds. So there will be another edge case that you have to think in recursion. So I can say if I'm going index lesser than zero, I will be like return zero because there will be nothing else. So over here, realize what I did. In the subsequence problem, the only change that I did was I represented it as index. I picked up the element, but instead of going to index minus one,"
+    },
+    {
+      "chunk_id": "L186_C9",
+      "start": 598.4,
+      "end": 670.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=598s",
+      "text": "only change that I did was I represented it as index. I picked up the element, but instead of going to index minus one, I just did index minus two. That's a shuttle change that I did in the subsequence problem because there was a condition which stated no adjacent, right? And there was one base case where I stated if I reach this base case, I'll pick up and if I cross this base case, there is nothing else to pick up. So there'll be a couple of base cases we have to think on this and there's not pick and pick. So in this way, I have modulated the subsequence code that I've taught you in the lecture six in order to write a same similar problem with an additional no adjacent constraint. So I hope you have understood the recurrence. It's pretty straightforward. So if you talk about this recurrence, you're going to try out all the possible ways. The time complexity is definitely exponential, which is two to the power n because you'll try out all. It's not exactly two to the power n. It's going to be lesser than that. So you have to memoize it. Now, now question arises, how do you optimize recursion? You have to figure out if the recursion has overlapping subproblems. Like if the recursion has overlapping subproblems, then we can definitely memoize it, right? So it will have overlapping subproblems. So what we"
+    },
+    {
+      "chunk_id": "L186_C10",
+      "start": 670.64,
+      "end": 735.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=670s",
+      "text": "subproblems. Like if the recursion has overlapping subproblems, then we can definitely memoize it, right? So it will have overlapping subproblems. So what we will do is we'll take a very simple example, two, one, four, nine, and I'll write the index numbers as zero, one, two, three. Let's start from F of three, where F of three basically states is what is the maximum sum you can get. If you pick up a subsequence with no adjacent from the index zero to index three, which essentially means the entire array. What are the maximum sum if you pick from this? So F of three is basically stating, Hey, listen, I can definitely pick up. Okay. I can definitely pick up. So if I pick up, I will go to the F of one. Why? Because if I decide to pick up this particular guy, I cannot pick up this. So I'll go to F of one directly. That's perfect. And if I decide not to pick up, I will go to just F of two. Makes sense. Now, if you are at F of one, again, there are a couple of conditions you say I'm going to pick up. So if you pick up, you're going to go to F of minus one. And if you decide you're not going to pick up, you're going to go to F of zero. Okay. Makes sense. So right over here at F of one,"
+    },
+    {
+      "chunk_id": "L186_C11",
+      "start": 735.36,
+      "end": 798.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=735s",
+      "text": "not going to pick up, you're going to go to F of zero. Okay. Makes sense. So right over here at F of one, you have encountered an F of minus one. So if I try to write this F of one in the code, generally F of one will look something like this. And this will be calling a pick, right? Which will be, it'll be saying, let's pick this F of one, which is A of one. What was the value of A of one? Let's see. That's nothing but one. So let's pick up one. So it'll be like, let's pick up one plus F of minus one. Now if you remember, what does F of minus one signify? It signifies zero. You remember this? So this guy will be zero. So what I can say is for F of one, if you pick up, it will be one, right? And if I decide to not pick up, it will be zero plus F of zero. Correct? What is F of zero? Whenever you reach F of zero, you're going to pick that element up. Correct? Because if you remember at F of zero, what you did, you returned, you returned the array of index. So kindly, yes, kindly try to return that array of index, whatever it is. So the first element was two, so you can return it. So this will be two. Now the pick gives you one, the not pick gives"
+    },
+    {
+      "chunk_id": "L186_C12",
+      "start": 798.48,
+      "end": 860.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=798s",
+      "text": "first element was two, so you can return it. So this will be two. Now the pick gives you one, the not pick gives you two, which is the maximum. That's two. So F of one will be two. F of one will be two. Now a very simple question arises. Yes, a very, very simple question arises. What does this signify? What does F of one signify? I told you now, F of one signifies the maximum sum that you can gather if you pick up a subsequence with no adjacent elements from zero to index one. So if I just take this portion of the array, I can either pick two as a subsequence or I can either pick one because there are no other options. Because in this particular array, if I forget this, in this particular array, I can either take two as a subsequence or one as a subsequence. So thereby it is very obvious that I got two because taking two would be a better choice. I hope that makes sense. So I can say F of one give you two. So I can just erase it. So I've erased it. F of one is given as two. Now what will be F of three? F of three will say, okay, I am going to pick, what will I pick? I'll pick A of three. What's A of three? That's nine."
+    },
+    {
+      "chunk_id": "L186_C13",
+      "start": 860.16,
+      "end": 917.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=860s",
+      "text": "will say, okay, I am going to pick, what will I pick? I'll pick A of three. What's A of three? That's nine. So I'm going to pick nine plus F of one. And I'm going to pick not pick. So zero plus F of two. Correct? Zero plus F of two. I'll have to do this. So there'll be a call for F of two now. I mean, there'll be a call for F of two. So call for F of two will now go. Remember this, first F of one went and came back with a value two. So it came back with a value two. Then F of two will go. So now F of two will go. Got this. So let's quickly do the F of two and then we can wrap this up. So if I have, yes, if I have F of two, what can I say? I'll either pick it up. So if I pick it up, I'll go to F of zero. And if I decide I'm not going to pick it up, so I'll go to F of one. Now, do you see an overlapping sub problem? You do see, right? This F of one is an overlapping problem. There is no need to again, go to F of minus one, F of zero. There's no need. There is no need. So you can directly take F of one right from here, because that's the value,"
+    },
+    {
+      "chunk_id": "L186_C14",
+      "start": 917.2,
+      "end": 988.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=917s",
+      "text": "of zero. There's no need. There is no need. So you can directly take F of one right from here, because that's the value, which has already been stored. So what I can say is in F of two, if I write the pick, the pick will be, I'll pick the A of two, which is four plus F of zero. What will be F of zero? That's this particular element two. So four plus two will be six. So again, makes pretty much sense. If I decide to not pick, that'll be zero plus F of one. What's the value of F of one? Two. So which one will you prefer? The pick or the not pick? I'll be like, I will prefer the pick portion, which is six. So thereby this value gets as six. And you can easily get this F of one from here, which is two. Thereby we did not do any further recursions, overlapping sub problems. Got it? Again, what does F of two signify? Let's think on this. What does F of two signify? The sum between zero to index two. The sum between zero to index two. So if I decide, if I take this, it makes sense. It'll be preferable to take these two elements. That's why you got six as the value, because it'll be preferable to take these two guys instead of taking these two or like instead of taking this one, or instead of just taking this,"
+    },
+    {
+      "chunk_id": "L186_C15",
+      "start": 989.2,
+      "end": 1050.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=989s",
+      "text": "preferable to take these two guys instead of taking these two or like instead of taking this one, or instead of just taking this, more preferable to take these two guys. That's why you got a value as six. So at the last moment, whenever you are at F of three, let me quickly. So let me quickly write you this. Whenever you are at F of three, what will happen? There'll be a case of pick, which will say, I'll pick F of three, which will give you a value of nine. And you'll say, if I pick, I'll go to F of one. And if I do not pick, I'll go to F of two. So F of two gave you six. F of one gave you two. So nine plus two gave you 11. Zero plus six gave you six. So which one will you do? You will directly say this value will be 11. Again, make sense because you're going to pick this and you're going to pick this. So thereby the answer is 11. And you saw that they were overlapping sub problems because in order to solve F of three, we required F of one twice. And whatever the answer for F of one is computed once that can be reused because answer will never change for a particular set of array. Correct. That's all. That's how we prove that there are overlapping sub problems and how did the recursion work."
+    },
+    {
+      "chunk_id": "L186_C16",
+      "start": 1050.56,
+      "end": 1120.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=1050s",
+      "text": "a particular set of array. Correct. That's all. That's how we prove that there are overlapping sub problems and how did the recursion work. So now we can easily apply memoization to it and we can reduce the time complexity because what would be the memoization technique? Obviously, how many states are there? F of three, F of one, F of two. So can I say there are N states like states like zero, one, two, three, because there will be F of zero, F of one, F of two, F of three. So there are N states. So you can create an array of size dp of N and you can initially initialize that with minus one. And then you know the couple of steps, but the couple of steps over here, you said dp of index and you write one more step over here. If dp of index is not equal to minus one, you return dp of index. So if you just write these couple of steps, what will happen is it will change it to a time complexity of big O of N instead of the exponential one. And the space complexity will change to be go off N stack space and a big O of N array space. So that is what the memoization time complexity is still, but there is still a recursion stack space, which we have to omit. But before that, let's code this up and submit this."
+    },
+    {
+      "chunk_id": "L186_C17",
+      "start": 1120.64,
+      "end": 1185.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=1120s",
+      "text": "still, but there is still a recursion stack space, which we have to omit. But before that, let's code this up and submit this. So can I say N will be nothing but nums.size? I definitely can. So let's keep it as that way. And can I say, I will return a function which will have initially start from the last index, which is this, and we can definitely carry the nums with that. So we can surely write this. And over here we can write the function, which is int f and can I write int index vector of int, and this will be nums. And what I can definitely do is if index is equal to equal to zero, we can return zero. If index goes lesser than zero, we can return something as zero. So by the way, if index is zero, please return nums index, because we're going to pick that up. So please do that. And this will be zero. And can I say, if I pick the element, remember, it's very simple. You either pick in almost all subsequence problems, it will be always pick or you don't pick. That's as simple as that. And if you pick, you'll go to the next and this will be the, this one. And if you not pick, you will basically, it'll be basically like zero plus, if you don't pick, you will simply go to index minus one with"
+    },
+    {
+      "chunk_id": "L186_C18",
+      "start": 1185.76,
+      "end": 1254.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=1185s",
+      "text": "not pick, you will basically, it'll be basically like zero plus, if you don't pick, you will simply go to index minus one with the nums. Correct. And at the end of the day, you can say return max of pick and not pick. So if I try to run this, so you see all the test cases running, but if I submit this, you'll get a TLE. So let's quickly, quickly have a DPRA. So it's a DP vector of, now people can easily take some analyst or something like that. And minus one, and you can just pass on the DP over here. And over here, what you'll do is you'll say vector of int, and you can say int dp. Just make sure you always pass it by reference over here, dp over here, dp. And what do you do over here is step one is done. That is passing the dp as minus one. Next step is initializing, whatever the value of f of index is computed. Next step is if that state is again called, no need to do any further recursion calls. Instead of that, please use the pre-stored value because we're not going to any further do recursion calls and increase our time complexity. So if I now run this, you will see this running perfectly. And if I submit this, you'll see it is working absolutely fine. So we have learned"
+    },
+    {
+      "chunk_id": "L186_C19",
+      "start": 1254.96,
+      "end": 1325.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=1254s",
+      "text": "this, you will see this running perfectly. And if I submit this, you'll see it is working absolutely fine. So we have learned about the memetization. What's, what is the next step that I generally teach? You guessed it correctly. We're going to learn the tabulation. Yes, we're going to convert the memetization into tabulation. Step one, declare the dp array of the same size, and you can fill that with zeros or whatever you wish to. So the dp array has been filled up with, let's take the base case. That's, that's how you generally convert a memetization, right? So let's assume what's the base case. At index zero, it says a of index. So dp of index dp of zero will be of index, correct? So please, please write it. So can I say the base case will be dp of zero will be a of zero because that is what the base cases. Do I have one more base case? I do. Let's see. What is the base case? The base case states, if index is lesser than zero, then you have to return zero. So in negative indexes, you have to return zero. So can I say, uh, probably, uh, I cannot store this because it's a negative index. So can I store this in a variable where I say negative is equal to zero, like negative is zero, basically whenever there is a negative index encountered, I'll add zero"
+    },
+    {
+      "chunk_id": "L186_C20",
+      "start": 1325.2,
+      "end": 1403.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=1325s",
+      "text": "variable where I say negative is equal to zero, like negative is zero, basically whenever there is a negative index encountered, I'll add zero just, just for understanding purpose. So both the base cases have been assigned. Now let's look at the next portion. What's the next portion? Where does, uh, like if index is passed on zero, it stops over here. If index is passed on one, it goes, if index is passed on two, it goes. So, you know, you know, this, that what is tabulation tabulation by reputation, I've been saying it is bottom up. So from bottom to up, what is the base case is zero. So from zero, you'll start building. So zero you have built. So you'll start from one. So quickly start from one and you can go on till end I plus plus. Correct. Now, what does the take case? Let's write the take case. What does the take case? Take case is saying, I'll take the array of index. That is what they have written in the recursion. And they were saying F of index minus two. And I've told you, instead of F you write dp of I minus two. Let's come to this, uh, edge cases I'll come across afterwards. We will write this. What about the non-take case? The non-take case will be zero plus dp of just the previous one. And dp of I will be max of take and non-take. Do you agree with me?"
+    },
+    {
+      "chunk_id": "L186_C21",
+      "start": 1403.84,
+      "end": 1474.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=1403s",
+      "text": "zero plus dp of just the previous one. And dp of I will be max of take and non-take. Do you agree with me? You have, there's absolutely no other option, right? So everyone has agreed with us. Now I see an edge case. What is the edge case? The edge case states, if dp like I minus two, for an example, whenever I is one. So one minus two, this will go to a negative index and the case of F of minus one, you remember there was a case of F of minus one in the recursion tree. If I take you slowly, there was a case of F of minus one over here, right? That case will be encountered. So can I say, can I say probably I can write something like this, like what is the negative? The negative is zero. So if it goes to negative, then only this portion will be there because this will be plus zero if it's a negative. And if it's a, and if it is not, then I add up this. So can I say, can I say something like this? Right, right. Can I say if I is greater than one, then take plus equal to dp of I minus two. If it is, if it is like you're, you're allowed to add this because that will always be there. But if it is like, if it is I equal to equal to one, then there'll be"
+    },
+    {
+      "chunk_id": "L186_C22",
+      "start": 1474.56,
+      "end": 1551.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=1474s",
+      "text": "this because that will always be there. But if it is like, if it is I equal to equal to one, then there'll be addition of zero. So it stays as it is. And if I exceeds, like I is two, then you have to add this with this. So it automatically performs. So can I just add this line up? So just add it only if it exceeds. So if you're not do this, this will be the tabulated form. Yes, this will be the tabulated form. And if I ask you the time complexity, now we go off and space complexity, just a big off and no auxiliary stack space. That's the time complexity and the space complexity for this particular tabulation code. And I hope it was as simple as it could have been. What's the next step that I generally do? Come on guys. This is something which none of the creators does, but just space optimization. If anyone teaches you space optimization, anyone, you can come and tell me everyone teaches you my mission. Some, some will teach you my mission. Some will teach my mission plus tabulation. And some will teach you some patterns, but over here, you get everything including space optimization, which is the ultimate form of DP. Like if you don't do space optimization, you don't know deep as simple as that. Like if you're, if you're understanding how to do space optimization,"
+    },
+    {
+      "chunk_id": "L186_C23",
+      "start": 1551.92,
+      "end": 1627.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=1551s",
+      "text": "you don't do space optimization, you don't know deep as simple as that. Like if you're, if you're understanding how to do space optimization, you actually understanding DP in depth, that last two states and so on and so on. Okay. So let's analyze over here in order to compute DP of I, what am I requiring? I'm requiring a DP of I minus one and I'm requiring a DP of I minus two point to note, point to note. If I put dots again, our famous dots, if I'm computing any, I let's, let's for an example, take any, what am I requiring? I'm requiring I minus one's value and I minus two's value. As of now, where are they stored at DP? I minus two and DP I minus one. As of now, they are stored at any particular array. Do I require I minus three? No, Baba, no. Do I require I minus four? No, Baba, no. Do you require I minus five? Give me the last two and I will do my job. So I say, Hey, you just require last two. So you require just two space. You don't require a huge array because in order to compute this, you just require these guys. And the moment I plus plus happens and for loop moves ahead to this guy, then you'll be requiring these two guys. And after this, when I"
+    },
+    {
+      "chunk_id": "L186_C24",
+      "start": 1627.36,
+      "end": 1703.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=1627s",
+      "text": "plus plus happens and for loop moves ahead to this guy, then you'll be requiring these two guys. And after this, when I move, so then we'll be recording these two guys. So if I can somehow carry the last two guys, my job will be done. And that's the trick of space optimization. So what I will say is, okay, instead of storing them in some DP, can I store them in a couple of variables, previous and previous to other like, yeah, you can. So let's store them now. Who is we were stopping you. So I will store them into previous and previous too. And I can see this as good. I, what will happen in the next step? I will move here. So this car, hi, hi. Like the previous I that was used will become someone's previous. Now for this, I know this guy will be the previous now. Yeah. And the previous will become previous to yeah. So can I again formulate the same logic that we have used in lecture two, lecture three, lecture four. So previous to will be previous. Previous will be car. I with complete proof. I have done the space of the my Jason. So can I do this now? Can I say instead of this, probably I can keep previous now instead of negative, I can keep previous to, because that's what zero and Z minus one will be."
+    },
+    {
+      "chunk_id": "L186_C25",
+      "start": 1704.4,
+      "end": 1782.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=1704s",
+      "text": "probably I can keep previous now instead of negative, I can keep previous to, because that's what zero and Z minus one will be. So can I over here, right? Previous to know I can, can I over here, right? Something as previous. I can, can I over here, right? As taken on, it will be there again. Sorry. They can not take will be there. Can I over here, right? As I can, instead of ending over here, instead of ending over here, I will write previous to becomes previous and previous becomes car. I that's it. At the end, where will be your answer? Like generically, the answer is that DP of N minus one. So can I say this for loop ends at whenever I is N. So whenever I is at N, whenever I is that N the last N minus one, where will be the value? Where will be the value? This is I minus one. Where will be the value previous, previous. Yeah. Yeah. Yeah. At previous. So you understood how to do a space optimization. Now, if I talk about the time complexity, we solved this particular problem in a big go off N and a space complexity of big off one. Amazing. Right. So what are you waiting for? Let's quickly go to this up. So what do I require?"
+    },
+    {
+      "chunk_id": "L186_C26",
+      "start": 1782.24,
+      "end": 1861.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=1782s",
+      "text": "big off one. Amazing. Right. So what are you waiting for? Let's quickly go to this up. So what do I require? I require a previous for sure, which is a of zero or nums of zero over here. I require a previous to for sure, which is zero in this case. And I start from zero. I gone to this and I say that take will be definitely by the way, just to make sure you start from one. So you say it'll start from nums of I take, and you will only take the previous guy. If it's a db of I minus two, if it's greater than one, what are we non-take? Non-take will be zero plus db of I minus one, which is previous. Can I say the curr I, can I say the curr I will be max of take not take I can. Can I see a previous two will become previous? I can. I definitely can. There's no doubt in that. And can I see the previous will not become curr I at the end of the day? Can I say I have to return just the previous and that'll be my answer. So if I just erase this off now, and if I try to run this, you will see this running fine. It goes for the summation. Bingo. Works fine. Amazing. So if I give a summary of the entire today's lecture,"
+    },
+    {
+      "chunk_id": "L186_C27",
+      "start": 1861.76,
+      "end": 1929.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=1861s",
+      "text": "see this running fine. It goes for the summation. Bingo. Works fine. Amazing. So if I give a summary of the entire today's lecture, it was, we learned something as subsequence pick or take or not take or pick or not pick technique. And then we applied a constraint on that because we did know about the pick and not pick technique, but we applied an additional constraint and understood how to solve it. After that, we created the tabulation and we noticed that there was I minus one and I minus two only being used. Thereby we converted it into a space optimization. So if you have understood the entire stuff, please, please, please write us in the previous videos, there was around 7,000 to 8,000 views. That's hardly 80, 90 people writing us. Please. Yeah. I request you to write us because it does take a lot of effort. It does takes a lot of effort to make these kinds of videos. And if you don't support, how will I maintain consistency? Right. So please, please do write, even if you're watching it after the DP series has been completed, still make a point that you write us because whenever I see people writing us, that motivates me that, okay, I'm teaching and people are understanding. And yeah, just do not forget to like, like this video. Now, please, please do subscribe to us because I do put very, very genuine content on this channel."
+    },
+    {
+      "chunk_id": "L186_C28",
+      "start": 1929.92,
+      "end": 1933.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=GrMBfJNk_NY&t=1929s",
+      "text": "forget to like, like this video. Now, please, please do subscribe to us because I do put very, very genuine content on this channel. And with this, let's wrap up this video and meet in the next one."
+    }
+  ]
+}

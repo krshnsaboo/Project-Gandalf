@@ -1,0 +1,358 @@
+{
+  "lecture_id": "L064",
+  "lecture_number": 64,
+  "lecture_title": "BS-20. Minimise Maximum Distance between Gas Stations | 3 Approaches | Heap | Binary Search",
+  "youtube_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA",
+  "chunks": [
+    {
+      "chunk_id": "L064_C1",
+      "start": 0.0,
+      "end": 78.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=0s",
+      "text": "So let's continue with our binary search failures but before that, hey everyone welcome back to the channel. I hope you guys are doing extremely well. So the problem that we are going to solve today is minimizing the maximum distance to gas stations. Now what does the problem state? The problem states that you'll be given an array which will be containing n integers. Now these n integers will be representing the coordinates of n gas stations. Now over here n is 5. So the first gas station is at the coordinate 1. The second gas station is at the coordinate 2. The third one is at 3. The fourth one is at 4 and the fifth one is at 5. That is not necessary that they will be in consecutive order like 1, 2, 3, 4, 5. They can be something like 1, 13, 17, 23 as well. It is not necessary like 1, 2, 3, 4, 5, 6, 7, 8. It can be in anything like 1, 13, 100, 1000. It can be anything. But the only thing that is given to us is they will be in sorted order. Like all the coordinates will be in sorted order. So you are given the coordinates of n different gas stations. Now what is your task? Your task is to place k new gas stations. So in this example you have to place 4 new gas stations."
+    },
+    {
+      "chunk_id": "L064_C2",
+      "start": 78.16,
+      "end": 152.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=78s",
+      "text": "your task? Your task is to place k new gas stations. So in this example you have to place 4 new gas stations. And in placing them what you have to do is you have to minimize the maximum distance between any two gas stations. I can give you examples. Imagine I say that I will place 4 new gas stations in this manner. 1, 2, 3, 4, 5. They will stay as it is and I will end up placing them at 6, 7, 8, 9. Now this is a way in which I can place the gas stations like the new 4 gas stations. If I do that, what will be the difference between any two consecutive gas stations? It's 1, it's 1, it's 1, 1, 1, 1, 1, 1, 1. Any two consecutive gas stations has a maximum distance of 1 can I say. Has a maximum distance of 1. So if I go ahead and place it like this, the answer will be 1. Can I do something different? Probably yes. What if I do something like this? I place 1, like the 1 will be at 1. And imagine I place it at 1.25. You can place it at decimal coordinates as well. Then I place 1 more at 1.5, 1 more at 1.75 and then at 2, 3, 4 and then another at 4.5 and another at 5. So I have placed 4 new coordinates, 4 new gas stations."
+    },
+    {
+      "chunk_id": "L064_C3",
+      "start": 152.18,
+      "end": 230.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=152s",
+      "text": "at 2, 3, 4 and then another at 4.5 and another at 5. So I have placed 4 new coordinates, 4 new gas stations. One over here, one over here, one over here and one over here. And the existing 5, you cannot change them. You can only determine the coordinates of the 4 gas stations that you have to place. So if I place them, the difference is 0.25, 0.25, 0.25, 0.25, 1, 1, 0.5, 0.5. What is the maximum among all? The maximum is 1. So the maximum is 1, the answer will be 1. So you have to find out the maximum distance. So that will be 1. Okay, so for this also the answer is 1. Can I do something different? Probably yes. What if I go ahead and say 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5 and 5. Now if I try to figure out the difference between two consecutives, it's 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5. Each of the consecutives have a difference of 0.5. So what is the maximum? The maximum is 0.5. Can you do better? You can try out but you cannot do better. Like I tried out over here by making sure that the difference is 0.25 but eventually the previous ones had a difference of 1."
+    },
+    {
+      "chunk_id": "L064_C4",
+      "start": 230.72,
+      "end": 302.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=230s",
+      "text": "tried out over here by making sure that the difference is 0.25 but eventually the previous ones had a difference of 1. So I have to make sure that I have to place it in such a way that any two, if I pick up any two, the max distance has to be minimized, has to be minimized. In this case it is 0.5. If I place them in between of everyone, the max distance will be 0.5 and that's the minimum I can do. I cannot go anything beneath 0.5. So what do you have to return is 0.5. Yes, that is what you have to return. So in questions where you have to return answers which are in the decimal formats, they might be asking you to return in a long double data type or a double data type. So these are the couple of data types that they will be asking you to return within. Like in the first example you saw that the answer was 0.5. So you definitely cannot store it in an integer. You have to either store it in a long double or a double in order to return it or maybe a float as well. So 0.5 was very simple. What if the answer was something like 0.678912567, such a big number. Now in such cases what they do is, they tell you note answers within 10 to the power minus 6 of the actual answer will be accepted."
+    },
+    {
+      "chunk_id": "L064_C5",
+      "start": 302.02,
+      "end": 380.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=302s",
+      "text": "cases what they do is, they tell you note answers within 10 to the power minus 6 of the actual answer will be accepted. What does that mean? Let me explain you. So what happens in the background whenever you submit a code? So what happens is there is a server, right? Most of us know that there is a server. So I'm kind of talking in terms of design. Now there's something as test cases and there's something as your code. There's something as your code and then there's something as the problem setters code or the testers code can be anything. So what happens is the setters code is already run against this particular test case. It is already run against this particular test case and it already has a output 2. Imagine it is called as output 2. So what happens when you click the run button is your code is sent to the server. The test cases are sent to the server and your code runs on the given test cases and an output 1 is generated and an output 1 is generated. Now this output 2 and the output 1 is compared. If the output 1 and output 2 is equal, they call it as an accepted answer. If the code while running against the test cases on the server ends up taking a lot of"
+    },
+    {
+      "chunk_id": "L064_C6",
+      "start": 380.76,
+      "end": 457.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=380s",
+      "text": "it as an accepted answer. If the code while running against the test cases on the server ends up taking a lot of time, in that case, they'll be returning something as time limit exceeded. Like if on the server, they would have sent the server that one second is a time limit and your code is probably taking more than one second while running those test cases, it might end up returning a time limit exceeded. And if it doesn't matches, like if it is not matching in that case, it says as a wrong answer. This is what happens on the background. And this one looks very simple. Like okay, you just need to compare. So whatever this is generating, whatever this is generating, go ahead and compare. But imagine in cases where you have to return something like long double or a double or a float and my program is probably printing an answer something like 0.65421678124. It's like a huge, like a long decimal, extremely long decimal. And the setter's code, probably they would have done some optimization, probably. And they're also getting something like this, but maybe something like this. And you're getting something beyond this. Again, it can be an extremely long one. What will happen is if you end up generating an extremely long one, the time taken will be huge and you'll end up getting a TLE."
+    },
+    {
+      "chunk_id": "L064_C7",
+      "start": 457.72,
+      "end": 533.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=457s",
+      "text": "is if you end up generating an extremely long one, the time taken will be huge and you'll end up getting a TLE. Because if you're going to generate the exact answer in terms of long double, that might end up taking a lot of time and you might get a time limit exceeded. So that is why the setter's code will always do some optimizations. And what they will do is, they'll probably store answers, let's say till seven decimal places, like seven decimal places is what they will probably store. So this is what they would have stored, like four and four. This is like eight decimal places. For an example, now imagine you are returning something like this, like a huge long decimal, then you'll get a TLE. This is the reason they clearly tell you, please just return up till six decimal places. Do not go beyond that. Do not spend more time in calculating. So what happens is, you will kind of stop till here because that is six decimal places. You will stop till there. And then what happens on the background is, they just check equal, equal, equal, equal, equal, equal, equal, equal, equal. Till six decimal places is what they will check. They don't care what is after it. They don't care what is after it. You can send whatever you wish to after six decimal places, they do not care. If the first six decimal places are matching, that is it."
+    },
+    {
+      "chunk_id": "L064_C8",
+      "start": 533.88,
+      "end": 595.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=533s",
+      "text": "can send whatever you wish to after six decimal places, they do not care. If the first six decimal places are matching, that is it. They will call it as an accepted answer. And that is the reason why you'll always find this line whenever the answer has to be returned in a long double or a double or a float format. Because they do not want your code to run on the test cases forever. Because when we talk about double, the answer can be extremely long. And they just don't want that much of time. That is the reason you'll find this in most of the problems. So we need to think of a solution. But if I start thinking of a solution by taking such a big example at the first, I think that will be an issue. So what I'll do is, I'll try to trim down the example. And if I trim down the example, and I take, let's say two gas stations, one at one, while the other one at seven, and I'm asking you to place two more. So what will be the optimal strategy that you'll use to place these two gas stations into the existing two, such that you minimize the maximum distance. So probably one of the strategies can be, I'll say one and seven are there, and I will place them at eight and nine."
+    },
+    {
+      "chunk_id": "L064_C9",
+      "start": 595.52,
+      "end": 668.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=595s",
+      "text": "probably one of the strategies can be, I'll say one and seven are there, and I will place them at eight and nine. So if I do that, the distance will be six, it'll be one, it'll be one, in the consecutive. And the maximum is six. So am I somehow reducing the maximum distance between the existing gas stations? The answer is no. So will it make sense to place the new gas stations outside the extremes, like the left extreme and the right extreme of the given gas stations? It doesn't make sense. Because if I place them outside, the distance between them will still be the same. So ideally, placing anywhere to the right or to the left doesn't make sense. Where is the ideal scenario? It's placing in between because the distance is six and I'll reduce the six, I'll reduce the maximum. So the optimal strategy will be to place in between the given end gas stations. So that is something we have figured out. So you have one and we have seven. If I have to place it, and I say, let's place it at two and four, because I have to place two new gas stations. And this is the distance, this is the distance, and this is the distance. Does it make sense? We still have three. I'll be like, no, it doesn't make sense because you still have three."
+    },
+    {
+      "chunk_id": "L064_C10",
+      "start": 668.7,
+      "end": 747.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=668s",
+      "text": "the distance. Does it make sense? We still have three. I'll be like, no, it doesn't make sense because you still have three. So what is the ideal scenario if I give you like two gas stations and you have something like this? I'll be like, hey, I have one seven. I now have to place two gas stations. If I place two gas stations, this will be one consecutive distance. This will be another and this will be another. So there will be three consecutive distance that I have to make sure is minimized. Because if I just let go one, that'll be like three is very high. Three is very high. I cannot let go one because that one might be very maximum and I want to minimize everyone. So I'll have to minimize three consecutive distances. And how much is the three distance? It's six and I have to split it into three equals. So that's like two, two, two. So if I just split it into three equals of two and place it at three and place it at five, then the distance will be two, then the distance will be two and then the distance will be two. Does make sense. So what I'll do is if I've been given two gas stations, I will try to place them between them in equal sectors, in equal sectors of length two so that the max distance is minimized"
+    },
+    {
+      "chunk_id": "L064_C11",
+      "start": 747.92,
+      "end": 816.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=747s",
+      "text": "I will try to place them between them in equal sectors, in equal sectors of length two so that the max distance is minimized and the answer is two. Got this. So this is the thought process under which we will be solving the entire problem. So let's not take this particular example where we are given four gas stations and you have to place five new gas stations in between them. We know one thing for sure, we cannot place anything to the right or anything to the left. So what we will do is we'll place five probably somewhere between this and this. So there are like three sectors, three sections where I have to place. Can I say if I start thinking by taking like all the five at a time, that will be an issue. So what I will do is let's quickly start off with one. So if I take one, where will you place? I'll be like, hey, striver, over here, the distance is 12. Over here, the distance is four. Over here, the distance is six, which is the maximum. 12 is the maximum. So if I have to place one, I'll try to place somewhere in between one and 13 so that this 12 is reduced because ultimately I'm trying to minimize. Got it. So what I'll do is I'll try to place one between one and 13. Maybe I can store it where I'm placing."
+    },
+    {
+      "chunk_id": "L064_C12",
+      "start": 816.44,
+      "end": 890.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=816s",
+      "text": "Got it. So what I'll do is I'll try to place one between one and 13. Maybe I can store it where I'm placing. So what I'll do is I know there are three sections, one section, two section, three section. So I'll say how many are placed in each of this. So this is the zero section, first section, one second, second section, zero, first and second. So I'm saying one is placed here. Perfect. One is placed over here. Amazing. Next is the second one. When the second gas station is in picture. So ideally, ideally, if you have placed one, where would, where would have you placed it? You would have placed it at one, seven and 13 and then 17, 23. This is where you'd have placed it because the ultimate distance was 12. So you'll keep a distance of six and keep a distance of six. This is where you'll place it. Right? So after placing one, let's look at the distance. Six, six, four and six. So apparently as of now, after placing one, the maximum distance is six. So you're going to kind of get rid of the six, you're going to reduce it, you're going to reduce the six. So maybe I can place in either of these sectors because I already have one at seven. So I can place either of this or either of this. So maybe let's go ahead and place in between."
+    },
+    {
+      "chunk_id": "L064_C13",
+      "start": 890.28,
+      "end": 962.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=890s",
+      "text": "have one at seven. So I can place either of this or either of this. So maybe let's go ahead and place in between. So I'll go ahead and say one is there. Placed. Let's come up with the third gas station. So when these two are placed, hypothetically, if you only have to place two, hypothetically you have to only place two. It'll be like one, seven, 13, 17, 20 and 23, where 20 and seven is the new one. And now the distance is six, six, four, three and three. Right? And how did you know that the distance is three? It's very easy. If you're placing one over here, that means it is broken down into two sectors. It is broken down into two sectors. And if it is broken down into two sectors, how much is the distance over here? Because each of the sectors will be of equal distance. The it'll be 23 minus 17 by the number of sectors, which is the number of placed plus one. So like six by two, that's three. The difference is three. Very simple. Over here, the same thing. 13 minus one by the number of placed plus one will be the sector. 12 by two is six, six and six. So you know one thing, this is six, this is six, this is four, this is three and this is three. So where will you place the three?"
+    },
+    {
+      "chunk_id": "L064_C14",
+      "start": 962.18,
+      "end": 1033.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=962s",
+      "text": "thing, this is six, this is six, this is four, this is three and this is three. So where will you place the three? You'll try to reduce the six because the six is creating an issue. Now let's think. If I say one 13 and seven is here, this is six and this is six. What will you do? Will you take this third gas station and place it maybe somewhere in between that? Will you do this? Will you do this? Will you place it somewhere like four or will you place it somewhere like 10? Does it make sense? Because even if you place it at four, this will still be six and realize the initial configuration had one 13. You are at liberty to place the first and the third gas station. You can do it, do move, you can move them anywhere. So ideally what I'll do is instead of placing the first one at seven, which I did, I'll try to take the entire distance 12 and I know there was already one, one in between them. I'll have one more in between them. So I'll have two more in between them, which means I'll have to place two, which divides it into three equal sectors. So 12 by three will be four. So now I'll place them at a distance of four, four, four. Got it? So what I'll do is I'll place them probably at one, five, nine."
+    },
+    {
+      "chunk_id": "L064_C15",
+      "start": 1033.8,
+      "end": 1096.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1033s",
+      "text": "place them at a distance of four, four, four. Got it? So what I'll do is I'll place them probably at one, five, nine. So this will be like four, four and four. So what I've done is I placed one more in between one and 13. So the number increases to two. So the number increases to two. So tell me one thing, if there are two place in between one and 13, what will be every individual sectors length? It's one and 13. The total is 12 and if there are two placed, that means there are three sectors. So it'll be like four. The individual lengths will be four. The individual consecutive differences will be four. Got it? So the third one is also placed. Let's talk about the fourth one. So I know one thing, this has an individual length of four. This has an individual length of four. This has an individual length of three because six by two. Right? So where will you, what will you try to minimize? You'll try to minimize four and four. So maybe let's take this four and place it here. So what I've done is I placed it here. So there will be like two sectors of two and two each and go at 15. Quite obvious. So the fourth one is placed. Time for the fifth one. Time for the fifth one."
+    },
+    {
+      "chunk_id": "L064_C16",
+      "start": 1096.84,
+      "end": 1174.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1096s",
+      "text": "each and go at 15. Quite obvious. So the fourth one is placed. Time for the fifth one. Time for the fifth one. So when I try to place fifth one, what happens is I have one 30, I have one 13, there is already two there. So between one 13, there's already two, which is at five and nine, but I need to place one more. So the distance is four, four, four. How did you figure it out? Difference 12. How many placed? Two. How many sections? Three. So that's like four over here. So for this, the difference is four. For this, the difference is four by two sectors. So two. Over here, the difference is three. So which is the highest? The highest is here. So where, where will you place here? Because you're going to reduce that highest length. So let's reduce. So can I say I'll place it here? Done. What I've done is I made sure I've placed five of the new gas stations and made sure that I've placed five of the new gas stations. Once I've done that, can I figure out the equal section length between this, between this, between this? Yes. Let's do it. How many are there between this? I'm saying there are three placed between this. So it's like one and 13, there are three placed."
+    },
+    {
+      "chunk_id": "L064_C17",
+      "start": 1174.74,
+      "end": 1250.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1174s",
+      "text": "are there between this? I'm saying there are three placed between this. So it's like one and 13, there are three placed. So if there are three placed, there'll be four sectors of equal length. The total difference is 12. Four sectors means three. So first one will be placed at four, then seven, then 10. The distance will be three, three, three, three. Perfect. Now you have 17. I'm saying one is placed. So one is placed means two sectors and it will be at 15. So the difference will be two, two. How did you find out? 17 minus 13 by one place means two sectors. That means a difference of two. Where's the next? 23. How many placed? One. So if one you're placing, that means two sectors. 23 minus 17 by two is three. So three, three, placed at 20. What I've done is I made sure to figure out what is the distance between each consecutive and what is the max? The max that I can see is three. How did you find out the max? You don't need to place them. You don't need to place them. 13 minus one by two, three. Each sector is of three. Each sector is of two. Each sector is of three. So three, two, three, which is the max? Three. That's your answer. This is the brute force. Might look tough, but when I try to write the code, it's going to be super simple."
+    },
+    {
+      "chunk_id": "L064_C18",
+      "start": 1250.5,
+      "end": 1310.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1250s",
+      "text": "your answer. This is the brute force. Might look tough, but when I try to write the code, it's going to be super simple. Don't worry about that. So we need to write the code. You might think it's going to be complex. No, it's not that complex. What are we keeping track of? I kind of keeping track of how many were placed between them. And we were trying to place one by one. The first thing I'll do is I'll try to go one by one. So gas stations will start from one and we'll go till K. That's the first thing I'll do. Quite simple. What I've done is I've basically gone from one to K. Now I have to keep a track of how many have been placed. Maybe I can take something and like a how many array. So tell me what will be the length of this how many array? So initially, it's like one, two, three, three sections where you can put in the gas stations of the like three. And you know, the indexing will go by zero based. Initially there are zero gas stations at every consecutive existing gas stations. So what we need to do is we need to figure out where will this first gas station go? Where will it go? I'll figure out the distance, figure out the distance of every section."
+    },
+    {
+      "chunk_id": "L064_C19",
+      "start": 1310.8,
+      "end": 1387.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1310s",
+      "text": "where will this first gas station go? Where will it go? I'll figure out the distance, figure out the distance of every section. If there are any place where we divide it, I'll try to place it at the place where we never there is maximum. So maybe I'll have to keep a track of which is the maximum value. And at the same time, I'll also have to keep a track of where is the maximum value occurring. Like in this case, it was 12 and it was occurring at the zero. It is occurring at the zero section. So what I need to do is, this is the first section, this is second, this is the third. So they're like three sections and n was four. I'll have to run a loop from i equal to zero till n minus one, right? What is the difference? What is the initial difference? If I have to ask you, the difference is very simple. Array of i plus one minus array of i. Again, the array is sorted, so it'll be fine. So initially what happens is 13 minus one. So this will be 12. This will be 12. But remember one thing, if there was one gas station already placed, this is actually six. This is actually six. So how do you figure out? You figure out how many are there. So basically the section length will be difference by how many are placed plus one, because if"
+    },
+    {
+      "chunk_id": "L064_C20",
+      "start": 1387.28,
+      "end": 1461.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1387s",
+      "text": "You figure out how many are there. So basically the section length will be difference by how many are placed plus one, because if there is one, if there's one placed, it'll be broken down into two sections. It'll be broken down into two sections. So difference by how many plus one place. That is the section length of that. That's the section length of that. Currently I need to figure out the maximum section length. If maximum is smaller than section length, what I'll do is I will say maximum equal to section length and I'll say max index equal to i. Quite simple. Once this for loop over here, ends here rather. If this for loop ends here, what will happen is I would have figured out where is the maximum line and I will go ahead and place that gas station at that max index. I'll just do a plus plus. So what will happen is I'll go across and place it there. Once I have done all the placements, once I've done all the placements, I have to go through everyone and figure out what was the sections individual length. So that's the maximum answer. So the max answer will be minus one and I can go across every section individually. So that's again n minus one, I plus plus one."
+    },
+    {
+      "chunk_id": "L064_C21",
+      "start": 1461.96,
+      "end": 1535.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1461s",
+      "text": "will be minus one and I can go across every section individually. So that's again n minus one, I plus plus one. And I'll again do the same process, but I'll say the section length is going to be. Array of I plus one minus array of I divided by how many were placed plus one, because that is going to be the section length. And if that exceeds my answer, so I can do a max of max answer dot section lengths. And at the end of the day, I can return this max answer. I can return this max answer. Quite simple. And if you do this, I'll figure out each of the individual section lengths and you can easily return them. I know the presentation was not that great on the iPad, but no issues. Let's quickly go back into the code editor. What I've done is I've written the exact same code so that it's much more readable. So basically go through all the gas stations and I know initially everything will be minus one. Make sure that you define long double and then you find out the initial differentiation like initial difference. And then you figure out what is the length by dividing it by how many were placed plus one. And if it exceeds, you do this and right in the end of the going through all the sections, basically figure out wherever was the max. You just increase the counter."
+    },
+    {
+      "chunk_id": "L064_C22",
+      "start": 1535.16,
+      "end": 1593.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1535s",
+      "text": "and right in the end of the going through all the sections, basically figure out wherever was the max. You just increase the counter. Once this is done, you go through every section and you figure out what's the individual section length and you figure out the max of it because that is what you have to return. Make sure that you do the type casting properly. Otherwise you'll be getting a wrong answer. So if I go ahead and submit this, this will be giving me a time limit exceeded. They'll be giving you a time limit exceeded. Why? Because you're running a loop for K. So that's like K and then internally you're running a N and then another N to figure out the maximum. So this K into N is kind of quadratic in nature and this is the reason why it will be giving you a time limit exceeded. So what we need to do is we need to kind of optimize this K into N. So let's quickly come back to the brute force solution. So we did see that this loop is taking K and this loop is taking N and that is making it as a K into N. Something that I cannot avoid as of now is this one because my entire logic depends on placing individual gas stations. Now what is this loop trying to do? This loop is trying to figure out the max length."
+    },
+    {
+      "chunk_id": "L064_C23",
+      "start": 1593.16,
+      "end": 1662.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1593s",
+      "text": "depends on placing individual gas stations. Now what is this loop trying to do? This loop is trying to figure out the max length. That is what it is trying to do. Now can I probably try to optimize this one and if I can optimize this one, my complexity can be reduced. So this is what I'll try to think of. I'll try to optimize the maximum finding mechanism. So let's quickly check if we can do that or not. So before we move on to improving the time complexity, let me quickly tell you about our data structure priority queue. In case you have seen my C++ ST lecture, you already know about it and in case you haven't seen it, I'll just quickly give a recap. So this data structure is there on C++ STL as well as on the Java collections. So it's not a linear data structure. Internally it is implemented using heap data structure, but I'm just writing it on a linear fashion to explain you in a much easier way. So imagine this is a priority queue and I ask you, okay, priority queue dot push two, priority queue dot push three, priority queue dot push one. And if you do this and after that you say priority queue dot top, so if you say dot top, this push takes logarithmic of n time complexity. This takes logarithmic of n, this takes logarithmic of n."
+    },
+    {
+      "chunk_id": "L064_C24",
+      "start": 1662.08,
+      "end": 1726.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1662s",
+      "text": "so if you say dot top, this push takes logarithmic of n time complexity. This takes logarithmic of n, this takes logarithmic of n. So if you say pq dot top, what happens is you have inserted three elements. Now the priority queue always stores the maximum at the top. It stores in a tree fashion, but that's a completely different thing. But as of now, remember if you say pq dot top, it will always give you three because three will be at the top. If I have to explain it in a linear fashion, it'd be something like three, two, one. So if you say dot top, it'll give you three. And after that, if you say pq dot top again, it will again give you three because it will not be removing it. And if you after that say pq dot pop, what will happen is this three will be gone. This three will be gone. After that, if you say pq dot top, it'll give you two. So this is what the data structure is. What do we need to do? We're taking big of n in order to find out the maximum. We need to optimize it. Obviously we don't need to optimize it to n by two because that's not a significant improvement. We have to talk about improvement because it was taking k into n and it was going towards quadratic. I need to be somewhere in the range of k."
+    },
+    {
+      "chunk_id": "L064_C25",
+      "start": 1726.1,
+      "end": 1794.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1726s",
+      "text": "improvement because it was taking k into n and it was going towards quadratic. I need to be somewhere in the range of k. So that's going to be like, I have to reduce it to logarithmic of n or big of n. Obviously I cannot find constant in like, I cannot find maximum in big of one. So that's out of question. Can I do it in logarithmic of n? Probably yes, because I know a data structure which always gives me the maximum in like this pq dot top takes a big of one, but this pq dot push takes a logarithmic of n. So kind of in a logarithmic time, it gives me the maximum. So I know a data structure which gives me maximum in logarithmic of n. So maybe I can try implementing it. So we know that we have a data structure which gives us the maximum. So we need to start. So what I will do is I will keep a how many as we did in the first one. And we know that there are three sections, zero, one, two, and I'll keep zero, zero, zero, because initially I haven't placed any gas stations. If I ask you what is the length of the initial sections, 12 for the zeroth, four for the first and six for the second. Okay. That is something which I know. And whenever I place the first, I always take the 12th because that's the maximum."
+    },
+    {
+      "chunk_id": "L064_C26",
+      "start": 1794.88,
+      "end": 1868.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1794s",
+      "text": "the second. Okay. That is something which I know. And whenever I place the first, I always take the 12th because that's the maximum. So what I'll do is I will take a priority queue. Yes, I will take a priority. And I'll say first section, what is your length? He says 12, 12 comma zero going to the priority. Next section, what is your length? Four, four comma one going to the priority queue. One is the index of that section. What is the next? Six comma two. So what I've done is in the priority queue, I'm storing it in pairs and the pairs is storing the length of the section and the index of the section. Done. Let's quickly now start our algorithm. I say first gas station, where will you place it? You're like, I have 12, I have six, I have four. I have to place it such that this 12 goes down. I need to minimize some like, okay, every place there, go ahead and place it. So like 12 comma zero, I have to place it at 12. How many are there at 12? It's like zero at zero index. It's like zero place. What is the difference? 12. So what will be the section length? 12 by one, 12 by one, and that's 12. So I can place it. So I've got 12 comma zero. I can place it there. I'll go ahead and place it there. So I placed it there."
+    },
+    {
+      "chunk_id": "L064_C27",
+      "start": 1869.24,
+      "end": 1941.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1869s",
+      "text": "place it. So I've got 12 comma zero. I can place it there. I'll go ahead and place it there. So I placed it there. So if I place it there, what is the length? 12. I placed one, which means it will be broken down into two sections. That means now this 12 comma zero will become six comma zero. The length of this one is now six, six, six. So what I'll do is I'll go ahead and say six comma zero. I'll go ahead and say six comma zero. Remember one thing, the priority queue will store it like six comma two will be at the first why? Because if the first one is matching, if the first one is matching, it differentiates it on the second factor. So six comma two will be at the front. The first gas station is placed. I'll go for the second. For the second, I say six comma two is a perfect choice. And like six comma two is a perfect choice. What that means is on the second section is where I'll place. Go ahead and place it on the second section. One incremented. If you increment one, previously the length was six, you have placed one. So broken down into two, it will be of a length three. So three comma section two. Perfect. Let's do for the next, which is the third gas station. For the third, it's six comma zero for short. No doubt in that."
+    },
+    {
+      "chunk_id": "L064_C28",
+      "start": 1941.68,
+      "end": 2017.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=1941s",
+      "text": "Perfect. Let's do for the next, which is the third gas station. For the third, it's six comma zero for short. No doubt in that. So I'm saying the zero section, I'm saying the zero section. What is the length of the zero section? Twelve. How many are placed? How many are placed now? You're placing one more. How many are placed? Twelve by three, four. Isn't it? Because you got this section, which is previously length six, because there was one. Now you're saying I'm placing one more. So twelve by three, that's four. So the new length will be four comma zero. Perfect. The new length will be four comma zero. So you are storing the current length and the section. And over here it stores how many. So which one will be at the top? Obviously four comma one will be at the top because priority queue stores that. So you'll just take four comma one out. For the fourth, you'll take four comma one out. And what will you do? You will say this will go here. And if it goes here, what's the length? Four by two. So it's two. So it's placed like two comma one. The section is one. So that's placed. Perfect. What's the next? The fifth. For the fifth, four comma zero comes in. So you say three. And this time what happens? Yes, the initial length is 12. How many have you placed? Three. Four sections. So three."
+    },
+    {
+      "chunk_id": "L064_C29",
+      "start": 2017.16,
+      "end": 2081.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2017s",
+      "text": "you say three. And this time what happens? Yes, the initial length is 12. How many have you placed? Three. Four sections. So three. So now you say three comma zero is what goes inside the priority queue. By the way, three comma two will be at the top. Done. Placed five. You have placed five. And you know the zeroth section is of three. The first section is of two and the second section is of three. And you need the maximum. You need the maximum value because that's your answer. You again just call a pq.top. You just call a pq.top and you get three comma two. You get three comma two. So the second section. So the second section has a value three. And that's the answer. The first section also has a value three, but you just need the one value. So three is the answer. And that is what you will return. Quite simple. So I hope you have understood the optimized solution. The point to note over here is whenever you take something out. So initially you took 12 comma zero. This is the main one. Like zero, the section index is the main one because this is where you place and on the placement, the new section length is defined and that is what you insert. Anyways, I'll quickly show you in the code editor because I don't want to write on the iPad. It's going to be super messy."
+    },
+    {
+      "chunk_id": "L064_C30",
+      "start": 2081.64,
+      "end": 2156.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2081s",
+      "text": "Anyways, I'll quickly show you in the code editor because I don't want to write on the iPad. It's going to be super messy. So let's quickly go back into the code editor. What I'll do is I'll quickly have the priority queue and that will be pair of long double and int. Make sure it's a long double. Otherwise you'll be having an issue. And I'll quickly remove this. I'll remove this as well. And I will be returning pq.top because the top dot first is what will be my maximum. But before that, what do we need to do? Initially in the priority queue, I'll have to insert all the sections. So let's quickly insert all the sections. It's going to be pq.push. And it'll be like array of i plus one minus array of i comma i. Done. So what I've done is I've made sure that the priority queue already contains the section length and the index. And how many is already assigned as zero. Over here, what I will do is I know one thing. I can write as auto and the top element that I'll get is pq.top. So once I've got the top element, make sure you pop it out as well. Otherwise it will stain the priority queue. After that, you just need the section index. So maybe you can write section index tp.second. Do you need the length? The length is of no use."
+    },
+    {
+      "chunk_id": "L064_C31",
+      "start": 2156.24,
+      "end": 2236.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2156s",
+      "text": "just need the section index. So maybe you can write section index tp.second. Do you need the length? The length is of no use. I go to how many and I say, add this section index, we have the maximum. So please go ahead and increase it. So what I've done is I've taken this particular gas station and I've made sure that it is under this section index. Now what I can say is what is the initial? Yes. What is the initial difference? Initial difference is nothing but adding off wherever the section index is, right? That is what this will be the initial difference. What will be the new, new section lens? Maybe I can again take long double and I can say news section length, and that will be initial difference by long double again. Please make sure you don't do any typecasting errors. Otherwise it will be an issue. Long double off. How many of section index plus one that is what will be the new section length. Once you've done this, you can go to a priority queue and say, this is your new section length comma your section index, because that's what will be the section index. Once you have done this, you can simply go ahead and return pq.dot first and that will be running. I'll quickly go ahead and run this off. I think this will be running fine. It does. I'll quickly go ahead and submit this as well."
+    },
+    {
+      "chunk_id": "L064_C32",
+      "start": 2236.0,
+      "end": 2313.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2236s",
+      "text": "go ahead and run this off. I think this will be running fine. It does. I'll quickly go ahead and submit this as well. What is the time complexity? It's a big O of N log in because priority queue dot push takes log in. It's a K plus a push log in. So it's an N log in plus K log in solution and thereby it is accepted because you have omitted the quadratic stuff. So if I go into depth now and if I write down the time complexity, that's an N log in plus K log in. Again, it's like N minus one, but I've written it as N log in. What is the space complexity? How many am I keeping in the priority queue every time? N minus one, because if I have like four gas stations, I'm keeping always three sections. It's like an N minus one. So this is the time complexity and the space complexity of the better solution, not the most optimal solution. Now in an interview, if I was the interviewer, I'll be happy with it. I am done with this if you are giving me the solution, but a lot of interviews might not be happy and they might be asking you to reduce the space complexity and this is where the optimal solution comes in. So time for the optimal solution. The question is asking you to minimize the max distance between any two consecutive gas stations."
+    },
+    {
+      "chunk_id": "L064_C33",
+      "start": 2313.9,
+      "end": 2386.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2313s",
+      "text": "comes in. So time for the optimal solution. The question is asking you to minimize the max distance between any two consecutive gas stations. Whenever there is something like minimum and maximum, I think we have done a lot of problems for you to understand that this is something which can be solved using binary search because we're trying to minimize something which is the maximum. So we can apply binary search and we have done similar problems previously, but in this problem, the catch is the answer is in long double. So we definitely cannot do something. The generic binary search has something like while low lesser than equal to high, and this is okay if it is an integer. And we also have something like low equal to mid plus one plus one and high equal to mid minus one. The generic binary search operates in this pattern where we have done all the problems. Yes, we have done all the problems till now where we had just taken low lesser than equal to high, nothing like lesser high or equal to equal to no. All the problems we have done with this and every problem we have taken mid plus one and mid minus one. None of the problems we have taken mid or mid minus one, nothing. All of the problems we have solved using this particular pattern. But over here, the answer is in long double."
+    },
+    {
+      "chunk_id": "L064_C34",
+      "start": 2386.24,
+      "end": 2451.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2386s",
+      "text": "mid minus one, nothing. All of the problems we have solved using this particular pattern. But over here, the answer is in long double. So all of the pattern will like each of the statements will not work. This will not work. This will not work. This will not work. Why? Because this is not going to work because you're kind of missing out on a lot of things. So what will you do? Will you do like plus zero point one? Will you do like plus zero point zero zero zero one? Will you do like plus zero point zero something like this? No, you can't do something like that because you have to find a proper answer. Even if you do this, you also might end up missing a lot of things, because if you do this, that might end up taking a lot of time, as I explained in the initial part of the videos, because the answer might be five, six, seven, one, two, a long, long, long double. And it might end up rotating like running for millions and millions of times, because it might be meeting at some like 89th decimal place. To do that, it will look for millions of operations. So you cannot write something like this. So the pattern slightly changes. Yes, the pattern slightly changes. All the double or long double binary search problems will always have a pattern like what"
+    },
+    {
+      "chunk_id": "L064_C35",
+      "start": 2451.38,
+      "end": 2526.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2451s",
+      "text": "pattern slightly changes. Yes, the pattern slightly changes. All the double or long double binary search problems will always have a pattern like what happens is instead of comparing high lesser than like low lesser than equal to high or doing something like this, you look at the problem statement. The problem statement was asking you to make sure that the answer is matching somewhere around 10 to the power minus, like it should match till six decimal places. So what you will do is you will say high minus low, if the differentiation like between them is exceeding this 10 to the power minus six, if they are differentiated at somewhere beyond six decimal places, I'm okay. I'm okay. If my low and high are standing with first six decimal places matching, I'm done and that's it. So that will happen to the condition and instead of doing low equal to mid plus one, you'll always do low equal to mid and you'll always do high equal to mid. You will not be reducing it. And this will make sure that if you start like in this example, you had one in five. If your low is standing at one and your high is standing at five, it will make sure right at the end, the low and high are standing in the correct place. Like I just took an example."
+    },
+    {
+      "chunk_id": "L064_C36",
+      "start": 2526.82,
+      "end": 2593.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2526s",
+      "text": "will make sure right at the end, the low and high are standing in the correct place. Like I just took an example. So in all the, like usually you'll not find them in interviews, but I'm just teaching you just in case they ask you, this is a very rare problem in an interview. You might not find it. Remember the pattern high minus low greater than 10 to the power minus six. If they're asking you seven decimal, it'll be minus seven and the low will be mid and high will be mid. Now let's come back to solving the problem. We know how to solve binary search double problems as of now. What was I doing in all the other binary search problems? I was kind of writing a while loop and then as doing some check using some check functions and using the check function, I was determining whether low will go to mid plus one or maybe our high will go to mid minus one. This is what I was doing right. This is what most of the binary search problems I did. I tried to figure out this check function and on the basis of that, I either eliminated the left half or I either eliminated the right half. That is what I did. Now the difference, the different thing that I'm doing over here is mid plus one goes and"
+    },
+    {
+      "chunk_id": "L064_C37",
+      "start": 2593.64,
+      "end": 2667.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2593s",
+      "text": "half. That is what I did. Now the difference, the different thing that I'm doing over here is mid plus one goes and mid minus one goes, but I have to figure out on what will I check on what will I check. So throughout the binary search, we always checked on answers. We always checked on answers. The same thing we'll do over here. So we need to apply binary search. If you remember in all our existing binary search problems, the first thing we figured out is the range in which the answer can lie. So can I say the answer can lie between zero to somewhere? Why am I saying zero? Imagine I'm giving you a test case where all the end gas stations are at the coordinate one. There are four gas stations and they're at the coordinate one. I'm asking you to place four more. You'll again go and place it at one. I haven't said that you cannot place it at the same coordinates. You can. So ideally the distance between any two will be zero, right? So the answer can be somewhere from one. Okay. And where can the answer be tell? The answer can be tell. I can place it outside, but will it make sense? No. What am I looking to optimize? I'm looking to optimize the max distance already being there. I need to reduce it. It cannot be beyond that. It cannot be beyond that."
+    },
+    {
+      "chunk_id": "L064_C38",
+      "start": 2667.92,
+      "end": 2733.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2667s",
+      "text": "looking to optimize the max distance already being there. I need to reduce it. It cannot be beyond that. It cannot be beyond that. So if you remember with this example as well, where was the example, but this example as well, there was 12, 4, 6. The answer cannot be beyond 12, right? It cannot be 13. Like if you, if you decide to place it at a hundred, it can be, but why will you, you're looking to minimize. So it can be somewhere under 12 if you try doing it properly. So what I can say is I'll try to look for all the maximums and the maximum that I find is like all the consecutive difference and the maximum that I find is one. It'll be like from zero to one. I know one thing for sure is the answer is going to be between zero and one. Now my question comes, how do I check? And in all the problems, what I did was I started from zero. Then I went to one, then I went to two. I did a linear search and over here it's like 10 to the power minus six. So if I have to do a linear search, I have to do it something like this for like maybe the distance is zero. That is again, everything will be in long double one and the distance plus equal to 10 to the power minus six."
+    },
+    {
+      "chunk_id": "L064_C39",
+      "start": 2733.34,
+      "end": 2802.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2733s",
+      "text": "is zero. That is again, everything will be in long double one and the distance plus equal to 10 to the power minus six. Every time I just increase it by 10 to the power minus six, minus six, minus six, minus six. I keep on checking. Got it. So I know that the answer lies between zero and one, but over here, if I have to do a linear search, I'll have to write it something like for distance equal to zero, I go until one and every time I cannot do plus plus. I have to increase it by plus 10 to the power minus six because it's a long decimal thing. If I have to do a linear search, I have to go like zero. Next one will be 0.000 something and it'll be like 0.0002, it'll be like 0.0003, it'll be like 0.0004 and so on. I'll have to go by increasing it at the sixth decimal place. Got it. We cannot go like zero and then one and then two because it's a matter of double. So first I have to check for zero and then I have to check for 0.0001 but in order to understand what I'll do is I'll, I'll just check for 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 and so on till one just to understand. So tell me one thing, if I keep a distance of zero, how many gas stations will I be able to place? Let's see."
+    },
+    {
+      "chunk_id": "L064_C40",
+      "start": 2802.44,
+      "end": 2874.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2802s",
+      "text": "understand. So tell me one thing, if I keep a distance of zero, how many gas stations will I be able to place? Let's see. So if I try to keep a distance of zero, I'll have to place infinite gas stations in order to make sure the distance doesn't exceed zero. Why? Because I'll have to place some something at one, one, one, one, one and I cannot go beyond this. It's not possible. It's not possible because if I just do 1.1 as well, the distance becomes 0.1. The difference, like if I try to place one gas station at one and another at 1.1, the distance still becomes a difference of 0.1 and I want to keep my answer as zero. I want to keep my answer as zero. So what I see is it's not possible. It's not possible by just placing four gas stations. I mean, I cannot, actually I cannot. So not possible. Okay. So I'm like, it's not possible to place four gas stations or to keep a distance of zero. Simple as that. So this is not possible. Let's see if 0.1 is possible. If I try to keep a distance of 0.1, can I place it at 0.5? I cannot place it at 0.5. Why? Because if I place it at 1.5, the distance will be 0.5 already. I want to keep a distance of 0.1. I want to keep a distance of 0.1."
+    },
+    {
+      "chunk_id": "L064_C41",
+      "start": 2874.2,
+      "end": 2942.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2874s",
+      "text": "at 1.5, the distance will be 0.5 already. I want to keep a distance of 0.1. I want to keep a distance of 0.1. So I'm like, no Raj, we can't do that. We can't do that. So I'm like, okay, where can I place it? I'm like, I can straight away place it at 1.1. Anything beyond that, because the moment I place it at 1.2 as well, the difference will be 0.2 and that will be my answer because I'm looking for max. But I want to make sure that the answer doesn't cross 0.1. So 1.2 is not possible. 1.2, then 1.3 I have to place, then I have to place 1.4, then I have to place 1.5. I'm taking a lot of gas stations. I don't have that many. I don't have that many. So I cannot keep an answer of 0.1 because in order to keep an answer of 0.1, I need a lot more gas stations and I only have four gas stations. So not possible. 0.2 for the same reason, not possible. 0.3 for the same reason, not possible. 0.4 for the same reason, not possible because you have to keep like 1.4 and then maybe at 1.8 you'll place one and then you have to go, maybe the next will be 2.4 and then you have to go. So at the end it's like 2.8 and then 3.4, 3.8. So you're already crossing because the difference you see 0.4, 0.4, 0.2."
+    },
+    {
+      "chunk_id": "L064_C42",
+      "start": 2942.4,
+      "end": 3020.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=2942s",
+      "text": "go. So at the end it's like 2.8 and then 3.4, 3.8. So you're already crossing because the difference you see 0.4, 0.4, 0.2. In order to keep a 0.4 distance, you need way more than four gas stations. So 0.4 is also not possible. I hope you're understanding why 0.4 is not possible because I cannot go and place it at 0.5. The distance will be 0.5. I want to keep our distance of 0.4 at maximum, not more than that. So 1.4, 1.8, I need two here, two here, two here. So it'll be more than four gas stations. So not possible. 0.5. If I keep a distance of 0.5, it's going to be point, point, point, point. And I'm seeing if I keep a distance of 0.5, I'm exactly requiring four gas stations. I'm exactly requiring four gas stations. So it's possible. It's possible. And if it is possible, what am I looking for? I'm looking for a minimum answer. I'm looking for a minimum answer. So what you can do is you can eliminate the right half and probably look on the left side. 0.4 is eliminated, but there'll be 0.4444, 0.45 something. Got it? Now, what I'm meaning to say. So since it is long, they still have to look at the left portion. So I'll probably go at the left and look. So again, if you take 0.6 also, it's still going to be possible. If you 0.6, 0.6, 0.6 is also possible."
+    },
+    {
+      "chunk_id": "L064_C43",
+      "start": 3020.52,
+      "end": 3088.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=3020s",
+      "text": "left and look. So again, if you take 0.6 also, it's still going to be possible. If you 0.6, 0.6, 0.6 is also possible. You're keeping a distance of 0.6, 0.4. Like this is still 0.6. It's not beyond 0.6. Even if you take 0.6, you can still do it in a four. Even if you take anything more than 0.6, you can still do it in four or lesser. So that is why anything on the right, anything on the right, if the distance is large, I'm able to do it in lesser number of gas stations. That is okay. But if I'm requiring a lot of gas stations, if I'm requiring a lot of gas stations, that's not, I don't have that liberty. So something I know for sure is if I'm requiring the number of gas stations required is greater than K, that's not possible. I need to increase the distance. I need to increase the distance. So what I'll do is I'll eliminate the left half and I'll go there. And if it is the other way, if it is lesser, that means that answer is I'll have to just go to the left because even with 0.7, 0.8, it's possible. I need to go on this one. So you go high equal to mid. That's what you do in binary search. Got it? So how do you figure out how many gas stations you actually need? So let me take an example."
+    },
+    {
+      "chunk_id": "L064_C44",
+      "start": 3088.96,
+      "end": 3158.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=3088s",
+      "text": "in binary search. Got it? So how do you figure out how many gas stations you actually need? So let me take an example. If I had something like 0.4, if I had 0.4, it was like I was placing one and then 1.4 and then 1.8 and then two. So I was able to place two gas stations and then it was like 2.4, 2.8. How did I figure out that I was able to place two gas stations between this, between this, between this, between this? It's very simple. You say 2 minus 1, that's 2 minus 1 by 0.4. You get something like 2 point something, but you don't take the decimal part. You just say 2. Just say 2 because I can take 2. Got it? So now you might have a question. Striver, it was easy for 0.5 because you did like 2 minus 1, the difference is 1. And you said there can be two placed as like 0.4, 0.4. And for 1, I'll kind of reduce it because I want to maintain an answer of 0.4, which is okay. But for 0.5, Striver, like this was like two elements placed. If I take 0.5 and another distance is one and I say one by 0.5, so you're saying we can place two. That is wrong because if I go one, I can only place like one by a distance of 0.5 and then it'll go to two. I cannot place two."
+    },
+    {
+      "chunk_id": "L064_C45",
+      "start": 3158.32,
+      "end": 3228.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=3158s",
+      "text": "I go one, I can only place like one by a distance of 0.5 and then it'll go to two. I cannot place two. That is wrong. The absolute division will be wrong. This is where you will do if one, like the difference of the section is properly divisible by the number that you're looking for. That means you can place one lesser. That means you can place one lesser. In this case, it was okay because 2 minus 1 was 1. One by 0.4 was something like 2 point something. So that point went in over here. So that was okay. But this is like properly divisible. So it's not possible. Got it? So this is where you have to be careful. So I hope you have understood everything. I did not do a lot of dry runs because it contains long double and to do a dry run on double values, it's, it's very, very tough. Trust me on that. So I'm assuming that you have been watching the entire playlist so you can easily catch up with it. So let's quickly write down the binary search code. So the low will be zero and the high will be the maximum of consecutive differences. We can easily find it out. And what you can do is high minus low will be greater than the six decimal places. That is what you write and make sure everything is in long double. Otherwise you will be having an issue."
+    },
+    {
+      "chunk_id": "L064_C46",
+      "start": 3228.32,
+      "end": 3306.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=3228s",
+      "text": "than the six decimal places. That is what you write and make sure everything is in long double. Otherwise you will be having an issue. Perfect. Done. What is the next thing? Figure out the count of gas stations required to maintain this mid distance to maintain this mid distance. Just figure that out. And that can be called as count. And remember if this count is greater than the number given to you, what does that mean? That means it's not possible. If it exceeds that, it's not possible. And if it's not possible, you've got to increase the distance because this distance is not possible. It's just too low. For that you need a bunch of gas stations. Otherwise it's possible. And maybe we need to eliminate the right half and look for a smaller value. So you eliminate because if to minimize, eliminate the right half. Remember one thing, the last possible one was when high was mid, when high was this. So maybe you can store answer equal to high, something like this. And at the end you can return the answer or high answer or high. Over here the concept of opposite polarity will not work that I've been teaching you because this is not mid minus one or mid plus one. Minus one was high equal to mid when it was possible. So high is probably storing the last answer."
+    },
+    {
+      "chunk_id": "L064_C47",
+      "start": 3306.84,
+      "end": 3361.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=3306s",
+      "text": "or mid plus one. Minus one was high equal to mid when it was possible. So high is probably storing the last answer. So that's why you return high or you can also return answer. That is your choice. This is how it'll look like. What about count of gas stations? I don't want to write it here because it doesn't matter the C++ or Java, the code is going to be pretty much similar because we just iterate over the array. So what I'll do is I'll quickly jump into the code editor now. So let's quickly jump into the code editor. As you can see, we're given the array and the K. Initially what am I doing? I'm taking the low and high as zero, long double, please make sure. And then I figured out the high by figuring out the difference of consecutive. So you just have n minus one section so you can do that. And then what I do is I do the normal binary search for doubles. That is according to the question. If you see in the question, I think, yeah, this is where they're stating it. So I do it accordingly. And after that I find out the mid and I call a function which tells me how many gas stations are required in order to maintain this particular distance mid. And then if it is a lot more, I need to increase the distance."
+    },
+    {
+      "chunk_id": "L064_C48",
+      "start": 3361.8,
+      "end": 3428.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=3361s",
+      "text": "are required in order to maintain this particular distance mid. And then if it is a lot more, I need to increase the distance. This is not possible and else I decrease it and that is what I return. And this is what we have to focus. Let's go to the function number of gas stations required. I have to keep a distance and this is the array. Initially I say that number of gas stations required count as zero and I have n minus one section. So we start from one and in order to find out the difference of the section, it's array of i minus array of i minus one by distance. What is distance that has been given to you? Point four point five can be anything. And this is the number that I require in. So if it is point four, if you remember, let's go back into the iPad. If it was like one to two and the distance was one, one by point four is two point something, right? This is what I'm checking. If it is exact division, pure mathematics, you can do it on pen and paper. Then it's, I have to reduce one. Because if it is one by point five, that'll be two and I cannot take two up to reduce minus one from it to reduce one for point four. It is two point five. I'll take the integer, which is two. That's okay."
+    },
+    {
+      "chunk_id": "L064_C49",
+      "start": 3428.86,
+      "end": 3494.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=3428s",
+      "text": "minus one from it to reduce one for point four. It is two point five. I'll take the integer, which is two. That's okay. So I'm digging an integer in the exact division matches in the exact division matches. I decrease the number in between and depending on that I added and eventually I'll have the total numbers. If I add up all the sections and that is what I returned. Let's really go ahead and run this off and see if it is running fine. Should be. Yeah, it does. And now let's quickly submit this stuff. Same pattern of binary search, writing the binary search and having a check and according to the check, eliminating the right or left just because it is, uh, in terms of double or long double, we cannot do minus one because that will eliminate a lot of numbers. So this is the standard procedure of doing binary search on anything which has long double. I don't expect this question to be asked, but just in case it is, that is why I'm teaching you and I know it was tough because all the three solutions are tough. It's not that one of the solutions is easy. All of them are tough and this is probably one of the hardest questions. If you ask me to rank in terms of interview questions when it comes to binary search, so do not worry about that. Let's talk about the time complexity."
+    },
+    {
+      "chunk_id": "L064_C50",
+      "start": 3494.42,
+      "end": 3543.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=kMSBvlZ-_HA&t=3494s",
+      "text": "rank in terms of interview questions when it comes to binary search, so do not worry about that. Let's talk about the time complexity. So let's talk about the time complexity. So, log of n logarithmic of the range length is the time taken for binary search and an n. So n logarithmic of n plus n. Are we using any extra space? No. This is where we optimize from the priority queue solution. And if the interviewer doesn't agree on that, tell him to. Anyways, I hope you have understood this. I know it has been a long video and it took me nearly three hours to record because I was retaking most of the times because I wanted it to be precise and to the point. And I hope you have understood everything. And if you're still watching, you can hear my voice. It's almost done. So please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us. And with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

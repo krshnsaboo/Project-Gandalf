@@ -1,0 +1,99 @@
+{
+  "lecture_id": "L070",
+  "lecture_number": 70,
+  "lecture_title": "BS-25. Search in a 2D Matrix - II  |  Binary Search on 2D",
+  "youtube_url": "https://www.youtube.com/watch?v=9ZbB397jU4k",
+  "chunks": [
+    {
+      "chunk_id": "L070_C1",
+      "start": 0.0,
+      "end": 77.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=9ZbB397jU4k&t=0s",
+      "text": "So let's continue with our binary search playlist. Before that, hey, welcome back to the channel. I hope you guys are doing extremely well. So the problem that you're going to solve today is searching in a 2D matrix part 2. Where is the part 1? I've already solved this problem in this particular playlist. You can go back and watch it. So what is part 2 stating? It's stating that you'll be given a matrix of integers which will be of size n cross and you will have to tell me the coordinate where the target is lying in the matrix. Now the target can be anything. It can be there in the matrix. It cannot be there. Just in case the target is there, you'll have to return me the row number and the column number. In this particular case, the target is 14 and it is over here. So if I write down the row numbers, that is, it is on the third row and it is at the column second. You'll have to return me 3, 2. This is what you have to return me. So is it a normal matrix? No, it is not. So the question states that every row, yes, every individual row will be sorted from left to right, from left to right, and every individual column will be sorted from top to bottom. That is what is stated."
+    },
+    {
+      "chunk_id": "L070_C2",
+      "start": 77.56,
+      "end": 150.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=9ZbB397jU4k&t=77s",
+      "text": "left to right, from left to right, and every individual column will be sorted from top to bottom. That is what is stated. But carefully notice this 15 is greater than 2. So it's not sorted in this way, like it's not sorted. The matrix entirely is not sorted. Only the individual rows and the individual columns are sorted. So this is the property of the matrix that is given to you. And your task is to tell me the coordinates of this particular target. So what will be the extreme brute force? The extreme brute force is super simple. What do you basically do is you go through every element and you check where is the particular element. And the moment you find the element, you return the row number and the column number. In case you don't find, then you return minus 1 and minus 1 or whatever the question is asking. So I have to go through every element. So what will be the time complexity? Obviously, it will be big O of n cross n. I'm not going to write the code because this is like extremely naive solution. Can I optimize this? Can I optimize n cross n? Probably I can. Why can I? The entire row is sorted. Every individual row is sorted. So can I say if I go to the first row and just look at this row as an array, as in 1D array, can I look for 14 over here?"
+    },
+    {
+      "chunk_id": "L070_C3",
+      "start": 150.04,
+      "end": 227.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=9ZbB397jU4k&t=150s",
+      "text": "go to the first row and just look at this row as an array, as in 1D array, can I look for 14 over here? I can. And the row is sorted. Can I do a binary search on this individual 1D array? I can. So what I will do is I'll go to the first row and consider this as a 1D array. I'll do a binary search to find the target. Do I find? No. Next, I'll go to the next. I'll again do a binary search to find 14. I don't. Next, I'll go to the next and again do a binary search to find the 14. I don't. And eventually, when I'm over here and I do a binary search for 14, I'll find it out at the column number 2. And we are at the row number 3. So 3 comma 2 is what we will be returning. So what am I doing? I'm basically going from the row 0 till the last row, which is n minus 1. And I know the array is matrix of I. Because if I just write matrix of I, that's basically an individual 1D array. Something like if I write matrix of 0, that's an individual 1D array. So can I say we know how to do a binary search, right? Maybe we can call the binary search function. I'll say that, hey, the array is matrix of I. I'll have to look for target."
+    },
+    {
+      "chunk_id": "L070_C4",
+      "start": 227.96,
+      "end": 299.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=9ZbB397jU4k&t=227s",
+      "text": "Maybe we can call the binary search function. I'll say that, hey, the array is matrix of I. I'll have to look for target. And probably I can just give index. And in case, because we know how to write this binary search on a 1D array, I'm not going to teach you again. So if this particular index is saying that, hey, listen, I am having a value apart from minus 1, assuming it returns minus 1, if the element is not there. If it is not returning minus 1, that means it is there. Hence you can straight away return the row number, which is I. And the column will be indexed because that is where it will be found. In case, after going through every row, you did not find it, then you'll be going ahead and returning minus 1 comma minus 1. That's it. So what I did was, I went through every row and I did a binary search on that 1D row. And if I'm finding it, then I'm returning the particular row and wherever I'm finding it, that is what I'm doing. What would be the time complexity of this? Can I say I'm going through every row? So that's a bigot of n. That is what I'm taking because I'm going through every row and doing a binary search. What is this particular length? That's a m length. Every 1D array is of length m, right?"
+    },
+    {
+      "chunk_id": "L070_C5",
+      "start": 299.9,
+      "end": 378.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=9ZbB397jU4k&t=299s",
+      "text": "every row and doing a binary search. What is this particular length? That's a m length. Every 1D array is of length m, right? So can I say I'm doing a binary search on every particular row, which will take logarithmic base 2m time complexity? Hence, this will be the time complexity. But but but this will just be the better solution. Can we optimize this? Yes, we can. Let's look at that. So I'll be writing the code for the better solution because I'm assuming that you guys can write it. And in case you need any reference, what you can do is you can go to the notes in the description and you can find out the better solution code in C++, Java, Python and JavaScript. So what is the next thing? n into logarithmic base 2m is something which is not working. Binary search did not work. Can we optimize this? Let's carefully look at something. If I stand over here, just hypothetically think on this. If I'm standing over here, this is increasing, this is increasing. So I'm standing over here and someone is saying, tell me where is 8. Can you for sure? Can you surely say that 8 will not be here? You cannot because from this, like on the right side, it is increasing. On the bottom also it is increasing. So you cannot decide on like which side 8 is lying. You cannot decide. Let's look at alternatives. Can I stand here?"
+    },
+    {
+      "chunk_id": "L070_C6",
+      "start": 378.78,
+      "end": 458.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=9ZbB397jU4k&t=378s",
+      "text": "it is increasing. So you cannot decide on like which side 8 is lying. You cannot decide. Let's look at alternatives. Can I stand here? Even if I stand here and I'm looking for 8, this side is decreasing, right? And this side is also decreasing. So I again cannot decide where to go. That is impossible because both of them are decreasing. So I cannot surely say. Let's look at the other alternatives. What if I stand here? Let's carefully observe. Over here, this is decreasing and this is increasing. So can I say overall this line and this line is increasing? Like it's like 1, 4, 7, 11, 15, 19, 22, 24, 30. It's increasing overall. So can I surely say if I'm looking for 8, hypothetically. If I'm standing here, 8 can never lie over here. Can I surely say that? I can. I can. Why? Because everything is greater than 15. So 8 cannot lie here, but 8 can probably, I'm not sure. I'm not sure. Probably here or somewhere here. But I'm very much sure that it'll never be here. I'm very much sure. And this is what we will try to use. Let's do a dry run. You'll understand it in a much better way. Target is 14. Let's stand at 15. Let's, okay, I'll probably change the color. Let's stand at 15. So you're standing at 15."
+    },
+    {
+      "chunk_id": "L070_C7",
+      "start": 458.52,
+      "end": 537.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=9ZbB397jU4k&t=458s",
+      "text": "Target is 14. Let's stand at 15. Let's, okay, I'll probably change the color. Let's stand at 15. So you're standing at 15. I'm looking for 14. Can I surely say this is not my target? I can. And can I surely say that this is increasing? This is increasing. Thereby, 14 can never lie over here. 14 can never lie over here. So what I'll do is I'll start at row equal to zero and column equal to, how much is that? Zero, one, two, three, four. So column is four. Let me write down the row numbers. So can I surely say that this particular 14 that I'm looking for will never be in the column four? I can. Thereby, I will simply move to 11. Hence I'll say the column will reduce to three. Perfect. I'm standing over here and again carefully observe this particular thing is sorted. I'm looking for 14. Now can I say it will never be? Yes, I can. I will eliminate this portion now. Just look at the elimination that's happening. I'll eliminate one row and I'll move to the bottom. That's to 12. That means I'll increase the row. Perfect. So I'm standing at row one and column three. What am I looking for? 14. Can I definitely say I can never find 14 here? I can."
+    },
+    {
+      "chunk_id": "L070_C8",
+      "start": 537.4,
+      "end": 614.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=9ZbB397jU4k&t=537s",
+      "text": "one and column three. What am I looking for? 14. Can I definitely say I can never find 14 here? I can. Thereby, this will be omitted. I'll move one step down and I'll increase the row. Perfect. I'm looking for 14, which is definitely not equivalent to this. And can I say I can probably have 14 here, but I can never have it here. Hence I will say eliminate this and move one place here, which is reduce the column. Perfect. I'm having nine. I'm looking for 14. That's definitely not it. Thereby, I can say I'll never have it here because all of these numbers are lesser. Hence I'll eliminate this and I'll increase the row to three and I'll reach at 14. The moment I'm reaching at 14, the next check that's equivalent to the target. Hence it's at the row comma column. And if you carefully see the row is three and the column is two. What did I do? I eliminated and at every time I was eliminating a row or a column. So this does work. What is the time complexity? We'll be discussing that. But before that, let's quickly write down the code. It's super simple. I know one thing. The row is zero. Initially I'm standing at column M minus one. Now I will be moving. Observe one thing."
+    },
+    {
+      "chunk_id": "L070_C9",
+      "start": 614.2,
+      "end": 692.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=9ZbB397jU4k&t=614s",
+      "text": "one thing. The row is zero. Initially I'm standing at column M minus one. Now I will be moving. Observe one thing. You either move this side or you either move downwards, isn't it? So basically while moving, you might drop the columns or while moving down, you might cross the rows. So can I write while till I have rows, like till I have rows and till I have columns. That's it quite simple. And in case if the matrix is having the row and the column equivalent to the target, I said got my value and you can return this value, which will be your answer. Just go ahead and return it. Pretty much simple. Or else if the matrix of row column is lesser than target, can I surely say it'll never be in that row. Thereby you will say row plus plus or else there's only one condition, which is column minus minus. Perfect. If the while loop ends, you can return something like minus one comma minus one stating the value was never found. Very simple. Now you might be thinking, Stryver, does it only work if we stand here? Can I stand here? Yes, you can."
+    },
+    {
+      "chunk_id": "L070_C10",
+      "start": 692.28,
+      "end": 768.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=9ZbB397jU4k&t=692s",
+      "text": "you might be thinking, Stryver, does it only work if we stand here? Can I stand here? Yes, you can. Even if you start your algorithm from here, it will still work. Why is that? Because even if you look at this carefully, this is also sorted. So when you're standing at 18, you can see that this is smaller, this is greater. So you can eventually eliminate this part or this part. So there are two possible starting points. One is definitely this one, while the other one is definitely this one. But these cannot be the starting points. Why? Because if you carefully observe, both of them are increasing, both of them are decreasing. So you cannot eliminate over here, since this portion is sorted, you can decide what to eliminate. So the next thing, the time complexity. What is the time complexity? I think the worst case, which is you start from 15 and you're looking for 18. What is the worst case? It's basically going from one corner to the other corner. Tell me one thing, what possible movements are we doing? We're either moving something like this and we're cancelling the column or either we are moving down and we're cancelling the row. These are the movements we are doing, isn't it? Something I know for sure is, if I have to go from here to here, I cannot go."
+    },
+    {
+      "chunk_id": "L070_C11",
+      "start": 768.08,
+      "end": 841.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=9ZbB397jU4k&t=768s",
+      "text": "we are doing, isn't it? Something I know for sure is, if I have to go from here to here, I cannot go. I cannot go in a, like what do you say, hypotenuse direction, because I cannot go in a diagonal direction rather. Why? Because that direction is something which our logic doesn't do. It just is going row plus plus that is down a column minus minus which is left. So I'm very much sure that from like to go from here to here, I have to take these many vertical steps. And what is these many steps? That's the number of rows I'll have to go in rows. And I also have to traverse the m horizontal steps, right? Thereby, in total, the complexity will be n plus m because I'll have to take these steps. And what you can do is, you can take this example and you will be seeing that, first you go from here to here, then you go from here to here, then you go from here to here, then you go from sorry here to here. Yes, then you go from here, then you go from here, then you go from here. So eventually you would have taken one, two, three, four. Four vertical and one, two, three, four horizontal steps."
+    },
+    {
+      "chunk_id": "L070_C12",
+      "start": 841.04,
+      "end": 907.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=9ZbB397jU4k&t=841s",
+      "text": "go from here. So eventually you would have taken one, two, three, four. Four vertical and one, two, three, four horizontal steps. 4 plus 4 is 8 which is basically n plus m. Thereby, the time complexity is B go of n plus m. What about the space complexity? That's a B go of 1. So this will be the complexity of the optimal algorithm. So let's quickly get back into the code editor. By the way, in the problem statement, they're asking you to return a Boolean value. That is, you return true if you find the target and you return false if you do not find the target. So you don't need to return the coordinates. So it's the exact same code and that is what I've written. You might be thinking, but where is binary search? And the concept of binary search, it's still here. That is elimination. We did not apply straightaway binary search. The concept of elimination was applied because we kind of eliminated a part. So the concepts will always be there. It might not be a straightforward binary search question. In that case, you need to figure out elimination tactics. Got it? So what I'll do is I'll quickly go ahead and submit it and this will be running fine. Just in case you're watching till here and you've understood everything. Please, please, please do consider giving us that like and"
+    },
+    {
+      "chunk_id": "L070_C13",
+      "start": 907.68,
+      "end": 919.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=9ZbB397jU4k&t=907s",
+      "text": "running fine. Just in case you're watching till here and you've understood everything. Please, please, please do consider giving us that like and if you're new to our channel, what are you waiting for? Hit that subscribe button and if you haven't followed me on Instagram, Twitter and LinkedIn, all the profile links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye."
+    }
+  ]
+}

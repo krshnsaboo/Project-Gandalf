@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L181",
+  "lecture_number": 181,
+  "lecture_title": "G-56. Articulation Point in Graph",
+  "youtube_url": "https://www.youtube.com/watch?v=j1QDfU21iZk",
+  "chunks": [
+    {
+      "chunk_id": "L181_C1",
+      "start": 0.0,
+      "end": 79.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we will be learning about articulation point. What do you mean by articulation point? Now if this is the given graph, any node on this graph on whose removal the graph breaks into multiple components is what you call as articulation point. Like if you see this graph for an example, imagine I remove zero. Do you see the graph being broken into one and two component? Do you see that? You see that right? The graph got broken into two components on the removal of zero. Similarly, if I try to remove two, like if I try to remove two, did the graph break down into multiple components? Yes it did. One is here and the other one is here. The graph broke down into multiple components. These edges will no more be there, but the graph did break into multiple components. So any node on whose removal the graph breaks down into multiple component is known as an articulation point. Now can I see that three is an articulation point? No, I cannot because even if I remove three, the graph is still connected. I don't see any breakage apart from the removal of three."
+    },
+    {
+      "chunk_id": "L181_C2",
+      "start": 79.08,
+      "end": 156.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=79s",
+      "text": "even if I remove three, the graph is still connected. I don't see any breakage apart from the removal of three. That is why three is not an articulation point for this particular graph. Only zero and two are articulation points. Now in order to understand articulation point, there is a prerequisite and the prerequisite is this particular video bridges in a graph. The video before this in this particular playlist is what you should have seen. You should have understood what is time of insertion, what is the lowest time and everything. And if you know that, then only you should watch this particular video, which is talking about articulation point because I'm assuming you've seen the video of bridges in a graph because the concept that we have used in bridges in a graph is what we will be using in the articulation point. So please go back and watch it and come back and watch this video again. So if you remember the bridges video, we used two arrays. One is the time of insertion while the other one was the lowest time of insertion. Now the definition still stays the same, but there's a slight tweak over here. The time of insertion states while you enter in the DFS, you store it, but the lowest time of insertion has been changed and it states minimum of all adjacent nodes. Like you take all the adjacent nodes apart from the parent and take"
+    },
+    {
+      "chunk_id": "L181_C3",
+      "start": 156.16,
+      "end": 226.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=156s",
+      "text": "has been changed and it states minimum of all adjacent nodes. Like you take all the adjacent nodes apart from the parent and take all the lowest time of insertions, but you also remove visited nodes. Do not take parent and do not take visited nodes. Why not visited nodes? I'll explain you in the bridges video, there was nothing as visited nodes. There was simply apart from parent over here. It's apart from the parent and apart from the visited nodes. Why we will be talking that in depth when I take this example. So let's, if it did not understand the exact use of low, do not worry. When I do a dry run on this particular graph, you'll get an idea about what is the exact definition of low here because it's slightly different from the bridges in the graph. Okay. So in the bridges in a graph, if you remember in that video, the condition was very simple. If the low of IT, like if the low of IT in any case was greater than the time of insertion of the node, then we could say that node and IT is a bridge, right? That means if that is a node cannot reach back to the node or before it, that means it is a bridge. This was the condition being used in the bridges in a graph of video. Now"
+    },
+    {
+      "chunk_id": "L181_C4",
+      "start": 226.0,
+      "end": 305.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=226s",
+      "text": "before it, that means it is a bridge. This was the condition being used in the bridges in a graph of video. Now over here, we are, we removing an edge. No, we're removing the entire node. We're removing the entire node. So if you're saying this is an articulation point, the five has to reach before, not at this node, not at this node. In the previous, in the previous bridges, if you could reach at two, it was okay because the edge was removed. Over here, you have to reach before two, somewhere before two. That is why that slightly, like we'll slightly change the definition of, we will see if, if the low of IT cannot reach, that means if it is greater than the time of insertion of node, that means it can either reach the node or it is greater. Even if it's reaching the node that is of no use because I'm going to remove the node. So even if you reach node, that's of no use. So this is the updated condition. This is the updated condition and there's a slight new introduction and that states parent is not equal to minus one. Yes, we have a slight new introduction. We say parent"
+    },
+    {
+      "chunk_id": "L181_C5",
+      "start": 305.72,
+      "end": 379.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=305s",
+      "text": "introduction and that states parent is not equal to minus one. Yes, we have a slight new introduction. We say parent is not equal to minus one. Why parent not equal to minus one? Let me explain. So imagine if you have a graph like zero and it points to one and then it goes to and then goes to three. Right? So apparently if you're at zero, if you're at zero, zero can never be the articulation point. Why? Because even if you remove zero, it still stays as a component. It still stays as a single component. So be very careful if it is the starting point. If it is a starting point, do not use the formula. You will go wrong. You'll go wrong. For the starting point, we'll use some different logic, which I'll talk at the back end. But as of now, remember if it is the starting point, do not use this formula because this is of no use. If you remove it, it's of no use. The formula is of no use. So do not use this for starting points. For starting points, we'll use a different logic. Okay. So I hope you've understood. You have to reach before the node, not at the node. You have to reach before the node. Okay. Now let's quickly start our time of insertion. So let's start the DFS traversal with zero. Market is visited. So what are we storing? Time of insertion"
+    },
+    {
+      "chunk_id": "L181_C6",
+      "start": 379.44,
+      "end": 453.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=379s",
+      "text": "start our time of insertion. So let's start the DFS traversal with zero. Market is visited. So what are we storing? Time of insertion and low similar to bridges. We inserted at time one and the lowest time is one. Next we go here. So market is visited and two by two. So does one have any of its adjacent? No. So we will go back. When we go back, will we apply the formula to this particular guy? Because we have came back from a node. The DFS is completed. But if you remember it's stated as the first guy, parent is minus one. Do not do anything for first parents. Do not do anything for first parents. Okay. Go to two. So we'll go to two and we will update it like three by three. Similarly, it will go here and the moment it goes here, it will update it by four by four. But here comes the twist. So it says I've updated myself by four by four. I've updated myself by four by four, but I can go, but it's already visited. I can go, but it's already visited. So what I will say is, Hey, listen, I will just update my loop. I'll just update my loop. But while updating my loop, I will just take this and not this. Why? I'll explain you as we go forward. We will not look at this. We will just look"
+    },
+    {
+      "chunk_id": "L181_C7",
+      "start": 453.12,
+      "end": 526.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=453s",
+      "text": "just take this and not this. Why? I'll explain you as we go forward. We will not look at this. We will just look at the time of insertion and that is what I'll take. I'll update it with one. Perfect. Time to come back. Now, when it comes back, when it comes back, the low looks around it and says, you have one, you have one. You're not my parent. You're not a visited node because you did your DFS. Since you did your DFS, give your load to me. That updates it's low to one. Now, can I see the DFS of two, call the DFS of three and adds back. Now, since it is back, you will say, okay, wait, I have done a DFS. Now let me see if I can be an articulation point. Now what is two? Two is stating my time is three. Two is stating my time is three. So three is saying my lowest is one. So I can reach before you. Even if you're an articulation point, I can still reach. So even if you're removed, I'm still somewhere in the same component. So this will not be an articulation point as of now, as of now, right? This is why I said greater than equal to, this is having a lowest point of one. This is having an entry point of three and it can reach before three. So this is"
+    },
+    {
+      "chunk_id": "L181_C8",
+      "start": 526.28,
+      "end": 597.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=526s",
+      "text": "is having a lowest point of one. This is having an entry point of three and it can reach before three. So this is why this is perfect. Perfect. Let's go down. So three is done. Now we'll go to four. It will be like, sorry, sorry, my bad. It'd be like five by five. We have five by five. So it says I have five by five, right? So it marks it as visited. Next goes to six by six marks it as visited. Next goes to seven by seven marks it as visited. Now here comes the critical junction. You have five. Five's DFS is done. Why? Because five has one adjacent node which is already visited. So now the low says I will look at the adjacent node, but that's visited. So I will not take one. I'll not take one if it's visited. I'll not take one if it's visited. Instead I'll just take three. Instead I'll just take three. Why? Why is the question? I'll take three. Why not one? Why not one? Because in Bridges we took one. We took one because I was greedy. You need to understand. Now this node was visited. Why was it visited? Because I traveled like this. Then I went here. Now I did not take one. Why? Because imagine, just imagine I remove this two. Can you reach back to one?"
+    },
+    {
+      "chunk_id": "L181_C9",
+      "start": 597.36,
+      "end": 662.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=597s",
+      "text": "went here. Now I did not take one. Why? Because imagine, just imagine I remove this two. Can you reach back to one? Had you taken one? Just, just tell me how will you reach one? You cannot. So if it is a visited node, do not take something which is via two, which is via two because two will be removed, might be removed. That's why you'll always take three and not one. Got it? So can I say the DFS of five is completed and now it will try to come back. So when it tries to come back, see what happens. So I can say DFS of five is completed. So the call came in from six. Now it goes back. Now six is saying, okay, what is the entry point of six? That is six. What is the entry point of like where can five reach? Five can still reach three. That means it can somewhere reach six back again, right? Even if you remove six, it can still, it's a part of the same component. This cannot be an articulation point. Go back. So when it now goes back, four says, okay, you're coming back. Let me take yours because you are an adjacent node. You're not a visited. You are one of my adjacent node who went into DFS, completed it. I'll take your three. I'll take your three. I will take your three. Now"
+    },
+    {
+      "chunk_id": "L181_C10",
+      "start": 662.84,
+      "end": 739.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=662s",
+      "text": "of my adjacent node who went into DFS, completed it. I'll take your three. I'll take your three. I will take your three. Now this time what happens is four called six. Now what is four's entry point? Five. Six is I can still somewhere go and reach three. So I can still reach before you. So you cannot be an articulation point. Perfect. Now comes the critical junction. Four now goes back to two stating I'm complete, I'm complete. So four is complete. It came from two. So now it goes back. Two says, okay, you're done. What's your minimum? Three. My minimum is three. So two says, can I be an articulation point? What's my entry point? That's three. What's your minimum entry? You can just reach three. That means you can reach to me, not before me, not before me. Even if I remove myself, you guys will be two separate, two separate entities. So thereby two is an articulation point. Thereby I find two is an articulation point. So I can say two is an articulation point. Got it? Very simple, very straightforward. The only reason we did not take one is because how do we take in one over here? This one would have been propagated here. This one would have propagated here. And I somehow"
+    },
+    {
+      "chunk_id": "L181_C11",
+      "start": 739.52,
+      "end": 814.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=739s",
+      "text": "we take in one over here? This one would have been propagated here. This one would have propagated here. And I somehow would have said I can reach zero, which is not possible because it's via two. It's via the visited path. That's why you do not take visited because if a path is via visited, that's no point. I want to go via some adjacent nodes. Got it? Perfect. Now two says, let's go back. Now when I go back again, the parent is for this minus one, so I'll not consider. So mostly done. The updated condition says I should reach before this and the parent should be minus one and low should only update itself if it's not parent and not visited. If it's visited, it takes the time of insertion. Simple. Done and dusted. Now the question comes is zero an articulation point? It is because if you remove zero, split it into two components. So the logic over here is very straightforward. Imagine there is a node and it is like just connected to one. In that case, this can never be an articulation point because even if you take it off, it's still a single comp. It is not broken into multiple. So it cannot be an articulation point, but the same parent, if it is connected to multiple children's, if it is connected to multiple children's, the moment you break it, the moment"
+    },
+    {
+      "chunk_id": "L181_C12",
+      "start": 814.92,
+      "end": 893.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=814s",
+      "text": "the same parent, if it is connected to multiple children's, if it is connected to multiple children's, the moment you break it, the moment you break it, they will always be individual components. This is what happened in this case. The moment you took it, this was individual and this was individual, which was later connected, here. Right? So what's the grass? If it's a starting point and if it has multiple children's, if it has multiple children's, then only I will see that it's an articulation point. So for the starting point, if it has multiple children's, then only I'll say it is an articulation point. I will not apply the formula to the starting point. Never ever. I'll do that. So before moving on to the code, did you observe something? Now, when you came back from four to two, two said, I am a articulation point because four cannot reach back to any position before. I was seeing that two is an articulation. Now, what if there was another component, which was similar to this seven and then eight and then nine and then similar. So if there was another component, but again, gone the same way and you've again came back and again, you would have found two is an articulation. So it might happen during the traversal course, you might find two to be the articulation point multiple times, because if I just extend this"
+    },
+    {
+      "chunk_id": "L181_C13",
+      "start": 893.48,
+      "end": 962.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=893s",
+      "text": "it might happen during the traversal course, you might find two to be the articulation point multiple times, because if I just extend this graph, just imagine I extend this graph to something like this. Imagine I'm taking it to seven and then eight and then nine. So similar graph just extended into two portions. So this, when it came back, it found out two was an articulation. Similarly, when this goes and comes back, it will find that this is again an articulation point. So it might happen. You might find two multiple times. So instead of printing directly on the check of this condition, create a hashing, say two is an articulation point, say two is an articulation point, say one is an articulation point, just mark it. And at the end of the day, you can return it. So I'll show you this during the code implementation. So if you can see that the question states, you'll be given a zero based indexing graph. You have to find all the articulation points. And if there are none, you have to return a list which is containing a minus one. What are we given? We're given the V, we're given the adjacency list. So what did we require in order to write the BFS? Sorry, DFS required a visitor. So market of this one, let's keep it as N. And then you can"
+    },
+    {
+      "chunk_id": "L181_C14",
+      "start": 962.04,
+      "end": 1033.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=962s",
+      "text": "to write the BFS? Sorry, DFS required a visitor. So market of this one, let's keep it as N. And then you can have a T in of N. Then you can have a low time as in that's something which you can have always. And then you can have a mark, which marks which are articulation points. And then, you know, there can be multiple components. So maybe you can just scroll through and you can say if not visited of I, you can say DFS of I and the parent can be minus one. Initially, you can pass in the visitor T in the low the mark and the adjacent. And at the end of the day, you can say vector of int answer. And you can just go across all the notes and you can see if it is marked as articulation point, can you please store it over here? And and if answer.says like if there are no articulation point, they state you to return minus one. So please return minus one else you can like else you can return the answer quite simply. I just need to write the DFS. So let's go across and see private and you can have a time as zero and you can have the void DFS. The void DFS is I and D"
+    },
+    {
+      "chunk_id": "L181_C15",
+      "start": 1033.16,
+      "end": 1106.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=1033s",
+      "text": "and you can have a time as zero and you can have the void DFS. The void DFS is I and D node. And it says I and D parent. And then you can take all the things like vector visited. They can take it by reference. You can take the team. You can take the low. At the same time, you can see the vector of it and take by reference the mark. And at the same time, you can take the adjacency list done. What's the first thing that you will do? You'll always when you start off, you'll say visited mark. Does this and the time of insertion, the lowest time will be marked as time. And you can always increase the time of plus plus for the next step. Now let's go across to the adjacent nodes, which is like this. And this one thing, you know, for sure is if it is the parent, you do not update the lower time insertion. So you can just go over here. You know, the other thing will be if it is not visited, this adjacent node is not visited. In that case, what you will do is you will go across, call it with the this DFS and you'll pass on the visited the time in the low, the mark and the adjacent. And when you come back, you'll be very"
+    },
+    {
+      "chunk_id": "L181_C16",
+      "start": 1106.84,
+      "end": 1181.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=1106s",
+      "text": "you'll pass on the visited the time in the low, the mark and the adjacent. And when you come back, you'll be very greedy to say, hey, whatever you brought in, can you please give it to me? Okay, done. Next is the condition to check because you're coming back. So if you cannot reach somewhere before me, and you're not the first guy, you're not the first guy. If you remember, sorry, not equal to minus one. If you're not the first guy, you're an articulation point, my friend. So I'll just market. And if it is visited, if it is visited in that case, I'll say low of node because that's the current guy will be minimum of low of node. This time for the adjacent, I will not take the low because it's visited. I'll not take the low. Instead of that, I'll take the time of insertion of that particular visited guy. Once I've done this, I think we are pretty much done. I'll quickly compile this and see if it is running fine. So you see, this is just giving to, why did it give to? Because for the starting point, we have not written the logic. If you remember the logic, it was very simple. Count the childs like the unvisited child. So you can just count it. And at the end, you can write, hey, listen,"
+    },
+    {
+      "chunk_id": "L181_C17",
+      "start": 1181.48,
+      "end": 1255.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=1181s",
+      "text": "simple. Count the childs like the unvisited child. So you can just count it. And at the end, you can write, hey, listen, if the child is greater than one, if there are more than one child, this is definitely an articulation point. And if you are the starting guy, if it was a starting guy and the child is greater than one, I can easily see that you are definitely a articulation point. So if you add this condition up, I think it should give zero. It does. Now let's quickly submit and see if it is running absolutely fine. Yeah, it is. So guys, I hope you've understood this, right? Shuttle change to bridges. One is you need to make sure you reach before it, not on it, before it is very important. You don't compute for parents because it might happen. It's a single parent and even on its removal, it doesn't matter. So it's very important for a single parent. You write it like this because it might have multiple components. So in that case, it's definitely an articulation point. If it has multiple components, it's definitely an articulation point, even if the condition is not satisfied. So for parents, you have to write shuttle different conditions. And if it's a visited guy, you don't take something on the top of it. Why? Because you came by that path, came by that path. So if that's removed, you cannot go back. You cannot go back."
+    },
+    {
+      "chunk_id": "L181_C18",
+      "start": 1255.72,
+      "end": 1319.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=j1QDfU21iZk&t=1255s",
+      "text": "it. Why? Because you came by that path, came by that path. So if that's removed, you cannot go back. You cannot go back. That's why you just take the time of insertion and not the lowest. If it's a visited one, very, very important, this one and this line and this, that's a shuttle change from bridges. If I discuss about the time complexity and the space complexity, space complexity is quite simple. 3N. I wrote about the time complexity. The time complexity can be said as doing a DFS traversal. So V plus 2E and then a big off in here. So quite simple to get this. So I hope you've understood everything. Now, before wrapping up this video, I have a very quick request to make. I was going through our channel statistics, nearly 50% of the users who watch my video do not subscribe to the channel. So please, please do consider subscribing to the channel if you haven't subscribed yet. And if you understood the intuition, the algorithm and the code, what are you waiting for? Hit that like button. And if you haven't checked out our DPCs and the SDG and the other playlists, all the links will be in the description. Make sure you check them out. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye and take care."
+    }
+  ]
+}

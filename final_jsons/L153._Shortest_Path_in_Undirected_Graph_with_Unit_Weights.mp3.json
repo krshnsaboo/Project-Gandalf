@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L153",
+  "lecture_number": 153,
+  "lecture_title": "G-28. Shortest Path in Undirected Graph with Unit Weights",
+  "youtube_url": "https://www.youtube.com/watch?v=C4gxoTaI71U",
+  "chunks": [
+    {
+      "chunk_id": "L153_C1",
+      "start": 0.0,
+      "end": 75.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem shortest path in undirected graph having a unit distance. So you will be given an undirected graph having unit weight means the edge weights will be one. I need to find the shortest distance from a given source. So they'll also be giving you a source to all the points you have to find the shortest distance. And if the path is not possible, then you need to put something like a minus one. So that is what you need to do. So assume that this is the particular given graph and this is the adjacency list of this given graph. And I am telling you that, Hey, listen, uh, the source is zero in this case. So from zero, if I ask you, what is the distance to one, you will say the distance is one. If I ask you from zero, what is the distance to two? You will say that this is the distance two. So from zero, if I ask you, what is the distance to six, you will like, this is the shortest distance three. So this is what you have to find from zero to all the given nodes. You have to find me the shortest distance. So how will we find the shortest path? Now we will be applying a plane BFS algorithm. How I'll tell you that."
+    },
+    {
+      "chunk_id": "L153_C2",
+      "start": 75.56,
+      "end": 146.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=75s",
+      "text": "shortest distance. So how will we find the shortest path? Now we will be applying a plane BFS algorithm. How I'll tell you that. So in the BFS algorithm, we'll start off with a Q data structure and we will store the node in the first place and the distance. So we'll be storing pairs in the Q data structure, a plane Q data structure. So since the source is given as zero, what we do is we insert zero, zero, Y zero comma zero, because you know the distance taken to reach zero from zero will be zero, right? So that is what we'll store in the Q initially, right? Next, we will be declaring a distance array of what size you see the number of nodes is eight. So make sure you declare such a size that you can fit in the index eight as well. So you'll be declaring a distance array of size nine over here so that we can fit in the index eight. Now all the places should be filled up with infinity. You can take a very big number which cannot be your answer. Very, very big number. What I've done is I'll be taking it as infinity and remember whatever source you're starting off with, just make sure you assign it with distance zero. Just make sure you rewrite infinity to distance zero. Now let's quickly start the algorithm. So initially whatever is in the queue, just"
+    },
+    {
+      "chunk_id": "L153_C3",
+      "start": 146.36,
+      "end": 211.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=146s",
+      "text": "zero. Just make sure you rewrite infinity to distance zero. Now let's quickly start the algorithm. So initially whatever is in the queue, just take it out and you say, okay, initially I have a node zero and I have a distance zero as well. Now what I'll do is for the node zero, I'll try to figure out who are the adjacent nodes and I see one is one of the adjacent nodes and three is one of the adjacent nodes. So node zero can go to a node which is one and it can also go to a node which is three that can be easily, uh, you can easily get one in three from the adjacency list. Now tell me one thing, if you are at node zero and the distance taken is zero and if you're trying to go to node one and you know that all these edges are having unit widths, all these edges are having unit width. So can I say if this is taking a distance one and previously it was just in zero, this will be nothing but distance one. Can I see this in order to reach node one, you will be ending up to take distance one. So what you'll do is you will go to node one and you'll say previously, what distance did I take? Infinity. It means you never reached here. So now you're reaching with a distance one. So what you"
+    },
+    {
+      "chunk_id": "L153_C4",
+      "start": 211.5,
+      "end": 278.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=211s",
+      "text": "previously, what distance did I take? Infinity. It means you never reached here. So now you're reaching with a distance one. So what you will do is you'll say, okay, now I'm reaching with a distance one. So can you please replace this with a distance one and can you take this node one with a distance one and put that into the queue data structure? Similarly, this will also be distance one because if you have taken distance zero to reach node zero from here, a unit wet will take it to distance one. The next you'll say three, you are taking a distance one and node three with a distance one will be put into the queue. Next I can see the task of this one is done and you'll move to the next node, which is the next node. It's one. So I'll say node one has taken a distance of one. What does this signify? This signifies in order to reach from the source to the node one, I have consumed a distance of one, have consumed a distance of one. Now node one has adjacent nodes as zero to three. That has three adjacent nodes. Node zero, it has node two, it has node three. Again, you can figure these things out from the adjacency list. So I know this will be a plus one. This will be a plus one. This"
+    },
+    {
+      "chunk_id": "L153_C5",
+      "start": 278.9,
+      "end": 339.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=278s",
+      "text": "these things out from the adjacency list. So I know this will be a plus one. This will be a plus one. This will be a plus one. If I consider about distances because those are unit wets. So if I see the distance previously is one, now the distance will be two. So in order to reach node zero, the distance is two, but I have already reached here at a distance zero. Do I consider this? The answer to that will be no, you don't need to take a smaller distance because we are looking for shortest spots. Next, what I'll do is I'll go to this one and I'll say how much is the distance two. So let's see for node two, have I reached here? No infinity. So I can reach it at a distance of two. So node two at a two distance done. You put it into the queue and you have replaced the distance array as well. And this is node three. What you'll do, you'll again update the distance to two. Let's quickly check for node three. Previously you have reached with a distance one, which is sensible because if you directly traverse from zero, you'll reach at a distance one. Why do you want to go via one by taking one plus one two. So this will discard it. This will be discarded. So thereby I just"
+    },
+    {
+      "chunk_id": "L153_C6",
+      "start": 339.66,
+      "end": 404.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=339s",
+      "text": "to go via one by taking one plus one two. So this will discard it. This will be discarded. So thereby I just get one guy, two comma two, which has been put into the queue data structure as well as I've initialized the distance. Sorry. So what I can see now is the task for the node one is done. I'll get the next node, which is node three. So let's get the next node, node three, and I'll take a distance of one. Now from three, where can I go? I can go to a node zero and I can go to a node four as well. So over here, if I get a node zero and that's a distance one. So from three to node zero, that'll be another plus one. This will be another plus one. So this distance will be two and this distance will be two. Let's quickly analyze. Does node zero has already been, yes, it has already been reached at a distance zero discarded. Has node four been reached? No infinity. So what I'll do is I'll take it to the distance two and I'll say four comma two to be inserted into the queue data structure. Node three is done now. Perfect. I'll get the next guy, two comma two. So node two with a distance two. Perfect. So next, where can node two go? Let's analyze one and"
+    },
+    {
+      "chunk_id": "L153_C7",
+      "start": 404.34,
+      "end": 474.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=404s",
+      "text": "guy, two comma two. So node two with a distance two. Perfect. So next, where can node two go? Let's analyze one and six so it can go to node one and node six. So if it decides to go to node one, what will be the distance? Plus one of the previous, previous was two. So distance three plus one of the previous or distance three. Let's analyze node one. Node one has already been reached via distance one. So why do you want to take it? So this will be discarded. Node six has never been reached. So you take the distance three. Yes, you take the distance three and put it into your distance array. So six comma three will be inserted into your distance and you'll update the distance array as well. Done. Let's see the next guy, four comma two. So four comma distance of two. Let's see what the notes are for. It's three comma five. So let's quickly take node of three and node of five. And let's figure out what is the minimal distance. So if I figure out the distance, it'll be plus one to it, which will make a distance three. This will be also plus one, which will again make the distance to be three. Let's analyze node three. Node three has already been reached with a distance one. So I'll discard it. What about node five? Node five is infinity. Node five is infinity. So this"
+    },
+    {
+      "chunk_id": "L153_C8",
+      "start": 474.96,
+      "end": 540.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=474s",
+      "text": "been reached with a distance one. So I'll discard it. What about node five? Node five is infinity. Node five is infinity. So this is the first time I'm reaching at a distance of three. So five comma three will be inserted into the QD test structure. So what I can do is I'll quickly now erase this off. Perfect. Let's get the next guy, six. So node six at a distance of three. Perfect. So at node six, where can I reach? You can reach a lot of guys, two, five, seven, eight. So what I'll do is I'll try to go to node two, node five, node seven. A lot of guys are there. Please try out everyone. Node eight. Let's see. For node two, if I tried to take the distance, it'll be four. Will I consider it? No, we have already reached it. So this will be discarded. So let's discard it. What is the distance? Four again. Have I reached five? Yes. At a distance. This is four. So discarded. What will be this distance? Four. For seven it's infinity. So you'll say four and it'll take seven comma four and you'll put it. So this is taken. What about eight? Eight will have a distance four because I'll do a plus one. So eight comma four will also be taken into consideration. What I've done is I've updated the distance array and I put"
+    },
+    {
+      "chunk_id": "L153_C9",
+      "start": 540.32,
+      "end": 606.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=540s",
+      "text": "plus one. So eight comma four will also be taken into consideration. What I've done is I've updated the distance array and I put it into the QD test structure as well. So I'll erase it. Perfect. Let's get the next guy, five comma three. So notice five, the distance is three. So what will you do? You'll try to get the adjacent nodes of five again. That's four and six. So let's write four and let's write six as well. What are the distance? It's three. So plus one, plus one more than it. The distance will be now four over here. The distance will be four again. So what I can say is for node four, the distance was previously two. I'll discard it. And over here for node six, the distance was three. I'll discard it as well. Let's discard both of them. So we did not get any new shorter distance. So I'll just erase it. What is the next thing that I'll do? I'll take seven comma four. So from node seven, where can you go? Let's quickly have a check. Six and eight. So let's try to go to node six and node eight. Perfect. What is the distance? Can I say it'll be a plus one? So distance will be five. Can I say it'll be a plus one over here? So distance will be five."
+    },
+    {
+      "chunk_id": "L153_C10",
+      "start": 606.24,
+      "end": 677.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=606s",
+      "text": "a plus one? So distance will be five. Can I say it'll be a plus one over here? So distance will be five. So as of now, node six at a distance five, we already reached it at a distance three. No need to take it. So discard it. What about this? Node eight has already been reached with four. So discard it. So again, I have made sure that this does not give me any shorter ones. And last one is node eight with a distance four. So what the adjacent of eight, six, let's try for six. You'll get the distance as five because you do a plus one and the other node is seven. So you'll get the distance as five again. And seven, you can see is already been reached with four. So no new nodes with shorter distance are found. So ultimately you'll see that queue becomes empty. Ultimately, you'll see that queue becomes empty. So all the nodes that were reachable has been updated with their shortest distance. And if any node was unreachable, it would have stored the value infinity. If any node was unreachable, it would have stored the value infinity. Apart from that, you can see the shorter distance being updated in the distance array. That is how easily you can solve this particular problem by following a simple BFS algorithm. And instead of a visited,"
+    },
+    {
+      "chunk_id": "L153_C11",
+      "start": 677.84,
+      "end": 746.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=677s",
+      "text": "distance array. That is how easily you can solve this particular problem by following a simple BFS algorithm. And instead of a visited, we keep a distance array, which tells me what is the shortest distance that has been previously visited to this particular guy. So I hope you've understood the entire explanation. I'd send to code it up. So as usual, I'll be coding the C++ code on the right, and you can figure out the exact similar Java code on the left. So what are we given? We are given the edges, the N M and the source node. So at first we need to create the graph. So let's quickly create the graph. So vector of adjacency list, and then we can go across all the edges. That's how you do it. And if this is the vector, I can say adjacency of it of zero, because that's the edge. And I get the ID of one is when you push it, remember it's an undirected graph. So it will have both side edges. So make sure you create the graph like this. So once the graph is created, what did I tell you need to create something as a distance array, right? So can we go across and say distance of N and everything needs to be initialized with an infinite value. So go across and initialize that"
+    },
+    {
+      "chunk_id": "L153_C12",
+      "start": 746.64,
+      "end": 809.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=746s",
+      "text": "go across and say distance of N and everything needs to be initialized with an infinite value. So go across and initialize that with an infinite value. So distance of I will be, I'll keep the infinite as one in nine. And then I know the source, whatever is the source given, because source to source is always zero. So that is what I'll give. And right after that, what I'll do is I'll say Q, okay. I'll start the queue with the source itself. So Q dot push, I'll keep the source. Now, what do I need to do? I need to travel in the queue till it is not empty, because I need to perform a standard DFS, sorry, standard BFS rather. This is what I'll do. After this, I'll say, I need node equal to Q dot front. Once I've said that I can do Q dot pop. And after that, I know to travel to all its adjacent nodes. It's quite simple. If you do this, this in this way, you can travel through all the adjacent nodes. But now what is ID? ID is an adjacent node to the node, right? So in order to reach from node, so they'll notice distance of node from there one more, because every edge has a new unit distance. So one more, if that's less than to what I require previously to reach the"
+    },
+    {
+      "chunk_id": "L153_C13",
+      "start": 809.2,
+      "end": 870.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=809s",
+      "text": "because every edge has a new unit distance. So one more, if that's less than to what I require previously to reach the node ID, what I'll do is I'll go distance of ID one plus distance of node. That is what I'll do. And I'll ask the Q, can you please store it because it's a new node. So can you please go and store it? Once I've done that, I'll go back to the question and say, I'll read the question. And it says that if you find the shortest path and return minus one, if it is not possible. So I need to return a list. Really, I can keep something like an answer of N size and everything initially initialized to minus one. And I can go across all the nodes, which is quite simple. And right after that, what I'll say is, Hey, listen, if the distance of I is not equal to one E nine, because initially we stored one E nine, assuming that none of them are reachable. If it is not, then we know it's reachable. Thereby it has updated its distance. So I'll say answer of I is equal to distance of I. So for all the nodes, which will contain one E nine, it'll stay as minus one. Otherwise we'll update the answer. And right at the end of the day, what I can say is, can I"
+    },
+    {
+      "chunk_id": "L153_C14",
+      "start": 870.16,
+      "end": 933.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=870s",
+      "text": "as minus one. Otherwise we'll update the answer. And right at the end of the day, what I can say is, can I please return this list? Once you've done this, what you can do is compile and run this. So you'll see that all the test cases are running absolutely fine. So a quick thing, why do we follow the Q method and why not the standard algorithms that we are going to learn in the future? So if you clearly see that since it is increasing by plus one, as you saw in the explanation, the Q will always store like the first, it will store source, which will take distance zero. Then the next guys will come at that will always come at distance one, because the edge weight is increasing by one, then the distance two will come, then the distance three will come. So if you look at the Q, it's already sorted. First the source at zero, then distance one, then distance two, distance three, it's already in the sorted order. So you need, so you don't need something like a sorted data structure to sort them in distance. That is why Q does work in a proper way. And the time complexity taken will be similar to what we usually take in a BFS algorithm. So you can call this as a BFS algorithm where we have applied a slight of greedy algorithm"
+    },
+    {
+      "chunk_id": "L153_C15",
+      "start": 933.36,
+      "end": 982.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=C4gxoTaI71U&t=933s",
+      "text": "usually take in a BFS algorithm. So you can call this as a BFS algorithm where we have applied a slight of greedy algorithm to make sure that we always compress the distance. And this is how you can easily store it. And if I talk about the overall space, we are creating the graph. So that's going to take some space using the distance, using the Q. So these three are taking some space and about the time complexity. It is more similar to what the BFS generally takes, which is V plus two E. So that is what the time complexity will be. If you omit these things in overall, you can say V plus two E. So guys, I hope I was able to explain you this particular problem. This in case I was, please, please, please make sure you like this video. And if you're new to our channel, please do consider subscribing to us. That is my only request. And if you haven't checked out our DPCs and the HDC, the links are in the description, please, please do make sure you check it out. With this, let's wrap up this video and meet in some other. Till then, bye-bye. Take care."
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "lecture_id": "L309",
+  "lecture_number": 309,
+  "lecture_title": "L13. Maximal Rectangle | Stack and Queue Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=ttVu6G7Ayik",
+  "chunks": [
+    {
+      "chunk_id": "L309_C1",
+      "start": 0.0,
+      "end": 78.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=ttVu6G7Ayik&t=0s",
+      "text": "So let's continue with our stack and queue playlist. Before starting off, Avery, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is maximal rectangle. So what is the problem stating? Problem is stating that you will be given an n cross m 2D matrix which only has 1 and zeros in it. Now your task is to give me the area of the maximal rectangle which has all 1's in it. The area of maximum rectangle in this 2D matrix which has all 1's in it. Let's understand. Can I take this particular rectangle? Yes, because it has all 1's in it and it is a rectangle. If I figure out the area, the area will be 5 because it is 1 cross 5. 1 is the height, 5 is the width. So this is the area, but you will have to figure out the largest, the maximal area. Do I see any other rectangle? Yeah, I do see this one which is having an area of 6 because 2 cross 3. This is the maximal. You could look over and you will find that this is the maximal one. You cannot take this one. You cannot take this one because there is a zero in it. There is a zero in it. So you cannot take this one."
+    },
+    {
+      "chunk_id": "L309_C2",
+      "start": 78.36,
+      "end": 145.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=ttVu6G7Ayik&t=78s",
+      "text": "cannot take this one because there is a zero in it. There is a zero in it. So you cannot take this one. It has to be all 1's in it and you need to return me the area, the maximal area. Okay, so before I move on to the solution, there is a prerequisite to this particular problem. If you have not seen my video on largest rectangle in histogram or if you have not solved this one, please, please go back and solve it because I will be using the concept of largest rectangle in histogram in order to solve this one. The critical catch over here is I am looking for a rectangle with only 1's in it, with only 1's in it. That is the critical catch. Okay. So, imagine I draw a line over here and forget about this portion, forget about this portion for a moment and I say that, okay, this is having a 1. So I will create a bar. This is a 1. I will create a bar. This is a 1. I will create a bar. Can I just visualize this as the histogram that we did solve? We can. If I ask you what is the maximal area, you will be like 1 is the maximal area. Yes, 1 is the size of maximal rectangle. I did not draw a bar on 0's because we are just considering 1's over here. Okay."
+    },
+    {
+      "chunk_id": "L309_C3",
+      "start": 145.4,
+      "end": 207.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=ttVu6G7Ayik&t=145s",
+      "text": "1 is the size of maximal rectangle. I did not draw a bar on 0's because we are just considering 1's over here. Okay. Now what if I say I will draw a line over here. This is my line. I will not consider this. Forget about this. I have asked you to draw bars. You will be like this is a bar, this is a bar, this is a bar and this is a bar. This is how the histogram looks like and this will be 0, this will be 0. If I ask you to figure out the largest rectangle over here, you will be like, hey Raj, this is the largest rectangle. Can you say that this is the largest rectangle which is of area 3? Does it make sense? And I can easily find out using this one. Okay. If I go ahead and say what if I draw a line over here and I say I will not consider anything beyond it, anything underneath it and this is my line, right. Start drawing bars. This is a bar of 3, 1, again a 3, again a 2 and again a 3. I have asked you, hey, what is the largest area over here? And if I apply the same thing that we did in this particular thing, you will say that this is the largest one. Can I say this? Yes and that is suppose 6, okay. Perfect."
+    },
+    {
+      "chunk_id": "L309_C4",
+      "start": 207.72,
+      "end": 272.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=ttVu6G7Ayik&t=207s",
+      "text": "this particular thing, you will say that this is the largest one. Can I say this? Yes and that is suppose 6, okay. Perfect. If I say that, okay, let us consider the last line. If I consider the last line, I will have a bar of 4. Remember the zeros will have no bars. The zeros will have no bars because I need all ones, only two bars. And if I have to consider the maximal area, I will come out to be 4 which is typically this one, okay. Out of everything I considered, because I considered almost all rectangles. If you just sit back and think, I did consider all rectangles and the maximum that I got was 6 which was this one. And this came out because I did draw a histogram over here because I did draw a histogram over here. So this is how you will have to connect questions to questions. You do not have to always think of a new solution. Maybe something that you have done in the past might help you to solve this particular question. Okay, fine. Now the question arises, hey, how do I figure out this? Because I have to stand here, figure this is of a length 1, this is of a length 1, this is of a length 1. And typically I will get an array which is something like a length 1, 0, 1, 0, 1."
+    },
+    {
+      "chunk_id": "L309_C5",
+      "start": 272.84,
+      "end": 335.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=ttVu6G7Ayik&t=272s",
+      "text": "this is of a length 1. And typically I will get an array which is something like a length 1, 0, 1, 0, 1. And this is the array that I will pass on to this question, okay. After that, I will stand over here. This is a length 2, length 0, length 2, length 1, and length 2. So basically the array will be 2, 0, 2, 1, and 2. How do you figure out this 2? That's the question because you just cannot iterate every time because if every time you are going to iterate and count the number of 1s, that will end up taking the complexity high. We need to optimize that. So for that, what I will do is I will try to use the concept of prefix sum. We have already done this concept of prefix sum in one of the problems. If you don't know the concept of prefix sum, please go back and watch my playlist. You will find this concept of prefix sum. Perfect. So, what I will do is I will end up converting this, I will end up converting this into a prefix sum 2D matrix. So what I will do is I will start from first 1 and then I will go to the next 1. So this will be 2. Then I will go to the next 1, this will be 3. Then I will go to the next 1, this will be 4."
+    },
+    {
+      "chunk_id": "L309_C6",
+      "start": 335.76,
+      "end": 396.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=ttVu6G7Ayik&t=335s",
+      "text": "Then I will go to the next 1, this will be 3. Then I will go to the next 1, this will be 4. So understand, if I am standing here, I know that this is of a length 3. I basically kept on adding. After that, I will go to 0, so I will add 0. I will go to 0, I will add 0. I will go to 1, I will add 1. Again I have a 0, so I will add 0. Remember you don't add this up. It's similar to prefix sum, you don't add this up. Because whenever I am standing here, there is no bar. But if I am standing here, there is a bar of 1 which I need. I need to be careful about it. And when you are standing here, there is no bar. You have to be careful about it. Perfect. Next is 1. Next is 2. Next is 3. And next is 0. So you take 0 over there because when you start from 0, there cannot be a histogram bar. Okay. After that I have a 0. After that I have a 1. After that I have a 1, so 2. After that I have a 1, I have a 3. So I realize that I need one more column, so I will just draw that column quickly. Perfect. Now I will go to this 1. So I need a 1. I have a 1."
+    },
+    {
+      "chunk_id": "L309_C7",
+      "start": 396.76,
+      "end": 461.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=ttVu6G7Ayik&t=396s",
+      "text": "I will just draw that column quickly. Perfect. Now I will go to this 1. So I need a 1. I have a 1. I need a 1, 3. And eventually I will have a 0. I can put a 0. So what I have done now is, if I am standing over here, I know the values of arrays straight away. I know the values of arrays straight away. Perfect. After this, I will be going to this particular row number and I will say, hey, if you are a matrix, give me this row which is mat of 0. And this is what I will pass on. This pass on and he will give me. And after that I will go to this one which is a mat of 1 because that is the list. I will again pass on. After that I will go to this which is a mat of 2 because I have already pre-computed the bar heights. After that I will go to this one and I will be mat of 3 and I will pass on. And among all the rows, whichever gives me the maximum area, that will be my answer. We are done. Yeah, we are done here. Quite simple. The only thing you need to do is the typical prefix sum where you compute the sum so that when you need the array for histogram bar, that is ready. Okay, so time to write down the pseudocode."
+    },
+    {
+      "chunk_id": "L309_C8",
+      "start": 461.84,
+      "end": 523.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=ttVu6G7Ayik&t=461s",
+      "text": "compute the sum so that when you need the array for histogram bar, that is ready. Okay, so time to write down the pseudocode. So, I will be writing down the function. Now, this function would be taking a matrix. So, matrix will be a 2D matrix. First thing you would do is you can compute n and m. Depending on the language, you can find the code below. n will be the number of rows, m will be the number of columns. I will be needing a max area. So max area will be initially 0. I will also be needing a prefix sum 2D array. I will not be changing the original array because it is not recommended to change the input array. So, I will have the prefix sum, make sure it is initially filled up with 0s and 0s and the sizes n and m. Correct. Done. What do I need to do? I need to make sure that I have this array ready which is the p sum array, which is a prefix sum array. How am I doing it? I am basically doing top to down summations. I have to write down the indexing, it is 0, 1, 2, 3, 0, 1, 2, 3, 4. This is typically 0, 0. This is 1, 0. This is 2, 0. This is 3, 0. So, if you see that the number of rows is increasing and we traverse column wise, we traverse column wise."
+    },
+    {
+      "chunk_id": "L309_C9",
+      "start": 523.76,
+      "end": 588.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=ttVu6G7Ayik&t=523s",
+      "text": "This is 3, 0. So, if you see that the number of rows is increasing and we traverse column wise, we traverse column wise. So, what I can do is I could go ahead and I can say that, hey listen, for I could do a g equal to 0 till m minus 1, very obvious and beneath it I can do a sum equal to 0 and I could run something like for I equal to 0 till n minus 1 and inside that what I could do is sum equal to or rather sum plus equal to matrix of IJ because I is running. If by any chance the matrix of IJ encounters a 0, I will make sure the sum is re-initialized to 0 because we are computing, you know, something like this. The bars will be something like this. So, 1 over here does not matter. The bar will be something like this. The 1 over here does not matter. That is why. I will convert the sum to 0. Once the sum is converted, I could do a prefix sum of IJ and I can say that, hey, can you just make sure that you store the sum and the iteration is over. So, I have the prefix sum ready. Once I have the prefix sum ready, I just need to compute over all the rows and all the rows"
+    },
+    {
+      "chunk_id": "L309_C10",
+      "start": 588.48,
+      "end": 668.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=ttVu6G7Ayik&t=588s",
+      "text": "prefix sum ready. Once I have the prefix sum ready, I just need to compute over all the rows and all the rows will be 0 till n minus 1 and what I could do is I could say max area equal to max of whatever is the max area comma. Imagine the largest histogram function is known as largest hist. That's what we call it and we can pass on the array because it does take an array and the array will be nothing but prefix of sum and you could easily say I because you're storing a 2D matrix, 2D list. If you say prefix sum of I, it would pick up the entire, yes, remember, it would pick up the entire row and it will be sending it across if you're storing a 2D list. This is what you will do and eventually you could end up returning a max of area. That's it. We are done. Time to compute the time complexity. We have a big O of n. We have a big O of n. So, for sure this is taking a m cross n time complexity to compute the prefix sum. After that we are running a big O of n again and if you remember the largest histogram ended up taking a big O of 2n time complexity, 2n time complexity. So, can I say that the overall time complexity will be big O of m cross n for the prefix"
+    },
+    {
+      "chunk_id": "L309_C11",
+      "start": 668.32,
+      "end": 724.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=ttVu6G7Ayik&t=668s",
+      "text": "complexity, 2n time complexity. So, can I say that the overall time complexity will be big O of m cross n for the prefix plus a big O of, this will be 2m because histogram takes the length of the array, twice into the length of the array. Over here the length of the array will be the number of columns. So, big O of n cross 2m which is I can say near about n cross n. What about the space complexity? I'm using a prefix sum which is taking n cross n. Again this is debatable. You can reuse the given input array but I don't do it. Because I'm using stack, if you remember big O of n while computing the largest histogram rectangle. Again, going back to the previous lecture. This will be the time complexity and space complexity and I hope you have understood this. So, if you are still now watching and if you have understood everything, please, please do consider giving us a like and if you are new to our channel, do consider subscribing to us as well. With this I will be wrapping up this video. Let's play some other video till then bye take care. Whenever your heart is broken, there is no reason to cry. I will find a light in you. Whenever your heart is broken, don't ever forget you're golden. I will find a light in you."
+    }
+  ]
+}

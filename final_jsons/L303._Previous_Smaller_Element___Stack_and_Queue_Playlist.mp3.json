@@ -1,0 +1,57 @@
+{
+  "lecture_id": "L303",
+  "lecture_number": 303,
+  "lecture_title": "L7. Previous Smaller Element | Stack and Queue Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=zMdbdGJNlh4",
+  "chunks": [
+    {
+      "chunk_id": "L303_C1",
+      "start": 0.0,
+      "end": 77.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=zMdbdGJNlh4&t=0s",
+      "text": "So, we will be continuing with the stack and queue playlist. But it was starting off everyone from back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is nearest smaller element. But it was starting off. Please please make sure that you have seen my video on next greater element. Please. Right. So what is the problem statement stating that you're given an array which has integers. Right. For every element you have to tell me the nearest smaller element on the left. On the left. Yes that is the question. For an example I'm standing at 4. If I look to the left I don't have anything. Thereby the nearest smaller element will be minus 1 because I don't have anyone. OK. If I'm standing at 5 and if I look to the left I have 4. So I'll write 4. If I stand at 2 and if I look to the left do I have anyone. No I don't have. I don't have anyone who is smaller than 2. Thereby I write minus 1. If I stand at 2 and if I look to the left I have 2. I have 2. Thereby I can write 2."
+    },
+    {
+      "chunk_id": "L303_C2",
+      "start": 77.4,
+      "end": 155.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=zMdbdGJNlh4&t=77s",
+      "text": "stand at 2 and if I look to the left I have 2. I have 2. Thereby I can write 2. If I stand at 8 is 10 smaller than 8. No. Is 2 smaller than 8. Yes. Thereby 2 can be the answer. So this will be my next nearest smaller element. This is the array that you'll have to return. So what is the extreme extreme name solution that you can think of. Stand at every element and look to the left. Super simple. So what I will do is I'll take next small element of size n and I'll iterate over all the element 0 till n minus 1. And for every element I'll start iterating from i minus 1 and backwards till 0. And if any element is smaller than very important is smaller than array of i not equal to smaller than in that scenario I'll say nse of i will be array of j and at the same time I can say break and that will be done for this for loop and this is done. And eventually I could end up returning nse. So this will be my extreme naive solution or the brute force. So what will be the time complexity. The time complexity will be definitely big O of n square like somewhere near about that"
+    },
+    {
+      "chunk_id": "L303_C3",
+      "start": 155.0,
+      "end": 232.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=zMdbdGJNlh4&t=155s",
+      "text": "what will be the time complexity. The time complexity will be definitely big O of n square like somewhere near about that and the space complexity is big O of n that I'm using to store the answer. Now I'm not using it to solve it's used to store the answer do not modify the input array it's not recommended. Ok. So in this scenario the interviewer will not be happy with big O of n square and I'll ask you to optimize it. So we need to optimize big O of n square and I'm looking for next rather nearest smaller element right. So we've already done a similar problem where I was looking for next greater element. Ok. So in the next greater element imagine I'm standing at this one as looking towards the right over here I'll be looking towards the left because I'm finding the next rather nearest smaller element on the left. So I'll be looking towards the left. So the iteration should start from left. Yes the iteration should start from the left. Perfect. So what I'll do is I'll again take a stack data structure. Same concept. We'll not be doing an entire dryer in this time. We'll be taking a stack data structure. When we start off do we have anything in the stack. No. So I can straight away say minus 1 for this one and I can take 5 and put it into the stack data structure."
+    },
+    {
+      "chunk_id": "L303_C4",
+      "start": 232.84,
+      "end": 301.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=zMdbdGJNlh4&t=232s",
+      "text": "So I can straight away say minus 1 for this one and I can take 5 and put it into the stack data structure. Then I can go to the 7. This is where I check the stack and I see that there is 5 which is smaller which is smaller. So I can say 5 is my answer. Ok. 5 is my answer. Do you take out 5? No you don't take out. Rather you insert 7. You insert 7 and you move to the next which is 9. For 9 when you look in the stack you have a 7 which can be your nearest small element. So I'm fine with it. I'll say ok 7 is my answer and I'll put on 9. After that I move to 6. And when I'm moving to 6 remember this time I'm trying an increasing order. I'm trying an increasing order something like a 5 7 9. So I'm coming to 6 right. If I'm coming to 6 the increasing order will be broken. So for 6 can 9 be the answer? No. Can 7 be the answer? No. So what I'll do is I'll take 9 off then I'll take 7 off. And after that I have a 5 which is ok. 5 will be my answer. And I'll put on 6 and I'll move ahead to 7. At 7 the top element is 6. I'll say 6 is ok."
+    },
+    {
+      "chunk_id": "L303_C5",
+      "start": 301.44,
+      "end": 381.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=zMdbdGJNlh4&t=301s",
+      "text": "answer. And I'll put on 6 and I'll move ahead to 7. At 7 the top element is 6. I'll say 6 is ok. I'll put on 7 and I'll move forward to 4. When I go to 4 I check the stack 7 no 6 no 5 no because all of them are greater. So I'll take out 4. I'll take out all of them and I'll say there's nothing on the stack so minus 1. And then I put a 4. And you can complete the process. So in this scenario what I did was I did a increasing order. I did store an increasing order. So this monotonic stack is an increasing is in the increasing order. Got it. Why? Because we are looking for next smaller rather nearest smaller element. Perfect. Quite similar to next greater element. So what I'll do is I'll quickly get into the pseudocode. So I'll have to return list. So list of int. Find maybe nse. And then I'll have to take an array. Perfect I take an array. What is my next job? My next job is to declare an nse of size n. What is the next job? Make a stack of st. Stack st again this is pseudocode. You could write it in your language. You can find the code below. I'll start iterating from forward direction till the last which is n minus 1."
+    },
+    {
+      "chunk_id": "L303_C6",
+      "start": 381.14,
+      "end": 458.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=zMdbdGJNlh4&t=381s",
+      "text": "in your language. You can find the code below. I'll start iterating from forward direction till the last which is n minus 1. And I know one thing. If the stack is non-empty. If the stack is non-empty and and the stack dot top is greater than equal to the array of i. I'm not entertaining any greater elements. I will say stack dot perfect. Once this is done I will say nse of i will be if the stack is empty. The stack is nothing then it will be minus 1. Then it will be minus 1 or I will say it will be stack dot top. Perfect. After this I will say stack dot push array of i. And then I'll end the for loop. And once I'm done with it I can end with returning nse. And that is where the function ends. It's very important to understand whether you need to traverse forward, traverse backward, whether you need an increasing stack, whether you need a decreasing stack. That is why I'm doing this problem. Got it? So what will be the time complexity? Similar to next greater elements I'll not be explaining. B go of 2n, n for this one and you're popping out at max n elements throughout the journey. What about the space complexity?"
+    },
+    {
+      "chunk_id": "L303_C7",
+      "start": 458.86,
+      "end": 483.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=zMdbdGJNlh4&t=458s",
+      "text": "of 2n, n for this one and you're popping out at max n elements throughout the journey. What about the space complexity? A B go of n for the stack and a B go of n for this one. Again do not modify the given input. Not recommended. So this will be it for this one. I hope you've understood everything. So if you're still now watching and if you've understood everything please please do consider giving us a like. If you're new to our channel, do consider subscribing to us as well. With this I'll be wrapping up this video. Let's make some other video. Till then bye bye. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

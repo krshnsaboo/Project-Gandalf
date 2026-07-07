@@ -1,0 +1,106 @@
+{
+  "lecture_id": "L012",
+  "lecture_number": 12,
+  "lecture_title": "Re 5. Multiple Recursion Calls | Problems | Strivers A2Z DSA Course",
+  "youtube_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE",
+  "chunks": [
+    {
+      "chunk_id": "L012_C1",
+      "start": 0.0,
+      "end": 75.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=0s",
+      "text": "Hey Viewers, Welcome back to the channel. I hope you guys are doing extremely well. So today we will be learning about multiple recursion calls. Till now you have seen recursion where we had only single recursion calls. Basically, we were learning something as there was a function and inside this function, only a single function was called again. So over here we will be learning something of this pattern where probably we will have a function and there will be multiple function calls. Yes, this is two times. So the function is called twice or thrice or four times. So you'll be learning multiple recursion calls. Now generally in all the problems that we'll be solving, there might be two times, three times, four times and so on. So in this video, I'll be teaching you how to have two multiple recursion calls and going forward you will be seeing problems like nQueen and other problems where you'll see multiple, not only two, n recursion calls being happening inside a function. So to understand multiple recursion calls, the best example is doing the Fibonacci number. Now what is Fibonacci number? Let's first understand. Basically, the first couple of"
+    },
+    {
+      "chunk_id": "L012_C2",
+      "start": 75.92,
+      "end": 152.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=75s",
+      "text": "example is doing the Fibonacci number. Now what is Fibonacci number? Let's first understand. Basically, the first couple of numbers are zero and one. So the next Fibonacci number will be last one and the previous class. So zero plus one will give you one. And the next Fibonacci number will be this one plus this one. That's two. Next Fibonacci number will be this one and this two, three. Next Fibonacci number will be this two and this three plus five. Next Fibonacci number will be this three and this five, which is definitely eight. Next will be 13, then it will be 21, 34 and so on. Okay. Now, assume I call this as the zero Fibonacci, first Fibonacci, second Fibonacci, third Fibonacci and so on. I call it like this. Now the question is very straightforward. You'll be given a problem. You'll be given an n and you need to write a recursive function. Yes, you need to write a recursive function, which tells you which is the nth Fibonacci number. For an example, I say F of three. So which is the third Fibonacci number? Two. If I say F of four, that's three. If I say F of five, that's five. So you have to give me the nth Fibonacci number. Now, generally, what did I say? How did this five come up? If this is F of, let's say this is F of"
+    },
+    {
+      "chunk_id": "L012_C3",
+      "start": 152.48,
+      "end": 226.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=152s",
+      "text": "Now, generally, what did I say? How did this five come up? If this is F of, let's say this is F of five, this F of five was indeed what F of four plus F of three. That is what this F of five was all about. F of four plus F of three, which is the previous one. And the one before that on adding them, we were getting the F of five. Correct. So, generally you could have done this easily using for loop. You could be like, we can probably write F of zero as zero F of one as one. And then you can easily run a loop from two till n and you can write F of i equal to F of i minus one plus F of i minus two. That's a very simple, simple linear version that you can write using iterative for loop. Correct. But obviously we are not here to solve Fibonacci number. Over here, we have to learn recursion. And that is where something like Fibonacci plays a very important part because it's going to teach you recursion in a very classical fashion. So, we did learn that in order to find F of n, we have to know F of n minus one, and we have to know F of n minus two. Correct. That is something we did learn. So, in case our function takes n,"
+    },
+    {
+      "chunk_id": "L012_C4",
+      "start": 226.8,
+      "end": 301.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=226s",
+      "text": "we have to know F of n minus two. Correct. That is something we did learn. So, in case our function takes n, we know one thing for sure. If n is anything greater, lesser than equal to one, if it is n is zero, then the answer is zero because the zero Fibonacci number is zero. If n is one, the first Fibonacci number is one. We definitely know that. Correct. So, can I say in this case, I will be returning n. I think there's no doubt in this. Going across, what is a Fibonacci of n? We can be like Fibonacci of n is nothing but F of n minus one plus F of n minus two. Without any doubt, this is the answer because if I'm looking for Fibonacci of n, if I'm looking for Fibonacci of n, I have to know F of n minus one, I have to know F of n minus two. There's absolutely no doubt in it. But how does this work? If we call a couple of recursive functions, do they go simultaneously? How does this work in recursion? So, let's understand this by again taking a very, very simple example. So, what I'll do is I'll rewrite it to basically explain you how this works. So, assume I say last is F of n minus one. I say a second last is equal to F of n minus two."
+    },
+    {
+      "chunk_id": "L012_C5",
+      "start": 301.68,
+      "end": 377.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=301s",
+      "text": "So, assume I say last is F of n minus one. I say a second last is equal to F of n minus two. And then I say, why don't you return last plus second last? So, if I write something like this, and then I simply write a main, where in the main I say that, okay, let's pre-assumably, let's take n equal to four, that should make sense. And we can say print Fibonacci of four. What if we write something like this, print Fibonacci of four and print Fibonacci of n. So, basically, this is going to call this guy with a value four. This will not be executed because the value of n is four. Now, if you carefully observe, there are a couple of recursion calls. So, one is this, while the other one is this. Do they go simultaneously? No. First, this guy will go, yes, first this guy will go, come back, then this guy will go and then come back. So, it happens, what to say, line by line, like whichever recursion call is made first, it will go and call it. And after that, it will go for the next one. That is how recursion works. To understand this in deep, let's just take this example. So, over here, I can say this call will"
+    },
+    {
+      "chunk_id": "L012_C6",
+      "start": 377.92,
+      "end": 450.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=377s",
+      "text": "how recursion works. To understand this in deep, let's just take this example. So, over here, I can say this call will go and if this call goes, this will call F of three because n minus one for this four is nothing but three, correct? So, F of three is made. Now, if F of three is made, again, the base case will not be executed. Let's understand the base case is not executed. And again, the last call this time is F of two, correct? Because minus one, the second last is definitely F of one. And then you are returning last plus second last. So, remember, this recursion call is being done. So, our stack space will wait over here, like we will be waiting at this line, we will not be going beneath this line, we will be waiting, the stack space will keep this function saying that, okay, I'm going to wait till this doesn't give me this answer. Perfect. Now, F of three will be like, okay, this is not executed. F of two will be executed. So, again, F of two will be executed and it will be like, let's call F of two. So, the if line is not executed. Last will be F of, what will be last? F of one. What will be second last? F of zero, correct? So, and then they can return last"
+    },
+    {
+      "chunk_id": "L012_C7",
+      "start": 451.04,
+      "end": 524.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=451s",
+      "text": "what will be last? F of one. What will be second last? F of zero, correct? So, and then they can return last plus second last. So, if I'm calling last, F of one will be called. So, whenever F of one is called, if N lesser than equal to one gets executed, you need to understand if N lesser than equal to one gets executed and it returns the value N. So, this basically gives you a value one, because that's how it is. And you can say, instead of F of one, now you can write one. So, one of the recursion calls was done and it did return you one. Now, this recursion call will go and again call one more same function, the same function in the memory, but this time it will pass N as zero. Again, the if N lesser than equal to one will be executed and this will return a zero. So, this guy is returned as zero. So, I can write second last as zero. Thereby, last plus second last. This is one, this is zero, plus gives you a value one, plus gives you a value one. So, I can say, instead of F of two, I can write one last is equal to one. Now, coming across to second last, F of one, again, F of one will be called. Remember this, again, F of one will be called."
+    },
+    {
+      "chunk_id": "L012_C8",
+      "start": 525.68,
+      "end": 598.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=525s",
+      "text": "coming across to second last, F of one, again, F of one will be called. Remember this, again, F of one will be called. And this time, again, the same thing, N lesser than equal to one, return one will happen. So, this guy will return one. So, this guy will be getting one. So, last got one, second last as well as got one. So, one plus one gives you two. So, what you got over here is two, correct? Now, over here, this is the case where you'll be doing for F of two, because F of N minus two will be four minus two, that's two. Again, you'll go and call these F of twos, F of twos will go and call the last one as F of one, the second last as F of zero. Remember the if base condition does not execute. So, F of one will be called, it'll return one, F of zero will be called, it'll return zero, thereby returning of one plus zero, last plus second last, thereby this returns one. So, two plus one gives you three, thereby F of four is printed as three, because two plus one is three, and it returns you three. That's how the recursion works. So, if I just keep a very, very, this is how you can see the recursion, entire recursion call being happening, right?"
+    },
+    {
+      "chunk_id": "L012_C9",
+      "start": 598.88,
+      "end": 672.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=598s",
+      "text": "works. So, if I just keep a very, very, this is how you can see the recursion, entire recursion call being happening, right? So, I hope you have got a fair bit of idea about how recursion calls will be worked. Always remember, yes, always remember, if there are multiple recursion calls to be done, if there are multiple recursion calls, this will happen, come back, this will happen, come back, this will happen, come back. That's how recursion calls work. One is ended, then the next comes. One is ended, then the next comes. Before ending the previous recursion, this can never, ever execute. So, if I try to, for this particular stuff, yes, for this particular stuff, if I, for this particular stuff, if I wish to draw the recursion tree, it, so, so, if you see this, it's in the, this level, horizontal. So, the recursion tree is generally vertical, so you can easily draw it. See, this is the F of four. So, you can write F of four. So, let's quickly erase this, so that I can write it over here. So, you can write F of four. Who did F of four call? Let's see. F of four called whom? It called, F of three was here, and F of two was here. So, it did call F of three, and it did call F of two, correct?"
+    },
+    {
+      "chunk_id": "L012_C10",
+      "start": 672.24,
+      "end": 743.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=672s",
+      "text": "was here, and F of two was here. So, it did call F of three, and it did call F of two, correct? And going forward, F of three called F of two and F of one. F of two called F of one, F of zero. But remember one thing, in recursion, how does this happen? F of four has couple of recursion calls, F of three and F of two. But which one gets executed first? This one gets executed first. So, F of three is executed at the first. For F of three, who are the recursion calls? F of two and F of one. But who is executed first? F of two. So, please execute F of two first, which is F of one and F of zero. Again, among these both recursion calls, which one is executed first? F of one. So, F of one indeed returned you a one, F of zero returned you a zero. So, one plus zero, this guy, last plus second last, gave you one. F of one returned a one. So, F of three got one from last, second last got one. So, this returned you two. Similarly, F of two will be done. This gives you one, this gives you zero. So, one plus zero will be one. So, two plus one will be done, which gets you an ultimate answer of three. This is how you can"
+    },
+    {
+      "chunk_id": "L012_C11",
+      "start": 743.92,
+      "end": 821.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=743s",
+      "text": "zero will be one. So, two plus one will be done, which gets you an ultimate answer of three. This is how you can draw the recursion tree. Remember this, we will be drawing recursion trees in tougher problems. I can't, like it is practically impossible to write every time the entire function and show you how it is being done. It's practically impossible to do this. So, I will be writing in this fashion going forward. So, please, please try to relate the horizontal programmatic call to the vertical recursion tree. It's very important to relate it. It's very simple. F of four, whom does it call? You just have to relate that. F of four called last and second last. So, just relate it second last, last and second last. Try to relate the horizontal with the vertical recursion tree. I hope that makes sense. So, if I try to code this super quick, it'll be like int F of int n. And then I can be right. If n is less than or equal to one, you can simply return n or else you can say there'll be a last of F of n minus one. There will be a second last of F of n minus two. And then you can return last plus second last. Correct. And over here, you can definitely print F of four if you wish to. And this will give you the answer."
+    },
+    {
+      "chunk_id": "L012_C12",
+      "start": 822.24,
+      "end": 896.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=822s",
+      "text": "second last. Correct. And over here, you can definitely print F of four if you wish to. And this will give you the answer. You see over here, you got the answer as three. Very simple and straightforward. But what about the time complexity? This is a very, very critical thing. Let's understand the time complexity. How many recursion calls did you made for n equal to four? Let's see. First recursion call, second recursion call, third recursion call, fourth recursion call, fifth recursion call, sixth recursion call, seventh recursion call, eighth recursion call, ninth recursion call. It's definitely not four recursion calls. It's way, way beyond that. Correct. Now, if I'm asking you for every n, how many recursion calls were you making? You'll be like, Strive, I was making a couple of recursion calls. I would like make sense because for four, you made for three and for two. It is not a unidirectional recursion call. It's kind of bidirectional when you call a couple of guys. So for every n, you're calling two guys. So for the next n minus one, again, you call two guys. For the next n minus two, again, you call two guys. So for every one, you're calling two, two, two, two, two. So can I say it's like two to the power"
+    },
+    {
+      "chunk_id": "L012_C13",
+      "start": 896.0,
+      "end": 964.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=896s",
+      "text": "guys. So for every one, you're calling two, two, two, two, two. So can I say it's like two to the power n will be the time complexity? Not exactly. Why? Because from four, you called for three and the other one was one lesser than three. Thereby, it's not exactly two to the power n, but you can say it's near about two to the power n, which is generally known as exponential in nature. If you did not understand, let's understand by recursion tree. See, this was the first level. This guy called couple of guys. Again, this guy called couple of guys. So if one guy calls couple and the other guy again calls couple, so it's twice into twice into twice. Got this? Try to draw recursion trees, you'll understand. So if every guy is calling twice and it's a tree type, it's going to be two into two into two into two, which is two to the power n. The only reason it's not like for four, it isn't like two to the power four equal to 16 and it is nine recursion calls. The only reason is because from four, you're calling to three and then you're calling it to two down level. Like from four, you're going to two. So for every time you're like going to twice down, thereby, it's not exactly two to the power n, but you can say it's near about"
+    },
+    {
+      "chunk_id": "L012_C14",
+      "start": 964.24,
+      "end": 996.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=kvRjNm4rVBE&t=964s",
+      "text": "every time you're like going to twice down, thereby, it's not exactly two to the power n, but you can say it's near about exponential in nature. So this can be done using dynamic programming where you can trim down. But as of now, I'll not teach dynamic programming that's coming next, but this should be understandable why it is two to the power n. Okay. Just in case you still have doubts, put that into the comment section, put that into the comment section. I will definitely reply. And yes, if you have understood the multiple recursion calls, please, please, please make sure you like this video. And if you're new to the channel, please do consider subscribing, please, please do consider subscribing. And yeah, with this, let's wrap up this video. Bye-bye."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "lecture_id": "L106",
+  "lecture_number": 106,
+  "lecture_title": "L34. Construct a Binary Tree from Preorder and Inorder Traversal | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ",
+  "chunks": [
+    {
+      "chunk_id": "L106_C1",
+      "start": 0.0,
+      "end": 75.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=0s",
+      "text": "So before starting this video, I'd love to thank Relible for sponsoring this entire tree series. Did you know that companies like Google, Apple, Starbucks are now hiring people without any degree or experience? Why? Because they believe that skills are more important than anything else. Now top companies in India like the top startups have also started following this trend by hiring through a platform which is Relible which is backed up by an academy. All you have to do is to give the Relible test and based on your score, send your candidate profiles to 50 plus companies which includes Cred, UpGrad, Vedantu, Razorpay, etc. and you can get selected for a job role within a week. Another amazing thing about Relible is it's absolutely free. So please make sure you check out the links in the description. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we're going to solve this problem. Construct a binary tree from an in-order and a pre-order traversal. So if you haven't seen my previous video, can you construct a unique binary tree from any given two pairs of traversal, you should definitely check it out because if you watch that video out, you can understand if an in-order and a pre-order traversal is given, then the binary tree that you create will always be a unique binary tree."
+    },
+    {
+      "chunk_id": "L106_C2",
+      "start": 75.56,
+      "end": 149.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=75s",
+      "text": "if an in-order and a pre-order traversal is given, then the binary tree that you create will always be a unique binary tree. Now what you will be given is an in-order traversal of any given tree and a pre-order traversal of the same given tree for whose the in-order traversal is given. Now since you're given both the traversals, you need to figure out for which tree is this in-order and pre-order satisfying. So I can say like if I draw the tree like 10, 20, 30 over here and then a 40 and then a 50 and then a 60 and if you try to write the in-order traversal, you'll actually figure out that the in-order traversal is this and if you try to write the pre-order traversal, you'll figure out that the pre-order traversal is this. Again, if you don't know in-order and pre-order traversal, make sure you check out my previous videos. You'll understand what is in-order traversal. Now can we form any other tree? In the previous video, we did see that we cannot form any other tree because the in-order is something which is unique if a pre-order is given. So I can say this is the tree and that is the question. It'll be given in-order, pre-order and you're going to return me the root of the tree. And if I know the root of the tree, I should get the same tree."
+    },
+    {
+      "chunk_id": "L106_C3",
+      "start": 149.4,
+      "end": 229.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=149s",
+      "text": "going to return me the root of the tree. And if I know the root of the tree, I should get the same tree. Like I should get the same tree on in-order and pre-order. That is what the question is. So how will you do this? Let's check that out. So each of us know that in-order traversal is nothing but left, root, right. I know that. And in-order traversal is nothing but left, root, right. And what is the pre-order traversal? We also know that a pre-order traversal is root, left, right. I think everyone knows this. So can I definitely say, whatever is the binary tree, this 10, I repeat, this 10 will always be the root of the binary tree. How many of you agree with me? I think everyone does. The reason is, the reason is because if I'm saying root, left, tree, whatever binary tree I take, I'll start with the root. And that is what the pre-order tells you, the root. Perfect. Now what does in-order say? In-order says left, root, right. So if this root exists over here, if this root exists over here, can I say all these nodes on the left will be the part of the left subtree? Now I don't know how they align, but I definitely know that these three nodes will be the part of the left subtree. Correct?"
+    },
+    {
+      "chunk_id": "L106_C4",
+      "start": 229.32,
+      "end": 299.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=229s",
+      "text": "I don't know how they align, but I definitely know that these three nodes will be the part of the left subtree. Correct? And can I definitely say these two nodes on the right will be the part of the right subtree? Like I can definitely say because a minimized show in-order means root is at the middle and the left guys are on the left and the right guys are on the right. So we know that. So, can I write something like a recursive solution which sees me that, hey, here's the root and you attach the left to the subtree. Can you attach the right to the subtree? And this subtree will again solve itself as an individual problem. Now what was the initial problem that we started off with? We started off with, we have an in-order, we have a pre-order, and we were required to construct this particular binary tree. So what I did was, I just did one step. I just made sure I figured out the root. That was very simple. The starting element will always be the root. And what I did was I segregated the left and right part. So can I do this similar task for 40, 20, 50? I think I can. If I again have the in-order for this guy and similarly if I have the pre-order for this guy. If I have these two guys, I can again segregate these nodes."
+    },
+    {
+      "chunk_id": "L106_C5",
+      "start": 299.76,
+      "end": 377.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=299s",
+      "text": "this guy and similarly if I have the pre-order for this guy. If I have these two guys, I can again segregate these nodes. Let's see if we can do that. So I'll come to the left. I'll come to the left. Now since I know the left will have these nodes, what is the in-order of these nodes? Can I say the in-order will be 40, 20, 50? That's the in-order. I'm very much sure that this is the in-order of this because this is what the in-order will be. What will be the pre-order if I ask you? Can I say that if the left subtree contains three nodes and since I know its root, left, right. So the moment you go to the left, you again start with root. That is what pre-order means. The moment you go to the left, you again start with root. So can I say these three elements, the first three elements will indeed be your pre-order traversal. That's 20, 40, 50. I'll be like, yeah, you're correct. Yeah, you're correct. And similarly, can I say for right, this is going to be my in-order. And these guys, like right after these three guys, whatever guys are there, that is going to be my pre-order. I think there's no doubt in that. There's no doubt in that. Correct? So we know that. Now we have two separate questions. We are again given an in-order."
+    },
+    {
+      "chunk_id": "L106_C6",
+      "start": 377.6,
+      "end": 454.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=377s",
+      "text": "in that. There's no doubt in that. Correct? So we know that. Now we have two separate questions. We are again given an in-order. We are again given a pre-order and we have to construct a tree or I can say the subtree. If I just boil this question to a subproblem, it's again a problem of creating a tree when you're given an in-order and a pre-order. So I've broken the entire question into creating subtrees. And once I create subtrees, I think the entire tree will be constructed. So let's solve this left part and then I'll come back and solve this right part. So on the left, I have this in-order and I have this pre-order. Again, if I know that a pre-order is something like root, left, right, and this in-order is nothing but left, root, right. I know that. So why don't I again apply the same logic and create a tree? So I can say this is definitely my root. So why don't I attach that over here? So I definitely know this is my root. And this is what I can return this left and that will get attached. I'll show you that over the code. So that's 20. So can I say in in-order, 20 is here, which is the root. And can I say the left guy is 40? Perfect. The left guy comes out to be 40. And this is nothing but the in-order traversal."
+    },
+    {
+      "chunk_id": "L106_C7",
+      "start": 454.64,
+      "end": 526.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=454s",
+      "text": "I say the left guy is 40? Perfect. The left guy comes out to be 40. And this is nothing but the in-order traversal. This is nothing but the in-order traversal. And can I say if there is one element of the left subtree, then the one element will be the pre-order traversal. The pre-order is this. Perfect. So I figured out the pre-order traversal also of the left. Now what about the right? So the right, can I say, this will be the right, like anything to the right of 20 will be my right. Perfect. So I'll take that as the right. That's 50. I'll take that as the right. And I can say this will be my pre-order traversal. So I've got again the in-order and I've again got the pre-order. Remember, this, this, this, these guys will wait until we form the entire left subtree. So again, the question is again broken down into two sub-parts where I have again an in-order, again a pre-order, again an in-order, again a pre-order. So I do have this. So let's solve this. So currently, can I say if on the left, like this is what we have on the left, right? So on the left, the pre-order is 40. So can I say this is the root of the tree? Perfect. So I'll say this is the root of the tree, 40. On 40's left, do we have anything?"
+    },
+    {
+      "chunk_id": "L106_C8",
+      "start": 526.16,
+      "end": 592.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=526s",
+      "text": "the root of the tree? Perfect. So I'll say this is the root of the tree, 40. On 40's left, do we have anything? And if we do not have anything, this guy will be returning a null. So this is null. On this 40 right, do we have anything? No. So when we call the right guy, we will again get a null. Perfect. So now 40 will come back as a node and this node will get attached to 20's left and we have attached it. I'll show you that in the code. Just understand. Now on 20's right, we have this. So again, can I say this, this is the pre-order, this will be the root. So 50 becomes the root and on 50, the left is nothing. So the left will be attached to null. It doesn't have anything on the right, so it will be attached to null. And this is a node now that will be returned and attached to 20's right. As soon as 20 has found its left, as soon as 20 has found its right, it will try to return. So 20 as a root gets returned and that gets attached to 10's left. Now 10 will go and figure out its right. That is when this will be executed. So let's do that. So as of now, the pre-order traversal is 30, 60. Can I say this is the root of the tree? I can indeed. I can indeed."
+    },
+    {
+      "chunk_id": "L106_C9",
+      "start": 592.66,
+      "end": 655.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=592s",
+      "text": "of now, the pre-order traversal is 30, 60. Can I say this is the root of the tree? I can indeed. I can indeed. So I'll say this is the root of the tree. And can I say for 30, there is a left subtree which will be containing 60, like the in-order will be 60. So I can say the left will have an in-order as 60 and the pre-order will be 60 itself. So I can again take a pre-order of 60. Now on the right, do we have anything? No. And we similarly do not have a pre-order. So on the right, there will definitely be a null because we did not find anything on the right. But on the left, we did find something, an in-order and a pre-order. So again, if we do the same stuff, we will get a 60. On the left, we will get a null. On the right, we will get a null. And this will be returned. So a pointer will be there. And again, the 30 tree is completed. So 30 will be returned and the 10's right will point to 30. And ultimately, I can say that I have the root and I can return this root, which will be my ultimate answer. So this is how I can create a unique binary tree from a given in-order and a pre-order traversal. So how to code this?"
+    },
+    {
+      "chunk_id": "L106_C10",
+      "start": 655.3,
+      "end": 732.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=655s",
+      "text": "this is how I can create a unique binary tree from a given in-order and a pre-order traversal. So how to code this? I'll just give you a preview so that you can try by yourself and then I'll be walking you through the code. For a preview, so that you can try, what you can do is whatever in-order you have, whatever in-order you have been given, and you'll be given a pre-order. So what is the first step that you're always doing whenever you're given an in-order and a pre-order? You're saying that the first guy is always your root. And then you're trying to figure out this first guy across the in-order. So you can optimize this. If you're looking to find this guy across this, you just hash all the values of in-order. Since the question states that the in-order values will be unique, just hash all the values of in-order. So if this number is 12, you can easily figure out where is 12 in the in-order using the hash map, like using hashing. Once you figure this out, tell these left guys that you are the new in-order of left sub-tree. And let's assume there are x elements. Take the first x elements and say that you are the new pre-order of the left sub-tree. So you create a different, like you just call the function saying that this is my in-order, this is my pre-order, please create my tree."
+    },
+    {
+      "chunk_id": "L106_C11",
+      "start": 732.34,
+      "end": 799.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=732s",
+      "text": "you create a different, like you just call the function saying that this is my in-order, this is my pre-order, please create my tree. So you're calling the function again. So it's a kind of recursive function. And you say that this right portion is going to be my in-order for the right, and the remaining elements over here, like remaining elements, can be called as my pre-order for the right. So again, you just pass an in-order and a pre-order for the left, for the right, and they will create themselves. That is how you generally try to write a recursive solution. I'll be showing you the code, and along with that, I'll be doing an example try run. So guys, as usual, the C++ code is on the left and the Java code is on the right. So we're given the pre-order traversal, and that's the pre-order traversal, like the example that I'll be doing a try run on. And that is the in-order traversal that is given to you. So initially what you'll do is, the entire in-order traversal, just put that into the hash map. So assuming the in-order traversal is this, and you just put it onto the hash map. You don't need to do anything else. So what I did was 0th index, 1st index, 2nd index, 3rd index, 4th index, and I just made sure that I put them into the hash map."
+    },
+    {
+      "chunk_id": "L106_C12",
+      "start": 799.3,
+      "end": 868.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=799s",
+      "text": "was 0th index, 1st index, 2nd index, 3rd index, 4th index, and I just made sure that I put them into the hash map. So 9 will be appearing at 0, 3 will be appearing on 1, 15 will be appearing on 2, 20 will be appearing on 3, 7 will be appearing on 4. Again, you can sort the keys. I've just written the hash map. You can sort it by yourself. So this step does this. Right after that, what I do is, I have two pointers. I pass the pre-order into the recursion of build tree. I pass on 0. So this is where I'm pointing for pre-order initially. And then I pass on pre-order size minus 1. That is over here. And right after that, I pass on in-order. That's this. And I pass on again the two pointers. One is this, one is this. So basically the two pointers are called pre-start, that is, where is the pre-order starting, where is the pre-order ending. Similarly, where is the in-starting, and where is the in-order ending, along with the hash map. So what I'm doing is, as long as I have some pre-orders, as long as I have a pre-order, as long as I have to create a tree, I'll create. If by chance I do not have any pre-order, like I get an empty array, then I return a null. As I said, in the last step I'll be returning a null."
+    },
+    {
+      "chunk_id": "L106_C13",
+      "start": 868.06,
+      "end": 936.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=868s",
+      "text": "pre-order, like I get an empty array, then I return a null. As I said, in the last step I'll be returning a null. Or else what I'll do is, I'll create the root. So let's assume initially I got the pre-start, the pre-end, the in-start, the in-end as this. As the name suggests, in-order means in-start, in-end. Pre-order means pre-start and pre-end. So what I've done is, I've taken the root and I've said, hey, why don't you create a node? So this is the node three. I know this is going to be my root of the tree. So I've created a root. So this is my initial root that's created on the first level of recursion call. Next I say, hey, can you figure out where is the in-root? Like where is the in-order? Like where is this three lying? So it says, in-map will say, it lies over here. So this is where the in-root points because you can directly get it from here. Now how many numbers are on the left? Isn't it very easy? If you have in-root and if you do the in-start, like it's the start pointer. So if you figure out, you'll get the number of left is one. There is one number on the left. Then I'm saying root.left. Why don't you again build yourself with the, I'll just pass on the pre-order. And I'll say this time the pre-order starts from one point and next."
+    },
+    {
+      "chunk_id": "L106_C14",
+      "start": 936.74,
+      "end": 1009.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=936s",
+      "text": "again build yourself with the, I'll just pass on the pre-order. And I'll say this time the pre-order starts from one point and next. This is my new pre-order. It starts from here. It goes on by taking one more number. So ultimately I can say this is my new pre-order. So I've just taken one number. I'm saying this is my pre-order. So I'm saying next time the pre-start will be this, the pre-end will be this. So without actually reducing the array, I'm just using these two pointers to mark the reduction of the array. So you can see, I've just figured out this as the new pre-order for the left guy. And over here, what I've done is I've said for the next guy, the in-start, like wherever I'm standing, that will be definitely my starting of the in-order. I'm saying in-root minus one. This is the in-root. This is where three exists, the root. Right before that is where my in-order will be. And that's what I'm passing to build the tree on the left. What about right? It's very simple. I'm saying pre-start, pre-start is three, plus nums left, that's one element, plus one. That is from 20 I'm starting to pre-end, till this end pointer. This is what I'm saying. This is going to be my pre-order of the next. So I've passed on over here. See, I've taken nums left, like from nums left to plus one, starts from 20, goes to pre-end."
+    },
+    {
+      "chunk_id": "L106_C15",
+      "start": 1009.46,
+      "end": 1077.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=1009s",
+      "text": "next. So I've passed on over here. See, I've taken nums left, like from nums left to plus one, starts from 20, goes to pre-end. What about in-root? So what about in-order? So can I say, if I'm standing at in-root, in-root plus one will be from 15 till the in-end. So I'm taking this as the in-order for the right. So left, right is also passed. So you have created a figure, like you have created a pointer and you have called the left and the right. And again, the same thing will happen. Again you will come back, again you'll create a left root and at the end, always return the root. So again, whenever you'll go, you'll again create it and this guy will be returned. And when this guy is returned, it automatically attaches to left equal to, because this build tree will ultimately return this root and this will be attached to this. So I hope you have understood how have I taken the pointers in order to reduce the array without actually reducing the array. And that's the C++ code. So if I discuss the time complexity, it's, it's B go of N and if you're assuming log N for HashMap, you can take log N log N. If you're not assuming log N, you can take it as N. Like depending on the HashMap you're using, you can use B go of N or N log N. What about the space complexity?"
+    },
+    {
+      "chunk_id": "L106_C16",
+      "start": 1077.7,
+      "end": 1123.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=aZNaLrVebKQ&t=1077s",
+      "text": "N. Like depending on the HashMap you're using, you can use B go of N or N log N. What about the space complexity? Are we using anything extra? Yes, we are using a map extra. So that's going to take a B go of N as well as it's a traversal that you're doing. So it's a stack space of a B go of N that you will be using. So I can like, I can just summarize it to be B go of N and B go of N for the creation of a unique tree from an inorder and a preorder that is given to you. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye bye. Take care."
+    }
+  ]
+}

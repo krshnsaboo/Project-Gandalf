@@ -1,0 +1,43 @@
+{
+  "lecture_id": "L113",
+  "lecture_number": 113,
+  "lecture_title": "L41. Ceil in a Binary Search Tree | BST | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=KSsk8AhdOZA",
+  "chunks": [
+    {
+      "chunk_id": "L113_C1",
+      "start": 0.0,
+      "end": 74.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=KSsk8AhdOZA&t=0s",
+      "text": "So before starting this video, I would love to thank Relevel for sponsoring this entire video. A hiring platform with no degree required, no experience required, mentoring sessions available feels like a dream, isn't it? What if I say all of this is for free? Well, Relevel by Unacademy is here to make your dream come true. With job opportunities in front-end, back-end and business development from India's top companies for freshers and people in the early career, Relevel is here to make the entire hiring process super simple and super quick. All you have to do is to give the Relevel test and based on your score, interviews will be scheduled and you will be hired. So what are you waiting for? Make sure you check out all the links in the description and apply for the Relevel test as soon as possible. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving find the ceiling in a binary search tree. So assume that you're given a key, okay? And the key has a value, just imagine you're given a value as 8, okay? So your job is to figure out a val which is greater than equal to key, but you have to figure out the lowest val. Yes, you have to figure out the lowest val that's greater than equal to key."
+    },
+    {
+      "chunk_id": "L113_C2",
+      "start": 74.36,
+      "end": 145.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=KSsk8AhdOZA&t=74s",
+      "text": "you have to figure out the lowest val. Yes, you have to figure out the lowest val that's greater than equal to key. So for an example, if key is given as 8 and I ask you what is the greatest, like what is the smallest number that's a greater than 8? Your answer will be that's 9, right? You don't have anything apart from 9, which is greater than 8 and lesser than 9. We don't have an 8, do we have? No, we don't have an 8. So the answer for this will be 9. Okay. Now, what if I just changed the value of key and I keep the value of key as 11, okay? This time the seal will be 11 itself because 11 is there, right? What if I give you a key as 12? Then something which is greater than 12, like 12 is not there. Something which is greater than 12, that's the first greater is 13. So I hope you have understood by the meaning of seal, okay? So how do you solve this question? So imagine if key is given as 8 for that reason, how do you solve this question? Very straightforward. Just keep a variable seal. You can keep it as something like minus 1 initially, or you can keep it as a very bigger value or whatever you want to wish, you can keep it. So let's start off with 10."
+    },
+    {
+      "chunk_id": "L113_C3",
+      "start": 145.24,
+      "end": 212.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=KSsk8AhdOZA&t=145s",
+      "text": "can keep it as a very bigger value or whatever you want to wish, you can keep it. So let's start off with 10. So 10 is something which is possibly like you want someone who's greater than your key, right? So 10 is someone which is possibly greater than your key 8. So you change the seal to 10. Now you want someone who is as less like 10 is quite far from 8. So you want a smaller than 10 because you want to reduce this val as much as possible, but at the same time, make sure it's greater than equal to. So you move to the left because if you'd have moved to the right, it's 13, the value would have increased, but I didn't want that. I want a ceiling. So I moved to the left. Now I get something as 5. Is this possible? Because if I take 5, if I take 5, that's less than key. So I'll never take 5. So whenever you don't take 5, you have to increase this 5. 5 is not possible. 5 is less than key. Increase it. So in order to increase it, you have to go right because on right, there is something which is greater than 5. So when you go to the right, you have 6. So when you go to the 6, is 6 possible? Definitely not in Mahi's world, right? 6 is not possible. So why will you go?"
+    },
+    {
+      "chunk_id": "L113_C4",
+      "start": 212.44,
+      "end": 275.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=KSsk8AhdOZA&t=212s",
+      "text": "when you go to the 6, is 6 possible? Definitely not in Mahi's world, right? 6 is not possible. So why will you go? You'll go to the 9. Is 9 possible? Definitely. Definitely yes. So if 9 is possible, can I say the ceiling will be updated? Yes. Now, what do you want? You want this 9 to be much reduced because you want value to be as lower as possible. So if you want it lower, you'll go to the left. The moment you go to the left, you reach a null. And the moment you reach null, you can say that 9 is your answer. So whatever ceiling is storing, you can simply return that and that will be your answer. Since you traveled the height of the tree, I can say the complexity will be at max the height of the tree, which in almost all the cases is log base to n. So guys, as usual, the left side is the C++ code and the right side is the Java code. So they are both identical. Root and key is given to you. So I've kept C as minus 1. And just make sure that if any time the key already exists in the binary tree, then since you want it greater than equal to, you can directly return that. You can directly return the root as the answer."
+    },
+    {
+      "chunk_id": "L113_C5",
+      "start": 275.78,
+      "end": 328.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=KSsk8AhdOZA&t=275s",
+      "text": "then since you want it greater than equal to, you can directly return that. You can directly return the root as the answer. Now what if the key that you are currently having is someone who is greater than your current, like wherever you're standing at, it's greater. And there's no need. You have to increase that. So move right. Whatever it's not, it's not like the key is lesser. In that case, update your seal and move left. Make it as much less as possible. Once root turns out to be null, you can return the seal. And that is what the code will look like. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

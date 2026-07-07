@@ -1,0 +1,64 @@
+{
+  "lecture_id": "L097",
+  "lecture_number": 97,
+  "lecture_title": "L25. Check for Symmetrical Binary Trees | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=nKggNAiEpBE",
+  "chunks": [
+    {
+      "chunk_id": "L097_C1",
+      "start": 0.0,
+      "end": 73.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=nKggNAiEpBE&t=0s",
+      "text": "So before starting the video, I would love to thank Relevul for sponsoring this entire three series. So, if you're tired of waiting for companies to respond to your applications through different job portals, the next few seconds are very very important for you. Because Relevul by Unacademy is India's first hiring platform that can get you a job within a week itself. Yes. All you have to do is to register for the Relevul test and within a week, your interview will be scheduled with India's top companies and the top budding unicorns. So what are you waiting for? Make sure you check out the links in the description and apply for the Relevul test because it is free. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, how to check if a binary tree is symmetric or not. What is the definition of symmetric? It means whether it forms a mirror of itself or not around the center. Now for an example, if I consider this binary tree and if I draw the center, okay, let's draw the center. And now if I try to take this left half and try to impose this on the right half, like if I try to take this left half and try to impose this on the right half, you can just imagine this as a mirror."
+    },
+    {
+      "chunk_id": "L097_C2",
+      "start": 73.52,
+      "end": 149.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=nKggNAiEpBE&t=73s",
+      "text": "I try to take this left half and try to impose this on the right half, you can just imagine this as a mirror. Then can I say this two will come somewhere over this, right? It will come over this. This four will come over here and this three will come over here. So I can see it being getting exactly imposed. Hence I can say it forms a mirror of itself around the center. Hence this is a symmetric binary tree. So if I take this example, is this a symmetric binary tree? It might look to you on the first look, but it is not because if I just draw this line and I try to self-impose this over here, I'll find two here, but this three will be on the left side. Like if you talk about the mirror, it'll be over here. So I cannot see that it is symmetric around its center. So this particular binary tree is not symmetric around its center. So how do you solve this problem? Now can I say, if I'm drawing a mirror, if I'm drawing a mirror on the center, I know what is the mirror's property. If I am having any mirror, the property is very simple."
+    },
+    {
+      "chunk_id": "L097_C3",
+      "start": 149.72,
+      "end": 229.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=nKggNAiEpBE&t=149s",
+      "text": "on the center, I know what is the mirror's property. If I am having any mirror, the property is very simple. The left tends to look on the right on the mirror and the right tends to look on the left of the mirror. That's, that's very obvious. If you stand on the mirror, you'll understand that, that your left is looking at the right and your right is looking at the left. So can I say, if I ignore the root, the left subtree will have a root, which will be starting at the original roots left. Like this will be the root. Like I can say two is the root of the left tree. And can I say the mirrored version will have the root as the original root, right? Basically I can say this two is the root of the right subtree. You'll be like, yes, Trevor, you're, you're, you're absolutely correct. So can I say that if I do any traversal of similar type, yes, if I do a traversal of similar type, assume I'm doing an in order traversal on the left subtree, which is root left right. Okay. So I'm doing an in order traversal, which is root left right on the left subtree. If I do a similar traversal on the mirrored, mirrored, can I say root will remain root? And then the left, as I know it's a mirror, the left is definitely going to look something"
+    },
+    {
+      "chunk_id": "L097_C4",
+      "start": 229.0,
+      "end": 296.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=nKggNAiEpBE&t=229s",
+      "text": "I say root will remain root? And then the left, as I know it's a mirror, the left is definitely going to look something like a right. And the right is definitely going to look something like a left. And can I say, if I do both these traversals simultaneously on the left subtree and the right subtree, then the nodes visited on those traversals are going to be seen if the trees are symmetrical. That makes sense, right? Like if you, if you give, we'll see if three is on the left over here, three is on the right. So if I do a simultaneous traversal on both the sub trees, I know the visited nodes are going to be seen, but that's the idea that I'm going to start off with. So let's start. So what I'll do is I'll simultaneously standard a root, but left and root, but right. The roots of the left subtree as well as the right subtree. Now I know on the left subtree first, first, let's compare this two and two. I see that they are, they're same, right? If they are same, then you'll try to move to the left. Please move to the left. Now the moment you move to the left over here, you'll move to the right. Simultaneous, remember, simultaneous movements will be there. After this, compare this tree and compare this tree."
+    },
+    {
+      "chunk_id": "L097_C5",
+      "start": 296.6,
+      "end": 356.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=nKggNAiEpBE&t=296s",
+      "text": "over here, you'll move to the right. Simultaneous, remember, simultaneous movements will be there. After this, compare this tree and compare this tree. Since they're mirrored image, they should be seen if it is, if it has to be symmetrical, I see they are seen. Perfect. Now since the check for three is done, since three is equivalent, what you'll do is you'll go to three's left and three's right and you figure out that both are null. So, okay, fine. Then you come back over here, you go to the right and you see it's a null and over here you go to the left. So we're just doing opposites and we see again, that's not, so it's time to go back. Now when you go back from here, you also go back from here. Now at two, you have to go to the right. So go to the right. And if you're going to the right, you go to the left here. And this time you stand at four and you say that they are equal. Again do the same thing. Go to the left, go to the right simultaneously and they are null. Do the other thing. Go to the right, go to the left. Again they are null. So both of them are matching. Time to go back, time to go back. Now I can say I have came back and I, during the entire traversal, everyone was matching."
+    },
+    {
+      "chunk_id": "L097_C6",
+      "start": 356.92,
+      "end": 431.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=nKggNAiEpBE&t=356s",
+      "text": "to go back, time to go back. Now I can say I have came back and I, during the entire traversal, everyone was matching. And if everyone was matching, I will say it's a symmetric. Yes, it's a symmetric. So if I take this case and if I stand here and if I stand here, the moment I try to go to its left, which is null, like first two will match, two will match. But the moment I try to go to its null, this will be a leftward movement. But over here it will be a rightward movement. If you remember, it's the opposite movement. So you reach three. So you cannot say that this null and this three are mirrored images. And if they're not mirrored images, I can say that it is not, yes, it is not a symmetrical binary tree. So as usual, the C++ code is on the left and the Java code is on the right. So initially we are given the root. If the tree is itself null, then I can definitely return or else what I'll do is I will do a symmetric check. What I'll do is I'll go to the left and I'll go to the right because these are the two sub trees for which I have to check for symmetry, the left and the right. I'll start a traversal. What I do is, at the first step I check."
+    },
+    {
+      "chunk_id": "L097_C7",
+      "start": 431.28,
+      "end": 501.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=nKggNAiEpBE&t=431s",
+      "text": "have to check for symmetry, the left and the right. I'll start a traversal. What I do is, at the first step I check. Whenever I come across to a node, if that is null, that is null. So there will be no further traversal. So if one guy is null, the other guy has to be null. That's the definition of symmetry. Both the guys have to be same. So what do I check is, if it's like both of them are same, it's okay. I'm going to return a true. Like they are symmetric till now. If left and right are not null and we are standing at some node, I'll check the node's value. If they do not come out to be same, then I have come over here and I figured out that they are not symmetric. Again, I'll go left and I'll go right simultaneously. I'll go left and I'll go right, but I'll go simultaneously. Whatever result it returns, like if they are matching, it's okay to return a true or else it'll return a false. Similarly, I'll go right and then I left. If they return a true, it's okay. If both of them return a true, like on both the sides they are symmetrical, then only I'll return a true. If any of these sides are not matching, there will be a false return which we'll ultimately encounter because of this."
+    },
+    {
+      "chunk_id": "L097_C8",
+      "start": 501.72,
+      "end": 551.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=nKggNAiEpBE&t=501s",
+      "text": "a true. If any of these sides are not matching, there will be a false return which we'll ultimately encounter because of this. This is how I make sure that it is symmetric or non-symmetric. What's the time complexity? We are doing simple traversals. So it's a big O of n. Space complexity, big O of n at the worst case. Assuming it's a skew tree, they'll end up having a stack space of big O of n. That's what the time complexity and space complexity will be. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to this channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

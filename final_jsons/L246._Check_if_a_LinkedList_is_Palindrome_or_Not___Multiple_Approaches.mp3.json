@@ -1,0 +1,127 @@
+{
+  "lecture_id": "L246",
+  "lecture_number": 246,
+  "lecture_title": "L10. Check if a LinkedList is Palindrome or Not | Multiple Approaches",
+  "youtube_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk",
+  "chunks": [
+    {
+      "chunk_id": "L246_C1",
+      "start": 0.0,
+      "end": 76.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=0s",
+      "text": "So let's continue with our playlist. But before that, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is check if a given linked list is palindrome or not. So what is the problem stating? You'll be given the head of the linked list and you have to check if it is palindrome or not. What is the definition of palindrome? Anything written in reverse should be the same. So basically if you're given a string, something like mom, and if you try to write it in the reverse order, M O M, it's the same mom, right? So any number, any string, any given thing, if you try to write it in the reverse order, it is the same. It is the same. Then you call it as a palindrome. Now what is the definition in terms of linked list? You cannot just pick up the data. You cannot pick up the data and write it in the reverse order. What you will do is you'll take the last place it, take the last place it, take the last place it, take the last place it, take the last place it, and then compare if they're equal, they are right. So if such is the scenario, you will be returning true. Otherwise you'll"
+    },
+    {
+      "chunk_id": "L246_C2",
+      "start": 76.4,
+      "end": 144.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=76s",
+      "text": "and then compare if they're equal, they are right. So if such is the scenario, you will be returning true. Otherwise you'll be returning false. So the question is stating given a linked list. So basically it will be given the head of the linked list. You'll have to return true if it is palindrome, you'll have to return false if it is not palindrome. So this is the case for odd length of linked list. What is for the even length? It's the same thing. You take the last, take the second last, the third last, fourth last, fifth last, and the first one. So if you again compare, they're similar. So this is also a palindromic linked list. Let's look at another example. They given one, two, three, two, three. Let's try to write it. Take the last. And if you write it, you will see that they are not matching. They're not matching. You'll be returning false stating that it is not a palindrome. Now what if this question comes up in an interview? What is the extreme naive solution that you can think of? And what I can think of is I need to preserve them. So what I'll do is probably I'll take a data structure. Let's take a stack data structure and we'll understand why as we move forward. And initially let's keep a temporary pointing to the head of the linked list. What is the data at temporary?"
+    },
+    {
+      "chunk_id": "L246_C3",
+      "start": 144.56,
+      "end": 212.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=144s",
+      "text": "as we move forward. And initially let's keep a temporary pointing to the head of the linked list. What is the data at temporary? One, take it and put it into your stack data structure. Remember stack is the last in first out data structure. Remember this. Let's move to the next. What is the value? Two. Put it into the stack. Let's move to the next. What's the value? Three. Put it into the stack. Let's move to the next. What is the value? Two. Put it into the stack. Let's move to the next. What is the value? One. Let's move to the temp and you reach null and you will stop. The moment you stop, the stack will have all the values. Look at the stack. It has all the values. Let's do the step two of the algorithm. Step two is again taking the temporary, placing it at the head. This time it will be the comparison step. What you'll do is whatever is the value, you'll compare it with the top element of the stack. Stack is in last in first out. The last entered element was one. If you do the top, you'll get the last element. You get the top element as one and that is matching with temporary. You say it is matching and let's move. In case it is not matching and you'll take it out of the stack. In case it is not matching, you'll straight away"
+    },
+    {
+      "chunk_id": "L246_C4",
+      "start": 212.32,
+      "end": 284.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=212s",
+      "text": "move. In case it is not matching and you'll take it out of the stack. In case it is not matching, you'll straight away return false stating that it is not palindrome. Let's take out the next. Two is matching. Let's move. Let's take out the next. Three is matching. Let's move. Two is matching. Let's move. One is matching. Let's move. And you're reaching null. The moment you reach null or if your stack is empty, you will be like, okay, all the comparisons were true. Thereby meaning it is a palindrome. Very simple. So if I have to write down the code, I think it's going to be super simple. You will basically take a stack data structure. You'll take a temporary, which is pointing to the head of the linked list and the step one will be traversing in the entire linked list, which is temporary is not equal to null. And you'll say stack, can you please push or add depending on the language that you're using temporary of data. Done. And then you can say temporary equal to temporary dot next. So that's the step one. This is the step one where you store everything in your stack data structure. Let's try out the step two. What will be the step two? You need to compare. Right? So again, we will take temporary and this time we'll make it point to head. Never ever alter"
+    },
+    {
+      "chunk_id": "L246_C5",
+      "start": 284.64,
+      "end": 363.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=284s",
+      "text": "two? You need to compare. Right? So again, we will take temporary and this time we'll make it point to head. Never ever alter head because you never know. While you write code, you might require it in the future. So let's go while again to the traversal till we reach the end. Temp not equal to null. This time we'll say if temporary data or value, whatever it is storing value or data is not equal to stack dot tops data. In that case, we will straight away say, Hey, this is not palindrome and we will return false in case they are matching. What we will do is a temporary. Can you go to the next? And if your language, like whatever language you're using, if the top doesn't delete the top element, you will say stack dot pop. So that will pop it out. Once this is done, all the checks are done. And if temporary ends up reaching null, it means it was palindrome. So you'll be returning true. What is the time complexity? Can I say the step one's time complexity is big off one because I'm going through the entire linked list, putting everything into the stack. So what is the time complexity for step two? Can I say big off and a simple because again, we are traversing. So what is the overall time complexity? Big off to end? What is the overall space complexity? Big off end because we are"
+    },
+    {
+      "chunk_id": "L246_C6",
+      "start": 363.84,
+      "end": 429.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=363s",
+      "text": "traversing. So what is the overall time complexity? Big off to end? What is the overall space complexity? Big off end because we are storing every element in a stack. This is where the interviewer will not be happy with the extra space that you're using and he'll ask you to optimize it. So let's quickly try to optimize. So we cannot use any external data structure, which brings us to the place that whatever we need to do, we need to do it in the given linked list. We need to do some link changes or whatever algorithm is, it should be restricted to the given linked list. Let's try to think, what are we trying to achieve? Compare one and one, compare two and two, compare three and three. If the first half is compared with the second half and all the elements are matching, it's a linked list. If one of the elements in that is not matching, it is not a linked list. That's what I'm trying to achieve. What is the problem that we are facing? We can simply keep one point at the head. We can keep one point at the tail, match head with the tail, matching, move the head one place ahead, move the tail point of one place back and then match it again. But the question arises, it's a singly linked list. It's not a doubly linked"
+    },
+    {
+      "chunk_id": "L246_C7",
+      "start": 430.0,
+      "end": 509.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=430s",
+      "text": "of one place back and then match it again. But the question arises, it's a singly linked list. It's not a doubly linked list. How do you move back? That's where the problem starts. Overall thing is, I know I need to compare the first half and the second half. That is in case of an even length linked list. We'll talk about the odd length afterwards, but in case of even length, we need to match the first half and the second half. But the problem that is arising is, I cannot go back because the links are in the forward direction. It's not a doubly linked list. How do we do it? First thing that comes to my mind is, what if somehow I can change the links and make one's next pointer point into two, two's next pointer point into three. In that case, I can stand here and do the travesel. Changing links, reversing the links, comes to my brain. But for that, I need to recognize the second half. Step one is recognizing the second half. Let's try to do it. How can you find the middle of the linked list? Yes, the tortoise and the hare algorithm. In case you haven't seen my video on finding the middle of the linked list, go back and watch it. The link will be in the description. Please go back and watch it. Over there, we did use something as"
+    },
+    {
+      "chunk_id": "L246_C8",
+      "start": 509.36,
+      "end": 589.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=509s",
+      "text": "back and watch it. The link will be in the description. Please go back and watch it. Over there, we did use something as slow and fast pointers. In case of even length of linked list, we had two middle, middle one and middle two. What we will try to do is, try to somehow reach middle one. In our middle of the linked list problem, we tried to reach here. Let's try to do it. I'll take slow and the fast pointer. First step, slow and fast moves simultaneously, one and two steps. Perfect, moved. Next step, slow moves one, fast moves by two steps. Perfect. If you carefully observe, this is standing at middle one. Here's the middle two. In this problem, you need to stand at middle one. You will not go to middle two, which means the fast pointer will be standing at the second last node. It won't go to the last node or rather null as it did in finding the middle of the node because over there we were finding m2. Fast will end up going to the null. We need to make sure that we stop when fast reaches the second last node, which basically means fast, next, next should not be null. We keep on moving till that time. The moment the next,"
+    },
+    {
+      "chunk_id": "L246_C9",
+      "start": 589.28,
+      "end": 664.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=589s",
+      "text": "node, which basically means fast, next, next should not be null. We keep on moving till that time. The moment the next, next is pointing to null, we should stop. Otherwise we keep moving. Perfect. The first half is done, which is recognizing the second half and the first half. You know one thing, this is the node which is basically slows next, slows next. This is the head of the second half. This is the head of the second half. What is my next job? The next job is to make sure the links are reversed so that I can easily traverse. What I will do is, I'll try to reverse this entire linked list, the second half linked list. I'll try to reverse it. We've already done reverse. I'll call the reverse function and I'll pass slow next. What will happen is, it will reverse the second half. It will reverse the second half and it will return a new head. It will return a new head by reversing. Once it reverses, how will it look like? It'll be something like one will be here. One will be pointing to two, two will be pointing to three, three will be pointing to null. Correct. Can you tell me one thing? Will the three be pointing to"
+    },
+    {
+      "chunk_id": "L246_C10",
+      "start": 665.36,
+      "end": 739.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=665s",
+      "text": "to three, three will be pointing to null. Correct. Can you tell me one thing? Will the three be pointing to one? No. You never changed the link. Three still points to the previous three because that is how the original linked list look like. You only made sure that these links are changed. The three is still pointing to three. It's still connected. Perfect. I've reversed it. What's my next job? My next job is maybe taking two pointers. What I'll do is, I still have slow here. I'll take two pointers. One is the first and the other one is the second. The second will be pointing to the head. Second will be pointing to the new head. That's where second will be standing at. Let's try comparing. One one matches. Let's move there. Second goes here and the first comes here. This matches. First goes here and the second goes here. This and this matches. The first will this time move here but the second will move here which is a null. The moment it reaches a null, you say stop and you are able to compare everything. It is correct. It is a parallel drop"
+    },
+    {
+      "chunk_id": "L246_C11",
+      "start": 739.92,
+      "end": 810.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=739s",
+      "text": "null, you say stop and you are able to compare everything. It is correct. It is a parallel drop but before returning true, please make sure that you again reverse it. What you will do is, you will say okay please reverse the new head again. This time again this will be reversed. Before returning true, make sure you bring back the links back to how the linked list was. It's like three two one pointing to null and this is still connected to three because you never change the link. Three to two and two to one. You reverse it back again. That's how it will look like. You might be thinking this is for an even length linked list. How does it work for something like an odd length linked list? In that case, what you will do is, you perform the same scenario, slow and the fast pointers. Do find out the first half and the second half. Slow moves by one, the fast moves by two. Again move slow by one, slow moves by one, the fast moves by two and this is where you stop. Basically you stop at the last node."
+    },
+    {
+      "chunk_id": "L246_C12",
+      "start": 810.72,
+      "end": 884.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=810s",
+      "text": "one, the fast moves by two and this is where you stop. Basically you stop at the last node. Which means fast of next is where you stop. Fast of next should not be null. You will stop at the last node. That's it. You stop at the last over here. You stop at the second last. So these are the couple of conditions you have to take care. What after this? You're standing here. Let's erase this. You basically again call the reverse. So this will get reversed. So you reverse slow of next. So you will have one pointing to two, two pointing to null and this three would be still connected to two. Do the same thing again because this will be the new head. Do the same thing again. Take the first pointer pointing to head. Take the second pointer pointing to new head and again do a comparison. Pretty simple. You just have to make sure that it stands at the middle and for the even node it stands at the middle one. That is the only thing that you have to take care. Let's write down the code. It'll be in three parts. The first is finding out the middle. The second is reversing. The third is comparing. So the first part is finding the middle."
+    },
+    {
+      "chunk_id": "L246_C13",
+      "start": 885.44,
+      "end": 962.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=885s",
+      "text": "first is finding out the middle. The second is reversing. The third is comparing. So the first part is finding the middle. Toto is in the hair algorithm. So slow will be head and the fast pointer will always be head. That's where we start off with and we know the conditions. While fast next is not equal to null, we will keep running it and fast of next because we want to stand at middle m1. Next is not equal to null. We will keep running it. Perfect and we will say slow goes by one step which is slow of slow next. We will say fast will go by two steps which is fast of next of next. Perfect. Amazing. So what is the next step? Reversing the second half. So can I say node of star that's in case of C++ in case of Java there will be no star. Reverse slow next because slow will be the middle and I'll say that next is the head of the second half. It will reverse you. So that was about the second step. What will be the third step? The third step is comparing. So let's take first pointing to head. Let's take second which will be pointing to the new head. Do not touch new head. Let's keep moving then. We know the second will get exhausted. Second"
+    },
+    {
+      "chunk_id": "L246_C14",
+      "start": 962.88,
+      "end": 1039.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=962s",
+      "text": "be pointing to the new head. Do not touch new head. Let's keep moving then. We know the second will get exhausted. Second is the second half and it will reach null after a point. So we will say second is not equal to null. And over here we will say if first data or first value is not equal to second's data or value we will be returning a false. But before that please make sure whatever reversal you have done you re-reverse it. Reverse new head again. So we'll come back to it original configuration and you can return false. You can return false. Perfect. If that's not the case you will say hey first can you move by one step? You'll be like why not? And it's a second. Can you move by one step? Second will be like why not? And then the while loop ends. After that if everything has been compared then it means return true. But before returning true what is the step? You re-reverse it. So first you will be returning true. Before returning true what is the step? You re-reverse it. So basically you call the reverse"
+    },
+    {
+      "chunk_id": "L246_C15",
+      "start": 1039.12,
+      "end": 1107.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=1039s",
+      "text": "be returning true. Before returning true what is the step? You re-reverse it. So basically you call the reverse and you say hey this thing can you just get it back to the shape. This is very very important specifically for interviews. Specifically for interviews this is very important because people don't want you to alter the given data. So if you have done something make it make it back to the original configuration. That's very important. What is the time complexity if I have to analyze? This is step one. Can I say b go of n by 2 because it will go halfway to find out the middle. Perfect. I'm reversing the linked list. So I'm reversing a half section of the linked list. So that's a b go of n by 2. I'm again going I'm again traversing the first half and the second half together. But can I say can I say if I go back to the example I'll end up traversing one node two node three node which is basically half of the nodes in order to compare in order to compare half of the nodes. So this while loop will be b go of n by 2 again. And can I say I'm reversing again so it is b go of n by 2. So technically it's like n by 2 plus n by 2 which is"
+    },
+    {
+      "chunk_id": "L246_C16",
+      "start": 1107.68,
+      "end": 1171.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=1107s",
+      "text": "again so it is b go of n by 2. So technically it's like n by 2 plus n by 2 which is n n by 2 plus n by 2 which is n. So the time complexity is overall b go of 2n. Right. And the space complexity overall is b go of 1. Yes we're using pointers like we're using pointers but that will not take a lot of memory not like what stack was taking. So should be it. This is this is the optimal approach. So let's quickly get back into the code editor and check out the edge cases. If you look at the first line. Very simple. If it is an empty linked list it will always be palindrome. If it has one element it will always be palindrome. No need to do all these things. Apart from this step one step two and the entire step three. Let's quickly submit it and see whether this one is picked up from our previous lecture. In case you haven't seen or in case you do not know how to reverse a linked list go back and watch that. And the other thing is this is a recursive solution. You can always use iterative in case you don't want to involve the recursive stack space into account. So I'm just copy pasted the previous code. That is why I'm using recursion."
+    },
+    {
+      "chunk_id": "L246_C17",
+      "start": 1171.68,
+      "end": 1200.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=lRY_G-u_8jk&t=1171s",
+      "text": "want to involve the recursive stack space into account. So I'm just copy pasted the previous code. That is why I'm using recursion. You're free to use the iterative version as well. So I hope you have understood everything. I'm sure you have. That is why you are still watching. And in case you are still watching please please please do consider giving us a like. And if you're new to our channel do consider subscribing to us as well because that is the only thing that motivates me to bring more and more videos. With this I'll be wrapping up this video. Let's meet in some other video. Till then bye take care."
+    }
+  ]
+}

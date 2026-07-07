@@ -1,0 +1,274 @@
+{
+  "lecture_id": "L206",
+  "lecture_number": 206,
+  "lecture_title": "Dp 25. Longest Common Subsequence | Top Down | Bottom-Up | Space Optimised | DP on Strings",
+  "youtube_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U",
+  "chunks": [
+    {
+      "chunk_id": "L206_C1",
+      "start": 0.0,
+      "end": 72.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=0s",
+      "text": "Hey everyone, welcome back to TKFWD. We will be starting off with a new pattern that is DP on strings. Okay, generally in DP on strings you will find problems of comparison, you will find problems of replacements, edits, etc. So these kind of patterns is what we will be solving and we will be doing a bunch of problems. And again, when we complete DP on strings, you can solve any problem on DP on strings. That's my guarantee. So to start off with, let's take the first problem which is longest common subsequence. Yes. But if you're understanding that, let's understand this term subsequence in depth. What is subsequence? So if I write ABC, A is a subsequence, B is a subsequence, C is a subsequence, AB is a subsequence, BC is a subsequence, AC is a subsequence, ABC is a subsequence, empty string is also a subsequence. What is a subsequence in a string S? You see BC, repetitive, BC is consecutive and maintaining the order of B and C, maintaining the order of B and C."
+    },
+    {
+      "chunk_id": "L206_C2",
+      "start": 72.34,
+      "end": 149.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=72s",
+      "text": "BC is consecutive and maintaining the order of B and C, maintaining the order of B and C. You see AC, AC is not consecutive but maintaining the order of AC. ABC is consecutive and maintaining the order. Very simple. It can be consecutive, it cannot be consecutive but as long as it maintains the order, maintains the order in the string, then you can call it as a subsequence. And in order to print all these subsequences, you might be thinking, Strever how do I print all the subsequences? So in order to print all the subsequences, you can use either power set, I have a video on this, or you can use the recursion method. Again I have a video on both of them. And if you watch the video, for any given string, like this string is of a length 3 and the number of subsequences is 8, including the empty one where I say I did not pick anyone. So for a string of length n, the number of subsequences is 2 to the power n. So that is what subsequences mean. So what is longest common subsequence?"
+    },
+    {
+      "chunk_id": "L206_C3",
+      "start": 149.2,
+      "end": 225.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=149s",
+      "text": "subsequences is 2 to the power n. So that is what subsequences mean. So what is longest common subsequence? What does this signify? So I can say over here ADE is a subsequence, ADB is a subsequence, AEC is a subsequence, DBC is a subsequence, EC is a subsequence, DC is a subsequence, there can be 2 to the power 5 subsequences, 32 different subsequences. Similarly over here there can be 32 subsequences. So I can say this guy can generate 32 subsequences, namingly ADE, BC, AD, AE, AB, AC and so on. And this guy can also generate 32 subsequences. So what you need to do is, you need to take this A, does this A exist? Yes. So as of now, the common subsequence, one of the common subsequences is A. Does D exist? Yes. One of the common subsequences is D. Does AD exist? No. So AD is not a common subsequence."
+    },
+    {
+      "chunk_id": "L206_C4",
+      "start": 225.08,
+      "end": 302.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=225s",
+      "text": "common subsequences is D. Does AD exist? No. So AD is not a common subsequence. Does AC? No. Does AB? No. Similarly you have to go on writing and you will see ADB exists over here, ADB and ADB also exist over here. So you will find ADB is common in both of them. And you have to find among all common subsequences, which one is the longest. So ADB is the longest that you will find. Yeah there was A, there was D, but you need the longest. So the longest is ADB. And what is the length of this? 3. The length of this is 3. So you need to tell me the length of this, which is 3. So that's the question. Pretty straight forward. Now you might think, Stryver, let's apply brute force. Okay that's correct. What is the brute force? Generate all the 32 subsequences. Generate all the 32 subsequences on this side and then do a linear comparison of both and find manually which one is the longest. But in order to do that, you have to actually generate all the 32 subsequences because generate, take one, compare, take one, compare, take one, compare, take one, compare and get the longest among them. So that's going to be 2 to the"
+    },
+    {
+      "chunk_id": "L206_C5",
+      "start": 302.28,
+      "end": 379.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=302s",
+      "text": "compare, take one, compare, take one, compare and get the longest among them. So that's going to be 2 to the power n because you have to generate all of the subsequences exponential in nature. So the brute force is going to be exponential in nature. Hence a pattern that I will not follow. But yeah, if you want to generate all the subsequences, feel free to watch out the power set video or the recursion video that I will be leaving the link in the description. So if not brute force, then what? Then my brain says, okay, let's do some, let's generate all the subsequences and try to do comparisons. Okay. Generate, that's what we did. Generate all subsequences and compare on way. That's what I'll think. And that's a standard way. Like you have to generate all subsequences and compare on way. That's a standard way that we generically do in a recursion or like on DP on strings. I'll be telling you about that. So you will be tending to follow a recursion method where you will not generate these on way. Instead of that, you will use parameters to generate them. I'll be showing you how."
+    },
+    {
+      "chunk_id": "L206_C6",
+      "start": 379.24,
+      "end": 459.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=379s",
+      "text": "not generate these on way. Instead of that, you will use parameters to generate them. I'll be showing you how. So first let's understand something in deep. Let's take an example super quickly. A C D and C E D. Okay. Assume these are the two strings that you're looking to solve. A C D and C E D. Okay. Now if you go to generate all the substrings, it will be A C D A C A C C D A C D and over here it will be C E D C E C D and E D C E D. Then you figure out the longest being C D and C D. So thereby this is the longest which is of length two. But if you generate this, that doesn't make sense. That's where we will try to write some recurrence. Yes. We'll try to write some recurrence that probably gives me the answer through the way. Through the way is my question. Okay. So assume you're solving this entire portion, this entire string and entire string. Okay. And generically, generically, what are the rules to write the recurrence? Let's, let's quickly just jolt down the rules to write recurrence and then we will try to follow those paths. Express everything in terms of indexes. Explore possibility on that index. That's it. Explore possibility on that index"
+    },
+    {
+      "chunk_id": "L206_C7",
+      "start": 461.6,
+      "end": 538.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=461s",
+      "text": "try to follow those paths. Express everything in terms of indexes. Explore possibility on that index. That's it. Explore possibility on that index is what we do. Take the best among them because you're looking for longest. Take the best among them. These are the three rules that you generically follow. Now express everything in terms of index. Okay. So either you can carry this entire string or you can say, Hey, listen, probably I can have a pointer here. Let's understand. Probably I can have a pointer here, which is somewhere around index two and F of two signifies the string. It'll index two. Okay. But only you can say I can keep a pointer here, which is again index two. F of two again signifies the string till index two. Something to observe. A single index cannot express both the strings. A single index cannot express both the strings. Thereby I will have to represent them by two indexes. I have to represent them by two indexes where index one represents this guy. Index two represents this guy. That's the first modification that"
+    },
+    {
+      "chunk_id": "L206_C8",
+      "start": 541.36,
+      "end": 619.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=541s",
+      "text": "two indexes where index one represents this guy. Index two represents this guy. That's the first modification that you have to do in the rules. Since you're dealing with couple of strings, you express them in terms of index one and index two. Very simple. Like in all the array problems, you express everything in terms of index because there was an index. Then you decided to pick a not pick or similar kind of things you did over here. We will have index one and index two, which will be representing. So can I say if I omit this and I write this something as F of two comma two or rather let's write it in a smaller way. F of two comma two. What does this represent? Tell me the LCS of string zero to two string one zero to two and string two zero to two. This is what this F of two two will represent. So we have understood the expressing term. You've understood the expressing term that's done. If I'm writing something as F of let's say two and five, what does this signify? This thing signifies give me the longest common sub sequence between two and five. String S one zero to two and string S two zero to five, a smaller string and a larger"
+    },
+    {
+      "chunk_id": "L206_C9",
+      "start": 620.16,
+      "end": 698.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=620s",
+      "text": "two and five. String S one zero to two and string S two zero to five, a smaller string and a larger string. This signifies this. So I hope you have got an idea what I'm meaning to say by index one and index two. Okay. So this we have figured out now time to explore all possibilities because if you do not explore all possibilities, we will be having an issue. Okay. So let's try to explore all possibilities. Okay. Let's, let's try to write them. So can I say this? Can I say this? That, okay, let's try this. I'm having the string ACD and CED and I'm having a couple of pointers over here and this is index one and this is index two. So a very straightforward question is if they're matching because this D like do comparisons characterize, remember this, do comparisons characterize. So this D and this D is matching. That's something we can see this D and this D is matching. So can I say if I just do not think of these things, they, and this D and this D is matching. Can I say I got a subsequence"
+    },
+    {
+      "chunk_id": "L206_C10",
+      "start": 698.68,
+      "end": 773.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=698s",
+      "text": "of these things, they, and this D and this D is matching. Can I say I got a subsequence of length one, I got a subsequence of length one that is D which is common in both of them. Again, makes sense. Thereby I can probably say one of the possibilities that I can have is I got one subsequence of length and then I shrink the string and I shrink the string and say the new string is AC and C in which probably you can find an answer in which you can probably find an answer. So does that make sense? It does because if these guys are matching, no, you just have to take these two strings and it was then what's the common, what's the longest common in them because I've done for D which is one. What is AC? I said, do what is AC? This index will come here, which is index one. So I can say AC is index one over here. C is index two over here, which is nothing but F of one comma one F of one comma one. Why F of one comma one? Very simple because one for this D and I've shrink the string. This is the string. So that's F of one, which means zero to one is the string and this D you took. So again, zero to one. So F of another one is there."
+    },
+    {
+      "chunk_id": "L206_C11",
+      "start": 773.36,
+      "end": 853.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=773s",
+      "text": "means zero to one is the string and this D you took. So again, zero to one. So F of another one is there. That's how you can do it if they are matching. So if character matches index one matches with index two, can I write this as I will add one to the answer and I will reduce index by one and the other index by one as well. Can I say this? I'll reduce index one by one and index two by one as well. And this is going to be the recurrence if both of the guys are matching. Okay. So we have, we have probably done one possibility. You've done one possibility over here, which is if both of them are matching, then it's kind of very simple enough. You say one plus F of index one minus one index to minus one. And that's going to be the case. If match on indexes, if match on indexes, that's one possibility. Okay. Now what about the other possibility? Because what if they do not match? Because in all the string problems, you know, in all the comparison of string problems, you'll see match and not match match and not match in previous problems of arrays. It was, it was pick not pick over here. It will be match, not match. So for matches,"
+    },
+    {
+      "chunk_id": "L206_C12",
+      "start": 854.52,
+      "end": 929.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=854s",
+      "text": "previous problems of arrays. It was, it was pick not pick over here. It will be match, not match. So for matches, you will generally add to the answer and it'll move back by index in matches. You'll generally add the answer and move back by index similar to pick similar to pick when you moved one back one back. Okay. So what about non-match? Let's talk about non-match. What if they're not matching? Yes. What if they're not matching? Because in the next step it will be AC and see what if they're not matching? Let's see. If I have AC and CE and they are not matching, something I know for sure is if I go ahead, this C will match with the C. But as of now, my index one is standing here. My index two is standing here. So how will I go and compare this C and C? Because as of now I'm standing at E. If I move them both back, I will miss out on a comparison of C. I'll miss out on a comparison of C, right? Or what if there was an E here? So this E would have matched with the C. So I can also miss out on a comparison of E as well. You understand? If I write EC, then what will happen? This C and this C might match because they're standing in the other places or this E and this E might"
+    },
+    {
+      "chunk_id": "L206_C13",
+      "start": 929.46,
+      "end": 1004.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=929s",
+      "text": "what will happen? This C and this C might match because they're standing in the other places or this E and this E might not match any day because they're standing at opposite, standing at different places. Thereby, you have to apply your brain. You have to apply your brain in such a way that you explore both the possibilities. Yes. What are the both the possibilities? You say, hey, for example, let's just to understand, let's do it easy. You will say, hey, listen, let's do one thing. Let's move only one guy. I'll be like, okay, but which guy? Let's try both because in both the directions, you might find the answer. I'll be like, okay. I'll be like, okay. This C did not match with E. Did not match. But this E might match with the C. I'll be like, okay, this C did not match with E, but this E might match with the C. Let's do one thing. Let's move the index one only. Let's keep the index two as it is. And since they're not matching, the answer added to the longest will be zero. Okay. Make sense? I'll be like, that does make sense because I'll just move this index. I'll keep it because this guy might match in future with these guys. Okay. But then"
+    },
+    {
+      "chunk_id": "L206_C14",
+      "start": 1004.36,
+      "end": 1082.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1004s",
+      "text": "because I'll just move this index. I'll keep it because this guy might match in future with these guys. Okay. But then you'll miss out on the C. Okay. Let's take the other way as well. When I say, okay, listen, let's keep EC. That means let's keep index one. Let's move C. Let's move index two. Let's move index two here. Okay. Make sense? Now the C and C might match up. Now the C and C might match out. Why? Because of match on indexes. In the next step, E and E will go on match on indexes. C and C will go on match of indexes. And over here, there's a plus zero. That's sure. But did you understand what I tried to do? I said, hey, listen, if they're not matching, let's either move this or either move this. There's the both the possibilities. I'm like, okay, that makes sense. So can I say if not match, then the answer added will be zero for sure, because there is no length that you're matching. Okay. Plus F of index minus one is what you will go. Sorry. Index one minus one is what you'll go. It'll keep the index two or you will go, you'll keep the index one and you will go"
+    },
+    {
+      "chunk_id": "L206_C15",
+      "start": 1083.08,
+      "end": 1155.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1083s",
+      "text": "what you'll go. It'll keep the index two or you will go, you'll keep the index one and you will go the index two minus one and you will take the max of both the guys. Yes. You'll take the max of either this guy or either this guy. And you can easily just move this or you can easily move this and the max of this and this is what you will get the answer. Like either solve this guy or either solve this guy. Whichever gives you the maximum answer is going to be the max answer. This is what if not match will be. So we have also explored all possibilities on that index. Take the best among them. You're taking the best among them. You either take on match, you either take this and they do not match. You take the best of this or this. So also done, take the best among them. So that's how you can easily think in terms of DP on strings. I'll be drawing the recursion tree. Don't worry about that. But that's how you can easily think of DP on strings. What are the base case? We will think about that. But let's try to write as of now the code in short and then I'll think about the base case. So I'll be like, okay, F of index is F of index"
+    },
+    {
+      "chunk_id": "L206_C16",
+      "start": 1155.64,
+      "end": 1228.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1155s",
+      "text": "code in short and then I'll think about the base case. So I'll be like, okay, F of index is F of index one and index two is there. That's for sure. Let's forget about the base case. What are the cases? Possibilities match or not match. Okay. So if they match, can I say if they match, then it will be index one equal to equal to index two. It can be. And what would be the answer? The answer is very simple. One of F of index one will also move. Index two will also move and you can easily return them. So if this line does not, if this line executes, the program returns over here and it goes back. The rest lines will never execute. Remember if this if executes, the program returns over here and these lines will not be executed. So I'll write the next lines. What will be the next lines? The next lines will be very simple. I'll be saying either if this is not happening, if this is not happening, if this is not happening, there'll be no match. If no match, can I say the answer will be zero plus I will move the index one by one and I'll move the index two minus one, sorry, index two, I'll keep it like this or I will be keeping the index one and I'll move the"
+    },
+    {
+      "chunk_id": "L206_C17",
+      "start": 1228.08,
+      "end": 1302.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1228s",
+      "text": "two minus one, sorry, index two, I'll keep it like this or I will be keeping the index one and I'll move the index two by one and I'll take the max of the best of them, the best of them. And that's what I will return. If they're matching, it's fine. If they're not matching, then take the max of these couple of guys and return. So if I just write it in a sophisticated way, in a sophisticated way, it will look something like this, like zero plus zero doesn't have any significance. This one not match, this one match as simple as it can get. So that's what about that was about the possibilities. But what is the other thing that's remaining? That's base case. Yes. That's something which is base case. You think about the base case. So can I say when will the base case come? Okay, let's come back and see when will the base case come? Can I say I'm a T, I'm a T at this portion, what will happen? You will say I'll do a plus one because, because this E matches with the C and thereby this index will go minus one and the other one will also go minus one. But if, if this guy goes minus one, it will go to negative because this was the zeroth index. It'll go to negative."
+    },
+    {
+      "chunk_id": "L206_C18",
+      "start": 1302.0,
+      "end": 1378.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1302s",
+      "text": "But if, if this guy goes minus one, it will go to negative because this was the zeroth index. It'll go to negative. And if it goes to negative, it's over. And similarly over here, this will happen. They are matching. So index two will go to negative. Index two will go to negative. This will become negative over here. This becomes negative because they've matched. So when you're comparing, when you're comparing either of index one becomes negative or either of index two becomes negative. What does negative signify? What does negative signify? Let's write. Negative means end of the string. Negative means end of the string. Very simple guys. If, if, if F of two means string zero to two, negative will mean end of the string. So can I say, can I say if at any moment index one is lesser than zero or index two is lesser than zero, I can say it's the end of string. If it's the end of the string, what is the longest length? Zero. What's the longest length? Zero guys. So I can say this is zero and it can"
+    },
+    {
+      "chunk_id": "L206_C19",
+      "start": 1378.0,
+      "end": 1454.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1378s",
+      "text": "longest length? Zero. What's the longest length? Zero guys. So I can say this is zero and it can easily return. Either this goes negative or this goes negative. You don't have anything to compare. So the returning length will be zero. This is how the recursive code will look like. Now, in order to get more clarity, what I'll do is I'll take this example and try to do a recursion tree so that it gets clear on you like on a crystal clear method. CED. Okay. Where are we? We were here. We were here. Okay. What did the first step, what are the first step? One plus. Perfect. And it'll call the function. So over here, it'll be something like zero one, two, zero one, two. The function call will be for F of two, right? What will be the next function call? Plus one on F of one, one, which will be AC and CE. F of one, one means AC and CE. So AC is here and E is here. Are they matching? No. So there'll be two split calls. There'll be two split calls. Let's do the two split calls. So if I do the two split calls, it will be plus zero and F of zero one will be one split call. And F of one zero will be another split call. Basically"
+    },
+    {
+      "chunk_id": "L206_C20",
+      "start": 1454.88,
+      "end": 1523.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1454s",
+      "text": "plus zero and F of zero one will be one split call. And F of one zero will be another split call. Basically you reduce one or reduce this one. That's what you did, right? That's what you did. You either reduce this or you either reduce this. So a split of one of zero or a split of one of zero will happen. Okay. So what does this signify? Zero of one. A, CE and this signifies AC and CE. Perfect. We are standing over here. We are standing over here. We are standing over here and we are standing over here. Okay. So this recursion will be solved at first and then this recursion will be solved at first. You are understanding, right? F of two, two will call F of one, one. F of one, one will call this and call this and take the max of this and the max of this. So F of zero one, what will happen? A, E are not matching. They are nowhere matching. A and E are nowhere matching. So what will happen? Again, two split calls will happen. If they're not matching two split calls. And what will be for the split call? It will go to minus one comma one. What will happen to the split call? It'll go to F of zero, zero. F of zero, zero. Understand zero is a split. One is, so basically"
+    },
+    {
+      "chunk_id": "L206_C21",
+      "start": 1523.16,
+      "end": 1601.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1523s",
+      "text": "the split call? It'll go to F of zero, zero. F of zero, zero. Understand zero is a split. One is, so basically you reduce. So over here, it gets reduced to nothing by CE and over here it gets reduced to A by C. Why? Because you're moving this guy. So A by C is what it reduces to. Okay. Again, what will this return? Negative. This guy returns zero. A of C, if you go on solving this, what will happen? Again, two split calls. F of minus one comma one and F of zero comma zero, or rather this will be actually zero. So F of zero comma minus one. Right? So this will also return a zero because of negative. Because of negative, this will also return zero. So F of zero one called those guys and it got zero and zero. So this guy actually got a zero. So this guy will return a zero. Now F of one, zero, what will happen? Let's analyze over here what will happen. C and C matches. So one F of both will reduce zero and minus one. So both will reduce, zero will reduce to minus one, one will reduce to zero because C is done, C is done. So you move this to here and this is over. So one plus this,"
+    },
+    {
+      "chunk_id": "L206_C22",
+      "start": 1601.16,
+      "end": 1678.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1601s",
+      "text": "zero because C is done, C is done. So you move this to here and this is over. So one plus this, what is this? Negative. So this guy will return zero. So one plus zero, this guy's value is one. This guy's value is zero. So F of one, one called both the guys. One guy gave him zero. The other guy gave him one. Which one will he take? He will take one. The max of both the guys. Over here, we had a plus one. So plus one and plus one. F of two, two gives you two, which is the answer. F of two, two gives you two, which is the answer. And eventually C, D is the string, which is the longest common subsequence. So you got the answer. So you saw the recursion tree working perfectly and it did give you the answer. Very straightforward in all the comparison of string problems. If they're matching, you just take both of them back. And if they're not matching, you take either one string, you shrink one string or you shrink the other string and try to do a comparison. And if you're able to do this, you can actually solve any problem on string comparisons. If you can understand the movement of strings, fine enough. So what are we doing as of now? We are actually doing recursion and we know we are applying possibilities. So the possibilities,"
+    },
+    {
+      "chunk_id": "L206_C23",
+      "start": 1678.44,
+      "end": 1754.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1678s",
+      "text": "enough. So what are we doing as of now? We are actually doing recursion and we know we are applying possibilities. So the possibilities, since you're trying out all the recursions, it's going to be two to the power n subsequences of this guy to the power n subsequences of the other guy, because you're trying out subsequences. If you carefully observe, you are trying out subsequences. A, C, E, C, E, you're trying out subsequences. Two to the power n subsequence of the first string, two to the power n subsequence of the other string. So that will be like near about exponential, which is definitely something which we don't want. And we want this to be optimized. We want this to be optimized. Correct? And how do you optimize this? You have to see if there are overlapping subproblems, because if there are overlapping subproblems, we can apply memoiation. I have already told you this in all the previous lectures. We can apply memoiation. Let's see if there are overlapping subproblems in this particular problem. f of 2, 2 was there. f of 1, 1 was there. f of 0, 1 was there. f of 1, 0 was there. f of 0, 0 was there. f of minus 1. That's a very small set to see. But if you take bigger examples, you will see like these guys getting repeated somewhere over here or similarly, you can see"
+    },
+    {
+      "chunk_id": "L206_C24",
+      "start": 1754.76,
+      "end": 1830.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1754s",
+      "text": "to see. But if you take bigger examples, you will see like these guys getting repeated somewhere over here or similarly, you can see over here, there's one state repeated. f of 0 minus 1 is repeated here also. You see both the states are repeated. That's a base case. That's okay. But you will see, if you take a bigger example, you will see states being repeated. You can take a bigger set of string and you'll see that the states are repeated. So what does f of i, j state means? It says LCS of a string from 0 to i and a string 0 to j. That's what it represents. LCS of a string 1, 0 to i and 0 to j. In this, they want the length. So if someone again comes up and asks you the same question, why do you want to pre-compute? Why do you want to re-compute? Thereby, we can easily apply memiation. What is the technique to apply memiation? Look out at the changing parameters. One is i, the other is j. What is about i? It's n. What's about j? It's m. Thereby, you can say n cross m is what I will be requiring dp. So you can easily just declare a dp of n cross m,"
+    },
+    {
+      "chunk_id": "L206_C25",
+      "start": 1830.92,
+      "end": 1901.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1830s",
+      "text": "cross m is what I will be requiring dp. So you can easily just declare a dp of n cross m, initialize everything to as minus 1 and you can just go back and add these lines over here. This is a return statement. So over here, you can say, okay, fine. I'll write dp of i, j equal to, this is a return statement. You'll say, okay, fine. I'll write over here. And whenever it enters, a very simple line of dp of i, j is not equal to minus 1 and you return dp of i, j. That's how you easily do it. That's what the function resembles. So it's time to check out the code. So we're given the string s and the string dot t. So really you can just give s dot size, right? And you can just give m equal to t dot size. Perfect. And right here, you can say return f of you can n minus 1. That is what you take s and t. Perfect. Let's quickly write the function that we generally write int f, int i, int j. Make sure you pass the string by reference because every time, if you create a new string, it might give you tl. This is what you wrote. This is what you wrote. Return 0. If they're matching, which is s of i equal to t of j,"
+    },
+    {
+      "chunk_id": "L206_C26",
+      "start": 1903.56,
+      "end": 1975.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1903s",
+      "text": "what you wrote. This is what you wrote. Return 0. If they're matching, which is s of i equal to t of j, then you're going to return 1 plus f of i minus 1, j minus 1 and s and a t. And they're not matching, you return the max of either both of them. And i minus 1, j, s and t, or you just go 1, which is s comma t. That's how the brute force will look. And obviously you need to optimize this by applying memization. So just apply memization over here, which is dp of n cross vector of int and m cross minus 1. Please make sure you pass the dp over here. And once you pass the dp right over here, you can say vector of vector int and dp. And you just pass on the dp over here. You can just pass on the dp over here. You can also pass on the dp over here. Perfect. And what I can say is, okay, fine. The next thing that I'll do is memoize. Let's quickly memoize this. And as a last thing, you will just see, please check if the state has been visited previously. If this has been visited previously, kindly return it. And that's what the code will look like. Hopefully it should run. Okay. It has some issue. Okay. Uh, dp was not declared in the scope. Okay."
+    },
+    {
+      "chunk_id": "L206_C27",
+      "start": 1975.72,
+      "end": 2048.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=1975s",
+      "text": "the code will look like. Hopefully it should run. Okay. It has some issue. Okay. Uh, dp was not declared in the scope. Okay. Looks like vector has not been declared. So what it says is you have to actually use hash include bits std c++.h because vector has not been defined. So you can easily define this. And after this, I think it should be running fine. Fine. It runs. Now we're getting a hundred score. And that's how the memoization technique will be. Now, the next step will be tabulation because we have to optimize the auxiliary stack space. And the time complexity in order to solve this by memoization was we go off n cross m, which we took in order to solve this using memoization. And the space complexity we took was n cross m for the states storage in dp. And then we go off n plus m in auxiliary stack space. Right now you might ask, why n plus m? I'll give you an example, a, b, and c, d. I'll ask you to draw the recursion tree for LCS. If you remember in match, in match, it was one plus and in unmatch, you moved in two directions. So this is unmatched. So you move in two directions, which is a by cd. And the other one is a, b, y, c. Very obvious because you either eliminate this or you either eliminate this. Again, over here, you again move"
+    },
+    {
+      "chunk_id": "L206_C28",
+      "start": 2048.44,
+      "end": 2122.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=2048s",
+      "text": "one is a, b, y, c. Very obvious because you either eliminate this or you either eliminate this. Again, over here, you again move in two directions because they do not match. So you either eliminate a, which makes it cd, or you either eliminate d, which makes it a by c. Over here again, in two directions, you either eliminate a or you either eliminate c. So if you carefully observe, one step, two step, three step, four. So at max the depth is four, length two plus length two. Because what we did was we deleted b, we deleted d, we deleted c. So alternative deletions. If you do alternative deletions, there can be n deletions from string s1, there can be m deletions from string s2. Thereby the auxiliary stack space will go as n plus m. But obviously, as always, I'm not a big fan of n plus m. So I'll have to omit this. In order to omit this, I have to write the tabulation iterative bottom-up approach, whatever you can call it. So bottom-up. Rules I've already told you. What are the rules? Copy the base case. I've already told you the rules. Copy the base case."
+    },
+    {
+      "chunk_id": "L206_C29",
+      "start": 2122.12,
+      "end": 2195.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=2122s",
+      "text": "told you. What are the rules? Copy the base case. I've already told you the rules. Copy the base case. Second, write down the changing parameters in the opposite fashion. Perfect. Third, copy the records. If you can follow these methods, I can guarantee that you can write any of the tabulations or bottom-up for any of the questions. But copy the base case is a bit tricky over here. Why? Because if you remember the code, the code was i comma j. And it was something like i lesser than zero or j lesser than zero and you return zero. So over here, this was the base case. If you remember, this was the base case. And in the base case, i can be negative. And usually we did see the recursion tree. If you remember the recursion tree, I'll just take you to the recursion tree that we did. In the recursion tree, the negative was minus one, minus one, minus one. So we stopped at minus one. So we can't write cases for minus one in base cases. Can you write for minus one? Because how will you write dp of minus one? That's not possible. That's not possible. So what we do is we do a shifting of index. Very simple. We do a shifting"
+    },
+    {
+      "chunk_id": "L206_C30",
+      "start": 2195.56,
+      "end": 2267.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=2195s",
+      "text": "possible. That's not possible. So what we do is we do a shifting of index. Very simple. We do a shifting of index. We do a shifting of index in order to write tabulation. You can still write tabulation using this, but I want you to teach this shifting of index in order to write tabulation. Like without even shifting of index, I can still write tabulation, but that will be a bit tricky. So I'll not go that direction. Shifting of index. So as of now, there was index zero, one, two, like minus one was the negative index three, n minus one. And we were calling these indexes, like how did the function start? The function call started from n minus one and m minus one. And n minus one represented this index. F of zero represent this index. F of one represents this index. Can I do a shifting? Can I do a right shift of the index? And I say, I will call n comma n. I will call n comma n. Yes, I'll call this. But over here, I'll say, hey listen, n means n minus one. Okay. F of one means zero and F of zero means negative. I shifted the index one right,"
+    },
+    {
+      "chunk_id": "L206_C31",
+      "start": 2267.32,
+      "end": 2346.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=2267s",
+      "text": "n minus one. Okay. F of one means zero and F of zero means negative. I shifted the index one right, one right. N means n minus one. One means zero. Zero means minus one. I shifted it one right. One right. Okay. Makes sense. So we're shifting it one right. If so, can I say F of IJ, if you've shifted IJ, like initially I is N and J. Initially I is N and J is N. You shifted it. N is actually n minus one. One is actually zero. So can I say, can I say, that means every I that you're giving should be treated as I minus one. And every G that you're giving should be treated as J minus one, because that is the meaning. Because as of now, you're sending I and J in terms of one shifted index. I'll be like, does make sense. Does make sense. So can I say, instead of greater than zero, can I write this as I equal to equal to zero? Because this signified I equal to minus one, but since I've shifted it, can I write I equal to zero? Yes. And can I write, instead of this J equal to equal to zero, I can, the base case has been changed. If I take you back to the code,"
+    },
+    {
+      "chunk_id": "L206_C32",
+      "start": 2347.56,
+      "end": 2418.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=2347s",
+      "text": "J equal to equal to zero, I can, the base case has been changed. If I take you back to the code, over here, instead of N minus one, I can write N, M minus one, I can write M. And over here, I can write equal to equal to, and in the G also, I can write equal to equal to, but what's the other changes? Everything stays same. States being called same. You're doing a string comparison, but I means I minus one. J means J minus one. Changed. And now if I run this code, does this run same? It will. Why will it? Because you've just shifted it. Okay. It's giving run parameter. Why does it give run parameter? Because the DP that you've declared is of N, M, and you're now using the states of N, M. So just make sure you declare a DP of extra size, M plus one. And now you've done a shifting of index one, right? And it does work fine. So, okay. So the base case has been, now the base case has changed. What is the base case now? The base case is now very simple. It states, if I is equal to equal to zero or J is equal to equal to zero, we are returning zero. How can I write this in simple layman terms? Okay. What does I"
+    },
+    {
+      "chunk_id": "L206_C33",
+      "start": 2418.28,
+      "end": 2497.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=2418s",
+      "text": "is equal to equal to zero, we are returning zero. How can I write this in simple layman terms? Okay. What does I equal to zero means? It means any DP of zero, and this guy can be anything because this is J. J can be anything. And what does this mean? I can be anything, but this guy has to be zero, right? And what can be the possible values of J? Anything from zero to M minus one. What can be the possible values of I? Anything from zero to N minus one. Loop it. The base case are very simple. J can be anything from zero to M minus one and DP of zero and J will be zero. This is for this one. And for this one is this. I can be anything from zero to N minus one and DP of I comma zero is equal to zero. Base case written by shifting indexes by one. Base case has been written. Perfect. What's next? Write down both these guys in opposite fashion. So, the moment I shifted it, the recursion was taking I from N to zero and J from M to zero. Top down, top down. These are the base cases."
+    },
+    {
+      "chunk_id": "L206_C34",
+      "start": 2499.32,
+      "end": 2578.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=2499s",
+      "text": "I from N to zero and J from M to zero. Top down, top down. These are the base cases. What is tabulation? Bottom up. You go up. So, one to N. Why not zero to N? Because zero is the base case which has already been written. So, one to N. What about J? Opposite. Done. Next, copy the recurrence. What are you waiting for? Just go back and copy the recurrence and you'll be able to easily write the tabulation format of LCS easily. So, what I'll do is I'll go back and try to write the tabulation format. Okay. So, we have this guy. That's perfect. Let's format this and try to write this. So, if you remember, it was I equal to zero. Or rather, yeah, J equal to zero was the first one. J equal to zero and J lesser than M. But then now it will go this. DP of zero and J is zero. Perfect. And similarly, I can go as zero till N. And I can go as DP of I and zero as zero. Perfect. And similarly, for loops can go as I equal to one, I lesser than equal to M, I plus plus. Similarly, the J loop can also go in a similar fashion of I and J equal to one, J lesser than equal to M, J plus plus. And you can just copy paste. Yes. Just make sure you copy paste the same thing."
+    },
+    {
+      "chunk_id": "L206_C35",
+      "start": 2578.76,
+      "end": 2656.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=2578s",
+      "text": "lesser than equal to M, J plus plus. And you can just copy paste. Yes. Just make sure you copy paste the same thing. Just instead of written, just remove written. Just remove it. And this copy is the same thing. Exactly same. And over here, just return DP of N and M. And remove this. And what you can do is you can also remove this portion. And instead of F, just make sure you write DP of I minus one. J. Perfect. And over here you can write max of DP of I minus one, J. And again, you can just remove this portion. There's a comma of DP of I and J minus one. And again, please make sure you remove this. Yeah, that's what it will be. So if I now try to run this, probably should run. If I've not done syntax mistakes, again, the hash include missing. Okay. It's giving us a wrong answer. Why is that? So you can check out why is this giving us a wrong answer? And then we'll get started. So why did this give us a wrong answer? Because in the recursion, if this, if executed, it went back from there. Over here, you have to just make sure you write an else. Okay. Just make sure you write an else because it will not return."
+    },
+    {
+      "chunk_id": "L206_C36",
+      "start": 2657.0,
+      "end": 2726.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=2657s",
+      "text": "have to just make sure you write an else. Okay. Just make sure you write an else because it will not return. In recursion, this line was not executed. In for loops, it will be. So just make sure either it is matching or not matching. It is running fine. Now you can just go across and submit. So can we do a space optimizations? Yes. I've always told you if there is a scope of I minus one, which means previous row, I minus one, which means previous row. You can always, I repeat, you can always space optimize the same portion. So what do you do is instead of this, just make sure you have a previous of M plus one comma zero and a curve of M plus one comma zero. And over here, this will go as, this is the zero guy. So what I'm basically saying is, okay, for any zero, what will happen? So this is DP of zero, right? So you can say previous. And will this be there? Will the column be there? No, there's no need of column. So you just format this for the first row. Everyone is zero, right? So that's what you've done over here. Just make sure instead of DP of I minus one, that's previous over here. Just make sure instead of DP of I minus one, it's previous over here. This is fine. Instead of DP, it'll be"
+    },
+    {
+      "chunk_id": "L206_C37",
+      "start": 2726.6,
+      "end": 2795.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=2726s",
+      "text": "over here. Just make sure instead of DP of I minus one, it's previous over here. This is fine. Instead of DP, it'll be curved. DP of I, it'll be curved. Let's make sure it is curved. And over here, instead of DP of I, this will be curved. Instead of DP of I, this will be curved. Perfect. And just right after this, you will do curve equal to previous. And over here, you'll just return the previous guy or curve, whatever you wish to. Is this fine? Yeah, this should look fine. So now you can try submitting this and you will see that this is also not running fine. Why? Okay. Forgot to have a colon. So if I give a colon, just previous column, previous curve concept and okay. So the issue was previous equal to curve will be a not current code previous my bad. Okay. So if I just give it a summit, I should be running fine now. I should run. I give it a summit. This will definitely run. So guys, I hope you have understood how I took a memoization solution. And since we were having problem in tabulation, I shifted it by right so that we do not have negative integers or negative indexes in base cases. And after that, I just simply converted that into a tabulated. Once I converted that into tabulated, the space optimization is an extension of whatever I've taught in the previous"
+    },
+    {
+      "chunk_id": "L206_C38",
+      "start": 2795.16,
+      "end": 2828.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=NPZn9jBrX8U&t=2795s",
+      "text": "converted that into a tabulated. Once I converted that into tabulated, the space optimization is an extension of whatever I've taught in the previous DP lectures. So if you haven't seen the previous DP lectures, it's, it's your, you should definitely go and watch it because you're missing on space optimization, which is a very, very important thing. So guys, I hope, I hope I have, I was able to make you understand LCS. And just in case I was, please, please, please make sure you like this video. If you're new to this channel, please do consider subscribing and yeah, to continue our tradition, please make sure you write understood in the comment section. And with this, let's wrap up this video and meet in the next one. Till then, bye-bye. Take care."
+    }
+  ]
+}

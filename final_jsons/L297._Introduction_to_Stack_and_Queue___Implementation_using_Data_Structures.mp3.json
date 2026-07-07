@@ -1,0 +1,372 @@
+{
+  "lecture_id": "L297",
+  "lecture_number": 297,
+  "lecture_title": "L1. Introduction to Stack and Queue | Implementation using Data Structures",
+  "youtube_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4",
+  "chunks": [
+    {
+      "chunk_id": "L297_C1",
+      "start": 0.0,
+      "end": 79.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=0s",
+      "text": "So with this video we will be starting off with the Stack and Queue playlist. Again this is a continuation of the Stryver's A to Z DSA course. If you haven't checked it out yet, you're missing out on something. So I'll be leaving out the link in the description. Make sure you check it out. But if you're starting off, the normal thing. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this will be an introductory video about Stack and Queue and what all will I be covering up. What is a Stack and what is a Queue? I'll be implementing Stack and Queue using Arrays. I'll be implementing Stack and Queue using LinkList. After that I'll be implementing Stack using Queue. After that I'll be implementing a Queue using a Stack. So the first thing, what is a Stack? Stack is nothing but a data structure that holds a certain kind of data. If you get into complex, you can store multiple kinds as well. I'll not get into that complex stuff as of now. As of now, just understand, Stack is a data structure that holds a certain type of data. It can be integer, it can be a pair, it can be a double, it can be a long, it can be a"
+    },
+    {
+      "chunk_id": "L297_C2",
+      "start": 79.04,
+      "end": 158.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=79s",
+      "text": "can be integer, it can be a pair, it can be a double, it can be a long, it can be a character, it can be a string. It can be anything, it can be a customized type as well. If you want to store multiple, then you'll have to go through the complex thing of customizing the data types. I'll not get into that. So the Stack data structure follows the LIFO mechanism. Now what is the LIFO mechanism? That's nothing but last, L for last, in, I for in, first, F for first, out, O for out, last in, first, out mechanism. Let's understand. So the Stack provides you with four different functions. First one is the push function. A lot of places you'll find it as the add function as well. Push a certain value. This value can be an integer, a pair, a double, can be a customized data type as well. It also gives you an option to pop out the element. I'll explain you this one as well. It also gives you an option to get the topmost element in the data structure. It also gives you an option to get the size of this particular, like how many elements are there in this particular data structure. So I'll be writing certain functions and on the basis of that, it will be understanding the Stack data structure."
+    },
+    {
+      "chunk_id": "L297_C3",
+      "start": 158.44,
+      "end": 234.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=158s",
+      "text": "particular data structure. So I'll be writing certain functions and on the basis of that, it will be understanding the Stack data structure. So I'll be writing down a push, let's say push two, push three, push four, push one. And then I say pop. And then I say top. Then I say again top. Then I say pop. And I say pop. Then I say size. Probably I can do some different thing. Probably let's do a push over here again. Push of five and then do a pop and then let's do a size. That should be perfect. Let's understand how this data structure works. So on your brain, you can think that it's a container. Yes, it is a container. Which is storing values of any particular data type that you're assigning it. Okay. First of all, I'm asking you to push a value two. So let's play with integers. If you understand with integers, you can then expand it to other data types. So I'm asking you to push two into the Stack data structure. Like, okay, I'll take two. Perfect. After that, I'm asking you to push three into the Stack data structure. Perfect. I'll take that. After that, I'm asking you to push four. Okay, I'll take it. After that, I'm asking you to push one. Okay."
+    },
+    {
+      "chunk_id": "L297_C4",
+      "start": 234.28,
+      "end": 313.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=234s",
+      "text": "that. After that, I'm asking you to push four. Okay, I'll take it. After that, I'm asking you to push one. Okay. If I ask you, which one is the last element pushed into the Stack data structure? You'll be like, this one. This is the last element pushed. Correct? Okay. So when I say pop, pop always takes out the last element. Pop always takes out the last element. Which was the last element that was pushed into the Stack data structure one. So what will happen is, you will end up taking out that one. After that, if I say top, it always gives you the last. Remember, last in first out. So one is gone. One is gone. So now which one is the last one? Four. So the top will give you four. Remember, it will not delete it. It will just give you four. Okay. After that, I'm again asking you top. Since it is not deleted, it will again give you four. After that, I'm asking you to pop out. If I pop out, what will happen is, the four will be gone. Four will be gone. After that, I'm asking you to push five. So five goes inside. After that, I'm asking you, hey, which is the last element, the top element? You say it's five. Because that was the one that was last pushed in. After that, we have an operation size. How many elements does the data structure hold?"
+    },
+    {
+      "chunk_id": "L297_C5",
+      "start": 313.36,
+      "end": 393.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=313s",
+      "text": "that was the one that was last pushed in. After that, we have an operation size. How many elements does the data structure hold? Three. So it will be returning three. So usually we have these four functions in the Stack data structure. Again, if you want to have other functions, well, you can do it yourself. But these four are the most common used functions when it comes to Stack data structure. Perfect. So you've understood what is a Stack data structure, right? Well, I can say, yeah, done. But what is a Q data structure? Okay. Let's understand that as well. So first of all, you need to understand Q allows you FIFO operation. That means first in, first in, first out. Let's understand that as well. Again, the same thing. Q is a similar data structure that allows you to hold certain data types, can be integer, can be pair, can be customized, can be character, can be string, can be anything. The Q also gives you the same operation, which is the push operation where you can push a certain value into the Q. It also gives you the pop operation. It also gives you the pop operation and it also gives you the size operation. Got it? Now this is a Q, not talking about DQ. DQ is a two-ended Q."
+    },
+    {
+      "chunk_id": "L297_C6",
+      "start": 393.32,
+      "end": 472.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=393s",
+      "text": "also gives you the size operation. Got it? Now this is a Q, not talking about DQ. DQ is a two-ended Q. I will be discussing about that right at the, right at the end of the playlist. Not now. Focus on Q as of now. Perfect. So what I'll do is I'll write certain operations. Let's quickly write down certain operations. So assume I'm asking you to push two, I ask you to push one, push three, push four, then I ask you pop, then I ask you top, and again ask you pop, then I again ask you top, then I again ask you to push, probably let's say seven, and the top, and then the size. Perfect. How will this work out? I've repeatedly said that it is a similar data structure. So again, I'm going to visualize it in a similar fashion. Let's try to go through each and every operation. Push two, push one, push three, push four. Perfect. Right after that, I'm asking you to pop. Now you will not be popping out this one because this is a different data structure. It does follow first in, first out, first in. Which element entered first into this Q data structure?"
+    },
+    {
+      "chunk_id": "L297_C7",
+      "start": 472.36,
+      "end": 549.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=472s",
+      "text": "data structure. It does follow first in, first out, first in. Which element entered first into this Q data structure? This one, right? So this is the one that will go out first. First in, first out. So what will happen is this goes off. Perfect. After that, I'm asking you the top. Now again, first in, first out. So you look from the back and this one was the last, like the first in entered one. So what I'll do is I'll say this is my top element as of now. I again ask you to pop out. So again, this will go off. Again ask you the top. This time the top is three because this is the first entered one among all of the present values in the Q data structure. Perfect. Next is push of seven. Push it. Push it. Again, the top. Again, the top will be three. First in, not last in. First in. After that, I'm asking you the size. So the size is three. Got it? Perfect. So this was the Q data structure. Okay. We've understood what is a Q data structure. And you might be thinking, hey, how do we implement it? Now, usually, usually in most of the languages, if I talk about C or C++ or Java or Python,"
+    },
+    {
+      "chunk_id": "L297_C8",
+      "start": 549.32,
+      "end": 627.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=549s",
+      "text": "we implement it? Now, usually, usually in most of the languages, if I talk about C or C++ or Java or Python, you will find the stack library in it. So what you can do is you can have it again, the syntax might vary from language to language. You can just Google it and you'll get it. If I have to store an integer, I can really give it something like this. Stack storing integers. And this is the variable name. This is the variable name. Perfect. And after this, what happens is I simply go ahead and say stack.push. There is a push operation. I can say six. There is a pop operation. I can do a pop. There is an inbuilt top operation and there is an inbuilt size operation. So while you solve problems, you don't have to implement a stack. There is an inbuilt stack. There is an inbuilt stack for every language that you use. Similarly, you also have a queue inbuilt as well. Same way you can define queue, data type and then queue. And you can go ahead and say queue.push. Again value, you can say queue.pop. You can say queue.top and you can say queue.size."
+    },
+    {
+      "chunk_id": "L297_C9",
+      "start": 627.16,
+      "end": 704.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=627s",
+      "text": "go ahead and say queue.push. Again value, you can say queue.pop. You can say queue.top and you can say queue.size. So in case of solving problems, you will not be implementing stack or queue by yourself. You will always be using the internal libraries for C++. You can use the STL for Java. You can use the collections. So similarly, according to your language, you can just Google it and you'll find it across. Perfect. So we know how to use it. But if I ask you a question, generally in interviews, they would ask you. This is the standard thing that you'll find in the library. But inside the library, how are they implemented? That might be a question that would be asked to you in an interview. So let's understand about that. So now it's time to understand what happens behind the scenes. So we'll be implementing a stack using array at first. After that, we'll be implementing a queue using array. Let's get into that. So a stack using arrays. If I have to implement something using an array data structure, in order to define the array data structure, I need a size. So that means in order to implement stack, I need to know the size. How many elements at max will you be storing? So for this implementation, the size has to be known. This cannot be dynamic in nature."
+    },
+    {
+      "chunk_id": "L297_C10",
+      "start": 704.8,
+      "end": 779.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=704s",
+      "text": "elements at max will you be storing? So for this implementation, the size has to be known. This cannot be dynamic in nature. It has to be constant size. So imagine they're telling you that I need a 10 size data structure. So what I will be doing is, I'll be storing integer in it. Integer the variable name stack st, and the size is 10. So this is what I will be doing. And after that, I'll be taking a top variable and I'll be assigning it minus one. I'll be assigning it minus one. Right after this, imagine someone is telling you, Hey, can you push four? Can you push four into your stack data structure? Now imagine this is your stack data structure. So what will you be doing? You'll have to store four. So logically four should go here first place. So what is the first thing? Yes. You'll take the top. You'll move it one place ahead. And after that, you'll take this four and you'll place it at the zeroth index. Done. Imagine after this, someone comes up and says, Hey, pop out. What does pop means? You'll have to delete that element."
+    },
+    {
+      "chunk_id": "L297_C11",
+      "start": 779.56,
+      "end": 858.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=779s",
+      "text": "this, someone comes up and says, Hey, pop out. What does pop means? You'll have to delete that element. So what you can do is you can take the top and you can move it back to minus one. After this, if someone is asking you, Hey, what is the topmost element in your stack? And you're like, Hey, listen, since the top is pointing to minus one, that means I don't have an element. I don't have an element. Why? I had a four, you popped it out. So I don't have an element. If I didn't erase this four, doesn't matter. Because top is the variable that will help us determine what elements are there in the stack. Got it? Perfect. After this, again, come up and say, Hey, push five. So again, what you will do is you'll take the top and move to the next point and you'll push five over there. After that, I ask you, push six. So again, you'll take top one place up and you'll push six. After that, I ask you push ten. Again, you take top one place ahead and push ten. Right over here, I am asking you, Hey, can you tell me the size? What will be the size? The top is pointing to the second index."
+    },
+    {
+      "chunk_id": "L297_C12",
+      "start": 858.48,
+      "end": 935.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=858s",
+      "text": "you, Hey, can you tell me the size? What will be the size? The top is pointing to the second index. The top is storing two. So if it is pointing to the second index, which means I have three elements. So size will not, will be nothing but top plus one. Quite simple, right? After that, imagine I'm asking you, Hey, what is the topmost element? What will be the topmost element? Since the top is no more pointing to minus one, it means I still have elements. It means I still have elements. So what you can do is you can say array or rather the array was stack, stack of top. Perfect. This will give you the top. Simple. And since it is under the assumption that the stack will add to max have ten elements, you don't have to check for top exceeding that size or not. If the interviewer is asking you, probably we can put a check for that as well. Got it? So I have to write down the implementation. Is it tough? No, it is not. Usually what we do is again, the best practice in such cases in an interview, because this will not be coming in an online assessment or nowhere. It will usually be asked in pen and paper interviews."
+    },
+    {
+      "chunk_id": "L297_C13",
+      "start": 935.38,
+      "end": 1012.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=935s",
+      "text": "because this will not be coming in an online assessment or nowhere. It will usually be asked in pen and paper interviews. The best practices, maybe you can name a class, you can call it as STIMPL, which means stack implementation. And inside of it, I can have a variable top as minus one. I can have a stack in D like I can have a stack. You can ask the interviewer, what is this size of the array that you're looking at? And probably let's assume we are taking a 10. Perfect. After that, I need to write a lot of functions. Now what are these functions? First function is push, where I take a variable. So let's try to write down the push function. How does the push function works? Straightforward. It will be top equal to top plus one. What is the next thing? It will be stack of top equal to X. That is it. Now if the interviewer is asking you, what if you have more elements than the size of the stack? In that case, you can probably enter a if condition where you're stating, hey, if the top is exceeding the size, then I can probably print something. Excise exceeded or something like that. Okay. Push is done. What is the next thing?"
+    },
+    {
+      "chunk_id": "L297_C14",
+      "start": 1012.98,
+      "end": 1092.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=1012s",
+      "text": "size, then I can probably print something. Excise exceeded or something like that. Okay. Push is done. What is the next thing? I need the top element. Top means I'll have to return something. So the return type over here is integer. How will I return something? Very simple. I know one thing. If the top is pointing to minus one, it doesn't have anything. So probably you can return or print something that, that is something you'll be asking the interview if it doesn't have. In that scenario, it would be like return stack of top. And at the same time, do you do a top minus minus? No. The stop means just give me the element. Perfect. What about pop? The next thing is pop, right? Maybe I can write the pop here so that we can have all the implementations in one screen. Pop means deleting the top element. First of all, again, the edge case, in case there is no top element, you will not be deleting anything. Otherwise you will be doing a top equal to top minus one. That's it. What is the other function? The other function is a size function. And I think that's super simple. You will be returning top plus one. Even if top is minus one, minus one plus one is zero. So the size of the stack will be zero. Got it."
+    },
+    {
+      "chunk_id": "L297_C15",
+      "start": 1092.58,
+      "end": 1166.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=1092s",
+      "text": "Even if top is minus one, minus one plus one is zero. So the size of the stack will be zero. Got it. So I have to determine the time complexity of each and every implementation. So by the way, make sure the class is ending over here. Usually you should implement in classes. Again, you'll find the notes given below. Please go through the entire code. You will get more confidence. Okay, fine. So what is the time complexity? Let's determine the time complexity of the push operation. I'm doing it in Bigo of one. The push operation is done in Bigo of one. What about the top? Again, in Bigo of one. What about the pop? Again, in Bigo of one. What about the size? Again, in Bigo of one. So all the operations are done in a time complexity of Bigo of one. What about the space complexity? And this is where the problem is. Now, I'll have to take a like over here, I took a 10 size, no matter what. So it's not dynamic in nature. Like I just required for the example we took, we just required a size three. But for this, probably I'll be declaring a size 10, which might not be of use. So we will always be having some extra space. So arrays, like the disadvantage with arrays is you'll have you need the constant size. It's not dynamic in nature."
+    },
+    {
+      "chunk_id": "L297_C16",
+      "start": 1167.14,
+      "end": 1245.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=1167s",
+      "text": "having some extra space. So arrays, like the disadvantage with arrays is you'll have you need the constant size. It's not dynamic in nature. So this is how the implementation of stack using arrays will look like. So coming to the next one that is implementing a queue using arrays. Again, since we are using arrays, it cannot be dynamic in nature. We need a fixed size. So assume this time the size is given as four. And what we will be doing is we'll be declaring a queue array with the size four, right? And with this, we'll be taking a current size variable. This current size is going to keep a track of how many elements do you have in the queue data structure. Along with this, we'll be taking a couple of variables. One is start, while the other one is end. And both of them pointing to minus one when we start off. If you remember, queue is nothing but first in, first out operation. Hence, we'll be requiring a couple of pointers. Let's take some operations. Imagine I'm asking you to push three. After that, I'm asking you to push two. After that, I'm asking you to push four. Perfect. Right at the first operation, that is push three, you go ahead and check, hey, first of all, do I have capacity?"
+    },
+    {
+      "chunk_id": "L297_C17",
+      "start": 1245.82,
+      "end": 1322.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=1245s",
+      "text": "Right at the first operation, that is push three, you go ahead and check, hey, first of all, do I have capacity? The current size is zero, but I have a capacity of four. So I can still store in the data structure. The next thing you'll check is if the start and end, both are pointing to minus one. And if that is the case, without thinking, you'll take both the start and end to the next variable, the next value that is zero. A start and end, both are standing at zero. So what you will be doing is you'll be taking the value three and you'll be putting it over here. At the same time, you'll be increasing current size, done and dusted. What is the next operation? Push two. Again, you do the same thing. What is the current size? What is the capacity? I can still accumulate. So what will happen is this time the start will not move. Start will not move. Instead, only the end will move. End gets to the index one. It takes the value two and the current size increases to two. After that, I move to the next operation, four, pushing four. Again, I do a similar check. What is the current size? It is two. Is it smaller than the capacity? It is. It is smaller than the capacity. So I can still accumulate."
+    },
+    {
+      "chunk_id": "L297_C18",
+      "start": 1322.28,
+      "end": 1399.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=1322s",
+      "text": "size? It is two. Is it smaller than the capacity? It is. It is smaller than the capacity. So I can still accumulate. So what I will be doing is I'll be taking this four, but before taking it, I'll have to take this end. I'll have to place it here and then I'll be pushing this four into it and I'll be increasing the current size to three. Got it? What's happening? What happens is, imagine someone comes up and says, Hey, can you give me the topmost element? You'll be like, why not? First in, first out. So whatever is being stored at the start, that will be your element. So you can simply return array of start. Given that, given that the start is not pointing to minus one, the queue has some values in it. Keep that in mind. Got it? So top was quite simple. Now after this, imagine I ask you to do pop, pop. I'm asking you to pop two times. So what you will be doing is, first of all, you will check, do we have elements to pop out? That means the current size is three. I have elements. So just pop it out. So in order to pop out, what will happen is the start gets to the next. So basically what you've done is, you're saying this is your queue data structure."
+    },
+    {
+      "chunk_id": "L297_C19",
+      "start": 1399.92,
+      "end": 1474.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=1399s",
+      "text": "will happen is the start gets to the next. So basically what you've done is, you're saying this is your queue data structure. The start and end are maintaining your start and end of the queue data structure. Perfect. At the same time, the current size will decrease to two. After that, I'm again asking you to pop. Again the same thing will happen. Since we have elements, the start will move over here and the current size will decrease to one. Perfect. Another pop is done. Right after this, I'm asking you to push two. I'm asking you to push three. Okay. First one is super simple. Pushing two is super simple. What you'll go ahead and do is, you will take the end to the next and you'll push two and the capacity will be two. Rather, the current size will be two because you have two elements with you. Okay. After this is the edge case. Pushing three. Now if you want to push three, you can. Why? Because the current size is two and it is lesser than the capacity. So you can. But the moment you try to do it, the end is somewhere standing at four. The end is somewhere standing at four."
+    },
+    {
+      "chunk_id": "L297_C20",
+      "start": 1474.84,
+      "end": 1550.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=1474s",
+      "text": "moment you try to do it, the end is somewhere standing at four. The end is somewhere standing at four. So what you'll have to do is, currently this was the queue, but you'll have to take, like these spaces are empty. You have to put over there. So what you will do is, if it exceeds, if it exceeds, just take it and you place it at the front. You place it at the front. Super simple. So if I place it at the front, this can be replaced with three. So the push operation is done. It's quite simple. You basically do end equal to end plus one and you can modularize with the size. It will automatically take you. Like in this scenario, end was three plus one. And if you modularize that with the size four, four modulo four, add a zeroth index. So you basically go to the zeroth index. Super simple. Push is performed as well. Now what if after this I ask you, hey, can you pop, can you pop two times? So for the first time when you pop out, the start gets over here. The start gets over here, right? And the current size, which was two, by the way, I forgot to increase the current size previously because we did enter an element. So let's quickly do the pop now. So now when you do a pop, start gets over here and the current size decreases to two,"
+    },
+    {
+      "chunk_id": "L297_C21",
+      "start": 1550.76,
+      "end": 1623.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=1550s",
+      "text": "let's quickly do the pop now. So now when you do a pop, start gets over here and the current size decreases to two, which is sensible because this and this is your Q, correct? Okay. So one pop is done. After this, if I again ask you to pop, again pop. So what will happen is the start this time will go ahead and the current size will now decrease to one. But this time when the start goes ahead, it goes to four. Again, you'll have to do a circular array, same formula. The start comes out to be here. Start comes out to be here. Perfect. That's, that's where we are. After this, what will we be doing? We're going to do something very important after this. If I have been asked pop, that means I'm having current size one and I'm popping out. I'm destroying the Q. If I'm destroying the Q, what you can do is wherever the end and start are, wherever, it doesn't matter. You basically bring them to the starting start and to the end and you make the current size to be zero. Done. A lot of edge cases. I covered each of them using this particular example, right? It's time to implement again. We're going to follow the same format, class Q."
+    },
+    {
+      "chunk_id": "L297_C22",
+      "start": 1623.1,
+      "end": 1698.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=1623s",
+      "text": "each of them using this particular example, right? It's time to implement again. We're going to follow the same format, class Q. You can open the braces again, assuming the size to be 10, assuming the Q data structure to be of size. And we need a current size, which is zero. And we need a start, which is minus one. We need an end, which is minus one. Now we need to write down the operations. Let's write down the operations. First one is push operation, which is quite important. So when can I not push? Obviously if the current size is equivalent to the given size, I definitely cannot push. So you can probably print a statement and go back. Okay. Apart from this, if the Q is of size zero, which typically means the current size will be zero or the start or end is minus one. In that scenario, what you will do is you will ask the start to be zero. You'll move both of them because you're giving both the starting point and the ending point of the Q."
+    },
+    {
+      "chunk_id": "L297_C23",
+      "start": 1698.74,
+      "end": 1774.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=1698s",
+      "text": "move both of them because you're giving both the starting point and the ending point of the Q. But if this is not the case, in that scenario, only the end will move. Only the end will move because I just need to insert at the end and it'll do a modularization with size. Perfect. Right after this, you simply go ahead and say, okay, hey Q, because the array was Q. Hey Q, on your end, can you put an X and once you have done this, can you increase the current size to one by one rather? And if that is done, can you just end up? That's it. I've covered up all the cases. So I'll have to implement the pop operation now. So I'll be adding another pop. So when can I delete? If I have something with me, right? So what if the current size is zero? That means I don't have anything. So probably you can say that the Q is empty and you can return. But what if it is not? What if the current size is one? In that scenario, you basically destroy the Q and you get back to the initial configuration."
+    },
+    {
+      "chunk_id": "L297_C24",
+      "start": 1774.78,
+      "end": 1851.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=1774s",
+      "text": "current size is one? In that scenario, you basically destroy the Q and you get back to the initial configuration. But if you're destroying it, please make sure you store the element somewhere. Perfect. So if the current size is one, I'll be destroying the start and I'll be destroying the end. I'll be initializing both of them with minus one. And that is not the case. You know what to do. Because since you have taken out the element, now you'll simply be moving the start to one place ahead because this element is deleted. You shrink like just take it out and the start goes ahead. Start plus one modularize with size. And at the end, because you are throwing out an element, so what you can do is minus equal to one, shrink the current size. And right at the end, you could go ahead and return the element which you had picked up right at the beginning. Got it. So this is how the pop operation will work out. Right after this, we need to write down the top operation as well. The top operation is quite simple. What you can do is you'll be like, okay, how do I figure out the top? If I have an element, if I have an element, if I don't have an element, maybe you can"
+    },
+    {
+      "chunk_id": "L297_C25",
+      "start": 1851.46,
+      "end": 1928.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=1851s",
+      "text": "out the top? If I have an element, if I have an element, if I don't have an element, maybe you can write current size equal to equal to zero. That is the case. You don't have an element. Apart from that, you always have an element. So what you can do is you can go ahead and return Q of start because that is the starting point of the Q data structure. Done. What about the size? I think that's going to be super simple. You'll just have to return the current size variable that you are storing. Simple. Done and dusted. Do I have to go through the time complexity? Can I? Probably yes. The push is working in B, go off N. Yeah, I'm just doing unit operations. The pop is working in B, go off N. Again, just doing unit operation. The top is working in B, go off N. The size is working in B, go off N. The overall time complexity is B, go off 1 for all the operations, but I'm using some extra space while I'm declaring the Q array, right? So we're using an extra space of B, go off size. Got it? So we are done with the implementation of stack and Q using arrays. The only disadvantage with that implementation is we need a constant size. What if we want something dynamic in nature? That is where linked list comes in. You haven't seen my linked list playlist."
+    },
+    {
+      "chunk_id": "L297_C26",
+      "start": 1928.78,
+      "end": 2006.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=1928s",
+      "text": "constant size. What if we want something dynamic in nature? That is where linked list comes in. You haven't seen my linked list playlist. Please go back and watch it because I'm not going to explain linked list over here. The first thing that we will be implementing is a stack using linked list. And these are the operations that we will be doing in order to understand this particular implementation. First of all, what you'll be doing is you will be taking a top and you will be pointing it to null pointer. Super simple. Now we will be doing the push operation that is asking us to push 4. So what you will be doing is you will be creating a node with that value and you will make sure that the next pointer of that node, because in linked list, if you take a normal node, it will be containing a value and a next pointer. Make sure that the next pointer is pointing to top, which is null as of now. Once that is done, take the top, take the top and make sure you place it at that new node. That's it. The push operation is done. Again, I'm asking you to push 2. So what you will be doing is same thing. Create a new node with a value 2 and make sure that the next pointer is pointing to top, which is the node 4."
+    },
+    {
+      "chunk_id": "L297_C27",
+      "start": 2006.46,
+      "end": 2082.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=2006s",
+      "text": "Create a new node with a value 2 and make sure that the next pointer is pointing to top, which is the node 4. And once that is done, take the top and point it to this one. Push of 2 is done. What is next? Push of 3. Again, the same thing. Create a new node with the value 3. Make sure that the next pointer is pointing to the next node and right after this, take the top and place it over here. This is also done. What is the next? Push of 1. Again, do the same thing. Create a new node with the value. Make sure that the next pointer is pointing to top. And once that is done, take the top and place it at that new node that you have created. Perfect. So all of these operations are done. After this, if I'm asking you top, which value is present at the top? Stack means last entered, first out. And the last entered element was 1. The last entered element was 1. So what you can say is top of data, top of value. If you do that, top of value, you will get that value. Perfect. After that, I'm asking you to pop out. What does pop mean? What you can do is temporary equal to top. So what that will do is that will place a temporary over here."
+    },
+    {
+      "chunk_id": "L297_C28",
+      "start": 2082.96,
+      "end": 2162.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=2082s",
+      "text": "mean? What you can do is temporary equal to top. So what that will do is that will place a temporary over here. After that, you can do a top equal to top.next. Now what this will do is this will take the top from here and it will place it at the next node. Once that is done, you could go ahead and say delete. A bad spelling. Yeah. Delete the temp. So what will happen is the temp will be deleted with all its references. Done. I was able to delete as well. After that, I'm again asking you to push 7. So what you can do is you can again create a new node and make sure that the next is pointing to the top and the top goes at done. And after that, the size, please make sure you count the number of push operations and you subtract when I'm popping out. That is the only thing that you'll have to do. Super simple, isn't it? Implement it. Again, the same thing. Class stack. We need a node. So again, the same definition of a node where we have a value and we have the next pointer. So maybe you can call it node top. And initially we can have it."
+    },
+    {
+      "chunk_id": "L297_C29",
+      "start": 2162.48,
+      "end": 2242.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=2162s",
+      "text": "value and we have the next pointer. So maybe you can call it node top. And initially we can have it. Don't assign anything. That means a null pointer. And along with this, I need a size as well. We can give the size as zero. We need to implement push. So again, push with a value, let's say X. How do I push X into it? Again, super simple. I create a new node, node star. That's a temporary equal to new. Node, again, I'm not explaining this already done this a lot of times in linked list. And after that, temp of next pointer should be pointing to top. And once that is done, top should be pointing to temp. And along with this, size should increase by plus one. Done. The push is done. What about the pop? The pop is again, super simple. If I have to write down the pop, it's going to be, I need to take it out. So maybe I can say temp equal to top. A node temp. So you can probably define it as a node start temp. And then I can say top, can you just go to the next? Done. After that, what I can do is I can straight away delete temp."
+    },
+    {
+      "chunk_id": "L297_C30",
+      "start": 2242.32,
+      "end": 2320.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=2242s",
+      "text": "can you just go to the next? Done. After that, what I can do is I can straight away delete temp. And before going ahead, I can say size equal to size minus one because I've reduced my size by one. Done. What about top? Oh, that's super simple. You just return top data. Done. What about size? You just return size. Please take care of the method and variable naming. They might collide. They might collide because yeah, certain languages that might collide. Yeah, that's it. Done. What about the time complexity? Again, big of one, big of one. All unit operations, everything is unit. What about the space complexity? This time I'm not consuming any constant space. I'm consuming the space that is required to store. If you are giving me three elements, I'll consume a space of three. I'll not consume a space of 10. Got it? So the time complexity is much, much better. This is how we implement stack using LinkList. So it's time to implement queue using LinkList. If you remember, you use a FIFO mechanism, right? So we will be requiring a start and an end so that by the end you can just keep pushing elements from the start."
+    },
+    {
+      "chunk_id": "L297_C31",
+      "start": 2320.44,
+      "end": 2397.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=2320s",
+      "text": "requiring a start and an end so that by the end you can just keep pushing elements from the start. You can know which was the first entered element. Initially both of them will be pointing to null. Just point them to null. Don't think much. Okay. We will make a size variable which keeps a track of the size. Whenever we push elements, you can increment the size. Whenever we pop elements, you can decrement the size. First operation is push seven. So what I will be doing is I will be creating a new node with the value seven in it, right? And if both the start and end are pointing to null, that means it's the first element. So what you will do is you'll take the start and you'll take the end and you'll make sure that both of them are pointing to this first node and you can increase the size as well. Done. After that, I'm asking you to push two. So this time what you will do is you will take two, again insert it in a new node, right? And this time just for the end, just for the end, because this is not the first element. This is not the first element. Otherwise, you would have been at null. This is the second or third or fourth, some of that level element. So what you will do is you'll take the end."
+    },
+    {
+      "chunk_id": "L297_C32",
+      "start": 2397.8,
+      "end": 2471.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=2397s",
+      "text": "null. This is the second or third or fourth, some of that level element. So what you will do is you'll take the end. You'll take the end and you will take its next and point it to this one. And once that is done, you can say, hey, end, not to the start, not to the start, just to the end. Can you move ahead? Done. After that, I'm asking you to push three. Again, I'll take an element three and I will, once that is done, the node is created. I'll ask the end to point to this one. And once that is done, I'll take the end and I'll move it here. After that, I have a push of five. I'll again do the same thing. I'll take a new node, five, and I'll make sure that ends next is pointing here. And after that, I'll make sure that end is over there. Done. After this, I'm asking you to pop out. I'm asking you to pop out. So it's going to be super simple. What you will be doing is, you will have temporary equal to start. And after that, you will move start. After that, you'll move start to start dot next. So it'll go to the next and then you can delete out the temporary. You can delete out the temporary. Done. I have popped out. After that, I'm asking you the top."
+    },
+    {
+      "chunk_id": "L297_C33",
+      "start": 2471.8,
+      "end": 2551.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=2471s",
+      "text": "can delete out the temporary. You can delete out the temporary. Done. I have popped out. After that, I'm asking you the top. Top will be nothing but start dot value or start dot data. Done. After that, I'm again asking you to pop. Keep it in a temp. Move the start. And then delete the temp. Done. After that, I'm again asking you to pop. Now, this time when I'm asking you to pop, what'll happen? Keep this in temp. Move the start to one place ahead and then delete out the temp. After that, I'm asking you the top. What will be your top? This one. So you can straight away give the value which is five. After this, if I ask you to pop, what is going to happen? Because this is pointing to a null pointer. Because this is pointing to a null pointer, the start will end up being at a null. So the start ends up going to a null. What you can do is, you can also assign end to go to the null pointer. You can say, hey, end, can you also go? Because you're done and dusted. If your start goes out, that means you're done. Both of them can be reassigned to null, which means we don't have anything left. We don't have anything left. Got it? Okay, so time to write down the pseudocode. Again the same thing. You can take a class."
+    },
+    {
+      "chunk_id": "L297_C34",
+      "start": 2551.48,
+      "end": 2629.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=2551s",
+      "text": "We don't have anything left. Got it? Okay, so time to write down the pseudocode. Again the same thing. You can take a class. You can take a queue. And what I will be doing is, I'll be taking a node star and I'll have a start and I'll have an end, both of them pointing to null. And I'll have a size which is zero. I need to write the push function. So I'll be taking a push of X. And over here, what I will be doing is, I know one thing. I need a new node. So temporary equal to new node of this value X. And maybe I can just declare it node star. Over here, I know one thing. If start is equal to equal to null pointer, which means we still don't have elements. So I can say start equal to end. Can you get to the temp? Done. That is not the case. That means we have elements. So I can say else end next. Can you point to temporary? And once that is done, right at the end, can you do a size plus equal to one? And that's it. The push operation is done and dusted. What about the pop? Can I add the pop operation? Yes, I can. I know one thing."
+    },
+    {
+      "chunk_id": "L297_C35",
+      "start": 2629.02,
+      "end": 2708.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=2629s",
+      "text": "operation is done and dusted. What about the pop? Can I add the pop operation? Yes, I can. I know one thing. If the start is pointing to null, I don't have anything. So you can just handle that case where I don't have anything. Apart from this, I have to pop out, right? So if you remember, we took a temp and we said, start, can you get stored in it? After that, we asked start, can you go to your next, which is start dot next. And right after that, we deleted the temp and we'll also have to decrease the value of size, which is by one. And that should be it. Yeah, that should be it for pop. What about top? Top is super simple. You just say if start is null, again, if that is null, that means you don't have anything. Otherwise you return start dot value or data, whatever you are storing. What about the size? You can implement that. You can straight away return the size. Yeah, that will be it for this class. Again, all the implementations in Bigo of one complexity and we're using dynamic space. Whatever is needed, we're using that much, nothing extra. So the next thing that we will be implementing is a stack using a queue data structure. Since you know both stack and queue, this will be an interesting problem."
+    },
+    {
+      "chunk_id": "L297_C36",
+      "start": 2708.66,
+      "end": 2788.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=2708s",
+      "text": "be implementing is a stack using a queue data structure. Since you know both stack and queue, this will be an interesting problem. So the question is stating, you just have a queue, you don't have anything else. You have a queue. And you'll have to make sure that this queue behaves as a stack. If you remember, a stack is nothing but a last in first out data structure, whereas the queue is a first in first out data structure. So obviously, if we use the queue directly, it's not going to work. I'll have to modify the queue. I'll have to do some extra operations so that it ends up behaving as a stack data structure. Now, if you know the stack data structure, you have to make sure the top operation returns me the last entered element and the pop deletes the last entered element. That is what I'll have to keep in mind. Perfect. What is the first operation? Push four. We'll do that. At this moment, it is okay because if I'm pushing four, if I'm asking the top, it'll give me four, which is okay for stack. The top element is four as of now. Okay. What's the next one? Pushing nine. Now, this is the moment we'll have to think. Till this moment, if I ask you the top element, the queue will return you a four."
+    },
+    {
+      "chunk_id": "L297_C37",
+      "start": 2788.0,
+      "end": 2864.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=2788s",
+      "text": "the moment we'll have to think. Till this moment, if I ask you the top element, the queue will return you a four. The queue will return you a four, right? Which is wrong because the stack means last in first out. And the last in element was nine. I need nine. I need four. I'll have to make it behave in that way that the top element is nine and not four. You can get the intuition. Reverse it. Reverse the queue. Yes. So, what I'll do is, whatever was the number of elements before, before nine, I had one element. So, I'll just pick it up. I'll just pick it up and I'll put it over here. Done. So, I've taken out one element and put it over there. Now, if I ask you after this operation, give me the top. The queue says my top is nine, which is okay. Rest the stack, stop. Okay. Let's do the next one. Push of two. So, if I push two, it goes over here. In a queue, it will go over there. So, after these many operations, if I ask you the top, it will give me nine, which is wrong, which is wrong, right? So, what I will do is, before this two, I had two elements. I had two elements. I will bring it here. So, what you will do is, first, you will take out nine and you'll place it here."
+    },
+    {
+      "chunk_id": "L297_C38",
+      "start": 2864.76,
+      "end": 2942.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=2864s",
+      "text": "two elements. I will bring it here. So, what you will do is, first, you will take out nine and you'll place it here. After that, you'll take out four and you'll place it here. Done. So, now, if I ask you, does it look like a stack? Top element is two, which is, yeah. After that, the top element is nine. After that, the top element is four. Okay. Next, push of five. So, I push the five here and I stop here. The top element is giving me two, which is wrong. So, I'll have to take the entire thing and put it over here. Do it. Take two. Take nine. Take four. The stack now looks something like this, which is correct. If I ask you the top, if I ask you the top, it will return you five. If I ask you to pop out, this goes off. If I ask you to pop out, this goes off. If I ask you the top, it gives you nine, which does make sense because the top was five and then you popped out the five and then you popped out the two. So, the top will be nine, right? Okay. After that, I'm asking you to push one. So, just to understand it better, I'll just erase it and write nine four. I've been asked to push one. Just push one. If I push one, what will happen is, it will not give the correct top."
+    },
+    {
+      "chunk_id": "L297_C39",
+      "start": 2942.08,
+      "end": 3019.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=2942s",
+      "text": "I've been asked to push one. Just push one. If I push one, what will happen is, it will not give the correct top. So again, take nine and four. Nine first and then four. And then if I ask you the top, it will give you one, which is correct. You just have to take the elements out and put it back so that it gets in the reverse order. Quite simple. I have to write down the implementation. Can I? Yes, I can. Again, class queue, or rather stack because I'm implementing a stack. So I'll be defining a queue data structure. We can use the inbuilt library over here, like the inbuilt library queue. And after that, I'll have to define the push function. So, push of x is what I'll have to do. So, can I say I need the size? Queue dot size. Okay. And then I can do queue dot push because it is a queue. I'll be pushing the value x. And after that, I'll be taking all the values from zero to that size. So, I'll be running a loop from zero to size minus one, or the best way is I'll be running a loop from one to size, whatever the previous elements were. And I'll basically do queue dot push of queue dot top or queue dot front, depending on your language library. And I can just pop it out."
+    },
+    {
+      "chunk_id": "L297_C40",
+      "start": 3019.76,
+      "end": 3091.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=3019s",
+      "text": "do queue dot push of queue dot top or queue dot front, depending on your language library. And I can just pop it out. So what I've taken is, I've taken it out, put it back, and then I've deleted it. Okay, done. This will make sure that they're rearranged in the correct order. What about the pop operation? Pop is very simple because the queue is already rearranged. You can just call the pop. What about the top? You can simply return queue dot top. And what about the size? Queue dot size. Well done. Super simple. What about the time complexity? The push will be taking a big O of n, near about, where n is the current size of the queue data structure. All of the operations will be taking a big O of one. Understood? What about the space? Again, dynamic in nature. Depending on the number of elements given to you, the space will be varying. I hope you understood this. So the next thing is to implement a queue using a stack data structure. In most of the stack implementations, you did see that I was using a single variable top. And in most of the queue implementation, I was using a start and an end. Why was that? For stack, I know one thing. It is a Leafo mechanism data structure. So I'll be entering at the end."
+    },
+    {
+      "chunk_id": "L297_C41",
+      "start": 3091.08,
+      "end": 3167.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=3091s",
+      "text": "Why was that? For stack, I know one thing. It is a Leafo mechanism data structure. So I'll be entering at the end. And whenever there is a call for getting the top, I'll be taking out from the end itself. But whenever it comes to queue data structure, I will be entering at the end. Like I'll be pushing it into the end. But whenever there is a call for the top, I'll be taking out from the back. Right? That is why in all the queue implementations, be it arrays, be it linked list, I was using start and an end. Over here as well, I'll be using two stacks. So the problem statement is, I'll have to simulate the mechanism of queue using stack data structure. I cannot use a queue data structure. I'll have to kind of replicate the similar behavior using stack data structures. So what I will be doing is I'll be taking two stacks, S1 and S2. What is the first operation? Push 4. This is how the push operation will look like. Again, you will have to know it or you'll have to think a lot during the interview. So what you will be doing as a first step is whatever is there in S1, you'll be putting it into S2. There is nothing so you can stop. And you'll put the variable that has to be entered into S1. So we're putting it over here."
+    },
+    {
+      "chunk_id": "L297_C42",
+      "start": 3167.84,
+      "end": 3245.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=3167s",
+      "text": "is nothing so you can stop. And you'll put the variable that has to be entered into S1. So we're putting it over here. And after that, for the third step, everything from S2 to S1. Not needed. Okay. Push 2. Now realize why am I following these three steps. Understand. I'm asking you to push 2 and you push it into the stack. And the queue comes and says, get me the top. So what you will do is you'll give the 2, you'll give out the 2 because stack's top is 2. But queue is a FIFO mechanism. So it will require 4 because that was the first entered element. And you're not getting it. So for the same reason, whenever I'm asking you to push 2, what you'll be doing is you'll be taking out this 4. Yes, you'll be taking out this 4. You'll be putting it into S2. Then you'll be taking this 2, putting it into S1. Then on the third step, you'll be taking out everything from S2 and putting it back. So now at this point, if someone comes out and asks you, hey, give me the top element, you can give out 4 because that is how it is. 4 first and then 2. And it is maintained. Let's check out one more example. Pushing 3. So if I've been asked to push 3, what I'll do is I'll take the first element and put it over here."
+    },
+    {
+      "chunk_id": "L297_C43",
+      "start": 3245.46,
+      "end": 3301.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=3245s",
+      "text": "Pushing 3. So if I've been asked to push 3, what I'll do is I'll take the first element and put it over here. And I'll take the second element and I'll put it over here. Done. After that, I'll take the 3 and I'll put it, which is the second step. And the third step is get back everything, which is first 2 and then 4. First 2 and then 4. Done. Again, if you see it is following, it is following. 4, 2, 3. 4, 2, 3. It is following. Okay. What is the next one? Push 5. What is the first step? Take everything out. Take everything out. First, it will be 4. Then it will be 2. Then it will be 3. So I've taken out everything. What's the next step? Push 5 into S1. Done. Bring back everything. First, it will be 3. Then 2. Then 4. Again, if you properly see, it is following mechanism. It's following that order. Okay. If I have to get the top, super simple, 4 will be the top. If I have to pop it out, you can simply pop it out. You can straight away pop it out. If I have to again pop it out, you can simply pop it out on S1. If I have to push 6, I'll push 6. I'll push 6. I'll push 6. I'll push 6. I'll push 6. I'll push 6. I'll push 6. I'll push 6. I'll push 6."
+    },
+    {
+      "chunk_id": "L297_C44",
+      "start": 3301.54,
+      "end": 3379.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=3301s",
+      "text": "I'll push 6. I'll push 6. I'll push 6. I'll push 6. I'll push 6. I'll push 6. I'll push 6. I'll push 6. I'll push 6. I'll push 6. Again, the same thing. Take out 3. Take out 5. Push it in and then push 6 over here and then get it back. So I'm getting back. First, 5. Then 3. If I again ask you the top, that's going to be 3, which makes sense. It does make sense because you popped out twice. First, two elements were gone, and after that you had 3. It does make sense. Super simple. Three steps and you're done. So if I have to write down the method, it will be class, queue. I'll be requiring stacks, so maybe I can use the internal library, S1 and S2. I need S2 in order to store the elements so that I can get it back. So I'll be writing the push operation. So I've been given push of X. So what I will be doing is I'll be saying, hey, first of all, get everything out from S1 to S2. So maybe what I can do is I can run a loop while S1.size till we have elements and I can say S2, can you take the element from the top? He's like, why not?"
+    },
+    {
+      "chunk_id": "L297_C45",
+      "start": 3379.96,
+      "end": 3451.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=3379s",
+      "text": "S1.size till we have elements and I can say S2, can you take the element from the top? He's like, why not? And then can you just pop it out so that I can get the next element done? That is step one. For step two, S1.push of X. Done. For step three, get everything back from S2. So till S2 has something, I can say S1.push of S2.front or top or whatever you call it. And after that, can you just pop it out? And that is done for the push. Can I get the top? Super simple it will be. You can simply say S1.top will be your answer. And can I do a pop? Yes. So S1.pop, if you need a size, S1.size. So what is the time complexity? The time complexity for the push operation is a big O of 2n. If you carefully notice, it is a big O of 2n because I'm doing S1 to S2 over here, another S2 to S1 over here. So it is taking a lot of time. That is big O of 2n. What about the space? I'm using a big O of 2n.dynamic space because I'm using two stacks. Got it?"
+    },
+    {
+      "chunk_id": "L297_C46",
+      "start": 3451.6,
+      "end": 3528.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=3451s",
+      "text": "2n. What about the space? I'm using a big O of 2n.dynamic space because I'm using two stacks. Got it? So this will be expensive if I have a lot of push operations in my problem statement because I'm taking a lot of time to push. There are a bunch of push operations. This might be expensive. So depending on the problem statement, if your problem has very limited push operations, then you can use it. But if it has significantly higher push operations than the top and the pop, then we'll be going for the approach 2 where the push is going to take lesser time and the top and pop are going to take more time. So the second approach will be focusing on optimizing the push operations, assuming that we are doing a lot of push operation and we will be making the pop and the top operation expensive. Again, I've written down the algorithm on the right over here. It's a very simple, straightforward algorithm. There's no intuition behind it. The moment you see me doing a dry run, you'll be like, ah, that was easy. So there's no intuition. It's very simple, basic, basic maths or basic implementation. So let's quickly try to do it again. We'll be taking two stacks."
+    },
+    {
+      "chunk_id": "L297_C47",
+      "start": 3528.64,
+      "end": 3594.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=3528s",
+      "text": "very simple, basic, basic maths or basic implementation. So let's quickly try to do it again. We'll be taking two stacks. One is going to be S1 while the other one will be called as S2. First thing, push 2. We'll keep it very simple. Just push it on S1. Push 3. Push it on S1. Push 4. Push it on S1. Push 5. Push it on S1. Now at this moment, if someone is coming up and saying top, you actually cannot get it from S1 because according to Q, according to the Q data structure, this is the first element. But if you do a stack 1.top, you'll get this element. So what you should be doing is this should be at the first. So this is the reason. This is the reason. Whenever there is a top operation, what I will do is if there is nothing in S2, if there is nothing in S2, I'll be taking everything from S1 to S2. Why did I do that? You'll understand. First thing, 5 will go off. Next thing, 4 will go off. Next thing, 3 will go off. Next thing, 2 will go off. So I've taken everything from S1 to S2. At this point, you will see that 2, 3, 4, 5, this should have been the order and this is the order in S2. So if someone is asking you the top, you can straight away give by saying take 2, take 2."
+    },
+    {
+      "chunk_id": "L297_C48",
+      "start": 3594.2,
+      "end": 3671.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=3594s",
+      "text": "is the order in S2. So if someone is asking you the top, you can straight away give by saying take 2, take 2. So I'll be given 2. And I'll not give S1. I'll give S2. So I'll be given S2. So I'll be given S2. So I'll be given S2. So I'll be given S2. So I'll be given S2. So I'll be given S2. in S2. That means the transfer was done and if there are some, why don't you just give me the top? I have optimized it significantly. So what I'll do is I'll again get the 2. Perfect. At this time, when someone is asking me to pop, technically the 2 should go and that is the one that will go. If you look at the pop, if S2 has something, I just take it off. So what will happen is the 2 will go off. So pop is also done. Right after this, I'm asking you to push 1. Remember 2 is gone, so you can just cross it off. 2 is gone. I'm asking you to push 1. So what you'll do is you'll push 1 into S1. Okay. And done. After that, I'm asking you to pop."
+    },
+    {
+      "chunk_id": "L297_C49",
+      "start": 3671.84,
+      "end": 3742.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=3671s",
+      "text": "So what you'll do is you'll push 1 into S1. Okay. And done. After that, I'm asking you to pop. So do you need to put it back? No, because you have 3. You have 3, right? And that is what pop checks. If there is still elements in S2, that means the order is maintained. I can still take it out. So for this pop, what I'll do is I'll take out a 3. For this, oh my bad, this pop is done. For this pop, I'll take out this 4. For this pop, I'll take out this 5. Okay. Done. So basically what has happened is 3 has gone, 4 has gone, 5 has gone. After this, I've been asked for the top. I've been asked for the top. This is where I'm saying, do we still have elements in order? He says, no. Get everything from S1. Get everything from S1. So I take it from S1, put it back. And now when I'm being asked to pop, I'll just take it off. I'll just pop it. Once I do the transfer, I'll let the order flow in, right? For the top and pop. And I keep the push elements with me. That is how we can easily implement the approach 2. So what I'll be doing is I'll be super quickly writing down the pseudo code. So class of Q. Again, very simple."
+    },
+    {
+      "chunk_id": "L297_C50",
+      "start": 3742.84,
+      "end": 3818.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=3742s",
+      "text": "2. So what I'll be doing is I'll be super quickly writing down the pseudo code. So class of Q. Again, very simple. I'll be taking stack of I and T with an S1, with an S2. Done. Right after this, we'll have to implement a push. Push is super simple. I'll just do an S2.push of X. Pop is where everything is done. Very simple. If S2 is not empty, is not empty. So I can simply do a S2.pop. Otherwise, this is where the game starts. I say everything from S1. I take everything from S1 and I say S2.push S1.top. At the same time, I can say S1.pop. So I've taken everything. Once I've taken everything, I can say S2.pop. Pop out the latest element. Pop is done. Similarly, can I write top? I can. What will be top? Top will be same if S2.empty. Can you do an S2? It's not empty, rather. So we're done with pop. The next thing is top. Can I do a similar thing? Yes. If S2 is non-empty, which means not equal to zero, I can straight away return S2.top."
+    },
+    {
+      "chunk_id": "L297_C51",
+      "start": 3818.72,
+      "end": 3897.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=3818s",
+      "text": "similar thing? Yes. If S2 is non-empty, which means not equal to zero, I can straight away return S2.top. Otherwise, I'll have to take out everything from S1, which is S1.size. Till I have something, can I say S2.push S1.top? Yes, I can. And I can say S1.pop. At the end of the day, I can return S2.top. That's it. Just return this and that will be your element. What is the time complexity if I have to analyze? I'm doing a push in BGOF1 and occasionally, occasionally I'm taking a BGOF1 where I'm transferring S1 to S2. Occasionally over here also I'm taking a BGOFn when I'm transferring from S1 to S2. That is occasionally, not always. So I've optimized significantly. But yes, I'm using two stacks. So two into dynamic space, whatever we need. So yeah, that is it for this one. And I hope I have covered up everything that we planned to do at the start. Let's go back and check it out. Okay, this is done. This is done. This is done. This is done. Yes. So yeah, that will be it for the introductory video. So if you're still now watching and if you have understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye, take care."
+    },
+    {
+      "chunk_id": "L297_C52",
+      "start": 3897.24,
+      "end": 3898.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=tqQ5fTamIN4&t=3897s",
+      "text": "subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye, take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

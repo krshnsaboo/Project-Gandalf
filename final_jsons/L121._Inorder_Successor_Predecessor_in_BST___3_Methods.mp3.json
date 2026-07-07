@@ -1,0 +1,78 @@
+{
+  "lecture_id": "L121",
+  "lecture_number": 121,
+  "lecture_title": "L49. Inorder Successor/Predecessor in BST | 3 Methods",
+  "youtube_url": "https://www.youtube.com/watch?v=SXKAD2svfmI",
+  "chunks": [
+    {
+      "chunk_id": "L121_C1",
+      "start": 0.0,
+      "end": 77.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=SXKAD2svfmI&t=0s",
+      "text": "Hey everyone welcome back to the channel I hope you guys are doing extremely well. So today we will be solving the problem finding the in-order successor in a binary search tree. Now what is a binary search tree? If you are given a node then everything to the left of it is smaller than that node value. So over here everything to the left of 5 is smaller than 5 and everything to the right of 5 is greater than 5. Here smaller on left greater on right. What is the definition of binary search tree? If you want to know in much more depth you can check my entire playlist out. Now the question states you have to find the in-order successor in a binary search tree. Now you are given this value 8. You are given this particular value 8 and you have been asked hey listen give me the in-order successor. So if you write the in-order of this particular binary search tree you will get that as 1 2 3 4 5 6 7 8 9 10. By the way in-order is left node and then right that is what the in-order is. So if you write it down this is what it is. So where is 8? 8 is here. So what is the in-order successor?"
+    },
+    {
+      "chunk_id": "L121_C2",
+      "start": 77.84,
+      "end": 154.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=SXKAD2svfmI&t=77s",
+      "text": "you write it down this is what it is. So where is 8? 8 is here. So what is the in-order successor? So the in-order successor is as of now this one. Yes that's the in-order successor. So I can say the in-order successor is 9. I hope you have got the definition of in-order successor. Now you are required like you will be given a value and the binary search tree. You have to give me the successor of this particular binary search tree for a given value. So how will you do this? Now the brute way is very simple and straight forward. You can just store the in-order and then you can find. Now you know one thing in binary search tree. If you store the in-order, the in-order is actually sorted. The in-order of a binary search tree is sorted. Why because it is left node and then right. You know the left is always smaller. The right is always greater. So this is already an increasing order. So the in-order is always sorted. So if you can store the in-order then you can either do a binary search or a linear search. You have to find the value that's greater than 8. You have to just find the first value that's greater than 8. And there is an exclusive condition over here."
+    },
+    {
+      "chunk_id": "L121_C3",
+      "start": 154.3,
+      "end": 223.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=SXKAD2svfmI&t=154s",
+      "text": "than 8. You have to just find the first value that's greater than 8. And there is an exclusive condition over here. If assume I give you a value equal to 10, then what is the successor of 10? We see that there is no successor of 10. So if there is no successor of 10, you are going to return a value as null. That is what you will be returning or else you will be returning the value or the node which is the successor. Now if you store the in-order, the time complexity will be B go of n in order to store the in-order. And then you have to do a traversal to find the first value greater than 8. That can be a log n for that or a linear search. That is your wish. And the space complexity to store that in-order will be B go of n. That is what the extreme, like extreme brute force approach will be. Can we do better? I think we can. We can perform an in-order traversal. Yes, perform an in-order traversal. And while performing the in-order traversal, the first value that you encounter which is greater than 8, the first value that you encounter which is greater than 8 is your answer. So you can stop over there. So I think that is the next way."
+    },
+    {
+      "chunk_id": "L121_C4",
+      "start": 223.06,
+      "end": 294.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=SXKAD2svfmI&t=223s",
+      "text": "encounter which is greater than 8 is your answer. So you can stop over there. So I think that is the next way. So if we do that, we know the time complexity will come out to be B go of n because we are doing an in-order traversal. And the space complexity will be B go of 1 if I do not assume recursion stack space and if I'm doing a Morris traversal. You can do any traversal that you wish. And if you want to know the list of all traversals, again you can check out my playlist. So the space complexity will be B go of 1. But there's a problem. We're using B go of n. Now a binary search tree has a specialty. Generally the height of the binary search tree is very, very small than the total number of nodes unless and until it is a skew tree. So we have discussed a couple of approaches. One of them was to store the in-order and the other one was while finding the in-order, why don't we just figure out the first value greater than the given node's value. So again that makes sense but that is going for B go of n. That is where the efficient approach comes in. And the efficient approach says that, hey listen, I know one thing that I need the value greater than 8. In this case it is 9. In this case it is 9."
+    },
+    {
+      "chunk_id": "L121_C5",
+      "start": 294.76,
+      "end": 370.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=SXKAD2svfmI&t=294s",
+      "text": "I know one thing that I need the value greater than 8. In this case it is 9. In this case it is 9. So why can't we probably store a variable as successor and probably assign it as null initially. First time we are at 5. Now that value is lesser than 8. That value is lesser than 8. So I know that cannot be the successor. So since we know binary search tree is everything on the left is smaller. Now I can surely say that everything on the left can never be the successor. Can I? I think I definitely can. Everything on the left can never be the successor. Because successor means it has to be greater than 8. The first value that is greater than 8. So this cannot be. So logically where should I move? So logically I should move on the right. That is 2. 7 is where I will move. Now the moment I have moved to 7, I can again apply the same logic and say everything to the left of 7 can never be or 7 also cannot be the successor. No one can be the successor because I want someone who is greater. That's the moment I say, okay, hey listen, let's move to 9. It will be like 9 is greater than 8. So if 9 is greater than 8, that guy can be your successor."
+    },
+    {
+      "chunk_id": "L121_C6",
+      "start": 370.08,
+      "end": 444.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=SXKAD2svfmI&t=370s",
+      "text": "9. It will be like 9 is greater than 8. So if 9 is greater than 8, that guy can be your successor. So the node which is 9 can be a successor because that's greater than 8. Now you're not sure that if that's the immediate greater than 8, like it's just the immediate greater than 8. That's why you'll say, okay, either this 10 cannot be my answer. Why? Because I have got 9 which is smaller than 10. So either 9 or someone smaller than 9 but greater than 8. Either 9 or someone smaller than 9 but greater than 8. So I'll be like, okay, let's move left. So that's the moment I'll say, okay, let's move left. But at left I see there is 8 which is again similar to what we have as the value. So I need someone greater. So I'll be like, let's move left, right because I want someone greater. So we reach at null. The moment I reach at null, I'll be like, okay, we are done over here. So the successor that we did find out was 9 and that is what our successor will be. Okay, so let's take another example where the value is 3. Now we want someone who is immediately greater than 3. So let's keep the successor as null initially and we are at 5. So we're like, hey, listen, 5 is greater than 3. So 5 can be a possible answer."
+    },
+    {
+      "chunk_id": "L121_C7",
+      "start": 444.2,
+      "end": 507.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=SXKAD2svfmI&t=444s",
+      "text": "null initially and we are at 5. So we're like, hey, listen, 5 is greater than 3. So 5 can be a possible answer. I don't know if 5 is the answer, but 5 can be a possible answer. I'm going to do a binary search. So you'll be like, okay, let's look for something which is lesser than 5. So I'll go to the left. That's when I come to 2. I'll be like, hey, but 2 is smaller than equal to 3. So 2 cannot be your answer. Let's look for something greater than 2. So you go to the right and you come to 4. 4 is greater than 3. So I'll be like, okay, 4 can be my answer. So I'll take 4. I got someone better than 5 at least. That's 4. Next we are like, okay, 4 is our answer. What if we get someone smaller than 4 but greater than 3? Okay for that we have to go left. So we'll go left. So we come to 3 and like, no, 3 is not greater than 3. So we have to look for someone greater. So we have to go on right. The moment we go on right, we reach null. So we stop. So ultimately our successor is storing the in-order successor, that is 4 and which will be our answer. So if I talk about the time complexity, we're moving left, right, left, right, left, right."
+    },
+    {
+      "chunk_id": "L121_C8",
+      "start": 507.28,
+      "end": 569.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=SXKAD2svfmI&t=507s",
+      "text": "is 4 and which will be our answer. So if I talk about the time complexity, we're moving left, right, left, right, left, right. So the height of the tree is the time complexity and the space complexity will be big O of 1 because you're just moving left and right. That's the time complexity and the space complexity. Now we will be going forward to the code. Now I'll give you a homework. The homework is, what if I change the question and I say predecessor, yes, the value right before the node, you have to find that. So you have to tell me how can you do this? You can drop your answer in the comment section. If I find your answer to be correct, I will be definitely replying to that comment. So make sure how do you find in-orders predecessor, you can drop that comment in the comment section. So it's time to check out the C++ as well as the Java code. Now you know that in binary search tree and binary trees, the C++ and the Java code are extremely identical because it's just a change of, you don't use a star over here in Java and instead of this arrow, you use a dot in Java. Apart from that, each and every line is same. So what we are given is the root of the tree. Yes."
+    },
+    {
+      "chunk_id": "L121_C9",
+      "start": 569.12,
+      "end": 628.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=SXKAD2svfmI&t=569s",
+      "text": "in Java. Apart from that, each and every line is same. So what we are given is the root of the tree. Yes. So we are given the node P. So given the root of the tree and the node P. Now what I've done is I've initialized the successor as null initially and we start with the root. Yes, we start with the root of the tree and we say, Hey, listen, if this guy, if the root val is smaller than equal to the current, whatever is given, that's val, then you know you have to find someone greater. So we go on the right. But if that's not the case, if I have someone greater, I have to go on the left. But since I'm going on the left, why don't I store that as the answer? That might be my answer. So I just store it. So once this is over, I can return the successor. It's as simple as that. It's a big of edges. The height of the tree is the time that it will take. So I hope guys you have understood the entire explanation as well as the code. Now it's your time to tell me how do you find the predecessor if you are given a binary search tree and a node. So you can drop that in the comment section. I'll be definitely replying to that. And yes, if you have liked this video, make sure you like this video."
+    },
+    {
+      "chunk_id": "L121_C10",
+      "start": 628.92,
+      "end": 638.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=SXKAD2svfmI&t=628s",
+      "text": "that in the comment section. I'll be definitely replying to that. And yes, if you have liked this video, make sure you like this video. And if you're new to this channel, please, please, please do consider subscribing. And yeah, with this, I'll be wrapping up this video. Let's meet in the next one where we discuss something else. Bye bye. Take care."
+    }
+  ]
+}

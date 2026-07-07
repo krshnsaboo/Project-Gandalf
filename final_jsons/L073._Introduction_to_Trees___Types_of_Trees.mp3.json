@@ -1,0 +1,64 @@
+{
+  "lecture_id": "L073",
+  "lecture_number": 73,
+  "lecture_title": "L1. Introduction to Trees | Types of Trees",
+  "youtube_url": "https://www.youtube.com/watch?v=_ANrF3FJm7I",
+  "chunks": [
+    {
+      "chunk_id": "L073_C1",
+      "start": 0.0,
+      "end": 73.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=_ANrF3FJm7I&t=0s",
+      "text": "So before starting the video, I would love to thank Relevle for sponsoring this entire three series. So if you're tired of waiting for companies to respond to your applications through different job portals, the next few seconds are very, very important for you. Because Relevle by an Academy is India's first hiring platform that can get you a job within a week itself. Yes, all you have to do is to register for the Relevle test. And within a week, your interview will be scheduled with India's top companies and the top budding unicorns. So what are you waiting for? Make sure you check out the links in the description and apply for the Relevle test because it is free. Hey everyone, welcome to the first lecture of the free cut tree series. So today's lecture will be about introduction to binary trees. What is binary tree? So as of now, you would be knowing arrays, stacks, queues, linked lists. Those are linear data structure. Whenever I talk about trees, they are hierarchical data structures. They follow a hierarchy. Now what is a hierarchy? If you've seen in computers, you have folders, right? Let's say this is the initial folder that you have. And inside that you have one more folder. Inside that you might have one more folder. Inside that you might have one more folder."
+    },
+    {
+      "chunk_id": "L073_C2",
+      "start": 73.92,
+      "end": 146.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=_ANrF3FJm7I&t=73s",
+      "text": "that you have one more folder. Inside that you might have one more folder. Inside that you might have one more folder. Inside that another folder. These kinds of things can be represented using trees. Whenever I associate a term binary, that's basically zero and one. So a binary tree basically says inside a guy, there can be at max two guys. So at max, like over here, there are two guys. Over here, there's only one. Over here, there's one. Over here, there's one. Over here, there's no. So whenever I say that in a hierarchy structure, I can have at max two guys. That is when I can call it as a binary trees. So that's the simple definition of a binary trees. Now why is binary tree important? Because there are a lot of questions related to binary trees that are asked in interviews. Yes, a lot of times you will find a question related to binary trees. So that is why we will be having this entire series on binary trees. So before moving on, let's discuss about some terms. Whichever is the head or starting, whatever you can call it, that is known as the root of the tree. Root, the starting point. And if this is the node and it has a couple of guys, these guys are called the children. Yes, these guys, this is the children. This is the children."
+    },
+    {
+      "chunk_id": "L073_C3",
+      "start": 146.8,
+      "end": 222.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=_ANrF3FJm7I&t=146s",
+      "text": "it has a couple of guys, these guys are called the children. Yes, these guys, this is the children. This is the children. For example, this guy is the children of this guy. This guy is the children of this guy. I hope you understood the children concept. If there's one guy, beneath it, whatever we have, those are children. Now there's one more concept, leaf. This is known as the leaf node. What's a leaf node? A node which does not have children. That's known as the leaf nodes. There's another concept as sub-tree. Now let's assume you're standing here and this entire portion will be the sub-tree. This portion will be the sub-tree for this node. Let's say you're standing here, this entire portion will be the sub-tree. Let's say you're standing here, this entire portion will be the sub-tree. The node and the beneath guys are the sub-tree of a node. Now there's one more concept which is known as ancestors. What is ancestors? If you stand over here, for this guy, this is the parent, this is the grandparent, this is the grand-grandparent, this is the grand-grand-grandparent."
+    },
+    {
+      "chunk_id": "L073_C4",
+      "start": 222.24,
+      "end": 301.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=_ANrF3FJm7I&t=222s",
+      "text": "for this guy, this is the parent, this is the grandparent, this is the grand-grandparent, this is the grand-grand-grandparent. So basically, all the grand-grand-grand-grand, whatever parents you have, these guys are called ancestors. For this guy, this is an ancestor, this is an ancestor, this is an ancestor, this is an ancestor. For this guy, only this guy is an ancestor. For this guy, this and this is an ancestor. For this guy, this, this, this is an ancestor. So I hope you have understood the concept of ancestors, root, children, leaf node. Now there are a couple of other terms but that are not important. You're just requiring these terms in order to understand the tree series. So now let's talk about the types of binary trees. So 1, 2, 3, 4, 5. There are five types of binary trees. The first one is full binary tree. What is a full binary tree? Every node will either have zero or two children. Now for an example, I can say this is a full binary tree because this node has two children. This node has zero children. This node as two children, this node has zero children, this node has a zero children. I can say this. Also has a full binary tree"
+    },
+    {
+      "chunk_id": "L073_C5",
+      "start": 301.28,
+      "end": 379.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=_ANrF3FJm7I&t=301s",
+      "text": "this node has zero children, this node has a zero children. I can say this. Also has a full binary tree because this node has two children, this node has two children, this node has two children, this node has 0, this node has zero, this node has zero, this node has zero. So this can also be called as a full binary tree whereas you cannot call something like this as a full binary tree. Why? Because this guy has two children but this guy only has a single children. So it either can have zero or it either can have couple of children. Okay, I hope you have understood full binary tree. Now let's talk about complete binary trees. Now the next type is complete binary trees. It states all levels are completely filled. All levels should be completely filled except the last level. And the last level has all the nodes as left as possible. So if I draw one of the binary trees, I can say that this is a complete binary trees because if you check the levels, this is what you call levels. Level 0 or 1, level 1 or 2, level 1, 2, 3, you can call it if you refer it as 1 based indexing. This level has all the nodes. This level has all the nodes. This level has all the nodes."
+    },
+    {
+      "chunk_id": "L073_C6",
+      "start": 379.96,
+      "end": 459.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=_ANrF3FJm7I&t=379s",
+      "text": "it as 1 based indexing. This level has all the nodes. This level has all the nodes. This level has all the nodes. So all levels are completely filled. Again I can call this as a complete binary tree. This level is filled. This level is filled. This level has this guy is missing. This level has these guys missing. But again that's allowed. If you carefully read it, it says except the last level. The last level cannot have everything filled. Now can you have something like this? No, because it clearly states the last level has all nodes in left. This is on right. So this is not possible. Whereas this is possible. The last level is not completely filled, but the guy is as left as possible. So this is again a complete binary tree. So just need to make sure all the levels are filled and the last level, if not completely filled, everything should be on the left. Have you understood complete binary tree? The next type of binary tree is a perfect binary tree. Basically states all leaf nodes are at the same level. So this is a perfect binary tree because you can see these are the leaf nodes and all of them are at the same level. Again, this is not a perfect binary tree because this is a leaf node."
+    },
+    {
+      "chunk_id": "L073_C7",
+      "start": 459.7,
+      "end": 537.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=_ANrF3FJm7I&t=459s",
+      "text": "all of them are at the same level. Again, this is not a perfect binary tree because this is a leaf node. This is a leaf node and this is a leaf node. They're not at the same level. It has to be on the same level. Like this is a binary tree because they are at the same level. So that's the definition of perfect binary tree. Now the next one is a balanced binary tree. It states height can be at a maximum of log n. When log n, n is number of nodes. For an example, if I give you n equal to, let's say 8. So log base to n is around 3. So you cannot have a greater height than 3. That means you cannot have a tree like this. At maximum, the height of the tree should be 3. Like the height. And this is generally done to efficiently search or improve the time complexity. We will be doing the other variant of binary trees, that is, binary search trees where we will be understanding this. That's why I'm not going deep into balanced binary trees as of now. What is the next one? Degenerate trees. What is a degenerate tree? Whenever it's a skew tree. For example, if n is 4, this is something like this. If it is going like this, it's essentially a linked list only. There is a straight line."
+    },
+    {
+      "chunk_id": "L073_C8",
+      "start": 537.46,
+      "end": 589.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=_ANrF3FJm7I&t=537s",
+      "text": "is 4, this is something like this. If it is going like this, it's essentially a linked list only. There is a straight line. So that's the definition of linked list. Every node has a single children. That's the definition of degenerate trees. So I hope you have understood the terms related to binary trees and the types of binary trees in this video. So I hope you have understood the entire explanation as well as the code. Just in case you did, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also if you are new to this channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care. I will find the light."
+    }
+  ]
+}

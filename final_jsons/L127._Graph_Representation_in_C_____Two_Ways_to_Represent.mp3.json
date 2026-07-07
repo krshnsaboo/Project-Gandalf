@@ -1,0 +1,106 @@
+{
+  "lecture_id": "L127",
+  "lecture_number": 127,
+  "lecture_title": "G-2. Graph Representation in C++ | Two Ways to Represent",
+  "youtube_url": "https://www.youtube.com/watch?v=3oI-34aPMWM",
+  "chunks": [
+    {
+      "chunk_id": "L127_C1",
+      "start": 0.0,
+      "end": 74.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=0s",
+      "text": "So the previous video you did learn about graph and its types. I must be thinking which is the complex data structure that we will be using to store graph in our programs. Now in this video, we will be learning about how to represent a graph in C++. The next it's going to be Java. Okay. So imagine this is the particular graph that is given to you. Now there will be two portions. Obviously someone will give you the input. So first portion is the input and next will be how do you store it? Okay. So first let's understand the input of a graph and then we can think about how to store in a data structure. So in all the questions what they will tell you is given n and m, okay, they'll always tell you given n and m and the starting of the question. They'll tell you if the graph is a directed one or the graph is an undirected one. If the line states given a graph given an undirected graph contains n notes and m edges. So n will be given to you. So n notes and m edges. The first thing that you will definitely do is you'll take the input of n and m, right? So over here, what is the number of notes? The number of notes over here is 5."
+    },
+    {
+      "chunk_id": "L127_C2",
+      "start": 74.2,
+      "end": 144.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=74s",
+      "text": "input of n and m, right? So over here, what is the number of notes? The number of notes over here is 5. The number of edges is 6 1 H 2 H 3 H 4 H 5 H 6 H number of edges is 6. The number of edges is 5. So in the input 5 and 6 will be given to you just 5 and 6 you have to assume the first one is node and the next one is the number of edges. Now is a saying you edges in order to represent a graph. You have to understand the edges are between which notes now in the next line. They will be giving you m lines remember this m lines that will represent edges m lines that is going to represent edges. So for example, if there is an edge between 1 and 2 the input might tell you 1 2 or the input might tell you to 1 it can be either way. If they tell you 1 2 we assume that there is an edge between 1 and 2 and there is also as also an edge between 2 and 1 right? So obviously 2 1 means 1 2 and 1 2 means to 1 vice versa. I can say that there is an edge between 1 and 3. I can say there's an edge between 2 and 4. I can say there's an edge between 3 and 4 2 and 5 and 4"
+    },
+    {
+      "chunk_id": "L127_C3",
+      "start": 144.5,
+      "end": 219.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=144s",
+      "text": "I can say there's an edge between 2 and 4. I can say there's an edge between 3 and 4 2 and 5 and 4 and 5. So I have written all the six edges to the follow a specific order. No, they can be given in any order. So this is the next set of input. So the input will be containing like this 2 1 1 3 2 4 3 4 2 5 4 5 right? So this is how the input will be. So you have to assume the first line. This is n. This is m the next set of lines m lines are the number of edges. Is there any specific? Boundary on the number of edges. Is it somewhere related to the number of nodes? No, if I draw one more edge, it becomes 7 if I draw one more edge, it becomes more if I draw one more edge becomes more if I draw one more edge becomes more they can be like M can be anything n will be constant but M can be anything. Okay. So this is how we take a input like this is how the input will be given. Now the question comes. How do we store? So there are two ways to store one is the matrix way. And the second one is the list way. Okay. So first let's learn about the matrix way. So the first way is to use a matrix"
+    },
+    {
+      "chunk_id": "L127_C4",
+      "start": 219.4,
+      "end": 294.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=219s",
+      "text": "second one is the list way. Okay. So first let's learn about the matrix way. So the first way is to use a matrix and we generally call that as an adjacency matrix the way that we use. So assume that this is the graph. Okay, and these are the edges that I given to you. You need to store these edges somewhere either. You can store these edges or this edges has to be stored somewhere so that the future algorithms can be performed. So where will you store this edges? This is where something like a matrix comes in. Okay, first thing that you'll observe is the number of nodes where five are the nodes zero based or one base and we see the nodes are one based if the number of nodes are five. The last node is n equal to 5. So it is one based indexing nodes. Okay. So what you will do is you will define an adjacency matrix of n plus 1 and n plus 1 size, which is this and it will have the indexes 0 1 2 3 4 5 0 1 2 3 4 5. Okay. Now if they tell you that there is an edge between 1 and 2, what you do is you go to 1 and you go to 2 and you take the intersection. Yes, and you mark it as 1. And did I tell you"
+    },
+    {
+      "chunk_id": "L127_C5",
+      "start": 294.3,
+      "end": 356.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=294s",
+      "text": "to 1 and you go to 2 and you take the intersection. Yes, and you mark it as 1. And did I tell you if there is an edge between 1 and 2 it means there is an edge between 2 and 1 so you go to 2. You go to 1 and the intersection as 1 perfect. Next there's an edge between 1 and 3. So 1 and 3 is marked as 1 and 3 and 1 is marked as 1 next you go to 2 and 4 2 and 4 is marked as 1 4 and 2 is marked as 1 next you go to 3 and 4 3 and 4 is marked as 1 4 and 3 is marked as 1. So in this way you can mark all these edges like 3 and 5 5 and 3 next 4 and 5 5 and 4. So all these edges are marked as in the adjacency matrix. Now all the remaining guys will be filled on with zeros. You can or you can just leave them all the remaining guys will be filled on with zeros. So this matrix will tell you if you want to check if there's an edge between 3 and 4. Yes, there is if there's an edge between 4 and 2. Yes, there is is there is an edge between 5 and 2. No, there is no edge. So this matrix is going to tell you"
+    },
+    {
+      "chunk_id": "L127_C6",
+      "start": 356.3,
+      "end": 428.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=356s",
+      "text": "there is is there is an edge between 5 and 2. No, there is no edge. So this matrix is going to tell you if there is an edge between a particular node to another node and how much space are you using? Remember this the space that you will be using will be n cross at n because you're using almost like n plus 1 into n plus 1 which is equivalent to n into n space is what you will be using and this is a costly thing. Yes, this is a costly thing. But if we're moving on to the next thing, which is cheaper, let's check out the code super quick. So what did I say? The first line will contain n and m. So define n and m and take it as input done. If it is something like Z one based indexing graph, you take like this. It's a zero base. Then you take a n cross m and that will work. Now. What is the next lines containing it was containing m lines. So you just run a loop for m lines and you know for every line they will be giving you that there's an edge between you and V. So you take them as input. What did I say have the intersection marked as one and have the reverse intersection marked as one as well. So both the so in this way,"
+    },
+    {
+      "chunk_id": "L127_C7",
+      "start": 428.1,
+      "end": 508.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=428s",
+      "text": "say have the intersection marked as one and have the reverse intersection marked as one as well. So both the so in this way, I can say the entire graph has been stored here, right? And what will be the time complexity? This is big O of n that you took to store the graph after that we can perform the algorithms. But at first it's very important to understand how to store a graph. So in the previous method we saw that it was taking n square space. This is where something like adjacency list comes in and it takes very very less amount of space. Now. What is an adjacency list? We use an array. Yes, we use an array, but the added that we will be using like over here. We see that the size is five, right? And we're using an one based graph one based indexing graph. So what we will do is we will create an array of n plus one size, which is six size and it will be like 0 1 2 3 4 and 5. So you have created an array of six size that this array will contain list and in C++. The list is nothing but vector of int. Yes in C++. It is nothing but vector of int so we can call this array as adjacency list. So a list of adjacency containing this. So apparently what happens is every index is"
+    },
+    {
+      "chunk_id": "L127_C8",
+      "start": 508.0,
+      "end": 586.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=508s",
+      "text": "so we can call this array as adjacency list. So a list of adjacency containing this. So apparently what happens is every index is containing an empty vector. Every index is containing an empty vector. You could have defined integer then it would have contained an integer you could have defined double as well. The moment you define something as vector. It means it contains an empty list on empty vector done. So as of now we have six indexes with empty vectors. So you need to remember one thing. What is the motive of the list? So if you see for four has to five three as its neighbor. So the motive of the adjacency list is on four. I just want to store two five three in any order so that if someone tells me who are the adjacent neighbors of four I can say four is connected to two four is connected to five four is connected to three that is my motive. Okay. So on the first step we have something like one and two. So what we will do is we will go to one and we will say the list can you take two because if one and two are connected two is definitely a neighbor of one and similarly can I say to please store one perfect because for two one is also a neighbor for one and three. Can I say one can you store three and for three?"
+    },
+    {
+      "chunk_id": "L127_C9",
+      "start": 586.6,
+      "end": 662.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=586s",
+      "text": "perfect because for two one is also a neighbor for one and three. Can I say one can you store three and for three? Can I say can you store one? Yes for three and four Can I say three can you store four and as a four can you store three? Yes, but two and four. Can I say to can you store four and can I say four can you store two? Yes for two and five. Can I say to can you store five five can you store two for four and five? Can I say four any store five five can you store four? I gather so this will be the. End of the day list. And if you carefully observe one has its neighbor as two three five has its neighbor as two and four three has its neighbor as one and four so you stored all the neighbors in particular indexes this is how the list works right and if you carefully observe the number of edges where one two three four five six how much space did you take one two three four five six seven eight nine ten eleven twelve because because the space that you take is twice of edges why because every edge has two nodes so for every edge you're storing twice so we'll take we go off to a to e is the space"
+    },
+    {
+      "chunk_id": "L127_C10",
+      "start": 662.28,
+      "end": 736.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=662s",
+      "text": "has two nodes so for every edge you're storing twice so we'll take we go off to a to e is the space that you will take in storing this particular adjacency list which is much much better than your n square because in n square a lot of places were unused over here we are storing who matters no one else so the input of n and m will be seen what we do is we declare an adjacency list and we say n plus one if it's a zero based you take n and now we take this and all the id uv it's like cn of u and v once you've done this it's like adjacency of u dot push back because in that vector you need to store this and this is your v dot push back of u so what it means is on the u at index can you please store v because v is a neighbor on the vth index can you please store u because u is a neighbor this is how we can easily store in a list and the space complexity will be much much lesser now let's come back to what if it's a directed graph if you remember if it's a directed graph we mean there's an edge between u and v only so if there is an edge between u and v will"
+    },
+    {
+      "chunk_id": "L127_C11",
+      "start": 736.58,
+      "end": 803.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=736s",
+      "text": "directed graph we mean there's an edge between u and v only so if there is an edge between u and v will we require this line obviously not this line will not be required if there is an edge between u and v the edge only goes from u and v so v will only be the neighbor of u it won't be the neighbor of the other one right so that is what we do and in case of directed graphs that space complexity used will be bigger of e why because we are not consuming two edges we're just consuming one edge so thereby we can easily say the number of edges will be the space complexity used in a directed graph and going forward we will be using adjacency list in every problem not adjacency matrix because of the space complexity issues so as of now you've understood how to store an undirected graph a directed graph but what if I ask you how do you store and weighted graph what does a weighted graph means now what if the graph comes up something like okay there's an edge between one and two and the weight is two there's an edge between one and three the wait is three edge between three and four the weight is four everything to and for the weight is one edge between this has six and then edge within this has three what if they start assigning something"
+    },
+    {
+      "chunk_id": "L127_C12",
+      "start": 803.34,
+      "end": 877.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=803s",
+      "text": "and for the weight is one edge between this has six and then edge within this has three what if they start assigning something like weights to it yes what if they start assigning edge weights that's when you call that as weighted graph. The first technique that we learned was matrix, right? And if there is an edge between one and two, you basically went to one, basically one went to two and you wrote one in it. So instead of writing one, you take the edge way to, and you write in both the places. So that's a slight change that you have to do. You have to go back to the code and instead of saying equal to one, you say equal to weight. So it's going to be like adjacency of U, V equal to weight, right? But that was of matrix. But if I ask you, how do you store in a list? So remember in the list, we were doing something like zero, one, two, three, four, five, and for four, the neighbors were two, three, five. If you carefully observe, for four, the neighbors were two, three, five. So how do you store the weights? So as of now, you're just storing two, three, five. So instead of that, yes, instead of that, what do you do is you'll store pairs in it. And you'll see four can"
+    },
+    {
+      "chunk_id": "L127_C13",
+      "start": 877.76,
+      "end": 947.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=877s",
+      "text": "So instead of that, yes, instead of that, what do you do is you'll store pairs in it. And you'll see four can be like, okay, I know it has two, but it has two comma one because the edge weight is one. I know it has three, but it has three comma four because the edge weight is four. I know it has five, but the edge weight is three. So instead of storing something like two, three, five, as single guys, you will just tweak the data structure to store pairs, to store pairs. And those pairs will be like the first guy will be the four to two and the second guy will be the edge weight. The first guy will be four to three and the second guy will be the edge weight. So while defining the list, instead of integer, you have to define a pair class of integer and integer and you can easily, yes, you can easily store the weights as well. I'll be showing you the implementation, probably in some video where we will be solving the problem in weighted graphs. But as of now, just keep this in mind. So I hope you've understood the entire implementation of graph. Just in case you did, please make sure you like this video. And if you're new to our channel, what are you waiting for? Kill that subscribe button right away. And if you haven't checked out our DP series and"
+    },
+    {
+      "chunk_id": "L127_C14",
+      "start": 947.32,
+      "end": 954.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=3oI-34aPMWM&t=947s",
+      "text": "to our channel, what are you waiting for? Kill that subscribe button right away. And if you haven't checked out our DP series and the SD sheet, man, the link is in the description. Make sure you check it out. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye, take care."
+    }
+  ]
+}

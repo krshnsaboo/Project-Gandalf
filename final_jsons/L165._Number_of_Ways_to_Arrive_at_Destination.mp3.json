@@ -1,0 +1,148 @@
+{
+  "lecture_id": "L165",
+  "lecture_number": 165,
+  "lecture_title": "G-40. Number of Ways to Arrive at Destination",
+  "youtube_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA",
+  "chunks": [
+    {
+      "chunk_id": "L165_C1",
+      "start": 0.0,
+      "end": 74.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving this interesting problem number of ways to arrive at a destination. Till now we have been doing problems like shortest path and all these stuff. But this is pretty interesting and it's different from the all the standard problems. So you're in a city that consists of n intersection numbered from zero to n minus one, which means that it's a zero based indexing graph and it's an undirected graph. Okay. And these are definition of graphs. So you're given an integer n and 2d integer where they have stated the roads. Basically there's a road between you and V and in order to travel from you to V or V to you, you're taking time. This means that whatever it is you want to know in how many ways you can travel from, they've given the source as zero and the destination as n minus one. Let me figure out in how many ways can you reach from zero to n minus one in the shortest amount of time is what the question does ask you. So if you look at this particular example and n is seven, so the source will be zero and the destination will be six. Okay."
+    },
+    {
+      "chunk_id": "L165_C2",
+      "start": 74.82,
+      "end": 152.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=74s",
+      "text": "look at this particular example and n is seven, so the source will be zero and the destination will be six. Okay. So if you travel from zero to six directly, it's taking you seven and this is the shortest that you can do and route all of the parts zero four, six, five and two again, seven. If you are try something like zero one, two or five, six zero one, two, five, six, you can see two, three, one, one that is again seven. And there is again zero one, three, five, six, zero one, three, five, six. That's one, three, one, one, which is sorry, two, three, one, one, which is again seven. So all of these four parts are taking seven. There is one other part as well, which is this, this, this, which is going to take you two, three, three, which is eight. But that's not what we require. We require the number of shortest parts. In short, the question is the number of shortest parts is what they're asking, not the shortest part. How many parts are there which are shortest is what the question dictates. What is the first intuition that comes to your mind when you think of finding the number of shortest parts? It is definitely something like if this is a source and the destination is this and we are reaching via various parts. And if, if I can figure out"
+    },
+    {
+      "chunk_id": "L165_C3",
+      "start": 152.78,
+      "end": 231.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=152s",
+      "text": "if this is a source and the destination is this and we are reaching via various parts. And if, if I can figure out the shortest distance, assume the shortest distance to be X, this is also taking X. This is also taking X in total. This is also taking X and assume this takes X plus five. So X, X, X, three parts, one, two, three. So I can see the number of times someone reaches the destination with the shortest part is what I'll count. That can be an intuition that is actually wrong. That might work for examples, which are something like this. If I give you an example, something like this, a very, very straightforward example where I take a unit distance on every edge weight. So I'll be like, okay, one, two. So the distance over here assigned minimum distance assigned is two. So you'll be like, okay, two, again, someone came by two, again, someone came by two. So three times two did arrive. So I can say it's three times. Oh, what happened? Yeah. Three times we assigned or we ended up having two, but this is completely wrong. Let me give you an example to prove it. Why it is wrong. Now, assume I take this particular example. Okay. Now you will be"
+    },
+    {
+      "chunk_id": "L165_C4",
+      "start": 231.9,
+      "end": 304.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=231s",
+      "text": "you an example to prove it. Why it is wrong. Now, assume I take this particular example. Okay. Now you will be thinking, okay, there's one guy coming from here. There's one guy coming from here. There's one guy coming from here. So you might think we'll count this as part one, part two, part three. So apparently if you follow this logic, you'll get three parts because once you'll come from this node, once you'll come from this node, once you'll come from this node, so there can be three instances that is actually wrong. Why? Because one part might be this, which is taking three, right? One part might be this, which is taking three, something to observe. The first part went by this and the second part also went by this. Got it? Again, this might be a part which is again, taking three. Again, this might be a part which is again, taking three. So can I see that if I just count one part from here, that is wrong because to reach here, to reach here, there were two parts, right? So can I see to reach here, there were two parts to reach here. There was just one part to reach here. There was just one part. So can I see if I'm taking this up to"
+    },
+    {
+      "chunk_id": "L165_C5",
+      "start": 304.94,
+      "end": 382.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=304s",
+      "text": "was just one part to reach here. There was just one part. So can I see if I'm taking this up to actually count two instead of counting one, then one, one, so I can say four instead of three. So you just do not say that, okay, I came from here, I came from here, I came from here and everyone was like distance three because this part also gave me three, this also gave me three, this also gave me three and there were three guys who gave me three. So I cannot say three parts. No, because this, he himself is arriving from two different positions or two different ways. So if he himself is arriving from two different ways, we just cannot count it as one. So the logic of saying that the number of times I get the shortest path to the destination is actually wrong. You have to trace back, you have to trace back how many times did every node, if this arrived to, if this could have been 10, this could have been a hundred. You just have to add all of these guys who are arriving. So if you're arriving at a node, if you're arriving at a particular node by various, assume node one, node two, node three, and everyone, and everyone is giving you"
+    },
+    {
+      "chunk_id": "L165_C6",
+      "start": 382.22,
+      "end": 459.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=382s",
+      "text": "you're arriving at a particular node by various, assume node one, node two, node three, and everyone, and everyone is giving you the shortest distance. Then you say ways of node will be, it won't be like one, one, one, no, it will be ways I arrived at this, which is ways of node one. Plus the ways I arrived at the second node, someone would have arrived over here to add that up. Got it. And plus the ways someone would have arrived at the node three. And I summarize that up. I summarize that up. And that is what the total ways will be. Similarly, in order to find this guy, the number of times these guys will be arriving. Similarly, in order to find the ways for this, this one. So I hope you've understood the intuition, what I was trying to convey, just in case you did not, not an issue. I'll be taking this complex example and trying to explain you the intuition as well as the dry run so that the algorithm or the logic gets into your head straight away. As usual, we'll be applying the drag stress algorithm. So what is the initial configuration, priority queue and a distance, but this time we need to count the ways as well. So an additional ways that it will be defined. So let's check out the initial configuration."
+    },
+    {
+      "chunk_id": "L165_C7",
+      "start": 459.42,
+      "end": 523.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=459s",
+      "text": "need to count the ways as well. So an additional ways that it will be defined. So let's check out the initial configuration. So initially we will have a priority queue, which is going to store a distance and a node as similar to the extra algorithm. We will have a distance that we know the source is zero. So zero will be assigned to zero because when we start off, the distance is always zero. Now we have an additional yes, the number of ways in which you can reach a particular node. Remember this is your source node. So what I say is, Hey, I know one thing. There's only one way where you can start from the source. So let's keep it as one and everyone else has not been reached yet. Let's put a zero saying you haven't been reached your number of ways as of now, as of now is zero. Okay. Now initially distance zero source, uh, node zero is what we will put into the priority queue. First iteration sees I'm at zero. I'm at the node zero. Where can I go from zero? Where can I go from zero as my question? So from zero, you can go to one, you can actually go to two, you can go to three and you can go to four. And these are the distances you will take. I'm assuming you are"
+    },
+    {
+      "chunk_id": "L165_C8",
+      "start": 524.14,
+      "end": 593.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=524s",
+      "text": "you can go to three and you can go to four. And these are the distances you will take. I'm assuming you are very comfortable with Dijkstra. So if you go to one, this will be added. And if you go to one plus one, so the distance will be one. So you'll see that the one is having infinite. So you'll go and update this to one and you'll see one in order to reach one. And can I see if you're coming from here, this guy was taking one way and you're coming from here. This guy will also take one way in order to reach via a distance of one. Can I see this? I can still update this to one as well. I'll update this to one as well. Fine. I've updated everything. Now can I go to two? I can. And the distance will be two. So go and update that to two. I can go with a distance of two to two and the ways will be one because from zero, zero was to reach zero. There was one way. And if you're going by this, it's just a one way to reach here, right? Next, you can definitely go to three, which is taking one. So I can say three is taking one. So one comma three is what you'll put into the minimum data structure. Okay. Now what I will do is I'll also update the ways to be"
+    },
+    {
+      "chunk_id": "L165_C9",
+      "start": 593.18,
+      "end": 654.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=593s",
+      "text": "three is what you'll put into the minimum data structure. Okay. Now what I will do is I'll also update the ways to be one because if you're coming from the source, again, to three, it will be one way. Similarly to four, the distance will be two. So go and update the distance to two, the ways to one. And I can say distance two to node four. So I can say the iteration for zero is over. Pretty simple. The priority queue says, who will be at the top? The minimum. And the minimum is one comma one. So take out one comma one. I'm saying one in order to reach the node one. From one, where can you go? You can go back to zero. That's going to take a plus. Like if you try to go back to zero, that will take a plus one and it will make a total distance of two, which you'll not consider because you're reaching at zero already. Not to be considered from one. You can also go to five. So if you decide to go to five, that will take a distance of two, make a total distance of three, which is better than infinite. You go and say, okay, I can reach at a better distance three. So three comma five is what I'll take to reach. Now what will be the number of ways? Now one says"
+    },
+    {
+      "chunk_id": "L165_C10",
+      "start": 655.02,
+      "end": 731.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=655s",
+      "text": "better distance three. So three comma five is what I'll take to reach. Now what will be the number of ways? Now one says I can reach in one way. I just have one way. So you will also, five will also be one way, right? So I'll say, okay, five. You can also keep one to yourself. Perfect. Done. What will be the next smaller guy among all of these? One comma three. So I'll be like, okay, one. And I will have a node three, one, and I'll have a node three. So on node three, where I'm I know three, right? Where can I go? I can go to five. Very, very important. Very, very, very important. Okay. So I can go to node five. That will take a distance of two. Correct? So the total distance will be three. Carefully observe something very, very carefully observe something. Distance is taking us three, right? Now I see at node five, it's already taking a distance of three. So it's not the first time. It is not the first time that I am reaching with a minimal distance because three I've already reached. I'm again, reaching via another part with the same minimal distance. So thereby I can say one more way I can. And so in order to reach three, how many ways did"
+    },
+    {
+      "chunk_id": "L165_C11",
+      "start": 731.66,
+      "end": 805.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=731s",
+      "text": "distance. So thereby I can say one more way I can. And so in order to reach three, how many ways did I take? One. So this will also be one way. So I'll say five, increase your number of ways to two, not to reach five with a distance three. I have taken something like this, but will you put this into the priority queue? Is there a point of going and putting three comma five again, when it is already there? No, but I need to count my ways because one more way I got it. Perfect. Amazing. Super. Next, where can three go? Three can go to seven and six. Let's try to go to seven. So if three tries to go to seven, seven is infinite. So the distance taken will be plus three and the total distance will be four, four ways. One four comma seven is what you'll put into the priority queue. It can also try to go to six. If it tries to go to six distance will be plus two total distance three first time one way, distance three, node six. Perfect. Right. So I'll just quickly, very simple because this one was one way, one and three, and this was one way, one and two. And since you reached three via one path, this will also be one path and this will also be one path. So done. Let's"
+    },
+    {
+      "chunk_id": "L165_C12",
+      "start": 805.66,
+      "end": 877.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=805s",
+      "text": "since you reached three via one path, this will also be one path and this will also be one path. So done. Let's erase this. I've erased this. What's the next thing? You'll figure out who, sorry, by the way, one comma three is done. So erase it. Now, who is the next guy out of this, which is the smallest two comma two, take a two comma two distance of two to a node two. Now from two, where can you go? You can go back to zero. Yes. With a two, you can go back. But if you go back to zero with a distance of two, total distance of four, not to be considered because it's not the minimum. Okay. Where can you go? You can go to five. Very, very important. Again, if you go to five, you take another one, make a total distance of three, but five says, Hey, I've already taken three. So I'm one more, I'm one more way in which I can reach five. I'm one more way in which I can reach five. The same minimal distance. So I'll say, no need to put this into the priority queue. No need. Just go and see to update this to one more way. The three ways now. Wow. Amazing. Next I'll be like, uh, no two. Can you go somewhere else? He's like, no, no, I'm done with no two. Perfect. So"
+    },
+    {
+      "chunk_id": "L165_C13",
+      "start": 877.74,
+      "end": 946.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=877s",
+      "text": "Amazing. Next I'll be like, uh, no two. Can you go somewhere else? He's like, no, no, I'm done with no two. Perfect. So no two is done. The two comma two is done. Next will be two comma four. Okay. Where can four go? Let's quickly analyze this. Four can go to six or can go to six. So let's see if I try to go to six, I'll take another one, which will make a total distance of three, but wait, wait, wait, six has already taken a distance of three, one more way guys with a distance three, one more way with a guy distance three. I'll just increase this to do no need to put into the priority queue for, could have gone back to zero, but not to be considered. Okay. So two comma four is also done. Who's the next guy? Three comma six or three comma five. Three comma five. Yes. Distance of three to a node five distance of three to a node five. Very, very, very important. Please, please stay focused because this is where you understand the cusp of the algorithm. Okay. So you're reaching five by taking a distance three, five can go to one, but not to be considered, can go to one, not to be considered, can go to three, not to be considered because none of them will be"
+    },
+    {
+      "chunk_id": "L165_C14",
+      "start": 947.74,
+      "end": 1023.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=947s",
+      "text": "considered, can go to one, not to be considered, can go to three, not to be considered because none of them will be lesser than these guys. None of them will be lesser. So there's only one way which will be lesser, which is if you go to node eight and that will be a total distance of four. It is infinite but will you just put one or will you put three? Think very obvious, you know, in order to reach five, the number of ways where three, five could be reached in three ways. So there are three parts which are associated with five. So can I say that even if you reach eight for the first time with a distance of four, but you actually reached for three times understood because there might be one way from here, but actually this is three combination combination. Right? So I can say, okay, I will just take whatever ways five has, which is three. Perfect. Uh, I get excited, but yeah, uh, that's how I teach. So I can say as of now, four comma eight is what I can reach. So done. So I can say this is done. So thereby, uh, three comma five is done. Amazing. Next,"
+    },
+    {
+      "chunk_id": "L165_C15",
+      "start": 1023.26,
+      "end": 1095.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=1023s",
+      "text": "can reach. So done. So I can say this is done. So thereby, uh, three comma five is done. Amazing. Next, which is the smallest three comma six, three comma six. Now six days, where can I go? Let's stand at six. Cannot go to three, not, it will not give short, cannot go to four. It will not give short can go to eight again. Important can go to eight by taking a distance of four can go to eight, right? Three plus one gives a four, but eight says, Hey, wait, I've already reached with a distance of four. You again reached by some other part, which takes the same distance. Thereby I will go see a six. How many times did you, did you, how many parts were there for you? This is two, which is very obvious. Let's take two and add it to myself. I have five parts now, which reaches at eight with a four distance. It's not just two, it's five because you took into account these guys as well. Got it. So do I take four and eight and put it? No, because they've already reached. They do not take and put. Perfect. Next I have taken a six into account. So this is done. Next will be four comma seven. So four comma seven. Now we have reached seven with a distance of four."
+    },
+    {
+      "chunk_id": "L165_C16",
+      "start": 1095.82,
+      "end": 1169.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=1095s",
+      "text": "this is done. Next will be four comma seven. So four comma seven. Now we have reached seven with a distance of four. I can go to eight with a plus one makes it a total distance five. But I'm like, it's five. It's more than this. No need, no need ignored. Similarly, you can go ahead with doing four comma eight. You'll not get anything. But the end of the day, eight says I can reach in five ways. Got it. Very simple. Very, very simple. So I hope the intuition was clear as well as the entire dry run, because that is where the crust of the algorithm is. Now we will try to put this up. So what are we given? We are given the number of roads actually. So we need to create the graph. So we know the graph will be storing adjacent nodes and the edge weight. So create the graph and we'll suffice because it's a one base indexing areas. So go ahead to all the nodes. So can you just go ahead? I'll just take it this idea. I.T. of zero. Push back of I.T. of one, which is the first adjacent node, comma, idea of two, which is the weight. Similarly, can I see I'll copy paste the same thing because it's an undirected graph and I'll make it zero and I'll make it one one and zero. So graph is ready. Now we need to apply Dextre's algorithm."
+    },
+    {
+      "chunk_id": "L165_C17",
+      "start": 1170.38,
+      "end": 1245.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=1170s",
+      "text": "and I'll make it zero and I'll make it one one and zero. So graph is ready. Now we need to apply Dextre's algorithm. So if you remember the Dextre's algorithm, it required priority queue. So let's quickly declare a priority queue. This is how I can declare a priority queue of pairs because I'm going to store distance and node. Next is very, very simple. I'll take a distance and I'll say, OK, n comma one in everyone with infinity. I'll take a ways of one. Sorry, n comma zero. What after this we need to initialize. So can I see distance of the source, which is zero as zero? Can I see the ways in which you reach the starting node as just one? And can I see PQ dot push will always contain distance zero and the node zero done. Now I can go ahead and iterate in the queue. So simple, strong, good. I read in the queue. Next, I can say auto of I.T. or I can just maybe write something like I did is equal to PQ dot top dot first. And I can say I.N.T. node equal to PQ dot top second. And I can go ahead and say PQ dot pop. But next I can go ahead and iterate on the graph and I can see the adjacency node is this. And I"
+    },
+    {
+      "chunk_id": "L165_C18",
+      "start": 1245.82,
+      "end": 1321.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=1245s",
+      "text": "pop. But next I can go ahead and iterate on the graph and I can see the adjacency node is this. And I can see the adjacency weight is this. Correct. Now, what is the next thing? The next thing I need to check is if the distance taken till now, the end weight is less than distance of adjacency node. That means this is the first time I'm arriving. This is the first time I am coming with this short distance. It's not the repeated occurrence. It's the first time I'm coming. So can I see the way? Sorry, let's first update the distance. Then I'll talk about the ways will be this plus 80 weight. And I can speak to you. Can you go ahead and put this plus 80 weight comma adjacency node? I can write. What about the ways? Can I see in order to reach the adjacency node? I came by a node. I came by a node. So whatever node was, I'll just take it. I'll not add it because it's the first time I'm arriving with such a short path. So I'll just copy it. But what if we are having a same path as the shortest path already arrived? Then I'll say, okay, no need to update the distance because this is the same shortest distance I've already got."
+    },
+    {
+      "chunk_id": "L165_C19",
+      "start": 1321.58,
+      "end": 1400.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=1321s",
+      "text": "already arrived? Then I'll say, okay, no need to update the distance because this is the same shortest distance I've already got. So I'll be like, ways of adjacency node. Can you please take ways? Can you just go ahead and take adjacency node plus ways of node? It's like, yes, because whatever ways you have reached, I'll just take you because that's my job. Once you have done this, can I say this is what you'll return because that's what they need. N minus one, because that's the destination. But wait, will you submit this? No, because they're saying that please return the answer module or 10 to the power nine plus seven. So maybe you can keep something like a danger one, a nine plus seven. Okay. Now whenever you use module, just make sure you do a module whenever you do an operation like a plus on a multiplication is do over there. And over here also, you can just go ahead and return it. I think this much should be more than enough. And now let's quickly compile and see if it is working fine. Wow. Errorless code at one go. I'm proud of myself. Let's quickly submit this and see. Okay. So what's fine. Now it's time to discuss the time complexity. So we're using a very simple textual algorithm. So I can say it's a lot of V because we're using"
+    },
+    {
+      "chunk_id": "L165_C20",
+      "start": 1400.06,
+      "end": 1442.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-0mx0SmYxA&t=1400s",
+      "text": "the time complexity. So we're using a very simple textual algorithm. So I can say it's a lot of V because we're using something like this, but this doesn't add up to the time complexity. It adds up as big off into the space, but not to the time. Got it. So, so guys, I hope you were able to understand the entire intuition, the extreme dragon, and now the code. So just in case you did, please, please, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And please let me know in comments. Did you like the energy of this video or not? And if you are, if you haven't checked out our DPC, then the HDC links are in the description. With this, I'll be wrapping up this video. Let's be in some of the video. Till then. Bye-bye. Take care. Don't ever forget your golden."
+    }
+  ]
+}

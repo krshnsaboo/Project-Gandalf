@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L161",
+  "lecture_number": 161,
+  "lecture_title": "G-36. Shortest Distance in a Binary Maze",
+  "youtube_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4",
+  "chunks": [
+    {
+      "chunk_id": "L161_C1",
+      "start": 0.0,
+      "end": 75.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we're going to solve shortest distance in a binary maze. Now you're given an n cross m matrix where each element can either be zero or a one. You need to find the shortest distance between a given source to a destination source, sorry, destination cell. The path can only be created out of a cell if its value is one. That means you can only move through once. Now if a path is not possible between a source and a destination, you need to return minus one. So imagine this is the given cell to you and you have one, one, zero, zero, zeros, and this cell being filled with ones and zeros. They've been said that the source is zero comma one, which means this is the particular source. I can say this is the particular source that being said that the destination is two comma two, which is going to be this portion. So if I mark this is going to be my destination. Now what they're asking you is from here you have to go here. What is the minimum path or minimum like shortest path that you can figure out? Now remember, uh, they haven't mentioned if they do not"
+    },
+    {
+      "chunk_id": "L161_C2",
+      "start": 75.4,
+      "end": 149.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=75s",
+      "text": "minimum path or minimum like shortest path that you can figure out? Now remember, uh, they haven't mentioned if they do not mention anything, then always remember from one cell to the other cell, the distance taken will be one. That means if you're moving from one cell to the other cell, the distance taken will always be one. So now you must be thinking if we have to figure out the shortest path, which kind of movements are allowed. So over here you can only move in four directions. It is not mentioned in the question. I'll ask the problem setter to edit it and add it up so you can move it, uh, move in four directions. So as you may are standing here, you can move here, which will take one, one more. Then you can move down, then you can move down, then you can move here, which means it is going to take you five steps. Yes, because a cell to another cell takes one step. So this is going to be five steps. But is this the shortest one? No, you can also move in this direction one, two, and then three. So I can see if I move in something like this, I get the shortest distance. Yes, I get the shortest distance. If it was eight directions, you could have directly moved here and it would have been two steps. But since the question clearly states you can"
+    },
+    {
+      "chunk_id": "L161_C3",
+      "start": 149.44,
+      "end": 217.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=149s",
+      "text": "was eight directions, you could have directly moved here and it would have been two steps. But since the question clearly states you can move in four directions, you'll be like here, here, here, and then here. And that is how you can easily reach this from source to destination. Now, if the question would have allowed you eight directions, then you would have gone like this and then this, it would have been two steps. But since it does not allow you all the directions, you have to move something like this and this, which will end up taking you three steps. And this is the minimal that you can do. There can be multiple other parts as well, but we are over here to figure out the shortest path from a given source to a destination. So whenever there is a question of shortest path, you always start thinking of which algorithms do you know about shortest path. And one of the algorithms that you know is of the Dijkstra's algorithm that we have learned in the previous video. So if you haven't seen the previous video, go back and watch it. So you've learned the Dijkstra's algorithm. Now, if you remember, the Dijkstra could be applied using the priority queue and the set data structure. Okay. Now we will be solving this using the Dijkstra's algorithm as of now. And then I'll be telling you, should"
+    },
+    {
+      "chunk_id": "L161_C4",
+      "start": 217.56,
+      "end": 284.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=217s",
+      "text": "data structure. Okay. Now we will be solving this using the Dijkstra's algorithm as of now. And then I'll be telling you, should we use a priority queue or can a queue suffice or not? I will be telling you all about that in this particular video. So make sure you watch the video till the end so that your concept is clear enough. So if you remember the Dijkstra's algorithm, what did it state? It always stated that you need to take a priority queue. Remember? So what I'll do is I'll take a priority queue and a distance array. So over here we have a 2D array. So the distance added this time can be something similar to a 2D array of the same size, which is going to store all the distances. So the initial configuration will contain a priority queue and a 2D array, which is going to store all the distances. So let's create the initial configuration. So this is how the initial configuration will look where we have a priority queue, which is going to store the distance at the first and then the coordinates of the node, which is over here, the row and the column. And over here we have the distance array, which is going to mark zero on the source because this is the source. And we know if you're traveling from source to source, the distance taken will be zero and everything"
+    },
+    {
+      "chunk_id": "L161_C5",
+      "start": 284.84,
+      "end": 343.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=284s",
+      "text": "source because this is the source. And we know if you're traveling from source to source, the distance taken will be zero and everything else will be marked as infinity, which means you have not reached at that place. Now what is the initial configuration to start off with? It's very simple. Whatever is the source, which is over here, 0 comma 1, you take 0 comma 1 and with the distance zero, you can put that into your priority queue. Yes. And after this you will start your Dijkstra's algorithm, which is very simple. You always take out the topmost element and you say, okay, to reach 0 comma 1 cell, I'm taking a distance of zero and you know, 0 comma 1 can either go to the top because we allowed four direction. One is to the top, one is to the right, one is to the bottom, one is to the left. So if I try to go to the top, it's not possible because it's not a valid cell. I can go, uh, I can try to go to the right, which will mean there is a one. Yes, there is a one. And which cell is it? Zero comma two. So I can go to the right, which means zero comma two. And I'll take another plus one, which will make the total distance to be one, which will make the total distance"
+    },
+    {
+      "chunk_id": "L161_C6",
+      "start": 343.96,
+      "end": 403.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=343s",
+      "text": "comma two. And I'll take another plus one, which will make the total distance to be one, which will make the total distance to be one. So thereby what I can say is I can take this and put it into the priority queue because this was infinity before. And I got a better version, which is one to take one comma zero comma two and put it into the priority queue. Very straightforward. Now can you go to the bottom? Yes, you can go to the bottom as well because the bottom has a one and it's infinity. So if you just add a plus one, the bottom one is one comma one and the distance taken will be one again. So you can say one comma one comma one is what you added into the priority queue and you'll update the matrix as well. Can you go to the left? Yes. Can it go to the left? Yes, it can go to the left, which is zero comma zero. And it'll end up taking a distance of one. If you see the left is here, it can go over here and it is, it was previously infinite. So I'll update it to one and I'll see it can go to the left with one comma zero comma zero and I'll update it. So I've travels to all that just a note. So what I'll do is I'll just omit this off. Now here comes a"
+    },
+    {
+      "chunk_id": "L161_C7",
+      "start": 403.16,
+      "end": 482.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=403s",
+      "text": "it. So I've travels to all that just a note. So what I'll do is I'll just omit this off. Now here comes a point of observation. You started with a cell zero. You started with a cell zero and then you took plus one plus one plus one on all the corresponding adjacent nodes. So you reached everyone with a distance of one. Why did we use priority queue in Dijkstra? I've already made a video on that. Please go back and watch it. The reason we use priority queue in Dijkstra was because we wanted the minimal of them. We wanted the minimal of them. But if you carefully observe, everyone is having the same distance. So do we need a priority queue? No. Why? Because even if you take this guy for the next step, so that means it will have a distance of one and again it will travel to its adjacent. Again, it will travel to its adjacent, again to its adjacent, again to its adjacent, and everyone will be at a distance of two. Everyone will be at a distance of two and they will pile up something like this in the priority queue. And in the next step, there'll be three, three, three, three. So do you need a priority? What was the purpose of priority queue in Dijkstra? It was to figure out the minimal of all of them. But if you store them in a queue data structure, they're"
+    },
+    {
+      "chunk_id": "L161_C8",
+      "start": 482.32,
+      "end": 559.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=482s",
+      "text": "in Dijkstra? It was to figure out the minimal of all of them. But if you store them in a queue data structure, they're already stored in the increasing fashion. They're already stored in the increasing fashion. If you carefully see, first one, one, one, then two, two, two, then three, three, three, then four, four, four will be stored. Why does this happen? Because everyone is increasing by a unit distance, a constant distance. In Dijkstra, what was happening? If there was a node, it was going to other node by taking plus four, sometimes plus 10, sometimes plus 15, sometimes plus two. It was moody. It was taking different edge weights. Thereby, we did not know what was the distance. Thereby, we required the priority queue to figure out the minimal. Do we require a priority queue over here? The answer to that is absolutely not. If we just convert this into a queue data structure, it will still store everything in the increasing order. And we do not need a priority queue to figure out the minimal distance. Thereby, we will omit the additional logarithmic of n that is in question over here. We do not need the additional logarithmic of n, which is in question here. So we have proved that this problem can be solved using Dijkstra's, but Dijkstra using queue. Why?"
+    },
+    {
+      "chunk_id": "L161_C9",
+      "start": 559.12,
+      "end": 627.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=559s",
+      "text": "which is in question here. So we have proved that this problem can be solved using Dijkstra's, but Dijkstra using queue. Why? Because we don't need to find the minimal distance because queue already stores everything in the increasing fashion. So let's take out the next guy, which is at a distance of one and the element is zero comma two. So where can zero comma two go? Can it go up? No. Can it go right? Yes, it can go right. So please take it and go to the right, which is zero comma three plus one distance. Updated distance will be to go and update the distance in the distance cell and then put it into the queue. Can it go down? The answer to that is no. Why? Because it contains something as zero, which is not allowed. Can it go left? Yes. Let's try it. If it tries to go to the left, it is zero comma one with a distance of two, but zero comma one says in the distance array, I've already been reached with a distance zero. Why are you coming up to me? No need. Please do not come up to me. He'll not come up to him. So this is done. Next, get the next element, which is, takes a distance of one at the cell one comma one. Where is one comma one? Let's figure out. Here is one comma"
+    },
+    {
+      "chunk_id": "L161_C10",
+      "start": 627.76,
+      "end": 699.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=627s",
+      "text": "is, takes a distance of one at the cell one comma one. Where is one comma one? Let's figure out. Here is one comma one. Can it go to the top? Yes. So it can go to the top by taking a plus one and it will reach something like a zero comma one, which will make it a distance of two. Again, zero comma one says I've already reached with a distance. You did not come to me. It has to go to the right, but it figures out on the right. It has a zero. So he tries to go to the down, which is two comma one with a distance of two. So he updates it because it's better and takes two comma one into the queue. Now it tries to go to the left on the left. It has one comma zero on the left. It has one comma zero with a distance of two. So thereby updates to and puts it into the queue. Done. Same thing. If you noticed, what did I tell you? Look at the pattern. Look at the pattern zero. Then once then twos and threes will come up because the increase in distance is very much constant over here. What's the next thing? It comes to zero comma zero with a distance of one, right? So where can zero comma zero go? It can go here. Sorry, it cannot go to the top. It can go here and"
+    },
+    {
+      "chunk_id": "L161_C11",
+      "start": 699.4,
+      "end": 765.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=699s",
+      "text": "right? So where can zero comma zero go? It can go here. Sorry, it cannot go to the top. It can go here and here. It cannot go to the left. It can only go to the right, which will make it again something like zero comma one with a distance of two not to be considered can go down with one comma zero with a distance of two. But if you see it's already two, we have already reached it using a distance of two. So we do not consider it because if you come by this or if you come by this is pretty much the same. So we do not consider anyone and we will just erase it. Yes, we will just erase it. Next comes zero comma three. So I'm taking a distance of two to reach zero comma three. Where is zero comma three? Yeah. Can it go top? No. Can it go right? No. Can it go down? Yes, it can go down, which is one comma three and takes a distance of three, three comma one comma three. And please make sure you update in the cell as well. Can it go left? Can it go? Can it go left? It can try to go left zero comma two with a distance of three, but not to be considered. Why? Because it is already reachable at a distance of one. I can say this is done. I'll omit it. Next"
+    },
+    {
+      "chunk_id": "L161_C12",
+      "start": 765.8,
+      "end": 835.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=765s",
+      "text": "to be considered. Why? Because it is already reachable at a distance of one. I can say this is done. I'll omit it. Next I'll get the next guy, which is distance of two. And the cell was two comma one. Where is two comma one? Let's see. Two comma one is here. Can it go to the top? Yes. So it will try to go to the top, which is one comma one with a distance of three because this will take another plus one. So if you see one comma one is already reachable at a distance of one, but this will not be considered. It will try to go to the right. It will try to go to the right with a plus one distance and it will reach two comma two with a distance of three. And it sees, yes. And it sees it is better than infinite. It is better than infinite. And also it sees that this is equivalent to the destination that you are looking for. This is equivalent to the destination you're looking for. So what it does is it says, wait, stop it right now. Stop the algorithm right now and return distance three, which is my answer, which is my answer. And this is how easily you can solve the shortest distance in binary maze problems. So before going into the code, you have to travel four directions"
+    },
+    {
+      "chunk_id": "L161_C13",
+      "start": 835.84,
+      "end": 905.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=835s",
+      "text": "easily you can solve the shortest distance in binary maze problems. So before going into the code, you have to travel four directions over here. You do not have an adjacency list. So if you're standing at a row comma column, you have to travel upwards. Is that's one of the adjacent nodes. If you travel right towards that's one of the adjacent node, it will travel bottom and you'll travel the left. So four adjacent nodes in four directions. So one of the ways is you can definitely write something like row minus one comma column separately. You can always write row comma column plus one separately. You can always write row plus one comma column separately. And you can also write row comma column minus one separately. You can write each of them separately, but will you do that? You can do that. No one will tell you anything, but if you are in an interview, they will reject you. So the way to do this is very simple. You don't have adjacency list. So you create them. How do you create them? You look at this minus one plus zero. You look at this plus zero plus one. You look at this plus one plus zero. You look at this plus zero minus one. So put them in something like D row, which is Delta row and tell minus one, zero, one, zero and Delta column and tell"
+    },
+    {
+      "chunk_id": "L161_C14",
+      "start": 905.04,
+      "end": 973.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=905s",
+      "text": "So put them in something like D row, which is Delta row and tell minus one, zero, one, zero and Delta column and tell them zero plus one, zero minus one. So now if you iterate on this, which is basically index, you can take it as index zero, one, two, three. So if you iterate on the index zero and you add a minus one to the row and you add zero to the column, you get this guy. If you iterate on the first and you add zero to the row and you add plus one to the column, you get this. And the next, if you have one, you add one to the row. Then you get this. If you add zero to the column, you get this. So apparently you will get all your adjacent nodes. If you just keep on adding them simultaneously to the row and column, this is how we will be coding this up. I've already taught this method a lot of times in the series. It was just for people who are just randomly landing up on this video via YouTube search. So guys, I hope you have understood the entire algorithmic explanation. It's time to code it up. So as usual, I'll be coding the C++ on the right and you can figure out the exact similar Java code on the left. So we're given a grid, the source and the destination. So do we require"
+    },
+    {
+      "chunk_id": "L161_C15",
+      "start": 973.24,
+      "end": 1043.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=973s",
+      "text": "figure out the exact similar Java code on the left. So we're given a grid, the source and the destination. So do we require a priority queue? No. A queue will suffice. So a queue with a pair of int and the pair of coordinates should do. And I'll require a distance array as well. So let's declare a 2D distance array of the same size of the grid. So the size of the grid is not given to you. So what you can do is you can just find it yourself, get dot size, and you can always say m equal to grid zero dot size. That's that is easy. And over here, what you can do is n vector of int and you can say something like m comma, you need infinity. So one in nine is the best choice. Now, something I know is the source, like the source is over here and the destination is over here. So what I can say is distance of source dot first distance of source dot second, because this is which is the row and column. I can tell it as zero and I can say, can you please go and store something like zero comma and source dot first again and source dot second again. So pretty simple, similar to rags to a, and now we will go on the queue till it is not empty. We'll go on the queue till it"
+    },
+    {
+      "chunk_id": "L161_C16",
+      "start": 1043.32,
+      "end": 1120.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=1043s",
+      "text": "to rags to a, and now we will go on the queue till it is not empty. We'll go on the queue till it is not empty. What will I do? I'll say auto ID equal to q dot. And I'll secure a pop as well. And I'll figure out everything. This can be set as ID or first row can be set as ID dot second or first because that is how I'm storing column can be set as ID dot second dot second. Done. Now, what did I require? I have to travel to the, through the adjacent nodes. So I need to acquire something like Delta row, which is something like minus one, zero one comma zero. Perfect. And I need the Delta column, which is something like zero plus one, zero minus one. Perfect. So this I've already explained. So go back and watch it. This I've already explained right before the writing of code. So this is done. So I have to go through these indexes. So let's go through these indexes. Now I know the new row, I can say a new art is going to be row plus Delta row change. And I know the new column is also going to be something like column plus DC of five. We know this, right? What do we need to check? We need to check the validity at first. That's the first"
+    },
+    {
+      "chunk_id": "L161_C17",
+      "start": 1120.48,
+      "end": 1199.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=1120s",
+      "text": "of five. We know this, right? What do we need to check? We need to check the validity at first. That's the first thing that you'll do. So the validity is very simple. You say this, and it should always be less than this. And you say it should always be greater than equal to zero. And it should always be, you can probably put this into a function as well, just to improve code readability. This is something which you'll do. What's the next thing that you'll do? You'll always see that. Okay. I have checked out for validity. And now let's come back to Dijkstra. Dijkstra stated before Dijkstra, it has to be a one as well. So what I'll do is I will just go and say, is this a one or not? So I'll go to the grid and say, Hey, listen, new art, new column. Are you guys one? If you are, then let's check for the distance. What is the distance? Previously it took this, that it's going to take one. Is this lesser than to what you are currently? If this is the case, go ahead and say the distance to update themselves with one plus this, that's a new distance and tell the queue to push one plus this for short and to push the new rule and the new column. But wait, wait, wait. If this is my answer, what if this is my answer? So I'll say, okay, wait,"
+    },
+    {
+      "chunk_id": "L161_C18",
+      "start": 1199.48,
+      "end": 1243.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=U5Mw4eyUmw4&t=1199s",
+      "text": "and the new column. But wait, wait, wait. If this is my answer, what if this is my answer? So I'll say, okay, wait, what if the new is equal to equal to the destination? So this is the destination. You can just copy and paste destination.first and add what if the new column is equal to the destination.second. If that's the case, I can return. This is my answer because this is what will be my answer. And in case I scroll through, I travels through the entire grid and I never find my answer. I never execute this line. That means I could never reach the destination, which will end up, which will end up me returning minus one because that is what they say. It's not possible. Return minus one. So before submitting this code, I will just write as small edge case. What if we are standing on the cell?"
+    }
+  ]
+}

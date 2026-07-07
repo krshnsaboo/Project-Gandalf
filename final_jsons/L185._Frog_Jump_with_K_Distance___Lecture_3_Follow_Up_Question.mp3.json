@@ -1,0 +1,120 @@
+{
+  "lecture_id": "L185",
+  "lecture_number": 185,
+  "lecture_title": "DP 4. Frog Jump with K Distance | Lecture 3 Follow Up Question",
+  "youtube_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8",
+  "chunks": [
+    {
+      "chunk_id": "L185_C1",
+      "start": 0.0,
+      "end": 73.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=0s",
+      "text": "Hey, welcome back to the channel. I hope you guys are doing extremely well. So this is going to be a very, very short video. Why? Because in this video, I'll be talking about the lecture three follow up question solution. Now in the lecture three, I did give you a follow up question where I asked you, like the question that we solved was if the frog could jump from the i-th index to i plus one and if the frog could jump from i to i plus two. In this scenario, what is the minimum energy that the frog will take in order to jump from zero index to n minus one-th index? That was the question in lecture three, but I did give you a follow up where I said to you that what if I give you k? Yes, what if I give you k and I ask you that you're allowed to jump from i plus one to i plus two plus i plus three dot dot dot dot till i plus k-th index. You're allowed to jump to all these indexes. So if instead of allowing couple of indexes, I allow you to jump around k indexes. So what is going to be the minimum energy required? So most of you remember the recurrence and just make sure the lecture three, like you would have watched lecture three in order"
+    },
+    {
+      "chunk_id": "L185_C2",
+      "start": 73.8,
+      "end": 147.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=73s",
+      "text": "So most of you remember the recurrence and just make sure the lecture three, like you would have watched lecture three in order to understand this. So if you remember the recurrence, it was something like f of index and if index is equal to equal to zero, then you returned a zero. Remember this? Every problem has to be expressed in terms of indexes, right? So what I can say is if I'm doing a first step, like first jump, then I will be reaching index minus one and then the energy taken will be absolute of a of index minus absolute of index minus one. And if I'm taking the second jump, which is again only possible if index is greater than one, then I can take the second step or second jump, which is f of index minus two plus absolute of a of index minus absolute of a of index minus two. Now, what did you return? You returned the minimal of the first step or the second step. That is how the recurrence was. So I'll just tell you about the recurrence and probably you can then modify every other thing. Now tell me what if I would have told you, like, let's think it in a slightly bigger version. What if I would have told you that I'm allowing you to jump from i plus one to i plus two to i plus three, I'm allowing you three jumps,"
+    },
+    {
+      "chunk_id": "L185_C3",
+      "start": 147.72,
+      "end": 213.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=147s",
+      "text": "you that I'm allowing you to jump from i plus one to i plus two to i plus three, I'm allowing you three jumps, then you would have written probably something like third jump, like third step would have been there. It would have been like f of index minus three plus absolute of a of index minus a of index minus three. And then this would have been if index is greater than two and instead of minimum of two, there will be three minimums. That's that is what you would have done. What if I change the question to i plus four, then there will be a fourth guy. If I change it to i plus five, there will be a fifth guy. Now, if I give you k where k can vary, yes, if I give you k where k can vary from question to question, will it not make sense? Because what are you doing ultimately? You're taking the minimal of whatever jumps you're making. So if I'm giving you k possible jumps, so you can ask the index because what is the rule? The rule is perform the recurrence of the index, do all stuffs on the index. Now, when I say there are k jumps, so all stuffs will means you will do k jumps, right? And what is the third step? You have to return the minimal. So you"
+    },
+    {
+      "chunk_id": "L185_C4",
+      "start": 213.32,
+      "end": 285.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=213s",
+      "text": "stuffs will means you will do k jumps, right? And what is the third step? You have to return the minimal. So you can easily return the minimal of all of these guys. So can I write this as like, if I'm doing k jumps, can I convert this into k for loop and do the jumps instead of writing one jump, two jump, three jump? Can I just write them in a for loop? I can, because if I categorize, like if I observe it, it is like index minus one, index minus two, index minus three. So what was changing? Minus one, minus two, minus three. So it will go on till minus k. Yeah. So you can just run a loop till then. So can I say, can I say like the recurrence will now be updated to something like this? F of index, where you can definitely write index equal to equal to zero, then I have no issue. You can return zero, right? Now you need the minimum energy in like whatever, whichever step did take the minimum, you want that. So can I say the minimum steps, let's assume initial minimum steps to be int max. I can definitely write that. Now I know there will be k jumps, so I can probably give it like j, where j is the jump. J equal to one, till j lesser than equal to k, j plus plus."
+    },
+    {
+      "chunk_id": "L185_C5",
+      "start": 285.56,
+      "end": 357.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=285s",
+      "text": "probably give it like j, where j is the jump. J equal to one, till j lesser than equal to k, j plus plus. I can definitely write that. Correct. Now, can I see what is the jump energy? Can I say the jump energy will be, I am going toward, now this time, instead of index minus one, first time, what's the value of j? One. So index minus one. Next time, what's the value of j? Two. So index minus two. Next time, what's the value of j? Three. So index minus three. So can I simply write them as index minus j? I can definitely write it. Correct. Now, what if, what will be the absolute? I can definitely see that the absolute will be a of current index minus a of index minus j, because that is what the jump will be. And if this is the jump energy, yes, if this is the jump energy, can I see this, that I can store the minimal of all the jumps. I can store the minimal of all the jumps, which is minimum steps and whatever the jump energy is. And at the end of the day, I can return whatever minimum steps or minimum energy that it took. So instead of writing index minus one, index minus two, I changed it into a for loop. Even if it's two, then it will be like index minus"
+    },
+    {
+      "chunk_id": "L185_C6",
+      "start": 357.0,
+      "end": 427.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=357s",
+      "text": "index minus one, index minus two, I changed it into a for loop. Even if it's two, then it will be like index minus one, then it will be like index minus two. So both of these minimums will be taken. So can I change the code to something like this? I definitely can. Right. But now still there is a problem. If I'm writing something as index minus j, I need to take care of it. Right. So if you remember over here, we were taking care of index is greater than one. We were taking care of index is greater than two. So we need to make sure that whatever this value is, yes, whatever this value is, index minus j, like the, the after, after subtracting, it should be greater than equal to zero. Like it should not go to a negative index. And if that's the case, I can make sure that these couple of steps are performed. If it is the case, otherwise there'll be no jumps and you can break out or you can do whatever you wish to. Like you can break out because if this is, this is going to a negative index, you can break out. There will be no further jumps possible. So that is how the recurrence relationship will be. Now, just to understand one thing, if I, if I apply memoiation to it, yes, if I apply memoiation to it, what will happen?"
+    },
+    {
+      "chunk_id": "L185_C7",
+      "start": 427.8,
+      "end": 501.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=427s",
+      "text": "Now, just to understand one thing, if I, if I apply memoiation to it, yes, if I apply memoiation to it, what will happen? Now, if I'm applying memoiation to it, obviously I will be applying a DP of N into this, where I'll be saying DP of index equal to, and over here, I'll be writing if a DP of something, those couple of lines I will have to write. But what will be the time complexity? Now, in the previous question, we have seen that the number of states where we go off end, but over here we have to observe one thing, per state, yes, per index, what is the loop that you're running? Per index, the loop that you're running is around K times. So if there are N states, like F of 5, F of 4, F of 3, every time you're taking K steps, it is no more like two steps. It is like 1, 2, 3, 4, 5, there are K steps for every junction, for every junction, there are K steps. So you can see that for, if there are N states and there are K jumps, I can say the time complexity to be this, and the space complexity to be O of N of recursion stack space, plus a big O of N of memorization. This is what the time complexity and the space complexity of the recursive solution will be. Now, if you remember the tabulation,"
+    },
+    {
+      "chunk_id": "L185_C8",
+      "start": 501.0,
+      "end": 564.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=501s",
+      "text": "of memorization. This is what the time complexity and the space complexity of the recursive solution will be. Now, if you remember the tabulation, how did I write the tabulation? It was again, very simple. I declared a DP array of size N. I said DP of a zero. Yes. Which means in order to reach the index zero from zero will be zero. That is what I definitely said. And right after that, what I did was I started from one and I went on till N, I plus plus. And what I wrote was basically, I wrote first step, second step. And then I said, DP of I is equal to minimum of first step and second step. You remember the previous class? So instead of first step, second step, I can say I can run a for loop over here and whatever will be the minimal, I'll store it in the DP. Right? Makes sense because in the previous lecture, we did take the minimum of first step and second step. Now there are K steps. So, I have to take all the K steps. That's very simple. What you'll do is, you will again say minimum steps is equal to int max. Similar stuff you'll write. And what you can write is for J equal to one, J lesser than equal to K, J plus plus. That is something which you can definitely"
+    },
+    {
+      "chunk_id": "L185_C9",
+      "start": 564.6,
+      "end": 631.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=564s",
+      "text": "write is for J equal to one, J lesser than equal to K, J plus plus. That is something which you can definitely write. And over here, what you can write is if I minus J is greater than equal to zero, that means if this jump can be possible, like it should not be a negative index, right? Then you can say, the jump energy required is nothing but DP of I minus J. You'll take it. Why this? Because in the recurrence, that is what you have written over here, right? DP of I minus J. That is what I have written over here. So, you have written DP of I minus J plus what is the absolute energy that you have taken? A of index minus A of index minus J. Correct? That's what you'll write. And you can easily write minimum steps equal to minimum of either the previous minimum steps or the current jump that you took. So, this will be the for loop. And once you have done this, you can say DP of I to be minimum steps. Correct? That's what you can easily do. And now what I can say is, once you have done this, you can directly print your answer to be DP of N minus one, right? You can directly print your answer to be this. And this is going to be your answer. What will be the"
+    },
+    {
+      "chunk_id": "L185_C10",
+      "start": 631.8,
+      "end": 697.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=631s",
+      "text": "one, right? You can directly print your answer to be this. And this is going to be your answer. What will be the time complexity guys? B go of N into K because that is what you're doing. A recursion stack space will be eliminated. There'll just be a B go of N DP array space that you're using. That's how you convert it into probably a multi-dimension DP. Like it's a basically nested loop DP. So, I hope you have understood the follow-up question. Now the question arises, can we space optimize this? Yes, we can. But can we space optimize it? Generally, in the previous questions we have seen, we have space optimized this from a B go of N to a B go of one. Now, can we do this over here? The answer to that will be no. We can just optimize the space from B go of N to a B go of K. So, do you remember how did we optimize a B go of N into B go of one solution? Remember? So, if I just quickly give you a recap, in order to find DP of I, what you required was DP of I minus one and DP of I minus two. So, there were only two previous states, which were required for computing any particular Ith state, like the value of DP of I, we required"
+    },
+    {
+      "chunk_id": "L185_C11",
+      "start": 697.64,
+      "end": 760.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=697s",
+      "text": "were only two previous states, which were required for computing any particular Ith state, like the value of DP of I, we required a couple of states that was DP of I minus one. And the other one was DP of I minus two. So, there were only a couple of steps that were required. So, what you can do is instead of carrying these guys, you can carry the previous couple of states in a couple of variables, which was previous to and previous. And you can call this as car I. So, there'll be no DP of I carried. So, whenever, like assume this is the current I. So, in the next step, when I will move here, what will happen in the next step? And I will move here. This guy tends to become the DP of I minus one, because if you're standing here, this is I, the previous guy becomes DP of I minus one. Thereby, you can say in the next step, this guy will become previous. Thereby, the next previous will be for the next I, the previous will be car of I, and this guy tends to become the previous two. So, in the next step, the previous two will become previous. Correct. And then you can easily do whatever the car I is using this previous and this previous two, instead of using DP of I minus one and DP of I minus two. Now, over here, what do we require?"
+    },
+    {
+      "chunk_id": "L185_C12",
+      "start": 760.76,
+      "end": 824.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=760s",
+      "text": "and this previous two, instead of using DP of I minus one and DP of I minus two. Now, over here, what do we require? Let's quickly look at over here. We require I minus J. Correct. We require something as I minus J. What is that? What is that I minus J? Can I say it can go like I minus one, I minus two, I minus three, I minus four, I minus five, so on till I minus K. Can I say this? Obviously, I can see this because if I'm giving a K as two, then for DP of I, I require DP of I minus one, and I require DP of I minus two. If I give K as three, I require DP of I minus one, I minus two, and I minus three. So, like if I just give you an extension, can I say this? If these are the points, yes, if these are the points, and just for a sake, assume you are standing over here, and this is the I, and K is four, okay, and if K is four, so can I see whenever you're standing over here and you're computing, you're trying to compute this DP of I, what you will require as states are very, very simple. What is that? That is as simple as that. You can say this is,"
+    },
+    {
+      "chunk_id": "L185_C13",
+      "start": 824.04,
+      "end": 888.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=824s",
+      "text": "you will require as states are very, very simple. What is that? That is as simple as that. You can say this is, I minus one is what you'll require. This I minus two is what you'll require. This I minus three is what you'll require. This I minus four is what you require. So, you'll just require the four last values, or can I say you'll just require the K last values? Does that make sense? Because you'll just require those K last values because you'll be like DP of I minus one, DP of I minus two, DP of I minus three, DP of I minus four, nothing beyond that. So, you'll just be requiring K last values. Now, if I just change to the next dot and I say in the next iteration, yes, in the next iteration, let's assume you have stored these four elements in some array. Okay, let's assume you have stored these four elements in some array. So, can I say if you are going to the next I, if you're going to the next I, who are the new last four elements? If this is the I, can I say the new last four elements are this white circle? Can I say the new last four elements are these white circle? And if I try to write the lines, this will be I minus one, this will be I"
+    },
+    {
+      "chunk_id": "L185_C14",
+      "start": 888.76,
+      "end": 957.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=888s",
+      "text": "elements are these white circle? And if I try to write the lines, this will be I minus one, this will be I minus two, I minus three, and I minus four. Does that make sense? That absolutely makes sense. So, what you can do is probably you can carry a list and like you can carry like in C++, you can carry a list. Even in I think Java, you can carry a list. So, what you just need to do is just need to make sure you omit the first element. Yes, like you can just erase it and you insert this I into the list. That is how you can do like in the previous question, we were swapping like this, right? Over here, what you will do is you will erase the first element and you'll insert the new I because in the next step that becomes the I minus one. So, in this way, you just need to maintain, you just need to take care of Vigo of K elements. Yes, you just need to take care of Vigo of K elements, but is the code necessary? And the answer to that is no. Why? Because if I give you K equal to yes, if I give you K equal to N, if I give you K equal to N, then the worst case again becomes Vigo of N elements. So, there's absolutely no need of a space optimizing it. Like I just give"
+    },
+    {
+      "chunk_id": "L185_C15",
+      "start": 957.0,
+      "end": 1025.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=957s",
+      "text": "then the worst case again becomes Vigo of N elements. So, there's absolutely no need of a space optimizing it. Like I just give you in concept, how can you think, but I'll not go into the code because it's not required because in the worst case, if I give you N jumps, you have to carry N elements. There is no other option. So, indirectly, you're not optimizing space. If I give you the worst case scenario, I hope you have got that right. So, since you have got this, that was the answer to the follow-up question. And since, so, since it took me so much of time to explain the follow-up only, that is the reason I did not add it in the lecture three. And yesterday I could not upload the video because I was suffering from very, very high fever and I have a lot of pain over here, like I'm still recording this and I will be uploading this. And right after this video, there'll be a lecture four coming up. Don't worry about that. This is, this video is for the yesterday one. So yeah, in case you have understood the lecture three follow-up, just a quick request, please write understood. In the previous video, there was around 8,000 views and hardly a hundred people wrote understood. So, please write understood, which goes by US and please, please like this video if you have understood it. And"
+    },
+    {
+      "chunk_id": "L185_C16",
+      "start": 1025.0,
+      "end": 1045.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=Kmh3rhyEtB8&t=1025s",
+      "text": "hundred people wrote understood. So, please write understood, which goes by US and please, please like this video if you have understood it. And also do consider subscribing to us if you are new to this channel. And if you haven't yet checked out our SD sheet, please, please make sure you check it out. That's in the description, like almost every college in India is following this particular sheet for placement preparation. So make sure you check it out. And yes, with this, let's wrap up this video. Let's meet in the next lecture. Bye team."
+    }
+  ]
+}

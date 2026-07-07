@@ -1,0 +1,162 @@
+{
+  "lecture_id": "L162",
+  "lecture_number": 162,
+  "lecture_title": "G-37. Path With Minimum Effort",
+  "youtube_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA",
+  "chunks": [
+    {
+      "chunk_id": "L162_C1",
+      "start": 0.0,
+      "end": 79.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video, we're going to solve the problem, the path with the minimum effort. What does the question state? It states you are a hiker preparing for an upcoming hike. Okay. You're given heights, a 2D array of size rows, cross columns, where height row column represents the height of the cell. You're situated in the top left cell. So I can say that this is our source and you have to travel to the bottom right cell. So I can say this as our destination. You can move in four directions and you wish to find a route that requires the minimum effort. Now a route's effort is the maximum. I repeat, a route's effort is the maximum absolute difference in heights between two consecutive cells of that route. So let, let us understand what does the question state. So imagine this particular grid and, uh, we have clearly stated that this will always be the source and this will always be their destination. Something like this will be the source and something like this will always be the destination that is clearly stated to us. Okay. Now, if"
+    },
+    {
+      "chunk_id": "L162_C2",
+      "start": 79.8,
+      "end": 150.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=79s",
+      "text": "the source and something like this will always be the destination that is clearly stated to us. Okay. Now, if I wish to reach from here to here and we are just allowed four directions, we are just allowed four direction. We can actually go something like this, like this, like this. We can actually go something like this, this, this, this. There can be multiple ways in which we can reach from here to here. That is definitely short, correct? Now, if I take let's write this path one, two, two, and two, five. This is the part where we go here, here, here, and here. Okay. Now let's find out the difference. So the difference is one. The difference is one. The difference, uh, rather the difference is zero. The difference is zero and the difference is three. Now of all the differences, which is the maximum difference? Can I say the max is three because I have only one, zero and three. So the maximum of them is three. So this is the, this is what the routes path will take as the effort. Three is the effort that it will take. So I can write three is the effort that you will take, but can I have any of the path? Let's see. What if I take something like this, something like this, something like this, and something like this, which is one, three, eight to five,"
+    },
+    {
+      "chunk_id": "L162_C3",
+      "start": 150.92,
+      "end": 228.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=150s",
+      "text": "What if I take something like this, something like this, something like this, and something like this, which is one, three, eight to five, one, three, eight to five differences to differences, five differences, six differences, three, and the max effort is six. So six is the effort it will take if it goes something like this, like this, like this, can I have something better? Let's get it right. One, let's take one, three, three, five, five, three, three, five. Okay. So it's something like one, three, five, three, five difference to difference to difference to remember absolute difference to what's the max to, so to is the effort taken. Now, what they want you to do is you can figure out the efforts in all the parts. You can figure out the efforts in all the parts and you need to give me the minimum of them. You need to give me the minimum of them. So in this part, the effort taken is two and that's the minimal. So the answer to this will be two. You can say that zero is the minimal. No, you don't need to take individual defenses. No, out of everyone. Once you figure out the max out of the max, you have to figure out the min out of all the max. You have to figure out the min. That is the question. So if I take the second grid, what will be the answer? If I go from here,"
+    },
+    {
+      "chunk_id": "L162_C4",
+      "start": 228.44,
+      "end": 300.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=228s",
+      "text": "out the min. That is the question. So if I take the second grid, what will be the answer? If I go from here, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero, zero. If I can take all the one part, the absolute difference between all the adjacent elements will be zero. So I can say for this, the parts effort is two while for this, the parts effort is zero. Got it. So which algorithm comes to your mind whenever you hear something related to path, shortest path, minimum kind of thing, which algorithm does come to your brain. The algorithm that comes to your brain is definitely Dijkstra's algorithm because that is one of the algorithm which is related to shortest path and that always involves something like a source to destination. So let's try that algorithm out and see if we can reach our answer or not. This is how you relate a problem to an algorithm because shortest path, okay, what are the algorithms I know? Okay. Dijkstra. Source and destination is there. Maybe we can try that out and see, and then you give it a dry run and see if it is working and then you figure out, yeah, this is algorithm which can fit in. And then while giving the dry run, you tend to understand, okay, this is the reason we are using it."
+    },
+    {
+      "chunk_id": "L162_C5",
+      "start": 300.68,
+      "end": 373.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=300s",
+      "text": "can fit in. And then while giving the dry run, you tend to understand, okay, this is the reason we are using it. Always follow the standard process of mapping algorithms to a problem that is figuring out keywords and then figuring out which one is applicable. Okay. So in priority, uh, sorry, in Dijkstra's algorithm, what is the initial configuration? A priority queue and a distance array. So let's quickly take it up. So this is how the initial configuration looks like. We will take a priority queue where we will be storing the difference. Since we always require the minimal difference, we'll try to keep the difference at the first so that the minimum heap or the priority queue, uh, you can use a minimum heap. Always store the minimal at the top and then the row and columns, which are basically the coordinates of the node and we can assign a distance and make sure everything is, everything is marked as infinite apart. If I did is basically a very big value, just the source. Yes. With a zero because the source is where you do not need anything. Yes. The source is the only point where you do not need anything. So what is the starting point? You always say difference is zero and the coordinates are zero comma zero and you put that into your priority queue. Done. Let's quickly start the Dijkstra's algorithm. Dijkstra's algorithm states, okay, I know"
+    },
+    {
+      "chunk_id": "L162_C6",
+      "start": 373.28,
+      "end": 440.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=373s",
+      "text": "zero comma zero and you put that into your priority queue. Done. Let's quickly start the Dijkstra's algorithm. Dijkstra's algorithm states, okay, I know one thing for sure. We are at zero comma zero and till now the difference that we have taken until now, the, uh, till now the difference that we have taken is zero and we know for a part, for a part, the effort is maximum of all difference. Remember this max of all difference in the path. So we know this, right? So what I will do is keep that in mind and I know till now the difference has been zero. So I'll try to go in all the directions and it states we can go in the top, which is not possible. We can go here, we can go here and we can go here. So if I go to the right, which is two, if I go to the right, which is two, that's nothing but the coordinate zero, zero one. So I'll write the coordinates as well. Zero one, two, zero one, two. So the coordinates is zero one. And what did the difference? If I go here, the absolute difference will be one. So can I see the new differences? One, can I say the new differences one and we know max of all difference in the path is what the effort is. The effort is very simple. The effort is always recognized"
+    },
+    {
+      "chunk_id": "L162_C7",
+      "start": 440.16,
+      "end": 507.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=440s",
+      "text": "we know max of all difference in the path is what the effort is. The effort is very simple. The effort is always recognized as max of all. So previously I took a difference of zero. Now I'm taking a difference of one. So if I follow this path, what will be the effort? Yes, one. So I know the effort is one which is less than infinity. So I take difference of one and I said this is the effort that I will take in and I'll put in something like zero comma one into the priority queue. Done. Now can I go to the down? Yes, I can go to the down, which is one comma zero as the coordinate and the difference. If you find the difference, it's one three. So the difference will be two. Now previously the difference taken was zero. Now I'm taking a difference of two and the path effort states maximum of all differences. So zero and two, which is the maximum two. So you just replace two as a two comma one comma zero is what I'll put into the priority queue and I'll just erase this because the iteration is done. Now if you go and look at the priority queue, which one will be at the top? The top most element will be this one because you are looking for the minimum guy. So this one will be at"
+    },
+    {
+      "chunk_id": "L162_C8",
+      "start": 507.08,
+      "end": 566.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=507s",
+      "text": "the top? The top most element will be this one because you are looking for the minimum guy. So this one will be at the top. This one will be at the top. So what I'll do is I'll just quickly take a, I know the difference taken as of now is one. I'm standing at zero comma one because that is where you're standing. So once you've done this, you can omit this from the priority queue from zero comma one. Where can you go? You cannot go on the top. Can you go here? Yes, you can go here, which is zero comma two. You can go to the right, which is zero comma two. So if you go to the right, the difference will be zero. Remember this, the difference will be zero. So over here, the difference is zero, but previously you have taken a difference of one. So this part that you're taking still has an effort of one. You just cannot take zero because you're, you're required to take the maximum. So you will be like, I'll still take one, which is better than what we have here. So one comma zero comma two is what I'll put it into the priority queue. Done. Now can I go down? Yes, I can go down. We have a two and we have an eight on the down. So one comma one. So if"
+    },
+    {
+      "chunk_id": "L162_C9",
+      "start": 566.76,
+      "end": 631.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=566s",
+      "text": "Yes, I can go down. We have a two and we have an eight on the down. So one comma one. So if there's a two and there's eight, what is the difference? Perfect. Six. Now previously it took till here, it took a difference of one. I'm taking a difference of six. What will be the new effort? Yes, six. I'll be like till here I can take a six, six comma one comma one is what I'll update. Once I'm done, I can say the iteration is done. I'll quickly omit this off. Done. What is the next step? Get the minimum out of the priority queue. Which one will be the minimum? Definitely one. I'll just take it out. It says the difference is one and the coordinates are very easily zero comma two, right? That's the coordinates. I'll just write the coordinates zero comma two. Now we are at here. Can we go top? No. Can we go right? No. Can I go here? Yes. Which is two. So I'll try to go here, which is one comma two. Very, very important, which is one comma two. So you are at one comma two and what will be the difference? The difference will be zero because there's a two, there's a two. So the difference is zero, but previously I've taken a difference of one. So you'll just update it with one and it'll say one comma one comma two. Perfect. Can I go to"
+    },
+    {
+      "chunk_id": "L162_C10",
+      "start": 631.96,
+      "end": 698.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=631s",
+      "text": "a difference of one. So you'll just update it with one and it'll say one comma one comma two. Perfect. Can I go to the left? Yes. And if you go to the left, what do we have? We have two, which will be a difference of zero and the zero comma one, zero comma one with the difference of zero. Now the difference over here is one. This is zero. So the effort is still one and you have already taken one effort. So no need to take it. So I can say the iteration for this is also done. Okay. Now let's get the next thing. What should be the next guy in the priority queue? Obviously one comma one comma two. So the difference is now one and you are at one comma two, which is this portion. Can I go top? I can go top, but if I try to go top, which will be zero comma two with a difference of zero, then also the maximum is one, which we already have over here. So we will not go to the top. Instead of that, can I go right? No, there's no one. Can I go bottom? I can go bottom, which is two comma two, which is apparently your destination. Will you take this? No, you'll wait. You might find someone better. That's why you'll not conclude as of now. You will not conclude"
+    },
+    {
+      "chunk_id": "L162_C11",
+      "start": 698.8,
+      "end": 762.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=698s",
+      "text": "Will you take this? No, you'll wait. You might find someone better. That's why you'll not conclude as of now. You will not conclude as of now. You'll be like, okay, two comma two. What's the difference? Three because two to five is difference of three. So now previously one, now three, which is the path separate. The parts of it will be three. So this updated to three and I'll say three comma two comma two. Put it into the priority queue. Do not conclude your answer now. Do not because this is not an answer. So I'll omit this. Uh, you could try going to the left as well. It'll be a six, which is already there. So there's no point in going to the left next. Which one will the priority queue give? Obviously this one, two comma one comma zero. So I'll take two comma one comma zero. I'm saying the difference is two and we are at one comma zero, which is particularly this coordinate. Correct? Now from here, where can I go? Can I go to the top? I can, I can. If I try to go to the top, which is zero comma zero, the difference will be two and previously it was two as well. And we already have a zero. No point in going there. Can I go to the right? We can go to the right. Yes, we"
+    },
+    {
+      "chunk_id": "L162_C12",
+      "start": 762.08,
+      "end": 823.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=762s",
+      "text": "already have a zero. No point in going there. Can I go to the right? We can go to the right. Yes, we can go to the right. And if we go to the right, which is one comma one, the difference will be five, which is better than the previous difference. Six. I'll be like, let's take this off. Let's say five comma one comma one into the priority queue. Perfect. Can I go down? I can, which is two comma zero and the difference will be two. If you try to go down, the difference will be still two. So I'll just update it to two and I'll say two comma two comma zero in the priority queue. Once this is done, there is no left. I'll just omit this. Perfect. Amazing. Next, what will be your job? Your job will be to go into the priority queue and see which is the minimal. And you see there's a two, there's a five, there's a three and there's a six. So apparently the two comma two comma zero is the minimal. So I'll just take the two comma two comma zero. It's like the difference is now two and we are standing at two comma zero. Where can you go is my question. It's very easy. You can try to go to the top, which will give you a difference of two, which is already"
+    },
+    {
+      "chunk_id": "L162_C13",
+      "start": 823.56,
+      "end": 880.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=823s",
+      "text": "question. It's very easy. You can try to go to the top, which will give you a difference of two, which is already there. So no need to go. You can try to go to the right, which is infinity. So yeah, we can go to the right. Let's try to go to the right, which is two comma one. And the new difference will be two because that's the difference. And difference is two still not two. So the maximum will still be two. So updated with two and say two comma, yes, two comma, two comma one. Can I go bottom? Now there's no bottom. Can I go left? No. So this iteration is also done. Perfect. Let's get the next element out of the priority queue. What will be the next element? Five, three, two, six, two, obviously let's take it out. So I can say the difference is two now and we are at two comma one. We are at two comma one. So if you are two comma one, where can you go? You can go to the top, which is one comma one, basically this, and the difference will be five and the difference will be five, but we already have a five difference. So no need to take, can I go to the right? We can, which is two comma two, which is the destination, which is the destination. And"
+    },
+    {
+      "chunk_id": "L162_C14",
+      "start": 880.96,
+      "end": 954.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=880s",
+      "text": "take, can I go to the right? We can, which is two comma two, which is the destination, which is the destination. And this time the difference is two point to notice because the difference is two and difference is two and it's two. It's better than three. It's better than three. So you say two and it's a two comma two comma two. It's a two comma two comma two. Perfect. What's the next thing? Can I go down? No. Can I go left? I can, but it'll yield a difference of two, which is already there. So I can say this is done. The next point is very, very critical. You look at the priority queue and say, who is there? There's a two, there's a five, there's a three and you get two comma two with the difference of two, which means the path effort. You've reached your destination. You've reached your destination in future. Will you get someone better? The answer to that is no, because if they'll not, it is two and priority queue says you always get the minimal in the future. Even if someone comes up, you will be greater than two. Like the difference might be smaller, but when you take the max, it will end up being a minimum of two. You cannot go less than two because you had someone like, if you see you had someone like three, but before three, two occurred in the future, it will"
+    },
+    {
+      "chunk_id": "L162_C15",
+      "start": 954.28,
+      "end": 1023.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=954s",
+      "text": "two because you had someone like, if you see you had someone like three, but before three, two occurred in the future, it will either more than two or two cannot be two because you are jumping to a part where already the max effort taken is two. Even if you'd cover a, another portion of a path, whatever the effort is, even if it's like one zero, the difference to the max has already been two. So if you combine the max with the other guys, it'll still be a minimum of two cannot be, cannot be less than two for short. So I am definitely short. Once I reach the destination by taking out of the priority queue, the answer is for short, this difference, which is ultimately your effort. And you can just go across and return that effort as your answer. So it's a very, very simple implementation of Dijkstra because Dijkstra always keeps the track of the short leg of the path value. And you're looking for minimum path value. So you always have the minimum path value in future. It's going to just increase. So keep this in mind and we're going to implement this now. So I hope you've understood the entire approach and it's time to code it up. So I'll be coding the C++ on the right and you can find out the similar Java solution on the left. So given just the heights, so you can use the"
+    },
+    {
+      "chunk_id": "L162_C16",
+      "start": 1023.8,
+      "end": 1098.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=1023s",
+      "text": "the right and you can find out the similar Java solution on the left. So given just the heights, so you can use the set data structure as well, the Python as well, whichever, sorry, the priority queue as well. So I'll be using the priority queue. So this time we have to kind of take a bit more pairs and we need another thing. So let's just quickly upgrade it to, that's the thing. And over here, if you just, just a minute. Perfect. I have declared the priority queue and this is how the priority queue looks. It's a very long one, but yeah, that's how it looks like. If you just break the line, you can probably read it. So this is how the entire priority queue will be defined. So I'll be keeping something like, if I show you the structure, this is how I'll be keeping the structure as I'll keep the difference and I'll keep the row column. Pretty straightforward. That's, that's what the structure is going to be for me. You can probably create a class as well, but then you have to write the competitors, which I don't want to. What's the next thing you require the size of the height. So probably you can just take the, like computer size and you can just do heights, zero dot size. You'll get the M as well. Now, what do you require? You require something like to store"
+    },
+    {
+      "chunk_id": "L162_C17",
+      "start": 1098.96,
+      "end": 1169.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=1098s",
+      "text": "can just do heights, zero dot size. You'll get the M as well. Now, what do you require? You require something like to store the difference. So maybe you can create the distance array or the difference. We can call it as the difference or the distance to be familiarized with the name. So we can go across and declare that as well. Better of int and make sure everything is marked as in finite done. That's the first thing you'll do. What's the next thing? Make sure you iterate on the priority queue till it is not empty. But before that, do you need to do anything else? Yes, you do need to do something like distance of zero zero will be zero because you know, that's the starting point for you. And what is the other thing that you have to do? You have to also see the priority queue to store the first guy, which is zero comma zero comma zero. Perfect. That's the easiest thing. Next, let's go across and take the peak. You don't talk. So I'll just take the peak. You don't talk. I'll just see peak. You don't talk. And once I've done this, I can take the new diff, uh, rents, which is nothing but very simple. Like if you, if you say it. First, you'll get it. And if you need the rule again, it's quite eminent. It's something like it.second.first. If you need the column, it's going to be it.second.second."
+    },
+    {
+      "chunk_id": "L162_C18",
+      "start": 1169.76,
+      "end": 1236.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=1169s",
+      "text": "it. And if you need the rule again, it's quite eminent. It's something like it.second.first. If you need the column, it's going to be it.second.second. Now there are four directions. One is the top boards, which is the row minus one comma column. Uh, then the other one is the right one, which is this. And there is one of the bottom, which is row minus one comma column. And there's one on the left, which is row comma column minus one, right? So what I can do is I can probably create, I've already taught you this in a lot of videos still now. So minus one, zero, one and zero. And then I can have something like DC equal to a zero comma one comma zero comma minus one. I can definitely declare it something like this. And now what I'll do is I'll just go across and say, I equal to zero I less than four I plus plus, and I can easily travel to all the adjacent nodes. It's very simple. You can say new R will be current row plus nothing but the change in this. And you can say new column equal to column plus DC of I. So what will happen is first time minus one and zero will get added because this is over here. Next time zero and one will get added next time. One and zero will get added"
+    },
+    {
+      "chunk_id": "L162_C19",
+      "start": 1236.92,
+      "end": 1310.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=1236s",
+      "text": "get added because this is over here. Next time zero and one will get added next time. One and zero will get added next time zero and one will get added. And I'll get it. First thing that you need to do always is to check if they're valid or not. So please go ahead and check if they are valid or not. So very simple check. You can probably put them into different functions. If you wish to improve code readability and what after that, now you know one thing you have checked for validity, right? What is the next thing you need to check? Did you check if the difference that you are getting is it lesser than the things stored in the previous one? Right? So probably we can, we can first check for validity because after that we can find out. So what is the new effort? Can I say the new effort will be nothing but max of the current, which is nothing but absolute of wherever you are. Yes. Wherever you are, which is heights of row column. So let's write heights of row column. This is currently where you are. Right. And can I see heights of new row and new column is where you're trying to go. So this is what the new effort that I'll take and I'll just take it with this. So if new effort, like the max of this. So once you've got the new effort, what's your"
+    },
+    {
+      "chunk_id": "L162_C20",
+      "start": 1310.84,
+      "end": 1381.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=1310s",
+      "text": "and I'll just take it with this. So if new effort, like the max of this. So once you've got the new effort, what's your job? You have to see if the new effort is lesser than whatever you have taken till now, which is distance of new R if previously you would have reached, otherwise it would be infinity. If it is, if it is, then you go across and say, Hey, listen, distance, you got someone better. Please go ahead and just do it right after that. You'll say PQ dot push this distance, which is distance of, or you can write new effort. Simple. This is the new distance. And you will add the same time, say new row, because that's the new coordinates and the new column. Once you've done this, you can, I can say we will reach here, but where did we get our answer? If you remember the approach we said, whenever we get our answer over here, which is this and this, because not while here, because we might find minimals afterwards. You saw an example. I'm going to return over here the difference, whatever difference I'm getting off of the priority queue, I am going to return. Remember this, I'll go and compile this and see if it is working fine. It is. And I'll quickly submit this to see if it is giving us correct answers. So it does give us correct"
+    },
+    {
+      "chunk_id": "L162_C21",
+      "start": 1381.6,
+      "end": 1449.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=1381s",
+      "text": "working fine. It is. And I'll quickly submit this to see if it is giving us correct answers. So it does give us correct answers. Now it's time to discuss the time complexity. You know, the Dijkstra's time complexity, it is always E log V. If you want the derivation, previous video, in the previous video, in the same series, I have derived time complexity. It's E log V. What is E? The total number of edges. So how many total number of edges we will have? If it's a grid, you know, in grid, there'll be N cross M cells for sure. There'll be N cross M cells for sure. And for every cell, there is four directions. So that is the total number of edges. Because for every cell there is N cross 4M. Cross log V. What is V? The total number of nodes. How many nodes are there? Number of total cells, which is N cross M. Got it? So this will be the time complexity of this particular algorithm. And you're using N cross M space and the priority queue uses a bit of space. So you can say the approximate space is near about N cross M. And this is how it will be done. So guys, I hope I was able to explain you the entire solution and the code. So just in case I was, please, please, please make"
+    },
+    {
+      "chunk_id": "L162_C22",
+      "start": 1449.16,
+      "end": 1461.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=0ytpZyiZFhA&t=1449s",
+      "text": "hope I was able to explain you the entire solution and the code. So just in case I was, please, please, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And if you haven't checked out our DPCs and the HDC, the links are in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

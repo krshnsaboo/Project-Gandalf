@@ -1,0 +1,155 @@
+{
+  "lecture_id": "L222",
+  "lecture_number": 222,
+  "lecture_title": "DP 42. Printing Longest Increasing Subsequence | Tabulation | Algorithm",
+  "youtube_url": "https://www.youtube.com/watch?v=IFfYfonAFGc",
+  "chunks": [
+    {
+      "chunk_id": "L222_C1",
+      "start": 0.0,
+      "end": 79.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=0s",
+      "text": "Hey everyone, welcome back to Take It Forward. So in the previous video, if you remember, we did the memoization solution of the LIS video. In this video, we will be discussing the tabulation approach via the memoization and then we will be moving across to discuss, yes, to discuss the rather be go of an approach that you'll find in all the blocks and everything. So going back to the recursive code, how do you convert this portion of recursive code into a tabulated code? That's a very big question. Now, if you have been following this DP series right from the first, you know the rules. The rules are very simple. Write the base case and before that declare the DP of the same size. So I'll declare a DP of n plus one and then write the base case. Now, if you look at the code, what is the base case? We just have one base case, which is if index is equal to equal to n, we have to return a zero. So since we are declaring a DP of size n and n plus one and assigning everything to zero, since everything is already assigned to zero, we don't need to specifically write for the base"
+    },
+    {
+      "chunk_id": "L222_C2",
+      "start": 79.44,
+      "end": 157.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=79s",
+      "text": "and assigning everything to zero, since everything is already assigned to zero, we don't need to specifically write for the base case. I hope that makes sense. Next, write the changing parameters. So if I look at the code, these are the couple of changing parameters that we have. So write down the changing parameters in the opposite fashion. Strict rules, easy rules, which we have been following right from the start. So the index will be from n minus one to zero. The previous index will be from n minus one to minus one. But here is a catch. If it's a previous index and it is an index, what is the definition of previous index? The previous index. So can a previous index be n minus one always? No, a previous index will always start from index minus one because it cannot be beyond index or index itself. The name itself is previous index. So this is how you can have these kind of things. Next is copy the recurrence as simple as it can get. Copy the recurrence and make sure you follow the coordinate shift that I taught you. Follow coordinate shift that I taught you. Just make sure you do follow the coordinate shift that I taught you."
+    },
+    {
+      "chunk_id": "L222_C3",
+      "start": 157.28,
+      "end": 231.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=157s",
+      "text": "you. Follow coordinate shift that I taught you. Just make sure you do follow the coordinate shift that I taught you. The coordinate shift that I taught you. So what I'll do is I will go across over here and this is how the code looks like. And over here, what I'll do is I'll do a zero. And this is the index, which I'll start from n minus one index greater than equal to zero index minus minus. And I'll have the previous index right starting from index minus one till previous index greater than equal to minus one and previous index minus minus. Perfect. And now what I'll do is I will simply take this portion and I'll copy paste over here. Once I've taken this, now what I will do is I will be like, okay, let's convert this into a DP. So remember whenever you convert it into a DP, the coordinate shift has to be done. So the second parameter will always have plus one, because if you remember, we stored the second parameter in plus one state over here, there's the first parameter. It is as it is. And the second parameter goes into the plus one state. Perfect. So we moved the second parameter into the plus one state over here. This will go off over here. This will be DP of zero. And instead of minus one,"
+    },
+    {
+      "chunk_id": "L222_C4",
+      "start": 231.12,
+      "end": 300.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=231s",
+      "text": "the plus one state over here. This will go off over here. This will be DP of zero. And instead of minus one, it will be a plus one state. So you just do a plus one. Once you have done this. And if you try running this, you will see that this is indeed giving you the correct answer. No, it did not. Why? Because you are at n minus one and you're doing an index plus one. So make sure this is declared for n plus one, because n means you don't have an nth row. So just make sure you have this. So as you see, it is giving time limit exceeded because we've missed a greater than equal to over here. Nevertheless, this would have greater than equal to over there. And this should be running fine. Perfect. So that's how you can convert this into a simple sorted tabulated code. Now, now if you're following my DP lectures right from the start, you know, the space optimization technique. Yes. Whenever you see something like index plus one, index plus one, what comes to your brain? Yes. Space optimization. So what you'll do is you will just space optimize this because in order to compute index, you're just requiring the next row, just the next row. So please space, uh, space optimize this by saying next row. And you can also declare a current row"
+    },
+    {
+      "chunk_id": "L222_C5",
+      "start": 300.24,
+      "end": 370.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=300s",
+      "text": "just the next row. So please space, uh, space optimize this by saying next row. And you can also declare a current row of n plus one. If you don't understand this, it's not my fault because you're watching the DPCs right from the between this playlist is an extension. So please make sure go back and watch all the videos because this trick I've been teaching right from the first day. So next and current at all the index, make it current at all the index plus one, just make it next. That's the rule at all the index plus one, just make it next. And once you've done, once you've completed the entire row, just do curve. Sorry, just do next equal to curve right at the end of the day, you can return car or next because both of them will be seen. And that's what you're doing. So in this way, what I have done is I have converted this code into something, uh, which is, if I, if I show you, uh, the time complexity is still be go of N square, but the space complexity has been boiled down to N into two. Now, is this the best solution? No, the best solution uses, uh, like weird method tabulation method. Like I personally feel if you know this, you know, this, otherwise you cannot intuitively write it. That is what I feel."
+    },
+    {
+      "chunk_id": "L222_C6",
+      "start": 370.32,
+      "end": 444.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=370s",
+      "text": "method. Like I personally feel if you know this, you know, this, otherwise you cannot intuitively write it. That is what I feel. So it's a tabulation method that you have to learn. It's a different way. So let's take a quick example and try to understand the tabulation method. So five, four, 11, one, 16, eight. Okay. Let's take this array. Okay. And now what I'll declare is I'll declare a DP of size. And that is what I'll declare. I'll try to declare a DP of size N where, where DP of I signifies the longest increasing subsequence that ends at index I remember this DP of I signifies the longest increasing subsequence that ends at index I. For an example, if I ask you, what is the longest increasing subsequence that ends with five, you'll be like the length is one definitely because before five, I cannot have any one. Similarly, if I ask you, what is the longest common subsequence, sorry, longest increasing subsequence that ends at four, again, five cannot be a part of it."
+    },
+    {
+      "chunk_id": "L222_C7",
+      "start": 444.64,
+      "end": 522.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=444s",
+      "text": "common subsequence, sorry, longest increasing subsequence that ends at four, again, five cannot be a part of it. So you'll again say the length is one. Similarly, if I ask you, what is the longest increasing subsequence that ends at 11, you can say five can be a part of it, or you can say four can be a part of it. Both of them can be a part of it. So I can see it can have a length of two because either five, 11, either four, 11, it can still have a length of two. Next you go to one. Can I have a longest increasing subsequence, any one before one, five cannot be before one, four cannot be before one, 11 cannot be before one. So the longest increasing subsequence will be of length one again. Sixteen, for sixteen, I can say I can have one before sixteen. So that's one of the ways. I can say I can have four before sixteen. That's one of the ways. I can say I can have five before sixteen. That's one of the ways. I can definitely say I can have five and eleven before sixteen. So these are the four, like, there can be a lot of other ways as well, like four, sixteen, like you can, you can figure out. But can I say the longest that I can have is if I pick five, eleven, and then sixteen. So I can have a length three."
+    },
+    {
+      "chunk_id": "L222_C8",
+      "start": 524.16,
+      "end": 602.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=524s",
+      "text": "I say the longest that I can have is if I pick five, eleven, and then sixteen. So I can have a length three. For eight, can I have sixteen before eight? No. Can I have one before eight? Yes. So one and eight can be together. Can I have eleven and eight? No. Can I have four and eight? Yes. So I can have one and eight, four and eight, five and eight. I can't see more than length two, that ends at over here. So I can still have a length two. Thereby, I know all the longest, like, at eleven, a length of two ends, at sixteen, a length of three ends. So if I know for every index, this is, this is the possible answer. So can I say this is the LIS, which means I can have a sequence something like five, eleven, sixteen, or four, eleven, sixteen for that reason. I can have both of them as the length. Yes, I can have both of them as the length. So like both of them as the longest. So I can have both of them as the longest increasing subsequence and the LIS will be the max of all DPI's, max of all DPI of index where I ranges from zero to N minus one. This is the formula. But the fun part is how do"
+    },
+    {
+      "chunk_id": "L222_C9",
+      "start": 602.08,
+      "end": 676.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=602s",
+      "text": "DPI of index where I ranges from zero to N minus one. This is the formula. But the fun part is how do you compute this portion? That's important. That is, that is the key. So you have figured out what's the thought process behind this algorithm. So now let's again copy paste the same example of five, four, eleven, one, sixteen, eight. And now let's try to figure out the DP. OK, so what I'll do is have a keen focus. I know one thing for sure. Even if there does not exist any element before that, I repeat, even if there does not exist any element before that, I know the length will always be one. The max length will be one. He itself itself. So initially DP will have all the values assigned to one because he itself will be the maximum length. OK, for this guy, which is index zero, for this guy, does it have any previous elements? The answer to that is no. So this will still stay as one. Let's move to the next index. Does this guy have any previous element? The answer to that is yes, this is the previous element, but this five is actually greater. So this cannot be a part of subsequence. This cannot be a part of subsequence. So it will still stay as one. And I don't have"
+    },
+    {
+      "chunk_id": "L222_C10",
+      "start": 676.64,
+      "end": 752.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=676s",
+      "text": "be a part of subsequence. This cannot be a part of subsequence. So it will still stay as one. And I don't have any other previous elements apart from five. Let's move next. When I move to second index, this guy doesn't have previous elements. Yes, these couple of guys are the previous elements. Can five, can five become the previous of eleven? The answer to that is yes, five can become the previous of eleven. If five can become the previous of eleven and if there is a subsequence that ends at five of length one, can I say if I involve eleven, the subsequence will be of length one plus one and that will be a length two because I know there is a subsequence that ends at five and is of length one. So if I take that length, if I take this length and if I add it to eleven, I'll add one to this length which makes it two. Perfect. This was a previous which can combine with eleven. Next previous is four. Again, this is of a subsequence length one. Like I know there is a subsequence of length one, LIS. There is an LIS of length one that ends at four. So can this be with eleven? Yes, this plus one is two. There is already two. So no need to"
+    },
+    {
+      "chunk_id": "L222_C11",
+      "start": 752.0,
+      "end": 828.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=752s",
+      "text": "at four. So can this be with eleven? Yes, this plus one is two. There is already two. So no need to update it because I already have a length two. Perfect. Let's move ahead. Three. So I'm moving ahead to this index. Now I have a one. Can this be a part with one? No. Can this be a part with one? No. Can this be a part with one? No. So no one can be a part with one. So one will be only having a length one. Perfect. Let's move to the next. When I'm at four, what do I have? I have sixteen. Can five be a part of sixteen? Yes, it can make five and sixteen. So five has a length one, adds a length one, makes it a length two. Can four be a part of sixteen? Yes. Length one adds one, two is already there. Can eleven be a part of sixteen? Yes. I say eleven can be a part of sixteen and eleven in itself is a length two, which is four and like five and eleven. So this length two can be a part of sixteen, makes it a length three. So this can be updated to length three. Realize since you store the longest till eleven, that helped you in attaching"
+    },
+    {
+      "chunk_id": "L222_C12",
+      "start": 828.24,
+      "end": 898.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=828s",
+      "text": "three. So this can be updated to length three. Realize since you store the longest till eleven, that helped you in attaching it and making it one more when it got a greater element. Got it? That's how you get three. Can one be a part of sixteen? Yes. Two, but we already have better one. So no need to take it. That's how you figure for sixteen. Next, move to the next five. You are at eight. For eight, can this be a part? Yes. So length two. For eight, can this be a part? Yes. Length two. For eight, can this be a part? No. For eight, can this be a part? Yes. Length two. For eight, can this be a part? No. So eventually you'll get length two only. So this is how you fill up the entire DP table. Once you have filled up the entire DP table, figure out the maximum and that's three and that is going to be your LIS. That is going to be your length of LIS. So can I say what am I doing? Can I say I'm actually starting from index zero and I'm going on till index minus one. That's what I'm doing. I'm starting from zero and I'm going to N minus one. And whenever I'm standing at, let's say 16, I checked for five, four, 11, one. So I'm checking all the previous indexes. So can I say"
+    },
+    {
+      "chunk_id": "L222_C13",
+      "start": 899.2,
+      "end": 978.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=899s",
+      "text": "I'm standing at, let's say 16, I checked for five, four, 11, one. So I'm checking all the previous indexes. So can I say I'm checking all the previous indexes from zero to index minus one. And what am I checking? I'm saying, can the previous be a part of mine? If it is, then the answer will be one plus whatever previous had, and I will store that in my current guy, but I need to compare that with whatever I am at current. I need to compare that whatever I have. And if the previous is smaller, if the previous is smaller, then just add one to it and then compare with myself. If it is greater, then I'll store it. And at the end of the day, the max of everyone will be my answer. So without actually waiting, let's go back and try to code this up. So just omit this off. And now what I'll do is I'll just declare a vector of DP of N comma one. So all of these guys will be declared with one. Next I'll go from zero. I'll go on till N I will like I plus plus perfect. Now I will have a previous, which will be from zero. I'll go on till I, I will like previous"
+    },
+    {
+      "chunk_id": "L222_C14",
+      "start": 978.24,
+      "end": 1057.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=978s",
+      "text": "plus perfect. Now I will have a previous, which will be from zero. I'll go on till I, I will like previous plus plus perfect. Now, can I say if a array of previous is lesser than array of I can, I say DP of I will be max of DP of whatever is there plus DP of previous as simple as it can get. And once this DP of eyes computed, can I store the max of all of them? I can really, I can store a max equal to one because I know that's the maximal answer max of maxi comma whenever all the DP of eyes is computed and then I can return the maximum. That's how this particular algorithm will be. And it's a very straightforward one. So yeah, again, why DP? Because you're storing the previous states. That's how you can easily do this. Now, if I ask you the time complexity, again, if I submit this, you will see it. It'll be giving you a TLE because the time complexity is still in square. Yeah. If I talk about the time complexity, it is still, we go off N square, but the space complexity has now boiled down to be go off. And now this solution will be required. If you want to trace back the allies, if you want to trace back the allies, this solution will be required. So it's time that we now trace back the last. Okay. Now we'll be"
+    },
+    {
+      "chunk_id": "L222_C15",
+      "start": 1057.92,
+      "end": 1136.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=1057s",
+      "text": "want to trace back the allies, this solution will be required. So it's time that we now trace back the last. Okay. Now we'll be learning how to print the allies. That's very important. So let's learn how to print the allies. So till now we have understood how to figure out the length of the allies, but what if someone comes up and says, Hey, can you print me the allies? Can you actually print the allies? We can. What if we apply some backtrack? Can we print it? We can. So the backtrack that we will do is what we will do is as of now, we were creating a DPRA. If you remember, well, we were creating a DPRA and we were initially saying everyone to be one, right? Now let's create one backtrack area, another area. Okay. You can, you can call whatever you can just name it as hash or something others. So let's create one more area. Okay. And make sure everyone is assigned, uh, whatever index you have, make sure everyone is assigned the index himself. So this hash will say this hash area will say, who was the previous index to it? You'll understand like for an example, over your five, it does not have any previous. So it will have one and it will say this five ends at like before five, we had five itself. So no one fight."
+    },
+    {
+      "chunk_id": "L222_C16",
+      "start": 1136.4,
+      "end": 1206.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=1136s",
+      "text": "it will have one and it will say this five ends at like before five, we had five itself. So no one fight. When we reach out for, it will still be one. And this five cannot be a part of it. It cannot be a part of it. So let's keep it as one. And this will also be staying as one. Now, whenever we are at 11, what we do is we take five, the value is one. We add one and we updated to two. Is that what we do? Definitely. We updated to two. Now remember this five got before 11, thereby this was updated to two. So can you say 11 before you, there was five. So at 11, can you say before 11, there was this index zero. So please store index zero. So hash will say before 11, there was an index five. Perfect. You have told it right now let's move. Uh, so we are at 11. It was two. Now we had four, four had one. So one plus one would have been you can update it or you cannot. It's still the same value. Perfect. Next you go to one, one says this cannot be, this cannot be, this cannot be. So it still stays as one. Next you go to 16. It's says that five can be a possible answer. So one plus one will give it two."
+    },
+    {
+      "chunk_id": "L222_C17",
+      "start": 1206.72,
+      "end": 1281.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=1206s",
+      "text": "one. Next you go to 16. It's says that five can be a possible answer. So one plus one will give it two. So this guy will be two. So please update it too. So what I'm saying is for the 16, before this, there was five. So let's update this to index zero. Perfect. Next. This is four, one plus one would have been two, which is already there. Next we have an 11. It can also be a part. So this is two, two plus one would have been three. Perfect. Why don't you update it to three? And if this guy is coming before 16, there is an index two. So index two will be updated. Amazing. One cannot be an answer because one means one plus one is two and we already have a three. So one cannot be an answer. Let's move to the next. We have 18. Five can it be an answer? Yes. If I'm taking five as in like, sorry, this was one, six, eight, not 18. My bad. Yeah. So for eight, can five be an answer? Yes. One plus one. So thereby this becomes index zero. Can four be an answer? No, because we have already updated this to two while we were doing it five. Can four be an answer? One plus one, two, same 11. No one, one plus one to 16. No. So apparently"
+    },
+    {
+      "chunk_id": "L222_C18",
+      "start": 1281.52,
+      "end": 1355.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=1281s",
+      "text": "it five. Can four be an answer? One plus one, two, same 11. No one, one plus one to 16. No. So apparently your hash array is storing something like this. And the maximum value you got was at this index, index four. So you start at index four, take up that value 16. Next, you go to the previous index and you can easily get by hash, which is two. So you go to two. So at the second index, you see a value zero. So you go to zero at zero, you see zero itself. So you stop. So apparently index four has 16 index two has 11 index zero as five. So if you reverse it, it's five, 11, 16, which is your answer in this way, you can easily get your answer. So if I go back to the code, you just need to create one more hash array. So make sure you just create an hash array of end size. And whenever you enter, just make sure hash is nothing but the index itself. Okay. And what do you need to do at the next step is just go across whenever this is getting updated. So instead of writing this, you can simply write and, and whenever this guy is greater than DP of I, I know I'll update this"
+    },
+    {
+      "chunk_id": "L222_C19",
+      "start": 1355.76,
+      "end": 1435.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=1355s",
+      "text": "writing this, you can simply write and, and whenever this guy is greater than DP of I, I know I'll update this to this portion. At the same time, I'll say hash of I to store the previous guy. Perfect. And over here, you can definitely keep the last index as one as zero initially. And whenever, yes, whenever DP of I exceeds maximum, you can simply say maximum to be DP of I and the last index to be I. So you have stored the last index. Now, what you can do is you can simply, uh, like take an index, which is like, you can just go on till while hash of last index is not equal to last index. And this way you can just bump up and over here, probably you can say, I N T or Elias. And you know, the, this is the length, right? And Elias of zero will be nothing but array of last index. That's the last guy. And over here, what you can do is you can say last index to bump up to hash of last index. And you can say Elias of like, you can probably keep an index equal to zero and X equal to one because the first index has been done. So index equal to whatever is at the"
+    },
+    {
+      "chunk_id": "L222_C20",
+      "start": 1435.76,
+      "end": 1508.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=1435s",
+      "text": "to zero and X equal to one because the first index has been done. So index equal to whatever is at the last index, you can easily take it and you can just do a, uh, just do an index plus, plus every time you have taken it. So in this way, you can easily plug in the values, but remember, if you do this, you will have everything in the reverse order. So the better way to do this is you can create a vector, right? That's the easier way. And you can say temp dot push back initially array of last index, and you can just keep on pushing, uh, temp dot push back, add a of last index. And you can just, at the end of the day, you can say reverse temp dot begin of temp dot. That's what you can easily do it. Right. And if I just show you by taking a very small custom case, which we were in now solving five, four, 11, one 16, eight. And if I just run this, you will see, uh, okay. We haven't printed it by the way. So please print it as well. If you print it, you will see that the answer is coming up. So you do perfect. So we see that, uh, so we see that we are getting our alias as well as the length of the longest"
+    },
+    {
+      "chunk_id": "L222_C21",
+      "start": 1508.08,
+      "end": 1555.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=IFfYfonAFGc&t=1508s",
+      "text": "perfect. So we see that, uh, so we see that we are getting our alias as well as the length of the longest increasing subsequence. So you just need to backtrack by storing a hash and you can just backtrack and you'll get your answer. So this is how you can easily print the alias as well. So that, so guys, uh, what would be the time complexity? Uh, you know, this is a big go of N square and, uh, this will be the length of the allies, whatever is the length of the allies, that will be the backtracking type. So guys, I hope you have understood, uh, the tabulation code, the space optimization code, then the algorithmic code, and then the printing of alias. So just in case you did, please, please, please make sure you like this video. And if you're new to this channel, please do consider subscribing to us. And yeah, with this, I'll be wrapping up this video. Let's meet in the next video where we will be solving alias using binary search. Till then bye bye. Take care."
+    }
+  ]
+}

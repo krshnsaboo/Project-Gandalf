@@ -1,0 +1,64 @@
+{
+  "lecture_id": "L229",
+  "lecture_number": 229,
+  "lecture_title": "DP 49. Matrix Chain Multiplication | Bottom-Up | Tabulation",
+  "youtube_url": "https://www.youtube.com/watch?v=pDCXsbAw5Cg",
+  "chunks": [
+    {
+      "chunk_id": "L229_C1",
+      "start": 0.0,
+      "end": 76.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=pDCXsbAw5Cg&t=0s",
+      "text": "Hey everyone, welcome back to Take U Forward. So in the previous video we did solve the MCM problem using the Memoization technique but we saw that it was partially accepted and that was because there was auxiliary stack space involved and we were using recursion. So in this video we will be learning the Tabulation method or the bottom-up DP method for MCM. So what have I told for Tabulation? What were the rules for Tabulation if you remember? From the previous lectures guys, if you're not following this DP playlist, you're missing a lot of things. Please follow from the first lecture, then you'll understand the rules. When you follow the rules, it becomes very simple. What were the rules? Copy the base case. Without even thinking anything, just copy the base case. So there was a DP of n x n that we used. So let's declare this. What was the base case? So if you remember the code, let's go back to the code. So if I show you the code, you remember what did the code say? If i is equal to equal to j. Which means whatever i is, if it is 1, this has to be 1. If it is 2, this has to be 2. If it is 3, this has to be 3."
+    },
+    {
+      "chunk_id": "L229_C2",
+      "start": 76.56,
+      "end": 146.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=pDCXsbAw5Cg&t=76s",
+      "text": "has to be 1. If it is 2, this has to be 2. If it is 3, this has to be 3. So for every similar set of i's, that means for every similar set of single matrix or matrices, whatever you can call, for every similar, because what does f of 1, 1 represents? Minimum cost to multiply matrix 1 to matrix 1 and that is 0. So DP of i, i equal to 0. That is what the base case is. Minimum cost required to multiply the matrix with itself, because you never multiply the matrix with itself. That is 0. Done. Write down the changing parameters is what I say. Write down the changing parameters. So what were the changing parameters or changing states? One was very simple. I, the other one was j. Other third step, copy the requirements. Let's understand how will I go and how will j go. So where did we start i from?"
+    },
+    {
+      "chunk_id": "L229_C3",
+      "start": 148.32,
+      "end": 226.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=pDCXsbAw5Cg&t=148s",
+      "text": "how will I go and how will j go. So where did we start i from? I can be like, Stryver, we started i from 1 and we moved it ahead. Because if you remember the initial call was made to f of 1, n minus 1. Remember over here, initial call, where did I go? Yeah. Initial call was made to this guy, f of 1, n minus 1. So I know one thing, the i started from 1 and then it went on moving ahead. So what you can say is, okay, we do it opposite. n minus 1 till 0. n minus 1 till 0. So what is top down? Let's understand what is top down and what is bottom up in order to write the records. Top down means, generically, bigger problem, like over here, the bigger problem was you took the entire set of data. Like if you remember the recursion tree, you took the entire set of data, then you broke it down into smaller problems. So that's what top down is. Top down is very simple."
+    },
+    {
+      "chunk_id": "L229_C4",
+      "start": 227.36,
+      "end": 304.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=pDCXsbAw5Cg&t=227s",
+      "text": "you broke it down into smaller problems. So that's what top down is. Top down is very simple. Bigger problem into smaller problem. And generally the smaller problem is nothing but the base case. That's the base case. So bigger problem into smaller problem. That's what top down is or that's what generally recursion you write. You try to break the bigger problem into smaller problem and then you go back and get the answer for bigger problem. What is bottom up? That's very, that's something that you need to understand. Bottom up is the opposite. You take the smaller problem. Yes, you take the smaller problem and then build up, build up, build up to get the bigger one. Get the bigger one. So what is the bigger one over here? What is the bigger one? So I can say the bigger one is nothing but looking for a large set of matrices to be multiplied. Looking for a large set of matrices to be multiplied. So if I is, where's the tabulation? I got lost. Yeah. So if I is n minus one to zero, because that's very obvious, because it'll go from the bottom only. So if I is n minus one to zero, what about J?"
+    },
+    {
+      "chunk_id": "L229_C5",
+      "start": 305.04,
+      "end": 382.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=pDCXsbAw5Cg&t=305s",
+      "text": "very obvious, because it'll go from the bottom only. So if I is n minus one to zero, what about J? You can be like Straver. One thing I know for sure that J is starting from where's the J running? How did you call the function n minus one? So ideally J is running from n minus one till zero. So apparently you'd have done the opposite. Okay. Let's write down the opposite, which is zero to n minus one. But does that make sense? And the answer to that is no. Why? Because we know one thing, I is something which will always be on the left of J. I is something which is always be on the left of J. So how can you always So how can you always start J from zero? So can I see, this is where I need to be a bit practical not to start from the right of I, instead of going till zero to n minus one. So yes, written both the loops. Let's make sure this is I plus one, because there has to be some set of data. J cannot go to the left. Next step is copy the recurrence and you will be done with the tabulation as simple as it can get if you have written the recursive solution. So what I'll do"
+    },
+    {
+      "chunk_id": "L229_C6",
+      "start": 382.96,
+      "end": 457.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=pDCXsbAw5Cg&t=382s",
+      "text": "be done with the tabulation as simple as it can get if you have written the recursive solution. So what I'll do is I will just go back to the code and this is how the code looks. So let's quickly change this to probably DP of n. Okay. Well, the next thing I said for I will go n minus one till I greater than one rather. Why not zero? Because if you remember, I was from n minus one to one and not zero. That's what you'll do. And J can go from I plus one till J lesser than n and J plus plus. Now the next thing, just make sure you copy paste the entire recurrence. Yeah, that's what you just need to do. Copy paste the entire recurrence as done. And instead of F, just make sure instead of rather F you copy something like DP I K. And over here, you just have DP K plus one J. Once you've done this, this is what you write. And over here, you return DP of one and minus one. And you just omit this off."
+    },
+    {
+      "chunk_id": "L229_C7",
+      "start": 459.04,
+      "end": 527.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=pDCXsbAw5Cg&t=459s",
+      "text": "you write. And over here, you return DP of one and minus one. And you just omit this off. That's what you will generally return. Okay. The base case, I forgot to write the base case. So it's I equal to one till I lesser than n I plus plus. And again, the DP of I, I equal to zero. I think that should be pretty much it. Yeah. It's like this is, this is what the code will be. So I'm going to run this. I'm getting all the correct answer. I'm going to submit this. This time, probably we will not get partially accepted. This will be completely accepted. It is, it is. It's two o'clock in the night. Cool guys. Easy, isn't it? Once you write this, it's just the opposite. Copying recurrence and understanding the base case is getting the opposite of IJ like whatever you're running the IJ in recursion is just the opposite that you need to do. I just need to be a bit practical while you write J just think about edge cases, because if you had a run, run this from zero, then, then there's a problem, right? So just make sure you, you be a bit practical when you try to write the for loops. And if you are, then you can easily solve this. How's the time complexity, n cube space, n square, no auxiliary space being used."
+    },
+    {
+      "chunk_id": "L229_C8",
+      "start": 527.84,
+      "end": 547.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=pDCXsbAw5Cg&t=527s",
+      "text": "if you are, then you can easily solve this. How's the time complexity, n cube space, n square, no auxiliary space being used. So guys, I hope you have understood the tabulation once just in case you did, please, please, please make sure you like this video. And when you do this channel, please do consider subscribing to us. And yeah, with this, let's wrap up this video and meet in the next one. Bye. Thank you."
+    }
+  ]
+}

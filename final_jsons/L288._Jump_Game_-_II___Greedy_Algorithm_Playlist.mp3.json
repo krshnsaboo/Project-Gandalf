@@ -1,0 +1,106 @@
+{
+  "lecture_id": "L288",
+  "lecture_number": 288,
+  "lecture_title": "L5. Jump Game - II | Greedy Algorithm Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk",
+  "chunks": [
+    {
+      "chunk_id": "L288_C1",
+      "start": 0.0,
+      "end": 78.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=0s",
+      "text": "So let's continue with our greedy algorithms playlist. But before that, everyone of them back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is jump game. Part two, in case you haven't seen my part one video, please, please go back and watch it. So what is the part two stating stating that you will be standing at the first element, given an array, every element tells you what is the maximum jump that you can take. For an example, if it is given us to, you can jump till here, till here, either of them, there's the maximum that you can take. So you can jump to either of these elements. The question is, tell me the minimum number of jumps that it will take to reach from the start till the end from the start till the end. And it is guaranteed that you will reach the end. It is guaranteed that test cases are given in such a way that you will definitely reach the end. In the part one, the question was, will you, will you reach the end? Over here, the question is, tell me the minimum jumps that you will take to reach the end. Got it. So what will be the answer for this particular test case? What I can do is from here, I can jump till here, which is a jump, single jump."
+    },
+    {
+      "chunk_id": "L288_C2",
+      "start": 78.48,
+      "end": 155.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=78s",
+      "text": "answer for this particular test case? What I can do is from here, I can jump till here, which is a jump, single jump. From one, I can take one more jump, which is another jump. From four, I can directly jump to the last. So I'm taking three jumps, right? So I've taken three jumps and this is going to be the answer, minimum jumps. You can try out all of the possible ways and three is the minimum answer that you will get. If this problem comes up in an interview, what is the extreme naive solution that you can think of? I know one thing, starting at the zeroth index. And there are two possible ways. There are two possible ways. One is this, one is this. From here, there are three possible ways. So every index has different ways, different ways. Can I try out all ways? Yes, I can. I can try out all ways and then can I pick the minimum of all of them? I can, right? So what I will do is I'll just take a smaller example. Let's take a smaller example, which is 23114. Can I say I can start with the zeroth index? I'll be trying out all possible ways and you know how to do it. Recursion, recursion playlist, remember? I'll be starting with the zeroth index and the number of jumps that I would have taken as of now is zero."
+    },
+    {
+      "chunk_id": "L288_C3",
+      "start": 155.12,
+      "end": 225.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=155s",
+      "text": "playlist, remember? I'll be starting with the zeroth index and the number of jumps that I would have taken as of now is zero. What I can do is I know I'm allowed to take at max of two jumps. So I'll take a jump of one, I'll reach the index one and that will be one jump. Or I'll take two jumps, I'll reach the index two and that will be two jumps. From here, there's three given to you. So maybe I can take one jump, maybe I can take a two jump or maybe I can take a three jump. So if I take a one jump, I'll reach two, correct? If I take, that will be two jumps. If I take two jumps, I'll reach three, that will be two jumps. If I take three, I'll be reaching the fourth index and that will be two jumps. And if you carefully see, this is one of the ways, one of the ways, this is one of the ways, this is one of the ways. And this is going to tell you, hey, you've reached your end. So you're going to take minimum of this, minimum of this and minimum of this. So eventually it will be returning you to, because taken two jumps. So you'll get your answer as two for this particular test case. You're going to try out all possible ways. Lane recursion, very simple recursion."
+    },
+    {
+      "chunk_id": "L288_C4",
+      "start": 225.36,
+      "end": 296.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=225s",
+      "text": "you'll get your answer as two for this particular test case. You're going to try out all possible ways. Lane recursion, very simple recursion. Can I super quickly write down the recursive code? Maybe this, shall we write, okay, a function, maybe I can take an index. I can take the jumps and this will be called with F of zero, zero with the array, obviously, you know, what is the base case? What is the end case? I know one thing for sure. The end cases, if at any moment the index is greater than N minus one, that means we either reached or crossed over. And if that is the case, I'll be like, hey, can you return? Now this is very important. Can you return? What will I return? I'll be returning the number of jumps, right? Perfect. Done. What is the next thing? I'll be like, okay, how many jumps can I take? I can start from one. I know for sure I can start from one and I can go ahead till array of index. Those many jumps I can take. I'll have to take the minimum of all of them. So maybe I can keep a mini equal to something as I need a mini answer, right? I'll keep it as int max. Perfect."
+    },
+    {
+      "chunk_id": "L288_C5",
+      "start": 296.5,
+      "end": 372.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=296s",
+      "text": "I can keep a mini equal to something as I need a mini answer, right? I'll keep it as int max. Perfect. And what I'll do is mini equal to minimum of mini, right? Comma. What I can write is function of standing at index. If I take the jump i, I'll reach index plus i and the jumps will be added by plus one. Perfect. So I'll take all the jumps and whatever is the minimum, I will straight away return it. Done and dusted. That's it. Just make sure you don't start with zero. Then it will go to the same index. There's no point in jumping to the same index. This will be the recursive code. And if I have to write down the time complexity, this will be exponential in nature. You are going for n indexes. So n to the power n, assuming all the jumps are till n or somewhere near about that. So it can go exponential in nature. What about the space complexity? I'll be using auxiliary stack space of pico of n. Correct. Now what you can do is this is exponential. You can optimize this. Yes, you can optimize this. How can you optimize this?"
+    },
+    {
+      "chunk_id": "L288_C6",
+      "start": 372.82,
+      "end": 450.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=372s",
+      "text": "can do is this is exponential. You can optimize this. Yes, you can optimize this. How can you optimize this? Again, if you haven't seen the dynamic programming playlist, don't watch this dynamic programming portion. If you know dynamic programming, you can watch it. So for the people who have seen my dynamic programming, you know how to optimize an exponential state to a quadratic state. You know it. There are two variables that are changing. One is index. The other one is jumps. So what you can do is instead of returning mini, you can technically declare a dp of n n. Correct. And you can say dp of index and jumps equal to mini. And over here, you can say, hey, if not here, over here, you can say, hey, if dp of this state has been visited previously, make sure initially a minus one has been visited previously, you can return dp of index jumps. Quite simple. So if you do this, the solution will be converted into a ego of n square solution to a big O of n square solution with a space complexity of big O of n square."
+    },
+    {
+      "chunk_id": "L288_C7",
+      "start": 451.24,
+      "end": 523.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=451s",
+      "text": "solution to a big O of n square solution with a space complexity of big O of n square. This is what it will be converted into. OK, perfect. I think we have pretty much understood. We have understood it. Right. What is the next thing? Again, you can optimize this. You can optimize the space, go into space optimization. I leave that. This is not a dp problem. I leave that in case you have seen my dp playlist, you know how to solve it. Obviously, the interviewer will not be happy with the big O of n square. I'll ask you to optimize it. So I'm looking forward to optimize n square. That means I'll have to go somewhere around big O of n. Correct. OK, how how should I think a big O of n solution? That's a big question. What was I doing in the recursion? I was trying out all possible ways, trying out all possible ways. Then I took the minimum. Can I try out all possible ways? Maybe I can. I know at zero jump, I'm standing at the first element. If I take this jump of two. What are the possibilities I can go to? I can go to you. I can go to you. That means I can take a jump of one. I can take a jump of one and I can reach either three or either one. Right."
+    },
+    {
+      "chunk_id": "L288_C8",
+      "start": 523.04,
+      "end": 596.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=523s",
+      "text": "can take a jump of one. I can take a jump of one and I can reach either three or either one. Right. OK, so I'll keep it in mind that this portion can be reached. Remember this. Now I'm dealing with ranges instead of doing the recursion for this, for this. I'm carrying the region. I'm saying jump one means this much. This one can be reached in jump one. Already done a similar problem, which is valid. Parenthesis string. Go back and watch it. You optimize the recursion in two ways. OK, so I'm saying instead of recursion, I can reach from here to here. If I take a jump from here, I can either reach here, which is going to take me like two jumps. There's no point because I can reach this place in one jump. So I'll not do this because recursion means minimum. I'll do the minimum. OK, there I can reach here or I can reach here. So I can reach both the places, both the places. So that means the farthest I can reach is this. Farthest I can reach is this. OK, for this, the farthest I can reach is here. Thereby I'll be like this is the next range I can reach by taking two jumps, two jumps. In range concept, I tried jumping from here and the max I could do is this range. So if someone is asking you, what is the minimum jumps taken till four?"
+    },
+    {
+      "chunk_id": "L288_C9",
+      "start": 596.08,
+      "end": 662.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=596s",
+      "text": "here and the max I could do is this range. So if someone is asking you, what is the minimum jumps taken till four? You're like two jumps. Straight away know it. OK, from four, where can you go? You can go here, which is going to take you one jump, sorry, one more jump, three jumps in total because till four you took two. You want to take three jumps till here. No? So I'll go here. Can you go here? Yes, in three jumps you can go here. Can you go here in three jumps? Yes. Can you go here in three jumps? Yes. Because till here it was two. For this one, I can reach till the last. I can reach till the last. OK. For this one, I can reach here. So I know the max I can reach is here. So from here to here, I can reach in third jump. That is going to be the last range. Once you reach the last, you stop. And what is the last range reachable at? It's reachable at three jumps. It's reachable at three jumps. So what I did was I didn't create individual recursive calls. I carried a range for it. Instead, I carried a range. Let's check out the code. It's going to be super easy. I'm going to write a very, very simple code. Don't worry. You tell me the initial jumps. You know it, right? Initial jumps is zero."
+    },
+    {
+      "chunk_id": "L288_C10",
+      "start": 662.2,
+      "end": 741.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=662s",
+      "text": "going to write a very, very simple code. Don't worry. You tell me the initial jumps. You know it, right? Initial jumps is zero. Tell me the initial range. This much. So maybe you can carry a L and a R which is initially at the zeroth index. OK. From here, where can I jump? Till here? Till here. What is the next range? Range is the range. Range. The next range is this. So where will L go? Where will L go? Please focus. L will go to one place ahead of R. One place ahead of R. Where will R go? To the farthest. To the farthest that I can jump. Perfect. And with this jump, what will be the value of jumps? One. So if I take one jump, I will reach this range. Done and dusted. What is the next one? For this three, the farthest I can go is this much. For this one, the farthest I can go is this much. So from this range, from this range, the farthest I can go is still here. So what I will do is I will update L and R. Again, focus. L will go one place ahead of R. R will go to the farthest. Done. What will happen to the range? What will happen to the jumps rather? Two. OK. Standing at this place. Again, four can go how much? It can go here, here, here, here. Farthest, farthest, farthest. OK."
+    },
+    {
+      "chunk_id": "L288_C11",
+      "start": 741.64,
+      "end": 815.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=741s",
+      "text": "rather? Two. OK. Standing at this place. Again, four can go how much? It can go here, here, here, here. Farthest, farthest, farthest. OK. One can go here. The farthest you can go from this range is till this place. So what I will do is first update L, which is going to be one plus of R. Then update R, which is going to be this. And the moment R reaches or crosses N minus 1th index, whether update the jump, update the jump for this one. Once it crosses the N minus 1th index, jumps is going to be your answer. Jumps is going to be your answer. Got it? Very simple. The code is going to be super duper simple. I'm going to write the function. I have the array. I'm going to be given the size of the array as well. Or if not, you can compute the size of the array. What do I need? OK. Initially, I am doing zero jumps. Having L initially at zero, R initially at zero. I'm going to try out everything now. I can try out till my range and the right of range should be lesser than N minus 1. If it exceeds, goes at N minus 1 or beyond N minus 1, I stop. At this time, what do I do? For this range, I find out what is the farthest I can go. What is the farthest? So I'm like, what is the farthest rate?"
+    },
+    {
+      "chunk_id": "L288_C12",
+      "start": 816.08,
+      "end": 893.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=816s",
+      "text": "this range, I find out what is the farthest I can go. What is the farthest? So I'm like, what is the farthest rate? Maybe I can call it farthest equal to zero because I'm trying to get the farthest. Now what I can do is I can start from index. What is my range? It's from L to R, right? It's from L to R. So what I will do is I'll start traversing from L to R. OK. And I know one thing, if I'm standing at I, I can go till the jump allowed, the jump allowed, and I need to see what's the farthest I can go. So I'll be like, OK, what's the farthest? It's going to be max of this one, comma, farthest. Pretty simple. Once this is done, once you have traversed for all elements in that range, you know the new range. And what is going to be the new range? L is going to be at R plus one, right after that L, and R will be the farthest. And please make sure you update jumps. So at the same time, you can do jumps equal to jumps plus one. And you can end the while loop."
+    },
+    {
+      "chunk_id": "L288_C13",
+      "start": 893.76,
+      "end": 970.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=893s",
+      "text": "at the same time, you can do jumps equal to jumps plus one. And you can end the while loop. And once you have ended the while loop, what you can do is you can straight away return the number of jumps it ended up taking. And that's it. That's pretty much it. Done and dusted. What is the time complexity? On a very naked eye, it might look like while loop into a for loop, B go of N square. No, no. What did you do? First you traversed two, then you traversed three, one, then you traversed four, one, and eventually you reached, eventually you reached. So what you are doing at the end of the day is traversing each element one by one, one by one. This while loop is just to check, did you reach? Did you reach? So eventually, eventually, the time complexity is B go of N, which is linear in nature, and the space complexity is B go of one. That's it. Is it? So, let's see. I thought of a recursive solution and instead of doing the recursive tree, it kept a range, converted the recursive solution into a range B solution, right? And this is how you can do it. Why is it under greedy algorithms? The reason being, I'm trying to reach the farthest. I'm trying to reach the farthest."
+    },
+    {
+      "chunk_id": "L288_C14",
+      "start": 970.36,
+      "end": 994.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=7SBVnw7GSTk&t=970s",
+      "text": "do it. Why is it under greedy algorithms? The reason being, I'm trying to reach the farthest. I'm trying to reach the farthest. That is why this is under the greedy algorithm playlist. I hope you have understood. I hope you understood how I started with a recursion solution and then how I optimize that recursion solution into a linear solution. So this will be it for this one. So if you're still now watching and if you've understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye, take care."
+    }
+  ]
+}

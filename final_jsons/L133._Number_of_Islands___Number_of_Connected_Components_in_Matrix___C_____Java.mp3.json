@@ -1,0 +1,155 @@
+{
+  "lecture_id": "L133",
+  "lecture_number": 133,
+  "lecture_title": "G-8. Number of Islands | Number of Connected Components in Matrix | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=muncqlKJrH0",
+  "chunks": [
+    {
+      "chunk_id": "L133_C1",
+      "start": 0.0,
+      "end": 76.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=0s",
+      "text": "So, we have learned about the BFS traversal and the DFS traversal, but where will it be applied? So, you're going to do a bunch of problems and this video is going to be about the first problem, number of connected components. So, let me explain you the problem. So, what does the problem state? The problem states, you'll be given a grid of size n cross m, where n is the number of rows and m is the number of columns in the grid and zeros are meaning water and one is meaning the land. So, your task is to find the number of islands and an island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically or diagonally in all eight directions. So, basically what they are stating is they'll be giving you a grid of size n cross m. Over here, zero means water, one means land. Now, you have to find the islands. So, this is a land, this is a land, this is a land, this is a land, this is a land. I can say these all lands are connected. These all lands are connected because this can be connected like this, this like this guy is connected to this, this guy is connected to this, this"
+    },
+    {
+      "chunk_id": "L133_C2",
+      "start": 76.08,
+      "end": 145.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=76s",
+      "text": "this can be connected like this, this like this guy is connected to this, this guy is connected to this, this guy is connected to this, this guy is connected to this or you can take the other way. These guys are connected. These guys are connected. These guys are connected. These guys are They are connected in somehow because all the eight direction connectivities are allowed. All the eight direction connectivities are allowed. So I can say these piece of lands are connected and then there is water, water, water, water, water. And then these piece of land is connected and this piece of land is connected. So apparently I find three pieces of land or three pieces of island. First island, second island, third island. So there are three islands. So the question states, tell me the number of islands. Tell me the number of islands. If I give you a grid and you might be thinking, but Stryver, this is a 2d matrix. How can this be a graph problem? This is a graph problem. So try to think it as a node. Try to think this as a node, a node, a node, a node, a node, a node, a node. So all these guys as a node. Okay. So if you think that all of these guys as a node or a vertex, carefully observe this guy is connected to this guy."
+    },
+    {
+      "chunk_id": "L133_C3",
+      "start": 145.8,
+      "end": 225.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=145s",
+      "text": "if you think that all of these guys as a node or a vertex, carefully observe this guy is connected to this guy. This guy is connected to this, this guy is connected to this, this guy is connected to this. So can I see if I start the travels, it can be any travels BFS, DFS doesn't matter. a traversal from, one, this will make sure it traverses, the nearest one. This will make sure it traverses, the nearest one. This'll make sure travels is the nearest one. This will make sure it travels is the nearest one. So if I start from a particular one and they do a certain level of travel. Assuming assuming that the connections are in all the eight directions, then this one will go and traverse this. This one might go and traverse this. This one might go and traverse this. This one might go and traverse this. They cannot go beyond this because there is zero zero zero zero zero zero zero zero zero all over. They cannot go beyond this. So if you do a traversal starting from this one, this will go and touch all of these guys and that can be called as one entire BFS or DFS, whatever you do. So I can do one traversal and that will touch this. All right. And then can I see from here, if I start the next traversal,"
+    },
+    {
+      "chunk_id": "L133_C4",
+      "start": 225.56,
+      "end": 300.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=225s",
+      "text": "do one traversal and that will touch this. All right. And then can I see from here, if I start the next traversal, this will touch these two things. And the third traversal, if I do from here, it'll touch. So can I see in short, if I do three traversals, if I do three traversals, three starting notes, one can like out of these, I can pick up anyone as the starting note, and it will make sure it visits everyone. Again, among these two, I can pick up anyone as the starting note and it'll make sure it will touch these two. And from here I can pick up anyone and this will make sure it only touches it. So can I see if I take three starting notes? Yes. If I take three starting notes, I will be able to touch all the pieces of land. Thereby, can I say there are three islands because one starting note will make sure it touches all the connected lands. So one starting note will represent one island. So this is the intuition. So we have understood kind of the intuition, but how do we apply and traversal technique that we have learned in the previous videos? So we know a couple of traversal techniques. One is the BFS while the other one is the DFS. So probably we can"
+    },
+    {
+      "chunk_id": "L133_C5",
+      "start": 300.72,
+      "end": 377.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=300s",
+      "text": "So we know a couple of traversal techniques. One is the BFS while the other one is the DFS. So probably we can just try the BFS traversal technique and then we can think of something. Okay. So what does BFS state? BFS states give me a starting point. So I'll say, okay, this is the initial starting point. And you can just refer this by, instead of node numbers, you can refer this by this row zero and column one. So it can be the starting node can be represented as row zero column one. So instead of a vertex number, we can represent it by a row and a column number now, a pair of row and column. So I can say this is the starting node. Now, what did we do initially in the BFS? If you remember, initially what we did was we took a queue, right? We took a queue and we inserted the vertex. And what is the other thing that we did? We always went ahead and marked them as visited in the visited array. But over here, the vertex numbers are in pairs. So we need something as a 2D array to mark visited. So what we will do is we will create a replica 2D array. Yes. A same size 2D array can be easily created. Yes. A same size 2D array can be easily created. So please go ahead"
+    },
+    {
+      "chunk_id": "L133_C6",
+      "start": 377.88,
+      "end": 452.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=377s",
+      "text": "A same size 2D array can be easily created. Yes. A same size 2D array can be easily created. So please go ahead and create the same size 2D array. Once you have done this, this is zero and one pushed into the queue. Initial config zero and one will be marked as visited or one. So this is the visited array. Please mark them as visited. Done. What is the next thing that you will do? You will be like fine. What does BFS set be? BFS set be while traversal, pick up the element from the queue. I pick up the element from the queue. Perfect. And then it said travel to all its neighbors. And in the graph, we stored all the neighbors in something which was known as adjacency list. Remember, but over here, what we will do is we don't have an adjacency list, but we know who are the neighbors. If I'm standing at a node, the neighbors can be someone at the top, someone on this diagonal, someone on this diagonal, someone in this one, someone here, someone here, someone here, someone here. There are eight directions who can be neighbors. We know the eight directions. We know that there can be eight directions. So what we will do is we will go to all directions. So does it have a neighbor on the up? So that does not exist. Does it have it here? No."
+    },
+    {
+      "chunk_id": "L133_C7",
+      "start": 452.92,
+      "end": 527.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=452s",
+      "text": "go to all directions. So does it have a neighbor on the up? So that does not exist. Does it have it here? No. Does it have it here? Yes, we have someone. And that's on the row zero and column two, row zero and column two. So go and mark it. Perfect. Next. Does it have it here? Yes. That's on row one and column two, row one and column two market. Next. Does it have it here? Yes, that's on row one, column one market. Next. Does it have it here? No, it's a water. Does it have it here? No, it's a water. Does it have it here? Invalid. Over. Decided all the eight boundaries and I got three guys who well lands, take it and we are done for the first traversal. For the first traversal, we are done. Let's pick up the next guy, which is zero two. Now who is zero two? This guy is zero two. Checks for all its neighbors in the same way. This guy's already visited, does not take already visited, does not take already visited, does not take, does not get anyone. Perfect. One two. So we get one two now, which is this guy. So we have one two. So for one two, this is visited,"
+    },
+    {
+      "chunk_id": "L133_C8",
+      "start": 527.54,
+      "end": 605.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=527s",
+      "text": "we get one two now, which is this guy. So we have one two. So for one two, this is visited, this is visited, water, water, water. We get a new guy who's at two comma two. So two comma two is marked as visited. Perfect. Then water, marked as visited, marked as visited, marked as visited. So this guy only got this neighbor and all eight directions, which we have taken. Perfect. Next we get one one and one one is this guy. Again, visited, visited, visited, water, water, water, water. Done. One one is also done. Next we get two two. At two two what happens? Which is two two? This is this. Visited, water, water, water, water, water, water, visited, visited, visited. So we get no more neighbors. Thereby two two is also done. Apparently the queue becomes empty. Apparently the queue becomes empty. So this is how, if you do a traversal, you will touch this, this, this, this, this, this. So you saw how in one traversal, you could have done DFS as well. How in one traversal we were able to touch everyone, the lands that were connected to it. Done. Next we have to start from this guy, which is the starting point will change. And this time the starting"
+    },
+    {
+      "chunk_id": "L133_C9",
+      "start": 605.58,
+      "end": 676.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=605s",
+      "text": "Done. Next we have to start from this guy, which is the starting point will change. And this time the starting point will become four comma zero. And again, we'll follow the same process. And if we follow the same process, again, it will be marked. Right? So the next time the starting point will be this, which is four comma three, again, the same process. And this guy will be marked. So apparently there were three starting points that we used. There were three starting points that we used. So how will you decide the starting points? Very simple. What we will do is we know it's a matrix. We know it's a matrix. So we start from this guy, which is zero comma zero. And we say it's a water. No need to do. Next we go to here. We find it's a land. We start the BFS traversal from a land. We start the BFS traversal from a land. And this is my first starting point. This is my first starting point. And this will make sure it visits everyone. Next we go, this is done. This is done. Next we go to this. And this says, I'm already visited, man. I'm already visited. Someone visited me. No need to do a BFS. I cannot be a starting point because I was already. Next we go here. Water, water, water. He says, Hey, I'm already visited. Next we go. You're already visited."
+    },
+    {
+      "chunk_id": "L133_C10",
+      "start": 676.34,
+      "end": 745.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=676s",
+      "text": "point because I was already. Next we go here. Water, water, water. He says, Hey, I'm already visited. Next we go. You're already visited. Water, water, water. Again, this guy says I've already been touched. Water, water, water, water, water. Next you come over here and you say, I have not been touched. I'm not been visited. You need to consider me as a starting point. And this will touch both these guys. Next we go here. He says, I'm touched. Water. Next we go here. I'm not touched. I'm not visited. You have to do a starting point as me. Okay. So you've got three times as a starting point. You've got three times as a starting point. So if I kind of tell you the pseudocode, now, you know, the BFS traversal is kind of simple. So if I tell you the pseudocode, it's going to be somewhere like for the row number. Like if I say row, row is going to be from zero to N and then there will be column number. It will be from zero to M. And what do you say is if not visited row and column, what do you do is you call the BFS with those row and column. And at the same time you say, these are the number of starting points that I called for. So apparently this portion will count. Every"
+    },
+    {
+      "chunk_id": "L133_C11",
+      "start": 745.34,
+      "end": 809.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=745s",
+      "text": "the same time you say, these are the number of starting points that I called for. So apparently this portion will count. Every time you call us row column to be the starting point, you count it and BFS will stay kind of similar. Only you just make sure how to traverse in the adjacency list. So we kind of wrote the pseudocode. So I'll now get back to the editor and I will tell you how to write the code like step by step. Again, the Java code is on the left and we are writing the C++ code on the right. So just in case you have an issue, you are following Java, you can definitely check out the left part. Okay. So what are we given? We are given the character grid zero or one, it will recommend water. So what's the first thing I told you? We need to create a, like we need to get the end. So N will be very simple. You can just say great dot size that will give you the end and I need to get the M as well. So you can say great of zero dot size, right? That's something that you can say. What is the next thing that you will do? You need to create a visited array. So since we need to pass everything by reference, it's better. We create something like this. Okay. And we need"
+    },
+    {
+      "chunk_id": "L133_C12",
+      "start": 809.3,
+      "end": 879.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=809s",
+      "text": "create a visited array. So since we need to pass everything by reference, it's better. We create something like this. Okay. And we need to create visited. So vector of int and M comma zero. So everything is marked as zero. Now what is the next thing that you will do? You will be like, okay, the rows will be from zero and rows will go to N and there will be row plus plus, and then there will be columns. So columns will be from zero columns will go to N and column plus plus. Perfect. And now what you'll see is if not visited row column, right? Then you can just keep a counter plus plus, and you can call the BFS for this row column with this visited and with this grid and at the end of the day, you can just go ahead and return the number of components, which is the number of islands. And over here you can just initialize count equal to zero. Now your turn, your time now to write the BFS code. So let's quickly try out the BFS. You can write the BFS as well. That is completely your chance. I'll leave it to you. So I'm writing the BFS. You can write BFS as well. I'll show that to you as well. So I, and D row, okay. I, and D column, that's the starting point. And the next thing that you'll do, you'll take the"
+    },
+    {
+      "chunk_id": "L133_C13",
+      "start": 879.3,
+      "end": 952.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=879s",
+      "text": "So I, and D row, okay. I, and D column, that's the starting point. And the next thing that you'll do, you'll take the visited guy. So visited guy will be taken. Always make sure you pass with reference, and then you can definitely take the grid as well, which is this. And once you've done this, you come back to here. And that was the first thing that you do. Always you said visited of yes. That's the initialization equal to one. And the next thing that you do, you took a queue, but this time, since you're getting a couple of guys, please make sure you carry something like this. And you say, queue dot push of row comma call done. What's the next thing that you do? You, I treat on the queue, simple BFS, simple BFS guys. I treat on the queue, right? And you get the row as q dot front dot first. And you get the column as q dot front dot second. Once you have got the row and column, you just pop up q simple. And this was a part of your BFS. If you remember in the BFS algorithm, you stored that into the BFS, but now we are more concerned about just going and marking it right now. We need to traverse in the neighbors, travels in the neighbors and and mark that if it's a lack, this is what we need to do. Now the question comes up,"
+    },
+    {
+      "chunk_id": "L133_C14",
+      "start": 952.02,
+      "end": 1028.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=952s",
+      "text": "travels in the neighbors and and mark that if it's a lack, this is what we need to do. Now the question comes up, you need to traverse in its neighbors. So which are its neighbors? So I'm going to teach you a shortcut for this. So apparently if you are standing at a row column, let's, let's come back to the iPad. If you're standing at a row column, which is kind of a portion. Now it will have a neighbor as the upper guy. It will have a neighbor as this guy. It will have a neighbor as this guy. It will have a neighbor as this guy. It will have a neighbor as this guy, this, this and this. So either you can write eight neighbors separately by writing eight different lines, or there's a shortcut. So this is row and this is column. What will be the index of a row? That's minus one, perfect. This will be row plus one column, plus one perfect, this will be row plus one column, minus one perfect, this will be row, comma column minus one perfect, this will be row minus one column minus one perfect. So if you carefully see everything is like minus"
+    },
+    {
+      "chunk_id": "L133_C15",
+      "start": 1028.26,
+      "end": 1103.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=1028s",
+      "text": "perfect, this will be row minus one column minus one perfect. So if you carefully see everything is like minus one row. How is row varying minus one minus one or it's like row row row or it's like row plus one row plus one. This portion is row plus one. This is row and this is row minus one. How is column varying? This is column column minus one and column plus one. So everything is varying from minus one to plus one in both row and columns. Right. So what you'll do is you'll run a couple of loops and you can call it as delta I or something like this delta I or delta row delta row goes from minus one to plus one. And similarly you can call delta column from minus one to plus one. And this will for the neighbors you can say the neighbor row is row plus delta row. And you can say the neighbor column is column plus delta column. This will give you the neighbor row and the neighbor column very, very easily. Why? Because first time it will be minus one. This will be minus one. So first time it will be like minus one minus one, which does have next only minus one and"
+    },
+    {
+      "chunk_id": "L133_C16",
+      "start": 1103.98,
+      "end": 1182.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=1103s",
+      "text": "minus one. So first time it will be like minus one minus one, which does have next only minus one and this will go to zero. So minus one plus zero. Next time it will be minus one and plus one. So minus one plus zero. So you will actually come across every neighbor. If you just follow this technique, you don't have to write them individually. You will automatically come across all of these neighbors. Right? So let's go back to the code and now try to get all these neighbors. So you're like delta row equal to minus one delta row greater than equal to this, right? And then you'd say delta row plus plus. Perfect. And then what you do is delta column equal to minus one delta column less than equal to one and delta column plus plus. Perfect. This is something which you have done. Neighbor row will be what? Row plus delta row. Neighbor column will be what? Column plus del column. Now these guys have to be valid because if you remember they might nothing be on the top or they might be crossing boundaries. So make sure the neighbor row is valid, which is this again, which is you need to make sure you need an end M so you can again just recompute them or you can carry them from them. So grid dot size and you can say grid zero dot size"
+    },
+    {
+      "chunk_id": "L133_C17",
+      "start": 1182.9,
+      "end": 1257.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=1182s",
+      "text": "can again just recompute them or you can carry them from them. So grid dot size and you can say grid zero dot size will be your column size. Perfect. So you can say this has to be valid. Thereby this has to be this and, and obviously end column has to be greater than zero and an end column has to be less than this is for valid. Once they are valid, they have to be very, very important. Once they are valid, they have to be a water, sorry, a land, which is something like this. They have to be a land. And what's the next thing they have to be non visited as well. So the new row and the new column have to be non visited as well. So you need to make sure you write all these conditions. Yes, you need to make sure you write all these conditions together. Like first you check for validity, then you check for land and then you check for visited. And if all of these are satisfied, you can just go and do it. So grid row and column equal to one that's visited. And you can say the queue to please go and store the new row and then you call them. Once this is done in this way, you can traverse all the neighbors and you can just keep on doing the same BFS traversal. And"
+    },
+    {
+      "chunk_id": "L133_C18",
+      "start": 1257.54,
+      "end": 1330.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=1257s",
+      "text": "this is done in this way, you can traverse all the neighbors and you can just keep on doing the same BFS traversal. And once, by the way, just make sure this is a land as well. Grid of row column has to be land as well in order to do a BFS traversal. Perfect. So now what you can do is you can just go across and run the code. And if you see the output is correct, does run fine. And your task will be to probably try BFS, sorry, a DFS and the DFS traversal. Just make sure the, these are the neighbors and everything else will stay the same. So this is how you can easily use the BFS algorithm in something like a matrix in order to solve a particular problem. So let's discuss the space complexity at first. So what are we using? We're using a visited matrix, which is taking N squared. Now, a lot of you might argue that we can use the given, like given matrix only to mark visited. Yes, you can use that. But generally, even if you're using that in order to solve the problem, you're using space, using space. So you're using big of N square space in order to have your visited stuff, whether you do it on a grid or whether you separate, create a separate data that doesn't matter,"
+    },
+    {
+      "chunk_id": "L133_C19",
+      "start": 1330.3,
+      "end": 1395.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=1330s",
+      "text": "to have your visited stuff, whether you do it on a grid or whether you separate, create a separate data that doesn't matter, but you're using big of N square space. You can explain that to the interview. And there is, is there any other space? There is a Q space at max N square Q space. If all of these guys are connected, the Q might end up taking N square space, but that will not happen. That is a very, very rare case. That's not going to happen. So we can say the space complexity is near about big of N square. What about the time complexity? We are running multiple loops. Like if you look at the goal, like it's N square over here, and then you're calling BFS. But if you are, you won't be calling for every guy, like you, it is not possible that everyone is one and you call BFS for everyone. That's not going to happen. Right? So in, in total, you over here called BFS for once, twice, thrice, like four times, five times, six times, seven times, eight times. So it was kind of eight plus you travels for N square plus N square is what you travels like you to find out this first one. So it will be like, if everyone is marked as one, if everyone is marked as one, but the BFS"
+    },
+    {
+      "chunk_id": "L133_C20",
+      "start": 1395.98,
+      "end": 1460.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=1395s",
+      "text": "this first one. So it will be like, if everyone is marked as one, if everyone is marked as one, but the BFS will travel like N square nodes. If everyone is marked as one, the BFS will travels N square nodes. Right? And then there are neighbors that is like eight neighbors for everyone. So you're going to check eight neighbors for everyone. So N square nodes into eight neighbors is what you're checking. So you're checking eight neighbors, but you might argue, but Trevor, this will be running for like three into three, nine times. But out of that one time will be ignored. Why? Because when del row will be zero and del column will be zero, it means the current row and column, which is like, it will be like row plus zero and column plus zero, but you'll find that as visited. So it did not go there. So after you're going for N square nodes and for every time you're finding nine neighbors or eight neighbors, so it's like N square into nine. And then you're traveling in the matrix. So it's something like N square for the matrix in order to check for once. And then you're doing a BFS like N square into nine. So roughly N square, you can call the complexity as So the time complexity will roughly boil down to N square. If you want to go into deep,"
+    },
+    {
+      "chunk_id": "L133_C21",
+      "start": 1460.9,
+      "end": 1500.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=muncqlKJrH0&t=1460s",
+      "text": "you can call the complexity as So the time complexity will roughly boil down to N square. If you want to go into deep, you can just analyze it again and again. You will be more confident about this. So guys, I hope I was able to make you understand this particular question because it has a lot of concepts. But just in case you understood, please, please, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And yeah, with this, I will be wrapping up this video. Let's meet in some other video till then. Bye bye. Take care. By the way, SD sheet and the DP series, the link are in the description. Please make sure you check them out. Bye bye. Take care."
+    }
+  ]
+}

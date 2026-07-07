@@ -1,0 +1,99 @@
+{
+  "lecture_id": "L088",
+  "lecture_number": 88,
+  "lecture_title": "L16. Diameter of Binary Tree | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=Rezetez59Nk",
+  "chunks": [
+    {
+      "chunk_id": "L088_C1",
+      "start": 0.0,
+      "end": 79.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rezetez59Nk&t=0s",
+      "text": "Hey everyone welcome back to the channel I hope you guys are doing extremely well. So today we will be solving the problem finding the diameter of a binary tree from the Frika tree series. So let's assume this is the first binary tree right and if I ask you what is the definition of diameter. Now this can be called as the longest path yes I can call the diameter as the longest path between any two nodes right that's the definition of diameter and also this path does not need to pass like it can pass through the root or it cannot does not need to pass via root. So if you can understand these two points you can understand the definition of diameter of a binary tree. Like for this tree 1 if I ask you what's the diameter of binary tree I'll say the diameter of binary tree this binary tree is 3 and I can say that if you start from the node 4 or node 5 you can take any one that's the path that's the length 1 that's the length 2 that's the length 3. So basically if I consider this node 4 and node 3 I can get a diameter of diameter 3. So over here you can see that the path is passing through the"
+    },
+    {
+      "chunk_id": "L088_C2",
+      "start": 79.84,
+      "end": 154.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rezetez59Nk&t=79s",
+      "text": "3 I can get a diameter of diameter 3. So over here you can see that the path is passing through the node 1 but we have been said that the path does not need to pass via root like it can pass or it cannot like it's not a mandatory that it should pass via node. So if I take this binary tree 2 for an example in that case if I take this node 6 if I take this node 9 then this is path 1 path 2 path 3 path 4 5 6 so I can say for this second binary tree the distance yes the distance from this node to the other node is nothing but 6. I hope you have understood this and this is not necessarily passing via root. So this is the question that we need to solve. So the naive way is very simple I can say I can traverse in the entire tree and if I'm standing at this node what I can do is I can simplify the longest path passing via this node 1 can be called as the left height of the tree like whatever is the left height plus the right height of the tree. So for this the left height is 1 so that's 1 for this the right height is 1 plus 1 2 3 4 so that's 4. So I can say that"
+    },
+    {
+      "chunk_id": "L088_C3",
+      "start": 154.88,
+      "end": 224.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rezetez59Nk&t=154s",
+      "text": "so that's 1 for this the right height is 1 plus 1 2 3 4 so that's 4. So I can say that for this the maximum like if the path passes via 1 the maximum is 5. So if I go over here I can see that we don't have anything here we don't have anything here for this guy the maximum I can say is 0 because I don't have any path. If I stand at 3 I can say it's 1 2 3 that's the left height and if I talk about the right height that's 1 2 3 so again 3 plus 3 and that makes it 6. Similarly if I stand over here I can say that the maximum height like in this case will be 2 plus 0 that's 2 in this case will be 1 plus 0 that's 1 in this case will be 0 over here like the maximum path if I call then it will be 0 plus 2 so that's going to be 2 over here it's going to be 0 plus 1 that's 1 over here it's going to be 0 plus 0 that's going to be 0. So what I can say is for any given node if I can figure out what's the left height what's the right height if I can add them up to get left height plus right height that's going to be the length of the longest path"
+    },
+    {
+      "chunk_id": "L088_C4",
+      "start": 224.8,
+      "end": 290.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rezetez59Nk&t=224s",
+      "text": "height if I can add them up to get left height plus right height that's going to be the length of the longest path passing via the given node and if we are given n nodes so if we can find LH plus RH across every given node can I say the maximum of left height plus right height is what is going to be my diameter of any given binary tree indeed we can. So if I talk about the brute force it's very simple we're going to do a traversal recursive traversal right and what I can say is if I am doing a recursive traversal starting from the node which is going to be the root of the tree what I can do is we can definitely go to the left and that's the simple recursive traversal every time just go to the left and go to the right so that's how you generally traverse the entire tree so every time you are at any given node just make sure you get the left height again very simple if you're standing over here go to the left go to left go to left and count like till the leaf node go till the leaf node so in that way you can easily find the left height of the binary tree similarly in order to find the right height go right go right if there is no"
+    },
+    {
+      "chunk_id": "L088_C5",
+      "start": 290.56,
+      "end": 353.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rezetez59Nk&t=290s",
+      "text": "the left height of the binary tree similarly in order to find the right height go right go right if there is no right then go left then go right go to the leaf node right once you've gone to the leaf node you can easily find the right height also over here you can also find the left height and if you don't know this I've already done this in one of the previous questions you can definitely watch out that video so you can find the left height and right height so once you've figured that out you know you can have a variable like maxi and you can use that maxi variable like that can be globally declared or you can pass a reference or a pointer to it like that's that's your choice you can have this globally declare and what you can do is every time you have a left height and a right height just add them up because for every node you have lh and rh just add them up and for every node compare that with maximum so ultimately at the end when you have traversed left right that means you have traversed the entire tree your maximum yes your maximum is going to store the height of the given binary tree now you might be thinking but strever this is big of n square"
+    },
+    {
+      "chunk_id": "L088_C6",
+      "start": 353.12,
+      "end": 419.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rezetez59Nk&t=353s",
+      "text": "going to store the height of the given binary tree now you might be thinking but strever this is big of n square i'll be like yes this is this is indeed big of n square why because you know whenever you do a traversal like this of left and right the complexity in order to traverse the entire tree is already big of n and then you're using a function to figure out uh left height which is definitely going to traverse this entire distance of the entire left height and again you're using a right height which is again going to traverse just imagine you have a tree like this a skew tree so if it's a skew tree you're going to traverse right from the start till the end so in order to compute the find height you'll end up taking a big of n time which will make this brute force to be big of n square which is definitely not acceptable so what we will do is we will try to optimize this into a big of n solution so let's check that out so in order to understand the big of n traversal okay so you need to know how to find the height of the tree yes you need to understand this like how to find the height of the tree and i've already made a video on that so i'll highly"
+    },
+    {
+      "chunk_id": "L088_C7",
+      "start": 419.6,
+      "end": 493.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rezetez59Nk&t=419s",
+      "text": "to understand this like how to find the height of the tree and i've already made a video on that so i'll highly recommend you that you should definitely watch out how to find height of a tree in big of n complexity so if you haven't watched that out please pause this video watch that and after that come back over so this is this is uh the exact code like if i if i just remove this maxi like if i just remove this extra variable maxi this is the exact code in order to find the height of the tree where we use the formula as one plus maximum of either the left height or right height again makes very sense so can i say can i say at every junction of node yes at every junction of node if i implicate the find height vala code i always have the left height i always have the right height so if i have the left height and right height during finding the height of the tree do we need to separately find it and the answer to that will be no we don't need to so what we will do is we'll use the same code from find height of the tree and we will take lh and rh and we will say maxi to be max of either maxi comma lh plus rh so what we did was instead of having lh and rh like"
+    },
+    {
+      "chunk_id": "L088_C8",
+      "start": 493.6,
+      "end": 557.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rezetez59Nk&t=493s",
+      "text": "say maxi to be max of either maxi comma lh plus rh so what we did was instead of having lh and rh like differently we use the lh and rh that was always computed while finding the height of the binary tree simple enough isn't it i'll show you a dry run for this so at first the node is root so we come across to root right after that uh this is not null so we'll go to the node dot left so we go to node dot left and yeah remember this maximum is zero initially so we go to the left the moment we go to the left again we go to the left so this time when we go to the left it's a null it's a null on the left so if it's a null we're going to return a zero yes we're going to return a zero so this guy returns a zero so from left the left height returned is zero now we come to the right again we get a null so basically come to the right we get a null so this guy is going to return a zero so can i say rh becomes zero so ultimately lh is zero rh is zero for this particular node two so what will we return one plus maximum of lh and rh before that we have to do this for this node"
+    },
+    {
+      "chunk_id": "L088_C9",
+      "start": 557.36,
+      "end": 624.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rezetez59Nk&t=557s",
+      "text": "node two so what will we return one plus maximum of lh and rh before that we have to do this for this node lh is zero rh is zero so maximum still stays as zero now the lh is zero rh is zero so zero comma zero max is zero one plus zero is one so what we will return is one so the lh returns one so the left height now returns one right now it's time to go to the right height so let's go to the right again we have a three we will go to the left again we have a four again we will go to the left we have a five again we'll go to the left we have a nine so this time we have a nine so we go to the left we get returned as zero we go to the right we get returned as zero so ultimately again we get 0 and 0 so this is 9 as of now this 9 says 0 0 so 1 plus max of 0 0 this is going to return something as the height as definitely 1 so LH becomes 1 when it goes to right it finds null so this is going to return 0 so the LH is 0 the RH is 0 which one is max like LH and RH is 0 so can I say maximum becomes LH plus RH"
+    },
+    {
+      "chunk_id": "L088_C10",
+      "start": 624.56,
+      "end": 691.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rezetez59Nk&t=624s",
+      "text": "0 the RH is 0 which one is max like LH and RH is 0 so can I say maximum becomes LH plus RH so LH is 0 LH is 1 RH is 0 so maximum becomes 1 right over here we add 5 so we have to go back so we will go back with the height right we will go back with the height so height is LH is 1 RH is 0 so 1 plus maximum of LH is 1 RH is 0 so it will become 1 plus 1 2 right again we'll come to the right and this is going to return 0 so this time LH is 0 RH is 0 so LH plus RH will give you 2 so maximum will change its value to 2 perfect but what will be the height written from here it's going to be 1 plus max of these 2 so 1 plus max is 2 height will be 3 so this returns 3 we'll come to the right we'll come to the right we'll come to the right again this guy will go here it'll return 0 go here it'll return 0 so 0 plus 0 it's gonna return 1 because 1 plus 0 right here RH is 0 LH was 0 so 1 plus 0 this guy returns 2 again this guy will return 3"
+    },
+    {
+      "chunk_id": "L088_C11",
+      "start": 691.52,
+      "end": 753.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rezetez59Nk&t=691s",
+      "text": "0 right here RH is 0 LH was 0 so 1 plus 0 this guy returns 2 again this guy will return 3 like you can keep on doing so ultimately this is a 3 this is a 3 from LH is 3 RH is 3 so the maximum will become 3 plus 3 6 and this guy will return the height as 1 plus max of LH that's 3 RH is 3 so 1 plus max of LH RH that's gonna be 4 so ultimately you got RH as 4 LH as 1 so this guy will give you 5 which is not greater than maximum so ultimately the greatest maximum you get is 6 and over here you can definitely return the height that's gonna be 1 plus max of these 2 that's 5 height height is 5 again make sense 1 2 3 4 like height if you count 1 2 3 4 5 height is the nodes number of nodes right so the maximum you got was 6 that's because at every step you had an LH and RH generated so as usual guys the left side is the C++ code and the right side is the Java code so this this time I will be talking about the Java code finally so we take the root okay now since in Java the variables are not passed by like they do"
+    },
+    {
+      "chunk_id": "L088_C12",
+      "start": 753.68,
+      "end": 816.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rezetez59Nk&t=753s",
+      "text": "the Java code finally so we take the root okay now since in Java the variables are not passed by like they do not work as reference so what I did was I created a array okay of size 1 and I passed I call the height function and right after that it's a similar code that was written over here and instantly over here if you've seen the C++ code I have passed via via and okay but that's not possible in Java that's why I passed an array which is passed by reference and after that I have done it similarly so that's the just smart trick that I've used apart from that the code remains as I have discussed so the time complexity is bigger of n and the space complexity is bigger of n and the space is used for auxiliary stack space assuming the worst tree given to you is skew tree so I hope you have understood the entire explanation as well as the code just in case you did please please please make sure you like this video because it took a lot of efforts to make this entire tree series also if you wish you can definitely drop in a comment that will keep motivating me to make such further series also if you're new to the channel please do consider subscribing because I'm going to bring in such more series in the upcoming future as well with this let's wrap up"
+    },
+    {
+      "chunk_id": "L088_C13",
+      "start": 816.6,
+      "end": 820.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=Rezetez59Nk&t=816s",
+      "text": "channel please do consider subscribing because I'm going to bring in such more series in the upcoming future as well with this let's wrap up this video let's meet in the next lecture bye bye take care"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "lecture_id": "L201",
+  "lecture_number": 201,
+  "lecture_title": "DP 20. Minimum Coins | DP on Subsequences | Infinite Supplies Pattern",
+  "youtube_url": "https://www.youtube.com/watch?v=myPeWb3Y68A",
+  "chunks": [
+    {
+      "chunk_id": "L201_C1",
+      "start": 0.0,
+      "end": 79.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=0s",
+      "text": "Hey everyone, welcome back to TakeUForward. So today we will be solving the problem DP 20. And what is the problem? The problem will be minimum coins. Yes. Now this problem is again a problem on the pattern of DP on subsequences that we have been doing. And if you remember DP on subsequences, it's very easy. Pick and non-pick is what you generally use to solve DP on subsequences. So it's a similar kind of problem. So what does the problem state? So the problem states that you're basically given an array which denotes denomination of coins. Assume the denomination of coins are 1, 2, 3. Like you have coins which have denominations as 1, 2 and 3. And you're given a target. Assume the target is given as 7. So what they're asking you is what is the minimum number of coins? What is the minimum number of coins that you will require in order to form this particular target? So over here I can say if I take one coin of 3 denomination, another coin of 3 denomination, another coin of 1 denomination that will add up to give us the given target. And how many number of coins did we use? The answer to that will be 3."
+    },
+    {
+      "chunk_id": "L201_C2",
+      "start": 79.02,
+      "end": 157.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=79s",
+      "text": "give us the given target. And how many number of coins did we use? The answer to that will be 3. So you have to minimize this number of coins. Like there can be other ways as well. You can take 2, you can take 2, 2, 2 thrice and then you can take a 1. This also gives you a target. But over here the number of coins required is 4. I don't want that. The question clearly states you have to figure out the minimum number of coins required. Now you might be saying, Striver, this is very simple. We are just gonna take the target and whichever is the maximum value, we divide by it like greedy way. Like the first approach, so you'll be like we can definitely solve this using greedy. So if it was greedy, you would have been like, okay, these are the other elements and the target required is 7. Pick up the biggest coin, which is 3. Can I have it? Yes. It divides it by twice. So I can have 2 denominations of coin 3. And what is the leftover part? 7 minus, 7 minus 2 denomination of 3, which is 7 minus 6, leftover is 1. Which is the next biggest coin? 2. Can it divide? No. 0 denominations of 2. Which is the next biggest coin? 1. Can it divide? Yes. 1 denomination of 1."
+    },
+    {
+      "chunk_id": "L201_C3",
+      "start": 157.08,
+      "end": 232.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=157s",
+      "text": "Can it divide? No. 0 denominations of 2. Which is the next biggest coin? 1. Can it divide? Yes. 1 denomination of 1. And after this, 1 minus 1 denomination of 1 will be 0 left. So you'll be like, okay, I'll require 2 coins here, 1 coin here, which sums up to give me 3 coins. Greedy does work for this test case, but it might fail. So can we figure a test case where greedy fails? Assume I give you something like 9, 6, 5, 1. Okay. And these are the denomination of coins and I'm looking for a target of 11. Okay. I'm looking for a target of 11. So will this fail? If you apply greedy, the biggest coin is 9 and it'll be like 11 by 9, 1 denomination of 9, leftover is 2, 6 cannot be applied, 5 cannot be applied, 1 can be applied twice. So you'll be like, I'll be requiring 3 coins in order to form the target of 11. But actually if you pick 6 and 5, the requirement of coins will be 2. And we saw that if we follow the greedy method, it does fail. Again, why? Same reason, uniformity. There is no uniformity there, right? There's a 9, but it might happen the next couple of elements might be something which gives you better values. So uniformity is not there."
+    },
+    {
+      "chunk_id": "L201_C4",
+      "start": 232.92,
+      "end": 311.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=232s",
+      "text": "9, but it might happen the next couple of elements might be something which gives you better values. So uniformity is not there. Like if you 9 to 6 difference is 3, 6 to 5 difference is 1, 1 to 5 difference is 4. So there is no uniformity in the differences of coin. Thereby you don't know what is the next denomination. Hence something like greedy cannot be applied in such cases. And that's when we think of trying out all combos to form target. And this is something which we have done in which problem? Knapsack. Over there we had to figure out the maximum value. Over here we have to figure out what is the minimum count. So try out all the combos and take the combo that has minimum coins. Take the combo that has minimum coins. So the problem is to figure out minimum coins. So what is the rule? What is the standard rule to write the recurrence? And how do you try out all combos? There's only one way. That is if you write the recurrence or recursion and then you can think of DP, tabulation and everything. So rules, do you remember the rules guys? I've been teaching that forever. Now what are the rules? First rule is express the recurrence in terms of first is index."
+    },
+    {
+      "chunk_id": "L201_C5",
+      "start": 311.36,
+      "end": 378.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=311s",
+      "text": "I've been teaching that forever. Now what are the rules? First rule is express the recurrence in terms of first is index. And obviously you're looking to form something in a knapsack. Also you had a back over here also looking for a target. So the second recurrence will be target, which I can call it as E right then express. Yes, that express third. You have to take the minimal of all right. If you take the minimal of all because over here, the question clearly states, find out how many minimum coins will you require? So what is the question stating? The question is stating to find out the minimum coins, correct? So can I say I have to write a function that returns the minimal coin? So if I'm writing N minus one and target, so that means if there is an area like this, yes, if there is an area like this, where this is zero and this is N minus one, I'm saying. You'll N minus one in the entire area. What are the minimum coins that will be required to form this target? So this will tell me, is it two? Is it three? Is it four? Is it five? What are the minimum coins? This F will tell me whatever is the question. That is what the F generally resembles. So this F is going to tell me what are the minimum number of coins that you'll be requiring"
+    },
+    {
+      "chunk_id": "L201_C6",
+      "start": 378.2,
+      "end": 456.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=378s",
+      "text": "what the F generally resembles. So this F is going to tell me what are the minimum number of coins that you'll be requiring to form the target and for this portion of the array N minus one means the array ends over here. So I can say I can start easily. Okay, so let's write the recurrence now. So we have an index, okay? And we have a target. So let's forget about the base case and what did we learn about this express all possibilities? Generally in subsequences, there are two possibilities. Either you take the coin, you take the coin or you do not take the coin. But over here, there will be slight difference. Let's understand why. So if you carefully see, whenever we took the coin three, we used two additions of that, right? We used two additions of that. So the question states there is an infinite supply of coins. In the previous questions, a single element was just used once. Like in the knapsack, what you did was if you stole, if you steal or stole whatever, an element, you just stole it once. But over here, this denomination can be used once, twice, thrice, as many times as possible, right?"
+    },
+    {
+      "chunk_id": "L201_C7",
+      "start": 456.52,
+      "end": 533.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=456s",
+      "text": "stole it once. But over here, this denomination can be used once, twice, thrice, as many times as possible, right? And you might be thinking, Shriver, then the best thing is divided. Like if you're using it, do a seven by three, you're using it twice, take twice. Will that make sense? No, because it might happen. You don't need always like, assume there is something like 25, 25 by three is eight times. You don't need to use it eight times. Probably there might be a case where you just have to take seven denominations of three, make it 21 and the probability to denominations and make it 25. There might be cases like this. It's always not necessary that if you're using a denomination, you end up using the entire portion. I will again repeat, assume there was a target of 25 and the denomination is three. It does not necessarily means that if you're taking the denomination of three, you take eight denominations of three. It can be seven denominations. It can be six denominations. It can be five denominations. It can be any number of denominations that you can. Make sense? So I'll be like, okay, there can be two cases. One is I decide I will not take, that's for sure. And if I not take, am I adding to the number of coins? Because the function, what is the duty of the function?"
+    },
+    {
+      "chunk_id": "L201_C8",
+      "start": 533.36,
+      "end": 610.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=533s",
+      "text": "And if I not take, am I adding to the number of coins? Because the function, what is the duty of the function? To return the number of coins. So make sure when you're not taking, you count the number of coins. So the number of coins counted will be zero. And if you're not taking it, what happens to this F? You had an array, right? You probably are standing over here and this is your portion. And if you do not take it, you have to move back. So please move back. So when you move back, it will be index minus one and target. Perfect. And what about take? So if you're taking, right, if you're taking, now you're looking for minimum. If you remember, I told you whenever you're looking for maximum, assign everything to intermean so that it's not considered. Whenever you're looking for minimum, assign everything to intermax so that it is not considered. So if you're taking it, make sure take is considered as int max. Okay. Now, when can you take it? So this array, you are at this index and assume this as six and the target is three. Can you take this denomination? Will it make sense to take this denomination? The answer is no, because if you take a denomination of six, but you're looking for a target of three, so it does not make sense."
+    },
+    {
+      "chunk_id": "L201_C9",
+      "start": 610.52,
+      "end": 688.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=610s",
+      "text": "no, because if you take a denomination of six, but you're looking for a target of three, so it does not make sense. So before taking any denomination, just make sure you ask, does the coin at that index is lesser than the target that I'm looking for? If it is, then I can take it. Now, if you're taking a coin into your denomination, let's understand. If you're taking a coin, what is this function doing? This function is counting coins. This function is counting coins. So how many coins are you taking? One and rest for the remaining target, you have to figure out, right? For the remaining target is T minus coins of index. Because if you took up, if you took up a coin, if this is the array and there was three and the target was eight. So if you took this three, if you took this three, this eight will reduce to five. That's what I'm doing over here. This eight will reduce to five. And now you look for what are the minimum in which I can form this five. That's why you'll again call this function choice. You will again call this function by taking it. But there's a question, what will happen to this index? Because if this three is picked only once you add one, but if you go back, you will not be allowed to pick it once more."
+    },
+    {
+      "chunk_id": "L201_C10",
+      "start": 688.76,
+      "end": 766.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=688s",
+      "text": "this three is picked only once you add one, but if you go back, you will not be allowed to pick it once more. So the best thing that you do is you say, I'm going to stand over here itself. Yes, I'm going to stand over here itself and I'm going to pick it again. So I will call the index again and this time with a reduced. So basically what I did was if there was a three and the target was eight, so I was looking what are the minimum number of ways in which I can form eight in this portion of the array. Now if I picked up once, this will be five. I'll again look in this array in how many ways can I form five? That's my motive. That's my thinking. Make sense? So what I did was I stayed at the same index. Remember this as a thumb rule. Whenever there is an infinite supply of anything, infinite supply, multiple use such statements. Whenever there is infinite supply, multiple use such statements, always when you consider take, it will stand at the same index. It won't move to the previous index. It will stand at the same index. Now you might have a question, but Shriver if it stands at the same index, it will keep standing. No. First it was eight when you picked up three. Next it will become five when you pick up three."
+    },
+    {
+      "chunk_id": "L201_C11",
+      "start": 766.84,
+      "end": 841.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=766s",
+      "text": "it will keep standing. No. First it was eight when you picked up three. Next it will become five when you pick up three. Next this five will become two and then you cannot pick up this three. Hence ultimately you'll move. You'll move at a moment because by picking up, by picking up, you're reducing this target. You're reducing the target as much as possible. So eventually you will move. So that's the funda of take. You always stand at the index. Remember this whenever there is something like infinite supply, something like multiple use, you always will stand at the same index and it'll just alter the target. Yes. You'll just alter the target, whatever like by how much possible you have to alter it. So that's what you have done. And now what do you need to return? The minimum of the combo of take or not take is what you have to return. So this is what you will do. You'll return the minimum of take and non-take. Have I written the recurrence? Express recurrence minimum of all. What is the next thing? The next thing is base case. And I've already taught you that. How do you write base cases? Whenever there is a case of base case and you're starting at n minus one, you always look at the last index, which is zero. And then you start thinking in terms of a single array containing a single element and a possible target."
+    },
+    {
+      "chunk_id": "L201_C12",
+      "start": 841.8,
+      "end": 919.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=841s",
+      "text": "last index, which is zero. And then you start thinking in terms of a single array containing a single element and a possible target. So this is an array at index zero and possibly containing a value six and a target seven. Now tell me one thing. If this is containing a value six and a target seven, can this target be achieved? Like what are the minimum number of coins? If I ask you, what are the minimum number of coins that you will take to achieve this target equal to seven is my question. What are the minimum number of coins that you will take in order to achieve this target seven? And your answer to that will be, Stryver, the answer will be zero because I cannot achieve the target seven using a coin denomination of six. But what if I tell you that this is seven? Now your answer will be Stryver, we can achieve it because it will take us one denomination of seven to achieve this target seven. Now let me quickly change something. If I change the target to be probably let's say 12 and the overheads four, then you'll be like Stryver, we will be requiring three denominations is the minimal that I will require in order to achieve this target via the denomination four."
+    },
+    {
+      "chunk_id": "L201_C13",
+      "start": 919.68,
+      "end": 996.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=919s",
+      "text": "will be requiring three denominations is the minimal that I will require in order to achieve this target via the denomination four. So can I say if the target is divisible by this four, just very, very logical. If this target is divisible by this four, then I return the minimum as target by denomination. And if it is not, then I'll return that it's not possible. So thereby the minimum number of coins is infinite. No matter how many coins you bring, you cannot don't return zero. Otherwise the minimum steps will be counted as zero. Don't return zero. So let's write down the base case. So you know, the base case will be very simple. If index is equal to zero and then you'll have to write something. So I know, and we are, we always assuming these cases, the coins will always have a denomination of greater than zero because there will never be a denomination of coins you like that's common sense. So if array of I or rather if target modulo array of I is equal to equal to zero, we will return what? We will return target by A of I because that's the minimal that we will require or else there is like we cannot form it. We will return int max."
+    },
+    {
+      "chunk_id": "L201_C14",
+      "start": 996.92,
+      "end": 1067.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=996s",
+      "text": "that's the minimal that we will require or else there is like we cannot form it. We will return int max. That is how you can easily do this stuff. Right? And just to make sure that it is no overflow, probably you can return something as one E9 again. Why? Because see you're adding one plus one plus if any of the function gives int max, it will be one E9. Like if any of the function basically gives like it's one plus one plus any of the function gives int max. So int max plus one plus one will go overflow thereby to, in order to have safety, I'm returning one E9. Okay. What's the next case? Let's take an example and try to do the dry run on the recursion tree so that the stuff gets more clear to you. So let's take this example and do a dry run on the recursion tree so that you understand how this is working. So initially we are like, if I just try to write, we are at F of two and you're looking to form eight. You can take, like you cannot take or you can take. So assume you do not take, you move to the previous index with the same target. But if you take, if you decide to take this guy, so eight minus three, the target will reduce to five now and there'll be a plus one of coin."
+    },
+    {
+      "chunk_id": "L201_C15",
+      "start": 1067.6,
+      "end": 1141.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=1067s",
+      "text": "decide to take this guy, so eight minus three, the target will reduce to five now and there'll be a plus one of coin. So you still stay at the same index, but the target reduces to five. Perfect. Now you are at F of one eight. You are saying in this portion, can you form eight? Can you form eight? And over here what you'll do is you'll say not take and take. So if you not take, you'll move to zero and you will be at eight. Correct? And over here, if you take it, if you decide to take it, plus one coin, and if you take it, there is two. There is two. So eventually what happens is you still stand at one, but there is a reduction in the target that you're looking for. Six. At zero eight, what happens? You are at this and you're looking for a target of eight. There'll be eight coins required of denominations one, right? So you return eight coins. Perfect. This guy returns eight coins. F of one six will again be not. So F of zero six. So F of zero six, there'll be six denominations. Make sense? And if you take again one and if you take two, it will be something like six minus two will be four and plus one over here. F of one four will again be not take, which will be F of zero four, which will again return four denominations."
+    },
+    {
+      "chunk_id": "L201_C16",
+      "start": 1141.84,
+      "end": 1218.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=1141s",
+      "text": "one over here. F of one four will again be not take, which will be F of zero four, which will again return four denominations. And if you take it, it'll be F of one comma two. You see every portion, like every combination is being, is being checked out thoroughly. Now at one comma two, what can you do? Again, you cannot take, which will take it zero comma two, which will return two denominations and F of one comma zero. Again, you can go across. kinds to work like this is zero denominations, one denomination of two, another denomination of two, another denomination of two, another denomination of tow, like four denominations of two also make it all the denominations of two, four denominations of one or three denominations of two. One or two denominations of like every, every angle is being seen on this particular regression tree. But what are the time complexity of this recursion. Now over here is it 2 to the power n? In all the other cases it is, but over here it is way greater than like way way greater than big of 2 to the power n because for a particular index you're taking it and you're still standing on the same index. So in order to analyze this you have to say that for every index the options that you"
+    },
+    {
+      "chunk_id": "L201_C17",
+      "start": 1218.86,
+      "end": 1287.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=1218s",
+      "text": "standing on the same index. So in order to analyze this you have to say that for every index the options that you have is not exactly 2 to the power n. It can go beyond that. Thereby we can like in general in the interview you don't have to explain so much. You can call it as exponential because you cannot theoretically prove the time complexity. So you can call it as exponential saying that every time our recurrence picks up it stands at the same index. So for an index now we don't have two ways. There can be multiple ways, right? So there can be a lot of ways. The time complexity is exponential as of now. What about the space complexity? We're using an auxiliary space of big O of n. Can we say this again? No, it's way way more than that. Why? Because if you are standing at the same index and if you look at the recursion tree because of the standing of the same index, the auxiliary space is not big of n. It can go beyond beyond then that. So at max it will be like assuming the minimum coin denomination is one at max it can go up to big O of target assuming it reduces by one one one one it can go to target. So again, a very different problem in terms of time complexity in the"
+    },
+    {
+      "chunk_id": "L201_C18",
+      "start": 1288.06,
+      "end": 1363.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=1288s",
+      "text": "by one one one one it can go to target. So again, a very different problem in terms of time complexity in the space complexity. The next step will be to definitely memorize this. We can see that it's a very different problem. Like it's not the typical problem where you can easily say to the power n big O of n because of this particular standing on the current index, it tends to be far greater than the obvious problem. So what's the next step? Obviously memorization and how do you memorize if there are overlapping sub problems. So if you take bigger examples, there will be overlapping sub problems. And in order to memorize, you look at which parameters are changing. One is index, one is target. So whatever index is given to you and assuming the max target is target, you'll require this size dp array in order to have it memorized. So make sure you memorize it and you know, step is very simple. How do you memorize? If I go back, yeah, you basically write dp of index target equal to, and over here you write if dp of index target is not equal to minus one, you return dp of index target. That's it. That's what you easily do it. Couple of steps and you can memorize any recursion into dynamic programming. Now the moment you memorize this,"
+    },
+    {
+      "chunk_id": "L201_C19",
+      "start": 1363.82,
+      "end": 1442.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=1363s",
+      "text": "what you easily do it. Couple of steps and you can memorize any recursion into dynamic programming. Now the moment you memorize this, yes, the moment you memorize this, what is the time complexity now? Big O of n into target and the space complexity is now around big O of n into t, but still the auxiliary space is around big O of target, slightly beyond that. So this has to be still reduced. And how can you reduce it? Very simple. Tabulation is a way to go. Yes. So what are the steps to tabulate? I've already told you that it's very simple. First base case. Second, look at the parameters that are changing. First parameter index, next parameter target and write it in the opposite fashion. Third copy, copy the recurrence. You can convert any, any memorization into tabulation. It's a matter of seconds. So let's, let's analyze the base case. So we have to declare a dp of n and target plus one. That's for sure. So in order to analyze the base case, let's look at the base case actually. So what are the base case stating over here? It states if index is zero and if the target is modulated of a of r, what can be the values of target? Always think like, don't think this target as the"
+    },
+    {
+      "chunk_id": "L201_C20",
+      "start": 1442.46,
+      "end": 1516.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=1442s",
+      "text": "is modulated of a of r, what can be the values of target? Always think like, don't think this target as the initial target. It is not the initial target. When the index is zero, like there might be a call for zero comma six. There might be a call for zero comma seven. There might be a call for zero comma eight. It can be anything. It can be anything. So can I say the target can be anything from zero to T. It can be anything from zero to T. Make sense? So for anything from zero to T, what does it have? T by a of I, if it is getting divided. Why don't you write that? It's very simple to write. Go ahead and write it. For any target from zero to the original target given to you, if the target is modulated of a of I is equal to equal to zero, or I can probably write this in some other lines. If the target T modulated of a of zero is equal to equal to zero, I can say dp of zero target is equal to a of, or rather target by a of zero. Else dp of zero target will be int max. That's what you wrote. Simple. This is how the base case will be. As simple as that. Just look"
+    },
+    {
+      "chunk_id": "L201_C21",
+      "start": 1518.38,
+      "end": 1595.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=1518s",
+      "text": "be int max. That's what you wrote. Simple. This is how the base case will be. As simple as that. Just look over there and try to copy paste. What about this? Your recursion runs from n minus one to zero. Zero is the base case. What's tabulation? Bottom up. Which is the bottom case? One. So you start from one till n minus one. What about target? You started from target till zero. Go in the opposite fashion. So it'll be zero till target. That's it. I think we've pretty much done. So next step is copy the records. So I'll show you that in the code now. So you're basically given this minimum elements function and the array num and the target. Okay. So we can write the function. So let's start off to write the function. I ntf, I nt index, I nt t and really we can get the vector as nums. Do we need anything else? I don't think so. I can say the base case is very simple. If index is equal to equal to zero and the target is, let's quickly check out if all the elements are greater than one. Yeah, it is. It is greater than one. So if t modulated of a of zero or nums of zero rather is equal to equal to zero, we can definitely return something as, um,"
+    },
+    {
+      "chunk_id": "L201_C22",
+      "start": 1595.82,
+      "end": 1668.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=1595s",
+      "text": "modulated of a of zero or nums of zero rather is equal to equal to zero, we can definitely return something as, um, what to say, probably something as a t divided by nums of zero makes sense or else we will return something as one nine again, not an intermax and there'll be a not take case. Can I say the not take case will be very simple. A zero plus F of index minus one and the target still stays as the same as the nums. And can I say the take case initially will be eight of max because you're looking for or rather you can just keep it as in max. Yeah, that's perfect. So what about the take case? I definitely can pick it if it is less than equal to target. And if I pick it, there'll be one coin and we'll still stay at the same because we can reuse it and the target reduces by nums of index and I can just pass on the nums and it goes and I can return the max of the and not take and that should be fine. And we will be returning the answer as F of N minus one and obviously N is not given over here. So please make sure you can compute the M by taking nums rather num dot size. Okay, perfect. And we can just pass on the target and the num array. It should be fine."
+    },
+    {
+      "chunk_id": "L201_C23",
+      "start": 1668.82,
+      "end": 1737.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=1668s",
+      "text": "taking nums rather num dot size. Okay, perfect. And we can just pass on the target and the num array. It should be fine. Let's quickly run this off. So you're getting some wrong answers. It's because they've clearly stated if the answer is not possible, print minus one. So what we need to make sure is just make sure over here, if yes, just make sure we're here. Probably you can keep the answer as this and then make sure if, if yes, if the answer is because what are you returning? You're returning something as one E nine, right? So if by chance the answer goes somewhere beyond one E nine as number of steps, return minus one or else whatever is the answer stored, you can just directly return it and then they should be fine. Now, as you can see, this is fine now. And if I submit this, this will, this will definitely give TLE. Why am I submitting this? Now it's time to memoize this. So let's quickly try to memoize this. And in order to memoize this, I will take a vector, a DP array and a size N and a vector another int a target plus one and comma minus one. And I can easily pass on the DP array over here. Let's call the DP array over here. Vector, vector, int and DP. Over here the DP will"
+    },
+    {
+      "chunk_id": "L201_C24",
+      "start": 1737.82,
+      "end": 1810.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=1737s",
+      "text": "on the DP array over here. Let's call the DP array over here. Vector, vector, int and DP. Over here the DP will go. Over here also the DP will go. And over here the DP will come across DP of index and capital. And over here, if DP of index E is not equal to minus one, return DP of index and T right. And we can just quickly run this off and see if this is running fine. There's now let's quickly submit this. This is, this is accepted. But as I said, the auxiliary space has to be removed as I never like, as I don't like memoization because of the extra auxiliary stack space. Time to convert this into tabulation. First step, make it zero. Just make sure this is nums because we're going to copy paste and we have used nums over here. Enter. This is the first thing, base case. For int T equal to, I've already described this zero. For every T lesser than target and T plus plus. What is it going to be? If the T is modulated by nums of index, that's zero. Then DP of zero of T will be"
+    },
+    {
+      "chunk_id": "L201_C25",
+      "start": 1810.82,
+      "end": 1890.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=1810s",
+      "text": "be? If the T is modulated by nums of index, that's zero. Then DP of zero of T will be the same thing that we have written over here. Else, if it is not, then DP of zero and T will be one in nine. The same thing that we have written over here. If it is, then this is otherwise not written. What's the next thing? Changing parameters, index from one to end. Perfect. Next changing parameter, target from zero to target. Quickly write it. What's the next thing? Copy paste. Just take it. Go over here. Copy paste this same thing. And just make sure instead of this, write this portion. And what you can do is just omit this, change it. Instead of this, write this. Change this. Perfect. Done. Instead of return, have this over here. Instead of F of N minus one, make it DP of N minus one target and change this. I think we're pretty much done. Let me just quickly. Yeah. It's"
+    },
+    {
+      "chunk_id": "L201_C26",
+      "start": 1890.82,
+      "end": 1968.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=1890s",
+      "text": "one target and change this. I think we're pretty much done. Let me just quickly. Yeah. It's like this is, this is it. So if you do this, you're getting all the right answers. And let's see if this is correct. So this is giving time limit exceeded, partially accepted. Probably they would love you to space optimizes. So let's quickly do a space optimization on this. So as you know, you'll be requiring a previous of target plus one comma zero and a current of a target plus one comma zero. So why can you space optimize again? The same reason that I've been teaching in the last 19 lectures, whenever you see something like index minus one, it's just the previous row that you need. It's just the previous row. So please do it. First of all, this is what the previous will be because of the first row, DP of zero. First row is done. What about the next thing? Instead of DP of index minus one, this is going to be previous instead of DP of index. This is going to be current. It's a DP of index. This is going to be current and right over here. It is previous equal to current. And what does over here, it can be previous or index or curve. What do we feel like? So you just stick to a couple of same column size, same number of columns. And then you just"
+    },
+    {
+      "chunk_id": "L201_C27",
+      "start": 1968.82,
+      "end": 2030.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=1968s",
+      "text": "What do we feel like? So you just stick to a couple of same column size, same number of columns. And then you just make sure that instead of computing in terms of DP, just take it row wise and just, uh, transfer the code. So if you see, uh, if I run this off, I think this should be running. Yeah. If I submit this, let's see if this passes all the test cases or not. It does. It does. So the space optimization solution is passing all the test cases, the tabulation, uh, memorization passed all the tabulation did not, uh, not sure why it's, it's mostly because I'll tell you the reason a lot of times happens is you can design test cases in such a way in memoration, you actually don't visit all the, all the N into target states. So you might be visiting very less amount of states and there is an auxiliary space, but you must be visiting a lot lesser number of seats. But if you look over here, it exactly visits N into target states. All the states N into target states are visited over here. That's the reason mostly sometimes it might happen, but most of the time it does not. So probably they have designed the test cases in such a way. So guys, uh, that will be it for this video. I hope you have understood this entire video. So just in case you did,"
+    },
+    {
+      "chunk_id": "L201_C28",
+      "start": 2030.82,
+      "end": 2055.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=myPeWb3Y68A&t=2030s",
+      "text": "So guys, uh, that will be it for this video. I hope you have understood this entire video. So just in case you did, please make sure you like this video. If you, if you are new to the channel, please, please, please do consider subscribing and to continue our tradition, please make sure you comment understood before leaving off this video and yeah, with this, let's wrap up this video and meet in the next one. Till then, bye bye. Take care. Transcribed by https://otter.ai"
+    }
+  ]
+}

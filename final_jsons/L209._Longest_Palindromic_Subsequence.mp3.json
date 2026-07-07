@@ -1,0 +1,64 @@
+{
+  "lecture_id": "L209",
+  "lecture_number": 209,
+  "lecture_title": "DP 28. Longest Palindromic Subsequence",
+  "youtube_url": "https://www.youtube.com/watch?v=6i_T5kkfv4A",
+  "chunks": [
+    {
+      "chunk_id": "L209_C1",
+      "start": 0.0,
+      "end": 74.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=6i_T5kkfv4A&t=0s",
+      "text": "Hey everyone, welcome back to Take U Forward. Today we will be solving the problem Longest Palindromic Subsequence. So let's understand what does the problem state. The problem states assume you are given a string. So let's take the string BBAB. So in this string if I ask you what are subsequences? You know the definition of subsequences I have already taught you that in the lecture LCS. So remember the prerequisite for this one is this lecture. Please watch out the LCS lecture before coming across and solving this problem because if you don't know how to solve LCS this you cannot because this is nothing but an extension of that problem. So what are subsequences? So if I write something as AB that's a subsequence. If I write something as BB it's a subsequence. If I write something as BBB that's a subsequence. If I write something as BBBB that's a subsequence. If I write something as ABB which is BAB that's a subsequence. So there can be a lot of subsequences right and you know it can be contagious, it cannot be contagious but the important part about this is it should maintain the order like"
+    },
+    {
+      "chunk_id": "L209_C2",
+      "start": 74.26,
+      "end": 145.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=6i_T5kkfv4A&t=74s",
+      "text": "be contagious, it cannot be contagious but the important part about this is it should maintain the order like BAB, BAB it should maintain the order. Now among all of these subsequences if you try to write down all of these subsequences you have to tell me which are palindromes. So if I ask you which are palindromes you will say this is palindrome, this is palindrome, this is palindrome, this is palindrome. You know what is palindrome right? A palindrome is nothing but if you write a string in the reverse like if you write BAB in the reverse order it will still be BAB. So that is the definition of palindrome. So I can see these strings are palindrome. Now the next thing comes as longest. Which one is the longest among these? I see this being the longest one. So for us this is the answer and what is the length of this? 4. So this is the question. Give me the length of the longest palindromic subsequence. So I will tell you how to print it but as of now give me the length of the longest palindromic subsequence is the question. Now to start off with you might think okay Stryber how are we going to solve this? The first method that comes to my mind is definitely the generic way. That's you will say generate all the subsequence. Again how can you generate"
+    },
+    {
+      "chunk_id": "L209_C3",
+      "start": 145.12,
+      "end": 214.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=6i_T5kkfv4A&t=145s",
+      "text": "that comes to my mind is definitely the generic way. That's you will say generate all the subsequence. Again how can you generate all the subsequences? By using two methods. One is the recursive method while the other one is the power set method that I have already discussed in another videos. Generate all the subsequences, check for palindrome and pick up the longest one. That's and pick the longest. And pick the longest. I think this is what the generic brute force is. And if you try to optimize this brute force then you have to write a recursive solution, you have to think of something. But can I solve this using something that I have learnt that is LCS because I will try to. Try to take this problem into that arena. So how will I try to? I know that this can be solved using LCS but if you don't know how will you? So we will try to see what does the problem actually mean. So for that example let's take a bigger string B, B, A, B, C, B, C, A, B. Okay so if I ask you which is the longest palindromic among this you will find B, B, I think not B, you will find the B, A, B, C, B, A, B."
+    },
+    {
+      "chunk_id": "L209_C4",
+      "start": 221.02,
+      "end": 290.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=6i_T5kkfv4A&t=221s",
+      "text": "among this you will find B, B, I think not B, you will find the B, A, B, C, B, A, B. Yeah. Basically B, A, B, C, B, A, B. So this is a palindrome. Now something to observe. This B is equivalent to this B. This A is equivalent to this A. This B is equivalent to this B and there is someone in between. So it matches from the front and from the back. It matches from the front and from the back. So can I say this? Can I say this? If I try to write this string, yes if I try to write this string in the reverse order, let's assume this is string 1 and I am saying I am going to write this string in the reverse order and reverse is B, A, C, B, C, B, A, B, B. I wrote the string in the reverse order. So if I try to write down the string in the reverse order, can I say this B, A, B, C, B, A, B, B, A, B, C, B, A, B or it can be the other one as well. This is somewhere similar"
+    },
+    {
+      "chunk_id": "L209_C5",
+      "start": 294.54,
+      "end": 374.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=6i_T5kkfv4A&t=294s",
+      "text": "A, B, C, B, A, B or it can be the other one as well. This is somewhere similar to B, A, B, C, B, A, B. So can I say this? If you have got this string in the straight fashion and in the opposite fashion, then you know one thing for sure. If I just try to mark it B, A, B, C, B, A, B. So this is what it looks like and over here it's like B, A, B, C, B, A, B. So can I say? Can you try to connect this to LCS? Can you? You can. You will be like, Strive if I take the string 1 and if I take the string 2 and if I try to find the LCS of both the strings. Because since I have written the string in the reverse order, you will find these exact same string over here as well. You will find the exact same string over here as well because you have written that in the reverse order. That's what palindrome is. So what I can say is, instead of thinking of any other way to solve it, I will be very plain and simple. I will be like, okay, let's take the string 1 and since I can intuitively see that what is palindrome? It's the reverse. The reverse is same. So"
+    },
+    {
+      "chunk_id": "L209_C6",
+      "start": 374.58,
+      "end": 451.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=6i_T5kkfv4A&t=374s",
+      "text": "let's take the string 1 and since I can intuitively see that what is palindrome? It's the reverse. The reverse is same. So why don't I write reverse and if the reverse is same, so some portion which is same and when you write them reverse, should also be same. I hope you are getting this. Right? It's exactly the same. And if there is a portion of string which is present in S1 as well and is present in S2 as well, what do we call that? We call that as common subsequence. If there is a portion of string which is present in both the strings, we call that as the common subsequence. Right? And what do we require? We require the longest common subsequence. So can I say, I know one thing for sure, if I just attach the longest term to these couple of guys, the longest is bound to be the longest palindromic subsequence because this string is written in the reverse order. It's not in the same order. It's in the reverse order. So whichever string will match, since it's the reverse, thereby you can call them as palindromes because a string which is in a normal way, a string which is in the reverse way, if they are matching, you know what is that called as? Palindrome. So basically if"
+    },
+    {
+      "chunk_id": "L209_C7",
+      "start": 451.74,
+      "end": 527.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=6i_T5kkfv4A&t=451s",
+      "text": "string which is in the reverse way, if they are matching, you know what is that called as? Palindrome. So basically if you get the LCS of both the strings, which is longest common subsequence, it is bound to be a palindrome because S2 is nothing but the reverse of S1. So the common string that you'll get will be the reverse. Thereby you can say it's a palindrome. So you don't need to do anything. You know how to find LCS. You just call the LCS function using the string S1 and you pass the reverse of S1. So if you just call the LCS function using this, you will get your answer. And I've already taught you how to print the LCS. So you can again use the print function to get the longest palindromic subsequence as well. So here's the question. What we will do is we'll go to longest common subsequence. Let's copy paste the code which was used in LCS. Let's copy paste them and probably print it over here. I printed it. Let's do one thing. Let's keep string T equal to S and we can say reverse of T.begin and T.end. So just make sure you reverse it. And once you've reversed it, it says the return of LCS S,T. I think this should be fine. Okay, we got some wrong answers because"
+    },
+    {
+      "chunk_id": "L209_C8",
+      "start": 527.62,
+      "end": 573.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=6i_T5kkfv4A&t=527s",
+      "text": "you've reversed it, it says the return of LCS S,T. I think this should be fine. Okay, we got some wrong answers because we are printing over here. So let's erase this. No need to print the DP array. Here comes the correct answer. Now if I just give it a submit, you will see that this is running absolutely fine. Yeah, it is. So we have done this problem very easily using a concept that we have learned. So guys, I hope just make sure you can space optimize this as well. I've already taught that in LCS. So you can just go across and space optimize this as well. So guys, I hope you have understood this problem. Just an extension of the LCS. Just in case you did, please, please, please make sure you like this video. And if you are new to this channel, please do consider subscribing to us. And with this, let's wrap up this video and meet in the next one. Till then, bye-bye team."
+    }
+  ]
+}

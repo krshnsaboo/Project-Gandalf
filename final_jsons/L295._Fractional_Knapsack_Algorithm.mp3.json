@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L295",
+  "lecture_number": 295,
+  "lecture_title": "L13. Fractional Knapsack Algorithm",
+  "youtube_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg",
+  "chunks": [
+    {
+      "chunk_id": "L295_C1",
+      "start": 0.0,
+      "end": 76.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=0s",
+      "text": "So, the problem that we will be solving today is fractional knapsack. So, what is the problem stating? It is stating that you will be given n items and every item will have a value, will have a weight to it. So, basically you will be given n pairs. Along with this, you will also be given the weight. So, what does this particular weight signify? You have a bag and that bag can hold a maximum weight of 90, not beyond it. Now, your task is to pick up items. You can pick in any order. You can pick in any order. Imagine, you start with picking the first item. That means you are taking a value of 100. First one is the value and that is taking a weight of 20. So, if your bag is already taking a weight of 20, can I say that you can only take 70 more weight, not more than that? Yes, I can. I can pick up this one, which means I am adding a value of 60 and it is taking a weight of 10, which means the weight can be reduced to 60. Perfect."
+    },
+    {
+      "chunk_id": "L295_C2",
+      "start": 76.84,
+      "end": 156.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=76s",
+      "text": "60 and it is taking a weight of 10, which means the weight can be reduced to 60. Perfect. After this, I can pick up this one, which means it is a 100 value. But the weight is 50, which means I am left off with 10 weight that I can take. Maybe I can pick up this one, but can I pick up this one is the question. I cannot pick up this one. Why? Because the remaining weight that my bag can take is 10 and this is taking a weight of 50. This is taking a weight of 50. So, this cannot be taken. But over here, the question is different. It is a fractional lapse. It is not necessary that you take the entire item. You can also take a fraction of it. You can also take a fraction of it. So, over here I am saying 50 weight means 200 value and I just have 10 weight remaining. So, can I say that 1 weight means 200 by 50? Correct? And 10 weight means, because 10 is remaining, 200 by 50 into 10. So, gone, gone 540. So maybe I can just pick up 10 weight and that 10 weight will give me 40 value. So, what will be the total value that I have picked up? That's a 100. That's another 60. That's another 100."
+    },
+    {
+      "chunk_id": "L295_C3",
+      "start": 156.0,
+      "end": 233.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=156s",
+      "text": "40 value. So, what will be the total value that I have picked up? That's a 100. That's another 60. That's another 100. That's another 40. And that sums up to, I think, 300. Now, the question is asking you to maximize the total value that you can take in the bag. Yes, you have to maximize this. So, this was a pattern in which you can pick. I started picking the first element, then the second, then the third, then the fourth. Again, I have stated that it can be in any order. You can try out every possible combination. Your task is to maximize the total value. So, what I will do is, I'll try out other examples. Since I know the answer, I'll try out the possible answer configuration. So, I have a weight of 90. What I will do is, I'll pick up this one. That is a value of 100 and a weight of 10. So, I'm left with 70. Then I'll pick up this one, 60, 10. So, 10 gone, I'm left off with 60. Then I'll pick up this one, which is 200, 50. So, 50 gone, left with 10. After that, this is a 50 weight, but I'm left over with 10. So, what I'll do is, I'll pick up a fraction. 50 is giving me 100. One will give me 100 by 50."
+    },
+    {
+      "chunk_id": "L295_C4",
+      "start": 233.88,
+      "end": 313.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=233s",
+      "text": "10. So, what I'll do is, I'll pick up a fraction. 50 is giving me 100. One will give me 100 by 50. 10 will give me 100 by 50 into 10, which means 20, 20 value. So, I'll take a 20 value and a weight of 10. Done and dusted. And if you add them up, it's 100 plus 200, 300. 360, 380. So, the value that you get is 380. You can try out all of the possible configuration and this is the maximum value that you can get. You cannot go beyond this. And this is what you'll have to return. You don't have to return which items you picked up. Just returning the value will do. But when I solve this problem, even if the interviewer does ask you, which items did you pick up? You can say that as well. Okay. I hope you have got the question, right? So how do I solve this? How do I solve this is a big question. Now the first thing that comes to your brain is, okay, you have a weight of 90. You want to maximize value. Why don't you pick up the value 200 at first because pick up the maximum. That is something that will come to your brain, right? So I'll just give you a small example. Imagine I change this to 90. So this is typically 200, 90."
+    },
+    {
+      "chunk_id": "L295_C5",
+      "start": 313.56,
+      "end": 390.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=313s",
+      "text": "your brain, right? So I'll just give you a small example. Imagine I change this to 90. So this is typically 200, 90. If you're thinking I'm going to pick up the maximum value, then what will happen is when you pick up this 200, 90, you're done. You cannot pick up anything else, anything else. And your total value will be 200. I can actually do better. I can actually do better. If I decide that, okay, I'm going to pick up this, this, this has gone to be 100, 20, 60, 10, 100, 50. Still a limit. We're still in limit and we can pick some of this as well, right? This is 160, 100. This is already 260, which is greater. So it is not necessary. It is not necessary that you always pick up the maximum value. Correct? Okay. Then how do I pick up? That's a big question. I have a weight of, I have a weight of 90 that I'll, I have to carry, right? What if I say I'm going to pick up the item which gives me the maximum value per one weight, per one weight. Unit mathematics. Okay. Make sense? So can I say this gives me five, why?"
+    },
+    {
+      "chunk_id": "L295_C6",
+      "start": 390.08,
+      "end": 468.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=390s",
+      "text": "per one weight, per one weight. Unit mathematics. Okay. Make sense? So can I say this gives me five, why? Because I'm getting 20, like 20 weight is giving me a hundred value. Correct? So one weight will give me a hundred by 20, which is five. So one weight, if I'm taking one weight, that's, that gives me a five value. Okay. Over here, can I say, if I take one weight, that gives me six value. Over here, can I say a hundred by 50? One weight gives me two value. Over here, one weight gives me four value. So thinking greedily, because I'm over here to maximize my total value, thinking greedily, what will I do? I'll be like, take this one, dude. This gives me the maximum. So I'll go ahead and say, okay, 60 comma 10 is what I'll take. Perfect. And that will reduce the weight to, remaining weight to 80. Perfect. Take it. What after this? I'll be like, I'll take this. This gives me per weight value more. Take it. Hundred comma 20. So you reduce this to 60 now. Perfect. This is also taken. After this, which one? This one. So you take 200 comma 50. Again, you can take the entire thing because this is greater than the remaining weight."
+    },
+    {
+      "chunk_id": "L295_C7",
+      "start": 468.08,
+      "end": 543.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=468s",
+      "text": "one. So you take 200 comma 50. Again, you can take the entire thing because this is greater than the remaining weight. After this, you're left off with 10. Now when you go to pick up the next one, what happens is you have a 50 weight, but you're left off with 10. Now this is where you say that, okay, I don't have a lot of capacity remaining. So I'll pick up a fraction of you. So I'll be like, okay, 50 means 100. 50 weight is giving me 100. One weight will give me 100 by 50 and I just have 10 remaining. So 100 by 50 into 10, that's going to be 20. So I'll just pick up 20 value. I'll pick up 20 value. That's a 10 weight. I'll go off. I'll go off. I remember the, like this might be 120. Might be possible. Might be 120. Then the answer will be in fraction. The answer will be in decimal points. So I'll have to use double or float while you're cold. Done. If I add this up, the total value will be 3, 380 and that is what you will be returning. How do I solve this? You did see, right? So what I'll do is I'll sort the array. Yes, I'll sort the array according to the fraction weight, like according to the per weight. What is per weight? It's very simple."
+    },
+    {
+      "chunk_id": "L295_C8",
+      "start": 543.0,
+      "end": 620.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=543s",
+      "text": "Yes, I'll sort the array according to the fraction weight, like according to the per weight. What is per weight? It's very simple. Value per weight for one weight that's value per total weight, right? According to this, I'll sort. If I sorted according to this in the reverse order, it's very important in the reverse order. So if I do it, I'll get 60 comma 10 at first, right? Then I'll get a hundred comma 20. Then I'll get 200 comma 50 and then I'll get a hundred comma 50. If there are same values, for example, if this was also five, it doesn't matter which one you take at first because eventually the value per weight is same. So it doesn't matter. You can take either of them. Done. So I have the sorted one. You have to write a comparator. You have to write a custom comparator. In case you don't know how to write a custom comparator, I have a C++ STL lecture, right? You can go back to that lecture and I've taught you how to write a custom comparator. You'll have to write it over here because the custom comparator will be value by weight and in descending order. Done and dusted? Now what you will do is you'll be like, okay, what is my weight remaining? 90. So I'll take a total value, which is zero. Let's start off. So you start off with the first one."
+    },
+    {
+      "chunk_id": "L295_C9",
+      "start": 620.8,
+      "end": 688.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=620s",
+      "text": "my weight remaining? 90. So I'll take a total value, which is zero. Let's start off. So you start off with the first one. Maybe I can use some different color. Yeah, I can use some different color. So I'm standing at the first one. Can I pick up this entirely? I have a 10 weight. I can pick up this entirely. So my value will be added by 60 and I'll pick up this entirely. And if I pick up this entirely, the 90 gets reduced to 80. Next I'll move to the next. Can I pick up this entirely? I can. So total value gets added, 160 and the weight reduces to 60. Can I pick up this entirely? Yes, I can. So this gets added, 360. So you have added the value. The value is 360. The weight will reduce. So it will be 10 now. And after that, you can move to the next one. Can you pick up the entire item? The answer is no, because it weighs 50 and you only have 10 left. So you cannot pick up the entire item. What will you do? You'll be like, okay, I'll pick up a fraction. So one weight will be 100 by 50, which is 2. One weight is 2 and you're left off at 10. So what you can do is you can multiply it. Then you'll get 20 value addition. You can add 20."
+    },
+    {
+      "chunk_id": "L295_C10",
+      "start": 688.44,
+      "end": 768.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=688s",
+      "text": "left off at 10. So what you can do is you can multiply it. Then you'll get 20 value addition. You can add 20. That will make 380 and this can be zero. And the moment this is zero, you can break off. Yes, you can break off. Done and dusted. If this is zero, that means even if there were elements after this, you don't care. You can just break off. So at any moment when the weight is lesser than the remaining one, you just take whatever weight is remaining, which is 10 over here and you break off. This is how you can easily do it. So I'll be writing down the pseudocode in case you want the language specific code, you can find them below. So I'll be writing down the function. Function will be taking the item array and the W and the function will be returning the total value and the total value can be fractional. So I'll be returning double. What is item? Item is nothing but an object and this particular object can have a value and a weight. Again depending on the programming language you're using, we're using C++, it can be a struct or class. We're using Java, this can be a class. So what is the first step? The first step is to sort this particular item array. So I'll be sorting this particular item array according to an comparator."
+    },
+    {
+      "chunk_id": "L295_C11",
+      "start": 768.08,
+      "end": 848.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=768s",
+      "text": "first step? The first step is to sort this particular item array. So I'll be sorting this particular item array according to an comparator. This will be a custom comparator. If you don't know how to write a custom comparator, you can pause this video, go back to my C++ STL video or the Java video and you can learn how to write a custom comparator. So I'll be writing a custom comparator that sorts it according to value by weight and in descending order. Got it? Okay. Now what is the next step? The next step is to iterate. I'll be keeping a total value which is initially zero and I'll be iterating. So let's iterate. So I'll be iterating from zero till the last. So what is the first thing that I'll do? I'll be like, okay, if in the array of I, if this particular weight, I'll take the weight from that index. I'll say, hey, if this is smaller than the capacity W, I can pick up this entirely. I can pick up this entirely. So I'll be like total value plus equal to array of I dot value. Quite simple. And at the same time, W will be W minus array of I dot weight."
+    },
+    {
+      "chunk_id": "L295_C12",
+      "start": 848.0,
+      "end": 928.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=848s",
+      "text": "of I dot value. Quite simple. And at the same time, W will be W minus array of I dot weight. Perfect. But what if it is not? What if the weight is greater than equal to the capacity? That means I'll go to the else. And if I go to the else, what will happen? I'll be like, okay. I have to compute the per weight and the per weight will be array of I dot value by array of I dot weight. Please make sure use double because on dividing the values will be in fraction multiplied with the remaining weight and the remaining weight will be W, right? And this is what you will add to total value. And once this is added, it will be like, okay, maybe now we can break free and that's it. And once you have done this, what you will be returning is the total value. And that's done. And the function is completed. Just make sure that this is double. Also make sure this is type casted. Again, you can find the code below. These things are very, very important."
+    },
+    {
+      "chunk_id": "L295_C13",
+      "start": 928.0,
+      "end": 1007.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=928s",
+      "text": "make sure this is type casted. Again, you can find the code below. These things are very, very important. Otherwise you will be getting wrong answers. And once you have done this, that is done and dusted. I'll be writing down the custom comparator. Don't worry. What is this custom comparator? It's typically a Boolean function. Let's try to write down the custom comparator. So I'll be like, okay, Boolean comparator. And what is the array having? The array is having items. So I'll be like item. Maybe I can call it as value one and item value two, because this is how you write a custom comparator. And what am I doing? I'm like, okay, if I have to compare it with value per weight, value per weight. So I'm like value one dot value divided by value one dot weight. If this is greater than equal to value one, sorry, value two dot value by value two dot weight. This means, this means it is correct. It is in the correct order. When you write a custom comparator, value one is always before value two."
+    },
+    {
+      "chunk_id": "L295_C14",
+      "start": 1007.76,
+      "end": 1086.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=1007s",
+      "text": "is in the correct order. When you write a custom comparator, value one is always before value two. And it is asking, am I maintaining the order? And you're right. And you're like, okay, if the per weight is greater than the value to weight, you're correct because I'm maintaining a descending order. So you'll be like, you are correct and you can return a true or else you will be returning a false. That's it. That is your custom comparator. You can go back to the C++ STL or Java in one short video. You will understand this. So this is done. Now what is the time complexity? Can I say this will be taking n logarithmic of n? I can. And can I say this will be taking a big O of n at the worst possible case? Thereby, the time complexity is n plus n log n. And that is the time complexity. And what is the space complexity? Big O of one. I did distort the array, but that will not be computed in this particular case because this is the only way in which you can solve this particular problem or you'll have to take an external container to store all the elements. Now what does greedy in this? You know what is greedy, right? You sorted it. You sorted it according to the value per weight. You sorted it according to the value per weight. Why?"
+    },
+    {
+      "chunk_id": "L295_C15",
+      "start": 1086.86,
+      "end": 1118.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=1ibsQrnuEEg&t=1086s",
+      "text": "greedy, right? You sorted it. You sorted it according to the value per weight. You sorted it according to the value per weight. Why? Because you wanted to maximize the total value. And this is where greedy algorithm comes in. It's not a specific algorithm. It's a very generic way to solve a problem, right? So yeah, this will be it for this one. So if you're still now watching and if you've understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's begin some other video. Till then, bye. Whenever your heart is broken, don't ever forget your golden."
+    }
+  ]
+}

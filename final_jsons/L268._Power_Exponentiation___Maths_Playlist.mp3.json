@@ -1,0 +1,78 @@
+{
+  "lecture_id": "L268",
+  "lecture_number": 268,
+  "lecture_title": "L5. Power Exponentiation | Maths Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=hFWckDXE-K8",
+  "chunks": [
+    {
+      "chunk_id": "L268_C1",
+      "start": 0.0,
+      "end": 77.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=hFWckDXE-K8&t=0s",
+      "text": "So, let's continue with the math section in Stryver's A to Z DSA course. But before that, hey, if you have come back to the channel, I hope you guys are doing extremely well. So, the problem that we will be solving today is Power Expo. So, what is the problem exactly stating? It's stating that you'll be given a value x, you will be given a value n. As of now, assume that both of them are integer and both of them are positive numbers. We will talk about double and negatives afterwards. Let's understand the algorithm in terms of positive and then it's very easy to convert it into negatives and double. So, let's assume I'm giving you x equal to 2 and n equal to 5. So, the value of 2 to the power 5 is 32, right? So, you'll have to return me power 2 comma 5, which is basically 2 to the power 5, which is 32. This is what you'll have to return me. Now, in C++ STL collections, you'll find this method power that implements this internally. But what is the algorithm behind it? Let's understand that. But before that, what is the extreme-naive solution that you can think of? Very simple."
+    },
+    {
+      "chunk_id": "L268_C2",
+      "start": 77.12,
+      "end": 157.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=hFWckDXE-K8&t=77s",
+      "text": "behind it? Let's understand that. But before that, what is the extreme-naive solution that you can think of? Very simple. Answer equal to 1 for i equal to 1 till n and answer will be answer into x. Simple, right? And the time complexity will be b go of n. Obviously, this is not the optimal solution. So, what will be the optimal solution? It's very simple. Now, in order to understand the optimal solution, I'll take bigger values. Let's take a bigger value like n equal to 2. It's a smaller value, x. So, in order to understand what I'll do is I'll take x to be 2, but I'll take the n to be a slightly bigger value, something like, let's take 21. Yeah, that will be great. So, I'll have to find 2 to the power 21. How do I do it? It's very, very simple. I'll keep answer as 1 initially when I start off with, right? And I take 21 and I ask, hey, are you even? And he says, no, I'm not. So, if it is odd, what I do is, so technically what I need to find is 2 to the power 21, right? What I do is I take one 2 out and I write 2 into 2 to the power 20. Now, what I'm asking you to do is find 2 to the power 20. So, 2 is gone."
+    },
+    {
+      "chunk_id": "L268_C3",
+      "start": 157.12,
+      "end": 235.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=hFWckDXE-K8&t=157s",
+      "text": "2 to the power 20. Now, what I'm asking you to do is find 2 to the power 20. So, 2 is gone. Since you're taking away 2, I'll ask you to add it to the answer. I'll ask you to add it to the answer. Perfect. I've taken away 1, so n becomes 20. So, now you're trying to find 2 to the power 20. Now, this power 20, this time is an even power. Whatever it is an even power, can I write this as 2 square 20 by 2? Can I write this? I think I can because standard maths, right? Standard maths, 2 and 2 will go up and it is still 2 to the power 20. 2 square and 20 by 2. Does it make sense? This time, if I do this, this will become 4 to the power 10. So, now what I'm trying to find is x is 4 and n becomes 20. I did a drop of by 2. I reduced n by by 2 straight away. That's an optimization. The only thing I did was I multiplied x by x itself. 2 square x by x itself. 2 into 2, 4. Perfect."
+    },
+    {
+      "chunk_id": "L268_C4",
+      "start": 235.84,
+      "end": 309.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=hFWckDXE-K8&t=235s",
+      "text": "I did was I multiplied x by x itself. 2 square x by x itself. 2 into 2, 4. Perfect. Now, what am I looking to do? Let me erase this. Now, what am I looking to do? My x is 4, n is 10, right? So, again it's an even number. So, I'm trying to find 4 raised to the power 10. It's an even one. Can I again write it as 4 square 10 by 2? I can because 2 and 2 will go up and this is nothing but 16 raised to the power 5. So, I again changed x. I just multiplied 4 to 4 itself and I got 16 and the 10 was converted to 5. Again by 2, straight away a massive optimization. I'm just multiplying 4 by 4. Okay. What is the next thing? This time I'm looking to find 16 raised to the power 5 and this time I see that the power is an odd one. 5 is odd. So, again I'll do the same thing. I'll try to take it towards even. 16 into 16 to the power 4. So, I'll take out a 16. I'll multiply that to the answer and I'll multiply that to the answer. Perfect. And, so I'll take this 16 out."
+    },
+    {
+      "chunk_id": "L268_C5",
+      "start": 309.04,
+      "end": 388.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=hFWckDXE-K8&t=309s",
+      "text": "I'll multiply that to the answer and I'll multiply that to the answer. Perfect. And, so I'll take this 16 out. I'll take this 16 out and this time this 5 gets converted to 4. Slight drop, not a lot of drop. Okay, perfect. Now, what is the next thing? The next thing is F4. So, we're trying to find 16 raised to the power 4. You know what to do. 16 squared 4 by 2. So, what will happen is this will become 256 raised to the power 2. Again a massive drop of by 2 and this x will be 256. Perfect. Now, what am I trying to find? x is 256 and s2, 256 raised to the power square. So, this time it will be 256 into 256 square 2 by 2. It is the same thing, right? So, 2 will get converted into 1 and 256 square. So, this will become now 256 into 256 is 65536, a big number. Hence, now I'm left with 65536 and this is 1. Okay. Now, it's odd. It's odd. So, whenever it is odd, what do we do? We take out 1 out. It will be like 65536."
+    },
+    {
+      "chunk_id": "L268_C6",
+      "start": 388.88,
+      "end": 467.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=hFWckDXE-K8&t=388s",
+      "text": "So, whenever it is odd, what do we do? We take out 1 out. It will be like 65536. I'll take out 1 out and I'll keep 1 minus. So, 1 minus 1. I've taken 1 out. Hence, something raised to the power 0 and I know this is always 1. So, I'll take this out. I'll take this out. Remember, you are taking this out. So, if you are taking this out, this will drop to 0 and this will have 255. The answer will get multiplied with 65536. Done. And since you have reached something raised to the power 0, you stop because anything raised to the power 0 is always 1. So, your answer is this and you are multiplying. While you are moving along, you are multiplying 1 is 2. That was 2 into 16. That was 32 and now this will be multiplied with 65536. You can do a multiplication. That's a big number. So, this is how you can easily do it. I did show you for 2. You can do it for other numbers as well. Let me quickly give you one more example. If I ask 3 raised to the power 9, I'll be taking answer equal to 1. Let's start. So, I'll take a 3 out. That will be 3 into 3 to the power 8. So, this 3 will go and get added to this. After this, I'm solving for 3 raised to the power 8."
+    },
+    {
+      "chunk_id": "L268_C7",
+      "start": 467.0,
+      "end": 546.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=hFWckDXE-K8&t=467s",
+      "text": "the power 8. So, this 3 will go and get added to this. After this, I'm solving for 3 raised to the power 8. So, it will be like 3 square 8 by 2. That's 4. So, 3 square is 9 raised to the power 4. So, I'm trying to solve for 9 raised to the power 4. This time, I'll be taking 9 square. It's the same thing. So, I'm trying to solve 81 raised to the power 2. Correct? Same again. I'll do the same thing. 81 square 1. So, 81 square. Again, a big number. I can again take my calculator out. 81 into 81 is 6561. 6561 raised to the power 1. So, again, odd power. In case of odd power, you know what happens. You take 1 out and then you write 6561. You reduce the power by 1. The 6561 goes away and gets multiplied over here. And eventually, you're left with something raised to the power 0, which is 1. So, you stop. So, your answer is getting computed. Very, very simple. Very, very straightforward. If I have to write down the pseudocode, it will be... Let's try the function where you get an x and an n. And you'll be taking an answer equal to 1. So, you take your answer as 1. And now you'll be doing it till n is greater than 0."
+    },
+    {
+      "chunk_id": "L268_C8",
+      "start": 546.32,
+      "end": 625.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=hFWckDXE-K8&t=546s",
+      "text": "answer equal to 1. So, you take your answer as 1. And now you'll be doing it till n is greater than 0. And it'll be like, okay, hey, listen. If n is odd number, I know one thing. I take 1 out. Answer equal to answer into x. I'll take 1x out. So, thereby, the power reduces by 1. The power reduces by 1. But if it is an even power, in that scenario, what happens is the power gets reduced by 2, but x gets multiplied by x itself. And at the end of the day, I can straightaway return the answer. What am I doing? In most of the cases, I'm dividing it by 2. I'm trying to reach an even number when I'm trying to reduce it by 1. Why am I reducing it by 1? Because I'm trying to reach an even number. So, I'm reducing, like dividing it by 2, by 2, by 2 every time. So, thereby, whenever you divide by 2, divide by 2 for any certain number, the time complexity is always set to be logarithmic base to n. So, the loop will be running for logarithmic base to n. There will be some instances when you'll reduce by 1, but most of the instances, as you saw in the examples we took, were getting divided by 2."
+    },
+    {
+      "chunk_id": "L268_C9",
+      "start": 625.48,
+      "end": 704.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=hFWckDXE-K8&t=625s",
+      "text": "you'll reduce by 1, but most of the instances, as you saw in the examples we took, were getting divided by 2. Got it? So, this is how it will look like. The power method works in a similar fashion. And let's come back to our main problem. What if I say, again, this n, what if I say this one can be negative as well? Can be negative, can be positive. Can be negative as well. So, if I ask you, 5 raised to the power minus 2, what is the value? Isn't it equivalent to saying 1 by 25? Or 1 by 5 squared? So, I can simply compute 5 squared and if the power is negative, I just divide the answer by 1 by answer. Very simple, very simple. If the power is negative, I just divide the answer by 1, like 1 by answer. That's what I do. So, what I can do is, since n is getting reduced, I can store it as m equal to n. And at the end of the day, I can say if m was lesser than 0, answer will be 1 by answer. Very simple and straightforward. Now, other question, what if this x is a double? 2.5, whatever."
+    },
+    {
+      "chunk_id": "L268_C10",
+      "start": 704.0,
+      "end": 754.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=hFWckDXE-K8&t=704s",
+      "text": "will be 1 by answer. Very simple and straightforward. Now, other question, what if this x is a double? 2.5, whatever. In that scenario, just go back and assign the answer to be a double. That is all you need to do. And make sure when you're dividing, do it as 1.2 by answer. So this is how the pseudocode looks like. The C++, Java, Python, JavaScript code will be given in the description. You can check them out. I hope you have understood and the space complexity is definitely be equal of 1 because I'm just using an answer variable, nothing else. So that will be it for this one. So I hope you understood everything. If that is the case, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

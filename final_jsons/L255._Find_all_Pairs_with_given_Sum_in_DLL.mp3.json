@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L255",
+  "lecture_number": 255,
+  "lecture_title": "L19. Find all Pairs with given Sum in DLL",
+  "youtube_url": "https://www.youtube.com/watch?v=YitR4dQsddE",
+  "chunks": [
+    {
+      "chunk_id": "L255_C1",
+      "start": 0.0,
+      "end": 77.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=YitR4dQsddE&t=0s",
+      "text": "So, let's continue with our playlist and for that, hey, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is finding pairs with the given sum in a sorted doubly linked list. So, you're basically given the head of a sorted, very important word, a sorted doubly linked list and your task is to return all the pairs which add up to this particular given sum. Like over here, you're given this head of the doubly linked list, you're given the sum 5. So, if I pick up this value 1, if I pick up this value 4, both of them will add up to give you the value 5. So, this can be a pair. I can say that 1, 4 is a pair that adds up to give you the given sum 5. Do I have any other pairs? I do have. If I pick up 2, if I pick up 3, 2, 3, if I take this, they will also add up to give you this particular sum. Can I take something else like 2, 9? I cannot. Why? Because 2 plus 9 is 11. I need 5. So, your task is to return all the pairs, yes, all the pairs that add up to give you the particular sum."
+    },
+    {
+      "chunk_id": "L255_C2",
+      "start": 78.04,
+      "end": 157.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=YitR4dQsddE&t=78s",
+      "text": "So, your task is to return all the pairs, yes, all the pairs that add up to give you the particular sum. Like in this case, the answer will be 1, 4, 2, 3. You can return them in any order. It doesn't matter. So, if this problem comes up in an interview, what is the first thing that you can think of? The extreme naive solution that I can think of is, I'll keep a temporary 1 at the head initially. I'll keep a temporary 2 one place ahead of the temporary 1. I'll do the travesty. One plus 2, is it equivalent to sum? No. I'll move temporary 2 to the next. One plus 3, is it equivalent to sum? No. I'll move the temporary 2 to the next. One plus 4, is it equivalent to 5? Yes, it is. I'll pick up this pair and I'll store it in a data structure. After that, I'll move the temporary 2 to 9. Nine plus 1, is it equivalent to sum? No. I stop. Since it is given that it is sorted, the moment 1 plus 9 is exceeding the sum, I am very sure to the right of the temporary 2, I'll never find anything. So, you can stop then and there. You can stop then and there by saying that beyond 9, I'll have greater values. So, I can never find 5."
+    },
+    {
+      "chunk_id": "L255_C3",
+      "start": 157.36,
+      "end": 236.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=YitR4dQsddE&t=157s",
+      "text": "and there. You can stop then and there by saying that beyond 9, I'll have greater values. So, I can never find 5. I'll stop. Perfect. Done. Once you have done this, you'll take temporary 1 and you'll move it to the next and again do the same thing. This time, temporary 2 will be starting at one place ahead of temporary 1. Again do the same travesty. Let's do it. Two plus 3. Perfect. Gives you 5, so you take it. Temporary 2 will go over here. Two plus 4 is 6. Six is greater than sum. So, you are very much sure that there is no need to go beyond 4. You can stop then and there. Yes, you can stop temporary 2 then and there and you can just move temporary 1 to the next place. Let's do the same thing. Temporary 2 will be placed one place ahead. This time, 3 plus 4 is 7. That's greater than sum. So, you stop then and there. No need to move ahead. Please move temporary 1 to the next. And again, temporary 2 will be standing one place ahead. 4 plus 9 is greater. No need to move temporary 2. This temporary 2 will be gone and temporary 1 will move to the last. And this time, temporary 2 will be standing at null, which means it's over."
+    },
+    {
+      "chunk_id": "L255_C4",
+      "start": 236.24,
+      "end": 304.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=YitR4dQsddE&t=236s",
+      "text": "gone and temporary 1 will move to the last. And this time, temporary 2 will be standing at null, which means it's over. Which means it's over. At the next step, temporary 1 will also move to null. So, it's over. Once you have completed, you will have all the pairs that are adding up to give you this particular sum. Very simple nested travesty. So, what I can do is, I'll write down the pseudocode. Again, I'm writing down the pseudocode, not the C++ or Java code. For C++, Java, Python or JavaScript codes, the link will be in the description. So, what I will do is, I'll keep a temporary 1 at head. And I'll also take any data structure. You can take list, top list or depending on the problem statement, you can take a data structure. So, let's take a data structure. So, let's call it as data structure. So, it's a list of list, which will be storing all the pairs. Okay. Let's do the travesty. While temporary 1 is not equal to null, I'll do the travesty till it reaches null. Where will temporary 2 be? Temporary 2 will be at one place ahead of temporary 1. So, that's temporary 1 of next. Perfect. Temporary 1 of next. What is the next job? Let's move it."
+    },
+    {
+      "chunk_id": "L255_C5",
+      "start": 304.96,
+      "end": 384.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=YitR4dQsddE&t=304s",
+      "text": "of temporary 1. So, that's temporary 1 of next. Perfect. Temporary 1 of next. What is the next job? Let's move it. While temporary 2 is not null, what will you check? You will check, hey, if temporary 1 dot value plus temporary 2 dot value is that equivalent, if that's equivalent to the given sum, can I say, hey, my data structure, can you please store these two pairs? So, I'll say add or push back or whatever in your language it is stated. Can you add the temporary 1 dot value comma temporary 2 dot value? Once you have added this, what is the next job? The next job is stating temporary 2, can you go to temporary 2 dot next? Simple. And to optimize it, to optimize it, like I'll do the optimizations, but this is where the temporary 2 will be finishing. After that, once one round of traversal is complete, you can take temporary 1 and you can ask it to go to the next, which is temporary 1 dot next. And you can finish up this one as well. So, in order to optimize it, what you can do is, you can see, I'll also check for and"
+    },
+    {
+      "chunk_id": "L255_C6",
+      "start": 384.42,
+      "end": 463.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=YitR4dQsddE&t=384s",
+      "text": "well. So, in order to optimize it, what you can do is, you can see, I'll also check for and and in case it is not null, temporary val, temporary 2 val, is it greater than equal to? Yes, it is. Sorry, smaller than equal to sum. If it is, if it is smaller than equal to sum, we keep on doing. The moment it is greater than sum, we stop. There is no need to do it. Got it? Lesser than sum, keep doing. Simple and sorted. So, yeah, this will be the code. So, let's analyze the time complexity. Can I say, I have a temporary 1 that goes through the entire doubly linked list and this is what our outer loop is doing. I have a temporary 2, which is the inner loop. What is it doing? For the first time, it is going this much. The next time till this much. The next time till this much. The next time till this much and the worst case. Correct? Somewhere near about it, still going through, through the entire thing. So, can I say the inner loop is also going through the entire doubly linked list. Near about, near about. Thereby, the time complexity is near about bigot of n square. Not exactly n square, not exactly n square. Near about n square and the space complexity is bigot of 1. This is where the interviewer will not be happy with."
+    },
+    {
+      "chunk_id": "L255_C7",
+      "start": 463.92,
+      "end": 533.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=YitR4dQsddE&t=463s",
+      "text": "n square. Near about n square and the space complexity is bigot of 1. This is where the interviewer will not be happy with. Bigot of n square and he will ask you to optimize it. So, if I go back to the question, the question stated that it is a sorted doubly linked list. So, we will take the advantage of the property sorted and we will try to do it in limited time like not in n square, something lesser than that. So, if you have seen my array lectures, you exactly know how to solve it. What we will do is, we will take a left pointer, make it stand at the head. We will take a right pointer, make it stand at the tail of the doubly linked list. We will have to traverse and reach the tail. So, traverse and reach the tail and make right stand at the tail of the linked list. Once this is done, the next thing that you will do is, you will take this value 1, you will take this value 9, you will add them up and the addition will be 10. That's greater than the given sum 5. If it is greater, if it is greater, you will try to reduce. You want to reach 5, you want to reduce. So, if you move the left, then 1 will be turned to 2 and 2 plus 9 will increase. You want to reduce, reduce. This is sorted."
+    },
+    {
+      "chunk_id": "L255_C8",
+      "start": 533.96,
+      "end": 612.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=YitR4dQsddE&t=533s",
+      "text": "you move the left, then 1 will be turned to 2 and 2 plus 9 will increase. You want to reduce, reduce. This is sorted. Thereby, the right will move. Thereby, the right will move. So, what you will do is, you will move the right to the left. You will not do anything to this. You will not do anything to this. You will just take the right and you will move it in the left direction because in doubly linked list, you can move backwards. This time we have right standing at 4, the left standing at 1. 1 plus 4 is 5. 1 plus 4 is 5 and if that is the case, I can say this is a pair. So, you just pick this up and you will store it. Okay, done. After this, whenever they are equal, you cannot increase or decrease. Just move both of them. Just move both of them. This time we have 2 and 3. Again equivalent to 5. Take them up. 2 and 3 taken up. Again move both of them. Left moves here. Right moves here. And the moment you will see, the moment you will see that right has a value that's smaller than left, right has a value that's smaller than left, it means they have crossed over. It means they have crossed over. So, you will stop. And you can see that you have both of them. Very simple. Just take the advantage of the software."
+    },
+    {
+      "chunk_id": "L255_C9",
+      "start": 612.64,
+      "end": 690.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=YitR4dQsddE&t=612s",
+      "text": "crossed over. So, you will stop. And you can see that you have both of them. Very simple. Just take the advantage of the software. So, can I write down the pseudocode? Again, I will be writing down the pseudocode and you will find the C++, Java, Python and JavaScript codes in the description below. So, what I can do is, I can write the left to be at head and the right to be at the tail. You can figure out the tail. It's very simple. Write down a function find tail and it will find you out. Just write down a function find tail, it will find you out. And you will write, also take an empty data structure. While left data, a value is smaller than right's value. I can just keep on going till it is. Because it is a sorted doubly linked list. This time I will check, if the left val plus right val is equivalent to some, in that case, head data structure. Can you add them up? I will simply add them up. And at the same time, I will say, hey left, can you go to the next? So it will go to the next. And I will ask the right, hey, can you go to the previous? So it will go to the previous. Very simple."
+    },
+    {
+      "chunk_id": "L255_C10",
+      "start": 690.6,
+      "end": 769.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=YitR4dQsddE&t=690s",
+      "text": "And I will ask the right, hey, can you go to the previous? So it will go to the previous. Very simple. Or else if I write, hey, in case the summation is smaller than some, what if it is smaller? I need to increase. So the left will move to the next. Or else it is definitely greater. So the right will move to the back. One and dusted. And the while loop ends. And at the end of the day, you can return the data structure. Simply done. What will be the time complexity of this one? We will discuss this. Let's go back into the code editor and check out the code. So in the code editor, you can check this find deal function out. It's a very simple one. I just stopped when the next is reaching null. I move the deal. I can easily get my deal of the doubly linked list. We take the data structure, which is basically a vector, a list of pairs. And after that, just in case it is null, the doubly linked list is null, you return the empty data structure. Or else you have left standing at head, right standing at the deal. It's a very simple, the same thing that I have written down in the iPad. And after that, we return down the answer. So I'll quickly go ahead and submit this and see if it is working fine."
+    },
+    {
+      "chunk_id": "L255_C11",
+      "start": 769.96,
+      "end": 842.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=YitR4dQsddE&t=769s",
+      "text": "iPad. And after that, we return down the answer. So I'll quickly go ahead and submit this and see if it is working fine. It should. What is the time complexity? Can I say this fine deal is basically traversing till the end, thereby the complexity to find deal is definitely big often. Yes. And over here, the while loop, I'm visiting every node, every node till I cross. So very sure that this is also big often because visiting every node, either moving left or moving right. Correct. So overall, it's a big of n plus big of n. So that's an overall of big of 2n. And what is the space complexity? Can I say I'm not using any extra space, just using the space that is required to store the answer. So depending on the number of pairs, it might be very small, it might be very large. But am I using anything to solve this particular problem? No, I'm not. So in order to solve this problem, big of 1 space complexity is in order to return the answers depending on the number of pairs, you can compute the space complexity. So this is it. And if you're still watching, I'm very, very sure that you understood everything. And if that is the case, please, please do consider giving us a like. And if you're new to this channel, please do consider subscribing to us as well. With this, I'll be wrapping up this video."
+    },
+    {
+      "chunk_id": "L255_C12",
+      "start": 842.64,
+      "end": 844.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=YitR4dQsddE&t=842s",
+      "text": "like. And if you're new to this channel, please do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's finish some of the video till then bye bye take care."
+    }
+  ]
+}

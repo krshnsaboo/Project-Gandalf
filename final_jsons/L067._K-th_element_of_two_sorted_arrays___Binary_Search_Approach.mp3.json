@@ -1,0 +1,85 @@
+{
+  "lecture_id": "L067",
+  "lecture_number": 67,
+  "lecture_title": "Bs-22. K-th element of two sorted arrays | Binary Search Approach",
+  "youtube_url": "https://www.youtube.com/watch?v=D1oDwWCq50g",
+  "chunks": [
+    {
+      "chunk_id": "L067_C1",
+      "start": 0.0,
+      "end": 66.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=D1oDwWCq50g&t=0s",
+      "text": "So let's continue with our binary search playlist. Now this is the part of the strivers A to Z DSA course in case you haven't checked it out yet. There's a link in the description. Make sure you check it out after this video. So till now I've covered up till this particular problem which is median of two sorted arrays. And the problem that I'm going to cover up today is finding the kth element of two sorted arrays. Please, please make sure that you pause this video right away, go back and watch this video median of two sorted arrays. Because if you don't understand the core concept that I've used in finding the median in two sorted arrays, you'll not understand how to solve this one because this problem is an extension of the previous one. So understanding the previous one is very critical. I'll leave a link in the description in case you haven't seen it, pause the video right away, go back and watch it and then you can come back and resume. So the problem is finding the kth element of two sorted arrays of different sizes. What does the problem state? You'll be given an array one and array two, both of them will be in the sorted order. What you have to do is you have to merge them like hypothetically just merge them into the third"
+    },
+    {
+      "chunk_id": "L067_C2",
+      "start": 66.36,
+      "end": 132.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=D1oDwWCq50g&t=66s",
+      "text": "in the sorted order. What you have to do is you have to merge them like hypothetically just merge them into the third sorted array. So if I merge them, I'll get 1234678910. This will be the third merged sorted array right now what you have to find is the fourth element. So the fourth element will be this, the fifth element will be this, the sixth will be this, and so on. So you'll be given array one array two k. So if to tell me the fourth element by merging these two sorted arrays. So when I say merge these two arrays to get the third sorted array, we need to merge them. No, I don't want you to merge it, it will be giving you k, what do you have to return as four, which is the element at the fourth position. After merging, you can merge them, you cannot merge them that is on you, what they expect you to return is just the element. That's it how you do that is your concern. So if you have solved the previous question, which is median of two sorted arrays, you do remember the question was very much similar. The only difference was finding the median of two sorted arrays. And in this question, we have been asked to find the kth element of two sorted arrays. So let's quickly get back to the previous question. And the example that we took was"
+    },
+    {
+      "chunk_id": "L067_C3",
+      "start": 132.92,
+      "end": 208.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=D1oDwWCq50g&t=132s",
+      "text": "find the kth element of two sorted arrays. So let's quickly get back to the previous question. And the example that we took was array one and array two, which had six and four elements respectively, right and adding them up with 10 elements, which was even in number, what we did was, we kind of try to implement binary search by splitting them into two halves, five elements on the left, five elements on the right. And then we recognized which of the elements was taken from the array one, which of the elements was taken from the array two, right once you have recognized this, we tried to find out the median because the median was four plus six by two, why two elements because the number of elements were even that is what we did, right and how did we do it, we know that out of four and three, you have to take the maximum. So we took four and we know that out of six and seven, you have to take the minimum. So we took four and six and we did something and the formula was max of L1, L2 plus min of R1, R2 by two. This was working when the symmetrical like the median symmetry was having equal number of elements on left and right and that is only possible in case of even number of elements and then you pick"
+    },
+    {
+      "chunk_id": "L067_C4",
+      "start": 208.68,
+      "end": 279.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=D1oDwWCq50g&t=208s",
+      "text": "number of elements on left and right and that is only possible in case of even number of elements and then you pick up four and six and then you divided them by two, right but but there was one more case where we had odd number of elements where there was three and two elements which added up to five elements. In that case you cannot like we know the median is three but you cannot draw a line of symmetry on three and say one two and four five you cannot do it that is why what we did was we took three numbers on the left we took two numbers on the right and we were doing okay we will try to formulate these three numbers and in doing so what we did was we realized that two was coming from array one and one three was coming from array two and on the right we had four and five from array one and nothing from array two. So this is how we formulated it and in order to get the median which is the three what we need was this was l1 this was l2 this was r1 and r2 was int max if you remember the formula or the algorithm we know that three is the median which is the last element of the left half so which is the last element of the left half that's the greatest element out of these"
+    },
+    {
+      "chunk_id": "L067_C5",
+      "start": 279.56,
+      "end": 346.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=D1oDwWCq50g&t=279s",
+      "text": "the last element of the left half so which is the last element of the left half that's the greatest element out of these so what we said was the median was max of l1, l2. Can we implement the similar formula? I think we can we can implement the similar formula isn't it what are we doing over here the total number of elements were five we were splitting them into three and two that is what we did can we not do the similar thing over here can I say I need four elements on the left and I need six elements how many elements are there in total let's quickly count it one two three four five six seven eight nine we have nine elements four on the left five on the right so we are very much sure that four elements will be on the left and five elements will be on the right now we have to figure out which are the four elements try to merge them can I say it's like one two three four these are the first four elements and two three are coming from here and one four are coming from here so we maybe can write two three are coming from array one and that's very much obvious and one four is coming from array two which is again very much obvious done once you have formulated the left half because"
+    },
+    {
+      "chunk_id": "L067_C6",
+      "start": 346.36,
+      "end": 410.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=D1oDwWCq50g&t=346s",
+      "text": "obvious and one four is coming from array two which is again very much obvious done once you have formulated the left half because that is what we need to formulate the left half once you have formulated the left half what is the answer l1 is here l2 is here the answer is you just need to find the kth element no median no median here just the kth element if I try to rearrange them that's what it is the last element is technically the greatest of all greatest of all so the greatest of l1 and l2 so the kth element is greatest of l1 and l2 so what we did was in the median we were trying to form n by 2 n by 2 or we were trying to form 3 2 in case of odd that is what we did over here we will try to form k and n minus k where n is the total number of elements same concept just that we did the slightly different split we were saying k on the left and the remaining on the right out of these k we figure out what is the correct configuration and that is how we can easily solve it so let's quickly get back into the code editor so we'll be solving the problem kth element what I'll do is"
+    },
+    {
+      "chunk_id": "L067_C7",
+      "start": 410.68,
+      "end": 483.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=D1oDwWCq50g&t=410s",
+      "text": "solve it so let's quickly get back into the code editor so we'll be solving the problem kth element what I'll do is I'll go back to the problem median of two sorted arrays and I will copy paste yes the code and now we have n1 n2 let's not take it because we are already given n and m so let's just rename it to n1 and n2 perfect let's rename array 1 to a and array 2 to b because that was there and instead of calling this function when we have to swap what we will do is we'll call b a n2 n1 and k perfect this is one of the things the other thing that I have to do is hash include bits slash std c++ dot h okay this is done is everything else correct okay how many elements will be there on the left k so there are k elements on the left n is there everything else will stay the same yes this one will change we don't need to find median we just find the max of l1 and l2 I think that should be done I think we're pretty much done but if we try to submit this this will give us a wrong answer why I'll tell you so over here we are taking low as zero which means maybe we'll pick up nothing from array one or we are saying maybe we'll pick up"
+    },
+    {
+      "chunk_id": "L067_C8",
+      "start": 483.48,
+      "end": 557.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=D1oDwWCq50g&t=483s",
+      "text": "we are taking low as zero which means maybe we'll pick up nothing from array one or we are saying maybe we'll pick up everything from array one so let's quickly get back into the ipad imagine I'm being asked to find the second element and the array one has six elements now does it make sense to pick up six elements from array one no at max how many can you pick you can pick you can pick at max two elements so can I say high will be minimum of k comma n1 because if it is given six I cannot pick six at max I can pick two elements so my maybe I will be minimum of k comma n1 so this is what I'll do minimum of k comma n1 similarly can do we need to change loop I think we need so you have understood for high what about low we're taking low to be zero but is it zero always when k was two okay that's understandable because imagine the array two has five elements that's understandable that okay in total it has 11 elements you need two so it's like two by nine the left will always have two elements you can pick up zero from here and just two from array two and that will do the job but but what if I change this k to make it something like"
+    },
+    {
+      "chunk_id": "L067_C9",
+      "start": 557.96,
+      "end": 633.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=D1oDwWCq50g&t=557s",
+      "text": "two from array two and that will do the job but but what if I change this k to make it something like seven in that case what I'm saying is seven elements from the left and in total there were 11 so the remaining four will go to the right and if I'm forming seven from I'm forming seven from on the left even if I pick up all the five even if I pick up all the five I still need a minimum of two I still need a minimum of two from array one I cannot survive with zero so thereby you will say max of zero comma at least k minus n2 which is five seven minus five two at least any in case k was two this formula also works max of zero k was two two minus five was minus three so it will be always taking zero in case k is a smaller quantity it works in case k is a bigger quantity than this one then you have to pick up something that is why the value of low will be at least you need k minus n2 at least and the minimum high will be minimum if if k is a very small quantity you don't need to pick up everything just do these changes otherwise it might end up giving you a wrong answer because you'll not find elements you'll not be having"
+    },
+    {
+      "chunk_id": "L067_C10",
+      "start": 633.48,
+      "end": 695.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=D1oDwWCq50g&t=633s",
+      "text": "everything just do these changes otherwise it might end up giving you a wrong answer because you'll not find elements you'll not be having sufficient elements so this is done we know the answer will be between this and this that is done let's quickly go ahead and run this I think we are pretty much done I think it should run hopefully it does let's really submit it and see if it is getting submitted or not it does get submitted as well by the way the brute and the better solution will be similar to what we did in this particular problem which is median of two sorted arrays that is why I did not discuss it and what about the time complexity it will be similar to what was in median of two sorted arrays that is logarithmic of minimum of the size of the both the arrays because we are doing a binary search on the minimum length got it so let's quickly get back into the sheet and mark this as done I hope you have noticed how important are concepts because if your concept for this problem was clear this problem was a cakewalk that is why I'm focusing so much on concepts please focus on concepts do not memorize problems please please in case you are still watching till here please do consider giving us a like and if you're new to our channel what are you doing"
+    },
+    {
+      "chunk_id": "L067_C11",
+      "start": 695.48,
+      "end": 712.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=D1oDwWCq50g&t=695s",
+      "text": "you are still watching till here please do consider giving us a like and if you're new to our channel what are you doing hit that subscribe button if you haven't followed me on Instagram Twitter and LinkedIn all the profile links will be in the description with this I'll be wrapping up this video let's play bye take care"
+    }
+  ]
+}

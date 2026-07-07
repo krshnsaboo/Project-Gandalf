@@ -1,0 +1,239 @@
+{
+  "lecture_id": "L213",
+  "lecture_number": 213,
+  "lecture_title": "DP 32. Distinct Subsequences | 1D Array Optimisation Technique 🔥",
+  "youtube_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY",
+  "chunks": [
+    {
+      "chunk_id": "L213_C1",
+      "start": 0.0,
+      "end": 76.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=0s",
+      "text": "Hey everyone, welcome back to Take U Forward. Today we will be solving the problem distinct subsequences. Again it is a part of DP on strings. Now till now whatever problem we have done we have seen that it uses the concept of LCS right. But now we will be moving on to a concept which is something like string matching on DP on strings where we generally do something similar to matching and we will be doing three problems and all of these three problems will be lead code hard version. Yes all of these three problems will be lead code hard and I can guarantee you that after this DP on strings will look very very simple to you. So what is the problem? It states distinct subsequences. Okay so the first problem states you're given a string and what is the string? BABGBAG and you're given another string bag okay. So you have to tell me how many times does the string 2 appears in the string 1. For an example I can say BA or if I use some other colors BAB then G and then BAG. So this"
+    },
+    {
+      "chunk_id": "L213_C2",
+      "start": 76.92,
+      "end": 156.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=76s",
+      "text": "I can say BA or if I use some other colors BAB then G and then BAG. So this in this entire string the yellow color is the string S2. So that's one occurrence. Similarly if I try to write BA this if I take these three there will be another occurrence of back correct. Similarly if I take something like BAG there will be another occurrence correct. Similarly if I take BAG there will be another occurrence right. So what I can say is listen in total there will be five occurrences in total there will be five occurrences of the string S2 in the string S1. You can call it as S1. The question is very simple. Given two strings says given two strings tell me the number of times the string 2 appears in string 1. That is a very simple question given to you and how do you solve this? Obviously we have to apply something like recursion. Now why do we apply recursion and why not simple matching because what I can say is if I have a BAG if I have a BAG like how do I approach this problem. My generic point of view will be let's take a BAG and let's try to compare okay B B gets compared A A gets compared next G gets compared over here."
+    },
+    {
+      "chunk_id": "L213_C3",
+      "start": 156.8,
+      "end": 232.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=156s",
+      "text": "a BAG and let's try to compare okay B B gets compared A A gets compared next G gets compared over here. So that that will be one occurrence but you could have said I will not compare G this G and I'll compare this G with this G. There will be another occurrence. Similarly you can say I'll not compare this B with this B instead of that I'll compare this B and this B. So you're saying that you have to follow different methodologies of comparing. Yes I repeat you have to follow different methods of comparing like there can be multiple ways of comparing if I ask you. Different methods of comparing so it's kind of trying always it's kind of trying always. So you know whenever we try always what comes to our brain obviously it's recursion right because that's the only way when we say that okay we're going to try this way this way this way and we take all the answers. That is what recursion is you basically try this way this way this way this way and you sum sum up all the ways right. So what is the question stating it states count the number of ways. Back to the recursion classes lecture 6 and lecture 7 in recursion whenever there"
+    },
+    {
+      "chunk_id": "L213_C4",
+      "start": 232.88,
+      "end": 308.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=232s",
+      "text": "stating it states count the number of ways. Back to the recursion classes lecture 6 and lecture 7 in recursion whenever there is something like count and ways what do you think what do you think. Let's write down the pattern. It's generally a function which is the recursive function the base case tends to return 1 or tends to return 0 because you're counting the ways and you call all the functions and you add up them and you return that is what you do whenever the problem is count ways remember this whenever the problem is count ways you write a function you know the base case has to return 1 or has to return 0 and then you try out this is one of the possible ways this is one of the possible ways and if there are other ways you try out and you add up all the states and you return that's the generic way and we have learned that in the lecture 6 and lecture 7 of the recursion playlist. But now the question arises how to write the recurrence is how to write the recurrence that's the plain and straightforward question how do I write the recurrence. Okay so what did I tell you in terms of strings over here how many strings we have we definitely have two strings and whenever there are two"
+    },
+    {
+      "chunk_id": "L213_C5",
+      "start": 308.8,
+      "end": 387.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=308s",
+      "text": "tell you in terms of strings over here how many strings we have we definitely have two strings and whenever there are two strings I've told you clearly that we are going to use two parameters one parameter will be I which represents the index in S1 the another parameter will be J which represents the index in S2 so I can say the first step of writing the recurrence is very simple express I repeat express everything in terms of I which is the first string and J right. For the second thing explore all possibilities and the third thing is count all ways so return the summation of all possibilities return the summation of all possibilities and I can say the fourth step is very simple write down the base case that is something which we always do and call it as a step or you cannot. So if you do all these steps I think we will be pretty much done so what I do initially is I write F of IJ as usual and I'll keep the base case for the future but as of now I will try to write I and J is what we will"
+    },
+    {
+      "chunk_id": "L213_C6",
+      "start": 387.92,
+      "end": 465.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=387s",
+      "text": "case for the future but as of now I will try to write I and J is what we will try to write. Let's analyze what does I and J actually means so what are the strings given the strings given are BAP and this one right so let's quickly write down the strings. String S1 is BAP and string S2 is BAP. So when I say I and J we know initially I is going to start over here and we know initially J is going to start over here. Let's assume the length of the string S1 is N assume the length of the string S2 is M we definitely know this and we know one thing this is nothing but N-1 and M-1 right so what do you basically staying when you are starting off with something like F of N-1 and M-1 is the start call. What do you mean by this? What does this mean? Let's write that down. This means number of distinct subsequences between of string S2 from 0 to this is I this is J 0 to J in string S1 0 to I which means which means let's go back which means you're saying this is so"
+    },
+    {
+      "chunk_id": "L213_C7",
+      "start": 465.0,
+      "end": 543.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=465s",
+      "text": "in string S1 0 to I which means which means let's go back which means you're saying this is so number of subsequences of bag in this entire string if I was over here and J was over here the number of subsequences of bag in this particular string because I is here so I basically signifies that this much is the string. So this is the string which is going to start over here and this is the string which is going to start over here. So this is the string this particular string because I is here so I basically signifies that this much is the string got it so that is what we are writing F of IJ number of subsequences from 0 to J like this is the string S2 in the string only from 0 to I that is what it means. I hope you have understood the definition of F of IJ what are we trying to explain by F of IJ. So we have written this and we have understood in terms of I and J it is basically the string from this is string S1 and the string S2 is 0 to J that is what it means and you have to give me the answer for that. So what is the next question explore all possibilities."
+    },
+    {
+      "chunk_id": "L213_C8",
+      "start": 543.56,
+      "end": 609.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=543s",
+      "text": "what it means and you have to give me the answer for that. So what is the next question explore all possibilities. So let's come back to this example of this S1 and this bag. Now assume that this is the G. Assume this G is matching with this G. Assume it is matching. So you can be like here is driver they are matching. So this can be the G because for this G I am looking for a G in S1. Let's understand what are we trying to do. Let's understand this. What am I trying to do? I am trying to figure this bag out. How many times does this bag occur over here? For that what I am trying to do is I am tweaking this G and saying okay this is the G, this is the G. Where is the A? This is the A. Where is the B? This is the B. So I will get one occurrence but what I could have also done is I could have said okay I will not take this G. I will take this G then I will take this A then I will take this B. Perfect. That's one more occurrence or what I could have said is let's take this G but let's not take this A. Take this A and take this B. Again perfect. Or what I could"
+    },
+    {
+      "chunk_id": "L213_C9",
+      "start": 610.0,
+      "end": 678.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=610s",
+      "text": "let's take this G but let's not take this A. Take this A and take this B. Again perfect. Or what I could have said is let's take this G, this G. Let's take this A, let's take this A but don't take this B. Take this B. So that's another one. Or you could have said let's take this G, let's take this A, let's take this B. So what am I getting? If this is the G I can take it. That's for sure because they are matching. I will take it and now I will look for BA. I will look for BA in this portion. I will take it and I will look for BA in this portion. If they are matching I will take it and I will look for BA in this portion. That is something which I am sure. So if they are matching I know one thing I will do. So let's write that as of now and then we can think of other things. If they are matching which is I is equal to equal to S2 of J. If they are matching I know one thing for sure. The string, the bag will reduce to BA. So that will be J-1 and you have matched someone so this will also reduce. This is something which will happen to F. But what does this mean?"
+    },
+    {
+      "chunk_id": "L213_C10",
+      "start": 678.16,
+      "end": 739.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=678s",
+      "text": "and you have matched someone so this will also reduce. This is something which will happen to F. But what does this mean? This again means you are saying this G matches with this G. So you are reducing the string to this and BA. But what if I say hey I am not interested to take this G. I want someone else as G. So probably this one. So I will say okay let's not match it and let's keep the bag as it is. I am not matching G. I am not matching G. Let's reduce it. So over here let's find bag. Let's not match this G with this G. Let's take the entire stuff and match it over here. Can I do that? I will be like yes. Why? Because I am looking for another occurrence of G because I am not satisfied with this occurrence or I want someone else to be the G. So I will be like okay I will not take this G but I will try to figure out this entire portion. So this still stays the entire string but I reduce this saying that this G will not be accepted. Perfect. So I will be like fine. I can say I will reduce this first string because this is not the G that I am looking for. I will keep the next"
+    },
+    {
+      "chunk_id": "L213_C11",
+      "start": 739.7,
+      "end": 799.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=739s",
+      "text": "say I will reduce this first string because this is not the G that I am looking for. I will keep the next string as bag only. I will keep it as bag only. I will reduce it. I will look for somewhere else. I will look for the G somewhere else in the reduced string. So I think I can do this and if I do this eventually this G probably will match over here. But what if this G because now now now what if what if just assume you came to a case where your I is here on A and your G is here. So you are like A is not matching with G. There is no other way. You have to reduce it. It will get reduced and this will be the bag. You will look for G in the reduced string because this A is not matching with this G. There is no way in which you can match this G with this A. So you don't have any other option instead of reducing the string and saying let's find bag. Again you will not find B. So you will again reduce the string and you will try to find and then you will find G and G. So you have to reduce the string. You have to reduce the string in order to do the search. So I can say okay what if what"
+    },
+    {
+      "chunk_id": "L213_C12",
+      "start": 799.54,
+      "end": 876.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=799s",
+      "text": "to reduce the string. You have to reduce the string in order to do the search. So I can say okay what if what if they're not matching because that might be a case in future. So if that's the case I'd like I will reduce the first string and I'll still keep on searching. Okay makes sense. So I've understood if they're matching if they're matching there can be two states. One is this one is this. If they are not matching then I'll reduce and look for somewhere else. So these are two different states. So can I say I will either return this guy as the answer if they're matching or I either return this guy. Perfect. Either this or either this and that looks absolutely perfect. Now so have I explored all the possibilities. I have. I have indeed explored all the possibilities. Have I written the summation because it was count ways. I have. Base case what is the problem. Problem is problem is count ways. The base case has to return one has to return zero. There's no other way. There's no other way. Okay. So when will the base case return one actually and when will it return zero is my question to you. So can I say if I'm matching if I'm matching what will happen."
+    },
+    {
+      "chunk_id": "L213_C13",
+      "start": 876.82,
+      "end": 954.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=876s",
+      "text": "will it return zero is my question to you. So can I say if I'm matching if I'm matching what will happen. Ask yourself what will happen. Base case is asking yourself. Base case is ask yourself what will happen. Okay. Let's ask. I'm matching. Okay. So I was like what was it. Bab. Okay. I was like back. What if there is a case where I'm still looking for B I'm still looking for B and my pointer came out somewhere here which is which is a negative index which is definitely a negative index. So my point that came across to a negative index I can say. What if this happens. So if if if because if I was over here then I would have matched this B right. But if I'm standing here and I still have some portion of the second string remaining this means I still have some portion of the die remaining. Thereby I could not figure this B out and the string was exhausted. That's one of the base cases. Or I can say yes or I can say I might end up coming to minus one on J which means I actually have"
+    },
+    {
+      "chunk_id": "L213_C14",
+      "start": 954.28,
+      "end": 1030.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=954s",
+      "text": "yes or I can say I might end up coming to minus one on J which means I actually have matched everyone which means I actually have matched everyone. And I think that's the case that I'm looking for because when do I return one is my question. When do I return one is my question. Can I see if all characters. Yes. Can I see if all characters of S2 match when I return one. I'll be like yeah that makes sense. So can I say the first base case is very simple. If I have matched all characters of the string S2 there's no thinking go across and return one. But if if if this did not happen and I exhaust the first string and I exhaust the first string so that is still matching to be done on the J counterpart. There is still some matching to be done on J counterpart. So I will go across and return a zero. That's it. That's how you write the base cases as simple as it could have got. So we have written the recursion right. And how many states are there. There are definitely"
+    },
+    {
+      "chunk_id": "L213_C15",
+      "start": 1030.2,
+      "end": 1106.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1030s",
+      "text": "could have got. So we have written the recursion right. And how many states are there. There are definitely two states. And I know the time complexity of this recursion if I ask you. Will go exponential. Assuming you're doing all type of comparisons there can be a lot of comparisons somewhere near about two to the power n will be the number of subsequences of string S1 because those are the number of subsequences that you can generate. The string is of length n and two to the power m of the string S2. So there will be matchings on them. So it will go exponential you can call it in an interview. And the space complexity if you're trying to go the auxiliary stack space way it will go up to be go of n plus m assuming you do simultaneous matches. So obviously obviously the time complexity and space complexity is something which I'm not I'm not super happy with. I need to do it better. So I know one thing for sure I can optimize this due to overlapping subproblems. Yes. Due to overlapping subproblems you could probably you could try out drawing the recursion tree and you will"
+    },
+    {
+      "chunk_id": "L213_C16",
+      "start": 1106.2,
+      "end": 1183.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1106s",
+      "text": "subproblems. Yes. Due to overlapping subproblems you could probably you could try out drawing the recursion tree and you will see overlapping subproblems. And I am not drawing it because this is the thirty second lecture of the dynamic programming series and I have been telling this all over overlapping subproblems. So there is no way I'm doing that. OK. So what do you do a very simple memoization. And how do you memorize what are the changing parameters. I J. How much is I n. How much is J m. So n cross m dp. Yeah. How do you do this. Right before returning dp of I J equal to dp of I J equal to. And over here you write if dp of I J not equal to minus one return dp of I J that's it. And if you write this your memoization solution is indeed ready. And what is the time complexity of this. Obviously the number of states space complexity will be the number of states that dp are that you're using and b go off n plus m which is the auxiliary stack space that you're using. OK. So you're given the string s and string b. Let's quickly write the private function. So we're like OK fine. I D. I D."
+    },
+    {
+      "chunk_id": "L213_C17",
+      "start": 1183.7,
+      "end": 1259.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1183s",
+      "text": "the string s and string b. Let's quickly write the private function. So we're like OK fine. I D. I D. I D. J. I mean one thing if the string gets exhausted we can return a one if the other string gets exhausted we could not do the match. And you know if they are matching which is this case you basically try to return the F of you match both of them which is this and you go across and you do you don't match and that's what you do. And if that's not happening then you go to the else. So they're not matching you automatically go to the else. So there's no need to write else. So F of just decrease one and that's what you will do. And you know you have to you require both the strings probably you can carry both the strings as well. So can you carry both the strings. And over here you can return F of n minus one m minus one s of d. And what is n. And you can call that s dot size. You can call m as t dot size. And that's what you can easily do. Let's quickly run this off and see if this is running fine. It is indeed giving us the correct answer. I do memorize it so just quickly call a vector vector int dp of n vector int dp of m cross minus one"
+    },
+    {
+      "chunk_id": "L213_C18",
+      "start": 1259.46,
+      "end": 1329.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1259s",
+      "text": "answer. I do memorize it so just quickly call a vector vector int dp of n vector int dp of m cross minus one and you can do is you can just pass on the dp over here just go across declaring the dp. I have done this and right over here as well pass the dp pass the dp over here as well pass the dp over here as well before returning dp of i j is equal to this and you can see dp of i j is equal to this plus this. And yeah on most it is if dp of i j is not equal to minus one you can return dp of i j again try to run this and see if this is running fine. It is indeed running. Let's quickly try to submit this off and see if this works fine or gives TLE because it's the memorization code. As usual it did give us the time limit exceeded. Why? Because we are using the memorization technique over here. We need to use the tabulation in order to remove this time limit exceeded. So let's go and check out the tabulation method. So as you saw the memorization technique did give you time limit exceeded right. So obviously we need to remove this auxiliary stack space and the recursion calls that we are making. And in order to do that what we can do this"
+    },
+    {
+      "chunk_id": "L213_C19",
+      "start": 1329.02,
+      "end": 1405.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1329s",
+      "text": "remove this auxiliary stack space and the recursion calls that we are making. And in order to do that what we can do this is we can definitely apply tabulation right. What is the first rule of tabulation? Declare the same size of dp array. So just go across and declare the same size of dp array. Done. Then write down the base cases. So and then write down the changing parameters in the opposite fashion. And then copy paste the recurrence. Is that what you do? Yes that is what you do. Just write it across. So write down the base cases is what you have to do. But do you remember LCS? Where we did something like one based indexing. In case you don't know please follow the dp playlist. So over here we are writing something as j lesser than 0 and i lesser than 0. So what we are doing basically is we are as of now dealing with zero based indexing. So there will be cases where a call for f of minus 1 will go which means the string i is exhausted. The string is exhausted. There might be a call"
+    },
+    {
+      "chunk_id": "L213_C20",
+      "start": 1405.26,
+      "end": 1475.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1405s",
+      "text": "1 will go which means the string i is exhausted. The string is exhausted. There might be a call where there will be i and the j will be minus 1. That means the string j is exhausted. So we are moving to a negative index. So in order to deal with it what we will do is we will just add a plus 1 to everything that we are doing. We will just add a plus 1 to everything we are doing. We were calling by n minus 1. What we will do is we will call it with n. We will call it with n. And over here since we did a plus 1. Now we know one thing for sure this will not be lesser than equal to. Instead of this this will be equal to equal to because instead of minus 1 since we did a plus 1 now a 0 will come. Instead of minus 1 in j a 0 will come. So these two are converted. But one thing we know for sure if we are dealing with n, n still means this guy. So that's one lesser. So over here instead of this yes over here instead of this you write s 1 of i minus 1 equal to equal to s 2 of j minus 1. You just compare the previous guys. That's it. And I think apart from that everything"
+    },
+    {
+      "chunk_id": "L213_C21",
+      "start": 1475.02,
+      "end": 1543.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1475s",
+      "text": "equal to s 2 of j minus 1. You just compare the previous guys. That's it. And I think apart from that everything stays as it is. You carry on one base indexing. But when comparing just make sure you compare with zero base because the strings are zero based. Right. And once you've done this now you can easily write this off. So just go back into the code. Yeah just go back into the code and just do these minor changes. So what I'll do is I'll just do this minor changes and just make sure you also declare the DP array of size 1 plus because you did this minor changes and over here just do i minus 1 and a j minus 1. That's it. And apart from that everything will stay as it is and try to run this and you will see that this is definitely running fine. It is but I'll not submit it because we know it will give TLE so we're not going to submit it. Coming back to IPAC. OK. Write down the base cases. So what does the base case state. Let's come down to the base case. The base case states for everything whenever j is equal to equal to zero you put a 1 and this is definitely going to be n plus 1 and m plus 1 now. So for everything where j is equal to zero what"
+    },
+    {
+      "chunk_id": "L213_C22",
+      "start": 1543.58,
+      "end": 1623.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1543s",
+      "text": "this is definitely going to be n plus 1 and m plus 1 now. So for everything where j is equal to zero what does j equal to zero means. No string is to. Because j is zero means there is nothing left there is nothing left. So I'll be like OK for every i equal to zero till n minus or at the end. DP of i and j is zero for every j is zero just put a 1. Any i that comes in I don't care because as long as the j is zero. I'm going to put I'm going to put a 1. Doesn't matter what i is coming. And all the other case i equal to equal to zero. In this you have to put a zero. So that's going to be very simple. For any j for any j. You're going to say DP of zero which is i and for any j it is going to be zero. That's it. These are going to be your base cases. Just look at the base cases and try to write them. So we have written the base cases. Step done. Next write down the changing parameters. We definitely know the changing parameters are i and j. Where are the parameters changing. What did you do for i. From n to zero is what you went. From m to zero is what you went. What is tabulation."
+    },
+    {
+      "chunk_id": "L213_C23",
+      "start": 1623.34,
+      "end": 1695.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1623s",
+      "text": "did you do for i. From n to zero is what you went. From m to zero is what you went. What is tabulation. Tabulation is bottom up. You write the base case. Yes you write the base case. So the base case has been written. And you go to the next then you go to the next then you go to the next and you get this answer. So you go to the next which is from 1 to n. You go to the next from j which is from 1 to m. And then you copy paste the recurrence in between. And the answer is that DP of n m because that's what you call. And if you do this you indeed get your answer. So without actually waiting let's get back and try to write this perfect tabulation code. So what did we do. If you remember well we just made sure this is zero. Nothing else. Let's write down the base cases. So the base case if you remember well enough it was for any i from zero to n. Yes. You just go across. And you put in one. And for any j which is from zero to m. You're like okay. DP of zero and j is going to be zero. And you know this is going to be from i equal to 1 to n. I plus plus."
+    },
+    {
+      "chunk_id": "L213_C24",
+      "start": 1695.42,
+      "end": 1774.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1695s",
+      "text": "is going to be zero. And you know this is going to be from i equal to 1 to n. I plus plus. I didn't know this is going to be from j equal to 1 till m j plus plus. And what you do is you just go back. Okay. Let's take it. Let's take it. Copy paste the recurrence. These are the recurrence. Let's take it and copy paste. And probably we can just do some formatting. And this looks fine. So you know instead of return this is what it will be perfect. Instead of f. It's going to be DP of i minus 1. And j minus 1. There's no doubt in this. And this stuff will go off. Perfect. There will be a plus. This time it will be DP of i minus 1. And this will be j. Right. And just take it off. Done. Now you know in recursion if this if was working then this line would not have worked. Just make sure you write an else for short. Because if it's matching fine or else you just pick up this guy which is DP of i j is equal to DP of i minus 1 and a j. And you say OK fine you can go off. And right over here you can say return. DP of nm. And this is going to be your tabulation code. And now let's quickly try to run this. OK we got a wrong"
+    },
+    {
+      "chunk_id": "L213_C25",
+      "start": 1774.18,
+      "end": 1837.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1774s",
+      "text": "of nm. And this is going to be your tabulation code. And now let's quickly try to run this. OK we got a wrong answer. Why did we get this. Let's quickly check it out. So why did we get a wrong answer. Because if you remember for j equal to 0 you did put over here. But after that you're rewriting. So just make sure that j actually starts from 1 instead of 0. Because for this base case you can't rewrite the 0 that you've written. And now let's quickly try to run this. It does run. You can actually omit this as well. Why. Because you're already initializing everything with 0. So you can omit this as well. And you can try to submit this. OK so we got a runtime error. It's mostly because of the integer overflow. Just make sure this has to be long long. I'm not sure why because I think that's a test case issue. But you can't do anything. So just make sure you just make everything as long long. That's the best that you can do. And try to run this off. It does give the runtime error with these cases as well. OK so mostly it is getting an overflow again. Mostly because of the conversion error or something like this. So generally what I tend to do is let's convert this"
+    },
+    {
+      "chunk_id": "L213_C26",
+      "start": 1837.62,
+      "end": 1916.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1837s",
+      "text": "overflow again. Mostly because of the conversion error or something like this. So generally what I tend to do is let's convert this into double and. We'll convert this into double. And over here just do a typecast. That's what we can do. That's what I generally do in competitive programming. Now let's try to submit this and see if this runs. That's that's how I will handle it. I was giving it long long. But eventually it will overflow and you can't typecast it back. So what I did was I just made it a double and then we converted it back. In Java this will not throw a runtime error. So can we optimize this. Yes the space optimization technique that I've taught you from the last 32 lectures. You can. Why? Let's see. I minus one. I minus one. Again an I minus one. Let's do a space optimization. So it will be like fine. I will like vector double. Yes previous. And you know you just have to keep the previous row. Why? Because you're just requiring the previous rows value. You don't require anything else. You just require the previous rows value. So what you can do is you can just store the previous rows value. So just go across and say OK fine. Let's store the previous rows value. And similarly let's define a curve which stores the previous"
+    },
+    {
+      "chunk_id": "L213_C27",
+      "start": 1916.02,
+      "end": 1993.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1916s",
+      "text": "just go across and say OK fine. Let's store the previous rows value. And similarly let's define a curve which stores the previous rows value again. So what does this line doing. This line is basically going to every row. I means every row. It goes to a row zero row one row two. At every column zero it goes across and putting one. Since we're just dealing with two columns if you see two guys one is previous and the other one is the current that you will be computing. So what you can do is in both of them you just put across a one at the zero place. Right. Let's go across and do this. Instead of this you can say OK previous of zero equal to curve of zero is going to be one. Amazing. Over here. This means definitely previous. Again this means definitely previous. Again this means definitely previous. And this means. This means. And once the entire row has been computed entire row you can actually switch it. And right here you can say OK this is what you return and try running this. It does run. Let's quickly submit this off. As you know the summation is also running fine. But how many areas are we using. We're using something as two areas. So let's analyze"
+    },
+    {
+      "chunk_id": "L213_C28",
+      "start": 1993.46,
+      "end": 2066.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=1993s",
+      "text": "the summation is also running fine. But how many areas are we using. We're using something as two areas. So let's analyze these couple of loops and try to see if we can reduce this into this into a single array optimization. So what am I writing. Let's go back to that. So in the in the area what I'm writing is sorry in the loop I'm writing I to this J to this and we are writing something as dp of i j is equal to dp of i minus one very important i minus one. Or rather you can see. After doing the 2D space optimization what you're using specifically is current of that means the current row is what you're computing. At the jth column. You're saying previous of previous of j minus one. Plus previous of j using the previous right. This is on the first if what you're doing and the else you're saying. Or of j is nothing but previous object. That's what you're simply doing. Either you're using the previous guy. And so is there a use of the current while computing the car."
+    },
+    {
+      "chunk_id": "L213_C29",
+      "start": 2066.66,
+      "end": 2141.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=2066s",
+      "text": "Either you're using the previous guy. And so is there a use of the current while computing the car. Basically you had a previous. If I draw this well. You had this as previous. You had some values. And then when you came across to compute this. You computed this. Yes you computed this by using this. You can build this by using this or this. You can build this by using this. So either you compute like this. Or you compute like this. Will there be a problem. No. Why. Because you're using the previous guys in order to compute the car. Let's understand. You're using the previous guys using the previous guys. In order to compute car. So the first thing I'll say is OK. That means. I can just do a slight shuttle change. And I can say if I run this from M to one. It is still fine. Does that make sense. I'd like. Yeah it does make sense and it is absolutely fine. Perfect. Now let's understand. So I've done this first change. Now let's understand. Again. Come back. Now how am I trying to compute. Try to compute this. This this this this this this."
+    },
+    {
+      "chunk_id": "L213_C30",
+      "start": 2142.02,
+      "end": 2217.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=2142s",
+      "text": "Again. Come back. Now how am I trying to compute. Try to compute this. This this this this this this. OK. And after this has been computed. I'm saying you be my previous. And there'll be another car that will come in. That's what I'm doing. Right. And then again I'll compute this using this and then I'll compute this using this. That's what the procedure is. Correct. But if I say that OK I'm not going to do this. I'm not going to use. Because I'm using as of now one previous one car. So let's understand in order to compute this. What am I using. In order to compute this. I'm either saying if they're not matching. The previous guy. That means whatever is here. This come across and right over here. Whatever is here this come across and right over here. Which means. This value is taken from this. If this else is executed. Or or. If this if is executed I'm saying. J minus one. Which means this. Like that means if J is here. Revisit J minus one. And J which means this. So J minus one and J. These two guys. On addition gives you this guy. Correct. So can I say can I say. Instead of car."
+    },
+    {
+      "chunk_id": "L213_C31",
+      "start": 2219.54,
+      "end": 2293.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=2219s",
+      "text": "J. These two guys. On addition gives you this guy. Correct. So can I say can I say. Instead of car. Even if I write previous of J. Even if I write previous of J. Will that be an issue. Ask yourself something that we didn't. Knapsack. In 1D. Array space optimization. Will there be an issue. And the answer to that is. I don't think so. There will be an issue. Why. Because. Once you've computed this. It basically replaces this portion. That's what you're doing. You're writing it. On the previous itself. You're writing it on the previous itself. So whatever is computed here. It goes on writing over here. Next. When you try to compute this guy. You actually don't require this guy. So. Instead of creating another guy writing it here. Why don't you just rewrite here because. We don't need this guy. Whenever we are computing this. Whenever we are computing this we'll require this and this. This guy is of no use. So instead of storing here. I'll come and store here. That's what I'll do. And this is what we can actually. Right. So going back to the code is going back to the code. What I'll do is I'll do a slight change and I'll say. Hey listen. I'll do it from M to one. It's very important that it runs from M to one because. We are. Replacing the guys that"
+    },
+    {
+      "chunk_id": "L213_C32",
+      "start": 2293.06,
+      "end": 2367.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=2293s",
+      "text": "I'll do it from M to one. It's very important that it runs from M to one because. We are. Replacing the guys that are no more needed. Like going back again to the iPad. You are actually. Replacing this guy because this is no more needed. If it had gone this way. You cannot replace this because in order to compute this. You will require this. And then once this is completed you cannot put it here because in order to compute this. You require this. So you cannot go from here to here. It's very important to understand. Okay. So that's the first change that I'll do. Next. I'll just write previous. And I'll take it off. Right. This is done. And this would have been previous G. Do I need to write else. No. That's the one liner that I will. Straight away right. There is no other change. And I'll just remove this curve. Perfect. Again I'll remove this curve. Perfect. And yet this should be my answer. Let's quickly try to run this off and see if this is running with one DP. It is. It is. It is. So you can look cool by just making it DP. You know that cool stuff. DP looks cool isn't it. DP. Oh that's a"
+    },
+    {
+      "chunk_id": "L213_C33",
+      "start": 2367.94,
+      "end": 2413.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=nVG7eTiD2bY&t=2367s",
+      "text": "look cool by just making it DP. You know that cool stuff. DP looks cool isn't it. DP. Oh that's a cool solution isn't it. Cool. And before this day you were going into a discussion section and you're like oh what have they written. How have they written this. Now you understand isn't it. In just in case you did understand. Please please please make sure you like this video and tell me in the comment section. Did you enjoy this. Leet code hard. This wasn't hard if you want to do it via memetion. This is hard if you want to do it this way because it does require entire concept to be clear. So I hope you enjoyed it. So guys just to continue our tradition tell me in the comment section for sure. And with this I'll be wrapping up this video. Let's meet in the next one. Till then bye bye DP again."
+    }
+  ]
+}

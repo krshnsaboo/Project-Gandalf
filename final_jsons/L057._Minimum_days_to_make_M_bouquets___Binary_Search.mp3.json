@@ -1,0 +1,162 @@
+{
+  "lecture_id": "L057",
+  "lecture_number": 57,
+  "lecture_title": "BS-13. Minimum days to make M bouquets | Binary Search",
+  "youtube_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg",
+  "chunks": [
+    {
+      "chunk_id": "L057_C1",
+      "start": 0.0,
+      "end": 79.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=0s",
+      "text": "Hey everyone and welcome back to the channel. I hope you guys are doing extremely well. So we will be continuing with our binary search playlist which is the part of the strivers A to Z DSA course. In case you haven't checked it out yet, there's a link in the description. Please do make sure that you check it out. So the problem that you're going to solve today will be finding out the minimum number of days to make M number of bouquets. Now what does the problem state? You'll be given an array bloom day which will be consisting of the blooming days for N flowers. What does it mean? So the zeroth flower like the zeroth index flower will be blooming on the seventh day. Before that it hasn't bloomed. This particular flower will be blooming on the 13th day. This flower will be blooming on the 12th day. Now your task is to tell me what is the minimum number of days you require such that you have ample amount of blooming flowers to make M bouquets, two bouquets in this case and you should have taken three adjacent flowers to have one bouquet. Let's understand the problem statement in depth. Now imagine, imagine all the flowers are bloomed, all the flowers are bloomed and that will"
+    },
+    {
+      "chunk_id": "L057_C2",
+      "start": 79.62,
+      "end": 151.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=79s",
+      "text": "understand the problem statement in depth. Now imagine, imagine all the flowers are bloomed, all the flowers are bloomed and that will only be possible if you are on the 13th day. If you are on the 13th day, this would have already bloomed on the 7th, this one, this one, this one, this one will be blooming on the 13th. This would have already, already, already. So all of these flowers will be bloomed on the 13th day. What do you need to make? You need to make two bouquets of three flowers. So if you take three flowers that will make one and if you again take three flowers that will make another bouquet. So you have to make two bouquets. Okay. So what I can do is I can probably take these three adjacent flowers and I can have one bouquet or maybe I can take this three adjacent flowers and I can have one bouquet. You can take this as well. You can take this as well. Doesn't matter. As long as you're taking three adjacent flowers and you're making one bouquet, that is what matters. So I have formed two bouquets. So I can say that if I take the 13th day, I'll be able to make two bouquets by picking up three adjacent flowers each. So thereby 13 day is a possible answer. But the question states you to find out what is the minimum possible day."
+    },
+    {
+      "chunk_id": "L057_C3",
+      "start": 151.78,
+      "end": 229.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=151s",
+      "text": "flowers each. So thereby 13 day is a possible answer. But the question states you to find out what is the minimum possible day. So what if I would have taken 7th day? Let's take this 7th day. If I take this would have bloomed, this would have, this would have, this would not have this would not have, and this would have. So I would have been able to make one bouquet over here and I cannot make any other bouquet. Why? Because they are not adjacent. They're not adjacent. So I cannot make any further bouquets. It's very critical that three of them should be adjacent. Okay. So this is not possible. Can I do it on the 12th day? Let's see. So if I take the 12th day and I say, okay, this will be bloomed, bloomed, not bloomed, bloomed, bloomed, bloomed. Why? Because this is, this needs 13th day to bloom. Can I make two bouquets? Let's see. I can take this as one and I can take this as one. So I can actually make two bouquets from taking the 12th day. Can I get anything better than this? Let's try it. Let's take 11th. If I take 11th bloomed, this one will be bloomed. This one will not be bloomed. This one will not be bloomed. Sorry. This one will be bloomed actually. And this one will, uh, will not be. And this one will be, can I make two bouquets? Let's see."
+    },
+    {
+      "chunk_id": "L057_C4",
+      "start": 229.2,
+      "end": 308.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=229s",
+      "text": "will be bloomed actually. And this one will, uh, will not be. And this one will be, can I make two bouquets? Let's see. One I can surely make. Can I make, make another one? No, I have three separate flowers, but the point over here is you need adjacent three different flowers. So not possible. So apparently it is not possible to make on the 11th day. And if you carefully observe 12th was possible, 13th was possible. 11th is not possible. So if 11th is not possible, 10th will not be possible. 9th will not be possible. 8th will not be possible. Anything under 11 will not be possible. So can I say from one to 11, nothing is possible. 12 and 13, both are possible. And what do we need? The minimum number of days. So thereby, can I say if I wait for 12 days, I'll be able to manage these amount of bouquets, right? So 12 is the answer for this one. Let's take one more example. What about this? Now in this, they're asking you to make three bouquets with two flowers each with two flowers each. But if you carefully observe, even if you take the 10th day, even if you take the 10th day, all the flowers would have already bloomed and I can at max make two bouquets. That is what I can make."
+    },
+    {
+      "chunk_id": "L057_C5",
+      "start": 308.58,
+      "end": 384.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=308s",
+      "text": "10th day, all the flowers would have already bloomed and I can at max make two bouquets. That is what I can make. And the problem is demanding you to make three bouquets. So in such cases, you have to return me minus one. And that is the problem. If it is possible, tell me the minimum number of days. If it is not possible, straight away return minus one. That is what the question states. So how do you approach this problem? Always remember, whenever you are solving a problem, the first approach should be, how can I solve this in some way? And then we can think of optimizations. The first thing that I should think of is how do I deal with the impossible case where I have to return something as minus one. So we know one thing for sure. If we take the maximum bloom day in the array, which is 10, all the flowers would have bloomed, right? And in such case, the total number of flowers will be n, which over here is five. They want three bouquets of two flowers each, which is a total of six. So can I say if at any moment m into k or whatever is the number of bouquets into the number of adjacent exceeds the n, this is not possible. And this is the case of minus one because I have already bloomed all the flowers and I can always pick up adjacent."
+    },
+    {
+      "chunk_id": "L057_C6",
+      "start": 384.24,
+      "end": 456.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=384s",
+      "text": "possible. And this is the case of minus one because I have already bloomed all the flowers and I can always pick up adjacent. I can always pick up adjacent because all the flowers will be picked. And if I cannot make this total and that's greater than n, then I just straight away return minus one. So this is the only impossible case. Apart from it, all the cases are possible because it is possible to bloom all the flowers. So you'll be able to pick up adjacents for any given thing which is lesser than equal to n. Thereby it is possible. So we have figured out the impossible case. Now let's come back and try to solve the case where it is possible. If I ask a very simple question, what is the maximum answer? Like what's the short answer? Can I say if I look at the array and if I take the day 13, everything will be bloomed. I can surely say that if I take the day 13, everything will be bloomed. And if everything is bloomed, I need two bookies. I'll just pick up the first two, three adjacents and that is possible. So one thing I know for sure is 13, like whatever is the maximum value in the array, that is for sure going to be my, like that's, that's definitely going to be one of my answers. But the problem is I need the minimum."
+    },
+    {
+      "chunk_id": "L057_C7",
+      "start": 456.28,
+      "end": 519.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=456s",
+      "text": "sure going to be my, like that's, that's definitely going to be one of my answers. But the problem is I need the minimum. So I need to figure out a smaller value that then that maximum possible answer. The question is what is the minimum possible answer? Now you can probably say one day and check it out. And then you can say two, check it out. You can say three, check it out. You can say four, check it out. But ideally, what can you do? You'll be like, maybe take the minimal possibility because in order to bloom at least one flower, you need the day seven. Then only you'll bloom something. If you take day six, nothing will be bloomed and you cannot even form one bookie. So in order to at least bloom one flower, you need the minimum day, which is seven. So I know one thing for sure that my answer will always lie between seven and 13. Again, very, very easy thing to observe. You just need to observe these things. Remember, in order to approach these kinds of questions, the first thing is figuring out the range. Again, you can, you can even take this as one and you can take this as some big integer as well. That will also work. But the goal is to minimize the range as much as possible. So what I've done is I've taken seven and 13."
+    },
+    {
+      "chunk_id": "L057_C8",
+      "start": 520.58,
+      "end": 595.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=520s",
+      "text": "also work. But the goal is to minimize the range as much as possible. So what I've done is I've taken seven and 13. For this one, I know that from seven and 13, like between seven and 13, there will be someone who will be my answer. So what I will do now is I'll take the day seven and I'll try to see which flowers have bloomed. Bloomed, bloomed, bloomed, bloomed, not, not, not, and bloomed. Now what I'll do is I'll start iterating. Once I know what I have, what has bloomed and what has not, I'll start iterating. I'll be like, okay, counter one, counter two, counter three, counter four. And the moment I reach here, I see it hasn't bloomed. Thereby the counter is four. How many, like before turning this, because you've got an unbloomed flower. So the counter will go back to zero. So as of now, you have a consecutive four bloomed flowers. If I ask you, how many bouquets can you form? How many bouquets can you form? You need three adjacent. Can I say the number of bouquets that you will form out of four consecutive will be one? So you just have one as of now. So you trim down the counter to zero and then you move, you move, and then you move and the counter is one again. So at the end of the day, the counter is one."
+    },
+    {
+      "chunk_id": "L057_C9",
+      "start": 595.58,
+      "end": 662.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=595s",
+      "text": "move, you move, and then you move and the counter is one again. So at the end of the day, the counter is one. Remember at the end of the day, the counter is one. So when you have ended everything, again, you check. You have one. How many bouquets can you form? Zero. So what is the overall number of bouquets that you could form? One. And how much did you require? Two. So this day is not possible. That is how you figure out. Okay, perfect. So day seven is not possible. What do you do is you take day eight and again, you do the same thing and you'll see that you can only form one bouquet. Next, you'll take day nine and again, you'll see the same pattern. Next, you'll again take day 10 and again, you'll see the same pattern. Next, you'll take day 11 and the moment you take day 11, let's try it out and see. So yes, yes, yes. And this will be no, this will be yes, this will be no, and this will be yes. Let's again try to do the same thing. Counter equal to one when you are here, goes ahead, counter two, goes ahead, counter three, goes ahead, counter four, goes ahead, and it finds a non-bloomed flower. So here's a counter four. How many will, like how many bouquets will you get? One. Perfect."
+    },
+    {
+      "chunk_id": "L057_C10",
+      "start": 662.36,
+      "end": 733.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=662s",
+      "text": "and it finds a non-bloomed flower. So here's a counter four. How many will, like how many bouquets will you get? One. Perfect. Counter turns down to zero, again starts from one, again goes to somewhere which is not bloomed. So how many bouquets will he make? Zero, turns to zero, again goes, which makes the counter one and it ends at the end of the day. Whatever is the value, you again check it and you get zero. So the total number of bouquets that you can form is one. So day 11 is also not possible. Okay, we have understood this. What's the next job? Take day 12. If you're taking day 12, let's again do the same thing. Possible, possible, possible, not possible, possible, possible, possible. Let's do the same thing again. Counter equal to one when it is here, moves ahead, counter becomes two, moves ahead, counter becomes three, moves ahead, counter becomes four, moves to a unbloomed flower, moves to an unbloomed flower. So again, you go back to counting the number of bouquets that you can form from that consecutive numbers. That's one. The moment you, sorry, the moment you come to unbloomed, you make it zero and then you move back. Counter becomes one, counter becomes two, counter becomes three and it is over. At the end of the day, I emphasize, at the end of the day, it is very, very important"
+    },
+    {
+      "chunk_id": "L057_C11",
+      "start": 733.6,
+      "end": 804.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=733s",
+      "text": "three and it is over. At the end of the day, I emphasize, at the end of the day, it is very, very important to whatever you have, you just do a three by three and say one. So the total number is two. Which is the required bouquets? So you started from seven. If you remember, the range was seven. You went eight, nine, ten, eleven and then you are at twelve. At twelve, you see that you're able to form two bouquets. Thereby, possible, possible. Hence, your answer is twelve. You can try with thirteen as well. But the question states to find the minimum number of days. Got it? So first, I'll try to write the function which kind of takes the day number and tells me if it is possible or not. Okay. So let's try to write down that function and then we can go ahead and probably write down the normal brute force thing. Let's first try to write down the function which tells me possible or not. So I'm basically taking this array which has all the bloom days and I'm passing him a very simple value. What is this value? Or I can say the day. Or I can say day. Ha ha. Okay. I'll say day. And this is where I start writing the code. So what I'm saying is, okay, if I'm giving you this day and I'm also giving you maybe let's say"
+    },
+    {
+      "chunk_id": "L057_C12",
+      "start": 805.42,
+      "end": 879.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=805s",
+      "text": "start writing the code. So what I'm saying is, okay, if I'm giving you this day and I'm also giving you maybe let's say the what is there M and K. So these are the number of bouquets I need and this is the adjacent that you can have. Perfect. Let's start writing code. So let's take initially the counter to be zero. Let's start from I and T I equal to zero and I can go on till N minus one which is basically the size of the array. I know one thing. If array of I is lesser than the bloom day, like whatever day you are considering, if you're considering eight, if you're considering ninth, that means the blooming is possible. That means the blooming is possible. If it is possible, you simply do a counter plus plus. You do not do anything. You simply do a counter plus plus. If it is not possible, that means you are in an unblooming like you are in this phase where it is not possible, where it is not possible when you turn it to zero. But before turning it to zero, what did you do? You took whatever it was and you divided it by this. So maybe what you can do is like number of bouquets that you can form will be zero. You can say number of bouquets that I can form will be plus equal to whatever consecutive I had"
+    },
+    {
+      "chunk_id": "L057_C13",
+      "start": 880.04,
+      "end": 950.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=880s",
+      "text": "can form will be zero. You can say number of bouquets that I can form will be plus equal to whatever consecutive I had divided by the adjacents that I require divided by the adjacents that I require. That is what we did four by three. And you basically take that and you add it into your number of bouquets and you turn back the count to zero because you again start counting consecutive and that's over again. I emphasize at the end of the day, at the end of the day, please make sure whatever you have the count as you again divided by K because remember the case when you had this, this, this at the end of the day, you had three, you have to make sure you count it as well. So at the end of the day, please make sure you count it. Is it possible if number of bouquets is lesser, sorry, is greater than equal to the required, it is possible or else it is not possible. So I've written down the function which takes a array, which is the bloom day, takes the day that I'm looking for, takes the number of bouquets required and takes the adjacent and tells me if it is possible or not. So this is ready. This is ready. I'm trying out with a brute force. So I know what will be my range."
+    },
+    {
+      "chunk_id": "L057_C14",
+      "start": 951.88,
+      "end": 1030.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=951s",
+      "text": "not. So this is ready. This is ready. I'm trying out with a brute force. So I know what will be my range. So I'll start off with what the minimum possible element and the maximum is where the answer will be. So I'll just go over there. What will I say? If possible, give him the array, give him this day, give him the M, give him the K. If this is possible, then return this answer, then return this answer or else, sorry, or else you can just go ahead and increase the value of I and check for the next day. So this is going to be the brute force solution. And, and, and if we have tried out everything and at the end of the day, you don't get your answer, you can return minus one. Again, at the start, you could have straight away checked if N, what is that? Yeah. Sorry. If N is lesser than M into K, then also you can return a minus one because that is the impossible case when you exceed. So I've written the brute force. What is the time complexity? It's very important to understand the brute force because the moment you understand the brute force, it's super simple to optimize it. What is the time complexity? This loop, can I say is running for maxi minus mini times because that is what it is running for. Maxi minus mini times. Perfect. Plus one actually."
+    },
+    {
+      "chunk_id": "L057_C15",
+      "start": 1031.08,
+      "end": 1100.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=1031s",
+      "text": "say is running for maxi minus mini times because that is what it is running for. Maxi minus mini times. Perfect. Plus one actually. If I take the exact number, it will be plus one. Yeah. These many times it is running into, you're checking for a possibility. You are checking for a possibility. And in order to check, what are you doing? You're going through the entire array. So it's a big O of N. It's a big O of N. That will be my time complexity. Yes, that will be the time complexity of the brute force. Now the question arises, can I optimize this? Can I? Probably I can. Why can I? Let's go back in order to write this. We had seven, eight, because that was the range in which the answer was possible. We had the range, something like this. And we knew this was not possible. This was not possible. This was not possible. This was not possible. This was possible. And this was possible. So we know the range and we know in which area it is not possible, in which area it is possible. So if I know this, the problem becomes super simple, isn't it? Yes. Binary search. We straight away apply binary search by saying this is my low. This is my high. I know where it is possible, where it is not possible. I straight away apply binary search."
+    },
+    {
+      "chunk_id": "L057_C16",
+      "start": 1100.6,
+      "end": 1159.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=1100s",
+      "text": "is my low. This is my high. I know where it is possible, where it is not possible. I straight away apply binary search. So you can pause the video right away and you can try out the binary search solution in case you are having problems or in case you want to verify, you can come back and watch it from here again by doing a fast forward. OK, so time for binary search was the first component in binary search. To figure out the range, we have already done that. We know the answer will be from seven to 13. That's the minimum element and that's the maximum element. What we do is we keep the low as this and we keep the high at this. And I'll quickly write down the numbers so that we can start with the binary search. Where will the middle be? The middle will be 13 plus 7 by 2, which is 10 to start off with. So the middle will be at 10. So what do you do is you take the 10th day and see if it is possible or not. So if you remember on the 10th day, it was not possible. So what you can say is, hey, on the 10th day, it is not possible. So if it is not possible on the 10th day, can I surely say one thing that"
+    },
+    {
+      "chunk_id": "L057_C17",
+      "start": 1160.12,
+      "end": 1233.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=1160s",
+      "text": "10th day, it is not possible. So if it is not possible on the 10th day, can I surely say one thing that on the 10th day it is not possible, on the 9th it will not be because lesser number of flowers will bloom on 9th, lesser on 8th and lesser on 7th. So what I can say is none of the days before 10 will also be possible. Thereby, I can take this. Yes, I can take this and I can move it to this portion. So we have a new range where we can find the answer. What will we do? We will take a mid. Again, the mid will this time be 12. I cannot explain how to find mid now. Is 12 possible? You see, 12 is possible. Maybe you can keep an answer variable as we did just so that in case you are facing problem with low and high and you can store answer as 12. So what are you saying? 12 is possible. So I am saying, okay, 12 is possible. What do I require? I require minimum number of days. If I require minimum, will I go ahead and check for 13 because I need small. Hence, I will say if 12 is possible, eliminate the right, look for small, look for small and thereby move the high to a point before mid because you eliminate the right part. Binary search is all about eliminating ranges. Done."
+    },
+    {
+      "chunk_id": "L057_C18",
+      "start": 1233.72,
+      "end": 1310.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=1233s",
+      "text": "and thereby move the high to a point before mid because you eliminate the right part. Binary search is all about eliminating ranges. Done. Where is the mid pointing? The mid is pointing to 11. What do we see? 11. Is it possible? You can again do the algorithm and you will see that 11 is not possible. If 11 is not possible, anything before 11 will not be possible. The left part will be eliminated and the left part is eliminated. What will go to the right? Yes, the low will go to the right because the left part is eliminated. So thereby at the end, when you eliminate left, the high will be pointing here and the low will be pointing there. We're done. Understood. Again, carefully observe. Where is your answer? Your answer is somewhere on the low. Your answer is somewhere pointing to the, uh, let's analyze. Do we need the answer variable? We don't. Why? Because the answer is already pointed, like pointed by low. Why did that happen? Again, opposite polarity. I told you that concept. If you have a low here, which is assuming not possible, you have a high, which is assuming possible, assuming again, low will end up at a point where it is of the opposite polarity, right? And the high will end up at the opposite polarity. Perfect. You see high coming from a possible to not possible, low going from a not possible to a possible."
+    },
+    {
+      "chunk_id": "L057_C19",
+      "start": 1310.12,
+      "end": 1375.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=1310s",
+      "text": "at the opposite polarity. Perfect. You see high coming from a possible to not possible, low going from a not possible to a possible. Simple as that. So once you have done this, thereby the low will be answer because you're looking for possible, possible. Correct? So that thereby the answer will be at low. So I have to write the binary search. How will the binary search code look like? Remember, we have already written the possible code. So we just need to write the binary search. Can I say the binary search will be taking the array and the M and the K was the first job low will be the minimum element in the array. We can write a function to find it out. High will be the maximum element in the array. Again, you can write a function to find it out and you can straight away go from, uh, my bad. How am I? Why am I writing the linear search? Uh, you can straight away, uh, start the normal binary search. That's from low to high. If you want, you can keep an answer just in case you want. And, uh, you, you're sure that the answer will be at high and do not forget to implement the impossible case, which is, uh, if N is sorry, if N is lesser than M into K, which is impossible return minus one, that's the impossible case that you can write."
+    },
+    {
+      "chunk_id": "L057_C20",
+      "start": 1375.96,
+      "end": 1453.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=1375s",
+      "text": "is sorry, if N is lesser than M into K, which is impossible return minus one, that's the impossible case that you can write. And over here, you can start the binary search with low plus high by two, right? And then you can be like, Hey, listen, is it possible? Is it possible with this particular array with this day number with M and K adjacent? If it is possible, this is possible. This can be my answer. And I need the minimum. So I will eliminate the right half. I will eliminate the right half. So eliminate the right half or else if it is not possible, it's too small a number increase, increase, and you go ahead and increase at the end. You can straight away return. What will you return? No. Or answer, whatever you feel like you can, you can play with answer. Like you can just take answer or you can also figure out low or high, which will be your answer. And in this case, low is, so you can straight away return this. What is the time complexity? So something is for sure the N and this is for the possibility check. This is for the possibility check that you're doing. You cannot eliminate that. So N is for sure there. Multiplied with what?"
+    },
+    {
+      "chunk_id": "L057_C21",
+      "start": 1453.32,
+      "end": 1522.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=1453s",
+      "text": "This is for the possibility check that you're doing. You cannot eliminate that. So N is for sure there. Multiplied with what? You're doing a binary search and binary search takes a logarithmic of the search space. What is the space from seven to 13 or from min to max? So it's like the space length is max minus min plus one. That is the space length. Thereby the logarithmic base two. This will be the time complexity. Am I using any extra space? No, I'm not using because we're just making sure it is possible or not by checking with the day and not converting it into a possible or not just simply checking and wait. So no extra space required. Thereby the overall time complexity will be this and the space complexity will be a big go of one. So let's quickly go back to the code editor. By the way, you can find out the problem link in the description and you'll get the C++, Java, Python and JavaScript codes in the notes below as well. You can check it out from there in case you code in some different language. So I've written the same code and instead of writing if else I've just straight away written this and something that you have to be careful about is this one. Because you're multiplying two integers, it might overflow. So first convert this into a long, long convert this into a long, long and then multiply both"
+    },
+    {
+      "chunk_id": "L057_C22",
+      "start": 1522.2,
+      "end": 1560.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=TXAuxeYBTdg&t=1522s",
+      "text": "you're multiplying two integers, it might overflow. So first convert this into a long, long convert this into a long, long and then multiply both so that they do not overflow. And apart from that, I figured out the minimum and maximum and we did a simple binary search. So if you're watching till here, I hope you've understood everything. And in case you have understood everything, please, please do consider giving us a like. And if you're new to our channel, what are you waiting for? I think you should definitely subscribe to us. And if you haven't followed me on Instagram, LinkedIn and Twitter, all the profile links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye, take care."
+    }
+  ]
+}

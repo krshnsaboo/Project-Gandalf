@@ -1,0 +1,190 @@
+{
+  "lecture_id": "L260",
+  "lecture_number": 260,
+  "lecture_title": "L24. Flattening a LinkedList | Multiple Approaches with Dry Run",
+  "youtube_url": "https://www.youtube.com/watch?v=ykelywHJWLg",
+  "chunks": [
+    {
+      "chunk_id": "L260_C1",
+      "start": 0.0,
+      "end": 74.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=0s",
+      "text": "So, we will be continuing with our playlist, so before that, if you come back to the channel, I hope you guys are doing extremely well. So, the problem that we will be solving today is flatten a linked list. You won't be given a generic linked list. The linked list that is given to you will be different in configuration. Let's understand that. When I say that you will be given a linked list, you will be given the head of the linked list. So, generically the linked list always has a next pointer. So, the head will always have an x pointer pointing to a node, an x pointer pointing to another node, an x pointer pointing to another node, an x pointer pointing to another node and eventually the next pointer will be pointing to null. At the same time, apart from the next pointer, this particular configuration will have child pointers, will have child pointers. So, if you look at every node, it has a pointer pointing down. So, the pointer pointing down is the child pointer. Now, if you look at the first node, the head, it doesn't have a child node. So, the child pointer is pointing to null. If you look at the next node, it does have a child node."
+    },
+    {
+      "chunk_id": "L260_C2",
+      "start": 74.56,
+      "end": 154.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=74s",
+      "text": "So, the child pointer is pointing to null. If you look at the next node, it does have a child node. So, the child pointer is pointing to the child node and eventually 10 is pointing to null. The 10 also has an x pointer pointing to null. Similarly, if you look at 1, the next is pointing to 4 but the child pointer is pointing to 7. 7's child pointer is pointing to 11. 11's child pointer is pointing to 12. 12's child pointer is pointing to null and all of these nodes have next pointers as well and they are pointing to null. So, understand the configuration. So, you will be given a linked list of this particular configuration. You will be given the head. Each of the linked list node will have an integer in it and there is one more thing. Every node and its child nodes are sorted, are sorted. Carefully have an observation. 1, 7, 11, 12 in a sorted order. 4, 9 in a sorted order. 5, 6, 8 in a sorted order. 2, 10 in a sorted order. 3 in a sorted order. Every child linked list is in a sorted order. Your task is to flatten this into one child linked list."
+    },
+    {
+      "chunk_id": "L260_C3",
+      "start": 154.2,
+      "end": 227.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=154s",
+      "text": "order. Every child linked list is in a sorted order. Your task is to flatten this into one child linked list. Flatten this into one child pointer linked list. Let's understand this. You have 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12. So when I am saying flattening all of these linked list because this is one linked list, this is another, this is another, this is another, this is another. So, you have to flatten all of them into one. It means you start the head with 1 that points to 2 that points to 3 because you will have to do it in the sorted order. It points to 4 and so on it will be pointing to the last one 12 and eventually to null. And this next pointer will be pointing to null. The next pointer of everyone will be pointing to null. And this will be the head of the flattened linked list. So, you will have to return me a flattened linked list in the vertical order. Got it? So, if this problem comes up in an interview, the extreme naive solution that I can think of is take all the integers, put them into an array and then probably think of a solution. So, what I will do is, I will be declaring a list which will be holding all the integers."
+    },
+    {
+      "chunk_id": "L260_C4",
+      "start": 227.28,
+      "end": 301.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=227s",
+      "text": "think of a solution. So, what I will do is, I will be declaring a list which will be holding all the integers. Then what I will be doing is, I will be taking a temp and placing it at the head. What is the first value? 3. So, I will be picking up 3. Right? Does it have any child nodes? Does it have any child nodes? It doesn't have any child nodes. Done and dusted with this one. So, what I will do next is, I will move temp to the next node. Now, what I will do is, I will be traversing in the bottom direction. I will be traversing in the bottom direction. And in order to do that, I can take another temp and probably call it as temp 2. So, temp 2 is standing at 2. So, I will be taking 2. Yes, I will be taking 2. Once I have taken 2, I will be moving temp 2 to the child. And the value is 10. So, I will be taking 10. So, once I have taken 10, t2 will be moving to null. Done. Once it is done, I can simply move the temp to the next. So, let's move the temp to the next. This time temp has child nodes. So again, you can assign t2. What's the value? 1. So, I will be taking 1. And you can move t2 to the next. So, I will be taking 7."
+    },
+    {
+      "chunk_id": "L260_C5",
+      "start": 301.92,
+      "end": 367.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=301s",
+      "text": "What's the value? 1. So, I will be taking 1. And you can move t2 to the next. So, I will be taking 7. And then t2 can move. It will be taking 11. Then t2 can move. It will be taking 12. So, after this, it will be moving to null. So, done and dusted. Once it is done and dusted, temporary can move to the next. It is 4. Again, place a t2. t2 is at 4. So, you can take the 4. Then t2 will move. It will be taking 9. Then t2 will move. It will again reach null. The moment it reaches null, temp can move to the next. Again t2. So, t2 can take 5. Then t2 can move. It can take 6. Then t2 can move. It can take 8. Then t2 can again move. It will be at null. So, it will be stopping then and there. And eventually, temp will be reaching null. Eventually, temp will be reaching null. Once that is done, I have the array, right? What I can do is, I can simply apply any sorting algorithm on them. So, I will be applying any sorting algorithm on them. Once I have sorted them, I will get a sorted array. So, once I have the sorted array, what is the next job? The next job is to convert it into a vertical linked list. Not a horizontal one. A vertical linked list."
+    },
+    {
+      "chunk_id": "L260_C6",
+      "start": 367.56,
+      "end": 447.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=367s",
+      "text": "is the next job? The next job is to convert it into a vertical linked list. Not a horizontal one. A vertical linked list. So, I will probably write a convert function that does it. And once I have the head of that updated or the new vertical linked list, I can return that head, correct? So, let's start doing it. So, what is the first step? First step is declaring an empty array, right? What is the next step? The next step is declaring a temp which stands at the head of the initial linked list. Let's traverse in the linked list. So, we are traversing till temporary doesn't reach null. Quite simple. Initially, we will be having a temporary too. It will be initially at temp. I will be going downwards right from that node. So, I will be like, okay, let's go downwards. So, it will be like while t2 is not equal to null. That's the case. I will say, array, can you please add? Array, can you please add temporary to value or data? Once you have done that, t2, can you move to your child? Very important. You will be moving to the child pointer. You will be moving child bottom. Once that is done, can I say t2 would have been completed?"
+    },
+    {
+      "chunk_id": "L260_C7",
+      "start": 447.32,
+      "end": 517.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=447s",
+      "text": "the child pointer. You will be moving child bottom. Once that is done, can I say t2 would have been completed? The traversal of t2 would have been completed. So, what I can do is, I can say temporary, now can you move to the next because I need the next. So, temporary will be moving to the next. Once that is done, I can complete the while loop. So, what this will do is, this will make sure that the array has all the elements. Once the array has all the elements, I can simply call the sort function and I can call the array to be sorted. So, once the array is sorted, I can probably call the convert function where I pass on this array and it will be converted. It's going to be a super simple convert function. So, you need to write the convert function. You already know how to convert an array into a horizontal 1D linked list. This time you have to convert it into a vertical linked list. That's the change of pointers. So what I will do is, I will write the convert function now for you. So, I will write the convert. I will take the array. What is the first thing that I will do? I know that the array has elements. In case the array doesn't have elements, you can straight away return null."
+    },
+    {
+      "chunk_id": "L260_C8",
+      "start": 517.2,
+      "end": 596.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=517s",
+      "text": "I will do? I know that the array has elements. In case the array doesn't have elements, you can straight away return null. In case the array doesn't have elements, which means the size will be zero, you can straight away return null stating that you don't have anything. So it will not be storing it. In case it has elements, you will be declaring a head. You can declare according to your language and you can call new node array of zero. So this will be your initial head. I need to traverse from i equal to one because the zeroth index element is done. I will be going to the last index which is n minus one. Again I'm writing down the pseudo code, not C++, not Java. What is the next job? The next job is to make sure that the linked list is created. So temporary will be assigned to head and then what I'll do is, I'll create a new node every time new node is created and that new node will have the value of array of i. Super simple. Very basic things though. Very, very basic things. And once that is done, I'll say temporary your child instead of the next in the horizontal one linked list, we're taking next. This time I'll say temporary your child will be pointing to this new node. Perfect."
+    },
+    {
+      "chunk_id": "L260_C9",
+      "start": 596.96,
+      "end": 675.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=596s",
+      "text": "the horizontal one linked list, we're taking next. This time I'll say temporary your child will be pointing to this new node. Perfect. Once that is done, you can say temporary you can move to the child instead of next. Super simple. Once the entire traversal is completed, you would have, you would have made sure that the vertical linked list is ready. If it is ready, your job is very simple. You straight away return the head. So you have the vertical linked list ready. You can straight away return it. So this will be your brute force. Now let's analyze the time complexity. What is the time complexity? For ease of explanations, let's assume this particular length is n. Okay. And assume each of the linked list is of length m. Each of the linked list, like the vertical linked list that is given to you is of length m for ease of calculations. Okay. So the outer while loop is running for b go of n times. The inner while loop is running for b go of m times vertically once once. So the overall complexity in order to traverse and put all the elements will be b go of n into m, which is technically all the elements n into m. Right. After that you are sorting. You are sorting down all the elements."
+    },
+    {
+      "chunk_id": "L260_C10",
+      "start": 675.56,
+      "end": 751.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=675s",
+      "text": "which is technically all the elements n into m. Right. After that you are sorting. You are sorting down all the elements. So the complexity will be x log x where x is nothing but n cross n, which is the total number of elements. Perfect. Then you are applying a convert function. Again the convert is taking all the elements, is taking all the elements, right? It's taking all the elements. So eventually all the elements means n cross m. So what is the overall time complexity? Can I say the overall time complexity is n cross m into 2. Why 2? Because you're also using n cross m over here plus x log x where x is n cross m. What is the space complexity? Can I say that the space complexity is the array that you're using and the array is holding n cross m elements. Okay. So the overall space complexity is n cross m into 2. Now why into 2? Why into 2? First time the array that is holding all the elements. The second time you're creating a new linked list, you're creating a new linked list, new vertical linked list in order to store all the elements. Correct? So that will again be taking n cross m. So twice into n cross m."
+    },
+    {
+      "chunk_id": "L260_C11",
+      "start": 751.92,
+      "end": 829.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=751s",
+      "text": "order to store all the elements. Correct? So that will again be taking n cross m. So twice into n cross m. Obviously the interviewer will not be happy with so much of time and space being taken. So he'll ask you to optimize this. So I need to optimize the previous algorithm. The previous algorithm didn't consider one thing. That is the vertical linked list are sorted. So maybe I can eliminate sorting from our algorithm. If I can use the property of vertical linked list being sorted. The other thing was we were converting the array into a new linked list. Why do I need a new linked list? It's external space that I'm using. Can I not use the same nodes? Can I just not do it in place? So these two things I'll be keeping in mind. First thing is use the property that the linked list is vertically sorted. The second, reuse the same nodes instead of creating a new linked list. Okay. First question. What if I just say that you're given this much? Can you solve this problem? Forget about the entire linked list. I'm telling you that you're just given two linked list. L1 and L2. This is vertically sorted and this is also vertically sorted. Can you actually flatten this? You'll be like, yeah, it's easy. I can do it."
+    },
+    {
+      "chunk_id": "L260_C12",
+      "start": 829.56,
+      "end": 905.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=829s",
+      "text": "sorted and this is also vertically sorted. Can you actually flatten this? You'll be like, yeah, it's easy. I can do it. What I'll do is I'll take a T1, I'll take a T2, right? And after that, as usual, we will be taking a dummy node. So let's take a dummy node. And this dummy node will be minus one. And the next will be pointing to null and the child will be pointing to null. Correct? We will start traversing. We'll compare T1 and T2. They are sorted. These two are sorted. Four or five, which is small? Four is small. So I'll take four. I'll take four and I'll place it over here. I'll point this to, point the next to null and the child to null as well. And I'll move T1 to the next. Perfect. So what I've done is, what I've done is I've taken four. And the next job is to compare nine and five. I'll take five. I'll take five and I'll place it here. Then again points to null and the child will also point to null. So T2 moves to six. This time I compare nine and six. I'll take six. Kind of similar to merge two sorted list, but in terms of child, in terms of child."
+    },
+    {
+      "chunk_id": "L260_C13",
+      "start": 905.92,
+      "end": 979.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=905s",
+      "text": "six. I'll take six. Kind of similar to merge two sorted list, but in terms of child, in terms of child. So I'll take six, point to null and the child pointing to null. And then T2 will move. This time I'll compare nine and eight. I'll be taking eight. Yes, I'll be taking eight. Remember, you're using the same nodes. We are using the same nodes. We are not creating any new nodes. We're using the same nodes. So I'll be taking eight, pointing this to null and the child is pointing to null and T2 reaches null. The moment T2 reaches null, what I will do is I'll take this. Even if there was 10, I don't care. I'll take the entire thing and make sure eight is pointing to this. Make sure eight's child is pointing to this. That's what I'll do. I'll make sure that eight's child is pointing to T1, that's nine. And if T1 has anything, it will get linked. None and dusted. None and dusted. Can I see this that L1 and L2 have been flattened into one linked list? I can. And what is that? What is the head of that one linked list? That's dummy node dot child. Dummy node dot child. So I've solved the problem for two lists. Maybe I can write a pseudo code for it and then we'll try to solve it for multiple lists. So let's quickly write down the pseudo code."
+    },
+    {
+      "chunk_id": "L260_C14",
+      "start": 979.04,
+      "end": 1058.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=979s",
+      "text": "write a pseudo code for it and then we'll try to solve it for multiple lists. So let's quickly write down the pseudo code. Again it won't be language specific. So we're writing down merge two lists. You're given list one, you're given list two. These are basically head of list one and list two. Again very similar to merge two lists but those were in horizontal order. This is vertical. Got this. What is the first thing? I'll probably assign dummy node. Let's assign dummy node to be minus one. So I'm assigning dummy node to be minus one. We're taking a resultant so that we can traverse through that new vertical list, taken a resultant. I need to traverse through list one and list two. Till both of them or either of them reach null. So it'll be like list one, if you're not reaching null, please go ahead. At least two, if you're also not reaching null, please go ahead. So what is the first thing that you will do? The first thing is, you'll either pick this one or this one. So you need to compare. Correct? So, the first thing that I'll write is, if list one value is less than list two value,"
+    },
+    {
+      "chunk_id": "L260_C15",
+      "start": 1058.4,
+      "end": 1138.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=1058s",
+      "text": "compare. Correct? So, the first thing that I'll write is, if list one value is less than list two value, if that is the case, I'll say that, okay, I'll take list one. So I'm taking list one, I'll use the same node again. So I'll say, Riz, can your child, not next, your child point to list one. Done? At the same time, please make sure that the rest is moved to list one. Done? Once that is done, your list one should move to the next. Done? And if that is not the case, do the same with the list two. Let's do the same with the list two. The resultant of child will be pointing to list two, resultant will move to list two and list two will move to the next, which is list two child. It is exactly the same that we did while merging two lists. It is exactly the same. The only difference is, I'm using the child concept over here. So this is done. But there's one thing that you have to keep in mind. Please make sure that res next is null. Because every time you merge, all of these should be null. All of these should be null."
+    },
+    {
+      "chunk_id": "L260_C16",
+      "start": 1138.22,
+      "end": 1216.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=1138s",
+      "text": "next is null. Because every time you merge, all of these should be null. All of these should be null. Done? Once that is done, you can say that your while loop is completed. At the completion, there's a small check that you have to write. What if there's still a part of list one that's left? So you'll ask, hey res, can your child now go and get connected to list one? Or else, can your child, if list one is not left, list two will be left, get connected to list two. Once that is done, can I straight away return, can I straight away return dummy node child not next child? Because this will be your new head. This will be your entire code. So if I ask you the time complexity, it's going to be, we go off n1 plus n2, where n1 is the size of the first list, n2 is the size of the second list. Very easy because you're traversing both the lists. So we know how to solve it for two lists. But can you do it for multiple lists? Because what you are given is multiple lists. Let's see how we can do that. So we know how to merge two lists, but can we merge multiple lists? I think we can. Let's see how."
+    },
+    {
+      "chunk_id": "L260_C17",
+      "start": 1216.02,
+      "end": 1295.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=1216s",
+      "text": "that. So we know how to merge two lists, but can we merge multiple lists? I think we can. Let's see how. So you have two lists at the back, right? Can I merge them into one? Probably yes. Just assume that you merged them into one. Just assume. So after this, you can take this one. So this is one again. So maybe this one can be considered as l1 and this one can be considered as l2. So these two can be merged as one. So eventually you will be able to merge three into one. You'll be eventually able to merge three into one. So now if I consider this as l1, this one will be l2. Again can you merge both of them? Probably yes. So four of them will get merged into one, right? After that you can consider this as l1 and this as l2. Can you merge both of them? Yes. So once you merge, the entire thing will get merged into one, correct? So this is the algorithm that I will try to follow. Let's see how. I'll try to use recursion because I'll try to merge the last two at first and make it one and after that once it is one, once it is a single one, I'll try to merge with this one and eventually I'll come back. I'll show you how."
+    },
+    {
+      "chunk_id": "L260_C18",
+      "start": 1295.18,
+      "end": 1373.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=1295s",
+      "text": "one, once it is a single one, I'll try to merge with this one and eventually I'll come back. I'll show you how. So what I will do is I'll start with the head. So the head is three. So I'll take three, right? And I'll go deep. So I'll go deep. Okay, fine. So the head goes to two. I'll again go deep. The head goes to one. I'll again go deep. The head goes to four. I'll again go deep. So the head goes to five. This is the moment you stop. This is the moment you stop. You see that, okay, five's next is pointing to null. Five's next is pointing to null. That means it's an individual vertical linked list. It's an individual vertical linked list. So you don't have anything beyond it. So you just return. You return. You return. You backtrack. You return. At the moment you're returning, what you will do is you will call a merge. Yes, you'll call a merge. I'll write the merge over here. You'll call a merge and you'll pass four and five. Four and five, you'll pass it and you'll ask them to merge them into one. You'll ask them to merge it into one. So after they are merged, it looks something like this."
+    },
+    {
+      "chunk_id": "L260_C19",
+      "start": 1373.66,
+      "end": 1445.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=1373s",
+      "text": "them into one. You'll ask them to merge it into one. So after they are merged, it looks something like this. So when this merge function is called and you're passing the four head and the five head, they're merging together and this is what is returned to you. It'll be returned four. It'll be returned this. So this is where the current head stands. So this is what you'll return. You'll return the four. You'll say, okay, take this four because this is the merged head. And now again, you'll call the merge, but this time you'll call the merge for one comma four. Why? Because four is the head of this function and four is what you get back. So you call for this one. Got it? Again, the merge will happen between them. So let's merge it. So once you have called the merge, you'll get the new head and the new head will be this one. So what you'll do is you'll return that. You'll return that. So once you have returned, your current head is standing at two. So you'll call the merge for two and the new head that you got that was for one. So again, the merger will happen and this time it will merge this one and this one and you'll again get a new linked list. So after the merge is completed, you'll get the new head that is at one and you'll try to return it."
+    },
+    {
+      "chunk_id": "L260_C20",
+      "start": 1445.96,
+      "end": 1518.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=1445s",
+      "text": "new linked list. So after the merge is completed, you'll get the new head that is at one and you'll try to return it. So once you return it, you get the new updated head. So you'll again call the merge for the new head that's one and the current head that's three. So this three and this one will go and merge into one new linked list. So once you call this merge function, it will return you the new head as one. So it'll return us the new head which is at one and this head will be having the entire vertical linked list and this will be pointing to null, this will be pointing to null and eventually all the linked list, all the nodes next pointer will be pointing to null. So make sure you go deep, deep, deep, deep till the last node and once you return, you merge and return the head. Merge and return the head. Merge and return the head. Quite simple. If I have to write down the function, it's going to be super, super simple. Function takes a head if it's an empty one, you don't do anything or if it is the last one because that is your base case. That is your base case if it is the last one. So you can simply check for the last one stating that head's next. If the next is null, that means you're standing at the last node."
+    },
+    {
+      "chunk_id": "L260_C21",
+      "start": 1518.22,
+      "end": 1596.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=1518s",
+      "text": "can simply check for the last one stating that head's next. If the next is null, that means you're standing at the last node. If that is the last node, you don't do anything, you return because it cannot be merged with anyone. Right? So once the base case is completed, what is next? The next thing is you'll have to go deep, you'll have to go deep just in case the base case is not there. You go deep, you go deep and eventually when you backtrack, you call the merge function. Right? So you'll have to go deep. Let's go deep now. I'll say function, I'll go to the next head of next. Perfect. So when I go, when I go, I also come back, I also come back. So when I'm coming back, what am I getting? I'm actually getting during the base case, I'm getting the head after the merge is completed. I'll also get the updated head after the merge is completed. I'll get the updated head. So can I say I'm getting the merged head in short? Yes, I'm getting that. So when I'm getting the merged head, what is my next job? I'll have to take the current head and the merged head and call the merge. I'll have to do it. Right?"
+    },
+    {
+      "chunk_id": "L260_C22",
+      "start": 1596.38,
+      "end": 1671.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=1596s",
+      "text": "job? I'll have to take the current head and the merged head and call the merge. I'll have to do it. Right? So once that is done, once I call this, this will be returning me the merged head, the merged between two lists and I can straight away return this quite simple recursion. Very, very simple recursion. And this one is nothing but this one that we wrote. Got this. So let's do a dry run so that the logic gets straight into your head. What I've done is I've taken a small example and this one was the code that we did right for flattening a linked list. So initially we are taking the head and this is the head. So I'll be taking the head. So the head is at one. The base case is not satisfied because neither head.next is null or neither head is null. So I'll be calling this function. So let's call this function. So I'll be calling this function and I'll be passing head.next. So when I pass head.next, that means I'm passing four. So basically we are going over here. Got that. This time again, this is not true. This is not true. So the entire base case is not true. So I'll again be calling function of head.next. So I'll again be calling the recursive function."
+    },
+    {
+      "chunk_id": "L260_C23",
+      "start": 1671.62,
+      "end": 1747.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=1671s",
+      "text": "entire base case is not true. So I'll again be calling function of head.next. So I'll again be calling the recursive function. So this time when I call the recursive function, I'll say force next, right? So force next is this one three. So I'll be calling it with three. Head is null? No. Head.next is null? Yes. If you carefully observe, three.next is null. So the base case is true. So what will happen is I will return head. So we'll be returning head, which is the head. That's three. So we'll be returning three. So what I will do is I'll go ahead and erase this one and I'll write three because this is what will be returned. Now what is the next step? Merge two. What is the head? The head is four as of now. The merged head is three. So what I'm asking is, can you go ahead and this merge this one and this one? Got it? So it will be merged. So once the merge operation is performed, we'll be getting this one, right? And this three will be returned because this is a merge function, which will be calling the merge that we have written. We'll be returning three. So this will be returning three."
+    },
+    {
+      "chunk_id": "L260_C24",
+      "start": 1747.12,
+      "end": 1826.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=1747s",
+      "text": "function, which will be calling the merge that we have written. We'll be returning three. So this will be returning three. So what I can do is I'll go ahead and erase this one and this will be three. This time, which is the head? The head is one. The merged head is three. So what happens is basically you merge this one and this one. So what will happen is this two will get merged and you'll get a new head and that new head will be one. Once you merge it, you'll get the new head as one. So this will be returning a new head as one and that will be the entire vertical linked list. Got it how recursion basically goes in and then comes back, backtracking. So anytime, if after the recursion call, we're doing something and returning that, we technically call it as backtracking. We're doing something and backtracking it. Got it? So what will be the time complexity? Before analyzing that, let's have some assumptions that the number of horizontal nodes were n and assume every vertical linked list length to be m. Okay. Now tell me one thing, the small example we took, it had three horizontal, three horizontal"
+    },
+    {
+      "chunk_id": "L260_C25",
+      "start": 1826.1,
+      "end": 1899.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=1826s",
+      "text": "to be m. Okay. Now tell me one thing, the small example we took, it had three horizontal, three horizontal nodes, right? Correct? And the recursion depth was three. It went thrice and every time I was doing a merge, I was doing a merge, I was doing a merge. So every time I was doing a merge, so can I say the overall complexity will be three, in this case it will be three into whatever the merge is taking. Can I say that I can, this three is basically nothing but the horizontal number of nodes because that is the depth it is going in. So can I say this is n? I can because it's for once, twice, thrice, three horizontal depths, not like for the last time the merge operation doesn't happen. But apart from that, every time it happens. So I can assume it to be three into merge. How much is merge Tk? Remember we did compute it. The merge was taking B go of n1 plus n2. So since I've assumed the vertical lengths to be m, so can I say it's m plus m which is B go of 2m? I can, I can."
+    },
+    {
+      "chunk_id": "L260_C26",
+      "start": 1899.14,
+      "end": 1969.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=ykelywHJWLg&t=1899s",
+      "text": "be m, so can I say it's m plus m which is B go of 2m? I can, I can. So n into B go of 2m is the overall time complexity. B go of 2mn, B go of 2nm, again assuming n and m to be length. What is the overall space complexity? Am I using any external space? I'm not using. Yes, I'm using the recursive stack space. Now this is something which is in memory. This is something which recursion uses. So this is the overall time complexity and space complexity of this particular approach. So going back to the code editor again, you can see that I've written the exact same code, exact same code over here. And then the merge is over here. And once I've written that, I'll go ahead and click on submit and it will be submitted. So if you're still watching, I'm very sure that you've understood everything. And that is the case. Please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's speed up some of the video. Till then bye bye, take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

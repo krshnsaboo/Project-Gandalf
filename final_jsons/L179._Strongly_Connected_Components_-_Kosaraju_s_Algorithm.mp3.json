@@ -1,0 +1,141 @@
+{
+  "lecture_id": "L179",
+  "lecture_number": 179,
+  "lecture_title": "G-54. Strongly Connected Components - Kosaraju's Algorithm",
+  "youtube_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo",
+  "chunks": [
+    {
+      "chunk_id": "L179_C1",
+      "start": 0.0,
+      "end": 77.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we're going to learn how to find strongly connected components, generally known as SCC. And the algorithm that we will be using is the Hosa Raju's algorithm. If you go in an interview, there can be two kinds of questions. Figure out the number of SCCs, or print the SCC. So these can be the couple of questions, right? So I'll be giving you the entire logic behind this particular algorithm. After you know the logic, you can solve both the questions quite easily. Now, something to remember, strongly connected components are only valid for directed graphs. Please keep that in mind. Strongly connected components are only valid for directed graphs. So you see this is a directed graph. Now what I'll do is I'll try to mark the strongly connected components and then I'll explain you the definition. So this yellow box is a strongly connected component. Like this is a strongly connected component. Why do I say that? I'm going to explain you that. I can say three is a strongly connected component in itself. Again, why do I say that? Please wait. I can say this"
+    },
+    {
+      "chunk_id": "L179_C2",
+      "start": 77.44,
+      "end": 152.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=77s",
+      "text": "three is a strongly connected component in itself. Again, why do I say that? Please wait. I can say this is another strongly connected component. I can say seven in itself is another strongly connected component. Now let's understand. So if I take this portion, if I take this portion, you will see any pair of vertices, any pair of vertex, you can take zero one. So if you take zero and one, you can go from zero to one and you can go from one to zero as well. So you can go both the ways. If you take zero two, you can go from zero to two and you can go from two to zero. So if you take one two, you can go from one to two and you can go from two to one as well. So in this component, every pair of vertex is reachable to each other. But if I would have taken this, if I would have taken this and I would have taken the pair two and three, you see two is reachable to three, but three is not reachable to two. That is why three was not involved. That is why this is the first SCC. Remember this? So I can say zero one two is the first strongly connected component. You can write them in any order. Doesn't matter. Now three is an"
+    },
+    {
+      "chunk_id": "L179_C3",
+      "start": 152.72,
+      "end": 227.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=152s",
+      "text": "say zero one two is the first strongly connected component. You can write them in any order. Doesn't matter. Now three is an individual SCC. Why? Because if you're going to take this, you can reach from three to four, but not the alternate way. So three is a SCC with a single node. So three is an SCC. Perfect. Now if you see this again is an SCC. Why? Take any two pair of vertex four, six, you can reach from four to six. You can reach from six to four, take five, six. You can reach from five to six. You can reach from six to five, take four, five. You can reach from four to five and five to four. So every pair can be reached from each other. So thereby this is one more. Similarly, seven is an individual one. So I can write four, five, six. Again, you can write six, five, four, five, six, four, whatever order you wish to. So I can say there are in total four strongly connected component. So in an interview, someone might ask you how many, which is four. Someone might ask you print all the strongly connected components separately. The order doesn't matter. You can print them in any order. So that is what the question is. You have to find the number of strongly connected component or print them. So the algorithm that I will be using is the Kosa Raju's algorithm. But before understanding the"
+    },
+    {
+      "chunk_id": "L179_C4",
+      "start": 227.84,
+      "end": 302.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=227s",
+      "text": "number of strongly connected component or print them. So the algorithm that I will be using is the Kosa Raju's algorithm. But before understanding the algorithm, let's understand the thought process or the intuition behind this algorithm. Because once you understand the thought process or the intuition, like the algorithm is a very straightforward one. So this is a strongly connected comp. This is a strongly connected component. This is one. And this is one. Now, if I see, let's start DFS from zero, then you know how DFS works. It'll go to one. It will go to two. It will go to three. It will go to four. Now it might go to seven or five. Let's go to five. Then it'll go to six and then it'll go to seven. So ideally, if you start from zero, it will end up visiting all the nodes. So can you differentiate between the strongly connected components? No, we cannot. This is where a simple just observation comes into picture. Now I say this is strongly connected component one. I said this is strongly connected component two. And I said this is strongly connected component three. And I said this is strongly connected component four. Basically this is this, this is this, this is this, and this one is this. Right? So can I say, can I say this can go to the strongly connected component two? It can."
+    },
+    {
+      "chunk_id": "L179_C5",
+      "start": 303.6,
+      "end": 383.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=303s",
+      "text": "this one is this. Right? So can I say, can I say this can go to the strongly connected component two? It can. Can I say strongly connected component two can go into component three? I can. Can I say component three can also go to component four? And this is the only reason when you started with zero in the SCC one, you ended up visiting everyone. That was the only reason. Why? Because if you're going here, this in itself will visit everyone. Then in this in itself will visit everyone. Right? But over here, if I say, Hey, wait, what if I say, Hey, let's just quickly do a bit of change. Take this, take this, take this and reverse this, reverse these edges, reverse these edges. Now, can I say if I reverse these edges, reverse these edges, which will be like, if I just try to just omit this, just to give you a thought process. So what I'll do is I'll try to reverse these edges. Remember this, this was connected via this portion as well. So I'll just take it off. So I have, as of now, this kind of disconnected, the strongly connected components, how I'll come to that afterwards. So what I'll do is I'll reverse this. Imagine I reverse everyone. If I reverse now, just imagine if I started EFS from zero, will I just visit the SCC one?"
+    },
+    {
+      "chunk_id": "L179_C6",
+      "start": 383.2,
+      "end": 461.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=383s",
+      "text": "Imagine I reverse everyone. If I reverse now, just imagine if I started EFS from zero, will I just visit the SCC one? Like I'll go to zero. I'll go to one and then I'll go to two. That's it. I will not go to three because the edges reversed. Similarly, if I start from three, I'll just end up at three. If I start from four, I'll go to five. I'll go to six. Right. And similarly, if I start from seven, this is where I will be. So can I somehow see that if I'm starting the DFS from the first guy, right from the first guy, and these edges are reverse, they will never go to the adjacent SCCs, like the SCCs, which they're directed into. They will never go. Can I see this? I can. Now here comes a point. If I do not know the SCC, how do I reverse the edges? Fine. Reverse all the edges. Reverse all the edges. You don't know about SCC. Can you reverse the entire graph? I'll be like, let me think. I think I can. I think I can. If you reverse the entire graph, will that make sense? Let's see. I'll just reverse one component and let you think. So if I reverse this entire graph, will that make sense to the SCC? The SCC doesn't bother us because SCC says every pair of vertex is reachable in both the ways. So even if you reverse,"
+    },
+    {
+      "chunk_id": "L179_C7",
+      "start": 461.84,
+      "end": 532.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=461s",
+      "text": "SCC? The SCC doesn't bother us because SCC says every pair of vertex is reachable in both the ways. So even if you reverse, I'm still going to visit everyone. I'm still going to go, go. I'm still going to go. So the SCC, the internal SCC doesn't bother us if you reverse the edges. Because the definition of SCC is, if you start from one, you can reach everyone. That's the definition of SCC. If you're still reversing the edges, you're still going to reach. That's why reversal of edges will stop you to go to the next SCC. But wait. Now you might say, Trevor, I still have a question. And the question will be, how do I know that I have to start from zero? What if zero was in this component? You might think, Trevor, what if zero was in this component? Then I would have ended up visiting all the SCCs. This is where something like a starting time and finishing time will come in. Okay. So I hope you've got the kind of intuition. I'll teach you about the starting time and the finishing time, everything. But I want you to have the intuition crystal clear. The intuition behind kind of reversing the edges, stopping it to go is what the thought process is. Like I'll try to reverse the edges so that the DFS happens in individual, strongly"
+    },
+    {
+      "chunk_id": "L179_C8",
+      "start": 532.48,
+      "end": 610.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=532s",
+      "text": "to go is what the thought process is. Like I'll try to reverse the edges so that the DFS happens in individual, strongly connected components. That is what the intuition is. Okay. Now let's go to the algorithm and see how does it work. So you know, the thought process, the thought process is kind of stopping one guy to go into the other SCC, right? That is the thought process. So Gulshan Raju algorithm states, Hey, the first point is pretty simple. Sort all the edges, sort all the edges, according to finishing time. That is the first thing we will do. Okay. Second thing it states, reverse the graph, reverse the graph. And the last point is do a DFS. So let's perform the steps one by one and you'll understand sort all the edges according to finishing time. So let's start the DFS from this zero. So if I start the DFS from zero, it will like DFS of zero, right? It has, the DFS has not finished yet. It will go to DFS of one, not finished yet. It will go to DFS of two, not finished yet. It will go to DFS of three, not finished yet. It'll go to DFS of four, right? This is where it is. Now from four,"
+    },
+    {
+      "chunk_id": "L179_C9",
+      "start": 610.96,
+      "end": 676.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=610s",
+      "text": "DFS of three, not finished yet. It'll go to DFS of four, right? This is where it is. Now from four, it can go to five or seven. Let's go to seven to have a better understanding. Now it goes to seven. Why do you notice when you go to seven, seven doesn't have anywhere to go. It's finished. Seven is kind of finished. So it'll backtrack. Seven is finished. Maybe you can store it somewhere. Seven is the first guy to finish. That means he is in the last portion of the SCC. He's in the last portion of the SCC. If you remember, we had SCC one, SCC two, he's in the last portion. That is why he finished first. Got it? Now let's go back. So seven is finished. You will come back to four. Now four will go to five. Let's go to five. And then five will go to six. I'll say six cannot go to anywhere. If you say six cannot go to anywhere to six is also finished. So six is also finished, he'll backtrack. It'll backtrack. You will say four is finished. it'll backtrack. You'll say three is finished. It'll backtrack. You'll say two is finished. It'll backtrack youll say then backtrack youll say zero is finished. It'll backtrack youll say zero is finished. So what I've done is I've stored everyone in the order of finishing time, and maybe you can put"
+    },
+    {
+      "chunk_id": "L179_C10",
+      "start": 676.88,
+      "end": 750.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=676s",
+      "text": "youll say zero is finished. So what I've done is I've stored everyone in the order of finishing time, and maybe you can put in the order of finishing time and maybe you can put them into some stack or something. So everything, this is the top guy. Remember this is the top guy, the guy who finished at the last, the guy who finished at the last, and this is the first guy to finish a seven. So I've done the DFS simple enough, done the DFS. So first step I can say is done. What is the next step? Reverse the graph. So let's quickly reverse the graph and see how does it look. So the second step is also done. I have reversed the graph. It's very simple. While I code it, I'll show it how to do it. So the entire graph has been reversed. Now it says do a DFS and do the DFS. If you remember the intuition, what was the intuition? SCC one reversed with SCC two. So you do the DFS of this guy and who will be this guy? Remember initially it was like SCC one going to SCC two, going to SCC three and so on. So you will do the guys who went to DFS like this, like this, like this, the guy who will be finishing at the last, which is this guy zero. So you know the first SCC one will be having"
+    },
+    {
+      "chunk_id": "L179_C11",
+      "start": 750.56,
+      "end": 823.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=750s",
+      "text": "the guy who will be finishing at the last, which is this guy zero. So you know the first SCC one will be having zero. You just take out zero. That's why sorting them in order of finishing time was so important because if you sort them, you know the first SCC one, then you can go to SCC two. So you know the guys with first SCC one. So what I'll do is I will just go across and take out the first guy. Okay. And now let's start the DFS of zero. When you start the DFS of zero visit, it will go to DFS of two visit. It will go to DFS of one visit, but will it go to three? No, because the edge has been reversed. So I will say done zero to one done. So apparently the DFS is done for this particular SCC. It was done in the order zero to one. You can store them if you wish to. Okay. Next is one. Will you do for one? It's already visited. No. Will you do for two? It's already visited. Next is three. When you take three, three says, Hey, I can go to two, but two says I'm already visited. Just three, just three. So under the SCC with three. Perfect. What's the next? Four. So there is four. Let's"
+    },
+    {
+      "chunk_id": "L179_C12",
+      "start": 823.88,
+      "end": 900.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=823s",
+      "text": "already visited. Just three, just three. So under the SCC with three. Perfect. What's the next? Four. So there is four. Let's start with four. So if you start with four, what will happen? Four goes to six. So four is visited. Six is visited. Six goes to five. Five is visited. So four, six, five, and the DFS is completed. Next four is visited. Five is visited. Six is visited. What is next? Seven. So when I take out seven, I'll go and mark as seven is visited. Seven says, can I go to four? It says I'm visiting. So done with seven. Seven is another SCC. So apparently can I see we have done the DFS and the DFS calls were just called for zero. We're called for three, we're called for four and we're called for seven. Out of all the nodes, the DFS call was called for four nodes. So if the DFS call was called for four nodes, can I say there was a SCC one, SCC two, SCC three, and SCC four. That is why the DFS call was called for four nodes. Isn't it? I can say I've done the third, I've got all the nodes and the four times is what the number of SCC are. So I hope you have got the intuition,"
+    },
+    {
+      "chunk_id": "L179_C13",
+      "start": 900.0,
+      "end": 963.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=900s",
+      "text": "all the nodes and the four times is what the number of SCC are. So I hope you have got the intuition, the thought process and the algorithm. Just walking through the intuition again, SCC one went to SCC two, SCC two to SCC three, three to four, because definitely there will be some SCC which goes to someone else and someone else and someone else. That is for sure. So if you know this, we just need to figure out this, like we will reverse the edge, but before this, we need to figure out the nodes which lie on the SCC one. That is why this step and just to stop going into the next SCC, the reverse the graph step and to find out all the nodes, you take one node out of this and do a DFS. All the three steps intuition are clear. The algorithm is clear. Now we will go to put this up. So over here the question states, find the number of SCC in the graph. The graph is a zero based indexing graph and we're given the number of vertices and the adjacency list. So what I'll do is I'll go across and go this up. As usual, you'll find the C++ solution on the right and you can figure out the exact similar Java code on the left. So we're given the V and we're"
+    },
+    {
+      "chunk_id": "L179_C14",
+      "start": 963.96,
+      "end": 1037.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=963s",
+      "text": "on the right and you can figure out the exact similar Java code on the left. So we're given the V and we're given the adjacency list. What was the step one? Sort all the nodes according to the finish time. So we will require a visited array for sure because we have to do a DFS. So it will be like V comma zero. Now let's quickly do the DFS for all the notes so that we can have everything in terms of finishing time. So if not visited of I, then you can go across and say DFS of I, then we can pass on the visited, then we can pass on the adjacency list and we can pass on the stack. Why stack? Because we just store all the notes according to their finishing time. Right? Let's quickly now write the DFS. So it'll take a node and then it will take a visited guy. So let's take a visited guy. Then it'll take an adjacency list. We take an adjacency list and then it will take a stack as well and make sure everything is passed by reference. Okay. Once this is done, what is your next step? The next step is just make sure everything is marked as visited. Whenever you reach the best one and whenever the DFS is over, please make sure you store the no done. And in the meanwhile,"
+    },
+    {
+      "chunk_id": "L179_C15",
+      "start": 1037.56,
+      "end": 1113.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=1037s",
+      "text": "you reach the best one and whenever the DFS is over, please make sure you store the no done. And in the meanwhile, can we do the DFS traversal? We can. So the DFS traversal is very simple. If till now, I think you know how to do the DFS traversal. If this is the case, I say, Hey, DFS of ID visited, uh, IT visited, adjacency list and the stack. So this is how you can easily do the step one, which will store all the notes in order of finishing time. What is the step two? Transpose the graph. The graph has to be reversed. So maybe I'll require one more adjacency list to store the reversed graph. So you can take a transpose adjacency list. Now let's go across to this one because that was a step to reverse the graph. So all the notes are there and let's traverse for all that. This is a notes of this particular note. Now can I see this means for I for I, the adjacent node is ID. That means there is an edge between I and ID from I and ID. There is an edge from I to ID. There is an edge. Can I see this? And I need to reverse it, which means from IT to I, the edge should be there after reversing the edge should be from IT to I. So I will say, adjacent of"
+    },
+    {
+      "chunk_id": "L179_C16",
+      "start": 1113.68,
+      "end": 1187.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=1113s",
+      "text": "IT to I, the edge should be there after reversing the edge should be from IT to I. So I will say, adjacent of transpose ID is adjacent is I know. So this is how you'll reverse the graph. Step two done. Step three, perform the DFS again, but on order of finishing time. So I know the finishing time is stored in the stack, right? That is something which I know the finishing, like the notes are stored in the stack in order of finishing time. So I'll get the first node and I'll say stack.top and I'll say stack.pop. So I got the first one. Now I need a visited area because I'm going to perform a DFS again. We can reuse the same one. So what I'll do is I'll just make sure everything is marked as unvisited again so that I can reuse the same thing. So I'll be like, Hey, if not visited node, can you again call the DFS for this particular node with a visited and this time with the adjacency transpose. This is what I will. Now I need to compute the number of SCCs. So can I say SCC will be something like over here I can do an SCC because the number of times I call, that's the number of SCC, but I need to write the DFS. So maybe DFS, this is the third step. I can write it as"
+    },
+    {
+      "chunk_id": "L179_C17",
+      "start": 1187.52,
+      "end": 1260.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=1187s",
+      "text": "the number of SCC, but I need to write the DFS. So maybe DFS, this is the third step. I can write it as three and I can write something as private. Yeah, I can write this as private and this was not written as private. So make sure it's a private function. And then I can go across and say void step DFS three. And I can say, I have a node. I will have a same vector of int and a visited and I'll have a same vector of int and adjacents transpose, but this time, and I can write the same thing again. And I had the same thing I can, because I'm doing the DFS call again, but this time we'll not have the full parameter and we'll call the same DFS three. So this is how you can again go and visit the transpose graph. Once you visited the transpose graph, you have the SCCs. Can I say you can return the SCCs and that is how you can complete the step three. I'll go across and compile this and see if we have compilation errors. We have, let's quickly fix this. Okay. This is an, and this will not be an and, and adjacency was not declared yet. This will be adjacency of D. Perfect. I think we should find. Okay. We are fine. Now let's quickly submit this and see if it is accepted or not. It is,"
+    },
+    {
+      "chunk_id": "L179_C18",
+      "start": 1260.16,
+      "end": 1332.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=1260s",
+      "text": "I think we should find. Okay. We are fine. Now let's quickly submit this and see if it is accepted or not. It is, it looks like accepted. Let's talk about the time complexity first, a DFS. So, you know, a DFS ends up taking a big of V plus E that's the number of edges, number of nodes, plus number of edges is what this will take. Then transposing the graph again, I can say V plus E same. Can I say again, step three is again, having a DFS. So V plus C, so three into the DFS complexity. Right. And one other thing is very, by the way, this over here, this DFS is being called throughout. So V plus C, we don't know V plus C go back and use the DFS video. I've explained why V plus C. Okay. So what about the space using big of N, big of N and is storing the entire graph here. So this is going to again, take for every V there is an edge. So D plus C is the space. And two V is the space over here because one for visited and one for the stack. So there's a space complexity and this time complexity for this particular algorithm. So guys, I hope I was able to explain you the intuition, the algorithm, the code, just in"
+    },
+    {
+      "chunk_id": "L179_C19",
+      "start": 1332.88,
+      "end": 1354.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=R6uoSjZ2imo&t=1332s",
+      "text": "complexity for this particular algorithm. So guys, I hope I was able to explain you the intuition, the algorithm, the code, just in case I was able to explain you everything, please hit that like button. And if you're new to our channel, please do consider subscribing because I was checking our statistics, nearly 50% of the users who watch our videos, do not subscribe to us. So please, please, please. It's an honest request. Do consider hitting that subscribe button. You can check out the playlist as well. With this, I'll be wrapping up this video. Let's get into some of the video. Till then, bye bye."
+    }
+  ]
+}

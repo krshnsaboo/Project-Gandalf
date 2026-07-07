@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L204",
+  "lecture_number": 204,
+  "lecture_title": "DP 23. Unbounded Knapsack | 1-D Array Space Optimised Approach",
+  "youtube_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY",
+  "chunks": [
+    {
+      "chunk_id": "L204_C1",
+      "start": 0.0,
+      "end": 76.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=0s",
+      "text": "Hey everyone, welcome back to TakeUForward. Today we will be solving the 23rd problem from the dynamic programming playlist and the problem goes as unbounded knapsack. So what is the problem state? By the way, in order to understand this question, you should have seen the problem 01 knapsack which is the DP 19. So please make sure you watch 01 knapsack. So how is unbounded knapsack different from the 01 knapsack? So over here, there is a thief who goes into the house with a bag weight of 10 and there are items. First item has a weight of 2 and if he steals that item, he gets a value 5. The second item has a weight of 4 and if he steals that, he gets a value 11. The third item has a weight of 6. If he steals that, he gets a value of 13. But the difference from, like how is this problem different from 01 knapsack? Let's understand this. So in 01 knapsack, it was clearly stated that there will only be one occurrence. Yes, I repeat, there will only"
+    },
+    {
+      "chunk_id": "L204_C2",
+      "start": 76.24,
+      "end": 154.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=76s",
+      "text": "knapsack, it was clearly stated that there will only be one occurrence. Yes, I repeat, there will only be one occurrence of these instances. But over here in unbounded knapsack, it states there are infinite supply. Yes, infinite supply against similar to the previous question coins in DP 22 and DP 20 that we did. Similar to that problem where we have been stated that hey listen, there will be something as an infinite supply of every item. That means you can pick a single item as many times as you wish. Like for an example, if the thief comes up with a weight of 10, he will be like okay I can pick someone with a weight 6 and a weight 4 and this will give me 13 plus 11 which is 24 value. Or someone can be like hey listen, I will pick the weight 6 once and I will pick the weight 2. I will pick this twice and if I do this, this weight 6 will give me 13 value and this 2 is giving me 5. So 5 cross 2 will be 10. So 13 plus 10 will be 23 is the value that I can get."
+    },
+    {
+      "chunk_id": "L204_C3",
+      "start": 154.0,
+      "end": 233.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=154s",
+      "text": "5 cross 2 will be 10. So 13 plus 10 will be 23 is the value that I can get. Or someone might be like that hey listen, I am going to pick two items of weight 4. Yes, two items of weight 4 plus one item of weight 2. So if I am picking two items of weight 4, it will be 11 cross 2 which is 22. One item of weight 2 which is 22 plus 5 is 27. So in this way you can actually pick up in a lot of other ways. Like you can also say that hey listen, I am going to pick the weight 2 five times. Because if I pick up the weight 2 five times, that will be equivalent to the weight 10. And how much value will I get? 5 into 5, 25. So there can be numerous ways and you see that this value that you get is the maximum possible value. And that's what is going to be the answer. So I hope that makes sense to the question. So how is this question different from 0-1 knapsack? It states you have an infinite supply. So again, you will follow the pattern of knapsack and I have clearly stated what is the pattern of knapsack. You have to write a recurrence and in order to write the recurrence, express everything"
+    },
+    {
+      "chunk_id": "L204_C4",
+      "start": 233.04,
+      "end": 312.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=233s",
+      "text": "clearly stated what is the pattern of knapsack. You have to write a recurrence and in order to write the recurrence, express everything in terms of index, weight, explore possibilities, explore all possibilities and then knapsack states what is the maximum value that you can generate. So return the max of every one. Every possibility rather. That's what you will simply do in order to solve this problem. So let's quickly write down this recurrence. So index and weight is the initial one. So basically what I'm saying is, if there are three items, three items with a particular weight and a particular value, I'm saying till n-1 with a baggage weight of w, that means till here with the baggage rate till here n-1 with a baggage weight of w, what is the maximum value you can generate? What is the maximum value you can get? So this function will tell you till n-1 with a baggage weight of w, what is the maximum value that you can generate? So what I can say is f of index w. So let's forget about the base case. Now let's think about what are the cases. Knapsack had a couple of cases where he says that I'll not pick this guy. So if I don't pick this guy, I will have a value addition of zero to myself. I'll have a value addition of zero to myself."
+    },
+    {
+      "chunk_id": "L204_C5",
+      "start": 312.8,
+      "end": 391.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=312s",
+      "text": "don't pick this guy, I will have a value addition of zero to myself. I'll have a value addition of zero to myself. And if I'm not picking this, I'll definitely move here and the weight still stays the same. Again, very simple. The take will be zero initially, but I'm looking for maximal value. So if you remember, it will always be intermean. Now, when can I pick it up? Again, very similar. I can only pick up if the weight of that guy is lesser than the bag weight. Yes, is lesser than the w, which is the bag weight. Then only I can pick up. And if I'm picking up, can I see the value addition will be value of index plus function of w minus weight of that guy's index. But what happens to this particular index? Again, similar to the previous one I'd stated in finite supply. And whenever it is infinite, you stand at the same index. Previous question, previous question. Yes, because, because you can again, pick up that gap. So kindly stand at the same index. You don't need to do anything. Kindly stand at the same index. So I'm standing at the same index and then you just need to return the max of eight and the max of not take. So once you've done this, that's perfectly fine. I need to write the base case. So how do you write the base case? So remember guys,"
+    },
+    {
+      "chunk_id": "L204_C6",
+      "start": 391.92,
+      "end": 468.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=391s",
+      "text": "you've done this, that's perfectly fine. I need to write the base case. So how do you write the base case? So remember guys, in all the infinite supply, unbounded cases, the main point of concern is whenever you try to pick, you still stand at the same index because you can go on picking, go on picking. That's the crucial point. So what about the base case? As I said, do you, whenever you start from N minus one, the base case that you write is for zero, right? So whenever you come to zero, yes, whenever you come to zero, always try to think in this case, this is zero. This guy probably has a weight of three and this guy probably has a value of N. Okay. And the thief still has a weight of eight left, like thief's baggage weight left is eight. So if I ask you, how many times can the thief steal this item? Because he will obviously steal. There is only one item left and he still has a baggage weight of eight. So it's very obvious that he's going to steal this guy. Like why will he not steal? Logically, he will always steal it because if he doesn't steal his, because this is the last item, if he does not steal it, it will be his loss, right? So if the"
+    },
+    {
+      "chunk_id": "L204_C7",
+      "start": 468.16,
+      "end": 534.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=468s",
+      "text": "steal his, because this is the last item, if he does not steal it, it will be his loss, right? So if the weight is eight, what will he do? He'll try to steal it. That's for sure that I will say, hey, listen, I am going to steal it no matter what happens. I'm going to steal it. So how many items will he steal? Because I know this guy is having an infinite supply. So he'll be like, Stryber, if he has a weight eight left, he'll steal two items because this has a three guy. So he'll steal twice. If this was somewhere around 13, he would steal this four times. Make sense? If this was somewhere around two, he'll not be able to steal it. So can I say whatever bag weight by the weight of zero is the number of times it can steal? Can I say this? Assuming that it will always have a weight, which is definitely because every item has a weight. None of the items can have a weight zero. So can I say this is the number of times like the integer will be the number of times it can steal it? If it is eight, then I'll have eight by three saying two. If it is 13, then I'll have 13 by three saying four into what is the value that it will add value of zero is what it adds."
+    },
+    {
+      "chunk_id": "L204_C8",
+      "start": 535.28,
+      "end": 611.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=535s",
+      "text": "then I'll have 13 by three saying four into what is the value that it will add value of zero is what it adds. So can I say this is what the base case will be whenever you reach the end dancer for a single area is this again, very simple. So can I say this, can I say this, if I reach index equal to zero, I'm going to return a quite simple W by array of zero into or rather weight of zero into like you can do an integer of this into value of zero. And this is going to be my base case. Amazing. Perfect. So if this is the base case after this, I think your recurrence is ready. Once the recurrence is ready again, this I have been talking through the time complexity will be exponential. Why not two to the power end? Because, because, because of this case you're standing at the same index, same index. And what about the space complexity? Auxiliary stack space will be the bag weight. Why assume, assume, assume you have weights of one, two and another one. Okay. Assume you have weights like this. So this is a weight of one and you had a bag weight of 10. So you'll be like, okay, 10. If you pick up that will reduce to nine. If you pick up that will"
+    },
+    {
+      "chunk_id": "L204_C9",
+      "start": 611.52,
+      "end": 686.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=611s",
+      "text": "of 10. So you'll be like, okay, 10. If you pick up that will reduce to nine. If you pick up that will reduce to eight. So the maximum stack space, the maximum stack space used will be big off weight because you'll go for 10 depth reducing one, one, one, you'll go to 10 depth. So can I say, uh, this is how you can easily generate for knapsack. So that's space complexity for unbounded knapsack. So how do you convert this into my motion? Again, the same thing, basically declare a DP of N and W, and then you memorize very simple. I'm not going to do this any further. What about tabulation? Again, this is something which I'll be teaching. What's the first step, right? The base case. What's the next step? What are the changing parameters, index and yes, index and W right. What's the next thing? Copy the recurrence. That's you do. So let's write the base case. So, so initially what you do is you declare the DP of N and W plus one. That's very obvious. And what's the first thing, right? The base case, let's go and check out the base case. What's the base case for index zero. W can be anything. It can be zero. It can be one. It can be two till the baggage weight."
+    },
+    {
+      "chunk_id": "L204_C10",
+      "start": 686.8,
+      "end": 760.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=686s",
+      "text": "index zero. W can be anything. It can be zero. It can be one. It can be two till the baggage weight. It can be anything for everyone. This is what it stores. This is what it stores. Let's write it for any W yes. For any W which ranges from zero to the original W you can say the weight of the bag or whatever you can call it. You can say DP of zero because this is the index. W is equal to W by weight of zero. Again, you can take an integer into value of zero. This is the base case. Again, very straightforward, very, very straightforward. So what is tabulation? Tabulation is nothing but top, sorry, bottom up. Tabulation is nothing but bottom up. So in recursion, you did from N minus one till zero. Zero is the base case that you've computed. Now with the help of zero, you'll compute one, we'll compute two and so on. So index starts from one till N minus one. W starts from zero to W because in the recursion, you wrote it opposite W to zero. So it will be opposite. The next thing is copy the records. And once you've done this, your code should be ready. So yeah, what are we"
+    },
+    {
+      "chunk_id": "L204_C11",
+      "start": 760.8,
+      "end": 838.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=760s",
+      "text": "next thing is copy the records. And once you've done this, your code should be ready. So yeah, what are we waiting for? Let's get into the code. So we are given the N, the W, the profit, we can call this as value and this as WT. So let's quickly write a function. So the function will definitely have index, a capital W and we can definitely carry the value. We can also carry the weight, right? There's something which we can carry. And if index is equal to equal to zero, we return, we do return this, right? We take an integer division of how many items can I steal, which is the remaining W by whatever is the weight of the current zero index multiplied by like, this is the integer multiplication at first, sorry, integer division at first, multiplied with the value, like the number of items. And what are the other cases? There'll be cases of not take what I say, I'm not going to take. So the addition will be zero with the previous index W, well, and WT, and there'll be something like eight, which will be zero. And I can say, if yes, if W of index is lesser than equal to the remaining W that the knapsack has, I can say take equal to value of that index plus function. We stay at the same index because"
+    },
+    {
+      "chunk_id": "L204_C12",
+      "start": 838.64,
+      "end": 912.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=838s",
+      "text": "that the knapsack has, I can say take equal to value of that index plus function. We stay at the same index because it is unbounded and the W gets subtracted by weight of nothing but the current index. And we can go as well, and we can go as WT and we can return the max of take and not take because that is what the answer will be over here. We just need to return the function of N minus one, W, Val and WT. So that's how the recursive code will look like. It does run. So what's the next step? Make sure we convert this into a DP. So vector of vector, a DP and vector, int and W plus one comma minus one. Make sure you pass that DP over here and just copy paste this particular DP again. Just make sure you pass it over here with the reference. Over here also you pass it again, over here also you pass it again, and this will be DP of index W equal to this. And just make sure you write one state check. If that state check has not been done prior to this, you return DP of index and a W. This is how you can easily run it. Let's super quickly run this off. It has run. Let's try to submit this and see if this is"
+    },
+    {
+      "chunk_id": "L204_C13",
+      "start": 912.64,
+      "end": 989.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=912s",
+      "text": "can easily run it. Let's super quickly run this off. It has run. Let's try to submit this and see if this is running fine. Indeed, it does run absolutely fine. So we have made sure that memorization solution is running. What's the next step? We definitely have to convert this into tabulation. So for tabulation, we look out at the base case. It is for index equal to zero and W can be anything. So just make sure you write W can be anything from zero to W less than equal to W, W plus plus, and a DP of the index zero and the W. We will just be copy pasting this portion. Very simple. Done. What's the next thing? Make sure you write a couple of nested loops. So the couple of nested loops will definitely be starting from one. We'll go to an index plus plus there'll be a W loop, which will start from zero and the W goes to W and W plus plus. And what do you do? You basically just copy paste this portion. So let's quickly copy paste this portion. How's the next step? Just convert this into DP of index minus one. You make it W. You can super quickly raise this over here. Also just convert this into DP of index, right? And over here, W minus W of index. Correct. And you can just do this and right over here, what you can do is this portion."
+    },
+    {
+      "chunk_id": "L204_C14",
+      "start": 989.84,
+      "end": 1061.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=989s",
+      "text": "here, W minus W of index. Correct. And you can just do this and right over here, what you can do is this portion. And over here, you can just return DP of N minus one W. And you can just erase this off. And I'll try to submit this. It is. And let's, uh, let's try to submit the tabulation one. Indeed. It does run. Uh, what is the next step? Obviously the next step is to convert this into, uh, to, to add a space optimization. Why index minus one and index is there. So just using the previous row again, if you have not seen the previous classes, please, please watch it out because space optimization is something which I've taught in the previous classes. So make sure you watch out the previous lectures. So what I just need to do is I need to have something like vector of end previous. Right. And we need to have something as good and W plus one and zero. That's what we will be doing. And over here, what we can do is this will be called. This will definitely be previous, right? And, uh, what's all the change that we need to do? This will be current. And over here, we can write previous equal to current, and this can easily be written as previous. So over here, this will definitely be previous"
+    },
+    {
+      "chunk_id": "L204_C15",
+      "start": 1062.72,
+      "end": 1142.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=1062s",
+      "text": "we can write previous equal to current, and this can easily be written as previous. So over here, this will definitely be previous and you can just omit this portion. Now let's quickly try to run this. It does run. Let's, uh, try to submit this off. Now the question arises, can we space optimize this from a two array to a one area? Because in the knapsack, we did a space optimization from two IRA into one array. So let's look at the code. What am I using? I'm using a previous, and I'm using a current in order to compute the current. So can I see this as the previous, can I say this is the current, right? And what am I doing in order to compute this guy? What am I using? I'm using this guy, which is like, let's write down the lines. Not take is nothing but zero plus previous of W ache is nothing but value of index plus current of, if I just write it properly, W minus WT index. Okay. So can I say, can I say whenever you're trying to compute this guy, what are you using? They're using this guy and somewhere someone from the current, but from the back."
+    },
+    {
+      "chunk_id": "L204_C16",
+      "start": 1143.52,
+      "end": 1222.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=1143s",
+      "text": "compute this guy, what are you using? They're using this guy and somewhere someone from the current, but from the back. Whenever you're trying to compute this guy, what are you using someone from here and someone from the previous? Whenever you're trying to compete, does guy, what are you using someone from here and samron from the previous? Because W minus WT is somewhere from here. Whatever you're trying to compute these using someone from here and someone from the previous, no simple question, do you, US whenever you're trying to compute let's say this guy apart from this guy are you requiring any of these guys are you requiring any of these guys and the answer is no why because we are just requiring the same column guy the same column guy we are just requiring the same column guy so can i say whatever values like this value whatever value i'll get i'll just rewrite over here then i'll move here whatever value i get i will rewrite over here so can i say i can use a single guy single array yes we can because because we do not need the previous values we just need the same column guy so use the same column guy use the previous compute this and just put it across here and you can use a single array right for an example let"
+    },
+    {
+      "chunk_id": "L204_C17",
+      "start": 1222.24,
+      "end": 1290.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=1222s",
+      "text": "use the previous compute this and just put it across here and you can use a single array right for an example let me just give you assume this is the previous just a single array okay assume this is the previous and it had some values as three four five six seven uh one two for an example something like this the moment you came to here and you wanted to compute this guy you wanted to compute this guy for the current row so what you did was you took three like for not take you took three for take you looked at the back and you did not find anyone because that's not possible so whatever is the maximum you rewrote it next you came to here you took four and whatever is at the back because you have rewritten it whatever is the back you again took it and again whatever maximum you got you rewrote it again you went here you took the five you took someone from the back and you took the maximum rewrote it just because you do not need the previous values you can rewrite this value to this guy once you have computed using this particular guy thereby i can definitely space optimize this into a 1d array so can i say this if i go back to the code"
+    },
+    {
+      "chunk_id": "L204_C18",
+      "start": 1291.36,
+      "end": 1373.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=OgvOZ6OrJoY&t=1291s",
+      "text": "thereby i can definitely space optimize this into a 1d array so can i say this if i go back to the code i don't need a current now only one guy will work like i can call it as the current guy only let's call it as previous to our confusion so i just require one guy this is the previous w the previous guy not take will be computed from this previous only like this is the row which i'm computing because i'm overwriting i'm overwriting so i can take it from here itself and once i've computed once i've computed non-take by using the previous value and the previous values i will take the maximum of that and i'll rewrite it to the w so the previous w gets rewritten by the max and eventually you can find your answer so if i try to run this this is also going to run in a 1d array and you see it is running wonderful isn't it we started from recursion exponential complexity then a 2d complexity then two arrays then a one array wonderful isn't it so just in case you did understand please make sure you like this video and if you're new to the channel please please please do consider subscribing to us and yeah with this i will be wrapping up this video let's meet in the next one bye bye take care whenever your heart is broken with this i will be wrapping up this video let's meet in the next one bye bye take care whenever your heart is broken don't ever forget your golden i will find the light"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "lecture_id": "L138",
+  "lecture_number": 138,
+  "lecture_title": "G-13. Distance of nearest cell having 1 | 0/1 Matrix | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=edXdVwkYHF8",
+  "chunks": [
+    {
+      "chunk_id": "L138_C1",
+      "start": 0.0,
+      "end": 79.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we will be solving a problem, distance of nearest cell having one. Now this problem is on GFG. If you want to find the similar problem on lead code, the problem name goes by zero one matrix. It's a slightly different variation where they will ask you to find distance of the nearest cell having zero. So this is a problem where you have to find the nearest cell which is having one. So let's read the problem. Given a binary grid of N cross M, binary means containing zero and ones. Find the distance of the nearest one in the grid for each cell. Now the distance is calculated, they are basically subtracting the row numbers and the column numbers and adding it. So let's understand the question. So imagine this is the particular grid that is given to you like one zero one one one zero one double zero. This is the particular grid that is given to you. Now over here I will ask you for this one, who is the nearest one? The answer to that will be he himself. He himself is the nearest one to himself. So I can say the answer to this is zero. For the zero, if I ask you who is the nearest one, the answer will be this guy, this guy,"
+    },
+    {
+      "chunk_id": "L138_C2",
+      "start": 79.34,
+      "end": 148.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=79s",
+      "text": "to this is zero. For the zero, if I ask you who is the nearest one, the answer will be this guy, this guy, this guy. So if you compute the distance to any of them, you'll actually find the distance is one. So you can pick up one and you can say the nearest one is at a distance of one. Now if I pick up this one, he himself is the nearest one. So I can write zero. If I pick up this one, this is the nearest one. This is the nearest one. This is the nearest one, but he himself is the nearest one. So again, zero. If I again pick up the next one, it is again zero because he himself is the nearest one. If I pick up the zero, the nearest one is this, the nearest one is this again at a distance of one. So if I pick up this one, he himself is the nearest one. So zero. If I pick up the zero, who is the nearest one? This guy and this guy at a distance of one. Now comes the main stuff. If I pick up this zero, you find the nearest one to be this or this. Now you might say this is at a distance of one. No, there are no diagonal distance calculated. The distance is calculated by row number subtraction and column number subtraction. That is how the distance is calculated. So"
+    },
+    {
+      "chunk_id": "L138_C3",
+      "start": 148.76,
+      "end": 217.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=148s",
+      "text": "no diagonal distance calculated. The distance is calculated by row number subtraction and column number subtraction. That is how the distance is calculated. So you have to go like this to get the column difference. They're like this to get the row difference, row difference, column difference. Thereby to go here, the distance is two. To go here, the distance is two. To go here, the distance is two. So I can say all of these three are at a distance of two. So thereby the nearest one to this particular zero is at a distance two. So the resultant distance matrix is this one, which you'll get. And this is what you need to return as an answer. Okay. So which is the algorithm that comes to your brain that you should start with that algorithm? Now we know we are solving, this is again something similar to graph and you have to find the minimum steps or minimum distance. So we know this is a graph problem, but which algorithm? Now I will say the algorithm that comes to my mind is BFS. Why? Because assume I want to find for this one, I know for this one, the nearest one is this. I need to figure out for these zeros, which is the nearest one. I have to figure out for these zeros, which is the nearest ones. So can I"
+    },
+    {
+      "chunk_id": "L138_C4",
+      "start": 217.04,
+      "end": 293.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=217s",
+      "text": "these zeros, which is the nearest one. I have to figure out for these zeros, which is the nearest ones. So can I say, if I pick up these three ones, if I pick up these three ones and I ask, Hey, listen, take one step in all the four direction, take one step in all the four direction. So this one will take a step in this and this, this one will take step here, here, here, here. This one will take a step here, here, here, and here. So apparently if you see, if you take one step from these ones, you will reach this zero, this zero, this zero, and this zero. So really this zero, this zero, this zero, this zero will be covered if you take one steps from like combining all these ones. So can I say, I'm definitely sure if I took one step to reach this zero, the nearest one to the zero is at one step. The nearest one to this zero is at one step. The nearest one to the zero is also at one step. I am definitely clear about that. Perfect. So imagine I say, okay, I got it. I got to them in one steps maybe next. Can I say from here, from here, from here, from here, which is the next"
+    },
+    {
+      "chunk_id": "L138_C5",
+      "start": 293.76,
+      "end": 370.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=293s",
+      "text": "to them in one steps maybe next. Can I say from here, from here, from here, from here, which is the next level. I can take one more step, which is two steps. And I'll reach these couple of guys because this guy will reach here, here, and you'll reach the next set of zeros in the next step, which is step two. So I'll take two steps. And if I'm reaching in two steps, can I see the nearest one was at two step? I can. So thereby for these zeros, it was at a distance to all the, all the initial ones, you can definitely put up something like a zero because that will take zero steps. So why did it work? Again, very obvious BFS when you start with these ones and you see them to take one step, they will reach all zeros. They will reach all zeros that are at a distance of one or happily. I can see the nearest ones to these zeros are at a distance one and you mark them. Then again, if you take one step, you'll reach the next set of zeros and you can say, all these zeros, I repeat for these zeros, this one is at a distance of two. So that is why I will always apply BFS because BFS is an algorithm that moves step by step. It does not travels in depth. Imagine you'd have taken this"
+    },
+    {
+      "chunk_id": "L138_C6",
+      "start": 370.36,
+      "end": 449.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=370s",
+      "text": "always apply BFS because BFS is an algorithm that moves step by step. It does not travels in depth. Imagine you'd have taken this one and you'd have started traveling in BFS one step, two step, three step. That would have been wrong. That is why you have to apply BFS because you want all of them to traverse a single step together so that you can always have the minimum count with you. That's why we will be using the BFS algorithm. Okay. So how to apply BFS? We know it's very simple. If you're given a matrix, so you just number them by the way, this is the numbering of matrix, which is zero one, two, zero one, two. And I never ever touched the matrix because it is the data that is given to you. So you'll always create a separate, yes, you'll always create a separate visited array and you'll mark everyone as zero over there. Yes. You'll mark everyone as zero over there. And this is your visited matrix. Now you need to store the distance to the nearest one. So you can always have one more stuff, which stores the distance. Okay. Now, okay. So in order to apply BFS, let's assume you have this matrix, okay. Where we have a one here, we have a one here, we have a one here. So these three are the starting points where you'll start your BFS from,"
+    },
+    {
+      "chunk_id": "L138_C7",
+      "start": 449.32,
+      "end": 525.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=449s",
+      "text": "here, we have a one here, we have a one here. So these three are the starting points where you'll start your BFS from, or I can call this as a multi-source BFS because there are three sources from where you're starting the BFS. Now this is a visited array. We know that we will never hamper the data that is given to us, never ever hamper the data that is given to us because that is not a good practice. So we will create a visited matrix and we will create a distance array or distance matrix, which will store the distance to the nearest ones from every particular cell. Now, in order to start with Q, we know these are the three source. So I define a Q data structure and I see, okay, first source at one comma one at a step, because if it's a one and if there is the starting, the nearest to this guy will take a step zero or a distance zero. Next two comma zero with this zero and next two comma two with a zero. So basically one comma one, two comma zero, two comma two, all at a step or distance zero. And at the same time, just make sure they are marked as visited. Done. So this is the initial configuration. You have this particular visited"
+    },
+    {
+      "chunk_id": "L138_C8",
+      "start": 525.32,
+      "end": 600.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=525s",
+      "text": "same time, just make sure they are marked as visited. Done. So this is the initial configuration. You have this particular visited array. You have this particular Q to start off with. Now what you will do is you'll pick up the first guy. You'll pick up the first guy. Maybe like, okay, I'm at one comma one and the step that it took was zero. So that means at one comma one, the nearest one is at zero step. So you go over here and say, okay, one comma one, can you please put zero because the nearest one to you is zero again, obvious because we have a one here. They buy zero will be the distance. But for this one comma one, you know, you can go in this direction, this, this, and this for this one. If you go here, it's a zero, right? So can I support the zero? The nearest one is this? Yes. Which is at a step one. You actually took a step one to reach the zero. So the vice versa is also true that for the zero, the nearest one is at a step one, right? So can I see that zero comma one, which is this guy is at a step one. Perfect. And zero comma one is visited and inserted into the queue. Now for this one, there is this guy, which is at a right, which is one comma two at a step"
+    },
+    {
+      "chunk_id": "L138_C9",
+      "start": 600.92,
+      "end": 677.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=600s",
+      "text": "into the queue. Now for this one, there is this guy, which is at a right, which is one comma two at a step one. Again, I can say, and I can mark it as visited for this particular zero. It is the bottom right, which is two comma one again at a step one market as visited over here, one comma zero at a step one, again, market is visited. Perfect. For this one, I traveled all the four directions. And that means all of them are at step one and I'm marked. Everyone has visited done with this. Let's get the next one. Two comma zero. Again, says step zero, please go back and market step zero. Obvious because this from here, the nearest one is this two comma zero, which is this guy. Sorry. Uh, which is two comma zero is the sky. Does it have a top? Yes. But that is already visited. Does it have a right already visited? No, no. So apparently this guy has no neighbors which are yet to be visited. So perfect. Next two comma two and took a step zero. So go and store that. Come back. Two comma two. Where is it? Yeah. Visited, visited, invalid, invalid. No more. It is"
+    },
+    {
+      "chunk_id": "L138_C10",
+      "start": 678.36,
+      "end": 753.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=678s",
+      "text": "go and store that. Come back. Two comma two. Where is it? Yeah. Visited, visited, invalid, invalid. No more. It is next zero comma one at a step one at a step one. Where's zero comma one? Yeah. This one has a right. Yes. Zero comma two. It will take one more step because if this took one step, you're taking one more step, which means from here to here, you went. And from there to there, you went. I hope that is clear. And that is into your head. So I can say this guy took two steps. Perfect. Market has visited for the zero. There is also on this guy, zero comma zero, which took two steps. Market is visited for this guy. There is no bottom because it's already visited. There's no top invalid. So I can say done. Let's take the next one out. One comma two with one step, one comma two with one step. Perfect. Does it have a one comma two is this? Does it have a top visited? Does it have this? No. Visited, visited. Next two comma one comma one, two comma one comma one, two comma one comma one up. Visited, right. Visited,"
+    },
+    {
+      "chunk_id": "L138_C11",
+      "start": 753.16,
+      "end": 824.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=753s",
+      "text": "Next two comma one comma one, two comma one comma one, two comma one comma one up. Visited, right. Visited, invalid. Visited. No more. One comma zero comma one, one comma zero comma one. Perfect. One comma zero up. Visited, right. Visited, down. Visited. Invalid. Next zero comma two comma two. Where's zero comma two? Two. Go ahead and write two. Up visited, up invalid, right invalid, down visited, left visited. Done. Next zero comma zero comma two. Zero comma zero comma two. Up invalid, right. Visited, down visited, left invalid. Q, empty. You visited everyone. And at the end of the day, this is your distance array. Is it correct? It is correct. It is indeed correct. So this is how you solve this particular problem. Now let's quickly dive back and check out the C++ as well as the Java code. C++ code is what I'll write. You can find the Java code on the left."
+    },
+    {
+      "chunk_id": "L138_C12",
+      "start": 824.68,
+      "end": 899.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=824s",
+      "text": "C++ code is what I'll write. You can find the Java code on the left. Okay. So INDN equal to grid.size. Perfect. INDM equal to grid zero.size. Right. And then you can say, okay, let's travel in the matrix. Find all the ones at first. What do we require? We require a couple of things. One is this thing we require, which is a visited. So you can probably create a visited to the matrix of marking everyone as zero, or you can probably create vector of int, int distance, where n comma vector of int comma m comma zero. Perfect. So I've created a visited and a distance array. Now, something I know for sure is if the grid contains a i, j equal to one, then this is where I'll start my BFS from else I'll not. So can I see, I need a queue, which stores three things. One is the coordinates of the row and column. Third is the step. So probably I can keep something like these are the coordinates that I'll keep. And I will keep something as"
+    },
+    {
+      "chunk_id": "L138_C13",
+      "start": 900.12,
+      "end": 975.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=900s",
+      "text": "I can keep something like these are the coordinates that I'll keep. And I will keep something as the steps here. And then what I can do is I can just say, this is the queue. So I can say, okay, I got my first at i, j. So I can keep like i, j, and then I can say zero steps. Right. And then what I can say is this guy is also visited. And if it is not, then I can say it is unvisited, which is already done over here. Perfect. This is how I store all the initial ones in the queue, and I mark them as visited. Perfect. Now I know I'm going to traverse till the queue is non-empty. So please do that. Traverse till the queue is non-empty. Now let's get this row number, which will be q.front.first, because it's on the first pair and dot first. Very basic stuff. I'm not going to teach this. The column is q.front.first.second. And then the steps are q.front.second and q.front.short. And then you can say, please go out of the queue. And can I see this is the distance that I took? The steps is the distance that I took in order to reach this. So I can store that in the answer as well. Perfect. I've stored that in the answer. Now what's the next thing? Travel upwards, travel rightwards, travel bottom and travel left. So if I go back to the"
+    },
+    {
+      "chunk_id": "L138_C14",
+      "start": 975.72,
+      "end": 1051.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=975s",
+      "text": "in the answer. Now what's the next thing? Travel upwards, travel rightwards, travel bottom and travel left. So if I go back to the iPad, so if I'm standing somewhere here, I have to travel here. Imagine this is row column. This will be row minus one and column. This will be row comma column plus one. This will be row plus one column. This will be row comma column minus one. This is what it will be. So what I'll say is, okay, let's store. So if you carefully see, there's a minus one, there's a plus zero, plus one, zero. So what I'll do is I'll say minus one, zero, plus one, and zero. If a column, there's a plus zero, plus one, plus zero, plus one, plus zero, minus one. So this is going to be the change in row, delta row and delta column. So if I add minus one to the row, I get the up one. If I add zero, I'll get the upwards. If I add zero and plus one, I'll get the right. If I had one zero, I'll get the bottom. If I had zero minus one, I'll get the left. So that's a shortcut to do. So I'll say del row is going to be minus one, zero, plus one, zero. And I can say the del column is going to be zero plus one,"
+    },
+    {
+      "chunk_id": "L138_C15",
+      "start": 1051.16,
+      "end": 1129.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=1051s",
+      "text": "going to be minus one, zero, plus one, zero. And I can say the del column is going to be zero plus one, zero minus one. Now what I'll do is I'll say, okay, for i and d i equal to zero, i lesser than four, i plus plus. And I can say the neighbor row will be the current row plus del row of i, right? And the neighbor column will be column plus del column of i. I hope that's clear, right? Now, first you need to check if they're valid. So in order to have a validity, please, please check it like this. And then you can say, and column, you can write a separate function because that will be more readable. And I can say, and column has to be less than M. Apart from that, what do you need to check? Is it already visited? So if it is, sorry, and row and column, is it already visited? If not, if not, then only yes. Then only you go and say, I have visited you. At the same time, you say, can you please take these new guys and keep them with you and steps plus one, whether this will be an column, my bad. Yeah. And once you've done"
+    },
+    {
+      "chunk_id": "L138_C16",
+      "start": 1129.24,
+      "end": 1202.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=1129s",
+      "text": "keep them with you and steps plus one, whether this will be an column, my bad. Yeah. And once you've done these things, you can simply over here, return the distance metrics, right? And this is how your entire code will look like. So let's quickly analyze the time complexity. So if I analyze the time complexity, how like N cross M over here, and then I'm traversing all these columns, which is in total of N cross M columns, right? So this, this while loop is going to run for N cross M. And then there is, you're running four times. So cross four. So N cross M cross four over here and an N cross M, which is approximately N cross M space. Yeah. I'm using like N cross M N cross M, then a Q with store. So near about N cross M people might argue that we don't need this visit distance. We can do it using the grid. You can, but I'm someone who does not change the data or does not alter something which is given to me because I'm solving a problem. I don't need to hamper the data. So I hope guys you have understood this entire problem, the code and the explanation. So just in case you did, please, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away, man. And yeah,"
+    },
+    {
+      "chunk_id": "L138_C17",
+      "start": 1202.04,
+      "end": 1218.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=edXdVwkYHF8&t=1202s",
+      "text": "like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away, man. And yeah, with this, I'll be wrapping up this video, but do not forget to check out our SD sheet and the DPC. The links are in the description with this. Let's start with this video. Let's begin some of the video till then. Bye bye. Take care. Don't ever forget your golden."
+    }
+  ]
+}

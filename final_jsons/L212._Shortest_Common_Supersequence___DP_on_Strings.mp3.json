@@ -1,0 +1,162 @@
+{
+  "lecture_id": "L212",
+  "lecture_number": 212,
+  "lecture_title": "DP 31. Shortest Common Supersequence | DP on Strings",
+  "youtube_url": "https://www.youtube.com/watch?v=xElxAuBcvsU",
+  "chunks": [
+    {
+      "chunk_id": "L212_C1",
+      "start": 0.0,
+      "end": 79.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=0s",
+      "text": "Hey everyone, welcome back to take you forward. So in this video, we will be solving the problem shortest common super sequence. Yes. Again, in order to understand this problem, that's a prerequisite. Please make sure you watch out the video of LCS and printing the LCS because without both of these videos, this won't be happening. So please make sure you go back and watch out these couple of videos. It's in my playlist. So what does a super sequence exactly means? It states you will be given a string S1, you'll be given a string S2. You have to make such a string such that the string S1 is in that, the string S2 is also in that. If I say I make a string root and root combined, if I make a string like this, I can say root is there, root is also there. So this can be called as a super sequence. Yes. This can be called as a super sequence. Common super sequence means both of these guys are over here."
+    },
+    {
+      "chunk_id": "L212_C2",
+      "start": 79.78,
+      "end": 158.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=79s",
+      "text": "be called as a super sequence. Common super sequence means both of these guys are over here. So this can be called as a common super sequence. But first line, shortest. Can I get something smaller than this? Because it's basically you're just taking this and taking this and then you're saying that this is the super sequence. Can I get something which is smaller than this? Let's see. Like probably I can have something like I'll just copy paste and then I'll try to explain. B-G-R-U-O-O-T-E. If I take a string like this, does it have root? Let's check out. Remember the order has to be same. B-R-U-T-E. Root is there. Does it have a root? G-R-O-O-T. Root is also there. So I can say in this string, we have the root, we have the root as well. And the length of the string is nothing but eight. Over here the length was 10. So I want you to give me the shortest and this is indeed the shortest. You can try out all of the super sequences, but you'll find that this is indeed the shortest one. So how do you actually get the shortest one?"
+    },
+    {
+      "chunk_id": "L212_C3",
+      "start": 158.52,
+      "end": 232.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=158s",
+      "text": "but you'll find that this is indeed the shortest one. So how do you actually get the shortest one? For example, let's take another string. Bleed and blue. So bleed blue. Ideally bleed blue will be a super sequence. But if I ask you, which is the shortest super sequence, then it will be B-L-E-U-E-D. This will be the shortest super sequence. Why? B-bleed, is it there? B-L, yeah, it is there. Is blue there? Let's see. B-L-U-E. Blue is also there. So bleed is also there as a subsequence. Blue is also there as a subsequence. And this is an entire string which contains S1 and S2. And thereby, this is the shortest common super sequence. But I want you to give me the shortest common super sequence length. Over here the length is six, as well as I want you to give me the string. So let's first analyze how do you figure out the length. Once you have analyzed how to figure out the length, then we will see how do you print the shortest common super sequence."
+    },
+    {
+      "chunk_id": "L212_C4",
+      "start": 232.8,
+      "end": 309.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=232s",
+      "text": "to figure out the length, then we will see how do you print the shortest common super sequence. So come back to the first example of brute and groot. This is string one and this is string two. So logically, if I apply my brain, I am at B, I am at G. And what I can say is, Striver, we know one thing, the string has to have brute. So if I need a B, why don't I take B in a super sequence? Perfect. And after that, I can move it to R. And if I need G, why can't I take a G? Perfect. And then I move it to R. But over here, when I'm standing at R and I'm standing at R, can I say, I can actually take a single R because that single R will also suffice for brute and that single R will also suffice for groot. Can I say that? I can. So I'll be like, okay, I'll take a single R and then I'll move both of them to somewhere here and then I'll be like, okay, let's take U and then I'll move it to T. I know on a very high level, this T can match with this T. So what I'll do is, I'll copy paste both the double Os and I'll take it to directly T."
+    },
+    {
+      "chunk_id": "L212_C5",
+      "start": 309.2,
+      "end": 388.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=309s",
+      "text": "match with this T. So what I'll do is, I'll copy paste both the double Os and I'll take it to directly T. And the moment it stands at T and it is at T, I'll write one T for it and then I'll move it to E and I'll just copy paste. So overall, I get this particular string. And if you carefully see, is that what we got? Yeah, that is what we got. There can be multiple answers. Yes, there can be multiple answers. But what was the intuition while I was doing it? Since I know if there is an R and there is an R, that's gonna suffice for both of them. And if there's a T, that's gonna suffice for both of them. So why shall I take R twice or T twice? I'll just be using R once and T once. That's gonna suffice for this guy as well as this guy. So my first thing is, common guys taken once. Common guys should be taken once. Now when I say common guys, what does common guys in two string means? What are the common guys in two strings? We have already done that. That's nothing but LCS. LCS tells me the longest common guy in two strings."
+    },
+    {
+      "chunk_id": "L212_C6",
+      "start": 388.12,
+      "end": 462.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=388s",
+      "text": "two strings? We have already done that. That's nothing but LCS. LCS tells me the longest common guy in two strings. So I can be like, okay, so if I take root and root, I know RT is the longest common subsequence of length two. And I know over here, I have to take every one. I have to take every one apart from the longest common subsequence. So I can say, I will be taking BUE. I can say from root, I'll be taking GW and I'll not take RT from here. I'll not take RT from here. I will take this guy and this guy and this RT will be just taken once. So can I say the answer is very simple? I will be like, what is the answer? You take root, you take GW, but since you have taken RT twice, once in root, once in GW, you don't take it twice, you just take it once. So can I say the answer is very straightforward. N plus M, where N is the length of the first string, M is the length of the second string"
+    },
+    {
+      "chunk_id": "L212_C7",
+      "start": 462.52,
+      "end": 537.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=462s",
+      "text": "plus M, where N is the length of the first string, M is the length of the second string minus the length of the LCS is the number of, is the length of the shortest common subsequence. If you see over here, the length is five, the length is five, five plus five minus two, the length comes out to be eight. And that is what the length was of this guy, which is eight. Isn't it? So I figured out the length was very simple. The length was N plus M minus the length of LCS. That is the length of the, I can say shortest super sequence or whatever you're calling it as. So we figured out the length, but how do we actually figure out the string? Because that's a critical junction. We have got the intuition that if there are common characters, we can use them once. So logically the longest set of common characters is what we will take because we want the shortest guy because if you're looking for shortest, shortest string length, then it's better that you take a longer patch of common characters so that they are used once. So we have got our answer very clearly. But now how do you print the string? That's that's a point."
+    },
+    {
+      "chunk_id": "L212_C8",
+      "start": 537.9,
+      "end": 616.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=537s",
+      "text": "once. So we have got our answer very clearly. But now how do you print the string? That's that's a point. How do you print the string or print the super sequence? So what you will do is you will have to watch the video print LCS. Please go back and watch the video print LCS. Over there I've taught you what is the DPT bill. And if you remember just a quick recap in LCS, it's very straightforward. We used one base indexing and we said if S of 1, I minus 1 is equal to T of J minus 1, then DP of IJ goes as 1 plus DP of I minus 1 and J minus 1. Remember that was for the matching character. That's for this matching character or else you are like, okay, else it will be DP of IJ equal to max of DP of I minus 1 J comma DP of IJ minus 1. Remember from LCS class, this is straight away from the LCS. So if you remember this, let's take the brute guy and the brute guy and try to create the DPT table super quickly. And then we will see how can we derive the shortest common super sequence from it."
+    },
+    {
+      "chunk_id": "L212_C9",
+      "start": 616.82,
+      "end": 695.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=616s",
+      "text": "the DPT table super quickly. And then we will see how can we derive the shortest common super sequence from it. So if you remember, this was the J column and this was the Ith row and we were taking one base indexing. So this will go as BRUTE brute and definitely this will go as GROT, which is GROOT. So you know well enough when you started B and G are not matching. So you were like, okay, put a zero over here. Then again, B and R is not matching. B and O is not matching. B and O is not matching. B and T is not matching. So it was like 0, 0, 0, 0 overall. Then you went across to R and there was again a zero over here. So you put a zero over here. Then there was R and R matching. So you took 1 plus this guy. So it was kind of 1. Then again, you went on and this was 1, 1, 1, correct? And if you just keep on going, this would have been 0, 0, or rather 1, 1, 1, 1. And if you go across BRUT and this is G, so this will be 0. Then it will be a 1. Then this will be a 1. This will be a 1. And over here, T matches with T. So this will be a 2. And similarly, you can fill the last row as well."
+    },
+    {
+      "chunk_id": "L212_C10",
+      "start": 695.94,
+      "end": 768.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=695s",
+      "text": "1. And over here, T matches with T. So this will be a 2. And similarly, you can fill the last row as well. This will be a 0, correct? This will be a 1. This will be a 1. This will be a 1. And this is going to be a 2. So that's how the DP table will look like. Now, how do I get, yes, how do I get my shortest common super sequence? That's the question. So guys, I hope you understood the DP table. It was very simple. We just applied these formulas and we tried to fill in the DP tables, nothing else. B did not match with G, so 0. B did not match with R, so 0. And whenever we are at this stage, E did not match with O, so we took the maximum of this or this. Similarly, E did not match with T, so we took the max of this or this, which is 2. Over here, T matched with E, so we took 1 for it and 1 for it. So over here, we came up with 2 because in this string and in this string, there is RT, there is RT which matches there by 2. That's the LCS table, yes. That is the LCS table of n plus 1 and m plus 1. Again, 1-based indexing."
+    },
+    {
+      "chunk_id": "L212_C11",
+      "start": 768.38,
+      "end": 843.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=768s",
+      "text": "by 2. That's the LCS table, yes. That is the LCS table of n plus 1 and m plus 1. Again, 1-based indexing. So now, how do you find the shortest common super sequence? That's the question. Let's figure that out. So we know one thing for sure, the answer does lie over here. That is something we know, everyone knows. The answer does lie over here. So over here, you'll always check, does this E match with this T? And you're like, no, it does not. So where did this 2 come in from? You know one thing for sure, it either comes from here and it either comes from here because the formula is very straightforward. Max up of the above row or max of the previous column. So this 2 would have came from here or would have came from here. And you know in LCS, what you do is, you take this guy and you move it to the up. So what happened when you move it to the up? What will happen when you move it to up? This string is still entirely there. Groot is still there because you're standing here. But this E, this E went cut off because now whenever you're standing here, the string is Groot and the string is B-R-U-T, not E. So E went out."
+    },
+    {
+      "chunk_id": "L212_C12",
+      "start": 843.98,
+      "end": 921.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=843s",
+      "text": "off because now whenever you're standing here, the string is Groot and the string is B-R-U-T, not E. So E went out. So what you'll do is, you'll add a P. Please add a P. Done. Next, this T matches with this T. Thereby, you're like, you have to move to this guy because this T matches with this T. So whenever you'll move here, the string will be Groot and the string will be B-R-U-T. So there's a T that goes off. But we know it's a common T. We know it's a common T. So what you'll do is, you'll take this T. Yes, you'll take this T and you'll add it once because the common guy gets added once. Perfect. So next, you're standing here and you're at here. So you have a Groot and you have something like Groot. They're not matching. So this one can come from here, can come from here. That's your choice where you will take it from. It could have come from here or from here. That's okay. So I'll probably try to go over here. You can also go over here. That's your choice. So I will try to go over here. So if I'm going over here, if I'm going over here, what am I doing? I am saying the string is this. So this O is off and there's still we have B-R-U. So this O is off. So you have to take this O. Perfect."
+    },
+    {
+      "chunk_id": "L212_C13",
+      "start": 921.7,
+      "end": 999.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=921s",
+      "text": "So this O is off and there's still we have B-R-U. So this O is off. So you have to take this O. Perfect. Next, you're standing here. This one might have come from here or from here. You can go to any of the portions. That's your wish. So in order to understand it better, we'll go upwards. So when we go upwards, this string reduces and this string still stays the same. There's a U that goes off. There's a U that goes off. So you'll take that U. Perfect. Next, you're at here. This one would have come from here. So you will go here. So who got reduced? O, right? So you'll take O. Next, this one, this R is equivalent to this R. This R is equivalent to this R. And if that's the case, and if that's the case, you write it once. And you write it once. And you move to the corner. And you move to the corner. Now, this zero, this zero might have come from here or here. Correct? So assume, assume, you move it to here. So what are you doing? You are taking this B off because you're still left off with G, but you're taking this B off. So you'll write B once. And you came over here. You came over here."
+    },
+    {
+      "chunk_id": "L212_C14",
+      "start": 999.5,
+      "end": 1076.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=999s",
+      "text": "with G, but you're taking this B off. So you'll write B once. And you came over here. You came over here. Thereby, this is nothing but the coordinate of I will be zero and J will be one. Because you came over here, so I is zero. You exhausted the limit. Remember, if you're moving beyond one, that means you exhausted the limit. So zero and one. That means in the second string, there is one character still remaining. In the second string, there is one character, which is G, which is still remaining. So you'll have to take that remaining character G. And this is what you can write. And this is the reverse string. Why? Because you move from the backward, because you move from the backward. It's the reversed string. Just do one thing. Reverse it. Reverse it. This becomes G, B, R, O, U, O, T, E. And a length eight. And since there can be multiple answers, it's okay. Even if you get this answer. Because if you see G, R, O, O, T, the root is there. B, R, U, T, E, the root is also there. So we got our shortest super sequence or common whatever you can call it. That's how you'll get it. So what did I do?"
+    },
+    {
+      "chunk_id": "L212_C15",
+      "start": 1076.58,
+      "end": 1152.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=1076s",
+      "text": "our shortest super sequence or common whatever you can call it. That's how you'll get it. So what did I do? We just did some modifications in the LCS code. So if I write the LCS code, I hope you remember the LCS code. It was very simple. We will start with I equal to here, G equal to this. And we were going till it is like we still have string lengths. And there was like if it matches, which was zero based indexing. So we were writing S1 equal to S2 equal to J minus one. That means if they are matching. And what did we do if they were matching? We basically took that string. Correct. Now we can say in our answer, we can keep the answer as empty. And we will be like answer will be containing any one of the guys because both of them are equal and we can move I minus minus and J minus minus. Perfect. That's what you're doing right? You're just adding it once or else you move to the maximum portion or else either DP of I minus, yes, either DP of I minus one of J is greater than DP of I comma J minus one or it's the opposite case. Yes. Or it's the opposite case. What am I doing? Let's analyze."
+    },
+    {
+      "chunk_id": "L212_C16",
+      "start": 1152.02,
+      "end": 1224.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=1152s",
+      "text": "I comma J minus one or it's the opposite case. Yes. Or it's the opposite case. What am I doing? Let's analyze. Whenever this guy is there, which means this guy is greater. When you started over here, this guy was greater. So you moved, you moved. So what did you do? You took the Ith guy, you took the Ith guy of the string one, you took this guy of the string one. So you'll be like, whenever I move up, this is the upward movement. Whenever I move up, I repeat, let's see over here again, you are moving up. So you're eliminating the C and this group is still there. So this E is gone. Who is the C? I. So you take that Ith guy whenever you move up. So you're like, okay, my answer will be containing S of one again, zero base indexing and you move I. And if you move the diagonal, it will be the opposite. You take the Jth guy because from S2, because J will be reduced and you will be reducing J. Got it? Let's understand this as well. So if you're moving in the diagonal fashion, which is this, when you move here, this O goes off, this O goes off, right? And this is nothing but the Jth guy and this is the string S2. So whenever you move in this direction, you take the Jth guy of S2. Very simple."
+    },
+    {
+      "chunk_id": "L212_C17",
+      "start": 1224.82,
+      "end": 1300.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=1224s",
+      "text": "Jth guy and this is the string S2. So whenever you move in this direction, you take the Jth guy of S2. Very simple. That's how you can easily get everything. And after that, you can easily end up the while loop over here. But still are we left off with something? Yes. We saw one thing. We know one thing at the end of the day, at the end of the day, what condition were we writing? We were writing I greater than zero or J greater than zero. What does this signify? Let's analyze what does this signify? If I'm writing I greater than zero, it signifies string one has some length. If I'm stating J greater than zero, I'm saying string S2 has some length. That is what I'm saying. At the end, what did you see? At the end of this, what did you see? You ended here and the value of I was this and J was this. So there was a one length of the string, one length of the string S2 remaining, which was G. Or you might end up somewhere here or here. In that case, let's say you end up here. Let's say you end up here. In that case, B and R will be remaining. Let's say you end up here. In that case, GRO will be remaining."
+    },
+    {
+      "chunk_id": "L212_C18",
+      "start": 1300.6,
+      "end": 1372.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=1300s",
+      "text": "In that case, B and R will be remaining. Let's say you end up here. In that case, GRO will be remaining. So can I say when you're comparing, when you're comparing, either something of the first string will be remaining or something of the J string will be remaining because you're comparing your moving. Because what are you doing? You are starting from here, right? You move, you move, you move, you move somewhere. You might end up either here or either here. And when you end up, you see, it's like ended at zero one. Some portion of the string two was remaining. So you just need to figure out which portion is remaining. So I can be like, okay, I know one thing, one guy will be remaining. So I can be like, if I is greater than zero, that can be one of the cases. Or what you can do is you can simply write, okay, fine. Till I lesser than zero. If there is something as I remaining, let's just take it into the answer. Answer plus equal to S of one, I minus one. And I can do an I minus minus. Or if there is something of J remaining, let's take it. Answer plus equal to S of two, J minus one, I'll say J minus minus. Either this will get executed or this will get executed because you saw in our example, zero and one was remaining. So J was remaining."
+    },
+    {
+      "chunk_id": "L212_C19",
+      "start": 1372.2,
+      "end": 1443.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=1372s",
+      "text": "this will get executed or this will get executed because you saw in our example, zero and one was remaining. So J was remaining. So it will take one character of J and it will get exhausted. Or if there was I remaining, it would have taken one character of I or two characters and it would have, depending on whichever it has to, it will. And after that, this would have been the reversed. So you just need to make sure you reverse your answer and that will be the super sub sequence. I hope that makes sense. Super sequence rather. So that's how you can easily do it. Right? So I hope you have understood this. I know it was a bit complicated. So what I'll do is I'll just go back. So we are given the shortest super sequence, a string A and a string B. So what I'll do is I'll just take these guys and I'll copy paste those to form it. Our LCS, the DPRA. And this is all the DPRA can be formed. I can see this as S and D in order to understand it. Okay. So, so I can see the DPRA is formed over here. Now I need the answer, right? So string answer equal to this. That's for some, that is something which I know. And I know I'll be standing at the, I know I'll be standing at you. Correct."
+    },
+    {
+      "chunk_id": "L212_C20",
+      "start": 1443.08,
+      "end": 1503.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=1443s",
+      "text": "for some, that is something which I know. And I know I'll be standing at the, I know I'll be standing at you. Correct. And I'll be like, while I will be greater than zero and, and J will be greater than zero. That is again, something which I know. What is the next thing? I know they might match. So why don't you write this? S of I minus one is equal to equal to T of G minus one. They might match. And if they match, I will be moving both of them or else if I'll be like DP of I minus one of G is greater than DP of I G minus one or else is the opposite way. And that's the case. I know I'll be moving till I minus one. And if that's not the case, I know I'll be moving till G minus one. That's how the LCS looks like. And over here, I know in answer, I just have to add once. So probably you can just add it once. Over here, I know again, you have to add S guy because that is getting reduced. Over here, you just need to add the key guy because that is what is getting reduced. And right at the end of the day, you just need to make sure while this is greater than zero. If, if you can just keep on adding S of I minus one, one based indexing, by the way,"
+    },
+    {
+      "chunk_id": "L212_C21",
+      "start": 1503.8,
+      "end": 1579.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=1503s",
+      "text": "while this is greater than zero. If, if you can just keep on adding S of I minus one, one based indexing, by the way, I can do this. And while G greater than zero, please make sure you add S or T of G minus one. And you can do a G minus minus at the end of the day, you can say reverse of answer dot begin. And you can say answer dot end. And right at the end of the day, you can just return the answer. And that's how it should be fine. Let's quickly check if this is running fine. Okay. Reverse was not declared. Probably they have not declared hash include. So please make sure you add hash include. Just added hash include. Now let's have it running. It does run. Let's quickly submit this and hopefully this will be running fine. So that's how you can easily do the shortest common super sequence. Just the LCS code that I copied. This is nothing but the LCS code. So guys, again, you saw if your LCS concept was clear using that, you can actually solve so many different kinds of problems. So LCS is the core. Whenever you're solving problems related to DP on strings, LCS is the ultimate code. And in the next lecture, I'll be solving a bit of a problems. And over there also, you'll see the same similar concept of I minus one, J minus one will be"
+    },
+    {
+      "chunk_id": "L212_C22",
+      "start": 1579.22,
+      "end": 1599.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=xElxAuBcvsU&t=1579s",
+      "text": "a bit of a problems. And over there also, you'll see the same similar concept of I minus one, J minus one will be used and you will be learning a lot more. So guys, I hope you have understood this complicated problem. And just in case you did, please, please, please make sure you like this video. And if you're new to this channel, please do consider subscribing to us. And you can also check out our SD sheet. The link is in the description. And with this, I'll be wrapping up this video. Let's meet in the next one. Till then, bye bye. Take care. Don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

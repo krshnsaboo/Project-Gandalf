@@ -1,0 +1,190 @@
+{
+  "lecture_id": "L263",
+  "lecture_number": 263,
+  "lecture_title": "L27. Clone a LinkedList with Next and Random Pointers | Copy List with Random Pointers",
+  "youtube_url": "https://www.youtube.com/watch?v=q570bKdrnlw",
+  "chunks": [
+    {
+      "chunk_id": "L263_C1",
+      "start": 0.0,
+      "end": 73.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=0s",
+      "text": "So, we will be continuing with our playlist, and before that, hey, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is copy list with random pointers. What is the problem exactly stating? It's stating that you will be given a link list, but this time the node will be different. Usually you have the value and you have the next pointer. This time you have one more pointer, that is the random pointer, as the name suggests random. The random pointer can point to anything random. Over here it is pointing to null. If you look at the next node, the next pointer is pointing to the next node, but the random pointer is pointing to this one. If you look at this one, the random pointer is pointing to this one. So, the random pointers can point to anyone. So, you will be given a link list which will have the values, the next pointer and the random pointers. Now, your task is to create a copy list. So, basically create a similar list with everything similar."
+    },
+    {
+      "chunk_id": "L263_C2",
+      "start": 73.68,
+      "end": 152.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=73s",
+      "text": "pointers. Now, your task is to create a copy list. So, basically create a similar list with everything similar. The values similar, the next pointer similar, the random pointer pointing to the same nodes. Let's create a replica of this particular link list. Once you have created the replica, you will have to return me the head of that replicated link list. So, what if this problem comes up in an interview? Can I follow the generic approach? Now if you are given a generic link list, the generic approach would have been, I will create a dummy node with minus one. I'll have a rest pointed to it. I'll have a temporary. I'll start traversing in the generic link list. I'll create a new node, copy the value too. I'll make sure that the rest next pointer is pointing to this. Once that is done, I'll take rest and temp. I'll move to the next. Again be at a new node. So, I'll create a new node with the value copied. Make sure that the rest next is pointing to this new node. Once that is done, again I'll take temporary to the next and rest to the next. Again let's try to copy the same. It's copied. The next is pointing to this. The rest and temporary will move. Again copy this. The values are copied."
+    },
+    {
+      "chunk_id": "L263_C3",
+      "start": 152.72,
+      "end": 229.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=152s",
+      "text": "same. It's copied. The next is pointing to this. The rest and temporary will move. Again copy this. The values are copied. The next is pointing to this. The rest is moved. The temp is moved. Once the temp reaches null, you stop. So, the copied list is this one. And where is the head? Dummy node dot next. This will be your head. So, you can simply return dummy node dot next. Copying this was very very simple because it just had the value and the next pointer. But in our problem, we have random pointers as well. So, I cannot just create a new node and initialize the value 7. I can probably mark the next pointer. But I cannot mark the random pointer y. Because these nodes are yet not created. So, the random pointer is pointing to somewhere here. I don't have this node created. So, I cannot use the same logic that I used while copying a generic linked list. So, what I will try to do is, first step will be to create each and every node with the values. Create the deep copy of nodes. And probably remember that. Let's try to do it. So, I will take a temporary, place it at the head. I will also take a hash map."
+    },
+    {
+      "chunk_id": "L263_C4",
+      "start": 229.76,
+      "end": 309.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=229s",
+      "text": "to do it. So, I will take a temporary, place it at the head. I will also take a hash map. Where I can remember the address of the created node. I will be storing a node comma node. The first node will be the key and it will be the original linked list. The second node will be the copied linked list. Got it? The first time, I am standing at 7. I am standing at 7. So, I will create a deep copy of this node 7. I will just copy the value. Not the next pointer, not the random pointer. Once that is done, I will tell the hash map, hey for the original 7, this is the deep copy 7. I will store this one over here. I will store the original over here as the key. So, I am remembering that, hey for this one, the copy is this one. I am storing it as a key value pair in the hash map. Done and dusted. I will take the temp and I will move to the next node. Again do the same thing. I will create a deep copy with the value and I will remember it. 13's deep copy is 13. Remember I am storing this, not the value. I am storing this and not the value. Remember this. Done. Move temp."
+    },
+    {
+      "chunk_id": "L263_C5",
+      "start": 310.08,
+      "end": 387.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=310s",
+      "text": "13. Remember I am storing this, not the value. I am storing this and not the value. Remember this. Done. Move temp. This time you have 11 so take 11. Again do the same thing. Take 11. Remember it. Again move temp. This time I have 10. So, take 10. Put it into the hash map. Again move temp. This time I have 1. So, take 1 and remember that in the hash map. Done and dusted. The step 1 is completed that is creating a dummy node. What is my next step? The next step will be to make sure that the next pointer and the random pointers are pointing to the correct nodes. Let's try to do it. I will again take the temp and place it at the head. This time I know that for the 7th, this is the original one. I have the copy. I have the copy which is this one. The 7 is pointing to 13. So technically, the copy of 7 should be pointing to the copy of this which is 13. I can easily do that. I can get the 13's copy from here and I can make sure that the 7th next is pointing to this one. Perfect. Where is the random pointing? It's pointing to null."
+    },
+    {
+      "chunk_id": "L263_C6",
+      "start": 387.26,
+      "end": 467.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=387s",
+      "text": "make sure that the 7th next is pointing to this one. Perfect. Where is the random pointing? It's pointing to null. So what I can do is, I can simply point this to null. This can be any null. It doesn't need to be the last one because the null point is the same. So I can make it point to null. Perfect. Point that to null. Done and dusted. I will move the temp to 13. So 13. The next is pointing to 11. So the copy of 11 is the copied 11. So I can easily make sure that the next is pointing to this one. So basically 13's copy is this. It should point to this one. Done. 13's random is pointing to this one. So the copy of 13 which is this, it's random should be pointing to the copy of the 7. Done. I can again move it. I'm able to connect it because the nodes are already created. Understand this. This time I have 11. Can I make sure that it works? Probably yes. I'll again see the 11's copy is this. So make sure that the next is pointed. Done. 11's next is pointing to this one. Again I can do the same thing. I have the one with me. So I can make it point. Once that is done I can move the temp. 10's next is pointing to this. I can do it."
+    },
+    {
+      "chunk_id": "L263_C7",
+      "start": 467.02,
+      "end": 534.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=467s",
+      "text": "I can make it point. Once that is done I can move the temp. 10's next is pointing to this. I can do it. 10's random is pointing here. Again we can do that. That's not a big deal. Take the random. Make sure it's pointing to this. Done. Let's move temp. I have 1. 1's next is pointing to null. So I can make sure it's pointing to null. And 1's random is pointing to the first node. So I can just make sure 1's random is pointing to the first node. Very simple. If 1's random is pointing to 7, I figure out the copy and make it point to it. So what is the next step? To get the head of the copied list. So if this is the head of the given linked list, can I know the head of the copied list? I can. In the hash map, who is your copy? This is your copy. Just return that. Quite simple. So it's time to write down the pseudo code. Again it won't be language specific. In case you want the language specific codes, it will be given in the description. We'll be writing down the function. We'll be given the head of the linked list. Now what is the first step? To create dummy nodes? Probably try to do it. You can take a temporary and place it at the head."
+    },
+    {
+      "chunk_id": "L263_C8",
+      "start": 534.42,
+      "end": 613.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=534s",
+      "text": "the first step? To create dummy nodes? Probably try to do it. You can take a temporary and place it at the head. At the same time I can take a map of node as the key, node as the value. And we can call it as map. Let's start traversing in the linked list. I'll start traversing till temporary reaches null. Perfect. What is the first thing? I'll try to create a new node. So node, new node. I can give it the value of temporary.val. Perfect. I've created that new node. In hash map, hey map, for your temporary node, your copied node is this particular new node. Saved. Once that is done, I can say, hey temporary, can you move to the next? And it will. So this while loop will make sure the step one is completed. That is creating the dummy nodes and storing it in the hash map. Now what is my next job? To connect the next and the random pointers? You can do that. So what I will do as the step two is, I'll again take the temporary, place it at the head. Done. I have to connect the next and random pointers. So let's start traversing again. Temporary is not null. I will be traversing."
+    },
+    {
+      "chunk_id": "L263_C9",
+      "start": 613.82,
+      "end": 692.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=613s",
+      "text": "have to connect the next and random pointers. So let's start traversing again. Temporary is not null. I will be traversing. Now the copied node. Can I say the copied node is MPP because in the map, if I take the temporary's value, that will be my copy node. That will be. Copy nodes. Next should be pointing to, should be pointing to what? The temporary is next. Copy temporary is next. Copy. Can I say this? I can. So it will be, so it will be temporary is next. Copy and the copy can easily be figured out by map. Done. Similarly, can I say copy node, your random should be pointing to temporary is random, but the copy of it. Perfect. Super simple. Done and dusted. Once this is done, can I say, hey, temporary is time that you move to the next. So temporary will go to the next by saying temporary dot next. Once this is done, can I easily get my copied list head? I can. I can say return MPP of head because I have it stored. Done and dusted. Step two."
+    },
+    {
+      "chunk_id": "L263_C10",
+      "start": 692.32,
+      "end": 772.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=692s",
+      "text": "can. I can say return MPP of head because I have it stored. Done and dusted. Step two. I have to compute the time complexity. First traversal, we go off and second traversal, we go off and again, it is an assumption that the hash map is working in. We go fun depending on the language that you're writing your code. It can be logarithmic. It can be big or fun. I'll leave that to you. I'm taking the assumption that the hash map works and we go off on in this case. So the overall time complexity will be we go off to when. What about the space complexity? Can I say I'm using a hash map when I'm storing all the nodes? So that's we go off and for sure I'm also creating a copy node. I'm also creating a copy node, right? This is the copy node that is being created. I know it's required in the question, but I'm still creating it. So you can explicitly tell the interview that this is required in the question. I cannot avoid it. This is needed in the question. I simply cannot avoid it. So the overall space, so the overall time complexity is big off to when the overall space complexity is big off and an extra space to return the answer because it's required. So the interviewer will not be happy with this hash map thing that they're using and he'll ask you to optimize this."
+    },
+    {
+      "chunk_id": "L263_C11",
+      "start": 772.32,
+      "end": 850.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=772s",
+      "text": "it's required. So the interviewer will not be happy with this hash map thing that they're using and he'll ask you to optimize this. So I need to optimize our previous solution. In the previous solution, I was using something as hash map and this hash map was storing the copied nodes for each and every node. Now I cannot use the hash map. So where do I store the copied nodes? So what I'll try to do is I'll try to insert the copy nodes in between instead of storing it in the hash map. The first thing I'll try to do is, okay, I'll stand at this head. I'll create a copy node with the same value, but this time instead of putting this into the hash map, what I'll try to do is I'll put it in between this one and this one. How can I do it? It's super simple. The seventh next is pointing to 13. I'll try to erase it and erase it. And what I will do is I'll make sure that the seventh next is pointing to this copied node and then the seventh, the copied seventh next is pointing to this. So I've inserted it in between. After that I'll move temp, but I cannot move it by one place because if I move it by one"
+    },
+    {
+      "chunk_id": "L263_C12",
+      "start": 850.34,
+      "end": 930.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=850s",
+      "text": "in between. After that I'll move temp, but I cannot move it by one place because if I move it by one place, it will go to the copied node. Instead of it, I'll move it by two places. temp dot next dot next. So temp will go here. Perfect. Again, I'll do the same thing. I'll try to create a copied node with the value 13 and this time again I'll try to erase it and 13's next will be pointing to this and the copied next will be pointing to this. Done. I'll again take temp and move it to next dot next. And again create a copied node of with the same value 11. Again please erase it and make sure that the next is pointing to this and 11's next is pointing to this. Done. I'll take temp again here. This time I'll again create another copied node. Please erase it again and 10's next will be pointing to this and 10's next will be pointing to this. After this, move temp again to this. Again create the copied node. The value one and this one will be pointing to this and 1's next will be pointing to null. Done and dusted. After this move temp and temp will be at null. Done and dusted."
+    },
+    {
+      "chunk_id": "L263_C13",
+      "start": 930.04,
+      "end": 1007.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=930s",
+      "text": "will be pointing to null. Done and dusted. After this move temp and temp will be at null. Done and dusted. So can I say that the first step is completed? What I've done is I've inserted the copy nodes in between. So my first step is completed. That is creating a copy of each and every node and storing them somewhere instead of the hash map. I've stored them in between. What is the next step? I have the copy nodes. I need to connect the next and the random pointer. Correct. So what I will try to do is I'll try to connect the random pointers. Once I've done that I'll then think of the next pointer. So for this what I'll do is I'll take a temp and I'll place it at the head again. This time I'll try to connect the random pointers. So this is the real node and the random pointer is pointing to null. Correct. So if I ask you which is the copy node of this real node. I know one thing temp dot next temp dot next is the copy node. So I can make sure that the random is pointing to null because if the random is pointing to null over here you can make sure temp dot next is also pointing to null. None. Let's move the temp. So I'll move the temp to the next."
+    },
+    {
+      "chunk_id": "L263_C14",
+      "start": 1007.04,
+      "end": 1086.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=1007s",
+      "text": "make sure temp dot next is also pointing to null. None. Let's move the temp. So I'll move the temp to the next. Temp is at 13 but where is the copy node? Temp dot next is the copy node. Where is 13 pointing? 13's random is pointing to this one. 13's random is pointing to this one. Correct. So who is the copy of this? This one. So I can make sure that hey 13 your random will be pointing to this. Can I do this? I can because if 13's random is pointing to this 13's copy is this and 7's copy is this. So this is pointing to this. This can point to this. Quite simple. Let's do the next step. I'll move temp again. Where is 11's random pointing? 11's random is pointing to this. So can I say 11's copy is this? So 11's random should be pointing to 1's copy which is this. Can I say? I can say. I can say. So I'll do it. I'll do it. So I'll make sure 11's random is pointing to 1's copy. Done. Which is the next job? Let's move temp. So we'll move temp. This time I have 10. 10's random is pointing to 11. So 10's copy is this."
+    },
+    {
+      "chunk_id": "L263_C15",
+      "start": 1086.32,
+      "end": 1165.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=1086s",
+      "text": "temp. So we'll move temp. This time I have 10. 10's random is pointing to 11. So 10's copy is this. 11's copy is this. So make sure this is also connected. Super simple. Done. Once that is done I'll move temp to here. 1's random. 1's random is pointing to 7. So 1's copy would be pointing to 7's copy which is this. Done. Wow. Can make sure that the random is pointing to this. This is the random pointer. And once that is done temporary reaches null. So step 2 is completed that is connecting the random pointers. So two steps are completed. The first one is copying each and every node. The second one is connecting the random pointers. Now what step is left? The next step is making sure that the next pointers are connected. So if I look at this one, this is the original linked list. Right. I still have a problem. The next is pointing to this. So I need to make sure that the next are properly connected. And can I say that the upper one is my copied list? I can. The upper one is my copied list? I can. So I'll try to extract that upper list. Okay. My third step will be connecting the next pointer. Let's try to do it."
+    },
+    {
+      "chunk_id": "L263_C16",
+      "start": 1165.84,
+      "end": 1240.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=1165s",
+      "text": "I'll try to extract that upper list. Okay. My third step will be connecting the next pointer. Let's try to do it. I'm trying to extract the copied list. So I'm trying to create a new list. So again do the same thing. I'll initialize a dummy node. I'll also have a res pointed to it. And at the same time I'll take a temp, place it at the head. First thing that I'll try to do is, I know one thing, this is my dummy node which is basically res. This should point to this because this is the initial head. So I'll try to point it. And that's very, very simple. As a dummy node or res, your next should be pointing to temporaries next because I know this is my first node. Right. So I'll do it. Once this is done, I will try to erase it. Yes, I'll try to erase this. Done. I'll also try to erase this. Done. Once this is done, I'll make sure seventh next is connected to this one. So what I did was, temporaries next is connected to next of next. Correct. Right. Because it was connected to this and then to this. So temporaries next is connected to temporaries next to next. I understood."
+    },
+    {
+      "chunk_id": "L263_C17",
+      "start": 1240.24,
+      "end": 1320.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=1240s",
+      "text": "it was connected to this and then to this. So temporaries next is connected to temporaries next to next. I understood. Once that is done, what I can do is, I can move the res to here and I can move the temp to here. Now when the temp is here, I know the copied 13 is this one. So I'll make sure the res, its next is pointing to temporaries next. Right. Because that's the copied list. Once that is done, as a temporary, your next is pointing to next of next. So what will happen is, this will go off and this will also go off and the connection will happen back. Done and dusted. Once this is done, I'll move both of them. So res will come here, temp will be here. Where's the 11th copy? Here. Temporaries next. The last res next. Any point to this? He says yes. Why not? Same time I'll say, hey, temporary, your next should actually be pointing to this one. He's like, yeah, you're correct. Done. Once this is done, what is my next job? To move res and temp together. So res goes here, temp goes here. Again with the copy of this, this one. So make sure res next is pointing to this. Done."
+    },
+    {
+      "chunk_id": "L263_C18",
+      "start": 1320.16,
+      "end": 1398.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=1320s",
+      "text": "temp goes here. Again with the copy of this, this one. So make sure res next is pointing to this. Done. After this, just make sure the next is no more pointing to this. Hence, sorry, my bad. Please connect it. Done. Again move res and temp. Res goes here, temp goes here. What is my next job? Again the same thing. Res is next is pointing to temporaries next because the copy of one is this. Once that is done, I'll make sure that the next is no more pointing here. Hence, once next is pointing here. After this, please make sure the temp goes to null and res goes to here. Once temp gets to null, you stop then and there. You stop then and there. Once you stop, what will happen is this link list is restored back, right? It's restored. And can I see dummy node dot next will be the head of the copied list. And if you carefully observe, this is a separate entity. This is so what you can technically return is dummy node dot next. And this will be your updated head of the copied list. Got it. So it's time to write down the pseudocode."
+    },
+    {
+      "chunk_id": "L263_C19",
+      "start": 1398.54,
+      "end": 1474.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=1398s",
+      "text": "this will be your updated head of the copied list. Got it. So it's time to write down the pseudocode. But this is not going to be in C++ or in Java. In case you want to a language specific code, you can find them below. This will be plain pseudocode. So in order to ease out the implementations, what I have done is I'm broken them down into three different sections. The first one being inserting the copy nodes in between. The second one being connecting the random pointers. The third one being connecting the next pointer and extracting the list out. So let's try to write down the first part. The first part will be inserting the nodes in between. So I'll try to assign a temporary initially and that will be assigned to head. Correct. I'll try to traverse in the link list. So while temp is not equal to null. Quite simple. Now I know that I need to create a copy of this temp. So I can say that, hey, copy node, new node and temporary dot value or data, whatever it is. None. Right after this, I can say, hey, I need to place them in between. Okay. I need to place them in between. So what I can say is first step will be a copy node."
+    },
+    {
+      "chunk_id": "L263_C20",
+      "start": 1474.54,
+      "end": 1552.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=1474s",
+      "text": "between. Okay. I need to place them in between. So what I can say is first step will be a copy node. Your next, can it point to temporary dot next? So what technically happens is if there are two nodes, you basically create a copy node with the same value and you say, hey, your next, can you point to temporaries next temporaries next is this one. So when you say copy node dot next, the next goes and points to temporaries next. Got this. What is the next thing? I have to make sure this is pointing to this. So what I can do is I can say, hey, temporary your next, can it point to copy node? So what this will do is this will make sure that this one now points to this one. Once this is done, it's inserted in between. I just need to move the temporary to next of next. Very important. So temporary will be moving to temp dot next dot next done. So I can say that if I keep on doing this, so I can say that, so I can say that once temporary reaches now I have every copy node inserted in between. The first step is completed."
+    },
+    {
+      "chunk_id": "L263_C21",
+      "start": 1552.78,
+      "end": 1632.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=1552s",
+      "text": "can say that once temporary reaches now I have every copy node inserted in between. The first step is completed. So I can say that once temporary reaches now I'll have all the copy nodes inserted in between. It's time to write down the second part. The second part is connecting the random pointers. So again, I'll do the same thing. I'll initialize temporary to the head. Again try to traverse. So while temporary is not equal to now. Now can I say that the copy node this time will be temporary dot next? I can, I can see that. A temporary is random. Understand temporary is random would be pointing to someone. Agreed? And this someone, it's copy would be somewhere here. Right? And this is nothing but temporary is random. And this is nothing but temporary is random dot next. So can I say this copy should be like it's random should be pointing to temporary is random dot next? Yes, because that is where the copy lies."
+    },
+    {
+      "chunk_id": "L263_C22",
+      "start": 1632.02,
+      "end": 1711.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=1632s",
+      "text": "should be pointing to temporary is random dot next? Yes, because that is where the copy lies. So this is what I'll do. I'll say, hey, copy node. Can you random point to temporary is random because this is the original and the next will be the copy. None understood. Once this is done, I can straight away go and say, hey, temporary, can you move temporary dot next? Very important. I can move it dot next next. While loop is completed. So what I've done is with this line I've connected, yes I've connected the random pointers. But be very sure about one thing. You're doing temporary dot random dot next. So it should have a random node pointed because it might happen. If you remember, there was a case where this was pointing to null. So this will never have if the random is already pointing to now, you can simply point it to now. Got it. So you can simply write if where you check if the temporary random is not null and if it is null, then you can just point it to now. I'll show that in the original code. Don't worry about that. So two steps are done. Now, which is the third step?"
+    },
+    {
+      "chunk_id": "L263_C23",
+      "start": 1711.34,
+      "end": 1788.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=1711s",
+      "text": "show that in the original code. Don't worry about that. So two steps are done. Now, which is the third step? Third step is connecting the next pointer or kind of extracting the list. Let's try to write down the third pointer where I can write it probably here. So can I say I'm creating a new list? Yes, I'm creating. So I'll assign a dummy node again, which will be new node minus one. I'll make sure res is pointing to this dummy node. Perfect. What is my first step? First step is again taking temporary and placing it at head. After this, I'll start traversing while temporary is again not null. Yes. What is my first step? Let's go back. First step was making sure this is pointing to this. So if temporary is here, this is the first one temporary dot next. So this is what I'll do. I say, hey, hey, listen. Your next can straight away point to temporary dot next. I'm like, yeah, I should. Right after this, what I can say is, okay, this time temporary dot next, which was pointing to this middle node, don't point there anymore."
+    },
+    {
+      "chunk_id": "L263_C24",
+      "start": 1788.78,
+      "end": 1866.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=1788s",
+      "text": "say is, okay, this time temporary dot next, which was pointing to this middle node, don't point there anymore. Instead of that, point to the next next, which is the actual next node. Done. So what I've done is I made sure this one, which is pointing to this, instead of that, it will point to this. Do you need to erase this? You don't need to, because eventually as you go forward in the next step, this will point to this. The res will point to this. You don't need to do it. Don't need to do it explicitly. So what is the next thing? I will make sure that the res goes to the next because it's done over here. I'll also make sure temporary goes to the next. So which is temporary dot next. So I can say that the while loop is completed. Once it is completed, you can simply return dummy node dot next because this will be our updated head. Got it? So this was about the pseudo code. What I will do is I'll go back into the code editor and as you can see that you're given a function, you're given the head. First I'll be calling insert copy in between. I've written down the exact same code. Yes, it is exactly the same code. After that I'll call connect random pointers. If I go back, it is the same code."
+    },
+    {
+      "chunk_id": "L263_C25",
+      "start": 1866.32,
+      "end": 1944.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=1866s",
+      "text": "Yes, it is exactly the same code. After that I'll call connect random pointers. If I go back, it is the same code. We've implemented the if that I was talking about and in case this is null, if the random is pointing to null, then you make sure that the random points to null and apart from that it is exactly the same. After that, the third phase, which is extracting the list out of like extracting the copied list. So this is how it looks like. Same thing right at the end. I returned dummy node dot next from this function. This will return me the updated head or the head of the copied list, which I can straight away return over here. So I'll try to do is I'll go ahead and submit this and this will be running fine. So I have to analyze the time complexity. Can I again break it down into three parts? I can. This will be bigot of n. This will be bigot of n. Very simple because I'm traversing the entire list and this will again be bigot of n. So can I say that the overall time complexity will be bigot of 3n and the overall space complexity will be bigot of n and this n will be to create the new list. I cannot omit this because the question itself is asking us to create a new list. So this is something which the question demands."
+    },
+    {
+      "chunk_id": "L263_C26",
+      "start": 1944.54,
+      "end": 1972.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=q570bKdrnlw&t=1944s",
+      "text": "I cannot omit this because the question itself is asking us to create a new list. So this is something which the question demands. I'm not using this to solve the problem. The question demands in itself. So can explain that to the interview. So this is going to be a time complexity and the space complexity for this particular approach and we cannot do better than this. So we're still watching. I'm very sure you understood everything. And that is the case. Please, please do consider giving us a like and if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's finish our video. Don't know why. Take care. Don't ever forget your golden. I will find the light. And you."
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "lecture_id": "L096",
+  "lecture_number": 96,
+  "lecture_title": "L24. Right/Left View of Binary Tree | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=KV4mRzTjlAk",
+  "chunks": [
+    {
+      "chunk_id": "L096_C1",
+      "start": 0.0,
+      "end": 76.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=KV4mRzTjlAk&t=0s",
+      "text": "Before starting this video, I would love to thank Relible for sponsoring this entire tree series. The placement season is here. I know a lot of you are planning to sit for companies which come on campus. In case you are disappointed that the top startups like Cred, UpGrad, Razorpay are not hiring directly from your campus, there is an easier way to work here. Just register for the Relible test conducted by Relible by Unacademy and you will get a chance to apply for front-end, back-end and business development roles at India's top startups and unicorn companies. Relible has 1000 plus openings by 50 plus companies and the best thing is it's absolutely free. So please make sure you check out all the links in the description and give the Relible test as soon as possible. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, finding the right side view or the left side view of a binary tree. So I'll be teaching you how to find a right side view of a binary tree and after that you can definitely do it by yourself how to find the left side view of the binary tree because both of them are almost identical solutions. So right side view, what do I mean by that? So you're looking at this binary tree, right? So you're looking from this direction, like from the front you're looking, right?"
+    },
+    {
+      "chunk_id": "L096_C2",
+      "start": 76.58,
+      "end": 155.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=KV4mRzTjlAk&t=76s",
+      "text": "I mean by that? So you're looking at this binary tree, right? So you're looking from this direction, like from the front you're looking, right? What if I start looking from this direction? Like I have an eye placed which I am bad at drawing, but yeah, okay. I'm watching it out from the right side. Which portion of the tree will be visible to me? Over here I'll see the node one. Over here I'll see the node three. Over here I'll just see the node seven because this four and five will be like hidden by seven because I'm looking from this direction. I'm looking from this direction and from the down I'll see the node six. So can I say if I have a right view of this binary tree, I'll have one, I'll have three because two will be covered up by three. I'll have seven and then I'll have six. I hope you understand the meaning of right side view. So I want you to write a program that prints this right view of any given binary tree. So ideally what should be the logic that I should think of? I know traversals, right? I have to traverse in such a way that I can say the last node of every level. Can I say the last node of every level will be my right's view? Make sense? Because one is the last node of the first level."
+    },
+    {
+      "chunk_id": "L096_C3",
+      "start": 155.32,
+      "end": 233.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=KV4mRzTjlAk&t=155s",
+      "text": "say the last node of every level will be my right's view? Make sense? Because one is the last node of the first level. Three is the last node of the second level. Seven is the last node of these third level. Six is the last node of this fourth level. So I can say the last node of every level is indeed my right side view. Okay. Can I just reverse this logic and can I say if I traverse the level in this direction, like I travel it like this, I travel it like this, I travel the level in this direction, then can I say the first node, yes, if I'm traveling, like if I'm having a traversal technique, which traverses like this, can I say the first node at every level? That's one, three, seven, six. The first node at every level will be my right view. Makes sense. Now, what kind of traversals can I apply? Obviously I can apply a traversal, which is a recursive traversal. So one is the recursive traversal that I can apply, right? While the other one is the iterative traversal that I can apply. And what are the traversal techniques that you know? For recursive, you know, in order, pre-order, post-order, correct? And for iterative, you know, a traversal, which is level order."
+    },
+    {
+      "chunk_id": "L096_C4",
+      "start": 233.18,
+      "end": 309.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=KV4mRzTjlAk&t=233s",
+      "text": "you know? For recursive, you know, in order, pre-order, post-order, correct? And for iterative, you know, a traversal, which is level order. So let's understand why am I not going with the level order traversal. What is the worst case of level order traversal? I know the level order traversal is definitely going to take a time complexity of big O of N and the space complexity at the worst case, I repeat, at the worst case, if I take a complex full binary tree, then the level order, the Q at the worst case will be storing four nodes, which is almost the half of the node's length, which is almost a lot. So the time, the space complexity will be a lot if I consider level order traversal. And in a recursive, in a recursive solution, since I recursively traverse for the binary tree, I know the time complexity will definitely be big O of N, but the space complexity will be big O of height of the tree. Now you might argue, Striver, what if we are given a tree, which is a skew type tree? In that case, we'll end up taking big O of N space complexity because the recursive solution is going to go from here to here to here to here. So the auxiliary stack space that will be required will be big O of N. So you can argue on both the solutions. So I'll be teaching you the recursive solutions."
+    },
+    {
+      "chunk_id": "L096_C5",
+      "start": 309.88,
+      "end": 388.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=KV4mRzTjlAk&t=309s",
+      "text": "be required will be big O of N. So you can argue on both the solutions. So I'll be teaching you the recursive solutions. You can definitely try the iterative solution at the end because at the end, the idea is important. The idea is very much simple. If I traverse on the level wise, the last node or the first node, depending on which direction are you traveling will be your right view. Now, why am I going to discuss the recursive solution? The only reason is the code is very short and crisp while in iterative, the code is a bit lengthier. And in interview, the more clean, the more short, the more crisp code you write. And that's what the interview will definitely give you an advantage on. So which recursive traversal will I prefer? I'll prefer the reverse preorder traversal, reverse preorder. So if you remember, the preorder was root left and then a right. That was the preorder traversal. I'll have the reverse. Basically, I'll do a root, then I'll do a right and then I'll do a left. Instead of moving left to right, I'll do a right to left because because of the same reason, I'm going to move in this direction. And the first node that we get in every right will be my part of the right view. That's why I'm going to do a root right left."
+    },
+    {
+      "chunk_id": "L096_C6",
+      "start": 389.58,
+      "end": 466.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=KV4mRzTjlAk&t=389s",
+      "text": "we get in every right will be my part of the right view. That's why I'm going to do a root right left. So in order to solve this problem, I'll be using a recursive function where I'll be initially passing the node and I'll initially be passing the level. So what is the node initially? That's the starting point or the root of the tree. And the level initially will be passed as zero. So these are the things that I'll be passing on to this recursive function and how the recursive function work. Since it's a preorder kind of a thing like root right left, you know, the traversals works like this. Like we're going to keep on doing the traversal till we like if we encounter a null, we are going to return and or else the root is over here, like whatever is the root. And then we are going to move to the right. So very simple. We are moving down. That's to the right. So the level is going to increase by one or I'll move to the left. Right. So I'll move to the left. Then also the level will increase. So that's how my traversal will look like. But you might ask, but Strybo where are you storing this right view? The answer to that will be very simple. I'll be using a very smart technique. I'll have a data structure ready with me. Okay. Let's have a data structure ready."
+    },
+    {
+      "chunk_id": "L096_C7",
+      "start": 466.54,
+      "end": 541.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=KV4mRzTjlAk&t=466s",
+      "text": "very simple. I'll be using a very smart technique. I'll have a data structure ready with me. Okay. Let's have a data structure ready. Which will initially be empty. And what I do is if, if every time I come to a level for the first time, so I'll compare is the value of level is equivalent to DS dot size. If that's the case, I can see this is the first time I came across to this level. And if I came across to this level for the first time, I'll say, DS, why don't you add this node guy, and this will be a part of my right view. And you might think, how does this work? Very simple. Let's do a dry run in order to understand it in a much better way. So initially we are at the node, right? So initial call will be on this node one with a level zero. That's the initial call, right? So we go across if notice none, no, then level is zero. The data structure size is zero. So this is the first time you're coming to level zero. So you insert this node. So you insert a node one. Perfect. Next you're doing a node, right? So I'll go to a node, right? Which means I'm going to this node three with a increase in level. So I increase in level and I go to the right. Perfect."
+    },
+    {
+      "chunk_id": "L096_C8",
+      "start": 542.02,
+      "end": 609.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=KV4mRzTjlAk&t=542s",
+      "text": "means I'm going to this node three with a increase in level. So I increase in level and I go to the right. Perfect. When I go to this, right, I have a node three, correct? So level is one. Is it null? No. Is the level one equivalent to ds.size? ds.size is also one. So it is the first time you're coming to level one. So I'll take this tree and I'll insert it. Perfect. Again, there's a node.right where you'll move. So when you move to this node, it's a node seven with a level bumped up. So the level will be two. So you're moving to a level two. Again, you come across and the level two is equivalent to ds.size. Indeed. So you'll take the seven and you'll insert it. Next, I again come to node right. So when you come to node right, you reach a null and whenever you reach a null, you are set to return. Returned. Next, you went to right and you return. So there will be a left. So you'll go to the left. You'll again reach null and you'll return. So the moment these two conditions are done, you will start going back. Again, for three, you went to the right. You'll go to the left and it's a null. So that's done. You will return. So the moment you return, the one guy has to go to the left. So you move to the left."
+    },
+    {
+      "chunk_id": "L096_C9",
+      "start": 609.66,
+      "end": 672.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=KV4mRzTjlAk&t=609s",
+      "text": "done. You will return. So the moment you return, the one guy has to go to the left. So you move to the left. Now you come across two comma level one. Very important. From one, you move to three. From one now you'll move to two. So when you're moving, the level is one, but the ds.size is already three. So this means you have filled up three levels. That's level zero, level one, level two. The moment you'll get the next level three, then only you'll fill something. So you'll move here next. Obviously, uh, you'll move to the right. That's five comma two. Again, nothing to be filled. It'll move right. Then again, you'll move left. The moment you move left, you'll come across six comma three. Right? Like you move here, then you move to right, but you find a null. You go back. Then you come to the left. That's six comma three. So six comma three will say, okay, the size is three. So that's a new node. So you take the six and you insert it. And then you again, go back again, go back again, come here. That's the node four. So the node four will make sure four comma two again, not to be inserted because now you have four size. So I'll go back. This will go back. So this is how the traversal will look like."
+    },
+    {
+      "chunk_id": "L096_C10",
+      "start": 673.06,
+      "end": 748.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=KV4mRzTjlAk&t=673s",
+      "text": "because now you have four size. So I'll go back. This will go back. So this is how the traversal will look like. I just played very smart because I know since I'm moving in the right word direction at first, whichever level I come across, like I came across level three, level two, level one, level zero, whenever I will come across, that will always be the first node from the right side. It'll always be the first node from the right side. And that's how you can easily get the right view of a binary tree. If I ask you a question, how to get a left side view of a binary tree? Can you tell me in the comment section, like you can pause and write the comment. What would be the answer? Very simple. Instead of right, left, you will move left, right, in order to get the left side view of the binary tree. Simple enough. So we have ended up solving the right side, left side view in a time complexity of V go off N and a space complexity of V go off H again. I'm not considering the data structure space complexity because. You know, whenever we are returning an answer, that's generally not considered into your algorithm. We consider the time complexity required in the algorithm, but yes, you can just mention this to the interviewer. He'll be okay with it. So that's the time complexity."
+    },
+    {
+      "chunk_id": "L096_C11",
+      "start": 748.0,
+      "end": 799.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=KV4mRzTjlAk&t=748s",
+      "text": "required in the algorithm, but yes, you can just mention this to the interviewer. He'll be okay with it. So that's the time complexity. Again, height can be at the worst case V go off N, but generally we do not get such binary trees. Skew binary trees are very, very less. So we have the C++ code on the left and the Java code on the right. So the C++ code will take the root and we will have a vector and then we will call the root, the level as zero and the vector will be passed. Root is now returned. If the size is level, add it or go to the right and go to the left with level upgraded to plus one. That's how the code will look like. Simple enough. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

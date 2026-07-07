@@ -1,0 +1,141 @@
+{
+  "lecture_id": "L205",
+  "lecture_number": 205,
+  "lecture_title": "DP 24. Rod Cutting Problem | 1D Array Space Optimised Approach",
+  "youtube_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo",
+  "chunks": [
+    {
+      "chunk_id": "L205_C1",
+      "start": 0.0,
+      "end": 79.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=0s",
+      "text": "Hey everyone, welcome back to Take U Forward. Today we will be doing the last problem on the DP on Subsequences series and I'm definitely sure that after doing 11 problems on DP on Subsequences, you can solve any problem that has been given on the DP on Subsequences. So today's problem will be a rod cutting problem and it's the 24th lecture of the ongoing dynamic programming playlist. So what does the problem state? The problem state you will be given a particular n. So assume over here we take n equal to 5 and for every length you will also be given a price. So let's write the price array as 2, 5, 7, 8, 10. So this is what the price array looks like. Now the question states you're given n equal to 5. So that's the rod length. This is the rod length. Now what you need to do is you need to cut the rod into pieces. Cutting, rod cutting, cut the rod into pieces. You can be like a haystripper. I can cut the 5 rod into a length 1, a length 1, a length 1, a length 1, a length 1. Possible? And for length 1, for length 2, length 3, length 4,"
+    },
+    {
+      "chunk_id": "L205_C2",
+      "start": 79.52,
+      "end": 143.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=79s",
+      "text": "a length 1, a length 1, a length 1. Possible? And for length 1, for length 2, length 3, length 4, length 5. For length 1, the price that you will get in the market is 2. So the pricing that you will get in the market is 2 for every length of rod because you will cut the rod into pieces and you'll sell them in the market. So the total price that you'll get in the market is 10. Can we cut it in some different way? You can be like a haystripper. I will cut it into a piece of 1, a piece of 2, another piece of 2. And if I cut it into a piece of 1, I'll get a price 2. If I cut it into a piece of 2, I'll get a price 5 and a 5 and the total cost will be 12. The total cost will be 12 which is greater. So in this way, you can actually cut this into several other ways like 1, 4, probably 2, 3. Then it can be a lot of ways, 1, 2, 2. There can be a lot of ways. So you need to tell me what is the maximum cost that you can get. So this cost, you have to maximize it and you can try every possible way and you will see that this is the maximal cost."
+    },
+    {
+      "chunk_id": "L205_C3",
+      "start": 143.52,
+      "end": 218.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=143s",
+      "text": "cost, you have to maximize it and you can try every possible way and you will see that this is the maximal cost. If you take like 2 and a 3, the cost that 2 will give is 5, 3 will give a 7, that is also 12. So the maximum cost that you'll get is 12 again. And this is what the problem states. You have to cut the rod into pieces and you have to sell that in the market. And you have to make sure that the cost that you get from the market is the maximum cost and you need to print this particular value 12. So now the question is given and break it, right? So you might get confused, but just try to think it in the other fashion. Try to think it in the other fashion. What fashion? Can I say this? You have a lot of lengths because if n is equal to 5, you know the rod lengths are like the rod lengths can be 1, can be 2, can be 3, can be 4, can be 5. We can have 5 different rod lengths, one of a length 1, one of a length 2, one of a length 3, one of a length 4 and one of a length 5. So can I say, how do you collect rod lengths? Can I write this? Collect rod lengths"
+    },
+    {
+      "chunk_id": "L205_C4",
+      "start": 219.04,
+      "end": 297.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=219s",
+      "text": "and one of a length 5. So can I say, how do you collect rod lengths? Can I write this? Collect rod lengths to make n and while collecting rod lengths, maximize the price. Can I say, can I think the problem in the opposite fashion? Instead of saying break n into pieces of rod and sell, can I say collect rod lengths and make it 10 and make sure it is maximized? You'll be like, yes, that makes sense. And this problem is quite a less similar to the knapsack kind of problems where we are given an array with values and weights and we collect weights and we try to form the n. So this problem now becomes similar, correct? So can I say this? For this particular example, like if I just take this particular example, 2, 5, 7, 8, 10. Can I say this? If I write down the index number 0, 1, 2, 3, 4, I know index 4 means a length 5. I know index 3 means a length 4. I know index 2 means a length 3. I know index 1 means a length 2. I know index 0 means a length 1. So can I do, can I solve the problem in a similar way to knapsack? I think I can."
+    },
+    {
+      "chunk_id": "L205_C5",
+      "start": 299.68,
+      "end": 370.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=299s",
+      "text": "length 1. So can I do, can I solve the problem in a similar way to knapsack? I think I can. So what I'll do is I will try to pick lengths, try to pick lengths and sum them up to make the given n. This is my funda. I'll try to pick them in various ways. I'll try to pick length in all possible ways. And whenever I say in all possible ways, what comes to your brain? Your brain immediately starts saying, okay, best way is to draw right recurrence, right recursion rather. And how do you write recurrence? I have taught you that funda. How do you write recurrence? I have clearly stated you first express in terms of index. Obviously you can express in terms of index because you're given an array. You're given an array of rod lengths and prices. So you'll take a rod length. So you'll take a rod length and you're looking to form this particular n. You're looking to form this capital N, which is initially five. So that's what explore all possibilities."
+    },
+    {
+      "chunk_id": "L205_C6",
+      "start": 377.28,
+      "end": 444.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=377s",
+      "text": "n. You're looking to form this capital N, which is initially five. So that's what explore all possibilities. So you know what are the possibilities on DP on sub sequences? It's not take and it's take. And it is being given you to maximize the price. So maximize the price, maximal, maximal of all the possibilities I can say is what you will have to write. So the question is pretty much similar to what we did in unbounded knapsack. Why? Because over here, what are you looking? You're looking to format this particular N, right? And you're trying to maximize all the possibilities. So can I see this? Can I see this? I will start off with index and a capital N now two, five, seven, eight, 10. This was the pricing of rod lengths. Can I see this? If I'm writing zero one, two, three, four, if I'm writing F of four, which is F of N minus one comma, a capital N, can I see this? What I'm asking is, what is the maximal cost that you can format? And till here, what is the maximal cost that you can format? And"
+    },
+    {
+      "chunk_id": "L205_C7",
+      "start": 446.32,
+      "end": 525.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=446s",
+      "text": "maximal cost that you can format? And till here, what is the maximal cost that you can format? And till index four, what is the maximum price you can obtain? Maximum price you obtain, correct? That is what the question states. So can I say, let's forget about the base case. Can I say, I will be like, okay, I will have a not take case. And if I not take, if I do not take that rod length, then the value added or the price added will be zero. And I'll move to the previous index and the weight or the N remains same. Now, when can you cut it? Can I say that take, since I'm looking for maximum pricing, it will be initially intermean, very obvious. And can I say I can only cut, because if I'm looking to form N, that rod length has to be, because if, if you're coming up with a value as three and the rod length is having like something like three or four. So how do you know the rod length? I told you, what is the rod length for this guy? It's five. What's the rod length for this guy? It's two, because the rod length is one, two, three, four, five. So can I say this, can I see this? If the rod length, like if I try to"
+    },
+    {
+      "chunk_id": "L205_C8",
+      "start": 525.52,
+      "end": 597.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=525s",
+      "text": "one, two, three, four, five. So can I say this, can I see this? If the rod length, like if I try to write it in a very sophisticated way, can I say the rod length is nothing but index plus one. Again, make sense? The rod length is index plus one every day. Can I see the rod length has to be lesser than equal to the length that I'm looking for? Make sense? And if it is, then I can take this rod length and the price added will be price of index plus function of index N minus the rod length, because this much rod length will go off. The rod length will go off. Now question arises, do you stand at the same index? Yes, Baba. Yes, you stand at the same index. Why? Because, because if you carefully remember, you can actually pick up one as many times as you want, which case infinite supply of rods, infinite supply of rods. And whenever there is an infinite supply of rods, what do you do? I've already taught this in the previous lectures. You stand at the same index, you stand at the same index, and right at the end of the day, you can return the max of take"
+    },
+    {
+      "chunk_id": "L205_C9",
+      "start": 598.32,
+      "end": 668.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=598s",
+      "text": "you stand at the same index, and right at the end of the day, you can return the max of take and not take. That's it. What about the base case? Right? The base case, we definitely know the base case will be at index equal to equal to zero, but we need to think on this base case as a single element now. So what is the initial starting? The initial starting that I started was N minus one. So you will go on zero. So zero is the base case. Let's just think it as a single element. So we are at the zeroth index. We know the rod length for zeroth index is one and it will have a price. Assume it has a price of six and I'm coming up with a rod length. Yes, I'm coming up with a rod length 12. This is the remaining rod length that I'm looking to make. Initially, whatever it is, this is the remaining rod length I'm looking to make. Looking to make this because that is what the recurrence was stating, right? Because that is what the recurrence was stating. Till index four, what is the maximum price you can obtain in order to make N, right? So whatever N comes, if at the last index N is 12, how can you make this 12 is the question. So the question is,"
+    },
+    {
+      "chunk_id": "L205_C10",
+      "start": 668.88,
+      "end": 744.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=668s",
+      "text": "N comes, if at the last index N is 12, how can you make this 12 is the question. So the question is, how can you make this rod length 12? Because over here, it's a rod length one. So if, if you can take one, one, one, one, dot, dot, dot, dot, dot, one, 12 times, can I say that will make this remaining length 12? Black. Yes, yes, it will. It will. So whatever N is left at the end of the day at index zero, can I say the pricing will be because the rod length is one. I can meet that rod length because if the remaining length is N, it will require N rods, N rods of length one, N rods of length one is what it will require. And if it requires N, N rod of length one, what will be the price? N into price of zero. Perfect. Perfect. So that's what you'll return. You will see N into price of zero is what I'll return because, because the last guy is of length one. And if it is of length one, I know I'll require N rods of length one. And the pricing will be into price of zero. That's the base case. Super simple. So once I've"
+    },
+    {
+      "chunk_id": "L205_C11",
+      "start": 744.32,
+      "end": 821.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=744s",
+      "text": "of length one. And the pricing will be into price of zero. That's the base case. Super simple. So once I've written the base case, what's the next step? It's a recursion code, right? So you have to convert the recursion into memo-iation. So overlapping sub-problems will be there. What's the time complexity of recursion? Obviously not, not two to the power N. It is exponential. It's greater than two to the power N. We have already discussed why? Because of staying at the same index, staying at the same index. We have already discussed this. What is the space complexity? The auxiliary stack space is the recursion depth and it can go on till we go off target. Whatever target is because you're taking the target, you're taking the target again and again. So we go off target, it can go as. If you do memo-ize, index and N, couple of changing parameters. Index is N, N is also N. So N into N plus one will do. And the time complexity will be B go off N into N. The space complexity will be B go off N into N plus B go off the target as the auxiliary stack space. And as usual, I'm not a big fan of auxiliary stack spaces. And if I'm"
+    },
+    {
+      "chunk_id": "L205_C12",
+      "start": 821.12,
+      "end": 897.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=821s",
+      "text": "target as the auxiliary stack space. And as usual, I'm not a big fan of auxiliary stack spaces. And if I'm not a big fan of auxiliary stack spaces, what do I do? I convert this into a tabulation code. What are the rules? Rules, rules, right? The base case, right? The two changing parameters. Copy the recurrence as simple as that, as simple as it can get. Let's write the base case at first. Let's go back to the records, by the way, in order to convert it into a memo-ization, just make sure you write DP of index N equal to, and over here, DP of index N not equal to minus one. And you try to return simple as that. So let's look at the base case. It states index equal to zero. Does it, does it have a boundary on N? Does it have a boundary on N? And the answer to that is it does not have a boundary on N. So N can be anything. It can be one, it can be two, it can be three, it can be four. In fact, it can be zero as well. It can be five, it can be six. It can be anything in the largest N. So thereby, I know index is set as zero. So I will be declaring DP of N and N plus one for sure. So can I say the value of N can be from zero to whatever"
+    },
+    {
+      "chunk_id": "L205_C13",
+      "start": 898.4,
+      "end": 970.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=898s",
+      "text": "declaring DP of N and N plus one for sure. So can I say the value of N can be from zero to whatever the original N is? Thereby I can write DP of zero N is nothing but whatever I wrote in the base case N into price of zero. Perfect. This is the base case. I exactly copy pasted the same thing, but I did it for every N. I did it for every N because N can be anything. Perfect. Superb. What about this? What did you do in the recursion? In the recursion, it went from N minus one till zero. Where zero being the base case. What is tabulation? Bottom up. What is tabulation? Bottom up. So from base case, you go till the ultimate. So base case is done. So you start from one N minus one. What about N? You do it in the opposite. Done. And now you just need to copy the records. So yeah, without, without actually wasting any time, let's super quickly code this up. So given the price and given the N, right? So what I can do is I can write the function with index and the capital N and we can take the vector int and the price. Correct? So that's what I will be taking."
+    },
+    {
+      "chunk_id": "L205_C14",
+      "start": 973.36,
+      "end": 1038.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=973s",
+      "text": "and the capital N and we can take the vector int and the price. Correct? So that's what I will be taking. Can I say if index is equal to equal to zero, I need to return the N into price of zero. Perfect. And there'll be other cases of not tick and tick, right? So not tick case will be zero value plus F of index minus one. You move back to N and take a price, but the tick case will be having int. You're looking for maximum, right? So int mean, and what is the rod length? The rod length is nothing but as of now at the index, it's index plus one. So I need to check if the rod length is lesser than the required N. If that's the case, I can definitely take it. And if I take it, it'll be price of index plus function of, you stay at the same index and the rod length that you are looking for will reduce by the rod length. Perfect. And you just pass on the price. And over here, you can return the max of take and not take. And right here, you can say return F of, you start from the last index, which is N minus one. You look for the N rod length and you pass on the price. So that's what I'm going to do."
+    },
+    {
+      "chunk_id": "L205_C15",
+      "start": 1040.56,
+      "end": 1115.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=1040s",
+      "text": "N minus one. You look for the N rod length and you pass on the price. So that's what I'm going to do. You will have to write. So you see it as giving correct answer. What's the next step? You know, it'll be giving you clearly. So please make sure you memorize this. So create a DP array and try to memorize this into N into vector of int N plus one comma minus one. Once I memorize this, this will go as DP. Obviously this will go as vector, vector, int, DP. This will be DP of index N. This you can say if DP of index N not equal to minus one, you can say return DP of index N. Perfect. And just make sure you pass a DP here. Make sure you pass a DP here. Once you've done this, so we'll really run this off. It is running. Let's quickly submit this and see if this is running fine. It does. It does give me a hundred marks. What's the next step? The next step is to convert this into a tabulation step one, make it zero step two, uh, sorry, step one, right? The base cases, it goes from zero goes on till N N plus plus, and you write DP of zero and the N equal to the base case. What about the base case? Just make sure you copy paste done. What's the next"
+    },
+    {
+      "chunk_id": "L205_C16",
+      "start": 1115.28,
+      "end": 1191.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=1115s",
+      "text": "zero and the N equal to the base case. What about the base case? Just make sure you copy paste done. What's the next step for INT index equal to one index, lesser than N index plus plus. And you can just go on from for INT W equal to, uh, sorry, rather N equal to zero N goes lesser than N and you can do capital N plus plus. Just make sure you copy paste this entire stuff. Perfect. Uh, copy paste this entire stuff, do some tabbing spacing. Okay, cool. Done. What's the next step over here? Instead of F you write DP of index minus one. You say this, just make sure you do this. And over here, what is with this DP of index? What about this N minus rod length? Perfect. And over here, you can just remove the return. And over here, instead of this, you can just, uh, you can write the return. Instead of this, you're going to write the DP N minus one and the N perfect. And you can just erase this off. So this is, uh, let me quickly check it. This is perfect. This looks perfect to me. Let's quickly run this off. So that's how you write the tabulation. And now let's quickly submit this off. Yeah, it does run. What's the next step? Space optimization. Again, index minus"
+    },
+    {
+      "chunk_id": "L205_C17",
+      "start": 1191.52,
+      "end": 1269.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=1191s",
+      "text": "write the tabulation. And now let's quickly submit this off. Yeah, it does run. What's the next step? Space optimization. Again, index minus one index, previous, previous current. Now, now space optimization is so easy, right? When you started, you were like, Oh my God, it is so tough, but now it looks easy. Isn't it? So vector of previous N comma at the end plus one, because a row is what you're taking curve N plus one comma zero. So instead of this, you can be like, let's write previous instead of DP of index minus one. Why don't I write previous instead of DP of index? Why don't I write car instead of DP of index? Why don't I write car over here? Why don't I do it previous equal to car over here? Why don't you do it three years and I'll quickly run this off. And it does run. Let's quickly submit this as well. A hundred. So this was two areas, space optimization. Can we space optimize this into a one DRA? And that's what that is. Yes, we can. Previous video, unbounded knapsack. So over there, you saw we were using a state right above because N is the column number. Previous N is the right above and N minus is like, if you're, if you're trying to compute this, we're trying to use the previous computed values"
+    },
+    {
+      "chunk_id": "L205_C18",
+      "start": 1269.68,
+      "end": 1345.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=1269s",
+      "text": "right above and N minus is like, if you're, if you're trying to compute this, we're trying to use the previous computed values and this guy, this guy, and the previous computed values. So these guys have no, no significance in the previous column. This guy has like the cross it guy have no significance. No need to store it. Whenever you're competing this current, just rewrite it over here. Whenever you're competing this current, rewrite it over here. Whenever you're competing this current rewrite, over here, whenever you're computing, this current reader over here, use this, compute this and try to read right over here. That's it. So you can easily use the single one. Yes. So this is a single one. No need to do previous equal to current. no need of this current one because just rewrite it because you're using the previous guys and they're right above guy so done let's rerun this off so 1d array yeah single array and we are able to space optimize this so guys DP on subsequences is done we have done all the patterns on DP on subsequences now you tell me in the comment section can you solve any problem on DP on subsequences now if you can please please tell me in the comment section how did you like this DP on subsequences pattern where we solved a bunch of problems please please do that because that will highly motivate me and"
+    },
+    {
+      "chunk_id": "L205_C19",
+      "start": 1345.62,
+      "end": 1363.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=mO8XpGoJwuo&t=1345s",
+      "text": "like this DP on subsequences pattern where we solved a bunch of problems please please do that because that will highly motivate me and yes if you watch this video till now we have learned recursion memorization tabulation to space optimization one space optimization and you've understood everything so just in case you did please make sure you like this video and if you're new to the channel please please please do consider subscribing to us and here with this let's wrap up this video it's me in the next one till then"
+    }
+  ]
+}

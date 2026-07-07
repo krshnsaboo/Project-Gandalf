@@ -1,0 +1,120 @@
+{
+  "lecture_id": "L142",
+  "lecture_number": 142,
+  "lecture_title": "G-17. Bipartite Graph | BFS | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=-vu34sct1g8",
+  "chunks": [
+    {
+      "chunk_id": "L142_C1",
+      "start": 0.0,
+      "end": 78.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we are going to learn about bipartite graph and we're going to solve this using the BFS technique. So if you haven't watched the BFS video, go back and watch it out. So what is the definition of bipartite graph? It states if you can color the graph with two colors such that no adjacent nodes have same color, like you are given a graph and you can take any two colors, black and white, yellow and green, any two colors in the world. And if you are able to color it with those two colors, such that none of the adjacent nodes or you can call them as neighbor nodes have the same color. So for an example, if you see this particular graph, you see this, right? So let's take the color yellow and green and let's try to color it. So imagine I give this a color yellow. Definitely this is the adjacent node. I cannot color it with yellow color because the condition clearly states no two adjacent nodes have the same color. So I have to color this with green. So this is the next adjacent. I cannot color it with green. I have to color it with yellow. So I'll color that with yellow and similarly green, yellow, green, yellow, green, and over"
+    },
+    {
+      "chunk_id": "L142_C2",
+      "start": 78.34,
+      "end": 142.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=78s",
+      "text": "green. I have to color it with yellow. So I'll color that with yellow and similarly green, yellow, green, yellow, green, and over here it will be yellow because the previous one was green. So this cannot be green. So this will be a yellow and this will be a green. And if you see for this particular graph, I was able to color this particular graph, but just two colors. Do you see that? Yes, I took two colors and I was able to color this graph with two colors. So thereby I can say that this graph is nothing but a bipartite graph. Yes, this graph can be called as a bipartite graph. Now let's look at the next example. Now if you see this example and I again take the same color, yellow and green, and I try to color, this will be yellow. This cannot be yellow, so it will be green. The next one cannot be green, so it will be yellow. Then it will be green. Then it will be yellow. Then it will be green. So if you go over here, this is green, so this cannot be green. So this will be yellow. Now the moment you try to color this with green, because you cannot color it with yellow because this was yellow. So you have to color it with the other color, which is green. But if you try to color it"
+    },
+    {
+      "chunk_id": "L142_C3",
+      "start": 142.4,
+      "end": 215.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=142s",
+      "text": "because this was yellow. So you have to color it with the other color, which is green. But if you try to color it with the other color green, you see that the next adjacent node also has a green. So you need to color it with yellow, but wait, this is having a yellow color. So you are somewhere in between where one of your adjacent nodes has a green, one of your adjacent nodes has a yellow. Thereby you cannot color it with any of the colors because the moment you color, any of the two nodes will have the same color. Thereby I can say this graph is not a bipartite graph. I hope that makes sense. Now something to observe, something to observe very deeply. We can always color a graph, which is a linear graph. Imagine you're given a graph like this, linear graphs. Now these are called linear graphs, which will never have a cycle, which will never have a cycle. So you can always take two colors since they do not have a cycle, you can just go on coloring them. So linear graphs with no cycles are always bipartite, are always bipartite. Remember this, they're always bipartite graph. Now what is the next step? The next step is, but this is a graph with a cycle, but the cycle length, let's"
+    },
+    {
+      "chunk_id": "L142_C4",
+      "start": 215.96,
+      "end": 291.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=215s",
+      "text": "what is the next step? The next step is, but this is a graph with a cycle, but the cycle length, let's count the cycle length. The cycle length is one, two, three, four, five, six. So any graph with an even cycle length can also be bipartite. Very, very important. Any graph with an even cycle length, any graph with an even cycle length can also be bipartite. So I can say that any graph with an even cycle length can also be bipartite. So which graphs cannot be bipartite? Yes. Any graph with a length of odd, if you count the length, one, two, three, four, five, any graph which has an odd length cycle can never be a bipartite. Any graph with odd length cycle can never be a bipartite. So if you're checking for bipartiteness and the graph is not a bipartite graph, then you can see that the graph has a odd length cycle, thereby it is a non bipartite graph. I hope the definition of bipartite is clear to you. So we are going to check for bipartiteness using the BFS algorithm. You know what are the requirements of a BFS algorithm? It requires a few data structure."
+    },
+    {
+      "chunk_id": "L142_C5",
+      "start": 291.24,
+      "end": 349.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=291s",
+      "text": "using the BFS algorithm. You know what are the requirements of a BFS algorithm? It requires a few data structure. It requires a visited array, but instead of visited, we will take a color array where we have all the eight nodes and everything is non-colored and minus one means not colored yet. Yes. Minus one means not colored yet. And what we will try to do is we will try to color it with color zero or color one. You can take any other colors as well, but I'll try to color it with color zero and color one. These are my two different colors. And for this particular graph, this is the corresponding adjacency list. Okay. Now let's quickly start off. You can start off with any of the given notes. What I'll do is I'll start off with this particular node one and I'll try to put that into the queue. Now, whenever I try to put that into the queue, what I'll try to do is I'll try to assign it a color. So let's assume we start with color zero. So I'll go over here and say, Hey, listen, you have a color zero. He's like, okay, fine. I have a color zero. So apparently this guy has a color zero. So that's the starting. That's the initial stuff. Now you start to iterate on the queue. Now you start to"
+    },
+    {
+      "chunk_id": "L142_C6",
+      "start": 349.2,
+      "end": 413.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=349s",
+      "text": "a color zero. So that's the starting. That's the initial stuff. Now you start to iterate on the queue. Now you start to iterate on the queue and you always get the topmost element out. Yes. You always get the topmost element out. So what is your note? The node is now one for you, right? The node is one. So if I ask you, who are the neighbor nodes of one, that's two. And you can easily get that by the adjacency list. So the neighbor node is two. Now what we do is we check is the neighbor node colored and we see that the neighbor node is yet not colored. So according to the by per tightness definition, what is the definition? No adjacent notes must have same colors. So if this node one has a color zero, so the adjacent node should have which color the opposite of it, which is one. So what do you do is you color it with one. Yes. You color this with one and not minus one. You got this with one and you put that note into the queue data structure. Once you've done this, I can see that this particular node does not have any further adjacent notes. Thereby it's done next. Again, you get the next guy too. So let's see the next guy too. And now let's check"
+    },
+    {
+      "chunk_id": "L142_C7",
+      "start": 413.92,
+      "end": 474.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=413s",
+      "text": "notes. Thereby it's done next. Again, you get the next guy too. So let's see the next guy too. And now let's check out for two, four, the adjacent nodes of two for two. The first adjacent node that you get is one, which is already colored. So there is no need of coloring this, which is the next one, three, which is the next one six. So there are two adjacent nodes which have not been colored. One is three, one is six. Which color will you give three? Which color will you give three? Obviously the color that this guy has the opposite of it. So that is zero. So you give the opposite color zero and you just put that into the queue, which is the next adjacent node. Thanks. You give it the color zero and you put it into the queue. So you can just give six the color zero and put that into the queue. So I can see the iteration for the node two is also completed. Let's get the next node, which is node three. And now let's check for node three. What are the adjacent nodes of node three? Let's quickly check. It's two and four, but we see two is already colored and is the color correct? Is the color correct? Have a check. This node had a three, a zero color and the"
+    },
+    {
+      "chunk_id": "L142_C8",
+      "start": 474.08,
+      "end": 533.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=474s",
+      "text": "colored and is the color correct? Is the color correct? Have a check. This node had a three, a zero color and the adjacent node has a color one. So it's okay. The adjacent nodes do not have the same color. Which is the next adjacent node? Four. Does it have a color? No. Please color it. Which, which color opposite of it? So that will be one. So you go to four and you say, okay, can I give it a color one? I will, I will give it a color one. And at the same time, I'll put that into the queue data structure. So I can see the node three is completed. Now I can see that the node three is completed. And let's get the next node, which is node six. So I'll get the node six. So the node six is here, which is already colored with color zero. So node six says my adjacent node is two, which is having an opposite color. So that is okay. We have a node five, which is yet not colored. We have a node five, which is yet not colored. So this is color zero. You need to color it with color one. You need to color it with color one. So this takes the color one and you can just put on the node five. Perfect. So I can see the node six is also done. Let's see the next one,"
+    },
+    {
+      "chunk_id": "L142_C9",
+      "start": 533.76,
+      "end": 610.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=533s",
+      "text": "you can just put on the node five. Perfect. So I can see the node six is also done. Let's see the next one, which is node four. Let's see the node four. And here is, you see a problem, but this is where the node four will come in and give, and we'll tell you that, okay, there was a problem. So let's see for node four. Node four has a color one. Node four has an adjacent node of three. So this adjacent node has an opposite color to this color, which is okay. Next node four has a five, but this five, which is already colored, has the same color, has the same color. Thereby I say, Hey, wait, this guy has an adjacent node, which was colored in some other direction. And it apparently has the same color as I do have not a bipartite graph. And you straight away say no, you straight away return false saying it is not a bipartite graph. If at any moment you find that any of the two adjacent nodes are having, are having the same colors, you straight away tell them go back, go back. Yes, that is what you do. So I'll quickly take an example to show you what if it had an even length of cycle. So let's quickly take an example. Four, five. Perfect. This is an"
+    },
+    {
+      "chunk_id": "L142_C10",
+      "start": 610.16,
+      "end": 689.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=610s",
+      "text": "show you what if it had an even length of cycle. So let's quickly take an example. Four, five. Perfect. This is an even in cycle. So if you'd have done, uh, if you'd have taken the queue data structure, assuming you have this entire BFS algorithm into your head, so node one color zero, node one will go to now that is to not only do color one, node one is done and pushes two. So node one is done next. Note two, right? Note two says my adjacent is one, which is color zero. Okay. We have a three, we have a five opposite colors, opposite colors, three and five done. Next we get a node three. The moment we get a node three, no three says I have a color zero. I have an adjacent two, which is an opposite color. So, okay. I have an adjacent four, which is not colored, color it with the opposite color colored. So now this four will go here. Perfect. Done. Next no five. So node five says I have two adjacent nodes and both of them have opposite colors to what I have. So that is okay. So node five is done. Next node four comes in. Now when node four comes in, it says, okay, we have one and this one has zero. This one has zero. Only one is there,"
+    },
+    {
+      "chunk_id": "L142_C11",
+      "start": 689.04,
+      "end": 760.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=689s",
+      "text": "node four comes in, it says, okay, we have one and this one has zero. This one has zero. Only one is there, which is uncolored, colored with zero and put that into the queue. Note four is done. Next node six comes in and it says, Hey, listen, I have zero. My adjacent node has one and I don't have any for that just to notes. So I'm done. So ultimately, ultimately, yes, the queue, if you give me, see the queue becomes empty and you are able to color the color, sorry, you were able to color the graph and that will be stored in the color array. And that will be stored in the color array. So if you're able to color the graph and there is not a place where two adjacent nodes have the same color, you can say that that graph is a bipartite graph. I hope that makes sense. So you might think, okay, BFS did work, but what is the intuition? The intuition is very simple. It is brute force. Yes, it is brute force. What I did was very simple. I started by coloring, coloring it with zero. And whenever I found an adjacent node, I give him an opposite color. And the next time, whenever I had someone with color zero, I give that just a notes zero. And even the traversal, if at any moment, any two adjacent nodes have been by mistakenly colored"
+    },
+    {
+      "chunk_id": "L142_C12",
+      "start": 760.96,
+      "end": 835.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=760s",
+      "text": "I give that just a notes zero. And even the traversal, if at any moment, any two adjacent nodes have been by mistakenly colored with the same colors, I said, it's not bipartite. Simple brute force of filling up colors. Zero one, just keeping in mind two adjacent nodes cannot have same color. At any moment of traversal, you get two adjacent nodes having same color. That means there has been a mistake and it's not a bipartite. Simple. There is no intuition. It's a simple brute force of filling up colors using the traversal technique. So now let's quickly get to the code. So as usual, I'll be writing the C++ code and the Java code is on the left. So we're given the adjacency list and the number of nodes. So we're going to follow a BFS technique. So Q, we can say Q dot push. It's a zero based indexing. So zero, we need a color. So color of this, please make sure all of these are colored with color of I equal to minus one. So color is also done. Now let's quickly go on to Travis the Q. I can say node equal to Q dot front, right? Then I can say Q dot pop. So now let's quickly travel in the adjacent nodes, which are these guys. And I see, hey, listen, if you're yet not colored, very, very important. If you're yet not colored, that means this."
+    },
+    {
+      "chunk_id": "L142_C13",
+      "start": 836.08,
+      "end": 913.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=836s",
+      "text": "are these guys. And I see, hey, listen, if you're yet not colored, very, very important. If you're yet not colored, that means this. So at the first step, make sure you color the zero guy with initial color zero. So remember, if the adjacent node is yet not color, if the adjacent node is yet not colored, what will you do? You will give the opposite color. We'll give the opposite color of the node. So can I see the adjacent node is IT. So the opposite color of the node will be not of this zero becomes one or one becomes zero. But what if it has been colored? What if it has been colored? You just check. Hey, I just, you know, is your color equal to Michael? Hey, I just know check. So you just go ahead and say, Hey, is the adjacent guy having the same color? If it is, that means someone would have colored before someone did color it on some other path. Thank you. So on the example that we took, this was colored in this direction. So someone would have colored it. But if it violates, then I say it is not a bipartite. And I said, it's not a bipartite room with this. And over here, if you're coloring, just make sure you push that, uh, I just know the over here."
+    },
+    {
+      "chunk_id": "L142_C14",
+      "start": 913.04,
+      "end": 985.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=913s",
+      "text": "bipartite room with this. And over here, if you're coloring, just make sure you push that, uh, I just know the over here. And once everything is done, and if you find that you've traversed everyone and this never appeared and you, you're able to put in colors, that means it is a bipartite and you can just return a true. So let's quickly compile this and check if it is working fine. It looks like our code is failing on a very large test case. Now, since there is no mention that there can be different components as well. So I'm assuming that there are multiple components and we are just checking for starting with zero. So if you remember the components code, you just need to run a follow. And if you're able to run a follow, I think we should be able to check it. So public, or we can do it private bull check, and we can just take the starting node and we can take the same thing. It's just make sure you take the same thing. So usually whenever it feels on larger test cases, it's generally the component thing. So what do you do is you'll just take it back. If you'll just take it back and over here, instead of zero, you'll say start perfect. And over here, you'll say start. And this color is something which you can define maybe here."
+    },
+    {
+      "chunk_id": "L142_C15",
+      "start": 985.68,
+      "end": 1052.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=985s",
+      "text": "instead of zero, you'll say start perfect. And over here, you'll say start. And this color is something which you can define maybe here. Perfect. And that's done. So this color is a component. Those colors are component individual component is what it, now this particular bull check, well, just check for a component. So now you can take the color of it. Again, these things, uh, components stuff I've already done in the previous videos, please go back and watch it, please, please go back and watch it. So over here, it's very simple. Now, you know, the notes are from zero to V. So just go something like this and see if it is not colored. That means this component has not yet been touched. So check for the check with the note I and V adjacent and the color guy. And once you have checked it, if, if, if this comes out to be false, that means this is not a bipartite and you can return or else at the end of the day, if you have checked for all the components, you can just return a true. It's the same for loop that I've been teaching you in connected components, like sorry, components that if there are multiple components, you always write the logic inside of all loop. So what I'll do is I'll just quickly run this off. It does, it does run fine. So it was for"
+    },
+    {
+      "chunk_id": "L142_C16",
+      "start": 1052.48,
+      "end": 1107.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=-vu34sct1g8&t=1052s",
+      "text": "of all loop. So what I'll do is I'll just quickly run this off. It does, it does run fine. So it was for the components. So remember whenever your code usually feels for larger test cases, try this stuff out, check all the components. What you can do is you can always start off with writing like this and just in order to be safe. So this is how we can easily check for bipartite. So what is the time complexity in the space complexity of this particular approach? It's a similar to the BFS algorithm, whatever BFS algorithm takes, it's a similar way. So if you haven't checked out our BFS video, you can go back and check it out. So guys, I hope I was able to explain you what is a bipartite graph. So just in case I was, please, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button, please, please do hit that subscribe button. And if you haven't checked out our DPCs and VSD sheet, the links are in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then bye bye, take care."
+    }
+  ]
+}

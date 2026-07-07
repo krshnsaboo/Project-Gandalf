@@ -1,0 +1,141 @@
+{
+  "lecture_id": "L135",
+  "lecture_number": 135,
+  "lecture_title": "G-10. Rotten Oranges | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0",
+  "chunks": [
+    {
+      "chunk_id": "L135_C1",
+      "start": 0.0,
+      "end": 77.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem rotten oranges. So what is the problem state? The problem states will be given a grid of dimension n cross n. That means a 2D matrix will be given of size n cross m. Now they are saying that zero means empty, one means the cell has fresh oranges and the cell is marked with two. It means the cells have rotten oranges. Now you have to determine what is the minimum time required to rot all oranges. That means you have to figure out what is the minimum time that you need in order to rot all the oranges. So how will the oranges get rotten? So if there is a rotten orange at any given cell by index ij, it can rot all the other fresh oranges that are at up, down, left, right in unit time if they are fresh. Now let's understand the question in depth. So imagine this like, because this is true, this is a rotten orange and this is connected to this, this, this, this, and this. Well, this is only a fresh orange. So these fresh oranges will be rotten in the first second. It says in one unit of time it will rot the neighboring"
+    },
+    {
+      "chunk_id": "L135_C2",
+      "start": 77.0,
+      "end": 153.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=77s",
+      "text": "these fresh oranges will be rotten in the first second. It says in one unit of time it will rot the neighboring guys only. So after one unit of time, this is the state of all the oranges. Okay. And the next, what will happen in the next step, this guy has already rottened all his neighbors. So there is this orange left. This orange has this, this, this, this, this. So this will rotten this and this. So in time to, in time to this orange and this orange will rotten all its neighboring oranges. So it goes down, rottens this, goes down, rottens this, right? Now we have this guy here, here, here, here. So this is already rotten, already rotten. And this guy is zero, which is an empty cell. It does not have an orange. So you cannot rotten it. So apparently right after time equal to two, these couple of oranges did rotten the neighboring oranges after that. Now these are the new two oranges. So can I see this guy has no one? Yes. But this guy has someone in the bottom, no one over here, no one over here, no one over here, but someone at the bottom. So I can see a time equal to three. This guy will be rotten. Perfect. What about time right after this?"
+    },
+    {
+      "chunk_id": "L135_C3",
+      "start": 153.08,
+      "end": 228.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=153s",
+      "text": "bottom. So I can see a time equal to three. This guy will be rotten. Perfect. What about time right after this? Now this guy is the new rotten orange. So this guy has something like this. So this guy will be rotten now. So at time equal to four, this guy was rotten. So what is the time that you required to rotten all the oranges? That is four seconds of four unit of time is what your answer will be for this particular question. So let's take another example. So this is an example. And if you see the, in the starting, there are three rotten oranges. Yes. In the starting, there are three rotten oranges. So if I see a time equal to one second, this rotten orange will all its neighboring oranges. This rotten orange will also a rotten all its neighboring oranges. This orange will also rot all its neighboring oranges. So what will happen is this guy has this neighbor, this neighbor, this neighbor out of this. This is just the single fresh orange. So it will rotten. Now time for this, this guy and And it happens simultaneously. Like when this guy will rotten this orange, this guy will rotten this and this simultaneously. Right. So what will happen is that this guy will rotten this and this. After this, there is only one orange left, which is this, which is rotten. This guy will be like something like this."
+    },
+    {
+      "chunk_id": "L135_C4",
+      "start": 228.34,
+      "end": 303.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=228s",
+      "text": "and this. After this, there is only one orange left, which is this, which is rotten. This guy will be like something like this. So it will be rotting this. Done. So I can see right up to one second, this guy rotten this, this guy rotten this, and this guy rotten this. So apparently, if you carefully see, are there any fresh oranges left? The answer to that is no. So the answer is in one unit of time, I was able to rotten all the fresh oranges that were there in the matrix. So let's take one more example. So if I see this example over here, we just have a single rotten orange to start off with. So this will be rottening this guy, this guy and this guy. So please rotten it. Rotten. So this will be this case at time equal to one second. Right. At time equal to two, what will happen? The new oranges that were rotten, they will rotten. So this was rotten. They will rotten its neighborhoods, which is this. Then this guy will rotten its neighborhoods. No fresh oranges, nothing to rotten. Then this guy will rotten its neighborhood. No fresh oranges, nothing to rotten. So apparently at time equal to two, these three guys rottened all their neighboring oranges. Right after this, we have another guy left. Right. So this guy does not have any neighbor."
+    },
+    {
+      "chunk_id": "L135_C5",
+      "start": 304.1,
+      "end": 382.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=304s",
+      "text": "guys rottened all their neighboring oranges. Right after this, we have another guy left. Right. So this guy does not have any neighbor. Done. So at time equal to two is when we will last rotten it, because after that, there are no neighboring oranges to be rotten. But even after this, we see there is one guy left who is a fresh orange. But is it reachable? No, it is not. Why? Because the movements are only like this. So a rotten orange can only rotten someone at the top, someone on the right, someone on the bottom, someone on the left. You cannot rotten someone who is at a diagonal or is at a distance. You need to be attached to them in only these four directions to get rotten. So as of now, I can see this is not possible. And if it is not possible, you return minus one as your possible answer. So if I ask you a very simple question, which algorithm should we use? So we have two rotten oranges and I can say it does rotten its neighbor at the same time, which is one second. So it is similar to saying these guys were at a distance of one or at a level one. So each of them got rotten at a similar stage. And if you're visiting same level guys, because this is at level one, level one, level one, same level guys at same time."
+    },
+    {
+      "chunk_id": "L135_C6",
+      "start": 383.34,
+      "end": 458.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=383s",
+      "text": "stage. And if you're visiting same level guys, because this is at level one, level one, level one, same level guys at same time. What algorithm do you use? BFS, because this is the only algorithm that traverses level wise. Had you gone something like BFS, what would have happened is probably would have gone from here to here, then to here, then to here, then to here, then to here, which would have taken you one second, two seconds, three seconds, four seconds, five seconds. If you'd have used BFS, which is depth first search, you'd have gone in the depth and you'd have visited all the neighboring fresh oranges. But you need to make sure you require minimum time overhead. It's not like you need to rotten all the oranges overhead. It's like you need to apply the minimum time. And that is only possible if you move in the neighboring directions at an equal pace, at equal pace. Right. So that is what we will do. This is the intuition behind BFS algorithm because we want to rotten them simultaneously. That is why something like in BFS algorithm will be used. So do you remember the BFS algorithm? Yes, you do. What is the initial configuration? Yes, it is a queue. You can always define a queue. And in the initial configuration, you can always see that over here we have a couple of"
+    },
+    {
+      "chunk_id": "L135_C7",
+      "start": 458.14,
+      "end": 528.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=458s",
+      "text": "You can always define a queue. And in the initial configuration, you can always see that over here we have a couple of starting points or the number of starting points will depend on the number of rotten oranges present initially. And these are the two rotten oranges which are present initially. So if I just number them, the row number will go like the first rotten orange is at two comma zero. The next rotten orange is at zero comma two. So you can easily just pass on this. And remember this. What is the other thing that we require? A visited array. So probably you can create a visited 2D matrix. So go ahead and create a visited 2D matrix. Done. Over here you can see the two rotten oranges that you pushed in. You can easily mark them as two. Done. Now I need the minimum time. Right. I need the minimum time. So what you need to do is you need to always see that. Hey listen, when these guys started, it was the initial time. So you need to carry one more variable, something like zero with these guys saying at a zero time. These were the guys who were rotten. Okay. Right after that, what you'll do is you'll say, okay, two comma zero is the row or the cell number. And the time is zero. Now, if I go to two comma zero, this is what it is."
+    },
+    {
+      "chunk_id": "L135_C8",
+      "start": 528.74,
+      "end": 599.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=528s",
+      "text": "the row or the cell number. And the time is zero. Now, if I go to two comma zero, this is what it is. Now we go to its neighbors. Who are its neighbors? These are its neighbors. Invalid, invalid, empty cell. Only one neighbor is having a fresh orange. Take up this neighbor. Take up this neighbor. Put it into the queue with a time of one second because you will be taking one more second than the previous time. So you'll put them into the queue at the same time. Make sure you're alternate over here. Done. What's the next step that you'll do? You'll take this is done. The next day we'll take zero comma two and the time is again zero. The time is again zero. Okay. And now what you will do is you saw. Okay. At zero comma two, the time is zero. Okay. So where is zero comma two? You know, who are its neighbors? This guy, invalid. This guy, invalid. This guy, a fresh. This guy, a fresh. So there are two fresh oranges. So you'll just pick up those two fresh oranges. First one being one, two comma one. So one, two is the fresh orange, which is this. And the time is one second. Over here it is zero and one. So you pick up zero and one and this will be one. Perfect. This is also done. At the same time, please make sure you mark them as rattle."
+    },
+    {
+      "chunk_id": "L135_C9",
+      "start": 599.9,
+      "end": 675.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=599s",
+      "text": "zero and one and this will be one. Perfect. This is also done. At the same time, please make sure you mark them as rattle. Next two comma one comma one. The time is one. Now we are taking time equal to one. Probably you can keep a variable which keeps a counter of the maximum time. The maximum time as of now is one. Right. The maximum time as of now is one. So we have someone as two comma one. Where is two comma one? This portion is two comma one. Who are its neighbors? This guy, a fresh orange. This guy, a fresh orange. This guy, invalid. And this is already rotten. Already rotten. So I found two fresh oranges. So go ahead and. Rotten them in the next second, which is two. And over here at two comma two. And make sure you mark them as visited. Perfect. This is also done. At the next, you take one comma two comma one. This is a time equal to one. Where is one comma two? Let's write it. One comma two is here. Already rotten. Invalid. Already rotten. Already rotten. So there is no fresh oranges remaining. So done with this as well. Next, you get zero comma one comma one. Where is zero comma one comma one? Yeah. What its neighbors? Already rotten. Already rotten. Because of where you can find that they are already rotten in the visited"
+    },
+    {
+      "chunk_id": "L135_C10",
+      "start": 675.34,
+      "end": 742.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=675s",
+      "text": "comma one? Yeah. What its neighbors? Already rotten. Already rotten. Because of where you can find that they are already rotten in the visited areas. So no more neighbors of this guy. So this is also done. Next time you get one comma one comma two. So you've got someone who took two seconds. So you can say the time to be updated to. Time to be updated to two seconds. Now at one comma one comma two. Again, if you see this is already rotten. This is already rotten. This is already rotten. This is already empty. So you find already rotten by this. So no one again. This is also done. The next step, you get two comma two and the time is two. So the time is already due. If you see two comma two up one already rotten. Invalid. Invalid. Already rotten. So I can see this is also done. But the end of the day I can see the queue turn results out to be empty and I have always visited all the cells have already visited all the cells. So let's see if all the fresh oranges got rotten. If we start to droping from these two, let's see this will theCal Abroad. Fresh orange. Is it rotten? Yes. This. Fresh orange is. Trutied. Yes. This. Fresh orange is 14 years. Yes. This. Fresh orange is. Truted. Yes."
+    },
+    {
+      "chunk_id": "L135_C11",
+      "start": 742.7,
+      "end": 811.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=742s",
+      "text": "Is it rotten? Yes. This. Fresh orange is. Trutied. Yes. This. Fresh orange is 14 years. Yes. This. Fresh orange is. Truted. Yes. Is it rotten? Yes. So all the fresh oranges were rotten. So I was able to rotten all the fresh oranges. And what is the maximum time I took? The maximum time I took was two seconds. So this is going to be my answer. If any of the fresh oranges were not rotten in the visited array, you could have printed minus one. You could have easily printed minus one. As usual, I'll be coding the C++ code and you can find the Java code on the left so that you can easily follow. So what do we need at first? We have the grid, right? So please just make sure you figure out the NNM because that will be required going forward. Just make sure you figure them out. Okay. Fine. NNM has been figured out. What is the next step that we did? We always said, get me all the rotten oranges and put them into the queue. So what you can do is you can store them into the queue, something like a pair. So this guy will be storing the row column and then you can store the time. So this is how you can have the queue. It's basically going to store something like this. Okay. So it's over here, the row column and over here the time."
+    },
+    {
+      "chunk_id": "L135_C12",
+      "start": 811.1,
+      "end": 890.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=811s",
+      "text": "have the queue. It's basically going to store something like this. Okay. So it's over here, the row column and over here the time. So this is how the data structure looks like. Next, you can always declare something like a visited array. Perfect. So declare this visited array. Okay. Now what you'll do is you will be traversing across the grid and get all the oranges that are rotten. So just travel. And over here you can say if grid of i, j is equal to equal to two, that means it is rotten. And if it in case is rotten, I will say, q, can you just take these guys because these are rotten and a time zero, please take them. Right. So this is something which you will always do. So once you have done this, what is your job? You also need to make sure that these guys are marked as rotten at the visited. So this is also done right after this. You need the time to be computed. So initially you can keep it as this. And now you know, you will always write the BFS. This is how the BFS is written. And you can always get the first row as q dot first dot first. And in q the front element is front. So yeah, that's how you'll get it right after this. You can always get the column as q dot front dot first dot second. Again, follow this particular data"
+    },
+    {
+      "chunk_id": "L135_C13",
+      "start": 890.3,
+      "end": 956.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=890s",
+      "text": "you'll get it right after this. You can always get the column as q dot front dot first dot second. Again, follow this particular data structure guys. Follow this particular data structure. First dot first, first dot second, and will be the time. The time will definitely be something like q dot front. I'd be at the second done. After this, you can do q dot once everything is done. You need to visit all the neighboring guys. So if I go back and write, uh, for all the neighboring guys, we have a row column, right? So at the top, at the right, at the bottom, at the left. So at the top, we have something like row minus one column. At the right, we have something like row comma column plus one at the down. We will have row plus one column at the left. We will have something like row comma column minus one. Correct? So this is at the top. This is at the right. This is at the bottom. This is at the left. So can I see there is a change of minus one and plus zero when we go at the top? Can I say over here, there's a change of plus zero and plus one. So if I probably write something as a del row, delta row equal to, like this can be an array minus one, zero plus one, zero. And I can"
+    },
+    {
+      "chunk_id": "L135_C14",
+      "start": 956.06,
+      "end": 1024.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=956s",
+      "text": "something as a del row, delta row equal to, like this can be an array minus one, zero plus one, zero. And I can write delta column as something as zero plus one. Sorry, my bad. Yeah. Plus zero and minus one. Perfect. And now can I see on the row, if I add this, which is minus one on the column, if I add this, I will get the top most guy. Similarly, if I on the row, add zero, which is row. And if I add plus one column, plus one, I'll get this guy. Similarly, if I add these, I'll get this. Similarly, if I add this, I'll get this. Can I see, I can definitely see. So what do you do is you'll just simply create this delta guys. It's very simple. You can say D row and you can create something like minus one, zero plus one, zero. And you can similarly create something like D column, right? And D column can also be, have something like zero comma, one comma, zero comma minus one. Perfect. This is how you can easily get the D row and D column. So how many neighbors are there? There are exactly four neighbors, so you can easily traverse for them. So what will be the neighboring row? The neighboring row is going to be very simple. It's going to be the initial row"
+    },
+    {
+      "chunk_id": "L135_C15",
+      "start": 1024.3,
+      "end": 1093.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=1024s",
+      "text": "So what will be the neighboring row? The neighboring row is going to be very simple. It's going to be the initial row and the change, which is D row delta row of I. It is the neighboring column. It's going to be the column plus the D column. Perfect. So this is how you can easily write it. Please make sure you maintain variable namings because code quality is very, very important. Right after this, you can say, okay, is this valid? Okay. Is this valid? Okay. Is N column valid? Have a check always. Is N this valid? Once they are valid, I need to check. I need to make sure. Are they previously not rotten? Which is neighboring row, neighboring column. Are you previously not rotten? That means are you not visited previously? If you are not, and are you a fresh guy? Because if you're not a fresh guy or you are an empty cell, I don't go. Are you a fresh guy? If you are a fresh guy and if you're not rotten, then you are one among me and I can easily put you in the neighboring row in the queue with an timer increased. Right? So the timer will increase. At the same time, I can say the visited to say, okay, these are my guys. Can you just mark them as one? Once this is"
+    },
+    {
+      "chunk_id": "L135_C16",
+      "start": 1093.66,
+      "end": 1162.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=1093s",
+      "text": "time, I can say the visited to say, okay, these are my guys. Can you just mark them as one? Once this is done, I'm getting the time every time. So every time you get the time, just make sure you store the maximum because whatever maximum you take, that is what you'll store. Just make sure that over here, if it is not a rotten orange, mark them as zero because it is very, very important that you initialize the visited one. And once the queue is done, you can return the timer. But before that, you need to do a check. So before returning the time, you need to check if all of these fresh oranges, the oranges, which were initially fresh, where all of these converted into rotten or not. If it is not something like if visited of IJ is equal, is not equal to two and, and on this grid, it is a fresh orange. If all the fresh oranges have not been converted, you return a minus one. This is a check. If it is not, then you return the timer. Just make sure you take an array instead of vector because you need to define vector if you take like, it'll be a messy stuff. So keep it short. This is now let's submit this. Now you might argue, but Trevor, why did you check at the end? You could have applied a different logic where"
+    },
+    {
+      "chunk_id": "L135_C17",
+      "start": 1162.78,
+      "end": 1233.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=1162s",
+      "text": "let's submit this. Now you might argue, but Trevor, why did you check at the end? You could have applied a different logic where initially you can keep a count. So what you can do slightly different is probably over here, do something like grade of IJ equal to equal to one and keep a count of fresh. That's it. So you can always keep a count of fresh over here. And so if you kept initially a count of fresh, okay, so what you can do is, okay, you've kept a count of fresh. So every time you're getting a fresh orange, you are pushing that into the queue. Correct. So what you can do is you can just keep a count over here. Every time you're getting a fresh orange, you're pushing that into the queue. So the end, if the counter is not equal to all the count fresh, it means it did not push them into the queue or you did not touch. So you can just return a minus one. You can also do this and this will also be running fine. So even if you submitted via this count fresh method, it's still runs fine. So yeah, these things you can do, you might argue straight away instead of visited, I can use the grid only. Yes, you can do that. But I always say whenever some data is given to you, do not alter it because in industry, if someone is giving you"
+    },
+    {
+      "chunk_id": "L135_C18",
+      "start": 1233.26,
+      "end": 1298.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=1233s",
+      "text": "do that. But I always say whenever some data is given to you, do not alter it because in industry, if someone is giving you a data to perform something, you don't change the data and work an algorithm on it, right? Just take this data and you work on it, basically copy of it. So that is why never ever alter something which is passed by reference or something like this, because that is a data that is given to you. Okay. So this is how the code will look like. So if I talk about the time complexity, or let's first talk about the space complexity. We are using a queue. So how many total nodes or total oranges it can have? All the oranges can be rotten, which will mean that we will have n cross m oranges. So n cross m will be the space over here. Using n cross m over here as well to visit it. So you can say that overall it's like n cross m as the space that we are using on an extra basis. The space complexity can be set to be n cross m. But what about the time complexity? We are at first running n cross m loop. So n cross m, then we know at total the queue will run if all the oranges are rotten, sorry, all the oranges are fresh, then it will run for"
+    },
+    {
+      "chunk_id": "L135_C19",
+      "start": 1299.18,
+      "end": 1348.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=yf3oUhkvqA0&t=1299s",
+      "text": "know at total the queue will run if all the oranges are rotten, sorry, all the oranges are fresh, then it will run for n cross m because that will be the number of times you will put them into the queue. So the queue will run for that. And for every guy we are running four times. So for every node, like for all the nodes, we will be running for four times this loop. So again, this can be aggregated to n cross m only. That will be the time complexity if we aggregate this. So guys, I hope I was able to make you explain this tough question. So just in case I was, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And yes, if you haven't checked out our DP series and the SDC, the links are in the description, please make sure you check them out. And with this, let's wrap up this video and meet in the next one. Till then, bye bye, take care."
+    }
+  ]
+}

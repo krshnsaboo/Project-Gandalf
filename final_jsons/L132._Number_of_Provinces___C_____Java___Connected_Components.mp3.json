@@ -1,0 +1,99 @@
+{
+  "lecture_id": "L132",
+  "lecture_number": 132,
+  "lecture_title": "G-7. Number of Provinces | C++ | Java | Connected Components",
+  "youtube_url": "https://www.youtube.com/watch?v=ACzkVtewUYA",
+  "chunks": [
+    {
+      "chunk_id": "L132_C1",
+      "start": 0.0,
+      "end": 75.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=ACzkVtewUYA&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we are going to solve this particular problem, number of provinces. What does the problem state? The problem states a given undirected graph with v vertices. We say two vertices u and v belong to a single province. If there is a path from u to v or from v to u, your task is to find the number of provinces. So let me explain the question. So imagine a graph is given which is something like this, like this is a particular piece and then there is something like this. Then imagine there is something like this. Okay. So what they're saying is this is an entire graph that is given to you. Now what they're calling a province is if you see, if you take this province, you can go from one to two, you can go from one to three as well. From three to two, you can go from three to one, you can go from two, you can go to one, from two, you can go to three. So from every other node in this province, you can go to every other node. Thereby this is a province. And if I take this, this is also a province because four, five, six, every one of them can go to each other."
+    },
+    {
+      "chunk_id": "L132_C2",
+      "start": 75.04,
+      "end": 148.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=ACzkVtewUYA&t=75s",
+      "text": "And if I take this, this is also a province because four, five, six, every one of them can go to each other. Similarly, seven, eight is a province because everyone like seven can go to eight and eight can go to seven. Now I cannot call this as a province because if you wish to go from two to four, you will not be able to go because there is no connectivity. So thereby this is first province. This is second province. This is third province, right? So you need to tell me the number of provinces. So over here, the answer to that will be three. So how do you calculate this or how do you calculate the number? It's very simple. Now you have read about the BFS travesal and the DFS travesal. You've read about both the travesals in the previous lectures. You can use any one of them because you know if you use any one of the travesals, it visits all the nodes in a graph. The BFS will visit everyone level wise and the DFS and the DFS will visit everyone in the deep, right? That is something which you know. Now I can use any of that algorithm. You can use BFS or you can use DFS. So imagine if I say, okay, there is a starting node or the node that you start the DFS travesal is from one. I'm talking about DFS."
+    },
+    {
+      "chunk_id": "L132_C3",
+      "start": 148.54,
+      "end": 227.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=ACzkVtewUYA&t=148s",
+      "text": "I say, okay, there is a starting node or the node that you start the DFS travesal is from one. I'm talking about DFS. So what will happen is you'll start from one, you will go to two, you will go to three. So apparently you end up visiting one, two and three, but you'll not be able to visit this nor this. So can I see if I call the, yes, can I see if I call the travesal three times, once from one, once from four, once from seven, can I see if I call the DFS travesal once from one that will make sure it goes like this, right? Once if I call for four, it'll go from four, go to five and then go to six. And then once I, if I call for seven, it'll go from seven, then go to eight. This can be like, I can call the DFS travesals starting from three different starting nodes and thereby I can get three provinces, right? We know how to do a DFS travesal. We have learned about that. But in that case, there was a single starting node over here. The starting node can be multiple. So we can see if somehow we can figure out the starting points, then we will be able to figure out three provinces. But now you might have a question in your mind, does the starting point needs to be one? No."
+    },
+    {
+      "chunk_id": "L132_C4",
+      "start": 227.08,
+      "end": 303.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=ACzkVtewUYA&t=227s",
+      "text": "to figure out three provinces. But now you might have a question in your mind, does the starting point needs to be one? No. Any starting point like one, two, three, it can be anyone. It can be anyone. It can be anyone. If you start from any one of these given points, it will make sure it visits everyone. It will make sure it visits everyone, right? So somewhere down the line, if I can figure out the starting points, my job will be done. This is where what we do is we use something as a visited array. Now we see there are eight nodes. So we will create a nine size visited array. One, two, three, four, five, six, seven, eight. So it's like zero, one, two, three, four, five, six, seven, eight. Perfect. We have created a nine size visited array and we mark everyone as false. And this is known as the visited array. Done. Now what we do is we say, okay, listen, for i and d i equal to one, because we know the numbering of nodes start from this to V or N. And we say, hey, listen, if visited of i is equal to equal to zero, or that means it has not been visited. Can you call the DFS from this node? This is what we write. This can be BFS as well. Yes, this can be BFS of i as well. You know both the algorithms."
+    },
+    {
+      "chunk_id": "L132_C5",
+      "start": 303.48,
+      "end": 363.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=ACzkVtewUYA&t=303s",
+      "text": "is what we write. This can be BFS as well. Yes, this can be BFS of i as well. You know both the algorithms. You can write either of them. So now what happens is for the first time, i is one. Okay. It goes and checks if it's visited and it finds that it's not visited. Thereby it says, okay, I'll consider one as a starting point and I'll call the DFS for one. I'll call the DFS for one. Now I'm not going to teach you DFS because you know that if you don't know that, go back to the previous video. So if you do the DFS of one, what will happen is one will be visited, two will be visited, three will be visited in that DFS call because a DFS algorithm makes sure that you visit all the nodes in a graph. So it will make sure that it visits, right? And then the call will be over. The call came from DFS one, it will go to DFS two, it will go to DFS three, and then it will come back, then it will come back and then it will come back. Now in the process, when it goes from one, it marks one as visited. If you remember, then it marks two as visited, then it marks three as visited, and then it goes back ultimately."
+    },
+    {
+      "chunk_id": "L132_C6",
+      "start": 363.64,
+      "end": 437.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=ACzkVtewUYA&t=363s",
+      "text": "as visited. If you remember, then it marks two as visited, then it marks three as visited, and then it goes back ultimately. So the DFS call makes sure that one is marked, two is marked, and three is marked in the visited array, right? The next time what happens, the I becomes two and it goes and checks, is that visited? Yes. Next time I becomes three, is that visited? Yes. Next time I becomes four, not visited. So what happens is, it again calls the DFS for four, but this time the DFS is called for four. So if you see the first time it is called for one, now it is called for four. Now when it is called for four, it marks four as visited, then it goes to five, then it goes to six and makes sure everyone is marked as visited in that call. And then it comes back, comes back, comes back. So apparently comes back. Now we make it five and you see that five is already visited. Then we make it six, already visited. Then we make it seven, not visited. So this time the DFS call goes for seven. Now when the call goes for seven, the starting node is again assumed to be seven. Marks seven as visited, goes and does the call for eight, marks it as visited, goes back and goes back. So this is how we can say the visited array performs."
+    },
+    {
+      "chunk_id": "L132_C7",
+      "start": 437.76,
+      "end": 513.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=ACzkVtewUYA&t=437s",
+      "text": "the call for eight, marks it as visited, goes back and goes back. So this is how we can say the visited array performs. And this after this term will be eight and it will not find it. Then it will be nine and the for loop will be over. So can I say this particular if statement was executed thrice? Can I say this particular statement was executed thrice? Thereby can I just put a counter plus plus over here, which will make sure, make sure that the provinces are counted right. So apparently this will be visited, then this and then this. So this is how you can easily do a modification into your DFS traversal and it will work fine. Okay. So guys, as usual, I'll be writing the C++ code on the right and the Java code will be on the left. So the input is slightly tricky and it's slightly different. So you're given an adjacency matrix. Very careful. It's not a list. It's an adjacency matrix. Okay. So one of the ways is either you create your adjacency list and then just go across. That is one of the ways that you can do it. Or what you can do is you can use this adjacency matrix and solve this particular problem. Now what I will do is since we have been doing everything in adjacency list, what I'll do is I'll just quickly create our adjacency list. So it's very simple."
+    },
+    {
+      "chunk_id": "L132_C8",
+      "start": 513.72,
+      "end": 593.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=ACzkVtewUYA&t=513s",
+      "text": "since we have been doing everything in adjacency list, what I'll do is I'll just quickly create our adjacency list. So it's very simple. You just do it something like this. And you know, you're given the adjacency matrix. So you can just run a couple of loops, something like this. And you can say, Hey, listen, if adjacency of I and J is equal to equal to one, that means there is a node. And please make sure you don't have self nodes. Like I should not be equal to J, which is basically the self node. So this is the adjacency list. And what I can say is adjacency list of I can say of dot push back of J. And similarly, we can say adjacency list of J dot push back of I. Once you've done this, your adjacency list is ready. Now we know that what do we need? We need a visited matrix. So we can just take a visited matrix and you can mark it as zero. What is the next thing that you will do? You will go from zero to V by the way, not N, I plus plus. And you will say if it is not visited, can you go and call the DFS with this particular"
+    },
+    {
+      "chunk_id": "L132_C9",
+      "start": 593.22,
+      "end": 672.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=ACzkVtewUYA&t=593s",
+      "text": "plus plus. And you will say if it is not visited, can you go and call the DFS with this particular starting node and this adjacency list and the visited array. And at the end of the day, you need to count the provinces. So you can do is IND count equal to zero and you can plug in a counter plus plus. So this is a very generic code to change adjacency matrix to list. I have already taught you how to represent a graph in an adjacency matrix as well as a list. So it's a very generic code. It's time to write the DFS. Again it's super simple. So you can write private void DFS and this will be the node and we can have the adjacency list carried across with us. So yeah, perfect. We can have the adjacency list carried and we need the visited. So this carry the visited as well, which is something like this. And you know, whenever you reach, you just mark it as one and then you go to something like auto of IT adjacency list of node and you say, hey, listen, if not visited IT, what I'll do is I'll go and call the DFS for IT adjacency list and visited. And this will be my DFS calls. And at the end of the day, since I've counted the number of provinces, I'll return it. Let's super quickly compile this and check it out."
+    },
+    {
+      "chunk_id": "L132_C10",
+      "start": 672.3,
+      "end": 741.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=ACzkVtewUYA&t=672s",
+      "text": "the end of the day, since I've counted the number of provinces, I'll return it. Let's super quickly compile this and check it out. Okay. Okay. So since the adjacency list was created like this, this will be an array. My bad. Okay. I think we should be fine. So usually in all the problems, you will not find the adjacency matrix just because if you see the constraints are very small, thereby the adjacency matrix was here, but usually you will not find it. You will mostly find adjacency list given to you and then you can perform this particular algorithm and then this DFS call. So let's discuss about the time complexity because that is something which is very important to understand because going forward, we will be solving problems where we will be running this particular for loop and then we'll be calling these DFS or BFS calls. So at first, let's discuss the space complexity. Are we using something? Yes, we created an adjacency list. Let's not take that into account because most of the problems adjacency list will be given to you. So let's not discuss about the adjacency list. Apart from that, we're using a visited array which takes BCOFn and we're using a recursion stack space, which at the worst case can go up to BCOFn. Imagine you're given a graph, a skewed graph, something like this, then the DFS call will go from here to here to here."
+    },
+    {
+      "chunk_id": "L132_C11",
+      "start": 741.54,
+      "end": 819.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=ACzkVtewUYA&t=741s",
+      "text": "BCOFn. Imagine you're given a graph, a skewed graph, something like this, then the DFS call will go from here to here to here. So it will go the entire way and thereby it will take a recursion stack space of BCOFn. Okay. So you've understood the space complexity. What about the time complexity? How much time does it take? So you can argue that Stryver, there is a for loop that runs and then there is a DFS call, right? So you might see that BCOFn into the DFS we know takes V plus 2E. So but this is wrong. It's not this. Instead of that, it is N plus V plus 2E. Why? Let's go back. So how many times is this DFS executed? Three times for this particular graph. So thereby I can say this is the outer loop and the inner loop overall throughout the"
+    },
+    {
+      "chunk_id": "L132_C12",
+      "start": 819.58,
+      "end": 893.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=ACzkVtewUYA&t=819s",
+      "text": "can say this is the outer loop and the inner loop overall throughout the loop journey runs for the DFS times for the entire graph it runs throughout because partially it will run for when the starting node is one, then the starting node is four, then the starting node is seven. So partial DFS, partial DFS, partial DFS sums up to overall DFS of the graph and the overall DFS of the graph is having a complexity of near about V plus 2E. Near about V plus 2E. And this can be like equivalently seen as near about a linear stop. Near about again, it's not exactly because V plus 2E is there. Then depends on the number of neighbor nodes as well. Imagine you get a graph like one, two, three, four, all single nodes. Then there will be no neighbor nodes for any one of them. So it will boil down to BGO of N, a single DFS, which has no neighbor nodes. So BGO of one, a single DFS, BGO of one, single DFS, BGO of one and no neighbor nodes. So BGO of N for the for loop and BGO of five calls. So BGO of N again. So depending on the neighbor nodes, the time complexity will vary. So overall we can write that as a BGO of N traversal. So guys, I hope I was able to explain you the time complexity and this particular method"
+    },
+    {
+      "chunk_id": "L132_C13",
+      "start": 893.5,
+      "end": 921.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=ACzkVtewUYA&t=893s",
+      "text": "that as a BGO of N traversal. So guys, I hope I was able to explain you the time complexity and this particular method because trust me, you're going to see this a lot in the next set of the questions that we are going to do. So I hope you understood it. So just in case you did, please, please hit that like button. And if you're new to our channel, what are you waiting for? I mean, you need to hit that subscribe button. So hit that subscribe button right away. And if you haven't checked out our DP series and the HD sheet, the links are in the description. Make sure you check them out. With this, let's wrap up this video and meet in the next one. Till then, bye bye. Take care."
+    }
+  ]
+}

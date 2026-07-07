@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L150",
+  "lecture_number": 150,
+  "lecture_title": "G-25. Find Eventual Safe States - BFS - Topological Sort",
+  "youtube_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc",
+  "chunks": [
+    {
+      "chunk_id": "L150_C1",
+      "start": 0.0,
+      "end": 75.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video, we're going to solve the eventual seed states. We've already done this problem while we did cycle detection. But since now we are doing toposort, we are going to do this problem using toposort. So what does the problem state? The problem state, you're given a directed graph of V vertices and E edges. It's a zero-based indexing edge. A node is a terminal node if there are no outgoing edges. Very, very important. A node is a terminal node if there are no outgoing edges. A node is a safe node if every possible path starting from that node leaps to a terminal node. You start from a node and if all the paths end up at a terminal node, then you can call that as a safe node. Now you need to return an array containing all the safe nodes of the graph. The answer should be sorted in ascending order. So let us first understand the question. So you're given this particular graph. Imagine. Okay. So over here, if I ask you in this graph, which are the safe nodes, what will be your answer? So one of the things is for sure, all the terminal nodes are safe"
+    },
+    {
+      "chunk_id": "L150_C2",
+      "start": 75.0,
+      "end": 144.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=75s",
+      "text": "the safe nodes, what will be your answer? So one of the things is for sure, all the terminal nodes are safe nodes because terminal nodes do not have outgoing edges. Like if you see six is a safe node, five is a safe node, is seven a safe node? It still has an outgoing edge. You need to check for it. You need to check for it. Okay. Let's start the checking from zero. So if you start from zero, is it like are all the paths ending at terminal node? Like one of the paths is definitely ending at a terminal node. What is a terminal node? No outgoing edges. Very simple. So zero, if you start, it ends at five. So zero, one path is ending at a terminal node. Are all the paths? No. There is one path of zero, which ends at zero himself. So that's not a terminal node because all the paths has to end at a terminal node. Then only I can call it as a safe node. Let's check out for one. Once one of the paths does end at a terminal node, but that's all its path. Let's check. No, not a safe node. Let's check for two. Two has only one path and it ends at a five. So a terminal node. So two can be called as a terminal node. So I'll just tick mark two. Let's check out for three."
+    },
+    {
+      "chunk_id": "L150_C3",
+      "start": 144.76,
+      "end": 219.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=144s",
+      "text": "So a terminal node. So two can be called as a terminal node. So I'll just tick mark two. Let's check out for three. Three has one of the paths as this, this, this ends up at a terminal node. What are all the paths? Let's have a check. No, three cannot be called as a safe node. Let's check out for four. Four has only one path and it ends at a terminal node. So it can be called as a safe node. Let's check out for five. Five is the terminal node itself. So no paths. Five is a safe node. Let's check out for six. Terminal node itself. So a safe node. Let's check out for seven. Seven has only one path and one of the paths and at a terminal node. From seven, if you go on this direction, you do not end up at a terminal node. So seven might have one outgoing edges, but they split in future. Like they are splitting in future. What about seven? Seven has one outgoing edge, but can have multiple paths. So one path does end at a terminal node. What are all the paths? Let's check. No, doesn't end up at a terminal node. The seven is not a safe node. So as of now we get two, four, five, six. These are our safe nodes. Now in the previous video, we have already solved this using DFS. If"
+    },
+    {
+      "chunk_id": "L150_C4",
+      "start": 219.88,
+      "end": 294.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=219s",
+      "text": "we get two, four, five, six. These are our safe nodes. Now in the previous video, we have already solved this using DFS. If you haven't seen that out, I'll highly recommend, please go back and watch that video out. So how will we solve this problem? We'll use a bit of higher space complexity in order to solve this. So what I'll do is I'll go back to the example that we used. So this is the example that we will be solving. So what I will do is I know one thing for sure. This is the graph. And if I have to find out the safe nodes, I know the initial starting safe nodes are the terminal nodes. Can I see all the terminal nodes are the safe node? So can I see if I count the out degree, like for seven, the out degree is zero for something like, I think, yeah, only for seven is a terminal node over here. For seven, the out degree as of now is zero. So can I see seven is definitely a safe node? I can definitely say. So what I'll try to do is since tupo sort has everything in sense of in degree, I'll try to reverse the edges. Why? You'll understand when I explain the algorithm that we are going to use, you'll understand why. Okay. So basically what I'll do is I know seven is a terminal node. And like seven, whoever seven is coming"
+    },
+    {
+      "chunk_id": "L150_C5",
+      "start": 294.04,
+      "end": 370.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=294s",
+      "text": "use, you'll understand why. Okay. So basically what I'll do is I know seven is a terminal node. And like seven, whoever seven is coming from, it'll say, okay, reduce this part. So that is the technique that we will follow. You'll understand as I start explaining. So what I'll do is I'll say, reverse all the edges. That's the first thing we'll do. Reverse the graph or reverse all the existing edges. So what will happen is if this is pointing something like this, let's start pointing something like this. This is pointing like this, like this, this will go and point in upward direction. So just reverse all the edges. Yes. Just reverse all the edges. Just go across and revolve. Sorry, reverse all the edges. So after reversing all the edges, this is how the graph looks. And this is how it is looking previously. So we have understood the first step, which is reversing all the edges. Now we will follow the plain topological sort. What does topological sort says? Get all the nodes with in degree zero. Get all the nodes with in degree zero and then do removal of edges on neighbors, on adjacent nodes. So that is what kind of topological sort stated. So if I try to write the"
+    },
+    {
+      "chunk_id": "L150_C6",
+      "start": 370.16,
+      "end": 437.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=370s",
+      "text": "on neighbors, on adjacent nodes. So that is what kind of topological sort stated. So if I try to write the in degree, can I see the in degree for this one will be zero because on the reversed graph, the degree will be zero, because there are no incoming edges? Can I say the in degree for this will be one, because there is only one incoming edge? Which is this one? Can I support five? Also it will be one technical support. For three, it will be do it because there are two incoming edges for it, be incoming edges. For we want a zero, it will be one for 18, it'll be one, sort of for eight. It'll be the other two, because then to incoming edges, this one and this one, for ten, it will be 1 for 9 it will be 1 for 11 it will be 1 so what I've done is I've written down all the indegrees of every right now figure out who are the terminal nodes the terminal nodes will always have indegree as 0 so once you've written down all the indegrees what is the next step figure out who are the terminal nodes anyone with a indegree as 0 because this is a reversed graph so instead of out degree it will be indegree anyone with an indegree of 0 will be a terminal node so what you'll do is please define a queue"
+    },
+    {
+      "chunk_id": "L150_C7",
+      "start": 437.44,
+      "end": 505.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=437s",
+      "text": "it will be indegree anyone with an indegree of 0 will be a terminal node so what you'll do is please define a queue data structure because that is how the 2posort works and in that put up that guy yes in that put up that guy who is no nothing but a terminal node so you put that guy right that's a starting face next simply start the bfs so first node that you get is 7 and this can be a part of is this can be a part of your seat node because it's a terminal node now who is 7 connected to 7 is having a part to 6 7 is having an adjacent node to 6 so can I see 6 has an indegree 6 has an indegree of 1 as of now but it has one path which is from 7 so can I see let's remove it so we remove this path the indegree goes to 0 so we get a node 6 which is again having an indegree 0 so I can say fine let's take it 7 was done now does 7 have anyone else no let's get the next one out 6 so the moment I get 6 what do I see okay who are 6 heading into 5 and 4 let's reduce the indegrees of both these guys so this will become 0 this"
+    },
+    {
+      "chunk_id": "L150_C8",
+      "start": 505.2,
+      "end": 572.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=505s",
+      "text": "okay who are 6 heading into 5 and 4 let's reduce the indegrees of both these guys so this will become 0 this will become 0 so that means you're removing the edge reduce the indegrees once you reduce the indegrees your 5 is in degree 0 4 as in degree 0 they will be like 5 and 4 cousin and this 6 is done the 6 can be a part of your safe node so you can just add it into your seat notes what is the next step get up the next node which is 5 let's see for 5 5 you have only one adjacent node which has an indegree of 2 so you can just reduce the indegree to 1 and you can remove this particular guy done but is it making it an indegree of 0 no so you do not take it and put it into the queue instead of that you wait so will you take 3 and put it into the queue data structure no because the indegree is 1 you haven't removed all the paths from 1 so you stop does 5 have any other adjacent nodes no so we can say it's done next get the next guy 4 so for 4 there's only 2 adjacent nodes which is 2 and 3 so reduce the indegrees reduce the indegrees so this path is removed"
+    },
+    {
+      "chunk_id": "L150_C9",
+      "start": 572.04,
+      "end": 638.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=572s",
+      "text": "4 there's only 2 adjacent nodes which is 2 and 3 so reduce the indegrees reduce the indegrees so this path is removed once you reduce the indegrees you will see this guy 3 is having an indegree of 0 because all the incoming paths have been removed now you can take it and put it into the queue so I can say 4 is also done separately 5 and 4 can be added into your safe nodes now the next time you will get a 3 now who is 3 pointing to or adjacent node it's just a 2 so reduce the indegree and remove the path so once you reduce the indegree you get a 3 you can actually take this 2 and put it into the queue data structure 3 is also done amazing next you have 2 so the moment you have 2 you're like okay we have a 2 2 is pointing to 1 so I'll reduce the indegree and I'll take 1 now and I'll put it into the queue data structure so 2 is also done and I can say I can say 2 is also a part of my safe node so 2 is also done next is 1 so if you see 1 1 is pointing to 0 and 1 is pointing to 8 so what I will do is I'll simply go and reduce the indegree to 0 and over here I'll reduce the indegree"
+    },
+    {
+      "chunk_id": "L150_C10",
+      "start": 638.32,
+      "end": 712.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=638s",
+      "text": "to 8 so what I will do is I'll simply go and reduce the indegree to 0 and over here I'll reduce the indegree to 1 so both the paths are removed but I'll only take the 0 I'll only take the 0 because this is having an indegree 0 so I'll take the 0 perfect so 1 is also done I can say 1 is a part of my safe node I'll take back 0 0 is taken now for 0 does it have any other nodes no so as of now I can say that hey listen it doesn't have any other node so 0 is done 0 can be a part of your safe node so once everything is done you'll get all your safe nodes and the queue will become empty if you see the queue becomes empty and this portion is never executed why because it has paths from somewhere else thereby you never executed it you just backtrack from the terminal node from the terminal node wherever the paths were heading you removed you removed you removed and this 8 had a path from 1 but it also had a path from 9 so this path was removed but since it had other paths which were which did not have terminal nodes thereby it could not remove it so 7 led to all your nodes which had which were actually leading to 7 so how do you get all these safe nodes make sure"
+    },
+    {
+      "chunk_id": "L150_C11",
+      "start": 712.6,
+      "end": 779.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=712s",
+      "text": "7 led to all your nodes which had which were actually leading to 7 so how do you get all these safe nodes make sure you sort the safe node make sure you do it because they will be in very randomized order so guys I hope you've understood the very simple topological sort implementation over here the only thing that we did was reverse the graph and everything else was different so just in case you did now it's time to code this up so I'll be coding the C++ code on the right and you can find the Java code on the left so so we're given the adjacency list and remember we need to reverse the graph so really we can keep something like adjacency reverse that's the best way to define it and then we can go across to like I equal to 0 I less than V I plus plus and we can go in the adjacency list something like for auto of IT and on the adjacency of I and what I can do is I can say now IT is a neighbor of I this means IT is a neighbor of I it means the edge is from I to IT this is what it means I need to convert this to IT to I understanding to convert this to IT to I so adjacency of"
+    },
+    {
+      "chunk_id": "L150_C12",
+      "start": 779.16,
+      "end": 853.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=779s",
+      "text": "what it means I need to convert this to IT to I understanding to convert this to IT to I so adjacency of IT will now have this neighboring node as I done and at the same time please count in degrees as well so you can take something like in degree of V and you can assign them to 0 and over here in degree means I right because ID goes to I so I's in degree will be increased so in degree of I plus plus perfect all in degrees are done now just figure out which are terminal nodes very simple how do you figure that out yes if in degree of I is equal to equal to 0 you say it's a terminal node and what do you do to that you definitely put that into your queue data structure because that is what we require so just take a queue data structure and over here you can say queue dot push of I perfect and over here take something as the answer which is safe notes at the end of the day please make sure you sort the safe notes and you return the safe notes and so do you do and over here it's a very simple thing simple"
+    },
+    {
+      "chunk_id": "L150_C13",
+      "start": 853.08,
+      "end": 922.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=853s",
+      "text": "notes and you return the safe notes and so do you do and over here it's a very simple thing simple BFS where you say q not empty and you get the node and that's very simple cute up front and you see q dot pop and right after this you go for this adjacency by the way this will be a business divorce you go for the adjacency reverse time because that is universe graph and in this whoever of the adjacent nodes is whoever at the adjacent nodes you say in degree of these are just in notes will go reduce and if after reduction the NDPC to be 0 I'll see the queue to actually take this note that's what you'll do and oh yeah you need to store all the safe notes so whoever is coming out because if the NDPC is 0 that means they are coming out from the queue and that means they were pushed because the NDPC was 0 so whoever is coming out of the queue you can call them as safe nodes because the NDPC was 0 that is the reason they were pushed so you can just put it on notes and this should be up there should be the shorter version of the code now what you'll do is you will just simply compile this let's see if it"
+    },
+    {
+      "chunk_id": "L150_C14",
+      "start": 922.8,
+      "end": 989.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=922s",
+      "text": "should be the shorter version of the code now what you'll do is you will just simply compile this let's see if it is fine yeah let's quickly submit this as well as we see it is running absolutely fine now this was a very very simple code so guys I hope you understood the solution let's talk about the time complexity the time complexity is similar to two sorts I'll not be discussing it but what about the space complexity it's similar to do resort with an additional overhead of this extra space for storing the reversed graph and an extra time complexity of sorting all the safe notes which is n log n at the worst case so this is the extra overhead we are using like the extra space over here and the extra time over here apart from the toposort and the previous method we did not click in the DFS method of solving this problem but did not have this overhead of storing the reverse graph because DFS did work out over there because we followed the cycle method this was a very simple tracing back backtracking method so why did I teach you this because I wanted to teach you problem solving my method link I don't want to see that a green mark of accepted I want to teach you various methods of solving a problem and then only you'll get good at problem solving"
+    },
+    {
+      "chunk_id": "L150_C15",
+      "start": 989.88,
+      "end": 1008.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=2gtg3VsDGyc&t=989s",
+      "text": "green mark of accepted I want to teach you various methods of solving a problem and then only you'll get good at problem solving so guys I hope this video was informative just in case you like this video please make sure that you hit that like button if you are new to our channel please do consider subscribing to us if you haven't checked out our DP series and the HDG the links are in the description and yeah with this I'll be wrapping up this video let's meet in some other video till then bye bye take care"
+    }
+  ]
+}

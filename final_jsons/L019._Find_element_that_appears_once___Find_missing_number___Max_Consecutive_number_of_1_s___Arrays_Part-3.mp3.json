@@ -1,0 +1,225 @@
+{
+  "lecture_id": "L019",
+  "lecture_number": 19,
+  "lecture_title": "Find element that appears once | Find missing number | Max Consecutive number of 1's | Arrays Part-3",
+  "youtube_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY",
+  "chunks": [
+    {
+      "chunk_id": "L019_C1",
+      "start": 0.0,
+      "end": 79.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another lecture from the Stryber's A to Z DSA course. Just in case you're for the first time here, this is world's most in-depth course on DS Algo. Why do I say that? Because in this course I'll be covering over 455 modules and we will be solving more than 400 plus problems. You can go across the internet by any of the paid courses on DS Algo. None of them will be covering DS Algo in such depth. So once you complete this particular course, you can actually clear any of the DS Algo rounds in any of the companies in any part of the world. So till now we have covered a till step 3.1 this particular problem. In this video I will be covering all these five problems. In case you want a solution for a particular problem, the timestamps will be there. You can switch between problems if you want to do that. So without waiting, let's get started with the first problem that is finding missing number in an array. So what does the problem state? The problem states you'll be given an N and you'll be given N minus one numbers. Okay. So these N minus one numbers will be containing numbers between one to N. So if you see one is there, two is there, four is there, five is there. Who is not there?"
+    },
+    {
+      "chunk_id": "L019_C2",
+      "start": 79.24,
+      "end": 153.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=79s",
+      "text": "numbers between one to N. So if you see one is there, two is there, four is there, five is there. Who is not there? Yes, three is not there. So your answer will be three because three is not here. Since three is not here, the answer will be three. So you have to find the number that is not there between one to N. In this case, one to five. So one, two, three, four, five, one was there, two was there, four was there, five was there, three was not there. So this is what the problem states. So if this question comes up in an interview, the first solution that you will be giving is definitely the brute force solution because you will never jump to the optimal solution because it's you who has to drive the interview. So what is the brute force solution? The brute force will be like, okay, I know the numbers will be from one to N. So be like, cool, let's take one. Does one exist? Yes. So one is not my answer. Let's take two. Does two exist? Yes. Two is not my answer. Let's take three. Does three exist? No. So three is my answer. So what I will do is I will take every number and I'll check in the array if it exists or not by linear search. And if it doesn't, then that's my answer. So that will be the initial brute force solution."
+    },
+    {
+      "chunk_id": "L019_C3",
+      "start": 153.0,
+      "end": 230.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=153s",
+      "text": "it exists or not by linear search. And if it doesn't, then that's my answer. So that will be the initial brute force solution. How will the code look like? Let's check it out. So basically you say for, I know the numbers will be from I till N. That's something which I know for sure. Now let's do a linear search for i and t, j equal to zero, j lesser than, I know the size is N minus one. So j lesser than N minus one and j plus plus. What I do is I know the number is i. If array of j is like, we can just scroll through and figure out, figure it out if it does exist. So flag can be set as maybe a zero. And if this is equal to, equal to i, I can say that, yes, it does exist and we can break out. Quite simple. And this can be inside the if and outside this for, I can see if flag is still zero, which means this number was not there because if this number would have been there at any moment, flag would have turned to one. So if the number is not there, I know my answer. Like you can directly go ahead and say, I know my answer is I. Quite simple. You pick up one, you check entirely. Does it exist? You pick up two, you check and dial it. Does it exist?"
+    },
+    {
+      "chunk_id": "L019_C4",
+      "start": 230.26,
+      "end": 300.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=230s",
+      "text": "Quite simple. You pick up one, you check entirely. Does it exist? You pick up two, you check and dial it. Does it exist? You pick up three, you check and dial it. Does it exist or not? So what will be the time complexity? Two loops, one for N, the other near about N. So can I say two loops? Means the time complexity, the worst case, if I, if the last number is not found and this gets executed at the last, last, assume five was not here. Assume five was not here and three was here. In this case, the loop will entirely run from one to five. And when it comes to five, it will not find five. So the worst case will be the sloop runs entirely and this loops keep on, keeps on running every time. Like that's, that's nearly the worst case. Not exactly the worst case because a lot of times you'll find here, so the loop will break. So I can say the worst case, which is again, very impractical. The worst case is kind of N square. Again, it's a hypothetical scenario because when you're looking for one, you found one here and you broke out. When you're looking for two, you found two here, you broke out. So this will never go till the end. So it's a hypothetical scenario. Got it? That's how you explain to the interview. And the space complexity used is big of one."
+    },
+    {
+      "chunk_id": "L019_C5",
+      "start": 300.66,
+      "end": 368.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=300s",
+      "text": "end. So it's a hypothetical scenario. Got it? That's how you explain to the interview. And the space complexity used is big of one. That's my brute force solution. This is how you should explain to the interview so that your thought process, your concept clarity is clearly visible to the interview. So when you tell the brute force solution to the interview, they'll definitely not be happy and he'll ask you to optimize it. That's when you go across and give him the better solution, not the optimal one. And you'll say, maybe I can use hashing and how will you use hashing? So you know the numbers are between one to five and if you want to hash five somewhere, you need that fifth index. So if you need the fifth index, you will have to declare an array of size six as your hash array. So in the hash array, I will declare the array of size six. I go ahead and declare the array of size six. If you declare the array, hash array of size six, then you'll get the fifth index, which will be your last index. Now what you will do is once you've declared the hash array, you'll start iterating one. You'll go and mark one and rest. Everyone initially would be zero. Then you'll go to two, mark it as one. Then you'll go to four, you'll mark it as one. Then you'll go to five, you'll mark it as one."
+    },
+    {
+      "chunk_id": "L019_C6",
+      "start": 368.5,
+      "end": 439.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=368s",
+      "text": "two, mark it as one. Then you'll go to four, you'll mark it as one. Then you'll go to five, you'll mark it as one. Once you have marked everything as one, you will reiterate from one to five. You will iterate from one to five in the hash array and you'll figure out who is not marked. So when you go, this is marked, this is marked. Oh wait, this is not marked. So three is your number. So three is your answer. So we can easily solve it using hashing as well. Let's look at the code. The code is going to be super simple. I'd like, okay, hash of size n plus one and everything will be initially zero. And then we will be going across and saying, let's go across the array. And I know for that array element, I have to mark in the hash array. So array element is array of i. So I go to the hash and say plus plus, or I can say mark equal to one. I can, I can simply say mark equal to one. Once I've done this, I know the numbers are from one to n. So I'll go from one to n and I'll say, if my hash of i, if my hash of i is equal to equal to zero, that is going to be my answer. That is going to be my answer."
+    },
+    {
+      "chunk_id": "L019_C7",
+      "start": 439.3,
+      "end": 507.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=439s",
+      "text": "hash of i is equal to equal to zero, that is going to be my answer. That is going to be my answer. And this will be your answer whenever you find out the hash i to be zero. So what will be the time complexity? Let's analyze a single big O of n loop and another big O of n loop. So it's a time complexity of two n at the worst case. So if I ask you about the space complexity, that's definitely big O of n because we are using a hash array in order to hash all the elements so that we can remember which one was not present. Got it. So that will be your better solution. So when the interview again, here's the better solution, it'll be like, okay, we did work on the time complexity, but now I'm not impressed with the space. Can we optimize the space complexity or not? Now this is when you'll come up with the optimal solution. Now remember one thing, this problem can have two optimal solutions. One is the sum, the other one is the Zor. And I'll tell you both and I'll tell you the minor difference between them. So something I know for sure is if n is five, the numbers in them will be one, two, three, four, five. And if I sum them up, if I sum them up, I know in order to sum up the first n natural"
+    },
+    {
+      "chunk_id": "L019_C8",
+      "start": 507.06,
+      "end": 577.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=507s",
+      "text": "four, five. And if I sum them up, if I sum them up, I know in order to sum up the first n natural numbers, the formula goes as n into n plus one by two, very basic maths. It's like five into six by two. So the summation is 15. You can also sum it up, you will get 15. So that is the summation of the first n natural numbers. Now I will go across and I will take an S2 and I'll start writing. Okay. One, maybe I'll just erase this so that I can reiterate. So I'll, I'll go to one, like add up one. So one added. Then I'll go to two, add up two. So this will become three. Then I'll go to four, add up four. That will become seven. Then I'll go to five, add up five. So I'll be like, okay, 12. So we have 12. Now if one number is missing, then can I say 15 and 12, the difference will be that one number because you summed up everyone. Whom did you not sum up? The one number that is missing. So if you have to take the summation of the first n and summation of one missing, so what will be a missing number? Yes, your missing number will be sum minus S2. Your missing number will be sum minus S2. So it's very simple."
+    },
+    {
+      "chunk_id": "L019_C9",
+      "start": 577.38,
+      "end": 654.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=577s",
+      "text": "missing number? Yes, your missing number will be sum minus S2. Your missing number will be sum minus S2. So it's very simple. You say summation to have a formula of n into n plus one by two. And then you say for i equal to, you can keep S2 equal to zero, i equal to zero to n and you can keep S2 plus equal to array of i and your number will be quite simple. Summation minus S2 will be your number. Very, very simple. So this is how the summation works. What will be the time complexity? We're just running a single loop in order to submit all the elements. This is a straightaway formula. So the time complexity is big O of n and the space complexity is big O of one. Is it better? This is the best we can do, but we can still do better. That is XOR. Now you might ask me, but Shriver, how can you do a better with XOR? That's when I'll explain you this. Let's understand. So coming to the second optimal solution that I was talking about that involves XOR. Now a lot of people might not be knowing XOR. Do not worry. I'll be covering XOR in depth when I cover the bit manipulation part. But as of now, just understand one concept of XOR. That is if you XOR same numbers, the XOR of that is always zero. What do I mean by same numbers?"
+    },
+    {
+      "chunk_id": "L019_C10",
+      "start": 654.42,
+      "end": 729.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=654s",
+      "text": "one concept of XOR. That is if you XOR same numbers, the XOR of that is always zero. What do I mean by same numbers? If you say two XOR two, it will be zero. If you say five XOR five, it'll be zero. If you say two XOR two, XOR five XOR five, that will also be zero. Why? This in itself is zero. This in itself is zero. Zero XOR zero will also be zero. Got it? If I say something like two XOR two XOR two XOR two, then it will be like zero XOR zero. That'll be zero. If I say two XOR two XOR two XOR two XOR two, it'll be like, this is zero. This is zero XORed with two. So this is zero XORed with two. And zero XORed with any number is the number itself is a number itself. This is the thing that you have to remember. Nothing else. That's the thing that you have to remember. So coming to the most optimal solution. So I hope you've understood till now. N is five. So when I say N is five, I know N natural numbers. It's like one, two, three, four, five. I know five natural numbers are these. And if I write this, will it be like one, two, four, five? Do you, can you somehow relate this to XOR? You can. So when I say striver, what I can see is there are seen."
+    },
+    {
+      "chunk_id": "L019_C11",
+      "start": 729.02,
+      "end": 808.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=729s",
+      "text": "Do you, can you somehow relate this to XOR? You can. So when I say striver, what I can see is there are seen. So if I, if I try to do a XOR, each of them will be zero and only this guy will be left because I know zero XOR any number is any number. I'm like, yeah, that's true. So what I will do is I'm like, okay, fine. Let's do one thing. Let's take a variable XOR one. And in that, in that do this. And remember when you do this, there will be a number stored. So we have understood, right? Okay. XOR one is done. What about XOR two? I will take XOR two and I'd like, I trade through the array. Let's iterate through the array. So if I iterate through the array, one is at first, then there's two, then there is four, then there's five. So XOR two is computed. This will be a certain number which will be computed. But in the back of the number, the computer knows, the computer knows that this is what it means mathematically. I know a number will be generated, but mathematically it still means this. So what will happen is if you do a XOR of one, XOR of two, what will happen? Yes. Yes. This and this will be together, which will be zero. Two and two will be together, which will be zero."
+    },
+    {
+      "chunk_id": "L019_C12",
+      "start": 808.5,
+      "end": 887.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=808s",
+      "text": "will happen? Yes. Yes. This and this will be together, which will be zero. Two and two will be together, which will be zero. Then three and there's no one with three. So three will be alone. Four and four will be zero. And there's five, which will again be zero. Five and five. So this three is alone. So apparently zeros or three will be three. So you get the number three because they will cut off. They will cut off each other. And the only number remaining will be three. Quite simple. So in order to implement this, how do you write the code? Let's take XOR one equal to zero. And then we start from one and we go until N and we go like XOR one equal to XOR one I. And I know the array sizes like we need XOR two. So XOR two equal to zero. The array size goes on till N minus one. But this will be N minus one. And I know XOR two will be XOR two XOR array of five. Quite simply. So apparently XOR one is computed. XOR two is computed. So the answer is XOR one XOR of XOR two. This will be your missing number. Can I say this will be your missing number? I can. And that's what you can easily return."
+    },
+    {
+      "chunk_id": "L019_C13",
+      "start": 887.54,
+      "end": 967.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=887s",
+      "text": "be your missing number. Can I say this will be your missing number? I can. And that's what you can easily return. Fine. We have solved the problem where we have returned the answer. Now the question comes up. But Stryver, we are using two for loops. Hence the complexity is to N. How is this better than this one? I'm like, I can still do it. I can still do something. Okay, let's erase this loop. I'm like, no, I will not run an extra loop. I will not run an extra loop in order to compute that. I will try to put this XOR one over here. So this loop is running like if N is five, this loop is running from zero to three. Can I say this? This loop is running from zero to three. Why? Because the indexing is zero, one, two, three. So the loop is running from zero to three. So if I write something like this, XOR one equal to XOR one XOR I plus one. The loop that is running from zero to three will end up XORing one because instead of zero I took I plus one. So it's like one XOR two XOR three XOR four because zero to three means one more. So apparently this will mean I'm running from one to four because I did a I plus one."
+    },
+    {
+      "chunk_id": "L019_C14",
+      "start": 967.26,
+      "end": 1042.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=967s",
+      "text": "to three means one more. So apparently this will mean I'm running from one to four because I did a I plus one. So I've XORed everything in place for XOR one. But if you remember XOR one was taking everyone till five. So five, the N, the N is not XORed. So the end of the day, you can say after the for loop XOR one will have to XOR with N as well because it did XOR till four. It requires N. Once you've done this, you can do this. So now the BGO of two N boils down to BGO of N and that's how you explain it to the interviewer because this will tell him about your thought process, about your thinking ability. Got it done? Now, if I have two, which one is better? Apparently this one is slightly better. Why? Imagine N is given as 10 to the power of five and summation is doing N into N plus one, which means somewhere like 10 to the power of five, plus one divided by two, which is nearly 10 to the power of 10. This cannot be stored in an integer. It will overflow. So you need a bigger data type, something like a long. And if you take a bigger data type, I'm not saying it is going to take a massive space, slight, slight more memory will be required. That's why this is better. Why? I didn't tell you."
+    },
+    {
+      "chunk_id": "L019_C15",
+      "start": 1042.74,
+      "end": 1115.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1042s",
+      "text": "is going to take a massive space, slight, slight more memory will be required. That's why this is better. Why? I didn't tell you. When we do XOR, the XOR never exceeds the largest number. So at max, the XOR will be 10 to the power of five. It will never exceed. Thereby, the time complexity is BGO of N, but we're using integers. We're not using longs. It's slightly better. Got it? So this is how you drive the interviewer from the brute to the better, to the two optimals. And you tell him everything, everything that you know. And trust me, this is where the interviewer gets impressed. That's why I always prefer this method. Now the interviewer knows that you know the optimal, but when you show all the facets of your thought process, he knows, you know, brute, you know, hashing, you know, the sum concept, you know, the long, you know, the XOR one loop, you know, why is all is better. You know, everything. So coming back to the code editor, you have the code editor. The problem link will be in the description. I've written the same code and this thing, what I'll do is I'll just say XOR one, as I said, XOR one, XOR capital N and I've taken the size of this. Now I will go ahead and try to submit this and see if it is running fine or not. It is. And all the test cases do pass."
+    },
+    {
+      "chunk_id": "L019_C16",
+      "start": 1115.38,
+      "end": 1189.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1115s",
+      "text": "go ahead and try to submit this and see if it is running fine or not. It is. And all the test cases do pass. So I can go back to the sheet and we can mark it because this is done. Let's come to the next question, which is maximum consecutive ones. So what does the problem state? It's very simple. Maximum consecutive ones. You will be given an array of zero and ones. So if I have to look at the consecutiveness of ones, so there are two ones here, there are three ones here, and there are two ones here. So consecutive ones are these ones. So can I see the maximum consecutive ones is three? And that's what you have to tell me is that's what you tell me. So the answer is three. Now, how do you solve this problem? So this question comes up in an interview. Do you go the same way as brood, better, optimal? Now if you start thinking about the brood better, I think that will take a lot of time because the optimal solution is very straightforward. So what do you see is, okay, as of now, I know that there are no ones. I have not figured out any ones. I'll keep a counter as zero. What I will do is I'll start it. Okay. One, increase the counter by one. So count out one. That means the consecutiveness is one. So the maximum gets updated. Okay."
+    },
+    {
+      "chunk_id": "L019_C17",
+      "start": 1189.86,
+      "end": 1268.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1189s",
+      "text": "it. Okay. One, increase the counter by one. So count out one. That means the consecutiveness is one. So the maximum gets updated. Okay. Let's move on. The counter gets to the maximum gets updated. Let's move. Oh, zero. Wait, zero means there's a break. There's a break in the consecutiveness. If there is a break, do I still count? No. If there is a break, I fall back to zero because the consecutiveness is broken. So I fall back to zero. I'll again continue. One, again count. But is this one greater than the longest? No. So I do not replace. Then I move. Again, I increase. Then I again move. Again, I increase. This time when I increase, I get three. So the consecutiveness is three, which will be replaced because now we have three, which is better than two. Let's move. Zero. Again, broken. Fall back to zero. Let's move. One. Let's move. Two. Is two greater than maximum? No. Iteration complete. When the iteration is complete, your maximum stores the maximum. And that's your answer. And that's your answer. So what is the time complexity? We go off n. Single iteration with just a minor if-else loop will do it. So if I have to write the code, it's very simple."
+    },
+    {
+      "chunk_id": "L019_C18",
+      "start": 1268.7,
+      "end": 1337.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1268s",
+      "text": "iteration with just a minor if-else loop will do it. So if I have to write the code, it's very simple. You're given the nums array. So what I'll do is I'll keep the maximum as zero. And this is the answer that I'll return. So we can return it. Perfect. And now I can keep the counter as zero as well. So keep the counter as zero. Let's iterate for this, which is like nums.size. And I know if array or rather nums of i is equal to equal to one, the counter increases and the maximum will take the maximum of both. If it is not, then what happens? That means it's a zero. I fall back to zero. Okay. Quite simple. One if, one else. And we have pretty much done. So I will quickly go and submit this. So if I submit this, this is accepted. Let's come back to the sheet and I can see that this problem is done. Now you'll be like, wait. This is looking something different. Yes. Why? Because previously there was this problem, find the row with maximum number of ones, which I moved into binary search. Why this? Because this problem will be involving binary search. And I just realized that I haven't taught you binary search yet. Let's move it into the binary search. Now coming back here, we see that this problem has been split into two."
+    },
+    {
+      "chunk_id": "L019_C19",
+      "start": 1337.5,
+      "end": 1411.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1337s",
+      "text": "binary search yet. Let's move it into the binary search. Now coming back here, we see that this problem has been split into two. So this problem is widely searched and I won't be covering this problem in this video. Why? Because I want my channel to be visible. I want new people to discover my channel. So I'll be making a separate video where I'll be covering both of these problems. First one is finding the longest sub-array with given sum, but just positives in the array. The next one is longest sub-array with given sum, which has positives and negatives in the array. Both of these I'll be covering in the next video. For this video, the last problem that I'll be covering is this one. So what does the problem state? The problem states you'll be given an array where every number appears twice apart from one number that appears once. So you have to find that one number that appears once. I think you know how to do it. We have already done a similar kind of approach in this problem where we were finding the missing number in an array using the Zor concept. So over here, if you carefully see, four is appearing twice, three is appearing twice, one is appearing twice, and the only number that isn't appearing twice is two. So the answer will be two. Now I'll quickly move on this problem."
+    },
+    {
+      "chunk_id": "L019_C20",
+      "start": 1411.72,
+      "end": 1478.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1411s",
+      "text": "twice, and the only number that isn't appearing twice is two. So the answer will be two. Now I'll quickly move on this problem. Whenever this problem comes up in an interview, what is the brute force approach? The brute force is very simple. You pick up every number once. First you'll pick up one and you will do a linear search on how many times one appears and you'll find that one appears twice. So that's not the answer. Next, you will go to this one and you'll again do a linear search and say, how many times do you appear? It will again be two. So that won't be your answer. Next, you'll pick up two and you'll do a linear search and you'll find that two appears once. So that will be your answer. How do you do this? You know the numbers will be in the array. So the number will be no one but the array of five. That is something which I know. Now you'll again iterate in the array from zero to n and probably you can keep a counter equal to zero. And you can say if array of j, because you're iterating in the array, is equal to equal to number, you can do a counter plus plus. So once the iteration is over, if the counter is one, that means the answer is this particular number. That's how easily you can do it."
+    },
+    {
+      "chunk_id": "L019_C21",
+      "start": 1478.96,
+      "end": 1555.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1478s",
+      "text": "the iteration is over, if the counter is one, that means the answer is this particular number. That's how easily you can do it. If I ask you the time complexity, again, quite simple, n loop, n loop. So the time complexity is B go of n square because I'm picking up every element one by one doing a linear search and counting it. And at the end I'm comparing the count. So the time complexity is n square and the space complexity is B go of one. So that is how the brute force approach will look like. So you're done with the brute force solution. Now the interview will definitely ask you to optimize this. That's when you come up to the better solution. Please hear me out properly for the better solution because the concept of time complexity and space complexity will be well explained using this particular problem. So better solution. Okay. So the better solution will definitely be to use hash. Very obvious. I just hash it. And then using that, I tell who appears first. But then what data structure am I going to use to hash it? Let's analyze that. So over here, the maximum element that is kept is four. So I can probably see if I create an array of size five, that it will have the last index as four and I can probably initialize everyone as you do. I can probably initialize everyone as you do."
+    },
+    {
+      "chunk_id": "L019_C22",
+      "start": 1555.24,
+      "end": 1628.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1555s",
+      "text": "will have the last index as four and I can probably initialize everyone as you do. I can probably initialize everyone as you do. And I can start iterating. Okay. One. Okay. Two. Okay. One. Okay. Three. Okay. Three. Okay. Four. Okay. Four. So at the end of the day, only this particular guy too will have an hash value of one. And that will be the guy who's appearing once. Understood. Very simple. But the question is, what size of hash array do you define? What size of hash array do you define? And the answer is pretty simple. The maximum element you define the hash array to be size of max element plus one. Over here it is four. So you define the size of five. Very simple. So can I say this? Can I say this? First step, if you are going to use an array for hashing will be to figure out the maximum element because without that you cannot create the hash array. So maybe max C equal to array of zero. And it'll be like max C equal to max of max C comma array of I. And this will give me my max element. Very obvious."
+    },
+    {
+      "chunk_id": "L019_C23",
+      "start": 1628.6,
+      "end": 1706.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1628s",
+      "text": "equal to max of max C comma array of I. And this will give me my max element. Very obvious. And now I will define an hash array of size max C, which is initially initialized to zero. Done. Now what I need to do? I treat, so I treat in the map from, sorry, I treat in the array from zero to N. And I'll say, hush, can you do at your place of array of I to be plus plus? So kind of, I can say this loop ends up taking B go of N. This loop for marking will end up taking B go of N. Now what's my job? My job is to figure out who appears once. Who appears once. So the best way that you can do is you can say, hey, listen, hey, listen, I will probably start going from zero to N again. And I'll just see if hash of, if hash of array of I is equal to equal to, yes, is equal to equal to one. That array of I is my answer. Pretty simple. Yes. And that's B go of N and that's B go of N. So that's like B go of 3N. And what is the space complexity? Can I say the space complexity is nothing but we're using an hash of a size maximum"
+    },
+    {
+      "chunk_id": "L019_C24",
+      "start": 1706.84,
+      "end": 1786.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1706s",
+      "text": "what is the space complexity? Can I say the space complexity is nothing but we're using an hash of a size maximum element of a size maximum. And that is something which will depend on the input. You cannot specifically say. So the time complexity is 3N and the space complexity is this. Now you can argue that this B go of N can be trimmed. Why? Because over here, it was like zero, one, two, three, four, five, six, the size was seven. You will end up at the worst case if two was placed at the last. I repeat, if two was placed at the last, you will end up iterating for B go of seven times. I could have done it better. I could have done it better. If I would have iterated just from one, like I know the minimum number might be zero and the maximum might be four. So if you could just iterate from zero to four, that will also do your job. And there will just be five iterations, which is better than seven iterations. But again, what if instead of four, four, I had eight, eight, then this loop will end up iterating nine times, which is not good. So instead of this, this is better. So depending on the input, it will vary. So you can tell that to the interview that, so I'm not sure, depending on the inputs,"
+    },
+    {
+      "chunk_id": "L019_C25",
+      "start": 1786.48,
+      "end": 1859.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1786s",
+      "text": "depending on the input, it will vary. So you can tell that to the interview that, so I'm not sure, depending on the inputs, this is also okay. If we use this, this will be the complexity. If we use the loop where we go from zero to max element, and for every element, we see how many times it occurs, then it will be B go of max for the last loop, depending on what you're trying to use. Now the interview might say, but can the hash array be used every day? And the answer to that is no. Why the answer to that is no. Think of that. Imagine I tell you that the array has negatives. The array has negatives. Can you hash negatives? Probably yes, probably no. But what if the array has big numbers like 10 to the power nine, like 10 to the power 12, very, very big numbers. In that case, in that case, you cannot hash it. You cannot hash it in an hash array. That's when you have to use the map data structure with a bigger data type as a key, with a bigger data type as a key, and the value can be int. So you have to use a map data structure. And now this can be an unordered map in C++, depending on what map you use, the time complexity will vary. Now, what can I say? Okay."
+    },
+    {
+      "chunk_id": "L019_C26",
+      "start": 1859.4,
+      "end": 1937.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1859s",
+      "text": "can be an unordered map in C++, depending on what map you use, the time complexity will vary. Now, what can I say? Okay. If I use map data structure, I'll probably do the same thing, but I'll reiterate. As you might reiterate on one and the map data structure is empty. I'll do it one once, one, twice, two, once, three, once, three, twice, eight, once, eight, twice. At the end of the day, your map data structure will look something like this. Now you can iterate on the map and it'll be like, okay, key one. How many times? Two. Next key, two. How many times? One. So this key is your answer. This key is your answer. I trade in the map and get your answer. Let's analyze again. If I have to code it, can I say the first thing will be very simple? I'll just go from zero to N. I'll say map data structure. Can you do an array of I plus plus? Quite simple. What will be the type complexity? If we use an ordered map, it will be N log N where N is the length of the array and this N is the size of the map. This N, probably you can write M. This M is the size of the map."
+    },
+    {
+      "chunk_id": "L019_C27",
+      "start": 1937.44,
+      "end": 2009.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=1937s",
+      "text": "N is the size of the map. This N, probably you can write M. This M is the size of the map. But if you use unordered map, the best case can be B cof N. I know the worst case of unordered map is B cof N, but that rarely happens. So I can say B cof N is the best case, but the worst case is N. The unordered map might take B cof N in order to find something. So the worst case still can be N square if we use unordered map. So you can tell that to the interview that this will not happen. So we can use an unordered map, but if you're saying that the inputs are very critical and the worst case can happen, then I'll switch back to ordered map. I've explained this in the time complexity class. So depending on what map you're using, the time complexity will vary. What's the next step? I'll just iterate in the map and that's very simple. If you're doing C++, this is how you will be iterating the map. If you're doing Java, you can definitely Google or you can find it in the notes. I know the value is what I have to check. So the value is always stored in the second parameter. The second parameter is one. I'll say it.first is my key, is my key and that's my answer."
+    },
+    {
+      "chunk_id": "L019_C28",
+      "start": 2009.08,
+      "end": 2085.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=2009s",
+      "text": "always stored in the second parameter. The second parameter is one. I'll say it.first is my key, is my key and that's my answer. Again in order to iterate in the map, what will be the time complexity is my question to you. Very simple. Time complexity is how many elements did you store? Four. Where the size of the array was seven. Where the size of the array was seven, but you just stored four. It's like you stored N by two elements. Why? Every number appears twice. Every number appears twice. So the number of elements you'll store is N by two plus one. Why plus one? The one guy was appearing once. So this loop will run for N by two plus one because most of the number appears twice. So they're like, we'll take one occurrence of it. There's one guy who's appearing once. This loop will run for this many times. The worst case. The total of a time complexity boils down to N logarithmic of M. But again, M is the size of the map and the size of the map is N by two plus one plus B go off N by two plus one for this loop. And the space complexity will be B go off N by two plus one for a map data structure. Again, this logarithmic can vary if you're using another map for the best case. Better is done."
+    },
+    {
+      "chunk_id": "L019_C29",
+      "start": 2085.88,
+      "end": 2161.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=2085s",
+      "text": "plus one for a map data structure. Again, this logarithmic can vary if you're using another map for the best case. Better is done. If you tell these many things to the interviewer, he'll be like, dude, I don't need to hear the optimal. Anyways, let's go back to the optimal solution. Why? Because definitely the interviewer will not be impressed with the extra time, a lot of iterations. So you might ask you to optimize this. This is when you give the optimal solution. So let's come to the optimal solution. It's very simple. What are we hearing? Every number appears twice, twice, twice, twice. There's one who appears once. We have done the same problem using XOR property. What we will say is, okay, listen, since everyone appears twice, if it was XOR, they will cancel off. Is it? Yes, it will cancel off. So what we will do is we will do a XOR of all the elements because XOR clearly states if they are same numbers and if you do a XOR, the corresponding value is zero. So if you do a XOR of all the numbers, like 1 XOR 1, XOR 2, XOR 3, XOR 3, XOR 8, XOR 8. So what will happen is this will club to give zero, XOR 2, this will club to give zero, this will club to give zero, zero XOR, zero XOR, zero XOR. It will be like zero XOR 2."
+    },
+    {
+      "chunk_id": "L019_C30",
+      "start": 2161.52,
+      "end": 2235.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=2161s",
+      "text": "will club to give zero, this will club to give zero, zero XOR, zero XOR, zero XOR. It will be like zero XOR 2. Zero XOR any number is the number itself. You got your number. Very simple. It's just a one line that you have to write for XOR can be kept as zero. You can start from zero to N and you can say XOR equal to XOR XOR array of I and your answer will be XOR because when you do an entire XOR, everyone will cancel. That one guy will be single and he will be left as an answer. The optimal has a time complexity of B cof N and has a space complexity of B cof 1. This is where you end the solution in an interview. So if you want to solve the problem, the problem link will be in the description. You can go and try it out and submit the code. So going back to the sheet, I can say that this problem is also done and I'll be covering these couple of problems in the next video. So guys, I hope you've understood everything because my main focus was to teach you basics. I wanted to teach you how, how do you approach an interview in terms of brute, better, optimal because it's you who's going to direct the interview. So please be careful about that. So with this, I can see that we have done 12 basic problems."
+    },
+    {
+      "chunk_id": "L019_C31",
+      "start": 2235.08,
+      "end": 2271.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=bYWLJb3vCWY&t=2235s",
+      "text": "going to direct the interview. So please be careful about that. So with this, I can see that we have done 12 basic problems. After this, we'll be moving to the tougher versions of the problems. So mostly you'll find single video for most of the problems because these problems are searched a lot on YouTube and I want my channel to be visible. So mostly you'll find single videos for the long, like the tougher problems. So with this, I will be wrapping up this video, but to continue our tradition, if you have understood everything, you got to, you got to comment understood beneath the video. And yes, if you're new to our channel, please, please do consider subscribing to us. You can find all the links in the description with this. I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye."
+    }
+  ]
+}

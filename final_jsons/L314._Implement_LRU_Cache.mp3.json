@@ -1,0 +1,155 @@
+{
+  "lecture_id": "L314",
+  "lecture_number": 314,
+  "lecture_title": "L18. Implement LRU Cache",
+  "youtube_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw",
+  "chunks": [
+    {
+      "chunk_id": "L314_C1",
+      "start": 0.0,
+      "end": 75.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=0s",
+      "text": "So let's continue with our playlist ready for starting off. Avery, welcome back to the channel. I hope you guys are doing extremely well. So the problem that I will be solving today is LRU cache. So what is the problem statement? You'll have to design a data structure that follows the constraints of a least recently used cache. So what you have to do is you'll have to implement LRU cache class that implements the constructor where it is taking the capacity and initializing the LRU cache to that capacity. That means it cannot store more values than the particular capacity. After that, you'll have to implement a get functionality, which is taking the key and it'll have to return the value of the key, which is stored in the cache. And if it is not stored, you end up returning minus one. After that, you'll have to implement the void put functionality where you'll be given a key will be given a value. So imagine if your cache already has the key, you just update the value to that key. Done. What if it doesn't have in that case, you'll have to add the key value pair to the cache. What if the capacity is full and you cannot add it?"
+    },
+    {
+      "chunk_id": "L314_C2",
+      "start": 75.54,
+      "end": 155.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=75s",
+      "text": "have to add the key value pair to the cache. What if the capacity is full and you cannot add it? In that case, you delete the least recently used key and then you add this particular key and value given to you. Everything like the get and put functionality has to run in a big of one average time complexity throughout. Okay, let's understand this with an example. So the first thing is you have a cache of a size four has to put two comma six. So the cache is empty. You could end up adding two comma six, where two is the key. Six is the value. It has to put four comma seven. You can again do it because the cache is still having a size. Eight comma 11. You can still add it. Seven comma 10. You can still add it. Remember, you need to keep a track of the least recently used and I'm keeping a track by maintaining this particular order. The last one that was used was two comma six. The recent one was this one, seven comma 10, because I just entered it. After that, get two. So the value is six. You could easily figure out from here, but this one is used. So what you'll do is you will take it and place it at the front because this is now used recently. Get eight. So the value of eight is 11."
+    },
+    {
+      "chunk_id": "L314_C3",
+      "start": 155.5,
+      "end": 226.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=155s",
+      "text": "will take it and place it at the front because this is now used recently. Get eight. So the value of eight is 11. So you could return 11 and at the same time, what you could do is you could take eight comma 11 and you could place it at the front because this is least recently used. Done. After that, you have a put a five comma six put a five comma six. Can you put it into the cache? First of all, five is not there, so you cannot replace the value. Can you put it into the cache? No, you cannot because the cache already has four elements and that is the maximum capacity it can hold. So what you will be doing is you'll be like, okay, I need to delete. You always delete the last one that is four comma seven goes off. This goes off. So you've deleted it. What next? You take five comma six and you put it over here. So this is my cache as of now. So I'm done with this. After that, I'm asked to get seven. So what's the value of seven? Ten. So can I say that this is somewhere here and it will go over here because this is least recently used. After that, I will put five comma seven. Do I have a five in the cache? I do have. I do have."
+    },
+    {
+      "chunk_id": "L314_C4",
+      "start": 226.82,
+      "end": 302.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=226s",
+      "text": "used. After that, I will put five comma seven. Do I have a five in the cache? I do have. I do have. So what I'll do is, first of all, I'll take this five, put it first and then I'll take off the six. I'll say, what's the new value? Seven. Replace it. I'm done. So this will maintain the order of least recently used. I'm done. That's it. So this is what we need to implement. It's not something that you'll have to solve. You'll have to have knowledge of doubly linked list and map data structure. So typically linked list and hashing is all you need to know. In case you don't know it, please stop the video as of now. Go back and watch my linked list playlist. Go back and watch my hashing playlist. You'll understand what a map does and how doubly linked list like, how addition in doubly linked list works, how deletion in doubly linked list works. All of these things are very, very important because this is a extremely implementation heavy problem. So in order to solve this particular problem, I'll be using a doubly linked list where every node will be storing the key and value. So key and value and the next pointer and the previous pointer. Again, I'm assuming you know what is a doubly linked list. Under that assumption, I will be solving this particular problem."
+    },
+    {
+      "chunk_id": "L314_C5",
+      "start": 302.78,
+      "end": 380.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=302s",
+      "text": "previous pointer. Again, I'm assuming you know what is a doubly linked list. Under that assumption, I will be solving this particular problem. Along with this, what I will be doing is I'll be typically defining a map data structure. Now, this map data structure will be storing the key and the node position. Remember the node address. Why you'll understand as we go across. So to start off, what you will be doing is we'll be straight away taking a head. So this will be a dummy head. It stores minus one minus one. So this is my dummy head. We'll be taking a dummy tail as well. It is also storing a minus one minus one and the dummy heads. Previous is pointing to null, but the next is pointing to tail. Remember this dummy tail. So the dummy tails previous is pointing to head and the next is pointing to null. So this is how initially my configuration will look like with an empty map data structure. So we start off with the first thing, which is the capacity for so maybe I can just store the capacity to be four. Done. After that, the first functionality, like the first operation is what of two comma six. First thing you'll do is you'll be like, okay, can I put it across? Yeah, I do. I can because the capacity is four. I can definitely put it across. Does it have it already?"
+    },
+    {
+      "chunk_id": "L314_C6",
+      "start": 380.54,
+      "end": 449.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=380s",
+      "text": "put it across? Yeah, I do. I can because the capacity is four. I can definitely put it across. Does it have it already? Because if it has already two, I have to replace it, but it is not there. How do I know it? I can have a hashing kind of a thing, which tells me if two is there or not. It tells me if two is there or not. So I definitely know two is not there. I just need to put it across. So what I'll do is you'll say, hey, insert it, insert it. So you'll go ahead and say, insert it. So it'll be inserting right after head. Remember this, you'll be inserting right after head. So you will make something like this. What I'll do is just to, you know, ease out going forward. I'll just insert it right after head over here. So insert two comma six over here. And I'll make sure because this is a doubly linked list, I'm asking it to be inserted right after head. So I make sure that the next is pointing to tail and this continues. So basically what happened is head's next is now pointing to this. I inserted it in between. And imagine this is at some random address. So I'll be storing two comma the address of it, the address of it. The address is a reference to where this particular value is perfect."
+    },
+    {
+      "chunk_id": "L314_C7",
+      "start": 449.74,
+      "end": 519.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=449s",
+      "text": "be storing two comma the address of it, the address of it. The address is a reference to where this particular value is perfect. After that, when asked to insert four comma six, I'll again do the same thing. I'll say, okay, can I go ahead and insert four comma six? So I'll take four comma six and I'll insert it. So the next will be pointing here. The previous will be pointing here. The next and the previous. Again done. And please make sure you insert four comma six, four comma the node location. After that, eight comma 11. Again, it is not there. That means I'll have to insert it. So I go ahead and say it is not there. Can you please insert it? So the value is eight comma 11. So I take eight comma 11 and I insert it. And the previous is you. This is there. This is there. After that, there's a seven comma 10. But for this, please make sure eight comma addresses going into your hashing hashback. After that, there is seven comma 10. So what I will be doing is I'll be again checking in the hash. It's not there. So I'll be inserting it. So I take that value and I say, hey, seven comma 10. And the next this and this seven comma address. After that, I've been asked to get to, I've been asked to get to."
+    },
+    {
+      "chunk_id": "L314_C8",
+      "start": 519.44,
+      "end": 582.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=519s",
+      "text": "10. And the next this and this seven comma address. After that, I've been asked to get to, I've been asked to get to. So when I've been asked to get to what I will do first of all is I'll go into the map and I'll say, okay, two, where are you? He says, Hey, I'm here. I'm like, give me a value. So I have the node. So I could just do a node dot value. It'll give me the value. So the value is six. I easily get the value, but we need to keep a track of least recently used. So all I need to do is all I need to do is first of all, I need to delete it. Keep it in mind. Delete, delete. You know how to delete in a double elenchless. You have to delete the given node. So I've deleted the given node. I'll have to insert it at the front. I'll have to insert it at the front. So what I can do is quickly just take it across, just move it back. And I could take the new one, which is two comma six. I'll put it over here. So it's a deletion and an insertion. It's a deletion and an insertion at the front done. After that, I've been asked to get eight. I'll again go and check if it is there. It says, yes, it is there. It points me where it is."
+    },
+    {
+      "chunk_id": "L314_C9",
+      "start": 582.48,
+      "end": 650.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=582s",
+      "text": "to get eight. I'll again go and check if it is there. It says, yes, it is there. It points me where it is. I get the value, which is eight comma 11. So eight comma 11, I get the value 11. So once I've got the value, what do I do? I basically do one thing, which is I say, hey, listen, this is no more here. There's no more here. Can you basically go ahead and put it at the front? I'm like, why not? I'll put it at the front, which is eight comma 11. So I put it at the front. Always make sure that you reuse the nodes. Don't create new nodes, because if you create new nodes, you'll have to update the map and that will add to extra time complexity. Try to reuse the nodes. Right. Perfect. So, again, again, done. After that, I've been asked to put five comma six. So I go ahead and check on the map. Do I have a five? I don't have a five. I don't have a five. And I see that the map has four elements, which is equal to the capacity. So I already have four elements. I need to take off the last one. I need to take off the last one. Can I take off the last one? Super simple. I get the last node. How do you get the last node? You have a tail. You have a tail."
+    },
+    {
+      "chunk_id": "L314_C10",
+      "start": 650.36,
+      "end": 717.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=650s",
+      "text": "last one? Super simple. I get the last node. How do you get the last node? You have a tail. You have a tail. So you say, hey, who's your last? So I said tail dot previous is the node that I need to delete. Tail dot previous is the node that I need to delete. OK, please delete it. So first you delete from here. So the value is four. So go in the map and say, where's four? So delete four as well. So I've deleted this. Now the doubly linked list looks like this. Correct? Maybe I could just move it across just to make it easy. So I moved it across. Now what do I need to do? I need to take the five, create a new node. So I've created a new node, five comma six, and make sure the next is pointing to the next one. And this is this. And this is as it is. So I have a five. And please make sure to store the reference to this five node. Done. So I've been asked to get seven. Do I have a seven? Yeah, I do have a seven. Where is the seven? Here. I get the value at first, which is ten. After that, what I do is I take this particular node itself. I take this particular node itself. So I take it off. My bad. So seven comma ten. So I'll take seven comma ten."
+    },
+    {
+      "chunk_id": "L314_C11",
+      "start": 717.36,
+      "end": 785.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=717s",
+      "text": "itself. I take this particular node itself. So I take it off. My bad. So seven comma ten. So I'll take seven comma ten. So if I take it off, this thing will go back. And seven comma ten will come across here. Seven comma ten and the next and the previous. Just taking it out and putting it in front. OK, done. After that, there's a question of putting five comma seven. So what I do is I go ahead and check. Hey, is there a five? I say, yeah, yes, there is a five. Yes, there is a five. Like, OK, I just need to replace it. So I get the reference. So I just pick out the node. Please make sure you pick out the node. So I'll just pick out. Uh huh. I will just pick out the five comma seven node. Make sure it's the same node. Make sure it is the same node. So you pick out the five comma seven. So once you've picked it out, it will look something like this. Insert the same node, take the same node and insert it over here. So the reference doesn't changes. You just change pointers. You just change pointers. Get the node, delete it. Get the node, delete it. And after that, insert, insert, done. Perfect. So time to write down the pseudocode. So please, please make sure you should be knowing what a doubly linked list is."
+    },
+    {
+      "chunk_id": "L314_C12",
+      "start": 785.76,
+      "end": 858.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=785s",
+      "text": "done. Perfect. So time to write down the pseudocode. So please, please make sure you should be knowing what a doubly linked list is. So if I get back to the dry run, what all do we need? We definitely need a map data structure so that we can have the key and the direct reference to the node. So if you observed, you did observe one thing. We were deleting nodes like we had a reference, we deleted. And what did deletion mean over here? We were just changing links. We were just changing links. But the node was as it is because we are reusing that node. We are not creating new nodes. Okay. We could delete from here as well. So that is typically something like this. So deletion of a node is what we need. So what I could do is I could write a function, deletion of a node, of a given node, a deletion of a node where you take a node and you end up deleting it. So given a node and you end up deleting it, that node can be anywhere. It can be here. It can be at the end, can be anywhere. Okay. So that is something I definitely need from doubly linked list. So as you, we know it because I've already done this thing in the doubly linked list lectures. Please go back and watch it. How to delete a node whenever the reference is given."
+    },
+    {
+      "chunk_id": "L314_C13",
+      "start": 858.16,
+      "end": 935.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=858s",
+      "text": "this thing in the doubly linked list lectures. Please go back and watch it. How to delete a node whenever the reference is given. What else do we need? Whenever we are deleting, we're kind of using it. And in order to market as the least recently used, what we are doing is we are putting it right after head, right after head. So what I can do is I can say insert after head and again you'll be given a node. Again you'll be given a node. So you just have to insert after head. Now if, if you're able to write these two functions, I think my job is done. My job is done. And please make sure the doubly linked list that you define, it should be storing a key, a value, a next pointer and a previous pointer. So the code is given below. Like you can find the code in any given language. It's a, it's given below. What I recommend you to do is open it on some other tab so that you could follow across whatever I am doing. So as of now, just remember you have a function deletion of a node insert after head and the node is containing a key, a value, a next and a previous, right? So let's get onto the code. I'll be writing down the pseudo code. So we have a class which is L R U cache. What all do we need?"
+    },
+    {
+      "chunk_id": "L314_C14",
+      "start": 935.04,
+      "end": 1014.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=935s",
+      "text": "code. I'll be writing down the pseudo code. So we have a class which is L R U cache. What all do we need? We definitely need a map data structure. So a map which is storing a integer and the node reference star for C plus plus for Java people. You don't have to give a star and a map. We also need the capacity where we know how many, like what's the size of the cache along with this. We definitely need a head and a tail. Why do we need it? As I implement, you'll understand. So we definitely need this head and the state, right? Okay. After this, we'll have to write across the constructor, which is taking a capacity. So what I can do is I can say the capacity, this is underscore equal to capacity underscore. That is done. I could always say initially the map will have no elements, so you could just clear it across. And I can always say initially the heads next will be pointing to tail and the tails previous will be pointing to head. So we have a small linked list to start off with. This is all my LRU cache will look like. What's the next function that I'll have to write? That's the get function. So let's write it. So I have to write int get where I've been given a key and I need to find the value if"
+    },
+    {
+      "chunk_id": "L314_C15",
+      "start": 1014.3,
+      "end": 1084.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=1014s",
+      "text": "let's write it. So I have to write int get where I've been given a key and I need to find the value if it does exist. So first of all, if it doesn't exist, which means if the map doesn't have it, the map doesn't have it. Can I say the map doesn't have it? And depending on your language, you can write it. If the map doesn't have it in that scenario, I know the answer will be return minus one because it's not there. But if it does have it, I definitely have a value. So what I could do is I could do a node star and a node and I could go to the map. Hey map, can you give me the value for the given key? So what this map will give is the map is storing. If you remember reference, I'll give you the entire node. It'll give you the entire node. So you have the node. You definitely have the node. So at the end of the day, you could return the node value because you have the reference node. You could straight away extract the value. But are we done? No, we're not done. If touched someone, if touched someone, now we need to put it at stand because this is least recently used. So what I'll do is first of all, I'll say delete the node. I'll pass on the node."
+    },
+    {
+      "chunk_id": "L314_C16",
+      "start": 1084.62,
+      "end": 1156.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=1084s",
+      "text": "because this is least recently used. So what I'll do is first of all, I'll say delete the node. I'll pass on the node. Remember the function that we wrote, like we said that there's a hypothetical function that deletes the node. Okay. Once it is deleted, can I say insert after head? Remember it's a dummy head. It's a dummy head. And we use the same node. Don't create one more node because it will be space complexity. Like you'll add up additional space complexity. Reuse the given node itself. I've inserted it after head. I need to do anything else. Now we're done here. I just deleted it, put it across to keep a track of the least recently used. Perfect. What's the next one? I need to write the put function as well. The put function will be, I'll be given a key and I'll be given a value. Okay. What are the cases? I know one thing for sure. If it is already existing, I just need to change it. So I'll be like, hey, does the map hazard? If the map has the value key, again, depending on the language, the syntax will vary. If the map has this value key, what will I be doing? I'll be like, okay, maybe I can get the node. Node star node. And you could always say map, hey map, can you give me the value?"
+    },
+    {
+      "chunk_id": "L314_C17",
+      "start": 1156.02,
+      "end": 1233.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=1156s",
+      "text": "maybe I can get the node. Node star node. And you could always say map, hey map, can you give me the value? And the map will give you the reference to that node, wherever you stored element. Perfect. And you could straight away say node dot value. Can you just replace your value by the value given to us? The new value. So we used it. I recently used it. So what I do is delete node. And this node would be deleted. Since I recently used it, I say insert after head or whatever is the function name. And I insert it and we are done. Yeah, we're done. No need to change anything in the map. There's a map is storing a reference to the node. Pretty cool. What if it is not in the map? If it is not in the map, then there can be multiple conditions. What if my cache is already filled up? Okay. So it means if the number of elements that I store, MPP dot size equal to capacity. If this is the case, what I'll do is I have to delete. I'll have to get rid of this guy. Which guy? The least recently used. How do you figure that out? Go back to the dry run. This was a dummy tail that you initially defined. The least recently element is this one, which is the previous of the dummy tail, which is the previous of the dummy tail."
+    },
+    {
+      "chunk_id": "L314_C18",
+      "start": 1233.98,
+      "end": 1311.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=1233s",
+      "text": "defined. The least recently element is this one, which is the previous of the dummy tail, which is the previous of the dummy tail. So what I do is I simply go over and I say, hey, I know the node and the node is nothing but the tails previous. So I can easily get the node. OK, if I have the node, I can also easily get the MPP like from the map. I could easily use it. I could say MPP dot delete or erase whatever you have from the map. I could always say node dot key, because if I have the node reference, I have the key. I could delete it out of the map. It's gone from the map. I need to take it out from the cache as well. So I say delete node, delete the node. And since I have the node, I'll delete it. So what I've done is even if the size was full, I ended up deleting one element from it. Perfect. So if it is deleted, I have someone new. OK, if I have someone new, I'll say node star node, new node or whatever is whatever you write key value. So I'll create a new node. OK, this is created as MPP of key. Can you store this new nodes reference done? And after that, I'll say insert after head, insert after head. And I'll pass on this node which can be inserted. And we are done."
+    },
+    {
+      "chunk_id": "L314_C19",
+      "start": 1311.3,
+      "end": 1380.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=1311s",
+      "text": "after that, I'll say insert after head, insert after head. And I'll pass on this node which can be inserted. And we are done. We're done here as well. OK. What is the time complexity? Let's analyze. This is definitely be go fun. OK, this is also be go fun. Assuming the delete works in be go fun, which it will because it's just a link change insert after head. It is also a link change that will also work in be go of one. This one is something that might take be go of log in depending on the language that we're using, the map that we're using. So I'll just leave it to you. The put. Am I doing something extravagant? Am I running a loop? No. This is also be go of one. Assuming that the map is taking be go fun. We're using a map that takes log in. This will end up being log in. Depending on the language, the map, etc. You can say be go of one or be go of log in. I was able to design it. But then you should be able to delete the node. It's very simple. If you're given a node and if you're not deleted, so what you do is you get the previous node. At first, which is node dot previous because it is a doubly linked list. You get the after node, the node after it, which is node dot next."
+    },
+    {
+      "chunk_id": "L314_C20",
+      "start": 1380.94,
+      "end": 1459.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=1380s",
+      "text": "node dot previous because it is a doubly linked list. You get the after node, the node after it, which is node dot next. So once you've got it, all you need to do is the previous nodes next. Should point to after node. And after nodes previous very basic linked list should point to the previous. Done this is how you easily delete a node by cutting off links. Insert after head. You have the dummy head with you. You have the dummy head. So all you need to do is you need to figure out as of now what is head connected to? What is head connected to? So current after head. So maybe you could write current after head. Now this is nothing but head dot next. So you have it. There's a current after head. All you need to do is head dot next could easily be written as node because this is the new node. So head would be pointing to it. Nodes next will always be pointing to the current after head like the previous one that you had. So basically if you insert something it will be pointing to this and the previous will be pointing to this. So I made sure that the next is pointing to this and please make sure that the nodes previous is pointing to the head."
+    },
+    {
+      "chunk_id": "L314_C21",
+      "start": 1459.94,
+      "end": 1487.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=z9bJUPxzFOw&t=1459s",
+      "text": "made sure that the next is pointing to this and please make sure that the nodes previous is pointing to the head. Done simple link changes and I'm good to go. You can find the entire code given below. This was more like a pseudocode but if you followed the entire pseudocode then going through the code that I've given below should be a key work. So yeah that will be it for this one. I hope you have understood it and if you're still now watching please please do consider giving us a like and if you're new to our channel do consider subscribing to us as well. With this I'll be wrapping up this video. Let's meet in some other video till then bye take care."
+    }
+  ]
+}

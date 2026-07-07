@@ -1,0 +1,120 @@
+{
+  "lecture_id": "L011",
+  "lecture_number": 11,
+  "lecture_title": "Re 4. Problems on Functional Recursion | Strivers A2Z DSA Course",
+  "youtube_url": "https://www.youtube.com/watch?v=twuC1F6gLI8",
+  "chunks": [
+    {
+      "chunk_id": "L011_C1",
+      "start": 0.0,
+      "end": 76.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=0s",
+      "text": "Hey Viewers, Welcome back to the channel. I hope you guys are doing extremely well. So today we will be again doing one more, I think couple of more problems on recursion. The first one being, we will be learning how to reverse an array using recursion definitely. And after that, we will be learning how to check if a given string is palindrome or not using recursion. Now reverse an array. Let's understand if I am giving you something like, let's say this, this is the array that I'm giving you and I ask you to reverse this. So the reverse will be definitely something like 2, 4, 3, 2, 1. I think there's no doubt that the reverse will be this. If you don't understand what is reverse, I can't tell. So this is what the reverse will be. Generally, if I ask you to do this using for loop, how will you do this? Very simple. Keep a point over here, which is the 0th index. You keep a point over here, which is 1, 2, 3, 4th index, n-1th index. And you basically say swap. And right after that, you move this point ahead and you move this pointer back. And again, you say swap."
+    },
+    {
+      "chunk_id": "L011_C2",
+      "start": 77.12,
+      "end": 149.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=77s",
+      "text": "And right after that, you move this point ahead and you move this pointer back. And again, you say swap. So it's like this. This is what you do. And the next moment you again say move ahead. And if they are at the moment at the same guy, and you can say that the left and right half have been swapped. Hence the array has been reversed. So this is how you would have done normally, or if you're writing a for loop or while loop. So can I implement the same concept? I think we can. We can definitely implement the same concept. So assuming that this is the array given and i is this one, right? i is this one. So there can be a couple of ways to do this. One is I say, I'm going to do recursion using two pointers. So let's first learn to do recursion using two pointers. So I'll be like, okay, let's keep a pointer here, l. And let's keep a pointer at r. So I swap l and r. And that's my recursion task. My recursion task will be to swap. And then again, call the recursion to swap the next index. Apparently the next index should have been this. So if you logically think it's swap and call the next l and the before r, right? So if you're going"
+    },
+    {
+      "chunk_id": "L011_C3",
+      "start": 149.44,
+      "end": 227.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=149s",
+      "text": "been this. So if you logically think it's swap and call the next l and the before r, right? So if you're going to think in that direction, I think you can write recursion. Until how long? Lr, Lr, Lr. The moment they cross or they overlap, you're going to stop. You're going to say no more. Need to swap. So probably I can think of recursion over here. I'm like, okay, f of l comma r. I know my recursion task is to swap. So the recursion task is to swap array of l and array of r. So they will definitely swap it. Once the recursion has swapped, I know I'm again going to call the recursion to swap the next elements, which is l plus one and r minus one. Makes sense because I'll say recursion, go and swap the next set of guys, which is l plus one and r minus one. But till how long? Can I say the limiting case in recursion will be if l goes or beyond r or equal to, there's no need to swap and I can return. And I think this is pretty much going to be my recursion. I hope that makes sense. So in order to understand this, we can definitely take a main and assuming you have an array, you can take the input of the array by yourself."
+    },
+    {
+      "chunk_id": "L011_C4",
+      "start": 227.52,
+      "end": 306.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=227s",
+      "text": "this, we can definitely take a main and assuming you have an array, you can take the input of the array by yourself. And you can say f of zero, that's the first index. And the last index will be n minus one, which is definitely the last index. Now, assuming this is the array given, let's assume we take a very simple array, one, three, two, three, not two, three, then there will be problem five, four. Let's see this. And first time this is zero, which is going to call this guy. So l is zero, l is over here, r is n minus one, which is this guy, which is definitely zero, one, two, three, fourth index. So this is what we do. This line is not executed. This line of swap is executed. Thereby saying swap a of l and a of r. So this guy will be swapped four and one. Next I'm saying f of something, which is f of one comma three. And again, the if will not be executed, the swap will be executed. So l will go here and r will go here this time. So they will swap five and three. Correct. Next I'll call f of l, which is two comma two. And thereby when this function goes, it's like f of two comma two, if states, is this greater than equal to two greater than equal to two? Yes."
+    },
+    {
+      "chunk_id": "L011_C5",
+      "start": 307.04,
+      "end": 385.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=307s",
+      "text": "function goes, it's like f of two comma two, if states, is this greater than equal to two greater than equal to two? Yes. Return, no more swap. Returned, this guy said returned, this guy said returned. So ultimately our entire array was indeed reversed. Now I easily did this using couple of variables, l and r, right? But can we do this using a single variable? That's my very, very straightforward question to you. Can you do this using a very single pointer? Yes, we can. Let's understand how. So if I again write the same array, and if I say this is the ith pointer, which is zero, one, two, three, four, and I say n is equal to five for this i, this guy is the, this index is what you'll swap it. For this i, this index is what you will swap that with. For this i, there's no more. So something that I can observe is, if this is i, for this, for this guy, the corresponding will be this, and that's nothing but n minus i minus one. You can try doing this. Five is n, i is zero, minus one is four. Again, you can try"
+    },
+    {
+      "chunk_id": "L011_C6",
+      "start": 385.68,
+      "end": 465.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=385s",
+      "text": "one. You can try doing this. Five is n, i is zero, minus one is four. Again, you can try doing n minus i minus one over here, which gives you five minus, i over here is one, minus one, which makes it three. So you can easily swap one and three. You can easily swap four and zero. So I can say, instead of carrying a couple of pointers, you can always do i comma n minus i minus one. As simple as it can get. Now, question arises, till how long? If you carefully observe, this is two, n was five. So I can say at any moment, i crosses n by two, because whenever you're crossing the middle, there's no need to swap. Before that, you can just keep on swapping the left and the right guys. So I can again write these in this way that, okay, f of something as i. And I can say, if i crosses n by two, then I can definitely return, or else I can say, can you please swap a of i, a of n minus i minus one, correct? And once you've swapped, you can say f of i plus one, can you please swap the next guy?"
+    },
+    {
+      "chunk_id": "L011_C7",
+      "start": 465.84,
+      "end": 534.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=465s",
+      "text": "one, correct? And once you've swapped, you can say f of i plus one, can you please swap the next guy? And over here on the main, you can simply call the, like, you can simply take the array and you can simply call f of zero. So basically, first call will be made to f of, f of zero, swaps a of zero, a of four, calls f of one, swaps a of one, a of three, calls f of two. The moment f of two is called, if two greater than equal to n by two, which is five by two true, return, returns, returns, and returns. But ideally, due to these couple of lines, the swap happens, right? Thereby your entire array will be swapped, correct? So in case, if you just want to check this out, you can just take i and n, and then you can take c of n, then you can probably take the array as well. So easy enough."
+    },
+    {
+      "chunk_id": "L011_C8",
+      "start": 545.36,
+      "end": 617.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=545s",
+      "text": "take c of n, then you can probably take the array as well. So easy enough. So you can say function of zero, you can pass on the array and pass on the n, they will do their job. And you can write void f, and you can write the index. And in order to carry the array, you can take it and you can say, I n T N and it'd be like, okay, at any moment, I crosses N by two, there's no need to do anything you can return or else you can simply swap array of I comma array of N minus I minus one. Once you've done this, you can say f of I plus one comma, array comma N. So these are the extra parameters that you will carry. Nothing special, just the extra parameters that you will carry. And once you've done this, you can definitely print the array, which is something like for I equal to zero, I less than N, I plus plus, and you can do in C out of array of I. Remember, arrays are passed using reference. So there's okay. So we give one, two, three, four, five. And if I just run this, you'll see this running. It's automatically swapped. Did you see this? So this is how the swap function works. So I hope you have understood again, avoid function, avoid function, which a recursion, which does it task"
+    },
+    {
+      "chunk_id": "L011_C9",
+      "start": 617.52,
+      "end": 697.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=617s",
+      "text": "is how the swap function works. So I hope you have understood again, avoid function, avoid function, which a recursion, which does it task and calls the next index to do the next task. So in recursion, it's very specific to identify which task does the recursion need to do. Like over here, the recursion has to do a task of swap it. You need to understand that. If you've understood this, recursion is very straightforward. Okay. Let's do the next one. The next one is very simple. Check if a given string is palindrome or not. Again, we have to write a functional code over here. Basically we will be giving the string and the string itself, like the function, we will be giving the string to a function and the function is going to tell us true or false. If the string is palindrome, the function is going to say true. It's a palindrome. If the string is not a palindrome, the function is going to say false. This is not a palindrome. Okay. So if you write a functional kind of thing. So for an example, let's understand what is a palindrome. So the definition of a palindrome is a string on reversal reads the same. A string on reversal reads the same. That is what we call as a palindrome. For an example, if I write madam, if this is the string, even if you reverse it, even if you apply a reverse function on it,"
+    },
+    {
+      "chunk_id": "L011_C10",
+      "start": 698.08,
+      "end": 775.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=698s",
+      "text": "an example, if I write madam, if this is the string, even if you reverse it, even if you apply a reverse function on it, like M, then A, then a D, then A, then M, you see madam still stays as madam. For an example, one, one, two, double one. Even if you do a reverse, the string still stays one, one, two, double one, like in a string. So a palindrome is a string when on reverse still stays the exact same. So how do you write this? So we can think that, okay, it's pretty much similar to reverse where, uh, because, because why does a similar to reverse because M, A, D, A, M, we know one thing. If on reversing, it is the same, we know how were we reversing. We were reversing something like this, this guy with this guy, right? Then this guy with this guy, correct? So basically the left half and the right half were swapped. So if after reversing, they are correct. If after reversing, they are correct, the left half and the right half has to be identical. That means this M, this M has to be same. This A, this A has to be same. And this D is definitely the middle one. There's no need to check for it. Makes sense. Because if reversal"
+    },
+    {
+      "chunk_id": "L011_C11",
+      "start": 775.36,
+      "end": 852.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=775s",
+      "text": "be same. And this D is definitely the middle one. There's no need to check for it. Makes sense. Because if reversal logic was that, and if I say on reversing, it is correct. Or like, if I say that is how you reverse. And if I say the definition of palindrome is after reversing, it's the same. So thereby I can say, the left half and the right half have to be same. Makes sense. So how do you check for it? Again, you need to write a functional one. Remember this, you need to write a functional one. So can I say, I'll write a function because it has to be a functional. So instead of swapping, I say, are they equal? If they are equal, it's fine. Let's do the next check or else tell them that it's not a palindrome because they're not equal. Makes sense because instead of swapping, I can just do a check. So f of i, and while reversing, we know how to do that using single pointer. We say if i is greater than n by 2, let's come to this case afterwards. Let's keep come to this case afterwards. So we can be like, instead of swapping, why don't we check if S of i is not equal to S of n minus i minus 1. So if they're not equal, I can say return a true,"
+    },
+    {
+      "chunk_id": "L011_C12",
+      "start": 852.24,
+      "end": 929.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=852s",
+      "text": "i is not equal to S of n minus i minus 1. So if they're not equal, I can say return a true, so return a false. But if they are equal, if these two guys are equal, then I'll be like, okay, please check for i plus 1. Please go and check for the upcoming indexes. And whatever that guy says, if it says me, yes, I'm fine. If it says me no, I'm fine. And I'll put a return on you. Whatever this guy says, I'm going to return that. But in how long? If this particular guy is being checked again and again and again and reaches the end, thereby this line is never executed. So I can say if i reaches at any moment n by 2, I can return a true. Makes sense. Let's understand from Adam and then we'll take another non-parandromic string and try to understand that as well. Let's check Adam. So this is the index 0. So you know how the main will definitely call it as f of 0. Please, whatever f of 0 says, please, please do me that. So first time, definitely f of 0 goes. First time f of 0 call"
+    },
+    {
+      "chunk_id": "L011_C13",
+      "start": 929.68,
+      "end": 1005.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=929s",
+      "text": "says, please, please do me that. So first time, definitely f of 0 goes. First time f of 0 call goes. 0 and the last index 4. Are they equal? Yes, they're equal. So can you please call for f of 1? Again, if first base case is not executed, if s of 1 is not equal to s of 3, which is again not the case, they're equal. So again, I'm saying return f of 2. So the moment I call f of 2, it says 2 greater than equal to 5 by 2, which is true. And I'm saying return a true. So this guy returns a true. So this becomes true. So return a true. This becomes true. Return a true. So this guy says, parandromic. Yes, this guy says parandromic. So random works fine. Let's try to take another example, something like MADMATSUM. So this is not a parandromic. Why? Because this guy and this guy are not equal. Because on reversing, they'll not be equal. So let's see how this works. So at the first time f of 0 comes again."
+    },
+    {
+      "chunk_id": "L011_C14",
+      "start": 1006.32,
+      "end": 1080.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=1006s",
+      "text": "be equal. So let's see how this works. So at the first time f of 0 comes again. s of 0, s of 4 equal. So not equal doesn't work. Return calls f of 1. If s of 1, this one, not equal to s of 3, this one, not equal. Return false. This guy returns a false. Thereby, this guy says false. Returns a false. So it did not go and check the entire one. If you'd have checked every index, every index was coming out as true, it would have reached this particular base case. It would have returned a true. But it did not. There was a case where the false was executed. So it did not move ahead. This is how you can write a functional check for checking a palindrome. So again, if I just write this, let's quickly write this. String s is equal to MADM. Let's write c out of f of s, f of i, 0 comma s rather. So I'll write a Boolean function, definitely. Boolean function. Into index, a string. You can take it using reference. And you can say if"
+    },
+    {
+      "chunk_id": "L011_C15",
+      "start": 1082.72,
+      "end": 1159.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=1082s",
+      "text": "function, definitely. Boolean function. Into index, a string. You can take it using reference. And you can say if i is greater than equal to s dot size, which is the length, you can return a true. All the checks have been done. If s of i is not equal to s of n, s dot size minus i minus 1, you can return a false. Correct? Or else you can be right. Okay. Can you please go and check the next one and you can return that. So if I just write this, you'll see this coming out as true. You see coming out as 1 because true is 1. The moment I change this MADSM, this is coming out as 0. See? Got this? So this is how you can easily write a functional. So I hope you've understood how to write a void recursive function, how to write a functional recursive function. That is what is very important going forward. So I hope you have understood everything in this video. What about the time complexity? How much indexes are you iterating for? Half? Because you're just going till the half length. The time complexity is n by 2 because you're going only till the half. And the space complexity will also be auxiliary stack space. Nothing significant like no containers is used. Internal stack space is n by 2 because half of the recursion calls will"
+    },
+    {
+      "chunk_id": "L011_C16",
+      "start": 1159.04,
+      "end": 1186.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=twuC1F6gLI8&t=1159s",
+      "text": "stack space. Nothing significant like no containers is used. Internal stack space is n by 2 because half of the recursion calls will be waiting if it's a parallel drop. Correct? So that's how the time complexity and space complexity will be. And I hope you have understood the entire concept, everything. Just in case you did, please, please, please make sure you like this video. And if you're new to this channel, please, please, please do consider subscribing. And yeah, with this, let's wrap up this video. Bye bye. Take care."
+    }
+  ]
+}

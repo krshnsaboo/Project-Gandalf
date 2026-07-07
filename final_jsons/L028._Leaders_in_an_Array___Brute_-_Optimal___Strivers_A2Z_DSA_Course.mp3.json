@@ -1,0 +1,85 @@
+{
+  "lecture_id": "L028",
+  "lecture_number": 28,
+  "lecture_title": "Leaders in an Array | Brute - Optimal | Strivers A2Z DSA Course",
+  "youtube_url": "https://www.youtube.com/watch?v=cHrH9CQ8pmY",
+  "chunks": [
+    {
+      "chunk_id": "L028_C1",
+      "start": 0.0,
+      "end": 63.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=cHrH9CQ8pmY&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another lecture from the Strybus A2Z DSA course. Just in case you are for the first time here, this is the world's most in-depth course when it comes to DS-ALGO. Why do I say that? Because this course has 456 modules. By the end of the course, you would have solved more than 400 plus problems when it comes to DS-ALGO. You can go across the entire internet. You can buy any of the paid courses. None of them will be teaching you DS-ALGO in such depth. Something that I can give you as assurance is once you complete this particular course, you can actually clear any of the DS-ALGO rounds in any of the companies in any part of the world. So till now we have covered till the next permutation problem. And in this video, I'll be covering the problem leaders in an array. So what is the problem state? It states finding the leaders in an array. So what is the definition of leaders? Everything on the right should be smaller. What does that mean? I can say 22 is a leader. Why? Because if you look on the right of 22, everything is smaller than 22. So thereby 22 is a leader. Can I say 12 is a leader? I can"
+    },
+    {
+      "chunk_id": "L028_C2",
+      "start": 63.28,
+      "end": 124.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=cHrH9CQ8pmY&t=63s",
+      "text": "right of 22, everything is smaller than 22. So thereby 22 is a leader. Can I say 12 is a leader? I can because to the right of 12, everything is smaller. Can I say 3 is a leader? No. Why? Because to the right of 3, there is 6 which is greater than 3. So that is not a leader. So can I take 10 as a leader? No. Why? Because 22 and 12 are greater than 10 and they are occurring on the right side. Can I say 6 is a leader? Yes, because on the right there is nothing. So something we can observe is the last element will always be the leader because there is nothing on the right. So this is what you have to return. You might ask, what is the format in which you have to return this particular answer? So over here you can see that first I've taken 22, then 12, then 6. Now this format is following the order of the array. And a lot of platforms you'll find a different format as well. They might ask you to return the leaders in the sorted fashion. So something like 6, 12, 22. Now the format doesn't matter. If you can deduce a logic so that you can collect all the leaders. Once you can collect all the leaders, so our task is to collect all the"
+    },
+    {
+      "chunk_id": "L028_C3",
+      "start": 124.64,
+      "end": 184.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=cHrH9CQ8pmY&t=124s",
+      "text": "so that you can collect all the leaders. Once you can collect all the leaders, so our task is to collect all the leaders. Then we can decide on the format. Over here the format is on this way. If they are asking us to sort them, we will sort them. Format can be decided later. But as of now, our task is to collect all the leaders and then we will think about the format. Got it? So this problem comes up in an interview. The first solution that you'll give to the interview will be of the brute force solution. What is the extreme naive solution that comes to your head? You're like, I need to pick up leaders. So what if I take 10? Then I'll just have to check on the right. If there is anyone greater than 10, if there is, it will not be the leader. Similarly, I can pick up 22 and I can check on the right. If there is anyone greater than 22 over here, no. So that's a leader. So what I can do is I can go across every single element and for every single element, I can do a linear search on the right portion of the array and that will be job done. So if I have to write the brute force code, so let's quickly write down the brute force code. So can I say if I have to go through every"
+    },
+    {
+      "chunk_id": "L028_C4",
+      "start": 184.48,
+      "end": 256.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=cHrH9CQ8pmY&t=184s",
+      "text": "the brute force code, so let's quickly write down the brute force code. So can I say if I have to go through every element that's saying I equal to zero, I plus plus, and I'm looking for leader. So assume initially the leader, it's true. Let's take a black leader and we will say that, okay, assume this element as of now is the leader. Now I will have to check on the right and I know the right starts from the next index, which is a I plus one. I'll go to the end of the array. And if at any moment, if at any moment I get an element which is greater than my leader, I will say, hey, leader, you're no more the leader. So mark the flag as false and you can probably break out. You can probably break out. So this is what you can do. And if over here you can say the leader is true, then you can store it in your answer and you can store it in your answer. So probably answer dot add. And this is your leader, which goes in quite simple. So every element and for every element, a of I, you go on the right. So the inner loop goes on the right and the outer loop I treats element by element. So this is the extreme brute force solution. What will be the time complexity near about big of n square? Because"
+    },
+    {
+      "chunk_id": "L028_C5",
+      "start": 257.68,
+      "end": 317.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=cHrH9CQ8pmY&t=257s",
+      "text": "element by element. So this is the extreme brute force solution. What will be the time complexity near about big of n square? Because for every element we're going right for the next we're going right, not exactly big of n square, because this loop doesn't runs exactly big of n, but near about big of n square is what I can say. Got it. What if the interviewer will ask you about the space complexity? In that case, you have to explain him, tell him that I haven't used any extra space in order to solve the problem. Yes, I have used an extra space to store the answer. So if you want to consider that, then I will take a big of n at the worst case. Imagine I give you something like five, four, three, two, one as the array, then everyone will be the leader. So everyone will be stored in the answer array. So in that case, the worst space that I'll require to store the answer will be big of n. So this is how you'll tend to the interviewer. Obviously, the interviewer will not be happy with this and he'll ask you to optimize the big of n square. That is when you move to the optimal solution. We do not have a better for this one, so we can directly move on to the optimal solution. Now the optimal solution is"
+    },
+    {
+      "chunk_id": "L028_C6",
+      "start": 317.92,
+      "end": 393.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=cHrH9CQ8pmY&t=317s",
+      "text": "do not have a better for this one, so we can directly move on to the optimal solution. Now the optimal solution is super simple. Can I say if I have 12 over here, whatever is the maximum element on the right, which is six, if 12 is greater than six, it means 12 is greater than every element on the right. Can I say that? Similarly, if I have 22 and on the right, the maximum element is 12 and 22 is greater than 12. Can I say 22 is greater than every other element? So what I need to do is, if I can see that the array element is greater than the maximum on the right, then it will always be the leader. So what I'll do is, I'll start iterating from the back and I'll be like, I will stand here and initially you can keep the maximum as a very small number. Again, you can also keep it as depending on the constraints, you can keep it as zero as well. But let's as of now keep it as a very small number, which is int underscore min. So we are at six. Can I say six, so on the right, the maximum is int min. So I will be like, hey, six is definitely my leader. Perfect. And now I will update the maximum to six and I'll move. So as of now,"
+    },
+    {
+      "chunk_id": "L028_C7",
+      "start": 393.52,
+      "end": 461.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=cHrH9CQ8pmY&t=393s",
+      "text": "hey, six is definitely my leader. Perfect. And now I will update the maximum to six and I'll move. So as of now, I'm standing at zero and on the right, I have the maximum as six. On the right, I have the maximum as six. So can I say zero is not greater than six, so thereby zero cannot be the leader. Will zero be the maximum? No, because six is greater. So I will move forward. So we are doing a back iteration. Got it? So now we have three. On the right, what is the maximum? Six. Three is greater than six? No. So three cannot be the leader. Again, will three be the maximum? No, six, we already have a bigger number. So we will move forward to 12. Now when we are at 12, 12 is greater than the maximum on the right, which is six, thereby 12 is the leader. So I'll just take that 12 and I'll place it over here. Then we will move. But before moving, but before moving, the maximum will be replaced. Yes, it will no more be six because now on the right, we have 12 as the maximum. Let's move forward to 22. So when you move forward to 22, on the right, you have a maximum of 12. So 22 is greater than 12. So I can again say 12 is one of my leaders."
+    },
+    {
+      "chunk_id": "L028_C8",
+      "start": 461.6,
+      "end": 534.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=cHrH9CQ8pmY&t=461s",
+      "text": "you have a maximum of 12. So 22 is greater than 12. So I can again say 12 is one of my leaders. Perfect. Before moving, update the maximum and then move forward to 10. So when you are at 10, is 10 greater than 22, which is the right maximum? No. So 10 cannot be a leader. Again, do you need to update the maximum? No. Then move forward. Once you see that the iteration is over, what you can say is, okay, I have collected all my leaders in this particular array. Yes, I've collected all my leaders in this particular array. Since you did a back traversal, since you did a back traversal, what will happen is the elements will be stored in this fashion. If, if the problem does ask you to return in this format, 22, 12, and then six, if they'll ask you to return in this particular format, what you do is you go across and reverse this answer, reverse this answer and that will be done. If the question will ask you to probably return the sorted, sorted leaders, then you just sort this and the sorted version will still stay the same. So depending on the requirement of the problem, if they're asking you in the order of the array, just reverse it, they're asking you the sorted leaders, then you just apply a sorting algorithm"
+    },
+    {
+      "chunk_id": "L028_C9",
+      "start": 534.72,
+      "end": 596.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=cHrH9CQ8pmY&t=534s",
+      "text": "you in the order of the array, just reverse it, they're asking you the sorted leaders, then you just apply a sorting algorithm which will end up taking big O of N log N. Got it? Quickly code this up. Again, the problem link will be in the description. Make sure you try out the problem from the link in the description. So what is the question saying? Element is called a superior element if it is greater than all the elements on its right. So it's greater, not greater than equal to, it's greater. Okay. And you must return a sorted over there. Over here, they're asking you to return a sorted array. So I know what I need to return. So I need an vector int answer and probably I'll have to sort this. So let's quickly sort this up and this is what you have to return. Perfect. This is something which I know. Now let's write the collection algorithm. So I can say int maxi equal to int min. So over here, if I look at the constraints, the seeding, the array will be starting from one. So even if I take zero, it'll work, but not an issue. Let's quickly start from the back and it'll be like n equal to a.size. Perfect. And I'll start from the back. I'll be like n minus one,"
+    },
+    {
+      "chunk_id": "L028_C10",
+      "start": 596.8,
+      "end": 671.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=cHrH9CQ8pmY&t=596s",
+      "text": "the back and it'll be like n equal to a.size. Perfect. And I'll start from the back. I'll be like n minus one, I greater than zero and I minus minus. And I will say if array of I is that greater than maxi, if it is, it is one of your leaders. If it is one of your leaders, please go ahead and store it. And before moving, you just update your maxi to array of I, if it is greater than maximum. So this is a very simple back iteration that will keep updating the maximum. This will keep track of the right maximum, keep track of the right maximum. And over here, you just compare and that's how you can easily get the leader. Again, what will be the time complexity to collect? It is big O of n. According to this problem statement, since it did ask us to return a sorted version, it will take n log n. The worst case, imagine if everyone is a leader, land up taking a big O of n log n to sort it. Are we using any space? Yes, we're using this one in order to return, but not to solve. It is just for returning. So you should explicitly tell that to the interviewer. And the worst case will be big off n if every one of them is a leader. So this is the C++ code. If you want the equivalent Java"
+    },
+    {
+      "chunk_id": "L028_C11",
+      "start": 671.84,
+      "end": 712.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=cHrH9CQ8pmY&t=671s",
+      "text": "be big off n if every one of them is a leader. So this is the C++ code. If you want the equivalent Java and Python code, what you can do is you can go to the link in the description and you can go across the article. There are Java and Python code over there as well. So going back to the sheet, I can say that this problem is also done. So if you've understood everything, make sure you hit that like button. And if you're new to our channel, what are you waiting for? Please, please do consider subscribing to us because that's the only thing that keeps you motivated to make these kind of videos. And yes, to continue our tradition, do comment understood so that I get to know that you're understanding everything. And if you haven't followed me on Instagram, Twitter, LinkedIn, all the links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye, take care."
+    }
+  ]
+}

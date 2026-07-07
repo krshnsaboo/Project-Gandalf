@@ -1,0 +1,36 @@
+{
+  "lecture_id": "L114",
+  "lecture_number": 114,
+  "lecture_title": "L42. Floor in a Binary Search Tree | BST | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=xm_W1ub-K-w",
+  "chunks": [
+    {
+      "chunk_id": "L114_C1",
+      "start": 0.0,
+      "end": 79.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=xm_W1ub-K-w&t=0s",
+      "text": "Before starting this video, I would love to thank Relible for sponsoring this entire tree series. The placement season is here. I know a lot of you are planning to sit for companies which come on campus. In case you are disappointed that the top startups like Cred, UpGrad, Razorpay are not hiring directly from your campus, there is an easier way to work here. Just register for the Relible test conducted by Relible by Unacademy and you will get a chance to apply for front-end, back-end and business development roles at India's top startups and unicorn companies. Relible has 1000 plus openings by 50 plus companies and the best thing is it's absolutely free. So please make sure you check out all the links in the description and give the Relible test as soon as possible. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, floor in a binary search tree. What does this signify? Basically, you will be given a key. Assume the key is given as 7. In this entire binary search tree, you have to figure out which value is the greatest value that's smaller than or equal to 7. I repeat, that's smaller than or equal to 7. So I can say the greatest value that is smaller than or equal to 7 is indeed 6."
+    },
+    {
+      "chunk_id": "L114_C2",
+      "start": 79.58,
+      "end": 157.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=xm_W1ub-K-w&t=79s",
+      "text": "than or equal to 7. So I can say the greatest value that is smaller than or equal to 7 is indeed 6. So I can say the floor, if the key is given as 7 will be 6. Similarly, if I modify the key to be something like 14, which is the greatest value that's smaller than or equal to 14, that's going to be 10. So that's the definition of floor in a BST. I need to figure out the greatest value that's smaller than or equal to a given key. So how do you do that? Very, very simple. Let's see. Okay, so assuming that the key has been given as 9, and I want to figure out which is the greatest value that's less than or equal to key. So it's very simple. What you do is, you start doing a binary search. You start off right at the root, that's 10, right? And that's definitely greater than your key. So that cannot be your answer. So you can keep an answer variable. That cannot be your answer for sure. So what do you do is, you try to move left because 10 is indeed greater than 9, but you want someone lesser than. So you have to move left. So move left. Over here you have 5. So you got someone who's lesser than 9. So 5 is as of now your answer. Now what do you want?"
+    },
+    {
+      "chunk_id": "L114_C3",
+      "start": 157.82,
+      "end": 227.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=xm_W1ub-K-w&t=157s",
+      "text": "you have 5. So you got someone who's lesser than 9. So 5 is as of now your answer. Now what do you want? You want this value to be as large as possible. So if you want to make this large, will you move left or will you move right? It's an obvious answer. You will definitely move right. Why? Because if you move right, this answer 5 will increase. Now you have a 8 that's lesser than 9. Yes, that's lesser than 9. So you can take this 8. So answer will be updated to 5. Now you want to increase this 8 further. You want to increase this 8 further. So what will you do? You will definitely move right. And the moment you move right, you reach null. So you can stop. So ultimately the answer is storing something as 8. That's how you get the BST. Just keep on moving, keep on moving in order of increasing this value. Just try to move in such a way that this value is always increased. And whatever is the last answer stored, is definitely going to be your floor in a binary search tree. So if I discuss the code, the C++ and the Java code are almost identical. So I'll be just telling you the C++ code. You're given the root, you're given the key. Very simple. Initially store the answer of the floor as minus 1."
+    },
+    {
+      "chunk_id": "L114_C4",
+      "start": 227.58,
+      "end": 292.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=xm_W1ub-K-w&t=227s",
+      "text": "you the C++ code. You're given the root, you're given the key. Very simple. Initially store the answer of the floor as minus 1. If that's equivalent to key, then there's no need to go left and right. You cannot increase this any further. Store in the floor and return the floor or you can directly return the root.val. Now what if the key that's given to you, that's greater than the current root.val that you're standing at. If that's the case, then you need to increase it. And in order to increase it, you move right. Just make sure you store the floor. Whatever it's not, then just go left. Because you need to decrease. You need to decrease. You need to have it under key. Yes, you need to have it under key. So just go left. That's how you can find floor in a binary search tree. So I hope you've understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

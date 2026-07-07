@@ -1,0 +1,120 @@
+{
+  "lecture_id": "L130",
+  "lecture_number": 130,
+  "lecture_title": "G-5. Breadth-First Search (BFS) | C++ and Java | Traversal Technique in Graphs",
+  "youtube_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k",
+  "chunks": [
+    {
+      "chunk_id": "L130_C1",
+      "start": 0.0,
+      "end": 79.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=0s",
+      "text": "So in order to solve any graph problems, we have to know traversal techniques. And the first traversal technique that we are going to learn is BFS traversal technique. Now what is BFS? It is nothing but the breadth first search technique. Okay. You must have heard about this if you have read trees. So this is the first technique that we are going to learn. And in the next video, we will be learning something as DFS. We'll talk about DFS in the next video. But as of now, let's focus on BFS. In order to solve any problem, you have to know the traversal technique. So you cannot skip this video. So what is BFS? As the name suggests, breadth, very important term, breadth first search. Now usually graphs are of two kinds. One can be the one based indexing graph, which is this one. If you carefully see, n is eight over here and the graph numbering starts like the node numbering starts from one. Or it can be zero based indexing where the graph numbering starts from zero. That is okay. You just need to make sure you write the code according to that, but the logic remains same. So let's come back to BFS. So what is breadth first search? So this term is very important. Breadth. It kind of signifies level wise traversal as well."
+    },
+    {
+      "chunk_id": "L130_C2",
+      "start": 79.12,
+      "end": 156.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=79s",
+      "text": "BFS. So what is breadth first search? So this term is very important. Breadth. It kind of signifies level wise traversal as well. This is also called as level wise traversal. But yeah, generally the generic term is breadth first. So let's understand. So usually they will be telling you a starting node. So assume I see you over here, the starting node is one. So I'm seeing that this is the starting node. Okay. Now what we see is, okay, this is at the level zero. That is what we generally see. This is at level zero. And then you see these guys are at a distance of one. So they'll call them as level one. Then you see these guys are at level two. And then you see this guy is at level three. So what you do is in breadth first search traversal, first you visit the first guy, that is the starting node. And you write that. So that, that is something that you have written. Then you go to all the guys that are on the next level. So this was at the zeroth level. So the next level will be nothing but first. So I can say this is at the first level and this is at the first level. And the breadth first search traversal, you can either traverse this and then this, or you can either traverse two and then six. That is completely your choice."
+    },
+    {
+      "chunk_id": "L130_C3",
+      "start": 156.82,
+      "end": 233.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=156s",
+      "text": "search traversal, you can either traverse this and then this, or you can either traverse two and then six. That is completely your choice. So I will decide to travel to six. You can travel six, two as well. That is completely okay. So this is also done. Now the next level is level two. And you know, these all guys are level two, correct? So what do you do is you say, okay, again, you can write three, four, seven, eight. You can write something like eight, seven, four, three. That is completely your choice. As long as you are traversing all the nodes in the level wise fashion, we are completely okay with it. So it is like three, four, seven, eight. So see, this is level zero. This is level one. And all of these are level two. So the level two can be traversed in any of the ways, but they should be traveled together. Okay. Next will be level three and this is level three. So I can say this is level three. So this will be the breadth first BFS traversal of this particular graph. But if the starting node is one, very, very important. If the starting node is one, what if I change the starting node? So let's quickly change the starting node and understand BFS in depth. So assume I tell you that the starting node as of now is six. Okay. So I've changed the starting node. Remember this?"
+    },
+    {
+      "chunk_id": "L130_C4",
+      "start": 233.34,
+      "end": 309.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=233s",
+      "text": "depth. So assume I tell you that the starting node as of now is six. Okay. So I've changed the starting node. Remember this? This is the starting node and this is at level zero. If this is at level zero, you cannot say this to be at level zero. No, this only one node can be at level zero. So you write six at level zero. If I ask you which is at level one, then what do you do is you say this is at a distance one. This is at a distance one. This is at a distance one. So all of these guys are at equivalent distance. Very, very important. All of these guys are at equivalent distance. So thereby you call them as level one, level one and level one. Again, you can travel one first, then seven, then eight. That is your choice. So I'll decide to travel one, seven, eight. So this is level zero. This is level one. You need to understand the distance, distance, breadth. It goes equivalent in the breadth. So it was here. It went equivalent in the breadth. That is very important to understand. Okay. Next, if I ask you the next level, that's two. So for this, this is level two. This is level two. And are there anyone else who is level two? I don't see. So I can say, okay, this guy is level two. And this particular guy is level two."
+    },
+    {
+      "chunk_id": "L130_C5",
+      "start": 309.98,
+      "end": 381.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=309s",
+      "text": "who is level two? I don't see. So I can say, okay, this guy is level two. And this particular guy is level two. So you can again, write something like two and five. So this is level two. Perfect. And it's time for level three. So obviously one, two, three. So this will be three. So maybe one, two, three, this will be three. And are there any other? No. So this is three. This is three. So there are two guys who are three. That's very important. You travel breadth wise, breadth wise, and everything depends on the starting node. Depending on the starting node, the traversal will change and you will always travel in the breadth wise manner, in the breadth wise manner. I hope that is clear. In order to do a BFS traversal, there is an initial configuration that you need to start off with. So whatever is the starting node given to you, what do you do is you clearly take a queue data structure. If you don't know queue data structure, please read about that. You take a queue data structure. Queue is nothing but first in first out. The guy who goes in first gets out first. So the initial configuration says I'm going to define a queue data structure and that will always contain this particular guy. Remember this. That will always contain this particular guy starting node. And there is another thing that you need to do."
+    },
+    {
+      "chunk_id": "L130_C6",
+      "start": 381.38,
+      "end": 458.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=381s",
+      "text": "this particular guy. Remember this. That will always contain this particular guy starting node. And there is another thing that you need to do. You need to create something as a visited array. And this visited array is something which is very common in all the graph questions. And over here, if you see the node is numbered till nine and since the graph is one based, what you'll do is you'll create this visited of a size 10. Okay. Please make sure you create of a size 10. So this is like 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. So this will be the visited one. And whatever is the starting node, you go over there and you mark it as one and everyone else will be marked as zero. So over here, please understand this one means this guy is already in the queue. Whenever I say someone has been traversed, someone has been touched, we mark that as visited. This will be the initial configuration. Initially a queue which contains a starting node, initially a visited array, which will be of size depending on it. So one based or zero based, you can decide. And the starting node will be traversed. So thereby it will be marked as one. This is going to be the initial or the starting configuration in a BFS traversal. What is the next step that you'll do?"
+    },
+    {
+      "chunk_id": "L130_C7",
+      "start": 458.16,
+      "end": 537.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=458s",
+      "text": "This is going to be the initial or the starting configuration in a BFS traversal. What is the next step that you'll do? Whatever is in the queue, you will start taking it out, start taking it out, start taking it out till the queue is not empty. Remember this, keep taking out, keep taking out till the queue is not empty. Okay. So whatever is the queue data structure, I take it out and you'll print it. So assume I print this. So this is printed, right? This is printed as a BFS traversal. Now very important, whatever you take out of the queue, one you took out of the queue. So if you remember this graph, you would have stored this in some data structure and which data structure was that? That data structure was adjacency list. Do you remember? Yes. So what will be the adjacency list for this particular graph? When I say for zero, it will be an empty data structure. For one, it will be storing this two and six. Remember this? Okay, let's write for the next. For three, it'll just be storing two. So please write that. So for two, you have to write in the next step. For two, it will be storing one, three and four. So let's write one, three and four. Next will be for three. Let's check out for three. For three, it's just storing two. So let's store two in it."
+    },
+    {
+      "chunk_id": "L130_C8",
+      "start": 537.72,
+      "end": 616.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=537s",
+      "text": "and four. Next will be for three. Let's check out for three. For three, it's just storing two. So let's store two in it. Next will be four. For four, it is having five and two. So for four, it'll be two and five. For five, for six, for seven, for eight. Similarly create the entire adjacency list that I have already taught you in the second video. So kindly create this and after that we can start off with the BFS traversal. So this is how the entire adjacency list will look like. Now whenever you take the first element out and you print it, what do you do is you go to one and you say, who are your neighbors? I repeat, you ask who are your neighbors? And how will you know who are its neighbors?"
+    },
+    {
+      "chunk_id": "L130_C9",
+      "start": 616.92,
+      "end": 693.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=616s",
+      "text": "who are your neighbors? And how will you know who are its neighbors? If you remember well enough in the graph, you can see that two and six are its neighbors. Two and six are its neighbors who are at an equivalent distance. So if you remember, this guy stores all the neighbors. Remember in the second lecture I told you, so who are the neighbors of one, two and six. So what do you do is you take two, you take six. First take two, put that into the queue data structure. And mark it as one. Next take six, put it into the queue data structure and mark it as one. Perfect. Done. So first iteration of one is done. So it is very simple. Let me repeat. You took out one, you basically went to its neighbors and you put that into the queue and marked it as visited. Next time, take out the next guy. So I'll take out the next guy too. Do the same thing on this too as well. Go to two's neighbors. Who are two's neighbors? How will you know? Again, two's neighbors are one, three, four. Very obvious. One, three, four are its neighbors and that is stored in the adjacency list. So two's neighbors were one. But remember this, one will not be put into the queue. Why? Because you've already traversed one. Because you've already traversed one. How will you know that?"
+    },
+    {
+      "chunk_id": "L130_C10",
+      "start": 693.12,
+      "end": 772.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=693s",
+      "text": "one will not be put into the queue. Why? Because you've already traversed one. Because you've already traversed one. How will you know that? Because, because yes, one is already marked as visited. So you already know one has been touched or traversed. So you'll not take one. Instead of that, what you'll do is you will simply omit one and you'll not put that into the queue. Let's check out the next. It is three and four. So you'll just take three and you'll take four and put that into the queue and mark three and four as visited. Perfect. This is done. Next, you take the next element out. Six. So six is there. Again, do the same thing for six. Who are six's neighbors? One already visited. Seven, not visited. Nine, not visited. So you take seven and you take nine and you put that into the queue data structure. At the same time, mark seven as true, nine as true. Perfect. Done. Six is done. What is the next thing? Three. Let's take out three. Who are three's neighbors? Just two already visited. Nothing to do. So three is also done. Let's take the next one out. Four. Who are four's neighbor? Two. Who are two's neighbors? Two already visited. Five. Take five. Put that into the queue. Mark five as true. Perfect. Four is also done. Next, take seven. Who are seven's neighbors? Six. Visited."
+    },
+    {
+      "chunk_id": "L130_C11",
+      "start": 772.16,
+      "end": 851.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=772s",
+      "text": "five. Put that into the queue. Mark five as true. Perfect. Four is also done. Next, take seven. Who are seven's neighbors? Six. Visited. Eight. Not visited. Take eight and put that into the queue and mark it as visited. Perfect. Next. So, nine. What about nine? For nine, there's one neighbor's neighbor. But that is already visited, so done. Next, take five. Five, who's the neighbor? Four and eight. And if you carefully see four and eight are already visited, so no need to do anything. Five is also done. Next, take eight. 8, if you see 5 and 7 are already visited, no need to do anything. So this is also done. Apparently, if you see this is your BFS traversal. Yes, this is your BFS traversal. 0th level, 1st level, 2nd level and the 3rd level if you carefully see. So we were successfully able to print the BFS traversal of a particular graph. Right now it's time that we check out the code. So I hope you have understood the entire explanation. Now it's time to check out the C++ code and the Java code. So what I'll do is I'll write the C++ code and I'll"
+    },
+    {
+      "chunk_id": "L130_C12",
+      "start": 851.48,
+      "end": 917.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=851s",
+      "text": "out the C++ code and the Java code. So what I'll do is I'll write the C++ code and I'll explain every step and the Java code is on the left so that you can just follow for every corresponding C++ step, what will be the Java code and we are going to follow the same structure of code. So you'll not face a problem. So generally what will happen is you'll be given a something like vector int, where you have to store the BFS and return and always you'll be given the number of nodes and you will be given the adjacency list. You don't need to create the adjacency list. They'll be giving you the adjacency list in almost all the problems. Now this problem states a directed graph, but we will be coding this for an undirected graph and then I'll tell you why the same code will work for directed graph as well. Okay. So what is the initial step if you remember? So first let's quickly check if this is a zero based indexing graph. So if you see it is a zero based indexing graph because the graph is starting from zero, right? So what you will do is you will just create an identity visited array of n size and probably mark everything as this. And you know, the initial configuration will be having zero and we will have a queue. Okay. And in the"
+    },
+    {
+      "chunk_id": "L130_C13",
+      "start": 917.36,
+      "end": 989.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=917s",
+      "text": "mark everything as this. And you know, the initial configuration will be having zero and we will have a queue. Okay. And in the queue, you know, it will, it will be having the starting node. Now what we did, we always took out everything from the queue till there was something in the queue. So can I say always take out like till it is having something till it is having something till the size is like still is not empty. Just take it out. And I can see the node that is taken out, like it will be q.front and we can just see q.pop. So this will make sure you always get the node. And can I see if I have to store the VFS, I can just do it over here and I can easily store whichever node comes out. That's that, that is what gets into the VFS. Done. What is the next thing that we did? We always took out the node if you remember and we checked out its neighbor nodes, right? So who is storing the neighbor nodes? Yes, the adjacency list. So for this node, can I see if I do auto of it of adjacency nodes, what does this mean? Whenever I write adjacency node, I'm saying index node, that adjacency element will be a vector. If you remember the vector adjacency list, if you remember"
+    },
+    {
+      "chunk_id": "L130_C14",
+      "start": 989.68,
+      "end": 1065.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=989s",
+      "text": "adjacency node, I'm saying index node, that adjacency element will be a vector. If you remember the vector adjacency list, if you remember the list, if you say index, that index is storing a vector and that vector is storing all the neighbor elements. So you have to just iterate on them. So these are the neighbor elements it. You just need to check, have they been previously visited? If not, you say, okay, let me visit them. Very simple. And let me put them into the queue as well so that in the next step they can be taken into the VFS. Once this is done, you can say this is my answer. Once this is done, you can always say, this is my answer. Okay. Now let's quickly compile this and check. So if you see the compilation is successful and let's quickly now submit the code and check if it's working fine. And so it's time to understand the space complexity and the time complexity. Space complexity is very simple. A queue, a visited node and a VFS list. So we go off three N which is almost equivalent to B go off N and the adjacency list is given to you. So you can just omit this. And what about the time complexity? Time complexity is very simple. Now if I go and analyze the time complexity, I know one thing for sure. If you look at the code in the code, this"
+    },
+    {
+      "chunk_id": "L130_C15",
+      "start": 1065.84,
+      "end": 1143.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=1065s",
+      "text": "if I go and analyze the time complexity, I know one thing for sure. If you look at the code in the code, this is running and you know, every time a node will come and go into the VFS. So a node goes once into the VFS. I know for sure goes once into the VFS, right? So if a node goes once into the VFS and it runs on all its neighbors, can I say it runs on all its degrees, runs on all degrees? So can I say it's something like while q not empty and then there's a for loop and this for loop runs for all node and it'll run for the number of degrees of that node because if this guy has three neighbors, it's going to run for three neighbors, all degrees. So can I see this for loop is what it is running. So thereby, thereby I can say the time complexity to be the queue itself will run B go off N times because there are N nodes and this inside guy will run for total degrees. And if you remember the total degrees, we have already concluded as twice of edges. This was done in the first lecture, the total degrees because for every node we traverse all the neighboring nodes, this will be the"
+    },
+    {
+      "chunk_id": "L130_C16",
+      "start": 1143.88,
+      "end": 1178.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=-tgVpUgsQ5k&t=1143s",
+      "text": "done in the first lecture, the total degrees because for every node we traverse all the neighboring nodes, this will be the time complexity for this particular guy. So guys, I hope you have understood the entire VFS algorithm just in case you did, please, please, please make sure you like this video. And if you're new to our channel, what are you waiting for, man, just hit that subscribe button right away. And with this, I will be wrapping up this video. If you haven't checked out our DPCs and the SD sheet, the links are in the description. Make sure you check it out. But this let's wrap up this video. Let's meet in some other video. Till then, bye bye. Take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

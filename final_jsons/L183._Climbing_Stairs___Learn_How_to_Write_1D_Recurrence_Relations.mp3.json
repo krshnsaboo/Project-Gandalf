@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L183",
+  "lecture_number": 183,
+  "lecture_title": "DP 2. Climbing Stairs | Learn How to Write 1D Recurrence Relations",
+  "youtube_url": "https://www.youtube.com/watch?v=mLfjzJsN8us",
+  "chunks": [
+    {
+      "chunk_id": "L183_C1",
+      "start": 0.0,
+      "end": 70.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=mLfjzJsN8us&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So welcome back to the second lecture of the dynamic programming playlist. We are going to solve a problem which is count ways to reach the nth stairs. Yes. So what does the problem actually state? It states that you'll be given a number of stairs. So you'll be given n which is the number of stairs. Initially you are at the 0th stair. That means you are at the 0th stair. Okay. And you need to reach the nth stair. Like you have to reach the nth stair. Now each time you can either climb one step or you can either climb a couple of steps. Now you're supposed to return the number of distinct ways in which you can climb from the 0th step to the nth step. Now, for an example, if I'm giving you n is equal to three, then I can say if from the 0th step, I take one step, then I take one more step. Then if I take one more step, I'm going to reach the third. Or from zero, if I take two step and then I take one step, I'm going to reach the third. Or from zero, if I take one step, then if I take two steps, I'm going to reach the third. So I can see these three"
+    },
+    {
+      "chunk_id": "L183_C2",
+      "start": 70.48,
+      "end": 146.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=mLfjzJsN8us&t=70s",
+      "text": "if I take one step, then if I take two steps, I'm going to reach the third. So I can see these three are three distinct ways in which you can reach the third step. So the problem is very simple. You have to tell me the distinct ways in which you can reach the third step. So the problem is very simple and straightforward. You have to tell me the distinct ways in which you can reach the nth stair if you start from the 0th stair. So remember one thing, in all the 1D problems, like generally in DP, in all the 1D problems, I'll be telling you a So first let's understand how do you understand that this is a DP problem. That's the first step before applying DP. You have to understand that this is indeed a DP problem. Now, whenever they say, whenever the questions are like this, generally, whenever the questions are like this, count me the total number of ways. So that's the first point. Count the total number of ways. The next can be, probably there might be multiple ways of doing something and they're asking you to figure out which gives you the minimum output or the max output. So the question might be like, there are multiple ways to do this, but you got to tell me which is"
+    },
+    {
+      "chunk_id": "L183_C3",
+      "start": 146.72,
+      "end": 224.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=mLfjzJsN8us&t=146s",
+      "text": "output. So the question might be like, there are multiple ways to do this, but you got to tell me which is giving you the minimal output or maximal output. Generally in these kinds of questions, you tend to apply recursion. Why? Because if I'm saying you count distinct ways, that means I'm saying you that, okay, figure out how many ways are there. So you have to try all possible ways. Remember this, whenever the concept of try all possible ways comes in, try all possible ways comes in, whenever it can be anywhere. If the concept of try all possible ways comes in, and if there is like count or if there is like figure out the best way, if out of all the possible ways you have to figure out, count like how many ways are there or the best way, that's when you try to apply recursion. What did I say? That's when you try to apply something as recursion, where you try all possible ways. And if you remember in the lecture seven of the recursion playlist, in the lecture seven of the recursion playlist, I told you, if you have to count all ways, then you have to perform all the ways and then sum it up. If you have to figure out the best way, then you have to perform all the ways and tell which is the best among them."
+    },
+    {
+      "chunk_id": "L183_C4",
+      "start": 224.24,
+      "end": 285.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=mLfjzJsN8us&t=224s",
+      "text": "have to figure out the best way, then you have to perform all the ways and tell which is the best among them. So you'll understand these things in depth. But as of now, just understand that whenever the problems tells you to figure out or like try out all possible ways, then you tend to think of recursion, where recursion says, I'm going to try all possible ways, whether I can count or probably I can found the best. That's when you think of recursion. And once you think of recursion, then you can think of dynamic programming. But the first step is try to figure this out, that this is a recursive problem. That's the first step behind every problem. Like over here, it has n equal to three. So you're like, okay, from zero, you will take one step to one. From one, you'll take one step to one. From two, you'll take one step to one and you'll reach three. Or from zero, you'll take two steps to two, then you'll take one step to three, you'll reach. Or from zero, you'll take one step to one, then you'll take two steps to three. So these were the three possible ways in which you can reach. So what is this giving you an idea? Try all possible ways. Yes. So a lot of people say that if you can master recursion,"
+    },
+    {
+      "chunk_id": "L183_C5",
+      "start": 285.52,
+      "end": 357.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=mLfjzJsN8us&t=285s",
+      "text": "is this giving you an idea? Try all possible ways. Yes. So a lot of people say that if you can master recursion, you can master DP. So I'm going to teach you a trick. I'm going to teach you a shortcut trick, which will be helpful in all the problems in DP. And you will be able to write every recurrence relation. So the step one of that trick is try to represent the problem in terms of index. Like if it's an array problem, there will always be an index. But if it's not an array problem, then also try to represent the problem in terms of index. Remember this. You will always do this. Try to represent the problem in terms of index. Next, do all possible stuffs on that index. Do all possible stuffs on that index according to the problem statement. According to the problem statement. Step three. If the question says count all the ways, sum up all stuffs. Sum up all stuffs. If the question says count all ways. If the question says find minimum, take minimum of all"
+    },
+    {
+      "chunk_id": "L183_C6",
+      "start": 357.12,
+      "end": 433.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=mLfjzJsN8us&t=357s",
+      "text": "stuffs. If the question says count all ways. If the question says find minimum, take minimum of all stuffs. If the question says find maximum, you'll take the maximum. Remember these three points. If you remember these three points, you can solve any recurrence. And if you are able to write the recursion, then you can memorize it to convert it into DP. And then you can tabulize it. And after that you can space optimize it. So over here, what was the problem? The problem was you are at zero and you have to reach n. The person has to reach n. So assume, this is not an array, this is like zero to n, the stairs. Assume these stairs to be indexes. I call a zero to be an index. I call one to be an index, two to be an index, three to be an index, four to be an index, five to be an index and everything. Assume I'm calling them as index. Treat them as an index. So step one, I've understood how will I represent this problem in terms of index. That is something which I've understood. Now, next step is to realize what will your recursion give. So I can say if I write a recursion, that recursion should tell me the number of ways in which I can reach from zero to n. If I'm calling a recursion as f of n, he should tell me what are the number of ways"
+    },
+    {
+      "chunk_id": "L183_C7",
+      "start": 433.44,
+      "end": 510.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=mLfjzJsN8us&t=433s",
+      "text": "can reach from zero to n. If I'm calling a recursion as f of n, he should tell me what are the number of ways in which I can reach from zero to n. That should be the recursion's job. I am like, yeah, that's true. So what if I write it as f of index? So can I say the base case is very simple? If I'm standing at the zero stair, there is no other way. There's only one way in which I can, like if I'm standing at zero, there's only one way. I cannot jump. There's only one way. Next, we have converted the problem in terms of index. What's the step number two? Do all possible stuffs on that index. Yes. Do all possible stuffs on that index. What are the questions treating? Either it can jump one, either it can jump two. So from a stair, you can jump one or you can jump two. So what can you do on that index? Jump one or jump two? Do it. What are you waiting for? So I can say, one of the things that I can do is jump one. So if you're starting, like if you're going from top to down, if you jump one, you will go back one index. If you jump two, you will go to index. Simple. Correct. Now, now what? Now can I see, okay, that's, that's pretty, pretty perfect."
+    },
+    {
+      "chunk_id": "L183_C8",
+      "start": 510.72,
+      "end": 567.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=mLfjzJsN8us&t=510s",
+      "text": "If you jump two, you will go to index. Simple. Correct. Now, now what? Now can I see, okay, that's, that's pretty, pretty perfect. Now can I say one thing? If I can jump one index and if I can jump two index, there are a couple of ways in which I can jump. So there are a couple of steps that I can do. Now if someone is saying me to count all distinct ways, I know recursion will do its job because you'll go in depth and count all the ways. Lecture seven. Please go and watch our lecture seven. I've taught you about how does it count all the ways. If you return one at the base case, please go and watch our lecture seven if you haven't, because over there, I've taught you, how do you count all ways by returning a one on the base case. I've taught you that. So please watch our lecture seven in the recursion. Pause it if you haven't watched it. So you know how to count all ways. If this is the left recursion and this is the right recursion in order to count all the ways I told you, right? You have to return left plus right. That's what you need to do. So if you write this recursion, it is going to work, but still there's an edge case."
+    },
+    {
+      "chunk_id": "L183_C9",
+      "start": 567.04,
+      "end": 643.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=mLfjzJsN8us&t=567s",
+      "text": "That's what you need to do. So if you write this recursion, it is going to work, but still there's an edge case. Yeah, there's an edge case. So can I say, can I say that if you're doing index minus two, now think about these edge cases. I did not tell you. What if you're standing at one? What if I'm just calling F of one, then one minus two will become minus one. So there might be a problem. So you can introduce one more edge case, something like this again, if index is equal to equal to one. So can I say, uh, if you're standing at one, there's only one way in which you can go zero. So you can return a zero. Done. What is this looking like? Like, what do you think? Which question is this like? I'll be like, yeah, this is Fibonacci. Yeah, absolutely. You solved this problem in the previous one. So you saw this, how I took a different problem, how I analyzed it and converted it into Fibonacci. So what I can say is this problem is nothing but similar to Fibonacci number. If you carefully write the recurrence and the possible ways to write a recurrences, try to represent the problem in terms of index, do all possible stuffs on that index."
+    },
+    {
+      "chunk_id": "L183_C10",
+      "start": 644.64,
+      "end": 708.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=mLfjzJsN8us&t=644s",
+      "text": "possible ways to write a recurrences, try to represent the problem in terms of index, do all possible stuffs on that index. If it is saying, if the question is saying count, always you will sum up all the stuffs. If the question is saying find minimum, you will speak minimum of all the stuffs. That is how you should solve any given question. So you can easily memorize it. After that you can convert into the tabular form. And then after you can space optimize it. And we have already done this in the lecture one. So I'll not be doing that again. The main reason why I picked up this problem was to tell you, even if I did not know, this was a Fibonacci. I told you how to write the recurrence. And after that you figured out it's a Fibonacci. But even if you don't know Fibonacci, you can definitely solve this problem. Now in Code Studio, if I take you to the Code Studio, the value of n is given as 10 to the power 18. So either in the tabular form, even if you run a for loop, you cannot run a for loop till 10 to the power 18. Even if you do the space optimization, you cannot run a for loop till 10 to the power 18. So a big O of n approach will not work. So in"
+    },
+    {
+      "chunk_id": "L183_C11",
+      "start": 708.72,
+      "end": 777.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=mLfjzJsN8us&t=708s",
+      "text": "cannot run a for loop till 10 to the power 18. So a big O of n approach will not work. So in order to find Fibonacci, you have to actually use matrix exponentiation, which helps you to find this in logarithmic of n. I can discuss this in some other lecture, but the main focus of today's lecture was to tell you how to convert any unknown problem to a recurrence. And then you can easily write the tabular and the space optimized. I'm not writing the tabular and space optimized in this lecture because I've already done that in the lecture one. If I would have not done that in the lecture one, I would have done it over here, but I'm just skipping it because I've already done it. So please remember these three points are important, which I wanted to convey you in this particular lecture. So the main intention of this lecture was to teach you the shortcuts, the three points, which helps you to build a recurrence because after that it's memorization, then tabulation, and then space optimization. So I hope you have got this. Keep these three points in your brain because in the next lecture, we'll be solving a problem, which will be much, much more interesting. And you can use these three points to solve that particular problem as well. So with this, let's wrap up this video. And yes, as a trend, please, please write understood,"
+    },
+    {
+      "chunk_id": "L183_C12",
+      "start": 777.84,
+      "end": 796.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=mLfjzJsN8us&t=777s",
+      "text": "to solve that particular problem as well. So with this, let's wrap up this video. And yes, as a trend, please, please write understood, if you have understood this particular lecture and the three points and make sure you like this video. And if you're new to this channel, please, please, please do consider subscribing to us. And yeah, with this, let's wrap up this video. Bye-bye. Take care."
+    }
+  ]
+}

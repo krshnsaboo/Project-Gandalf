@@ -1,0 +1,85 @@
+{
+  "lecture_id": "L158",
+  "lecture_number": 158,
+  "lecture_title": "G-33. Dijkstra's Algorithm - Using Set - Part 2",
+  "youtube_url": "https://www.youtube.com/watch?v=PATgNiuTP20",
+  "chunks": [
+    {
+      "chunk_id": "L158_C1",
+      "start": 0.0,
+      "end": 79.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=PATgNiuTP20&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. In the previous video, we have learned about dextrose algorithm using priority queue. If you haven't seen that video, please, please go back and watch it because you won't understand anything in this video because it's an extension. It's just an extension of the previous video. Okay. So in the previous video, we did implement dextrose algorithm using the priority queue, right? But in this video, what I'll do is I'll try to implement our dextrose algorithm using the set data structure. So if you remember, what did we do in the previous video, we just took a priority queue, right? And we stored everything in terms of distance and node. Why did we keep priority queue? Because we always wanted the minimum distance at first. That is the reason we took priority queue. Okay. Now set, what is the definition of a set? Set stores unique values and the smallest at the top, smallest at the top, and then it stores everything in the ascending order. If you know set data structure, it stores everything in the ascending order, right? So that is what we were doing in priority"
+    },
+    {
+      "chunk_id": "L158_C2",
+      "start": 79.2,
+      "end": 155.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=PATgNiuTP20&t=79s",
+      "text": "set data structure, it stores everything in the ascending order, right? So that is what we were doing in priority queue as well. In priority queue, we were looking for the minimum distance. If we take set, it's going to do the same. If you look at the topmost element, it'll always be the minimum guy because set stores everything in ascending fashion. However, there is one other reason why I'm going to use this particular set data structure. And I'll explain you, again, doing a dry run on the same example. Okay. So we'll take a same set data structure, a distance, a node, a source node, and initially as usual, put zero and everything else to be infinite. That's what I'll start off with. And I'll just put off distance zero and the source zero in the set data structure. So let's take it out and erase it. So distance zero with a node zero. Okay. Let's quickly move it to its adjacent nodes. I'll just go quick because you already know about it. This is going to take plus four. So the updated distance will be four. I can reach at an updated distance of four. Thereby I'll go and see updated distance of four and a node one in the set data structure. I can also reach the"
+    },
+    {
+      "chunk_id": "L158_C3",
+      "start": 155.24,
+      "end": 219.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=PATgNiuTP20&t=155s",
+      "text": "I'll go and see updated distance of four and a node one in the set data structure. I can also reach the node two by taking a distance of four. So another updated distance of four. So four comma two will come here. Right? And this is how we can wrap up the first node. So right after the, right after the first iteration, four comma one will appear at the top because these two are same. So it is differentiated by the node number. So four comma one will tend to appear at the top. So what I'll do is I'll take the four comma one this time. The distance is four and the node is one. Yes. The distance is four and the node is one. So if I have no one, if I have no one, where can I go from one? I can go to zero and do. So I'll try to go to zero, which is node zero, which will end up taking me for, which will make the distance eight, which will, which I'll not consider. I'll try to go to node two by taking a distance of two, which will make the distance of six, which will again not be considered. So this is done. All right. I'm going quick because you already know this. Next I'll take four to four node two from node two. Where can you"
+    },
+    {
+      "chunk_id": "L158_C4",
+      "start": 219.64,
+      "end": 279.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=PATgNiuTP20&t=219s",
+      "text": "right. I'm going quick because you already know this. Next I'll take four to four node two from node two. Where can you go? You can go to node zero. That'll cost you four, which will make it a distance of eight, which will not be considered. You can go to node one as well, which will take your distance of two, make it six, which will not be considered. These two things will not be considered. If you're started to, there are other things like three, four, and five where you can go. So let's try to go to node three. So if I try to go to three, it'll take me a distance of three, which will make me a distance of seven. That will be considered. The seven comma three will be considered. So you can put that into the set data structure, right? You can. So once three is done, we will go to the next node, which is node four. And how much will we take? We'll take one, which will make the distance as five. So five comma four is not the shortest one. It'll go at the top. I'll update the distance here, which is the next node. The next node is five. I'll take a distance of six, which will make it a 10. So 10 comma five is what goes into the set and we'll update 10 over here. So I can say"
+    },
+    {
+      "chunk_id": "L158_C5",
+      "start": 279.96,
+      "end": 352.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=PATgNiuTP20&t=279s",
+      "text": "make it a 10. So 10 comma five is what goes into the set and we'll update 10 over here. So I can say this iteration is over. So we can just go and omit this portion of, okay, done. Now is where you understand. Let's go on the set and get the smallest one, which is five comma four distance of five, which is the node four. Okay. Where can four go? Four can go to two. If you carefully see in the graph, which will take it a distance of one, which will make it a six, which is not to be considered. But from four, you can go to five, which is going to take three plus three is what it'll take to go to five, which will make it eight. And this is where you see previously five was reachable at 10, not infinite. If it would have been infinite, please hear my words properly. If it would have been infinite, it means no one reached it ever. But since it is 10, it means someone reached 10. Someone reached 10 previously. Please hear me out properly. At five, we do not have an infinite. We have a 10. Had it been infinity, it means the first time someone is reaching five, but since it is 10, it means someone has reached five,"
+    },
+    {
+      "chunk_id": "L158_C6",
+      "start": 353.64,
+      "end": 420.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=PATgNiuTP20&t=353s",
+      "text": "been infinity, it means the first time someone is reaching five, but since it is 10, it means someone has reached five, which took him a distance of 10. So I'm sure there will be a 10 comma five in the set. I'm sure there'll be a 10 comma five in the set because someone reached five at a distance of 10. I'm sure. Right. So if I'm sure I'm getting a better one and I'm putting that into the set data structure, I'm doing like an eight comma five will go here. Like if I go and erase this portion, something like an eight comma five will go here. If an eight comma five goes, is there a point in keeping 10 comma five? No. This is where you see, I know the set will have a 10 comma five set. Please erase it. Right. I think you cannot erase. I think you will do the iteration, but set will say, I have a liberty. I can do this. It is operation. I'll go and erase it. The moment I see there's a better alternative, I will definitely put an eight comma five, but before putting in, I'll say there's no need of 10 comma five. I can reach five in a much, much better distance. And if I can reach five in a much, much better distance, why don't I use that"
+    },
+    {
+      "chunk_id": "L158_C7",
+      "start": 420.2,
+      "end": 498.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=PATgNiuTP20&t=420s",
+      "text": "in a much, much better distance. And if I can reach five in a much, much better distance, why don't I use that better distance? Why will I end up using 10? I don't need extra iterations. I don't want, I don't want in the future that this happens like, I don't want in the future that in the next step, probably I'll get eight and I'll do four, five. And then again, I'll take five and do it. Then that won't be of any use because if eight was taken prior to 10, it would have given me the shortest distance. There's no point in taking 10. This is why I'll use set. I'll use set to erase very important. I'll use to erase already existing parts, already existing parts. Does it improve the time complexity? Very, very minor, not much, very, very like depends on the graphs, but it's better that you use set because even set will go as a, even if you do an erase, set.erase is a logarithmic operation. So can I see that if I use set, it'll be a better complexity than prior to Q? No, right? Because set.erase ends up taking a logarithmic time. So you are probably saving up on iterations in the future, which might not be, but you're erasing it."
+    },
+    {
+      "chunk_id": "L158_C8",
+      "start": 499.72,
+      "end": 573.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=PATgNiuTP20&t=499s",
+      "text": "a logarithmic time. So you are probably saving up on iterations in the future, which might not be, but you're erasing it. So erase takes login. So you're investing a login and in the future, you're saving some iteration. So depending on the size of the graph, a lot of things will depend. So you cannot explicitly tell me that set is better than prior to Q or prior to Q is better than set. Both of them can be used because it'll be hardly a minor difference. This is how you tell to the interviewer that these are the cases where I can use. These are the cases I cannot use. If you tell the interviewer with such concept clarity that you know, like almost every bits and pieces, you will be impressed and tell him you learn from taking forward. Cool. I hope you have understood the algorithmic implementation. Now it's time to code it up. I'll be coding the C++ on the right and exact similar Java code is on the left. So we are given the vertex, the adjacency list and the source. So set of pair, go and declare a set of pair because you're going to store set of pairs and please make sure you declare a distance array of B V comma and infinity, which is one in nine. And our case, perfect initial configuration set always does what to my CS and distance of"
+    },
+    {
+      "chunk_id": "L158_C9",
+      "start": 574.28,
+      "end": 645.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=PATgNiuTP20&t=574s",
+      "text": "comma and infinity, which is one in nine. And our case, perfect initial configuration set always does what to my CS and distance of S equal to zero. Same thing. Why just keep on iterating in the set. It's exact similar. Yes. Is the exact similar to this thing. And now you say, and just point, like if you do an eye treater, this iterator points to the beginning of the set. And if you do a star, you get the value at that address. So ST dot begin will be an eye treater pointing to the address where the sets first element is and the star will give you the value. So I can see the node is nothing but ID dot second, but I can say the distance is ID not first. Cool. Other thing I can say now you need to remove it from the set as well. That's the thing. Please make sure you just call the remove function. That's it is after this, you'd go across and travel in the set. Simple, same thing that you didn't try to give. And you say, okay, this is my adjacency, no idea of zero, because it's a list that is given to you. Right. And what do you do for edge weight? Very simple. You say edge weight will be nothing but ID of one. Simple. Next you say, okay, currently I've"
+    },
+    {
+      "chunk_id": "L158_C10",
+      "start": 645.88,
+      "end": 723.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=PATgNiuTP20&t=645s",
+      "text": "for edge weight? Very simple. You say edge weight will be nothing but ID of one. Simple. Next you say, okay, currently I've taken distance to reach this note. I'll take another edge weight to reach. I just, you know, if this is smaller than I just, you know, that means I can update it. But before that, we need to erase if it existed, which means if distance of adjacent node is not equal to one, it means someone reached, someone reached, and if someone reached, can I go across and probably say set dot it is what that someone would have taken distance of adjacency node and adjacency node in the set. Once you've reached, you just go ahead and say, the new distance is this. I care about this now. And the same thing I can go and tell to the set, this is the new distance. Please insert that into yourself. Cool. Uh, adjacency. No, once you've done this, the same thing, just go across and say return of distance. So on submitting, we see that all the test cases are running fine. So, so guys, I hope you've understood this. Uh, just in case your interview does ask you, how do you have so much of clarity? Tell him that you read from the striver and yeah, just in case"
+    },
+    {
+      "chunk_id": "L158_C11",
+      "start": 723.32,
+      "end": 738.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=PATgNiuTP20&t=723s",
+      "text": "you, how do you have so much of clarity? Tell him that you read from the striver and yeah, just in case you understood everything, please, please, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And if you haven't checked out our DP series and the SD sheet, the links are in the description, make sure you check them out. But this I'll be wrapping up this video. Let's meet in some other video. Till then. Bye."
+    }
+  ]
+}

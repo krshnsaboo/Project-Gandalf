@@ -1,0 +1,85 @@
+{
+  "lecture_id": "L292",
+  "lecture_number": 292,
+  "lecture_title": "L9. Insert Intervals | Greedy Algorithms Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=xxRE-46OCC8",
+  "chunks": [
+    {
+      "chunk_id": "L292_C1",
+      "start": 0.0,
+      "end": 75.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=xxRE-46OCC8&t=0s",
+      "text": "So let's continue with the greedy algorithms playlist before starting off. Hey, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is insert intervals. So what is the problem stating the stating that you will be given an intervals array, which will be having n number of intervals. This is the first interval. This is the second interval. Every interval will have a starting point will have an ending point and this intervals array will be non overlapping in nature. What does that mean? If you write one comma three, and if you write six comma nine, they are not overlapping between themselves, right? And along with this, you'll be given a new interval, which is basically a start and an end. So your task is to insert this new interval in intervals array, such that it still remains as non overlapping. Once you have done that, you'll have to return with the resultant array. Let's understand. So if I have to insert two comma five in the intervals array, it's definitely going to go somewhere over here, right?"
+    },
+    {
+      "chunk_id": "L292_C2",
+      "start": 75.94,
+      "end": 154.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=xxRE-46OCC8&t=75s",
+      "text": "have to insert two comma five in the intervals array, it's definitely going to go somewhere over here, right? So if I insert it, it will be something like one comma three, then a two comma five, and then a six comma nine. And this might be my resultant array. But the question is asking you to make sure it is still non overlapping in nature. But if you look at this properly, these two are overlapping one three and two five, they're overlapping, they're overlapping. So if there is an overlap, you'll have to make sure that the overlap goes away. How can you do that? So simple, if it is one three, two five, you take the entire range, you take the entire range. So that's typically going to be one comma five, such that one comma three is also in that and two comma five is also in that. And after that, you can have a six comma five. And now I can see that the resultant array doesn't have any overlapping intervals. And this is what they're expecting you to return. So what if I just change the example? Let's change the example to something as four comma five, four comma five, four comma five. In such a scenario, what will happen is you can straight away write one comma three, four comma five, and a six comma nine."
+    },
+    {
+      "chunk_id": "L292_C3",
+      "start": 154.56,
+      "end": 232.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=xxRE-46OCC8&t=154s",
+      "text": "such a scenario, what will happen is you can straight away write one comma three, four comma five, and a six comma nine. And they're not overlapping, and they're not overlapping. And if they're not overlapping, you can straight away return this super simple. Let's try out one more example. If you look at this particular example, you will see that there is an there's there's like five intervals and a new interval that you will have to insert. So typically, if I have to write them, it's going to be one comma two, three comma four, and then the five comma eight, and then the six comma seven, and then the eight comma 10, and then the 12 comma 16. So if you look at it, this section is not overlapping, and this section is not overlapping. What is overlapping is this portion, this portion is overlapping. Five to eight, six to seven, eight to 10. So there is an overlap. So can I say that, okay, this section is going to be taken as it is, which is one comma two, three comma four. The overlap section starts from five, ends at 10. So I can probably take it. And once I've taken it, I can write the last section, which is 12 comma 16. Done and dusted. And this will be your resultant array."
+    },
+    {
+      "chunk_id": "L292_C4",
+      "start": 232.68,
+      "end": 304.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=xxRE-46OCC8&t=232s",
+      "text": "it, I can write the last section, which is 12 comma 16. Done and dusted. And this will be your resultant array. Also in the problem statement, they have stated that the intervals will already be in a sorted order will already be in a sorted order, and will have no overlap in them. When you're given the intervals array, and you try to insert, there might be one overlap. Got it? So how do we solve this particular problem? So I'm going to start off with the naive solution that is trying out brute force, and then we can analyze the time complexity and see if we can do better or not. But as of now, a very simple brute force. The brute force will be the method that I explained while explaining the example number two. Let's understand. We have the new interval as six comma eight. Can I say six comma eight is over here? And I from the naked eye, I can see that five comma seven and eight comma 10 will be overlapping. But there will be a segment on the left, which will not overlap. And there will be a segment on right, which will not overlap with six comma eight. Over here, if you visualize, this is the left segment that doesn't overlap. This is the right segment that doesn't overlap. And there is a middle segment that overlaps."
+    },
+    {
+      "chunk_id": "L292_C5",
+      "start": 304.74,
+      "end": 384.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=xxRE-46OCC8&t=304s",
+      "text": "is the left segment that doesn't overlap. This is the right segment that doesn't overlap. And there is a middle segment that overlaps. So I can break the problem into three different segments, the left, the middle and the right. Let's start this solution. So can I say that this is not overlapping? How do I know this? There is a two, which like the interval ends before your new interval begins, before your new interval begins. So this is not overlapping. Three comma four doesn't overlap. Why? Because it is ending at four. This is starting at six, doesn't overlap. Five comma seven. This is ending at seven and this is starting at six. This is might be overlapping, might be. Right? So I'm very sure this is my left section. I've identified my left section that doesn't overlap. So what I'll do is I'll pick them up. One comma two and a three comma four. I'll put them into my answer. I'll try to figure out the middle segment that is overlapping. Okay. Five comma seven. Does it overlap? Yes, it does. Yes, it does. How do you know this? There is a five, right? Which is before the ending point. This is overlap. Perfect. Eight comma ten. Does it overlap? Yes, it does."
+    },
+    {
+      "chunk_id": "L292_C6",
+      "start": 384.14,
+      "end": 462.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=xxRE-46OCC8&t=384s",
+      "text": "five, right? Which is before the ending point. This is overlap. Perfect. Eight comma ten. Does it overlap? Yes, it does. There is a eight which is before the ending point. I know these two are overlapping and this is not because this is starting at 12 and it has already ended at eight. So I know two segments, two intervals that are overlapping. Perfect. I have to write them down. It's five seven, six eight and an eight ten. If I ask you what will be the combined interval of this? It will be like take the leftmost which is five, take the rightmost which is ten. Technically what I'm doing is taking the minimum of all the intervals that are overlapping and taking the maximum of all the ending points of the overlapping intervals to get the new interval. So I've got my new interval. Since this interval is not overlapping, can I surely say because it's given in the question that the intervals array is sorted. It's given in the question that the intervals array is sorted. So anything to the right of it, anything to the right of it will always have the intervals that are not overlapping. Yes. So I can just copy them. Twelve comma 16. Done. Done. And you might be thinking, hey, hey, hey, what if there is no overlapping section?"
+    },
+    {
+      "chunk_id": "L292_C7",
+      "start": 462.5,
+      "end": 537.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=xxRE-46OCC8&t=462s",
+      "text": "copy them. Twelve comma 16. Done. Done. And you might be thinking, hey, hey, hey, what if there is no overlapping section? I have an example for that as well. Let's try it out. So let's try it out. One comma two doesn't overlap. Three comma four doesn't overlap. Seven comma seven. This is where you'll be like this is the leftmost section. This is the leftmost section before the new interval. So you can straight away pick one comma two and three comma four. So you have the leftmost section. Now you're thinking, can this be your overlapping one or not? And you have a seven which is a starting point which is starting after your new interval. So there's no overlapping section. And if there is no overlapping section, you can straight away pick this five comma six. Yes. Done. And from here you can just copy paste everything which is seven comma seven because on the right they're not going to overlap any further. So you can just pick them up and write it. Super simple. If there is overlapping section, you just take the minimum and maximum. Otherwise you take the interval. So let's quickly write down the pseudocode. I'll be writing down the function. It's going to take a 2D array. So basically of a size n cross 2 where every index will have two values, starting and the ending."
+    },
+    {
+      "chunk_id": "L292_C8",
+      "start": 537.42,
+      "end": 616.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=xxRE-46OCC8&t=537s",
+      "text": "take a 2D array. So basically of a size n cross 2 where every index will have two values, starting and the ending. And it'll also be given a new interval array which will have two values. It'll have two values at the index zero, the starting point, at the index one, the ending point. So let's quickly start off scanning. So I need a resultant 2D array which is going to store all the intervals, like the answer intervals. I'll be requiring the i equal to zero which is going to traverse in the array. So let's quickly start traversing to figure out the first left portion which doesn't collides. I'm going to go i lesser than n. I'm going to write array of i and the ending point. So ending point is one. If that's lesser than the new interval that's given to you, that starting point which is at zero. If that is the case, I'm very, very sure that this is on my left radar. And what I can do is I can say rest dot add or push back whatever it is, array of i. So I'm going to store this as the answer and I got to do i equal to i plus one, go to the next one. And this will make sure that you get the leftmost part, left part. That's time to figure out the, like the overlapping part. Okay."
+    },
+    {
+      "chunk_id": "L292_C9",
+      "start": 616.62,
+      "end": 691.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=xxRE-46OCC8&t=616s",
+      "text": "this will make sure that you get the leftmost part, left part. That's time to figure out the, like the overlapping part. Okay. How do I figure out the overlapping part? Isn't it very simple? Again the same thing. While i lesser than n and, and the starting, the starting, which is array of i zero should be before the ending of new interval. And if that is the case, we need to figure out what is the single interval that will come up for this overlapping intervals. I want to pick up the minimum so I can say new interval, which is given to you at the zero, which is a starting point. I can say minimum of either whatever, like wherever it starts at or the colliding, this, this is the colliding array of i zero. So I take minimal of all the starting points of the collisions. And for the ending point, what I can do is I can say new interval of one, because this is the ending point, max of new interval of one comma array of i one. And right after this, you can do i equal to i plus one. Once this is done, you will get all the intervals that are colliding and you'll have the new interval stored."
+    },
+    {
+      "chunk_id": "L292_C10",
+      "start": 691.7,
+      "end": 769.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=xxRE-46OCC8&t=691s",
+      "text": "one. Once this is done, you will get all the intervals that are colliding and you'll have the new interval stored. So what you can do is you can say rest dot add your new interval. Done. After this, you have the right portion left. So you can simply go ahead and say while i lesser than n and you can say rest dot add array of i and then you can move i equal to i plus one. And at the end of the day, you can go ahead and return rest. That's it. That's done and dusted. Super simple. What is the time complexity? Okay, we have the left portion, we have the middle portion, we have the right portion. So overall, we're going through each and every element. So can I say that the time complexity will be big open and the space complexity in order to store the answer because the question is already stating, you can use an extra variable to store the answer. So that's going to be a big open. This will be the time complexity and space complexity. And we optimize this. No, because the question is already stating, we need a separate array to return the answer. And you can do better than big open, you'll have to go through each and every element. So we cannot do better than this. So this will be the most optimal solution."
+    },
+    {
+      "chunk_id": "L292_C11",
+      "start": 769.42,
+      "end": 794.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=xxRE-46OCC8&t=769s",
+      "text": "have to go through each and every element. So we cannot do better than this. So this will be the most optimal solution. Sometimes the better solution is the most optimal solution. So don't think out of the box. This will wait for this one. So if you're still now watching, and if you've understood everything, please, please do consider giving us a like and if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's play some other video. Bye. Whenever your heart is broken, don't ever forget your golden."
+    }
+  ]
+}

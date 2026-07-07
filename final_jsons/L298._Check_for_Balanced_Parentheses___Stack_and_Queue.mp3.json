@@ -1,0 +1,78 @@
+{
+  "lecture_id": "L298",
+  "lecture_number": 298,
+  "lecture_title": "L2. Check for Balanced Parentheses | Stack and Queue",
+  "youtube_url": "https://www.youtube.com/watch?v=xwjS0iZhw4I",
+  "chunks": [
+    {
+      "chunk_id": "L298_C1",
+      "start": 0.0,
+      "end": 79.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwjS0iZhw4I&t=0s",
+      "text": "So, we will be continuing with our Stack in Q playlist. But before starting off, hey, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is balanced parenthesis. So, what is the problem statement? It is stating that you will be given a string and it will only be containing characters like the brackets. These are the possible brackets that it might contain. Your task is to check if the given string is a balanced parenthesis string or not. What are the conditions it should follow to be called a balanced parenthesis string? First one is every opening bracket should have a same closing bracket. Got it? Every closing bracket should have a same opening bracket. The other examples will be this and this one. Got it? The third one is it should follow the order as well. Let's understand the three conditions. So, if I look at this particular example, let's check if this is balanced or not. Now, first I am seeing an opening bracket and after that I am seeing a closing bracket. So, they are following the order and they are of the same type. So, opening and then closing."
+    },
+    {
+      "chunk_id": "L298_C2",
+      "start": 79.68,
+      "end": 156.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwjS0iZhw4I&t=79s",
+      "text": "closing bracket. So, they are following the order and they are of the same type. So, opening and then closing. Perfect. After that, there is an opening. After that, there is an opening. After that, there is a closing. So, for this closing, for this closing, I have a corresponding opening right before it. So, they are following the order as well and they are of the same type as well. Perfect. After this, I have this one and then there is a closing. For this closing, I have a corresponding opening. So, they are following the order. Got it? So, they have followed the order and they have also followed the order. Now, I have a closing. For this, I have an opening as well. So, they are also following the order. So, every bracket has a similar kind of bracket that is closing itself and they are following the order as well. So, this can be called as a balanced parenthesis. Got it? Whereas, if I look at this particular example, this is an opening, this is a closing. So, they are following the order. Perfect. This is an opening, this is an opening, this is a closing. So, they are following the order. After that, this is an opening, but this is a closing and this is not following the order. They are not following the order. Thereby, this is not a balanced parenthesis. Let's look at other examples."
+    },
+    {
+      "chunk_id": "L298_C3",
+      "start": 156.44,
+      "end": 235.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwjS0iZhw4I&t=156s",
+      "text": "this is not following the order. They are not following the order. Thereby, this is not a balanced parenthesis. Let's look at other examples. So, if I take an example like this, now this is also not a balanced parenthesis. Why? Now, they are following the order. For this opening, there is a closing. But for this opening, there is no closing. Thereby, I said for every opening, there must be a closing and vice versa. If I take a string like this, this is also not balanced because for every closing, there is not an opening. Got it? And this describes the order. So, these are the three conditions that you have to keep in mind if you are calling someone as a balanced parenthesis. If you carefully look, what do we need to solve? Now, there are two things. Whenever I am getting a closing bracket, I am checking out if the last opening that I saw, the last opening that I saw is of my type, is of my type. That is what I am checking. So, what am I looking for? I am looking for last opening encountered. That is it. Whenever I encounter a closing bracket, I look for the last opening that I encountered. Correct? Okay. So, it kind of gives me an idea."
+    },
+    {
+      "chunk_id": "L298_C4",
+      "start": 235.84,
+      "end": 306.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwjS0iZhw4I&t=235s",
+      "text": "a closing bracket, I look for the last opening that I encountered. Correct? Okay. So, it kind of gives me an idea. I am looking for the last opening encountered. So, I just need to preserve the opening brackets. That is the first thing that should come to my mind that I will be preserving all the opening brackets. And the other thing is I should be able to see the last one. So, which data structure? This stack, because that is going to tell me the last one, because it follows a last in first out mechanism. If you keep something in the data structure and you want to check out which one was the last thing that you kept, that is when stack comes in. Got it? So, what I will be doing is, I will be doing a dry run using the stack data structure. So, let us take the stack data structure. So, this is my stack data structure. When I am at the opening bracket, we need to preserve the openings. So, I will just preserve this opening. After this, I will go to the next one. Now, this is a closing bracket. Whenever you get a closing bracket, you take out the top element from the stack. You take out the top element from the stack and you compare with the current closing. Are they of the similar types? You say yes. And you are fine. You can move ahead."
+    },
+    {
+      "chunk_id": "L298_C5",
+      "start": 306.44,
+      "end": 382.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwjS0iZhw4I&t=306s",
+      "text": "and you compare with the current closing. Are they of the similar types? You say yes. And you are fine. You can move ahead. Again, you get an opening. You have to preserve them. So, you preserve it in your stack. You preserve it in your stack. After that, you get another opening. Again, you preserve it in your stack. After that, you again get a closing. At this time, when you are getting a closing, what you will do is, you will head over and get the last opening that you had. And you see that they are matching. Fine. After that, you get again an opening. So, you take it. After that, you get a closing. So, you take that closing and you head over to the stack. You take out from it and you see that they are matching. And if they are matching, it is fine. After that, you get to the last one. That is a closing bracket. And if it is a closing one, again you go to the stack and you see, hey stack, what is the last one? He says this one. Oh, you are matching. Perfect. And after that, the iteration is over. And you see that the stack is empty. What does it mean? It means that for every opening, for every opening that I preserved, I got a corresponding closing. So, thereby, I can say that this particular string is a balanced string. Got it? Perfect."
+    },
+    {
+      "chunk_id": "L298_C6",
+      "start": 382.4,
+      "end": 444.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwjS0iZhw4I&t=382s",
+      "text": "that I preserved, I got a corresponding closing. So, thereby, I can say that this particular string is a balanced string. Got it? Perfect. Now, what I will do is, I will now do the same iteration over the second string to understand how do we figure out that it is unbalanced. Again, we can start from here. Maybe I can take a stack so that we understand it in a much better way. Perfect. So, I take a stack. First one is an opening one. So, I preserve it. After that, I go to the next one. Now, this is a closing bracket. So, whenever it is a closing bracket, I get the top of the stack. I get the top of the stack and I see that they are matching. I see that they are matching. So, it is fine. Again, I go to this one. It is an opening. So, I will take it off. After that, again it is an opening. So, I will take it off. This time it is a closing. Whenever it is a closing, I go back to the stack and I take out the closing and I match and it is a match. Again, it is a opening. So, I take it off. Next time it is a closing. So, you go to the stack and say which is the last scene. So, it gives you this one and you say it is a mismatch."
+    },
+    {
+      "chunk_id": "L298_C7",
+      "start": 444.56,
+      "end": 521.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwjS0iZhw4I&t=444s",
+      "text": "go to the stack and say which is the last scene. So, it gives you this one and you say it is a mismatch. And if it is a mismatch, you are done and dusted. Yes, you are done and dusted. So, it is very important to preserve the opening one to figure out which was the last one because every opening should have a corresponding closing and in the same order and in the same order. That is very, very important. Understood? Now, some other cases, if you want to do a super quick dry run, some other cases would be, let us say you take a string which is opening, opening and closing and then I take a stack. First one, I have an opening. So, you can put that in. Then I again have an opening. So, I can put that in. Then again, I have a closing. So, for this closing, you will get this one. Which is typically matching and after that the iteration is over, but the stack still has an opening bracket, which means every opening did not get a closing. Got it? Same might happen for something like this, where you are just closing. In that scenario, whenever you have a stack and you encounter a closing bracket, the stack will be empty. That means you do not have a corresponding opening for the closing. This is also unbalanced. Got it? So, time to write down the pseudocode. Again, super simple."
+    },
+    {
+      "chunk_id": "L298_C8",
+      "start": 521.04,
+      "end": 600.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwjS0iZhw4I&t=521s",
+      "text": "not have a corresponding opening for the closing. This is also unbalanced. Got it? So, time to write down the pseudocode. Again, super simple. We are going to write the function, which is going to return a Boolean stating true or false if it is balanced or unbalanced respectively. So, I will be getting a string. First thing, we need a stack. So, maybe I will be defining a stack. So, maybe stack S. Again, depending on the programming language you are using, you can define the stack. The stack will be storing characters. So, maybe I can iterate over the string. So, assuming the string's length is n, we can iterate till n minus 1th index. We know one thing, if it is an opening bracket and the opening bracket will only be S of i equal to equal to this or S of i equal to equal to this or S of i equal to equal to this. So, that is the case. You ask the stack, hey stack, can you store this one and the stack is going to store it. Perfect. Now, the logic comes up whenever it is a closing bracket. If it is a closing bracket and at any moment the stack is empty, that means it does not have a corresponding, it does not have a corresponding opening bracket for itself. So, you can just break out and return false."
+    },
+    {
+      "chunk_id": "L298_C9",
+      "start": 600.44,
+      "end": 676.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwjS0iZhw4I&t=600s",
+      "text": "not have a corresponding, it does not have a corresponding opening bracket for itself. So, you can just break out and return false. Otherwise, what we will be doing is inside the else, we will be like, okay, the stack has something. Maybe I can just get out that element. We can say character ch equal to st dot top. So, you get the top and then you can pop it out because this will be required for comparison. We know one thing, it has to meet three conditions. If S of i is equal to equal to this, my bad, it is a closing one. So, if this is a closing one, then the character that I got from the stack has to be the corresponding opening one, has to be the corresponding opening one. Perfect. So, this condition should be met or I should be like S of i is equal to equal to, if it is this particular closing, then the character should be this particular opening or for the third bracket, if it is not matching, if it is not matching, in that scenario, you go to this particular if else and you return a false. If this particular if is matching, well and good, otherwise you return a false and the for loop ends and at the end of the day, you say return stack dot empty."
+    },
+    {
+      "chunk_id": "L298_C10",
+      "start": 676.36,
+      "end": 738.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=xwjS0iZhw4I&t=676s",
+      "text": "otherwise you return a false and the for loop ends and at the end of the day, you say return stack dot empty. If the stack is empty, that means everything is matched, but the stack still has some opening brackets. That means it didn't find it corresponding closing brackets. That's it. That will be it. If I have to discuss the time complexity, what will that be? I'm just iterating over. So, that's a big O of n and what about the space complexity? I'm using a stack data structure at the worst case if everything is an opening bracket. I'm going to store everything out. I'm going to store everything out. This will be the time complexity and the space complexity. Can we make it better? No, because we'll have to match for every corresponding opening, there should be a corresponding closing. So, we need to store it somewhere to have a match. Got it? So, space complexity cannot be improved. So, this will wait for this one. So, if you're still now watching and if you've understood everything, please, please do consider giving us a like and if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's speed in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

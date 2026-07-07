@@ -1,0 +1,162 @@
+{
+  "lecture_id": "L047",
+  "lecture_number": 47,
+  "lecture_title": "BS-3. First and Last Occurrences in Array | Count occurrences in Array",
+  "youtube_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY",
+  "chunks": [
+    {
+      "chunk_id": "L047_C1",
+      "start": 0.0,
+      "end": 74.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we will be continuing with our binary search playlist, which is the part of the strivers A to Z DSA course. Just in case you haven't checked out our A to Z DSA course, there's a link in the description. Please, please make sure you check it out. So in the previous video, I think I've covered up till this particular, like all of these problems. And this video I'll be covering up these two problems. So without waiting, let's get started. So the problem is asking you to find the first and the last occurrence of a given number X. So you will be given an array, obviously it will be sorted. So you have to find me the first and the last occurring index of X. Let me give you an example. So if I give you X as eight, which is the first occurring index over here, which is index three, which is the last occurring index over here, which is index five. So you have to return me a pair of the first and the last occurring index. Imagine I give you the X as 10. In that case, do I have 10? No. So you will have to return me minus one and minus one. Imagine I give you X as 11. Do I have 11? Yes, but there is only one occurrence. So that one"
+    },
+    {
+      "chunk_id": "L047_C2",
+      "start": 74.9,
+      "end": 148.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=74s",
+      "text": "and minus one. Imagine I give you X as 11. Do I have 11? Yes, but there is only one occurrence. So that one occurrence will be the first occurrence and that one element, that one index will be the last occurring index as well. So I'll be returning index six and index six. So I've given you three different examples. So this problem comes up in an interview, it is the first solution that comes to your brain. The extreme name solution that I can think of is doing a linear iteration on the array. Basically, I go via every element. Imagine I give you X as eight. So what I'll do is I'll keep first as minus one, I'll keep last as minus one, and then I'll Travis. No, no, no. Yes, this is the first occurring. Like first time I found out eight. So if I get it equal to X, what I'll check is, is first minus one. It is, I'll replace it with the index and I'll not check anything for the last and I'll replace it with the index. Then I'll go to eight and I'll see this is equivalent to X. So I'll see it is at index four and I'll see what is the value of first. First is no more minus one. No need to change it. Just change the last. Again, I'll move to the next and this time I'll see this eight is equivalent to this eight. Thereby I'll"
+    },
+    {
+      "chunk_id": "L047_C3",
+      "start": 148.98,
+      "end": 219.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=148s",
+      "text": "it. Just change the last. Again, I'll move to the next and this time I'll see this eight is equivalent to this eight. Thereby I'll take this index five and compare it with first. First is not minus one. No need to change. Change last and then move to here and then this 11 is not equal to and move to here and it ends. So at the end you'll see that the first is stored as three and the last is stored as five. So if I have to quote this up, it's going to be super simple. I'll say first as minus one. I'll say last as minus one. I'll start the iteration from zero. I'll go on to the last index and minus one and I'll be like is array of I equivalent to X. If that's the case, if first is like this is the first time it, it is appearing. If this is the first time it is appearing, please make sure that you store that index I and every time you find that element, you just update the index. Quite simple. Any time you find first equal to minus one, you update and the last keeps on updating every time it's equivalent to X says the array sorted. We're very sure that we will get the first and the last occurring index, right? So what is the time complexity? Beagle of N. Yes, we are taking a beagle of"
+    },
+    {
+      "chunk_id": "L047_C4",
+      "start": 219.66,
+      "end": 289.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=219s",
+      "text": "the first and the last occurring index, right? So what is the time complexity? Beagle of N. Yes, we are taking a beagle of N time complexity. So obviously the interview will not be happy and you'll ask you to optimize. So we have to improve beagle of N. How can we improve? Like what is better than beagle of N logarithmic of it, right? So how can I think of a logarithmic of an solution? We know that this given array is sorted. We know that we have to find that means up to perform a search. So whenever you perform a search in a sorted section, which algorithm binary search? Yes. So we will be applying binary search on this array to figure out the first and the last occurrence. So we can either write the raw binary search, which means we'll write the code from the scratch or we can use the functionalities that we have learned in the previous lectures and the previous lectures. I've taught you something as low bound and I've also taught you something as upper bound. Do you remember? Yes, you do, right? So we will try to implement low bound and upper bound to find a solution for the first and the last occurrence. So if you remember one thing, what was low bound? Come on guys. Remember it was the smallest index where the element at that index was greater"
+    },
+    {
+      "chunk_id": "L047_C5",
+      "start": 289.54,
+      "end": 363.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=289s",
+      "text": "remember one thing, what was low bound? Come on guys. Remember it was the smallest index where the element at that index was greater than equal to very, very important, greater than equal to X, correct? What was upper bound? Upper bound was the smallest index where area of index was greater than X, not equal to greater than X. So can I say if X is eight and if I say give me the lower bound of eight, give me the lower bound of eight, where will that point to? That will point to here. That is for sure, which is index zero one, two, three. And it's definitely going to point to index three because if I'm finding the low bound of eight, this eight is greater than equal to eight. So I am getting the low bound. But how do I figure out this one? This is when I'll be using the upper bound. So if I say upper bound of eight, what is upper bound of eight? It says first element that is greater than eight, that is greater than eight. Thereby it will somewhere point here. It will somewhere point here, correct? So can I say one thing for sure? If I do a minus one, whatever index it gives, if I do a minus one, then it will be pointing here. So the low bound points here and this one"
+    },
+    {
+      "chunk_id": "L047_C6",
+      "start": 363.64,
+      "end": 436.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=363s",
+      "text": "it gives, if I do a minus one, then it will be pointing here. So the low bound points here and this one will be pointing here. Is that correct? That is correct. But is that the answer? Are we covering up all the cases? I don't think so. I don't think so. Let me give you an example. So for eight it works because eight is in the array. That is why it worked. But there are some cases that you have to cover. By the way, if you don't know about low bound, please go back and watch my previous video. I've already implemented low bound. So I'll just be reusing that code. Now let's come back. What if I give you something as ten? In this case, when you try to figure out the lower bound of ten, that will be pointing to this portion. That will be pointing to this portion because since there is no ten, since there is no ten, you got eleven as your lower bound. So it is very, very important that at the first step you check whatever index this is returning. Is that containing this number or not? There can be other cases as well. Let's think. If I give you X as, let's say 14. In that case, the moment you try to find out the low bound of 14, it will"
+    },
+    {
+      "chunk_id": "L047_C7",
+      "start": 436.16,
+      "end": 512.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=436s",
+      "text": "you X as, let's say 14. In that case, the moment you try to find out the low bound of 14, it will try to point to a hypothetical index of eight. Right? So if I'm pointing to the hypothetical index of eight, I cannot check for any value of eight. So even if the low bound points to N, that's what, if the low bound of X points to N or the array of lower bound is not equal to X, which is this condition. When X is 10, I did a low bound of 10 and it pointed to index six, which is 11. So that is not equal to X. So either this case, when it points to the hypothetical index, that means this number is not there or whatever index it is pointing me, if that's not equivalent, then the number is not there. If they are okay, like for eight, both of the cases will be false. If that's the case, I'll always find the first and last occurrence by finding the lower bound and upper bound minus one will be my first and the last occurrence. Got this? So let's quickly put this up and we need the low bound and the upper bound. So what I'll do is I'll go and copy the low bound from the previous code that we have written and I'll go and copy the upper bound from"
+    },
+    {
+      "chunk_id": "L047_C8",
+      "start": 512.36,
+      "end": 582.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=512s",
+      "text": "go and copy the low bound from the previous code that we have written and I'll go and copy the upper bound from the previous code that I've written. Perfect. I've copy pasted both of them. Please be careful that the upper bound first is taking X. So I'll just replace this. Yeah, perfect. So what is the first thing I know? I need to find out the low bound. So I'll call this function for short. Let's call this function and pass on array. How pass on array, pass on N pass on game. What do I know? If the low bond that will be end. What do I know? If the low bound points to N or all the array of low bound is not equal to this element, that means element is not found perfect. Otherwise I'll return the low bound and I'll call the upper bound and I'll give me a value for short array N and game and whatever it gives. I'll just do a minus one because I know the previous one will be the last occurrence and that is something which I'll return. Super simple. You just have to take care of this particular edge case. My bad. It will be key. You just have to take care of this particular edge case and a pretty much done and yeah, that's it. So if you know low bond and upper bond,"
+    },
+    {
+      "chunk_id": "L047_C9",
+      "start": 582.48,
+      "end": 646.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=582s",
+      "text": "of this particular edge case and a pretty much done and yeah, that's it. So if you know low bond and upper bond, that actually will help you to solve so many number of problems. So what is the time complexity of this one? So what will be the time complexity of this particular solution? We are trying to find out the low bond, which will take me logarithmic based to N. We're trying to find out the upper bond, which is going to take another logarithmic based to N. So two into big O of logarithmic based to N. What about the space complexity? That's a big O of one. Now this will be a great solution, but a lot of times the interviewers might ask you, Hey, uh, I don't want you to use some low bond concept. Please try to write a simple binary search that does it for me. I don't want you to go through the low bond and upper bond. A lot of interviews will accept it because they know about low bond. Why interviews will do not know. They might ask you to go one step further. So you should be careful about this and you should be able to write a binary search code for this as well. So now we'll be discussing the plain binary search where I will not be using any pre-written code. Okay. So we have to write a binary search from scratch. Obviously in a single binary"
+    },
+    {
+      "chunk_id": "L047_C10",
+      "start": 646.12,
+      "end": 713.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=646s",
+      "text": "where I will not be using any pre-written code. Okay. So we have to write a binary search from scratch. Obviously in a single binary search, you cannot find first and last together. So what I'll be doing is first I'll be writing a binary search to find out the first occurrence. Then we'll be writing a binary search to find out the last occurrence. So let's first start the first occurrence thing. Now let's assume that first is stored as minus one. And what is the standard protocol of binary search? Low will be pointing to the zero index and high will be pointing to the last index, which is the seventh over here. So the standard protocol sees we will have to find out the middle and the middle is nothing but low plus high that is zero plus seven by two. So zero plus seven by two will be 3.5 which will be taken as three. So mid will be pointing to eight. So can I say one thing for sure that I have figured out a eight because X was eight. So can I say one thing for sure I have figured out a eight for sure I've got an eight. So I'll be like, Hey, I got a eight. Okay, fine. I got a eight. Let's replace this. I got an eight at the third index. I got an eight at the third index. What am I looking for? First"
+    },
+    {
+      "chunk_id": "L047_C11",
+      "start": 713.28,
+      "end": 784.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=713s",
+      "text": "replace this. I got an eight at the third index. I got an eight at the third index. What am I looking for? First index. Now what is the definition of the first index? Will you look for this side or will you not look for this side? Ask yourself. It'll be like, Hey, Striber, it's better to look for on the left. It's better to look for on the left because the more we go on the left, the index will reduce. The index will reduce. And that is what I want. I want the first occurrence. If I go on the right, I'll get the later occurrences, but I want the pre occurrences. So I'll have to go to the left. This is the reason the right search space will be eliminated, will be eliminated. Got it. So what I'll do is I'll simply go away, take this high and I'll put it over here. Perfect. Amazing. So I put it over here. Next time I have made over here for short, that is where the mid will go. Zero plus two by two. What do I have again? Eight, which is same. I'm like, where are you? You're at index one. So I'm, I'm short since I'm going left, whatever index I'll get will be small. So I'll replace it. Amazing. So I'll again have to go left because I need, I need a lower"
+    },
+    {
+      "chunk_id": "L047_C12",
+      "start": 784.04,
+      "end": 855.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=784s",
+      "text": "get will be small. So I'll replace it. Amazing. So I'll again have to go left because I need, I need a lower occurrence. So the right one will get eliminated. Thereby this high, which is here, will end up pointing to this portion. Again, the mid will come up over here itself. Can I say one thing for sure? This element, this element two is not equivalent to X. So I'm like, it's not, it's not. You'll have to go on the right and find where, why? Because this two is lesser than eight. So I'm sure on the left, you'll not find it. You'll have to go to the right. You'll have to go to the right, to the search eight, to search eight. So I'll be like, okay, I have to go to the right. So I'll move low to mid plus one. So it goes, the moment you move low, you see what happens? Low crosses high, low crosses high. And apparently as of now, you've got the first occurrence as one. As of now, you've got the first occurrence as one. So this is how you can easily get the first occurrence. I'll take another example to explain you what if the mid was not eight and something else. I'll also take that example. Don't worry about that. Let me now try to find out the last occurrence. Again, you'll"
+    },
+    {
+      "chunk_id": "L047_C13",
+      "start": 855.44,
+      "end": 932.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=855s",
+      "text": "something else. I'll also take that example. Don't worry about that. Let me now try to find out the last occurrence. Again, you'll keep the last as minus one and we will do the standard protocol of binary search of keeping low and high where it is. And initially mid will be pointing to this. What do we get? We get eight, which is equivalent to eight. So I can say, okay, I'm getting it at third index. Perfect. If I'm looking for the last occurrence, will I go on the left or will I go on the right? Think yourself. I will go on the right. I'll go on the right. Thereby I will simply move low here because there's no point in searching here because I've already got here. Now for the later occurrence, I have to go to the right. Let's move. Perfect. This time where will the mid point? Mid will point to four plus seven by two, which is five point five, which is five midpoints here. What is this? Eight, which index? Five. Replace. Perfect. Now can I say if eight is, you're getting it here, you have to do a search on the right half. The left half will be eliminated because you're looking for the last occurrence. I can thereby this low will end up moving here. Amazing. What's the next? You're trying"
+    },
+    {
+      "chunk_id": "L047_C14",
+      "start": 932.96,
+      "end": 1010.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=932s",
+      "text": "because you're looking for the last occurrence. I can thereby this low will end up moving here. Amazing. What's the next? You're trying to find out the mid. This time the mid will point here and it is 11, which is actually greater than eight. You're like, I'm greater than eight. I'm greater than eight. Thereby I can never find eight on my right. I can never find eight on my right. Please ask I to move here because I have to eliminate the search space. Thereby I'll take this high and I'll move here, which is one before the mid, which is one before the mid and I'll eliminate next. The high crosses low. So we stop. The moment we stopped, do you see something? You have got your first and you have got your last because this is where the first was and this is where the last was. So we have got our occurrences. Now this was when we got the element right at the start of the mid. What if I change the X to something as let's say 11, change the X to something as 11. Let's try to find out the first and the last occurrence. So let's keep the first as minus one. Let's start the standard binary search and the mid is pointing here. The standard binary search. What is this? Eight. What is this? Eleven."
+    },
+    {
+      "chunk_id": "L047_C15",
+      "start": 1010.08,
+      "end": 1082.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=1010s",
+      "text": "start the standard binary search and the mid is pointing here. The standard binary search. What is this? Eight. What is this? Eleven. Not equal. But eight is smaller than 11. Where will you find 11? Where will you find 11? You will never find 11 here. You'll never find 11 here. You'll find 11 on this portion. So what will you do? You'll try to go on the right. Thereby the left space will be eliminated. And if that is eliminated, what will happen? The low will move here. Perfect. Amazing. What's the next step? I'm here. Where will my mid point to? My mid will point to this portion, which is four plus seven by two. That's 5.5, which is the fifth index. This is eight. Again, I'll say, hey, listen, five is sorry. Eight is less than 11. No, no, no, no, no. So I'll be like, ha, ha. I can't find it there. Thereby, please move your low. Take your low and move ahead. So he moves ahead. You see, when I don't find what happens, I either move left and right and I try to find it. Perfect. Where will the mid point now? Mid will point here. This time I see 11. I see 11. So when I see 11, I'm like, perfect. You can replace yourself to this. And if I'm getting here and I'm trying to"
+    },
+    {
+      "chunk_id": "L047_C16",
+      "start": 1082.52,
+      "end": 1144.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=1082s",
+      "text": "So when I see 11, I'm like, perfect. You can replace yourself to this. And if I'm getting here and I'm trying to find the first, I'll try to go on left. I'll try to go on left. So the high, we'll try to go over here because the right search space is eliminated. High crosses low and we stop. So I've got the first occurrence. It's pretty simple binary search. You don't have to do anything out of the box. It's time to write the pseudo code for this one. Again, you can find the C plus plus Java, Python, JavaScript, whichever language you follow a code links in the description. Make sure you check it out from there and you can keep it in parallel in case you want to figure out your language code. So I'll have to write the pseudo code now. Right. So let's write the pseudo code for first at first. So I'll write probably a function. I'll take an array and I will say, okay, N and I'll take X. I'll keep the low as zero. I'll keep the high as N minus one and I'll keep the first. It's very important to keep the first as minus one. So I'll keep it like this. What's the next step I'll do? I'll say while low lesser than equal to high. That's one thing for sure. Now what do I do?"
+    },
+    {
+      "chunk_id": "L047_C17",
+      "start": 1144.96,
+      "end": 1223.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=1144s",
+      "text": "next step I'll do? I'll say while low lesser than equal to high. That's one thing for sure. Now what do I do? I know one thing for sure. If, okay, I need to find out mid according to the standard protocol of binary search, low plus high by two. We do that. What's the next thing we will do? The next thing we'll do is if array of mid is equal to equal to X. I know I've figured it out. I know I've figured it. So my first will say I got it at mid and now I need a lower index. I need my first talkers. Maybe I'll go on the left and see if he's there. So I'll say, Hey, hi, please go on the left. So in binary search, we usually did not do this while we did a equal to equal to, but we will do it away. Amazing. Perfect. What's the next job else? If what can happen else, if you'll be like, whatever you're standing at, that's actually smaller than X. So right. You have to go to the right to find it because I'm smaller, dude. I'm smaller. Left will be more smaller. Go on the right. Okay. I'll go on the right. And the else part will only be one thing, which will be high, equal to mid minus one, because there's will be nothing but when the mid is greater than X, because"
+    },
+    {
+      "chunk_id": "L047_C18",
+      "start": 1223.12,
+      "end": 1293.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=1223s",
+      "text": "thing, which will be high, equal to mid minus one, because there's will be nothing but when the mid is greater than X, because these conditions are done. So this is what the function will look like. Pretty simple. If this part never gets executed, the first will stay as minus. So this is how I can find the first documents. What about the last documents? Let's try to write it. I'll write, add a, I'll write an, I'll write X. Perfect. Again, I'll take the low as zero. Again, I'll take the high as N minus one. This time what I'll do is I'll try to basically figure out, uh, the last. So the last will be minus one. And I'll start with while low, lesser than equal to high, same concept. I'll figure out the same standard protocol of binary search, like the mid. And what's the next thing? If array of mid comes out to be X, what will I do? I'd be like, okay, this can be my answer. This mid can be my answer. And maybe I have to find it. I'm looking for the last. So no, I'll not go on the left. I'll try to go on the right. So eliminate the left search space or maybe lesser space. So low equal to mid"
+    },
+    {
+      "chunk_id": "L047_C19",
+      "start": 1293.92,
+      "end": 1372.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=1293s",
+      "text": "I'll try to go on the right. So eliminate the left search space or maybe lesser space. So low equal to mid plus one. That is what you will do. Pretty simple. What's the next thing? What if I am smaller than X? You're not finding it. You have to go to the right and find you haven't found it out yet. Okay. Or else high will be like mid minus one. Perfect. And at the end you can return this particular last. And if this never happens, the last will stay as minus one. So these are the couple of functions and the pseudocode for this one. So as you can see, I've written both of the functions over here. Please make sure that at first you call for the first occurrence. Don't, don't just call for the last occurrence blindly. Call for the first occurrence and array of N and K. And in case you don't find it in case it returns as minus one straight away, return minus one. Do not waste another logarithmic of N to find the last occurrence. Because if the first occurrence is not there, there will never be a last occurrence. So be careful about this. These minor things might help you in interview because a lot of times people are like, ah, I'll just call this and I'll return. This one link and, uh, save like logarithmic base to end time complexity."
+    },
+    {
+      "chunk_id": "L047_C20",
+      "start": 1372.28,
+      "end": 1441.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=1372s",
+      "text": "people are like, ah, I'll just call this and I'll return. This one link and, uh, save like logarithmic base to end time complexity. Okay. Uh, looks like we did a mistake. Let's see where line number 2828. Oh my bad. We lost. Okay. Runs. Let's quickly submit it and see if it is running fine. Should be. It does. So going back to the course, uh, I can say that this one is done. What is the next problem? Count occurrences of a number in a sorted array with duplicates. So if I look at the problem, it states you have been given an array of integers, this and an integer X. You have to find the total number of occurrences of X in the array. I think it's easy. If you are given X as three, there's one, there's two occurrences. Since the array is sorted, you did the previous problem, right? What will be the answer? Last occurrence minus first occurrence plus one. Isn't it? Isn't it? Yes. Yes. Yes. So just make sure you copy and paste the same thing. Come on here. I'm not going to explain the S like super simple, super, super, super simple. So can I see, I will probably call like probably I'll take"
+    },
+    {
+      "chunk_id": "L047_C21",
+      "start": 1441.96,
+      "end": 1510.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=1441s",
+      "text": "the S like super simple, super, super, super simple. So can I see, I will probably call like probably I'll take like bear, a day, Joe and answer equal to this. And I'll say, add a of N comma X. And I would be like if answer dot first equal to minus one, it doesn't exist. Return zero or else I will return answer dot second last occurrence minus first occurrence plus one. Pretty simple. Pretty simple. I'll run this and it runs fine. Let's quickly submit this. This will be submitted as well. So going back to the sheet, I can say that both of these are done. I hope you've understood all the approaches that I discussed. I just did not write the binary search code because I wanted you to think out of the box. I wanted you to think the low bound and the upper bound. Why? Because in a coding round, if problems come up, which has implementation of low bond and upper bond, you can simply copy paste the function without thinking of anything. So that is why I wanted you to connect with the logic of low bond and upper bond as well. I hope you got it right. So in case you have understood everything, please, please consider giving us a like. And if you're new to our channel, what are you waiting for? Kill that subscribe button. And yes, if you haven't"
+    },
+    {
+      "chunk_id": "L047_C22",
+      "start": 1510.92,
+      "end": 1518.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=hjR1IYVx9lY&t=1510s",
+      "text": "us a like. And if you're new to our channel, what are you waiting for? Kill that subscribe button. And yes, if you haven't followed me on Instagram, Twitter, and LinkedIn, all the links will be in the description. With this, I'll be wrapping up this video. Let's meet in the next video of this playlist. Till then, buh-bye, take care."
+    }
+  ]
+}

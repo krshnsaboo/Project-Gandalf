@@ -1,0 +1,211 @@
+{
+  "lecture_id": "L232",
+  "lecture_number": 232,
+  "lecture_title": "DP 52. Evaluate Boolean Expression to True | Partition DP",
+  "youtube_url": "https://www.youtube.com/watch?v=MM7fXopgyjw",
+  "chunks": [
+    {
+      "chunk_id": "L232_C1",
+      "start": 0.0,
+      "end": 78.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=0s",
+      "text": "Hey everyone, welcome back to TakeItForward. So today we will be solving the problem Boolean Evaluation to True. Now this is again a similar problem related to MCM DP. So if you have not seen the MCM lecture, go back watch DP 48, 49, 50, 51. Make sure you watch out all these four lectures and then you can definitely watch out Boolean Evaluation because this problem is so much related to MCM. If you know MCM, this problem becomes like a cakewalk. So please please go back and watch it. Now what does the problem state? Let's understand the meaning of the problem. So the problem states you'll be given a string. Now this is the string that is given to you and this string will be given true or false and then an expression. The expressions can be OR which goes by this AND which goes by this and XOR which is somewhat like this. So these are the three expressions that you will be seeing all over. Now imagine I give you this particular expression. Now the standard way to solve this is you can go anywhere like true and true like you can probably write true and true is true and false which gives you false. This is one of the possible ways where you say true and true is true and then true and"
+    },
+    {
+      "chunk_id": "L232_C2",
+      "start": 78.84,
+      "end": 151.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=78s",
+      "text": "gives you false. This is one of the possible ways where you say true and true is true and then true and false is false thereby this is false. So this is one of the ways but what they want you is to perform this like to solve this in such a way that at the end of the day you get true. So for an example what I can do is see I can probably say I'll keep T then I'll keep OR and then I'll perform this portion at first like I'll perform this portion at first. So if I perform this portion at first we will get false, true or false which gives you true. So this is one of the ways in which you can definitely get true. So I can say for this expression I have one way in which I can get true. So do I find any other way? No. Since we are not finding any other way you have to just print 1. This is nothing but the number of ways in which we can evaluate it to true. Now let me just quickly take one more example and try to explain you. So let me take one more example this expression and try to solve it. So imagine I say that I will be solving F or T at first then I'll be doing a XOR with F. So F or T will give you what it will give you?"
+    },
+    {
+      "chunk_id": "L232_C3",
+      "start": 151.3,
+      "end": 222.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=151s",
+      "text": "or T at first then I'll be doing a XOR with F. So F or T will give you what it will give you? True definitely. True XOR F will give you true. So if I follow this pattern of solving I am still evaluating this expression to true. If I go in the other way where I say okay listen let's keep this and let's try to solve T XOR F at first. Now true XOR F will be nothing but true and then there will be an F which again gives you true. So if I follow this way and this way I am still getting a true. If I follow the other way of solving this first and this then also I am getting a true. So I can say there are two ways in which I can evaluate this expression to get true. There are two ways in which I can evaluate this expression to get true. The question is very straightforward. The question states given an expression you have to tell me the total number of ways in which you can evaluate this expression to true. So how do you solve this problem? Again you definitely know it will have true then it will have probably XOR then it will probably have false then it will probably have or or and then a true probably then an then a false then XOR then a true, it can be like anything."
+    },
+    {
+      "chunk_id": "L232_C4",
+      "start": 222.58,
+      "end": 297.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=222s",
+      "text": "probably have or or and then a true probably then an then a false then XOR then a true, it can be like anything. But something for sure you known as it starts with true or false and then is followed by an operand. Then followed by a true or false followed by an operand followed by true or a false followed by an operand followed by a true and false followed by an operand followed by a true and false followed by an operand. Something I definitely knows. solve this guy at first and then this then over here I can decide whether to solve this or that that is a different thing but when I start can I think this problem in this a certain way that either I solve this and this or either I say this or this or either I say this or this or either I say this or this or either I say this or this so can I say can I say at every opponent at every operand I can do a partition stating I solve the left subproblem I solve the right subproblem right or I can say on this operand I solve the left subproblem and the right subproblem or I can say on this operand I solve the left subproblem and the right subproblem or I can say on this operand I solve the left"
+    },
+    {
+      "chunk_id": "L232_C5",
+      "start": 297.18,
+      "end": 370.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=297s",
+      "text": "on this operand I solve the left subproblem and the right subproblem or I can say on this operand I solve the left subproblem and the right subproblem or I can say on this operand I'll solve the left subproblem and the right subproblem so on every operand I'm actually breaking it down into subproblems and then imagine if I'm solving this this will give you a true and then on this on this like if I try to write this subproblem like if I just do it in yellowish F OR T AND F XOR T XOR F now on this again you can do the same thing either you solve this and this either you solve this or this either you solve this or this either you solve this or this and again this will be solved so am I getting a pattern of breaking it down on the operand yes I'm getting a pattern to break it down on the operand so why don't I break it down on the operand let's let's actually break it down on the operand so can I say initially I have this entire expression to be solved so probably we know this is nothing but similar to something like MCM where we had A B C D E F we decided this will be solved at first and this will be solved at first so can we actually think this problem in that direction we"
+    },
+    {
+      "chunk_id": "L232_C6",
+      "start": 370.1,
+      "end": 440.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=370s",
+      "text": "this will be solved at first and this will be solved at first so can we actually think this problem in that direction we definitely can and that is what we will move across and try to think so can I say initially I have this entire range I can call this as an I and J as we have been doing in all the other problems I can say this is the entire range that I'm looking to evaluate right starting from the true to this last gap I can say this is the initial range that I'm looking to evaluate now can I say can I say if I'm standing at I I can always do a partition on an operand on an operand on an operand on an operand on an operand I definitely can do and that operand can be this guy, this guy, this guy or this guy or this guy do you see a pattern evolving do you see a pattern evolving yes the operands are at a distance of two indexes the operands are at a distance of two indexes I can can definitely vouch for that that the operands are or will always be at a difference of two right and if this is the entire expression that we are solving the first operand will be starting from i"
+    },
+    {
+      "chunk_id": "L232_C7",
+      "start": 440.94,
+      "end": 517.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=440s",
+      "text": "of two right and if this is the entire expression that we are solving the first operand will be starting from i plus one then you can do a plus two then you can again do a plus two then you can again do a plus two plus two in order to find your operands and you can go on till j minus one because that is where the last operand will be so i have practically understood where can i do a partition that is definite enough that where can i do a partition but now how do i solve a problem imagine let me just erase this blue lines because those are a lot of lines okay now this was the entire range right imagine i am doing i am doing an operand like i am trying to do a partition here this is an and operator this is an and operator so apparently this is the sub problem that i am saying to solve this is the sub problem that i am saying to solve correct so if this partition is done at an index so can i say can i say the number of uh like i need to solve this partition which is f of i comma index minus one this belongs to this and this is nothing but f of index plus one comma j as usual this is a left sub problem this is a right sub problem now"
+    },
+    {
+      "chunk_id": "L232_C8",
+      "start": 517.74,
+      "end": 588.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=517s",
+      "text": "nothing but f of index plus one comma j as usual this is a left sub problem this is a right sub problem now since there is an and operator since there is an and operator what should the left sub problem give you back what should the left sub problem give you back and what should the right sub problem give you back that is a simple enough question that i am asking you so we know that if there is an and operator and we know and will because you are saying there is a left guy and there is an and there's a right guy so i know one thing for sure this left has to yield a true this left has to yield a true and this right has to yield a true that is for sure the number of ways can i say since i'm looking for the total number of ways to make true can i say the number of ways in which the left yields true imagine it is x number of ways and the number of ways the right yields true is y so can i say the total ways will be x into y where x is the number of ways in which the left guy gives true the left is true and"
+    },
+    {
+      "chunk_id": "L232_C9",
+      "start": 588.14,
+      "end": 663.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=588s",
+      "text": "x into y where x is the number of ways in which the left guy gives true the left is true and similarly y is number of ways in which the right is true understood so that was for and operator that was for and operator now similarly if i if i think of other patterns where we are doing a partition at imagine or and there is a left guy that has to be solved and there is a right guy which has to be solved so if it's an or operator when does an or operator gives you a true like when will this yield a true can i say if the left sub problem yields true and the right sub problem yields a true and imagine this is x1 ways this is x2 ways the left sub problem yields true or gives you true in x1 ways the right sub problem gives you true in x2 ways so can i say the number of ways will be x1 into x2 is it just limited to true no because it is an or operator so i can say if the right yields false in x3 ways because this sub this right sub problem might also give you a"
+    },
+    {
+      "chunk_id": "L232_C10",
+      "start": 663.66,
+      "end": 740.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=663s",
+      "text": "say if the right yields false in x3 ways because this sub this right sub problem might also give you a false might might give you a false and if the number of ways in which it gives you a false is x3 is x3 so what you say is hey listen there is true on the left there is false on the right so true and false if it's an or operator will also yield a true true or false will also yield a true thereby the number of ways can also be x1 the number of ways in which you can make true on the left the number of ways in which you can make false on the right similarly can i say if i make false in x4 ways i can again say false from here true from here will also yield a true thereby x2 into x4 so i can say the total ways will be this i figure out the number of ways of true the number of ways of true number of false false and total will be this if it's an or operator if it's an if it's a simple uh and then it's an easy one it is just x into y if it is or then it becomes x1 into x2 x1 into x3 x2 into x4 right and similarly if it's a zorr"
+    },
+    {
+      "chunk_id": "L232_C11",
+      "start": 741.18,
+      "end": 809.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=741s",
+      "text": "if it is or then it becomes x1 into x2 x1 into x3 x2 into x4 right and similarly if it's a zorr if it's a zorr let's understand when does a zorr gives you a true so zorr is basically if it's a true or true it will give you a false if it's a false or for uh it will give you a false if the trues or false it gives you true if the false or true it gives you true so these are the ways in which it can yield true remember this now i see one thing only there are two ways in which you can get true so thereby if there is a left sub problem if there is a right sub problem and if i can get the number of trues to be x1 the number of trues to be x2 the number of false to be x3 the number of false to be x4 so i can say it's true into false which is x1 into x4 that's true into false and false which is x3 into true which is x2 so for the zorr whenever there is a zorr operator this will be the total number of ways this will be the total number of ways so i i can understand one thing if i'm solving a left sub problem i have to figure out the number of ways in which it can"
+    },
+    {
+      "chunk_id": "L232_C12",
+      "start": 809.98,
+      "end": 874.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=809s",
+      "text": "can understand one thing if i'm solving a left sub problem i have to figure out the number of ways in which it can be true and in which it can be false so i have to solve it in two ways i have to figure out in how many ways it can be true in how many ways it can be false understood now as of now we were just solving a true problem where we are given a range ij and we are trying to evaluate it to true but now whatever range because this sub problem and this is a sub problem that this might yield a true this might illa true or this sub problem might be a false so whatever range i'm solving yes whatever range i am solving i need to figure out in how many ways it can be made true in how many ways it can be made false so i'm looking to make it true i'm looking to make it false i have to figure out both the ways so apparently can i just carry a third variable i can so what i'll do is i know this is the range that i'm looking to solve and i will say one or zero like true or false is true like are you looking for true so i will i'll have this guy is true if i'm looking to figure out the"
+    },
+    {
+      "chunk_id": "L232_C13",
+      "start": 874.38,
+      "end": 940.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=874s",
+      "text": "is true like are you looking for true so i will i'll have this guy is true if i'm looking to figure out the number of ways in which i can need to have it true i'll have it as one or i'll have it as zero like initially when you start let's go back and understand initially this is the guy and if i try to write down the indexes it's 0 1 2 3 4 5 6 7 8 9 10 so i will call it f of 0 comma 10 because the range is from 0 to 10 so i'll call it 0 to 10 and this is the initial expression and the question states in how many ways can you make the initial expression true so i will call is true as one because i'm looking for true because i'm looking for the number of truth so i'll call it as one got it perfect so what i'll do is i will simply uh have it as is true and initially i will start off with f of 0 comma n minus 1 and 1 because i'm looking for the number of trues i'm looking for the number of ways in which you can make true the entire guy the entire stuff so that's why initially start with one but whenever you're solving the left and right sub problem make sure you uh take"
+    },
+    {
+      "chunk_id": "L232_C14",
+      "start": 940.14,
+      "end": 1012.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=940s",
+      "text": "stuff so that's why initially start with one but whenever you're solving the left and right sub problem make sure you uh take care of whether you need true or whether you need false got it so what will be the base case in partition dp now you know one thing for sure if the partition is over which is this case i greater than j this is partition over and there are zero ways in which you can make it true if there is no partition there is no true or no false so you just return a zero as a standard way what's the other now when do you actually get it true and false try to try to realize or try to think so imagine if i am if i'm just giving you this portion true or uh true or false is or true imagine now wherever you're trying to solve this sub problem at like this was the initial sub problem i and j and then you broke it down into solving saying just solve this where i is this j is this and also solve this f zot where i is this j is this and the other way you're saying solve this sub problem where i is this j is this and solve this sub problem where i is this j is this now tell me"
+    },
+    {
+      "chunk_id": "L232_C15",
+      "start": 1012.3,
+      "end": 1085.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1012s",
+      "text": "problem where i is this j is this and solve this sub problem where i is this j is this now tell me one thing if this is a sub problem where i and j is he himself where i and j is he himself is he himself what will this guy give this guy will give one way to make it true this guy will give one way to make it true since i was looking to make this guy as true this will give true as one way because i is equal to equal to j and it was true similarly over here single guy this will also give you one way so can i say can i say if if i is equal to equal to j then that is when i can say it's end if the single guy you know it's a true or false if the single guy it will either be true or it will either be false the single partition will either be true and false and if your is true is looking for one like if you're just looking for one if you're passed on one which means you're saying how many trues are there in how many ways can you make it true you will say okay if is true is one then i will return you whatever is at my partition if that is true i'll"
+    },
+    {
+      "chunk_id": "L232_C16",
+      "start": 1085.82,
+      "end": 1161.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1085s",
+      "text": "will say okay if is true is one then i will return you whatever is at my partition if that is true i'll return a true or else it will return a false this makes sure this will make sure that it returns a one if true zero if false remember this and if it is not if is true is like you're looking for false if you're looking for false remember this if you're looking for false in how many ways can you make it false then i will say okay then kindly return if the partition is false then only return one if the partition is false return one if false return zero if true so in this way you can say that partition at the end of the day is true if you're looking for true it's one way if you're looking for false it's one way otherwise it's not so this is how the base case can easily be written once you have written the base case we will get back and see okay where is the partition now where can you make the partition if this is i this is j i already told you you start from i plus one and you go until j minus one with a transition of plus two plus two plus two so just go across and make the partition so what you'll do is you'll just go across and try to make the"
+    },
+    {
+      "chunk_id": "L232_C17",
+      "start": 1161.02,
+      "end": 1231.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1161s",
+      "text": "plus two so just go across and make the partition so what you'll do is you'll just go across and try to make the partition right starting from index equal to i plus one index lesser than equal to j minus one and index equal to index plus two you'll always make a jump of plus two so imagine i'm saying x1 is the number of ways in which you can make the left partition true or let's have it a name better left partition can be made true in the number of phases i comma n minus one is the left partition i'm looking the left partition to be true so one the left partition can be made false in i comma n minus one comma zero the right partition can be made true in index plus one comma j is the right partition comma one the right partition can be made false in you can go to the right partition and say can you please bring me down so depending on if you want a true you send in a one if you want the false you send in a zero if you want the true you send in a one if you want the false you send in a zero now whatever formula we made for an example if your operand is by the way we are looking for the number of ways so we know number of ways is initially"
+    },
+    {
+      "chunk_id": "L232_C18",
+      "start": 1231.1,
+      "end": 1299.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1231s",
+      "text": "example if your operand is by the way we are looking for the number of ways so we know number of ways is initially zero and all the ways you'll count all the ways you'll count and if you remember the dp uh the recursion lecture seven i told you whenever you're counting ways if there is a one recursion call two recursion call you add up all of them so these are recursion calls being made you add up always what does that mean if you're counting always first you will try this and figure out the number of ways and add it then you'll try this figure out the number of ways and add it then you'll try this figure out the number of ways and add it then you'll try this and this figure out the number of ways and you'll add it then you'll try this and this figure out the number of phase and you will add it that's what you will keep on doing so can i say if this is what we have have as a very straightforward one you say that hey listen if the operand is somewhere and if the operand is somewhere and I know the ways will be nothing but we just need true on the both sides so left will be true and right will be true just please add them up similarly you go on applying the formula for or and similarly you go on applying the"
+    },
+    {
+      "chunk_id": "L232_C19",
+      "start": 1299.1,
+      "end": 1368.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1299s",
+      "text": "right will be true just please add them up similarly you go on applying the formula for or and similarly you go on applying the formula for XOR once you have done this just the formula that we wrote you return the two total number of ways yes you just return the total number of ways that is what you will do now are we done no you have to be careful enough is this correct no this is not correct why is this not correct because this just gives you true ways but if you remember your function had a parameter does it want true it might want false it might want false so on an and if I'm if I'm counting only if I want true only if I want true then I come across and do a true into true what if I want false then the number of ways will be very simple if I want false it will be either one of them has to be false so either the right one has to be false or the left one has to be false or the both has to be false that will also work so if if the left is true and the right is false it will give you a false if the left is false and the right is true it will also give you a false if both"
+    },
+    {
+      "chunk_id": "L232_C20",
+      "start": 1368.26,
+      "end": 1435.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1368s",
+      "text": "give you a false if the left is false and the right is true it will also give you a false if both of them are false it will also give you a false so if you are looking for false ways this is how you count it if you're looking for true ways this is how you count it similarly for or you can write similarly for XOR you can write and you can just return the number of ways that's how you do it so we are definitely applying recursion right what are we applying we are trying to apply recursion and if you're applying recursion the time complexity over here will be exponential and in order to get it better you will see if there are overlapping sub problems and we will notice that there are overlapping sub problems thereby like you can draw the recursion tree and you'll see overlapping sub problems thereby we can easily memoize it yes thereby we can easily memoize it and if we can easily memoize it how do you memorize you go back to the function the function had an I the function had a J the function has is true all are changing parameters I can be from 0 to n minus 1 so an n size will be required for the state J can be from n minus 1 to 0 again an n size"
+    },
+    {
+      "chunk_id": "L232_C21",
+      "start": 1435.82,
+      "end": 1513.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1435s",
+      "text": "so an n size will be required for the state J can be from n minus 1 to 0 again an n size will be required is true either I required true or either I require false so there are two guys so I'll be requiring a 3d DP of n n n 2 a 3d DP of n n n 2 and you will be just writing it over here like DP of I DP of J and is true is equal to ways and similarly you can just plunge it plunge that in over here right over here yeah right over here if if that DP has not been visited you end up returning the DP of whatever is that so you just write across that and if you are doing this you will end up boiling down the time complexity to how many you're using these number of states n into n into these are the number of states that are using inside every state you're running a for loop for the partition to be made so this is almost near about to n cube whatever the space complexity you're trying to memorize it in n square into 2 plus an auxiliary because you're trying to shrink it down so auxiliary stack space will be there this will be the time complexity and space"
+    },
+    {
+      "chunk_id": "L232_C22",
+      "start": 1513.26,
+      "end": 1582.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1513s",
+      "text": "because you're trying to shrink it down so auxiliary stack space will be there this will be the time complexity and space complexity in the next step we will try to code this up so let's quickly check out the code now something very important to figure this out as since the number of ways might be a lot of ways you need to return the answer modulo this okay so please make sure you take everything in long long otherwise it will be an issue so please make sure you do this and the I INTJ and INT is true is what we required right and you'll definitely require the string as well so probably you can write the string as well perfect now I know one thing if it exceeds this case will never happen but still let's for safety reasons let's write it and in this case if I know it's true and I will then return expression of I is that true if it is true I'll return it true or else it goes as false else I'll return expression is equal to false it's false it's a one way because if I'm looking for that perfect right after this I will have the number of ways so just a quick thing probably this we can do"
+    },
+    {
+      "chunk_id": "L232_C23",
+      "start": 1582.98,
+      "end": 1659.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1582s",
+      "text": "that perfect right after this I will have the number of ways so just a quick thing probably this we can do long long just to avoid overflows yeah perfect long long ways is equal to zero for INT index the partition will start from this and index will go on till J minus 1 and index plus equal to 2 perfect and if I'm doing the partition I'm looking for long long left just instead of writing it again and again let's do one thing hash define long long is LL that is perfect let's change it to LL this changes to LL LL left true will be function of I of index minus 1 let's find the number of trues LL left false will be F of I comma index minus 1 find the false LL right true will be F of index plus 1 comma J comma find the number of trues LL right or false will be F of index plus 1 comma J comma 0 comma expression okay this is how you can easily find this off right after this I know there can be two ways one is the expression going to be and this is"
+    },
+    {
+      "chunk_id": "L232_C24",
+      "start": 1659.86,
+      "end": 1739.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1659s",
+      "text": "right after this I know there can be two ways one is the expression going to be and this is one of the ways else if the expression goes to be or that's another way and the last way is definitely of XOR if it is and and I know it is true is what I'm looking for then I will go as ways plus right true it left true for sure and we will do a modulo mod and we will do a modulo mod over here but if it is not then I will do ways equal to ways plus then this will go as right true into left I'm just looking for false so right true into left false right true into it'll go as left false that will definitely give you false because you're looking for true so it's just going to be true and true but if you're looking for false true and false will give you false plus the right false into left true will also give you false plus both false will also give you false"
+    },
+    {
+      "chunk_id": "L232_C25",
+      "start": 1739.62,
+      "end": 1816.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1739s",
+      "text": "right false into left true will also give you false plus both false will also give you false perfect and if you're adding every one of them just make sure after the addition just do a simple otherwise it will overflow so false and true false and true and false and false everyone will give you a false perfect if it's a or and if I am looking for true then I know it will be ways plus if it's an or I know left true into right true will give you a false it will give you a true rather I know the left true and the right false will also give you a true and I also know a left a right true rather or a left false and a right true will also give you a false sorry a true so all of these ways are bound to give you a true but I'm looking for false another is only way the only way in which I can make it false is I take right false into left false and I do a modulo mod if I go across and do a modulo mod on both the sides they both have to be false"
+    },
+    {
+      "chunk_id": "L232_C26",
+      "start": 1816.94,
+      "end": 1896.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1816s",
+      "text": "mod if I go across and do a modulo mod on both the sides they both have to be false perfect similarly for us or I know for Zor if I just write down the ways yeah this is how it is so if it is is true like if I'm looking for true then the ways will be ways plus modulo for sure and if I'm looking for true I know both this and this will be true so it will be left true into right false of modulo perfect and plus left false into right true of modulo this is what will be it is if it is not then it will be ways plus so either true and true will be false or false and false so left true into right true perfect or left false into right false perfect and you can just go on do a mod once you have done all of these you can simply return the ways it was a long one isn't it so over here what we can do is you can just return f of zero comma expression"
+    },
+    {
+      "chunk_id": "L232_C27",
+      "start": 1896.46,
+      "end": 1968.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1896s",
+      "text": "it so over here what we can do is you can just return f of zero comma expression dot size minus one that is n minus one I need true and I need the expression perfect so this is what I'll write and once you've written this I think should be fine I'll try running this hopefully it runs as a long book I did not now this is recursion we need to convert this into my motion so simple step is vector vector vector and it is gone as LL and then you can go as DP and then you can go as n and then you can go as the double one that we did vector vector LL again and then you can go the similar way when you you can say n comma vector again you can go on L and over here you can go as two comma minus one I think should be perfect I'll just take it in the next line yeah now it should be visible so if you just do this I think we should be fine and now you can just pass on this just make sure you carry this across and make this a DP amazing so right at the next step just make sure if DP of IJ is true is not equal to minus one"
+    },
+    {
+      "chunk_id": "L232_C28",
+      "start": 1968.82,
+      "end": 2047.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=1968s",
+      "text": "amazing so right at the next step just make sure if DP of IJ is true is not equal to minus one return DP of IJ is true okay once you've done this rather the last step right DP of I J is true and we write this I think we should be good to go okay my bad have a DP over here our DP over here have a DP over here as well so try running this and you will see this will be running fine it is and I'll try submitting so if you try submitting this you will be seeing that you're getting a wrong answer okay so we got a wrong answer that is strange looks like I've done a minor mistake this will be into my bad okay apart from that looks fine to me you'll try submitting this and see if this is running fine it does it does so so guys I hope you have understood the memorization solution so just in case you want to write the tabulation format please follow the procedure that I have taught you right from the first in the DP series there are three changing parameters just make sure you write them make sure you write the base cases by yourself and right after that just copy paste the recurrence under the three nested loops"
+    },
+    {
+      "chunk_id": "L232_C29",
+      "start": 2047.7,
+      "end": 2085.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=MM7fXopgyjw&t=2047s",
+      "text": "sure you write the base cases by yourself and right after that just copy paste the recurrence under the three nested loops every four nested loops it'll get a lot complex so let's not get deep into that instead of that let's keep it simple to the memorization solution but I'll highly appreciate if one among you can write the tabulation code by following the format that I have taught and put it in the comment section that will be immensely helpful for a lot of other people as well so yeah with this I will be wrapping up this video just in case you've understood everything just give a like and if you have watched the video till here let me know in the comment section if you have understood it or not and if you're new to the channel please please please do subscribe to us because that is the only thing that motivates me to make these kind of content and with this let's wrap up this video and meet in the next one till then bye bye take care"
+    }
+  ]
+}

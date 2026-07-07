@@ -1,0 +1,106 @@
+{
+  "lecture_id": "L236",
+  "lecture_number": 236,
+  "lecture_title": "DP 56. Count Square Submatrices with All Ones | DP on Rectangles 🔥",
+  "youtube_url": "https://www.youtube.com/watch?v=auS1fynpnjo",
+  "chunks": [
+    {
+      "chunk_id": "L236_C1",
+      "start": 0.0,
+      "end": 73.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=0s",
+      "text": "Hey everyone, welcome back to TakeUForward. So today we will be solving the problem count number of square sub matrices. Yes. What does the question state? You will be given an n cross m matrix filled up with one and zeros. Okay. And if to figure out how many square sub matrices are there, what is square? Whose length is equal to the breadth, right? So for an example, I can say we have a size one square here, a size one square here. So I can say there are six size one squares. Can I see that? I definitely can. How many two size squares are there? Then that can be this only. Like I can see just one size two square. Do I have a size three square? The answer to that is no. So in total I have seven squares in total. I have seven squares in this particular n cross m matrix. Okay. Uh, so in total I have seven square in this particular matrix. Now let's check out for this. How many do you think? I know one thing for sure."
+    },
+    {
+      "chunk_id": "L236_C2",
+      "start": 73.4,
+      "end": 149.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=73s",
+      "text": "matrix. Now let's check out for this. How many do you think? I know one thing for sure. We have one, two, three, four, five, six, seven, eight, nine, 10. We know 10 size one squares are definitely there. How many two size are there? Let's quickly check that out as well. We know one is here for sure. We know one is here for sure. We know one is here for sure. We know one is here for sure. So there is four size two squares, something for sure. How many do we have as three? I can see, uh, do we have a three size square? Yes. So here is the three size square that we only have. So we have a one size three squares. So in short I have 15 total squares. That is the question I will be giving you an n cross m matrix. You have to tell me the total number of sub matrices which are squares. It can be of size one, size two, size three, can be of any particular size. So how do you approach this problem? Definitely like if this question comes up in an interview, you say that you're going to try out the brute force solution and it's very simple."
+    },
+    {
+      "chunk_id": "L236_C3",
+      "start": 149.88,
+      "end": 217.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=149s",
+      "text": "comes up in an interview, you say that you're going to try out the brute force solution and it's very simple. You basically stand here and you say, okay, uh, this guy can be one square. This guy can be two square. This guy can be three square. So there can be three squares. Then you stand here. You said this guy can be one square. This guy can be two square. Similarly, you stand here. You said this guy can only be one square. Stand here, one square, only two square. Stand here, one square, two square. So you probably, you can just run across some for loops and that will be your brute force. We just keep on expanding. Like you basically stand here and you try expanding to this. Then you from here, try expanding to this. And that is only possible if these guys are one. This expansion is only possible if these guys are one. So you need to have a proper check, which is again going to be slightly complicated. So like this in short, you don't have to code it in an interview. Just have to say that this is what I'm thinking. They'll not ask you to code it because the code will be very, very complex. That's a brute force solution where you stand at a particular step and you try to expand it. But can we do better? Uh, yes, we can do better."
+    },
+    {
+      "chunk_id": "L236_C4",
+      "start": 217.04,
+      "end": 292.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=217s",
+      "text": "where you stand at a particular step and you try to expand it. But can we do better? Uh, yes, we can do better. And that is where something like dynamic programming will come in. Yes. So until now, all the dynamic programming solutions that we have done was based on recursion. Okay. It was based on recursion. Over here we can apply recursion, but that is not intuitive. Definitely. Generally in all square problems, we tend to write the tabulation. We tend to write the tabulation that is much more intuitive and you'll understand why is that much more intuitive. We will try to write the tabulation format. So what we do is generally in all the square problems, there are not many, like there are only couple or three square problems. So what do you do is you create the similar size dp array. Okay. Try to create a similar size dp array. And what do you state is dp of i j like 0 1 2 0 1 2. Now whatever value is here that basically states how many squares, how many squares end at i comma j like the right bottom, the right bottom is at i j. The right bottom is at i j. How many are there whose right bottom is at i j."
+    },
+    {
+      "chunk_id": "L236_C5",
+      "start": 292.64,
+      "end": 365.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=292s",
+      "text": "is at i j. The right bottom is at i j. How many are there whose right bottom is at i j. For an example, if I ask for this guy, how many guys are there? Like how many squares will end at this guy being the right bottom? I can say only he himself. So there'll be only one guy who will say that I will be the right bottom, which is this guy for this guy. This cannot be a square because this is a rectangle. Only this guy is the right bottom of himself. So again one for this guy, this guy himself will be the right bottom because this is a rectangle. This is a rectangle. So this guy will be the bottom guy. So that's one again. Similarly, for this guy, this will be a rectangle. So he himself will be the right bottom one for himself again for this guy. He himself will be the right bottom. So one for himself. So I'm definitely sure that this row and this column gets copied because there is the single elements and the single elements who will be the square. So if I ask you, this guy will be the right bottom for how many squares? One square is he himself, one square is he himself where he is the right bottom. The other one is this where he is the right most bottom guy."
+    },
+    {
+      "chunk_id": "L236_C6",
+      "start": 365.54,
+      "end": 439.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=365s",
+      "text": "square is he himself where he is the right bottom. The other one is this where he is the right most bottom guy. One is he himself where he is the right most bottom guy. The other square is he where he is the right bottom guy. So I can probably put in a two over here. If I ask for this, one he is himself where he is the right bottom guy. The other is this portion where this is the right bottom again. So again two. For this, he himself and this is the other one. Now beyond this, this cannot be because this is rectangle. I'm looking for square, he himself and in this he. So again two. Now for this, I can say he himself, this here and in the entire again he himself. So there are three. One is this, one is this, one is this in which this guy is the right bottom. So there are three. So I know at every junction, I have one square, I have one, I have one, I have one. This can be a part of two, this can be a part of two, this can be a part of one. So how do I fill up this DP table is my question because I know for every guy how many squares are there and I need the total."
+    },
+    {
+      "chunk_id": "L236_C7",
+      "start": 439.56,
+      "end": 519.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=439s",
+      "text": "up this DP table is my question because I know for every guy how many squares are there and I need the total. So I can probably do one plus one plus one plus two plus two plus one plus two plus three. If I sum it up all, I'll get all the squares that we can form because we are assuming every guy to be the square bottom, like the right bottom. So but how do we fill up this DP table because manually looking, we understand that okay this guy is a portion of he himself. Again for this, again for this, but how do you actually fill this up? That is a point to be raised. So for that what I'll do is I'll take the next square. And try to fill this up and see if we are able to fill this. Okay. Now as I said, the first row will be they themselves, the first column will be they themselves. So you don't need to do anything, you just replicate them. Just go across and replicate them. Now over here, can I see if this guy is forming one square, this guy is forming one square, this guy is forming one square. If I add a one, that's bound to form one more square. That's bound to form one more square. Okay. So that's two. Over here, this guy is forming a single square. This guy is forming two square."
+    },
+    {
+      "chunk_id": "L236_C8",
+      "start": 519.1,
+      "end": 588.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=519s",
+      "text": "to form one more square. Okay. So that's two. Over here, this guy is forming a single square. This guy is forming two square. But if he attaches this, this will be a rectangle. And this guy is forming a single square. So can I say, I don't need to take this tool. I don't need to take this tool because this on attaching will be a rectangle. But what I can do is since this is a single square, this is a single square, and I'm very much sure if this is forming a two square, this will also form a single square. Thereby, can I say, I'll take the minimal of this, this, this, and do a plus one for him, he himself. So that will be a two. I hope you understood. Because, because, again, let's repeat. We had a two, which means we were having two squares, which were ending here. And if I expand this, we cannot have, because it's a rectangle. Thereby, it's very important. We take the minimal of all of these because the minimal is important over here. If this is forming one square, this is forming one square, and this is forming two square, then it's bound that we take this because this two will also form one. That's why a two comes in over here. Okay. Now again, we are coming over here. Same logic. A one is here. A one is here."
+    },
+    {
+      "chunk_id": "L236_C9",
+      "start": 588.12,
+      "end": 657.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=588s",
+      "text": "a two comes in over here. Okay. Now again, we are coming over here. Same logic. A one is here. A one is here. And then there is two, which means I can form two squares. One is this, the other one is this. But if I expand this, this cannot be three squares because this can just be one and this can be two. So, thereby, again, the minimal, and I'll fill in with two. Perfect. Similarly, over here, we have a two, which means there is one square, he and the other square he, that's why two. And there is again one, which means one himself. So, can I say again, the minimal of all, and I'll just fill up two. And over here, a point to be seen. Over here, we see that, okay, this guy, this guy says this guy can form two, which means one for himself and the other for himself. This guy also says I can form two, which means one for himself, one for himself, which means all of these guys are filled with ones. All of these guys are filled with ones. That is the reason there is a two over here, because all of these are filled with ones. That is the reason there's a two over here, which means all of these are filled with ones. And there's a two over here, which means all of these are also filled with ones. This one and this one."
+    },
+    {
+      "chunk_id": "L236_C10",
+      "start": 657.8,
+      "end": 725.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=657s",
+      "text": "filled with ones. And there's a two over here, which means all of these are also filled with ones. This one and this one. So, I can assumedly say all of these are filled with ones. So, if I attach one more one, I know I'll form a square of size three, one himself, the other here, and the other full. That is how you do it. Okay. Let's do it for the last one. For the last one, I see, I can just have two guys, which means this portion, I can again have two guys, which means this portion. I can again have three guys which means this portion, but this guy can actually form this and actually form this at max and actually form this, it cannot go this portion, it cannot go this portion and this portion comes under this league so I can just go till this to at max till this two, I can go this. That is what I can do. So I can take this two and I can say, Hey, listen, I can do for myself. I can do for yourself. I can do for the three. So that means there was two and I'm adding one. So that's three again. Thereby the total rectangles would be one plus one plus one plus one plus two plus two plus two. And you sum it up. I hope that makes pretty much sense. So the formula is very straightforward."
+    },
+    {
+      "chunk_id": "L236_C11",
+      "start": 725.2,
+      "end": 805.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=725s",
+      "text": "plus two plus two plus two. And you sum it up. I hope that makes pretty much sense. So the formula is very straightforward. If you are, let me just quickly fill this up. You just fill up the first row as it is in order to fill this, in order to fill this, you take this guy, you take this guy, you take this guy and the minimal. And if it's a one, you add one to it. The minimal is one. There's one. So you add. Now you go over here. That's a one. You go to this. That's a zero. You go to this. This is a one. This is a two. So the minimal is zero. So, one plus one, one, because he will be himself only. This cannot expand. He will be himself only thereby one. Next you go here and you say, okay, listen, there's a one. So there's a two here. There's a one here. There's one here. So it's the minimal one. So one plus one, two again makes sense because one himself, one for himself. There's zero, so zero. That's how you fill it. So I can say any dp of i, j will be minimal of dp of the upper row, the diagonal and the previous column. Perfect. Plus one. And this will only be valid if it is a one, if it is a one, otherwise you just fill in"
+    },
+    {
+      "chunk_id": "L236_C12",
+      "start": 805.04,
+      "end": 881.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=805s",
+      "text": "Perfect. Plus one. And this will only be valid if it is a one, if it is a one, otherwise you just fill in a zero. That is as simple as it can get. And if you just write this, you should be able to get the total number of answers. Let's quickly check out the code. So we will declare the dp of size n cross m. Now you know the first row gets copied. So please, please copy the first row. That's as simple as that. What you can do is you can go for the first row, which is j equal to zero, j lesser than m and j plus plus. And please copy the first, which is dp of zero, j equal to array of zero and j. Similarly, please make sure you copy the next thing, which is the first column. Again dp of i zero equal to array of i zero. Once you've done this, it is pretty straightforward. Just go across this, this, this, this. Go across. Just make sure you don't do the first row and the first column again. This can be very simple. If array of i j is equal to equal to zero, you say dp of i j is equal to zero or else you say dp of i j is equal to one plus minimum of dp of the previous row guy comma minimal"
+    },
+    {
+      "chunk_id": "L236_C13",
+      "start": 881.36,
+      "end": 948.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=881s",
+      "text": "or else you say dp of i j is equal to one plus minimum of dp of the previous row guy comma minimal of dp of the diagonal, which is i minus one j minus one comma dp of the previous row, which is previous column rather, which is this. Definitely. Once you have done all these, you need the summation of everyone. You can either submit, you can either submit while calculating or you can just do it across here. Whatever you wish to, that is your choice. I'll leave that to you. Dp of i j, that is something that you can do. Once you've done, you can return the summation. This is very simple. All of them are giving correct answer. Now if you submit this, you will indeed get correct answer. So this time complexity guys, we're using big O of n into m. That is what we're using and the space complexity is an n into m dp matrix is what we are using. So I hope I was able to explain you this problem on the matrix. Just in case I was, please, please, please make sure you like this video. And if you're new to this channel, please, please, please do consider subscribing to us because that is the only thing that keeps me motivated every now and then to make these kind of content. So yeah, with this, I'll be wrapping up this video. Let's meet in the next one."
+    },
+    {
+      "chunk_id": "L236_C14",
+      "start": 948.56,
+      "end": 957.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=auS1fynpnjo&t=948s",
+      "text": "and then to make these kind of content. So yeah, with this, I'll be wrapping up this video. Let's meet in the next one. Till then, bye bye. Take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "lecture_id": "L171",
+  "lecture_number": 171,
+  "lecture_title": "G-46. Disjoint Set | Union by Rank | Union by Size | Path Compression",
+  "youtube_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U",
+  "chunks": [
+    {
+      "chunk_id": "L171_C1",
+      "start": 0.0,
+      "end": 78.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video, we're going to learn about the most important topic in the graph series, which is the disjoint set data structure. It's a very, very important topic. Why? This is commonly asked in almost all interviews and the online assessments as well. So you need to master this topic. And in order to master this topic, you have to watch this video and all the follow up problems that I'll be solving in the next part of this graph series. So let's understand why is this joint set data structure used. So imagine I give you something like one, two, three, four, and I give you other portion like five, six, seven. This is a single graph, but it has two components. First one is this. Second one is this. Now suddenly someone will come up and say, Hey, does one and five belong to the same component or not? How will you determine? You'll pick up one and you'll start a DFS traversal. One, two, three, four, and the traversal is complete. You could not find five since you could not find five in the DFS traversal of one in that component. It will be like, they do not belong to the same component. You did a DFS traversal and that's"
+    },
+    {
+      "chunk_id": "L171_C2",
+      "start": 78.44,
+      "end": 152.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=78s",
+      "text": "one in that component. It will be like, they do not belong to the same component. You did a DFS traversal and that's a brute force. How much time will the DFS traversal take? N plus E. That's the complexity the DFS or the BFS takes. Already discussed this in the previous section of the graph series. If you do not know DFS or BFS, go back and watch it. So the brute force is going to take a kind of linear time complexity. So this is where something like this joint set comes in and says, Hey, I'm going to do the same thing in constant time. You asked me does one in five belong to the same component? I'm going to tell you in constant time, either a yes or a no. That's the use case of disjoint set data structure. And one more thing, it is usually used in dynamic graphs, graphs, which keep on changing, graphs, which keep on changing their configuration at every moment. What do you mean by exactly changing configuration? I'll explain you that in the later part. So disjoint set gives us two options. One is finding the parent. That's one of its main functionality. And the other main functionality is union. Now this union can be done with two methods. One is rank. Other one is size."
+    },
+    {
+      "chunk_id": "L171_C3",
+      "start": 152.86,
+      "end": 232.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=152s",
+      "text": "the other main functionality is union. Now this union can be done with two methods. One is rank. Other one is size. I'll be discussing both of them. But so primarily it gives you two functions, find parent and union. Now I did talk about dynamic graphs, graphs, changing configurations. So let's understand this. Now, what do you mean by these things? These are all edges. There's an edge between five and six. Okay. So initially what we assume is one, two, three, four, five, six, seven, everyone is alone. So initially before all these edges formation, every node is single, single, right? So you have one, two. What it means is I'm asking you to connect one, two. So that is what union does for you. Remember this. Whenever I say connect one, two union in disjoint set, we'll do it for you. We'll talk about union in details, but as of now, no, the higher level of union union will go and connect. So what I'll do is I'll go and connect. Okay. Next two and three connect to one next four and five, connect four and five next six and seven, connect six and seven. So you see the graph is changing at every instant, but you'll be like, but Stryver, wait, this is our graph is formed. But what"
+    },
+    {
+      "chunk_id": "L171_C4",
+      "start": 232.86,
+      "end": 306.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=232s",
+      "text": "the graph is changing at every instant, but you'll be like, but Stryver, wait, this is our graph is formed. But what happens here is if I stop the formation of it and I give you a question where after this formation, I suddenly ask you, Hey, does four and one belong to the same component or not? You will say no. Why? Because four as of now is here. One as of now is here. Till this point, they're not in the same component, but the answer will be no. So in any stage, someone might come up and ask you because the graph is changing at every step, but I can ask you a question at any step and you should be able to answer that in constant time. That is what disjoint set will do. And I'll explain you how it does next five and six. Let's connect five and six next three and seven. Let's connect three and seven. Now if I ask you the same question, does one in four belong to like after performing all the operation, does one in four belong to the same component? Your answer to that will be yes, they do belong to the same component. Understood. So you saw, they'll hear the graph was something different. The moment you perform the next two operations, the graph was a combined part. So I can ask you this particular question or any you and we belong to the same component"
+    },
+    {
+      "chunk_id": "L171_C5",
+      "start": 306.42,
+      "end": 368.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=306s",
+      "text": "the graph was a combined part. So I can ask you this particular question or any you and we belong to the same component at any particular time. So this is the use case of disjoint set data structure. Now let's quickly check out what is find parent and what is union exactly. So in order to implement a disjoint set data structure, we can implement union in two ways. One is the rank. The other one is the size. So I can follow two ways of doing it. Okay. But initially I'll be teaching you the rank. I'll be coding you up, showing you how to write a clean code so that it can be reused in almost all the problems. And then I'll be teaching you the size one. So the video will be a first union by rank, then union by size. Okay. So let's understand rank. So in order to implement union by rank, we will be requiring a couple of areas. One is the rank area while the other one is the parent area, which will serve for finding parent. I'll explain you. So let's quickly assign the rank and the parent areas. Okay. So the initial configuration is very, very simple. What we do is we assign a rank area with the same size of the number of nodes. Since the graph is one based indexing, I start the area"
+    },
+    {
+      "chunk_id": "L171_C6",
+      "start": 368.38,
+      "end": 444.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=368s",
+      "text": "a rank area with the same size of the number of nodes. Since the graph is one based indexing, I start the area from one. So everyone is assigned to zero. Okay. So what does rank zero mean? So if you see this particular node, there was no one beneath it. So it means there is no one beneath it, zero nodes beneath it. But eventually with the optimizations that we will do, the meaning will change. So I'll explain you throughout the course. So now we have a parent area. Now remember, initially everyone is the parent of himself. Now what does parent mean? Parent. Parent. Okay. Right above guy. That is what is the definition of the parent, which is stored here. Again, over the course of this lecture, the definition of parent will change as we do multiple optimizations in order to obtain a constant time complexity. So this is what we currently have. Let's quickly start the operations. So let's quickly write the pseudo code for the union of U comma V. So remember the step one is very, very simple. The step one says find ultimate parent. Yes. Find ultimate parent of U and V. What is the meaning of ultimate parent? I'll explain you. And we can term this as a ultimate parent link, ultimate parent of U and V. Let's term this as P U and P V. P U means ultimate parent"
+    },
+    {
+      "chunk_id": "L171_C7",
+      "start": 444.62,
+      "end": 522.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=444s",
+      "text": "a ultimate parent link, ultimate parent of U and V. Let's term this as P U and P V. P U means ultimate parent of U. P V means ultimate parent of P V. Now find rank of those ultimate parents. Find rank of P U P V. Find rank of ultimate parents, not U and V. Ultimate parents. Okay. Now connect smaller rank to larger rank. Connect smaller rank to larger rank always. In case of equality, you can connect anyone to anyone. We will explain that as we move. Okay, cool. We have understood or I've written the pseudo code. Okay. Let's now quickly check out the first operation that has been asked for us. It says union of one, two. So what I do is I have one. So I go and look at the parent of one. What is the ultimate parent? You have a bunch of notes. The guy at the top is known as the ultimate parent. Okay. So for one, who is the ultimate parent? One itself for two, two is the ultimate parent. So I can see as of now, the ultimate parent of one is one and the ultimate parent of two is two. What is the rank of both? Can I say the rank of both is as of now zero. If you carefully see what the ranks are zero. So if they are equal rank, you can actually connect anyone to anyone."
+    },
+    {
+      "chunk_id": "L171_C8",
+      "start": 522.3,
+      "end": 596.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=522s",
+      "text": "now zero. If you carefully see what the ranks are zero. So if they are equal rank, you can actually connect anyone to anyone. Very, very important. You can go ahead and connect. Either you can connect like one here or either you can connect to, it is completely your choice. So what do you do is you will go ahead and take this two and say, can you please connect with, or I can change the color. Can you please connect with two? And you'll go to that. Now your above parent is one. Now remember you connected two to one, right? Both of them had same level. Both of them were equal height. You took it and connected. So the height increased and the height increased, the rank will also increase by one. The rank will also increase by one. Done. Perfect. Next two, three. And this is where again, the next thing comes, who is the ultimate parent of two? Let's see who's the ultimate parent of two. It's one over here. And is the one, the top guy it is. So the ultimate parent of two is one. Who is the ultimate parent of three? Three itself. What's the rank? Rank of this particular one is one. Rank of this particular three is three. If you see one is one, three is zero. Sorry, it will be zero. Who is the greater guy? This one. The three will come up and get connected"
+    },
+    {
+      "chunk_id": "L171_C9",
+      "start": 596.1,
+      "end": 672.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=596s",
+      "text": "one, three is zero. Sorry, it will be zero. Who is the greater guy? This one. The three will come up and get connected to the smaller guy comes up and gets connected to the larger one. So three is connected to this. Now I'll go and erase this connected. Do I do anything to the ranks? No, you will not do anything to the ranks. Why? Because it still has a height of one because you connected a smaller to the larger. So the larger is not going to increase. It's not going to increase. So thereby we keep the same height. Perfect. Next, connect four and five. Who is the ultimate parent of four? Four. Who is the ultimate parent of five? Five. What's the rank? Zero. Zero. Connect any one to anyone. So what I'll do is I'll go ahead and connect five to four and I'll erase this. I'll update the parent of five to four. And the other thing that by the way, I forgot to update the parent of three. It will be one. So what the other thing I'll do is I'll increase the rank by one because two same guys connected height increases. So done. Next, connect. So what is the next thing? Connect six and seven. So ultimate parent of six is six. Ultimate parent of seven is seven. The ranks are zero. So what do you do is you'll connect seven to six. You'll update seven's parent to six."
+    },
+    {
+      "chunk_id": "L171_C10",
+      "start": 672.5,
+      "end": 740.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=672s",
+      "text": "seven is seven. The ranks are zero. So what do you do is you'll connect seven to six. You'll update seven's parent to six. You'll update the rank of six to one. This is how you can easily connect them. Perfect. Done. So apparently I can just remove this as well. So as of now, this is where we stand. What's the next thing? It says connect five and six. So perfect. So who is the ultimate parent of five? Let's see. Ultimate parent of five. Five is here. So five's parent is four. Who is actually the top boss? Who's actually the top boss? So he's the ultimate parent. Now I've been asked to connect six. So six's parent is six. Six's parent is six himself. So ultimate parent is six. Let's write the rank. Rank of four if you see is one. Rank of six if you see is one. Do you agree? You do agree. So apparently I can say that. Okay, fine. We have someone of the same ranks. So either this can go and get attached here. Either this can go and attach here. You can do as you wish. So what I'll do is I will just go ahead and take the six and make it attached to seven. I'm sorry, to four. Done. And now I'll omit this. Remember one thing, you attached six to four. So the"
+    },
+    {
+      "chunk_id": "L171_C11",
+      "start": 740.82,
+      "end": 814.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=740s",
+      "text": "attached to seven. I'm sorry, to four. Done. And now I'll omit this. Remember one thing, you attached six to four. So the parent of six will be four. The parent of six will be four. Remember this very, very well. Okay. Next, what is the other thing that you will do? You will have to increase the rank. Why? Because you had four, five, you had six, seven, both of the ranks. If you carefully see four and six had a rank one. So since you attached same guys, height will, if you see the height increased. So apparently you go ahead and say the rank to increase by one more. So the rank will be two. So this is where we stand till we have not performed the last step. Now, if, if Kyle kind of understood everything, now suddenly if someone comes up and says, does let me write it, uh, does one and seven or do one and seven belong to same combo? If I ask you this question, the answer is no. But how will you find out? This is where something like find the parent will help. This is where something like find parent will come into picture. Okay. So since I'm saying find parent will come into picture, let's understand. So when I'm seeing does one and seven belong to the same component, I look at the parent of one, it's one. I look at the parent of seven, it"
+    },
+    {
+      "chunk_id": "L171_C12",
+      "start": 814.62,
+      "end": 882.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=814s",
+      "text": "and seven belong to the same component, I look at the parent of one, it's one. I look at the parent of seven, it is six. So I'll be like, okay, the parents are different. They're not, but wait, you should not do like this. Just imagine you were having an eight year. Imagine. I'll ask, does eight and seven belong to the same component or something to notice? We are not creating a graph. We are creating a different data structure where a graph is not being created. Okay. A different data structure is being created. If I ask you if eight and seven belong to the same component, ideally they should. But if you will look at the parent, then eight would have stored five, seven would have stored six. Both have different parents. Can you actually tell on the basis of parents or do you need the ultimate parent, the top guy, the boss, need the boss, you need the ultimate parent. So this is why if I'm asking you, who's the parent of seven, you say the parent of seven is four. So you go seven and you see six, you see six, you see four, you see four, you see four. Oh, I'm the boss. That's why my parent is me. That's why you see the parent, ultimate parent boss is four and the boss for one is one. So both have different ultimate parent. If both have different ultimate"
+    },
+    {
+      "chunk_id": "L171_C13",
+      "start": 882.02,
+      "end": 957.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=882s",
+      "text": "parent, ultimate parent boss is four and the boss for one is one. So both have different ultimate parent. If both have different ultimate parents, you say they do not belong to the same component. This is the use of find parent. Now, since you're creating a kind of a tree structure, the tree will increase in depth with more number of edge additions. The tree will increase, increase, increase, increase. So it will end up taking login. It is theoretically proven that evil, uh, the tree will increase and end up taking log, get rid of the me coffin. If you just apply union by rank, because in order to find the parent of seven, you have to go from seven to six from six, you have to go to four and at four, you find he's himself. So you get the top boss or the ultimate parent. That's going to take you a logarithmic of time, but wait, but it's right. You said it works in constant. It does. We apply something as part compression. Okay. So what I do is I say, okay, someone did ask me to find the parent of seven. So what did I do? I went to six because six was his right father or the next parent and six is parent was four and four says, I'm the pirate. So you can write something like this."
+    },
+    {
+      "chunk_id": "L171_C14",
+      "start": 957.78,
+      "end": 1026.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=957s",
+      "text": "or the next parent and six is parent was four and four says, I'm the pirate. So you can write something like this. I went from seven to six, six to four. So I know the four is the parent. So once you have figured out seven's parent is four and since we are just dealing with parents and that is what I require because our aim main goal is to figure out who is the ultimate parent. So can I see once I've gone to seven to six to four and once I figured out the parent of seven is four, can I actually see, let's, I don't need this link anymore. I don't need this link anymore because I know seven's parent is not four. So can I change seven's parent to four? I can because the next time if someone again comes up and sees me, Hey, does two and seven belong to the same component and you again go and call find parent, you will not move like seven, six, four, because this time seven will directly go to four and it will find him to be the boss. So you did a path compression. You did a path compression. You said once I will just compress you and then I know that, Hey, listen, your parent is this guy. I know this. I don't need to go via six. Imagine the tree to be longer."
+    },
+    {
+      "chunk_id": "L171_C15",
+      "start": 1026.82,
+      "end": 1095.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1026s",
+      "text": "that, Hey, listen, your parent is this guy. I know this. I don't need to go via six. Imagine the tree to be longer. Imagine the tree was something like this. Just imagine, take it as an imagination. Imagine the tree was something like this and someone said, find the parent of five. So what will you ideally do? You'll go to five, you'll go to four, you'll go to three, you'll go to two, you'll go to one and at one you'll find he's the parent himself. And you'll say one is the parent. You'll say one is the parent. But what I will do is I'll do a path compression. I know one is the parent and one will be the parent of two also. So I'll say two is directly going to one will be the ultimate parent of three as well. So I'll say one will be the ultimate parent of four as well. So I'll just remove this and say, and I know five ultimate parent will be one. So apparently a tree, which was something like this, if you do path compression on finding parent of five, four, three, two, one, and you get two as the parent, it returns two, sorry, it returns one. It returns one. It returns one. It returns one because you went, went, went, went, and you backtrack to get one, one, one. So what I"
+    },
+    {
+      "chunk_id": "L171_C16",
+      "start": 1095.26,
+      "end": 1162.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1095s",
+      "text": "It returns one. It returns one because you went, went, went, went, and you backtrack to get one, one, one. So what I will do is when this guy will return, basically when this guy will return one, I'll say three, your ultimate parent is one. Why are you connected to two? Why are you wasting your time getting connected to two? Three will be like, yes, that makes sense. Let me connect to one. Four will be like, yes, I'm also wasting time. Five will be like, I'm wasting time. Everyone goes and gets connected. So this is how the graph will change. Now under one, we will have two, we will have three, we will have four, we will have five directly, directly. Yes. So we know this is for sure. And next time when someone comes up and says, find parent of four, I'd be like, one, direct low one, because four is connected to one and one is the ultimate parent. Someone comes up and says, find parent of five, take one. One is directly connected, ultimate parent. This is what the path compression technique is. If someone is asking me, parent, everyone in the path whom I encounter, I'll replace their links and attach it to the direct parent. But here comes a slight twist. I'll attach it to the direct parent. So it's fine. So what we usually do is we attach it to the"
+    },
+    {
+      "chunk_id": "L171_C17",
+      "start": 1162.34,
+      "end": 1238.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1162s",
+      "text": "a slight twist. I'll attach it to the direct parent. So it's fine. So what we usually do is we attach it to the direct parent and that's what we call as path compression. Okay. Remember this. So as of now we have something like this. Now what will happen? The next three and seven will be like, you have to attach three and seven. So we know three's ultimate parent is one. And that's very easily found because three is directly attached to one. But when I tried to find out, find out the seven, I'll have to find the parent of seven, which goes to six, which goes to four. And in order to find the parent, we will end up doing a path compression. We will end up doing a path compression. So let's be honest, let's do the path compression, which will be something like this. And I'll find the ultimate parent of seven to be four who is connected to himself. Right? But if you do this, the tree will be something like this. And the rank of four, if you carefully observe is two, but actually you have five, six, and seven. Ideally the rank will also decrease, but we cannot do it. We cannot do it because you're not sure of it because the rank cannot be reduced in while path compression. The simple reason is imagine you had something like this and someone asked you to find a"
+    },
+    {
+      "chunk_id": "L171_C18",
+      "start": 1238.1,
+      "end": 1309.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1238s",
+      "text": "cannot be reduced in while path compression. The simple reason is imagine you had something like this and someone asked you to find a parent of eight. So you went ahead and found parent of eight and path compressed. So you reduced one section of the tree, but the other section is still having a bigger length. So the rank cannot be, cannot be reduced. So that's why we call it as a rank and not height. If we can reduce it, we would have called it as a height, but since it cannot be reduced, we call it as a rank. Rank in the sense means this guy is bigger than this guy. Sorry, opposite. This guy is bigger than this guy. That's it. That's the meaning of rank. This guy is higher ranked than me. Got it? So the moment you find the parent of seven to be four, I find the rank to be two, which means this is the bigger guy. So the smaller guy will this time come up and get attached to this guy. So what will happen is this guy will come up and get attached to this one. So ultimately we will have, so ultimately what we will have is the parent of seven will be four and I'll attach one to four. So what will happen? The parent of one will now become four. Correct? So if I just redraw it, it's going to look something like this."
+    },
+    {
+      "chunk_id": "L171_C19",
+      "start": 1312.18,
+      "end": 1381.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1312s",
+      "text": "will happen? The parent of one will now become four. Correct? So if I just redraw it, it's going to look something like this. One attached here and two and three attached to this guy. Correct? So will the rank change? No, it's still the larger guy attaching the smaller to the larger guy will not impact because the rank of one, if it was one, the rank of four was two. So we are not storing the height because during path compression, the height will shrink. But this is how easily we can do it. Now, if after this, someone comes up and says, Hey, uh, does three and six belong to the same component? What do you do? We'll call the find parent for three and it'll find you the parent to be ultimate, ultimate three, one, one, four, four himself. So again, a path compression will happen. Yes. When you find the parent, three will give you as four. So the path compression will also happen. Find parent of three will give you a four find parent of six will be directly four. The both of them have seen parent or ultimate parent. So they belong to the same form. Why do you, since you're compressing the tree, and they're compressing the tree, the tree will be always a very limited size in order to find parent. If you do limited traversals,"
+    },
+    {
+      "chunk_id": "L171_C20",
+      "start": 1381.78,
+      "end": 1460.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1381s",
+      "text": "they're compressing the tree, the tree will be always a very limited size in order to find parent. If you do limited traversals, always got it. So thereby the time complexity in order to perform the union operation is big or four alpha. Now this four alpha has a huge mathematic derivation, which is not required in interviews. You can say four alpha, which is as good as constant because the alpha's value is very, very close to one that is as good as a constant. And in order to find parent, it is also four alpha. So overall the data structure works in bigot of four alpha. Remember this. Okay. So the question comes up, but Stryver, how do we do path compression? You might be thinking, how do you do path compression? Because it looks scary because if you're connected to this, then you're connected to this, then you're connected to this, then you're connected to this. How do you path compress it? It's very simple. So wife's parent is four, post parent is three, three's parent is two, two's parent is one and one's parent is one. So what do you can do is you can backtrack. So you can write something as find parent and you can give the node you. Okay. And what will happen is you will say if you is equal to equal to parent of you, then return this you. So basically what does this mean? If at any moment one comes,"
+    },
+    {
+      "chunk_id": "L171_C21",
+      "start": 1460.82,
+      "end": 1535.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1460s",
+      "text": "you is equal to equal to parent of you, then return this you. So basically what does this mean? If at any moment one comes, one will be equal to equal to parent of one because parent of one is himself. They'll return the parent as one. That's the beast because that is where you stop. Otherwise you will be like, can you please return find parent of parent of you? What does this mean? Imagine I give you five, what will happen? It will go and say, parent of five. What's parent of five? Four. They'll go and say, find the parent of four. So the next time find parent of four will happen. Does not obey. Again, it will say find the parent of parent of four, who's parent of four, three. So it'll go on. So the recursion will be something like this. Function of five calls function of four calls function of three calls function of two calls function of one add to one. The base case is executed and when it is executed, it returns one. So this two, which called, which you would have called here, what you'll do is you'll say, parent of you will be two. So when it will return up, it will return with one. You'll say, Hey, I won. Keep it. I'd keep it one. Next. You will again, return one."
+    },
+    {
+      "chunk_id": "L171_C22",
+      "start": 1536.26,
+      "end": 1613.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1536s",
+      "text": "up, it will return with one. You'll say, Hey, I won. Keep it. I'd keep it one. Next. You will again, return one. You'll again, return one. So now three will also keep one parent of three is one. Next. You'll all also return one. So now parent of four will also be one. Next, you'll also return one. So parent of five is equal to one. So everyone in term will assign one to it. And if everyone assigns one to it, so automatically all the links will be part compressed and pointing to one. And, and all these links will be destroyed. Perfect. Done. So I hope you've understood everything about the union by rank and the part compression. Now it's time to code it up. So I'll try to create the data structure in a class so that going forward in the upcoming problems, we can use that snippet of code to solve almost all the problems. So we have a class of, uh, this joint set, nothing to worry, like don't, don't get too worried about a class. Very simple. It's a very simple thing. What's the initial configuration, initial configuration required a rank and a parent to just have it and declare everything afterwards, public. So all the functions can be reused outside. So now go ahead and declare the constructor. What is the construction? What is the constructor other? So if you remember, I said you initially rank will be marked with"
+    },
+    {
+      "chunk_id": "L171_C23",
+      "start": 1613.14,
+      "end": 1683.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1613s",
+      "text": "the constructor. What is the construction? What is the constructor other? So if you remember, I said you initially rank will be marked with zeros. Parent will be marked with themselves. That is what we do. So we say rank dot resize of N plus one comma zero one plus one. Imagine it's a one based indexing graph. We need the Nth index as well. If it's a zero based fine, but declaring, uh, declaring it as one N plus one will work for both one based as well as zero based. Similarly, we can define parent or tree size of N plus one and we can keep it. And then we can go ahead from zero. Very, very important to go to N for one base indexing. And it'd be I itself. So this is how the constructor will look like. Now what does this join set give you? It gave you find ultimate parent, right? So this will be the node. And for this, you have to find the ultimate parent. So we know one thing, if node is equal to equal to the parent of node, this is the ultimate parent for sure. So you go ahead and return the node. But if it is not, then you call the ultimate parent and say, go to its parent and then look for parent, parent, parent, parent. But this is the normal logarithmic guy. We need the path compression. So this is where I can say whenever"
+    },
+    {
+      "chunk_id": "L171_C24",
+      "start": 1683.86,
+      "end": 1759.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1683s",
+      "text": "parent, parent, parent, parent. But this is the normal logarithmic guy. We need the path compression. So this is where I can say whenever it returns the value, I'll store it so that in future, if someone comes up and does ask me the same question, I can tell him that this is the parent. So this is where the path compression comes in. Next, what I'll do is I'd like, okay, void union by rank is what I need to implement union by rank. So I'll have node U and node V, which I have to combine. So ultimate parent of, I guess the ultimate parent of U will be find ultimate parent of U. Similarly, you can say ultimate parent of V will be find ultimate parent of V. Now I can say if ultimate of U is equal to equal to ultimate of V, I can simply return. What does this mean? If they're belonging to the same component, I don't need, right? But if they're not belonging to the same component, I go ahead. The first thing I do is I check if the guy U is smaller than the guy V, right? So if V is the greater guy, the smaller goes and gets attached to the greater guy. So the smaller will now say, okay, I'll go and have the parent as V. No change in rank because if a smaller guy gets attached to"
+    },
+    {
+      "chunk_id": "L171_C25",
+      "start": 1759.62,
+      "end": 1831.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1759s",
+      "text": "will now say, okay, I'll go and have the parent as V. No change in rank because if a smaller guy gets attached to the larger one, there'll be no increase or that still stays the larger, right? Next else if rank of ultimate of V, if this is the lesser guy rank of ultimate of U, if this is the lesser guy, then I see the opposite. I say parent of rank, sorry, parent of ultimate of V goes and gets attached to U. Okay. Done. But if, what if they are same? If they're same, I'll say attach V to U. You can do the other way as well. U to V is okay as well. And rank of ultimate of U will increase because that is where I am attaching it to. V attached to U, so the larger one will grow in size. So this is what I'll do. Once I've done this, I can say the union is done. This is how our data structure will look like. How can we use this snippet of code? So I'll just hard code it to show you how can we use it. It's pretty simple. So you can be like disjoint set DS, whatever is the number of nodes. So in our case it was one. So I can have it as disjoint set of seven. So it will call this constructor and have the initial configuration ready for us."
+    },
+    {
+      "chunk_id": "L171_C26",
+      "start": 1831.78,
+      "end": 1906.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1831s",
+      "text": "So I can have it as disjoint set of seven. So it will call this constructor and have the initial configuration ready for us. Next will be, I'll call it union by rank. And the first thing was one comma two, if you remember in our example, right? So we'll have it one comma two. So I'll quickly add all these things. So next was two comma three. If you remember, let's add two comma three next was four comma five. So let's add four comma five next was six comma seven. Let's add six comma seven next was five comma six. Let's add five comma six. And the next was, if you remember well enough from the example, the next was three comma seven. So I'll be adding up this, but before adding up three comma seven, let's quickly check if three and seven belong to the same component or not same or not. Okay. So what I'll do is I'll call the find ultimate parent for three. And I will say, okay, do you have equal to equal to seven? Like, do you belong to the same? Like, do you have the same boss, same ultimate parent? If you do then same as the same or else I'll say not same. I'll go and say not same, right? Perfect. Done. And after connecting them, I'll again check for the same. So as of now, let's have a quick run and see if it is giving"
+    },
+    {
+      "chunk_id": "L171_C27",
+      "start": 1906.9,
+      "end": 1983.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1906s",
+      "text": "after connecting them, I'll again check for the same. So as of now, let's have a quick run and see if it is giving us correct answer. So I'll just go and compile this. So on compiling it is saying, no, they do not belong to the same. And if I go ahead and move it to the next guy, it will actually say that they belong to the same. See, first time it says not same, then on combining it says same. So this is how you can always use the data structure. If you want to have two disjoint set data structure, you can go as DS one, you can have two different objects of this class, and you can have two different graphs and two different data structures. So this code can always be reused in almost all the problems because it covers up zero based indexing graphs as well as one based indexing graphs. Now question might be coming to your head, but Striver, we did not understand why connect smaller to larger, like what's the idea of connecting smaller to larger. The first idea is I don't want to increase the height. For an example, if I have one, two, I have a three, four, five, just for an example, empty. So if I connect the larger to the smaller, see what will happen. One, two, three, four, five, six. So basically the height increases."
+    },
+    {
+      "chunk_id": "L171_C28",
+      "start": 1983.46,
+      "end": 2055.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=1983s",
+      "text": "So if I connect the larger to the smaller, see what will happen. One, two, three, four, five, six. So basically the height increases. And if the height increases, like we will do path compression for sure. But if the height increases, what happens is now in order to find the parent of six, we'll have to travel six, five, four, three, and then one. So we're taking a longer distance. So imagine someone would have said for four. So you're actually taking a longer distance. And if you do the opposite way, which is saying, let's connect, like you keep three, four, five, six, and let's connect one and two. So if you see for six, the distance taken is shorter. Even for five, the distance taken a shorter, even for four, the distance taken a shorter, but for these, the distance will increase. Like for two, the distance will be now more because over here, two was just traveling once and getting the ultimate. But over here, it has to travel to one, then to three, but the number of nodes over here are lesser. So the travel time for all the nodes computed will be lesser. Over here, the number of nodes are larger. The travel time for all the nodes will be larger. So to give you a clear vision, imagine we had something like this. Imagine five, six, seven, eight."
+    },
+    {
+      "chunk_id": "L171_C29",
+      "start": 2055.3,
+      "end": 2125.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=2055s",
+      "text": "the nodes will be larger. So to give you a clear vision, imagine we had something like this. Imagine five, six, seven, eight. Okay. And we had one, two. Now, if you attach this guy to this guy, what will happen is in order to find the parent of seven, seven will go to six to four, three to one. Similarly for eight, six, four, three, one. Similarly for five, four, three, one. Right? So this will take longer time. This will take longer time. This will take longer time. More nodes will take longer time. Whereas if you attach this to this, they will take the similar time that they were taking. And only two nodes will take slightly longer time, which is okay. This is the reason we attach smaller to larger. First to keep it shrinked. Second is to make sure that the time taken in finding of the parents is as minimal as possible. So you must be thinking, Stryver, if that's the case, why are we using something like union by rank? Because after path compression, it doesn't even give us the height because the height is distorted after path compression. Can we use something as size, which keeps a track of what is the size of the component? I think we can. I think we can. So that's what we will be doing. Okay. So, so what I will try to teach you now is union by size."
+    },
+    {
+      "chunk_id": "L171_C30",
+      "start": 2125.06,
+      "end": 2184.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=2125s",
+      "text": "we can. So that's what we will be doing. Okay. So, so what I will try to teach you now is union by size. We know find parent, we know path compression, but instead of rank, we'll be using the union by size. So over here, the same thing will happen. We will have a size array of the same size. So let's quickly declare the size array of seven size. So the initial configuration will be very straightforward. We will have a size and everyone will be of size one. Why? Because everyone is itself a component when we start off with. So everyone is going to be having a size of one. And we know one more thing that the parent will be themselves. So this is what we take. Now to start off with very simple, we say one comma two, we say one has a size of one to also has a size of one. So both are similar size. So it doesn't matter who you're at. So I go ahead and attach to over here. The moment you attach two to one size of one will increase to two because it took a size of one got attached to it. So the size increased by okay. Next is two to three, very important point to realize. Now one has a size of two and remember the parent of two is the step"
+    },
+    {
+      "chunk_id": "L171_C31",
+      "start": 2184.74,
+      "end": 2255.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=2184s",
+      "text": "to three, very important point to realize. Now one has a size of two and remember the parent of two is the step one. So one has a size of two and three has a size of one. So this is the smaller goes and gets attached to one. So goes and gets attached to one. So the size will again increase by one. Why? Because three was a size of one. Perfect. None. And three will be having a parent of one. This is also the next is four and five. So what I'll do is I'll just omit this and I'll just assign five to the sky and five's parent will be four and four will increase the size of two. Next will be six and seven. So I'll assign over here. I'll assign seven's parent to six and I'll increase the size over here. Perfect. Done. Next is where you understand. So next is, so six comma seven is done. Next is five comma six. So where is five? Five is here with four and six is here. So both of them, if you see are of size two, size two, same size. What you'll do is probably you can take six and get attached to this. Done. The six's parent will be four. Six's parent will be four. And since you're attaching a size two to four, the size will increase by two, not by one. So"
+    },
+    {
+      "chunk_id": "L171_C32",
+      "start": 2255.62,
+      "end": 2327.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=2255s",
+      "text": "Six's parent will be four. And since you're attaching a size two to four, the size will increase by two, not by one. So basically this is keeping a track of how big is this? This is keeping a track of how big is this? This is also done. Next will be three comma seven. So for three, it's one, which is a size of three, three size component for seven. If you see seven as this, which is nothing but a four size component. This is a smaller one. So this will go and attach. So when you're trying to find the ultimate parent of seven, definitely path compression will happen as a first step. Next for three, the parent is one. So this goes and attach. Four's size will be increased by three. The four will be having a size of seven. So you can keep a track of size. And this actually is much more like intuitive. You can say instead of the rank, I don't find the rank to be that much intuitive, but I feel I find this union by size to be much more intuitive than union by rank, because it kind of makes sense when you are storing the size because rank is distorted. So what I'll do is I'll try to copy the same thing. So I'll try to copy the same thing and I'll create in the same function. I'll just create union by size because everything else will stay"
+    },
+    {
+      "chunk_id": "L171_C33",
+      "start": 2327.38,
+      "end": 2403.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=2327s",
+      "text": "try to copy the same thing and I'll create in the same function. I'll just create union by size because everything else will stay same union by size. And now what I'll do is I will say, okay, fine. I know one thing for sure. Now I'm doing a comparison on the size. So size of this, if lesser than size of this, then I'd be like, okay, I will take the ULP U and attach to the ultimate parent of V. Done. Next, the size of the ultimate parent of V, because it is getting attached to, will be increased by ultimate parent of U. Else, now will there be an equal case? If there is an equal case, you still attach it. So we can just write an else instead of writing else if greater than else, because in equal, it doesn't matter whom you attach to. So I'll just take this and I'll just change this to V. I'll change this to U. I'll change this to U and I'll change this to V. That's it. So this is how the union by size will work. And what I'll do is, now remember, if you're implementing a data structure, either use by rank or either use by size, don't use both of them together. Don't use both of them together because we have to declare"
+    },
+    {
+      "chunk_id": "L171_C34",
+      "start": 2403.78,
+      "end": 2479.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=2403s",
+      "text": "or either use by size, don't use both of them together. Don't use both of them together because we have to declare a size this time. So let's quickly declare a size. And over here, what I can say is size dot resize n plus one. And I can go ahead and say size of I is initially one. That's the initial configuration. Then I've written the union by size. Then I have everything is union by size. Let's quickly do a compile and see if it is working fine. Okay. Looks like a mistake. Oh, my bad. Comma here. Cool. Should be fine. Okay. Not same, not same. Strange. So over here, there was a V, you have to make it U. Okay. Now we can compile and see if it's running fine. Yes. Not same and same. So this is how you can easily create a snippet of code, which has union by rank as well as union by size. What is the time complexity? Which one is better? Both are of the same time complexity because we are still attaching them, still creating trees, still having the path compression. So both of them will take bigger of four alpha, which is as good as a constant. Will like, will the interviewer ask you about four alpha? No,"
+    },
+    {
+      "chunk_id": "L171_C35",
+      "start": 2479.14,
+      "end": 2534.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=aBxjDBC4M1U&t=2479s",
+      "text": "bigger of four alpha, which is as good as a constant. Will like, will the interviewer ask you about four alpha? No, because it's, it has a very, very huge mathematic derivation. You can probably Google and read about it. For interviews, if you tell them that four alpha is near about constant, that's more than okay because what they look for is, do you know the logic? Do you understand this in depth or not? That please focus on that part as much as you can. So yeah, before ending up this video, I was checking out our channel stats. Nearly 50% of the people who watch our videos do not subscribe to us. So please do consider subscribing to us. It's a very, very honest request. And yes, if you understood it by rank, even by size, path compression, the code snippet, I think you should hit that like button. And if you haven't checked out our DPCs and the HDC, the links will be in the description. Please make sure you check them out. And with this, I'll be wrapping up this video. Let's be in some other video. Tell them to buy. Take care."
+    }
+  ]
+}

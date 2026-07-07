@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L264",
+  "lecture_number": 264,
+  "lecture_title": "L28. Design a Browser History | LinkedList Implementation",
+  "youtube_url": "https://www.youtube.com/watch?v=mG3KLugbOdc",
+  "chunks": [
+    {
+      "chunk_id": "L264_C1",
+      "start": 0.0,
+      "end": 79.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=mG3KLugbOdc&t=0s",
+      "text": "So, we will be continuing with our playlist and before that, hey welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is designing a browser history. So, what you need to do is, you need to write a class which implements the constructor browser, the function visit, the function back, the function forward. You'll have to design a class. Okay. So, let's go back into the code editor for a while. This is how the entire snippet of code will look like and you'll have to write pieces of code within itself. So before I move into that, let's understand what every function does in depth and I'll do that by taking these set of queries as an example. So, let's take these set of queries as an example and remember this one thing, always the first thing will be to set the constructor home page. That's the first thing and no matter what queries you are given, this will always be your first query that is home page, calling the constructor. This can be different, this can be Instagram, google.com, anything but this is what the first query will be, that is calling the home page. So technically in your brain, just imagine you opened a google chrome tab and the first"
+    },
+    {
+      "chunk_id": "L264_C2",
+      "start": 79.04,
+      "end": 158.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=mG3KLugbOdc&t=79s",
+      "text": "that is calling the home page. So technically in your brain, just imagine you opened a google chrome tab and the first thing you type is take you forward.org. That's considered as your home page. Got it? So what I will do is, I'll consider tuf.org, like that's take you forward.org as my home page. Done? So that's my first query. After that, I'm asking, on the same tab, can you go to google.com? So on the same tab, I'll go to google.com. Perfect. Again on the same tab I'm asking, can you go to insta? It'll be like, okay I'll go to insta. So currently if I look at my tab, I'll be at Instagram, right? I'll be at Instagram on the current tab. Perfect. The next is, I'm asking you to go to Facebook. I'm like, fine I'll go to Facebook as well. On the current tab, I'll be on the Facebook. Perfect. So currently I'm standing on Facebook. What is the next thing? Going back by one step. So what I'll do is, I'll go back by one step. So can I see my current will now be on Instagram. So wherever you end up, this is what you will return to this function. You will see, currently I'm on Instagram. Perfect."
+    },
+    {
+      "chunk_id": "L264_C3",
+      "start": 158.42,
+      "end": 237.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=mG3KLugbOdc&t=158s",
+      "text": "wherever you end up, this is what you will return to this function. You will see, currently I'm on Instagram. Perfect. I'm again asking you to go back by one step. Perfect. I'll go back by one step. So if I go back by one step again, my current will be on google.com. So this time my current is on google.com. So this is what I will return. Return Google. I'm again asking you to go forward by one step. So your current will technically go to Instagram again. So this time what you will return is, Instag, that's what you'll return. I'm asking you to visit Take You Forward. So what will happen is, from Instagram, from this tab, you will go to Take You Forward. You will go to Take You Forward. If I go to Take You Forward, will there be Facebook anymore? There won't be. Because I can go to Take You Forward, I can come back to Instagram, but I cannot go to Facebook anymore. That's how Chrome tabs operate, right? That's how browser tabs operate, right? Perfect. If I go to TUF, my current, like currently I'm at Take You Forward. Perfect. I've been asked to go forward by two steps. Can I go forward by two steps? There's nothing. I never visited beyond TUF because currently I'm standing at TUF. I cannot. So if I cannot, I will not. I cannot go by two steps ahead."
+    },
+    {
+      "chunk_id": "L264_C4",
+      "start": 237.88,
+      "end": 317.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=mG3KLugbOdc&t=237s",
+      "text": "beyond TUF because currently I'm standing at TUF. I cannot. So if I cannot, I will not. I cannot go by two steps ahead. So if I cannot go by two steps ahead, I will return where I'm standing, which is Take You Forward. Perfect. Next, I've been asked to go back by two steps. Okay, I'll go back by two steps. So I'll go back by two steps, which brings me here. It basically brings me here. And that's Google. So I'll return Google. Perfect. What's the next? Go back by seven steps. Perfect. At max, I can go one step. At max, I can go one step because this is my home page, because this is my home page. So at max, I can go one step. If I can go one step, I will not go seven. I'll return this till what I can go. I'll return Take You Forward. And this is how the queries will be executed. I'll only return in terms of back and in terms of forward. Apart from that, this will be the constructor, which tells me that this is my initial page. This will be, okay, I'm going forward. Apart from that, for back and forward, I need to return a string, which is basically the URL where I'm currently standing at. Got this? So, what is the data structure that we will be using in order to design this entire browser"
+    },
+    {
+      "chunk_id": "L264_C5",
+      "start": 317.04,
+      "end": 392.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=mG3KLugbOdc&t=317s",
+      "text": "I'm currently standing at. Got this? So, what is the data structure that we will be using in order to design this entire browser thing? If I get into that, let's understand three use cases. First of all, I'm visiting a new page, right? So I'm kind of getting into new pages. I don't know how much, we don't know the length. So I definitely cannot use something like an array. Correct? I need to come back as well. Okay, come back. I need to go forward as well. So I cannot use array. So what is the data structure that allows you to go back, go front, and at the same time allows you to keep adding new nodes or new pages? Yes, doubly linked list. Not singly linked list, because singly linked list will not allow you to go back. So doubly linked list is the data structure. Okay, I know the data structure. Now all of the problems we have done, we have stored integers in that node. This time if I ask you, what can we store in that particular node? I know one thing, I'll definitely have a next pointer. I'll definitely have a back pointer. That's for sure. In this particular node. What do we store? Can I say that, okay, in terms of data, what I can store is the URL. I can store the URL of the page. I can. So anytime someone says, where am I?"
+    },
+    {
+      "chunk_id": "L264_C6",
+      "start": 392.8,
+      "end": 470.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=mG3KLugbOdc&t=392s",
+      "text": "what I can store is the URL. I can store the URL of the page. I can. So anytime someone says, where am I? From the URL, I can say that we are at google.com, we are at instagram.com. I can. So this is how the structure of the node will look like. Instead of an integer, I'll try to store the data in terms of a string, a URL. Got it? Okay. What's the first thing? I need to design this class, which has the constructor browser. The first thing I'll try to do is, I'll try to design the constructor. I'll write the class. The class is browser. Again, the code will not be language specific. If you want the language specific code, you can find them below. I'll try to write down the functions and the constructors. The concept is same in all the languages. First thing I can do is, I can call the node current and I can initialize it as null or whatever you want to initialize. Okay. It's not initialized as of. After that, I can have the constructor written. And the constructor is always getting a string homepage. And if you remember, initially I told you one thing. First query will always be homepage. So it will always be given the homepage. Okay. If I've been given dq4.org as the homepage, what I can do is, I can actually create a"
+    },
+    {
+      "chunk_id": "L264_C7",
+      "start": 470.96,
+      "end": 545.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=mG3KLugbOdc&t=470s",
+      "text": "be given the homepage. Okay. If I've been given dq4.org as the homepage, what I can do is, I can actually create a node which has tuf and I can make sure current is pointing to this. So I can create a node and store tuf like dq4.org because that's my homepage. I'll do that. I'll say, okay, let's have new node and let's have the homepage stored in it because that is my URL, dq4.org, google.com or whatever. Let's call current to stand there. So can I say that my constructor is done and this will only be called once right at the starting of all the queries. Perfect. I can go back and I can say that this is done or the browser is done. What is next? I need to visit a URL. When I'm visiting an URL, I'm visiting google.com. What am I doing? I'm technically again going to a new page. So it's a new data. It's a new data, which is basically saying I'm going to Google, right? So I need to create this new thing. Let's try to write down this method as well. So I'm saying visit and I've been given this URL to visit. What am I trying to do? I'm going to a new page. Okay. So technically whatever URL you're given, let's try to store it."
+    },
+    {
+      "chunk_id": "L264_C8",
+      "start": 545.96,
+      "end": 625.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=mG3KLugbOdc&t=545s",
+      "text": "I trying to do? I'm going to a new page. Okay. So technically whatever URL you're given, let's try to store it. So I'm saying new node and the URL stored. Maybe let's store it in new node so I can call it, okay, new node stored. What after this? Can I say the current will be keeping a track? Okay. So I'm going to a new page. Okay. So I say current.next is my next page. So that's basically new node. Super simple. None in descript. What after this? A current cannot stand at, take you forward because this is no more the current page. So I'll just update the current to go to Google. Quite simple. So I'll say, okay, current, can you go to this new? Because this is where you will be standing at as you're going to this new page. So probably my visit is done as well. Okay. Visit is done. What is next? Going back by certain number of integer steps. Okay. Let's try to go back now. So if I've been asked to go back by certain number of steps and this steps is integer, I just need to go back. I just need to go back. So currently I'm standing here. I just need to make sure current traverse is back. Correct. Let's do it now. What are you waiting for? It's super simple."
+    },
+    {
+      "chunk_id": "L264_C9",
+      "start": 625.4,
+      "end": 704.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=mG3KLugbOdc&t=625s",
+      "text": "I just need to make sure current traverse is back. Correct. Let's do it now. What are you waiting for? It's super simple. If like while steps and then greater than zero basically, and you can say, okay, my current, can you go back? Hey current, go back. And you can do steps minus means. And at the end of the day, you can see return because you need to return the string where you are ending, like after going back by certain number of steps where you are ending at. So you can say current, this is the page I'm at. So you can call it as data, value, URL, whatever you call it. Done. That is it. Correct. There was an edge case. Remember, it back goes by seven steps. There were not seven steps. So remember, you go to current. Imagine you go back. Now you cannot go back. You need to check. Can you go back? You need to check. So please check. So please make sure you put a check over here. If current can go back, that's very important. If only current can go back, then only it will go or else it will break. Quite simple. If it can go, it will, otherwise it will break."
+    },
+    {
+      "chunk_id": "L264_C10",
+      "start": 704.02,
+      "end": 782.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=mG3KLugbOdc&t=704s",
+      "text": "only it will go or else it will break. Quite simple. If it can go, it will, otherwise it will break. So can I say that I've written the back as well? I think I can. Forward is going to be similar because I'm just going forward instead of back. So let's write down the forward as well. So I can say forward. Again, I'll be given a URL. So let's take the URL and this time, oh sorry, you'll be given the steps. So let's write the forward. So I'll be given the steps. I'll have to return the string of the URL where you're standing at. So what I can do is I can say, okay, while steps greater than zero, which basically means this and if I have something at the front, it's very important. You should have something at the front to go front. Otherwise you cannot. You say current. Can you go front or next to whatever it is? If there is nothing, then there's no need to go any further. You can simply break. You can simply break. Or else you can say steps. Okay, I've gone these many steps. So please reduce it. Once everything is done, you could just go ahead and say current, whatever is your data or URL or whatever you call it, just return it. This is how the forward will look like. Super simple. And the class ends over here."
+    },
+    {
+      "chunk_id": "L264_C11",
+      "start": 782.88,
+      "end": 855.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=mG3KLugbOdc&t=782s",
+      "text": "or whatever you call it, just return it. This is how the forward will look like. Super simple. And the class ends over here. If I quickly go back into the code editor, I've written down the exact same code. The only thing that I've done is I've taken a class node. Again, this is in C++. If you want the Java, Python and any other language specific codes, you can find them below. So I wrote down the pseudo code in the iPad and I'm just showing you one of the language codes. I'm just storing string data. Apart from that, everything stays the same. Whatever I taught you in doubly linked list and node current page, browser, visit, string back, string forward, done. I'll go ahead and click submit and this will be accepted. You might have a question. What is the time complexity of each and every function? Let's understand that. Can I say the constructor will be big of one? I can. Can I say a visit will be big of one? I can because I'm just attaching pointers. Can I say back will be big of number of steps depending on how many steps you go back at the worst possible scenario. Forward will be big of steps again. That's how a browser operates, isn't it? So in the back end of the browser, this is how data structure works. Got this thing."
+    },
+    {
+      "chunk_id": "L264_C12",
+      "start": 855.6,
+      "end": 874.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=mG3KLugbOdc&t=855s",
+      "text": "how a browser operates, isn't it? So in the back end of the browser, this is how data structure works. Got this thing. So if you're still watching, I'm very sure you have understood this and if that is the case, please, please do consider giving us a like and if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's play some other video till then bye take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

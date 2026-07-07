@@ -1,0 +1,148 @@
+{
+  "lecture_id": "L221",
+  "lecture_number": 221,
+  "lecture_title": "DP 41. Longest Increasing Subsequence | Memoization",
+  "youtube_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc",
+  "chunks": [
+    {
+      "chunk_id": "L221_C1",
+      "start": 0.0,
+      "end": 72.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=0s",
+      "text": "Hey everyone, welcome back to TakeUForward. Today we will be starting with another pattern of DP which is the LIS pattern or the longest increasing subsequence pattern. Now we have done some problems on subsequence if you remember well enough the DP 13 to DP 22 was based on DP on subsequences. But this is slightly different than that. Now longest common subsequence, all of you know what is the definition of subsequence. Like if I give you an array of n numbers, any contiguous or non-contiguous like you can pick up 10, you can pick up 2, then you can pick up 5, then you can pick up 7, then you can pick up 101. So if I write this, this is a subsequence. But if you write something like this, this is not a subsequence. Why? 5 and 2 have swapped places, thereby it's not a subsequence. Any contiguous like it can be 9, 2, 5. This is a subsequence. As long as you're picking elements that follow the order like if 9 after that 2 after that 5, if it's following the order, then you call it as subsequence."
+    },
+    {
+      "chunk_id": "L221_C2",
+      "start": 72.6,
+      "end": 144.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=72s",
+      "text": "if 9 after that 2 after that 5, if it's following the order, then you call it as subsequence. Now as the name suggests subsequence, it's clear to you. As the question name is suggesting, figure me out the longest increasing subsequence. So among this, if I try to figure out different types of subsequences, I can say one of them is 10, 101. This is a subsequence of length 2. And if I say I can figure 9, 101. That's again another subsequence of length 2. I can similarly say 5, 7, 101. 5, 7, 101. The length is 2. Similarly, I can say that, hey listen, let's pick up 2, let's pick up 3, let's pick up 7, let's pick up 101. If I pick up something like this, I will be getting a length of 4. Even if I pick up something like 2, 3, 7, 18. This also gives me a length 4. So the question over here is very straightforward. You need to tell me the longest increasing subsequence, the length of it. Over here, we will be solving length. Going forward in the next set of videos, I'll also be telling you how to print this particular subsequence."
+    },
+    {
+      "chunk_id": "L221_C3",
+      "start": 144.8,
+      "end": 223.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=144s",
+      "text": "length. Going forward in the next set of videos, I'll also be telling you how to print this particular subsequence. So that's the question you have to tell me. The length of the longest common subsequence. So just a quick recap, if you remember well enough, in all the subsequence problems, we followed a simple pattern. That was pick or you can say take, pick or take, or not take. Like take and not take or pick or not pick. This was the pattern that we followed. Either we took the guy or either you did not take the guy. So you're going to remember this pattern like either you take it or either you decide that you're not going to take it. This is the stuff that you have to follow. Now going forward, if I ask you, what is the longest common subsequence of this particular array? The answer to that will be, listen, the length is 1. Why? Because it clearly states, understand this particular word, it clearly states increasing. You cannot have equal elements. It has to be increasing. Like you see 2 is, you see the increasing pattern. It has to be increasing. So the question is very straightforward. You have to figure out the length of the longest increasing subsequence. So the length is 1 over here, which is nothing but a single array of size 8, sorry, a single array of size 1, which contains 8."
+    },
+    {
+      "chunk_id": "L221_C4",
+      "start": 223.8,
+      "end": 302.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=223s",
+      "text": "is 1 over here, which is nothing but a single array of size 8, sorry, a single array of size 1, which contains 8. Cool. So how do you solve this particular problem? I know there can be various subsequences, which can be answers. So the first thing that comes to my mind is let's try out various subsequences. Like the brute force technique that comes to my brain is, hey, Stryver, let's print all the subsequences. Like let's print all subsequences. I'll be like, OK, makes sense. And if you have seen my previous videos, how can you print all the subsequences, guys? Obviously, you can use power set or you can use the recursion, both of which I have already taught on this channel itself. Either you can use the power set or either you can use the recursion in order to generate the subsequence. Once you have generated one subsequence, then you can easily see if it is increasing. Check for increase. That's a brute force I'm talking. Generate all the subsequence, check for increase, store the longest among them. Store the longest. So that's going to be the brute force. Like I will not be diving deep into it because you can just go across and watch power set or recursion. Generate all subsequences. Once the subsequence is generated, you just at the end of the day, see if that subsequence is increasing or not."
+    },
+    {
+      "chunk_id": "L221_C5",
+      "start": 302.8,
+      "end": 380.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=302s",
+      "text": "all subsequences. Once the subsequence is generated, you just at the end of the day, see if that subsequence is increasing or not. If it is, then you check for the longest portion. So that's the brute force. And, you know, in order to generate all the subsequences, you end up taking 2 to the power n time, because if we are generating all the subsequence, the number of subsequence for a length n is nothing but 2 to the power n. We know that. Right. So that's not something because this is nothing but exponential in nature. And this will give us a TLE. So the brute force will definitely not work of generating all the subsequence. So the brute force does not works. Then what? We are trying always. We are trying always. And we know we can do via recursion. Perfect. We can do via recursion. And if you're doing via recursion, remember this, if you're doing via recursion, we can probably try to write recurrence. We probably can try to write recurrence. And after that, we can see if it can be memorized or not. That is afterwards. But if you're trying to write the recurrence, what is the rule to write recurrence? The simple static rule to write recurrence is express everything. Yes. I've been telling this from the first lecture in DB playlist. Express everything in terms of index. Explore all possibilities in subsequences."
+    },
+    {
+      "chunk_id": "L221_C6",
+      "start": 381.8,
+      "end": 450.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=381s",
+      "text": "everything. Yes. I've been telling this from the first lecture in DB playlist. Express everything in terms of index. Explore all possibilities in subsequences. You know in subsequences, either you pick or either you don't pick. These are the couple. And then you take. Now you need the longest. That means the max length of both. Max length of not take. And take is what you'll take. That's the generic way to write the recurrence. So we know that we have to express everything in terms of index. Because over here, we are definitely sure we are given an array. So, an index will always be there which we can start from here, which is the 0th index. We definitely know there is going to be an index, right? Which can start from 0. Now, I need to understand if this portion can be a part of my subsequence or not. Can this be a part of my subsequence if I ask you? You'll be like, yes, because it's the first element. You can go on and say, yes, this can be a part of my subsequence or cannot be. You say, I'll not take 10. Either you say I'll form a subsequence which has a 10 or either you'll say I'll not have 10 as subsequence. Now imagine, just ask your brain. Imagine you take this 10 to be the part of your longest increasing subsequence."
+    },
+    {
+      "chunk_id": "L221_C7",
+      "start": 450.8,
+      "end": 524.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=450s",
+      "text": "10 as subsequence. Now imagine, just ask your brain. Imagine you take this 10 to be the part of your longest increasing subsequence. For an example, you take 10 to be the part of your longest increasing subsequence. Now you move to 9. So the index moves to 9. Can 9 be the part of the same subsequence? And the answer to that is no. Why? Because your brain says, hey, Stryver, we previously took 10. We're looking for increasing. So we cannot have 9 as the part of this particular subsequence. Let's repeat. We previously took 10. We previously took 10. So we cannot take 9 at the current index. Yes, you heard that correct. You have to keep a store of the previous because if you're deciding whether you take 9 or not, you have to understand what you took previously. So someone has to tell you that you took previously the 0th index, which is 10. Someone has to tell this. So apparently what I can say is I can express the recurrence in terms of index and previous. Why previous? Because previous allows us to make a choice whether I can include this index in my subsequence or not. I need to know who is the previous. So I need to carry the previous index as well. Like who was the previous index?"
+    },
+    {
+      "chunk_id": "L221_C8",
+      "start": 525.8,
+      "end": 599.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=525s",
+      "text": "to know who is the previous. So I need to carry the previous index as well. Like who was the previous index? That was the part of my subsequence. Right. So initially, when you're starting off, initially, when you're starting off, you can say F of 0 comma minus 1. Basically saying 0. This is the first guy. And since he's the first guy, there is no previous index as such. So I can mark it as minus 1. So this means give me the length. Give me the length of alias starting from 0. With no previous element. If I write F of 3 comma 0, this means length of alias starting from third index. Whose previous index is 0. Let's understand this length of the alias starting from the third index whose previous index is 0, which means 1, 2, 3. If you're here, the previous index is 0. What is the longest length you can get if the previous is 10? That is what it means. Makes sense. That is the definition of the function. So I can say instead of index, third, I can write index."
+    },
+    {
+      "chunk_id": "L221_C9",
+      "start": 599.8,
+      "end": 676.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=599s",
+      "text": "That is the definition of the function. So I can say instead of index, third, I can write index. And instead of this, I can write previous index. That is the definition of the function that we will define. Now, since the definition is clear, we have expressed everything in terms of index and previous index. So let's write it super quick. Index and previous index. Very, very simple thought process. Let's write the base cases afterwards. Now, what's the first thing that you write in recursion? Very straightforward. It is either you take that element into yourself, or either you say this is not going to be the part of my subsequence. Because explore all possibilities means, if you are standing at this particular 10, you say 10, come and be my part. Hey, come across and be my part. Or you say 10, don't be my part. So I can say there are a couple of ways, which is you're saying 10, be my part, or you're saying don't be my part. So let's write the non-part at first. If I'm saying someone, you are not my part. Which eventually means I am moving to the next index. And if this particular index is not the part of the subsequence, can I say the previous index still stays the same? It does."
+    },
+    {
+      "chunk_id": "L221_C10",
+      "start": 676.8,
+      "end": 750.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=676s",
+      "text": "this particular index is not the part of the subsequence, can I say the previous index still stays the same? It does. So thereby, the previous index still stays the same. And if you're not including it into the part of your subsequence, will the length, because this function returns the length, if you remember the definition, it returns the length. So will the length increase? The answer to that is no. Thereby, we will have no increase. And this is for the not take case. Now you have to write for the take case. But the take case has some conditions. Let's understand. This is very simple. If you're not taking, you move to the next index. And since you're not taking, whoever was the previous still stays as the previous. Quite straightforward. Now let's talk about the next choice. It's the take choice. Let's come across and see. Can you take this 10? Always yes. Why? Because it is an element which does not have a previous index. So when you decide to take this 10, let's draw the recursion tree and try to visualize. If you are at f of 0 minus 1, you say I'll take 10."
+    },
+    {
+      "chunk_id": "L221_C11",
+      "start": 750.8,
+      "end": 822.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=750s",
+      "text": "recursion tree and try to visualize. If you are at f of 0 minus 1, you say I'll take 10. Assume it was 10 and 9, something like this. You say I'll take 10. So if you take 10, you're saying the previous index is now the 0th index. And you move to the next, which is the first index. And the length will also increase by 1. That's when you take it. If you don't take, what happens? You move to the next, which is the first index. And the previous still stays as minus 1. But you move to the 9th guy. And over here, assume there is something like 18. Now whenever you are at this, you can again take 9. So if you take 9, you'll move to the second index. And you'll say if you're taking 9, the first guy becomes your previous index. So over here you're saying don't take the first guy, take the second guy. So you're having a subsequence of 9. But over here, if you have taken the 0th guy, can you take the 9th guy? No. Why?"
+    },
+    {
+      "chunk_id": "L221_C12",
+      "start": 822.8,
+      "end": 899.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=822s",
+      "text": "But over here, if you have taken the 0th guy, can you take the 9th guy? No. Why? Because you're looking to form longest increasing. And if you take this 9, then eventually you're taking 10 and 9. Thereby it will be decreasing. So are you getting a pattern? Yes. If it's minus 1, which states it does not have a previous element. And if the current index exceeds the previous index, if there is some, then I can definitely take it. And if I am taking it, this is the length. The length will be 1 plus f of, I move to the next index. And the previous index will now be, since I'm taking the current index, that will be the previous index now. And I'll move to the next saying, go and check if this guy can be your previous or not. And this is the new length. If you decide you are going to take. So this was the previous one when you decided to not take. So I need the max of both."
+    },
+    {
+      "chunk_id": "L221_C13",
+      "start": 899.8,
+      "end": 971.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=899s",
+      "text": "was the previous one when you decided to not take. So I need the max of both. So can I say it will be length equal to max of either the not take length, which is this or the take one. And at the end of the day, I can simply return the length. And that's how you can easily write the couple of conditions. This is going to be your take condition. This is going to be your not take condition. Couple of conditions easily written. So have I explored all the options I have now taken the next max length? I do. What's the next thing? I forgot the next thing, which is base case. When do you end? That's my question. You know, in sub sequences, you end when you run out of elements. So can I say if I am going, going, going, going, going, going, can I say over here, right after this, which is n minus one and the next one will be n. Can I sell run out of elements at the nth index? I will. So if I'm running out of the elements of the nth index, can I write something like, hey, I am running out of index."
+    },
+    {
+      "chunk_id": "L221_C14",
+      "start": 971.8,
+      "end": 1050.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=971s",
+      "text": "out of the elements of the nth index, can I write something like, hey, I am running out of index. I don't have any more elements. So do not, I do not have any more elements. What will be the length? I will give you a length of zero because I don't have anything. That's the shuttle base case. These are the couple of stuffs. And this is the length that I'm talking about. So in this way, you can easily make it a recursive solution. Now, if you're making a recursive solution, you know, one thing for sure, the time complexity. It's going to be two to the power n. Why two to the power n? Because for every index, you're having two options. Take or not take, take or not take, take or not take. So in total, it will yield two to the power n number of operations. So the time complexity becomes this. And the space complexity will be an auxiliary stack space of big O of n, because you're going across a stack space of till till n. This is the stack space that you'll be taking. So there'll be an auxiliary stack space of big O of n and the time complexity will be two to the power n. Obviously, this is exponential and I will be looking to optimize this. And you have been going through the entire DP playlist."
+    },
+    {
+      "chunk_id": "L221_C15",
+      "start": 1050.8,
+      "end": 1130.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=1050s",
+      "text": "n. Obviously, this is exponential and I will be looking to optimize this. And you have been going through the entire DP playlist. You know, how do you optimize a recursion? That's very simple. You say, I see for overlapping sub problems. And if you draw the entire tree, I am very much sure you will find overlapping sub problems. Try to draw the entire tree. Like this is a cemetery that I've drawn. Try to draw the entire tree and you will see that there are overlapping sub problems. And if there are overlapping sub problems, what you do is you tend to convert that into memoiation. And how do you convert it into memoiation? You look at the variables that you have passed in function. One is index. One is previous index. So like, okay, what is index? I see index is nothing but from zero to n minus one. Thereby, in order to store it in some array, I can definitely use an n size because then I'll be allocated zeroth index till n minus one. What's the next thing? Previous index. But there is a problem with previous index. This starts from minus one and goes till n minus one. So if you're using a 2D array, how do you store minus one? Because you cannot, because you know, in arrays, it starts from zero based indexing."
+    },
+    {
+      "chunk_id": "L221_C16",
+      "start": 1130.8,
+      "end": 1205.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=1130s",
+      "text": "a 2D array, how do you store minus one? Because you cannot, because you know, in arrays, it starts from zero based indexing. So you definitely cannot. So how can you store this? What you do is you say, okay, I cannot store previous index, but can I do a coordinate change? Can I do a coordinate change in memoiation? Now I'll be like, what do you mean by coordinate change? I'll say, okay, fine. I have minus one. I have zero. I have one. I have two. I have n minus one. Now, whatever minus one is, whatever minus one status, instead of storing it at minus one, I'll store it at zero. Whatever zero is, I'll store it at one. Whatever one is, I'll store it at two. Whatever two is, I'll store it at three. Whatever n minus one is, I'll store it at n. I do a coordinate shift, coordinate shift so that I am allowed to store. Understand I did a coordinate shift so that I'm allowed to store. Okay, fine. So if I'm doing a coordinate shift, I require from zero till n, which means if I take n plus one, that will suffice. That's it. Just do a coordinate change. And you know how to just change it. Over here, instead of this, you write dp of previous, sorry, dp of index and previous index while storing to a coordinate change."
+    },
+    {
+      "chunk_id": "L221_C17",
+      "start": 1205.8,
+      "end": 1280.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=1205s",
+      "text": "Over here, instead of this, you write dp of previous, sorry, dp of index and previous index while storing to a coordinate change. That's it. Plus one will do a coordinate change equal to length. Over here, while you come across dp of index, previous index plus one is not equal to minus one. Then return. What I did was I just did a shuttle coordinate change and I converted this into a memoization solution. And since I've converted this into a memoization solution, now what is the time complexity? It's b go into n into n space. Complexity will be n into n because of the dp array that you're creating of the size. And there is an auxiliary stack space of b go of n for the recursion call that you're making. So I've trimmed down the time complexity into n square, which is quadratic and the space complexity to n square plus something, which is again quadratic. So that's how you can easily solve this problem. Definitely this is not the most optimal solution. So what we'll do is we'll try to code this off and see if this is running fine or not. Okay, so let's quickly write the function which will have index and previous index. Okay. And over here I can say if index is equal to n, I return zero and I do the not take case."
+    },
+    {
+      "chunk_id": "L221_C18",
+      "start": 1280.8,
+      "end": 1338.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=1280s",
+      "text": "Okay. And over here I can say if index is equal to n, I return zero and I do the not take case. So I probably can store it like zero plus f of index plus one and previous index. Perfect. That's how you can do the not take case. And over here you can carry the array as well and the size as well. So what about the take is the take is a very simple if previous is equal to go to minus one or array of index comes out to be greater than array of previous index. So I can say the length is max of length, comma, one plus function of you move to the next index. And you say this current index is your previous and you can pass on the array as well as the end. Pass on the array as well as the end. Once you've done this, you can simply return the length as the answer. And over here you can simply say return function of zero comma minus one comma array comma n and try running this. If it is running, the recursion is absolutely perfect. Okay. It says previous is equal to invalid operands types. Let's quickly check it out. Okay. My bad. It should be previous index."
+    },
+    {
+      "chunk_id": "L221_C19",
+      "start": 1339.8,
+      "end": 1417.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=1339s",
+      "text": "says previous is equal to invalid operands types. Let's quickly check it out. Okay. My bad. It should be previous index. Okay. You see all. So you see all of them are running. Only the last thing is giving TLE. Again, it's very obvious. So let's quickly try to memorize it. So dp of n comma vector of int. Remember we are doing a shift. So just make sure you have n plus one or minus one. Now pass on the dp. Okay. And just make sure you are guided this by reference. Just make sure you carry it. You're carrying it by reference. And the way you can say dp of index, previous index plus one equal to this. And you can just copy paste the same portion. And you can say if dp of not equal to minus one return dp of index previous. That's it. So once you've done this, just make sure you also pass on dp over here. Also pass on dp over here. I think that should be good. Yeah, that should be good. I'll try to run this. Now you have memorized the solution. Again, every time you declare vector, you have to be having hash include bits std c++ dot edge. Okay. You see all of them are running fine. Let's quickly submit this off. So we see that this particular solution is giving you a run time error."
+    },
+    {
+      "chunk_id": "L221_C20",
+      "start": 1417.8,
+      "end": 1465.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ekcwMsSIzVc&t=1417s",
+      "text": "them are running fine. Let's quickly submit this off. So we see that this particular solution is giving you a run time error. Why is that? Because if I just go across and check out the constraints of the solution of the question, rather, and it's 10 to the power of five, right? And if n is 10 to the power of five, and they're creating an size of n cross n cross array, n to the power of five. Multiplied with 10 to the power of five. That's a 10 to the power of 10 size that you're trying to create. And that will definitely be not possible. Thereby you're getting a run time error. So guys, I hope in this video, you have understood the recursion plus the memization solution. So just in case you did, please, please, please make sure you like this video. And if you're new to the channel, please do consider subscribing to us. With this, I'll be wrapping up this video. Let's meet in the next one where I'll be discussing the tabulation solution of the LIS in detail with the space optimization."
+    }
+  ]
+}

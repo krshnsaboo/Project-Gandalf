@@ -1,0 +1,204 @@
+{
+  "lecture_id": "L040",
+  "lecture_number": 40,
+  "lecture_title": "Merge Sorted Arrays Without Extra Space | 2 Optimal Solution",
+  "youtube_url": "https://www.youtube.com/watch?v=n7uwj04E0I4",
+  "chunks": [
+    {
+      "chunk_id": "L040_C1",
+      "start": 0.0,
+      "end": 72.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another lecture from the Stryver's A to Z DSA course. Just in case you're for the first time here, this is world's most in-depth course when you talk about DSL. Why do I say that? Because this course has 455 modules. By the end of the course, you'd have solved more than 400 plus problems when it comes to DSL. You can go over the entire internet, you can buy any of the paid courses. None of them will be teaching you DSL in such depth. The only thing that I can give you as assurance is once you cover up the entire course, you'll be able to clear any of the DSL in any of the companies in any part of the world. So till now I have covered up till this particular problem. Now in this video, I'll be covering up this one. Now what does the problem state? It states that you have to merge two sorted, very important keyword, sorted arrays without using any extra space. Now you'll be given a couple of arrays, okay? And both the arrays will be sorted in itself. So if I have to ask you, if you merge both of them, can I say the merged version will be looking something like 0, 1, 2, 3, 5, 6, 7, 8, 9. This will be the merged version of two arrays."
+    },
+    {
+      "chunk_id": "L040_C2",
+      "start": 72.84,
+      "end": 140.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=72s",
+      "text": "version will be looking something like 0, 1, 2, 3, 5, 6, 7, 8, 9. This will be the merged version of two arrays. It will be. So what you need to do is, for the first four elements, you have to replace them by 0, 1, 2, 3. And this one you have to replace by 5, 6, 7, 8, 9. You will not be creating any third array. Instead of that, in the given arrays itself, you have to make sure that you reshuffle the elements in such a way that the elements are placed in the sorted order. Like if you see properly 0, 1, 2, 3, then 5, 6, 7, 8, 9. Once you have reshuffled the array elements, you have to basically return. That is what you have to do. Now in an interview, the interview will not give you this one. It'll just give you the plain problem statement. So if this problem comes up, what is the extreme nice solution that comes to your brain? It is like super simple. I know one thing for sure that both the arrays are sorted. So what I'll do is I'll probably create a third array. Yes, I'll probably create a third array and I will keep two pointers because I know both the arrays are sorted. Is one smaller or zero smaller? Zero. So the first element that I'll take up is zero and then I'll move this pointer."
+    },
+    {
+      "chunk_id": "L040_C3",
+      "start": 140.0,
+      "end": 207.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=140s",
+      "text": "sorted. Is one smaller or zero smaller? Zero. So the first element that I'll take up is zero and then I'll move this pointer. Now I'll be asking is one smaller or two smaller? You know one is smaller. So you'll take up one and you'll move this pointer. Is two smaller or three? Two. And after that you move. Is six smaller or three? Three. After that you move. Is five smaller or six? Five. You move. Six or seven? Six. You move. Eight or seven? Seven. You move. Once you move, you see that you don't have any other elements. If you don't have any other elements, what do you do is for this array, you don't have any other elements. For the other array, you still have two elements. So just pick up those two elements. You'll be able to create a third array where all the elements are in the sorted order. Now what do you need to do? You basically need to put back the elements, right? So we can easily do it. So what I'll do is I'll start from here. I know it is zero. And if I talk about indexing, can I write zero index, one index, two index, third index, fourth, fifth, sixth, seventh, eighth? This is how the indexing will look like. That is for sure. I know one thing for sure. Zero one two three, till the third index, I will be taking everything in the array one."
+    },
+    {
+      "chunk_id": "L040_C4",
+      "start": 207.06,
+      "end": 269.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=207s",
+      "text": "sure. I know one thing for sure. Zero one two three, till the third index, I will be taking everything in the array one. After the fourth index I'll be taking everything in the array two. Let's quickly start off. Whenever we are at the zeroth index, dig the zero, and I'll put it in. Whenever we are at the first index, I'll dig the one. Whenever at the second index, I'll dig the two and I'll put it in. At the third index I'll dig the three and put it in. the fourth index when I'm at the fourth index that is five so how will you put it four minus whatever is the length of the first array the length of the first array is four four minus four will give you zeroth index and that will be the indexing on the array two so you take up five and you put it over here next you move at the fifth index this gives you first index so you put it at the first index next you move you have the sixth index which is the second index so you put seven next you move which is at the seventh index which is basically the third so you put up eight and then you move so basically you get nine and you put it up so once you have done the entire travesty you can see that you"
+    },
+    {
+      "chunk_id": "L040_C5",
+      "start": 269.28,
+      "end": 325.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=269s",
+      "text": "move so basically you get nine and you put it up so once you have done the entire travesty you can see that you have reshuffled the array but there is a problem with this approach what is the problem we are ending up using an extra array so I'll try to write the code and then we will analyze the time complexity and the space complexity so in the brute force I know I need a third array so what I'll do is I'll create a third array and what will be the size of the third array can I say it will be n plus m where n is the size of the first and m is the size of the second we know that for sure now we will keep a left pointer which will be pointing at zero we will keep a right pointer which will be pointing at zero again now one thing we know for sure is initially we were standing here and initially we were standing here so we will go on till it doesn't crosses this and we will go on till it doesn't crosses this last one so I can see I will keep on moving till this is lesser than n and I'll keep on moving till this is lesser than m basically till we have elements in the first array until we have elements in"
+    },
+    {
+      "chunk_id": "L040_C6",
+      "start": 325.96,
+      "end": 393.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=325s",
+      "text": "keep on moving till this is lesser than m basically till we have elements in the first array until we have elements in the secondary now what do I need to do if array of ones left is smaller than equal to maybe array of right I know what I need to do I need to take the array of one and I have to put it into array of three so maybe I can declare something like index equal to zero and I can say array of three index can you just take array of one up left and since you have taken left can you increase left and index is also put because you have already put an element into array of three so we will move to the next index so what I've done is even initially compared one and zero I put up zero and then I move to the next index that is what I have done over here what if it's the other way around if it's the other way around what you'll do is use the array of three index is equal to array of three you'll pick it up from the right and this time we'll move the right and you'll move the index as well simple so once you have done this what will happen as you saw over here this array got exhausted when we were standing here"
+    },
+    {
+      "chunk_id": "L040_C7",
+      "start": 393.16,
+      "end": 466.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=393s",
+      "text": "so once you have done this what will happen as you saw over here this array got exhausted when we were standing here it went out and there was still two elements left so there can be two cases either the left array gets exhausted or the right array gets exhausted so I can say what if the left is still left if we still have elements on the left I will simply say array of three can you pick up those elements and even just pick it up and you can just do an index plus plus over here and F plus plus instead of writing it in a separate lines perfect what if there are elements left on the right in that case it will be lesser than n in that case array of three index plus plus plus equal to array of two right plus plus quite simple and it is bound to happen that one of these while loops will be executed because if you look at this while loop either this will be false or this will be false then only this while loop will get over and if either of them is false one of the while loops will get executed so what will this do this will make sure that you have this array three now what you need to do is you need to go across this array three and you have to put every element back so let's quickly go across"
+    },
+    {
+      "chunk_id": "L040_C8",
+      "start": 466.4,
+      "end": 531.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=466s",
+      "text": "need to do is you need to go across this array three and you have to put every element back so let's quickly go across that array three and put every element back so maybe again I'll just declare an index to be zero and now what I need to do is I need to go through it rather instead of index you can just keep I equal to zero and I know how many elements are there n plus m and I can go across them something I know for sure is if I is lesser than n which means it will go to the array of one for sure and what will be the value array of three I perfect and if it is not then it will go to array of two for sure and this time it will be I minus the length of the first if you remember whenever you had the fourth index right whenever you were at the fourth index what happened this went to this portion which is four minus four the length so that is what I've done and that will be equal to array of three I'll just pick up from here once you've done this I can easily see that we have successfully make sure that array one has everything in the correct order and array two also has everything in the correct order so this will be the"
+    },
+    {
+      "chunk_id": "L040_C9",
+      "start": 531.36,
+      "end": 593.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=531s",
+      "text": "that array one has everything in the correct order and array two also has everything in the correct order so this will be the brute force one so if I talk about the time complexity what will be it let's analyze that so at first we are creating this array three so we are putting up all the elements into array three so that will end up taking we go off n plus m because one element one one one and then these elements are individually put over here so no matter how many while loops you are running eventually what you're doing is you are going across and putting one one element into array of three so n plus m will be the time complexity to put everything into this array three and then another n plus m in order to put this back into this and into this so this will be the time complexity what about the space complexity will be big O of n plus m because we are using an extra array in order to have everything in the sorted order and then we are reshuffling it back into the original arrays so this will be the overall time complexity and the space complexity obviously the interviewer will not be happy with the extra space that you're using and I'll ask you to optimize it this is when we"
+    },
+    {
+      "chunk_id": "L040_C10",
+      "start": 593.68,
+      "end": 658.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=593s",
+      "text": "interviewer will not be happy with the extra space that you're using and I'll ask you to optimize it this is when we move to the optimal solution so you have to get rid of the extra space that we are using how can we do that so if you remember I told you sorted is the keyword over here since we know everything is sorted can I see in this area if I stand over here it has a 7 and that is the largest element in array 1 and if I stand over here this has the smallest element in array 2 because both of the arrays are sorted if I compare 7 and if I compare 0 can I say if this is the largest element and if this is the smallest element this element should be on this side and this element should be on that thing yes because that is technically what it should be because 7 is bigger and it should be on this side and 0 should be on the side and that is where we will take the advantage so what I'll do is I will always start with the largest element and I'll always start with the smallest element and I will compare them I'd like 7 0 are you in the correct position 7 is like no no maybe 0 can come to my place I can go to 0 space"
+    },
+    {
+      "chunk_id": "L040_C11",
+      "start": 658.48,
+      "end": 733.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=658s",
+      "text": "are you in the correct position 7 is like no no maybe 0 can come to my place I can go to 0 space okay go ahead and do it 0 will come over here 7 will go over here and then you will move forward now you will be comparing 5 and 2 and 2 will be like maybe I can go to your place if I will be like maybe I can go to your place so let's take 2 let's take 5 perfect and then you'll move the pointers now you'll be comparing 3 and you'll be comparing 6 this is the moment you realize 3 is already like 3 is smaller than 6 and that's the case and if that's the case do you need to do something because no they are at the correct place and can I say everything on the left and now everything on the right will be at its correct place why because they are sorted they are sorted so they will be in the correct place so if you have done this this array has 1 3 2 0 this array has 7 5 6 8 9 so what I have done is I knew one thing for sure on the left I should have 0 1 2 3 and on the right I should definitely have 5 6 7 8 9 I have somehow managed to put everything on the left and everything on the right yeah"
+    },
+    {
+      "chunk_id": "L040_C12",
+      "start": 733.88,
+      "end": 800.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=733s",
+      "text": "should definitely have 5 6 7 8 9 I have somehow managed to put everything on the left and everything on the right yeah they are not in the correct order but they are on the left and on the right correct now what I'll do is I'll go ahead and say can you please sort it can you please sort it so if you sort it you'll get 0 1 2 3 if you sort the array itself you'll get 0 1 2 3 if you sort this one you'll get 5 6 7 8 9 quite simple so what I've done is I've sorted them and that is it I was able to reshuffle the array 1 and I was also able to reshuffle the array 2 and now they are in the correct order quite simple just a two-pointer approach and that does it so let us quickly quote this up what I'll do is I know the left pointer on the left side will always be at the last place I know the right pointer will always be at the first and I'll keep on going till this is greater than equal to 0 and till this is this one and now I know one thing if array of one of left is greater than array of two of right probably yes I can just stop them so I'll go ahead and stop them perfect I have gone ahead and stop them"
+    },
+    {
+      "chunk_id": "L040_C13",
+      "start": 800.68,
+      "end": 877.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=800s",
+      "text": "of right probably yes I can just stop them so I'll go ahead and stop them perfect I have gone ahead and stop them because they're not in the correct order and I'll say left can you move one place back right can you move one place ahead but if if if they are not not greater like array one is not greater they are going in the correct fashion so the remaining elements will always be the correct fashion done at the end I'll say array 1 comma array 1 plus n and I'll say sort array 2 comma array 2 plus n so if I sort them up that'll be done and this will be the code if ask you about the time complexity what will it be let's analyze that term so what about the time complexity what am I doing I'm starting from here I'm starting from here I'm comparing I'm comparing then I'm moving then I'm moving then I'm comparing then I'm comparing then I'm moving then I'm moving then I'm comparing then I'm comparing probably if I would have moved at the max I will go 4 places I cannot move five places because there are not five elements to compare. There are just four elements to compare. So the while loop will return false when the left will go below zero. So either of the left will go false or either the right will go false. So one of them will go false."
+    },
+    {
+      "chunk_id": "L040_C14",
+      "start": 877.58,
+      "end": 945.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=877s",
+      "text": "go below zero. So either of the left will go false or either the right will go false. So one of them will go false. And if I ask you who will go false at the first, can I say the minimum of n comma m, whoever is minimum, if there are four ones, if there are four places on the left that will go at first, if there were four places on the right that would have gone. So the minimum whoever is the minimum will go false at the first and that many times will iterate. Yeah, there is a break case which might happen. But this is the worst case at max this might happen if a given extremely opposite arrays. And then you're like n log n to sort one of them and b go of m log m to sort the other. So this will be the overall time complexity. Are we using any extra space? We can say we are using this couple of arrays, but that is given to us. So nothing extra apart from the given arrays. So that is why we can say we're not using anything extra. So b go of 1. And this will be the overall time complexity in the space complexity. And this is one of the optimal solutions. Let's quickly discuss the next optimal solution as well. So time to discuss the second optimal solution and an interview if you give the optimal solution"
+    },
+    {
+      "chunk_id": "L040_C15",
+      "start": 945.34,
+      "end": 1019.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=945s",
+      "text": "discuss the next optimal solution as well. So time to discuss the second optimal solution and an interview if you give the optimal solution one or if you give the optimal solution to it doesn't matter both of them will be accepted. Okay, the solution to will be using a technique known as gap method. Now this gap methods intuition comes from sorting technique which is known as shell sort. You can Google about the sorting technique and you can learn more about it. But this gap method has been taken from this particular sorting technique got it. So how does this gap method works? It's very simple. You take the first array, what is the size? You take the second array, what is the size? It's four and five. You sum them up and you divide by two, what do you get 4.5 and you take the scene value of it. That's five. So initially, we will take a gap as five. If this would have been something like size four and probably a size four, then eight by two would have been four and the scene of four would have been four. Since it was four and five, four plus five gave me like by two gave me 4.5 and the ceiling of it is five. That is why the initial gap that you'll start off is five. Okay. And the first pointer that you'll keep is at this place."
+    },
+    {
+      "chunk_id": "L040_C16",
+      "start": 1019.38,
+      "end": 1096.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=1019s",
+      "text": "That is why the initial gap that you'll start off is five. Okay. And the first pointer that you'll keep is at this place. And the second point you'll keep at five distance away. Yes, you'll keep it at five distance away, which is one, two, three, four, five. So this is where you'll keep the second pointer. Let's call it as left. Let's call it as right. Now you will start comparing one, two. One should be on the left and two should always be on the right. Don't do anything. Move. Now you'll move the left to the next and you'll move the right to the next. And you'll again compare three, six. They're in the correct place because three should be on the left and six should be on the right if you compare three and six. Next move. You have a left here. You have a right here. Please compare again. Five and eight. Five and eight on comparison. Five should be on the left. Eight should be on the right. Do not do anything. Move. Left is here and right is here. And this time seven and nine. Seven should be on the left and nine should be on the right. Done. Move. The moment you move, left moves here and right moves out of the boundary. And the moment one of the pointers, one of the pointers and it is very obvious that right"
+    },
+    {
+      "chunk_id": "L040_C17",
+      "start": 1096.36,
+      "end": 1174.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=1096s",
+      "text": "right moves out of the boundary. And the moment one of the pointers, one of the pointers and it is very obvious that right will be the first pointer that will always move out. So the moment the right moves out of the boundary, you stop and you restart. And how will you restart? By reducing the value of gap. And in order to reduce, what you'll do is, you will again do a division by two. And on doing a division by two, whatever value you get, you take the ceiling of it. Five by two is nothing but 2.5. So the ceiling of it will be three. Perfect. And this time what you'll do is, you'll go ahead and again keep the left pointer here and the right pointer will be three places ahead. So if you count one, two, three, so the right pointer will be at this place. Again you start comparing. One and seven. Looks to be at the correct place. So move them, left goes here. I'll just erase this right and the right goes here. This time we have three and zero. Aren't they at the correct place? No. Three can go here and zero can come over here. So let's do that. So what I'll do is, I'll probably omit this and I'll take zero, rather zero here and three here. Perfect. Next, let's move left. So the left goes here and let's move right. So the right goes here."
+    },
+    {
+      "chunk_id": "L040_C18",
+      "start": 1174.24,
+      "end": 1241.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=1174s",
+      "text": "zero here and three here. Perfect. Next, let's move left. So the left goes here and let's move right. So the right goes here. I'll quickly erase the right to have some cleanliness. Next five and two. You can again do the same thing. Just make sure that two comes over here, five comes over here. And what's the next thing? Move the right to this place and move the left to here. And when you do this, what's the next step? Compare seven and six. Do you need to? No. So please go ahead and move it. So left will go here and the right will go here. What is the next comparison? Three and eight. Do you need to do anything? No. So please move the left and please move the right. Next five and nine to be compared. Do you need to do anything? No. So please move the right. The moment you move right, it's over. Yes, it is over. So once I have done this, I can say that another iteration is completed. So again, we can just omit everything off. And this time we will go to the next. And again, we will do the same thing."
+    },
+    {
+      "chunk_id": "L040_C19",
+      "start": 1241.3,
+      "end": 1319.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=1241s",
+      "text": "omit everything off. And this time we will go to the next. And again, we will do the same thing. So this time, the left will be pointing here and the right will be two places ahead. Perfect. What will you compare? One and two. Are at the correct place? So what I'll do is, I'll go ahead and move right one place ahead. At the same time, I'll move left by one place ahead and I'll quickly erase the other pointers to make it clean. Next zero and seven looks to be at the correct place. So let's move one pointer ahead to the left and one pointer ahead to the right and erase this. Next two and three looks to be at the correct place. So let's move one place ahead and let's move this one place ahead. And this time, seven and five not at the correct place because seven can go here, five can come over here. So this is what I'll do. I'll just make sure that five comes over here and seven goes over here. Perfect. And what's the next step? You move left here. At the same time, you move right here. Let's move. And once you've moved, just clean it. Next three and six appears to be at the correct place."
+    },
+    {
+      "chunk_id": "L040_C20",
+      "start": 1319.66,
+      "end": 1399.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=1319s",
+      "text": "here. Let's move. And once you've moved, just clean it. Next three and six appears to be at the correct place. Let's move one. Left goes here, right goes here and again clean it. Next seven and eight, nothing. Let's move left here, right here and you can go ahead and you'll find nothing. And this will be over as well when right crosses. So when gap is two, this is how the array looks. We still have steps. Let's do it. Next is nothing but gap will again be divided by two. And this time when you divide, you get one and the ceiling of one is one. So the gap reduces to one this time. And the gap reduces to one. What you'll do is you'll keep the left pointer here and I'll keep the right pointer here. So it's basically adjacent elements. So zero and one doesn't look to be at the correct. So please go ahead and just guess. Very good. Zero and one. Next move left and right. So the left goes here and the right goes here. Again one and two looks to be at the correct place. So move left and right. So left again goes here. Right again goes here. Two and five looks to be at the correct place. Let's move them. Next left goes here. Right goes here. Five and three don't look to be at the correct place. So three comes over here."
+    },
+    {
+      "chunk_id": "L040_C21",
+      "start": 1399.52,
+      "end": 1475.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=1399s",
+      "text": "them. Next left goes here. Right goes here. Five and three don't look to be at the correct place. So three comes over here. Five comes over here. Next, I'll just erase it because it's not clean anymore. Next left will be here and right will be here. Five and seven looks to be at the correct place. So we'll move. Left comes over here. Right comes over here. I can move this and this time seven and six don't look to be at the correct place. So six and seven. Perfect. Next, again move left and right. You can keep on moving and it will end and at the end of the day, zero one two three. Wow. Zero one two three five six seven eight nine. Wow. They caught arranged using this wonderful gap method. And what is the next turn of gap? One by two. But when you reach one, please don't do it because it will be zero point five and you'll again get gap as one because the ceiling of zero point five, you know, what is that? The ceiling of zero point five is one. So you'll again get one. So whenever you get one, you say, please, I don't need to do anything further. You can stop right away. Got it. So if you get a repetition one, you just stop and you do not do anything. Note whenever there is one, do not go and divide it by two. Simple as that."
+    },
+    {
+      "chunk_id": "L040_C22",
+      "start": 1475.78,
+      "end": 1548.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=1475s",
+      "text": "you just stop and you do not do anything. Note whenever there is one, do not go and divide it by two. Simple as that. So this is this was it for this particular method. So now I'll quickly go ahead and try to code it up. OK, so time to go to the second optimal solution. We know one thing. The length is n plus n. And what will be the starting gap? If you remember, the starting gap was nothing but. N plus n. By two five plus four by two. That was four point five. So I'll be like the starting gap is something. N plus m by two or rather length by two. Plus length modulo two. Why? But why are we doing plus of length modulo two? Because nine by two will give you four as an integer and nine modulo two. Since it is an odd number, will give you one and that will give you a gap of five. This is how we write instead of writing if else. What's the next thing? While we know we will keep on going till gap is greater than zero. What's the next thing we will do? We will start having left. Where was the left initially? It was if you remember, left was always over here. And where was right? Five steps ahead. Gap steps ahead."
+    },
+    {
+      "chunk_id": "L040_C23",
+      "start": 1548.94,
+      "end": 1624.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=1548s",
+      "text": "the left initially? It was if you remember, left was always over here. And where was right? Five steps ahead. Gap steps ahead. So right was always gap steps or left plus gap, which is gap automatically. What till how much did we go? Till the right cross the boundary. So we will go ahead till the right crosses the boundary. Remember over here we're taking right as left plus gap. So we're taking this normal count. We're taking this normal count to start off with. I can say left is at zero and the gap is five. When the gap is five, we can say left is as zero and the right is at five. So what I'll do is I say right will go on till it is lesser than length because if you remember the length is nine and we will go on till the eighth because after eight it crosses the boundary. Perfect. Now what do we know? What can be the three conditions? Three conditions. Let's analyze the three conditions. One of them is when left is on the left array and right is on the right array. So I know one of the conditions for sure. I can write it. If left is lesser than N because if left is lesser than N means it's on the first array"
+    },
+    {
+      "chunk_id": "L040_C24",
+      "start": 1624.46,
+      "end": 1697.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=1624s",
+      "text": "can write it. If left is lesser than N because if left is lesser than N means it's on the first array and right is greater than equal to N. This condition means I'm in the array one and array two. Perfect. Next, what will be the condition? Let's analyze. What can be the other condition? If you remember left might be here. So I can say maybe left is here and right is here which means both of them are in the second part of the array. Can I just write this? Will this be okay? Do I need to write for right? No because if left is on the right, if the left is here, the right will always be in the right. What does this mean? I'm comparing array two and array two elements. What will be the other case? Can you think of the other case? Yes, very simple. What will be the other case? The other case will be imagine the left is on the left and the right is also on the left. They both are on the array one. In that case, you'll be like array one and array one. Perfect. Super easy."
+    },
+    {
+      "chunk_id": "L040_C25",
+      "start": 1697.66,
+      "end": 1774.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=1697s",
+      "text": "both are on the array one. In that case, you'll be like array one and array one. Perfect. Super easy. And now what I will do is I'll try to write a private function void swap if great or something like this just to maintain cleanliness nothing else. I'll take this int index one and index two and I'll say hey listen if array of one index one is greater than array of two index two please go ahead and swap array of one index one from array of two index two. That's it. Now what I will do over here is I know one thing I'll have to swap array one and array two because left is at array one left is at array two and the greater check is done over here. So I've fastened two indexes one is left. Let's observe something. We know one thing if left is over here if left is over here left will go as it is. What about right? Right is at the fifth index. But is that the index on the secondary? No on the secondary it's the first index is the first index. So how do you get it five minus the length of the first array will give you one if you remember."
+    },
+    {
+      "chunk_id": "L040_C26",
+      "start": 1774.86,
+      "end": 1842.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=1774s",
+      "text": "So how do you get it five minus the length of the first array will give you one if you remember. And we like right minus the length this will give you the corresponding index in the secondary very simple and similarly I can go ahead and write the same conditions for everyone. So over here I can say this will swap array two and left will be minus n. Why because both of them are in array two and array two and this is array one so array one and I don't have to subtract anything because that's okay because if the right is over here it's the second index because in the left is the same index corresponding is the same index corresponding only when we go on the right that's when you have to correspond to another index that's when you have to correspond to another index that's why you end up subtracting n once you have done this what's the next step. I've written down all the conditions in order to adjust left and right what is left left plus this because after every movement I move left and right once I've done this I need to reduce gap in the next interval so can I say if you remember if gap is one we don't divide it any further by two we just say it's over or else we say gap equal to"
+    },
+    {
+      "chunk_id": "L040_C27",
+      "start": 1842.58,
+      "end": 1908.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=1842s",
+      "text": "gap is one we don't divide it any further by two we just say it's over or else we say gap equal to gap by two plus gap modulo two in case it is odd take the clay and this is it this will be the code for the entire one and this is how easy it is the gap method it might look complicated but if you sit back and try to code it it is actually very simple so let us analyze the time complexity what will be the time complexity let's quickly go back to the code so we have a while loop and inside of that we have a while loop the first while loop has gap and if you remember the gap starts from length by two and again reduces by two again reduces by two again reduces by two and again reduces by two till it's one and if you remember I told you anything that reduce like divides by two divides by two the time complexity is logarithmic base two of length which is n plus n the length n plus n right and what about the inner loop if you carefully observe the inner loop is kind of running one pointers ahead one pointers ahead one pointers ahead one pointer said it's kind of covering not in all cases but in most like most of the kind of cases it's kind of covering"
+    },
+    {
+      "chunk_id": "L040_C28",
+      "start": 1908.5,
+      "end": 1957.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=n7uwj04E0I4&t=1908s",
+      "text": "pointer said it's kind of covering not in all cases but in most like most of the kind of cases it's kind of covering from here to till the end right if you remember initially it started with this much then right went here it started with this much then right went here it started with this much so kind of covering the entire array kind of not not exactly so I can say it as B go of n plus m not exactly but near about now this will be the time complexity what about the space you're not using anything extra apart from the given arrays so this will be the time complexity in the space complexity and say that this is done as well I hope you have understood all the three approaches just in case you have please please do consider giving us that like because it won't cost you anything but it will highly motivate me to make these kind of content and if you need to our channel what are you waiting for kill that subscribe button and if you haven't followed me on Instagram LinkedIn Twitter the links are in the description with this I'll be wrapping up this video let's meet in some other video till then bye bye take"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "lecture_id": "L256",
+  "lecture_number": 256,
+  "lecture_title": "L20. Remove duplicates from sorted DLL",
+  "youtube_url": "https://www.youtube.com/watch?v=YJKVTnOJXSY",
+  "chunks": [
+    {
+      "chunk_id": "L256_C1",
+      "start": 0.0,
+      "end": 72.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=YJKVTnOJXSY&t=0s",
+      "text": "So let's continue with our playlist, and before that, hey welcome back to the channel, I hope you guys are doing extremely well. So the problem that we will be solving today is removing duplicates from a sorted doubly linked list. So what is the problem stating? It is stating that you're definitely given a sorted doubly linked list. So you have the head of the doubly linked list, and you have to remove all the duplicates. What does that mean? If you look over here, there's a one. So that's the first occurrence of one. After this, there are duplicates of one, you'll have to delete the duplicates, delete them. This is the first occurrence of three. After that, there are duplicates, delete them. So if you have deleted, what will happen is the one, the next will point to this, the two's previous will point to this, right? Three's next will point to four, four's previous will point to this. Once you have done this, you'll have to return me the head of this particular doubly linked list. Obviously, the head will not change. Why? Because this will be the first occurrence. After that, you will find the duplicates and the duplicates."
+    },
+    {
+      "chunk_id": "L256_C2",
+      "start": 72.48,
+      "end": 150.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=YJKVTnOJXSY&t=72s",
+      "text": "not change. Why? Because this will be the first occurrence. After that, you will find the duplicates and the duplicates. If you carefully observe, since it is a sorted doubly linked list, the duplicates will always be in a contiguous manner. It cannot be over here because it is a sorted doubly linked list. The duplicates will always be in a contiguous manner. So we will take the advantage of this continuity and try to delete all the duplicates. So how do I approach this problem? The first thing I have to observe is, if I have a number one, the duplicates will be right after this. If you look over here, the duplicates are right after this. Why? Because it is a sorted doubly linked list. I cannot have a one over here. That is not possible. If there are duplicates, they will be in a contiguous manner. So I'll take this advantage of continuity and try to solve it. So let's try to do a traversal and try to remove all the duplicates. So we start at the head, right? So let's take a temporary and place it at the head because we do not want to alter the head. Now we will start the first round of traversal. So can I can I say that the first duplicate, if there is one, it will be right at the next of temporary. It will be if there is one. Then I have a check."
+    },
+    {
+      "chunk_id": "L256_C3",
+      "start": 150.12,
+      "end": 227.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=YJKVTnOJXSY&t=150s",
+      "text": "there is one, it will be right at the next of temporary. It will be if there is one. Then I have a check. Is it equivalent to this temporary? I find yes, this is equivalent. So what I can do is I can take the next and just move to the next just to see if there are more duplicates. I see this one is also equivalent. So I again take the next and move to the next. And this is the moment, this is the moment I see this two is not equivalent to this one, which means that I have got my duplicates like I have gone over the duplicates. Now I am standing at an element or a value which is not equivalent to this. What do we need to do? We need to make sure this temporary next is pointing to two. So you can take temporary and make it point to two and you can take two and its previous point to temporary. So it's going to be something like temporary dot next equal to next node. And if there is an next node, if there is an next node, very, very important, it might end up reaching none. So please have a check the next previous point to temp. Once this is done, where will your next round of traversal start from?"
+    },
+    {
+      "chunk_id": "L256_C4",
+      "start": 227.76,
+      "end": 306.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=YJKVTnOJXSY&t=227s",
+      "text": "have a check the next previous point to temp. Once this is done, where will your next round of traversal start from? Where will your next round of traversal start from? Because once you have done this, I've changed the links. Remember, I've changed the links. Can I surely say, if I just erase this, this for a moment, if I do a temporary of temporary next, the temporary will go from here to here. It will, it will, right? Because you've changed the links. Let's again do the next round of traversal. So in the next round of traversal, again, you keep the next node over here. I kept the next node over here. I check is this equivalent to this? I find no, I find no, right? So what will I do? I can simply, even if I attach temporaries next to next node, new nodes previous to temp, that's fine. That's fine. Because the goal is what we are trying to do is temporary because temporary was your next node was your, what is next? No, next node is the first element. That's not equivalent to the current node. Next node is the first element. That's not equivalent to current node. So you are always pointing the next year and the previous year, which is the case here already, right? So what I'll do, I'll take the temporary and move ahead."
+    },
+    {
+      "chunk_id": "L256_C5",
+      "start": 306.2,
+      "end": 384.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=YJKVTnOJXSY&t=306s",
+      "text": "year and the previous year, which is the case here already, right? So what I'll do, I'll take the temporary and move ahead. So let's do the next round of traversal. So the temporary moves here. This time where will next node stand? Next node will stand here. What will happen? Yes, this is equivalent. So you loop and find the first node that's not equivalent. So the next node goes here and this is where it finds, okay, this is my first node, which is not equivalent to the current node. What will happen? Yes, my bad. Temporary is next, will point to next node, first node, which is not equivalent and next node's previous will point to temporary. Once this is done, can I say that I can take temporary and say go to the next? So what will happen? Temporary will go here. Can I say something for sure? If temporary reaches the last node, I don't need to do any more because beyond it, there cannot be duplicates of four. Beyond it, there cannot be duplicates of four because this is the tail node, so I stop. So if your temporary reaches the last node or if it reaches the null, you stop because there is nothing in the next. You just stop, right? So if you carefully observe, one's next is pointing to two's, two's next is pointing to three, three's next is pointing to four."
+    },
+    {
+      "chunk_id": "L256_C6",
+      "start": 384.46,
+      "end": 457.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=YJKVTnOJXSY&t=384s",
+      "text": "right? So if you carefully observe, one's next is pointing to two's, two's next is pointing to three, three's next is pointing to four. And if you're using C++, please make sure while you're traversing, erase them off, erase them off, like delete them off because in Java, garbage collection will take place and it will delete it. But in C++, you'll have to free them. I'll show you in the code, but I hope you've understood this. So I will be writing down the pseudocode which is not language specific. If you want the C++, Java, Python or JavaScript code, the links will be in the description. So initially, how do we start? We take the temporary and place it at the head. That is what we do. And we do a simple traversal and we know the traversal will be till temporary reaches null and, and it is not the last node, which is temporary and next is not null. That's the last node condition. Check. Okay. What is the first thing? You'll have to find the first node that is not equivalent to this. So next node will be temporary next. And I can say while let's keep on moving. Let's keep on moving. While next node is not null, obviously I just cannot keep on moving till it is null obviously."
+    },
+    {
+      "chunk_id": "L256_C7",
+      "start": 457.74,
+      "end": 536.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=YJKVTnOJXSY&t=457s",
+      "text": "Let's keep on moving. While next node is not null, obviously I just cannot keep on moving till it is null obviously. And and the next nodes data or the value is equivalent to temps value. I'll keep on moving because I want to end up at a node which is not equivalent. So I keep moving. I'll say, Hey, next node. Let's keep moving. That's going to the next. Perfect. I'll show you, I'll show for the C++ users how to free up space while I show you the code. But as of now, just understand this. So next node keeps on going, keeps on going till this is not equivalent. It will eventually reach a node where the datas are not equivalent or it might reach the end of the linked list. Once it has done, once your next node is standing at a node which is not equivalent to your temporary value, what you will do is you will say temporary your next. Can it point to next node? You can, even if, even if, if you remember the case when temporary was your next node was here because for this too, there are no duplicates. So you always stand at the first. You can still have temporary point to this. That's fine. That's fine. You don't have to write extra conditional checks and you can still have next nodes previous"
+    },
+    {
+      "chunk_id": "L256_C8",
+      "start": 536.96,
+      "end": 615.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=YJKVTnOJXSY&t=536s",
+      "text": "point to this. That's fine. That's fine. You don't have to write extra conditional checks and you can still have next nodes previous point to this. You don't need to write any additional checks. So that's why I'm not writing additional checks. And you can say next node, please make sure to check if next node is a valid one. Only if the next node is not null, you'll say next nodes previous will be pointing to temp. Perfect. What after this? You say, Hey, temporary, can you go to your next because I have assigned you. Once this is done, this particular while loop can be completed. Done and dusted. And right at the end, you can return the head because we haven't altered. We haven't altered the head. Done. Yes. Done. So let's analyze the time complexity. What is the time complexity? On a naked eye, on a naked eye, it might feel, it might feel that, okay, there's an outer loop. There's an inner loop. So we go off n square that's on a naked eye. But if I try to visualize, I'll see that, Hey, listen, the temporary touched this, then touched this, then this, and this. So what it did was it skipped the duplicates. It skipped the duplicates. Correct?"
+    },
+    {
+      "chunk_id": "L256_C9",
+      "start": 615.2,
+      "end": 694.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=YJKVTnOJXSY&t=615s",
+      "text": "then touched this, then this, and this. So what it did was it skipped the duplicates. It skipped the duplicates. Correct? And these duplicates were traversed by the inner loop. These duplicates were traversed by the inner loops. So if I look at the overall traversal, if I look at the overall traversal, and if I mark the outer loop, the outer loop will go here, will go here, will go here, and will go here. That's where the outer loop goes. And the inner while loop will go here, will go here, and will go here. Because apart from this, it never goes inside. So eventually the outer loop in total is one, two, three, four, and the inner loop is one, two, three. So that's overall seven, which is the length of the doubly linked list, which is the length of the doubly linked list. So thereby the time complexity is big O of n. It is not big O of n square. You need to understand, even if you're running an inner loop, it's going over the nodes. But at the end, you're changing the temps next to next node. So you've already gone through these nodes. You will not repeat. You will not repeat. If the outer was going, going, going through all of these, then it could have been n square. What you're basically doing is you're changing the link."
+    },
+    {
+      "chunk_id": "L256_C10",
+      "start": 694.24,
+      "end": 760.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=YJKVTnOJXSY&t=694s",
+      "text": "going, going, going through all of these, then it could have been n square. What you're basically doing is you're changing the link. So after this, it straight goes away. It's those nodes which you have gone through the inner node. Got it. So thereby the time complexity is big O of n. What about the space complexity? Big O of one. We're not using any external space, right? So let's go back to the code editor and understand how do you free up these nodes? Because in C++, you need to free up these nodes, right? So in the code editor, you can check out the code. It's the exact same code. And carefully observe over here. The next node was traversing to the next. So what I did was I stored this one because I know this is a duplicate, right? And after going to the next, what I've done is I've just freed it up. Just feed it up. That's that's the thing that you have to do as a C++ user. The extra stuff. If I go ahead and submit this, this will be running fine. And in case you want the C++ Java Python or JavaScript code, the links will be in the description. If you're still watching, I'm very sure that you've understood everything. If that is the case, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well."
+    },
+    {
+      "chunk_id": "L256_C11",
+      "start": 760.84,
+      "end": 765.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=YJKVTnOJXSY&t=760s",
+      "text": "is the case, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

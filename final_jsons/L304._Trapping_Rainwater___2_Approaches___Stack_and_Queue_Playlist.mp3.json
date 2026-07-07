@@ -1,0 +1,176 @@
+{
+  "lecture_id": "L304",
+  "lecture_number": 304,
+  "lecture_title": "L8. Trapping Rainwater | 2 Approaches | Stack and Queue Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=1_5VuquLbXg",
+  "chunks": [
+    {
+      "chunk_id": "L304_C1",
+      "start": 0.0,
+      "end": 77.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=0s",
+      "text": "So let's continue with our stack and cube playlist. Before starting off, hey everyone welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is trapping rainwater. So what is the problem stating? Stating that you will be given an array of non-negative integers where every integer is representing the height of a given building. The height can be 0 as well. Now imagine if it rains, there will be water from the sky. And if there is water from the sky, there will be water logging as well. There will be water logging all across. I will have to figure out where will be the water logged. So in this particular case, I can surely see that there will be some water logged over here. There will be some water logged over here. We might ask why not over here. It is a flat surface so what will happen is the water will flow to the streets. It is a flat surface so the water will flow to the streets. So when it drains, the water gets logged only in between the buildings. Only in between the buildings."
+    },
+    {
+      "chunk_id": "L304_C2",
+      "start": 77.94,
+      "end": 154.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=77s",
+      "text": "the streets. So when it drains, the water gets logged only in between the buildings. Only in between the buildings. Now your task is to tell me the total units of water that might be stored in between the buildings. So can I say that this particular building has 1 unit of water. Why 1? The base is of width 1 and the height is of width 1. So 1 into 1 is 1 unit of water. There is a lot of water over here. So how do I figure out the total units of water? Quite simple. You look at the first building and you see how much water is there. That's 1. Look at the second building and you see there is 2 units of water on the top of it. Look at the third and you see that there is 1 unit of water on the top of it which makes it a total of 4 units of water. And the last one has 1 unit of water. So in total I have 6 units of water and this is what you will have to return. How do I solve this particular problem? What is the brute force that comes to your brain? First of all, let's understand where will the water be stored. It will only be stored if I have a building and there is a taller building on the left and there is a taller building on the right."
+    },
+    {
+      "chunk_id": "L304_C3",
+      "start": 154.26,
+      "end": 233.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=154s",
+      "text": "stored if I have a building and there is a taller building on the left and there is a taller building on the right. Then only water can be locked. That's for sure. In this particular case, there was no water lock because there is no one on the left which is taller. On the left, on the right, there has to be someone taller for water to be locked. So one thing I have understood that I need taller building on the left, I need a taller building on the right. Then only water will be locked. Next thing, like the thought process, the intuition. I see water being locked over here. How did I figure out the total units of water? What I did was I looked over individual buildings. So for this building, I had 1 unit of water. For this building, I had 2 units of water. For this building, I had 1 unit of water. And overall, I added them up to get 4 units at this particular place. So if I need the total units of water across all the buildings, can I say I'll go to each building, I'll go to each building's terrace and figure out how much water is stored and I can sum it up and that will be my total. I'll go through each and every building and I'll figure out how much water is stored on the top of that building."
+    },
+    {
+      "chunk_id": "L304_C4",
+      "start": 233.78,
+      "end": 312.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=233s",
+      "text": "my total. I'll go through each and every building and I'll figure out how much water is stored on the top of that building. The second one is clear as well. Now the question arises, for every particular building, how do I know how much water is stored? Good question. Let's understand that by taking this particular building. So if I look at this building, this has a height of 1 and this is storing water because on the left, I have someone of height 2 which is greater than it, which is greater than it and it is also storing water because on the right, it has a height of 3. It has a building which has a height of 3 which is greater than it. On the left, I have someone greater. On the right, I have someone greater. But why is it storing only till here and why not till here? Because the other waters like the, it will overflow. It will just go into the streets. Okay. So this was of height 2 on the left. This was of height 3. How much water did it store? Till the height 2, till the height 2, the lower of the, the lower of the left and the right. So can I say, can I say, it looks onto the left, it looks onto the left and figures out who is your left max and it looks onto the right and figures out who is your right max."
+    },
+    {
+      "chunk_id": "L304_C5",
+      "start": 312.74,
+      "end": 384.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=312s",
+      "text": "onto the left and figures out who is your left max and it looks onto the right and figures out who is your right max. Can I say this? It does that for sure, right? And then it says, okay, I have two max, like I have a max on the left, I have a max on the right. Now, I will take the minimum of it because that is where, that is the height till where I can have water, okay. But how much, it can only store water from the height of the building, correct? So this was 2. So 2 minus, the height of the building was 1. So it ended up storing 1 unit of water. So can I say minus the height of the building, which is array of i? So can I say this is the formula for every i, for every i and if I could, if I could go over, my bad, if I could go over from 0 till n minus 1 and I can do it for every building and sum it up, I think I'll have the total unit supported. I will have it for sure. The only thing I'll have to figure out is how do I find left max, how do I find right max in the most optimal manner. That is what I'll have to figure out."
+    },
+    {
+      "chunk_id": "L304_C6",
+      "start": 384.76,
+      "end": 462.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=384s",
+      "text": "I find left max, how do I find right max in the most optimal manner. That is what I'll have to figure out. So before I move on to the code, there is a key thing that you'll have to keep in mind. The left max and the right max, both of them has to be greater than array of i, then only it can store water. Like if it is in between two bigger buildings, then only it can store water. So keep in mind, okay. So I'll have to write down the code. So what I will do is, I will take total equal to 0, okay, total equal to 0. I'll start iterating from i equal to 0 till n minus 1. Perfect. Now what I will do is, I'll say, okay, I'm at index i, the building i. So if my array of i is lesser than my left max, how to figure left max? I'll do that afterwards. And my array of i is smaller than right max. In that scenario, I'll have some water. I'll have some water with me. And what is the formula? You know the formula, right? Total plus equal to minimum of your left max, comma, your right max minus array of i."
+    },
+    {
+      "chunk_id": "L304_C7",
+      "start": 462.86,
+      "end": 539.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=462s",
+      "text": "know the formula, right? Total plus equal to minimum of your left max, comma, your right max minus array of i. And that will be done for this one. If this if condition is not meeting, then it will be 0 units of water, which you don't have to add. And eventually, you could end up returning the total units of water. Perfect. But now the question arises, how do I figure out the left max and the right max? What is left max? If I'm standing at here, the left max is nothing but I'll have to go entirely towards the left and figure out the left max. And the right max, I'll have to go through each and every element on the right and figure out the right max. But is there a better way? Yes, there is a better way. It's known as prefix max. It's known as prefix max and suffix max. So, you can define a, you can basically define a array of size n. And similarly for suffix max, you can define a array of size n. So, I'll take a small example and I'll explain you. So, imagine you have an array which looks something like 2 comma, 1 comma, 0 comma, 5 comma, 3."
+    },
+    {
+      "chunk_id": "L304_C8",
+      "start": 539.86,
+      "end": 615.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=539s",
+      "text": "explain you. So, imagine you have an array which looks something like 2 comma, 1 comma, 0 comma, 5 comma, 3. So, what prefix max does is, it's super simple. It says prefix, the first element, prefix of 0 will be array of 0 which is 2. Okay. After that, it comes to this element and it says you have a 1, you have a 1. So, whenever I'm standing at this index, I need the maximum of these two elements, maximum of these two elements, which is the max of 1 and the max of 2. Thereby, I say 2. Perfect. After that, I go to the next. Now, when I'm standing here, I'm saying I need the prefix max of these three elements. Definition of prefix is the maximum till that index, the maximum of all the elements till that index. That is prefix. Got it? So, if I need the prefix max for this one, I'll have to take the max of 0, 1 and 2. Or can I say, I've stored 2 over here which means the max of these two elements. So, I can simply compare 2 and 0. That will be 2. Perfect. After that, I'll go to 5. So, when I go to 5, I need the prefix max of the four elements which is typically, till"
+    },
+    {
+      "chunk_id": "L304_C9",
+      "start": 615.18,
+      "end": 694.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=615s",
+      "text": "go to 5. So, when I go to 5, I need the prefix max of the four elements which is typically, till here you have 2 which is all the three elements, prefix max is 2 and then you can compare it with 5. Okay. So, you get 5. After that, you go over here which means you need all the prefix, max of all the elements. So, what you could do is, you could take these four elements which is nothing but this one, 5 and then compare it with 3. Thereby, it still stays as 5. So now, at any moment, if you come over here, you know that towards the entire left arena, towards the entire left arena, the maximum is 4. If you come at this place, you know towards the entire left, the max is 2. If you come at this index, you know the left max is 5. So, you always know about it. It's very simple. How you write this is, you basically say prefix of 0 will be array of 0 and after that, you could just start with i equal to 1 and you could go ahead till n minus 1 and you could do prefix of i equal to max of prefix of i minus 1 comma of array of i and that would be your prefix i. So, can I say this?"
+    },
+    {
+      "chunk_id": "L304_C10",
+      "start": 694.7,
+      "end": 769.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=694s",
+      "text": "of prefix of i minus 1 comma of array of i and that would be your prefix i. So, can I say this? Can I say this? I do have my left max now. I do have my left max now. You could relate and I'll show you in the code afterwards, but let's quickly check out the suffix max as well. It goes in the reverse direction, suffix because I'm looking for right max. So maybe I can take an array and let's assume the array is something like 10, 2 comma let's say 11 comma let's say 1. So what you do is, you take a suffix max. Let's say suffix max, yes and you basically fill up the last element. So, the last element will be 10. Then you come to this element and you say I need the max of these two elements. So, you still have for 1, so 10 comma 2. The max will be 10. Then you again go over here. This time you say you need the max of three elements. So, till two elements you have it here and then you compare it with this. That ends up becoming 11. After that for this one, you end up taking 11. So, you have the suffix max ready as well. You would come to any index and you'll get the right maximum. You'll get the right maximum from that index. Super simple."
+    },
+    {
+      "chunk_id": "L304_C11",
+      "start": 769.06,
+      "end": 846.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=769s",
+      "text": "as well. You would come to any index and you'll get the right maximum. You'll get the right maximum from that index. Super simple. So, what I could do is, I have to write the code. I think it's going to be same. You'll have to do suffix max n minus 1. The last element can be filled. Array of n minus 1 and once that is done, you could start traversing from n minus 2, very important till 0 in the backward direction and you could say suffix max is equal to max, I have add suffix max of i is equal to max of suffix max of i plus 1 comma array of i. That's it. That is as easy as it gets. So, you have the suffix max ready. You have the prefix max ready. So, can I say I can easily figure out the left max now. What will be left max? So, left max will be nothing but prefix max of i and right max will be nothing but suffix max of i. Please make sure before these for loops, before these for loops, you should have done these things on the array. You should have done these things and computed the prefix array and computed the suffix array."
+    },
+    {
+      "chunk_id": "L304_C12",
+      "start": 846.98,
+      "end": 926.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=846s",
+      "text": "these things on the array. You should have done these things and computed the prefix array and computed the suffix array. Once you have done that, you could do this. Okay. So, crucial time, time to analyze the time complexity of this one. So, if you look at the prefix max, this is hardly taking a bigot of n. The suffix max is also taking a bigot of n like to generate. So, can I say I am consuming bigot of 2n in order to generate prefix max and suffix max and then there is another bigot of n in order to compute the total units of water which is another bigot of n. So, in overall, it's near about bigot of 3n which is as good as bigot of n. What about the space complexity? I'm ending up using a couple of arrays, one to store the prefix max while the other one to store suffix max. This can be optimized like I'll leave that to you as a homework. What if I do not take prefix max? I can still do it just with the suffix max, just with the suffix max this could be done. So, the space complexity could be reduced to one array as well. I leave that as a homework. It's very simple. You just have to do one thing while you are traversing. Keep remember the left max, keep right remember the left max while traversing and that will"
+    },
+    {
+      "chunk_id": "L304_C13",
+      "start": 926.14,
+      "end": 1003.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=926s",
+      "text": "to do one thing while you are traversing. Keep remember the left max, keep right remember the left max while traversing and that will be done. I leave that optimization to you. It's very straightforward. So, this is the time complexity and space complexity. So, the interviewer will not be happy with the extra space that you are using and he will ask you to optimize this one. So, we need to optimize our previous solution. The previous solution was taking a bigot of n space complexity. I have to optimize it. This is a clear indication that we are looking for something around bigot of 1 space complexity. Why were we taking bigot of n space? A simple whenever we had a building and we had to figure out the units of water on the top of it, we figured out left max, we figured out right max. The figuring out left max was super simple because we were traversing from left to right, but in order to figure out right max we used something as suffix max right and that is what was taking a bigot of n space complexity. So, I have to optimize. So, for every building the formula that we were using was minimum of left max comma right max minus array of i and this was for every building and we ended up summing it up."
+    },
+    {
+      "chunk_id": "L304_C14",
+      "start": 1003.62,
+      "end": 1078.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=1003s",
+      "text": "of left max comma right max minus array of i and this was for every building and we ended up summing it up. Obviously, given that array of i has to be greater than left max and right max for it to have some water on the top of it ok. So, let us understand one thing. If you are standing at this particular building, you are at this building and the water is here, the water is here. Now, if you have to compute the units of water, there is something as left max, there is something as right max, but do I need the right max? Do I need the right max? No, because the water is the units of water is 2 minus 1 where 2 is left max and 1 is array of i. I just need the left max, I just need the left max, I do not need the right max and this is the intuition that I will be using. I know one thing for sure, I either need the left max or I either need the right max. I do not need both of them. If I have one of them and the smaller one, the smaller one, this is very very important. I always need the smaller one. It can either be the left max, it can either be the right max and this is what I will be using in order to optimize."
+    },
+    {
+      "chunk_id": "L304_C15",
+      "start": 1078.78,
+      "end": 1154.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=1078s",
+      "text": "either be the left max, it can either be the right max and this is what I will be using in order to optimize. Keep it in mind, we always need the smaller one because the smaller one is is the building till which I can have water, I can have water, got it? I know this intuition, how do I solve it? First of all, if I do a left to right traversal, it would not be possible because imagine you are standing over here, you have never seen what is on right, you have never done anything around it, so that is not possible. If I traverse from right to left, then also you have never seen the left portion. Somehow I will have to do a two-way traversal. This is where the thought process comes in. Maybe I could try a two-way traversal, left pointer and right pointer. At the same time, what I will do is, I will take a left max and I will initialize it to be zero, I will take a right max and I will initialize it to be zero and I will take a total and I will put it as zero. So initially, left is at zero and the right is at one, which is typically the zeroth index and the n minus oneth index. So when we start off, remember smaller one is what matters."
+    },
+    {
+      "chunk_id": "L304_C16",
+      "start": 1154.42,
+      "end": 1219.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=1154s",
+      "text": "which is typically the zeroth index and the n minus oneth index. So when we start off, remember smaller one is what matters. So we are at a building with height zero, we are at a building with height one. Which one do we work on? We cannot work on both simultaneously. So we will work on the smaller one, we will always work on the smaller one. So we will take this one, we will take this one. Now I know this is smaller than this particular thing, which clearly gives us an idea that on the right, I have a taller building. On the right, I have a taller building for sure. Now what I need to do is figure out, do we have something on the left? Do I have something on the left? And I see that on the left, I still do not have anything. Thereby, I cannot store water in it. Hence, I will move. I will go to the next, nothing updated because it is zero, the left max does not get updated. I am at this one and I am at this one. Both of them are same, both of them are same. If both of them are same, I can straight away say that I will probably work on L. You could work on R as well. You could do something on R as well, does not matter, but I will work on the L."
+    },
+    {
+      "chunk_id": "L304_C17",
+      "start": 1219.86,
+      "end": 1280.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=1219s",
+      "text": "could work on R as well. You could do something on R as well, does not matter, but I will work on the L. If I am at this one, I know on the right, I have something similar. If I have something similar, I can definitely not store water, but still I will look on the left. When you look at the left, you also do not have anything. What you will do is, you will update the left max. You could do that. Now you go here. This is the moment you need to understand something. You are at the building with a zero height and on the right, you are at a building with the height one. On the left, nothing is greater than one, nothing is greater than one. You never saw a two because that will never happen. I am traversing by making sure I always traverse through the smaller ones, through the smaller ones. So, it will never happen that I will traverse two first and the one will be left out. I repeat, it will never happen that I traverse two first and there will be one left out because I am traversing the smaller one first. You will understand as I move forward. So, I have a zero now. I have a zero, I have a one. So, I will always do the smaller one, I will always do the smaller one."
+    },
+    {
+      "chunk_id": "L304_C18",
+      "start": 1280.8,
+      "end": 1343.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=1280s",
+      "text": "now. I have a zero, I have a one. So, I will always do the smaller one, I will always do the smaller one. So, I have a zero and I know on the right I have a one, on the right I have a one. I need to look, I need to look on the left. On the left, I see that the left max is one, I see the left max is one. If the left max is one and I know the right is greater, I know the right is greater, it is going to store. So, I am very sure about one thing that I can store some units of water and that unit of water will be one which is the left max minus zero. Why? Very simple. If this is one, I am very sure anything to the left of zero can never be greater than one, can never be greater than one because I am traversing the smaller ones. Perfect. After this, I move left to two. At the moment I move left to two, I will never traverse this because I will traverse the smaller one. So, I will end up traversing this one. Perfect. I look at the right, do I have something? No. I update the right max to one and I move right. This time I have a two, I have a two. So, I am very sure about one thing."
+    },
+    {
+      "chunk_id": "L304_C19",
+      "start": 1343.46,
+      "end": 1401.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=1343s",
+      "text": "to one and I move right. This time I have a two, I have a two. So, I am very sure about one thing. Everything on the left will be lesser than two, will be lesser than two. The buildings on the left will be smaller. Keep that in mind, the buildings on the left will be smaller. So, what will I do? Will I take this two or this two? You can take either of them. So, I will take this and what I will do is I will update two because on the left there is nothing which can store water. So, I will just move ahead. Again on the left, I am at a one and I am at two. So, which one will you do with? You will do with this one, you will do with this one and at this moment you have a two, on the right max you have a one. So, you cannot store water, you cannot store water. So, you just update your right max and you will move ahead. At this point, you are at this place and you are at this place and you are sure about one thing, you are sure about one thing. Whatever max you have on the right, whatever max you have on the right that is something like you cannot have a three here, you cannot have a three here because you are traversing"
+    },
+    {
+      "chunk_id": "L304_C20",
+      "start": 1401.74,
+      "end": 1457.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=1401s",
+      "text": "have on the right that is something like you cannot have a three here, you cannot have a three here because you are traversing the smaller ones first, you are traversing the smaller ones first. Keep that in mind. So, you have a one, so you have a one and on the right you know that the right max is two, the right max is two. So, the right is supported. You just need to look at the left, the left max is two. So, you can store water. How much? So, the right max is two, this is one. So, one more unit. After that you move left to zero. This time when you move to zero, you know on the right you are supported by two, you know on the right you are supported by two, right. So, you look at the left, there will be something which is around two and you see the left max is two. It will never be three, it will never be three because you are traversing the smaller ones first. So, since I have the left max to be two, I can say the units of water will be two minus two, two. So, four and then I will move here. Now, when I move here, again I know the right max is two. So, the right is supported. I look at the left, the left max is two. So, the unit of water will be one minus two."
+    },
+    {
+      "chunk_id": "L304_C21",
+      "start": 1457.94,
+      "end": 1527.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=1457s",
+      "text": "the right is supported. I look at the left, the left max is two. So, the unit of water will be one minus two. So, you update and again you move left. This time you come up to be at three, you are at three now, ok. So, you will end up doing things on the right, traverse the smaller ones, traverse the smaller ones. So, whenever you are at here, you know there is someone on the left who is there, who is greater, who is greater, ok. So, you look at the right and you see that on the right there is a max and that max, this max will always be lesser than this buildings like you will never find a four here, never, right. So, this max is two and so, the unit of water will be right max minus one that is six and then you move out. Again the same thing you will traverse with this one, you will look at the right max which is two, unit of water is zero. So, you move and you move it here. So, when you move there, left and right will always end up, always end up at the largest, at the largest and whenever they end up at the largest, you stop and when you stop the total units of water will be storing your answer. Yes, that is it."
+    },
+    {
+      "chunk_id": "L304_C22",
+      "start": 1527.58,
+      "end": 1598.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=1527s",
+      "text": "at the largest, you stop and when you stop the total units of water will be storing your answer. Yes, that is it. It is important to traverse the left ones, the smaller ones first so that you could easily deal with it, ok. Time to write down the code now. So, if I have to write down the code, it is super simple. I need to return an integer. So, in an integer and a function will be, maybe I need find total water. So, find total and I will be given an array, perfect. I will start writing, what do I need? I need a left max, I need a right max, I need a total and all of them assigned to be zero and I need a left pointer assigned to be zero and a right pointer assigned to n minus one for sure. I know I will go ahead till I don't reach the largest element which is l lesser than r. Now, if array of l is lesser than equal to array of r, I can deal with, I can deal with array of l because I know for sure on the right, I know for sure on the right I have someone who is greater, someone who is greater or at least of the same length. So, I will be like, ok, first thing, if my left max is actually greater than my array"
+    },
+    {
+      "chunk_id": "L304_C23",
+      "start": 1598.26,
+      "end": 1676.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=1598s",
+      "text": "at least of the same length. So, I will be like, ok, first thing, if my left max is actually greater than my array of l which gives me an idea that I have someone on the left, thereby the total can be increased by left max minus array of l. But if it is not the case, if you don't have someone who is greater, obviously this person itself is the greater. So, you could just update it. And once you've done this, you could move the pointer to the next one, which is l plus one and that would be done with the f. Can I write the else? I can. So, you just write an else. What will be else? Else will be similar. It will be like if, because you're dealing with a small element now, if, if right max is greater than array of right, that's the case. I'm very sure total plus equal to right max minus array of r or else you will end up updating right max to array of r. And once that is done, you'll be doing a back iteration r equal to r minus one. And once everything is done, you could finish up the while loop and you could typically"
+    },
+    {
+      "chunk_id": "L304_C24",
+      "start": 1676.5,
+      "end": 1730.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=1_5VuquLbXg&t=1676s",
+      "text": "equal to r minus one. And once everything is done, you could finish up the while loop and you could typically return the total value and that will be it. What is the time complexity? If I go back, the left pointer and the right pointer together will move in indexes, right? Not beyond it. So, this while loop at the worst possible scenario will move, not even worst, it will move big of n. Thereby, the time complexity is a bigo of n and the space complexity is a bigo of one because I'm not using any external space. And this is the most optimal solution. We can't do better. Because I'll, I'll have to touch every element at least once. Without that, I cannot solve it. So, this is the best possible solution. So, I hope we have understood everything. And if that is the case, please, please do consider subscribing to us. And with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye. Take care. Bye."
+    }
+  ]
+}

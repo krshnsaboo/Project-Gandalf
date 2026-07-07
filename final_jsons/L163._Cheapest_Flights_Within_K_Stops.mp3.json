@@ -1,0 +1,155 @@
+{
+  "lecture_id": "L163",
+  "lecture_number": 163,
+  "lecture_title": "G-38. Cheapest Flights Within K Stops",
+  "youtube_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ",
+  "chunks": [
+    {
+      "chunk_id": "L163_C1",
+      "start": 0.0,
+      "end": 78.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we're going to solve cheapest flights within K stops. Now what does the problem state? There are N cities and M edges connected by some number of flights. You're given an array of flights where flights I mean from to price, which means you can fly from the city from to city to with a cost price of this. You're also given three integers. Source, destination and K. You have to return the cheapest price from source to destination with at most K stops. If there is no such route, return minus one. Now this is one of my most favorite algorithms. Why? Because this is the algorithm which is implemented on a large scale on a number of websites. Okay. So cheapest flight within K stops. So what does the problem state? Imagine this is the flight paths. I'm saying in order to fly, uh, fly from zero to the city one, the cost is a hundred in order to fly from the city to the city zero, the cost is a hundred one to city to the cost is a hundred one to city three. The cost is 600 to two city three. The cost is 200. Okay. Now a customer comes"
+    },
+    {
+      "chunk_id": "L163_C2",
+      "start": 78.42,
+      "end": 148.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=78s",
+      "text": "hundred one to city three. The cost is 600 to two city three. The cost is 200. Okay. Now a customer comes up and says, Hey, I want to fly from the city zero. Okay. I don't reach the destination three from here to here, but I do not want to take a lot of stops, but at max, yes, at max I can take one stop. I can fly directly or at max I can take one stop. Okay. Now are there any direct flights to this? I don't see. Let's see if there are any flights with stop one. So one and then one. So if I take this route, I have to stop at the city one and the cost will be 700 correct? Because a hundred to fly from zero to city one and 600 to fly from city one to city three. Correct? Now the question comes, can we have any other path with one stop? And the answer to that is no. Any path we take will not end up at city three. So there can be another path, which is from here to here, then to here, which it costs me a hundred plus hundred, 200 plus 200, which is 400, which is cheapest. Yes. But the customer says no at max, I can fly one. Like I can stop at one stop, not more than that. If I take this path, it ends up stopping at city one and city two. And"
+    },
+    {
+      "chunk_id": "L163_C3",
+      "start": 148.7,
+      "end": 217.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=148s",
+      "text": "can stop at one stop, not more than that. If I take this path, it ends up stopping at city one and city two. And the customer does not have that much of time. Got it. Now you might be thinking, what is a big deal in it? Let's apply a simple Dijkstra and that should give our answer. So what I'll do is I'll take a test case and try to apply a simple Dijkstra. And I will eventually explain you why a simple Dijkstra will fail, but let's take a test case and try to implement a simple Dijkstra where we start from a given source node. We use a priority queue. We use a distance array. By the way, if you do not know Dijkstra's algorithm, I've already made a lot of videos on it. Go back in the series and watch it. Okay. And then come back and watch this. Do not jump in between. Then you'll be like, I don't understand. I am assuming you have seen the previous video in the series. Then only I'm explaining this problem, assuming you already know what I have taught in the previous videos. Okay. So I'm assuming you know Dijkstra's algorithm. So we will be taking this particular graph. Source is given as zero. Destination is given as two. And at maximum, you're allowed two stops. Nothing more than two stops. Remember one thing, if you're traveling something like this, these"
+    },
+    {
+      "chunk_id": "L163_C4",
+      "start": 217.56,
+      "end": 284.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=217s",
+      "text": "as two. And at maximum, you're allowed two stops. Nothing more than two stops. Remember one thing, if you're traveling something like this, these two are considered stops. The end point or the starting point is not considered as a stop. Keep that in your mind. The middle points are the ones which are considered as stops. Okay. So we're given the source, we're given the destination and we're given the k equal to two. So what will we be given as the input? The input will be something like this. We're given zero, one, five. We'll be given zero, three, two. Basically this edge, this edge will be given all the edges. So the step one is very simple. I'll say step one is to create the graph from the edges. And I've already taught you this in a lot of videos in the previous, like in the series. So please go back and watch it. So first step is very simple. Create the graph with the given edges. What is the next step? The next step is whatever is the source, go and mark it as zero. Yes. Go ahead and mark it as zero. And we will be assigning a priority queue, which will be storing something. That's the generic way, which will be storing something like a distance, a node and a stops. And we'll try to apply it and see why will it fail? Okay. Very simple because that's the, uh,"
+    },
+    {
+      "chunk_id": "L163_C5",
+      "start": 284.46,
+      "end": 350.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=284s",
+      "text": "a node and a stops. And we'll try to apply it and see why will it fail? Okay. Very simple because that's the, uh, that's the first intuition that should come to my brain, that priority queue. So I'd be like distance is zero. The node is zero. And initially I haven't taken any stops. So zero comma zero comma zero. Right now, what I'll do is I'll start iterating on the priority queue. And that's the first thing that we like. Okay. Distance till now zero note is zero and stops till now taken is zero. Right now, can I see from zero? Where can I move? I can move to one or I can move to three. These are the two possible places I can move. So if I decide to move to one, I'll cost plus five, which will make me a total cost of five. And can I say the stops will be one because this is the stop where I am going to. So the stops will increase by one and the distance will be added by the cost that it takes to fly from zero to one. Very simple. Now we look at one. It is saying that previously I could reach one with infinity. So I'll go to one and I'll say, can I please update this? So let's quickly update this and this will become cost five. I'm like, okay, five comma."
+    },
+    {
+      "chunk_id": "L163_C6",
+      "start": 350.1,
+      "end": 410.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=350s",
+      "text": "and I'll say, can I please update this? So let's quickly update this and this will become cost five. I'm like, okay, five comma. So let's quickly insert that into the priority queue. Five comma node one stop one inserted into the priority. Correct. Now what is the next thing? I can also go to the node three with a cost of plus two. So the total cost will be something like two now and the stops taken will be one. So can I see the new costing will be two because in order to reach three, I'm taking two costs. So two comma three comma one step. That's it. Do does zero have any other adjacent cities to fly to? No, it just had a couple of adjacent cities to fly to. You can figure that out from the adjacency list. Now I'll quickly erase the soft. Let's erase the soft. I've erased that off. Now priority queue will say, Hey, listen, I'm a minimum heap. So which one will be at the top? This one, because that's the minimum. I'm saying I'm going to take a cost of two. So I'm going to take a cost of two to reach the node three with a stop one stop. Okay. And then I'll erase this from the priority queue. Let's quickly erase this from the priority queue. Now three will be like, where can I"
+    },
+    {
+      "chunk_id": "L163_C7",
+      "start": 410.7,
+      "end": 471.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=410s",
+      "text": "I'll erase this from the priority queue. Let's quickly erase this from the priority queue. Now three will be like, where can I go? Three is like, I can go to one. Yes, I can go to one. Three will be like, let's go to one, which is the node one. And I'll take a plus two. The total cost will become four. Why? They'll not just do, I'm taking plus two. So the cost will become four. And can I say, I'll have one more stop. So the stop will become two. I'll definitely have one more stop. The stop will become two. So apparently as of now, can I see, I have again reached the node one with a cost of two, sorry, with a cost of four. So node one with a cost of four, which stops two. I'll just put that into the priority queue and I'll update the one with saying, I can reach you at a cost of four. Perfect. Now what I'll do is I'll just omit this off. Let's quickly omit this off. I've omitted this off. Now again, we'll go to the priority queue and we will see four is the minimum this time. So I'll take out four. So I'm like, okay, I can take a cost of four in order to reach a node one and with a number of stops as two. Remember we were only allowed two stops. We"
+    },
+    {
+      "chunk_id": "L163_C8",
+      "start": 471.86,
+      "end": 535.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=471s",
+      "text": "four in order to reach a node one and with a number of stops as two. Remember we were only allowed two stops. We were only allowed two stops. So after this, it has to be the destination. We cannot take any other thing. It has to be the destination. Got it? So what I'll do is I'll still go ahead. We can check about the destination afterwards, but we will still go ahead and see who are your adjacent nodes. It states one of my adjacent node is four and it also states one of my adjacent node is two. So imagine it tries to go to the node two and takes a cost of five, which makes it a total cost of nine, which stops us three. Remember three stops is still okay because this is the destination. We can go ahead, we can proceed. Okay. So we see something that stops. We have exceeded. That's fine. The cost taken is nine. So I'll be like, fine, where did I reach? That is the point of question. I'll be like, I reached node two with a cost of nine. So cost of nine node two with stop three is what I'll put into the priority queue. Correct? And where else I can go, I can go to the node four. I can, and how much it will take plus one. So the total cost this time will be five in"
+    },
+    {
+      "chunk_id": "L163_C9",
+      "start": 535.86,
+      "end": 599.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=535s",
+      "text": "to the node four. I can, and how much it will take plus one. So the total cost this time will be five in order to reach four. So again, I can update this to something like five comma four with a stop three, because that is what I'll take. Now you might be saying, this is not the destination. You're taking a lot of step, a lot of stops. Okay. Let's put that into the priority queue. Do not think perfect. So the step is done. What's the next step? It'll say, who is the minimum in the priority queue? And the priority queue says I have a five, four, three, I have a nine, two, three, and I have a five, one, one. So five, one, one is the minimum. So I'll take it out. Five, one, one is the minimum. So five, sorry, cost of five in order to reach one with a stop one, because that's a straight path that it took. Correct? Now the point comes is standing at one, it says two is one of my adjacent and four is one of my adjacent. So if I try to go to two, the cost taken will be plus five and that will be a total cost of 10. Right? And if you see at two, you've already reached two at a nine step, but this will not be considered. Right? And over here, there's a four over here. There's a four."
+    },
+    {
+      "chunk_id": "L163_C10",
+      "start": 599.46,
+      "end": 673.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=599s",
+      "text": "reached two at a nine step, but this will not be considered. Right? And over here, there's a four over here. There's a four. So I can try to go to four. I can try to go to four, but the cost then will be one more, which will be a cost of six. But the stops taken very, very important. The stops taken will be two because previously the stop was one. I'm taking one more stop. So the stops is two, but, but, but if already reached four, you see have already reached four at a cost of five, which is this path. This is taking a larger cost. So priority queue or the Dijkstra's algorithm will say, I will not consider it, which is actually wrong, which is actually wrong. Priority queue will say, I'll not consider it because I already have reached till here at a costing of five. I understand these are three stops, but in case it was not three stops, just imagine that scenario. Like if K was more than that, it's like, I'll not allow you because I have better, but it cannot move ahead. You need to understand this part, which is storing five at four. Can this move ahead? No, because it already has three stops. It cannot take the next journey. It cannot take the next journey because three stops must include the destination as well. But since I've taken"
+    },
+    {
+      "chunk_id": "L163_C11",
+      "start": 673.02,
+      "end": 750.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=673s",
+      "text": "cannot take the next journey. It cannot take the next journey because three stops must include the destination as well. But since I've taken this path, which is costing two plus two plus one, which is five, which is the minimal, it tends to say, I have a better, I have five. I take five to reach five, sorry, four. Why will I take this distance, which is costing me six? So apparently I will not consider this, which is a wrong, which is a wrong direction. Why? Because this direction cannot go here. Because stops are, you're done with stops, but this is still possible. Five, one and one, which is seven. This is still possible because just two stops that's allowed. Thereby, if you store everything in terms of distance, you store everything in terms of distance. Whenever you reach two, that will be wrong. So what do you have to do is you have to store everything in terms of stops. Yes, you have to store everything in terms of stops. It will be like whenever I need someone, that's fine. I will try to maintain this distance array, but this will not be my first priority of judgment. My first priority of judgment will be stops. And then I can just keep on comparing all the distances. I can keep on comparing and store it. Got it. Perfect. So this is where we will not implement something"
+    },
+    {
+      "chunk_id": "L163_C12",
+      "start": 750.76,
+      "end": 824.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=750s",
+      "text": "comparing all the distances. I can keep on comparing and store it. Got it. Perfect. So this is where we will not implement something like a priority queue. Got it. So what I'll do is I'll quickly erase this and try to implement the algorithm that will be required to solve this problem. So I hope you have understood why cannot we implement the Dijkstra's algorithm because it might happen. You have taken this journey and you have got something like a very small distance, but you cannot move ahead. So this journey is of no use. Whereas someone else might take slightly more, but he can go ahead. That's why storing shortest distance will not work. Got it. So what I'll do is I'll store stops, node and distance. So zero stops, source zero, distance zero, source marked as zero. So I'm at node zero, which has taken a distance zero, stop zero. Zero can go to one, which will cost him five. So one can be reached at a cost of five. One can be reached at a cost of five with a stop one, stop one. One can be reached at a cost of five. Perfect. I can also go to three, which is very obvious. I can go to three and I can go to one. So if I go to three, I'll cost plus two, which will make me reach it"
+    },
+    {
+      "chunk_id": "L163_C13",
+      "start": 824.24,
+      "end": 900.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=824s",
+      "text": "three and I can go to one. So if I go to three, I'll cost plus two, which will make me reach it in two cost. Stop one, node three at a cost of two. Perfect. Done. Omit this. Next priority queue says, which is the minimum? Priority queue is like, I know which is the minimum stop. This one. Do we require a priority queue? We will talk about that as well. So stop one, node one, distance five. Where can one go? One can go to four, one can go to two. One can go to four, one can go to two. Okay. So what I'd be like is, okay, fine. One can go to four, right? And if it goes to four, it'll take another plus one, which will make it a total distance of six. Four can be reached at a distance of six. Distance of six, four at a stop two. Very, very important because previously it was stop one. So plus one stop, stop two. Nice. Next, it can also go to something like two. If it goes to two, it'll charge us another five, which will make it a cost of 10. So I can reach two at a cost of 10 at a stop of two stops. Perfect. That'll be like stop two, node two, distance 10. Amazing. Next, I'll just go and erase it. Now, priority queue says, who is the shortest distance?"
+    },
+    {
+      "chunk_id": "L163_C14",
+      "start": 900.36,
+      "end": 977.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=900s",
+      "text": "like stop two, node two, distance 10. Amazing. Next, I'll just go and erase it. Now, priority queue says, who is the shortest distance? It says this. Stop. Sorry, which is the shortest stop? Stop one, node three, distance two. Perfect. So I can go to one, which will cost me another two. So that will be yielding me a cost of five. So I've already reached, I've already reached one at a cost of five at a better, at a better stops, like taking, consuming less number of stops. Will it make sense to consume more stops and reach at the same cost or more cost? Definitely not. So not to be considered. Where can three go? Nowhere else. Three is done. Amazing. Next, let's take it. So this is done. Next, two, four, six stops. Two. I can say I'm at four and it has taken me six. Now four can be like stops is two. Okay. Not, not an issue. Four can only go to two and takes a one. The cost will be updated to seven. I got a better one. Seven. Okay. So the stops taken is three. Fine. That's the maximum we can allow because it might be the destination. Right? So stops three, node two, cost of seven. Right? And I can easily go and update two to seven. And I've done this. So this is done. Let's see the"
+    },
+    {
+      "chunk_id": "L163_C15",
+      "start": 977.92,
+      "end": 1052.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=977s",
+      "text": "seven. Right? And I can easily go and update two to seven. And I've done this. So this is done. Let's see the next guy. What's the next guy? Next guy is very simple. Two comma, two comma, 10. I'll take the next guy. I'd be like two comma, two comma, 10. So stops two. And I'm like, which is the node? Oh, that's the destination. I've reached. No need to go beyond. We've reached. No need to go to its adjacent. Next three comma, two comma, seven. Again, we've reached. It's kind of over because this is again, the destination. No more going forward. So ultimately I can say I have reached. And if you look at this too, it's storing seven, which is ultimately my minimum cost. If I take at max of k stops at max of k stops. And which is the path? If I take somewhere around this path, sorry, my bad. Somewhere around this path rather, which is this path, which is taking seven somewhere on this, this and this, which is something like five, one, one, and this path, two stops. Why did we take one more stop? Because this is not a stop. Thereby inserting three is okay, but do not go beyond three. Do not go beyond three. If you're inserting three, make sure it's"
+    },
+    {
+      "chunk_id": "L163_C16",
+      "start": 1052.92,
+      "end": 1123.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=1052s",
+      "text": "inserting three is okay, but do not go beyond three. Do not go beyond three. If you're inserting three, make sure it's the destination or do not go beyond at max three and all the distances can be stored because that's what we are allowed to do. Not more than that. Got it. The question arises, do you actually need a priority queue? Because what is the use of priority queue? It always tells me the shortest stops or the minimum stops. But do we require a priority queue? Because stops are increasing by plus one. The distances are not something like plus four, plus six, plus seven. It's like first you'll always be at source at a stop zero and you take one step in all the direction to the adjacent cities. So stop one, stop one. Then you take adjacent cities, another plus one, plus one. So if you carefully see, it's like zero one, one, two, three, three, it's increasing. Do you actually need a priority queue? No, because even if you take a queue data structure, the topmost guy will always be the guy with the shortest number of stops. We've already done a similar problem in the past, in this series only. Right? So I can see there's no need to take a priority queue because that adds an extra logarithmic thing. I'll just take a queue and I know since the"
+    },
+    {
+      "chunk_id": "L163_C17",
+      "start": 1123.0,
+      "end": 1195.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=1123s",
+      "text": "need to take a priority queue because that adds an extra logarithmic thing. I'll just take a queue and I know since the stops are increasing by plus one at every step, it's constant. The increase is constant. If the increase is constant, I don't need a priority queue. Since the increase is constant, the queue will make sure that it always gives me the shortest number of stops. So before moving on to the code, there's one thing to notice. Whenever we reach the destination, do not stop because in future, if you carefully see, we reach the destination over here, but going forward, we reach the same destination at a better price. Do not stop, do not stop and take the answer from here. Okay? And if this is marked as infinity, you cannot thereby minus one. Okay? So guys, I hope you have understood the entire explanation. So it's time to code it up. As usual, the C++ code is on the right and you can figure out the exact similar Java code on the left. So we're given the number of notes or the number of airports and I given the, all the flight informations. First thing, create the graph. So I need to store that just in notes and the edge weights. So we need a pair. So just create it. So auto ID, let's go across to all the flights information and I can say, okay, there's an edge from"
+    },
+    {
+      "chunk_id": "L163_C18",
+      "start": 1195.36,
+      "end": 1267.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=1195s",
+      "text": "So just create it. So auto ID, let's go across to all the flights information and I can say, okay, there's an edge from this. Remember it's a directed graph. So I T of one and ID of two is the cost. The graph creation is done. Next thing I can secure and in the queue, I need to store three things. So probably I can take a pair of end comma, pair, end, comma, end. And this can be a queue. And what do I need to store? Q dot push. So something like I need to store stops. Definitely I need to store the source. I need to store the distance, which is the new one. Next I need to declare our distance array. So let's quickly declare a distance array of same size. Really I can assign that to one E nine. Now I know the distance till the source is zero. These things I definitely know. And at the end of the day, if the distance to the destination is still one E nine, that means we never reached and we can return a minus one. Else we can go ahead and return whatever distance it took. And in between we can perform the Dexter's algorithm. So let's go and perform. Oh, I can say auto of it equal to you. Front. And at the same time I can secure that pop. Now can I write the stops as it dot first? I can."
+    },
+    {
+      "chunk_id": "L163_C19",
+      "start": 1267.88,
+      "end": 1345.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=1267s",
+      "text": "you. Front. And at the same time I can secure that pop. Now can I write the stops as it dot first? I can. So go ahead and write it. And can I write the node as it dot second dot first, because this is how I'm storing. If you see properly, I'm storing it something like as stops and then a pair of node comma, the distance. That's how I'm storing. Okay. So what was the distance or the cost will be it dot second dot second. But if the stops has exceeded the minimum number of stops given to us, no need to go to any for that just in cities. And I'll just drop it over here. I can say auto of item can be written as a adjacent of node. Okay. And then I can see what is the adjacent node and it will be like first, right? And I can also say what is the edge weight? And it'd be like, I did not. Second is the adjacent note. Once you've got the edge weight, can I see cost plus EDW is what I'll take more to reach the adjacent node. And if that is lesser than standard extra, then this and those stops taken till now is just k till now, because I can take one more in order to reach the destination. They'll know if this is the case, can I say distance of adjacent node will update itself"
+    },
+    {
+      "chunk_id": "L163_C20",
+      "start": 1345.0,
+      "end": 1405.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=1345s",
+      "text": "more in order to reach the destination. They'll know if this is the case, can I say distance of adjacent node will update itself to cost plus EDW, which is the edge weight. And can I say the Q would be like, okay, fine. I've taken one more stops. That's what I did. And at the same time, can I see, I have reached the adjacent node? Yes. At the same time, can I see the cost is cost plus EDW? I can. And this is how the iteration will be done. And then you can return the answer. So I've compiled this and it is compiling. Now I'll quickly submit this and see if this is working fine. You see, we have successfully submitted this particular problem. We can figure out the space complexity very easily, but what about the time complexity? So if you remember the time complexity was a lobby of the extras algorithm, but we are not using anything as a priority queue. So can we remove lobby lobby? Yes, I can. So can I see, he is the total number of edges that is, that is what the definition was in Dijkstra. I've already proved this in the previous video, go and watch it. So what is he? Total number of edges? Or can I say it is nothing but this flights. If I just take it, flights, that size, because"
+    },
+    {
+      "chunk_id": "L163_C21",
+      "start": 1405.04,
+      "end": 1434.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=9XybHVqTHcQ&t=1405s",
+      "text": "Total number of edges? Or can I say it is nothing but this flights. If I just take it, flights, that size, because that is what the number of edges is. That's it. That is the time complexity. So guys, I hope I was able to explain you the entire algorithm and the explanation. So just in case I was, please, please, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And if you haven't checked out our DP series and the SDC, the links are in the description. Let's meet in some other video. Tell them bye bye. Take care."
+    }
+  ]
+}

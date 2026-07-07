@@ -1,0 +1,197 @@
+{
+  "lecture_id": "L245",
+  "lecture_number": 245,
+  "lecture_title": "L9. Reverse a LinkedList | Iterative and Recursive",
+  "youtube_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8",
+  "chunks": [
+    {
+      "chunk_id": "L245_C1",
+      "start": 0.0,
+      "end": 77.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=0s",
+      "text": "So let's continue with our playlist. But before that, Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we'll be solving the problem, reverse a given linked list. So we'll be given a linked list and your task is to reverse that particular linked list. So imagine you're given this particular linked list. If I try to reverse it, the reversed linked list will look something like this, right? So your task is to return me the new head of the reversed linked list. Now if this problem comes up in an interview, what is the extreme naive solution that you can think of? Like I can think of what if I take all of these elements out, right? That's the first thing. Let's take all of these elements out. We need a data structure to store it. So maybe I'll take a data structure stack. Why stack? You'll understand why after I take it out. So first let's stand at the head of the linked list. So I'll take a temporary variable because we do not want to alter the head. It might be used afterwards. So what is the first data? One. Let's take it and put it into the stack. Right after that, let's move a temporary to the next. What is the data? Three. Let's take it, put it into the stack. After that, let's move it into the"
+    },
+    {
+      "chunk_id": "L245_C2",
+      "start": 77.92,
+      "end": 148.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=77s",
+      "text": "temporary to the next. What is the data? Three. Let's take it, put it into the stack. After that, let's move it into the next. Take the data, put it into the stack. After that, let's take the next data, which is five and put it into the stack. After that, move the temporary and eventually you will reach null, which means you have traversed the entire linked list, right? Once you have done this, let's do our next step. So the next step is again, I'll take temporary and this time I'll place it on the head again. This is the reason I did not alter the head. So this time when I'm standing at the head, what is the data? The data is one, but if you're reversing the five should be here, isn't it? How do you get this five? You look at the stack and stack is something as last in first out. So what is the last entered element? Five. So if you do stack dot top, you'll get this five, you'll get this five. This is why I took something as stack. So you'll take this five and what you'll do is you'll replace this. Done. After this, you'll move the temporary to the next one. Again, take the next one, which is to replace the data. After that, again, move to the next. Again take the top at the stack, which is three and replace this. After that, again,"
+    },
+    {
+      "chunk_id": "L245_C3",
+      "start": 148.96,
+      "end": 218.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=148s",
+      "text": "data. After that, again, move to the next. Again take the top at the stack, which is three and replace this. After that, again, move to the next. This is five, take one and replace it. After that you will reach null. The moment you reach null, we'll observe a couple of things. Your stack, the stack you took is empty and at the same time your linked list is reversed in terms of data. Now this is very important. You have reversed the linked list, but just in terms of data. So can I write the code for this one? Probably yes. So this algorithm will be in two steps. One is Travis L putting everything into the stack. The second is taking out of the stack and putting back to the linked list. So let's do the step one. Can I say the step one will be I'll take a temporary and put it at the head. I'll also take a stack. So assume your stack is named as ST again, depending on your language you're using, you can code it across. Let's do the Travis L. So the Travis L will go on till I don't reach null, right? What's the first step? Put it into the stack. So stack dot push or stack dot add, depending on your language, take the data and put it into the stack. Once you have done it, ask"
+    },
+    {
+      "chunk_id": "L245_C4",
+      "start": 218.74,
+      "end": 281.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=218s",
+      "text": "or stack dot add, depending on your language, take the data and put it into the stack. Once you have done it, ask temp to move to the next. So temp will move to the next, which is basically temp of next. So this is a step one of the algorithm where we are taking all the data and putting it into the stack. What is the step two? Taking back from the stack and putting it into the linked list. So let's do it. So again, reassign temporary to the head. And this time what I'll do is I will again keep it moving till it reaches the last, which is null. Okay, let's do it. So what we say is temporary, your data should be replaced by whatever is on the top of the stack. Once you have taken the top, depending on your language, if your language needs stack to pop it out. So basically you delete the top element. It's required in some languages. It's not required in some languages, depending on the language that you're using. And after that move the temporary to temporary next. So this will be the brute force and can I say this will be the step two. So two step algorithm rather a two pass algorithm. What will be the time complexity of this algorithm? Can I say this is big O"
+    },
+    {
+      "chunk_id": "L245_C5",
+      "start": 281.14,
+      "end": 348.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=281s",
+      "text": "step algorithm rather a two pass algorithm. What will be the time complexity of this algorithm? Can I say this is big O of one and this is another big O of one. So in overall the complexity will be big O of two n. What will be the space complexity? It will be big O of n because you're storing all the elements into the stack. So this will be the time complexity and the space complexity. This is where the interviewer will not be happy with this one. That is basically the space complexity and he'll ask you to optimize it. This is when we move on to the optimal algorithm. So the previous algorithm was using an external space. What we need to do is we need to optimize that external space. What that means is you cannot use any external data structure, which means we have to play around with the links. That's the only way. So if I'm reversing the linked list, it technically means this one will be the new head of the linked list. So can I say if I'm reversing it, if I'm reversing it, then if one stays here, three stays at the same place, two stays at the same place, five stays at the same place, at the same memory data is same and this becomes my new head of the linked list. I've reversed it. So this will be my new head. So this new head"
+    },
+    {
+      "chunk_id": "L245_C6",
+      "start": 348.38,
+      "end": 422.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=348s",
+      "text": "and this becomes my new head of the linked list. I've reversed it. So this will be my new head. So this new head of next will be pointing to two, two's next will be pointing to three, three's next will be pointing to one and one's next will be pointing to null. Correct? Am I right or not? I am right. We need to somehow find out a logic such that these links are reversed. Let's observe. If I take this particular node, which is the node having the data two, the two is basically this node has the data two and the next is pointing to five. What we need to do is the data stays intact. We need to make sure this next points to the previous one. So I'm basically changing one link. I'm basically changing one link. If you look at every node, let's look at every node, the node with one, I'm changing this node. The node with three, I'm changing this node. The node with two, I'm changing this node. The node with five, I'm changing this node. Somehow I'll have to play around with the next and make it point backwards. This is what I have to do. Can I do this? Let's, let's try thinking. So what I'll do is I'll just take one node just to understand. So this"
+    },
+    {
+      "chunk_id": "L245_C7",
+      "start": 422.52,
+      "end": 502.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=422s",
+      "text": "I do this? Let's, let's try thinking. So what I'll do is I'll just take one node just to understand. So this one node has a data, let's call it some data. It's pointing to the front and it definitely has a previous element. It definitely has a previous element. All of us know it. What is the task that we need to do with one node? That's basically taking this and pointing it to the back, to the back. Imagine you have the previous node. Just imagine you have the previous node. How can we do it? So there's a node which it is pointing to, right? And we can call it as the, maybe something as a front node. Yeah. So assume, just assume you are standing at this particular node and this node is called as temporary. What we technically need to do is temporary next should be pointing to previous. This is something we have to do, which will mean this node will be pointing to back, right? Next job that I have to think is, Hey, wait, if you point this, how can you go to the next node? Because we have to somehow do the same thing for the next node as well. How can I go to the next node? So what you will do is before replacing this, before replacing this, just"
+    },
+    {
+      "chunk_id": "L245_C8",
+      "start": 502.04,
+      "end": 577.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=502s",
+      "text": "as well. How can I go to the next node? So what you will do is before replacing this, before replacing this, just make sure you store the front node. So you say temporary dot next. So what I've done is I've stored it. I've stored it after that. Yes. After that I do the step. After that I do the step. So this step is performed after storing. So what happens is now this is done. What is the next job? The next job is technically moving the temp to this. Just think, just think out loud. It is. So can I say temporary can go to front? And if I just look at the larger picture, this will again be pointing to someone. I'll again have to do the same job of rotating it back. I'll again have to do the same job. So thereby I need this previous. So I need to make sure I am preserving this previous. So what will happen is I'll say preserve or rather previous. I'll have to preserve it. So before moving, before moving, make sure my bad, make sure previous is temporary. So what I did was, what I did was let's recall what I did. So basically previous was here. Temporary was here. So what I did was I said"
+    },
+    {
+      "chunk_id": "L245_C9",
+      "start": 577.64,
+      "end": 655.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=577s",
+      "text": "did was let's recall what I did. So basically previous was here. Temporary was here. So what I did was I said previous since it is done, the rotation of the pointers is done. Previous you can go ahead. So this line will do it right after that I'll see the next line. So the next line will take it forward. And then again, you're on the same cycle when you can do the same job, right? You can again make sure the same cycle is repeated. So what I'll do is I'll try to do this algorithm rather I'll try to do a dry run. Let's do it. So what I'll do is I'll write while temporary let's do it till it reaches null. Very simple. What are the steps? What I can do is I can straight away copy this steps. Let's say copy. And after that let's paste. So I'll just paste the same code over here. Done. Let's try to do it now. So I have to perform this algorithm for all the nodes, right? So what I'll do is I'll start off with this particular head. So can I say temporary will be head? I can. Afterwards, what can I say? I know one thing after the reversal, this one will be pointing to null. This one will be pointing"
+    },
+    {
+      "chunk_id": "L245_C10",
+      "start": 655.72,
+      "end": 735.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=655s",
+      "text": "can I say? I know one thing after the reversal, this one will be pointing to null. This one will be pointing here. This one will be pointing here and this one will be pointing here. I know this. So I need to make sure this first node is pointing to null. So maybe I can take a null and I can call it as previous. So I'll take a previous and I'll call it as null, right? Let's do the step. What's the first step? Front. So let's assign front here. What is, so this step is done. What is the next? Temporary.next equal to previous. So what happens is this temporary.next is pointing to previous. Nice. What is the next? Previous equal to temporary. So previous goes to temporary. Perfect. What is the next? Temp equal to front. Temp goes to front. Perfect. So this is step. This is one step. So we are done with one step. What is the next step? Let's again do the same thing. Front equal to temporary. So front goes to temporary.next. Right? What is the next? Temporary.next previous. So basically what happens? Temporary is next, which is this I'm erasing, goes to the previous. Perfect. What is the next? Previous equal to temporary. Goes here. Perfect. What is the next? Temporary equal to front. Goes to next. Perfect. So I'll just erase this and erase this as well. Done. Let's do the next step. Front equal to temporary.next."
+    },
+    {
+      "chunk_id": "L245_C11",
+      "start": 736.12,
+      "end": 813.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=736s",
+      "text": "Goes to next. Perfect. So I'll just erase this and erase this as well. Done. Let's do the next step. Front equal to temporary.next. Front goes over here. Perfect. Temporary.next equal to previous. So it is temporary is next equal to previous. Done. Next. Previous equal to temporary. Take it. What is the next? Temporary equal to front. So the temporary goes here. So this is also done. Let's erase this. Perfect. What is the next? Front equal to next. So front goes here. So I can just take the front and go out here. Next temporary.next. Temporary.next. So basically this erases itself. Temporary.next points to previous. Done. What's the next job? Previous equal to temporary. Take the previous to temporary. What is the next? Temporary equal to front. Let's take temporary equal to front. Done. Stop. Then end there. And if you carefully see, temporary would have reached null. So this while loop will end. What is the new head of your linked list? Previous. So you can go ahead and return previous because that is your new head done and dusted. Isn't it? So let's quickly get back into the code editor. And as you can see, I've written the exact same"
+    },
+    {
+      "chunk_id": "L245_C12",
+      "start": 813.88,
+      "end": 889.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=813s",
+      "text": "it? So let's quickly get back into the code editor. And as you can see, I've written the exact same code. I'll hit the submit button and it will be working fine. Again, the same code can be submitted in Java as well. I'll go to Java and over here I'll paste the same code. It's the exact same thing. What do you just need to do is need to change this pointers and then this one to dot. And this goes in lower caps. Perfect. And should be good. Let's quickly. Okay. This one will also be low caps. Let's try to run this off and see if it is running fine. Should be. It does. It's quickly submitted. So it will be running fine. So it is running absolutely fine. Coming back to the code editor. If I ask you, what is the time complexity? Can I say the time complexity is big off and because I'm doing it in one pass and if I ask you the space complexity, can I say it's a big off one? Because what we are doing is changing the links. We're not doing anything. We're just changing the links. So before I start off with the recursive solution, please, please, please, please, please, please, please, recursive solution. Please, please make sure that you would have seen my basic modules of recursion in case you haven't seen it. I'll be leaving the link in the description, go back and watch it,"
+    },
+    {
+      "chunk_id": "L245_C13",
+      "start": 889.48,
+      "end": 961.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=889s",
+      "text": "my basic modules of recursion in case you haven't seen it. I'll be leaving the link in the description, go back and watch it, understand what recursion is, and then you can understand this particular problem. What is like, why is recursion used or how do we use recursion? Generally, we are given a problem statement, which is a large problem statement, like in this case, reverse an entire linked list. You cannot solve it in one step. So what recursion does is it breaks it into a smaller problem. And then again, it breaks it into a smaller problem. Then again, it breaks it into a smaller problem. It stops the moment it can solve a smaller problem. And then it tries to give it back saying, hey, I solved the smaller problem. Then this one says, hey, I can use that and solve myself. Again, it turns and says, I can use this and solve myself. He returns and this can say, I can now solve it myself. And eventually you solve the bigger problem. You break it down to small, small, small, and eventually extract and solve it. This is how technically or generally recursion works. How will we make it work for reversing a linked list? What are we given? We are given the head of the linked list. So basically, I can consider this as the bigger"
+    },
+    {
+      "chunk_id": "L245_C14",
+      "start": 961.4,
+      "end": 1035.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=961s",
+      "text": "list? What are we given? We are given the head of the linked list. So basically, I can consider this as the bigger problem. What we will try to do is we have a bigger problem with four nodes on n nodes. So we'll try to solve it for three nodes, then we will try to solve it for two nodes. Then we'll try to solve it for one node. So basically, the problem is with four nodes. I'll try to solve it for three. I'll try to solve it for two. I'll try to solve it for one node. So basically if I'm able to solve it for one node, I can solve it for two, I can solve it for three, I can solve it for four. How let's understand. Let's try to solve the smallest problem which has one node. I'll just write this one node. So imagine you have one node. How can I solve this? Do you even need to solve it? If the linked list has one node, you don't need to reverse it. This is going to be my reversed linked list. You just return it, you just return it. So maybe this can be my base case because base case is the smallest problem that you try to solve. So this will be my base case, the smallest problem. Perfect. So maybe I can try to write the base case. Let's try to write the base case."
+    },
+    {
+      "chunk_id": "L245_C15",
+      "start": 1035.34,
+      "end": 1112.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=1035s",
+      "text": "my base case, the smallest problem. Perfect. So maybe I can try to write the base case. Let's try to write the base case. So reverse, imagine head is given to you. And you know, this is the bigger, like bigger linked list. But you know, the smallest version is if either you're given an empty linked list, which means it's a null. If it's an empty linked list or the, it's a one element linked list, which means the next is pointing to null. In both the cases, you stop then and there, you stop then and there and you return the head and you return the head. Quite simple. Stop whenever it has one node. Okay. We're done with one node. What is the next smallest problem? With two nodes. Maybe let's try to solve it. So I'll, I have two nodes, right? So I have, maybe I'll write it somewhere here. I have two, two is pointing to five and five is pointing to null. I need to reverse it. I need to reverse it. After reversal, can I say two will be pointing to null, five will be pointing to two and this will be my new head. Can I say this will be my new head? How can I solve this? You know one thing, this has two nodes. So if you call the recursion for one node, it will return you this node itself."
+    },
+    {
+      "chunk_id": "L245_C16",
+      "start": 1112.36,
+      "end": 1189.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=1112s",
+      "text": "You know one thing, this has two nodes. So if you call the recursion for one node, it will return you this node itself. It will just return you this because whenever you try to solve the problem for this, you get the same back. How can I solve this? Let's try to understand. Can I say this as of now is my head of the linked list. This as of now is the head of the linked list. Okay. What is the next node? I'll be like this one front front node is five. What do I need to do? I basically need to make sure the front is pointing to head and the head is pointing to null and this is my new node. This is my new head of the linked list because after reversal, after reversal, five will be pointing to two, two will be pointing to null and this is my new head that I will return as an answer. I'll return as an answer. How can I do this? Very simple. You say front, your next will be head. You'll be like, why not? Erase this, point it, done. Next head, your next will be null. Perfect. Erase this, point. So basically I have everything ready. Can I say this front will be my new? Yes."
+    },
+    {
+      "chunk_id": "L245_C17",
+      "start": 1189.8,
+      "end": 1268.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=1189s",
+      "text": "be null. Perfect. Erase this, point. So basically I have everything ready. Can I say this front will be my new? Yes. So I'll basically return this front, which will be my new node, which will be my new head. Remember this five is your new head now, five is your new head. I've solved the problem for three nodes, sorry, two nodes, sorry, two nodes. So I solved the problem for two nodes. It's time to solve it for three nodes. Let's try to do it. For three nodes, I have, it's starting with three, going to two and going to five and the five goes to null. So it's a problem where the head is at three and I have three nodes. I need to solve it. So what I will do is I'll call the sub problem or rather I'll call the sub problem and I'll ask the sub problem. Can you solve it for two, five X? So basically a linked list with two nodes. What will the sub problem return? The sub problem will solve itself and it will return a new head where the head is basically starting from five pointing to two. So this is the new head which it will return and the two is pointing to null. So this is what it returns if you call the sub problem for two."
+    },
+    {
+      "chunk_id": "L245_C18",
+      "start": 1268.0,
+      "end": 1344.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=1268s",
+      "text": "will return and the two is pointing to null. So this is what it returns if you call the sub problem for two. So basically the pointer should have changed because these are in memory nodes. After you call the sub problem and it has returned, you'll have something like two, the same thing, but this time you'll have five and the two will be pointing to null. Remember this, the two will be pointing to null. That's very, very important. The two will be pointing to null. So you'll call the sub problem and the sub problem will solve itself and you will get the new head here. How can you solve now? How can you solve now? You already have this, this, and you just need to make sure this is pointing here and this is pointing. So what you'll do is you'll again do the same thing. You'll take a front and you'll again perform the same step, which is front equal to, sorry, fronts next equal to head because this is your head. Heads next is null. So basically what happens when you say fronts next, so fronts next goes and points to this. When you say heads next, so heads next goes and points to null. What will you return? Very, very important. What will you return? This is the new head. So you'll return new head."
+    },
+    {
+      "chunk_id": "L245_C19",
+      "start": 1344.66,
+      "end": 1421.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=1344s",
+      "text": "to null. What will you return? Very, very important. What will you return? This is the new head. So you'll return new head. You'll return new head stating if I've been given this problem, the new head will be this. So I've also solved a problem for three size linked list. Done. Wow. Easy. Let's try to do it for four size linked list and I think we will be done. So I have one pointing to three, pointing to two, pointing to five. So what will happen is this four size linked list will call the reverse function and it will pass this much. It will say, this is my new head. Please give it reversed. This is my new head. Please give it reversed and he will do it. He will do it. So basically you pass it. What happens is three, two, five, five points to two, two points to three, three points to null and this will be my new head. This is what will be returned. This is what will be returned. So after you've called the sub problem, it will give you the new head, which is five. So eventually I can say these links will go off. After you call the sub problem, what will happen is you will have new links. This one pointing to this, this one pointing to this and this one pointing to null. Remember this, this is what you will get."
+    },
+    {
+      "chunk_id": "L245_C20",
+      "start": 1421.98,
+      "end": 1499.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=1421s",
+      "text": "This one pointing to this, this one pointing to this and this one pointing to null. Remember this, this is what you will get. This is what you will get the new head. How to do the next step? Quite simple. The same thing. This is my head. So I'll do the same thing. We'll say, Hey, front, you're next should be pointing to head. Hey, head, you're next should be pointing to null. Done. Once you have done, you've written the new head. So I've solved a problem for four nodes. So you can do it for five. I can do it for six. I can do it for seven. I can do it for N as well because we have done it. Yes, I've done it. So what we technically did was we started off with a problem or rather reverse. If I have to write it reverse of four, we called for reverse of three, we called for reverse of two, we called for reverse of one. So this one was easily solved, which again helped us to solve two and then three and three helped us to solve four and we return the new head eventually. Got it? So I have to write the code. It's very simple. Let's go back here. So this is for a node with one."
+    },
+    {
+      "chunk_id": "L245_C21",
+      "start": 1499.3,
+      "end": 1575.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=1499s",
+      "text": "So I have to write the code. It's very simple. Let's go back here. So this is for a node with one. So I can write, this is for one node, one node or zero nodes. So I can solve it for one node or zero nodes. After this, what we do, imagine it's a big linked list. You don't solve it straight away. What do you say is you break it into sub problems. So you say, Hey, node, start, new head. Maybe I'll call the reverse again and I'll ask it, Hey, can you solve it for the next? So basically what I've done is if initially you got a four, if initially you got a four length, I call it to solve it for three length. I call it to solve it for three length. Then the three calls to solve it for two and the two calls to solve it for one. That's how it works. So basically it will go, go, go in depth. And once you have the new head coming back, what did we do? We did not do anything. We said node star front equal to, we need the next, we need the next. This new head is not the next. Remember this, this new head is not the next. This new head is rather the head of the reverse head of the reversed. So you say front will be heads next because that is what matters."
+    },
+    {
+      "chunk_id": "L245_C22",
+      "start": 1575.62,
+      "end": 1646.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=1575s",
+      "text": "is rather the head of the reverse head of the reversed. So you say front will be heads next because that is what matters. So if you remember over here, this was pointing to this and this was pointing to null when you got the answer. So you already have the front over here because head, head is still pointing to front. Head is still pointing to front. So you get it. After that you say, okay, front your next can point to head, head your next can point to null. And this works because at every step, whatever is your head, whatever you're passing as head, that will always point to null. And after this you can return the new head. Simple. So it's time to do our famous dry run of the recursion algorithm. In all problems, I will be doing similar dry runs. What we get initially is this, what are the values? One, three, no, one, three, two, five. Yeah. One, three, two, five. This is what we initially get. So what happens? Is this true? No. Reverse calls this. So the call goes over here."
+    },
+    {
+      "chunk_id": "L245_C23",
+      "start": 1646.74,
+      "end": 1725.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=1646s",
+      "text": "we initially get. So what happens? Is this true? No. Reverse calls this. So the call goes over here. Now when the call goes over here, what it gets is three, which is the head, two, five pointing to null. Is no. Again calls the reverse. So the call goes from here to here. And this time this gets us two, five and null. Point to notice is head is this, head is this, head is this over here. Doesn't works. Goes to reverse. So this reverse calls again another internal function. And this time just passes five with null. Just passes five with null. So this time this base case gets executed and returns head and returns head. So let's return head. So it will return head. So what will be the value of new head? The value will be five. The value will be five. Let me quickly erase this so that maybe I'll keep it. So the value is five. Correct? Let's see this. Front equal to head next. Front equal to head next. So this is your head as of now. This is your head. So the front stands here. The front stands here. So what happens is front equal to head dot next. Front equal to head dot next."
+    },
+    {
+      "chunk_id": "L245_C24",
+      "start": 1725.92,
+      "end": 1805.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=1725s",
+      "text": "here. The front stands here. So what happens is front equal to head dot next. Front equal to head dot next. So front stands here. Front next equal to head. So front next points to head. Perfect. Head next point to null. Head next point to null. Returns new head. Remember this? Returns new head. And what is the new head? The new head is five. So it returns five. So the new head is five. Let's again do the same thing. So when it returns five, I can say that the new head has five. Right? What will happen at the next step? We will basically do the next set of steps. But as of now, the linked list is looking something like this. Two, five. The reversal of five has happened and this is my new head as of now. And two is pointing to null. Front head dot next. So front goes here. Head is here. Next. Front next. Front next goes here. Next. Head next goes to null. Returns new head. New head, remember, is five. So it returns five. So the new head is five. Point to observe. The linked list has been reversed. You got this. You're returning this. Perfect. Let's do the next thing. So I'll erase this and I'll also erase this because this is reversed now. And as of now, it looks something like this. One, you have three, you have two, and you have five. Five is pointing to this."
+    },
+    {
+      "chunk_id": "L245_C25",
+      "start": 1805.38,
+      "end": 1884.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=1805s",
+      "text": "And as of now, it looks something like this. One, you have three, you have two, and you have five. Five is pointing to this. Two is pointing to this. Three is pointing to null. And one is pointing to this. This is your head. And this is your new head as of now. And this is your last step of your recursion. Front. Front.next. Head.next. Null. And after this, return new head. And your new head is five. So if you return the new head, if you carefully observe, is it? After returning, is it reversed? It is reversed. This is how recursion works. You try to solve the smaller version and it eventually solves your bigger problem. So if I go back to the code editor, I've written the exact same code. I'll try to submit it and it will be running absolutely fine. If you want to run it for Java, just copy paste the same piece of code, go to Java, maybe just change this to perfect. We'll do a tab. First thing, small. Yeah. Let's make it small. Done. What's the next thing? Replace this to dots. Remove the pointers. Dot. Do we have any other dots? I think we have one more. Oh yeah. Change it. Looks good to me. So what I'll do is I'll try to run this and it'll be running up. So you T. Okay. One more."
+    },
+    {
+      "chunk_id": "L245_C26",
+      "start": 1884.3,
+      "end": 1951.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=1884s",
+      "text": "to me. So what I'll do is I'll try to run this and it'll be running up. So you T. Okay. One more. I have to change dot and I'll try to submit this straight away and let's see if it is running fine. It does. So it does run absolutely fine. So what is the time complexity? The time complexity is same. We go off end because eventually you are traversing through the nodes because if you look at the number of steps, it is one, two, three, and four, four recursion calls, four recursion calls, right? You're doing four steps and that's okay. So basically the time complexity will be big off end. What about the space complexity? Space complexity will be big O of N. Now this is the recursive stack space because when you start with recursion, this is there in the stack. Then you go here. This is there in the stack. This is there in the memory. If you go here, so these things are there in the stack. So recursive stack spaces, big O of N. So this will be the time complexity and the space complexity for the recursive implementation of linked list. So if you're still watching, I hope you have understood everything. In that case, please do consider giving us a like, and if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video."
+    },
+    {
+      "chunk_id": "L245_C27",
+      "start": 1951.26,
+      "end": 1961.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2vI2DNJGd8&t=1951s",
+      "text": "new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye, take care. Whenever your heart is broken, don't ever forget your golden. I will find a light. I will find a light. I will find a light. I will find a light. I will find a light. I will find a light. I will find a light. I will find a light."
+    }
+  ]
+}

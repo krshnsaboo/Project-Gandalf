@@ -1,0 +1,218 @@
+{
+  "lecture_id": "L214",
+  "lecture_number": 214,
+  "lecture_title": "DP 33. Edit Distance | Recursive to 1D Array Optimised Solution 🔥",
+  "youtube_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo",
+  "chunks": [
+    {
+      "chunk_id": "L214_C1",
+      "start": 0.0,
+      "end": 73.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=0s",
+      "text": "Hey everyone, welcome back to Techie Forward. So today we will be solving the famous problem edit distance and this comes under the category of lead code hard and yeah we are continuing with db on string so this is a problem similar to string matching. So what is the problem like what does the problem states you're given a string s1 you're given a string s2 okay and there are three different operations given to you one is something like you can you can take any word any character and insert anywhere in string s1 okay next is remove which means deletion you can take any any character and you can remove from s1 the third is replace where you say okay pick up any character in string s1 and replace with any given character and you're given these three operations you're allowed to do these three operations you have to tell me what are the minimum number of steps in which you can convert this given string s1"
+    },
+    {
+      "chunk_id": "L214_C2",
+      "start": 74.56,
+      "end": 147.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=74s",
+      "text": "me what are the minimum number of steps in which you can convert this given string s1 into this given string s2 that is what you just need to tell me and if you're able to tell me that that is what the question states edit distance which states minimum operations by using these three functions in order to convert the string s1 to string s2 in the previous videos we have done a problem in order to convert s1 to s2 using these two functions which was insert and delete but now in this question i add one more replace and that makes the question a bit harder than the previous one so for an example let's understand the question you're given this horse and you want to convert this into this ros what is the minimum number of operations so before before finding out the minimum number of operations let's understand is it always possible the answer to that is definitely like if you're asking me is it always possible the answer is very simple yes how delete delete delete delete delete perform the number of deletions empty string use insert ros"
+    },
+    {
+      "chunk_id": "L214_C3",
+      "start": 147.04,
+      "end": 223.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=147s",
+      "text": "very simple yes how delete delete delete delete delete perform the number of deletions empty string use insert ros and you convert s1 to s2 so delete all insert the string s2 so possible at maximum n plus n steps rather not big often n plus m steps is the max that you will take by deleting everything and then by inserting okay so let's find the minimal one so what i will do is i will go across and say okay the first operation that i will do is i will replace h with r which makes it r o r f c this is what the string is so the next operation will be i will say let's remove r which makes it that means this r is what i'm saying which makes it r o s e next operation i'll say is remove e which makes it r o s and this is nothing but the string s2 how many operations did i need i needed three operations you can try out all other ways and you'll not find any different combination where you can get into lesser number of operations so three operations required did we"
+    },
+    {
+      "chunk_id": "L214_C4",
+      "start": 223.04,
+      "end": 300.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=223s",
+      "text": "not find any different combination where you can get into lesser number of operations so three operations required did we use insert no we were we were done with replace and two removal operations and we are able to convert this into this okay so let's take one more example intention and execution okay so the first thing that i will do is i'll say okay let's remove e which makes it in ention okay which makes it in engine i said let's remove this particular t so i removed it which makes it in engine next i'll say hey can you please replace i with e i'm saying replace this i with e i n e n in engine done next i'll say let's replace n with x this n with x remember whenever i say replace one n you can just replace one n this becomes e x e n extension okay next i will say replace n with c which makes it e x c t i o n i said please replace this n with c perfect next i"
+    },
+    {
+      "chunk_id": "L214_C5",
+      "start": 300.72,
+      "end": 379.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=300s",
+      "text": "e x c t i o n i said please replace this n with c perfect next i will say can you please insert u where here this becomes e x c u e i o n thereby this is the string how many operations four operations is what you required four operations is what you required and this is the minimal set of or rather five my bad five these are the minimal set of operations that you will require in order to convert this s1 into this particular s2 and you to tell me this particular like you have to solve this question only so how do you solve this problem you can say we can go across the string matching path yeah we know that's recursion which is the string matching path where we recursively try to match everything so how do you do this let's take this example of r o s and h o r s c okay so this is the example that i have taken so what you try to do is you say okay this is e and this is s so they're not matching so if they're not matching how can i match this s with e one thing that i can think of is i'll just take it off yeah i'll say"
+    },
+    {
+      "chunk_id": "L214_C6",
+      "start": 379.6,
+      "end": 446.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=379s",
+      "text": "i match this s with e one thing that i can think of is i'll just take it off yeah i'll say i don't require this hey listen let's let's delete it so if i delete it that's fine then then we will try to match h o r s with r o s so if i just tend to delete it it's going to be off right and then we will be like okay this s matches with this s then i'll be like fine if this s matches with this s we are pretty much done with first s first s next i'll be like okay uh this is an s this is an r and this is a no they're not matching so i can be like hey what can i do i'll be like hey listen let's delete it so i'll try to delete it so i'll be like okay let's let's omit this perfect next i'll be like okay this o matches with this so so i'm like perfect i got the second match next i can be like this is an h this is an r i will like okay i need to make this s as an h as an r let's replace it so just replace it that's it so i did match s o o and since i'm replacing this is also matched since i'm replacing because if you're trying to replace you'll try to replace it with r only so"
+    },
+    {
+      "chunk_id": "L214_C7",
+      "start": 446.0,
+      "end": 519.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=446s",
+      "text": "since i'm replacing this is also matched since i'm replacing because if you're trying to replace you'll try to replace it with r only so that it gets matched so this is matched so i'm getting an intuition that i have to do a kind of string matching where i a character like one character from the string s2 another character from string s1 and then try to compare them if they're matching it's well and good if they're not matching then i have a lot of options so if they're not matching what options do you have on your brain let's uh let's ask it to yourself if they are not matching because if they're matching it's fine like for an example we had a match with o and o it was fine if they're not matching what operations you can you know the operation that you can do is you can say i will do an insert of the same character that's what i can think of i'll try to do an insert of the same character how i'll tell that afterwards if they're not matching or i can say that okay i'll delete i'll delete and try to match it on the back delete and try finding somewhere else or i'll be like i'll try to replace and match similar to what we did here this was not matching"
+    },
+    {
+      "chunk_id": "L214_C8",
+      "start": 519.92,
+      "end": 598.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=519s",
+      "text": "finding somewhere else or i'll be like i'll try to replace and match similar to what we did here this was not matching so i tried to replace and they got matched so i kind of in i can insert the same character i can delete and find in the shrink string or i can replace and match so these are the three operations that i can think during string matching right so i know i have to try all possible ways because i can insert i can either delete i can either replace and match i can do a lot of stuffs so if i'm trying to do all possible stuffs i know among all these ways i need to figure out i need to figure out what's the best and that that basically takes me to the place where i say try always and whenever it comes as try always you know what comes up recursion is the first thing that comes up you're going to try every way i'm going to go across this this this and if and if it states minimum possible operations out of all these operations whichever gives you the minimal you just take it right so i'll be like okay try all possible ways that's recursion how do you write recursion because the first step is how to write recursion so let's let's actually go back and try to write this recursion stuff how to write recurrence correct so the question is"
+    },
+    {
+      "chunk_id": "L214_C9",
+      "start": 599.52,
+      "end": 675.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=599s",
+      "text": "to write recursion so let's let's actually go back and try to write this recursion stuff how to write recurrence correct so the question is very simple how to write records i can say there are two strings so i'll try to express in terms of as usual our rules in string matching is i represents the first string j represents the second string explore all parts of matching explore all parts of matching or or possibilities of matching what is the question stating give me the minimum number of operations so i'll be like return the minimal of all parts return the minimal of all parts again makes sense fourth is definitely the base case fourth is definitely the base case there is no other thing that i can at least think of so let's try to write the recurrence now so i can be like okay i'll start with f of i j and as usual we'll write the base case afterwards but we need to understand what does f of i j signify so assuming it was horse and r o s assume i is here j is here which means f of n minus one and m minus one what does this signify this signifies find me the minimum operations"
+    },
+    {
+      "chunk_id": "L214_C10",
+      "start": 675.28,
+      "end": 750.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=675s",
+      "text": "means f of n minus one and m minus one what does this signify this signifies find me the minimum operations to convert string s1 which is from zero to i to string s2 which is from zero to j that is what it signifies from zero to i convert this into zero to j that's what it signifies if i would have been here convert ho to ros got it if j would have been here i would have been here convert hor to ro so that is what f of i j signifies so what cases will be there i know whenever we are doing string matching there are always two possible set of cases one is if they match the other one is if they do not match so we'll write the base case afterwards we know one thing if if if they end up uh matching yes if they end up matching it's a very common thing if they are ending up matching do we need to do anything else do we need to perform an operation to try to match them the answer to that is no striver for an example for an example if you are standing at this o and you're standing at this so dude they are matching why do you want to do an insert why do you want to do a delete why do you want to do a replace there's absolutely"
+    },
+    {
+      "chunk_id": "L214_C11",
+      "start": 750.32,
+      "end": 826.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=750s",
+      "text": "you want to do an insert why do you want to do a delete why do you want to do a replace there's absolutely no need of doing anything so what do you do is you say hey listen they're matching so let's shrink the string and try to find the answer in the shrinked string so i'll be like okay so if they're matching am i actually applying any number of steps the answer to that is no striver we are not applying so i'll be like if they're matching hey listen i'm not applying any set of steps and my string also reduces to this and now i'll try to find the answer how many steps are in this reduce string because i and j have matched so i'll try to see how many steps does this string take to convert into the string that's what i'm doing perfect what if they don't match if this if is not executed then it'll come over here which is the else condition what then then i know one thing for sure let's let's come back if this e is not matching with this what is the first thing that i can do let's let's think i can be like okay fine listen i can write an s which is insert operation yeah i can just insert an s and i said this s is matching with this s right right right"
+    },
+    {
+      "chunk_id": "L214_C12",
+      "start": 827.12,
+      "end": 906.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=827s",
+      "text": "which is insert operation yeah i can just insert an s and i said this s is matching with this s right right right i can say let's let me just write it i'll write this s and i'll move this j and now i'll say this s matched with this s but i'll keep the i here because hypothetically because hypothetically i've tried to place this s right ahead of i so that next i can compare this e and o i hope that makes sense so in an insertion since hypothetically you're inserting an s right there so the i is still at e because hypothetically you have entered an s so i stays where it is because this s and this s has matched but you do and you do an insert operation which takes this s and s similar and the j reduces the j reduces so i can say the replace operation is going to be very straightforward i stays where it is and the j reduces by one because you're trying to you have hypothetically hypothetically inserted s so they are matched so i is still because someone got inserted right ahead of me why will i bother to move i'll stay where it is this s got matched so j will get reduced so that is how you can do an insert operation perfect"
+    },
+    {
+      "chunk_id": "L214_C13",
+      "start": 908.64,
+      "end": 988.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=908s",
+      "text": "where it is this s got matched so j will get reduced so that is how you can do an insert operation perfect so if you're doing this insert operation that's one step that's one step okay perfect can i do something else let's go back let's let's go back and see if i can do something else it's it is this can i do something else okay what operations do i have i have a delete operation right i'll say hey let's delete this and let's take this and try to match this s with this s i'll be like let's delete this let's take this i here and now try to match this s with s i'll try to delete it so if i delete it i'm saying go go go so i reduces i will reduce i'll be like yeah make sense so if i'm trying to delete it can i say only i reduces and i'm again taking one step i will reduce and does the j reduce no you deleted but you're still looking for this s you deleted but you're still looking for this s which will get matched at the next step which will get matched at the next step thereby i already reduces the g stays where it is perfect what about the other one so again we will just go back and try to just write it again back yeah where was i i was here right"
+    },
+    {
+      "chunk_id": "L214_C14",
+      "start": 990.72,
+      "end": 1066.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=990s",
+      "text": "one so again we will just go back and try to just write it again back yeah where was i i was here right we have a e we have a s what is the other thing we have done insert we have done the delete as well the other thing is definitely replaced because that's the other operation remaining if you're replacing what is like will it make sense if you replace it with a why will you replace it with a you're not a fool are you a fool no so you'll be like what will i replace that with i'll be like okay let's replace this with s so that this s now matches with this s and now i can look for in the remaining portion of the string because in order to replace i will try to match these guys so replace will be done in that way and after they are matched i reduce both the strings so i'll be like okay if you're trying to match it stills replace operation is still one and you reduce both the strings perfect you reduce both the strings so these are the three operations that you will encounter if they are not matching and by doing these three operations you will somehow or the other try to match it and after that you know you have to take the minimal of"
+    },
+    {
+      "chunk_id": "L214_C15",
+      "start": 1066.32,
+      "end": 1144.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=1066s",
+      "text": "operations you will somehow or the other try to match it and after that you know you have to take the minimal of all of these three and that's what you do and that's how you can write all possibilities wow last thing base case what can be the base cases try to think try to think generally the base cases when it's over what did i see these cases when it's over that's when you think of these cases correct so when it over when it's over what does that signify you were comparing something you were comparing someone got exhausted someone would have got exhausted right let's analyze what happens if string one gets exhausted let's analyze the other way when string two gets exhausted okay so there can be two ways because i know one thing for sure if i and j are are somewhere over here here somewhere on on a character we can still do operations but what if they don't have any characters for an example we were at something like horse right let's take a word as s h o s e h o r s e rather and you came over here which is the minus one at index this is where the i is"
+    },
+    {
+      "chunk_id": "L214_C16",
+      "start": 1145.52,
+      "end": 1221.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=1145s",
+      "text": "s e rather and you came over here which is the minus one at index this is where the i is right that is when i say string one gets exhausted when i is over here and you still are having a rose and assume you're over here which is j assume you're over here which is j correct so what is j j is at the zero and one index so if you're looking to make ro and you have exhausted like this string doesn't exist you have exhausted how many operations will you require to make ro obviously two operations because if you don't insert ro what what am i saying let's understand what does this signify f of minus one and one because this is one this is where the j is that means minimum operations minimum operations to convert a empty string because minus one means you don't have any string convert an empty string to a string from zero to one which is nothing but ro what are the minimum operations you'll take to convert an empty string to ro obviously you'll require two insert operations you look at two insert operations"
+    },
+    {
+      "chunk_id": "L214_C17",
+      "start": 1222.0,
+      "end": 1301.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=1222s",
+      "text": "to convert an empty string to ro obviously you'll require two insert operations you look at two insert operations can i say if string s1 gets exhausted you end up returning j plus one because if j is standing at the index one j is standing at the index one it will take two steps to insert steps so i can say you can return j plus one that's how you have to analyze perfect guys so if this string gets exhausted you have to return j plus one what about the other thing when s2 gets exhausted let's write it if s2 gets x hosted or exhausted whatever you can call it so imagine s1 is horse and probably you're standing somewhere over here which is zero one second index and s2 was like you're standing at minus one there was ros which is zero one two this is where j is so what does this signifies f of two comma minus one what does this signifies operations minimum operations to convert hor to an empty string how many operations come on guys you can tell me obviously we'll perform three delete operations which means i plus one because you're standing at two so three operations"
+    },
+    {
+      "chunk_id": "L214_C18",
+      "start": 1301.28,
+      "end": 1380.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=1301s",
+      "text": "me obviously we'll perform three delete operations which means i plus one because you're standing at two so three operations so can i say if it happens the other way which is if this gets exhausted you will say it'll require i plus one operations perfect that's how you write the base cases and that's how you do this edit distance wow okay so again we are doing recursion so you're trying all possible ways so obviously the time complexity will be exponential because there are three states where you're calling so it will go up to three to the power n into three to the power m so we are not discussing that because it is a lot complicated well space complexity auxiliary stack space again n plus m can go as that can be the auxiliary stack space you have to see for overlapping sub problems so if you try to draw the recursion tree where you're comparing you will see overlapping sub problems occur try drawing the recursion tree by yourself you will see there are portions where they're overlapping sub problems so if there is an overlapping sub problems what do you do you tend to memoize is there is there even a doubt yeah you tend to memoize just go across and try to memoize this so we're trying to memoize"
+    },
+    {
+      "chunk_id": "L214_C19",
+      "start": 1381.6,
+      "end": 1455.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=1381s",
+      "text": "there even a doubt yeah you tend to memoize just go across and try to memoize this so we're trying to memoize changing parameters i and j was the maximum value of i n was the maximum value of j m so n cross m dp is what you end up taking up so in memorization you know what to do just a couple of steps just make sure you before returning write it and before coming over here just make a check and if you're able to do this i am successfully able to convert this into a time complexity of number of states into a space complexity of the dp array plus an auxiliary stack space amazing wow that's what the memoization time complexity will be so let's quickly code this up so you're given a string s1 and string s2 let's find the size super quickly str1 dot size let's find the size for m as well str2 dot size perfect and i tend to write the function so int f int i int j string s1 you can call it as s1 you can call it as string s2 perfect now i know the base case is very simple if one string is exhausted it's going to take these many steps if the other"
+    },
+    {
+      "chunk_id": "L214_C20",
+      "start": 1455.84,
+      "end": 1529.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=1455s",
+      "text": "the base case is very simple if one string is exhausted it's going to take these many steps if the other string oh sorry if the other string is exhausted it's going to take another i plus one steps if they are matching which is this equal to equal to this you know it's going to take zero steps so zero plus f of i minus one because they're matching so let's not do anything if they're not matching then i know it's going to take one plus minimum of there can be three operations i minus one j or minimum of f of i comma j minus one and comma f of i comma this is the replace that's what it will be let's quickly check yeah and over here you can say return the function of n minus one and m minus one and str1 and str2 yeah that's what you can call it so let's quickly run this off this will be s1 s2 okay this will be s s1 s2 again this will be s1 s2 perfect it does run fine let's quickly convert this into a dp so vector of"
+    },
+    {
+      "chunk_id": "L214_C21",
+      "start": 1534.32,
+      "end": 1613.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=1534s",
+      "text": "will be s1 s2 perfect it does run fine let's quickly convert this into a dp so vector of vector int dp n vector int and n sorry m minus one you can definitely pass it over here which is vector sorry rather dp just try to copy paste this over here okay so pass it by reference so make sure everything is passed by reference because i don't want everything to create a new copy because it's going to take a lot of space dp dp dp rdp and just make sure before returning dp of ij perfect before returning dp of ij perfect and right here before entering dp of ij is not equal to minus one so return of dp of ij perfect once i've done this i think it should be fine let's quickly run this off now it does run let's submit this it is it it is submitted so make sure make sure you carry by reference okay so we definitely know that in recursion there is an auxiliary stack space we generally tend to use so can we avoid the auxiliary stack space obviously and you know how can we do this we can say we will convert this into a tabulation what are the"
+    },
+    {
+      "chunk_id": "L214_C22",
+      "start": 1613.68,
+      "end": 1689.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=1613s",
+      "text": "and you know how can we do this we can say we will convert this into a tabulation what are the rules very simple i've already told you the rules base case next yeah write it in the opposite fashion i and j the changing parameters next copy the records so what are the base cases let's analyze again in all the string from lcs to the previous question whenever there is something like this you know the states that will come will be like for i it can be minus one or for j it can be minus one right so there can be a negative and i don't usually want negative so what we do is in order to avoid negative we just do a plus one to everything like initially or where did i go initially we started with n minus one so we will do a plus one and we will say n and m yeah that's what we will do initially okay and everywhere yes everywhere you will try to do a plus one so basically this was less than zero now minus one minus one means zero so over here this will be equal to equal to over here there will be equal to equal to this will go as j this will go as i"
+    },
+    {
+      "chunk_id": "L214_C23",
+      "start": 1689.44,
+      "end": 1760.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=1689s",
+      "text": "to equal to over here there will be equal to equal to this will go as j this will go as i because now you're using one based indexing now i equal to three is actually meaning second index so second index will return three steps only so you just need to return j or i perfect just in over here you have to just make sure you do a comparison of i minus one and j minus one that's it just a slight change and that should be converting this into a one based indexing so without actually waiting let's go back and do this in the code so that we don't have an issue afterwards so this is going to be equal to is going to be this is going to be equal to this is going to be i plus one and yeah obviously this is going to be i minus one j minus one and just make sure this is m plus one because the states have increased by plus one so what i did was i just converted them into a one based indexing so that we don't have any negative indexes involved so a slight change will do it okay now since i've done the slight change let's write down the base cases that we took what are the base cases as of now one of the base cases is if the string s1 is exhausted"
+    },
+    {
+      "chunk_id": "L214_C24",
+      "start": 1761.2,
+      "end": 1837.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=1761s",
+      "text": "cases that we took what are the base cases as of now one of the base cases is if the string s1 is exhausted you try to return j steps right so for any i equal to zero that means f of zero comma j can be anything j can be anything so you will be like okay j can be anything perfect so i'll be like j can be anything from zero to m so dp of zero on any j please put on j you see on any i equal to zero on any j you're putting j so just make sure you put it across okay that's the base case one what are the other base case it states for any j equal to equal to zero yes for any j equal to equal to zero please return i for any j equal to equal to zero please return i so you will be like okay fine for i equal to zero till n because that is what i will be i comma zero because you are saying for any j equal to zero which means i can be anything equal to i that's it this is going to be the base case two perfect i've written both the base cases now what's the other thing that we are dealing with this and this what is a tabulation"
+    },
+    {
+      "chunk_id": "L214_C25",
+      "start": 1839.92,
+      "end": 1917.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=1839s",
+      "text": "i've written both the base cases now what's the other thing that we are dealing with this and this what is a tabulation it's bottom up bottom up so you were doing the top down why this base cases have been computed so you go from one till n one till m and you copy paste the recurrence so what are you waiting for let's write the tabulation so what you can do with so what you can do is you can just put a zero over here that's perfect and just make sure for any i equal to zero till n just make sure any dp of i of j which is zero will be i perfect and the other one will be for any j equal to zero j lesser than equal to m j plus plus dp of any like any of i which is zero and any of j will be j perfect that's what the base cases will be and the other two will be i equal to one till n and i plus plus for i and d j equal to one j lesser than equal to m and j plus plus and what i can do is it can just copy paste the record so please please copy paste the records i'll go over here and i'll try to copy paste perfect and instead of this please write else why because if it matches you run this otherwise you"
+    },
+    {
+      "chunk_id": "L214_C26",
+      "start": 1917.6,
+      "end": 1994.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=1917s",
+      "text": "and i'll try to copy paste perfect and instead of this please write else why because if it matches you run this otherwise you run this over here else was not required because if this executes this will never execute but over here you have to give an else that's what you'll write and over here just make sure you will write dp of i minus one j minus one so dp of i minus one and j minus one is what you'll write perfect and you can just remove the return statement that's what this will be and over here you can simply say dp of i minus one j dp of i minus one j dp of i j minus one so please write dp of i and j minus one and you can simply write dp of i minus one and j minus one perfect and that is what you will be returning dp of n and m because that is what the call was made for so if you write this and try to run this this will be running absolutely fine whenever i say absolutely fine it ends up not being absolutely fine anyways what you can just do it you can just convert this into str1 and str2 it has run let's quickly submit this and see if this is working fine it is we are getting a correct answer so can we space optimize we're"
+    },
+    {
+      "chunk_id": "L214_C27",
+      "start": 1995.04,
+      "end": 2073.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=1995s",
+      "text": "quickly submit this and see if this is working fine it is we are getting a correct answer so can we space optimize we're using an n cross m matrix can we space optimize this let's quickly check okay there's an i minus one as an i minus one okay so something for sure is we can definitely space optimize because there is a i minus one involved so what i'll do is i can say that hey listen what does this actually mean like what do i actually require i just require one previous guy and then i'll use that previous to fill this current correct okay so i just require to fill the previous gap and what does this mean this means on any row let's understand on any row on any row i is row the first column has to have i the row number rather the zeroth row will have zero the first row will have first the second row will have second the third row will have third that is what it signifies right so the first row on the first place will have zero so we have got the space case covered because we are just requiring the first row what does this signify this signifies on the zeroth row yes on the zeroth row which is the first row which i'm filling at every column you will put zero one"
+    },
+    {
+      "chunk_id": "L214_C28",
+      "start": 2073.92,
+      "end": 2148.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=2073s",
+      "text": "zeroth row yes on the zeroth row which is the first row which i'm filling at every column you will put zero one two three this is what it signifies right so just put this so you'll be like okay i i just compute the previous i'll put it and this is not required anymore so i'll just go across and try to declare this as vector of int of previous of m plus one comma zero because i require rows curve of m plus one comma zero perfect next instead of dp of i minus one i'll say previous instead of dp of i i'll say car amazing inside of dp of i minus one i'll say previous instead of dp of i i will say definitely card instead of dp of i minus one i'll definitely say previous instead of dp of i i'll say god i'll write previous equal to god And over here, I'll try to return previous. This has been taught in all the DP lectures. So if you haven't seen it, please go back and watch the previous lectures. Okay. Now I'm trying to run it. Okay. We are getting a wrong answer. Why is that? Let's quickly have a check. Okay. So why did we get a wrong answer? So if you remember, there was a base case for any J equal to zero, which means for any"
+    },
+    {
+      "chunk_id": "L214_C29",
+      "start": 2148.76,
+      "end": 2224.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=2148s",
+      "text": "get a wrong answer? So if you remember, there was a base case for any J equal to zero, which means for any row, it can be this row, it can be this row, it can be this row for any rule. The zero guy is the zero guy was for the zero throw it was zero for the first row. It was first for the second or second, right? So for every day we using code, you have to update it zero because every time code will have some values in the zero column. So make sure every time you're using code, it will always have, I, it will always have I. So that's what you will do. You'll see this is running fine. So once you've done this, I hope this is clear. Just in case, this is not clear. Try to see this. You'll get an idea because if at any J equal to equal to zero, it will always be I. So at any current row, the first guy will be I. Right? So this is, this is how you can definitely space optimize this portion. Can you space optimize this into a 1D one? The answer to that is no, because you're dependent on the previous state of the current as well as the previous state of the previous. So you need to store both the rows, the previous and the current. So you cannot space optimize this for the like beyond two 1D arrays."
+    },
+    {
+      "chunk_id": "L214_C30",
+      "start": 2224.06,
+      "end": 2250.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=fJaKO8FbDdo&t=2224s",
+      "text": "you need to store both the rows, the previous and the current. So you cannot space optimize this for the like beyond two 1D arrays. This is the maximum that you can do. So guys, I hope you have understood this entire edit distance, right from the recursion to the memization to the tabulation and to the wonderful space optimization. Just in case you did, please, please, please make sure you like this video. And if you're new to this channel, please, please do consider subscribing to us and yeah, let's continue our tradition. Please make sure you write it right in the comment section video. How was the video? So yeah, with this, let's wrap up this video and meet in the next one. Till then, bye bye. Take care."
+    }
+  ]
+}

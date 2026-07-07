@@ -1,0 +1,155 @@
+{
+  "lecture_id": "L279",
+  "lecture_number": 279,
+  "lecture_title": "L8. Longest Repeating Character Replacement | 2 Pointers and Sliding Window Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0",
+  "chunks": [
+    {
+      "chunk_id": "L279_C1",
+      "start": 0.0,
+      "end": 77.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=0s",
+      "text": "So let's continue with this driver's A to Z DSA course and the problem that we are solving today will be involving the concepts of two pointer and sliding window. But before starting, hey welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is longest repeating character replacement. So what is the problem exactly stating? Stating that it will be given a string which will have all the uppercase letters. It will be given an integer K. Now what does this particular integer signify? It signifies that you can pick up at most K characters at most two characters from this given string. Assume I can pick up this particular A, I can pick up the last A, any two characters at most any two characters and then I can convert them to any other possible uppercase letter. I can convert this A to C, I can convert this A to R or anything, anything. Yes. Once you have done this, you'll have to figure out the longest substring which has all the characters as equal, which has all the characters as equal. So let's assume I pick up this."
+    },
+    {
+      "chunk_id": "L279_C2",
+      "start": 77.72,
+      "end": 151.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=77s",
+      "text": "has all the characters as equal, which has all the characters as equal. So let's assume I pick up this. So substring is basically a consecutive portion of the string. The length is two and all the characters are equal. But if I pick up this one, the length is four, but does it have all the characters equal? It doesn't. But then I'm allowed to convert at most two characters. So maybe I can convert this B to A and I can have all the characters as equal. So I can pick up a substring of length four. But the question is to pick up the longest substring. So can I say if I pick up this one, this is a length five and it is AABAB and what I can do is I can convert this B to A, I can convert this B to A. So yes, this is length five. Can I pick up more than that? If I try to pick up length six, this will have AABABB. So over here I have three characters that I have to convert and that's not possible because at most you can convert A characters to characters over here. So if you try out all the substrings, you'll find out that at max the length that you'll be able to achieve is five. So this is what you'll have to return. Five is what you have to return."
+    },
+    {
+      "chunk_id": "L279_C3",
+      "start": 151.52,
+      "end": 230.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=151s",
+      "text": "length that you'll be able to achieve is five. So this is what you'll have to return. Five is what you have to return. So what does the extreme brute force that you can think of? Like what I can think of is generate all the substrings. That is the extreme brute force. So what I will do is I'll generate all the substrings. Yes. And what I'll try to do is I'll try to figure out how many characters I need to change. That's what I need to figure out, right? If I pick up this one, double ABAB, I figured out that this B and this B is what I need to change. Now you can also say that, okay, AABAB, maybe I can change all the A's to B's. That's also a valid one, right? But what will you look to do? Since you're allowed at max to, you look to minimize the conversions, look to minimize the conversions. Thereby this is what you'll try to do. You'll try to pick up the minimal conversions. Correct? Now how do I figure out the minimal conversions? It's very easy. Can I say double A, AB, this has A three times, B two times. So technically I should convert all the B's instead of converting all the A's. Whatever, like whichever character appears maximum number of times, I'll not touch it."
+    },
+    {
+      "chunk_id": "L279_C4",
+      "start": 230.84,
+      "end": 303.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=230s",
+      "text": "convert all the B's instead of converting all the A's. Whatever, like whichever character appears maximum number of times, I'll not touch it. I'll touch all the others. Imagine you have a substring which is looking something like ABABC and A is appearing three times, B is appearing two times, C is appearing one time. So you'll try to convert B and C instead of converting A. Correct? You'll try to convert B and C because that will take three operations. Understood? So I know one thing, the number of conversions, if I have to figure out a formula, double ABABC. For an example, for the string, if I ask you how many conversions do you require? Can I say max frequency, which is max of F minus the length or can I say the opposite like length? So the length is six minus max frequency, which is three. Hence comes out to be three. Three is the number of characters that you need to change. Length minus max frequency is the number of characters that you need to convert. Okay, I need, I figured it out. So what was my brute force? My brute force was to generate all the substrings. Now I know that the first substring will start from this character, which is A. The next one will be double A, double AB, double ABA and so on till the end."
+    },
+    {
+      "chunk_id": "L279_C5",
+      "start": 303.56,
+      "end": 376.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=303s",
+      "text": "from this character, which is A. The next one will be double A, double AB, double ABA and so on till the end. The next set of substring will start from this particular A, which is A, AB, EBA, ABAB and so on. The next set of substrings will start from here, which will be B, BA, BAB. So what I can do is, I'll be like, okay, I know the formula is length minus max of F. So I just need to figure out the maximum frequency. And I know that we have uppercase characters. So I can maintain an hash array of 26 size, correct? Which is going to tell me how many times a particular character appears. That's what I'll do. Let's try to pick up. First, I'll try to pick up A. So that's my first substring, right? So I'll pick up A and I'll say A is appearing once. Next I'll pick up A, so that will make it two. So I can keep on updating the frequency, correct? So let's try to write this in pseudocode. So if I try to write this in pseudocode, I know that I'll always start from zero and then every possible character will be a starting point of any substring. And after that, I know that I need a hash array. So maybe I can keep a hash array, which is initially assigned to zero."
+    },
+    {
+      "chunk_id": "L279_C6",
+      "start": 376.88,
+      "end": 456.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=376s",
+      "text": "that, I know that I need a hash array. So maybe I can keep a hash array, which is initially assigned to zero. I also know that in substring question, I start the J from I and I go on till N. Perfect. So can I say that the hash of I will be updated, hash of S of J, because that is the character that's going to be updated. I need to keep a track of the maximum frequency, right? So maybe I can also update, I can also carry a max of F, which is initially zero. And whenever I update, whenever I update, I can compute the max of frequency to be max of the previous frequency, hash of S of J. You can write it in one statement as well. I've written it in two statements to make you understand. Okay. I've updated, I've updated my maximum frequency as well. What after this? I need to figure out the number of changes. Can I say the number of changes will be the length? What is the length of this particular substring? J minus I plus one, very obvious. Minus max of F, correct? Now can I say this is only allowed if the changes are under K, are lesser than equal to K, then only it's allowed. And in that case, I'll have to keep the maximum lengths track."
+    },
+    {
+      "chunk_id": "L279_C7",
+      "start": 456.78,
+      "end": 534.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=456s",
+      "text": "K, are lesser than equal to K, then only it's allowed. And in that case, I'll have to keep the maximum lengths track. So what I can do is I can say max length, max of max length, comma J minus I plus one, if that is the case, and if it doesn't satisfy, if it doesn't satisfy, in that case, I'll go to else. Do I need to accumulate the other characters? Imagine you have accumulated this, this, this, this, and after this, when you get this B and it doesn't satisfy your condition, do you take this B? Because if you take this B, it's not meeting your condition of at max K. You'll not be able to take this. So what you do is you straight away say, hey, listen, I'm going to break out and the for loop ends. And eventually what you can do is you can head over and you can print the max length. That's it. That is the extreme naive solution that I can think of. Now what is the time complexity? Can I say initially I'm taking a big O of N? I am. And again, I'm taking another big O of N. So that's an overall of big O of N squared. Am I using any external space? Yes, I am. Big O of 26, but nothing more than that. So that's what I am using. That's it. That's the brute force."
+    },
+    {
+      "chunk_id": "L279_C8",
+      "start": 534.22,
+      "end": 601.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=534s",
+      "text": "Yes, I am. Big O of 26, but nothing more than that. So that's what I am using. That's it. That's the brute force. And this is where the interviewer will not be happy with you and he'll ask you to optimize it. So you'll have to optimize big O of N squared. And if I'm looking to optimize N squared, that means I'm looking for an algorithm around big O of N and the problem is involving substring or subarrays, right? So which algorithm comes to your brain? Yes, two pointer and the sliding window. We've already done a lot of problems on two pointer and sliding window. You haven't seen it. Please go back and watch it because we are going to follow the same pattern. So big O of N and two pointer. Initially we start with the left pointer and the right pointer and we keep it at the zeroth index. What are we looking at? We're looking at a maximum frequency. So maybe I can keep a variable max frequency which keeps a track of the maximum frequency. We're looking for a longest substring. So maybe a max length. If I have to figure out the frequency, we'll have to keep a hash map as well of size 26. So a hash map. So initially we are standing at A which is the zeroth index. Put it into your hash map, A comma one."
+    },
+    {
+      "chunk_id": "L279_C9",
+      "start": 601.98,
+      "end": 671.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=601s",
+      "text": "hash map. So initially we are standing at A which is the zeroth index. Put it into your hash map, A comma one. So once you put it into your hash map, can I say that the max frequency will be updated to one? I can. Now what is the next thing? You check if this is a valid segment or not. How do you check? What is the length? One. What is the max frequency? One. What are the number of conversions required? Zero because this segment has all the characters same. So I don't need any conversions. Thereby this is a valid segment. And if this is a valid segment, I update the length to one because the length is greater than the max I already have. What is the next thing? I take this R and I move it to A. I move it to A. I update the frequency to two. And if I update the frequency to two, the max frequency gets updated. What is the next thing? Check if this segment is a valid one or not. The length is two. The max frequency is two. Number of conversions is zero because double A. No conversions needed. Thereby I can update the max length to two. After this, I'll take the R. I'll move it here. Again A. So you update this to three. And if this gets updated to three, max frequency gets updated to three. Next is this a valid segment?"
+    },
+    {
+      "chunk_id": "L279_C10",
+      "start": 671.34,
+      "end": 737.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=671s",
+      "text": "you update this to three. And if this gets updated to three, max frequency gets updated to three. Next is this a valid segment? The length is three. The max frequency is three. Number of conversions required is zero because all are A. So can I say that the max length gets updated to three? Yes, it does. What is the next? R goes over here. That means I'm getting a B which is appearing once. Will I update the max frequency? No, because the max frequency is still three. So I don't update the max frequency. Instead what I do is, I check if this is a valid segment or not. In order to do that, the length is four of this segment. The max frequency is three. Number of conversions required is one because I'll have to convert this B to A in order to make all the characters equal. So thereby, length can be updated to four. Perfect. What is the next thing? I'll take this R. I'll move it to here. B gets updated to two. After that, will the max frequency get updated? No. I'll check if this frequency, this segment is valid or not. Five minus three, two, valid. Thereby, the segment length will increase. After that, you'll move R. Now this time when you move R, this is C which is appearing once. The max frequency will not get updated."
+    },
+    {
+      "chunk_id": "L279_C11",
+      "start": 737.28,
+      "end": 809.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=737s",
+      "text": "move R. Now this time when you move R, this is C which is appearing once. The max frequency will not get updated. But when you try to check if this is a valid segment or not, the length is six and the max frequency that appears is three times. Number of changes required is three. Hence it's not possible. Hence it is not possible. So what you will do is, you'll be like, fine, if this is not possible, I'll have to trim down my window. Because this is my window, I'll have to trim it down. If I'm trimming it down, what I'll do is, I'll take this L. I'll move it forward. So if I move forward, first thing that will happen is I'm removing one A. So the frequency decreases. So basically I removed this A. Next, if I remove this A, I'll have to crosscheck the max frequency again. What is the max frequency now in this hash map? That's two. So what you'll do is, you'll update it to two. The max frequency now is two. Is this segment, my bad, is this segment possible? What is the length? The length is five. The max frequency is two. It's coming to be three. Number of conversions required is three, which is not possible because I'll have to convert this, this, this to A, A, A. Hence, not possible. If it is not possible, you'll again end up removing another A. If you remove another"
+    },
+    {
+      "chunk_id": "L279_C12",
+      "start": 809.24,
+      "end": 881.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=809s",
+      "text": "this, this to A, A, A. Hence, not possible. If it is not possible, you'll again end up removing another A. If you remove another A, this will reduce to one. And after that, you'll move your R. So you shrink down the window from the left. You shrink it down again. If you shrink it, will the max frequency update? No, this time because you still have another two. Let's check if this is a valid segment. The length is four. The max frequency is two. And this is valid. So you can say this is valid. But what is the length? The length is coming to be four, which is not allowed because I already have a five. So this is not the longest. So I'll simply go ahead and take R over here. And I can keep on doing this. I can keep on doing this till this R exceeds my boundary. And eventually, I'll have my max length. Couple of points to remember. Whenever you are removing A, make sure you update the max frequency by scanning through the entire map. We can optimize that afterwards. But as of now, remember it. So we know what we are looking forward to do, right? So can I write down the pseudocode? Maybe yes. So I'll have a function which takes my string and my variable K. Correct? Now what is the next thing I'll do?"
+    },
+    {
+      "chunk_id": "L279_C13",
+      "start": 881.6,
+      "end": 960.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=881s",
+      "text": "yes. So I'll have a function which takes my string and my variable K. Correct? Now what is the next thing I'll do? First thing I'll do for sure is I'll take a L to be zero. I'll take R to be zero. I'll take a max length to be zero. I'll take a max frequency to be zero. And I'll take a hash map of 26 size because all of them, all of them are, all of them are initially zero. So you, all of them are uppercase characters. So 26 will suffice. Now what I will do is I'll start while R lesser than the string size. That's the first thing. Because that's, that's, that's the point L which I will iterate. After that, I'll go to the hash map and I'll say, Hey, listen, S of whatever it is, S of R, please make sure you do a minus of A and then a plus plus. Perfect. After this, what happens is I'll have to update the max frequency. So can I say max frequency will be max of whatever previously I had max frequency, comma, whatever the current hashes, which is hash of S of G minus A. Can I say this? I definitely can say this. Okay. After this, I'll have to check if this is a valid one or not. And if this is not a valid one, I'll have to trim it down from the left."
+    },
+    {
+      "chunk_id": "L279_C14",
+      "start": 960.96,
+      "end": 1039.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=960s",
+      "text": "this is a valid one or not. And if this is not a valid one, I'll have to trim it down from the left. This is not a valid one. I'll have to trim it down from the left. So maybe I can write a while loop, which is gonna check if it is a valid one or not. So can I say that, can I say that the length is R minus L plus one, that is the length minus max frequency. If that is greater than K, which means it's not a valid one. And if it is not a valid one, I'll have to trim it down. And if it is a valid one, the while loop never gets executed. Super simple. What do I do? I go across to hash of S of L, because that is what I'm trimming, minus of A, and I do a minus. Once I've trimmed it down, I'll have to update my max frequency. So what I do is, I assign max frequency to be zero. And I go ahead through the entire 26, like 25 indexes, all the 26 indexes. And I say max frequency equal to max of max frequency comma hash of I, whatever it is. So this will update my max frequency, the new max frequency for that segment. After that, what I can do is, I can take L equal to L plus one, I can move the L pointer,"
+    },
+    {
+      "chunk_id": "L279_C15",
+      "start": 1039.64,
+      "end": 1116.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=1039s",
+      "text": "that segment. After that, what I can do is, I can take L equal to L plus one, I can move the L pointer, and then I can finish off the while loop. Once the while loop is finished, I'm very much sure about one thing. What is that one thing? That if now, which is R minus L plus one, the length minus the max frequency. Remember, max frequency is a variable which is declared over here, so you can access it. If that's lesser than equal to K, which means this is a valid segment. And if this is a valid segment, you can compare it to max of max length comma J minus, my bad, R minus L plus one. Done. And you can complete the while loop. Please make sure you move R plus plus before completing the while loop. And eventually you can return max length and the function will be terminated. So this will be your abego of, somewhere near about abego of N approach. But we will be computing the time complexity now. Let's compute it. So there's a while loop which is contributing to it. And I know this is definitely going to run for abego of N. Because R starts from zero, goes till the end. There's another while loop which is trimming of L, which is trimming of L."
+    },
+    {
+      "chunk_id": "L279_C16",
+      "start": 1116.64,
+      "end": 1196.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=1116s",
+      "text": "R starts from zero, goes till the end. There's another while loop which is trimming of L, which is trimming of L. But you'll have to be careful that L stands over here. And it is not every time that L is going the entire distance. For the first time, it might go two places, then three places, then two places, then one places. But overall, throughout the journey, it might go N places. So can I say that the outer while loop is taking abego of N and the inner while loop throughout the journey, not individually, is taking the abego of N. And inside this while loop, I'm always doing a hash check of frequency. So can I say this multiplied by 26, assuming that every time you go inside, assuming that every time you go inside. So I can say N plus N into 26. Correct? What about the space? That's abego of 26. I cannot optimize the space because we need to store the frequency. So this will be the time complexity and the space complexity. Now can I optimize? I can because this is still taking abego of 2N. So we are still taking a time complexity of N plus N into 26. Let's try to optimize it. So there is abego of 26 that I'm still taking."
+    },
+    {
+      "chunk_id": "L279_C17",
+      "start": 1196.12,
+      "end": 1275.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=1196s",
+      "text": "complexity of N plus N into 26. Let's try to optimize it. So there is abego of 26 that I'm still taking. Okay. And that abego of 26 is because I'm re-scanning and updating my max frequency value. So what I'll do is I'll try to get rid of this re-scanning. Let's understand why. So I'll say, hey, there's no need to re-scan and re-update the max frequency. Why? So the condition was length minus max f lesser than equal to k. Correct? Let's go back to the example we took. In this example, this was the segment which was valid. Correct? And after that, when I added c, I started removing a from the back. This is where I updated my max frequency from 3 to 2 because I removed the same. Now what I say is, do not, do not down, do not decrease the value of max free, max frequency only to decrease. Why do I say it? Let's understand. So the length was 5, the max frequency was 3 when we were at triple A double B. This was the segment and this gave me my max length to be 5."
+    },
+    {
+      "chunk_id": "L279_C18",
+      "start": 1275.96,
+      "end": 1350.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=1275s",
+      "text": "at triple A double B. This was the segment and this gave me my max length to be 5. So I have already, I already have the longest substring of a length 5. I already have a longest substring of length 5. In order to get a better answer, I'll be looking at a length 6. I'll be looking at a length 7. I'll be looking at a length 8. There's no point in looking for a length. There's no point. So what I will do is, I'll try to look for a better length 6. If I'm looking for a better length 6, will 3, will the max frequency 3 contribute to it? No, because if this is the last valid condition, this can never be the valid condition. I will have to increase the value of 3. I'll have to increase the value of 3. So max frequency, which was 3, there's no point in downgrading it to 2. There's no point because if I have to increase 5 to 6 and if I have max frequency as 2, that is never going to be valid. That's never going to be valid. That's why, because ultimately you're trimming down and the only reason you trim down is because it's invalid. You figured out that beyond 5 minus 3, it's invalid. That's why you're trimming down. And when you're trimming down, there's no point in reducing 3 to 2."
+    },
+    {
+      "chunk_id": "L279_C19",
+      "start": 1350.36,
+      "end": 1425.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=1350s",
+      "text": "beyond 5 minus 3, it's invalid. That's why you're trimming down. And when you're trimming down, there's no point in reducing 3 to 2. There's no point because that's never going to contribute to my longest answer. What will contribute is 6 minus 4. So I'll have to increase the value of 3. So what I say is, there's no point in trimming down. Don't trim it down because when I'm removing, this will only reduce, this will only reduce and reduction never helps. Reduction never helps in increasing my answer. It shall not do. So as of now, I have this max frequency which is increasing every now and then and this is contributing to my answer. Perfect. Next answer 6 will be having a max frequency though. So it'll contribute to it. There's no point in trimming down. So what I did was, I removed this 26 dependency. I removed the scanning. It is still taking a bigo of 2n. Can I optimize it? I can. So as you have seen my previous videos, you know one thing. Till this point, the length was 5. After that you added a c and it was invalid and this was a length 6. I already have my answer as 5. I have a length 6 and what the while loop does is, it removes 2 a's. Do I need to remove 2 a's?"
+    },
+    {
+      "chunk_id": "L279_C20",
+      "start": 1425.48,
+      "end": 1503.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=1425s",
+      "text": "I have a length 6 and what the while loop does is, it removes 2 a's. Do I need to remove 2 a's? No because if the answer is 5, the next answer will definitely be 6 which is a valid one. I straight away cannot go to 7. The next answer will be 6. So what I do is, since I added this, the sliding window increased by 1. It went to become of a size 6. I'll trim it down to 5 again. So what I'll do is, I'll just remove 1 and I'll keep it as size 5. I'll again say add this and make it a size 6. I'll not let it go beyond 6. That's why instead of removing 2 a's, 3 a's, what I'll do is, I'll remove 1 because that will make sure I'm still with length 6. I'm not increasing it to 7. Length 6, 6, 6, 6, 6 window. Let the 6 window go and whenever 6 window is meeting this condition, I'll upgrade it. I'll not move n. Perfect. So if I remove the while, this trims down to a Pico of n time complexity and a Pico of 26 space complexity and this is the most optimized solution. Again, I've written down the pseudocode in case you want the language specific code, you can find them below. So if you're still now watching and you've understood everything, please, please do consider"
+    },
+    {
+      "chunk_id": "L279_C21",
+      "start": 1503.44,
+      "end": 1511.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=_eNhaDCr6P0&t=1503s",
+      "text": "want the language specific code, you can find them below. So if you're still now watching and you've understood everything, please, please do consider giving us a like and if you're new to our channel, do consider subscribing to us as well. So with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

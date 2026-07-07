@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L159",
+  "lecture_number": 159,
+  "lecture_title": "G-34. Dijkstra's Algorithm - Why PQ and not Q, Intuition, Time Complexity Derivation - Part 3",
+  "youtube_url": "https://www.youtube.com/watch?v=3dINsjyfooY",
+  "chunks": [
+    {
+      "chunk_id": "L159_C1",
+      "start": 0.0,
+      "end": 74.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=3dINsjyfooY&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in the previous couple of videos, we have learned about a Dijkstra's algorithm, if you remember, and we solved it using a priority queue and a set data structure. And there were a bunch of questions revolving around your head. Why priority queue? Because even if we take a queue data structure, it does work. The time complexity I stated was E log V. Why E log V? A proper derivation of that. What is the intuition behind Dijkstra's algorithm? That was another question that might would have come to your head. So I'll discuss all of these three points in this particular video. So coming across to the first question, why a priority queue or a set? Because even if we take a queue data structure, we do get the answer. So let's take this particular graph and this will be the corresponding adjacency list. So let's try this algorithm with a queue data structure and a distance array. Okay. So we're given the source zero. So apart from zero, everything we can initialize as infinity, right? So sources put"
+    },
+    {
+      "chunk_id": "L159_C2",
+      "start": 74.8,
+      "end": 148.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=3dINsjyfooY&t=74s",
+      "text": "we're given the source zero. So apart from zero, everything we can initialize as infinity, right? So sources put as zero and input zero comma zero in the queue data structure. Let's take zero comma zero. So zero at a node zero, where can node zero go? Node zero can go to node one and node two. Remember first node one, then node two, first node one, then node two. So if you try to go to node one, the distance taken will be three and the updated distance will be three. So I can update this with three and I can say three comma node one, right? And if I try to go here, it'll take a distance one and the distance will be one. So this will be one. I'd be like one comma two is what I'll put into the queue. Now remember, it's not a priority queue. It's a queue data structure. So we get the next element with a distance of three and a node of one. Where can one go? One can go to node zero by taking a distance of three, which will make it a distance of six, not to be considered. One can also go to node three and that'll take a distance of four, which makes it a total distance of seven update seven and put seven comma three in the queue. So this is also done. Now let's take the"
+    },
+    {
+      "chunk_id": "L159_C3",
+      "start": 148.96,
+      "end": 224.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=3dINsjyfooY&t=148s",
+      "text": "a total distance of seven update seven and put seven comma three in the queue. So this is also done. Now let's take the next element. The next element comes out to be one node equal to two. Where can two go? Two can go to node zero with another one, which makes it a distance of two, not to be considered. Two can also go to node three with a distance of two, which makes it a total distance of three. So node three is having a better version three. So three comma three. Perfect. Next. So the point of observation, observation one, whenever you add three, now you came by one path, which took you something like three plus four, seven, seven comma three is there. And you came by other path, one plus two, which is three. So three is also there. So there are two parts which are there. Now, if you'd have used priority queue, you would have actually dealt with just three, like this path, instead of dealing with this path. Now, since you're dealing with a queue, you'll end up dealing with seven comma three, which is a bit of time consuming. Okay. And now three can go to one, which will take it four and makes it a total distance of 11. Three can go to two as well, which will take it a distance of two,"
+    },
+    {
+      "chunk_id": "L159_C4",
+      "start": 224.24,
+      "end": 300.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=3dINsjyfooY&t=224s",
+      "text": "and makes it a total distance of 11. Three can go to two as well, which will take it a distance of two, which will make it nine. Both of them will not be considered. And then it can go to four, which will take a distance of two, which will make it a distance of nine. So nine comma four, it can also go to five, which will take him a distance of one. So the total distance will be eight, five will be eight, eight comma five. Perfect. So done. Next, we'll just omit everything. Next, we'll come up with the next guy, three comma three. So again, we have node three. Now, zero will not be there. Two will not be there because these things are not possible. Like you, you can't go back to there because the distance will be more. But when I try to go to four, this time, it takes a two, which makes it a better distance of five. So four, what's a better distance of five comma four, right? And you can also go to five, which will be plus one, which makes it a distance of four. So five can also be done with four, four distance. So this is done. Did you see something? Unnecessary occurrence. Did you see something? I can reach five using four, but there is still an occurrence of eight comma five. I can reach"
+    },
+    {
+      "chunk_id": "L159_C5",
+      "start": 301.84,
+      "end": 377.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=3dINsjyfooY&t=301s",
+      "text": "occurrence. Did you see something? I can reach five using four, but there is still an occurrence of eight comma five. I can reach four with five, but then there is still an occurrence of nine comma four. Why did that happen? Because you also considered this path. You also consider this path. Then you came and considered this and this. How do you use a priority queue instead of this? Then the seven comma three would not have been considered. The seven comma three would not have been considered and you'd have considered just three comma three at the first. So afterwards, when seven comma three would have arrived, it would have not found shorter distances. That's why using the minimal distance is preferred so that you don't encounter a lot of paths. So you're just doing a brute force. If you use queue data structure, you're going on all parts, all parts, all parts, and then figuring out the minimal. And I'm like, I'll go, but I'll be like greedy. I'll go to the minimal first, minimal first, minimal first, so that I can mark all the minimal that I can reach. Then I'll go to the other guys. That's why a minimal is important. Otherwise you end up exploring too many parts. It will give you the answer. I'm not saying that it won't. It did give you over here, but you're exploring too many parts, unnecessary occurrence of these guys, unnecessary exploration"
+    },
+    {
+      "chunk_id": "L159_C6",
+      "start": 377.76,
+      "end": 453.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=3dINsjyfooY&t=377s",
+      "text": "not saying that it won't. It did give you over here, but you're exploring too many parts, unnecessary occurrence of these guys, unnecessary exploration of parts, unnecessary iterations. So I hope I was able to explain you why a queue is not preferred because it takes a lot more time complexity. I hope the intuition is also clear now because of priority queue, we always travel to the minimal guys first and we explore minimal, minimal, minimal, and we ultimately have reached all minimals. Since we are doing a traversal thing, we reach minimals always. Cool. What's the next thing? The time complexity. Why the time complexity is E log V where E is total number of edges. Very, very important. Total number of edges and V is the number of nodes. Why is that? So is this the pseudo code of priority queue? It is. This is how the pseudo code of the priority queue looks like. So I'm saying while P, Q dot not empty. So at max, I can say that this loop will go through all the nodes, which is V at max like twice or thrice. It won't go like a lot of things because you're following the greedy strategy of going to every node, every minimal node. So I can say this while loop is going to run for the total number of nodes, which is V. So I can say this probably will run for V, right?"
+    },
+    {
+      "chunk_id": "L159_C7",
+      "start": 453.92,
+      "end": 530.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=3dINsjyfooY&t=453s",
+      "text": "is going to run for the total number of nodes, which is V. So I can say this probably will run for V, right? So V into the entire thing, V into this entire thing, correct? So V into what? This is going to take a logarithmic of heap size. Heap size, very important. Logarithmic of heap size at the worst case. This is number of edges. This is number of edges of every node. Number of edges of every node. Let's take the densest, like the dense, the most dense graph where if there are four nodes, for an example, this is one node. This is connected to everyone. And this guy is also connected to this, this, and this, this guy is also connected to this, this, and this, this guy's also connected to everyone. But this is the most dense node where everyone is having N minus one nodes. Every guy is connected to all other nodes possible. That is the most dense graph possible. If you avoid self loops, I don't want self loops. I want this guy connected to everyone. I want this guy connected to everyone. I want this guy connected to everyone. Got it? I want this guy connected to everyone. That is what you call as a dense graph. So I've"
+    },
+    {
+      "chunk_id": "L159_C8",
+      "start": 530.72,
+      "end": 606.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=3dINsjyfooY&t=530s",
+      "text": "everyone. Got it? I want this guy connected to everyone. That is what you call as a dense graph. So I've taken dense graph and I'm saying any, any is what this will iterate at the worst case. What can be any if I ask you, if every guy is connected to all the nodes, how many nodes can one have? So can I say it'll be V minus one? Because if you see this guy is connected to three in four nodes, one, he himself, other three. So V minus one. So I can say this will run for at max V minus one. And then there is an update, a conditional check, which is okay. And then there is another push, which will go for log of heap size. Understood? Perfect. So if I write it properly, can I write it something like this? V in overall into pop vertex from min heap, number of edges on each vertex into push into the priority queue. Isn't it this? And then any into push. Correct? So if I go across and try to write it, you know, it, this as V into pop log of heap size plus any into log of heap size. I can, I'll go. And can I see any is nothing like,"
+    },
+    {
+      "chunk_id": "L159_C9",
+      "start": 606.64,
+      "end": 683.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=3dINsjyfooY&t=606s",
+      "text": "heap size plus any into log of heap size. I can, I'll go. And can I see any is nothing like, can I just take logarithmic of heap size to be common? I can. And if I take logarithmic of heap size to be common, I'll have any plus one. Yes. Perfect. Next. I figured out what was any, any was V minus E because at max, everyone can have V minus one at just in notes at max. So can I replace this with something like V minus one? So minus one and plus one will go. So will it be like V into V into logarithmic of heap size? It will be, which is nothing but V square into logarithmic of heap size. Indeed. Now what is this heap size? We need to figure this out. What is this heap size? So when we are taking a priority queue, when we are taking a, something like a priority queue is whenever we are taking something like a priority queue at the first step, if this guy goes to this, this, this, and finds everyone to be having a smaller distance, it will indeed push three notes. It will indeed push three notes. This guy will end up pushing"
+    },
+    {
+      "chunk_id": "L159_C10",
+      "start": 683.28,
+      "end": 756.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=3dINsjyfooY&t=683s",
+      "text": "a smaller distance, it will indeed push three notes. It will indeed push three notes. This guy will end up pushing three notes. Then what do you do? You take out this first guy and imagine this guy is also connected to three notes. Again, this guy is also connected to three notes. Again, this guy again, finds better, better, better. So hypothetical, like it's a worst case scenario. It again will push three notes. Correct? Then we'll get this guy. This guy is again connected to three guys. Hypothetical again, again, it will get smaller distances and it'll again push three. So at the worst, like again, you'll get this. Again, you'll get this, which will again be connected to three guys, which will again push all of these three. Because three guys, two, three separate notes, pushing it again and again. So can you see three plus three plus three, which is equivalent to N square notes? Because everyone like it has something like N minus one plus N minus one plus N minus one keeps on pushing every time. Every day. Can I say somewhere near about V square notes is the worst heap size. Again, very hypothetical scenario will not happen, but I'm taking the extremist case. So can I say the heap sizes, nothing but"
+    },
+    {
+      "chunk_id": "L159_C11",
+      "start": 757.68,
+      "end": 832.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=3dINsjyfooY&t=757s",
+      "text": "Again, very hypothetical scenario will not happen, but I'm taking the extremist case. So can I say the heap sizes, nothing but V square? I can at the worst case, everyone is pushing everyone into the heap size. Okay, cool. Now what is logarithmic of V square? Can I write it as two log V? I can. Right now, what is V square is my question. That's the total number of notes. So can I convert this into, you might again ask how? Come on, simple. If one guy is connected to three and everyone is connected to three, that is like one guy is connected to N minus one notes or V minus one notes, right? And there are V notes. There are V notes. Everyone is having V minus one edges. How many in total they will have V square edges, which is the total number of edges. Correct? If one guy is having V minus one, there are V notes, V minus one into V is V square, which is the total number of notes. I can simply convert V square into E and be like E into two log V, which can be written as E log V, which is the time complexity. Worst case, worst case, very hypothetical worst case scenario of Dijkstra's algorithm. So guys, I hope I was able to explain you the time complexity of Dijkstra's algorithm. It did"
+    },
+    {
+      "chunk_id": "L159_C12",
+      "start": 832.0,
+      "end": 869.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=3dINsjyfooY&t=832s",
+      "text": "case scenario of Dijkstra's algorithm. So guys, I hope I was able to explain you the time complexity of Dijkstra's algorithm. It did take me a lot of research because you can just scroll through it. You'll just find people saying E log V. People will not derive or people will not explain you. So I hope I was able to. So just in case I was, please, it's an earnest request, hit that like button. And if you're new to our channel, please, please, please do consider subscribing to us. And if you haven't checked out our DP series and the HD sheet, the links are in the description. Please make sure you check them out. And with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

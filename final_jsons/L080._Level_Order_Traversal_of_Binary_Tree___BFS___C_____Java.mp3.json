@@ -1,0 +1,64 @@
+{
+  "lecture_id": "L080",
+  "lecture_number": 80,
+  "lecture_title": "L8. Level Order Traversal of Binary Tree | BFS | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=EoAsWbO7sqg",
+  "chunks": [
+    {
+      "chunk_id": "L080_C1",
+      "start": 0.0,
+      "end": 71.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=EoAsWbO7sqg&t=0s",
+      "text": "So before starting this video, I would love to thank Relible for sponsoring this entire three series. So do you wish to work with companies like CRED, UpGrad, Urban Company, Raise Your Pay but you are not able to apply because of your lack of experience and lack of opportunities? So here's the solution to this problem. Relible by Unacademy is a hiring platform that helps freshers and experienced people to get jobs in India's top companies. All you need is skills. So what you need to do is you just need to give the Relible test that is completely based on your skills. Depending on your performance, your interview will be scheduled and you will be hired from the Relible platform and the best thing about this is it's absolutely free. So what are you waiting for? Please make sure you check out the links in the description. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be discussing the Level Order Traversal which is another episode from the Free Cut Tree series. So what is a Level Order Traversal? So this is the binary tree that you are seeing over here, right? So if I talk about level, this is the first level, right? So if I write down 1, then if I write down the next level from left to right, from left to right, if I write it down, it will be 2, 3."
+    },
+    {
+      "chunk_id": "L080_C2",
+      "start": 71.92,
+      "end": 144.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=EoAsWbO7sqg&t=71s",
+      "text": "I write down the next level from left to right, from left to right, if I write it down, it will be 2, 3. Again if I write down for the third level, first it's going to be 4, then it's going to be 5, then it's going to be 6, then it is going to be 7. So this is what a Level Order Traversal will be. It's going to traverse in this fashion, then in this fashion, then in this fashion. So you have to print the Level Order Traversal of any given binary tree. So in order to print the Level Order Traversal, in level wise, what we require initially is a Q data structure, okay? So let's define a Q data structure. Now this Q will be initially having the root of the tree, that's 1. Now in order to store the traversal level wise, we will be requiring some data structure. So let's take a vector of vector or an ArrayList of ArrayList for that reason. So I'm going to take a vector of vector which stores the level wise traversal level wise. Now these are the initial data structures that I'll be taking, okay? Now let's start iterating over this Q. So what's the first thing that I have? I have a node which is 1. So let's take this 1 out, okay? So we've taken this 1 out."
+    },
+    {
+      "chunk_id": "L080_C3",
+      "start": 144.24,
+      "end": 223.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=EoAsWbO7sqg&t=144s",
+      "text": "that I have? I have a node which is 1. So let's take this 1 out, okay? So we've taken this 1 out. Now whenever you take this 1 out, please make sure that if on the left of this 1, that's 2, if it exists, if the left exists, just take this left guy and put it into your Q data structure, okay? Now check the right side of 1, just check the right side of 1. Does the right side exist? If it does exist, take this and put it into your Q data structure. Once you have done it for 1, okay? Once you've done it for 1, since there was only one guy of this level, right? What you will do is you will take this 1, put it into a vector or a list, and you'll put it into your data structure which stores your traversals. So put that. So this traversal is completed. Now in the next iteration of the Q, what you will do is whatever is lined up in your Q, just take them. Whatever is lined up in your Q, just take them. You don't need to do anything extra. Just take them whatever is lined up. Now off 2, check the left, that's a 4. On 2, check the right, that's a 5. So first 4, then 5, insert that into your Q data structure. Similarly do it for 3."
+    },
+    {
+      "chunk_id": "L080_C4",
+      "start": 223.16,
+      "end": 295.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=EoAsWbO7sqg&t=223s",
+      "text": "2, check the right, that's a 5. So first 4, then 5, insert that into your Q data structure. Similarly do it for 3. For 3, on the left there is a 6, on the right there is a 7. So let's take 6, let's take 7, and insert into a Q data structure. Once, yes, once on this iteration you have done for 2 and 3, again put it into a list or a vector, and just make sure you put it into your data structure which is storing your level-wise traversals. So you'll put 2 and 3 as of now. Perfect. Then the next iteration, you have these 4 elements. That's your next iteration, right? You have these 4 elements. So what you will do as of now is, you'll take these guys out, 4, 5, 6, 7. So 4 is taken, 5 is taken, 6 is taken, 7 is taken. Does 4 have a left? No. Does 4 have a right? No. Does 5 have a left? No. Does 5 have a right? No. Does 6 have a left? No. So similarly no one has a left or a right. So if it doesn't have, you don't need to push anything into the Q. Now take these 4 guys out, put it into a vector, and put this into your required answer data structure which is 4, 5, 6, and 7."
+    },
+    {
+      "chunk_id": "L080_C5",
+      "start": 295.36,
+      "end": 372.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=EoAsWbO7sqg&t=295s",
+      "text": "guys out, put it into a vector, and put this into your required answer data structure which is 4, 5, 6, and 7. So once this is done, you can say your traversal is completed and if you carefully observe, your Q data structure is indeed empty now. Whenever this is empty, you can say this data structure stores your level order traversal. So this is how you're going to store the level order traversal. So I hope you have understood how to do a level order traversal on any given binary tree, right? Now let's quickly check out the code. So guys I'm going to discuss the C++ as well as the Java code. So on the left side you can see the C++ code, on the right side you can see the Java code. So initially you can see that you're given the root of the binary tree, right? So what we can see is, initially I've declared the data structure which is going to store the list or the level wise traversals. Right after that I see if the tree that is given to us, if that is empty, I'm going to return an empty data structure saying that I don't have any level wise traversals. After that I have defined a Q data structure, right? That's the line. I'm saying Q.push root. So this is the moment when I make sure that I have all the initial configs ready."
+    },
+    {
+      "chunk_id": "L080_C6",
+      "start": 372.28,
+      "end": 438.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=EoAsWbO7sqg&t=372s",
+      "text": "That's the line. I'm saying Q.push root. So this is the moment when I make sure that I have all the initial configs ready. Right after that I just make sure that I take the size. So whatever is the number of elements, for the first time I will have one, for the next time I'll have two, three, for the next time I will definitely have four, five, six, seven, four elements. So I take the size of the element and whatever is the size, I basically traverse for that. So that means I'll traverse for two, three, and the next time I'll traverse for four, five, six, seven. So this traversal is done using this for loop, okay? Right after that what I'm doing is, I'm taking the node. That means I'm just taking two, three, or four, five, six, seven. This is the first iteration, this is the second iteration, this is the third iteration. Across I'm taking every node. So what am I doing is, I'm taking that node and I'm popping it out and whatever node I'm taking, if there exists a left, I'm pushing it into the queue. If there exists a right, I'm pushing it into the queue. Right? And once it is done, I'm storing that node, yes I'm storing that node into some vector. So once the complete iteration is completed, I'll take this vector level and I'll put it into my answer. Got it?"
+    },
+    {
+      "chunk_id": "L080_C7",
+      "start": 438.32,
+      "end": 506.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=EoAsWbO7sqg&t=438s",
+      "text": "into some vector. So once the complete iteration is completed, I'll take this vector level and I'll put it into my answer. Got it? So this is how, this is how, after the entire iteration I can say, my this data structure which is answer will be storing the entire level-wise traversal and I can easily return it. So guys, this is how the level-wise traversal will look like. So guys, if I discuss about the time complexity, that's a big O of N because as you saw, you traverse for one node, two node, three node, four node, five node, six node, seven nodes. So there are seven nodes or big O of N. What is the space complexity? Again I can say it's a big O of N because at the worst case, your queue is going to store all the nodes in itself at a time. Like that can be the worst case. And will we, will we take into account the complexity which this answer data structure is? No, we generally do not take into account that because that is what we are returning, right? That is where we are storing and returning. So that's not taken. So in usual I can say the time complexity of level order is big O of N and the space complexity is also big O of N. So I hope you have understood the entire explanation as well as the code."
+    },
+    {
+      "chunk_id": "L080_C8",
+      "start": 506.5,
+      "end": 527.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=EoAsWbO7sqg&t=506s",
+      "text": "and the space complexity is also big O of N. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also if you are new to this channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

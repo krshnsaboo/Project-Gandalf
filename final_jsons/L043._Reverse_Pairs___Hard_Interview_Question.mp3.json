@@ -1,0 +1,211 @@
+{
+  "lecture_id": "L043",
+  "lecture_number": 43,
+  "lecture_title": "Reverse Pairs | Hard Interview Question",
+  "youtube_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI",
+  "chunks": [
+    {
+      "chunk_id": "L043_C1",
+      "start": 0.0,
+      "end": 70.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=0s",
+      "text": "Hey everyone and welcome back to the channel, I hope you guys are doing extremely well. So we will be continuing with the strivers A to Z DSC course just in case you are for the first time here and you don't have any idea about what this is all about. You can definitely check it out from the link in the description and yeah till now I have covered up till this particular problem. In this video I will be covering up the problem reverse pairs. Now this is a hard problem so please please make sure that you should have seen the problem count inversions and you should also be knowing about merge sort in detail. So if you do not know about this pause this video right away, there's a link in the description go back and watch these couple of videos and then you can come back and resume this video. So what does the problem state? The problem states you will be given an array of integers and what you have to find is the number of pairs and what should the pair do? The left element should be greater than twice of the right element. Let me give you an example. So if I take two which is basically this one then I can say that if I take six from the right which is basically this one six comma two can be a pair."
+    },
+    {
+      "chunk_id": "L043_C2",
+      "start": 70.08,
+      "end": 144.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=70s",
+      "text": "then I can say that if I take six from the right which is basically this one six comma two can be a pair. Why because six is greater than twice of two it is as well as I can say nine comma two is a pair as well I can say twelve comma two is a pair as well I can say nineteen comma two twenty five comma two forty comma two all of them are possible but something like nine comma six is not possible. Why because nine is not greater than twice of six. Got that? Even something like twelve comma six is not a pair. Why because twelve is not greater than twice of six. So the key idea over here is it has to be greater than twice of and the problem count inversions if you have seen the previous video in the problem count inversion the problem was array of i should be greater than array of j. So we were able to solve this problem but this is slightly different. You have to solve it keeping in mind that it is greater than twice of. So any left element should be greater than the right element by twice. That is what the problem states. Over here if I have to count the number of pairs for two all of them can form a pair which is basically I can get six pairs for six all of them can form a pair these people"
+    },
+    {
+      "chunk_id": "L043_C3",
+      "start": 144.76,
+      "end": 201.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=144s",
+      "text": "of them can form a pair which is basically I can get six pairs for six all of them can form a pair these people cannot so I will get three more. For nine this cannot this can this can this can so another three. For twelve this cannot this can this can so another two. For nineteen this cannot but this can so another one and then for twenty five this cannot so we are pretty much done with it so the number of pairs that you will get for this one is fifteen and I want you to return the number fifteen. I don't want the pairs I just want the number which is fifteen that is what the problem states. So the problem comes up in an interview what are the first solution that you will give to the interviewer that is definitely the brute force solution. So what is the extreme naive solution that comes to your brain. It's like okay I need the i I need the j basically I need a pair. Can I generate all the pairs? How can you generate all the pairs? It's very simple. You stand at forty and we go through all the numbers on the right. You stand at twenty five and you go through all the numbers on the right. You stand at nineteen and you go through all the numbers on the right."
+    },
+    {
+      "chunk_id": "L043_C4",
+      "start": 201.74,
+      "end": 263.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=201s",
+      "text": "you go through all the numbers on the right. You stand at nineteen and you go through all the numbers on the right. You stand at twelve and you go through all the numbers on the right. right. So this is what I will do. I probably go through every number so that's basically i equal to 0 to n minus one so this i will be like first over here than it'll go here than it will go here than here then here and keep on going. So whenever i is here, where should we start from? We should start from right of i. So it starts from 25, goes till 2. If we are at 25, it should start from here, go till here. So quite simple. So what I'll do is, I'll go ahead and run the j loop from i plus 1 and it'll again go on till n minus 1. Very simple. And what will I write? If I'll write the condition if a of i is twice of a of j. If a of i is greater than twice of a of j, I will keep a counter which will keep me count. So initially counter can be zero. So I can complete these four loops and whatever count is there after the finishing of the i-th loop will be my answer. But what will be the time complexity of such an approach?"
+    },
+    {
+      "chunk_id": "L043_C5",
+      "start": 263.06,
+      "end": 333.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=263s",
+      "text": "there after the finishing of the i-th loop will be my answer. But what will be the time complexity of such an approach? Obviously, it will be of n squared, not exactly n squared, somewhere near about. Why? Because this is running for n times and for the first time this will run for these many times, for the next time for these many times, somewhere near about n, near about, near about, not exactly. So thereby the time complexity is b go of n squared. What about the space complexity? The space complexity can be called as b go of 1 because we are not using any external space. Obviously, over here, the interviewer will not be happy with the n squared and he'll ask you to optimize it. This is when we move to the optimal solution. So the last approach was taking n squared and we have to reduce it. So if we have to reduce it, it'll be somewhere in login or b go of n and that is something we are getting as a hint. So if you remember the last problem, count inversions, we did take examples where I was taking two arrays. So let's for the moment forget about this problem. Let's go to a problem where we have been given a couple of sorted arrays. Yes, if you see both of the arrays are sorted in an ascending order. So let's take this and I've asked you for these couple of arrays,"
+    },
+    {
+      "chunk_id": "L043_C6",
+      "start": 333.58,
+      "end": 399.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=333s",
+      "text": "you see both of the arrays are sorted in an ascending order. So let's take this and I've asked you for these couple of arrays, can you find me the number of pairs? Can you find me the number of pairs where if you take something from the left, that should be greater than whatever you're taking from the right array. For an example, if you take 21 from here, then you could pick up two and this can be a bear 21 comma one can be a bear 21 comma three can be a bear, but 21 comma 13 cannot be a bear because 21 is here, 13 is here, that's okay, but it's not greater than twice. So this cannot be a fair, again, something like six and 25 cannot be a bear, something like one and nine cannot be a bear. Only bear is possible if something is from the left and something is from the right, then only a bear is possible. Alright, so let's again go the same way as we moved in the count inversions problem. So we have two arrays, this one and this one, both of them are sorted. So in the count inversions, what we did was we were basically having a condition as array of i greater than array of j. So in a case where we were standing at three and we were standing at six, we were sure enough, we were sure"
+    },
+    {
+      "chunk_id": "L043_C7",
+      "start": 399.28,
+      "end": 472.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=399s",
+      "text": "j. So in a case where we were standing at three and we were standing at six, we were sure enough, we were sure enough that if three and six are compared, six is greater than three. So thereby, all the numbers, all the numbers can form a pair with three. Why? Because six comma three can be a pair according to this condition. Similarly, six comma 13 comma three can be a pair, 21 comma three can be a pair, 25 comma three can be a pair. And that was only possible because this three was smaller than six. Thereby, all the numbers on the right of six will always be greater than three. That's why it was possible. And that's why we ended up taking the count four as the answer because if three can form a pair with six, it can form with every one. But over here, that condition or that process will not work. Why? Because over here, six, I know six is greater than three, but I know six is not greater than twice of three, not. So six cannot form a pair, but 13 can, 21 can, 25 can. So you'll miss out, you'll miss out. We'll just take three and you'll move forward to four. So you'll miss out on these pairs. The only reason it worked for this one is, is very straightforward. If six forms,"
+    },
+    {
+      "chunk_id": "L043_C8",
+      "start": 472.16,
+      "end": 540.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=472s",
+      "text": "four. So you'll miss out on these pairs. The only reason it worked for this one is, is very straightforward. If six forms, these will form. But over here, you have a condition. You have a condition, let me write the condition now. You have a condition of array of i greater than twice of array of j. So it doesn't matter if this one is forming a pair with this one or not. Because if six is not the forward, like the next elements might be, so you will be missing it. Got it? But you did not understand? Roll back, watch it again. You'll understand for sure. So we cannot apply a method where we say if six is forming a pair and the others will, because that doesn't work. Because if six doesn't form a pair, the others might, the others might, so we will miss out. So we'll try to apply some other logic. Understand the logic will be slightly different. We'll try to stand over here and see who can, like who can form a pair with six. We will stand at 13 and it's a who can form a pair. We will stand at 21 and we will say who can form a pair. Let's, let's start and then we will try to optimize. First I'm standing at six and I'm asking you which people can form a"
+    },
+    {
+      "chunk_id": "L043_C9",
+      "start": 540.64,
+      "end": 616.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=540s",
+      "text": "let's start and then we will try to optimize. First I'm standing at six and I'm asking you which people can form a pair. You'll be like one can, two can. So these two people will definitely form a pair with six. Right? So let me write this. Six can form a pair with one comma two, not with three, not with three because it is greater, not greater equal to. Okay. Let's go to the next 13. Let's see for 13 who can form a pair. For 13 this can, this can, this can, this can, this can, this can. Every one of these can. So let's write that. For 13, one, two, three, four, four and five can. Not nine, not nine. Okay. Perfect. Let's move to the next, which is 21. For 21, which elements can? This can, this can, this can, this can, this can, this can, this can. Okay. Can this still? So one can, two can, three can, four can, four can, five can, comma nine can. Perfect. Let's go to the next one, 25. For 25 who can? This, this, this, this, this, this, this, this, this, this, this, this, this, this, this, this, till here, not 30. So for 25, actually I can take all the elements and I can take 11. Do you see a pattern? You do, you do. If one and two can form a pair with six, I'll repeat."
+    },
+    {
+      "chunk_id": "L043_C10",
+      "start": 616.72,
+      "end": 688.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=616s",
+      "text": "can take 11. Do you see a pattern? You do, you do. If one and two can form a pair with six, I'll repeat. If one and two can form a pair with six, they can also form a pair with 13. Why? Please hear me out properly. The reason is 13 is greater than 13 is greater than six. So all the elements that form a pair with six will also form a pair with 13 will also form a pair with 21 will also form a pair with 25. Because if six is greater than someone, 13 is bound to 21 is bound to 25 is bound to be. So I'll try to use this analogy that the same elements can be reused. If you see same elements are being reused, I'll try to form and use this because as of now, what I'm doing is for six, I'm trying to find the keys for nine. I'm trying to find some iterating throughout, which might end up taking a lot of time. So this is where, because it is sorted, I'll end up using a very simple formula, not a formula, rather, or I treat of ticking for six. Let's see till which we can have an answer. This one can, this one can, and this one cannot. So I'll stop here. I'll stop here. I checked for one, it can, for two, it can, like I'll check for this condition. Six is greater than"
+    },
+    {
+      "chunk_id": "L043_C11",
+      "start": 688.4,
+      "end": 765.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=688s",
+      "text": "here. I'll stop here. I checked for one, it can, for two, it can, like I'll check for this condition. Six is greater than twice of one, six is greater than twice of two, six is greater than twice of three. So I stop, I stop here. So for six, I stopped here. Can I say I will take two to my answer because of these two elements? I can, so I've taken. Next I'll move to 13. Now remember, you don't need to start checking from the first again, no need. Straight away start from three, straight away start from three. Okay, for 13, three cross three. Yes. For 13, sorry, for 13, two cross three. For 13, if I go here, two cross four. For 13, if I go here, two cross four. For 13, if I go here, two cross five. If I go here, 13, two cross nine. No. So we stop here, we stop here, it's not possible. So I go check, check, check, and this out, and this is where it comes out to be not possible. So all these elements are apparently possible. So how many elements do you get now? One, two, three, four, five, six. So six added to the answer. Perfect. Let's move to the next, 21. Let's see for 21. Again, see for 21, you do not need to start from the first. You can straight away start from ninth. You don't need"
+    },
+    {
+      "chunk_id": "L043_C12",
+      "start": 765.36,
+      "end": 843.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=765s",
+      "text": "21. Again, see for 21, you do not need to start from the first. You can straight away start from ninth. You don't need to start from one, you can straight away start from nine. For 21, two, nine, yes. Let's move. For 21, two, 11, no. So you stop here. You stop here and you can say nine can be taken. So apparently seven elements this time. Perfect. Let's move to the next, 25. For 25, two, 11, yes. So you move ahead. For 25, two cross 13, no. So you stop. So you moved ahead and you stopped here. So apparently this time, eight more elements. I'm done. So for every element, I figured out it can, like how many elements can it form a pair with? And this will be my answer. The total will be my answer. Because those many pairs I can form from the left and from the right. Quite simple. It wasn't that tough. So this is what we will try to implement in the merge shop. Why? Because both the parts are sorted. And if you remember, where did we have sorted arrays? Right? Because the starting arrays definitely might not be sorted. So we know one thing for sure. When we break them down in merge shop, we get sorted parts. So if for every sorted part, if for every sorted part, I can compute the answer. The overall answer will be my answer."
+    },
+    {
+      "chunk_id": "L043_C13",
+      "start": 843.04,
+      "end": 918.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=843s",
+      "text": "parts. So if for every sorted part, if for every sorted part, I can compute the answer. The overall answer will be my answer. Similar to what we did in count inversions. Got this logic? So instead of relying on two pointers, I slightly changed the two pointer technique. Right? So now let's come back to our original problem. Now we did solve a different problem where we were given two sorted arrays. So if I have the original array, how can I take them to a portion where they have two sorted arrays? The best is to perform a merge shot because it divides, divides, divides, and then it auto converts them to two sorted arrays. So let's try to do it. So first I'll try to break it down into two portions and this portion will be 40, 25, 19, and 12. And the right will be 9, 6, 2. Let's try to solve the left part first and then we can solve the right part. So this will be 40, 25, whereas this will be 19 and 12. Let's try to solve this. This will be 40 and 25. So let's first solve the left part and then we will try to solve this. So we have 40 and 25. So if I try to write them separately, 40 and 25, just try to map this to this problem. Isn't it the same? Two sorted arrays,"
+    },
+    {
+      "chunk_id": "L043_C14",
+      "start": 918.16,
+      "end": 992.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=918s",
+      "text": "try to write them separately, 40 and 25, just try to map this to this problem. Isn't it the same? Two sorted arrays, find me out the number of pairs. Okay, let's try. We stand here for 40, it's 25. 40 greater than 2 of 25. No. So we stop here. We stop here. How many elements before that? No. So zero pairs. Let's move. So we got zero pairs when we take 40 and 25 as two separate arrays. Perfect. But this step is done. This is a different step. This is not the same step. Please, please remember this. This is not the same step as merge. Once you have done this, then you do the normal step of merging, which is basically 40 and 25, which is smaller. 25, you take it and then you take the 40. This is a completely different step. Please, please remember that this is a completely different step. So I've got 25 and 40. So this time what I'll do is, I will go back and I'll try to change it to 25 and 40. Perfect. So the left portion is done. Now let's go to the right portion. On the right portion, we can again go ahead and split it to 19 and 12. Perfect. And if I again try to write it separately, because I'll have to come back. So whenever you're coming back from the"
+    },
+    {
+      "chunk_id": "L043_C15",
+      "start": 992.4,
+      "end": 1065.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=992s",
+      "text": "Perfect. And if I again try to write it separately, because I'll have to come back. So whenever you're coming back from the merge shot, you know you're merging it, but before merging, you perform one small step. Before merge it, again, try to map it to the same problem we solved. But 19, let's try to find it out. Can 25 be? No, it cannot be. So apparently, anything before 12, like there are no numbers, so zero base again. Done. Our step is done. Do the merge step. So on merging, you'll get 12 and 19. So this will be 12 and 19. So I merged it. Perfect. Merged. What's the next step? This left and this right, because both of them are solved. Try to merge them. So before merging, we will perform our step. So let's write them 25, 40. Again, try to map it to our problem. Can I map it to our problem? Yes, I can. Why? Because this is the left sorted array. This is the right sorted array. Let's try to map them. So for 25, if I try to figure it out, can 12 be possible? 25 greater than 2, twice of 12. Yes, possible. So I'll move to the next. Can 19 be possible? 25 greater than twice of 19. No. So I stop here. It's not possible. So everything before 12, very important. Everything before 12"
+    },
+    {
+      "chunk_id": "L043_C16",
+      "start": 1065.84,
+      "end": 1139.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1065s",
+      "text": "25 greater than twice of 19. No. So I stop here. It's not possible. So everything before 12, very important. Everything before 12 is possible. So I'll add one to my answer. I'll add one to my answer. Perfect. Let's go for 40. 40 greater than twice of 19. I'm like, yes, possible. So let's move it. And we are running out. We ran out of numbers. Since we ran out of numbers, can I say, can I say for sure, since we ran out of numbers, for 40, there'll be these two numbers. So two more. And then we will run out of 40 as well. Done. Our step is done. Once your step is done, you simply perform the merge step. And in merging, you'll get 12, 19, 25, 40. You just perform the merge step, which is in the merge shot. No need to do anything different. Just perform the merge shot. 12, 19, 25, 40. So I can say that I have solved the left portion. Now it's time that we go ahead and in the recursion, solve the right portion. So this will give me nine and six, and this will give me two. Perfect. What's the next step? Nine and six, nine and six. Again, try to map it into similar zones, because they're two sorted arrays for nine. This is not possible. So we stop here, zero pairs, and it's over. So"
+    },
+    {
+      "chunk_id": "L043_C17",
+      "start": 1139.92,
+      "end": 1200.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1139s",
+      "text": "similar zones, because they're two sorted arrays for nine. This is not possible. So we stop here, zero pairs, and it's over. So just quickly merge them. Let's quickly merge them. I'm going faster now. Six and nine. And over here we have a single element. So let's try to again do the same job. Six and nine, left array, left sorted array rather, to the right sorted array. Let's stand at six. Can't to be possible. Six greater than twice up to possible. So we'll take it and we'll move forward. There are no further elements. So if there are no further elements, this is just one element on the left. And thereby I can say that this particular one element is possible. So I'll take one to my answer. Perfect. And then I'll try to move it. And when I try to move it, again, there are no further elements to compare. So I'll just take that one element which is there, which is plus one. And I can say my step is done. Once my step is done, you can merge them. So let's go ahead and merge them. Let's go back and try to merge them. So you'll get two, six, nine. Perfect. I merged them. What's the next step that you'll do? You have this and this. We will go back and try to merge them as well. So"
+    },
+    {
+      "chunk_id": "L043_C18",
+      "start": 1200.4,
+      "end": 1266.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1200s",
+      "text": "the next step that you'll do? You have this and this. We will go back and try to merge them as well. So let's try to merge them. You have 12, 19, 25, 40. And over here you have two, six, nine. Let's try to perform our operation. We are standing at 12. So let's quickly start from two. Let's check. Can 12 comma two be a pair? Can it be? It can be. Why? Because 12 is greater than twice of two. So it is possible. Let's move ahead. Can 12 comma six be a pair? The answer is no. Why? Because 12 is not greater than twice of six. So it cannot be a pair. So everything before six, which is one, yes, there will be one element which can be a pair. So just add one to your answer. Once you've done that, you can move it to 19. At the moment you move to 19, you start comparing nine greater than twice of six. Yes, that's possible. So you move ahead and you compare 19 greater than twice of nine. Yes, that is possible. So you move ahead and you finish. When you finish, and when you finish for 19, you can see all the three elements can form a pair. So what you do is you go ahead and add three to your answer. Very good. Next, you go to 25 and you see there are no numbers to"
+    },
+    {
+      "chunk_id": "L043_C19",
+      "start": 1266.0,
+      "end": 1334.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1266s",
+      "text": "you go ahead and add three to your answer. Very good. Next, you go to 25 and you see there are no numbers to compare. You have already finished. If you've already finished, all of these three numbers can be a part. So you'll again add three to it and then going ahead you'll move to 40. Again, all of the numbers are finished. So you'll add up three and then you'll end up once you have ended, your job is complete. Your small job is complete. And if your small job is complete, try to merge it on Oh, my bad. So on merging, what you can do is you can merge them and you'll get to six, nine, 12, 19, 25, 40. And once you've done this, you can add them up 3456. And there's nine. So 15. If you remember, initially, we got 15. And this is what the most short algorithm will also give you. Again, I'll not be reiterating on the fact that why does more short give you the answer of all pairs because I've already explained that in the problem count inversions. It's because very simple because 1425 within themselves have got it. So now they are looking for the right. And when they have got it, now they look for the right. So it's basically that concept that we have used in the count inversions. So we have pretty much solved it. So basically, what we have to do is"
+    },
+    {
+      "chunk_id": "L043_C20",
+      "start": 1334.24,
+      "end": 1395.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1334s",
+      "text": "concept that we have used in the count inversions. So we have pretty much solved it. So basically, what we have to do is we have to perform our single step before the merge. So we have to write a function which does it. So let's quickly go back and try to probably write that function. So let's probably think it as a more short thing. And if you remember, if you remember in the more short, this is usually low, this is usually mid, this is usually mid plus one. And this is usually high. You know, right, more short, when you are doing a more short, this is your left portion of the array. And this is your right portion of the array. Again, more short has to be clear, it has to be in your head, then only you'll understand this. This is your left portion of the array. And this is your right portion of the array. You're trying to figure out the pairs between them, right? Because the left is sorted, the right is sorted. So what we can do is we can say for i equal to low, and it can go ahead till mid, because for every number, you have to find our answer. For every number, we have to find our answer. And we can keep counter as zero. And inside this, we'll try to write our logic. Let's try. So initially, I'm over here, six, what am I"
+    },
+    {
+      "chunk_id": "L043_C21",
+      "start": 1395.68,
+      "end": 1465.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1395s",
+      "text": "keep counter as zero. And inside this, we'll try to write our logic. Let's try. So initially, I'm over here, six, what am I trying to do? I'm trying to figure out, like, is one possible? Yes, it is. Is two possible? So I'm trying to figure out in the right. So I know the right will always start from mid plus one, the right will always start from mid plus one. So let's try to figure out. So I'll be like, why, I know the right will go ahead, till this portion, till it's less than equal to high, it will go. And at the same time, I know one thing, let's, let's keep on going if it is correct. If the condition is correct, if the condition is correct, let's keep on going. Great, the condition is correct. So for you, one is correct. So let's go for here, two is correct. For three, it is wrong. If you see for six, three is incorrect, because six greater than two of three, this will be wrong. This will be wrong. So you stop. And apart from that, you just keep going. And it will stop at this three, whenever it's not possible. So when you're stopping at this, for six, how many elements? Two elements can form a pair. And if you're standing here, which is your right, how will you get the number of elements on the left? Quite simple."
+    },
+    {
+      "chunk_id": "L043_C22",
+      "start": 1466.16,
+      "end": 1533.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1466s",
+      "text": "a pair. And if you're standing here, which is your right, how will you get the number of elements on the left? Quite simple. You say count equal to count because previous count plus, you say right minus mid plus one, that will give you the number of elements, which are here, quite simple. And at the next time, what will happen? This will move here, which is 13. And this time right stands here and checks for three. And it says yes, then it moves to four, then it says yes, then it moves to four, says yes, and moves to five, says yes, and it moves to nine, says no. And the while loop stops. So when the right goes here, this time, the number of elements will be this, and you can easily subtract and get it and eventually it will keep on moving. So this is the function that you have to write that will give you the number of pairs and the overall count for every, every, every merge will be your answer. So let's quickly try out the problem. Again, you can find the problem link in the description and please, please make sure that you try out the problem from the link in the description itself. So going back to the sheet, I know I'll be requiring more short. So I'll go to the article and I'll try to just pick up the code. So this is the code that we have"
+    },
+    {
+      "chunk_id": "L043_C23",
+      "start": 1533.12,
+      "end": 1605.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1533s",
+      "text": "short. So I'll go to the article and I'll try to just pick up the code. So this is the code that we have written in the most short video, you can find the Java code over here. So going here, what I'll do is I'll simply copy paste this because that is the most short algorithm. I have been given an array and an N. So let's quickly call this merge sort with the array zero and N minus one. So merge sort will be sorting it. I know one thing before the merge, I have to perform my magic. So maybe count pairs and I'll pass on the array, the low, the mid and the high. And let's try to write down this count pairs. So void count pairs, and this will be taking the array, the low, the mid and high again can be like, instead of writing a separate function, you can also write it inside the merge, but that is not, not a good practice, better write a cleaner code. So this is where I have to count the code. So count the pairs rather. So what I'll do is I'll keep a global variable just so that you understand it easily. Now, what I'll do is I know one thing. If you remember the pseudo code, we always started from low because I have to go through every variable, everything on the left"
+    },
+    {
+      "chunk_id": "L043_C24",
+      "start": 1605.84,
+      "end": 1680.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1605s",
+      "text": "If you remember the pseudo code, we always started from low because I have to go through every variable, everything on the left array, and I will be going on till mid. This is something which we know for sure. And if you remember, we had a right, that always started from mid that's one. And what did we write inside? While this right is lesser than equal to high. And, and this right, or rather a of I is greater than twice of a of right. It's perfect. Let's go ahead and move right. And once this is done in the count, all the left elements to the right, which is bit plus one, please add them. And once you've done this, this should be counting all the base. And eventually you can go ahead and return the count. Well, this one, this should because this will end up counting like this will make sure that everything is counted. Let's quickly see if we missed up something. Yeah, we missed up. This will be added. This will be added. Perfect. Let's run it up again. Should be running fine. Yeah, that's fine. But we're using a global variable, which is not a good practice. So let's quickly get rid of this. Let's quickly convert this into an int and let's have an int count equal to zero and let's have this return count. So every time you have two arrays, you have two arrays, every time the merge shortest"
+    },
+    {
+      "chunk_id": "L043_C25",
+      "start": 1680.88,
+      "end": 1748.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1680s",
+      "text": "equal to zero and let's have this return count. So every time you have two arrays, you have two arrays, every time the merge shortest point and those two arrays are merged. And before that you're counting. So maybe count every time you're counting. So we can keep a count variable here. Similar to what we did in count inversions. Convert this into integer. And for every, every merge that you're calling, it will definitely return you a count. It will definitely return you a count, right? So that count has to be added. So every return count, every return count from every single more short plus the current one. So basically what I'm saying is for this one, sorry, aha, my bad. For this one and for this one, I will be merging them. But before this, they gave an answer. They give an answer. Also they give an answer. So please add these things and please add these things and then only you can come away. So it's basically, please add the bottom ones and then you can add the current module and eventually you can return this. So this time, instead of having a global variable, I can go ahead and return this particular thing. This will definitely distort the array. Make sure that you mentioned that to the interview as well. Okay. Any problem? Okay. This will be written code, which is basically"
+    },
+    {
+      "chunk_id": "L043_C26",
+      "start": 1748.16,
+      "end": 1812.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1748s",
+      "text": "Make sure that you mentioned that to the interview as well. Okay. Any problem? Okay. This will be written code, which is basically zero. If it runs out of the boundary, once we have done this, let's quickly submit this and see where it's running. Fine. Should be fine. I am assuming it is fine. So what is the time complexity? If I ask you, can I see the time complexity will be, I know one thing, login is for the divisions that you do, like because you divide and we go of n was for the merge operation. So I'm now doing another operation, including the merge before the Marshall. So what is that another operation? That is nothing but this one. How much time is it like on a naked eye, it might look like a big of an another big of it, but if it's not, why? Because he did an optimization for a six, we went for 12 for a 13. We again restarted from here and we went on to here for 21. We restarted from here. We went off here for 25. We went on to this. So it's like, we're not always for six. We're not always doing this for 30. We are not always doing this for 21. We're not always doing this for 25. We are not always doing this. So they are by calling this as"
+    },
+    {
+      "chunk_id": "L043_C27",
+      "start": 1812.48,
+      "end": 1877.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1812s",
+      "text": "this for 21. We're not always doing this for 25. We are not always doing this. So they are by calling this as big of N will be a wrong, it'll be wrong. So thereby, if I carefully analyze one, two, three, four, this one, so that's like big of N one, right. And can I say, this is like, every time you touch everything once, all the elements are touched one. So it's N two, because first time might be this much. Next time might be this much. Next time might be this much. Next time must be this. So the wine loop overall, overall runs fine too. So can I say N one plus N two, which is the equivalent of the merge, whatever merge was taking, can I say this, because merge also does the same thing. It goes through every element individually and merges it. And over here, we are doing the C going through every element individually. So I can say easily it's to a login because we're doing kind of similar merge kind of a thing, but in a other fashion. And what about the space complexity? We go off N for the merge and we are distorting the array. Please mention that to the interview because you have to tell to the, uh, tell it to the interview that, Hey, I'm distorting"
+    },
+    {
+      "chunk_id": "L043_C28",
+      "start": 1877.6,
+      "end": 1932.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1877s",
+      "text": "mention that to the interview because you have to tell to the, uh, tell it to the interview that, Hey, I'm distorting your array. So in case you have a problem with it, I can take a copy and solve it. So you have to mention that to the interview so that he knows that you're still aware of this thing, that you're distorting the input given. And it's very important to tell to the interview. So once you're done with this, the interview will be happy with you and it'll hire you. So, uh, jokes apart, uh, not jokes, it's a reality. So going back to the sheet, I can say that this one has done as well. So we're done with the reverse pairs as well. I hope you understood this problem. This is a very, very tough problem. So you have to know it beforehand. Don't worry. Like you won't be able to invent this algorithm in the interview itself. So you have to solve these kinds of problems beforehand. So if you understood this video entirely, please, please, please make sure that you like this video. If you are new to our channel, what are you waiting for? Hit that subscribe button, man. We keep on producing these kinds of videos on our channel every now and then. So please do consider subscribing to us. And if you haven't followed me on Instagram, Twitter, LinkedIn, the links will be in the"
+    },
+    {
+      "chunk_id": "L043_C29",
+      "start": 1932.8,
+      "end": 1945.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=0e4bZaP3MDI&t=1932s",
+      "text": "then. So please do consider subscribing to us. And if you haven't followed me on Instagram, Twitter, LinkedIn, the links will be in the description with this. I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

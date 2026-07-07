@@ -1,0 +1,148 @@
+{
+  "lecture_id": "L233",
+  "lecture_number": 233,
+  "lecture_title": "DP 53. Palindrome Partitioning - II | Front Partition 🔥",
+  "youtube_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0",
+  "chunks": [
+    {
+      "chunk_id": "L233_C1",
+      "start": 0.0,
+      "end": 79.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=0s",
+      "text": "Hey everyone, welcome back to take you forward. So today we will be solving this interesting problem palindrome partitioning. Now this will not be similar to MCM DP rather this will come under partition DP like I'll teach you a different form of partition over here. Okay. Now before starting this, there is a palindrome partition one as well. I've done that in the recursion series. Yes. I've done that in the recursion series, just in case you want to watch it, you can, but yeah, let's like, it's not a prerequisite for this problem palindrome partitioning too. Is there any prerequisite? Nothing. Let's get started. So what does the question say? You will be given a string like this. Let me first take a smaller string. Imagine you're given something like ST string equal to double A double B. Okay. Now I ask you cut them into cut them like make partitions. So you can say, okay, I'll make a partition here. I'll make a partition here. I'll make a partition here. I'll make a partition here. So one, two, three, and a string of length four, a string of length four. I am definitely sure if I can make N minus one partitions, then every substring, these are substrings. Every individual substring is,"
+    },
+    {
+      "chunk_id": "L233_C2",
+      "start": 79.52,
+      "end": 157.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=79s",
+      "text": "am definitely sure if I can make N minus one partitions, then every substring, these are substrings. Every individual substring is, will be a palindrome. Every individual substring will be a palindrome. What is a palindrome? A string that reads the same if you reverse it as well. So everyone is a palindrome. So we definitely know a string can be partitioned such that every substring will always be a palindrome. We definitely know that a string can be partitioned such that every substring will always be a palindrome. But how many partitions do you require? N minus one. But over here, they're asking you find the minimum partitions, find the minimum partitions that you will require in order to make the string as palindrome. For an example, in this string, I can also go like, I'll do a single partition. Then also this is palindrome. And then also this is palindrome. Double A, double B is palindrome. Correct? So you can have a one partition and you can have it as palindrome. Now you might come and say, Striver, why do you need two partitions? Because you cannot have A, B, like they cannot be same. So what I see is, okay, this is a particular form of partition where I'm requiring one. Or you can say you can have A, you can also have two"
+    },
+    {
+      "chunk_id": "L233_C3",
+      "start": 157.6,
+      "end": 229.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=157s",
+      "text": "a particular form of partition where I'm requiring one. Or you can say you can have A, you can also have two partitions like this. Even if you do two partitions, they're still palindrome. But the question states, find the minimum number of partitions. They don't want you to find maximum. Find the minimum number of partitions. Does an answer always exist? Yes, because if I do N minus one partitions, everyone will be a single character and everyone will be a palindrome in itself. That is for sure. So somewhere down the line, we have figured out, the question you have to figure out, the minimum number of partitions. So like for this example, like if I just go across and do a B, A, B, and then I do A, B, C, D, A, then I keep D alone, I keep C alone, and I keep this. So I'll be requiring four partitions over here. Four partitions. B, A, B is a palindrome. A, B, C, D is a palindrome. D is a palindrome. C is a palindrome. E, D, E is a palindrome. So if I do four partitions, if I do four partitions, you're bound to say that all the strings, all the substring generated are palindrome. So the answer to this will be four. So this is the question, given a string, you need to tell me when do I have, like how many minimum cuts do I need"
+    },
+    {
+      "chunk_id": "L233_C4",
+      "start": 229.68,
+      "end": 300.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=229s",
+      "text": "this is the question, given a string, you need to tell me when do I have, like how many minimum cuts do I need to make in order to have all the substrings as palindrome. So how do you approach such problems? Such problems are generally solved using front partition. Now what do I mean by front partition? You start off, yes, remember this, you start off from here, okay, and you say, can I do a partition over here? You simply say, can this guy, like can this be a partition? And you'll be like, yes. Why? Because the only string over here is B. The only string over here is B, and it is a palindrome. So you will be like, I can do one partition. You will be like, I can do one partition, and the left over string will be this guy, and I will try to find the answer for this guy. So it is known as front partition. I start from front, and I do a partition, then I solve for this. So I know one partition I've done. So I have to find the number of partitions required over here, right? So either you can do a partition here, or you can go across and say, hey, listen, I am not going to do a partition over here. I'll try to do a partition over here. But the moment"
+    },
+    {
+      "chunk_id": "L233_C5",
+      "start": 300.48,
+      "end": 366.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=300s",
+      "text": "hey, listen, I am not going to do a partition over here. I'll try to do a partition over here. But the moment I try to do a partition over here, B A is not a palindrome. I repeat, B A is not a palindrome there, but I cannot partition. So I'll go across to the next, and can I do a partition? I can. So I will go across and say, okay, let me do a partition on B A B, which will take me this. Then let me have this, guys, okay. So I'll now try to find the answer for this portion. I'll now try to find the answer for this portion after I have partitioned here. Similarly, you go across here, can you do a partition here? No. Can you do a partition here? Yes, because this is a palindrome. Again, you try to do a partition here, which is again, 1 plus, then you'll be left out with C B A D C E D E. Similarly, you'll move ahead. Can you do a partition here? No. You'll move here. Can you do a partition here? No. Can you do a partition here? No. Can you do a partition here? No. Can you do it here? No. Can you do it here? No. Can you do it here? No. Can you do it here? No. So you will have three options of partitioning. One is you do it here and you get"
+    },
+    {
+      "chunk_id": "L233_C6",
+      "start": 366.88,
+      "end": 431.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=366s",
+      "text": "No. Can you do it here? No. So you will have three options of partitioning. One is you do it here and you get one partition. And then you still have this string in which you have to do partitions. Or you can say, I'll do one partition here, and I'll still have this string where I have to do some partition, or you will see, I'll do a partition here and I'll still have this string which has to be solved. So, imagine just imagine like these are three sub problems this is one, this is one, this is one. So, out of these whichever gives you the minimal cuts because this string will give you some number, this string will give you some number, this string will give you some number out of these three whichever cut gives you the minimum number is which is the one that you will consider okay. So, imagine I just take up this partition okay. Imagine I take up this partition where you do B A B and you have A B C. So, again this time, this time remember you will keep a track on A, you'll keep a track on A and can you do a partition here? Yes and when you do a partition here this time you don't check for this because B A B has been taken. So, you just check for this A, so you just check for this A,"
+    },
+    {
+      "chunk_id": "L233_C7",
+      "start": 431.92,
+      "end": 492.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=431s",
+      "text": "check for this because B A B has been taken. So, you just check for this A, so you just check for this A, so just check for this A. So, you will be able to do it. So, you'll be like okay I can do for one and then I'll be left off with B C B A D C E D E. Similarly, can you do it here? No. Can you do it here? No. Can you do it here? No. Can you do it here? Yes, this is a palindrome, this is a palindrome. So, thereby you can do a partition here. So, you can also go on like I can do a partition one plus more and I'll still be left off with D C E D E to be solved. So, in this way you can do a front partition. You start from the front, you start from the front and you go on checking. So, if I ask you how do you start from the front? Now, remember the rules of writing a recurrence because this is nothing but the same logic. It is nothing but the same recurrence logic where you're trying out all possible partitions, you're trying out all possible partitions and the one that gives you the minimal answer is the one that you're taking. So, you'll be like how do you write"
+    },
+    {
+      "chunk_id": "L233_C8",
+      "start": 492.0,
+      "end": 572.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=492s",
+      "text": "and the one that gives you the minimal answer is the one that you're taking. So, you'll be like how do you write a recursion? What is the rule? Express everything in terms of index. So, as I said it's a front partition problem. So, where will be your initial index? You can probably place your initial index at I equal to zero because that is where is you're looking to start the partition from. So, that is where you're looking to start the partition from. So, I can say okay, I will have an index and that is where I'll start looking to make the partition from. As simple as that. Perfect. What's the next step? Next is express all the ways that you can partition or rather express all possibilities as a second step of writing recurrence. Express all possibilities. What is the third? Take the minimal because the question states minimal. Take the minimal of all possibilities and also write the base case for sure. So, can you tell me when is a partition possible? If I ask you when is a partition possible? So, one thing we know for sure is we are expressing everything in terms of index. So, whenever I is zero, I'm basically stating give me the minimum cuts"
+    },
+    {
+      "chunk_id": "L233_C9",
+      "start": 574.56,
+      "end": 648.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=574s",
+      "text": "we are expressing everything in terms of index. So, whenever I is zero, I'm basically stating give me the minimum cuts required to make it make all substrings palindrome rather make all substrings palindrome and can I say if I'm keeping I equal to zero that means in the string from zero till n minus one is what I'm talking in the string zero to n minus one and we've already decided like we have already proved that the minimum number of partitions in such case will always be n minus one which is the length of the string minus one. So, if I is zero that means I am treating this as an entire string then what I do is I try checking what are the possibilities. Can I do a partition here? Can I do a partition here? Can I do a partition here? Can I do a partition here? Can I do a partition here? What am I doing? I am basically iterating from i to j. This is j. This is j. Whenever j is here, this is b a b. Whenever j is here, this is b a b a. Whenever j is here, this is b a b a b. Whenever j is here, this is b a b a b c. Whenever j is here, b a b a b c b. So, you're basically taking a for loop. Right? So, if I try to write the recurrence,"
+    },
+    {
+      "chunk_id": "L233_C10",
+      "start": 648.72,
+      "end": 725.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=648s",
+      "text": "here, b a b a b c b. So, you're basically taking a for loop. Right? So, if I try to write the recurrence, I know it will be i and when do I end? When I don't have a string. When I don't have a string, can I say whenever I reach the end that is when I end? For sure. So, whenever I end that is no partition. If I'm not ending, I know I will start the first partition from j and I'll try on going on till n. j plus plus. Front partition. Now, whenever j is i, first time I'll pick up b, then j will go here. It's b a, then j will go here. It's b a b. So, every time j is moving, I'm just adding a new character in it. Like first it was empty. You added b, then it become b a, then it become b a b and it become b a b, then it become b a b b. So, can I say, can I say probably I can keep a temporary string. I can keep a temporary string and every time I move, I can add s of j into it because from i, because from i to j will always be stored in that temporary. Now, when can I make a partition is the question. I can definitely make"
+    },
+    {
+      "chunk_id": "L233_C11",
+      "start": 725.44,
+      "end": 797.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=725s",
+      "text": "to j will always be stored in that temporary. Now, when can I make a partition is the question. I can definitely make a partition if that string is palindrome. If that string is palindrome, like the temporary string is palindrome. If that string is palindrome, I can, for an example, let's go back and see, can I make a partition at b? Yes. Why b is a palindrome. Can I make a partition at b a? No. Can I make a partition at b a b? Yes. Why b a b is a palindrome. So, temp would have stored at first b, then at a, then at b. So, whenever it gets b a b, it tries to take one for the partition and then calls the string. Which string does it call? See, j was here. So, the next string starts from here. So, i should be here. So, it calls i for the next portion, which is j plus one, which is j plus one. So, I say, okay, remember the cost, the cost encountered will be one for that partition. And then next portion of the string starts from j plus one is what you need to solve. The next portion of the string starts from j plus one and that is what you have to solve. So, that is the cost that you will get. So, for every j partition, you're getting a cost and you need the minimum"
+    },
+    {
+      "chunk_id": "L233_C12",
+      "start": 797.2,
+      "end": 872.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=797s",
+      "text": "solve. So, that is the cost that you will get. So, for every j partition, you're getting a cost and you need the minimum cost. So, probably you can keep the minimum cost as int something as max and the minimum cost will be the min of all of these. So, you can just keep the cost and this is how the partition will be done. And you can easily return the min cost. Yes, you can easily return the min cost and that is how simple it can be. Got it? So, that's how you can easily write the recursion. Whenever you end, you end. Otherwise, you try at every j right from the start till the end. You try everything and every time you're trying it and among all, you take the possibility. So, express everything in terms of index. Done. Explore all possibilities. All partitions done. Take the minimum of all possibilities. Done. Write the base case. Done. So, you've successfully written the recurrence. Yes, you have successfully written the recurrence for the forward partition or the front partition problem. Now, once you have successfully written the recurrence, what will be the time complexity? Again, you're trying out every possible partition. So, it will go exponential in nature and we have to see if there are overlapping subproblems. And if there are overlapping"
+    },
+    {
+      "chunk_id": "L233_C13",
+      "start": 872.96,
+      "end": 947.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=872s",
+      "text": "So, it will go exponential in nature and we have to see if there are overlapping subproblems. And if there are overlapping subproblems, you will see that there are. You will apply memoiation into the recursion. You'll apply memoiation into the recursion into the problem. If you have, if you don't know what is memoiation, please go back and watch the entire DB playlist. So, how do you apply memoiation? You go back to the function. There's only one parameter that is changing. So, just write that one parameter. What is its value? Starts from zero, goes till n minus one. So, I can just keep a 1D array. If I just keep a 1D array, that does. So, what do you do is go back and write over here, you say dp of i is equal to minimum cost. And right before having anything, just keep if dp of i is not equal to minus one, then return. Just couple of lines, shuttle change will make sure that this is working. So, if we come back to the code, we have the string str. So, what I'll do is, I'll just keep str.size. Okay. And let's do one thing. Okay. So, we've done this and straight away, let's call the function with the first index,"
+    },
+    {
+      "chunk_id": "L233_C14",
+      "start": 947.36,
+      "end": 1020.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=947s",
+      "text": "And let's do one thing. Okay. So, we've done this and straight away, let's call the function with the first index, with the n and str. And let's write the function as int i n and string, please make sure you call it by reference because there'll be multiple recursion calls. Whenever you reach the end, there will be no partitions required. So, you can return a zero. After that, you can go across saying j will be i till n j plus plus. And what you can do is, you can probably just have a string temporary equal to this. Or do you actually need to store this temporary string? Ask yourself, do you need to store it? Because you know one thing for sure, the string will be from like, whenever you're trying to do a partition at j, the string will always be from i till j. The string will be from i to j. So, do you actually need to store that temporary? The answer to that is no, you don't need. So, what I'll do is, okay, I'll keep it. And I'll say if is palindrome, if the string from i till j is palindrome, if it is, then the cost will be one plus function of j plus one comma n comma str. And this will be the cost. And what I'll do is, I'll just minimize it with min cost."
+    },
+    {
+      "chunk_id": "L233_C15",
+      "start": 1023.12,
+      "end": 1084.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=1023s",
+      "text": "one comma n comma str. And this will be the cost. And what I'll do is, I'll just minimize it with min cost. Yes. And right after this, I can just return the minimum cost. Perfect. Now, I just need to write is palindrome. And if I have written this, I think we should be fine to go. So, let's write Boolean is palindrome. I can have i and t i, I can have i and t j, I can have the string s. So, you just need to make sure while i is lesser than j. And if at any moment s of i is not equal to s of j, we say return false or else we do an i plus plus again, I'm not going to teach how to do palindrome. Very obvious, very obvious palindrome stuff. So, this is what you'll write. And yeah, if this, if you're trying to run this, you will again see some issues. Okay. Definitely you'll see, because I have not declared. So, you're seeing that this is giving wrong answer. And for that reason, we took a very simple test case. And you know, the answer for this should have been a partition here, a partition here and should have been two partition. But what our code does is, a code first does a partition here and calls for bc. Then in bc does a partition for b"
+    },
+    {
+      "chunk_id": "L233_C16",
+      "start": 1084.56,
+      "end": 1152.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=1084s",
+      "text": "our code does is, a code first does a partition here and calls for bc. Then in bc does a partition for b and then calls for c. And then for c does a partition here, then eventually calls for i equal to equal to n. Got it? So, what happens is, it does a partition right at the end. So, what do you just need to make sure is, whatever answer comes, since it is doing a partition at the end, you just need to subtract a one. And if you try to subtract a one, it should work. The sole reason being, because if you take a b c, it does a partition here, does a partition here. Then whenever the recursion is called for this much, again, it does a partition here. So, for that reason, you have to take a minus one that is definite. Okay. So, once you've done this, you just need to declare a vector of dp of n comma minus one. And you can just pass on the dp over here. Make sure you carry the dp at all the places, call it over here as well. And whenever this is calling it, make sure you have it. And right before this, also make sure if that dp of i is not equal to minus one, you can return the dp of i. Perfect. So, if I try to run this,"
+    },
+    {
+      "chunk_id": "L233_C17",
+      "start": 1152.24,
+      "end": 1222.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=1152s",
+      "text": "of i is not equal to minus one, you can return the dp of i. Perfect. So, if I try to run this, you will see that this is running fine. It is, and try to submit this. You will see that this is giving you an accepted answer. It does. 10 out of 10 test cases. So, if you're not trying to submit this, you will see that this is running absolutely fine. So, this is how you solve this using memoization, but it's time to check out the tabulation code as well, because in the memoization, you will always have auxiliary stack space, isn't it? So, let's go deep and check out the tabulation code now. Okay. So, if, if we discuss the time complexity of that recursive solution, it's definitely, we have n states and there's a big O of n loop running inside it. So, it's n square. And if I discuss the space complexity, it's definitely big O of n for the dp array and an auxiliary stack space of big O of n, because we're doing a partition, partition, partition, you end up going right, right at the end, right? So, the space complexity will be big O of n for the dp array and big O of n for the partition, like you partition, you partition. So, you exactly get into the depth. So, I'm not a big fan of, as you know, this auxiliary stack space. So, we write"
+    },
+    {
+      "chunk_id": "L233_C18",
+      "start": 1222.88,
+      "end": 1301.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=1222s",
+      "text": "So, you exactly get into the depth. So, I'm not a big fan of, as you know, this auxiliary stack space. So, we write tabulation. What are the rules? Write the base case. So, please, please write the base case. What are the base case at first? It was, if I is equal to equal to n, you return zero. So, this means dp of n will always have a value zero. Just write it. The second, write down the changing parameter. Over here, there's only one. So, write it. And in the recursion call, you started from zero and you went all it in zero to n. So, in dp, it will be opposite. You start from n minus one and you go on till zero because n is the base case. So, you start from n minus one, you go on till zero. Third is very simple. Copy the recurrence without even thinking. Let's go across and copy the recurrence. Don't think much. So, that is what I will do. So, we have a dp. So, we can assign everything to zero. dp of n will be zero. Okay, perfect. What's the next thing? We know I will be from n minus one till zero and I minus minus. And once you've done this, I'll just take this portion to be something like this. Okay. And amazing. Now, instead of dp of this, we'll write just dp of j plus one. That's it."
+    },
+    {
+      "chunk_id": "L233_C19",
+      "start": 1302.32,
+      "end": 1367.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=1302s",
+      "text": "to be something like this. Okay. And amazing. Now, instead of dp of this, we'll write just dp of j plus one. That's it. And if I write this, will it run perfect? It will. But is there any still issue? There is. There is. We did not copy this. So, please copy this as well. So, please copy this as well. And right over here, just try to have this reduced and this will be dp of zero. Yes. Whatever value is stored at dp of zero minus one. So, if I now try running this, you will see that this is running fine. It is, but it did give you a runtime error. Why did it give you a runtime error? Let's quickly have a check because I think you're having it of size n. j is going from i till n and you're doing a j plus plus. So, dp of j plus one. Is it at any time giving you a runtime error? Let's quickly have a check. Yes. Yes. We will, we will have a runtime error because we assign in dp of n. So, please make sure you have a dp of n plus one. So, once that is done, I think it should be fine. It is not right to submit this and you will see that this is giving you a accepted answer. That's how you can easily convert this into a tabulation code. It is so simple. Once you write"
+    },
+    {
+      "chunk_id": "L233_C20",
+      "start": 1367.84,
+      "end": 1396.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=_H8V5hJUGd0&t=1367s",
+      "text": "is giving you a accepted answer. That's how you can easily convert this into a tabulation code. It is so simple. Once you write the memoization. So guys, I hope I was able to explain you the memoization and then the tabulation one. Just in case I was, please, please, please make sure you like this video. And if you're new to this channel, please do consider subscribing to us because that is the only thing that keeps you motivated to make these kinds of content. And now with this, I'll be wrapping up this video. Let's meet in the next one. Till then, bye-bye. Take care. See ya."
+    }
+  ]
+}

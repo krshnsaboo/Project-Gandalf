@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L203",
+  "lecture_number": 203,
+  "lecture_title": "DP 22. Coin Change 2 | Infinite Supply Problems  | DP on Subsequences",
+  "youtube_url": "https://www.youtube.com/watch?v=HgyouUi11zk",
+  "chunks": [
+    {
+      "chunk_id": "L203_C1",
+      "start": 0.0,
+      "end": 74.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=0s",
+      "text": "Hey everyone, welcome back to take you forward. So today we will be solving the 22nd lecture of the dynamic programming playlist and we have been containing with the problems with DP on sub sequences. So today we will be solving the problem ways to make a coin change. Now, what does the problem states? You'll be given an array, okay, and the array will contain elements like one, two, three, whatever it can. And you have to form this target. So you might be like, what's the way we've done this problem? No, we have a slight change in the question. Any element can be used any number of times. Any element can be used any number of times. For an example, I can use one four times and that will make four. Or we'll take one twice and two ones and that will also make four. Or else we'll be like, take two twice and that will also make four. Or we'll be like, take one and three, that will also make four. So you can see there are four different ways. Yes, there are four different ways in which I can get this target. So how's this different from all the other problems that we have done? In all the other problems,"
+    },
+    {
+      "chunk_id": "L203_C2",
+      "start": 74.96,
+      "end": 154.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=74s",
+      "text": "get this target. So how's this different from all the other problems that we have done? In all the other problems, we have been said that we can use the element only once. Over here, the problem states, you can use as many number of times as you wish. It's on you. So I have got four different times in order to get this particular target using this array. So how do you solve such kind of problems? So whenever it is like use number of times, you don't have to do anything different. It'll be a slight change that you have to apply. So again, what is the question? Figure out total number of ways. And in order to figure out total number of ways, what do you use? You try out all ways. Yes, you try out all ways and then you just count them. And how do you try out all ways? By using the recursion. So what is the problem stating? Total number of ways and what has the recursion in total number of ways. Usually you write the function and then you have the base case, which either returns a one or either returns a zero, right? Either the base case is returning a one or either it returns a zero. Then you write whatever function, whatever possibilities or whatever stuff that you can try. And then in order to return, if this is one, then you basically"
+    },
+    {
+      "chunk_id": "L203_C3",
+      "start": 154.8,
+      "end": 233.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=154s",
+      "text": "whatever function, whatever possibilities or whatever stuff that you can try. And then in order to return, if this is one, then you basically sum it up. Yes. All the states you sum up and that's what you return. So that's how you generically count the total number of ways. I've already taught this in the lecture six and the lecture seven of the recursion playlist, where I've said, whenever the problem states total number of ways, a base case will always return one. If the destination is made or else it will return zero if the destination is not made. And you try out all possibilities and the summation of all possibilities will be returning the total number of ways. So over here, what is the problem stating? So in order to write the recursion, you have to write the recurrence, right? So how do you write the recurrence? I've taught you three ways. What are the three ways? The first is express in terms of specifically index over here, we have an array, so we can definitely use index to express. And the other thing will be target that we will be using to express, right? What's the next thing? Explore all possibilities. Yes. Explore all possibilities. What is the third thing? Total number of ways. So some, all possibilities and return some, all possibilities and return. Right? So can I say if I have an array like this one, two, three, like, sorry, rather one, two,"
+    },
+    {
+      "chunk_id": "L203_C4",
+      "start": 233.76,
+      "end": 311.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=233s",
+      "text": "all possibilities and return. Right? So can I say if I have an array like this one, two, three, like, sorry, rather one, two, three, can I say, if I write down the indexes, that will be zero, one, two. So till index two, till index two, I'm looking to form a target for this is index. This is T. Till index two, till index two, how many ways can you form four? Till index two, in how many ways can you form four? That's a simple question. And if you can just figure this out, I think it's very simple. So how do you start off writing the recurrence again? Very simple index target. Let's keep the base case as of now, because we're starting from the back. So this will be nothing but N minus one, the last index, and this will be target. So what do you need to do? You need to explore all possibilities. So if I'm, if I'm saying on this array, you're looking to form this target four, what do you generally say? You can either take this guy, like you can either take this guy and you say, okay, this particular guy will be a part of the sequence that I'm looking to form. So it'd be like, okay, I can take it or I'll not take it again. What are the"
+    },
+    {
+      "chunk_id": "L203_C5",
+      "start": 311.68,
+      "end": 377.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=311s",
+      "text": "that I'm looking to form. So it'd be like, okay, I can take it or I'll not take it again. What are the possibilities? I will either not take it or either I'll take it. And all the DP on subsequences problem, it has to be either I'll not take it or either I'll take it. And if you're able to do this, I think you can solve any particular problem. So can I see this? If I'm not taking, if I am not taking, what will be the case? If I'm not taking, I know I'm not taking that guy. So I'll have to move to the next index. If I'm at an index and I have decided I'll not take it, I will have to move to the previous index, which is index minus one. And what will happen to the target? If I'm not taking any guy, the target still remains same. So it will be the same thing. And we will move to the previous index. But what about it again, whenever there are cases for take, you have to consider, can you actually take it? Because assume this is that it, and you have a four over here, and this is the index and the target is five, then you can definitely take it. You can definitely take it. But what if the target is two, then you cannot take it. So you need to make sure"
+    },
+    {
+      "chunk_id": "L203_C6",
+      "start": 378.16,
+      "end": 444.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=378s",
+      "text": "it. You can definitely take it. But what if the target is two, then you cannot take it. So you need to make sure initially take is zero. And if array of index is lesser than equal to the target that you're looking for, yes. If array of index is lesser than equal to the target that you're looking for, then you can definitely take it. And if you take it, the target is going to reduce by array of index, but what will happen to index? That is the question. Now, remember one thing in all the question, which states can be used any number of times, you don't move back to the previous index. I repeat, you do not move back to the previous index. That is the thumb rule. And what you will do is you will say, I will still stay at the same index. Why? Assume you had a one over here. Okay. And you're looking for a target four. You can pick this one four times. Yes, you can pick this one four times. So if you move back to the previous index, you will not be able to pick this one. So make sure you say, I will still stay at the same index because this index might be picked at the next instance. So please stay at the same index. And right over here, I will say return"
+    },
+    {
+      "chunk_id": "L203_C7",
+      "start": 445.2,
+      "end": 524.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=445s",
+      "text": "index might be picked at the next instance. So please stay at the same index. And right over here, I will say return not take class. That is what I'll do. So once I've written this, it's simple enough. So remember this, whenever the problem States, any number of times in all the cases, this is the funda. You stay at the same index. And apart from that, everything stays same. So what will be the base case? What did I say? You, how do you think of base cases? When you write, I've taught you the way. If you're starting the recursion from N minus one, you write it for the last index. That's zero for sure. So what do you do is you write index equal to equal to zero. Yes, you write index equal to equal to zero. And over here you think, yes, over here you go and think. So what will you think? So remember this, it has been clearly stated that the coins are of denomination greater than yes. It States that all the coins are of denomination greater than equal to one. That is because, because logically none of the coins can be of denomination, uh, zero, right? So points are of denomination. So imagine you are just standing with a single element and you have a four and you're looking to form a target for, then how many ways can you form this target? As my question,"
+    },
+    {
+      "chunk_id": "L203_C8",
+      "start": 524.16,
+      "end": 604.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=524s",
+      "text": "you have a four and you're looking to form a target for, then how many ways can you form this target? As my question, like, can you form this? You're like, yes, driver, we can form this because if the element contains four and my target is four, I can definitely form it. What do I say? It is not four and it is three. It like striver. I cannot form a target for, I cannot form a target for with this three. I cannot simply. I cannot. I be like, yeah, that makes sense. What if it is two? Can you form target four? And the answer is yes, because if you take two twice, you will be able to form the start. So can I see if the target is modulated array of zero, if this is the case, then this target can be formed any day, any day. Can I say this? It'd be like, yeah, that makes sense. So why don't you write this? So I'll be like, okay, if target, or you can be like, let's return. If target modulated array of zero is equal to equal to zero, this will return a one or else it will return a zero. If the condition is false, that makes sense. Just because the coins are of denomination greater than equal to one. If it was of zero, you can watch the DP 18, where I've covered this case"
+    },
+    {
+      "chunk_id": "L203_C9",
+      "start": 604.0,
+      "end": 674.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=604s",
+      "text": "are of denomination greater than equal to one. If it was of zero, you can watch the DP 18, where I've covered this case already. I've already covered this case in DP 18 problem, right? When the denomination might be of zero and you're reaching the base case, but as of now, let's keep it simple. So you figured out that this will be the recurrence. Whenever we reach the end, this will be the base case. Can that target, because I can pick up the element any number of times. So if it is divisible, I'll pick it any number of times that I'll make the key. So this will be the base case. So I've written a base case, which either returns a one or which either returns a zero. And then I've written not tick and tick and I am returning this. So what am I writing? Am I writing a recursion? Yes. So what will be the time complexity again? Can I say that, Oh, it's not true to the bar end because, because you are always standing at the same index. If you carefully observe, you're always standing at the same index when you're doing it. So for any given index, there can be more than two possible ways because you're standing at that given index. So you cannot be sure that it's exactly true to the bar end. So it will be somewhere greater than true to the bar end,"
+    },
+    {
+      "chunk_id": "L203_C10",
+      "start": 674.16,
+      "end": 740.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=674s",
+      "text": "you cannot be sure that it's exactly true to the bar end. So it will be somewhere greater than true to the bar end, but you can just, uh, in a normal way, you can call it as exponential. But if, but if you want to deduce the time complexity, then you have to go deep and you'll be like, okay, this is the number divides this by these many times. Then you have to just go deep into that. So generally in interview, you can call, you can just see if you're in an interview, you'll be saying that a recursion will be exponential. So I have to use memoization. So recursion is exponential. And what about the, this is the time complexity. What about the space complexity? Again, if I'm talking about space complexity, since you're standing at the same index, the auxiliary stack space will be not a big often, right? Because assume you just have one, two, okay. And the target is 10. You're picking this two, you're picking this two, you're picking this two. So it might go on because five times you can pick this two because five times you can pick this two. So it might go on up to a depth of five, right? So the auxiliary space is again, greater than big O of N or I can say the worst case at the worst case, it can be big O of target. Assuming, assuming this case"
+    },
+    {
+      "chunk_id": "L203_C11",
+      "start": 740.56,
+      "end": 814.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=740s",
+      "text": "of N or I can say the worst case at the worst case, it can be big O of target. Assuming, assuming this case where you have an one and you have a target, not, not exactly one. You can say you have something like this one, one, you have a one and the target is 10. So you just, you're like F of index of one target 10, you pick it. So you're like F of one target nine, you again, pick it. You're like F of one eight. So you go on to the depth of 10. So you can call it as big O of target depth of auxiliary stack space. But obviously in an interview, you don't have to explain in depth. So that's okay. So how do you convert a recursion into memoization? Again, overlapping sub problems, it's going to be exactly same. You don't need to apply your brains to changing parameters. One is index. The other one is target index can be N and the target, you know, can at maximum be target. So N cross TDP array will change this to normal stuff. So just a couple of lines, one is over here where you write DP of index and target again, very simple. And the other, another one over here, if the state is not visited while aligned, right? And that will convert this into a memoization solution. So the moment you convert this into a memoization"
+    },
+    {
+      "chunk_id": "L203_C12",
+      "start": 814.88,
+      "end": 887.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=814s",
+      "text": "is not visited while aligned, right? And that will convert this into a memoization solution. So the moment you convert this into a memoization solution, the time complexity becomes big O of N into target. And the space complexity becomes N into target plus an auxiliary target, plus an auxiliary stack space, auxiliary stack space of big O of target. Obviously, I'm not a big fan of this. So how do you optimize this in order to optimize this? You apply tabulation. What are the rules to apply tabulation? Step number one is, what is the step number one to apply? Yes. Write the base case. What is step number two? What are the changing parameters? One is the index. The other one is the target. Express them. What's the step three? Copy the recurrence. The step three is very simple. Copy the recurrence. So why don't you copy the recurrence? So let's talk about the base case. Can I actually write the base case? So first of all, let's declare the DP of N and target. What is the base case? So if you remember, the base case was, let's actually go and see. The base case will only be operated at index equal to equal to zero. The base case will only be operated at index equal to"
+    },
+    {
+      "chunk_id": "L203_C13",
+      "start": 887.68,
+      "end": 964.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=887s",
+      "text": "will only be operated at index equal to equal to zero. The base case will only be operated at index equal to equal to zero. And when will it have to? Can I say this? This line gets executed at index equal to equal to zero for sure. Is there a foundation on target? I'll be like, no. The target can be anything. It can be zero. It can be one. It can be two. Till the biggest target possible. It can be anything. And this line will be executed. So I'll be like, okay, let's write this. So I'll go and try to write this. So I say, okay, the target can be anything from this to the original target. And I'll be like, okay, DP of index is zero and T will be nothing but is T modulated. Yes, is T modulated array of zero equal to equal to zero. That's it. That is what I've written. For any given T that comes into my state, this was the condition that I was returning. And this is what I can easily store in the state because index will always be zero. So the base case has easily been written. What about does the conversion? What about index? Can I see the index will be converted from where you are running the recursion from N minus one till zero."
+    },
+    {
+      "chunk_id": "L203_C14",
+      "start": 965.12,
+      "end": 1038.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=965s",
+      "text": "about index? Can I see the index will be converted from where you are running the recursion from N minus one till zero. So what is, what is tabulation? Tabulation is bottom up and in bottom up, the base case was the case of index equal to zero. So what is the next case? Index equal to one. So you take index zero, build index one, then index two, then index three. So thereby you start from one and you go on till N minus one. It's the opposite. What about the target? The target will have similar consequences. You move from T to zero. So you'll move from zero to T over here. You'll move from zero to T over here. Index done, target done. Now it's time to just copy the recurrence, whatever you wrote. And if you are able to do this, you can easily solve this particular problem. So yeah, without wasting any time, let's super quickly code this. So basically given the denomination array, the N and the value. Okay. Let's quickly write the long function, int index. Let's give it as int T and just write int star, denominations, int, value do I require? No, I don't require that. Perfect. So I can call return f of zero, rather N minus one. And this is the target. And this is"
+    },
+    {
+      "chunk_id": "L203_C15",
+      "start": 1041.2,
+      "end": 1117.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=1041s",
+      "text": "that. Perfect. So I can call return f of zero, rather N minus one. And this is the target. And this is the array. Perfect. So over here, can I say if index is equal to zero, can you please return target modulated a of zero or rather denomination? We can just call it as a, I don't prefer writing so much. A of zero is equal to zero. Perfect. So there'll be a non-take case again, let's take it as long non-take case. And it'd be function of index minus one and target stays the same. And you can just pass on the array and there'll be a case as take, which is zero. And I know if array of index is lesser than the target that I'm looking for, I can definitely take it. And if I take it, this will still stay as the same. And over here, this is how it goes. And I can return the take plus the not take case, right? Which is non-take or not take whatever you can call it. So let's see if I run this, does this run properly? It does run, but this will give us TLE. So the next step, the next step is very simple. You try to take a vector. So once the vector has been declared, just pass it over here. And right after that,"
+    },
+    {
+      "chunk_id": "L203_C16",
+      "start": 1117.04,
+      "end": 1183.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=1117s",
+      "text": "simple. You try to take a vector. So once the vector has been declared, just pass it over here. And right after that, you can just carry that across over here as well as over here, as well as over here, right? And make sure you pass it by reference. And the next step is please make sure you memorize that. So once you memorize that, just make sure you write DP of index and T is not equal to minus one. Then you can easily return DP of index and T, right? So once you've done this, you can simply run this code. Looks like the vector has not been included. So please make sure you include it. It gave us wrong answer. I think the most, the reason should be this. Let's quickly just change this off into long, long, and now let's try submitting this. So make sure you define everything as long. Okay. So what's the next thing? Let's write the base case. Let's keep it as zero. I mean, the base case is very simple. If the target is zero and the target can go on till value and T plus plus, and I know this case will be written very simple enough. This just copy paste this case for DP of zero and any target you can just copy on this piece. So once you've done this,"
+    },
+    {
+      "chunk_id": "L203_C17",
+      "start": 1183.52,
+      "end": 1259.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=1183s",
+      "text": "copy paste this case for DP of zero and any target you can just copy on this piece. So once you've done this, you know, there'll be a couple of stuff. So as the index, which goes on from index greater than, lesser than N and index plus plus is the other thing, which is the target, which goes on from zero to the target as value and D plus plus. And again, please make sure you do the same thing, just copy paste. So that's how you can easily copy paste. So once you've copy pasted this, what's your job? Basically just make sure this is DP of index minus one. You can say this is D and yeah, you can just erase this. And right away, you can just take DP of index D minus index. And it is take this off as well. And once you've taken this off, I think instead of return, this will be this and over here, a simple thing, DP of N minus one and value would be there. So just make sure this is over here and not just erase this. I think it should be fine. Now let's try running this. Fine. It does run. Let's submit this. Yes. What's the next thing? Space optimization. And can you do this? Obviously I've already stated, if you see something like index minus one and index, you can always be optimized by using a couple of stuff, which is"
+    },
+    {
+      "chunk_id": "L203_C18",
+      "start": 1260.56,
+      "end": 1327.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=HgyouUi11zk&t=1260s",
+      "text": "stated, if you see something like index minus one and index, you can always be optimized by using a couple of stuff, which is yes. Only storing two rows. And if you're, if you're not understanding this, it's your fault, please watch out the previous lectures. I've already explained how does this work? So value that's one. And this has been done now instead of this, what will be yes, previous. So make sure this is previous instead of DP of zero, this will be previous. Instead of every DP of index minus one, just make sure you're right. Previous instead of DP of index, just make sure you're right. Current. And yeah, over here, it'll be current and make sure you're right. Previous equal to car so that it stops. Oh, I can just write previous and try running this. So if you're on this, this should be running fine. It does. And if you submit this, I think we will be, again, we get a long answer. Oh, we again did the same mistake of long. Just make sure this is long, long, and I'll try to submit this. So guys, I hope you have understood the recursion, the dimension, the tabulation, the space optimization approach. Just in case you did, please, please, please make sure you like this video. And if you're new to this channel, please do consider subscribing. And yeah, with this, I'll be wrapping up this video. Let's meet in the next one."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "lecture_id": "L103",
+  "lecture_number": 103,
+  "lecture_title": "L31. Minimum time taken to BURN the Binary Tree from a Node | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g",
+  "chunks": [
+    {
+      "chunk_id": "L103_C1",
+      "start": 0.0,
+      "end": 72.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=0s",
+      "text": "So before starting the video, I would love to thank Relevul for sponsoring this entire three series. So, if you're tired of waiting for companies to respond to your applications through different job portals, the next few seconds are very very important for you. Because Relevul by an Academy is India's first hiring platform that can get you a job within a week itself. Yes. All you have to do is to register for the Relevul test and within a week, your interview will be scheduled with India's top companies and the top budding unicorns. So what are you waiting for? Make sure you check out the links in the description and apply for the Relevul test because it is free. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, find the minimum time that is required to burn a complete binary tree from any given node. Now this question can come up in a lot of fashion. They might ask you from any given node, from any given leaf node, like they can give you the question as leaf node also. So we will be solving the question for any given node and then you can definitely get the answer for leaf node as well. So let's assume I take the node to be 2. So that's the node I take. So this is the node that I have taken."
+    },
+    {
+      "chunk_id": "L103_C2",
+      "start": 72.72,
+      "end": 148.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=72s",
+      "text": "let's assume I take the node to be 2. So that's the node I take. So this is the node that I have taken. So if I'm asking you the time to burn, so basically this guy will take a time 1 to burn this, these two guys, like it'll take 1 second to burn these two guys. After that, it'll take 2 seconds to burn these two guys. After that, it will take 3 seconds to burn these guys. So the entire tree, if you burn the node, the entire tree in order to burn will take 3 seconds. So that is what we want you to return. Basically I want you to return the minimum time that is required in order to burn any given binary tree if you are given a node. So I can say that this problem can be solved using BFS traversal. What if I use a BFS and if this is the node given, assume this is a node that is given to you, that's the node 2. Now the node can be directly given to you or the node can be like, direct address can be given to you, doesn't matter. So if this node is given to you, what if I apply a BFS algorithm and I say on the first instance I'll color these two guys. So a BFS I can work it right. Radially outwards I'll go like via one distance. Right after this, I'll have these two nodes."
+    },
+    {
+      "chunk_id": "L103_C3",
+      "start": 148.02,
+      "end": 218.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=148s",
+      "text": "guys. So a BFS I can work it right. Radially outwards I'll go like via one distance. Right after this, I'll have these two nodes. So on these two nodes, I'll again go radially outwards. I can go na? And after this, this will color these guys. Again the next node will be this. This doesn't have any node and this guy will again go radially outwards. So I can implement a BFS kind of algorithm in order to burn the entire tree. But the problem that I will face is, if the node 2 wants to go in the upward direction, there will be a problem because we have the links that are pointed to downwards. All the links are pointed to downwards. So we can easily go downwards. Like when we are performing the BFS, it can easily go downwards. But in order to go upwards, we're going to face problem. And in order to have upward, like in order to have an upward movement, we have to assign parent pointers. So the first step of the algorithm is to assign parent pointers to this binary tree. So the first step will be to have parent pointers ready. So what I'll do is, I'll take a cube and I'll have the initial node that is the root node and we're going to do a level order traversal. So this is the node that we are currently standing at. So let's take this node out."
+    },
+    {
+      "chunk_id": "L103_C4",
+      "start": 218.5,
+      "end": 285.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=218s",
+      "text": "going to do a level order traversal. So this is the node that we are currently standing at. So let's take this node out. Does this node have a left guy? I can say yes, it has. So I can say 2, your parent pointer will be 1. Again you can have some hash map in order to have that ready. Like I will have a single hash map which sees me that the parent of 2 is 1. Similarly, I'll check if 1 has a right pointer and I see that 1 has a right pointer. So I can say 3, your parent is 1. So 3's parent has become 1 now. So I can easily mark them. Next step, whatever where you're left and right, just put them into the cube. So please make sure you put them into the cube. Done. So once that is done, I can say the task for the node 1 is complete and I'll move the level order traversal to the next node that is node 2. Again do the same step. Does 2 have a left? Does it have a right? Does 2 have a left? The 2 has a left, that's 4. So you'll say 4, your parent pointer is 2. So 4, your parent pointer is 2. So 2 is done. So you'll take just 4 and you'll enter it. So 2 is also done because it doesn't have a right. Next node is 3."
+    },
+    {
+      "chunk_id": "L103_C5",
+      "start": 285.1,
+      "end": 358.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=285s",
+      "text": "So you'll take just 4 and you'll enter it. So 2 is also done because it doesn't have a right. Next node is 3. So kindly take 3 out. Does 3 have a left? Yes, that's 5. So mark the 5's parent pointer to 3. 5's parent pointer will be 3. Does 3 have a right? Yes, 6. Mark the parent pointer of 6 to 3. Mark the parent pointer of 6 to 3. Perfect. So I can say 3 is done. If 3 is done, just make sure you enter 5 and 6 into the queue data structure. Right after that, you get 4. So the moment you get 4, does 4 have a left? No. Does 4 have a right? Yes. So whichever is the right guy, the 7's parent pointer is 4. So please make sure you mark the parent pointer. And at the same time, insert that node into your queue data structure. 4 is done. Next, get 5. Does 5 have a left? No. Does 6 have a right? No. Next, get 6. Does 6 have a left and right? No. Does 7 have a left? No. Does it have a right? No. So I can say I have completed the entire, yes, I have completed the entire traversal. And I made sure that the parent pointers are ready in some hash map. Now it's time to move ahead to the next step."
+    },
+    {
+      "chunk_id": "L103_C6",
+      "start": 358.7,
+      "end": 427.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=358s",
+      "text": "I made sure that the parent pointers are ready in some hash map. Now it's time to move ahead to the next step. Now once the parent pointers are marked, it's time to start the BFS traversal. Now if the node is like, if you're given a value 2, just figure out where is this node lying. Like you could have done that using the traversal. Like just figure out where is this node. Or else, if you're given this node address, it's absolutely fine. If the node address is given, it's okay. If the address is not given, just figure out where it lies. And that can be done using traversal. I'll show you that in the code. So as of now, we have a node 2. So let's again do a BFS traversal. And this time we'll take again a queue data structure. And this time the node 2 will be inserted in this. And at the same time, we're going to have a visited map. Yes, we're going to have a visited map. So let's have a visited map. Why? I'll tell you that. Because we're performing BFS. So just tell them that 2 is visited. Okay, 2 is visited. Let's start the BFS traversal. So as of now, the time is definitely 0, right? So the time is 0. So when I start the BFS traversal, I have this node 2. So currently I have a node 2. Now 2, where can it go?"
+    },
+    {
+      "chunk_id": "L103_C7",
+      "start": 427.68,
+      "end": 504.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=427s",
+      "text": "when I start the BFS traversal, I have this node 2. So currently I have a node 2. Now 2, where can it go? Which guys can it burn? Logically 2 can burn someone who's above that, someone who's on its left, someone who's on the right. Above, left, right, that is what 2 can burn, right? So 2 will burn the above guy. And that's nothing but the parent pointer. The above guy is the parent pointer. 2's parent pointer is 1. So it can burn 1. So you have visited 1. It can burn left. That's 4. So you have visited 4. Perfect, done. Now since 2 has successfully burned someone, so it'll take a time of 1. So I have successfully burned the adjacent nodes. So the task of 2 is completed. I'll move to the next. Now in the next traversal, it's very important that you pick up all these 2 nodes. You do not like, because these nodes are burned at the time 1. So you pick up both the nodes instead of picking only 1. Pick up both the nodes and have simultaneous task on that. So on 1, 1 will burn left, 1 will burn right, and 1 will burn top. So as of now, does 1 have a top? No, because 1 doesn't have a parent pointer. Again proved by the parent map. Does 1 have a left? Yes, it does have 2, but that's already burned."
+    },
+    {
+      "chunk_id": "L103_C8",
+      "start": 504.36,
+      "end": 575.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=504s",
+      "text": "have a parent pointer. Again proved by the parent map. Does 1 have a left? Yes, it does have 2, but that's already burned. You can figure that out from the visited array. So again, this will not be burned. Does 1 have a right? Yes, indeed. And that's 3. So what you can do is, you can definitely burn 3. You can definitely burn 3 and mark it as visited. So I can say the task of 1 is completed. Hence, I can just strike it off from the queue. Now in the next, in the same iteration, I know we will have 4. So we have a 4. What I do is, again the same thing. Does 4 have a top? Yes. Does 4 have a left? Yes. Does 4 have a right? Yes. Like it might have. So on 4's top, we have 2. That's already burned, so no need to burn it. Does 4 have a left? No. Does 4 have a right? 7. 7 is not burned yet. So you will burn 7. So put it into the queue, mark it as visited. So what I've done is, all the guys that were burnt during time 1 have burnt their adjacent nodes. So 1 and 4 have been completed. So can I say 1, 4 at least burnt someone. Hence, the time will increase to time 2 seconds. In the next iteration, I'll take the next set of nodes which were burnt at time 2."
+    },
+    {
+      "chunk_id": "L103_C9",
+      "start": 575.88,
+      "end": 645.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=575s",
+      "text": "the time will increase to time 2 seconds. In the next iteration, I'll take the next set of nodes which were burnt at time 2. That's the node 3 and node 7. And I'll again perform the same task. 3 can burn the top, the left, the right. So does 3 have a top? Yes, that's 1. But that is already burnt. If you carefully observe, that's already burnt. So we will not burn it. Does 3 have a left? Yes, it has a left. That's 5. So let's burn the node 5. Does 3 have a right? Yes. Let's burn it. So 5 will be burnt. 6 will be burnt. So mark them as visited. Put them into the queue data structure. 7. Does it have a top? Yes, that's 4. But that's already burnt. Does it have a left? No. Does it have a right? No. So we have a time 2 guys that were 3 and 7 have burnt their adjacent nodes. And this 3 has burnt someone like 5 and 6. So they burnt some adjacents. So if they're burning some adjacents, can I say the time will increase to 3? Indeed. And so this is over. Now I'll move to the next set of nodes. The next set of nodes are 6 and 5. So I have a 5. I have a 6. So currently when I have a 5, the topmost node is 3. That's already burnt."
+    },
+    {
+      "chunk_id": "L103_C10",
+      "start": 645.9,
+      "end": 725.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=645s",
+      "text": "So I have a 5. I have a 6. So currently when I have a 5, the topmost node is 3. That's already burnt. And you can just figure that out from here. Visited. 5 doesn't have a left, doesn't have a right. So 5 actually doesn't burn anyone. 6. Does it have a top? Yes, 3, which is already burnt. 6 has a left. 6 has a right. But it doesn't burn anyone. So can I say this 5, this 6 did not burn anyone. Hence, the time will no more increase. Hence, the time will no more increase because they could not burn anyone. Right? Next, if I try to find anyone else in the queue, I don't find it. So the queue is empty. Once the queue is empty, whatever time is stored in your time variable will be your minimal time that's required to burn a binary tree from any given node. If I change the question to leaf node, doesn't matter. You're just going to take parent pointers left, right, every time because whether it be a node, whether it be a leaf node, the BFS will still stay the same because I have applied BFS from 2. I started and I moved radially outwards. That's BFS. That is what we generally apply. Now, you might ask a question, why not BFS? The reason is the tree is burning at the same time."
+    },
+    {
+      "chunk_id": "L103_C11",
+      "start": 725.62,
+      "end": 799.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=725s",
+      "text": "we generally apply. Now, you might ask a question, why not BFS? The reason is the tree is burning at the same time. Like from node 2, it's burning on the same time. So you have to move level wise. Like if you just think this, this is level 0, like time 0. This is time 1, time 1. So you can just imagine this as a level. And after that, at time 2, these 2 are burnt. And at time 3, these 2 are burnt. So it's kind of a level wise movement. First the level 0, then the level 1, then the level 2, and then the level 3s. So that is the reason we cannot use DFS. So as usual, we have the C++ code on the left and the Java code on the right. So we are given the root. And as you can see, we are given the integer value of the node, the node that we are looking for, not the address. So what I've done is I've initially created a map of binary tree to binary tree. And I have a BFS which basically maps these nodes to its parents. So in this BFS, I'll pass the root, I'll pass this map, and I'll pass this start. And this BFS does a couple of tasks. One is parent mapping, while the other one is it returns me the node address where this target lies."
+    },
+    {
+      "chunk_id": "L103_C12",
+      "start": 799.46,
+      "end": 871.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=799s",
+      "text": "does a couple of tasks. One is parent mapping, while the other one is it returns me the node address where this target lies. Because while doing a parent mapping, I was doing BFS traversals. So while traversal, I'll find that address and store it and return. So let's check out the BFS to a parent map function at first. So what I've done is I've declared a queue and I pushed the root, that's the starting point. And at the same time, I have kept a resultant node so that I can store the address of the start. Right after that, I start iterating. I do a level audit traversal. I get the node, right? And if this node is equivalent to the start, like the node that you're looking for. So I store that node. So during the traversal, if anytime I find that node which is containing the value start, I just store its address. And after that, I pop. And if there is a left, if there is a right, what I do is I map, I say left, your parent is node. At the same time, I push it to the queue. Right, your parent is node, push it into the queue. This is all the level audit traversal will complete. So after this line, the target node is what, where the start node will be. And the BFS will make sure that this map contains all the nodes' parents."
+    },
+    {
+      "chunk_id": "L103_C13",
+      "start": 871.42,
+      "end": 938.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=871s",
+      "text": "target node is what, where the start node will be. And the BFS will make sure that this map contains all the nodes' parents. Right after that, I have one function, find max parent, find max distance, where I pass this parent map and I pass this target node. So since I have the target node, the address, I pass it. So as of now, I have this find max distance, correct? So what do I have? I have the parent map, I have the target node. Now initially I have taken the queue. So I'll just push on the queue. Like I just push on the target into that. Right after that, I have this visited node, correct? And what I'm doing is I'm marking visited as one. So I marked visited as one. After this, I've kept the timer. So initial timer is zero. Right after this, I'll start iterating. So if you remember, whatever is the target node, you have to keep that into the queue. I have to mark that into the visited. Right after that, I start iterating in the queue. I take the size. So if you remember, first we had one, then we, like, sorry, first we had two, then we had one. And like, if I remember well, we had one and four, so we will iterate for one and four. And after that, whatever set we had, we iterated for it."
+    },
+    {
+      "chunk_id": "L103_C14",
+      "start": 938.46,
+      "end": 1009.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=938s",
+      "text": "we had one and four, so we will iterate for one and four. And after that, whatever set we had, we iterated for it. So that's why we are running directly on the size, running directly on the size. And if it's one and four, we'll take one and four and do simultaneous works on that. That's why we're running on the size. So we'll take the node, we'll pop it. And what we check is, does it have a left? And is that not visited? If it is, I will burn it. So kindly burn it. That is marking visited and push it into the queue. Similar, I'll do for right, check it, burn it, and push it into the queue. Check it if it exists. Like, map of node, does it exist? What does that mean? Does the parent pointer exist? And if it exists, does that parent pointer, like, is it already visited? If it is not, then burn it and push it into the queue. So these are three, left, right, and top. I burn it and push it into the queue. And if any one, if I'm burning any adjacent node, I am marking a flag as one. I am marking a flag as one. Like if I'm burning any one, and at the end, if the flag is marked as one, that means I burned someone who was adjacent to me. Hence, I'll do a maxi++. That means I'll do a timer++."
+    },
+    {
+      "chunk_id": "L103_C15",
+      "start": 1009.2,
+      "end": 1073.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=1009s",
+      "text": "marked as one, that means I burned someone who was adjacent to me. Hence, I'll do a maxi++. That means I'll do a timer++. At the end, I can return the timer, which I can ultimately return as my answer. Time complexity of this method. So what I'm doing is I'm using a BFS to map parent. That's a level order traversal, which is going to take a big O of n. Plus, I'm again using a BFS kind of a function, which is burning the adjacent nodes. So that's a big O of n. So I can just summarize, like I can write it as big O of n. I'm assuming, I'm assuming that the map works at big O of one. Like I'm assuming map is working at big O of one. Depending on what time complexity I'm assuming map to work at, then you can just make it n log n or whatever you want to make it. And the space complexity is again, you're using an external map, you're using an external queue and similar stuff. So I can just summarize it to be big O of n. So that is what the time complexity and the space complexity will be in order to get the minimum required time to burn a binary tree from any given node. So I hope you've understood the entire explanation as well as the code."
+    },
+    {
+      "chunk_id": "L103_C16",
+      "start": 1073.44,
+      "end": 1095.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=2r5wLmQfD6g&t=1073s",
+      "text": "time to burn a binary tree from any given node. So I hope you've understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to this channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

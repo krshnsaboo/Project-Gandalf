@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L065",
+  "lecture_number": 65,
+  "lecture_title": "BS 21: Median of two Sorted Arrays of Different Sizes | Brute and Better Approach",
+  "youtube_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8",
+  "chunks": [
+    {
+      "chunk_id": "L065_C1",
+      "start": 0.0,
+      "end": 68.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=0s",
+      "text": "Okay, so we will be continuing with our binary search playlist. Now, this is the part of the strivers A to Z DSA course. In case you haven't checked it out yet, there's a link in the description. Make sure you check it out. So before starting, hey, welcome back to the channel. I hope you guys are doing extremely well. So the problem that you're going to solve today is finding out the median of two sorted arrays. Now this word is very important sorted because that is what will help us to solve this problem. Now you can be given two arrays of equal size. You can also be given two arrays of different size. Like in this example, you can see this array is of size six and it is sorted. This array is of size four and it is sorted. Now what you have to do is you have to find the median of these two sorted arrays. So what you have to do is if you take both of those sorted arrays and you have to combine them. So if I combine them, what I get is one, two, three, three, four, six, seven, 10, 12, 15. What is the total number of elements? The total number of elements in this case is 10. Why? Because n1 was six, n2 was four. So the total number of elements is 10."
+    },
+    {
+      "chunk_id": "L065_C2",
+      "start": 68.5,
+      "end": 133.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=68s",
+      "text": "of elements in this case is 10. Why? Because n1 was six, n2 was four. So the total number of elements is 10. So if I try to find out the median, can I find a median of 10 elements? I cannot. Why? Because if I stand over at four, there are four elements on the left. There are five elements on the right. If I stand at six, there are five elements on the left, four elements on the right. So there is no specific median because median means on the left and on the right, there must be equal number of elements. Now this is not in this case, this is like five and four, they're not equal. So can I say the median will be somewhere between four and six because if I take somewhere between four and six, on the left there are five, on the right there are five, which is equal. So I can say that the median is somewhere between four and six. So it's like the middle of four and six, so four plus six by two, five is the median in this case. Now over here, the point to notice was the total number of elements was even. That is why it did not have a specific median. But what if I take this example, there's like three elements, there's like two elements. So what is the total number of elements?"
+    },
+    {
+      "chunk_id": "L065_C3",
+      "start": 133.54,
+      "end": 198.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=133s",
+      "text": "median. But what if I take this example, there's like three elements, there's like two elements. So what is the total number of elements? Can I say that the total number of elements in this case is five? I can. Now if I try to combine them in this time, what will I get? If I try to combine them, I'll get one, two, three, three, four. If I ask you what is the median, can I say this is the median? I can. Why? Because it's like two elements on the left, it's like two elements on the right. Thereby the median is pretty simple, the midpoint. So in case of the total number of elements being odd, it's very simple. In case the total number of elements is even, I have to consider two elements, I have to take the middle of it. Got it? Now this is what we have to find. We have to find the median of two sorted arrays. So what is the first solution that you can think of? The extreme brute force that comes to my mind is, okay, two sorted arrays. Can I merge them into a third sorted array? And if I merge them, then I know I can solve it afterwards. And the point to notice over here is both of them are sorted arrays. And you know how to merge two sorted arrays into one. So we have done that in merge-short, isn't it?"
+    },
+    {
+      "chunk_id": "L065_C4",
+      "start": 198.14,
+      "end": 252.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=198s",
+      "text": "them are sorted arrays. And you know how to merge two sorted arrays into one. So we have done that in merge-short, isn't it? So what I will do is, I will stand at one and I will stand at two. And I will try to take another third array, and I'll try to put it over there. Will I take one or will I take two? I'll take one because I'm trying to form a sorted array. So I'll take one. And I'll move. Will I take two or will I take three? I'll take two and I'll move. Will I take three or three? I can take any one. I'll take three and move. Will I take three and four? I'll take three. And I'll move. Will I take six and four? I'll take four. move. Will I take 6 or 7? I'll take 6. I'll move. Will I take 7 or 15? I'll take 7. I'll move. Will I take 10? Yes. Will I take 12? Yes. Will I take... after this, there's nothing. So whatever is left on the right, I'll just take it. So we have put two sorted arrays into the third one. Now what is the next step? The next step is to find out the median. Can I say if the total number of elements is even, I need to find two median elements. One is"
+    },
+    {
+      "chunk_id": "L065_C5",
+      "start": 252.68,
+      "end": 314.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=252s",
+      "text": "out the median. Can I say if the total number of elements is even, I need to find two median elements. One is 4 and the other one is 6. And I need to basically add them and divide by 2 to get our median. And you know how to find it. The index is 0, 1, 2, 3, 4, 5. You need the fourth index and the fifth index. Fifth index is nothing but 10 by 2 and the fourth index is nothing by 10 by 2 minus 1. So you get both the indexes and then you can do your job. I'll write that in code. But before that, let's look at the other example. In the other example, when you try to merge them, you'll get something as 1, 2, 3, 3, 4. And over here, the total number of elements is odd. And which index do you require? You straight away require this one, which is the second index. Can I straight away write 5 by 2 and that will be the second index and that will be my only median. I can. Right. So this is how the brute force will be. So let's quickly write down. So let's quickly write down the pseudocode. So what I've done is I've taken an array 3, which is an empty array. I've taken index i, which points to the first element of array 1. I've taken index j, which points to the"
+    },
+    {
+      "chunk_id": "L065_C6",
+      "start": 314.2,
+      "end": 392.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=314s",
+      "text": "an empty array. I've taken index i, which points to the first element of array 1. I've taken index j, which points to the first element of array 2. Now what I know is I have to merge them. So I'll keep on going till i is lesser than n1, which is basically the size of the first one. I'll keep on going till it is lesser than n2, which is the size of the next one. Now what I'll do is, if array of 1 of i is lesser than array of 2 of j, in that case, I'll ask array 3 to add array of 1 of i and do a plus plus. Basically, after you add, you move forward because we're done with you. Else, I will say array 3 to add array 2 of j because that is the smaller element. At the same time, go ahead because you're done. So what this will do is, this will make sure I end up adding up all the elements. But once I've done, like if this condition exhausts, if this condition exhausts or this condition exhausts, there must be some elements left. So I say if some element is left on the first array, then array 3 can you just add up to yourself, which is like array 1 of i plus plus. I'm not going to explain this. It's a very, very standard one. Very, very standard. If j is lesser than n2, I say array"
+    },
+    {
+      "chunk_id": "L065_C7",
+      "start": 392.06,
+      "end": 466.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=392s",
+      "text": "plus. I'm not going to explain this. It's a very, very standard one. Very, very standard. If j is lesser than n2, I say array 3 dot add array 3 j plus plus. Quite simple. What this will do is, this algorithm will make sure array 3 has the sorted array. I just need to find the median. I know if, so maybe I can do one thing. I can say n is equal to n1 plus n2. If n is rather odd, I know the answer will be very simple. Array 3 of n by 2 because in that case, it's exactly the middle. If you remember for 5, the middle was 2, which is 5 by 2. So you just take out the middle and you send it back. Or else the median will be, if I have to write, it's array 3 n by 2 because if you remember for 10, you have to pick up the fourth index, you have to pick up the fifth index and the element where 4 and 6 and you added them and you divided them by 2. So this plus array of 3 n by 2 minus 1 divided by 2 is what you return. And this will be the pseudo code. Simple as that. So let's quickly jump into the code editor. As you can see that"
+    },
+    {
+      "chunk_id": "L065_C8",
+      "start": 466.9,
+      "end": 526.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=466s",
+      "text": "this will be the pseudo code. Simple as that. So let's quickly jump into the code editor. As you can see that I've written the exact same code. The only minute difference is I'm typecasting over here because the answer will be in double. And if you do not typecast, these are integers, you might end up getting incorrect answers. So if you try to submit this, you'll get a partially accepted. Why? Because it is taking a lot of time. The total time taken over here will be, you're going through every element in both the arrays and you're putting them into a third array. So since you're going through every element, that's n1 plus n2 because that is the total number of elements. Using a third array to store all the elements. So that's a big O of n1 plus n2. This is giving you a time limit exceeded. Can we do better? The next better solution will be to optimize the space and after that we'll try to work on this time limit exceeded. But as of now, can we optimize the space, like get rid of this third array? That is what we will look forward to. So the brute force solution, we were using an extra space. Why was that? Because I was using an array 3 where I was storing all the elements. But if I just think logically, do I need all the elements? The answer"
+    },
+    {
+      "chunk_id": "L065_C9",
+      "start": 526.66,
+      "end": 600.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=526s",
+      "text": "an array 3 where I was storing all the elements. But if I just think logically, do I need all the elements? The answer to that is, if I can somehow just get 4 and 6 for this example and then just divide them by 2, that's done. I don't need all the elements. Why am I storing all the elements? I just need 4 and 6. In this particular example, I just need 3. I don't need all the elements. So let's focus on picking up 4 and 6 only or let's focus on picking up 3 only. So when you are doing the algorithm, if you remember, we checked for n's value at the end. If it was odd, we did the computation. If it was even, we did the computation at the end. But before that, we merge them together. So let's have some observations. The total number of elements are 10. At the fourth index, I have the first index 1 element. At the fifth index, I have the index 2 element. And if it is even, I'm adding them up and dividing it by 2. So let's call index 1 as 4 because I need the fourth index element and index 2 as 5. I need the fifth index element which is called as element 1 and element 2. And what is these values? If you just do total by 2, you'll get index 2. And if you just subtract it"
+    },
+    {
+      "chunk_id": "L065_C10",
+      "start": 600.58,
+      "end": 671.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=600s",
+      "text": "element 2. And what is these values? If you just do total by 2, you'll get index 2. And if you just subtract it by 1, you'll get the index 4. So it's basically n by 2 and n by 2 minus 1. And this is index 1 and this is index 2. In this case, if you divide by 2, you will get index 2 because the formulas are similar. I want to keep the same formula so that I don't have to write repetitive code. It's element 2. So what I'll try to do is I'll try to find index 1 and index 2. In case n is even, I take both of these elements, sum and divide by 2. In case the element is odd, I will have index 1 and element 1 but I'll discard it. I'll discard it and I'll just take element 2. That will be my answer. So let's quickly try to merge it and in the process, try to find the fourth index element and in the process, try to find the fifth index element. That is index 1 and index 2. So we will not be merging it. Let's call the first index as count 0. Count refers to the first index which is 0. How did we merge? We started at 1 and we started at 2. Hypothetically, think which one will be your zeroth index guy? 1. 1 will be a zeroth index guy, right?"
+    },
+    {
+      "chunk_id": "L065_C11",
+      "start": 672.02,
+      "end": 743.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=672s",
+      "text": "and we started at 2. Hypothetically, think which one will be your zeroth index guy? 1. 1 will be a zeroth index guy, right? Let's move to 3 and that means the count moves to first. You're looking for your first index guy and that's 2. Let's take 2 and now let's move this and move the count to the second index. Now you're looking for your third index guy. Who is your third index guy? 3. Let's take 3 and move count to 3. Now what are you looking for? You're looking for your third index guy and the third index guy will be 3. Let's take 3 and move the count to the fourth index. Here comes the twist. Your count is looking for an index which you need. So which one will it be? 4 or 6? It says 4 because of the comparison. So I take 4 and I say I got my element 1 because I was looking for the fourth index guy. So I got my element and after that I'll move. Now the count will move to the fifth index because I'm looking for the fifth index guy. It's happening hypothetically. You're not storing these elements. You're just not storing. You're just playing with the pointers. You just move the pointers. The count is at 5 and it's 6 is the guy and you store the 6. Just store the 6 and then you move the count and you keep on doing"
+    },
+    {
+      "chunk_id": "L065_C12",
+      "start": 743.38,
+      "end": 806.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=743s",
+      "text": "6 is the guy and you store the 6. Just store the 6 and then you move the count and you keep on doing your process. You keep on doing your process and if you have figured out both the elements, if you figured out both the elements, the job is done and the answer will be element 1 plus element 2 by 2 and that's it. In case n was odd, the answer will be element 2. You would have stored element 1 but the answer will be element 2. Right? Got it? And let's quickly get back into the code editor because if I try to write down the code in the iPad, it's going to be super messy and since we're just using increment operators and while loops, I think the C++, Java and all the versions will be similar so you'll be understanding it. Doesn't matter which language you follow. So what I am doing is at first making sure I take n1, n2 and initialize i and j pointers and get the value of n. After that we know the values of index 2 will be half of the total length and index 1 will be 1 before that. Simple. And we're keeping the index tracker. This is the tracker. The count is the tracker which is basically saying okay on array 3, this is the index that I'm looking for. Initially you're looking for zero things. Right? So that's"
+    },
+    {
+      "chunk_id": "L065_C13",
+      "start": 806.02,
+      "end": 876.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=806s",
+      "text": "is basically saying okay on array 3, this is the index that I'm looking for. Initially you're looking for zero things. Right? So that's your index tracker and we haven't figured out the elements so that can be stored as minus 1. What I do is I basically do the same looping where I try to merge both of them. If for this index tracker count zero, this element is smaller. I go inside and I know array of i is the element that will be present at my current index and if the index tracker is equivalent to one of my index that I'm looking for, I say hey please assign yourself. If my index tracker is equivalent to the other index that I'm looking for, maybe assign yourself. So either of these conditions and after that count plus plus because this index is done. Let's find out the next index and i plus plus. So this is how this one will look. A similar thing will happen for the else. What if we have taken b? In that case the index tracker will just take the b and we move forward. Very straightforward, very simple. Again this condition can be trimmed when you find index. You can also optimize this by saying we will stop then and there the moment we find index one and index to both. That is what we're looking for. The moment we find both we can stop. You can do those"
+    },
+    {
+      "chunk_id": "L065_C14",
+      "start": 876.02,
+      "end": 931.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=876s",
+      "text": "index one and index to both. That is what we're looking for. The moment we find both we can stop. You can do those optimizations by yourself. I'm over here to just explain the concept. Right after that the same thing. If there are leftover elements on the array one, you just do the same thing. Is index tracker equivalent? Then you pick it up or else you just keep on moving. Is on the right, if the index tracker is equivalent you pick up from the right and you keep on moving. Again the optimizations can be done. If you find index one and index two, like both have been found, you can just break out. You can break out and instead of minus one, primarily you have to give int mean or int max something. Such an element which doesn't exist in the array and then you can simply break out the moment you have figured out both of them and then these conditions will be executed. If it is an odd I just need the index two. If it is an even I have to do the type casting, sum it up, divide it by 2.0 and enter. If we're to submit it this will also be partially accepted. Why? Because we haven't reduced down the time complexity. What we have done is we've reduced the space. We're no more using"
+    },
+    {
+      "chunk_id": "L065_C15",
+      "start": 931.86,
+      "end": 944.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=C2rRzz-JDk8&t=931s",
+      "text": "accepted. Why? Because we haven't reduced down the time complexity. What we have done is we've reduced the space. We're no more using the extra space that we are using for storing the entire array. We're just keeping the trackers which strengthens the element because that is what we require. Got it?"
+    }
+  ]
+}

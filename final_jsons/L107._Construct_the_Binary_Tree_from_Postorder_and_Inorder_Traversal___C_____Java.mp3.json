@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L107",
+  "lecture_number": 107,
+  "lecture_title": "L35. Construct the Binary Tree from Postorder and Inorder Traversal | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc",
+  "chunks": [
+    {
+      "chunk_id": "L107_C1",
+      "start": 0.0,
+      "end": 70.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=0s",
+      "text": "So before starting this video, I would love to thank Relevel for sponsoring this entire video. A hiring platform with no degree required, no experience required, mentoring sessions available feels like a dream, isn't it? What if I say all of this is for free? Well, Relevel by Unacademy is here to make your dream come true. With job opportunities in front-end, back-end and business development from India's top companies for freshers and people in the early career, Relevel is here to make the entire hiring process super simple and super quick. All you have to do is to give the Relevel test and based on your score, interviews will be scheduled and you will be hired. So what are you waiting for? Make sure you check out all the links in the description and apply for the Relevel test as soon as possible. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, construct a unique binary tree from a given post order and an in order. So why did I say unique? Because if you're given an in order and if you're given a pre-order or post order, then you can only create a unique binary tree. I've discussed about this in detail in the previous video. So you can watch that video and after that you can start this video."
+    },
+    {
+      "chunk_id": "L107_C2",
+      "start": 70.4,
+      "end": 135.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=70s",
+      "text": "discussed about this in detail in the previous video. So you can watch that video and after that you can start this video. You'll have a clear idea why do we need an in order and why do we need a pre-order or a post order in order to create a binary tree that is unique. You can create a lot of binary trees if post order, pre-orders are given. So just make sure you check out that video in order to get a much detailed knowledge. So over here, the in order is given to you and the post order is given to you. And the task is to create the binary tree whose in order is this given one and whose post order is this given one. So if I try to create like the binary tree that is the answer is this 10, 20, 30 and over here there's a 40, there's a 50 and there's a 60. Like if you write down the pre, write down the in order, you'll get this. You write down the post order, you'll definitely get this. So that is what you have to do. You have to return the root of this constructed, like you have to construct this binary tree and you return the root of this binary tree. That is what the question is all about. So how do you solve this problem? It's very easy. Now, what do you know? What is a post order?"
+    },
+    {
+      "chunk_id": "L107_C3",
+      "start": 135.04,
+      "end": 212.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=135s",
+      "text": "question is all about. So how do you solve this problem? It's very easy. Now, what do you know? What is a post order? It's nothing but left, right and root. That is what a post order is. What's the in order? In order is left, root, right. That is what I can call as the in order. So can I say that this last guy is indeed your root of the entire tree? If like, yes, you can say that, that this last guy is indeed the root of the entire tree. Now, if you've got the root of the entire tree, how do you figure out what is the left portion? What is the right portion? So can I say, since the in order says left, root, right, and this is where the root of the tree is. So can I say all these elements, all these elements will be the part of your left subtree and all these elements will be the part of your right subtree. So what you can say is on the left, on the left, I again have to create a tree whose in order is 40, 20, 50 because I know this left is itself the in order. Like if I just consider this, this is going to be the in order. Common sense because left, root, right, that is the sequence that the tree follows."
+    },
+    {
+      "chunk_id": "L107_C4",
+      "start": 212.2,
+      "end": 282.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=212s",
+      "text": "this, this is going to be the in order. Common sense because left, root, right, that is the sequence that the tree follows. So whatever is on the left is the part of the left subtree and this is the in order of that subtree. So I can say the in order is this of the left subtree. Similarly, I can say 60 and 30 is the in order of the right subtree. So if I know the in order and if I can again predict, like if I can just get the post order, I think my job should be done. What is the post order of the right? So I can say that if this is 10 and I know first I have the left, so I have three elements on the in order, like on the left subtree. So can I say the first three elements, first three elements are these, can I say the first three elements will be the post order traversal of the left subtree? Indeed. And can I say the remaining elements, I repeat, can I say the remaining elements will be nothing but the post order of the right subtree? I can. So does the question boil down to similar question again? Like the question was given constructed a binary tree when a post order in order is given. Does the question again bring you back to that state where in order is given to you"
+    },
+    {
+      "chunk_id": "L107_C5",
+      "start": 282.84,
+      "end": 352.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=282s",
+      "text": "a post order in order is given. Does the question again bring you back to that state where in order is given to you and a post order is given to you and you need to again construct a tree. So if I can think of this, like what is this? This is kind of a recursive solution, right? Whenever you're breaking the problem into sub problems, the first time the post order was so big, the in order was a big one. You just broke it down into left and right and you created a small sample of it. So it's kind of creating sub trees, sub trees, sub trees by taking in order post orders every time. So that's, that's the whole idea about this problem. We figure out the left subtree that is this, we figure out the right subtree and then we again create a tree on that left subtree and the right subtree. That's how we are going to solve this problem. So we have solved 10, like you've got the root. Now we will solve taking this in order and the preorder for the left subtree and we'll construct that subtree and we'll attach that to the left of 10. Okay, let's construct this tree that will be formed using this in order and using this post order. So what I can say is I currently have these guys as the in order and I can say that I"
+    },
+    {
+      "chunk_id": "L107_C6",
+      "start": 352.92,
+      "end": 424.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=352s",
+      "text": "this post order. So what I can say is I currently have these guys as the in order and I can say that I have currently this guy as the post order. Now I can keep these guys for the later use, but as of now, let's understand that we have this. So can I say that again, since the post order and I know post order is left, right, root. So can I surely say whatever is at the last will be my root of the tree for the new tree? Remember for the new tree, I'm creating a new tree again. I can again, if I figure out 20 is right at over here. So the left, the left in order, the left in order. So the left guy will be having an in order 40, right? And the right guy will be having an in order 50. So I figured out the left subtree and the right subtree again, again, I've broken down into sub problems again. Now can I say, since it is left, so if on the left subtree, I have one element on the right subtree, I have one element. So can I say, since it's a left, right, so the, from the left, the first one element that's 40, that's 40. So that's the post order. And right after that, the next one element is the post order of the right subtree."
+    },
+    {
+      "chunk_id": "L107_C7",
+      "start": 424.62,
+      "end": 487.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=424s",
+      "text": "that's 40. So that's the post order. And right after that, the next one element is the post order of the right subtree. So I figured out, again, I've broken down the problem into smaller sub problem where I have an in order, I have a post order for the left, I have an in order and I have a post order for the right. So I can again create the tree and I can attach it to the left. And similarly, I can create the tree from the right and I can attach it to the right. Simple enough. Let's try to create the tree from the, this 40 as in order and this 40 as the post order. Cool. So as of now, we have an in order as 40, a post order as 40. So as you know, post order is nothing but left, right, root. So can I say, can I say the root will be 40 itself? So I'll create a node with 40 and the moment I see 40 is here on the in order, I try to figure out what's on the left. I see there is nothing. So when I call, I do not get anything. So I will say it's a null. So I'll mark it to null. And on the right, I also do not have anything. So I'll mark it to null. So the last stage of recursion will be a node itself."
+    },
+    {
+      "chunk_id": "L107_C8",
+      "start": 487.9,
+      "end": 552.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=487s",
+      "text": "right, I also do not have anything. So I'll mark it to null. So the last stage of recursion will be a node itself. And if I create a node, I'll return that and that will be attached to the left. So the left call is done. Similarly, for 50, if you again do the same thing, you'll just create a node of 50, right? Because 50 will be the in order and 50 will be the post order. So as you know, the last guy is the root. So 50 comes out to be the root. So what you can do is you can create a 50 and again, the left will be null and the right will be null. Correct? So that's how you create 50 and you can just return it and attach it to 20s, right? So I can say 20 has got its left and got its right. So 20 will return and that will be attached to 10s left. As simple as that. So I recursively created the trees and while coming back, I attached it to its left counterpart and right counterpart. Now, if you remember, this was remaining 60, 30 as the in order, 60, 30 as the post order. So let's, let's do for this. So this is the in order for the right, and this is the post order for the right subtree. So again, you can call the right and let's create."
+    },
+    {
+      "chunk_id": "L107_C9",
+      "start": 552.1,
+      "end": 612.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=552s",
+      "text": "order for the right, and this is the post order for the right subtree. So again, you can call the right and let's create. So I can say this last guy is definitely mine. Yes, I can say this last guy is definitely my root of the tree. So I can figure out that this is the root of the tree. And if this is the root of the tree, and if this is the root of the tree, the left guy will lie on the left with an in order of 60. And I can take one element from the starting of post and that's definitely going to be my post order. So the left guy will have an in order and a post order as something like this. And the right guy will say, I do not have anything because it doesn't have anything. I will point to null. So it points to null, correct? So when I move to the left, I'll have the in order as 60 and the post order as 60. So I can again, just create the node as 60. And I'll, this is the node that I'll create. And on this left, I'll find nothing on the right. I'll find nothing. So I'll point to null, it'll point to null. And once this, this recursion is over, I'll return it. And 30 is left, will be pointing to 60. 30 is right, will be pointing to null. So 30 is complete."
+    },
+    {
+      "chunk_id": "L107_C10",
+      "start": 612.9,
+      "end": 685.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=612s",
+      "text": "I'll return it. And 30 is left, will be pointing to 60. 30 is right, will be pointing to null. So 30 is complete. So 30 will be returned and hence right will be pointing to 30. This is how, this is how you can create the unique binary tree from any given post order or in order, right? So if I discuss like, how will the code look like, like I will give you a brief idea and then you can probably code it. And if you cannot, you can definitely check out my coding explanation after this. How will the code look like? So first step that I'm always doing is like whatever post order is given to me, whatever post order is given to me. I'll take the last element and I'll say that this is going to be my node. Okay. This is going to be my node, right? And after that, what I'm saying is nodes left will be a left counterpart. Like if this is 12 and if I've been given an in order where 12 exists somewhere here, so I'll figure out where does 12 exist? And I will say that this left guy, this left guy will be on the left sub tree in order and these right guy will be right sub tree in order. And how to figure out where does 12 exist? It's a very simple thing."
+    },
+    {
+      "chunk_id": "L107_C11",
+      "start": 685.42,
+      "end": 750.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=685s",
+      "text": "right guy will be right sub tree in order. And how to figure out where does 12 exist? It's a very simple thing. Whatever elements are there on the in order, just put them into some map data structure so that you can easily understand where does 12 exist in order like in a big or funnel log and you can easily understand where does 12 exist in your in order. So what you'll do is you will easily get 12 and you can easily figure out how many elements are on the left. Like if this is a starting point and this is the point you can easily figure out how many elements are on the left and how many elements are on the right by easily subtracting. So once you figure out the number of elements on the left from post order, the first though like assume there are X elements on the left, first X elements will be the post order of the left sub tree and right after that the remaining elements, the remaining elements will be the post order of the right sub tree. And again you can start recursively building this. That's what the recursive idea will be. It will be given an in order, it will be given a post order, figure out the root, build the node and call the left, call the right with the next in orders and post orders."
+    },
+    {
+      "chunk_id": "L107_C12",
+      "start": 750.18,
+      "end": 815.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=750s",
+      "text": "post order, figure out the root, build the node and call the left, call the right with the next in orders and post orders. And at the end, whenever you are in order and post order do not have elements, that is when you can say that it's empty and just point them to null. So that's how you can think of a code. So I'll try to, I'll highly recommend that you should definitely implement this by yourself and if you cannot, the next part is decoding explanation. So that's as usual, the left part is the C++ solution and the right part is the Java solution. So basically you're given the in order and the post order. So what's the first thing, just in case they do not match in size or anything is given as null or something, just make sure you return a null. Just make sure you return a null saying that there cannot be a tree, like this is kind of a wrong solution. After that you create a map. This map, if you remember, like whatever in order is given to you, yes, whatever in order is given to you, like assume 10, 12, 11, 10, just make sure 10 is at the zeroth index, 12 is at the first index, 11 is at the second index, 10 is at the third index. For that, create a map so that whenever you do a post order, yes, whenever you do a post"
+    },
+    {
+      "chunk_id": "L107_C13",
+      "start": 815.02,
+      "end": 892.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=815s",
+      "text": "is at the third index. For that, create a map so that whenever you do a post order, yes, whenever you do a post order, whatever element is at the last, that's going to be a root. So you can easily figure out where does 12 exist. So 12 can be easily figured out to be existing at the first index using this map data structure. That's why I just make sure whatever in order you have, you have a hash mapped. After that, you call this function buildTree with in order, with the starting pointer of zero, with the ending pointer of in order size minus one, with the post order, the starting point is zero and the last size is like the ending pointer over here and with the hash map. So basically the IS is the starting pointer of in order, IE is the ending point of the in order and PS is the post starting point and PE is the post ending point. That's what I've taken. Now, just in case you run out of the in order and post order, just in case this pointer, what I'll do is if I'm taking this much array for the left subtree and I'm saying this is my post order, instead of reducing the array, I'll take pointers. I'll say that this is post start, this is post end. I'll take pointers in order to make sure that this is the new array for the post order of"
+    },
+    {
+      "chunk_id": "L107_C14",
+      "start": 892.38,
+      "end": 961.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=892s",
+      "text": "post start, this is post end. I'll take pointers in order to make sure that this is the new array for the post order of left or right. So if they are over, we do not have a post order or in order, the size is zero, I can say return a null. If the size is zero, there will be no left subtree, there will be no right subtree. So that is what I'll return. And after that, what I do is, whatever is at the end, like over here, the end is 10. So I'll say 10 will be my node, 10 will be by root or node of the tree that I'm creating. And right after that, I figure out where is this, like where is this 10? And this is where I'll get the in root, in root variable. It will directly tell me where is this 10 in the hash map. It directly tells me that this is at this index. And if I write down the indexing, it's at the third index. So if I ask you, how many elements, how many elements are on the left? How many elements are on the left? Your answer might be three, but that is not correct. You'll be like three minus the starting point, because as I said, in the next step might happen, in the next step might happen. This is the in order, this is the in order."
+    },
+    {
+      "chunk_id": "L107_C15",
+      "start": 961.02,
+      "end": 1028.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=961s",
+      "text": "I said, in the next step might happen, in the next step might happen. This is the in order, this is the in order. Whenever you find 30, you cannot say on the left, you have one element, right? If it's a five minus four, it's the number of elements on the left, right? So that's why what you'll always say is the starting point of the in order array, the starting point of the in order array and the in root, like wherever I am currently at three minus the starting point will be the number of elements on the left. As of now, we have three elements. So after that, once you figure out the number of elements on the left is three, you call the left guy, like you'll call the left guy with the same in order, where you'll say that this is my new in order starting, this is my new in order ending, like in root minus one, okay? There's a new in order starting and in order ending for the next function call, correct? And what about post order? In the case of a post order, for post order, for the left subtree, it's very simple. You start from the post order starting, right? That is where you start from. And you end up taking three numbers. That's a index two is where you take up. So post order starting plus three numbers minus one, because if there are three numbers,"
+    },
+    {
+      "chunk_id": "L107_C16",
+      "start": 1028.94,
+      "end": 1093.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=1028s",
+      "text": "That's a index two is where you take up. So post order starting plus three numbers minus one, because if there are three numbers, you take the index two, that makes three numbers. That's why minus one. That is about the left subtree. What about the right subtree? Can I say the right subtrees in order will start from in root, this is in root, in root plus one, in root plus one is where it starts from. I'll go on to in root n, like in order n. What about the post order? Can I say the post order will be post order plus three, that's post order plus nums left till what? Post order end minus one. This post order end minus one. So post order end minus one. So I have easily figured out from where, like I've easily figured out ps plus nums left plus p minus one is where the next, like this is the next post order for right. This is the next in order for the right. And similarly, this is the next in order for the left. And this is the next post order for the left. That's how you send it across. And whenever this returns, like this will definitely return a root, right? It'll definitely return a root or a null. Whatever it returns, you'll make the root, it'll make this guy point to whatever the left returns."
+    },
+    {
+      "chunk_id": "L107_C17",
+      "start": 1093.48,
+      "end": 1155.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=1093s",
+      "text": "return a root or a null. Whatever it returns, you'll make the root, it'll make this guy point to whatever the left returns. And after that, make the right, make the right point to whatever it returns. That's very simple. And keep on doing it, keep on doing it. On backtracking, it will automatically make sure it points to the left and right. At the end, you return this 10, which will be your root of the tree. And that is what is returned. Return this, this guy returned, and this guy will automatically return the root. Time complexity. You're doing a simple traversal of the tree. That's a big of n traversal. And are you, I can say log in, I can say log in. If you're considering a hash map to take log in, you can say log in. If you're considering hash map to take big of one, you can take a big of n into one. So what about the space complexity? The space complexity is definitely going to be big of n for the hash map and a big of n for the auxiliary stack space of recursion. But yes, if I can summarize that to n log n or n again, n log n or n depending on what time is your hash map taking. And that's the space complexity of this particular solution. So I hope you've understood the entire explanation as well as the code."
+    },
+    {
+      "chunk_id": "L107_C18",
+      "start": 1155.82,
+      "end": 1177.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=LgLRTaEMRVc&t=1155s",
+      "text": "map taking. And that's the space complexity of this particular solution. So I hope you've understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

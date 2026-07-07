@@ -1,0 +1,78 @@
+{
+  "lecture_id": "L082",
+  "lecture_number": 82,
+  "lecture_title": "L10. iterative Inorder Traversal in Binary Tree | C++ | Java | Stack",
+  "youtube_url": "https://www.youtube.com/watch?v=lxTGsVXjwvM",
+  "chunks": [
+    {
+      "chunk_id": "L082_C1",
+      "start": 0.0,
+      "end": 76.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=lxTGsVXjwvM&t=0s",
+      "text": "So before starting this video, I'd love to thank Relible for sponsoring this entire tree series. Did you know that companies like Google, Apple, Starbucks are now hiring people without any degree or experience? Why? Because they believe that skills are more important than anything else. Now top companies in India like the top startups have also started following this trend by hiring through a platform which is Relible which is backed up by an academy. All you have to do is to give the Relible test and based on your score, send your candidate profiles to 50 plus companies which includes Cred, UpGrad, Vedantu, Razorpay, etc. and you can get selected for a job role within a week. Another amazing thing about Relible is it's absolutely free. So please make sure you check out the links in the description. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So the previous video, we did learn about how to find an in-order traversal of any given binary tree but that method did use recursion. What if in an interview, the interviewer tells you that you cannot use recursion? Then how will you solve this problem? We're going to use an iterative technique in order to get the in-order traversal. So let's just quickly write the in-order traversal for this particular tree or the in-order traversal. You know what is in-order?"
+    },
+    {
+      "chunk_id": "L082_C2",
+      "start": 76.6,
+      "end": 145.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=lxTGsVXjwvM&t=76s",
+      "text": "in-order traversal. So let's just quickly write the in-order traversal for this particular tree or the in-order traversal. You know what is in-order? In-order is basically left and since it is in, so the node or the root will be at the middle and after that something like the right will appear. So over here, this is where you start. You go to the left. 4 is the first node. Then you go to its root. That's 2. Then you go to the right. So this is the right subtree and this right subtree again left, root, right. So 6, 5, 7. So the left portion is completed. So you come back to root. That's 1. Then you go to the right. That's 3. So this is how you generally do left, root, right. So this is going to be the in-order traversal of this particular binary tree. So you know recursive way, right? So if you remember, in the recursion, what we did was we moved to the left, we printed and then we moved to right. So basically what happened was we went to the left. Again we came to the left. Again we came to the left and the moment the left was complete, then we printed that node. So basically I went to 1, then I went to 2, then I went to 4 and then I printed 4."
+    },
+    {
+      "chunk_id": "L082_C3",
+      "start": 145.44,
+      "end": 224.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=lxTGsVXjwvM&t=145s",
+      "text": "that node. So basically I went to 1, then I went to 2, then I went to 4 and then I printed 4. And this 1, like at first the call was made for 1, it went to the left, then 2, then it went to 4 and at the end the 4 was printed. So these 2 and 1 were stored in the auxiliary stack space of recursion, right? Auxiliary stack space of recursion. Over here, in order to convert this into an iterative solution, can I not use a stack which is created by me? Yes, I can. And I store the similar thing like 1, 2 and I can just reuse them. I think that makes absolute sense. So let's do that. So in order to have an iterative traversal, just make sure you have a stack data structure, okay? So what's a stack data structure? It's a last-in, first-out data structure. That is what you will have. And also have a node which is initialized to the root initially. So currently you are at the node 1. Let's start the iteration. Now remember, at every step of iteration, you take whatever is at the node. Remember this. If this is not null, you take this and you put it into your stack, okay? Once you have put it into your stack, if there exists a left, like even if there doesn't, you just take the left of 1."
+    },
+    {
+      "chunk_id": "L082_C4",
+      "start": 225.6,
+      "end": 291.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=lxTGsVXjwvM&t=225s",
+      "text": "you have put it into your stack, if there exists a left, like even if there doesn't, you just take the left of 1. So you'll take the left of 1. So in every iteration, if the node is not null, you'll take this and you'll put it into your stack and you'll move to the left. Similar to recursion where you move to the left. Now in the next iteration, you come to 2 again. Same thing. Take it and put it into your stack. And now it's time to move to the left. Similar to recursion, I'll move to the left. And the next iteration, you come back again and you have a 4. Again just store it and move to the next. Move to the left. So when you move to the left, you will get null. So in the next iteration, when you come, you see that there is a null. Remember, if there is a null, there is no need to move to the left any further. So similar to recursion, what you will do is, you will just take out this element and you'll print it. So the first element 4 is indeed printed. That is the inordered traversal. Right after that, you know you have to move to the right. If you remember recursion, left, print, right. So you have to move to the right. So who is force right? Do you have anything? No."
+    },
+    {
+      "chunk_id": "L082_C5",
+      "start": 291.96,
+      "end": 350.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=lxTGsVXjwvM&t=291s",
+      "text": "you remember recursion, left, print, right. So you have to move to the right. So who is force right? Do you have anything? No. So this guy again gets converted to null because force right is null. And that is what you will make the node as. Iteration over. Again come back to the next iteration. When you come back to the next iteration, you again have a null. If you again have a null, it's the same thing. Come back. So you'll take this 2 and you'll print it. So coming back, right? If it's a null, if you remember the recursion code, if it's a null, you have to come back, right? So came back. You have printed 2, right? Now since you have taken 2 and printed, if you remember it was left, root, right. So it's time to move to 2's right. What's 2's right? 5. So this is what I will do. I'll take out the top of the stack, I'll print it. And now it's time to move to the right. So I'll move to the right. Perfect. So in the next iteration, when I come across, I will take this 5 and I'll put this into the stack. Okay. At the same time, I will move to the left of 5 because this 5 will wait and I'll move to the left. That is 6. Let's move to the 6."
+    },
+    {
+      "chunk_id": "L082_C6",
+      "start": 350.76,
+      "end": 419.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=lxTGsVXjwvM&t=350s",
+      "text": "the left of 5 because this 5 will wait and I'll move to the left. That is 6. Let's move to the 6. Then the next iteration, when I come back again, again I'll take this 6 and I'll make it wait and I'll move to the left. So when I move to the left, it's a null again. Perfect. If it's a null again, in the next iteration, what will happen? It will say I'm a null. So I will take the top of the stack. And what is the top of the stack? 6. So I'll print this 6. And what I will do is left, print, right. So 6's right is null again. So I'll just reassign that to null. So I've reassigned that to null. Perfect. In the next iteration, when I come across, I again get a null. So what I will do is I will take back the last guy, 5, and I'll print it. Once I have printed it, you're getting a pattern, right? First it was 6, then it was 5. So it is coming back. It is backtracking. First 6, then 5, it is backtracking. So since you have printed 5, so left root is printed. Time to go to the right. So 5's right is 7. So this guy will change to 7. So I'll come to the right now. I'll come to 7. Perfect. So in the next iteration, when I come back, I see I have a 7."
+    },
+    {
+      "chunk_id": "L082_C7",
+      "start": 419.02,
+      "end": 485.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=lxTGsVXjwvM&t=419s",
+      "text": "come to the right now. I'll come to 7. Perfect. So in the next iteration, when I come back, I see I have a 7. So I'll take that and put into the stack and I will move to the left of 7. So I'll move to null. And the next iteration, when I come back, I see a null. If it's a null, what I'll do is I'll take this 7 and I'll print it. And since it is printed, now it's time to move to the right. 7's right is null. So I'll move to null. Perfect. Now the next iteration, when I come across, I again see a null. Now this moment, when I see a null, what happens? Very simple. I take the topmost element again. And that is what is printed. Once that is printed, I will reassign this to the right of 1 because 1 is printed. It's time to go to the right of 1. Left print right. So the right of 1 is nothing but 3. So I went to 3. And the next iteration, when I come back, I have a 3. So I go to the left of 3. Yes, in the next iteration, when I come back, I have a 3. So just take it and put it into your stack. And now it's time that you change this to the left. So the left is null."
+    },
+    {
+      "chunk_id": "L082_C8",
+      "start": 485.86,
+      "end": 560.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=lxTGsVXjwvM&t=485s",
+      "text": "it and put it into your stack. And now it's time that you change this to the left. So the left is null. In the next iteration, when you come back, you see there is a null. So whatever is over here, you just take it out and you print. And you move to the right of 3. That's null. Perfect. Now the next iteration, when you come back, there is a null. Yes, there is a null. Whenever you look at the stack, it's empty. So if it's empty, you can break out saying there is no further nodes to travel. And at the end, I can say I have actually printed my in-order traversal. So if you draw the recursion tree, you'll actually see the same stack trace being created. So as usual, the C++ code is on the left and the Java code is on the right. So what are we given? We are given the root of the tree, right? And we take a stack, empty stack. I create a node which is our current or whatever you can call. I can just assign it to root. And I've declared a vector which stores my in-order. Now if you remember what we did, if the node is not null, we took that node, we put that into the stack, and we moved to the left. Basically, this creates my auxiliary stack trace. And I move to the left. Perfect."
+    },
+    {
+      "chunk_id": "L082_C9",
+      "start": 560.48,
+      "end": 628.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=lxTGsVXjwvM&t=560s",
+      "text": "that into the stack, and we moved to the left. Basically, this creates my auxiliary stack trace. And I move to the left. Perfect. And at the same iteration, if I end up getting to the else, what does else mean? It means it's null, right? If it is null, if you remember what did we do, we will just make sure the stack is empty, then it's over. That means there are no nodes to travel. Or else, whatever is at the top of the stack, we take it. And that will be my in-order. And after that, since it is print, and after that it's right, I move to the right and the iteration goes over. Whenever the stack becomes empty, I'll break out. Once I break out, I'm going to return the in-order traversal. What will be the time complexity, guys? It's very simple. It's a big O of n traversal because I'm traversing all the nodes. What is the space complexity? It's a big O of n because I'm using an auxiliary stack space. Now why the auxiliary space is big O of n? Imagine you're given a tree which just has left children. So you'll push this, then you'll push this, then you'll push this, and you'll go to the left every time you go to the left and you're going on to push on. So if there is a skew tree which has just the left children, you will end up taking"
+    },
+    {
+      "chunk_id": "L082_C10",
+      "start": 628.28,
+      "end": 666.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=lxTGsVXjwvM&t=628s",
+      "text": "you're going on to push on. So if there is a skew tree which has just the left children, you will end up taking big O of n space. Or if I just summarize this, I can say it's a big O of height of the binary tree is the space complexity for storing the in-order traversal. So I hope you've understood the entire explanation as well as the code. Just in case you did, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also if you're new to this channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

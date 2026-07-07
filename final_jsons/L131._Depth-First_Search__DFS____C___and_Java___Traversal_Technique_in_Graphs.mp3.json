@@ -1,0 +1,120 @@
+{
+  "lecture_id": "L131",
+  "lecture_number": 131,
+  "lecture_title": "G-6. Depth-First Search (DFS) | C++ and Java | Traversal Technique in Graphs",
+  "youtube_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8",
+  "chunks": [
+    {
+      "chunk_id": "L131_C1",
+      "start": 0.0,
+      "end": 79.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=0s",
+      "text": "So in this video we are going to learn about the second traversal technique that is the DFS traversal in a graph. Now in the previous video you did learn about something which was BFS breadth first search which was based on level. Now we will be learning as DFS which is depth first search. Now this will be based on depth depth depth. Yes. So why did I emphasize so much on depth. You'll understand. Again similarly you'll be given a graph and you'll be given a starting node. Assume the starting node to be one over here. OK. The starting node is one. This is one. OK. Now you go to any one of the neighboring nodes. Two three four. Anyone you can go. So for example I decide I will go from one to the left neighboring node which is two. So if you go to two you don't stop there. Very important. You started from here. You go here and then you don't stop. You go depth depth. So you go to depth which is five. Again you can either go to here or here. That is your choice. But generally we go to the guy who is right at the first of that adjacency list or from"
+    },
+    {
+      "chunk_id": "L131_C2",
+      "start": 79.52,
+      "end": 159.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=79s",
+      "text": "your choice. But generally we go to the guy who is right at the first of that adjacency list or from left to right. So five will be there. You basically go like this. So it's like one two five. Done. Now you're going like one two five. There is no further depth in it. So what you do is you come back and now you go to here which is the six which is the six. So you go to six. Now you went like one two five. You came back. You went to six. Now there is no depth of six. So you come back. Now there is no further children of two. So you go back. Now once this portion depth is completed it starts going to the next portion which is three. So you go to three. Done. Now when you've gone to three. Now again either you can go this way or you can go this way. That is your choice. So I decide I'll go this way. So I'll go like seven. I'll go like seven. OK. So I go seven. Now you're like one three seven. Now seven's depth is eight. Does not need to be in doubt. Neighbor seven seven's depth is eight. So you go to eight. Eight's depth is four. So you go to four. So apparently you started from one. You came to three. You went to seven. You went to eight."
+    },
+    {
+      "chunk_id": "L131_C3",
+      "start": 159.4,
+      "end": 232.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=159s",
+      "text": "four. So you go to four. So apparently you started from one. You came to three. You went to seven. You went to eight. You went to four. And after that you can't go because this is already done. So you go back. There is no further. Go back. No further. Go back. So apparently this portion is done. Had there been. Assume. Had there been someone else. Something like three four nine ten. Then coming back you'd have gone to nine ten. So you go to depth. You go to depth at first. I hope that makes sense. So this will be the DFS. This will be the DFS. Again it's not necessary that you go like this. This then this. You could have done the other way like one three. Then you could have gone like this four eight seven. Then you could have gone to two then to six then to five. You could have done that way. That is as long as you're traversing in depth any traversal type will work. But it should be depth depth. OK so let's change the starting node in order to understand the DFS traversal more. OK so assume I change the starting node to be somewhere around three. Now assume this is the starting. So again this would be the first point for sure. This will be the first point. Now from three you can either go here."
+    },
+    {
+      "chunk_id": "L131_C4",
+      "start": 232.68,
+      "end": 308.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=232s",
+      "text": "again this would be the first point for sure. This will be the first point. Now from three you can either go here. You can either go here you can either go here your choice. So I decide I'll go to four. From three I decide I'll go to four so to be like four. Then you'll go to eight then you'll go to seven. So be like three four eight seven. So three four eight seven. So three want to four four. One two eight. Eight one to seven cannot go further. Comes back comes back comes back. So this portion depth is completed. Depth is completed. Now go the other way, which is one. So you go to one, you go to two, again do the same thing. Five and then six or the opposite. It's like one, two, five, six. Now come back again. Now three, will it go to seven? No, because seven has already been covered. So we start from three and you go in this, then you go in this, this will be the DFS. There can be plenty of DFS depending on the starting node. Yes, depending on the starting node and which algorithm, if I ask you which algorithm usually goes to the depth, Solset comes back. Yes, you said that correctly, recursion. That is absolutely correct. The algorithm that always goes in depth, like if you remember this kind of algorithm is,"
+    },
+    {
+      "chunk_id": "L131_C5",
+      "start": 308.92,
+      "end": 387.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=308s",
+      "text": "said that correctly, recursion. That is absolutely correct. The algorithm that always goes in depth, like if you remember this kind of algorithm is, do you remember this kind of algorithm is nothing but recursion. And if you have not seen the recursion playlist, I will highly recommend you go back and watch my recursion playlist at least till video seven, at least from video one to video seven, because entire graph without recursion will be nightmare. You need to understand how graph works in DFS traversal. Otherwise it will be a big, big mess. So again, for this graph, where do you store that? You store this graph in an adjacency list. That is something which you will do. So please, please go and store this graph in an adjacency list. So this is how the adjacency list for this particular graph will look like. Now assuming the starting node is given as one, okay. Assume the starting node is one. What will be the initial configuration? Again similar to BFS traversal, you will first create a BFS. So first create a visited array. Again, please go and check if it is a one based indexing. So if you see a one based one to eight, so please create like a nine size array, zero, one, two, three, four, five, six, seven, eight. So a visited array is what initially you will start off with."
+    },
+    {
+      "chunk_id": "L131_C6",
+      "start": 387.6,
+      "end": 465.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=387s",
+      "text": "size array, zero, one, two, three, four, five, six, seven, eight. So a visited array is what initially you will start off with. And what is the starting node? Just mark it as visited and everything else will be staying as zero similar to what we did in BFS. Done. What will be the next step? Remember this. The next step is going to be whatever is your starting node, you call a recursive function. Remember this. You call a recursive DFS function from that. Okay. Now what you will do is this DFS of one, I'll write the code somewhere, DFS of node. What this will do is the moment it gets into the function, it states, hey dude, listen, this guy is done. And this is a part of my DFS. You can just add a list and you can say this is a part of my DFS. Okay. So this is the line where you will do the DFS traversal because you're visiting a node. So stored. Now what do you do is, remember this, what do you do is you went to one. Now either you can go to two, either you can go to three. You go this depth or you go this depth. So you travel the neighbors, either you travel to first or three first, that is your headache, but you travel the neighbors at first. So how do you travel the neighbors of one? Very simple. They're stored in the adjacency list."
+    },
+    {
+      "chunk_id": "L131_C7",
+      "start": 465.1,
+      "end": 543.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=465s",
+      "text": "headache, but you travel the neighbors at first. So how do you travel the neighbors of one? Very simple. They're stored in the adjacency list. If you carefully see, they're stored in the adjacency list. So for any node, you go to their adjacency list, you go to their adjacency list, right? So this is nothing but adjacency of one. So this is the vector. This is the list. So that is what you'll pick up. That is what you'll pick up. So pick up the list and run a for each loop in it. So these are the neighbors. Run a for each loop in it, adjacency of node. So this is the list of neighbors and you're running it. And now you go depth by each node. So first you go to the depth of two, then you go to the depth of three. So first go to the depth of one IT, which is one neighbor. And then next iteration, the next IT will go. So imagine this to have two comma three, what will happen? First a call of two will be made. So it'll be like DFS of two is made. Then when this completes, the call completes because it is a recursive call. It's a recursive call. When it completes, then it goes to DFS of three. You need to understand this. Okay. So it's basically something like, okay, let's get back."
+    },
+    {
+      "chunk_id": "L131_C8",
+      "start": 543.42,
+      "end": 618.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=543s",
+      "text": "completes, then it goes to DFS of three. You need to understand this. Okay. So it's basically something like, okay, let's get back. It's something like, okay, first we have to, let's call the DFS for two. It will go and it'll complete, like go to the depth, depth, depth, depth, and then come back. Then the next guy will be three. Then it'll go to DFS of three and then come back. So it's like DFS of two will be performed in depth, then DFS of three. But you don't visit every time all the nodes, because when you go to two, it will have the neighboring as one, five, six, but from two, you will not go back to one. From two, you'll not go back to one. So it's very important. A node which has been visited in its traversal, you don't visit it again. So what do you do is you say, okay, listen, this node has to be unvisited for me to go into the depth of it. Simple. But this will be the simple lines of code that you need to execute. So what will happen is DFS of one will come and mark it as visited. Now it has two neighbors, two and three. So it'll go to the depth of them, right? So for two, it again goes and checks. There is one, but that is already visited. Then there is five and then there is six."
+    },
+    {
+      "chunk_id": "L131_C9",
+      "start": 618.62,
+      "end": 696.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=618s",
+      "text": "for two, it again goes and checks. There is one, but that is already visited. Then there is five and then there is six. So it'll go for both DFS for five and then DFS for six. So how is the call coming up? First, the call was for one, right? So you can write one. Next the call went to two, right? Next the call went for five. So now for five, when you go to five, remember this, by the way, when you go to two, you'll mark it as one. Now you go to five, mark it as one. Now for five, what happens is, see here. For five, the neighbor is two, which is already marked. There'll be no further calls. So five will say there are no further calls. There are no neighbors, so I don't call anyone. So I will come back. I came back, right? Now DFS of two goes to DFS of six. Six says, do I have neighbors? I do too, which is already visited. No further calls. Comes back. Now two says, do I have any other neighbors apart from five and six? No, I go back. One. So two is completed. So initially when you started with two, it is completed. Now the next guy, three will be occurring. Next guy, three will be occurring. So you go to three now."
+    },
+    {
+      "chunk_id": "L131_C10",
+      "start": 696.1,
+      "end": 765.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=696s",
+      "text": "it is completed. Now the next guy, three will be occurring. Next guy, three will be occurring. So you go to three now. Three is marked as visited, and now you're traversing three. So the next, we go to DFS of three. So let's check out who are the neighbors of three. So the neighbor of three appears to be four and seven. So first we will go to four, then we'll go to seven. But apparently what will happen is when you go to four, four in turn will go to eight, eight will go in turn to seven. So four, when it goes to depth, it will visit seven. So thereby this call was made. Depending on where four lies on the adjacency list, we made this call. If there was something like seven, four, you would have gone like this. So it depends on the adjacency list, which format, like which traversal you will traverse. So for three, who are the neighbors? One, no, four and seven. Four and seven. First we go to four. Perfect. Let's go to four. Then we will think, shall we go to seven or not? Then we will think, shall we go to seven or not? We are not sure as of now. But DFS of four is sure. Let's go to four. Marked as visited and four is there. Perfect. Now let's go to four. Who are four's neighbors? There should be three and eight."
+    },
+    {
+      "chunk_id": "L131_C11",
+      "start": 765.98,
+      "end": 843.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=765s",
+      "text": "four. Marked as visited and four is there. Perfect. Now let's go to four. Who are four's neighbors? There should be three and eight. Three is already visited, but eight is not. So let's go to eight. Very simple. Again, if you're going to eight, marked as visited. At the moment you go to eight, who are eight's neighbors? Four, no need to go. Seven. Okay, interesting. Let's go to seven. And seven is visited. Now, who are seven's neighbors? Three and eight. Those guys are already visited. You have already traversed them. So you do not go. You do not go. Yes, you do not go. So apparently seven is done. Seven says, I don't have anything. My recursion is done. Can you just go back? He's like, okay, let's go back. Eight says, I don't have any neighbors. Can you please go back? He says, okay. Four says, I don't have any neighbors. Can you please go back? Yes. So this three, this three went into one of its neighbor four. Will it go to the next neighbor seven? No, because seven was visited by this path. There is no need to again, go and visit seven. So this supposed neighbor is no more visited. Thereby, the DFS is this portion. This is your DFS call."
+    },
+    {
+      "chunk_id": "L131_C12",
+      "start": 843.94,
+      "end": 922.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=843s",
+      "text": "visit seven. So this supposed neighbor is no more visited. Thereby, the DFS is this portion. This is your DFS call. So if you carefully observed from here, whether you went like this or whether you went like this or whether you went like this dependent or was dependent on the adjacency list. So I hope you've understood the technique. That's time to check out the code. So as usual in the code, so the C plus plus code is what I'll be typing. And on the left, you can see the entire Java code in the similar format. So you can just follow Java code and you can understand every line while I type the C plus plus code, the syntax is almost identical. So what do we have? We have the number of notes and the adjacency list. You don't need to create the graph because that is always given to you. So if you carefully observe, it's a connected undirected graph and it says the starting index is zero vertex. So something to observe, it's a zero based indexing graph. So this will do right. Perfect. So starting index is zero. So you can say the start is zero. And you need to store the, so you can create a list in order to store the DFS. Okay. So over here, you can go back and say, cool, private. And right here, what you can write is void DFS. This will be the note."
+    },
+    {
+      "chunk_id": "L131_C13",
+      "start": 922.98,
+      "end": 1000.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=922s",
+      "text": "here, you can go back and say, cool, private. And right here, what you can write is void DFS. This will be the note. Correct. You need this particular adjacency list. So please carry the adjacency list as well. And what is the next thing that you need? You need the visited. So please carry the visited. And you need the list which stores the particular DFS. So please carry the list as well. Now what will you do when you enter? So the moment you enter, you remember this is mandatory and you add it in the, you add the note into the vector or the list. What's the next step? The next step that you do is you traverse for all its neighbors. This is how you traverse for all its neighbors. Remember this, this is the way in which you traverse all its neighbors. Okay. So now what are the first thing that you do? If this neighbor is non-visited, very, very important. If this neighbor is non-visited, you call DFS, IT, adjacency, visit, and just pass in the parameters. And this is how the DFS will be. And over here, what do you do is you call the DFS, the starting node, the starting node can be anything. Pass on the adjacency, pass on the visited, pass on the LS. Once the entire DFS has been completed, you return the LS. And now you can just go and compile."
+    },
+    {
+      "chunk_id": "L131_C14",
+      "start": 1000.22,
+      "end": 1078.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=1000s",
+      "text": "visited, pass on the LS. Once the entire DFS has been completed, you return the LS. And now you can just go and compile. Hopefully it runs. So if you see visited of N, okay, as usual, our common mistake. This will be, if you see the output is correct. Let's quickly submit this. So internally, the code has also been written in such a way that it follows the adjacency list. So you don't need to worry. The code will be working fine. But this is what is the DFS traversal of a graph. So let's talk about the space complexity. So what will be the space complexity? How many nodes are we visiting? At max, we are visiting N nodes in our traversal. So we can see that we are storing N nodes in those DFS traversal. We're using Vigo of N for visited and the recursion stack space at the worst case, because what is stack space? If you remember recursion, this is the stack space. But the worst case, if I give you a graph, like a skewed graph, you will end up going like one, two, three, four. So the recursion stack space at the worst case can be Vigo of N. So I can call it near about Vigo of N if we do not include the adjacency list. What about the DFS traversal? So how's the DFS traversal?"
+    },
+    {
+      "chunk_id": "L131_C15",
+      "start": 1078.46,
+      "end": 1152.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=1078s",
+      "text": "near about Vigo of N if we do not include the adjacency list. What about the DFS traversal? So how's the DFS traversal? It's a function and then it iterates on the neighbors. Right? Iterates on the neighbors. And for every neighbor, it calls the function. This is how it is. Right? So this function will always be called for a single node. This function will always be called for a single node. Right? And any node, for any node, it will just be called once because you traverse a node single time. For node one, it will come once. For node two, it will come once. And for every node, we will have a certain number of neighbors that it is iterating. It is iterating. So can I say for an undirected graph, can I say for an undirected graph, these neighbors for three, the neighbors are one, seven, and four, which is the degree of the graph, which is the degree of the graph. Can I say it is the degree of the graph? Like sorry. Degree of three? Yes. And for every node, can I say it will be the summation of degrees? So can I say it will be the summation of neighbors or the summation of degrees? I can say summation of degrees because for every node, it will be the number of neighbors plus number of neighbors plus number of neighbors, which is equivalent to degree of a node plus"
+    },
+    {
+      "chunk_id": "L131_C16",
+      "start": 1152.62,
+      "end": 1205.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=Qzf1a--rhp8&t=1152s",
+      "text": "it will be the number of neighbors plus number of neighbors plus number of neighbors, which is equivalent to degree of a node plus degree of a node plus degree of a node which is equivalent to summation of degree. Right? So what is the summation of degree? If you remember the first lecture that is two into number of edges and then for every node you're calling the function once so we go off in for calling the recursion once so this is the time complexity for an undirected graph for a directed graph. It will depend on the number of edges. So this too will go off and the number of edges is what it will boil down to. So guys, I hope you have understood the entire explanation as well as the code and the time complexity in the space complexity. Just in case you did, please hit that like button. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. With this, I'll be wrapping up this video and yeah, for the DPCs and the SD sheet, you can find the link in the description. Make sure you check it out. And let's wrap up this video. Let's meet in some other video."
+    }
+  ]
+}

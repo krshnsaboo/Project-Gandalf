@@ -1,0 +1,197 @@
+{
+  "lecture_id": "L030",
+  "lecture_number": 30,
+  "lecture_title": "Set Matrix Zeroes | O(1) Space Approach | Brute - Better - Optimal",
+  "youtube_url": "https://www.youtube.com/watch?v=N0MgLvceX7M",
+  "chunks": [
+    {
+      "chunk_id": "L030_C1",
+      "start": 0.0,
+      "end": 69.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=0s",
+      "text": "Hey everyone and welcome back to the channel. I hope you guys are doing extremely well. So this is another lecture from the Strive USA Toolset DSA course. Just in case you are for the first time here, this is world's most in-depth course when it comes to DSL Go. Why do I say that? 455 modules. By the end of the course, you would have solved more than 400 plus problems in DSL Go. You can go across the entire internet. You can buy any of the paid courses. None of them would be teaching you DSL Go in such depth. Something that I can give you as guarantee is, once you complete this entire course, you can clear any of the DSL Go rounds in any company in any part of the world. So till now we have covered this particular problem. Now in this video, I'll be covering the problem, set matrix, zeros. Now what does the problem state? The problem states, you will be given an n cross m matrix. N and m can be different, can be equal. Now the matrix only has zero and ones. That means it's a binary matrix. Your task is to find out zeros you have. Once you have figured out zeros, so there's a zero over here. What you do is, you go to the entire column in which that zero exists. You go to the entire row and you mark everyone as zero. You mark everyone as zero."
+    },
+    {
+      "chunk_id": "L030_C2",
+      "start": 69.84,
+      "end": 136.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=69s",
+      "text": "the entire column in which that zero exists. You go to the entire row and you mark everyone as zero. You mark everyone as zero. Done. Where is the next zero? Here. So you go entire column, entire row and you mark everyone as zero. Done. Next, where's the next zero? Over here. So you go across the entire column and row and mark everyone as zero. Now remember one thing, over here there's a catch. If there's a zero here, you go here, mark here, mark here, mark here, mark here. But from this marked zeros, you do not do anything. Only whatever zeros are there during the initial time, for those zeros you go for the rows and columns. For those zeros you go for the rows and columns. Nothing apart from them. Got it? So this question comes up in an interview. The first solution that you'll give to the interviewer should be of the brute force solution. What is the brute force solution that you can think of? Let's do whatever is being told to us. What is being told to us? If there's a zero, go across the entire column, mark everything as zero and go across the entire row and mark everyone as zero. So really let's, let's try doing this as the part of the brute force solution. So what we do is a given this N cross M matrix, we will try to iterate on it."
+    },
+    {
+      "chunk_id": "L030_C3",
+      "start": 136.24,
+      "end": 203.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=136s",
+      "text": "of the brute force solution. So what we do is a given this N cross M matrix, we will try to iterate on it. And how do we iterate on matrix? We go like this, like this, like this, like this, and so on till here. So let's try to do it. So we start from here. It's a one. It's a one. We don't do anything when there's a one and we find a zero. The moment we find a zero, what was the task? Like the entire column is zero and the entire row is zero. So what we will do is we will go ahead and probably, probably mark everything as zero. But is that the correct solution? Think of it. Once you've marked, the array will look something like this. And the next step of traversal, you will reach here and then for this zero, you'll mark everyone as zero, right? And then you'll get this zero and you'll start marking this. But that is a wrong solution. Because of this zero, you ended up turning this one to zero. And when you're traversing, you will find a zero here and you'll end up marking everyone as zero on this column, which is wrong because over here there's a one. So these people should not be zero. So thereby you have to be careful. You just cannot go and blindly mark everyone as zero. You cannot do that."
+    },
+    {
+      "chunk_id": "L030_C4",
+      "start": 203.62,
+      "end": 266.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=203s",
+      "text": "not be zero. So thereby you have to be careful. You just cannot go and blindly mark everyone as zero. You cannot do that. So what I will do is I will go through the entire column and I'll mark everyone as minus one rather. Yes, I'll mark everyone as minus one. So I'll mark it as minus one. I'll mark it as minus one. I'll mark it as minus one. Anything apart from zero, I'll just mark it as minus one. Done. Let's now quickly do the next job. So this one is, this column is done and we will do for this row. So let's minus one and then minus one. Make sure you do not mark zeros as minus one because this zero will again be responsible for marking it. So if you mark it as minus one, there will be an issue. So for this one, I've marked this, I've marked this. I'll move forward. The moment I move forward to this, we have a zero. So we'll go for this column and we'll go for this row. So let's do it. Minus one. Again, not, do not mark this minus one and this particular row is done. Now we will start iterating. We have a minus one. Thereby we will not do anything. Had we marked for the zero zero, we would have ended up marking this, which would have been wrong. One minus one zero. Okay. We have a zero."
+    },
+    {
+      "chunk_id": "L030_C5",
+      "start": 266.02,
+      "end": 329.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=266s",
+      "text": "the zero zero, we would have ended up marking this, which would have been wrong. One minus one zero. Okay. We have a zero. So entire thing and then this entire thing. So this will be minus one rather minus one and this will be minus one. Perfect. Next, this one, next, this one, next, this one, next, this one, next, this one. Once you have done this, now what do you do? For these zeros, whoever was to be marked, they have been marked minus one. So let's do one piece of iteration more. Yes. So let's do one piece of iteration more and what we will do is we'll just convert them to zeros. Now we will just convert them to zeros and once you have done this, I can say this is my final array and this will be my brute force solution. Quite simple. Just you have to be careful. It's not about doing what they have said because that might cause an issue. So thereby we will just introduce something as minus one in the brute force solution. So we have to write the code for the brute force solution. So you know, in order to traverse, we first traverse from zero to N, then we traverse from zero to M. This is how you usually traverse in a 2D matrix. And then what do you do is you say if there's a zero on that particular place, we go to"
+    },
+    {
+      "chunk_id": "L030_C6",
+      "start": 329.46,
+      "end": 390.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=329s",
+      "text": "in a 2D matrix. And then what do you do is you say if there's a zero on that particular place, we go to the ith row and mark that. That means this portion. Then we go to the column, that means this portion and we mark it and you have to write these couple of functions separately. So let's quickly write it. So the macro function will be very simple. It takes a row number and then it iterates for the columns and in every i, j which is non zero, do not mark the zeros. In all the non zeros, you can just assign minus one. Similarly, there will be a column which takes the column number and iterates for every row and marks that column as minus one if it's a non zero. So this code will make sure that everything that is a zero in that particular column, everything will be marked as minus one. And in that particular row, everything will be marked as minus one apart from the zeros. So once you've done this, what's the next job? The next job is just to iterate in the matrix and whoever is minus one, turn it into zero. So let's quickly do it. So this will be the final piece of code where we iterate in the matrix and we say if it's a minus one, please convert it into zero. So what will be the time complexity of the brute force solution?"
+    },
+    {
+      "chunk_id": "L030_C7",
+      "start": 390.82,
+      "end": 452.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=390s",
+      "text": "we say if it's a minus one, please convert it into zero. So what will be the time complexity of the brute force solution? Can I say over here it's n into m and inside, can I say this is taking V go of n and this is taking V go of n because there are two loops that are running. So thereby it's something like n into m into n plus m, very important, into n plus m plus you're again doing an iteration of n into m in order to initialize them to zeros. So this is the overall time complexity and it's somewhere to the power of Q, somewhere to the power of Q. If you carefully see this and into this will be somewhere near about the power of Q and the interviewer will not be happy with it and he will say that this is not accepted and that's when you move to the better solution. So let's quickly check out the better one. So we give a brute force solution to the interviewer which was taking a time complexity in the order of n Q and why was it taking a time complexity in the order of n Q because we were traversing in the array and that was taking n square like in the order of n square n into m and then what we did was for every zero we went across the entire column and"
+    },
+    {
+      "chunk_id": "L030_C8",
+      "start": 452.78,
+      "end": 518.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=452s",
+      "text": "the order of n square n into m and then what we did was for every zero we went across the entire column and the entire row and we marked everyone as zero. So this is where we were taking that extra time for going across the column and going across the row. So what do we need to eliminate because if the interviewer is asking us to optimize the optimal solution will definitely not be n Q. We need to optimize this and in order to optimize we might be able to get an n square or somewhere around n square that's for sure. This is where we need to think what do we need to eliminate. We need to eliminate this and we need to eliminate this. How can I? Now can I say what was I doing? I was going across and marking everyone as zero. I will not do that. Instead of that I'll think for this one to be zero in the final matrix for this one to be zero in the final matrix why will it be? I'll be like if this entire column has a minimum of one zero can I say if it is a minimum of one zero or if this entire row has a minimum of one zero agreed because this zero will convert this to zero even the zero will convert but what I need is just one zero and so can"
+    },
+    {
+      "chunk_id": "L030_C9",
+      "start": 518.34,
+      "end": 579.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=518s",
+      "text": "because this zero will convert this to zero even the zero will convert but what I need is just one zero and so can I say if there's a zero instead of going across the entire column I'll say if there's a zero I will mark it I'll mark this column because at the end of the day everyone will be zero in this column that's for sure. So I'll just keep a track this column is done and dusted at the end of the day everyone will be zero. Similarly if there's a zero this row is done and dusted everyone will be zero at the end of the day. So instead of marking them at the current time I'll say let's probably keep a track and by the end of the day I will mark it. This is how my thought process will be. So to have that thought process converted into algorithm what I'll do is I know that for the zero I'll have to mark it and for the zero I'll have to mark it. So there has to be four column array correct which will keep a track if the column is marked and there will be a four over here four size row array which will again keep a track if the row is marked or not. So I'll go ahead and create a m size yes very important I will create in column array of"
+    },
+    {
+      "chunk_id": "L030_C10",
+      "start": 579.26,
+      "end": 655.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=579s",
+      "text": "row is marked or not. So I'll go ahead and create a m size yes very important I will create in column array of m size because those many are the number of columns and I'll create a row array of n size over here n and m are same and what I'll do is initially I will mark every one of them as zero. Zero means they're yet not touched. And now I'll start iterating. First no one no one no one no one no you will not do anything when there's a one and then you go ahead and see there's a zero. So whenever there is a zero you know this entire column is done and dusted at the end of the day everyone will be zero. So please go ahead and say I will mark it marking it means one perfect and you know everything in this row will also be marked. So we mark it as one perfect one one one one zero again. Zero means everyone in this column and everyone in this row. Go ahead and mark it. So you'll mark it perfect. Next one one again a zero this zero means this one is marked and this one is marked. So go ahead and mark it perfect. Next this zero means this one is marked. And this one is marked. this done. So what I have done is for every zero I've ended up marking which"
+    },
+    {
+      "chunk_id": "L030_C11",
+      "start": 655.68,
+      "end": 728.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=655s",
+      "text": "one is marked. And this one is marked. this done. So what I have done is for every zero I've ended up marking which columns and which rows will be zero. Now what I'll do is I will do a re-iteration. Yes I'll do a re-iteration. Let's quickly do the re-iteration. So whenever we are at one we are like okay wait will I be a zero? I will only be a zero if this or this is marked. Is this marked? No. Is this marked? No. So I stay one. I stay one. Perfect. I will say one I'll only be zero if this is marked. I'm like yes I'm marked. So I'll end up getting zero. Perfect. Next I have a one. Oh this is marked. So I'll end up getting zero. Next one. One. Not marked. Not marked. So stays. Next one. Not marked but marked here. So this will be a zero. Next zero. Nothing to do. One marked. So this will be a zero. Next one marked. So this will be a zero. Next one marked. So this will be a zero. Next one marked. This will be a zero. Zero nothing to be done. This one marked. This will be a zero. This one marked zero. This one marked zero. This one marked zero. This one already a zero. So what we got to know was this entire thing got zeroed if you carefully see and every one over"
+    },
+    {
+      "chunk_id": "L030_C12",
+      "start": 728.56,
+      "end": 796.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=728s",
+      "text": "one already a zero. So what we got to know was this entire thing got zeroed if you carefully see and every one over here got zero apart from these two elements. Apart from these two elements and this is how easily you can do it. Got it? So how will the brute force code look like? We know we need a column of size m to keep a track. So I'll mark everyone as zero and we know we need a row size n to keep a track of everyone who's zero. Now I will start iterating. So if we have to iterate on the matrix first I'll go from zero to n then I'll go from zero to m. Perfect. Then what is the next job? If that element at i j is zero I know the row i will go ahead and get marked as zero and the column j will go ahead and sorry marked as one rather. Marked as one. Both have been marked and this is how you can iterate and mark it. Once you have done that you again reiterate yes you again reiterate from zero to n and this time you convert the ones to zeros who are marked. You convert the ones to zeros who are marked. So what do you say is if you are marked if your row is marked or your column is marked if"
+    },
+    {
+      "chunk_id": "L030_C13",
+      "start": 796.52,
+      "end": 857.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=796s",
+      "text": "are marked. So what do you say is if you are marked if your row is marked or your column is marked if anyone is marked I do not care you will be zero for sure because the entire sorry the entire row is marked or the entire column is marked. If that's the case you will be this and this is how the code will look like. Got it? So in case you want to try out the problem the link will be in the description and if you want the c++ java and python code all the links will be in the description. Remember one thing over here they're asking us to return a matrix that is when returning if it's a void function then you can just change to this particular matrix which we are doing and we do not need to return anything. So coming back to the iPad again what is the time complexity? Can I say this is taking b go of n cross m and so is this. Remember the time complexity is b go of 2 cross n cross m for sure. What about the space complexity? The space complexity is nothing but b go of n and b go of m for the two arrays that you're using for hashing. This is where the interview will not be happy because you're using an extra space and he will ask you to optimize the better"
+    },
+    {
+      "chunk_id": "L030_C14",
+      "start": 857.48,
+      "end": 932.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=857s",
+      "text": "This is where the interview will not be happy because you're using an extra space and he will ask you to optimize the better solution and you will move to the optimal one. Over here can you optimize the time complexity? We are already doing it in the order of n square and we know the minimum in order to traverse a matrix can be n square. You cannot do better than that. That's why we will be focusing to optimize the time complexity and let's get back to the matrix. We were taking a column and we were taking a row agreed. So if I was taking a column and if I was taking a row if I have to optimize it what does that mean? That means you have to do everything in the matrix itself. So what I'll start thinking is can I keep a track in the matrix itself? Can I just probably keep a track in the matrix itself and that's when I start thinking what if I say hey maybe instead of taking a row outside what if I consider the first column to be my row like instead of taking here I moved it inside in place I moved it inside. So what I'm saying is row r at the column of zero will become my row which I was taking probably yes and now I'll say probably instead of taking"
+    },
+    {
+      "chunk_id": "L030_C15",
+      "start": 932.44,
+      "end": 1001.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=932s",
+      "text": "at the column of zero will become my row which I was taking probably yes and now I'll say probably instead of taking this I'll move it inside maybe because I have to do it in the matrix. So that's a possible solution. The row zero is what I will now consider as column of m size. That's my first assumption but can I take it? Let's see if that's possible. So what am I saying? The things that I was marking here like for the zero if I was marking here instead of marking here I'm taking this and I'll mark it here that's what I'm saying correct but is it correct? It's not correct. Why? Because okay I understood you took the column inside and that's how it looks but you took the row also inside and now there is one single point which acts as the same and if you remember the better approach there was a row here and there's a column here and everyone was individual this point and this point were individual but if you take them inside what happens is this is one and this is one and this is a single point where it's a common point. So what I'll say is it's about one point I'll apply in my brain and I'll say okay probably let's keep the row as row so I'll keep the row as row"
+    },
+    {
+      "chunk_id": "L030_C16",
+      "start": 1002.12,
+      "end": 1067.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=1002s",
+      "text": "I'll apply in my brain and I'll say okay probably let's keep the row as row so I'll keep the row as row perfect and the column I'll take till here I won't take the entire column I'll take till here but then I'll be like what will happen to this one like who will keep the track of this because instead of this what you're doing is you're just taking this so what happens to this I'll say okay this one is a single element now it's a single element I will probably extend this to something like this can I do this I'll call it as a column variable I just call it as a column variable can I call this because this is an extra part this is an extra part so the row stays as row and I take this much and for this since it is colliding put it into a variable now there is no collision works works fine for me at least so now what I'll do is I'll try to probably draw the figure it's something like this and then I go like this and I go like this perfect that's how the column array will look like and it's more like maybe I can call it as column zero and mark it as one and this will be my row do you agree you do right so this will be my row"
+    },
+    {
+      "chunk_id": "L030_C17",
+      "start": 1069.08,
+      "end": 1131.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=1069s",
+      "text": "zero and mark it as one and this will be my row do you agree you do right so this will be my row the same truth was I'm trying to optimize look at the intuition okay now let's start iterating and let's try to do the same things that we did but before that let's keep something in mind this zero will mark everything here and mark everything here agreed this zero will mark everything here and mark everything agreed this zero will mark everything here and everything so if you remember so if you see everyone will be converted to zeros only apart from this corner guy keep this in mind that this corner guy will not be converted keep this in mind it will be very very useful in the next part when we figure some edge cases keep this in mind the corner is not convert. Okay let's start integrating in the matrix. We have a 1 right. What happens to this one? This one says I'm a 1 so I do not harm anyone. Let's move. I'm a 1 I do not harm. I'm a 1, I'm a 1, I'm a 1. I do not. But he's a 0. He's like what did I do? I'll keep a track. So I'll mark it here and mark it here and I know who who is this tau? This guy. Who is this? This one. So I will now go and convert them to"
+    },
+    {
+      "chunk_id": "L030_C18",
+      "start": 1131.8,
+      "end": 1202.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=1131s",
+      "text": "and I know who who is this tau? This guy. Who is this? This one. So I will now go and convert them to zeros. Perfect. Next I have a 1 1 1 1 0. This 0 was marking it here and marking it here. So instead of this I'll mark it here. Perfect. Next 1 0. This 0 was apparently marking it here and was apparently marking it here in the column array. So what will happen now? Instead of here it will mark here and it's already a 0. So it's okay. And instead of here it will mark here. So this will make it 0. Perfect. Next we have a 1 we have a 1 we have a 1. So the iteration is completed. Once the iteration is completed what is the next job? To convert all the 1's to 0's who are marked. Correct. To convert all the 1's who are 0's. This is where you have to remember. In the answer only this one was not converted. So if I'm trying to convert this whom do I check? I check in this and I check in this. Correct. For this one I see the column 0 is 0. So this will be 0. Right. Because it's marked. If you remember for this we will check this and this and the column 0 is 0. So this will be converted to 0. But but here"
+    },
+    {
+      "chunk_id": "L030_C19",
+      "start": 1202.28,
+      "end": 1275.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=1202s",
+      "text": "this we will check this and this and the column 0 is 0. So this will be converted to 0. But but here comes the twist. If you convert this to 0, hypothetically just assume you converted this to 0. And the twist is if you convert this to 0 what will happen is now when you go to this one when you go to this one okay this one will say I will be converted to 0 if this is 0 or this is 0. What will happen is it will find here 0 and it will convert this to 0 which is wrong because this row means this. So thereby you cannot start from these elements you cannot start from these and keep them for later because as of now if you change the values that will impact the matrix. Do not change their values instead try doing from these places instead try doing from these places. Did you understand? I hope you did right. So what I'll do is I will not touch them as of now and I will start going probably from here then to here then to here and then we can deal with this separately. Got it. So let's start. This one will it be marked? No it's a 1 but it's a 0 so this will be marked. Perfect. This one it's a 0 it's marked."
+    },
+    {
+      "chunk_id": "L030_C20",
+      "start": 1275.68,
+      "end": 1355.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=1275s",
+      "text": "be marked? No it's a 1 but it's a 0 so this will be marked. Perfect. This one it's a 0 it's marked. Next this one it's a 0 it's a 0 marked. Please do not do anything to the first rows and first columns please. Next there's a 1. Will it be? No. Will it be? Yes. Next is already 0. Next 0. Next 0. Why? Because over here. Next 0 because here. Next 0. So what I've done is I've converted each of them. Now it's time for the next. Okay so the last section of this algorithm and it's very important that you hear me out properly. So do you remember one thing? Initially I told you this is the only one who was not converted to 0 and everyone else would be converted to 0. Now tell me one thing. You have solved this portion. Will you solve this portion at first or will you solve this portion at first? Let's analyze. This portions answer is dependent on whom? One is this and the other other one is this. Correct? Agreed or no? You agree? So this one is himself and this one is 1. So it's dependent on this. So if you solve this portion at first the value might change the value might change which might hamper this"
+    },
+    {
+      "chunk_id": "L030_C21",
+      "start": 1355.08,
+      "end": 1421.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=1355s",
+      "text": "on this. So if you solve this portion at first the value might change the value might change which might hamper this which might impact this. So at first you will solve this portion then you will solve this portion. Now for this portion to be 0 this has to be 0 which is not the case. So this stays as 1. For this this is already 0 and this is already 0 and we do not do anything else. Now for this portion to be 0 this one has to be marked and this one has to be marked and I see this is marked so this will be 0. Convert it to 0. For this portion it's 0 0 0. Done. So first you solve here here here here here here here and you solve this because it is dependent on this then you solve this. First do not solve this because if you change the values that will impact the matrix. This was the thought process behind this particular algorithm. So let's quickly code the optimal solution up and this was the better solution if you can see in the editor. So I'll really remove this and I will just comment this off. So we were initially using a column and we were initially using a row. Instead of column if I go back to the iPad instead of"
+    },
+    {
+      "chunk_id": "L030_C22",
+      "start": 1421.48,
+      "end": 1487.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=1421s",
+      "text": "initially using a column and we were initially using a row. Instead of column if I go back to the iPad instead of column we will be using the row 0. Which is the row 0? Can I say the row 0 is this which is nothing but matrix of the 0. Yes because this is 0 right. Matrix of 0 is what we will be using. So can I say the column is nothing but the matrix of 0 and something the variable whatever is the variable and can I say the row is nothing but if I carefully see the row is nothing but the 0th the 0th which is matrix of something of 0 because the row keeps on changing but this stays constant. So can I say it's nothing but matrix of something of 0. Very simple. This is the first row and this is the first column which is taken as this. Perfect. Now over here if matrix of i j is this what do we do? We mark the i-th row and we mark the j-th column. Now we are marking the row which is row c. Row is here. So"
+    },
+    {
+      "chunk_id": "L030_C23",
+      "start": 1487.36,
+      "end": 1546.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=1487s",
+      "text": "we mark the j-th column. Now we are marking the row which is row c. Row is here. So we'll just take this. Let's take this. So we mark the i-th row. So we'll say let's mark the i-th row. So i-th row is this and we will say 0. And what are we saying mark the j-th column. Who is the j-th column? This one. So we'll take this and this is the matrix and we will say let's mark this. But can we simply write this? The answer to that is no. Why? Because if you remember this case it did mark itself. That is okay. But it could not mark in the column it could not mark in the column and if you see over here what's the column? That's the matrix of 0 of something. Matrix of 0 of something. So remember if j is not equal to 0 then only you mark it. Otherwise yes. Otherwise what will you do? You will say column of 0 can you mark yourself. If your j is 0 let's go back again. If you are over here you do not mark it here. Instead of you mark it here. Got it? Do not mark"
+    },
+    {
+      "chunk_id": "L030_C24",
+      "start": 1546.68,
+      "end": 1618.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=1546s",
+      "text": "are over here you do not mark it here. Instead of you mark it here. Got it? Do not mark anything on this. Instead of go here. So please go ahead and declare one more variable column 0 is equal to 1. Perfect. Done. So this is the marking that I've done. After the marking what do we do? Let's analyze that. Whatever we do. So after the marking once we mark this and this we started from here and then we went on. So it's more like I ignored the 0-th row and I ignored the 0-th column. So just iterate without them. So I'll be like I can iterate without them as well. So you can you can again iterate from here that's okay or you can iterate from here as well. That is okay. That is your choice. So I'll go ahead and say okay let's iterate without them. You can iterate in the backward or frontward. That is your choice. As long as you're not touching our hash arrays I'm absolutely okay. So what what will happen? What will happen? If this is a 1 I have to convert it. The first check will be if matrix of i j is not equal to 0 then there might be a conversion. For this I'll have to check here. For"
+    },
+    {
+      "chunk_id": "L030_C25",
+      "start": 1618.44,
+      "end": 1695.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=1618s",
+      "text": "of i j is not equal to 0 then there might be a conversion. For this I'll have to check here. For this I'll have to check here. So check for column and row. So let's check. First you have to check for column. What's the column? That's this. Let's pick it up. Or or what's the row? That's this. Sorry that's this. Let's pick it up. So I picked up. So over here instead of this you will have a j. Over here instead of this you'll have a i. And if any of them is marked as 0 that means this element will go as 0. Quite simple. Simple. Done. Second step done where we have marked everything. After that what did we do? First we marked these three elements. Then we marked this. So how will this three elements when will this three elements be 0? When will this three elements be 0? If this guy who has matrix of 0 0 if this is 0 then everyone will be because it's dependent on this. So the last step will be hey if matrix of 0 0 is equal to 0 everyone in the column which is this matrix of 0 j everyone"
+    },
+    {
+      "chunk_id": "L030_C26",
+      "start": 1695.28,
+      "end": 1753.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=1695s",
+      "text": "matrix of 0 0 is equal to 0 everyone in the column which is this matrix of 0 j everyone in the first row will be 0. Quite simple. And what about this one? This one will be dependent on the column. So please go ahead and say if column 0 is equal to equal to 0 what will I do? I will do the same thing for i and d i equal to 0 i less than n i plus plus because everyone on this portion will be marked as 0. So I will go and say matrix of 0 sorry matrix of i and everything on the first column will be 0. Once you have done this you can return the matrix. Now let's quickly go and run. I hope runs at once. I'll be super happy. Oh I am. Quite simple. The only way that you can write this is try to write this so that you don't get confused. This is how I approach usually a code. So what is the time complexity? n into m and this overall is the total matrix alteration n into m. 2 into n into m. Are we using any extra space?"
+    },
+    {
+      "chunk_id": "L030_C27",
+      "start": 1753.28,
+      "end": 1798.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=N0MgLvceX7M&t=1753s",
+      "text": "overall is the total matrix alteration n into m. 2 into n into m. Are we using any extra space? Probably yes for this column. One variable. One variable. That's it. That's it. One variable and I was able to solve the problem in place within the matrix itself. So let's go back to the sheet and mark this as done. I hope you have understood all the three approaches and the build up to the optimal solution. Just in case you did please please do consider giving that like because it won't cost you anything but it will highly motivate me to make these kind of content and if you're new to our channel what are you waiting for? There's a bunch of content on our channel. Please please do consider subscribing to us and yes to continue our tradition please do comment understood and if you haven't followed me on Instagram, Twitter, LinkedIn the links are in the description. With this I'll be wrapping up this video. Let's meet in some other video. Till then bye bye. Take care."
+    }
+  ]
+}

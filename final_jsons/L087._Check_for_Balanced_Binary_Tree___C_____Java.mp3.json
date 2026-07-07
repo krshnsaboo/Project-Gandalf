@@ -1,0 +1,85 @@
+{
+  "lecture_id": "L087",
+  "lecture_number": 87,
+  "lecture_title": "L15. Check for Balanced Binary Tree | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=Yt50Jfbd8Po",
+  "chunks": [
+    {
+      "chunk_id": "L087_C1",
+      "start": 0.0,
+      "end": 74.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yt50Jfbd8Po&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem. Check for balanced binary tree from the Freeca Tree series. So what is a balanced binary tree? So in any given binary tree, there will be a lot of nodes. Okay. So for every node, the height of the left subtree and the height of the right subtree, their difference should be lesser than equal to one. Like you cannot have a difference which is greater than one. So for an example, if I consider this a first binary tree, you can see for this node, for this node three, the left height is one and the right height is two. So there is a difference of one. For this, there is no left subtree. There is no right subtree. Right. So you can say that the height of left right is zero. For this, the left subtree is a height one. The right subtree is a height one. So the difference is again zero. For this guy, the left subtree is zero. The height of right subtree is zero. For this guy also, the left is zero. The right is zero. So I can say this is a balanced binary tree."
+    },
+    {
+      "chunk_id": "L087_C2",
+      "start": 74.28,
+      "end": 142.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yt50Jfbd8Po&t=74s",
+      "text": "this guy also, the left is zero. The right is zero. So I can say this is a balanced binary tree. But when I come to the second example, if I stand over here and I look at the right, the right's height is one. Whereas the left height is one, two, three. So I can say the left height is three. So the difference between them is three minus one, two. So I want lesser than equal to one. Like I cannot have more than one as height. So I can say, I can say that this binary tree is not a balanced binary tree. So you have to write a code which checks if a given binary tree is balanced or not balanced. So if I talk about the naive solution, the naive solution is going to be very simple. I go to every node and I figure out the left height, the right height. And I compare the difference and I just say if like if the difference is greater than one, I'm going to return a false. So I just do traverse for every node. So you can check out the pseudocode over here. Like I take a node, like it's a pseudocode. So I go to the left height. I find the left height. Very simple. You keep on going left. You keep on going left. If there is no left, go right. Go right. Go left."
+    },
+    {
+      "chunk_id": "L087_C3",
+      "start": 143.6,
+      "end": 209.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yt50Jfbd8Po&t=143s",
+      "text": "height. Very simple. You keep on going left. You keep on going left. If there is no left, go right. Go right. Go left. Wherever you can go to the leaf node, just keep on going and figure out the left height. Figure out the right height. Again, very simple. Go right. Go right. If there is no right, go left. If there is like again, right, go, go to the leaf node, figure out the right height also. So once you figured out the right height, what you can do is if there absolute difference, yes. If there absolute difference is greater than one, you're going to return false saying that they're not balanced. This is not a balanced binary tree. Or else if this condition is not happening, then you go to the next node and then you go to the next and then so on. So you go to the left and then again to the right and you again follow the same procedure of checking left, right. And if any, anyone from left, right, anyone gives you a false, if anyone gives you a false, you return a false. Like if any node in bottom anywhere gives, says you that this is not a balanced binary tree, you directly return a false. And if no one like on left, on right, no one gives you, you're going to return a true. Again, you have to be very good at recursion in order to solve this problem."
+    },
+    {
+      "chunk_id": "L087_C4",
+      "start": 210.36,
+      "end": 280.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yt50Jfbd8Po&t=210s",
+      "text": "no one gives you, you're going to return a true. Again, you have to be very good at recursion in order to solve this problem. So what's the time complexity of this? The time complexity of this is very simple. I can say we go off n for traversal and in order to find the left height or in order to find the right height, we're going to take a big O of n every time I reach every node because I at the end will traverse this much. And if it's a skew tree, just in case if it's a skew tree, I'm going to end up taking a big O of n complexity, which is apparently a lot. Right. So that's going to take a big O of n. So I can definitely not try this solution because this is a big O of n square solution. And the only problem in order to convert this big O of n to a big O of n solution is since we have to write a Boolean function, like I want to write a Boolean function, which returns me a true if it's a balanced binary tree and it returns me a false if it is not a balanced binary tree. So how do I get the left height and right height? Because that's that's tough in order to get the left height and right height, I have to do something else."
+    },
+    {
+      "chunk_id": "L087_C5",
+      "start": 280.96,
+      "end": 352.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yt50Jfbd8Po&t=280s",
+      "text": "height and right height? Because that's that's tough in order to get the left height and right height, I have to do something else. This if I can, if I can reduce this time, because this is where I'm taking an extra big O of n. So if I can omit this time, I think I can convert my solution to a big O of n complexity. So let's discuss the big O of n complexity solution. So in order to understand the big O of n solution, there is a prerequisite. You should be knowing how to find the height of a tree in big O of n time. And if you don't know that, I already have made a video on that. You can find the link in the description. Go and check that video out. How to find the height of a tree in big O of n. This is the code that I did use in order to find the height of the tree in big O of n. Very simple. What I do is I just do a simple recursive traversal where I say LH, RH and I know for any node, like if I'm standing at this node, this might have a height. This might have a height LH and RH. What is the height of the tree? If this right subtree is longer, can I say for this node, the height will be RH plus the node itself."
+    },
+    {
+      "chunk_id": "L087_C6",
+      "start": 353.04,
+      "end": 425.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yt50Jfbd8Po&t=353s",
+      "text": "of the tree? If this right subtree is longer, can I say for this node, the height will be RH plus the node itself. So maximum of left subtree, right subtree plus one. So in order to understand in brief, please go and watch my find the height of the tree video. So you should definitely know find the height of a tree video. Now, since this does this in big O of n, this is the height of tree. But I want this function to return me either a true or either a false. I want this to be returned. And how can I manage a function which returns the height as well as true and false? So what I'll do is I'll just act smart. Instead of returning true and false, what I will say is if my tree is balanced binary tree, I will return the height of the tree. I'm going to return the height of the tree. So if I take this tree, this function is going to return me the height of the tree. And if it is not a balanced one, then I will return a minus one. So as of now, my this functionality returns the height of any tree."
+    },
+    {
+      "chunk_id": "L087_C7",
+      "start": 425.48,
+      "end": 495.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yt50Jfbd8Po&t=425s",
+      "text": "then I will return a minus one. So as of now, my this functionality returns the height of any tree. So I will try to implicate a functionality such that it returns a minus one if it is not a balanced binary tree. So what I know is if the left height, that's nothing but the left height subtree. So if the absolute of left height and right height is greater than one, I know one thing. This is not a balanced binary tree. So instead of returning any further height, instead of returning this, what I'll do is I will return a minus one. So at any moment, I find a height difference of left subtree and right subtree to be greater than one. I am going to return a minus one. Now you might think that this is okay, but how will this work? Very simple. If you're calling the left height and this is giving you the height, if this LH at any time is minus one, if this is minus one or this RH, if you're calling the functions at any time you get a minus one, you are definitely going to return a minus one. So you can insert it over here."
+    },
+    {
+      "chunk_id": "L087_C8",
+      "start": 496.24,
+      "end": 569.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yt50Jfbd8Po&t=496s",
+      "text": "get a minus one, you are definitely going to return a minus one. So you can insert it over here. If LH equal to equal to minus one, like if any of the left calls did give me this minus one or any of the right calls gave me minus one, then also I can return a minus one stating that these two functions tell me that this is not a balanced binary tree. And if it's a balanced binary tree, then these two lines will never be executed and it's definitely going to return me the height of the binary tree. And if any moment it is executing, it's going to return a minus one as a whole result. So what I did was I just added two lines to the code of the height of the tree in order to find if a tree is a balanced binary tree or not. So let's do a dry run on this particular tree and see how this code actually works. So initially we are over here. So if node is null, no it's not. So we'll go to the left. So we go to the left. So we come to the two. Again, we go to the left. We come here. Again, we go to the left. We come here. So when we reach nine, there's no left. There's no right. So the left height and right height is not there."
+    },
+    {
+      "chunk_id": "L087_C9",
+      "start": 569.2,
+      "end": 633.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yt50Jfbd8Po&t=569s",
+      "text": "We come here. So when we reach nine, there's no left. There's no right. So the left height and right height is not there. Basically, when you call them, you will get the left height as zero. You'll get the right height as zero. So these two lines will not, these two lines will not function. So max of left height, that's a zero comma zero plus one. So this is going to return you a one. So from this side, like when three called its left, it got as one. Now three, it's time for three to call its right. So when three call its right, it'll go to the right and it'll execute node as null and it'll return a zero. So it got a value zero. So three from the left got a one, from the right got a zero. Again, the height difference is not that much. The height difference is not that much. So you have a one, you have a zero, which is permitted. The difference is one. So you got a one, you got a zero. Again, maximum of one comma zero, that's one plus one, two. So this guy returned a height of two. Again, makes sense because the height of the tree is two if you stand at three. Now you add two. The two guy went to the left and got a height of two. Now when it goes to the right, it gets a height of zero."
+    },
+    {
+      "chunk_id": "L087_C10",
+      "start": 633.4,
+      "end": 697.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yt50Jfbd8Po&t=633s",
+      "text": "guy went to the left and got a height of two. Now when it goes to the right, it gets a height of zero. So this is the moment. When you add two, you went to the left and you came up. Like when you add two, the left height came up to be two. And the moment you went to the right, since two did not have a right, you got a height of zero. So what happened was two and zero have an absolute difference of greater than one. So what this guy returned was minus one. So the moment one saw that a minus one is returned, it directly returned a minus one. So if you're getting a minus one, there's no need to visit the other part of the tree. And you can see that if you have got a minus one, the tree is indeed unbalanced binary tree. So the C++ code is on the left and the Java code is on the right. Very simple. I call the DFS, like I call the function. And if it doesn't returns minus one, then it's a balanced binary tree. If it returns a minus one, it's not a balanced binary tree. Simple as that. Root is null. Left height. If by chance left height is minus one, return a minus one. Right height. If by chance the right height is minus one, return minus one. Else absolute is greater than one, return minus one."
+    },
+    {
+      "chunk_id": "L087_C11",
+      "start": 697.96,
+      "end": 741.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yt50Jfbd8Po&t=697s",
+      "text": "one. Right height. If by chance the right height is minus one, return minus one. Else absolute is greater than one, return minus one. Or else have the function computing the height. Simple as that. Added two lines and the function works. Time complexity. Big O of N because it's a recursive traversal. Space complexity. Auxiliary space, stack space. At the worst case, big O of N for a skew tree. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

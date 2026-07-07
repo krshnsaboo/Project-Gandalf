@@ -1,0 +1,50 @@
+{
+  "lecture_id": "L129",
+  "lecture_number": 129,
+  "lecture_title": "G-4. What are Connected Components ?",
+  "youtube_url": "https://www.youtube.com/watch?v=lea-Wl_uWXY",
+  "chunks": [
+    {
+      "chunk_id": "L129_C1",
+      "start": 0.0,
+      "end": 79.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=lea-Wl_uWXY&t=0s",
+      "text": "So in this video, we will be learning about connected components in a graph. Now what do we mean by connected components? Till now, we have seen graphs like this, if you remember well enough. You've also seen graphs like this. In the first lecture, I told you this is also a graph. It might be a binary tree, but this can also be called as a graph. This is a connected graph, so we can also call this as a graph. But what if I ask you, is this a graph? Like if I show you something like this, is this a graph? Then you might say, yes, Trevor, this is a graph. This is a graph. This is a graph. This is a graph. There are four graphs. This is a single node. This can also be treated as a single node. You're correct. You're absolutely correct. These are four graphs, but can I say these four graphs, can they be one single graph? You might say, no, Trevor, they're not connected. This is where the definition connected components come in. So if I try to number them, for an example, one, two, three, four, five, six, seven, eight, nine, 10, okay, so I've numbered them."
+    },
+    {
+      "chunk_id": "L129_C2",
+      "start": 79.12,
+      "end": 155.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=lea-Wl_uWXY&t=79s",
+      "text": "number them, for an example, one, two, three, four, five, six, seven, eight, nine, 10, okay, so I've numbered them. Then someone comes up and sees the definition of graph. Given an undirected graph with 10 nodes, one, two, three, four, five, six, seven, eight, eight edges, and he sees there just to be one, two, one, three, two, four, three, four, okay, five, six, six, seven, five, seven, and eight, nine. He just tells you about these eight edges. So apparently it's a graph. It's a graph which is in four pieces. It's a graph which is in one piece, two piece, three piece, four piece, the last one being a single graph. So this is what we call components. Instead of piece, it's four components. The graph has been broken down into four different components. So next time you see two different portions and they're not connected, don't say that those are not graphs. So these are four different components of a single graph. Yeah, they could have been four different graphs, but according to the question and the input, you can see them to be a part of a single graph."
+    },
+    {
+      "chunk_id": "L129_C3",
+      "start": 155.56,
+      "end": 233.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=lea-Wl_uWXY&t=155s",
+      "text": "according to the question and the input, you can see them to be a part of a single graph. So you will be applying a lot of algorithms going forward, okay, applying a lot of algorithms. We'll be learning about algorithms. Assume a traversal algorithm, okay? Assume a traversal algorithm, I'll not take any name because I haven't taught you that. So what will happen in future is, if assume you're doing a traversal algorithm, you'll be like one, two, four, five. Assume you started a journey and you start like one, then you go to two, then you go to four, then you go to three. So on this traversal, you'll never be able to reach these components. You will be, you'll never be able to reach these components. This is why any traversal that you will do, any traversal, you will always use something as a visited array. Yes, you always use something as a visited array. Remember the concept visited array. Over here we have 10 nodes. So what you'll do is you'll create an array of 11 size starting from the zero index and you can go on till the 10th index. So the size of the array will be 11. And what you will do is, remember this, you will always run a loop for any algorithm from zero and this node numbering is from one to 10. So you can always run a loop from one to 10, always."
+    },
+    {
+      "chunk_id": "L129_C4",
+      "start": 233.88,
+      "end": 313.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=lea-Wl_uWXY&t=233s",
+      "text": "algorithm from zero and this node numbering is from one to 10. So you can always run a loop from one to 10, always. And if the node is not visited, remember this, if the node is not visited, you will call the traversal algorithm from that node. I'll explain you now what happens. You might be confused to what is happening, but let's understand. So initially what you'll do is you will say everyone to be unvisited, which is false. Okay. Everyone initially is unvisited. So thereby it will be false. So what happens is when you start your traversal from one and you see one is unvisited. So you see one is unvisited. Yes, the if says one is unvisited. So you go and say traversal of one, traversal of one. So one starts a traversal and the traversal algorithms are designed in such a way that they will traverse the entire connected portions of the graph, entire connected portions of the graph. So it goes to one, goes to two, goes to four and goes to three. So apparently it will mark because it went to everyone, right? It went to everyone. So it will mark everyone as visited because it traversed everyone. Now the traversal, I will move to two. So it will see two is not, two is already visited. In my traversal, yes, in my traversal, I have already visited one, two, three, four. So I'll not go for two."
+    },
+    {
+      "chunk_id": "L129_C5",
+      "start": 313.68,
+      "end": 386.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=lea-Wl_uWXY&t=313s",
+      "text": "is already visited. In my traversal, yes, in my traversal, I have already visited one, two, three, four. So I'll not go for two. Then I'll go to three. I'll not go. Then I'll go to four. I will not go. Next when I go to five, I see five over here is zero, non-visited. Then you again call the traversal for five. Now five will traverse, six will traverse, seven will traverse. So it's done. Next you'll be like six, seven. Next it goes to eight. Eight will say I have not been visited. So now it'll go and do a traversal for eight and nine and it'll mark it as true. Next nine traverse. Next you go to 10, not traverse. So 10 will be visited. So in this way, any algorithm in the future, you don't just call like, you can't do something like, okay, we start the traversal algorithm from node one and this will make sure that it visits everyone. This is not possible if the graph has multiple components because you carefully saw if you started from one, it have only visited this portion and these portions would have not been touched. So for any traversal algorithm, just make sure this is the pattern. This is the pattern. You always run from one to 10 and you check for one, not visited. Go and start it. So it will mark everyone whom he can. For the next guy, again, he goes."
+    },
+    {
+      "chunk_id": "L129_C6",
+      "start": 386.92,
+      "end": 418.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=lea-Wl_uWXY&t=386s",
+      "text": "check for one, not visited. Go and start it. So it will mark everyone whom he can. For the next guy, again, he goes. For the next guy, again, he goes. For the next guy, again, he goes. So this is how the traversal algorithms will be executed. And this is what the connected components are. Okay, so guys, I hope you have understood this video just in case you did, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right over man. Just hit it. And if you haven't checked out our DPCDs and the SD sheet, please make sure you check it out. The link will be in the description. And with this, I'll be wrapping up this video. Let's meet in the next one. Till then, bye bye. Take care."
+    }
+  ]
+}

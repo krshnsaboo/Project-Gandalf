@@ -1,0 +1,99 @@
+{
+  "lecture_id": "L289",
+  "lecture_number": 289,
+  "lecture_title": "L6. Job Sequencing Problem | Greedy Algorithm Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=QbwltemZbRg",
+  "chunks": [
+    {
+      "chunk_id": "L289_C1",
+      "start": 0.0,
+      "end": 73.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=QbwltemZbRg&t=0s",
+      "text": "So let's continue with the greedy algorithms playlist. We're starting off, Avery, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is job sequencing problem. What is the problem stating? The stating that you will be given n number of jobs. Every job will have its job ID, its deadline, its profit. So job ID is basically the ID to recognize which job it is. What is deadline? Deadline basically means if the job ID 1 has a deadline of 4, it can be performed on day 1, day 2, day 3 or day 4, not beyond day 4, not beyond the deadline. And a single job and a single job requires a single day, not more than it, not less than it. Got it? Now every job has a profit associated with it. Now your task is to make sure that you maximize the profit. Yes, you maximize the profit by performing jobs. You can perform any number of jobs."
+    },
+    {
+      "chunk_id": "L289_C2",
+      "start": 73.96,
+      "end": 150.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=QbwltemZbRg&t=73s",
+      "text": "the profit. Yes, you maximize the profit by performing jobs. You can perform any number of jobs. The only thing you have to keep in mind is it should be performed under a deadline and on a single day, on a single day, you can only perform one job, not more than one jobs. For an example, there can be multiple scenarios with this given example. I say that, okay, on day 1, I will be performing the job ID 1. If I perform this, I'll gain a profit of 40. I'll gain a profit of 40. But on day 2, can I perform any other jobs because this is done. I cannot perform job ID 2 because the deadline was 1 and that's gone. The deadline was 1, that's gone. The deadline was 1, that's gone. So if I decide that the job ID 1 will be performed on day 1, I'll be having a total profit of 40. Now the question is to maximize the profit. The question is to maximize the profit. So what I will be doing is, I'll be like, okay, what if I perform the ID 1 on day 2? If I perform the ID 1 on day 2, I'll have a profit of 40, right? And on day 1, what I can do is, I can decide that I'll be performing the ID 3 because it"
+    },
+    {
+      "chunk_id": "L289_C3",
+      "start": 150.82,
+      "end": 228.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=QbwltemZbRg&t=150s",
+      "text": "40, right? And on day 1, what I can do is, I can decide that I'll be performing the ID 3 because it has given me a profit of 40 again. So the overall profit will be 80. You can try out all other combinations. 80 is the maximum profit that you will get. So you did notice that the deadline was 1 for 3 of these jobs. What I did was, I greedily performed the job with the maximum profit. I was greedy because I want to maximize. So you're getting a vibe, right, of the thought process. Now first thing you did see was, avoid performing the jobs on earlier days. Like for the job ID 1, the deadline was 4. And if you performed it on day 1, you're blocking anyone else. So it's better to delay the job. Delay the job to the end days. Why because the initial days will be empty. The initial days will be empty and you can perform other jobs whose deadline is much closer, right? So delay the job to the end days. What is the next thing you did? You want to gain maximum profit. So it's better to perform the maximum profit job."
+    },
+    {
+      "chunk_id": "L289_C4",
+      "start": 228.74,
+      "end": 306.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=QbwltemZbRg&t=228s",
+      "text": "the next thing you did? You want to gain maximum profit. So it's better to perform the maximum profit job. It's better to perform the maximum profit job. So if I keep these two things in mind, probably I'll have an algorithm, right? So let's come to this example and try to explore how can I have an algorithm. I'm looking to maximize profit. So what I've done is, if I've been given n number of jobs, I have sorted them according to the profit in the descending order. The highest profit is at the first and the lowest profit is at the last. I sorted it according to the profit because I'm looking to maximize profit. So I'll try to do the jobs which gives you more and more at the first. Okay. Now tell me, like till how many days can you perform jobs? This has a deadline of 2, 6, 6, 5, 4, 2, 4, 2. So the max, like the last day that you can perform a job will be a day 6, not a day 7 because any job, like if you take all the job IDs, the maximum deadline you can see is 6. So you cannot perform beyond 6, beyond day number 6. Perfect. So what I know is I have 6 days. So what you can do is you can create a 7 size array so that you get a 6th index, 0, 1, 2,"
+    },
+    {
+      "chunk_id": "L289_C5",
+      "start": 306.42,
+      "end": 383.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=QbwltemZbRg&t=306s",
+      "text": "days. So what you can do is you can create a 7 size array so that you get a 6th index, 0, 1, 2, 3, 4, 5 and a 6. So what I've done is I've created an array, you can call it as an hash array, whatever you wish to. Let's initialize minus 1. So what is minus 1? Minus 1 is basically stating that all of these days as of now are empty. All of these as, all of these days as of now is empty. Perfect. So maybe you can have a count of profit as well. And you can have a simple count as well. Initially 0, initially 0. Perfect. Let's start with the first one. First one is saying I have a deadline of 2. So what I will be doing is I'll be trying to perform on the end days. So I'll see, okay, this is the deadline date, which is 2. Can I perform it on day 2? I'll try to perform it at the last. He says yes. I don't have a job. So I can perform the job ID 6 over here. I can perform it. So done and dusted. If I perform this, I'll get a net profit of 80. So maybe you can add that 80 to your answer. So I'll add 80 to my answer and I'll say I performed one job. Okay. Let's go to the next one."
+    },
+    {
+      "chunk_id": "L289_C6",
+      "start": 383.82,
+      "end": 456.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=QbwltemZbRg&t=383s",
+      "text": "to your answer. So I'll add 80 to my answer and I'll say I performed one job. Okay. Let's go to the next one. Next one is saying my deadline is 6. So I'll go to the deadline 6 and I can perform. So I'll say, okay, ID number 3 performed. Gives me a profit of 70, which makes a total profit of 150 and the count to be 2. Perfect. I'll go to the next one and the deadline is 6 again. This is where you'll have to understand the deadline is 6. So when you head over to 6, you see that the day is already done. So I'll try to take the other day. Is day 5 possible? Because I can still perform it on day 5. He says yes, it is. So I'll take the job ID 4 and I'll perform it on day 5. Gives me a profit of 65. So if you add it up, if my math is correct, it's 215. Yeah. Count is 3. Done. What is the next one? Job ID 2. Day 5 is the deadline. Can you do it? No. Can you do it on day 4? Yes. So I'll be doing it on day 4. The job ID 2, which gives me a profit of 60. That makes it 275. If I'm doing addition mistakes, please forgive me. Okay. Done and dusted. Which is the next one? You see a job ID 5."
+    },
+    {
+      "chunk_id": "L289_C7",
+      "start": 456.9,
+      "end": 529.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=QbwltemZbRg&t=456s",
+      "text": "275. If I'm doing addition mistakes, please forgive me. Okay. Done and dusted. Which is the next one? You see a job ID 5. Can it be done on deadline 4? No, it's already taken. So I'll do it on deadline 3. Done. Job ID 5. Add a 25. So the profit is 300 now. The count is 5. Interesting. Let's go to the next one. The deadline is 2. Is it 3? Deadline 2 is not free. So look at day 1. Okay. So day 1 is possible. I'll take the day 1 and perform the job ID 8. That's up a 22. So that's going to be 322. You can add it up and the count will be 6. Let's go to the next one. The deadline here is 4, which is interesting. The deadline here is 4. So you look at 4, taken. You look at 3, taken. You look at 2, taken. You look at 1, taken. You look at 0, not taken. So you perform it on day 0. So you perform the job ID 1 on day 0, which is 20. That's me. That makes it 342 and 7 jobs performed. Let's go to the next one. The deadline is 2. So you go to day 2, no. Day 1, no. Day 0, no. You cannot perform this job. You cannot perform the last job because there are no days left. And eventually you have the total count of profit."
+    },
+    {
+      "chunk_id": "L289_C8",
+      "start": 529.3,
+      "end": 607.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=QbwltemZbRg&t=529s",
+      "text": "perform this job. You cannot perform the last job because there are no days left. And eventually you have the total count of profit. You also have the total count of jobs that you can perform. And this is what you'll be returning. Super simple. I did it greedily. I said, okay, who's giving me the maximum? Let's do it. Let's do it at the end. Why did I do it at the end? Simple example. If I do it at the end, the initial days will be empty. The initial days will be empty and I can perform other jobs in it. Understood? Perfect. What's the next thing? Yes. Write the algorithm. So write the algorithm. You'll be given a jobs array. These jobs can be a struct, can be a class, can be a POJO, can be anything. And the job, class, struct, POJO, whatever, will be containing an ID, will be containing a profit, will be containing a deadline. And depending on language, you can initialize it. This is given to you. So you need to sort it. That's the first job you'll do. My bad. I'll be sorting the jobs. And I'll be sorting the array according to a competitor. In case you don't know how to write a competitor, please, please go back and watch my STL video over there. Explain how to write a competitor. It's super simple. What you basically do is you write a Boolean."
+    },
+    {
+      "chunk_id": "L289_C9",
+      "start": 607.7,
+      "end": 684.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=QbwltemZbRg&t=607s",
+      "text": "watch my STL video over there. Explain how to write a competitor. It's super simple. What you basically do is you write a Boolean. That's what a competitor returns. And you always take two variables because comparison means between two. And the type will be jobs because that is what is the type. Jobs you can say value one and you can say jobs value two. And you're basically trying to compare, you're trying to sort it according to the largest profit. So you're saying, okay, if value one dot profit is greater than value two dot profit, which means it is in the correct order. So you can just return a true. This will technically mean. So what this means is in the array, the value one is ahead of value two. Shall I keep it in the same order? Shall I keep it in the same order? And you say a value one's profit is greater than value two's profit. Keep it in the same order. But if you return a false, it will just change the order. That's how the competitor works on a very, very generic term. Okay, I've sorted it. What is my next job? I need to count the total profit. So maybe I can keep a total profit equal to zero. I can keep a counter equal to zero. Now I know I need one thing so that I can create the hash array, the maximum deadline."
+    },
+    {
+      "chunk_id": "L289_C10",
+      "start": 684.22,
+      "end": 763.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=QbwltemZbRg&t=684s",
+      "text": "keep a counter equal to zero. Now I know I need one thing so that I can create the hash array, the maximum deadline. So what I can do is maybe I can quickly iterate through, I can keep a max deadline as well. Max deadline and we can probably keep it as minus one. Correct. And we can just scan through from zero to N minus one in the compare in the jobs array. And I can say, hey, max deadline, whatever it is, equal to max of max deadline, comma, array of I deadline. Perfect. So this will be storing the max deadline. Once this is done, what you can do is you can define a hash of max deadline plus one and you can initialize that with minus one. You can write a for loop to initialize that with minus one. Perfect. Now what? I start iterating. Okay, so I'll start iterating right from the first job, which is at zeroth and I'll go till the last job, which is at N minus one of the index. For the first job, I need to see, can I perform this job or not? Can I perform this job or not? How do I see it? It's super simple. I know the deadline. So I'll start with the deadline. I can say array of I."
+    },
+    {
+      "chunk_id": "L289_C11",
+      "start": 763.3,
+      "end": 839.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=QbwltemZbRg&t=763s",
+      "text": "I see it? It's super simple. I know the deadline. So I'll start with the deadline. I can say array of I. Okay. If your deadline is sixth day, let's check out the sixth day and I can check out till the zeroth day. Whichever day is empty, whichever day is empty, which means hash of that day, hash of J is equal to equal to minus one. That means that day is empty. I can perform the job. So I can do count equal to count plus one. At the same time, I can say hash of I. Can you store the job ID, which is array of, sorry, array of J dot ID. A bad array of I of ID. Where that is a job number. What apart from it? I need the total profit so I can maybe see total profit is equal to plus equal to array of I dot profit. So that will be counting. Perfect. I can do a break because I don't need to find out other these. Simple. The follow up is done. This follow up is also done and eventually you can return the total profit because they wanted a pair. So you can say return count comma total and the function ends and the function ends. Super simple. So this function will typically be returning a pair, which is count of the total jobs and the total profit. Time to analyze the time complexity."
+    },
+    {
+      "chunk_id": "L289_C12",
+      "start": 839.58,
+      "end": 915.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=QbwltemZbRg&t=839s",
+      "text": "function will typically be returning a pair, which is count of the total jobs and the total profit. Time to analyze the time complexity. Sorting is going to take n logarithmic of n. This is going to take a big O of n. Now this is where the problem lies. This at the worst possible scenario can go up to big O. Imagine all the deadline days being filled up. It will end up going the entire stuff. So this is max deadline. The overall complexity will be n log n plus n into max deadline. And what about the space complexity? The space complexity will be a big O of max deadline. Why big O of max deadline? Because that is the hash array that you are creating. Correct. Now in an interview, this is what they expect you because they expect you to tell them this one. In case the interview is slightly into competitive programming, they'll ask you to optimize this inner loop. Yes, they'll ask you to optimize this inner loop. And this can be done with this joint set union. You apply this, this one because you're looping to figure out, you're looping to figure out which is the first day that is empty."
+    },
+    {
+      "chunk_id": "L289_C13",
+      "start": 915.82,
+      "end": 959.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=QbwltemZbRg&t=915s",
+      "text": "one because you're looping to figure out, you're looping to figure out which is the first day that is empty. You're looping to figure out that can be replaced with DSU in big O of 1. So without looping, you can straight away get it. So you can head over and watch my graphs playlist. I've taught the DSU concept over there. Understand the DSU concept and maybe you can try replacing this internal for loop with that DSU concept. You can try that on your own, but it will not be required in interviews. I'll not be teaching it over here. So yeah, that will be it for this one. So I hope you have understood everything. And if you've understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then bye take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

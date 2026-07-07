@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L199",
+  "lecture_number": 199,
+  "lecture_title": "DP 18. Count Partitions With Given Difference | Dp on Subsequences",
+  "youtube_url": "https://www.youtube.com/watch?v=zoilQD1kYSg",
+  "chunks": [
+    {
+      "chunk_id": "L199_C1",
+      "start": 0.0,
+      "end": 75.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=0s",
+      "text": "Hey everyone, welcome back to TakeUForward where we are trying to take you forward. So DP18 is what we will be doing today. But before that, I would love to address some of the comments that were there in the DP17 video. What was DP17 video? Find the number of subsets. Yes, find the number of subsets whose sum is equivalent to K. And in that video, in that video, a lot of people were saying me, Stryver, what if the array is given us to as 0, 0, 1 and the sum is 1. Your code will just give you the answer as 1 subset. Ideally it should have been 4 subsets because 0, 1 where I consider this 0 and this 1, then 0, 1 where I consider the next 0 and next 1, 0, 0 where I consider both the 0s and 1 and then just the 1. So ideally the answer should have been 4. So how did the previous code pass? So if I just go back to the code of the number of subsets, if you carefully see in the test cases, it's clearly written the numbers will be greater than equal to 1."
+    },
+    {
+      "chunk_id": "L199_C2",
+      "start": 75.36,
+      "end": 149.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=75s",
+      "text": "if you carefully see in the test cases, it's clearly written the numbers will be greater than equal to 1. That's why I did not consider that case because we were clearly told that there will be no cases where there will be 0s. That is the only reason it did pass. Now how would you solve this problem? Imagine I just changed the constraints to be equal to 0. Like I say all the array of elements will be greater than equal to 0. So in that case, how will you solve this particular problem is a big concern. So can I say this? Can I say this? That if it is 0, does 0 alter the sum? No, because addition of 0 or removal of 0 will never alter the sum. The sum will still stay the same. So that is the idea that we will take into consideration and we will compute the number of 0s and the number of 0s come out to be 2 because the array was 0, 0, 1. Number of 0s come out to be 2. In how many ways 2 0s can be represented? One is this, one is this, one is double 0, one is the empty subset. If I just add 1 to both of them, which was the subset that I was creating, I'll get 0, I'll get 0, 1, I'll get 0, 0, 1, I'll get just a 1."
+    },
+    {
+      "chunk_id": "L199_C3",
+      "start": 149.68,
+      "end": 219.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=149s",
+      "text": "was the subset that I was creating, I'll get 0, I'll get 0, 1, I'll get 0, 0, 1, I'll get just a 1. So if I can figure out how many ways I can represent the 2 0s, how many ways I can represent the 2 0s, then the answer will be there. So how many ways can you represent the 2 0s? It's 2 to the power n, comes from the algorithm power set. So if you don't know this algorithm, please check it out. The number of ways in which you can represent numbers are 2 to the power n into the original answer where the original answer was 1. So 2 to the power 2 into 1 is 4 into 1 is 4 subsets. So that's one of the ways you will solve it. When you say that you're going to compute the power, like the number of 0s and then you just do power 2 to the power n into whatever answer you're getting from the written test case. But the question is, how do you correct it? How do you correct it? Because that is the biggest stuff that we have to understand. So why did it fail? Let's go to the code. So in the code, if you carefully see, there is a line, if sum equal to equal to 0. So eventually what happens is if I give you an array like 0, 0, 1 and I am starting from"
+    },
+    {
+      "chunk_id": "L199_C4",
+      "start": 219.28,
+      "end": 282.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=219s",
+      "text": "to equal to 0. So eventually what happens is if I give you an array like 0, 0, 1 and I am starting from here, which is the second index with a sum 1. So whenever I say don't take, yes, whenever I say don't take, I'll go to 1, 1. But whenever I say take, I'll go to 1, 0. Because if I take this guy, this one will be 1 minus 1 and this is where I'll go. So if I go to f of 1, 0, I get a 0. And if you remember in the code, the first line itself stated if sum is equal to equal to 0. So this is where you return 1. So these couple of zeros are actually not considered. Thereby there is a problem. So what I can say is I need to go deep. Yes, I need to go deep. Instead of returning from here, I need to go to non-take, which will take to me 0, 0. I'll again go to here. When I'm at 0, 0, then I have to think of something. So basically I have to go deep. So the first thing that I will do in the code is I'll remove this if sum equal to equal to 0, because that is something which is creating problem. And I have to go deep till index equal to equal to 0. And that's when I think of the base case."
+    },
+    {
+      "chunk_id": "L199_C5",
+      "start": 282.2,
+      "end": 350.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=282s",
+      "text": "creating problem. And I have to go deep till index equal to equal to 0. And that's when I think of the base case. Now what will be the base cases? Let's think. If you are just standing at the index 0, that means just have a single element. Right. And imagine if the sum is 0, if the sum is 0 and the element is 0, what options do you have? It will be like Stryver, either you can take this guy into your subsequence because then also the sum will not be altered. Or Stryver, we will not take it. Then also there will be no problem. So there are two options with this single guy. There are two options. You say I'll take the 0 into consideration or you'll say I'm not going to take this into consideration. So I can say if it is a 0 and the sum is 0, I will have two options. Either I'll take the 0 or I'll not take the 0. So the first base case is very simple. If a sum is 0 and array of 0 is also 0, then I can return a 2. That's the first base case because there can be two possible ways in which you can form the subsequence by taking it or by not taking it. Let's think of the other case. I'm at 0 and we have some 5 and the sum is 0."
+    },
+    {
+      "chunk_id": "L199_C6",
+      "start": 350.36,
+      "end": 415.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=350s",
+      "text": "or by not taking it. Let's think of the other case. I'm at 0 and we have some 5 and the sum is 0. So if you're looking at some 0 and if you decide to take this guy, then the sum will be altered. So you just have one way, which is not taking because if you don't take this, then the subsequence will still have a sum 0. Thereby, I can say else if, or you can just write an if because there's a return statement. If sum is equal to 0, you return 1 because there's only one way. If this is 5 at the 0th index and the sum is 5, then if I don't take it, then the sum will not go to 0, which is a problem because it will not go if I don't take it. But if I take it, then minus 5 will happen and the sum will go to 0. So again, a single way. So can I say either this or sum equal to equal to array of 0, then it will return 1 and all the other cases I'll return 0. So that's how we can modify by removing the first line of if statements. Now what I'll do is I'll just open the console and probably I'll give one test case and 3 is the RSI, 1 is the sum, 0, 0, 1. So ideally this should run. Let's check it out."
+    },
+    {
+      "chunk_id": "L199_C7",
+      "start": 415.4,
+      "end": 483.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=415s",
+      "text": "one test case and 3 is the RSI, 1 is the sum, 0, 0, 1. So ideally this should run. Let's check it out. So you see the answer is now coming out to be 4, which they're not expecting because the code has been written, like the tester has written the code in terms of numbers greater than equal to 1. Thereby there's a problem, but you see the answer coming out to be true. That's the slight change that you will do in sum equal to like, you have to just remove the sum equal to 0 and let it travel to the last index. Just let it travel to the last index without actually stopping it in between. So that's the minor change that you'll do. So enough of DP 17. Let's come back to the original stuff, which is DP 18. So what is the problem? The problem states partitions with given difference. So you're given an array, which is using an array partition. So given an array, partition it into two subsets, two subsets, such that their union is the original array. That means you can take an array and partition them into two subsets. Let the sum of the elements of these two subsets be S1 and S2. Given a difference D, count the number of partitions in which S1 is greater than or equal to S2. And the difference between S1 and S2 is equal to D."
+    },
+    {
+      "chunk_id": "L199_C8",
+      "start": 483.52,
+      "end": 556.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=483s",
+      "text": "number of partitions in which S1 is greater than or equal to S2. And the difference between S1 and S2 is equal to D. So basically if I understand the question properly, there is an array given. You have to basically divide them into two parts such that this part is giving you an S1, which is greater than equal to S2. And the difference between S1 and minus S2 should be equal to D. And you have to count how many different subsets can you divide them into such that this is true. So let's take one of the examples, something like 5, 2, 6, 4. So if I take 5, 2, 6, 4, this is the array and the D is given as 3. So if I take this, I can be like the two subsets will be 5, 2 and 6 and 4. So this will give me a sum of 10. This will give me a 7 and you'll get the difference as 3. Now, subsets means subsequences. So it's not that it has to be consecutive. You can pick up from anywhere. So I think most of you have understood the question. It's pretty much similar to the DP-15 that we did. But over here we need to check this out because that's the main concern that we will be having. So what is the problem telling us to find?"
+    },
+    {
+      "chunk_id": "L199_C9",
+      "start": 556.76,
+      "end": 634.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=556s",
+      "text": "to check this out because that's the main concern that we will be having. So what is the problem telling us to find? It's telling us to find how many subsets are there which have a difference S1 minus S2 equal to D where S1 is greater than S2. So can I say this that S1 can also be written as total sum minus S2 if total sum is the total summation of array elements because if you just remove S2's sum, you'll be left out with S1's sum. So can I just replace this and it will be like total sum minus S2 minus S2 equal to D. Yes. Thereby, it will be total sum minus D if I take the D other side and 2 into S2. Thereby, S2 will be total sum minus D by 2. So can I say I'm looking for subsets? Yes. I'm looking for subsets which are having summation as total sum minus D by 2. So the question boils down to find the count of subsets whose sum is total sum minus the difference by 2 and this is nothing but DP 17."
+    },
+    {
+      "chunk_id": "L199_C10",
+      "start": 634.76,
+      "end": 714.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=634s",
+      "text": "of subsets whose sum is total sum minus the difference by 2 and this is nothing but DP 17. DP 17 with a modified target. With a modified target. We have just modified the target. It's as easy as it can get. But do we have edge cases? Yes. We definitely know that the constraints told us that the numbers will be like all the numbers of I will be greater than equal to zero. So we know one thing for sure. This cannot go negative. Definitely this cannot go negative. It has to be greater than equal to zero. That's one of the cases that total sum minus D has to be greater than zero. Why because if I'm looking for a sum and that's what is the sum. This sum is sum of a subset. So if it's a subset and the numbers are greater than zero, how can a sum of a subset be negative? Thereby this element has to be greater than zero. You're dividing by two. So again, there is no fractions. All the numbers are zeros ones too. So all are integers. So if all are integers, you can't have a decimal right. Thereby the other edge case will be total sum minus D has to be even. Has to be even."
+    },
+    {
+      "chunk_id": "L199_C11",
+      "start": 714.34,
+      "end": 788.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=714s",
+      "text": "decimal right. Thereby the other edge case will be total sum minus D has to be even. Has to be even. Right. So there are two edge cases. It has to be positive because all the numbers are greater than equal to zero. So that so the sum has to be zero greater than zero and it has to be even because you don't have decimals. So you just check for these couple of cases and then the question boils down to count of subsets. Yes, that is what the question boils down to. So we need the number of subsets concept. Right. So just copy paste the entire changed code that we wrote for zeros. And now we'll paste it over here. Right. And over here, can I say this that we require the total sum. So that's zero. And then we can easily go across the array and we can add total sum plus equal to ID. That is something which you have done. Right. What's the next stuff? So we know the total sum minus D has to be greater than zero. So if it is lesser than zero, that goes as false and total sum minus D has to be even. So if it's odd, it's still gone. So I can just return a false. So we are pretty much done with the false. Now we just need to return find ways and we call the array and we give the target as total"
+    },
+    {
+      "chunk_id": "L199_C12",
+      "start": 788.1,
+      "end": 868.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=788s",
+      "text": "done with the false. Now we just need to return find ways and we call the array and we give the target as total sum minus D by two. So if I can just find the number of subsets with total sum minus D by two, it does work. But over here they have asked, since the answer may be too large, you have to return module of 10 to the power nine plus seven. So really you can just declare a mod equal to one in nine plus seven. And over here, just make sure you give a mod. That should be fine. So that was about the memorization, but how can we optimize this? Obviously we can write tabulation. So what I'll do is I'll copy paste the tabulation that we wrote over here, but this is definitely not going to work because it does not handle the case where we have zeros. So what did we change? If you remember, we removed sum of zero. So please remove some of zero because this was sum of zero at every index. So we remove this first case. This let's, let's think about this afterwards. Let's write the other cases. What's the first case? If sum is zero and the number zero at index zero. So if the number zero and then DP of zero at zero will be two else DP of zero at zero"
+    },
+    {
+      "chunk_id": "L199_C13",
+      "start": 868.06,
+      "end": 940.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=868s",
+      "text": "index zero. So if the number zero and then DP of zero at zero will be two else DP of zero at zero will be one. Basically I'm saying at index zero, if the sum is zero, because the first parameter represents index, the second parameter represents sum. So if at zero, the sum is also zero and the number is also zero. So we have two cases, take or not take. Or else if, if I'm at index zero and the sum is zero, but the number is not zero and there is only one way, which is not take. So there were one case. What about this case? Number zero lesser than equal to target because at the zeroth index, there can be a number assume five and the target is also five. So there is only one way. So you might think this is correct, but the still fail. What if number of zero is one zero only, then it should have been, it will come as DP of zero of zero as one, which is wrong. So make sure the number of zero is not equal to zero in that case, anywhere, anywhere. I explained the case of five. If it contains five, then it will just have one way, right? So you just write at five, there's only one way. But if it is having zero, then it is bound to have two ways. So this is the two ways."
+    },
+    {
+      "chunk_id": "L199_C14",
+      "start": 940.54,
+      "end": 1019.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=940s",
+      "text": "there's only one way. But if it is having zero, then it is bound to have two ways. So this is the two ways. If it is not having zero, it is having other numbers like seven. There's only one way in which you can make the sum zero. Those cases is what I've written over here. So if you just not try to submit it, this is definitely going to run fine. So let's submit this. It does run. And if I submit this, it will definitely give me an accepted answer. So what's the next step? Why did it give us a wrong answer? Oh, we forgot to apply modulo to it. So please apply modulo to it. Very important concept. Please make sure you apply modulo to it every time you submit. So after applying modulo, I will be submitting this and they should definitely be working fine. So what is the next step? The next step is definitely space optimization. So you know, in order to do space optimization, it's very simple. You just omit this and you keep one row. So vector of end, previous of target plus one comma zero current of target plus one comma zero. Right. And over here, you can just do previous. Over here also you can just do previous. And over here also you just can do previous. And once you've done this, you know, at dp of index minus one, it changes to previous"
+    },
+    {
+      "chunk_id": "L199_C15",
+      "start": 1020.08,
+      "end": 1079.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=zoilQD1kYSg&t=1020s",
+      "text": "here also you just can do previous. And once you've done this, you know, at dp of index minus one, it changes to previous dp of index minus one, it changes to previous. And over here at dp of index, it's more of like curve and the previous will be curve if you remember. And over here instead of dp of n minus one, if you remember well, it's going to be previous. So these are the changes that you do and it becomes space optimized as well. So you see, we solved this using memation, the tabulation and the space optimization. So just in case, guys, if you have understood the entire code, the entire explanation and the correction that I did, please, please, please make sure you like this video. And if you're new to this channel, please do consider subscribing. And yes, to continue our tradition, please do write understood in the comment section so that I do get motivated that you are understanding whatever I'm explaining. So yeah, with this, let's wrap up this video and meet in the next one. Till then, bye bye. Take care. I will find the light."
+    }
+  ]
+}

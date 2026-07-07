@@ -1,0 +1,50 @@
+{
+  "lecture_id": "L077",
+  "lecture_number": 77,
+  "lecture_title": "L5. Preorder Traversal of Binary Tree | C++ | Java | Code Explanation",
+  "youtube_url": "https://www.youtube.com/watch?v=RlUu72JrOCQ",
+  "chunks": [
+    {
+      "chunk_id": "L077_C1",
+      "start": 0.0,
+      "end": 75.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=RlUu72JrOCQ&t=0s",
+      "text": "So before starting this video, I would love to thank Relevel for sponsoring this entire video. A hiring platform with no degree required, no experience required, mentoring sessions available feels like a dream, isn't it? What if I say all of this is for free? Well, Relevel by Unacademy is here to make your dream come true. With job opportunities in front-end, back-end and business development from India's top companies for freshers and people in the early career, Relevel is here to make the entire hiring process super simple and super quick. All you have to do is to give the Relevel test and based on your score, interviews will be scheduled and you will be hired. So what are you waiting for? Make sure you check out all the links in the description and apply for the Relevel test as soon as possible. Hey everyone, welcome to another lecture of the Free Cut 3 series. Now in the previous videos, I have explained about the DFS traversal technique which is the pre-order traversal. So we're going to see the coding implementation of this pre-order traversal. So again, if you have seen the in-order traversal video, we will not complicate things and we'll keep it simple. Root, left, right is what the pre-order traversal is. So again, we'll write the pre-order. The C++ and Java code are almost similar. So we'll take the node and if that's null, we're going to return."
+    },
+    {
+      "chunk_id": "L077_C2",
+      "start": 75.52,
+      "end": 155.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=RlUu72JrOCQ&t=75s",
+      "text": "write the pre-order. The C++ and Java code are almost similar. So we'll take the node and if that's null, we're going to return. Otherwise, we're doing a print and after doing the print, we'll move to the left and after we come back from the left, we'll move to the right. So that's a simple code. But if you do the dry run, then you'll understand why this code works. So as you know, initially we start from the root. Initially, the call comes for the root of the tree. So we start from the root of the tree. So we're starting with the root, comes to the first line, print. So we'll print one. So one can be printed. So one is printed. Next says node, left. So we will come to node, left and we will stand over here. Next for two, it will come across print. So two will be printed. Two is printed. Next is again left. So we will come to left. We'll stand over here. Again four comes. So the pre-order of four is called print. So four will be printed. Once four is printed, next you call for the left of four. When you call for the left of four, it's a null. It's a null that you call. So if node is null, it returns. So we go back. So print is done. Print is done. Left call is done. Next is right. So we call for right."
+    },
+    {
+      "chunk_id": "L077_C3",
+      "start": 155.14,
+      "end": 229.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=RlUu72JrOCQ&t=155s",
+      "text": "returns. So we go back. So print is done. Print is done. Left call is done. Next is right. So we call for right. At right also, we find null. So we will return. So as I can see, for the four node, the pre-order traversal, print, left, right is completed. The entire stack is completed. So can I say the recursion is over? If the recursion is over, I will get back. So for two, print is done. Left is done. Time to go to the right. Let's go to the right. So if you go to the right, you will stand at five. So you come to a new node five. Again print. So you print five. Once you have printed five, what you will do is, you will go to the left. So currently you are at node six. Again node.data, print. So you'll print six. So I made sure that I printed six. Once you have printed six, what you will do is, you will go to the left of six because after print, it's the left. Once you go to the left, you'll find null. The moment you find null, it will return. So make sure you return it. So for six, printing is done. Left is done. Time to go to the right. Right says it's a null. So again return. So for six, print is done. Left is done. Right is done. So what I can say is, six is over."
+    },
+    {
+      "chunk_id": "L077_C4",
+      "start": 229.1,
+      "end": 305.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=RlUu72JrOCQ&t=229s",
+      "text": "So again return. So for six, print is done. Left is done. Right is done. So what I can say is, six is over. So it will go back. So for five, print is done. Left is done. Right it will go and it will find it as null. The moment it finds it as null, it goes back. So five goes back. Correct? So five, print, left, right, everything is completed. Goes back. For two, print is done. Left is done. Right is done. Goes back. For one, print is done. Left is done. Time to go to the right. Goes to the right. Recursion goes to the right. So as of now I'm at three. Three says print. So I'll print three. Once you're printed, it says go to the left. Goes to the left. Stands at seven. When you come to seven, again says print. So please make sure you print it. So I made sure I print it. Seven says go to the left. Comes to the left. Finds null. Goes back. For 7, print and left is done. So it will go to the right and the moment it goes to the right, it finds null, comes back. So for 7, print left right is completed. So the recursion is over, goes back. 3 is printed, left is completed, comes to the right. And when it comes to the right, it sees 8."
+    },
+    {
+      "chunk_id": "L077_C5",
+      "start": 305.8,
+      "end": 384.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=RlUu72JrOCQ&t=305s",
+      "text": "over, goes back. 3 is printed, left is completed, comes to the right. And when it comes to the right, it sees 8. The moment it sees 8, it prints it. Once printing is done, goes to the left. But once it goes to the left, it says this is a 9, so why don't you print it. Next, it goes to the left, nothing. Comes back, goes to the right, nothing, comes back. For 9, print left right is over, comes back. For 8, print left right is there. So it prints 10, goes to the left, goes to the right, nothing, goes back. 8 is completed, goes back. 3 is completed, goes back. Completed, goes back. So that's how you can easily get the pre-ordered traversal again. 1, then the left tree. So that's 2, 4, 5, 6. For it, it should be 3, 7, 8, 9, 10. Root, left, right. So basically three lines. Again, no need to complicate. Don't complicate. Keep it simple. Just write whatever you want to write. If you want to first visit root, just write it. If you want to first visit left, write it. Keep it as simple as possible. That is how binary trees are solved. Don't complicate. Keep it as simple as possible. So this will be the pre-ordered traversal technique. If I talk about the time complexity, that's a bigot of n, where n is the number of nodes. Why?"
+    },
+    {
+      "chunk_id": "L077_C6",
+      "start": 384.74,
+      "end": 439.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=RlUu72JrOCQ&t=384s",
+      "text": "the pre-ordered traversal technique. If I talk about the time complexity, that's a bigot of n, where n is the number of nodes. Why? Because at max, 1, 2, 3, how many nodes are there? That many times you're going, correct? So that is why the time complexity is bigot of 1. And the space complexity is auxiliary space of the height of the tree. At the worst case, the height of the tree can be a skew when a tree like this is given. So at max, the auxiliary space which is used in recursion can be bigot of n. So I can say this is the time complexity and space complexity in order to do the pre-ordered traversal. So guys, I hope you have understood this entire code as well as this wonderful recursive diagram. Just in case you did, please make sure you give a like to this video and I'll be leaving the C++ and the Java code links in the description below. With this, let's wrap up this video and if you're new to our channel, do consider subscribing because I'm going to bring much more videos like this. So yeah, let's wrap up this video now and with this, bye-bye, take care."
+    }
+  ]
+}

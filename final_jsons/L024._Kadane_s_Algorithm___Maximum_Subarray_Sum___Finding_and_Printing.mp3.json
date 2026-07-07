@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L024",
+  "lecture_number": 24,
+  "lecture_title": "Kadane's Algorithm | Maximum Subarray Sum | Finding and Printing",
+  "youtube_url": "https://www.youtube.com/watch?v=AHZpyENo7k4",
+  "chunks": [
+    {
+      "chunk_id": "L024_C1",
+      "start": 0.0,
+      "end": 73.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another video from the Stryber's A to Z DSA course. Just in case you're for the first time here, this is the world's most in-depth course when it comes to DS-ALGO. Why do I say that? Because this course has 455 modules. By the end of the course, you would have solved more than 400 plus problems in DS-ALGO and you can go across the entire internet. You can buy any of the paid courses. None of them will be teaching you DS-ALGO in such depth. Something that I can give you as guarantee is if you complete this entire course, you can clear any of the DS-ALGO in any of the companies in any part of the world. So till now we have covered till majority element in step 3.2. In this video, we will be covering maximum sub-array sum, which will be involving Fadan's algorithm. So what does the problem say? Sub-array. Out of all the sub-arrays, give me the maximum sum. What is the definition of sub-array? The definition of sub-array is a contiguous part of the array. I've already explained you this in the previous videos. Now what is a contiguous part? Something like this. Minus one, minus two. This is a contiguous part. So you can call this as a sub-array within the array itself."
+    },
+    {
+      "chunk_id": "L024_C2",
+      "start": 73.96,
+      "end": 144.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=73s",
+      "text": "like this. Minus one, minus two. This is a contiguous part. So you can call this as a sub-array within the array itself. Even if you pick up a single element, that can also be called as a sub-array. Even if you pick up the entire array, that can also be called as a sub-array. Now what cannot be called as a sub-array? Imagine you pick up this contiguous part and then you say I'll pick up five. So what happened was there was a discontinuity between minus one and five. So it cannot be called as a sub-array, but it can be called as a subsequence. But the question is asking you out of all the sub-arrays, give me the maximum sum. So if I give you this particular array, you can try out all the sub-arrays. Probably this is one of the sub-arrays that will give you a sum of six. Probably this is a sub-array which will give you a sum of four. But if I take this portion, which has negative elements, which has negative elements, it still gives you a sum of seven, which is the highest possible among all the sub-arrays. And that is what you have to return as the answer to this problem. Now this question comes up in an interview. What is the first approach that you'll be giving to the interviewer? That's definitely trying out all sub-arrays. And we've already discussed how do we do that in the previous video."
+    },
+    {
+      "chunk_id": "L024_C3",
+      "start": 144.68,
+      "end": 213.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=144s",
+      "text": "you'll be giving to the interviewer? That's definitely trying out all sub-arrays. And we've already discussed how do we do that in the previous video. Just in case you do not know, please go back and watch the previous videos in this playlist. You'll understand how do you print all the sub-arrays or how do you iterate through all the sub-arrays. So if you try out all the sub-arrays, and out of all the sub-arrays, which gives you the maximum sum can actually be the answer, will actually be the answer. So how do you try out all the sub-arrays? If I have a clear observation, we know this is the first sub-array, this is the second, this is the third, this is the fourth, this is the fifth, this is the sixth, seventh and eighth. And then ninth, tenth, eleventh, twelfth, thirteenth, fourteenth, fifteenth. Then this one, this one, this one, this one, this one, this one. Do you see a pattern? Each time I'm standing at an element, then the first sub-array is minus two. Then it's like minus two, minus three. It's like minus two, minus three, four. So I'm just taking one, one element at a time and I'm forming the next sub-array. Once starting from this, I've taken every one. And what is the next step I'm doing? I'm going and standing at the next element and I'm doing the same thing again. I'm doing the same thing again with it."
+    },
+    {
+      "chunk_id": "L024_C4",
+      "start": 213.38,
+      "end": 274.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=213s",
+      "text": "doing? I'm going and standing at the next element and I'm doing the same thing again. I'm doing the same thing again with it. And then again, at the next step, I stand at the next and do the same thing. Stand at the next, do the same thing. So this is how you can iterate through all the sub-arrays. So if I'm standing at here and I can call that as an I loop. So the I loop will always stand at first at the zeroth index and it will go on till the last index, which is I lesser than n. Right? And where is the next, what are you doing? First you're taking minus two, then you're taking minus three, then you're taking four. It's basically you're iterating from I and you're taking every one till the end. So please do that. So you're iterating from the I and you're taking every one in the end. So just go ahead and do that. And now can I see my sub-array is nothing. If I is zero and j is zero, this first sub-array is from zeroth index to zeroth index, which is this. The next sub-array is from zero to the first index, which is this. The next sub-array is from zero to second index, which is this. The next sub-array is from zero to three index, which is this."
+    },
+    {
+      "chunk_id": "L024_C5",
+      "start": 274.76,
+      "end": 346.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=274s",
+      "text": "next sub-array is from zero to second index, which is this. The next sub-array is from zero to three index, which is this. The next subarray is from 0 to 4 index which is this and when i becomes 1 and it's standing here it's like 1 to 1 is the first subarray which is only this. Then 1 to 2 is the second subarray which is only this. Then 1 to 3 is the third subarray which is this and so on it will go. So you know the subarray is from i to j. So what you will do is, summation will be 0 and you can probably run the k loop from i to j because you know that is where, yes that is where the subarray is from and you can say sum plus equal to array of k. You can easily see that once you have figured out the sum using this particular loop, once the internal loop is completed what you can say is maximum is equal to max of sum, maximum because I know this is every subarray generation. This is every subarray generation and then you can easily get the maximum. Initially you can keep the maximum as the lowest possible value that you can think of. So imagining like just wondering that everything can be stored in integers, I'll take the integer minimum because that is the least number that I can have. So what will be the time complexity?"
+    },
+    {
+      "chunk_id": "L024_C6",
+      "start": 346.88,
+      "end": 408.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=346s",
+      "text": "in integers, I'll take the integer minimum because that is the least number that I can have. So what will be the time complexity? Can I say it's big O of n cube because it's very simple I'm running three loops. It's near about big O of n cube, not exactly because I know it's running from i so it won't exactly run for n times always and I can say it's near about big O of n cube, not exactly n cube. Am I using any space? No, the space complexity is being big O of one. So what I can say is this will be the extremist brute force solution. This is where the interviewer will come up and say, can you please optimize the brute force? Then you move to the better solution and the better solution is very, very easy. What we do is we say, okay, let's for a moment erase the sum. For a moment erase the sum. Let's do some observations. The first subarray was minus two. So can I say the sum is minus two for the first subarray? The next subarray is minus two minus three. So do you need to, do you need to reiterate on minus two minus three? And if the next subarray is minus two minus three, four, we need to reiterate and sum it up. No, whatever was the sum of the previous subarray, hear me out properly."
+    },
+    {
+      "chunk_id": "L024_C7",
+      "start": 408.54,
+      "end": 469.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=408s",
+      "text": "minus three, four, we need to reiterate and sum it up. No, whatever was the sum of the previous subarray, hear me out properly. Whatever was the sum of the previous, I just add the next element. Then I add the next element. So sum over here will become minus five. Sum over here, including four will become one. So you just add the next element. Whenever J was initially here, take this and J goes here, take this and J goes here, takes this. So eventually you'll get the summary three, like three elements, some stored. So what I'll do is I'll take this sum out and I'll see some, can you stay here and some as you move forward, can you just add up area of J the first time this gets added. So we have one summary sum. Next time this gets added. So we have two subarray sum. Next time this gets added. So if three subarray sum and every time you have a sum, you update it with the maximum. So this will be the brute, a better approach and the time complexity will be N square and the space complexity will be big of one. Pretty clear, the brute and better. Now we will move to the most optimal solution. Why? Because the interview will be like N square. No, please optimize. That's when we move to the optimal one."
+    },
+    {
+      "chunk_id": "L024_C8",
+      "start": 469.74,
+      "end": 544.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=469s",
+      "text": "most optimal solution. Why? Because the interview will be like N square. No, please optimize. That's when we move to the optimal one. So in order to find the most optimal solution, we will be using something known as the Catan's algorithm. Again, I'll be explaining the algo as well as the intuition behind the algorithm. Do not worry about that. The first thing that you'll do is you will say maximum to be the lowest number and as you may say, ain't mean, and then you start from the zero index and you take a sum initially as zero and I even start iterating in the array and as I move through the algorithm, I will be telling you the thought process. Do not worry about that. First time you get minus two. So what do you do is you go to some and say, can you please add it to yourself? Can you please add it to yourself? And you're like, okay, I'll add it to myself. Once you have added this minus two gets compared with the maximum. Yes, it gets compared with the maximum and it is better and it is better because end to mean is super small. So what I'll do is I'll be like, okay, maximum, can you update yourself with minus two? He's like, sure I can. But wait, not anyone. If this is minus two, if you move forward, will it make sense to carry minus two? It will not. Why?"
+    },
+    {
+      "chunk_id": "L024_C9",
+      "start": 544.24,
+      "end": 613.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=544s",
+      "text": "But wait, not anyone. If this is minus two, if you move forward, will it make sense to carry minus two? It will not. Why? Because if you carry minus two and you move forward to this summary, this will be like minus two minus three, which will give you a sum of minus five. Correct? But if you just take the single element, it'll be minus three and the sum will be minus three. If you took two elements, the sum was minus five. By the way, minus three is greater than minus three. A lot of people get confused. Minus three is greater than minus five. So will it make sense to carry a minus two? Because if you carry negative sum, if you carry negative sum forward, the summation will always reduce, will always reduce. It is minus three. Since you carried a negative, it will always reduce. So what you will do is at any moment the sum is lesser than zero, you'll say, no need to take. It will only hamper my sum in the future. So I'll say reduce yourself to zero and then move. So when I move, it's the first index. When I move to the minus three, can I say I'll just add it to the sum? I will. If I add it, the new sum will be minus three. And now I'll be like, is minus three greater than minus two? No, it is not."
+    },
+    {
+      "chunk_id": "L024_C10",
+      "start": 613.64,
+      "end": 680.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=613s",
+      "text": "it, the new sum will be minus three. And now I'll be like, is minus three greater than minus two? No, it is not. Minus two is greater than minus three. So we will not replace. And then we will move. But before moving, will it make sense? No, we'll replace that to zero. Then we move to four. Then we move to four and we will add it to the sum. This time when you are adding to the sum, you're starting the subarray from here because there's no point in taking minus three because it will only reduce your sum. So you start from four. Now when you're starting from four, can I say the maximum is now four? Just for betterment, I'll just erase it. Can I say the maximum is four? I can. And then I'll move. Why will I carry four? Because it's a positive sum. It's a positive sum. So I'll carry it. Now I will add minus three, minus one. So this one will become three. This one will become three. Now will it make any sense to carry three? Yes. Even if it's a negative element, these two elements together are still giving us a positive value, a positive addition. So even if it's a minus one, I know I should not carry minus one, but I will carry someone before minus one, which is four."
+    },
+    {
+      "chunk_id": "L024_C11",
+      "start": 680.0,
+      "end": 744.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=680s",
+      "text": "it's a minus one, I know I should not carry minus one, but I will carry someone before minus one, which is four. I cannot carry entirely four, but okay, even if I have to include minus one, I'll still lose some value, but I'll still have plus three with me, which is still of some addition to the sum. It'll still increase the sum, right? So I'll carry it. I'll carry it. And then I'll move to minus two. The moment I move to minus two, what will happen? This will be one. And we'll compare with maximum. It's not more than, but wait. Will I still carry? Yes, you will still carry. Why? Because even if you add two negatives to it, it is still giving you a plus one value addition to the sum, which is okay, which is okay to me. So I'll just move now. Next is one. So this will increase to two. Two is not greater than maximum and it's still a positive value. So even if you carry all the four elements, including negatives, it is still giving you a value addition of plus two. Now in the next step, you'll see how it is beneficial. The moment I move to the next, it is a five. So the moment you add five, you get seven and that seven will be your new maximum. Now, did you see what advantage you had?"
+    },
+    {
+      "chunk_id": "L024_C12",
+      "start": 744.3,
+      "end": 820.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=744s",
+      "text": "the moment you add five, you get seven and that seven will be your new maximum. Now, did you see what advantage you had? If you'd have just taken these two elements, it would have been six. The reason you carried a positive one as these three elements, it was a value addition of plus one to the sum of six. That's why you will only neglect if it is going lesser than zero, otherwise you will not neglect. Perfect. Next, minus three. And when you do minus three, it will be four. That will be not greater than maximum. So at the end of the day, I can say that my answer is seven. So that is what Kadan's algorithm states. It's like, hey, listen, I don't care about anything. I will simply move. I'll keep on adding. And if it goes below zero, I'll draw because it's of no more significance to me. That's how you will get the maximum subarray sum as seven. I will explain you how to find the subarray as well. But as of now, let's code this one and then we will move to coding how to find that particular subarray. OK, so let's code this up again. The problem link will be in the description. Please make sure you try out the problem from the problem link itself. Long, long sum equal to zero. Minimum sum is equal to not int. You can take long min. OK, because it's given it fine."
+    },
+    {
+      "chunk_id": "L024_C13",
+      "start": 820.26,
+      "end": 885.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=820s",
+      "text": "itself. Long, long sum equal to zero. Minimum sum is equal to not int. You can take long min. OK, because it's given it fine. Written the answer in long now. So just for safety, I can take this. And now you will go ahead and say I zero I lesser than an I plus plus. You know one thing for sure. Every time you get in, you were adding up the sum. And when you are getting out, you are saying if at any moment someone's going lesser than zero, re initialize some to zero. Do not carry any negatives into your future. Do not carry. If it is positive, then only carry. Otherwise, do not. And in the midway, you doing you are saying, hey, if this sum is greater than maximum, can you go ahead and say maximum equal to sum perfect? Now you can at the end of the day return this maximum and this you can run. But wait, in this particular problem, in this particular problem, they have said you're given an array. You have to find the sum of the subarray, including empty subarray, including empty subarray. Now, let me take you to one more example. Find is minus four, minus two, minus three, minus one. In this case, which is the according to our definition, I can say this is the summary. So I can say this minus one is the summary which gives me the maximum sum."
+    },
+    {
+      "chunk_id": "L024_C14",
+      "start": 885.5,
+      "end": 954.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=885s",
+      "text": "definition, I can say this is the summary. So I can say this minus one is the summary which gives me the maximum sum. Again, minus four is not greater than minus one. So this summary is in this particular problem. They have explicitly mentioned if you do not find any summary with greater than zero sum, then you just say final take an empty summary. And this is what you call empty. I will not take any. I will not take any. But do not take any unit will be zero. So what do you do at the end is before returning, if by chance maximum is lesser than zero, you will initialize that to zero states because of this one, because of this one, where it states if none of them is giving you a positive sum, return zero because you will take no one. And then you will go ahead and say, OK, now I can easily go ahead and submit this. Let's see it's running fine or not. So what is the time complexity? Very simple. The time complexity is bigot of n and the space complexity is bigot of one because we are not using any extra space whatsoever. So once you give the optimal solution to the interview, the interview now might ask you a follow up question and that will be, can you print the. Subarray with the maximum sum and you might ask you to print any of those subarrays."
+    },
+    {
+      "chunk_id": "L024_C15",
+      "start": 954.9,
+      "end": 1022.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=954s",
+      "text": "and that will be, can you print the. Subarray with the maximum sum and you might ask you to print any of those subarrays. Why do I say any of those? There might be multiple subarrays. OK, so you might ask you to print any of those subarrays which will give you a maximum sum. Now for this follow up question, you just have to slightly do some changes to the given code that we wrote, which was finding out the maximum sum. Now, what are the changes? Let's quickly analyze the algorithm once again. So what did we do? We had a maxi as int mean and we started the sum as zero and we started from the first and we had a minus two added. Correct. And then we dropped and then we made it zero again and then we moved to minus three and then we added minus three and then when we moved to four, we dropped it back to zero and then we started from four. We took four, then we took minus one and we took minus two, then we took one, then we took five. So did you see something? We were always having zeros when we started. Even at this place, sum was zero. Even at this place, sum was zero. Even at this place, sum was zero and it went on, went on, went on."
+    },
+    {
+      "chunk_id": "L024_C16",
+      "start": 1022.62,
+      "end": 1097.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=1022s",
+      "text": "zero. Even at this place, sum was zero. Even at this place, sum was zero and it went on, went on, went on. So can I say whenever I'm starting to form a new subarray with a sum greater than zero, I'm always starting with a sum zero. That is assured. So what I can say is, okay, if sum is zero, I can say I'm starting off, I'm starting off a new subarray whose sum has to be computed. Now what I'll add is, this time I will add an answer start and answer end. This is what I'll add, like two new variables, initially initialized as minus one. Now what I'll do is, I'll say if summation is greater than maximum, I know this summation started at start i because whenever it was here, it just marked the index at start and then it went on. It did not get reinitialized because I just do it when sum is zero. So whenever the sum exceeds your maximum, what you will see is answer start will be the start that I initialized. That is one thing that I'm sure about and answer end will be what?"
+    },
+    {
+      "chunk_id": "L024_C17",
+      "start": 1097.68,
+      "end": 1161.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=1097s",
+      "text": "the start that I initialized. That is one thing that I'm sure about and answer end will be what? If you're standing at a correct, if you're standing at a current index and you have sum that up and you're saying the sum is greater, can I say the current end index is i? This is which will keep a track. Yes, this is what will keep a track of the subarray. Now if they ask you the longest, shortest, that can be implemented after this, you can do it easily. But I wanted to mention this. This was important. Whenever the sum is zero, we are having a new start. Here we had a new start and then it ended because it's a minus. Then we had a new start. Again it ended because it had a minus. Again we had a new start here and it went on. So it's very critical to understand a start is always when the sum is zero. Got it? So will there be any change to the time complexity? Probably not. The time complexity still stays as bigot of n and the space complexity is bigot of 1 for Cadan's algorithm even if you find the subarray sum or even if you find the subarray. I hope that's clear. So coming back to the sheet, I can say that this one is done and also this one. Why?"
+    },
+    {
+      "chunk_id": "L024_C18",
+      "start": 1161.56,
+      "end": 1199.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=AHZpyENo7k4&t=1161s",
+      "text": "I hope that's clear. So coming back to the sheet, I can say that this one is done and also this one. Why? Because we already have a video made on this and this video was made recently. It might have a DP tag, but it does not involve any dynamic programming. Why? Because this video was the base of the next set of problems. DP36, 37, 38 is the base of this one. That is why you can just watch it without any prior knowledge of dynamic programming. So I hope you have understood everything. Just in case you have, please, please do consider giving that like to us because it won't cost you anything, but it does motivate me. And to continue our tradition, please do comment understood so that I get an idea that you have understood everything that I'm teaching. And yes, if you haven't followed me on social media, that is Instagram, Twitter, LinkedIn, all the links will be in the description. Make sure you try the problem from the problem link in the description. And with this, I'll be wrapping up this video. Let's meet in the next video. Till then, bye-bye. Take care."
+    }
+  ]
+}

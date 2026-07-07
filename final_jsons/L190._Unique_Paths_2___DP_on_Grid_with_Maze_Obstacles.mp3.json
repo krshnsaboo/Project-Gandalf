@@ -1,0 +1,85 @@
+{
+  "lecture_id": "L190",
+  "lecture_number": 190,
+  "lecture_title": "DP 9. Unique Paths 2 | DP on Grid with Maze Obstacles",
+  "youtube_url": "https://www.youtube.com/watch?v=TmhpgXScLyY",
+  "chunks": [
+    {
+      "chunk_id": "L190_C1",
+      "start": 0.0,
+      "end": 78.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=TmhpgXScLyY&t=0s",
+      "text": "Hey everyone, welcome back to another lecture of the DP series. I hope you guys are doing extremely well. Yes. So, uh, we were doing DP on grids and the previous question we did great unique parts. We'll be doing another question, which is quite similar to that. Like if you've understood that question, this question will be a cakewalk and I'll not be taking that long to explain this question. The question states maze obstacles. It says, uh, given an N cross M maze with obstacles, you have to count and return the number of parts to reach the right bottom cell from the top left side. Similar question to the previous one, but over here there's a slight change. A cell in the given maze has a value minus one. If it is a blockage or dead end, like if the cell is blockage or dead end else zero, like if it's minus one, it is a dead cell. If it's zero, you can visit that. So from a given cell, we are allowed to move to cells. I plus one J like similar bottom, or you can move to the right. So from a given cell, you can move bottom or right. Similar. So then the answer can be large. You have to print it like in how many ways you can reach same question, uh, slightly change. Like I'll just take this example and try to explain you. So it states, assume this is the"
+    },
+    {
+      "chunk_id": "L190_C2",
+      "start": 78.48,
+      "end": 143.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=TmhpgXScLyY&t=78s",
+      "text": "reach same question, uh, slightly change. Like I'll just take this example and try to explain you. So it states, assume this is the grid, which is having something like this. Okay. And they're asking you in how many ways can you reach from this cell to the cell? Had this been previous question, you could have said, this is a one way, this is another way. This is another way. This is one way. This is one way. This is one way, but over here, there's a slight different condition. They state if there is a, like, this is a dead city. Remember this, this is a dead set. You cannot go via dead cell. So if you cannot go via dead cell, then I guess, uh, this is one of the ways in which you can go to the end. That's one of the ways. And the other way that I can see is you can directly go from here. So I see, uh, there are a couple of ways in which you can go from the specific zero comma zero to two comma two. So there is only a couple of ways in which you can go. So in the previous question, it was moreover, uh, how many ways without having dead cells as a slight inclusion over here, I assign dead cells to you. Right? So we will, we will just super quickly, right? The recurrence that we wrote"
+    },
+    {
+      "chunk_id": "L190_C3",
+      "start": 143.84,
+      "end": 214.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=TmhpgXScLyY&t=143s",
+      "text": "inclusion over here, I assign dead cells to you. Right? So we will, we will just super quickly, right? The recurrence that we wrote in the previous question, and then tries to see if there is a modification that we can do in order to get the same stuff. So rule number one was very simple, express it in terms of I and J. So I'll not go into deep. So I'll just write I equal to equal to zero and, and J is equal to equal to zero. Same thing. See return one, same, same. If I is lesser than zero or, or J is lesser than zero, you definitely cannot. Same again, either you can go to up, which is F of I minus one J, or either you can go to left, which is F of I comma J minus one. And at the end of the day, you can say return up plus left as simple as it gets. This was the unique parts. Yes. This was the answer that we did in unique parts over here. What is the slight addition that has been done? The slight addition that has been done is a dead cell. What is a dead cell? If any of the matrix, I, J is having a value minus one, then we call it as a dead cell and we cannot go via that."
+    },
+    {
+      "chunk_id": "L190_C4",
+      "start": 214.8,
+      "end": 289.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=TmhpgXScLyY&t=214s",
+      "text": "matrix, I, J is having a value minus one, then we call it as a dead cell and we cannot go via that. So can I say if accidentally I reach a dead cell, there's no way if accidentally I reach a dead cell in recursion, there is no way. Okay. Makes sense. So can I say there is an addition of one more base case to the answer, addition of one more base case to the previous question. Makes sense. Yeah, that does make sense. So can I say if at any moment, or like if it's a valid cell, like it's a valid cell, something like I like what I can do is let's just be a smart enough, really bring this line right above it and write if I is something like greater than equal to zero. And, and J is greater than equal to zero and, and array of I, J is equal to equal to minus one, then it's definitely not possible. And yes, that case will still stay, which is this, this case still stays. So can I say there is an inclusion of one more edge case, which states, one more edge case, which states if it's a valid cell and that cell is a dead cell, you cannot go any via further thereby directly return a zero. Makes sense. So I add a simple"
+    },
+    {
+      "chunk_id": "L190_C5",
+      "start": 290.24,
+      "end": 368.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=TmhpgXScLyY&t=290s",
+      "text": "cell is a dead cell, you cannot go any via further thereby directly return a zero. Makes sense. So I add a simple one extra is I simply add one extra case where I say it's not possible if it's a dead cell. So yeah, simple one liner addition to the previous question and it does solve it. Next step, my question, quite simple. How do you memorize? Again, I've been tired of saying, how do you memorize DP of IJ equal to over here and over here, if DP of IJ not equal to minus one, then you return DP of IJ. Correct? So you wrote the tabulation as well. So let's quickly write the tabulation. What are the tabulation? Tabulation was I equal to zero till M minus one. And the tabulation was J equal to zero to N minus one. And what you wrote was, if I is equal to equal to zero and, and J is equal to equal to zero, you made a DP of IJ equal to one. Right? Because there's only one way and where there will be one more case that will be added. What is that case for any I of J, just add this case for any I of J. Yes. For any I of J, which is greater than zero. It is definitely. So there is no need to externally"
+    },
+    {
+      "chunk_id": "L190_C6",
+      "start": 368.96,
+      "end": 439.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=TmhpgXScLyY&t=368s",
+      "text": "of J. Yes. For any I of J, which is greater than zero. It is definitely. So there is no need to externally check if it is something like a greater than zero. I can say if any of the array of IJ is marked as minus one, I can say DP of IJ will be zero. There'll be no ways else of this and the else will still stay the same. Up will be DP of I minus one J. Same, same, same. Exactly same. So make sure you watch the previous lecture. You can make sure you watch the previous lecture. Otherwise there is an issue. Don't say without watching the previous lecture, don't say Stryver we did not understand this lecture. Up plus left and you can return it. By the way, just make sure if I is greater than zero and if J is greater than zero. And after this, a space optimization can be done. Similar, just in the tabulation, add up this line, just in the tabulation, add up this line. Otherwise every line of the code stays same to the previous lecture, create unique parts that we did. So please watch that lecture. Okay. Because it's just a single line addition that we did apart from that, I'm not going to explain anything else. So remember one thing, you have to return the answer in terms of modulo."
+    },
+    {
+      "chunk_id": "L190_C7",
+      "start": 439.92,
+      "end": 510.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=TmhpgXScLyY&t=439s",
+      "text": "from that, I'm not going to explain anything else. So remember one thing, you have to return the answer in terms of modulo. So probably we can define the modulo globally as integer. And then we can definitely do one E nine plus seven. So just make sure you declare the modulo globally every time. Okay. So obviously I and I and DJ, and you have a vector this time. So vector, vector, ain't, ain't modular matrix. That's for sure. And there's one different case this time, but just this case and, and the matrix of IJ, if that's a dead cell, I return a zero apart from this, the entire code stays the same. So I'll just quickly copy paste. So if you see this, this runs and what's the next step, please do a DP by the way, it's M cross N. So N cross M rather, so really you can write vector of int of M cross minus one. And once you've done this, you can definitely pass on the DP at every step at every step, just make sure you pass on the DP at every step. And where you can just call the same DP"
+    },
+    {
+      "chunk_id": "L190_C8",
+      "start": 510.16,
+      "end": 586.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=TmhpgXScLyY&t=510s",
+      "text": "just make sure you pass on the DP at every step. And where you can just call the same DP Done. And before returning, just make sure you store it DP of IJ and over here, DP of IJ. If that's not equal to minus one return, DP of IJ. Correct. And yeah, that should be fine. So just make sure you do a mod every time. I'll just make sure you do a mod every day. Whenever you're storing it, just do a mod every time. That's it. Should be fine. So if I submit this, uh, we see it is exceeding time limit. So let's, let's quickly try out the tabulation format. Let's see if over there also we get a time limit exceeded a verdict or not. So let's quickly write that off. So the first thing that you do, if this is just copy paste these conditions, I think that should be the easiest step. If a matrix of IJ is equal to minus one, let's make sure DP of IJ is equal to zero. Else if it's I equal to equal to zero and, and J equal to equal to zero, you can keep DP of IJ equal to one else. You know, it's very simple. The up will be zero. The left will"
+    },
+    {
+      "chunk_id": "L190_C9",
+      "start": 586.16,
+      "end": 665.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=TmhpgXScLyY&t=586s",
+      "text": "keep DP of IJ equal to one else. You know, it's very simple. The up will be zero. The left will be zero. And if I is greater than zero, you can say up will be DP of I minus one and J. And similarly, if a J is greater than zero, you can say left will be DP of I and J minus one. And at the end of the day, you can just read up plus left. That's as simple as this. So instead of returning where it will store is DP of IJ. Correct. And over here, you can directly return DP of N minus one and M minus one as the answer. Just make sure whenever you store something over here, you do a modulo so that we don't have any issues. Let's quickly run this up. So it's okay. I raised modulo. It's really is this and try to run it. Cool runs let's submit it and see if the iterative DP works. Yeah, the iterative DP works. So you saw a prime example. I wrote a recursive memorized DP. It give you a DL because of the stack space that you tend to use and iterative DP works. It can still space optimize it. I don't know how to space optimize it. Very simple. What we do is instead of declaring a DP of size N cross M, we just require the row. So the row has M columns."
+    },
+    {
+      "chunk_id": "L190_C10",
+      "start": 665.6,
+      "end": 734.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=TmhpgXScLyY&t=665s",
+      "text": "we do is instead of declaring a DP of size N cross M, we just require the row. So the row has M columns. So make sure you declare a row, which has M columns. The best way to do is a vector because we can easily declare a vector of M zero. Right. Over here, make sure you declare one more vector of int, which is the current row. So current will be again this. So this is what you're computing for current, right? So current is this again, this is current. This is the previous. So probably you can do a previous. Are you storing it as previous? So you can store it as previous. And again, this is current. So just write it as current. Again, this is current. So write it as current. Basically DP of I means a current row. So I just change it. And once you've done this, you can say the current will become the previous. So I can just say the previous will be now current. So this was again, the previous N minus one means previous, previous of M minus one. So if you run this, I think this also will work. If I'm not done any mistakes, yes, works. Let's submit this. Bingo works. So space optimization done. So a big of N cross M solution with a big of a number of columns as the space complexity. So this is how we can"
+    },
+    {
+      "chunk_id": "L190_C11",
+      "start": 734.08,
+      "end": 770.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=TmhpgXScLyY&t=734s",
+      "text": "big of N cross M solution with a big of a number of columns as the space complexity. So this is how we can easily solve this problem. A simple minor change on the previous problem. And we are easily able to do one more problem on grids. So guys, I hope I'm able to explain your DP on grids. Just in case I am, please, please make sure you like this video. And yes, let's continue our tradition of writing understood in the comment section. If you have, you can write an US as well, but please do consider writing it because that is something which gives me motivation to make more and more videos. And also be a new to our channel, please do consider subscribing to us. Please, please do consider. And with this, let's wrap up this video and meet in the next one. Bye."
+    }
+  ]
+}

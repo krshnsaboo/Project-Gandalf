@@ -1,0 +1,169 @@
+{
+  "lecture_id": "L154",
+  "lecture_number": 154,
+  "lecture_title": "G-29. Word Ladder - I | Shortest Paths",
+  "youtube_url": "https://www.youtube.com/watch?v=tRPda0rcf8E",
+  "chunks": [
+    {
+      "chunk_id": "L154_C1",
+      "start": 0.0,
+      "end": 76.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=0s",
+      "text": "Hey, welcome back to the channel. I hope you guys are doing extremely well. So in this video we are going to solve this word ladder one problem which is an extremely hard problem. So what does the problem state? The problem states you're given two distinct words, two distinct. So a start word and a target word and a list denoting word list of unique words of equal lengths. Find the length of the shortest transformation sequence from start word to the target word. I need to keep the following conditions in mind. A word can only consist of low case characters. Only one letter can be changed in each transformation. Very, very important. Each transformed word must exist in the world list, including the target word. The start word may or may not be part of the word list. So what does this particular problem define? So it defines a given a begin word. So over here it is hit a given an end word over here it is called and you're given a word list which will be containing certain number of words and if you see all of them are of length three. So if I start with it,"
+    },
+    {
+      "chunk_id": "L154_C2",
+      "start": 76.96,
+      "end": 147.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=76s",
+      "text": "number of words and if you see all of them are of length three. So if I start with it, so let's start with something like hit. Now what you can do is you can change any one of the character. Like there are three characters in hit. You can change H, you can change I, you can change T, you can change any one of the characters of hit. So as you might say that, Hey, I'm going to change this I to O. So what I'll get is hot. And if you give me see hot is there in the world list. So you can have this transformation done in the next step. I say I'll change hot to dot, which means I'm going to change this H to D and if you see dot does exist over here in the next, I see I'm going to change dot to dog. Basically I'll change T to G which is dot to dog. And if you see dog also exist in this particular word list in the next, I'll say I'll change dog to, I'll change the D and I'll make it C and I'll have a cog, which is nothing but our end word. If you carefully see this is nothing but our end word. So if I ask you how many transformations did you do? There was like one, two, three, four. And what is the sequence length? That's five."
+    },
+    {
+      "chunk_id": "L154_C3",
+      "start": 147.0,
+      "end": 220.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=147s",
+      "text": "I ask you how many transformations did you do? There was like one, two, three, four. And what is the sequence length? That's five. So thereby I can say that this is the shortest transformation sequence. If you want to start from head and you want to end at something like a cog. So if I show you one more example over here, we have the world is as deaths, DER, DFR, DGT, DFS. So DER can actually be changed to DFR and DFR does exist if you see, and then DFR can be changed to DFS and DFS also does exist over here. So over here, the sequence is off length three, thereby the output is three. Now it might, now what if it is not possible to change a particular given word to any other word? In that case, you will just return zero stating that it is not possible. The sequence length is zero. I must be thinking which algorithm to apply, but before going into that direction, let's analyze the problem we're given hit, right? So what can we do to the set? So hit is getting converted to something like hot where the eye is changed to, Oh, right? So the second alphabet in the world is changed. So if I say hit, when can I change? You can be like striver. I can change the first H striver."
+    },
+    {
+      "chunk_id": "L154_C4",
+      "start": 220.32,
+      "end": 291.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=220s",
+      "text": "is changed. So if I say hit, when can I change? You can be like striver. I can change the first H striver. I can change the second eye striver. I can change the third P make sense. Now let's go deep. If I ask you, if you change H in hit, what can you make HS? You'll be like, I can change H to a it makes sense. I can change H to BIT makes sense. I can change H to CIT does make sense. I can change H to DIT makes sense. I can change H to RIT makes sense. I can change H to ZID. Sorry, ZID does make sense. So apparently in the head, I can pick up the first character and I can change it to anything from A to Z. Do you agree? I, you do agree, right? Similarly, can I say I can pick up I and I can change it to anything from A to Z. Do you agree in this? You have to. And when I change I to O, I get hot and that hot does exist over here. If you see the hot does exist separately, you can try"
+    },
+    {
+      "chunk_id": "L154_C5",
+      "start": 291.56,
+      "end": 366.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=291s",
+      "text": "get hot and that hot does exist over here. If you see the hot does exist separately, you can try changing like HAT, HBT, HCT, HET, HFT, but the only one valid will be hot. Why? Because that exists in the world list. And the next step you can be like, I can change T as well. T can be changed to A to Z and the word has to be in the world list. Agreed? So this is the brute force that we will follow. We will start with a particular word and we'll try changing it on character to character and every character we will replace from A to Z and we will see if it is in the word list or not. Got it? So as of now, you know the brute force, right? So if you know the brute force, the brute force is pretty simple. You have HIT, you take H and you try to change it from A to Z. You take I, you try to change it from A to Z. You take T and you try to change it from A to Z and you count the minimum length. Yes, you count the minimum length because the question states you have to find the shortest transformation sequence. So you have to change it in such a way that you find the shortest transformation sequence. Now, which algorithm to apply if you are willing"
+    },
+    {
+      "chunk_id": "L154_C6",
+      "start": 366.96,
+      "end": 440.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=366s",
+      "text": "have to change it in such a way that you find the shortest transformation sequence. Now, which algorithm to apply if you are willing to find the shortest sequence? Let's analyze that. So if I say I will keep the HIT as the level one right at the top. According to brute force, I'll try to do H to AIT, BIT, CIT, DIT and so on till ZIT. I'll try to do this, right? In order to transform HIT to any of these, in order to transform HIT to any of these, these words should exist in the word list and they do not. If you go and see in the word list, there is nothing like AIT, BIT, CIT, none of them. So not possible. Next I'll take I and I'll try to change it from A to Z. So I'll get like HIT, HBT, HCT, dot dot dot, HOT, dot dot dot, HZT. So these are all the words that I can change HIT to. And apparently only HOT does exist. If you go and see, HOT is the only one that exists over here. So I can say from HIT, I can go to HOT."
+    },
+    {
+      "chunk_id": "L154_C7",
+      "start": 440.68,
+      "end": 517.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=440s",
+      "text": "is the only one that exists over here. So I can say from HIT, I can go to HOT. Now I'll take T and I'll try to change it to HIA, HIB, HIC, so on to HIZ. Let's see if they exist in the word list. None of them. Yes, none of them do exist in the word list. That is not possible. So only HOT is possible. Can I say this is the second step because the length of the sequence will increase to two. Perfect. Now I have a word as HOT. I'll again perform the same thing. I will take H, I'll try to do it like AOT, BOT, COT, DOT, and so on till ZOT. I'll see only DOT exists. Only DOT exists. If you go back and see, only DOT exists and LOT also exists and DOT and LOT also exists. So if I change this to DOT and I can also change it to LOT. So that's when I change H. Let's see for O. HIT, HBT, HCT, HDT, so on till HZT. Does anyone exist? Let's have a quick check. No one. Next, let's try"
+    },
+    {
+      "chunk_id": "L154_C8",
+      "start": 517.68,
+      "end": 596.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=517s",
+      "text": "HCT, HDT, so on till HZT. Does anyone exist? Let's have a quick check. No one. Next, let's try to change T. It'll be like HOA, HOB, HOC, HO... and so on. Does anyone exist? Have a check. HOT does exist. Because if I change this T to T, HOT does exist but you will not take that into consideration. Why? It's the same word. It is the same word. So you do not take that into consideration because there's no point in going to HOT again and going to HOT again or there's no point in getting to HIT again. I can change this O to I as well and I'll get HIT. But if I've come down from HIT to HOT, is there a point in going back to HIT because that will only elongate the sequence. So apparently, this is the step 3. Similarly, I can take DOT and I can do the transformations. Similarly, I can take LOT and I can do the transformations and this will be level 4. Similarly, I can just go on doing the transformations and this will be level 5. Since we are going something like a level, whenever, assume somewhere over here, we reach the particular cog, can I say the length taken will be 5 and that"
+    },
+    {
+      "chunk_id": "L154_C9",
+      "start": 596.4,
+      "end": 669.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=596s",
+      "text": "whenever, assume somewhere over here, we reach the particular cog, can I say the length taken will be 5 and that will definitely be my shortest sequence. Can I say this? I can. Why? Because beyond this, since I'm doing level wise, anyone that will be level 6, the length will increase. So I'm definitely short. I am definitely short. Whatever I'm getting over here, that's the first instance of cog. It might come over here again but length 5 is what matters. So the first time, whenever we encounter the end word, that is when we end. Which travesel is this? Which travesel is this guys? Yes, yes, yes. It is nothing but the BFS travesel. So we go ahead and apply BFS travesel to this in order to solve this amazing tough problem. So you saw how I started the problem using simple brute force. Then I analyzed the brute force and figured out that we can apply BFS algorithm. Now it's trying to do a dry run on this particular example so that the algorithm gets into your head straight away. So you know that this is the beginning word and in a BFS algorithm, we always start with a queue data structure. So what I'll do is I'll just take this word and say hit comma 1 because the length of the sequence as of now is 1. So you've taken that and put that into the queue"
+    },
+    {
+      "chunk_id": "L154_C10",
+      "start": 669.12,
+      "end": 737.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=669s",
+      "text": "hit comma 1 because the length of the sequence as of now is 1. So you've taken that and put that into the queue data structure. The next thing that I'll do is I'll take this out from the queue data structure and I will start working on it. So as of now, we have a word hit and we have the sequence length as 1. Now what I need to do is I need to take H and change it to A which will make it AIT. And then I'll check does AIT exist in the word list. Now this is an array. If I go and do a linear search and check, that is definitely going to take a lot of time. So what I'll do is I'll take a set data structure and I'll make sure that the same thing, yes, the same word list does exist in the set data structure so that whenever I change this H to A and make it AIT, I can easily check in the set data structure if they exist or not in a very, very less time complexity. So AIT doesn't exist. Then I'll make it BIT that doesn't exist. Then I'll try CIT, DIT, EIT, so on till ZIT. None of them does exist. Next, I'll move to the next alphabet I and I'll be like HAT, does it"
+    },
+    {
+      "chunk_id": "L154_C11",
+      "start": 737.12,
+      "end": 816.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=737s",
+      "text": "on till ZIT. None of them does exist. Next, I'll move to the next alphabet I and I'll be like HAT, does it exist? No. HVT, does it exist? No. HCT, does it exist? No. HDT, does it exist? No. I'll keep on doing and HOT, when I convert this I to O, I see HOT does exist. Yes, I see HOT does exist over here. So what I'll do is I'll simply take this and convert this to T like O and that will be sequence length of two. So I'll put that into the queue data structure saying this is of a sequence length two, right? So HIT got converted into a HOT with a sequence length of two. Now, do you keep the HOT in the set data structure? Do you? The answer to that is no. Because if you remember, in a BFS algorithm, whenever I visited the nodes, I used to mark them as visited. But over here, we are not using anything such as visited. So what I will do is I'll say, okay, we got HOT. So we will remove it from the set data structure. And you might say, but Stravo, what if we get this in a future? Let me come back and explain you this with a very trivial example. Imagine in order to go from Orissa to Kerala, there is only one particular way. Okay. There is the shortest way because from"
+    },
+    {
+      "chunk_id": "L154_C12",
+      "start": 816.56,
+      "end": 893.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=816s",
+      "text": "example. Imagine in order to go from Orissa to Kerala, there is only one particular way. Okay. There is the shortest way because from Orissa to Kerala, there'll be one shortest way. And the shortest way will have a length of three sequence. Right? So tell me one thing, if from Kolkata, you went to Orissa, right? And from there, you'll take a distance, like a sequence of three to reach Kerala, right? So if Orissa is on the level two, right? Will you take Orissa again in some other levels? For example, from Kolkata, you went to Bangalore and then to Orissa. Does it make sense to take Orissa in this third step? Because you've already taken Orissa in the second step. And you know, from the second step, that is the minimum that it will take. And even if you start from Orissa, from here, it's again going to take three. So if before you've got Orissa, if before you've got Orissa and you're taking three, after you're getting Orissa, you're again taking three. So it's better now, once you've taken Orissa, there's no point in taking again afterwards, because the length from Orissa to the last guy is three. So if afterwards you take, it's already a lengthier guy. So it's better you do not execute Orissa in the future. So similarly, I can say something like HOT. I'll not execute HOT"
+    },
+    {
+      "chunk_id": "L154_C13",
+      "start": 893.6,
+      "end": 973.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=893s",
+      "text": "So it's better you do not execute Orissa in the future. So similarly, I can say something like HOT. I'll not execute HOT anywhere in the future, because if I got that in the second step or second level, there's no point in encountering them in future levels. Because from here I can travel wherever I wish to. Going from further levels will actually increase the length, right? Done. Next, I'll try to convert I to everything else till HZT, but nothing will be there. Next I take T and I'll try to convert it. So HIA, HIB, HIC, HID, so on till HIZ. None of them is in the world list. So we did not take. So we just got one and we have inserted that into the queue data structure. Time to omit this all. Next, take the next guy from the queue data structure that is HOT with a sequence of two. So as of now, I can say, where can HOT go? Let's analyze. So we need to change H. It'll be like AOT, BOT, COT, DOT, so on till ZOT. And you'll get DOT and you'll get LOT. You can actually go to DOT"
+    },
+    {
+      "chunk_id": "L154_C14",
+      "start": 973.44,
+      "end": 1044.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=973s",
+      "text": "DOT, so on till ZOT. And you'll get DOT and you'll get LOT. You can actually go to DOT with the step three, or you can also go to LOT with a step three because both of them do exist. So when you go to DOT, you just erase it and you put them with three. And when you go to LOT, you erase it and you put them with a three. So since we can go to DOT and LOT, we will remove them. DOT is removed and I'll put that into the queue. Next I'll get LOT. So LOT is removed and I'll try to put that into the queue data structure. So can I do anything else? Let's try it out. We can change this O. So HAT, HBT, HCT, HDT, HET, and so on till HZT. None of them is there. Next I'll change T, HOA, HOB, HOC, HOD, HOE, and so on till HOZ. None of them is there. Next, nothing. So what I can say is we got it. So this traversal of the queue is complete. What is the next thing? Let's get DOT of three. So DOT of three. Now let's try to change again."
+    },
+    {
+      "chunk_id": "L154_C15",
+      "start": 1044.96,
+      "end": 1116.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=1044s",
+      "text": "What is the next thing? Let's get DOT of three. So DOT of three. Now let's try to change again. So we have D. Let's try to change D. So it'll be like AOT, BOT, COT, DOT, and ZOT. None of them does exist in the whole list. Next I'll change O. So I'll get like DAT, DBT, DCT, DDT, DET. None of them. Next I'll try to change T. So it'll be like DOA, DOB, DOC, DOT, and so on DOG. So DOG does exist. If you carefully see, DOG does exist. So what I will do is I'll take that. Yes, I'll take the DOG. So I'll take the DOG with a step four, and I'll try to insert that into the queue data structure with a step four. What was the last word? It was LOG, not DOG. So done. Nothing else is possible. Next, take LOT three outside. Let's see what can we make LOT three. Let's try to change L. AOT, BOT, COT, ZOT. Nothing possible. Let's try to change O. LAT, LBT, LCT,"
+    },
+    {
+      "chunk_id": "L154_C16",
+      "start": 1116.8,
+      "end": 1191.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=1116s",
+      "text": "to change L. AOT, BOT, COT, ZOT. Nothing possible. Let's try to change O. LAT, LBT, LCT, LDD, so on to LZT. Nothing is possible. Next T. LOA, LOB, LOC, LOG. LOG is there. LOG is there. So you can take it to LOG with step four. Removed. LOG with step four. Perfect. Next, DOG of four. So as of now, can I say if this is DOG of four, thereby, when I try to change this D, it'll be like AOG, BOG, COG, and we see COG is present here. So we insert COG with a five step. You can stop over here, but I generally do not. I just want to explain you. So COG five is there. Done. COG is removed. This is the point you'll understand. Someone reached COG with five. Someone reached COG with five. But the next time when the queue tries to get this up, LOG four and tries to change it, it will actually get something like COG. It'll"
+    },
+    {
+      "chunk_id": "L154_C17",
+      "start": 1192.16,
+      "end": 1263.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=1192s",
+      "text": "up, LOG four and tries to change it, it will actually get something like COG. It'll actually get COG because of this L. When this L gets converted to C, it will get COG. But there is no COG in the world list because you've already encountered COG because you've already encountered COG. This is what I was trying to explain. Once you've got someone, it will take its path. Why will you again visit that path? So this is how the set helped you. If you erase it from the set, there'll be no further occurrence of like COG five. Otherwise you'd have taken COG again and would have kept on going. So that is how the set helps. So LOG cannot be made into anything. Next time when you do an extraction from the queue, you get COG with five. So your end word was COG. The word that you get from the queue is COG and the steps that it took was five. So your answer boils down to five. Yes, your answer boils down to five. And this is the answer that you will return. And imagine if the queue becomes empty, you have tried out all possible changes and you never ever reached the end word during the extraction from the queue. Then you can, after the end of the queue, you can return zero, which will be your particular answer."
+    },
+    {
+      "chunk_id": "L154_C18",
+      "start": 1264.0,
+      "end": 1333.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=1264s",
+      "text": "extraction from the queue. Then you can, after the end of the queue, you can return zero, which will be your particular answer. So you have figured out what is the algorithm that is required to solve this complex problem. So I'll be coding the C++ in the right. And if you have any syntactical issues related to Java, you can watch it out on the left. So we have a start word, we have a target word, and we know we need a queue, which is going to store a pair and the pair will be having a string and an integer. This is the queue that will be defined. And we know we always start off with the start word and the sequence length is one. And we know there will be a set, right? And this particular set will always have this particular target word. So it's sorry, the word list. So you can always write something like this in C++ is a very simple thing. You can just write this and then we'll take the entire vector and put it into this particular set data structure. You can use the unordered set. It takes amortized time complexity of one big off one, but the worst case is still be go off and, but the amortized is big off one. So we'll be using unordered set. Now you remember whenever we pushed something into the queue, we marked it as visited. So we"
+    },
+    {
+      "chunk_id": "L154_C19",
+      "start": 1333.36,
+      "end": 1398.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=1333s",
+      "text": "one. So we'll be using unordered set. Now you remember whenever we pushed something into the queue, we marked it as visited. So we can always use visited as deleting from the set. We can say that, okay, can you please go and delete start one? So if it exists, it'll delete the start word from the set. This is done. What's the next thing? The next thing is very simple. We say we will, I treat all the queue is not empty. So go ahead. I do it until the queue is not empty. What's the next thing that you do? You say, okay, give me the word. So can I see the word will be very simple. Q dot front dot first. I can see these steps or the length will be very simple. Again, Q dot front dot second. Once you've got it from the queue, can I see Q dot pop is what you'll say? Take it out of the queue. Now, every time you get a word for every character, you're doing a change for every character. So what do you do is okay. For every character, I'm doing a change. So can I actually travels till all the characters I can, but it's Travis to all the character, which is something of this. Now every character is nothing but can I see the character alphabet or original is nothing but one of my, this is the character that I'm looking to change."
+    },
+    {
+      "chunk_id": "L154_C20",
+      "start": 1399.36,
+      "end": 1477.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=1399s",
+      "text": "but can I see the character alphabet or original is nothing but one of my, this is the character that I'm looking to change. So can I see what I'm looking to change? I can change it from A to Z. So can I see, I'm looking to change it from A to Z, this, to this, to this. So every character, what I, is what I'll replace. So I'll say, what I, can you get replaced by CH? Every time it comes up, it gets replaced by a new character. First time, let's imagine the word is just imagine the word to be okay. So what will happen is for the first time, original will have something like edge, right? So this, what I will be like, instead of edge, it will be having for the first time, a, next time, B, next time, C, this is what the internal fall loop will do. Yes. This is what the internal fall loop will do. So you will be changing the values. You'll be changing the values. Now, what is, does that value exist in your set? So we're like, okay, center find, does this word exist? And if it does exist, then it'll never be equal to end. Because if it exists, it'll always like, if it doesn't exist, it'll be pointing to it. This means it exists in the set. It is the count as well. So then what's the next thing that you'll do? If it exists,"
+    },
+    {
+      "chunk_id": "L154_C21",
+      "start": 1477.44,
+      "end": 1550.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=1477s",
+      "text": "This means it exists in the set. It is the count as well. So then what's the next thing that you'll do? If it exists, what way between we're saying, okay, say market is visited, which means do this, tell the queue, this guy is there with an increase steps. Done. Once you push back into the queue, make sure you replace it with the original Y because over here, you're always changing. So the last moment, the word I, what I will always have Z or Zed. So you need to make sure that it gets back its original value. So this is what you'll do, right? And over here, can I see every time you're getting a word, can you just go and quickly check if that is the target one? If that is a target word, can I say, these are the steps that I'll take again? You can write it over here as well. Over here also, you can have a check, but I usually prefer keeping it over here. And then we can return a zero saying, in case it did not find in case it finds it and return the steps, otherwise a zero, but this is how simple the code is. So compiler is working now. Let's quickly try to submit this. So when we submit it is running absolutely fine. So this is how we can easily do this particular thing. And you might ask me"
+    },
+    {
+      "chunk_id": "L154_C22",
+      "start": 1550.16,
+      "end": 1628.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=1550s",
+      "text": "when we submit it is running absolutely fine. So this is how we can easily do this particular thing. And you might ask me what the time complexity is. Something I know for sure as whatever the word length is, word length into 26, these things are running for word length into 26. Like whatever your word length is, because they have already stated all the word lengths will be seen. So whatever is your word length into 26 is the internal loop. Now, how many transitions will you do? How many transitions will you do? At the worst case, you can do a lot of transitions, but if you carefully think, can I see the number of transitions? Can I see the number of transitions? If you carefully see one, two, three, four, five, six, one, two, three, four, five, six. Can I see the number of words over here will be the number of times it will go into the queue at the worst case, because if it is not in the set of words, it never goes into the queue. So can I see the queue will run for n times the number of times the words are, because that is only when it gets into the queue. Otherwise it will not go. So can I see the complexity is n into word length into 26 every time? Can I see this? I can definitely see that. Using an extra space."
+    },
+    {
+      "chunk_id": "L154_C23",
+      "start": 1628.0,
+      "end": 1678.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=tRPda0rcf8E&t=1628s",
+      "text": "the complexity is n into word length into 26 every time? Can I see this? I can definitely see that. Using an extra space. Yes, you are using an Vigo of n space to store all of these things into the set. And by the way, there's a logarithmic factor. If you want to include it for set, if you're assuming that your hash set works in Vigo of one, then you can use Vigo of one over here. Otherwise you use a logarithmic. If you're using something like a set, a lot of logarithmic. So depending on what is the time complexity of a set, this can vary. So guys, this will be the time complexity and the space complexity for this particular problem. I hope I was able to explain you. Just in case I was, please, please make sure you like this video. And if you're new to our channel, what are you waiting for? I think it's time that you hit that subscribe button. And if you haven't checked out our DP series and the SDG and you're missing out on a lot of content, the links are in the description, please, please make sure you check it out. And yeah, with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

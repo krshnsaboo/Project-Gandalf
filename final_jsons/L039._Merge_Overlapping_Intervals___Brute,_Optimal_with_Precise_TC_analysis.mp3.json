@@ -1,0 +1,141 @@
+{
+  "lecture_id": "L039",
+  "lecture_number": 39,
+  "lecture_title": "Merge Overlapping Intervals | Brute, Optimal with Precise TC analysis",
+  "youtube_url": "https://www.youtube.com/watch?v=IexN60k62jo",
+  "chunks": [
+    {
+      "chunk_id": "L039_C1",
+      "start": 0.0,
+      "end": 71.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=0s",
+      "text": "Hey everyone and welcome back to the channel, I hope you guys are doing extremely well. So this is another lecture from the Stryber's A2Z DSA course just in case you are for the first time here. This is world's most in-depth course when we talk about DSL Go. Why do I say that? This course has 455 modules. By the end of the course you would have solved more than 400 plus problems when it comes to DSL Go. You can go over the entire internet, you can buy any of the paid courses. None of them will be teaching you DSL Go in such depth. Something that I can give you as assurance is once you cover up the entire course, you'll be able to clear up any of the DSL Go rules in any of the companies in any part of the world. So till now I have covered up till this particular problem. Now in this video I'll be covering up the problem merge overlapping subintervals. So what does the problem state? It states that you will be given an array of n subintervals. Now what is the definition of subinterval? If you're given 1, 3 it means it starts at 1, it ends at 3. That is a particular subinterval. Now your task is to merge all the overlapping subintervals into one and find me out how many minimum, yes how many minimum intervals you can give me."
+    },
+    {
+      "chunk_id": "L039_C2",
+      "start": 71.92,
+      "end": 145.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=71s",
+      "text": "to merge all the overlapping subintervals into one and find me out how many minimum, yes how many minimum intervals you can give me. So if I have to understand overlapping, let me give you an example. So if I take this 1, 3 and I can say this 1 starts at here and goes till here. If I take this 2, 6 I can say it goes from 2 to 6 till here. If I take probably 8 and 9, I can say 8 and 9 is this much. That's a long word. So 8 and 9 is this much. If I take 9 and 11, I can say 9 is from here and 11 is still here. Perfect. If I take 8 and 10, so it can be like 8 and 10. If I take 2 and 4, it will be like 2 till here, 4. If I take 15 and 18, it will be 15 till 18. If I take 16 and 17, 16 and 17. Understood? So I've drawn all the intervals. If you see, all the three intervals can actually be written as into 1 and can be written as 1, 6 because if you take 1 and 6, you will be able to have all the overlapping intervals into 1. Right? So that is why 1, 6."
+    },
+    {
+      "chunk_id": "L039_C3",
+      "start": 145.68,
+      "end": 217.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=145s",
+      "text": "1 and 6, you will be able to have all the overlapping intervals into 1. Right? So that is why 1, 6. If you look at over here, that's like 8 to 11 and you get all of them into a single one. If you look at over here, it's 15 to 18 and if you take 15 to 18, you get all of them into 1. Now, you might ask, why not take 1 to 18 and you will have everything. In that case, you will be having a lot of empty places. So when you talk about 1 to 6, 1, 2, 3, 4, 5, 6, each of the coordinates is being touched by someone. If you see, it's being touched by someone. So one of the intervals has to touch it. So that is why I have to find the minimum possible intervals that you can club them into. And for this particular example, this will be the answer. So it will be shrinked into 3 possible subintervals after you have merged all the overlapping ones. So this is what you have to return me. Yes, merge them and return me the number of subintervals that they can be merged into. So this problem comes up in an interview. What is the first brute force solution that comes to your mind? If I can think of, it will be like, probably let's try to keep the intervals together."
+    },
+    {
+      "chunk_id": "L039_C4",
+      "start": 217.08,
+      "end": 291.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=217s",
+      "text": "force solution that comes to your mind? If I can think of, it will be like, probably let's try to keep the intervals together. Like if you saw 1, 3, 2, 6 and 2, 4. If I can somewhere keep them together and clubbing them into one interval will be easier. So my first approach will be to club them together, right? Like to keep all the closer intervals together. So for the brute force, what I'll do is, first step will be, let us sort them up. So if I sort them up, what I'll get is, probably first I'll get 1, 3. So when you sort pairs, at first it gets sorted by the first element. If at any moment the first element is equal, like for this and this, the first element is equal, then it will get sorted by the second element. Got it? So if I sort it, then 2, 4 will come in, then 2, 6, then 8, 9, then 8, 10, then 9, 11, then 15, 18 and then 16, 17. Perfect. I've written down each of the pairs in the sorted order. Next what you will do is, you will basically start iterating over and you will be at 1, 3."
+    },
+    {
+      "chunk_id": "L039_C5",
+      "start": 291.7,
+      "end": 367.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=291s",
+      "text": "order. Next what you will do is, you will basically start iterating over and you will be at 1, 3. Let's stand at 1, 3 and say that is my possible interval. Just hypothetically say, this is my possible interval. I'm like, okay. And now I'll do, I will go to the next interval. I'll be like 2, 4. Hey, 2, 4, are you overlapping? How will you know it is overlapping? Very simple. If it is 2, 4 and if you see the first element is before the last element, if the first element is before the last element, it is an overlapping. So I can say the 2, 4 is overlapping. So this 1, 3 will expand, will expand. Can I say in order to accumulate, in order to accumulate 2, 4, this will become 1, 4 because if you take 1, 4, 2, 4 gets accumulated. Perfect. Next, I will try to move to 2, 6. Can I say 2, 6 is also overlapping? Why? Because the first is before the last. So overlapping. How will you accumulate it? Only changing this to 6, which is this to 6, can I accumulate the 2, 6? I can, I can definitely accumulate."
+    },
+    {
+      "chunk_id": "L039_C6",
+      "start": 367.78,
+      "end": 444.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=367s",
+      "text": "this to 6, which is this to 6, can I accumulate the 2, 6? I can, I can definitely accumulate. So fine, let's go to the next 8, 9. So we know one thing for sure, 8, 9 is not overlapping. Why? 8 is greater than 6. If it is greater, how will it overlap? So can I say I have, I've got my overlapping things. Do I need to go ahead and check for this, this, this, this? No, because if one is not, it is sorted. So anyone after it will never be stopped. So you got 1, 6. Okay, next move to the next. So when you move to the next, what happens? You have a 2, 4 and you see the 2, 4 is already there in the, the previous like this was a previous one, previous interval that you got. It's already there. So if 2, 4 is already there, how do you know it's already there? Because the last element 4 is before 6, so it's already there. You don't need to do anything. Go ahead. 2, 6, it's already there. How do you know? The last element is before, so it's already there. Don't do anything. Move ahead. 8, 9, 8, 9, it's not here because the first element is out of this."
+    },
+    {
+      "chunk_id": "L039_C7",
+      "start": 445.06,
+      "end": 523.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=445s",
+      "text": "already there. Don't do anything. Move ahead. 8, 9, 8, 9, it's not here because the first element is out of this. So you again consider this as one other interval and you start doing the same step. You stand here and you look at the other intervals. Who can be a part of you? You stand here and you look at the other intervals. Who can be a part of you? So it will be like 8, 10. Can you be a part of me? He says, yes, I can because this is before this. So I will silently make it 10, right? Then we'll move to 9, 11. Can you be a part of me? Yes, because 9 is before 10. I can. So I'll just silently make it in there so that it is a part. Next I'll move to 15, 18, which is out, which is out. I stop, I stop. I get this as 8, 11. And next I'll move to 8, 10. 8, 10 says I'm already in bro. Let's move. 9, 11 says I'm already in. Okay, let's move. 15, 18 says I'm not in. Please create a new one for me. He goes there and creates a new one for him. 15, 18, perfect. And he stands here. He'll stand there and he'll look at the forwards. 16, 17. Can you be a part of me? He says, yes, because 16 is before 18."
+    },
+    {
+      "chunk_id": "L039_C8",
+      "start": 523.14,
+      "end": 596.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=523s",
+      "text": "there and he'll look at the forwards. 16, 17. Can you be a part of me? He says, yes, because 16 is before 18. So I can overlap with you. So by overlap, it is 17, but it's 18. It's already overlapping. Do you need to change 18? No, please be careful. Do not change it if it is being accumulated. So do not change it. Done. Can I say the iteration for this is over? Next, move to 16, 17. It's already there. Over. So I got my answer. This is the extreme brute I can think of. What I did, first I took the one and I checked these two can be a part and I took them. And then I moved, moved, moved. And again, I checked I have a new and then these two can be a part. So I took them. Then again, I moved, moved, moved. And I saw this is a new. And again, I took them. So it's kind of standing at one and looking forward who can be a part of. So I'm still looking forward. So we can improve it. But as of now, let's try to write the code for this one. And then we can try to improve it. Got it? So let's quickly code this up again. You can find the problem link in the description. Maybe I'll find the added dot size. Perfect. Next, sort it. Quite simple. So I'll go ahead and sort it."
+    },
+    {
+      "chunk_id": "L039_C9",
+      "start": 596.34,
+      "end": 673.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=596s",
+      "text": "link in the description. Maybe I'll find the added dot size. Perfect. Next, sort it. Quite simple. So I'll go ahead and sort it. Once I've sorted it, what is my next job? I know one thing for sure that I need to have this particular answer. So I'll have something which stores all the answers. And I'll return it. And if you remember, we started iterating from here and we went up to that last. So we will go ahead and write a loop which starts from the first and goes to the last. Now, what did we do? When we stood here, we probably considered this as the starting interval. Right? That is what we did. So maybe I can take the start as array of I of zero because it is storing list of list. I can take the end as array of I of one. But can you tell me one thing? When you started, you took one comma three and that one three got replaced by four and then got replaced by six. But what if you were at two comma four? Did you do anything for two comma four? No. Why? Because it was already a part of this. When you moved this pointer to two comma four, it was already a part of one comma six that was computed. So you were like, hey, listen, if you have some previous interval, if you have some previous interval,"
+    },
+    {
+      "chunk_id": "L039_C10",
+      "start": 673.02,
+      "end": 747.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=673s",
+      "text": "one comma six that was computed. So you were like, hey, listen, if you have some previous interval, if you have some previous interval, which means you're not empty, you're not empty. And my end, I'm lying in you. I'm lying in you. That means two comma four lies in this interval. That means four is lesser than equal to the six. Right? So answer of back, if you do back, what happens is you get this. If you're standing here, you get one comma six. And this is at the first index. The answer of back of one, if you do this, you'll basically get whatever is the end of the last interval. And if this is the case, you're already lying inside it. Don't do anything. Go ahead. If it is not, if it is not, then this will be a part of your new interval. Imagine you're starting at one comma three. Imagine you started at one comma three. So you have considered the start to be one and end to be three. Now, what are you doing? You're starting at two comma four, then you're going two comma six, then you're checking eight comma nine, right? So you have to go from the next. You have to go from the next. So you go from the next. Perfect. And what do you do? You basically say, hey, two comma four, are you overlapping? Which means two, are you lesser than three? Which means you're overlapping."
+    },
+    {
+      "chunk_id": "L039_C11",
+      "start": 747.7,
+      "end": 822.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=747s",
+      "text": "you do? You basically say, hey, two comma four, are you overlapping? Which means two, are you lesser than three? Which means you're overlapping. So just write it. If array of G, the starting is lesser than whatever interval I've taken, lesser than this, that means it's lying. If it is lying, the end will get updated to max of end. Very important. If you've taken one comma three, the four gets updated, the six gets updated. But at this case, when you're at 15 comma 18, even if the 16 comma 17 lies, 17 will not update. Thereby, please make sure you take the max. If you're greater, fine, I need to extend my range. Otherwise I will not. And if this is not the case, I can say break out. No need to check for any other. If that's not the case, break out. Because if you're not lying, your previous elements will no more overlap. So just break out. At the end, can I say the start and end will be updated to the new intervals? And that is what you can always store in your answers, like start comma end. Perfect. That is what you'll store and that is what you can easily return. Now I'll quickly go ahead and try to run it off and see if it is running fine. It is. So what about the time complexity? N log in for sure. So I can see N log in for sorting"
+    },
+    {
+      "chunk_id": "L039_C12",
+      "start": 822.9,
+      "end": 893.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=822s",
+      "text": "running fine. It is. So what about the time complexity? N log in for sure. So I can see N log in for sorting plus how much is this? Might look like a big O of N square because you're running two loops, but it is not exactly big O of N square. Why? We're using something as break. We're also using something as continue. So you're actually saving a lot of time. If I go back to the test case that I took, if you remember, when you stood here, you just did for these two things and you expanded the interval to one sixth and you never went ahead. You just broke out after this. And then for this, you said it's already a part of it. So no need to check. It's already a part of it. No need to check. Then you went for eight, nine, then you checked for these things. So you're never going till the end. So what I can say is, the time complexity, if I have to analyze it perfectly, let's analyze how many times do you do. So you traverse this one once, you traverse this element, then this, then this. Because for this, you went this, this, this, then you stopped. Now, what is the next thing you did? This moved to here, which means you traverse this once more. But this will say, I'm a part, so I stopped."
+    },
+    {
+      "chunk_id": "L039_C13",
+      "start": 893.3,
+      "end": 971.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=893s",
+      "text": "thing you did? This moved to here, which means you traverse this once more. But this will say, I'm a part, so I stopped. And this will say I'm a part, so I'm stopped. Then you moved here, eight, nine, and then you again went for checking, checked, checked, checked. And this is where you said, no more a part. And you proved. Correct? And then you again came here, and it is already a part. You again came here, it is already a part. And you came here, and this guy went on to make the new interval, and it checked for this, and it got into it. And then it moved ahead and checked for this. If you carefully observe, if you carefully observe, every element is iterated twice. When you stand here, this, this, this, and then this, this, this, and then this, this, this, this. So, kind of, to n, can I say the complexity is B go of to n? I can, because touching every element kind of twice, in order to kind of shrink, rather merge the overlapping subintervals. So the complexity is B go of to n, plus n log n. What about the space complexity? It is B go of n. Imagine you're given an example like 1,2,3,4,6,7. None of them is overlapping. So you end up storing everything in the answer array. So this will be your time and space complexity. Obviously, this is where the interviewer"
+    },
+    {
+      "chunk_id": "L039_C14",
+      "start": 971.34,
+      "end": 1046.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=971s",
+      "text": "you end up storing everything in the answer array. So this will be your time and space complexity. Obviously, this is where the interviewer will not be happy with to n. He will not be happy with to n, because you're still for this element, you're still touching, you're going and checking. He's not happy. Why are you checking? Please reduce B go of n. This is where we move to the optimum. So what do we need to optimize? What are we doing currently? You're standing here, and we're checking, can you be a part of me? And can you be a part of me? And he says no, so we stop. So we're kind of standing and we're checking who can be a part of me. That is what I have to avoid. So what I will do is, I'll try to do it in a single iteration. Let's see how. So we start up with 1,3. And in our answer, we don't have anything. So we say, since we don't have anything, let's take this 1,3 and we will move. And the moment we move, we have 2,4. So if we have 2,4, 2,4, two is smaller than equal to three. Overlapping. So I say, you're overlapping. Please come to me and get attached. And if it gets attached, I see it's four. So I'll just increase myself to four. Done, done. Next, I go to 2,6. And 2,6 says, two is lesser than equal to four."
+    },
+    {
+      "chunk_id": "L039_C15",
+      "start": 1046.5,
+      "end": 1125.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=1046s",
+      "text": "four. So I'll just increase myself to four. Done, done. Next, I go to 2,6. And 2,6 says, two is lesser than equal to four. I am a part of you. Please increase your boundary to six. Redoes. Next, I move to 8,9. 8,9 says, hey, wait, I'm not a part of you because eight is more than six. I'm not a part of you. I'll form a new interval. I'm like, okay, form a new interval 8,9. I don't stop you, please form. Next, move ahead. 8,10. 8,10. Eight. It is nine. Yes, you're a part of me. Please increase. Please increase. So I go ahead and increase this to 10. Perfect, move. 9,11. 9,11 says, nine lesser than equal to 10. Yes, you're a part of me. Please take it and improve yourself. Perfect, next. 15,18. If I have a 15,18, can I say it is not a part of this? Thereby a new, thereby a new. Just take it and store it into your answer. Next move. 16,17. 16,17 says, I am inside you. But 17 is not greater than 18. No need to expand. I can stay with you. And it's over."
+    },
+    {
+      "chunk_id": "L039_C16",
+      "start": 1125.26,
+      "end": 1197.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=1125s",
+      "text": "But 17 is not greater than 18. No need to expand. I can stay with you. And it's over. So easy, isn't it? I just kept on checking with the previous interval item. That's it. That's how easy it was with a one pass iteration. Got it? Let's quickly code it up. So you can find out the problem link in the description. Please, please make sure that you try out the problem from the link in the description itself. So going back to the code editor, we will sort it. We will have an answer. We will return the answer. What in between? Something we saw was when we started, yes, when we started, this was the first we started with one comma three. So we know one thing for sure. If we don't have any intervals till now, I can't compare. If I don't have anything, I can't compare one comma three with the previous. If it is empty or imagine you have a eight comma nine and you had one comma six. So the eight was greater than six. So it cannot be a part of it. Then only you will form a new interval because if it's the first time you form or if it's not a part of it, then you form a new interval. Correct? So I'll be like, what am I currently at? Array of I and is the starting. If that is greater than, because if it is not empty,"
+    },
+    {
+      "chunk_id": "L039_C17",
+      "start": 1197.58,
+      "end": 1276.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=1197s",
+      "text": "like, what am I currently at? Array of I and is the starting. If that is greater than, because if it is not empty, then it goes to this answer dot back, which will be the last. So basically if your array just has this, back will give one comma six. And you do one, it will give the six. If it is greater, that means it's a new one. It's a new one. So you'll be like, okay, can I say then answer dot pushback and the answer, I'll have a new interval and the new interval will be array of I, or maybe I could just push in the array of I. Yeah, I'll just go ahead and push in array of I because that is what the current interval is. So I will end up pushing eight comma nine or maybe one comma three if it's empty. Done. What about the next? What if it is not? Yes. What if it is lying inside? If it is lying inside, let's go to this case. Two comma four. We had one comma three. So I know this is lying inside this. So I'll take this four and I'll try to replace this. Let's see, that's what I'll do. I will say answer dot back of your first, basically your last guy, will be max of answer dot back, whatever is your last element, comma my, which is array of I last. If I'm more than I'll expand you."
+    },
+    {
+      "chunk_id": "L039_C18",
+      "start": 1276.46,
+      "end": 1342.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=1276s",
+      "text": "max of answer dot back, whatever is your last element, comma my, which is array of I last. If I'm more than I'll expand you. If I'm not more, I'll get into you. Simple. Once I've written this, I will end up returning this and this will be running fine. Let's see if it runs. It does and I'll quickly go ahead and try to submit it. So as you can see, hardly like three or four lines of code and it does it for me. So it'll be the time complexity and space complexity. Can I say n log in for sorting? And a single pass because everything else is if-else. What about the space? A big of n to store the answers. Imagine if all the intervals are unique and they don't overlap. So you'll end up storing everyone as its answer. So you've improved our time complexity and this is where the interviewer will be super satisfied. So going back to the sheet, I can say that this one is done as well. I hope you've understood everything. Just in case you have, please, please, please do consider giving us that like because it won't cost you anything but it'll highly motivate me to make such kind of content. And if you're new to our channel, what are you waiting for? Hit that subscribe button and if you haven't followed me on Instagram, Twitter, LinkedIn, all the links will be in the description."
+    },
+    {
+      "chunk_id": "L039_C19",
+      "start": 1342.66,
+      "end": 1345.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=IexN60k62jo&t=1342s",
+      "text": "waiting for? Hit that subscribe button and if you haven't followed me on Instagram, Twitter, LinkedIn, all the links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye, take care."
+    }
+  ]
+}

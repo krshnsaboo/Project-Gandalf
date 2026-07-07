@@ -1,0 +1,169 @@
+{
+  "lecture_id": "L152",
+  "lecture_number": 152,
+  "lecture_title": "G-27. Shortest Path in Directed Acyclic Graph - Topological Sort",
+  "youtube_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U",
+  "chunks": [
+    {
+      "chunk_id": "L152_C1",
+      "start": 0.0,
+      "end": 74.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem shortest path in directed acyclic graph. Given a directed acyclic graph, find the shortest path from the source. They've clearly stated that the source will always be zero to all the vertex. Okay. So basically what does the problem state? Uh, you're given a dag. What is a dag? If you remember, it's a directed graph with no cycles. If I combine this, then you call it as a directed acyclic graph. That is the definition of it. So over here you're given a graph. Now do you see a shuttle change from the graphs that we were doing till now? Yes, you do. So if you see zero and one, there's an edge, but we have added edge weights to it. We are saying the edge weight is two. That means to go from zero to one, it will take you to go from one to two. It will take you three. So in short, if I ask you to go from zero to one, what is the shortest path? It takes two. Are there any other parts in the graph? The answer to that is no. So I can see if"
+    },
+    {
+      "chunk_id": "L152_C2",
+      "start": 74.62,
+      "end": 151.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=74s",
+      "text": "takes two. Are there any other parts in the graph? The answer to that is no. So I can see if I say node one, the distance is two because that is what it will take for node zero. The distance is zero. Why? Zero on itself because the source node has been clearly stated as zero. So zero to itself will be zero, right? If I ask you for the second node, it states three. Where's the second node here? How many parts are there? One is this, which takes five. One is this, which takes three. So thereby the shortest path is three. So the question is very straightforward and simple. You're given a source and it will always be zero. From zero to all of the paths, like all of the nodes, zero, one, two, three, and so on till n minus one node, you have to find me the shortest distance to travel. Shortest distance to it. That is what the question states. So you have learned toposort till now, right? So you'll be applying toposort, but the algorithm will be slightly different this time. Okay. I'll be combining toposort with some relaxation of edges to solve this. So I'll write the steps and the process that I'll follow is first I'll tell you the algorithm, then we'll go and code it so that after this process, you have a very strong hold of what"
+    },
+    {
+      "chunk_id": "L152_C3",
+      "start": 151.66,
+      "end": 223.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=151s",
+      "text": "tell you the algorithm, then we'll go and code it so that after this process, you have a very strong hold of what we are doing. Once you understand this, I will tell you the intuition. Okay. You might think why not intuition at the start? Because if I tell you the intuition, you might understand, but in a very blunt manner, you'll understand. You won't understand in depth. Once you have the algorithm and the code in the brain, and then I tell the intuition, we will to connect it and it'll be much like it'll be easier for you to absorb it. Okay. So this is the DAG and this is the corresponding adjacency list. This time, carefully see the six has an adjacency node of four. Six has an adjacency of node of four with a weight of two. So instead of storing an integer, previously it was like six as an adjacency node of four and five, four and five. This is what we were storing, right? This time we will store pairs four comma two, five comma three, because this is five. We'll store pairs this time. This time it will be list of pairs. Either you are in C plus plus it will be vector of pairs. What you will store. If you are doing a Java, it will be array list of pairs that you will store in this particular thing. Remember the third lecture where I told you"
+    },
+    {
+      "chunk_id": "L152_C4",
+      "start": 223.78,
+      "end": 289.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=223s",
+      "text": "Java, it will be array list of pairs that you will store in this particular thing. Remember the third lecture where I told you how to store graphs. If they have edge weights, you always declare it as pairs and you store pairs where the first guy will be the adjacent node. The second guy will be the weight of that edge. Remember? So that is what I have done over here. So the question stated, the source will always be zero, but we will try to solve this problem for any given source. So source can be anything. So thereby what I'll do is I'll say for this graph, assume the source to be six for this graph, assume the source to be six because I don't want you to be sticking with zero because that will not help you out. So we can have any source because the interviewer might give you the question as stating as any source. So any source. Okay. So what is the step one? So the step one of the algorithm is very simple. Do a toposort. Do a toposort on the graph. Yes. Do a toposort on the graph. Now, how many ways do you know to do a toposort? There are two ways. One is the DFS way. One is the BFS way. Do whichever you wish to. I just want the toposort for this particular DAG,"
+    },
+    {
+      "chunk_id": "L152_C5",
+      "start": 289.62,
+      "end": 358.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=289s",
+      "text": "is the DFS way. One is the BFS way. Do whichever you wish to. I just want the toposort for this particular DAG, which is the directed acyclic graph. So let's quickly do the toposort for this DAG. So I'll be using the DFS method to find the toposort. So you know the DFS method is very simple. We always take a stack data structure, which stores the toposort. Whenever we complete the DFS for a given node, we put it into the stack. We take a visited node. That is what we take. And we always run something like this for I equal to zero and we go on till six and we say if not visited of I, then please call the DFS for I. If you remember, this is always done for the components, right? So what's the first value of I? That's zero. We'll go and call the DFS for zero. The DFS of zero is called. Whenever the DFS of zero is called, please make sure it is marked as visited. Now who are zeros adjacent nodes? It appears that zeros adjacent node is one. So go and call the DFS for one. Perfect. So again, mark it as visited. Who are ones adjacent node appears to be three. So go and call for three. So I called it for three. Who are for three? Appears that there is no one for"
+    },
+    {
+      "chunk_id": "L152_C6",
+      "start": 358.54,
+      "end": 425.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=358s",
+      "text": "So go and call for three. So I called it for three. Who are for three? Appears that there is no one for three. Mark three as visited. And it appears that for three, there is no one. So what I can say is for three, the DFS call is over. And whenever the DFS call is over in toposort, if you remember, we just took that three and put it into the stack. Go back one. Do we have any further adjacent nodes? No. Put it into the stack. Go back zero. Do we have any further adjacent nodes? No. Put it into the stack and go back. So what I can say is this particular DFS call is done. Let's increase the value of I. One, it's already visited. Two, not visited. Call it for two. Mark it as visited. For two, do we have any adjacent nodes? Yes. What is it? Three. But it's already visited. No further DFS calls. So two is also done. Go back. So once you go back, this is done. Increase the value of I. This will be three. Will we do a DFS call for three? No, it's already visited. Increase the value four. So will we do it for four? Yes, we'll do it for four. Mark four as visited. After that, look at four. It has zero, which is visited. You see zero is visited. It is. And it has"
+    },
+    {
+      "chunk_id": "L152_C7",
+      "start": 425.54,
+      "end": 498.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=425s",
+      "text": "four as visited. After that, look at four. It has zero, which is visited. You see zero is visited. It is. And it has two, which is also visited. Zero and two, both are visited. So I really know for the DFS calls. So it'll go back and put it into the stack and go back. Next, it's five. For five, mark it as visited. And five has adjacent node as four, which is already visited. So no further DFS calls. Please make sure put five into the adjacent nodes and go back. Next, into the stack rather. It'll be six. Similarly, it will happen for six. Mark it as visited. And you'll find that for six, we have four and five as the adjacent node. Four and five, both are visited. So no further DFS calls. Put it into the stack and go back. So apparently, once this for loop has been completed, all the DFS calls have been completed. This stack will store the toposort. Now, if I quickly erase this off, let's quickly erase this off. So the step one I can say has been completed and the toposort is very simple. It is six, five, four, two, zero, one, three. And if you carefully see, there's an edge between zero to one. So zero appears before one. There's an edge between two to three. The two appears before three. So this is indeed a valid toposort. I can easily say"
+    },
+    {
+      "chunk_id": "L152_C8",
+      "start": 498.86,
+      "end": 563.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=498s",
+      "text": "one. There's an edge between two to three. The two appears before three. So this is indeed a valid toposort. I can easily say that. Now what is step two? Step two is very, very simple. You take out all the nodes from the stack one by one. Take the nodes out of the stack one by one. Nodes out of stack. And relax the edges. You'll hear this term a lot going forward and relax the edges. Okay. This is the step two. So in order to relax the edges, we need to declare a distance array. And that should be marked with infinity. Let's do it. The distance array has been declared. And what you'll do initially is just make sure everything is marked as infinity. Now let's start relaxation of the edges. But before that, please make sure whatever is your source node, just go to that source node and make it zero. Just make sure that you go to that source node and see that, Hey, I know one thing. If you start from six and if you end at six, the distance that you'll take will always be zero. So make sure you do that. Next, whatever is on the stack stop, this is stack stop. Stack is always last in first stop. So the last in was six. This is a stack stop. So make sure you take it out."
+    },
+    {
+      "chunk_id": "L152_C9",
+      "start": 563.22,
+      "end": 635.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=563s",
+      "text": "always last in first stop. So the last in was six. This is a stack stop. So make sure you take it out. So node equal to six has been taken out. Now, whenever you add six, you know, the distance to six is zero. How did you figure this out? Because that is what it was stored over here. Right? Now figure out the adjacent nodes of six. The adjacent nodes of six is four and five. The adjacent node of six is four and five. So try to go there. So you'll be like, okay, I'll try to go to node five. I'll also try to go to node four. Okay. These are the two nodes that I'll try to go to. These are the two nodes that I'll try to go to. Now have a careful observation, have a very careful observation on this graph in order to go from six to five, which is this, what is the edge weight that is required? Three. Do you see three? So you say, if I go, I'll require a three. So can I see if in order to reach six, I required a distance of zero from six to five, I require a distance of plus three. Can I say the overall distance will be three because from six to six, it was zero. And from six to five, it is three. So the overall"
+    },
+    {
+      "chunk_id": "L152_C10",
+      "start": 635.94,
+      "end": 710.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=635s",
+      "text": "distance will be three because from six to six, it was zero. And from six to five, it is three. So the overall distance will be three. And you see to node five, it was infinity, right? And if you see, we are reaching a distance three, which is better three, obviously. So you go and update this to three. You go and update this to three. Don't do anything else. Just go and update. Similarly, see over here to node four, what will you require? Two. So please do a plus two. The distance will be two. Similarly, go to node four and see, you'll require a distance of two. You will require a distance of two. Done. Once you have checked out all the nodes, completed. Next, get the next node out, which is five. And let's see, what is the distance taken to five? That's states me that the distance has been taken as three. It's clearly states as three. The distance is three. What does it mean? Whatever was the source node in order to get to node five, I required a distance of three. That is the meaning of it. So for node five, look at the nodes. The nearby node is four. So the nearby node is four. How much will it take if it goes from five to four? One plus one is what it will take. Let's see the distance. The previous state took three in order to reach from six to"
+    },
+    {
+      "chunk_id": "L152_C11",
+      "start": 710.42,
+      "end": 780.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=710s",
+      "text": "four? One plus one is what it will take. Let's see the distance. The previous state took three in order to reach from six to five. That's taking plus one. The total distance will be four. Three plus one is four. And if you carefully see, in order to reach node four, I already have a better option. I already have a better option of two. So will I take this four? No. Why? Very simple. Because from six to five and five to four, it will be four. And from six to four, it will just be two, which we already have taken. So nothing to be done. Omit this off. Next, take the next guy, node four. At the moment you take node four, what happens? You again check for the adjacent nodes. That's zero and two. So one is node zero and the other one is node two. This takes a distance of plus three. This takes a distance of plus one. Very simple to figure out. You have already stored it. The plus three and plus one. Previously, how much distance node four took? Two. Again, very simple to get from here. Six to four took a two plus three. So till node zero, what will be the distance? It will be nothing but very simple, five. And till here, it will be nothing but three. Why? Two plus three"
+    },
+    {
+      "chunk_id": "L152_C12",
+      "start": 780.66,
+      "end": 854.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=780s",
+      "text": "the distance? It will be nothing but very simple, five. And till here, it will be nothing but three. Why? Two plus three will be five. Two plus one will be three. So node zero states it's infinity. So you update it to distance five. And node two says it's infinity. So you update it to distance three. Done. Once you've done this, omit this as well. Simple. Next, take the next node, which is two. So node two, what is the distance taken? Three. From the distance array. From six to two, you know the distance is three. You know the distance is three. From six to two, you know the distance is three. And that's very obvious because it took this path. It took this path. Right? So from node two, where can you go? Let's quickly check it out. From node two, you can go to three. So let's write it. You can go to three. And if I go to three, I will require how much? Three. I'll require nothing but three. So I'll just add a three and that will give me nothing but distance of six. So till node three, I get a better option than infinity. So I take it. Next, erase it. So we're going to take the next one, which is zero. So node is zero. The distance taken is five. From zero, you can go to node one."
+    },
+    {
+      "chunk_id": "L152_C13",
+      "start": 856.66,
+      "end": 930.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=856s",
+      "text": "the next one, which is zero. So node is zero. The distance taken is five. From zero, you can go to node one. And the distance will be plus two of it. So the distance will be seven. What you can do is, you can say one to be seven. Very obvious because if this was taking five and this takes another two, so five plus two will be seven, which is better than infinity. So done. Omit this. This is the next guy who is one. So from node one, what is the distance? Seven. You see node one has distance seven. Where can one go? One can go to node three. How did you get this? From here. What is the distance? Plus one. So what will be the distance if I go to node three? Eight. Will I take this? No. Why? Because we already have a six. So omit this. We will not take it. Similarly, we'll get the next guy, which is three. So node is three. So from three, where can you go? You can go nowhere. There's nothing to be done. Omit this. This is the step two. So once you have done the step two, you can see that the distance array actually stores all the shortest distance from the source six and the toposort is empty. And we have figured out this is our answer. Yes, this is what our answer is. So I hope you've"
+    },
+    {
+      "chunk_id": "L152_C14",
+      "start": 930.26,
+      "end": 991.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=930s",
+      "text": "the toposort is empty. And we have figured out this is our answer. Yes, this is what our answer is. So I hope you've understood the algorithm. It's very straightforward and simple. Figure out the toposort. Once you've done that, take one node out and just keep on updating the distance array. Keep on updating the distance array every time. Once you're done with this, this is your particular answer. What's the intuition? After the code, I'll tell you. So I hope you've understood the entire algorithm. Now it's time to code it up. So I'll be coding the C++ solution on the right. And you can figure out the exact similar Java code on the left. So as you can see, we are given the number of nodes, the number of edges, and all the edges data have been given over here. The edges data is like U and V and the weight. So the first step is definitely to create a graph. So let's quickly create the graph, which will be something like vector of pair. We need to store pairs this time. So adjacency of N. Okay. Next we go across and say, I and D, I equal to zero, I lesser than N, I plus plus. This is something which you will do. And what's the next thing that I'll do? I'll say adjacency of U. By the way, just to make your understanding better, edges of I zero,"
+    },
+    {
+      "chunk_id": "L152_C15",
+      "start": 991.86,
+      "end": 1064.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=991s",
+      "text": "the next thing that I'll do? I'll say adjacency of U. By the way, just to make your understanding better, edges of I zero, because every index has a vector and the vector resembles three guys. That is the meaning of this. So U is this, V is edges of I of one and WD is on the second index. Simple as that. Next, I say adjacency of U. Can you please store the adjacent guy, which is V and the weight is WD as a pair. Stored. Next, you always find the topo. So that's the first thing. So what do I need? I need a visited array. I need a stack. And when you do anything else? No. So let's quickly create the visited array. So I create a visited array, something like this. Now we're just capital N equal to zero. Perfect. I need a stack. So let's quickly create a stack as well. Perfect. Next, I need to figure out for all components. So let's go for all components. And we say, if not visited of I, we go across and say, okay, let's go for the toposort. And in the toposort, what do we need? We need the node. We need the adjacency. We need the visited and we need the stack. So this is what I'll do. I'll get my toposort. So now quickly write the toposort and that's for"
+    },
+    {
+      "chunk_id": "L152_C16",
+      "start": 1064.9,
+      "end": 1143.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=1064s",
+      "text": "we need the stack. So this is what I'll do. I'll get my toposort. So now quickly write the toposort and that's for DFS. You can always write whatever you wish. You can do the BFS as well. Why DFS? I denote ID node. And I'll say vector of pair of INDI, INDI, INDI, INDI, adjacent. This is how the graph will be perfect. Next, I need the visited. So let's see the visited. And this is the stack, which is INDI and please pass it using reference. So that's what I will do. But the first step of DFS, you say, but this will not be DFS. This will be toposort. That's what we are naming it. Visited of node will be one. And while going back, just make sure you push on the node. Next, I traverse all the adjacent nodes, which is adjacency of node. Now I know V is the node is right at the first because we're storing pairs. So I say, if not visited of B, please go and call the toposort. It's very simple because we will be calling the toposort for V, adjacency, visited and stack. So this is how I'll call the toposort. So I can say, once I've done this, the stack is ready and it has all the toposort elements. Next step to do the distance thing. Do the distance thing. And what do I need? What do I need for doing the"
+    },
+    {
+      "chunk_id": "L152_C17",
+      "start": 1143.94,
+      "end": 1216.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=1143s",
+      "text": "elements. Next step to do the distance thing. Do the distance thing. And what do I need? What do I need for doing the distance thing? I need a vector which stores all the distance. Perfect. Please make sure everything is initially marked as infinity. So I this, and you can go on like I less than an I plus plus, and you can go as distance of I equal to infinity. You can call it as int max. Super simple. Next, you know, you have a source node and that's always zero. If the question does not mention your source node and it gives you, you have to write distance of SRC equal to zero. Next, you start from a while and you say stack not empty. That's the first thing you'll do. What will you do over here? You'll say, okay, let's get the node which is stack dot top. And let's do a stack dot top. Perfect. Next, you need all the adjacent nodes. So please go across all the adjacent nodes. And you know, over here, indv, id dot first stores the adjacent nodes and id dot second stores the weight and I need to relax it. So distance of node is what it takes to reach the node. And from you to me, it takes weight. And if it is less than the previous way of reaching V, it can be infinite. It can be anything. If node plus V it is less than the"
+    },
+    {
+      "chunk_id": "L152_C18",
+      "start": 1216.1,
+      "end": 1283.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=1216s",
+      "text": "less than the previous way of reaching V, it can be infinite. It can be anything. If node plus V it is less than the previous way of reaching it. I do not do anything. I just go across and update it to the new node. This is what I'll do. I'll just update it to new node. Once I've done this, I'll return the distance. So this is how simple it is. And after this, I'll go across and run this and see if it is fine. It gives me a compilation error because I think we, my bad, it'll be pushed back. So let's quickly run this. So I've done a slight typo over here. It'll be M because number of edges. I'll quickly compile and see if it is giving us the correct answer. And compilation, we see that it is giving us the correct answer. Will we submit? No, let's wait. Let's read a couple of statements. So it says, find the shortest path, but does it mentions about what if we do not reach? So it doesn't mention about it. I'll ask the problem setter to add it up. But as of now, there's a trick. I'll go ahead and I say, okay, they're expecting if it is 1E9 to see out infinity, not reachable. They're expecting 1E9 instead of intermax. So I'll just assign 1E9 because what they're expecting is if it's not reachable, it should be 1E9."
+    },
+    {
+      "chunk_id": "L152_C19",
+      "start": 1283.06,
+      "end": 1352.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=1283s",
+      "text": "They're expecting 1E9 instead of intermax. So I'll just assign 1E9 because what they're expecting is if it's not reachable, it should be 1E9. So I just did a slight hack. I just checked in, but I'll ask the problem setter to update the problem statement. Don't worry about that. I'll now quickly run this off and see if it is running fine. Okay. It is. So all of these test cases do pass. So we have understood the algorithm. We have understood the code. Now let's discuss the time complexity. Then we'll go across to the intuition. What are the time complexity? A toposol, plain DFS, whatever time the DFS takes. What about this? The number of nodes is what the stack will always give you. That's for sure. The number of nodes is what the stack will give you, which is n into all the neighbors, into all the neighbors. So if I ask you in total, this for loop will run for how many times? Let's go back. Can I see in the iPad runs for first run zero to run for once, twice, thrice, four times, five times, six times, seven times, eight times. Can I say the internal fall for loop for the adjacent nodes will run for one, two, three, four, five, six, seven, eight times, which is nothing but one, two, three, four, five, six, seven, eight, which is nothing but the images."
+    },
+    {
+      "chunk_id": "L152_C20",
+      "start": 1353.62,
+      "end": 1426.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=1353s",
+      "text": "four, five, six, seven, eight times, which is nothing but one, two, three, four, five, six, seven, eight, which is nothing but the images. And I said, overall, it will run for images. So N plus M is what the second loop will run. This is a plain DFS. This is plain DFS N plus E, the number of edges, which is M. But this is very obvious, right? Because the stack will give you N and in total, that's the nodes is nothing but the number of edges only. So we have understood the time complexity as well. Now it's the main thing about. Okay. So you've understood everything. I must be thinking about the intuition. Why two percent? Why not some standard algorithm? Like in the next half of the lecture, like in the, sorry, in the next half of the series, we'll learn algorithms like Dijkstra and a lot more, which helps us to find the shortest path. Will those algorithms work? Those algorithms will definitely work. But why did we do a two percent? Let's understand. So what was the two percent for this? If I did, it was six, five, four, two, zero, one, three. Something I know for sure is there is no one before six. There's no one before six. So something I know for sure is the initial guy is six. So I took the initial guy to be six"
+    },
+    {
+      "chunk_id": "L152_C21",
+      "start": 1427.46,
+      "end": 1494.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=1427s",
+      "text": "before six. So something I know for sure is the initial guy is six. So I took the initial guy to be six and six took me to four and five. So apparently once I started from six, which was the two percent, then I could go to the next guys. And that will always be in my two percent only. This two percent starts with the first guy who has no one into it and then takes to the next guys who he was into, who he was into just to take it to five because it was just to five and five days. I'll take you to four. All right. So what to do was it stated as a first guy. I don't have anything. I'll start up from myself and since I was a source, not all assigned myself to be zero. I'll go to five. I'll figure out the answer for five. Then I'll go to four, figure out the answer for four. Then I'll go to zero and to figure out the answer for them. Then I'll go to three. Then I'll go to one and I'll figure out what I did was I moved sequentially the nodes which are reachable. First I moved them. Then this, then this, then this, then this, then this, then this. I moved according to reachability, moved according to reachability. So what happened was I minimize"
+    },
+    {
+      "chunk_id": "L152_C22",
+      "start": 1494.26,
+      "end": 1560.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=1494s",
+      "text": "then this, then this, then this, then this. I moved according to reachability, moved according to reachability. So what happened was I minimize the number of steps to be go off n plus m, which is much, much better than any standard algorithm because next or takes more than this. The only reason it works is because we are making sure there was no one before six and we computed for six. Then we did for five. So when we are doing for four, we know all the previous guys have been computed and I have, I can only reach four via six or five because it is a directed graph to zero one three cannot make me reach for the guys who can make me reach four or six and five and they have that their answers come computed. So I'll compute a four for two. These three guys can make me reach two. So these answers are computed. So I started with a very small and then I expanded it to two, then expanded it to three and so on. That is how we will do it. So in short, the intuition is very straightforward. If I'm reaching a node, I know all the previous nodes have their answers, right? That was the simple indication. We still have a problem. I leave a stack overflow link on the description. You can"
+    },
+    {
+      "chunk_id": "L152_C23",
+      "start": 1560.58,
+      "end": 1595.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZUFQfFaU-8U&t=1560s",
+      "text": "answers, right? That was the simple indication. We still have a problem. I leave a stack overflow link on the description. You can check it out. The answer is given over there. You can read it again and again, but I think it is more or less clear to you now. So I hope you have understood the algorithm, the code and the intuition. So just in case you did, please, please, please make sure you like this video. And if you're new to our channel, hit that subscribe button right away. Please do consider subscribing to us. If you haven't checked out our DP series and the SDG, the links will be in the description and with this, I'll be wrapping up this video. Let's meet in some other video. Bye-bye. Take care."
+    }
+  ]
+}

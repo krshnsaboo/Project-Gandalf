@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L151",
+  "lecture_number": 151,
+  "lecture_title": "G-26. Alien Dictionary - Topological Sort",
+  "youtube_url": "https://www.youtube.com/watch?v=U3N_je7tWAs",
+  "chunks": [
+    {
+      "chunk_id": "L151_C1",
+      "start": 0.0,
+      "end": 75.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem alien dictionary. What does the problem say? It states a given a sorted dictionary of an alien language. It's not the English language. It's an alien language having n words and case starting alphabets of a standard dictionary. Find the order of characters in the alien language. Note many orders may be possible for a particular test case. Does you may return any valid order and output will be one. If the order of a string returned by the function is correct, else zero denoting incorrect string return. So let's analyze the problem statement. So basically it states you'll be given something like B double a, like a number of strings and strings. And you have to give me the sequence. If I talk about the English dictionary, you know, the sequence is very simple. The sequence goes like ABCDE dot dot dot, X, Y, Z. And if you follow the English dictionary, these n words would have been something like this. First we would have had ABCA, then ABCD, then definitely"
+    },
+    {
+      "chunk_id": "L151_C2",
+      "start": 75.56,
+      "end": 147.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=75s",
+      "text": "these n words would have been something like this. First we would have had ABCA, then ABCD, then definitely something like B double a, then a CAB and then CAD. Why does this happen in an English dictionary? Because if you see these couple of words, a appears before D, a appears before D, thereby ABCA appears before ABCD. Now, if you go across ABCD and B double a, why does ABCD appear before B double a? Because A is smaller than B or A appears before B. Now if you see B double a and CAB, if you carefully see B appears before C in the dictionary, and if you carefully see CAB, CAD, CCC, this is equal. So B appears before D, thereby CAB appears before CAD in the normal dictionary. But over here we are not talking about any normal dictionary. It's a dictionary of aliens, right? So it's an alien dictionary. So in the alien dictionary we are seeing B double a, ABCD. B double a appears before ABCD. So we do not follow the standard dictionary or standard alphabetical order of ABCD dot dot dot X, Y, Z. We have to make our alien order. So the question"
+    },
+    {
+      "chunk_id": "L151_C3",
+      "start": 147.04,
+      "end": 226.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=147s",
+      "text": "alphabetical order of ABCD dot dot dot X, Y, Z. We have to make our alien order. So the question states, find out the alien order. Yes. The question is very simple. Find out the alien order. And over here they've clearly stated that K is four. That means the alien order will have first four alphabets on the English dictionary, which is ABCD. Just need to order them. So if you carefully see, this couple of guys are differentiated by B and A. So can I say B appears before A? Can I say B appears before A in the alien order of dictionary? That is the reason B double A is before ABCD. That's because B appears before A. So thereby in the alien order, can I say B appears before A? I can definitely see this. If I compare these two ABCD, ABC, so these three are equal. So D appears before A. Can I say D appears before A in the alien order? Thereby this string appears before this. So D appears before A. So you can definitely write D over here, right? Now let's compare these two things. So if you carefully see these two things, ABCA, CAB, A appears before C, A appears before C. Thereby ABCA appears before CAB. So A appears before C. So I can put in C over here."
+    },
+    {
+      "chunk_id": "L151_C4",
+      "start": 227.6,
+      "end": 305.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=227s",
+      "text": "A appears before C. Thereby ABCA appears before CAB. So A appears before C. So I can put in C over here. Let's see. CAB and CAD. And we are saying that C is equal, A is equal, B appears before D. In the alien order, B must appear before D, which is the case. So can I see this is the alien order? Can I see this is the alien order? I can definitely see that this is the alien order. And this is what you have to return. Yes, this is what you have to return. Now the question is something which says something before something, isn't it? B before D, D before C, A before C, something before something. Which algorithm? Yes, you said it correctly. It's nothing but the topological sort algorithm. We apply the standard topological sort. And if we apply that, we should be able to solve this problem. Now the question boils down. How do we apply the standard topological sort? So we know that we have been said explicitly that there are four alphabets, the first four alphabets from the English dictionary being used. So I know something for sure that something like A, B, C, D would have been used. So what I will do over here is I will say A to be zero, B to be one, C to be two, and D to be three."
+    },
+    {
+      "chunk_id": "L151_C5",
+      "start": 305.6,
+      "end": 382.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=305s",
+      "text": "over here is I will say A to be zero, B to be one, C to be two, and D to be three. So I express all the alphabets in terms of number. If there would have been till Z, it would have been zero, one, two, three, four, till 24, 25. So I'll try to express all the alphabets in terms of zero based numbers. A means zero, B means one and so on. Now what I'll do is at first, yes, at first I'll pick up these couple of guys, which is B double A and A, B, C, D. At first I'll pick up B double A and A, B, C, D. So I'll say, okay, B double A and A, B, C, D. And I'll figure out why is B double A, I repeat, I'll figure out why is B double A appearing before A, B, C, D. And the answer to that is very simple because B, the aliens are saying B is smaller than A. Thereby B double A appears before A, B, C, D. That is what the aliens are saying. So I can say B is smaller than A, which I can correspond to a directed graph. And I can say, Hey, listen, probably I can have something like a B having an edge to A. We can see that. So we're trying to create a directed graph. So B is having an edge to A. Perfect. So"
+    },
+    {
+      "chunk_id": "L151_C6",
+      "start": 382.8,
+      "end": 451.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=382s",
+      "text": "to A. We can see that. So we're trying to create a directed graph. So B is having an edge to A. Perfect. So we figured out why B double A appears before A, B, C, D. Now if B double A appears before A, B, C, D, that's the pair that we have figured out. Now, do I need to again check for why does B double A appear before A, B, C, A? There's no need because if we check for B double A and A, B, C, D, we are satisfied. And if we do the next two, it will continue the flow. Got it? So the next two are very simple A, B, C, D and A, B, C, A. And now you'll try to figure out why, why the aliens are saying that A, B, C, D should appear before A, B, C, A in their dictionary. And if we, if we carefully observe A, A, if we carefully have an observation A, A, then B, B, same C, C. So all these English alphabets are same, but where is the difference? D tends to appear before A, D tends to appear before A. So I'll be like, okay, fine. D is tending to appear before A. So probably I'll say D tends to appear before A. So I can have an edge from D to A now. Perfect. Done."
+    },
+    {
+      "chunk_id": "L151_C7",
+      "start": 452.96,
+      "end": 522.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=452s",
+      "text": "So probably I'll say D tends to appear before A. So I can have an edge from D to A now. Perfect. Done. What is the next two guys? The next two guys are very simple. A, B, C, A and C, A, B. So I'm saying, okay, in the dictionary, we have A, B, C, A and C, A, B. Now I need to ask the aliens, why are they thinking A, B, C, A to be before C, A, B? They'll tell me because in the dictionary, A appears before C. In the dictionary, A appears before C. So can I say there is an edge between from A to B? So I can definitely see that there's an edge between A to C rather than not B, C. Okay. Done. Let's take the next guys. What are the next guys? C, A, B, C, A, D, because that is what we have the last pairs, C, A, B, C, A, D. So what we are saying is, hey, listen, C, A, B appears before C, A, D in the alien dictionary. Why? Because B is apparently smaller than D according to them, not according to me, according to them, B is smaller than D, which means B is smaller than D means there's an edge between B to D. There's an edge between B to D. So I can have something like this. There's an edge between B to D. Got it? So once you've done"
+    },
+    {
+      "chunk_id": "L151_C8",
+      "start": 522.88,
+      "end": 598.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=522s",
+      "text": "between B to D. So I can have something like this. There's an edge between B to D. Got it? So once you've done this, once you've done this, we're pretty much done. So we have created the directed graph. If you carefully see, we have created the directed graph. Now, assume, assume, if there was something like K equal to five, then there would have been an alphabet as E as well, which would have been four, right? Which would have been four. There would have been an alphabet as E as well, which would have been four. So where does that E lie in this DG? Because we do not have a mention of E, but the alphabets are saying we have five alphabets. We do not have a mention of E. In that case, we can consider the E to be a single, yes, we can consider the E to be a single node in the DG, a single node in the DG. But this can lie anywhere in the order because this is not related. So there are multiple components, doesn't matter. If someone is not related, doesn't matter. You can keep them as single. What matters is you pick up pairs, you pick up pairs, you pick up pairs, you pick up pairs, find who is appearing before whom, and you make edges and you create the DG. And then once that are left out,"
+    },
+    {
+      "chunk_id": "L151_C9",
+      "start": 599.36,
+      "end": 673.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=599s",
+      "text": "up pairs, find who is appearing before whom, and you make edges and you create the DG. And then once that are left out, it'll be single nodes. Once the DG is created, what do I need? Yes, what do I need? I need an order. So how do I get the order? There's only one algorithm that gives us the order. We perform the topological sort. The topological wills, because over here, clearly states A is smaller than C or A must appear before C in the order. And that is where the topological sort comes in. If you figure out the topological sort of this, you will definitely get something like B at first. That's what you'll get B. Then you'll get something like D. Then you'll get something like A. Then you'll get something like C. B, D, A, C is the toposort. And if you include E, then you can add E over here or at the front, wherever you wish to. But if you perform the topological sort of this particular directed acyclic graph, you will get something like B, D, A, C, E as the topological sort. Now, how do you implement this? We have seen like we have taken B, D, A, but instead of storing BDA, we will store something like zero one, two, three. It's a very simple thing. So the core concept lies if we can figure out between every pair,"
+    },
+    {
+      "chunk_id": "L151_C10",
+      "start": 674.0,
+      "end": 740.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=674s",
+      "text": "something like zero one, two, three. It's a very simple thing. So the core concept lies if we can figure out between every pair, if we can figure out between every pair, who is appearing before whom, like who is the differentiating factor? Why is B double A before A, B, C, D? That's because B is lesser than A. If we can figure out this differentiating factor, and if I can create the DG, then the question boils down to finding the toposort of the DG. That is as simple as it gets. So can I say in order to find out the differentiating factor between these two guys? So first I'll be like B double A, A, B, C, D. Next I'll be like A, B, C, D, A, B, C, A. Next I'll be like A, B, C, A, C, A, B. Next I'll be like C, A, B, C, A, D. Can I say I can run a loop? Yes, I can run a loop something like I equal to zero till this guy, which is till three. And what I'll do is first time I will be at B double A. So I can say something like, okay, S1 is let's say an array of I, which means B double A, which means it will be B double A. So I'll just erase it and explain how do you implement this? And I can say S2 to be array of I plus one,"
+    },
+    {
+      "chunk_id": "L151_C11",
+      "start": 740.08,
+      "end": 804.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=740s",
+      "text": "So I'll just erase it and explain how do you implement this? And I can say S2 to be array of I plus one, which means it will be A, B, C, D. So this is how for the first time when I is zero, it will pick up array of I B double A and array of I plus one, which is A, B, C, D. It'll pick up. Now, what do you need to do is you need to take these two strings and compare B is equal to A. The moment you find a non-equality, the moment you find a non-equality, you say, I don't need any further non-equalities in the future. B is smaller than A. And that is what determines for the dictionary to work. So I will just go ahead and say, add an edge between B and A, and I'll stop. So this is what happens for the first time. And I zero next time. And I is one, what you'll do is this will change. Yes, this will definitely change. And this thing, what will happen is you will get A, B, C, D because I is one and A, B, C, A. This is what will happen because I is one. So you'll get this. And this, if you start comparing, you just have an iterator or something like pointer. So this is equal. This is equal. This is equal. This is equal. So this will"
+    },
+    {
+      "chunk_id": "L151_C12",
+      "start": 804.08,
+      "end": 869.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=804s",
+      "text": "just have an iterator or something like pointer. So this is equal. This is equal. This is equal. This is equal. So this will be a not my bad. So when I is one, you get A, B, C, D. And for this two, you'll get A, B, C, A. So now what will happen is A equal B, B equal C, C equal. So D and D are the differentiating factor. So you'll go ahead and add the edge DA to your graph. Similarly, when I will be next time to what will happen, it'll get the next guy. ABCA. Yes. ABCA. I'll get something like CAB. So you can just go on every pair by pair. And after you have gone pair by pair, you just take a pointer and you compare, you compare, you compare. First time you get a differentiation, you say there's an edge between A and C and you stop because you just need one guy to be the differentiating factor to place them in a dictionary order. So guys, I hope you've understood the solution. Now it's time to code it up. So as usual, I'll be coding the C plus plus on the right. And you can figure out the Java code on the left. So what are we given? We're given the dictionary, uh, the number of strings and the number of alphabets that we will take from the English alphabet. So the first thing"
+    },
+    {
+      "chunk_id": "L151_C13",
+      "start": 869.2,
+      "end": 937.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=869s",
+      "text": "the dictionary, uh, the number of strings and the number of alphabets that we will take from the English alphabet. So the first thing that I'll do is I'll try to create the adjacency list and that will be for case X next. I know that I have to go through this dictionary. So I'll go through this dictionary till N minus one, because I need pairs. The first string that I'll get is dictionary of I, and the second string that I'll get is dictionary of I plus one. Why till N minus one, because you need pairs. And if you have to take the next one, you just go to second last, not to the last, because at last there will be no one else to compare, right? This is done. Now I need to compare every character, first character, second character, third character, fourth character. So I can go on till the length of minimum of S1.size, like whoever is minimal, I'll go on comparing till it. I can take it something else because if there is one string, this small, if there is one string, this big, then we compare till the length of the smallest string. Got it. So for INT, you can say PTR equal to zero and point up and PTR is lesser than the length and PTR plus plus. So what I will say is, hey, listen,"
+    },
+    {
+      "chunk_id": "L151_C14",
+      "start": 937.2,
+      "end": 1017.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=937s",
+      "text": "zero and point up and PTR is lesser than the length and PTR plus plus. So what I will say is, hey, listen, if S1 of PTR is like both the characters are different, which is not equal to S2 of PTR. If both the characters are different, what do you do is you say adjacency of, I'm saying someone appears before someone. So S1 of PTR appears before S1 of PTR should be done as pushback of S2 of PTR. Simple as that. That's the thing you'll do. Now you're saying S1 has an edge, directed edge to S2. S1 should appear before S2. That is valid because in dictionary, it appears before, but I need to store in terms of zero one two. So just subtract minus C so that it automatically gets converted into zero one two. This is how you can easily create the graph. Now once your graph is ready by performing this constructive algorithm, what do you need? Need to find it's toposort of this directed graph because they're clearly stated answer like ordering is possible. If they would have stated that answer is not possible, we will discuss it afterwards. But as of now, what I'll do is I'll go ahead and pick up the function that gives me toposort. I'll just pick up the function that gives me toposort. We have already done this. So in case you have not checked out the previous videos, please check out for toposort. We have"
+    },
+    {
+      "chunk_id": "L151_C15",
+      "start": 1017.04,
+      "end": 1084.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=1017s",
+      "text": "me toposort. We have already done this. So in case you have not checked out the previous videos, please check out for toposort. We have already done the toposort for any given directed graph with multiple components. Remember this works for multiple components as well for single nodes as well. So we just pick up the toposort that we have learned in the previous videos. Now what I'll say is, okay, listen, we have the graph. Can I ask this guy to give me the toposort and what does he need? Needs the number of vertices and the graph. I'll give him the number of vertices. Remember the number of vertices is not n. N is the number of words in the dictionary. The number of vertices is K and I give him the adjacency list. Once I get this, also they're asking you to return a string, not a vector of so let's convert this into a string, the string of answer equal to this. I'll just go across the IT of topo and I know answer is equal to answer plus. You need to convert this into a character. So IT is the alphabet. If you remember we subtracted a, they'll again add a so that we get the character back. And once you have got the character back, you can go ahead and return the answer because they require a string to be returned. So go and compile it. So in the same,"
+    },
+    {
+      "chunk_id": "L151_C16",
+      "start": 1084.24,
+      "end": 1154.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=1084s",
+      "text": "can go ahead and return the answer because they require a string to be returned. So go and compile it. So in the same, you compile, you see this is running absolutely fine. Let's quickly submit this. And if you submit this, you will see that all the test cases are. So we have solved this particular problem. Now, what if the interviewer tweaks the question and says, okay, this was when this was always possible. Now, when the order will not be possible, what if the order is not possible? What are the dictionary is wrong? What if the order is not possible? How will you figure that you'll tell him to test cases. One of the test cases you can see him is the string one is this and string two is this. Whenever we try to compare the strings, what are we looking at? We are looking at is this matching? Is this matching? Is this matching? And apparently you ended up comparing like the comparison has gone, it's finished. And he did not find a differentiating point because ABC, everything is matching. If everything is matching, doesn't matter if you're following the alien dictionary or if you're following the normal dictionary, the shorter string ABC should have been before ABCD for sure. So you can see this test case that if everything is matching and the largest string is before the shortest thing,"
+    },
+    {
+      "chunk_id": "L151_C17",
+      "start": 1154.16,
+      "end": 1228.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=1154s",
+      "text": "for sure. So you can see this test case that if everything is matching and the largest string is before the shortest thing, very important. If ABC was before ABCD and that is fine, you don't need to find an order for this. But if the largest string is before the shortest string, when everyone matches, it's a no order is not possible. It's a wrong dictionary. Got it. And the other one is if you have something like which is a cyclic dependency, something like ABC, something like bat and something like ADE. Now what we are seeing over here is we are seeing a to be smaller than B and we are seeing B to be smaller than a, it's a cyclic dependency. This is not possible. So these are the two test cases when a dictionary is wrong. When a dictionary is wrong, whenever you find two pairs having something like this or a cyclic dependency, because we know for a cycle to post sort or any sorted order is not possible. That is what you'll tell the interview. If it gives you a follow up question that when is it not possible? You tell them, listen, if the largest spring appears before the shorter and everything is matching, not possible. If there's a cyclic dependency, not possible. These are the two checks you have to integrate in the given code and it will start running absolutely fine. So guys, I hope I was"
+    },
+    {
+      "chunk_id": "L151_C18",
+      "start": 1228.56,
+      "end": 1244.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=U3N_je7tWAs&t=1228s",
+      "text": "the two checks you have to integrate in the given code and it will start running absolutely fine. So guys, I hope I was able to explain you this particular problem just in case I was, please, please, please hit that like button. And if you're new to our channel, please do consider subscribing to us. And if you haven't checked out our DPCs and the HDC, the links are in the description and yeah, with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye."
+    }
+  ]
+}

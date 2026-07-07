@@ -1,0 +1,71 @@
+{
+  "lecture_id": "L287",
+  "lecture_number": 287,
+  "lecture_title": "L4. Jump Game - I | Greedy Algorithm Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=tZAa_jJ3SwQ",
+  "chunks": [
+    {
+      "chunk_id": "L287_C1",
+      "start": 0.0,
+      "end": 76.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=tZAa_jJ3SwQ&t=0s",
+      "text": "So let's continue with our greedy algorithms playlist. But before that, everyone welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is jump game. So you'll be given an array which will have integers and the problem is stating, we'll be standing at the first element and every element tells you how much maximum you can jump. For an example, if there is two over here, it means you can jump to this place or you can jump to this place, not beyond it, not beyond two places. If there is three, you can jump here, you can jump here, you can jump here. And the problem is asking you, if you're starting at the first element, can you reach the last element by jumping? Let's try it out. Over here we have two, right? Which means I can take a jump of two, a maximum jump of two. So if I go here, there is a jump of one. So I'll go here and I cannot jump further, which means I cannot. The question is stating maximum that you can take. I shall not jump the maximum."
+    },
+    {
+      "chunk_id": "L287_C2",
+      "start": 76.8,
+      "end": 155.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=tZAa_jJ3SwQ&t=76s",
+      "text": "further, which means I cannot. The question is stating maximum that you can take. I shall not jump the maximum. Instead I'll jump by one place and from here I'll jump three places. So eventually I can reach the end. Which means true, possible. Okay. Let's try out the other example. I'm standing over here. I'm standing over here. Okay. Can I reach the end? Let's try it out. If I start from here, I can either reach here, I can either reach here, I can either reach here. From two, I can either reach here, I can either reach here. From one, I can only reach here. You can try out all possible ways. I'm not able to cross zero. I am not able to cross zero. Forget about the last. I cannot cross zero. Thereby I cannot reach. If I cannot reach, I'll be returning a cross. In this example, I can go here, I can go here. From three, I can go here, from here, here. So eventually I can reach the last. Right. It's important that you can cross the zero. Right. So this is what you'll have to do. You have to be given an array. You have to tell me if you can reach the end or not. How do I solve this problem? Let's take this example. If I start from one, where can I reach?"
+    },
+    {
+      "chunk_id": "L287_C3",
+      "start": 155.9,
+      "end": 233.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=tZAa_jJ3SwQ&t=155s",
+      "text": "the end or not. How do I solve this problem? Let's take this example. If I start from one, where can I reach? I can reach this place. The maximum that I can reach is this place. If I start from two, I can either go to this or I can either go to this one. Perfect. If I start from three, I can either go to this one or I can either go to this one or I can either go to this one. Perfect. If I start from one, I can either go to this one. I can only go to that one. If I start from this one, I can go to this one. From zero, I cannot go to anywhere. If I cannot go from zero, if I cannot go anywhere, I stop then and there because I'm not able to reach here. I tried all possible combos. You can try out all possible combos. You cannot cross zero. Thereby it is not possible. Let's change these examples and try out one more example. I'll change this three to four. Okay. Now let's try out. From here, I can go here. From two, I can go here or I can go here. From four, I can go here, here, here and here as well. Okay. From one, I can go here. From one, I can go here. From zero, I don't need to go anywhere."
+    },
+    {
+      "chunk_id": "L287_C4",
+      "start": 233.92,
+      "end": 313.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=tZAa_jJ3SwQ&t=233s",
+      "text": "as well. Okay. From one, I can go here. From one, I can go here. From zero, I don't need to go anywhere. From two, I can either go here or I can either go here. So what I can see is I can actually reach the end. If I take this pattern, sorry my bad. If I take this pattern, this pattern and then this and then this can actually reach the end. So it is typically possible. Tell me one thing. Did you observe something? What if the arrays don't have a zero? What if the arrays don't have a zero? For that case, you'll always be able to reach the end. If the array just has positive integers, we'll keep jumping, we'll keep jumping. There is no stopping us, right? And we will be able to reach the end for every possible scenario, right? Okay. So how do I solve this particular problem? It's going to be super simple. The only thing I have to see is whenever I'm reaching an index, whenever I'm reaching an index was, did someone reach me? For an example, the one reached here, two reached here at max, four reached here. So when you are at two, four can come here. So someone did touch you. Someone did touch you. Got it? That's what my intention would be. And if there was a three here, no one would have touched two. No one would have touched two."
+    },
+    {
+      "chunk_id": "L287_C5",
+      "start": 313.68,
+      "end": 389.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=tZAa_jJ3SwQ&t=313s",
+      "text": "what my intention would be. And if there was a three here, no one would have touched two. No one would have touched two. That means you cannot reach there. You cannot reach there. So let's see how I can solve this. What we will do is we'll say, okay, what is the max index till which we have gone till now? Initially at zero. So we haven't gone anywhere. Okay, perfect. So we are standing at here and we are at this place. So over here we have one, one place we can jump. So the max we can go is still one, not beyond it. Perfect. Next we come to this index. We come to this index and ease out understanding, I'll write down the index symbols. So we are at two. From here, where can I go? Two places more, two places more. I'm standing at one. I can go to two places more, which makes it to the index three, to the index three. So the max I can go is to the index three. Perfect. Next I can go to four. Four means I'm standing at the second index. Two plus four is six. I can go a max of six. I can go a max of six. Perfect. Next, I'm standing at three. I can go a one, which is four. No need to update max because I can still reach six. I can still reach six. Perfect."
+    },
+    {
+      "chunk_id": "L287_C6",
+      "start": 389.36,
+      "end": 468.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=tZAa_jJ3SwQ&t=389s",
+      "text": "can go a one, which is four. No need to update max because I can still reach six. I can still reach six. Perfect. Next I can go to this one, which is a one. I'm standing at four. Four plus one is five. I can still reach six. So I don't care. I don't care. I'm at zero. Five plus zero is five. I can still reach six. I don't care. Next I have a two. Six plus two is eight. And you can stop over there. You can stop over there because you have somehow crossed this. And if you have crossed this, that means you can definitely reach the index seven. You can definitely reach the index seven. I'll just go back. I'll change the example so that you understand when is it not possible. Okay. So we stand over here. Not bad. Yeah, we stand over here. And I can erase this and I can convert this to three. Now let's understand how this works. So we're standing at one. Okay. So the max that I can reach is the index zero plus one, which is one. Okay. Perfect. I have a two. So the max I can reach is one plus one plus two, which is three, which is one plus two is three. Next I can go to the next, which is three."
+    },
+    {
+      "chunk_id": "L287_C7",
+      "start": 468.08,
+      "end": 543.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=tZAa_jJ3SwQ&t=468s",
+      "text": "plus two, which is three, which is one plus two is three. Next I can go to the next, which is three. So I can go from two plus three, which is five. Okay. The next is one. Three plus one is four. I don't care. Next is four. I can go at max one. So that's a five. I don't care. I've already reached five. Next I reach five. Five plus zero is five. I don't care. Next I reach six. And this is where I say, Hey, wait, wait, wait, wait. The max you were able to reach was five. How did you come here? As a person, you cannot arrive here. You cannot. None understood. Return false. Return false. Simple, right? So I have to write down the code. Again I'll be writing down the pseudo code in case you want your language specific code. Pseudo code, not any language specific code. So I'll be writing down the function. So you're typically given the array, correct? You can figure out the size of the array by array.size. Where do I start? I start at the zeroth index, correct? And what I can do is I can go ahead and say i equal to zero and I can get on till n minus one. One thing I know is, Hey, listen, if you haven't reached, if, if, if i is greater than max"
+    },
+    {
+      "chunk_id": "L287_C8",
+      "start": 544.2,
+      "end": 622.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=tZAa_jJ3SwQ&t=544s",
+      "text": "till n minus one. One thing I know is, Hey, listen, if you haven't reached, if, if, if i is greater than max of index, if you haven't reached me, that means you cannot, you cannot jump from here. Thereby you can straight away return false. Correct? Apart from it, can I say max index can always be updated to max of max index comma i plus array of whatever jump is given to you. I can, I can. I'd have at any moment, maybe you can just skip it. You can write a max index at any moment is greater than equal to n minus one. You can stop. And if this condition, remember if this condition never happens, which means you're able to reach the last index, thereby you can straight away see return false, sorry, return to optimize. You can definitely insert a if condition in case during the journey you were able to reach, you can put an if condition over here. That will be it. What is the time complexity? B go off n. What is the space complexity? B go off one. That's it. This is the most optimal solution. Again, I was greedy. I tried to jump the maximum and see if I'm able to reach the end or not. Simple sorted greedy algorithm. The catch over here is zero. If you're able to cross zero, you will be able to reach."
+    },
+    {
+      "chunk_id": "L287_C9",
+      "start": 622.72,
+      "end": 644.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=tZAa_jJ3SwQ&t=622s",
+      "text": "not. Simple sorted greedy algorithm. The catch over here is zero. If you're able to cross zero, you will be able to reach. And if there are no zeros, you will always be able to reach. That's the catch. If you can add all these edge cases to the interview, you'll be more than happy. So this will be it for this one. So if you're still now watching and if you understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you. I will find the light in you."
+    }
+  ]
+}

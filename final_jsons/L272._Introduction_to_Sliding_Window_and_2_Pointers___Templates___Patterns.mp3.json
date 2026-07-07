@@ -1,0 +1,225 @@
+{
+  "lecture_id": "L272",
+  "lecture_number": 272,
+  "lecture_title": "L1. Introduction to Sliding Window and 2 Pointers | Templates | Patterns",
+  "youtube_url": "https://www.youtube.com/watch?v=9kdHxplyl5I",
+  "chunks": [
+    {
+      "chunk_id": "L272_C1",
+      "start": 0.0,
+      "end": 75.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=0s",
+      "text": "So, with this video, we will be starting off with the two-pointer and the sliding window playlist from the Stryver's A2Z DSA course. In case you haven't checked out our DSA course, please make sure you check it out. The link will be in the description. But before starting off, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this video will be an introductory video for the two-pointer and the sliding window playlist. So, one thing, this is not a typical algorithm that you'll have to, you know, memorize. This is more like a constructive algorithm where you need to understand the concept and then depending on the problem statement, you'll have to mold that concept and solve that problem. So in this video, I'll be talking about four different pattern of problems that you can see when it comes to two-pointer and sliding window in interviews. And I'll also be giving you some templates which will help you to solve most of the problems in this particular playlist. And after this video, we'll be solving a bunch of problems on two-pointer and sliding window. But please, please make sure that you watch this video till the end because you'll understand the patterns and specifically the template that we are going to reuse in most of the videos across this particular playlist."
+    },
+    {
+      "chunk_id": "L272_C2",
+      "start": 75.6,
+      "end": 151.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=75s",
+      "text": "you'll understand the patterns and specifically the template that we are going to reuse in most of the videos across this particular playlist. So we generally see four kind of patterns in this particular topic. The first one is where it's a constant window. Right. So let me give you an example. Imagine I give you an array. Okay. So this array can have positive as well as negative numbers. I don't care. Imagine this is the array. And imagine I give you K as 4. And I give you a very simple problem. Hey, given an array with positive and negative integers, given an integer K, your task is to figure out the maximum sum that you can obtain by picking up four elements consecutively. Let me explain. If I pick up these four elements consecutively, the summation that I'll get is 3 plus 3, 6 plus 2, 8, 8 minus 1, 7. Right. So I'll have to pick up four elements consecutively. You can pick up this one as well. What you cannot do is pick up two from here, two from here. That's not allowed consecutively."
+    },
+    {
+      "chunk_id": "L272_C3",
+      "start": 151.68,
+      "end": 222.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=151s",
+      "text": "well. What you cannot do is pick up two from here, two from here. That's not allowed consecutively. So the question is already stating the size is constant, 4. So I'll have to use this into picture. For an example, what I can do is, I can straight away say, okay, I know one thing. This is zero, the next first index, second index, third index, which is typically K minus one at the next. So if it's a problem of constant window, what we generally do is we take two pointers, take an L, take an R, right? First compute the sum. So you can run a loop from L to R. That's going to be super simple from zero to K minus one, right? Where you can say that initially L is at the zero index, R is at the K minus one at the next, you can run a loop from L to R and the summation that you will get is minus one plus two plus three plus three. That is seven, three plus three, six plus two, eight, yeah, seven. So you got a sum of seven and that is typically for this particular window, right? This is a consecutive four elements. What is the next window? The next window is going to be this one, right? So the constant window shifts. What is, what has happened for the next window?"
+    },
+    {
+      "chunk_id": "L272_C4",
+      "start": 222.84,
+      "end": 294.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=222s",
+      "text": "next window is going to be this one, right? So the constant window shifts. What is, what has happened for the next window? For the next window, if I use a different color, maybe I can just use the same color. The first window was this one. What has happened for the next window? Nothing but this is the next window, right? What has happened? Tell me, tell me, tell me, tell me. You trim off, you take off the last element and you add up one more element. So can I do that? It's going to be super simple. You move R to one place ahead. You move L to one place ahead, but the condition is before, before moving L, you'll have to take out this minus one from the sum. So you can keep on doing this and you know that the last window will be when R reaches over here, the last window will be this one. So you keep on going till R is not crossing the boundary. It's going to be super simple. While you can straight away do R, can go on till the size, right? So whenever it is constant, first thing you'll have to do is move the L for the next window. But if we're doing that, you can say sum equal to sum minus array of L, right? And the other thing that you can do is L plus plus. And that was with L. Now what about R?"
+    },
+    {
+      "chunk_id": "L272_C5",
+      "start": 294.24,
+      "end": 365.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=294s",
+      "text": "array of L, right? And the other thing that you can do is L plus plus. And that was with L. Now what about R? Sum equal to, first you have to do R plus plus, then sum plus array of R. Simple. That is what you have to do. And you know, you can only move R when R is here and then it can move here. When R is here, it cannot move beyond it. So only thing that you'll have to change is the condition gets altered. That's it. And you get the sum. So what happened is now you have the orange, you have the orange windows sum, and you can easily compare it with some max sum equal to max of max sum comma sum and done. That's it. So max sum can easily be figured out by running a loop from L to R. How tough is that? You can keep a max sum variable. So this is how the constant window problems will work. You'll have to first assign the constant window depending on the condition. Over here, the condition is very simple. Depending on the conditions, you'll have to do your job. You can run a for loop and do your job. And after that, if it's a constant window, you move it. So you decide how to move it. Just make sure you keep this condition in check because you're doing an R plus plus."
+    },
+    {
+      "chunk_id": "L272_C6",
+      "start": 365.32,
+      "end": 443.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=365s",
+      "text": "it. So you decide how to move it. Just make sure you keep this condition in check because you're doing an R plus plus. If you keep R lesser than N, that will be out of boundary. That's the first one. It will not be asked a lot of times. We'll be doing one problem on this one because I haven't seen it that much in interviews, but still it's just good to know. And a type of pattern will be, it will be given something like longest subarray or a substring. Yeah. Longest subarray or a substring, depending if it's an array problem or it's a string problem where, and then there will be a condition. This is the most common type of problem that you will see across this playlist or across this topic on the internet. And most of the interview problems are on this particular pattern. So please listen to this carefully. Let's take an example. Longest subarray matches the pattern. Longest subarray can be a substring if it is a string problem. We'll be doing that across the playlist. And then there is a bad, and then there is a condition. This is the condition. You know what is a subarray? Any consecutive portion of the array, any consecutive portion of the array, right? Maybe I can pick up this and this can be called a subarray."
+    },
+    {
+      "chunk_id": "L272_C7",
+      "start": 443.6,
+      "end": 519.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=443s",
+      "text": "of the array, any consecutive portion of the array, right? Maybe I can pick up this and this can be called a subarray. Whereas one and 10 cannot be called a subarray because it is not consecutive. A single element is also subarray. The entire array is also a subarray. Okay. You'll have to pick up the longest subarray where the sum is less than equal to K, where K is given to you. So maybe if I pick up this one, what is the sum? Sum is a 7 plus 7, 15. 7 plus 7, 14 plus 1, 15. Whereas this is not lesser than the sum. So this subarray cannot be picked. Can I pick up this subarray? Uh, probably yes. 7 plus 1 is 8 plus 5 is 13. And this is lesser than this one. Do you find any other subarray? I typically don't find it. Like I am not able to find any other subarray. This is the longest subarray where the sum is less than equal to K. So you'll have to return, uh, in questions, they might ask you to return the subarray in question. They might ask you to just return the length of the subarray. It will depend on the question. So in these question, uh, there is typically a three format, uh, way to follow. The first one is you start off with the brute force, right?"
+    },
+    {
+      "chunk_id": "L272_C8",
+      "start": 519.84,
+      "end": 593.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=519s",
+      "text": "uh, there is typically a three format, uh, way to follow. The first one is you start off with the brute force, right? Then you go to the better solution and then you optimize it with the optimal one. Okay. And there's a very straightforward template to it. So when I'm talking about a brute force, it's what will be a brute force for this one? Think of it. Generate all the subarrays. Yes. So a typical brute force will be to generate all the subarrays and that's going to be the template. You'll always generate all the subarrays and check with the condition. Now when I'm saying generate all the subarrays, what do I mean by that? You know how to generate all the subarrays. If you have seen my arrays playlist, it's going to be very simple. You standard an individual element and you generate all the subarrays that is possible with that element. And I know single element is possible. You attach five, you attach one, you attach seven, you attach 10, all the subarrays with two. Done. Then you move to the next. You generate all, generate all, generate all. Then you move to one, generate, generate, generate. Then you move to seven, generate, generate. Then you move to 10 and that is the only one. So you have to generate all the subarrays. How you can do is because we're going through each and every element, what you can do is"
+    },
+    {
+      "chunk_id": "L272_C9",
+      "start": 593.28,
+      "end": 664.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=593s",
+      "text": "have to generate all the subarrays. How you can do is because we're going through each and every element, what you can do is you can start from zero and you can go on till n minus one of the index because every element is considered as the first element of a subarray. After that what's happening? When I is here, you start with this element, then the G goes here. So you take one more than the G goes here. So you take one more than the G goes here. So you take one more than the G goes here. So you take one more. So there's a G that starts with the current element. So what you can do is you can simply take a G which starts from I and goes till n minus one. That's it. And you're able to generate all the subarrays. That is how you'll generate all the subarrays. This particular problem was saying some, right? So depending on the conditions, now you'll be writing the other things. But this will be a typical template to generate all the subarrays. Now what is the question asking? Sum is the maximum length. So maybe I can keep a max length equal to zero initially, right? So can I say if I'm looking, if I'm standing here, this is the initial subarray and the sum is two. Then you attach five, the sum is seven. Then you attach one, the sum is eight."
+    },
+    {
+      "chunk_id": "L272_C10",
+      "start": 664.64,
+      "end": 740.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=664s",
+      "text": "the initial subarray and the sum is two. Then you attach five, the sum is seven. Then you attach one, the sum is eight. Then you attach seven, the sum is 15. Then you attach 10, the sum is 25. Keeps on increasing. So maybe what I can do is I can keep a sum equal to zero and then I can write, hey, if sum is lesser than equal to K, that's my condition. That is my condition, isn't it? But before doing this, you'll have to add up this element. So please add up this element then. And if it is, you can straight away update max length equal to max of max length comma. What is the length of the particular subarray? If I is standing here and the J is standing here, that means all the four elements are here and the length is J minus I plus one. Very standard mathematics. So what do you do is J minus I plus one. Done. And that will be it. And eventually you can straight away print your max length. Now there might be optimizations across and optimizations are very simple. You'll have to think about it. Now over here I can think of an optimization. I'm looking for sum lesser than equal to 14. So I know one thing, I'm adding two, five, one, seven. At this moment what happens is two plus five is seven plus eight, 15. The sum is 15."
+    },
+    {
+      "chunk_id": "L272_C11",
+      "start": 740.96,
+      "end": 815.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=740s",
+      "text": "I'm adding two, five, one, seven. At this moment what happens is two plus five is seven plus eight, 15. The sum is 15. Do I need to go and add 10? There's no point. So these optimizations you have to think of. Something like I can put an optimization else if sum exceeds K, I can break off. I can put an optimization now. I'll break off. This is what you will have to think of. So this is how the brute force can be written. And if I have to analyze the time complexity, it'll be big O of n square, near about because two loops are running. And what about the space complexity over here? It will be big O of one. So the pattern will be same across every problem. You will have to deal with the brute force at first and that will be generating all the sub-arrays and the template will be this one. Condition goes over here. And if there is an optimization, you break out. And depending on the condition, you can think of it, right? So this will be the brute force for the pattern number two. Let's quickly discuss the better one as well. So the better approach will be to implement the two pointer and the sliding window in such cases. So what you will typically do is, this is the standard behavior across all the problems. We'll start with a window size of one. Okay."
+    },
+    {
+      "chunk_id": "L272_C12",
+      "start": 815.2,
+      "end": 890.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=815s",
+      "text": "what you will typically do is, this is the standard behavior across all the problems. We'll start with a window size of one. Okay. So I'll take a sliding window size of one. So I'm talking about a sliding window. So that typically means a window, right? So the window will always have two pointers, left and right. The left signifies the leftmost portion of the window and the right signifies the rightmost portion of the window. So if I'm talking about one window size, you typically start with L and R. And since this particular problem is saying sum, what you'll do is you'll take initially the sum to be zero. After this, there are two concepts of window. One is expand, one is shrink. Okay. Usually expansion happens for the variable R, which is the right edge of the window. And the shrinking happens for the left edge of the window. Remember this in your brain. Okay. So this is the current window. So always when you start off, whatever is your condition, over here it is sum. So add it to your sum too, because the, you're looking for a sum. So current window should go into your sum. Done. So what I'm saying is this window is having a sum of two. Is that lesser than equal to K because that is the condition and I'm saying yes. So that is the case."
+    },
+    {
+      "chunk_id": "L272_C13",
+      "start": 890.26,
+      "end": 958.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=890s",
+      "text": "of two. Is that lesser than equal to K because that is the condition and I'm saying yes. So that is the case. What you can do is you can update the max length and what is the max length? One, because that is the windows length as of now. One length window. So what am I looking for? I'm looking for longest. So generally what you will do, you'll try to expand, you'll try to increase the window size. So in such cases, what you'll do is you'll try to increase the window size standard. You take the R to the next one. And if you take it, the summation increases to seven. Does this window satisfy the condition you say? Yes, yes it does. And if it does, you update the max length to two. Perfect. Again, you can go ahead and do the next thing. You can again opt for widening the window. So this time this is the window that you're looking for. And the sum will be updated to eight. Is this a valid window? This is because the summation is still less than equal to K. So the length can be updated. At any moment, the length of the window is R minus L plus one. Simple maths, keep it in your brain. Done. What is the next job? Now this is where you start understanding. The next job moves to R and eight plus seven gets to be 15."
+    },
+    {
+      "chunk_id": "L272_C14",
+      "start": 958.16,
+      "end": 1032.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=958s",
+      "text": "the next job? Now this is where you start understanding. The next job moves to R and eight plus seven gets to be 15. So when the window, when the window has a sum that's greater than the given condition, it's greater than K, which is a false condition, which is a false condition. Whenever a false condition happens, you try to shrink, you try to shrink and come inside that condition, come inside that condition because other window is violating the condition. You don't want to violate. So what you try to do is, because you're moving, window is moving in this direction, expanding, you try to take out elements from the left. You try to take out elements from the left till you get the condition to be valid again. So what you will do is always shrink from the left, shrink to, you take out two. So the moment you take out two, the 15 boils down to be 13 and this time the R moves ahead and you say, okay, this is the window and sum is 13. Is this valid? You say it's valid and you can take this window, you can take this window and the window can be updated. You already have a length 3, so no need to update. So you have to shrink the window, but over here you shrink by one place. You shrink just by one place. In certain conditions, it might happen."
+    },
+    {
+      "chunk_id": "L272_C15",
+      "start": 1032.8,
+      "end": 1106.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1032s",
+      "text": "to shrink the window, but over here you shrink by one place. You shrink just by one place. In certain conditions, it might happen. For an example, I can give you a very, very simple example over here. I'll just go back some steps. Okay. So I've gone back to the step and imagine, just imagine this is not 7 and this is something like a 10. Yeah, that's a better one. Something like a 10. Now what happens is when you take R and you move it here, you add 10, which is typically adding like 18, typically adding 18 to the answer, right? So what you're seeing is this particular window size has a sum of 18, which is again violating the condition. So you have to shrink the window. So when you're shrinking, you take off one, which is two. So when you take up two, it gets down to 16 and the R, sorry, and the L goes ahead. Now this is the one you need to understand. You have a 16 and this is the window, not a valid one, still violating the condition. So you reshrink it, you reshrink it and you take out five. Now it is a valid one. Now this is a valid one. So you can again compare the length. The length is two and you don't need to update the max length."
+    },
+    {
+      "chunk_id": "L272_C16",
+      "start": 1106.78,
+      "end": 1181.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1106s",
+      "text": "a valid one. So you can again compare the length. The length is two and you don't need to update the max length. So you continue with your job, which is moving the R. So again, when you move R, this becomes 21, which is not a valid. So you'll again shrink. So got this concept, got this concept. So we have to write down the code. It's going to be super simple. What I'll write is, let's again analyze what we did. I'll quickly erase this in order to understand how the template works. So what did we do? We typically started with the L equal to zero, started with R equal to zero, started with the sum equal to zero, started with the max length equal to zero. Over here, only this portion will be variable. Everything else will be constant in the template. Remember this. And after that, what you can do is you can write while R lesser than N because that is how much you can expand the window. Okay. What's the first step? Sum equal to sum plus array of N, array of R because that's the new element that you're adding to your window. Okay. After this, we were saying that if it's a valid window, if it's a valid window, how do you know it's a valid window? Very simple. You say sum is lesser than equal to K. There's a validity check."
+    },
+    {
+      "chunk_id": "L272_C17",
+      "start": 1181.68,
+      "end": 1252.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1181s",
+      "text": "window, how do you know it's a valid window? Very simple. You say sum is lesser than equal to K. There's a validity check. And if in that scenario, what you did was max length, max of max length, comma R minus L plus one. That's it. But what if it was not valid? What if it was not valid? You made it a valid window. If you remember, if you remember when it appeared like this window was invalid, so you took off this, you took off this and you made it to be a valid window. You shrinked it so that it's a valid window and then you checked for the length. So before this, before this, you'll have to check, you'll have to check for the validity. If it is not, you'll have to shrink, you'll have to shrink. So maybe I can have a check. You can either write if, but I'll try to combine the shrink and the check condition together. What I'll say is, okay, what is the case? If sum is greater than K, I know this is an invalid condition. This is a invalid condition. In such a scenario, I will be taking sum equal to sum minus array of L. I'll take out L and I'll move L equal to L plus one. Isn't it? I'll keep on doing, keep on shrinking it till it is."
+    },
+    {
+      "chunk_id": "L272_C18",
+      "start": 1252.56,
+      "end": 1330.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1252s",
+      "text": "L and I'll move L equal to L plus one. Isn't it? I'll keep on doing, keep on shrinking it till it is. So what I did was I did put a conditional check at the same time I did put a while so that it keeps shrinking it till it's a valid one. And when it is valid, it will automatically update the max length. There's one more thing you'll have to do is you have to do R equal to R plus one. After this, you have to go to the next element. So this is pretty much it. And at the end of the day, you can go ahead and print the max length. And if you're asked to print the sub array, this is where you'll have to store the L and R. Store L and R if you're asked to print the sub array, because this is where the max length is getting updated. You'll have to store the L and R in case they are asking you for the sub array. Remember? So what will stay constant throughout? Firstly, L and R is going to be constant in the template. Remember this max length typically in all longest you'll have to have it. This stays constant. Again, this one is a condition based depending on the condition. Depending on the condition, the while loop will always stay constant because it is the shrinking stuff. Only this one will go to the condition, right?"
+    },
+    {
+      "chunk_id": "L272_C19",
+      "start": 1330.8,
+      "end": 1410.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1330s",
+      "text": "the condition, the while loop will always stay constant because it is the shrinking stuff. Only this one will go to the condition, right? And this is again condition driven, whereas the shrinking stays constant, the expansion stays constant, and the max length update stays constant. You'll see this pattern being followed everywhere, everywhere. Remember this. And over here, we'll discuss the time complexity. What is the time complexity? So you might think, you might think that there's one while loop, there's another while loop. So it's a B go of n square, but it is not. Because if you look forward, L and R was here and then R kept on moving, R kept on moving, R kept on moving. Right? If R, this R will at max move from here till here, that's a B go of n. At max, R will move for B go of n, not more than that. Got that into your head? What about L? So I'm moving L, I'm taking it off. I'm moving L, I'm taking it off. So at max, you'll take off how many elements? N elements at the worst possible case, not beyond it, not beyond it. But will you do it always? No. In some steps, this shrink will work in some steps. So overall, sometimes you might take two, then you might take one, then you might take one more."
+    },
+    {
+      "chunk_id": "L272_C20",
+      "start": 1410.12,
+      "end": 1487.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1410s",
+      "text": "will work in some steps. So overall, sometimes you might take two, then you might take one, then you might take one more. Overall, you might end up taking all the elements. Overall, overall. So can I say overall, R will work for B go of n and the shrinking will work for B go of n. So overall, it is B go of 2n. And what about the space complexity? Again, over here it is B go of 1, but depending on the problem statement, if you're using a map data structure, depending on the condition. We'll see in the later problems. So this will be the time complexity, which is B go of 2n. Now this is going to be the better solution. I'll have to optimize this. Now, if you're looking at a B go of 2n, how much further can I optimize? If the array is having 2n elements, sorry, if the array is having n elements, how much can I optimize 2n into? Very straightforward, I can probably remove one n and I can make it a B go of n solution and try thinking of a B go of n solution instead of a B go of 2n solution. Agreed? Agreed. Right? So what is causing this B go of 2n? This shrinking part. So if I can trim down the shrinking, because what is happening was, if you remember, when L was here, R was here, we ended up shrinking two elements."
+    },
+    {
+      "chunk_id": "L272_C21",
+      "start": 1487.08,
+      "end": 1563.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1487s",
+      "text": "down the shrinking, because what is happening was, if you remember, when L was here, R was here, we ended up shrinking two elements. We ended up shrinking two elements so that it is a valid condition. It is a valid condition. What if I say, I'll take this example, 2, 5, 1, 10, 10. I'll explain you. Array 2, 5, 1, 10, 10, 2, 5, 1, 10, 10. And what is the value of K? 40. Whatever I say to you, you don't have to shrink it all the way. Let's understand what do I mean by that. So I had a L, I had a R, right? And the summation was initially zero. And there was a max length initially as zero. And we started with the first element, which is two, right? And after that, what I did was, I said, is this segment valid? And the summation was lesser than equal to 14. So I said it is valid. And I updated my max length to one. And right after this, what I did was, I took the R and I moved it to five. So I added it, seven. And again, this segment was valid. This window was valid. So the max length got updated to two. After that, I took the R and there was a one, right? So seven turned to be eight. Is this valid? This is. So the max length was updated to three."
+    },
+    {
+      "chunk_id": "L272_C22",
+      "start": 1563.0,
+      "end": 1632.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1563s",
+      "text": "there was a one, right? So seven turned to be eight. Is this valid? This is. So the max length was updated to three. After that, I again took R and I took it to the next one, which is 10. And I added 10, it went down to be 18. I'm seeing that this particular 18 is greater than 14. So it's an invalid condition. It's an invalid condition. Now, some things to keep in mind, the max length that you have seen till now is three, which is this segment. What is happening after this? This segment is a valid one. And I added one more. So I increased the segment size to four. And I'm checking if this segment size is valid or not, because I'm looking for max, max. So I'm increasing the segment size. I'm increasing and trying to check if it is valid or not. I'm saying this is not valid. So if I again increase it, the segment size will become five. So I don't want four to like, I don't want three valid to go directly to five. That's why I'm trying to shrink and bring it down. But during shrinking, what I'm trying to do is taking out two, which is basically making it 16 and taking L ahead. I'm taking L ahead. And then I'm again taking out five, which is 11. And then I'm taking L ahead. So what I'm doing is I'm doing a two step."
+    },
+    {
+      "chunk_id": "L272_C23",
+      "start": 1633.24,
+      "end": 1699.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1633s",
+      "text": "I'm again taking out five, which is 11. And then I'm taking L ahead. So what I'm doing is I'm doing a two step. If it was a different problem, it might have been three, might have been four steps. So this is where I'm consuming a time. Can I optimize this and say, hey, don't shrink it, don't shrink it. Keep this particular window itself. I know one thing, I know one thing. A max length is three. So why to shrink the window below this length? Because that won't help me. Because if I take L over here, the window length will be two. And then I'll again have to increase that two, increase that two to a three size and then to a four size to get a possible answer, to get a possible answer. Because what I'm looking for is a possible answer, right? A possible length as an answer, length as an answer. So why to do that? Why to do that? Yeah. If the question is asking you to find out the subarray, you'll have to do it. There's no other option. If the question is asking you, find out the subarray, you'll have to shrink it. But if the question is asking, find the length of the subarray, do I need to shrink this and make it a length two? Ask yourself. Because if you make it a length two, you'll have to increase it to three and then you'll"
+    },
+    {
+      "chunk_id": "L272_C24",
+      "start": 1699.92,
+      "end": 1767.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1699s",
+      "text": "it a length two? Ask yourself. Because if you make it a length two, you'll have to increase it to three and then you'll get to four and four can be an answer. Because reaching to three is of no use. Reaching to three is of no use. So this is what I'll try to use. If I've been asked to find the longest and not the subarray, not the subarray, just the length of the subarray, what I'll say is, okay, now I'm at a length three. Fine. No need to shrink it further. No need to shrink it further. Just shrink it by one. Because it got to a length four, I'll just make it back to a length three and now again do the same thing. Now again do the same thing. Take the R to the next, which is at 10, add it 26 and now check. Is this four length valid? And it says no. Again shrink it by one. Take the five off, 21, take the L. So what I've done is I'm not allowing it to go beyond a length three. I'm not allowing it to go beyond a length three. I'm making sure I'm keeping the length three intact and if there is an addition, I add it, check it, no. Come back to length three. Come back to length three. Length three, three, three, three, three and eventually when it satisfies, it gets increased. It gets increased. Got it?"
+    },
+    {
+      "chunk_id": "L272_C25",
+      "start": 1767.88,
+      "end": 1840.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1767s",
+      "text": "Come back to length three. Length three, three, three, three, three and eventually when it satisfies, it gets increased. It gets increased. Got it? So it's not mandatory that you shrink back to a length two. You can shrink back to the length three because I don't care about a length three. I need a better answer than three. So I'll check for all the length four that is possible or not. All the length four beyond that. All the length four. And if any length four is possible, again start to make it length five, length six and so on. So the optimization that will happen is instead of writing a while loop, you can remove this and you can say instead of shrinking it all together, just check for one. If it is greater, if it is greater, just move it by one. Keep it to the max length and then increase r and check for the next length. So while turns to if and if you do this, this big O of n will go off. Yes, this big O of n will go off and it will be big O of n complexity. And you'll see me doing this in most of the problems for the optimal solution. But again, I'm repeating if they're asking you to find the subarray, you can't do it. You'll have to get back to the while loop because a subarray is again, you'll find a"
+    },
+    {
+      "chunk_id": "L272_C26",
+      "start": 1840.12,
+      "end": 1918.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1840s",
+      "text": "find the subarray, you can't do it. You'll have to get back to the while loop because a subarray is again, you'll find a subarray, but that might not be the correct answer. For an example over here, this is a valid answer, right? Which is five plus one, six plus two, eight. But again, if I just turn it back to seven, this is also a valid answer with a sum 13. So maybe I'll prefer this one. Maybe the question would ask you, find out the longest subarray with maximum sum lesser than equal to K. So you'll figure out this one is needed. So again, if they're asking you to store, you'll have to think what are the conditions. Can you use if or not? That is very important. If they say there are multiple answers and you can just print any one of them, that's fine. You can use it. But if they're saying that no, you have to print according to the condition that valid five part work, that's the second pattern. So let's talk about the third pattern. The third pattern is, it'll be given to figure out the number of subarrays with some condition, where some condition. So it's a very different problem. It's a very, very different problem. It says number of subarrays, right? So this kind of problem, you'll see that I'll be solving a lot of them."
+    },
+    {
+      "chunk_id": "L272_C27",
+      "start": 1918.04,
+      "end": 1997.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1918s",
+      "text": "different problem. It says number of subarrays, right? So this kind of problem, you'll see that I'll be solving a lot of them. This problem will be solved using the pattern two. Remember this using the pattern two. It's very difficult to count the number of subarrays. And when I solve those problems, you'll see why it is difficult. I'll show you examples and I'll show you why it is tough to understand when to expand and when to shrink. These kind of problems will be solved using pattern two. So it's very important to understand pattern two. So let me give you an example. I'll just go down and imagine I'm asking you, Hey, can you figure out the number of subarrays with some equal to K? Imagine this is a question. So typically these kind of problems, I'll not be solving this, I'll be solving this in that video. Typically these kind of problems will be solved in this way. Whenever I see a number of subarrays, not asked to figure out the length, number of subarrays and when there is a constant condition, it's a very constant condition. So whenever there is a constant condition, it's very tough to realize, tough to understand whether to expand or whether to shrink is pretty impossible to determine. So in such scenarios, what will happen is they'll break this problem into two things."
+    },
+    {
+      "chunk_id": "L272_C28",
+      "start": 1997.92,
+      "end": 2072.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=1997s",
+      "text": "whether to shrink is pretty impossible to determine. So in such scenarios, what will happen is they'll break this problem into two things. Find out the number of subarrays where some is lesser than equal to K. This is how we will be solving. Some is lesser than equal to K and then you again find out the number of subarrays where the sum is lesser than equal to K minus one. This is what you'll do. And once you figured this out, you basically do a subtraction. Imagine this is X, imagine this is Y. So the answer will be X minus Y always, always. You'll see me solving this and this particular problem can be solved using the pattern two. I'll be solving a bunch of them. Do not worry, I'll be solving this exact problem itself. So that will be the pattern three. Now the next pattern is pattern four, pattern four, which is finding the shortest or the minimum window or length, whatever they can call and then the condition. And this is also a very rare case scenario. You'll not be finding a lot of problems in it. I'll be solving one problem to explain you. It's pretty much identical, pretty much identical."
+    },
+    {
+      "chunk_id": "L272_C29",
+      "start": 2072.84,
+      "end": 2152.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=2072s",
+      "text": "lot of problems in it. I'll be solving one problem to explain you. It's pretty much identical, pretty much identical. So what we typically do is I'll just give you a overview and when I solve that problem in that particular playlist, you will understand. So what we typically do is we take an L and R right and then we move R and imagine this turns out to be a valid window. This turns out to be a valid window, right? What am I looking for? I'm looking for a minimum size. So once I've got a valid window, what I try to do is I try to shrink, I try to shrink, I try to shrink, I try to shrink and check is this a valid window or not. I try to shrink, shrink, shrink the window. I try to check if that shrinked window is a valid one or not. And the shortest shrinked window, whichever is valid, I store it as an answer. So typically whenever you asked as a minimum, you just get the window which is valid and then you shrink to figure out the smaller part. We'll be solving a problem. Do not worry about that. But the overall, every problem will be revolving around generating all the sub-arrays, expanding and shrinking and then using the if condition to make sure you're not shrinking it by too"
+    },
+    {
+      "chunk_id": "L272_C30",
+      "start": 2152.1,
+      "end": 2209.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=2152s",
+      "text": "around generating all the sub-arrays, expanding and shrinking and then using the if condition to make sure you're not shrinking it by too many places, just by one place, just by one place. So overall, this is very important. Keep this template, sorry, my bad. Keep this template in your brain because you're going to use it to solve most of the problems. This was more like an introductory video. It gave you an overview of how two pointers and sliding window are and most of the problems will be around this. You don't have to think a lot. Once you solve all the problems, I think we'll be solving around 10 to 12. I'm not sure. I'll be solving around 10 to 12. Once you solve all of these problems, you will be very much comfortable when you are appearing for an interview or for a coding round for that case. So this will be it for this one. So if you're still now watching and if you've understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's be in some other video. Till then, bye, take care. Whenever your heart is broken, don't ever forget your golden. I will find a light in the darkness. I will find a light in the darkness. I will find a light in the darkness."
+    },
+    {
+      "chunk_id": "L272_C31",
+      "start": 2209.46,
+      "end": 2215.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=9kdHxplyl5I&t=2209s",
+      "text": "I will find a light in the darkness. I will find a light in the darkness. I will find a light in the darkness. I will find a light in the darkness. I will find a light in the darkness. I will find a light in the darkness. I will find a light in the darkness. I will find a light in the darkness. I will find a light in the darkness. I will find a light..."
+    }
+  ]
+}

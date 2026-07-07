@@ -1,0 +1,36 @@
+{
+  "lecture_id": "L281",
+  "lecture_number": 281,
+  "lecture_title": "L10. Count number of Nice subarrays | 2 Pointers and Sliding Window Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=j_QOv9OT9Og",
+  "chunks": [
+    {
+      "chunk_id": "L281_C1",
+      "start": 0.0,
+      "end": 76.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=j_QOv9OT9Og&t=0s",
+      "text": "So, let's continue with the two pointer and sliding window playlist from the striver's A to Z DSA course. Whatever starting off, Avery, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is count the number of nice sub-arrays. So what is the problem stating? Stating that, you'll be given an arms array. It can contain any possible integer. You'll be given a value k, right? Now your task is to count the number of sub-arrays. Now what is a sub-array? Contiguous portion of the array. You'll have to count the number of sub-arrays where the count of odd integers is exactly equivalent to the given integer k. Let me explain. If I pick up this contiguous portion of the array, the number of odd numbers in it is two, right? And the number of even is one. So this sub-array cannot be counted as a nice sub-array. Which one can be a nice sub-array? If I pick up this portion, this can be a nice sub-array because I have three odd numbers which is one, one, one and I have one even number which is two. So this can be a possible nice sub-array. So that's one."
+    },
+    {
+      "chunk_id": "L281_C2",
+      "start": 76.8,
+      "end": 156.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=j_QOv9OT9Og&t=76s",
+      "text": "one and I have one even number which is two. So this can be a possible nice sub-array. So that's one. I can also pick up this one and this is also a nice sub-array because I have three odd numbers and that is what is the value of k. So this is the problem statement. So overall in like for this particular example, I can see that there are two nice sub-arrays and that is what you will have to return. Got it? Now before getting into the solution, there is a small prerequisite. Please please pause this video and go back and watch my video on binary sub-arrays with sum. Please go back and watch it. Now in that particular problem statement, we were given an array. The array had one and zero in it. It was a binary array. We are given a value goal and the problem was stating, you will have to count the number of sub-arrays, number of sub-arrays where the sum is equivalent to the goal, where the sum is equivalent to the goal. I will try to convert this particular problem into that problem. Let's understand how. What if I say, hey listen, I'll consider all the odd numbers as one and all the even numbers as zero. If I consider this, can I say this one is the odd number, I can write it as one."
+    },
+    {
+      "chunk_id": "L281_C3",
+      "start": 156.16,
+      "end": 227.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=j_QOv9OT9Og&t=156s",
+      "text": "even numbers as zero. If I consider this, can I say this one is the odd number, I can write it as one. This one is the odd number. This could have been five as well. I don't care if it's an odd number, I just write it as one, right? This two is an even number, I can write it as zero. This one is an odd number, I can write it as one. This one is again an odd number, I can write it as one and K is three. Can I say, can I say, I'm counting the number of sub-arrays where the sum is equivalent to K. Can I say this? Isn't it? Because if I pick up this particular sub-array, I know this is odd, this is odd, this is odd and the sum will be three, which is equivalent to K. This problem is nothing but similar to the previous problem. Yes, it is the exact same problem. What the problem setter has done is he has just twisted a bit of words here and there. So, it's very important that you identify such problems, right? So what you can do is you can pick up the same solution. Yes, you can pick up the same solution and the only changes that you'll have to do is, okay, we're adding sum plus nums are, instead of that, if it's an odd number, you can straight"
+    },
+    {
+      "chunk_id": "L281_C4",
+      "start": 227.78,
+      "end": 286.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=j_QOv9OT9Og&t=227s",
+      "text": "that you'll have to do is, okay, we're adding sum plus nums are, instead of that, if it's an odd number, you can straight away do a modulo two, because on modulo two, if it's an odd number, it will give you a one. If it's an even, it will give you a zero. Same over here, when you're subtracting, again do a modulo two. If it's an odd number, you'll subtract one. If it's an even number, you'll subtract zero. The problem is exactly similar. Copy paste this particular solution and use this formula, it will be running absolutely fine. So, I hope you understood how to identify patterns in problem. It is very, very important. The problem setter or the interviewer might twist some of the known problems. It's important that you are able to recognize these set of problems. I hope you understood it. So, if you're still now watching and if you've understood this one, please, please do consider giving us a like and if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's me in some other video. Till then, I take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

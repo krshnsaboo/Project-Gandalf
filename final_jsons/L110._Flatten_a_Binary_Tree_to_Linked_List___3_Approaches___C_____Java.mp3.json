@@ -1,0 +1,141 @@
+{
+  "lecture_id": "L110",
+  "lecture_number": 110,
+  "lecture_title": "L38. Flatten a Binary Tree to Linked List | 3 Approaches | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4",
+  "chunks": [
+    {
+      "chunk_id": "L110_C1",
+      "start": 0.0,
+      "end": 67.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=0s",
+      "text": "So before starting this video, I would love to thank Relible for sponsoring this entire three series. So do you wish to work with companies like CRED, UpGrad, Urban Company, Raise Your Pay but you are not able to apply because of your lack of experience and lack of opportunities? So here's the solution to this problem. Relible by Unacademy is a hiring platform that helps freshers and experienced people to get jobs in India's top companies. All you need is skills. So what you need to do is you just need to give the Relible test that is completely based on your skills. Depending on your performance, your interview will be scheduled and you will be hired from the Relible platform and the best thing about this is it's absolutely free. So what are you waiting for? Please make sure you check out the links in the description. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, flatten a binary tree to a linked list. Now you might be thinking, oh, this is an easy problem. What is tough in it? But it is tough. It is tough. Let me tell you, how do you need to flatten it? And then I'll tell you why it is tough. So basically what do you need to do is you need to make this a linked list into something like this. Okay."
+    },
+    {
+      "chunk_id": "L110_C2",
+      "start": 67.68,
+      "end": 144.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=67s",
+      "text": "is tough. So basically what do you need to do is you need to make this a linked list into something like this. Okay. Like a linked list like this. So if you write down the pre-order of this, it's going to be one, two, three, and then a four, then a five, then a six, then a seven. So whatever is the pre-order of this binary tree, that is how you have to represent a linked list. Now you'll be like, Striver, that is easy. Isn't it? Why? Because Striver, what we will do is we will take one, we will create a node. We will insert one. Then we'll create another node, insert two and point one to that. And we'll again create another node and insert three. This is where you'll go wrong. You don't have to create a new linked list. No, you don't have to create a new linked list. You have to rearrange these nodes. I repeat, you have to rearrange these nodes such that one's right should be pointing to two, two's right should be pointing to three, three's right should be pointing to four, four right should be pointing to five, five's right should be pointing to six, six right should be pointing to seven. That is what you have to do in order to flatten a binary tree to a linked list. So definitely you cannot create an external. You have to rearrange the tree. Okay. Okay."
+    },
+    {
+      "chunk_id": "L110_C3",
+      "start": 144.14,
+      "end": 215.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=144s",
+      "text": "to flatten a binary tree to a linked list. So definitely you cannot create an external. You have to rearrange the tree. Okay. Okay. So how to solve this problem? So, so what will be the recursive solution? So if I just think of this first, if I just break down this link and I attach it to six right, that that'll make it seven. Okay. Now what if I just break this link and I break this link and I take this entire tree and I just convert this tree into something like two, three, four, and then I have one's right attached to two and four's right attached to five. I think, I think this is, this is how I can actually do. So in short, in short, can I say, like if I just think it in a very distant manner, can I say if I can do a traversal so that I can reach six at first, which will ideally mean that I have to traverse first right, right? And after that, after that I can do the other job because first I'll go in, I'll do the job for seven, then I'll come back and do the job for four and then the job for two and so on. So ideally it should be left and then right first, right, then left, then root. Like that should be the logical solution because first I'll arrange seven, then I'll arrange"
+    },
+    {
+      "chunk_id": "L110_C4",
+      "start": 215.16,
+      "end": 276.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=215s",
+      "text": "and then right first, right, then left, then root. Like that should be the logical solution because first I'll arrange seven, then I'll arrange these guys, then I'll make, then I'll work with one. So it's kind of a right, then a left, then I'll work with the upper guys. Perfect. So right, left, root. It's not a post order, it's not an in order, it's not a pre order. It's kind of a reverse post order. You can call it reverse post order if you want to. So this is what my thought process will be. I'll try to do a reverse post order kind of a thing and try to first attach seven to six and then probably four to five and so on. That is what my thinking will be. Okay. So let's see how I can do that. Okay. So this is the piece of recursive code that's going to work for the kind of approach that I was discussing. I'll be like, how did you come up with this? It's a very easy one. I'll explain you about the intuition while explaining the code because if I explain the intuition normally, you will not be able to connect it. So once you understand the code flow, then understanding the intuition won't be a big deal. Okay. So what I'll do is I'll initially have previous equal to null. Okay. I'll start with the root. So that's where I start off with."
+    },
+    {
+      "chunk_id": "L110_C5",
+      "start": 276.68,
+      "end": 356.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=276s",
+      "text": "what I'll do is I'll initially have previous equal to null. Okay. I'll start with the root. So that's where I start off with. And then I go to the right. So that's where I go, right? And I again come back and I again go to the right. Perfect. Then I again come back, go to the right and I find a null. So I'll return. So when I return, the right is done. So I'll go to node.left. So this is where I go. Now, this one has no right, no left. So I can say, when I'm at seven, the right is null, the left is null. So nodes right should be pointing to previous. So nodes right is pointing to null. And nodes left should also be pointing to null. Why is nodes right pointing to null? Because previous is initialized as null. Perfect. So, since I did not need to do any modification, I made it as like this null. Okay. So once they have been pointed to null, it's time that previous should be updated with seven. So please update previous with seven. Now what's the next step that you'll do? Six digits right, right? Six digits left. Six will perform these. See, six does what? Six is my right will be connected to previous. That is seven. That is seven. So six right is connected to this node itself."
+    },
+    {
+      "chunk_id": "L110_C6",
+      "start": 356.64,
+      "end": 432.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=356s",
+      "text": "is my right will be connected to previous. That is seven. That is seven. So six right is connected to this node itself. And nodes left is now null. So it says it will be null now. So we just erase it. This is nothing but null. Perfect. After that, I'm saying previous is six. So I updated previous to six. So understand what I did. Since I was doing a traversal of right and left, the moment seven was completed, I stored seven in previous. And the moment I came back to six, right and left was completed for six. So I took those previous guys, I attached it to six correct. Simple as that. And now the previous is six. So this time five, I'll come back to five. Five's right is over. Left is no one. So five's right points to previous. That is to six. And this is to null. This will point to null. Simple. Again, come back. Once right is over. Remember, when you come back, previous will be updated to five. Because five points to six, points to null, and then previous is assigned. Perfect. Now you come back to here. Now when you go to the left, you are at two. So right is done. Left is still waiting. Two's, you'll go to the right. This guy doesn't have a right, doesn't have a left. So no more going into the flat and flat."
+    },
+    {
+      "chunk_id": "L110_C7",
+      "start": 432.96,
+      "end": 507.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=432s",
+      "text": "you'll go to the right. This guy doesn't have a right, doesn't have a left. So no more going into the flat and flat. So this guy will now say my right will be previous. So this is the last guy that you completed for. I hope you're getting the intuition. This is the last guy for which you completed the entire post order. So what you'll do is you'll say, okay, why did you go and attach it? So nodes right went in and attached to five. That is what I was wanting. I was saying nodes left will be null. That is okay. Now I'm saying four, this is the last guy whose entire stuff is done. So previous will be four. Perfect. Comes back. Two's right is done. Two goes to the left. Three. Three. Right. No right. No left. So again, three's right will be pointing to four and no left. So the previous will be updated to three. Perfect. So now comes back to two. Two says, Hey, I've done right. I have done left. So two will say, okay, it's my time. My right, my right should point to previous. That's three. So it will point to three now and it's left should point to null. So three's, if you remember three's right was pointing to four. That is over. So that, that is what I'll do. Perfect."
+    },
+    {
+      "chunk_id": "L110_C8",
+      "start": 507.24,
+      "end": 576.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=507s",
+      "text": "null. So three's, if you remember three's right was pointing to four. That is over. So that, that is what I'll do. Perfect. So I can say two's right is pointing to three and two's left is null. So now I've completed for two. So the previous will be two. Perfect. Now you come to one. One says my right is over. My left is over. So one has to now do its job. One says my right should be pointing to the previous. That's two. So one's right now points to ultimately two. Like that's the right node. That's the right node that's pointing to two and it's left points to null. So ultimately if you rewrite this, now this is over. The next time the previous will be one and it's over. Ultimately if you rewrite this, this is equivalent to saying one's right points to two, two points to three, three points to four, four points to five, then to six and then to seven and so on. Correct? So what I did was very simple. The guys whose post order was completed, I stored in previous. And whenever I went to that, I just attached it. I just attach it to that. That is what I did using these couple of lines. I attached it to the previous guy whose reverse post order was completed and I made sure there was no left out."
+    },
+    {
+      "chunk_id": "L110_C9",
+      "start": 576.88,
+      "end": 650.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=576s",
+      "text": "lines. I attached it to the previous guy whose reverse post order was completed and I made sure there was no left out. Two lines and I since right and left calls are over for node, I said this guy is the new guy whose reverse post order is completed. That's it. That's as simple as that. What's the time complexity? The time complexity stands out to be big O of n and the space complexity also stands out to be big O of n assuming the worst height is big O of n. That's about the recursive solution. So the second solution that I'll be discussing will be an iterative solution that uses a stack. Now you don't need to tell us in the interview, just know this. And again, I've written the code. I'll be telling you the intuition while explaining the code so that it gets more clear. It's basically an extension of the recursion, nothing else. So initially you take a stack, you have the root node into that. Now stack is the last in first out data structure. Remember that it's the last in first out data structure. So initially you take a stack and it will have a one into that. So first time come in and curve will say st.top and top. So curve will be one. Next, does curve have a right? Yes, that's five. Does curve have a left? Yes, that's two. Insert that. Right after that, right after that."
+    },
+    {
+      "chunk_id": "L110_C10",
+      "start": 650.12,
+      "end": 725.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=650s",
+      "text": "does curve have a right? Yes, that's five. Does curve have a left? Yes, that's two. Insert that. Right after that, right after that. Curve is one, right? So over here what we'll do is we'll say once right should be st.top. So once right should be two. So I'm directly saying, Hey one, you're right. Should indeed be two. That is what I'm saying. Hey one, you're right. Should be indeed be two. So what I'll do is I'll just use the yellow colors to mark the right links. Okay. After that, I'm saying, Hey, your left is null. So I'll use the red colors to mark null. So your left is null. Perfect. Right after that, I have done this. So I come back again and curve will be like, take two. Okay. So curve will take two. So I've taken two, right? Now the moment I have two, the moment I have two, I again do the same thing. Take the right, take the left and put it into the stack. Taken. Perfect. This time I'll say two, your right should be three. So I'll take the top and I'll link it. So two, your right should be three. And I'll say two, your left should be null. So that's, that's what we are doing over here and over here. So once you've done this next, you will take the curve to be the next guy. That's three. So I've taken it three."
+    },
+    {
+      "chunk_id": "L110_C11",
+      "start": 725.42,
+      "end": 787.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=725s",
+      "text": "here. So once you've done this next, you will take the curve to be the next guy. That's three. So I've taken it three. Now you're saying three, do you have a left? No. Do you have a right? No. So we don't have anyone. So ultimately we don't have anyone. So this time we do not push anything, but we see stack is not empty and stack is having four. So we are saying three's right should point to four. Again, I'm using yellow pointers. Three's right should point to four. And three's left should point to null. Red point is for that. Done with this. Next, I come again, again, and I say four. So the moment I have four, I can see there is no left, there is no right. So nothing to be pushed into the stack. This time four says, four has been taken out. The same four says, who's the top? That's five. Four says, okay, connect my right to that. And connect my left to null. Okay. Pretty straightforward. So you see one's right getting connected to two, two's right getting connected to three, and three's right getting connected to four, four's right getting connected to five. Okay. By the way, just make sure these links, like these links will not be there because you have reassigned these links. So these links will not be there. Perfect. So once you're done for four, it's time that you take out five."
+    },
+    {
+      "chunk_id": "L110_C12",
+      "start": 787.54,
+      "end": 864.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=787s",
+      "text": "reassigned these links. So these links will not be there. Perfect. So once you're done for four, it's time that you take out five. So next time it's five. Five says, I have a right, that's six, but I don't have a left. Okay. Five's right points to six. Okay. And five's left, that's null. Nice. Next time you again come back and this time five will be changed to six. Six will say, I don't have a right, but I have a left, that's seven. And I put it. This time six says, my right will be seven and my left will be null. Perfect. Next time when you come across, you have seven. So seven says, I don't have a left, I don't have a right. So nothing to insert. And the stack is indeed empty. So curr right will be not pointing anywhere and curr left will be null. And I can say my stack is empty and I have ended my iteration. Once my iteration has ended, can I say like, if I just join the yellow dots, it's going to be one, two, like yellow are the right dots, right? Three, then a four, then a five, then a six, and then a seven. And that's, that's how you can flatten a binary tree to a linked list. Very straightforward. Insert right, insert left, and then just make sure you connect them right."
+    },
+    {
+      "chunk_id": "L110_C13",
+      "start": 864.34,
+      "end": 941.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=864s",
+      "text": "flatten a binary tree to a linked list. Very straightforward. Insert right, insert left, and then just make sure you connect them right. Again, it's very intuitive because you're inserting right and inserting left. Like if you just understand the intuition, it's two and it's like, just assume the smaller binary tree. So what are you doing is you're inserting three, you're inserting two. And right after that, you're saying, Hey, let's do one thing. Let's connect this one to whichever is at the top, like connect this one's right to whichever is at the top. So since we're inserting left at right, at the second time, so one's right will automatically get connected to two, right? And after that, two will automatically get connected to three. That's why the intuition is often entering right first, then for left. So that whenever you have the right attached, you automatically get it attached to the next guy. So that's the simple intuition behind inserting right first and then the left. Time complexity again stands out to be big O of n, space complexity big O of n. So we haven't significantly improved anything except ignoring recursion. So in the method tree, we will be using a big O of 1 space. Now if you haven't seen my Moist Traversal, I'll recommend that you should definitely watch it and you can watch it afterwards also. But if you have watched it previously, then it will be a very big plus."
+    },
+    {
+      "chunk_id": "L110_C14",
+      "start": 941.42,
+      "end": 1015.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=941s",
+      "text": "watch it and you can watch it afterwards also. But if you have watched it previously, then it will be a very big plus. So let me explain what will be my thought process. Now can I say, can I say, since this Bany tree has to be converted into a linked list and essentially it's a pre-order, correct? So logically this four should always connect to this five, right? That's the logic. This four should always connect to the right, the five. Why, why, why does this four has to connect to five? Again a logical answer will be since it's pre-order, this is the left subtree, this is the right subtree. So first we will have this, then we will have the entire left subtree and then the last guy of the left subtree that's left, what is the pre-order? That's basically root left, right, root left, right. So first you'll have root, that's one, then the left guy. So again, root left, right. So root left, right. And then again five and so on. That is what you will ultimately have. So I can see that what if I can actually do a connection like this and then I can connect this once right to two. Like if I just do a connection like this, I think my job should be done, right? So that is what I'll try to do."
+    },
+    {
+      "chunk_id": "L110_C15",
+      "start": 1015.38,
+      "end": 1075.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=1015s",
+      "text": "I just do a connection like this, I think my job should be done, right? So that is what I'll try to do. On the left subtree, yes, on the left subtree, I'll try to figure out which is the right most leg, which is the last guy of the pre-order, which is the last guy of the pre-order and whichever is the last guy of the pre-order, I'll try to connect it to the right of this guy because that is essentially what we have to do, correct? So we will be writing the code, keeping this in mind. So let's write that. So this is how the code will look like. Again, doing a dry run will make things further clear. So initially I have a current which is a one, which is standing at the root of the tree. So ideally I have to connect this four to five, right? So what I'll do is, I will first see if cur has a left because if there is a left, then only it will get connected between one and five, right? If there is a left only. So if it is having null, not having null, then I'll take a previous, okay? So let's take a previous which is saying I am two. Okay, so I've taken a previous which is two. What I'm saying is, go on till previous right is not null."
+    },
+    {
+      "chunk_id": "L110_C16",
+      "start": 1075.86,
+      "end": 1152.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=1075s",
+      "text": "am two. Okay, so I've taken a previous which is two. What I'm saying is, go on till previous right is not null. So previous will say, okay, I can go on four, but I cannot go beyond four because four's right is null. So I'll go till four. Perfect. Now I'm saying four's right, why don't you go to cur's right? Cur is one, four's right, that's this. Why don't you go to cur's right? Perfect. Next I'm saying, cur's right should be cur's left. So I'm saying, this guy. So one's right is pointing to two and I've made sure that this happens. The next thing that I just need to do is, I have to make sure three comes in between them. So I've done the first thing. Perfect. Next I'm saying, cur, why don't you move to cur right? So cur's right is two. So I moved it. Perfect. Next, let's come back again. Does two have a left? Indeed, it has. So previous will be this time three. And I'll go on to right if there is any. So that doesn't exist any right. So this while loop will not be executed. I'm saying previous right, previous is three, it's right, should point to cur's right. So it's point to here. Again, super simple. And I'm saying, cur's right, this guy's right, should point to two. Perfect. Next I'm saying, cur, why don't you move right? So cur now will move to three. Perfect."
+    },
+    {
+      "chunk_id": "L110_C17",
+      "start": 1152.7,
+      "end": 1225.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=1152s",
+      "text": "guy's right, should point to two. Perfect. Next I'm saying, cur, why don't you move right? So cur now will move to three. Perfect. Again, you come back. Cur's left. Does three have a left? No, it doesn't have. So this time, cur will move to again to cur right without actually performing these steps. So cur this time moves to cur's right. That's four. Does four have a left? No. So cur will again move to right. That's five. Does five have a left? No. So cur will again move to six. Next, does cur have a left? Yes. So this time if it has a left, cur will be six. Now again, we'll do the same thing. So the next time you come across to six and the previous will be seven, right? Because it has a left, so it has a seven. So while will not be executed. So previous right should be pointing to null. And cur's right, that is cur this, this right should be pointing to cur's left itself. So this is the new node that will be created. Cur's right will be pointing to seven itself. Perfect. Next, this time, cur will say, I'll move to right. So this time, cur will say, I'll move to right. Six will move to right. Does seven have a left? No. So seven will say, I'll again move to right. Seven this time moves to null. The moment cur reaches null, I can say it's over."
+    },
+    {
+      "chunk_id": "L110_C18",
+      "start": 1225.22,
+      "end": 1293.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=1225s",
+      "text": "So seven will say, I'll again move to right. Seven this time moves to null. The moment cur reaches null, I can say it's over. And if you just see the yellow linings, one goes to two, then to three, then to four, then to five, then to six, then to seven. Joint everyone. Again, the intuition is very simple. On the left subtree, whichever is the last guy, which will be performed on pre-order, I just took that and connected to the right of the current node. That is what the simple intuition is. I repeat, on the left subtree, whichever is the last node of pre-order, I connected it to the right of the node, right of the root. That's it. That is what I needed to do. And I just kept on doing that for every tree. And ultimately I could easily traverse and change the pointers in big of n time and big of one space. That's very important. Big of one space is what I took. So that is how we will do this. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also if you wish, you can definitely drop in a comment that will keep motivating me to make such further series."
+    },
+    {
+      "chunk_id": "L110_C19",
+      "start": 1293.66,
+      "end": 1303.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=sWf7k1x9XR4&t=1293s",
+      "text": "entire tree series. Also if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you are new to this channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

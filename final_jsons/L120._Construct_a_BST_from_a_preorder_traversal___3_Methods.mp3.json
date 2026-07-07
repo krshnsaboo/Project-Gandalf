@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L120",
+  "lecture_number": 120,
+  "lecture_title": "L48. Construct a BST from a preorder traversal | 3 Methods",
+  "youtube_url": "https://www.youtube.com/watch?v=UmJT3j26t1I",
+  "chunks": [
+    {
+      "chunk_id": "L120_C1",
+      "start": 0.0,
+      "end": 76.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=0s",
+      "text": "Hi everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem construct a binary search tree from a given pre-ordered traversal. Now what's a binary search tree? It's basically if you have a node then everything to the left of that node will be smaller than this node's value and everything to the right of this node will be greater than this node's value. That is the unique thing about binary search tree. If you want to know more in detail you can check out my entire playlist. Now what is the question? So you will be basically given a pre-order. Yes, a pre-order like 8, 5, 1, 7, 10, 12. If I take this example and you have to draw the corresponding binary search tree for this given pre-order and once you have created this corresponding binary search tree, you have to just return the root of that binary search tree. Yes, that is what you have to do. So how will you solve this problem? What's the brute way to solve this problem? The brute way to solve this problem is to manually, naively create the binary tree. Now when I say naively, what does that signify? Let's check that out. So initially you have 8. Now you know what is pre-order. Pre-order is basically root or node left."
+    },
+    {
+      "chunk_id": "L120_C2",
+      "start": 76.2,
+      "end": 148.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=76s",
+      "text": "signify? Let's check that out. So initially you have 8. Now you know what is pre-order. Pre-order is basically root or node left. That is what we call as pre-order traversal. So we definitely know that this is the root of the binary search tree. So we can say that this is the root of the binary search tree. Next we come across to 5. Now whenever we come across to 5, we know everything to the left of 8 should be smaller than 8. So 5 can be inserted over here. So 5 is also inserted. Next time we come across to 1. Now when we come across to 1, we know everything to the left of 8 is smaller than 8. We know everything to the left of 5 is smaller than 5. So 1 gets inserted over here. Now when we come across to 7, everything to the left of 8 is smaller than 8. So we come over here. That is over here. And then everything to the right of 5 is greater than 5. So 7 is greater than 5. That gets inserted over here. Next we come across 10. Now 10 is greater than 8. So it goes over here. Next we come across 12. 12 is also greater than 8. So we just come over here and it's like tapping. So this is how you can naively create the binary search tree from the given pre-ordered traversal."
+    },
+    {
+      "chunk_id": "L120_C3",
+      "start": 148.36,
+      "end": 215.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=148s",
+      "text": "come over here and it's like tapping. So this is how you can naively create the binary search tree from the given pre-ordered traversal. What's the time complexity? Now there are big O of N. Like there are N nodes. And for every node you are determining left, right, left, right. Where do we need to insert it? You're always determining that, right? So I can say you will be taking a big O of N time if it's a skew tree. Like if you're given a tree like this, then you end up taking an entire lot of time to insert every particular node. So the worst case that can be big O of N into N. And there is no external space that you're using apart from the one that you're using to create this tree which is needed. So we do not consider that. So this will be the absolute brute method. Now what can be a better method? Let's check that out. A better method will be, we know that, if you have seen my previous video, a binary search tree's in-order traversal. You remember that property, the in-order traversal will always be sorted. So can I say if the given pre-order traversal consists of all the nodes of BST, if it consists of all the nodes of BST, so if I sort them, will I get the in-order?"
+    },
+    {
+      "chunk_id": "L120_C4",
+      "start": 215.48,
+      "end": 289.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=215s",
+      "text": "the nodes of BST, if it consists of all the nodes of BST, so if I sort them, will I get the in-order? I think logically yes. So why don't I sort them? So I will sort them, then the in-order will be 1, I think 1, 5, 7, 8, 10, 12. That is what the in-order will be. Now if you remember my one of my previous videos in this particular playlist, whenever you have the pre-order, whenever you have the in-order, I think you can create a binary tree. You can. So you have a pre-order and in-order. So a unique binary tree can be created which will come out to be BST. So I think we are good to go. So in case you want to know how to create a binary tree, if you are given pre-order as well as in-order, you can check my video out in this particular playlist only. So I can say that the time complexity will be, I will have to sort the pre-order in order to get the in-order. So that will take n log n and then I will take another big O of n in order to create the BST from the pre-order as well as the in-order. And the space complexity, apart from the tree, I'll be requiring is big O of n in order to store the in-order in some container or vector or a list or an"
+    },
+    {
+      "chunk_id": "L120_C5",
+      "start": 289.08,
+      "end": 361.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=289s",
+      "text": "I'll be requiring is big O of n in order to store the in-order in some container or vector or a list or an array, whatever you wish to take. So that is what the time complexity will be. What's the extra stuff that you're using? A log n. Now I don't want that. So that is where the efficient method will come in. So it's now time to check out the efficient method where we do it in a big O of n time. So let's check that out. Now we know one thing. Now if you have seen my previous video, that is check if a BT is a binary search tree. I'm assuming you have seen that. So if you have seen that, now you know one thing, you know one thing. If there's a node, it will always belong to a range. That is the starting node will always belong to minus int mean, like that is int mean to int max. And the left one will always be lesser than this guy. So it will belong to minus int mean, the upper node value. And the right one will be from the node, like it will be greater to int max. So if you remember this, I think you remember this. So this is the logic that we will be using in order to create the binary search tree. So let's see how can we use that. Now do we require to"
+    },
+    {
+      "chunk_id": "L120_C6",
+      "start": 361.8,
+      "end": 429.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=361s",
+      "text": "will be using in order to create the binary search tree. So let's see how can we use that. Now do we require to carry both the ranges? Assume this to be L and R. Do we require, do we need both the ranges like the lower bound and the upper bound? The answer to that will be no. If we just carry the upper bound, then I think it will work. Why the lower bound is not required, I'll tell you that while I give you the algorithm. I'll tell you the intuition. So as of now, assume whenever you start off, yes, whenever you start off, you say that the upper bound is int max. That's when you start off, you say upper bound is int max. That's the maximum number possible. So initially you will come across to this particular number. That's eight. Yes. Initially you'll come across to the number eight. Now you say, okay, the upper bound is int max. Is eight inside that upper bound? You'll be like, yes, indeed it is. So let's put that in. So I put that eight inside that int, like inside that node. Now I have a node. I need its left. I need its right. Now I know one thing, pre-order is root and then comes left and then comes right. So there might be a left to the root. There might be. Now"
+    },
+    {
+      "chunk_id": "L120_C7",
+      "start": 429.24,
+      "end": 499.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=429s",
+      "text": "is root and then comes left and then comes right. So there might be a left to the root. There might be. Now there might be a binary search tree, which is something like this. No, like no left. There might be no left. So there might be a left or there might not be. And if there is a left, like this is the left in this case, but you're not sure how much, how many elements are in the left. You're not sure. So can we use the property that I know one thing for sure that everything to the left, everything to the left will be smaller than eight. Can I use that property? I think I can. And if I use this property, like if you look at a distance, all these elements are lesser than eight. Thereby you can easily determine, okay, these guys are part of your left. Make sense? Indeed. So what I'll say is, okay, I'll go left and I'll say, Hey, I'll give you the upper bound as eight, not more than that, because you cannot exceed eight. Like you cannot even touch eight. I'm like, okay, makes sense. So currently my pointer will be at five because it has been taken. So if I'm standing at five, yes, if I'm standing at five, what will I do? I'd be like, can this be a node? I'd be like, yes, because it is still lesser than my upper bound. Perfect."
+    },
+    {
+      "chunk_id": "L120_C8",
+      "start": 499.56,
+      "end": 568.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=499s",
+      "text": "I do? I'd be like, can this be a node? I'd be like, yes, because it is still lesser than my upper bound. Perfect. So this guy is a root now. Now, you know, again, some part will be left, some part or might not be, or might not be. So how do I determine that? Again, I'll go left and I'll say, Hey, I know one thing for sure. You will be lesser than five. I'm like, yes, that is something which is definite. So this time I'll be over here. Can one be a part of the left? I'd be like, yes, because that's still lesser than five. So this time this guy becomes my root. Perfect. So I have a root. I need the left. So I go to the left. I say left. Hey, listen, listen, your upper bound will be one because you cannot exceed one. This time, whenever you are at seven, seven says, no, dude, I cannot be on the left. So I say, okay, let's return a null. So this guy gets a null. So it assigns it a null. So he says, okay, I cannot be on the left, but can I be on the right? Can I be? I think I can. So I will go to the right and I'll say, okay, go to the right. But hey, listen, your upper bound will be five this time, not one because you're going to the right. You're going to"
+    },
+    {
+      "chunk_id": "L120_C9",
+      "start": 568.8,
+      "end": 631.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=568s",
+      "text": "the right. But hey, listen, your upper bound will be five this time, not one because you're going to the right. You're going to the right. So you know, one thing that this five is there. So everything to the left of this will be lesser than five. So you pass on the same upper bound. You pass on the same upper bound saying, okay, whenever you go to the right, you take the same upper bound and go. Perfect. Now you're at seven. Can seven be a part of this? I don't think. I don't think because that's not possible. So I hope you have understood. Why did I not require a lower bound? Why did I not require a lower range? The reason is very simple. If seven cannot be planted here, which means seven is greater than one. So this is automatically checking, like working for the low bound. Correct? So seven can also not be planted here. So I come back to here. When I come back to here, this has a right to go. So this time it'll go to the right and I'll say, okay, I'll pass on the upper bound to be eight because five is here. So this upper, like everything to the left of the eight is lesser than eight. So the upper bound of eight is first. Now I say, okay, can seven be a part? He says,"
+    },
+    {
+      "chunk_id": "L120_C10",
+      "start": 631.72,
+      "end": 698.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=631s",
+      "text": "is lesser than eight. So the upper bound of eight is first. Now I say, okay, can seven be a part? He says, yes, I can be a part. Amazing. Now you'll go to the left and you pass the upper bound to be seven because you have to have everything lesser than seven. Now whenever you are 10 and cannot be a part, so it makes it a null and goes back to seven. Seven goes to the right and says, hey, my upper bound will be eight this time because I'm going to the right. Can 10 be a part? No. So it again has a null and goes back. So ultimately from here you come here. Seven has no left, no right. So null and null comes back. This guy has the left, has the right, so goes back. Now you're at eight. Eight says, okay, I'm at 12 as of now. As of now I'm at 12. I need to place 12. So my left portion is done. I need to go to the right. So let's go to the right. The moment you go to the right, you say, okay, the upper bound will be int max because this was the upper bound that I'll carry off because I'm going to the right. Now at this portion, can I have 10 placed? Yeah, sorry. I was at 12. I was at 10. Absolutely. Sorry. Not at 12, I was at 10. Can I place?"
+    },
+    {
+      "chunk_id": "L120_C11",
+      "start": 698.12,
+      "end": 773.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=698s",
+      "text": "10 placed? Yeah, sorry. I was at 12. I was at 10. Absolutely. Sorry. Not at 12, I was at 10. Can I place? I'll be like, yes, I can. Now the question arises, can you go left? If you go left, the upper bound is 10 and then 12 and then 12 is not possible. So you will be like, not possible. Let's go back. Now you go right and you say the upper bound is int max. So 12 is possible here. You place it and then you go back because there are no remaining elements. So ultimately you end up forming this entire BST. So you just have to carry this upper bound whenever you call left. Now something critical to observe. If you're calling left, then this guy, the node val will become the bound, the upper bound if you're calling left and if you're calling right, then the previous, like whatever it was, eight will be transferred if it does int max transferred, if it does five transferred. So you're basically transferring the bound if you're going route, right? If you're going right, you're transferring the bound. If you're going left, you're taking node.val. Remember? And this is a very global pointer that you have to maintain so that you know at which element you are at, at every junction, correct? And once you run out of elements, it's over. Or if you reach a point"
+    },
+    {
+      "chunk_id": "L120_C12",
+      "start": 773.44,
+      "end": 842.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=773s",
+      "text": "which element you are at, at every junction, correct? And once you run out of elements, it's over. Or if you reach a point where you cannot place, then also you can return a null. So that are the two cases that you need to be careful of. So if I talk about the time complexity guys, what will be it? I'm just requiring how many traversals am I doing for a single node? First time I'm coming to five single traversal on a node, going to the left, doesn't matter. Again, coming back to five, two traversals, going to the right, again, coming back to the five. So five is like from up once, goes to the left, comes back, right, comes back. Three times you're visiting a single node at the worst case. If you're visiting three times, can I say it's a 3n, which is as good as we go off n because you won't be visiting 3n always. So that's as good as we go off n. And the space complexity, yeah, recursion is using a stack space, but yeah, not any external containers. So that will be the time complexity and the space complexity for this particular approach. And this is the best that we can do. So it's now time to check out the C++ as well as the Java code. So as usual, the C++ code is on the left and the Java code is on the right. So as you can"
+    },
+    {
+      "chunk_id": "L120_C13",
+      "start": 842.2,
+      "end": 905.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=842s",
+      "text": "Java code. So as usual, the C++ code is on the left and the Java code is on the right. So as you can see that we will be having a vector in C++ and in Java it will be integer. So initially we have kept the pointer. What is the pointer? Now, if you remember, we had a pre-order, right? So we initially, we had a pointer like the first element that we compared with bound, then we had the next element, then we had the next. So we need a pointer, right, to move across. So we have a pointer as I, and we say build, we have passed on the vector, the I as well as the upper bound. Initially, when you start off at the root, the upper bound is int max. So whenever we reach and we see that, okay, hey, listen, if we run, ran out of elements, like there are no more elements that has to be inserted into the BST. So at that case, that's over. Or if it is out of bound, we will say, okay, this is not possible over here. We can go back. So return a null in both the cases. And normally what you can say is, if this is not the case, that means it is okay. So you'll take that guy at the Ith index and you will say that, hey, listen, this will be a part of my current"
+    },
+    {
+      "chunk_id": "L120_C14",
+      "start": 905.04,
+      "end": 967.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=905s",
+      "text": "So you'll take that guy at the Ith index and you will say that, hey, listen, this will be a part of my current node. Like I'll form a root with that. And once I've formed that, I know that roots left will go with a root.val as the upper bound. But if it comes back, if it comes back, then it has to go to the right. And for the right, the bound will remain the same. Only whenever it goes to the left, the bound has to be, has to be self adjusted because whenever it goes to the right, if you remember the example, the moment it went to the right, int max remained as int max, correct? Whereas five, it remained as five. So over here, the similar stuff we will do, we will attach the left and we'll attach the right. Once they have formed, I can return the root easily. Now over here, int i will be passed by reference because the i will be changed. Like the pointer will be moving across throughout the process, correct? Now in Java, you cannot pass a reference to a variable. So what I've done is I've created an array of one size, yes, an array of size one. And since array can be passed by reference and I've used that array in order like arrays first element as it like the arrays first"
+    },
+    {
+      "chunk_id": "L120_C15",
+      "start": 967.96,
+      "end": 991.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=UmJT3j26t1I&t=967s",
+      "text": "array can be passed by reference and I've used that array in order like arrays first element as it like the arrays first index or the zeroth index as a variable because variables cannot be passed. So guys, I hope you have understood all the three explanations as well as the code just in case you did. Please, please, please make sure you like this video. And if you're new to this channel, please do consider subscribing because that is the only thing that keeps me motivated to make these kind of videos. And yeah, with this, I'll be wrapping up this video. Let's meet in some other video. Bye bye. Take care."
+    }
+  ]
+}

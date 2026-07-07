@@ -1,0 +1,211 @@
+{
+  "lecture_id": "L192",
+  "lecture_number": 192,
+  "lecture_title": "DP 11. Triangle | Fixed Starting Point and Variable Ending Point | DP on GRIDS",
+  "youtube_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0",
+  "chunks": [
+    {
+      "chunk_id": "L192_C1",
+      "start": 0.0,
+      "end": 76.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=0s",
+      "text": "Hey Viewers, Welcome back to the channel. I hope you guys are doing extremely well. So this is the 11th lecture of the Dynamic Programming Playlist. Yes, till now we have done DP on Grids, like we have done three problems on the DP on Grids, where there was a shuttle pattern where we always stated that the starting point is 0, 0 and the ending point is N-1 and M-1. This was the pattern of questions that we have done. Now going forward I will be solving three problems. Three problems where we will be having variable starting points. There might be a variable or a fixed starting point and the ending point will also be variable. When we will see the questions you will understand what does variable mean. But yeah, the variable, it will be variable. That's going to be the next set of three questions. So in order to start off, we will be taking the first question, which is triangle. So yeah, without wasting any time, let's get started. It states that you're given a triangular array, that's basically a triangle. Your task is to return the minimum path sum to reach from the top till the bottom row. The triangle array will have N rows and the ith row will"
+    },
+    {
+      "chunk_id": "L192_C2",
+      "start": 76.56,
+      "end": 154.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=76s",
+      "text": "to reach from the top till the bottom row. The triangle array will have N rows and the ith row will have I plus one element. So let's understand this. So basically there will be N rows and the ith row will be having I plus one elements. Now you can move only to adjacent number of row below each step. For example, if you are at an index J in a row I, then you can move to I or I plus one index in the row J plus one in each step. I'll explain you this. So this is the example. So let me just quickly write this down over in the iPad. So if you see over here, what the question stated was, this is the zeroth row. It will have one element. This is the first row. It will have two elements. Second row will have three elements. So that's why it's right angle triangle. Got this? Now it states that if you are over here, yes, if you're over here on a given row, you can move right to the bottom of the next row or you can move diagonally to the next row. So basically assume you are standing over here, you can move either to here or you can move either to six, but you can't move to 10 and either you can move to eight. So either you can move diagonally or right straight"
+    },
+    {
+      "chunk_id": "L192_C3",
+      "start": 154.48,
+      "end": 221.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=154s",
+      "text": "to six, but you can't move to 10 and either you can move to eight. So either you can move diagonally or right straight bottom. So they have said that there is a starting point. So over here, we need to understand that the starting point is fixed. Okay. So the starting point is fixed. What about the ending point? They're saying that the ending point might vary. Yes, the ending point might vary because what they are concerned is as long as you're reaching the last row, you can either reach here, you can either reach here or you can either reach here, or you can either reach here as long as you're reaching the star ending, ending row, we are satisfied. And in order to reach from the first row to the last row, there might be a path. How many different paths can be there? You might go from here to here, then from here to here, then from here to here, there can be some part like one, two, three, three to seven, seven to 10. They can be something like one, two, three, eight, right bottom. There can be a lot of parts. Okay. And in these parts, whichever part takes the minimum part sum, you have to tell me that. So for an example, I can say I can go from one to two to three"
+    },
+    {
+      "chunk_id": "L192_C4",
+      "start": 221.76,
+      "end": 296.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=221s",
+      "text": "sum, you have to tell me that. So for an example, I can say I can go from one to two to three and to eight, and this is like eight plus two is 10, 13, 14. So 14 is the minimum part sum. You can try out all the parts and the minimum that you will get is indeed 14. So going across, how do you identify that a greedy solution is, will fail? Again, uniformity concept that I have explained to you in the previous videos, if you have seen, it's not uniform because it might happen over here. Greedily you choose two and again, greedily you choose three and like greedily you're choosing right. And might happen somewhere down the line. There is a very smaller value you miss out just because you're choosing something which is very, very small on the upper half. So uniformity is not there because the values might be bigger, might be lesser. So whenever there is no uniformity in the increase, increment of values or decrement of values, then we can see that something like a greedy cannot be applied. Something like a greedy cannot be applied. So what do we tend to apply over there? Yes, we try out all the parts. We try out all the parts, right? And how do you do that? Again, very simple. We know we just have one way to try out all"
+    },
+    {
+      "chunk_id": "L192_C5",
+      "start": 296.6,
+      "end": 368.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=296s",
+      "text": "the parts, right? And how do you do that? Again, very simple. We know we just have one way to try out all the parts that as we travel through all the parts and that can be done using recursion. And by using recursion, what do you need to do is you need to find the part which gives you the minimum sum. And once you've done this, you're done. So in the great good problems, what have I told you? I've told you represent everything in terms of indexes and what are the indexes over here? I enjoy because in a great, we will always have the row number and the column number. What is the next thing that I've told you? Explore all the parts. So if you remember over here, yes, over here, the parts, what kind of parts are there? Either you can go here, either you can go diagonally, right? And after that you take the minimal of all the parts. And if you write these three steps down, you can easily write any recurrence. Can you write any recurrence? Right? You can. But now the question arises, Stryver, in all the previous videos, we did know that the ending point was something like N minus one and M minus one. So Stryver, we started from the back, like F of N minus one, M minus one. And we did write the recursion. But over here, there is not a fixed ending part. That"
+    },
+    {
+      "chunk_id": "L192_C6",
+      "start": 368.48,
+      "end": 448.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=368s",
+      "text": "of N minus one, M minus one. And we did write the recursion. But over here, there is not a fixed ending part. That is very obvious because we can either end here. We can either end here. We can either end here. We can either end here. So there is no fixed ending point. So logically it will not make sense if I write the recurrence because I might be ending here. I might be ending here. So there can be four different recurrence. One that starts from here. The other that starts from here. The other that starts from here. The other that starts from here. There can be four different kinds of recurrence. In the previous video, there was only one recurrence that you called and you got the answer. But over here, you have to call four different recurrence. One is from here. One is from here. One is from here. One is from here. And in all the four recurrence, whichever recurrence gives you the minimum part, that will be your answer. Right? But whenever you see that there is a single fixed point, like I can see that there is a single fixed point. Logically, it is preferable that you start from right the top and you try to go down. That's the preferable logic. So we will try to implement that preferable logic. Instead of starting from the back, which we"
+    },
+    {
+      "chunk_id": "L192_C7",
+      "start": 448.2,
+      "end": 521.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=448s",
+      "text": "go down. That's the preferable logic. So we will try to implement that preferable logic. Instead of starting from the back, which we have usually done in all the problems, we will not do because over here we have to start from four different columns. Basically the number of columns is what I have to start. That's not preferable. That's why what we do is we start the recursion from F of 0, 0. And what we see is, hey listen, over here, F of 0, 0 signifies the minimum path sum from 0, 0 to last row. And in last row, it can be any column. I don't care. It can start from 0, 0 and go to the last row. So we have figured out that the recurrence has to start from instead of F of N minus 1, M minus 1, we know the recurrence will start from 0, 0. That is something which we have figured out and I've told you the reason. Right? It's time to write the recurrence. So we know the recurrence is something like I comma J. Correct? So what do we initially write? If I'm writing this represent IJ, then you have to write the base case. What is the base case? What am I doing? Try to think in that direction. What am I doing? I know that I'm starting from here. I know that I'm starting from here and I am going down."
+    },
+    {
+      "chunk_id": "L192_C8",
+      "start": 521.92,
+      "end": 597.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=521s",
+      "text": "direction. What am I doing? I know that I'm starting from here. I know that I'm starting from here and I am going down. I will go down. And when do I end? From this row, can I go further down? Where is your destination? Generally the destination is your base case. I know the destination is the N minus 1th row. So I know whenever I reach N minus 1th row, whichever value is there that will simply get added to the answer. So what I can do is, okay, if I reach N minus 1th row by any chance, if I reach N minus 1th row, I can say that please, please return whatever is there on that Jth column. Like if I'm reaching any of the columns, yes, if I'm reaching this guy, I'll return 8 to be added to the answer. I'll return 9, I'll return 6, I'll return 10. Whichever column I ended, I'll be returning that. So that is how we will be doing this. Correct? So we have figured out the first base case. What can be the other base case? Can you try to think? Yes, you probably can try to think. So if I, if I talk about where am I moving? I'm moving till bottom and to the right. Will we ever go out of boundary? Try to think. For this guy, this is the extremist guy on the 0th row."
+    },
+    {
+      "chunk_id": "L192_C9",
+      "start": 597.6,
+      "end": 665.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=597s",
+      "text": "the right. Will we ever go out of boundary? Try to think. For this guy, this is the extremist guy on the 0th row. Does it have a diagonal? Yes. Does this guy have a diagonal? Yes. Does this guy have a diagonal? Yes. We've reached the last row. So I know no matter how you move, because we can only move down in diagonal, we will never go outside this boundary. So we know that there will be no outside boundary condition. So there is only one base case. So step one completed. Now step two, explore all the paths and we know we are looking for minimum paths. What kind of path is there? One is this. I know this is nothing but I plus one J. We go to the next row and the same column. And we know this is I plus one next row, but the right column, right column will mean I plus one J plus one. Everyone knows that. What's the next step? The next step is very simple. Explore all the paths. So what paths do you have? You have one down path with states, the current you will take and you will ask, like basically you took the current and you said, go down and figure out the answer for the rest of matrix. You took the current and you said, go down and figure out the"
+    },
+    {
+      "chunk_id": "L192_C10",
+      "start": 665.32,
+      "end": 742.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=665s",
+      "text": "and figure out the answer for the rest of matrix. You took the current and you said, go down and figure out the answer for the rest of the matrix. So you're saying, okay, go down and figure out the answer for the rest of the matrix. Or you're saying, go diagonal and figure out the answer for the rest of the matrix from that step. So that's what you've done. So basically what does this condition mean? You're basically saying, okay, listen, take one and go to this guy. So this guy states, I have to figure out the answer that I'll take from here to reach here. Right? Or if you would have gone diagonally, we would have been going here. So you have taken one and you're saying you're here now, you're asking in this triangle from here in order to reach here, figure out the minimal cost path sum. So you have written one down and one diagonal and you've taken the path sum, the current and the remaining that it will give. So what we have done, the next step is also done, explore all the paths. What is the third step? Minimal of all the paths. Yes. So can I say, I will return the minimal of D and DG, which is down and diagonal. So I can just complete the function. This is how the recurrence will be. Pretty straightforward. Right? So you have written"
+    },
+    {
+      "chunk_id": "L192_C11",
+      "start": 742.24,
+      "end": 820.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=742s",
+      "text": "down and diagonal. So I can just complete the function. This is how the recurrence will be. Pretty straightforward. Right? So you have written down the recurrence. Now, if I ask you the time complexity, what will be the time complexity of this recursion? Now, how many, like if I ask you how many rows and columns are there, then the first row has one column. So basically one column, then the next row has two column, next row has three column and so on. We have N plus one columns at the last Nth row. That's I think N column rather. We have exactly N column at the last row. So what we know is these are the number of rows and for every column we have couple of options, either to go down or to go bottom. So we can say twice into twice across everyone. Right? So two to the power, the summation of this, two to the power summation of this, which is exponential in nature because you're going twice for everyone, recursion and the space complexity, there'll be a stack space involved. What will be the stack space? You're going from the zero through to the bottom. So the length of the rows, which is Bico of N. So I can do the recursion is this, and you know how to convert a recursion, like how to optimize"
+    },
+    {
+      "chunk_id": "L192_C12",
+      "start": 820.48,
+      "end": 886.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=820s",
+      "text": "Bico of N. So I can do the recursion is this, and you know how to convert a recursion, like how to optimize this. The best way is to figure out, are there overlapping sub problems? And I will not be doing any more recursion tree because this is the 11th lecture of the DP series. And I'm of the assumption that you have been seeing the DP series from the first lecture. So you all know what is overlapping sub problems. If you want to figure out, are there overlapping sub problems? What do you just need to do is you need to start from F of zero, zero, go across to F of one comma zero, go across to F of one comma one, keep on going. This will be F of the next one will be a two comma zero. The next one will be F of two comma one. This will be like F of two comma one. This will be F of something like one, sorry, two comma two. So you see the first step. This is the first step where you get overlapping sub problems. So we are seeing there will always be overlapping sub problems. If you draw the tree, I said I'll not draw, but still I did draw. So if you draw this, you will see that there are overlapping sub problems and you know, whenever there are overlapping sub problems, what"
+    },
+    {
+      "chunk_id": "L192_C13",
+      "start": 886.08,
+      "end": 961.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=886s",
+      "text": "So if you draw this, you will see that there are overlapping sub problems and you know, whenever there are overlapping sub problems, what can you apply? Yes, you can apply something as memoiation. Yes, you can apply something as memoiation. Now what's the next step? Can I see this? Can I say this, but if I can apply memoiation, I had to figure out what can be the maximum value of I, what can be the maximum value of J? I know we can at max have N rows and N columns. So we will be requiring an N cross N DP. So what's the next step? Very simple guys. You just take DP of IJ done next. If DP of IJ is not equal to minus one, you can return DP of IJ. That's what all that's, that's, that's what you just need to do. And if you're able to do this, it should be absolutely fine with the memoiation solution. So once you convert it into a memoiation solution, what is the time complexity? Can I say the time complexity will be the number of states, which is N into N and the space complexity, again, it will not be exactly N into N because it's a triangle, right? Like if you, if you think it properly, it's a triangle. So one state, two states, these will be the number of states,"
+    },
+    {
+      "chunk_id": "L192_C14",
+      "start": 961.04,
+      "end": 1037.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=961s",
+      "text": "Like if you, if you think it properly, it's a triangle. So one state, two states, these will be the number of states, which is one plus two plus three plus this portion of the DP will not be required, but I'm not going into depth. You will, you can understand if you just do a dry run on yourself, I'm not going into the depth. So the time complexity, like you can just generally see, this is the time complexity and the space complexity will be this, which is recursion stack space. And I've already told you about what is recursion stack space. So this is the time complexity and the recursion stack space. Perfect guys. Okay. So how do you remove the stack space? Because you know, in a lot of platforms, you will get TLA time limit exceeded. So in order to do that, you just need to write the tabulation method. So first, this is going to be slightly different from the previous ones. In the previous problems, we did recursion from N minus one till zero. And over here, we did the recursion from zero to rather the last row. So it isn't like now we will be calling just because we wrote the recursion from zero to N last row. It doesn't mean it's a bottom up. Right? Recursion always is top down, is always top down because this is where you start, you go down,"
+    },
+    {
+      "chunk_id": "L192_C15",
+      "start": 1037.76,
+      "end": 1114.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1037s",
+      "text": "mean it's a bottom up. Right? Recursion always is top down, is always top down because this is where you start, you go down, you go down, then you compute the base case, then you re-accommodate to get the final answer. Top down, then you go. So never ever. Right? So over here, the recursion that you wrote was from zero to N minus one. So the base case will be like the tabulation will be the opposite. It's a thumb rule. Whatever you write for recursion, the opposite is the tabulation. Right? So that's something which is a thumb rule. And let's look at the base case. Let's go across. So by the way, the first thing in tabulation everyone knows is declare a DP of size N cross N. That's something which you have to declare. Correct? Now going across, what do I see in the recursion? This is the base case. How many base cases can we have? If I'm saying I is N minus one, what were the possible values of J? The possible values of J. If I just go to the example, zero, one, two, three. And that could be four different rows. It can be four. Sorry, four different columns. Because once you might reach here, this might be a base case. You might reach here. This is a base"
+    },
+    {
+      "chunk_id": "L192_C16",
+      "start": 1114.16,
+      "end": 1187.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1114s",
+      "text": "different columns. Because once you might reach here, this might be a base case. You might reach here. This is a base case. You might reach here. This is a base case. You might reach here. This is a base case. So there can be four different base cases. Agreed? So if I'm saying that there can be four different base cases I just need to write it so I know for sure that j there can be j equal to 0 till j lesser than n so all the columns and I know n minus 1 will stick common but this column number will always change because it might be the first column and every time I just need to make sure I take the value from the matrix because this is what I have been doing in the recursion right we have been writing this only right return this what can be the j j can be 0 1 2 and 3 which is up till n minus 1 that's what I wrote in the base case so something different from the previous ones we have written the base case ourselves so you have written this particular base case what is the next step the next step is definitely writing the for loop so we need to understand if we write the recurrence from 0 to n minus 1 the tabulation will be opposite why because"
+    },
+    {
+      "chunk_id": "L192_C17",
+      "start": 1187.14,
+      "end": 1259.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1187s",
+      "text": "so we need to understand if we write the recurrence from 0 to n minus 1 the tabulation will be opposite why because you know the base cases n at n minus 1 so you fill the table from n minus 1 then 2 n minus 2 then 2 n minus 3 and so on you go on till 0 comma 0 so you go opposite right so what I know is there will be the row number I will definitely start from n minus 2 there's no need to do for n minus 1 because you've already done for it we go till 0 and I minus minus now remember whenever you you write tabulation you go and see what are the recurrences there is a I and there's a J so for an I what can be the particular J's you think in your brain so if I see if I is 0 what can be the possible J it will like for 0 throw there will be 0 columns I will like yes if I is 1 how many J's can be there 0 and 1 if I is 2 how many J's can be there 0 1 2 if I is 3 how many J's can be there 0 1 2 3 because this triangle it's a triangle so can I say whatever is the value of I that's equivalent to the number of columns it can have so I"
+    },
+    {
+      "chunk_id": "L192_C18",
+      "start": 1259.46,
+      "end": 1339.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1259s",
+      "text": "a triangle so can I say whatever is the value of I that's equivalent to the number of columns it can have so I figured out how many possible columns will I have for a particular I so first variable you'll write and then you will create a nested loop that's a tabulation concept for J so create the nested loop for the tabulation concept so I create a nested loop for the tabulation concept and what did I tell you the nested now you might ask okay striver now how is the nested loop run now the nested loop will also run in the similar fashion how did J move J move like plus plus right plus one something you run the nested loop in the opposite direction which is J equal to I G greater than equal to 0 G minus minus you're moving both of them in the plus plus the tabulation will be the opposite that's it that's the simple tabulation nested for every I you write the particular J that's it and after that copy paste the recurrence what are the recurrence a of I G plus F of I plus 1 J that was the recurrence relationship right so you write DP of I plus 1 G or the other one you wrote DG equal to a of I G is a of I G plus DP of I plus 1 and G plus 1 perfect and then you wrote DP of I G"
+    },
+    {
+      "chunk_id": "L192_C19",
+      "start": 1339.34,
+      "end": 1412.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1339s",
+      "text": "G is a of I G plus DP of I plus 1 and G plus 1 perfect and then you wrote DP of I G equal to minimum of D comma DG what will be answer what is the recursion that you call to get the answer the recursion that you call to get the answer was F of 0 comma 0 so over here the answer will be print of DP of 0 and 0 that's it that is the answer yes that is the answer perfect so what is the time complexity now again we go off n into n because that's that's the kind of like near about n into n because over here it's not exactly n loop it's the number of rows so you can say that it's slightly less than that why I near about what were the space complexity no more recursion stack space by the way I think in the memorization part we just wrote a recursion stack space we did not write the tabulation that was used so the recursion stack space has been omitted and I just left off with this n cross it n matrix that you're using for this particular DP table so we have made sure that the space complexity of the"
+    },
+    {
+      "chunk_id": "L192_C20",
+      "start": 1412.34,
+      "end": 1487.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1412s",
+      "text": "n matrix that you're using for this particular DP table so we have made sure that the space complexity of the recursion of the stack space has been removed can we optimize this yes why I tell you if there is something like I plus one and there is something like I plus one you can always do it so why don't you do it I was the rule just store the previous keep exchanging remember so what is the next thing space optimization and as the specialty about the series isn't it what have I told you whenever you see something like I minus one like till now it was I minus one because it is a previous over here we are seeing something as what are we seeing I plus one so how will this DP a table fill up so I'll always recommend in order to understand space complexity better like our space optimization better try to do a dry run of this table format that the guy to Char Roy does like we have seen his videos you will understand how he like he just comes up and writes the formula and fills up the DP table so now you know how to how to derive this particular formula now you can just fill up the DP table so if you try to fill up the DP table what happens is the last row is the base case which is"
+    },
+    {
+      "chunk_id": "L192_C21",
+      "start": 1487.1,
+      "end": 1558.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1487s",
+      "text": "DP table so if you try to fill up the DP table what happens is the last row is the base case which is automatically feel like I'm just filling up like random numbers it's not zero it's some dots and then you start from this guy and then you are like fill up this fill up this fill up this then you go to this guy and you like fill up this fill up this then you go to this guy and you said fill up this and whatever is here you say this is my answer so how did the DP table fill up first the base case and in order to get this what you did was you took this guy plus this or this guy plus this right in order to fill up this guy what he did was you took this plus this or this plus this that is what this line is doing F IJ plus DP like the next guy F IJ plus DP that's what it is doing if you try to do a dry run in order to fill up this it's taking this plus this or this plus this similarly in order to fill up this it's taking this plus this or this plus this so can I say in order for like in order to solve any rule I'm just requiring this particular rule in order to solve this rule I'm just requiring this"
+    },
+    {
+      "chunk_id": "L192_C22",
+      "start": 1558.5,
+      "end": 1633.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1558s",
+      "text": "for like in order to solve any rule I'm just requiring this particular rule in order to solve this rule I'm just requiring this particular rule in order to solve this row I'm just requiring this particular rule so can I say once this is the base case I compute this particular rule then I'm not requiring this I'll just delete it then I complete this row I'll not require this deleted then I'll compete this row I'll not require to delete it so can I say instead of storing the entire triangle I just need to store two rows, two rows. One is the previous or like the front row and one is the current row that you are traversing. And once this current row is computed and you move to this guy, this current row becomes the front row. Can I say this? I can. That's what you have to just do in the code. Just make sure you store this particular guy. Like what you can do is always remember, always, always, uh, try to create a, like over here you can say the front row. So really you can write something as front row of size N and over here instead of this, you can write front of G and the front row is computed. So the front is computed by this. Next, this is front. I plus one is"
+    },
+    {
+      "chunk_id": "L192_C23",
+      "start": 1633.1,
+      "end": 1704.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1633s",
+      "text": "of G and the front row is computed. So the front is computed by this. Next, this is front. I plus one is front. The entire I plus one is front. So right front, correct? Now, instead of adding DP of IJ, because DP of IJ means understand DP of IJ means this guy, this guy, this guy. So instead of DP of IJ, what do you say is you just create this particular row, just create one more row. So what you basically do is you say, okay, what I'm going to do is I'm not going to do anything. I'd be like, let's create the current row. Like you can create off a lesser size, but I'll just take it curve. And instead of DP of IJ, you'd be like curve of J. And once the entire row has been created by this particular for loop, you know, this particular current for the next I will become the front. So you'll say front who's the front, the current will be the front for the next I, because I will go minus minus that's the space optimization. And once you do the space optimization, you can be like, okay, I've done the space optimization. So now the time complexity is still the same, but the space complexity has boiled down to be go off. And it's twice of N, but yeah, it's, it's near about big often. We're not using an N cross and matrix. We're just using"
+    },
+    {
+      "chunk_id": "L192_C24",
+      "start": 1704.46,
+      "end": 1772.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1704s",
+      "text": "And it's twice of N, but yeah, it's, it's near about big often. We're not using an N cross and matrix. We're just using a couple of rules and we're able to compute the entire answer. And can I say, can I say at the end of the day, whenever you're doing I minus minus in the first loop, you're doing I minus minus over here. What are the ending point of I, when this loop ends, I will be minus one and the current will be stored in front. So the answer will be stored in front of zero, right? Very obvious. That's how you can space optimize this particular stuff. So I've already written the pseudo codes in the iPad, but I'll still write the code so that you have a quick revision kind of a thing. So basically given the triangle and N which recommends the number of rules. So what you can do is you can definitely write a function. So let's quickly write a function where we will, we know that we will have a couple of changing parameters, which is I T I G. We will be requiring this vector triangle and the N. So let's quickly take this off. I know that if we reach the last row, that's over, right? So we can definitely return triangle N minus one G. So that's the base"
+    },
+    {
+      "chunk_id": "L192_C25",
+      "start": 1772.94,
+      "end": 1849.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1772s",
+      "text": "if we reach the last row, that's over, right? So we can definitely return triangle N minus one G. So that's the base case that we have covered. And there will be a D which will be a triangle I J plus F of I plus one G, which is basically the down part. There will be a DG which will be triangle I J plus F of I plus one and G plus one. Correct. And don't forget to pass on the extra parameters that's important. At the end of the day, you know, you have to return the minimal of down and the diagonal part. So can you return that? Over here you can return the function zero comma zero, the triangle and the size N. I can quickly run it off. It does run, but it will give you a TLE because it's a recursive solution and it will be exponential. So what do you need to do is you definitely need to create a DPS array. So please create a DP array of size N cross N initialize with minus one. Pass it as the next parameter. So you can just copy paste this. And this will be DP. So just make sure it's DP. Over here, make sure you pass one more DP. So first step is done by just declaring and passing the parameter. What's the next step? Initialize the answer. So please initialize the answer."
+    },
+    {
+      "chunk_id": "L192_C26",
+      "start": 1850.46,
+      "end": 1917.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1850s",
+      "text": "So first step is done by just declaring and passing the parameter. What's the next step? Initialize the answer. So please initialize the answer. What is the next step? If DP of IJ is not equal to minus one, you can return DP of IJ. That should be perfect. Now you can run this code. It's running fine. And if I try to submit this, it says partially accepted because it's getting time limit exceeded. As I said, a lot of times it will happen that the recursive memorization will give you a time limit exceeded. That is when you need to do is you just need to convert that into a tabulation format. So over here, what I can do is you can just put in an N of zero and I know there is a last row that has to be filled. So kindly fill up the last row. That's very simple. DP of the last row and the column will be nothing but the triangle of the last row and the column. That's how you can easily fill that up. And apart from that, there'll be a couple of nested loops, right starting from the back. So we can just run it off. There'll also be a for INTJ equal to starting with the back and it can go on something like this. And I know there will be a couple of parts, which is INTD. So basically you just"
+    },
+    {
+      "chunk_id": "L192_C27",
+      "start": 1917.66,
+      "end": 1985.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1917s",
+      "text": "it can go on something like this. And I know there will be a couple of parts, which is INTD. So basically you just need to make sure you copy this stuff. That's nothing special. Just make sure you copy this stuff. And instead of F you need to create a DP of I plus one and a J that's the shuttle change that you need to do instead of F. And it'll always be DP of the recurrence that you're calling. So just carry it on DP of I plus one R2J plus one. That's how you'll do it. And at the end of the day, you can say DP of IJ will be minimal of D comma DG. So once you've done this, you know, what will you return? You will always return DP of zero zero because that's sorry. DP of zero zero. That's zero zero. So zero zero is what you're going to return. Let's quickly run this off. Should be running fine. That's run. Let's quickly submit this off and let's see if this is getting your TLE. This is not giving. Okay. So this appears to be the correct answer and you're getting your 100% score. So now what are the changes that I require? What's the next step? Space optimization. Let me quickly raise this off to get some space. Space optimization, right? So we"
+    },
+    {
+      "chunk_id": "L192_C28",
+      "start": 1985.34,
+      "end": 2053.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=1985s",
+      "text": "I require? What's the next step? Space optimization. Let me quickly raise this off to get some space. Space optimization, right? So we need to delete this and we just need to store the last row. So what we can do is we can say vector of front row. We can call it as front rather of N comma zero. Okay. And instead of DP of N minus one, we call it as front and make sure you also have a current row initialized as N cross zero. Now what I know is triangle of IJ plus DP of I plus one. So instead of I plus one, I'll say front. Instead of again, I plus one, I'll say front. Very obvious. Instead of DP of I, I'll always say curve and over here, I'll make sure the front is reinitialized with curve. That's what I just need to do. And over here, instead of DP of zero, I'll say front because that is where it will be stored. You can also do it curve. That is fine. So we just run it. It is running fine. And if I submit this, it's going to be working fine. If you see, it is, it is indeed working fine. You're getting a correct answer. That is how you can easily space optimize this particular stuff. So guys, I hope you have understood all the threes. So guys, I hope you have understood the recursion, the remission, the tabulation,"
+    },
+    {
+      "chunk_id": "L192_C29",
+      "start": 2053.5,
+      "end": 2078.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=SrP-PiLSYC0&t=2053s",
+      "text": "stuff. So guys, I hope you have understood all the threes. So guys, I hope you have understood the recursion, the remission, the tabulation, and the space optimization. So just in case you did, please, please, please make sure you like this video and to follow our tradition, please make sure you comment understood under the comment section. That does give me a lot of motivation to keep making such kind of videos. And with this, I'll be wrapping up this video. Let's meet in the next one. Bye-bye. Take care."
+    }
+  ]
+}

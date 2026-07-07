@@ -1,0 +1,267 @@
+{
+  "lecture_id": "L041",
+  "lecture_number": 41,
+  "lecture_title": "Find the Missing and Repeating Number | 4 Approaches 🔥",
+  "youtube_url": "https://www.youtube.com/watch?v=2D0D8HE6uak",
+  "chunks": [
+    {
+      "chunk_id": "L041_C1",
+      "start": 0.0,
+      "end": 71.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we will be continuing with this Triverse A to Z DSA course. Just in case you don't know about it, you can check it out from the link in the description. So till now I have covered up till this particular problem. Now in this video, I'll be covering up the problem, find the repeating and missing number. So what does the problem state? The problem states that you will be given an array of n integers, you'll be given an array of n integers. So let's take this example. So over here n is 6. So you're given 6 integers. Now these 6 integers will be from 1 to 6. These 6 integers will be from 1 to 6. So if I write down everything from 1 to 6, it will be 1, 2, 3, 4, 5, 6. And if you carefully see, there is 4, there is 3, there is 6, there is 2, and there is 1 that appears twice. So that is your repeating number. So the repeating number is 1. And which number doesn't appear in the array? That is 5. So the number that doesn't appear in the array is 5. So this is your missing number. So what you have to return me is the repeating number and the missing number. This"
+    },
+    {
+      "chunk_id": "L041_C2",
+      "start": 71.24,
+      "end": 128.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=71s",
+      "text": "5. So this is your missing number. So what you have to return me is the repeating number and the missing number. This is what you have to return me and this is the question. Got it? So if this question comes up in an interview, what is the first solution that you can think of? The extreme nice solution that I can think of is, I know one thing for sure, all the integers are from 1 to 6 over here. That is from 1 to n. So what I will do is, I'll probably loop from 1. So if I take 1 and I check, I'll find out that 1 appears twice. So I can say that this is the repeating number. Then I go to 2 and I'll do a iteration through the entire array and I'll find that 2 appears once. Then I'll check for 3 and 3 appears once. Then I'll check for 4, 4 appear once. Then I'll check for 5 and 5 appears 0 times. So 5 is my missing number. So I'll pick up every number from 1 to 6 and I'll do an iteration in the array and I'll check how many times it appears. If it appears 2 times, it is my repeating number. If it appears 0 times, it is my missing number. So this is the extreme brute force."
+    },
+    {
+      "chunk_id": "L041_C3",
+      "start": 128.82,
+      "end": 204.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=128s",
+      "text": "times, it is my repeating number. If it appears 0 times, it is my missing number. So this is the extreme brute force. So if I have to write the brute force code, I can say that I'll take a couple of variables, repeating and missing and now I'll start iterating from i equal to probably 1 and then I'll go on till n and I'll take a counter equal to 0 and I will do an iteration on the entire array. That is from 0 to n minus 1 and I'll say if the array of j is equal to equal to i because i is the number and then I'll do a counter plus plus. At the end of the day, if counter is equal to equal to 2, I will say that this number is my repeating number which is basically i or else if the counter is equal to equal to 0, that means I did not find this number. So this will be my missing number. At any moment, I find both the repeating and missing numbers. Probably you can initialize them as minus 1. At any time if both of them are not equal to minus 1, both of them are not equal to minus 1, I can simply break out. That's it. Simple. This will be my brute force. What is the time complexity? Very simple to guess. We go off n square. Why? Because we are running an entire"
+    },
+    {
+      "chunk_id": "L041_C4",
+      "start": 204.6,
+      "end": 265.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=204s",
+      "text": "my brute force. What is the time complexity? Very simple to guess. We go off n square. Why? Because we are running an entire n loop. Then we are iterating through the entire array for another n times. So it is n into n. Hence the time complexity is n square. Are we using any extra space? No, we are not using any extra space. So the space complexity will be big or one. Obviously the interview will not be happy with the n squared and I'll ask you to optimize it. This is when we move to the better solution. So we have to improve n square. What were we doing? We are counting, right? So whenever something like counting comes up, what is the technique that we use to optimize? We know that for sure we use something like hashing. So we have, can we hash elements and keep a track of how many times they appear? We can. I can say something for sure that all the numbers will be from one to n. In this case, all the numbers will be from one to six for sure. So what I'll do is I will end up declaring an hash array. We don't need a map data structure. We can do it using an array as well. So I'll declare a hash array and the size that I'll take is seven. Why? Because the elements are"
+    },
+    {
+      "chunk_id": "L041_C5",
+      "start": 265.44,
+      "end": 330.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=265s",
+      "text": "an array as well. So I'll declare a hash array and the size that I'll take is seven. Why? Because the elements are till six. In order to accumulate six, we need the sixth index and in order to have the sixth index, the size has to be seven and initially I will initialize everything to be zero. So basically stating none of the numbers appear till now. All of the numbers appear zero times. Then I'll start iterating on the array. So for the first time I have four, go to four and increment the count by one. Next go to three, increment the count by one. Next go to six, increment the count by one. Next go to two and increment the count by one. Next go to one and increment the count by one. Next go to one and increment the count by one. Once you have done the iteration, what is the next step? You know the numbers are from one to six. Let's start iterating from one to six. One, the count is two. So what do you do is you'll say one, your count is two, right? So you will be mine, repeating number. So I get the repeating number as one. Next I'll move to two. Two says my count is one. I'm like, okay, three says my count is one. Four says my count is one. Five says"
+    },
+    {
+      "chunk_id": "L041_C6",
+      "start": 330.42,
+      "end": 399.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=330s",
+      "text": "Two says my count is one. I'm like, okay, three says my count is one. Four says my count is one. Five says my count is zero. So I will say, Hey, the missing number is five and this will be my answer. So this is how I can easily implement hashing in order to solve this particular problem. So let's quickly code up this particular solution. The problem link is in the description. At first I'll find the size of the array done. Next time I will require a hash array. So I can declare that of the size and everything initialized to zero. Next step to iterate through the array. So this is how you can easily iterate and go to the number which is a of I and do a plus plus that will increment it by one. Now you need a repeating. So repeating can be minus one and you need a missing as well. So maybe missing will also be minus one. Next you can say I equal to one and you could go ahead till N and over here you can say hash of I, if that's equal to equal to two, please go ahead and say that this is my repeating perfect else if hash of I is zero, then this is missing. Perfect. Once you have figured out both of them, something like if repeating is not equal to minus one"
+    },
+    {
+      "chunk_id": "L041_C7",
+      "start": 399.6,
+      "end": 462.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=399s",
+      "text": "then this is missing. Perfect. Once you have figured out both of them, something like if repeating is not equal to minus one and and missing is not equal to minus one, probably I can return this particular answer or I can break and going ahead. I need to return a list. First step to return the repeating and then the missing. This should be the order. So return it. Once you've done this, you can go ahead and run it off. What will be the time complexity? Can I say over here I'm running for big O of N we are. So that's a big O of N complexity over here. We are again running for big O of N. So that's another big O of N. So can I say the overall time complexity will be nothing but at the worst case big O of 2N. What about the space complexity? Can I say we're using an extra space for the hash array and this will be the time and space complexity for the better solution. Obviously the interviewer will not be happy with the extra space that you're using and he'll ask you to optimize this. This is when we move to the optimal solution. So this particular problem has two optimal solutions. The first of one will be using basic mathematics while the second one will be using the Zorr method. The Zorr method is slightly difficult. So probably you can avoid that in an interview."
+    },
+    {
+      "chunk_id": "L041_C8",
+      "start": 462.64,
+      "end": 524.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=462s",
+      "text": "while the second one will be using the Zorr method. The Zorr method is slightly difficult. So probably you can avoid that in an interview. But I'll still be teaching you because I don't want you to cram up solutions. I'm over here to teach you problem solving. That is why I'll be teaching you the Zorr method. You might not find a lot of YouTubers teaching it because it is a tough method. But I still want you to know this because I want you to learn problem solving. That is the key over here. So first let's get ahead with the mathematics solution. So in case you want to jump over directly to the Zorr solution, you can find it in the timestamps below. So for the mathematical optimal solution, what I'll do is I'll take X and Y and I'll say X to be the repeating number and I'll say Y to be the missing number. So I just assign a couple of variables. First thing I'll do is I will sum up all the elements. Yes, I'll sum up all the elements of the array. So probably I can call it as S. So what is the summation of all the elements? Can I say that will be four plus three plus six plus two plus one plus one? I can't. And then what I'll do is I will also sum up all the elements from one to six. So please sum up all the"
+    },
+    {
+      "chunk_id": "L041_C9",
+      "start": 524.64,
+      "end": 602.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=524s",
+      "text": "And then what I'll do is I will also sum up all the elements from one to six. So please sum up all the elements from one to six and maybe I'll call it as S of N. And if you know one thing, this is very easily found. What is it? If I ask you the summation of the first N natural numbers, what is that? N into N plus one by two. Remember, it's a simple formula. Summation of first N natural numbers is N into N plus one by two. So what I've done is I've summed up the entire array. I've summed up the first N natural numbers. Now I will subtract them. I will subtract them and I'll try to get a value. Let's see what value we get. Over here we have a minus. So if I open this bracket, will I get minus one minus two minus three minus four minus five minus six? I will. So plus four will go off with minus four. Plus three will go off with minus three. Plus six will go off with minus six. Plus two will go off with minus two. One will go off with minus one. We'll be left off with one minus five. We will be left off with one minus five. Let's write it over here. One minus five and that will give me a value of minus 4. That will give me a value of minus 4. Let's carefully"
+    },
+    {
+      "chunk_id": "L041_C10",
+      "start": 602.08,
+      "end": 676.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=602s",
+      "text": "One minus five and that will give me a value of minus 4. That will give me a value of minus 4. Let's carefully observe what is 1. 1 is actually x which is my repeating number. Yes. So I'm left off with x. And what is 5? 5 is my missing number which is y. So I know one thing for sure x minus y is what I'm left off with. Can I write this as minus 4? Yes because I know for sure if I simply do a subtraction the value that I will get is minus 4. I will not get 1 minus 5 because when you do the mathematics you will just have minus 4. You do not know in minus 4 1 is or minus 5. You don't know that. You will simply get minus 4 when you do a subtraction. But on observing I can find it out that x minus y which is repeating minus 4 is missing is coming up to be that value minus 4. And I will take this as equation 1. I'll take this as equation 1. So then I'll write it over here. x minus y equal to minus 4. Tell me one thing. Back in your school days when you had an equation and you had two unknown variables can you solve it using one equation? Obviously no because I have"
+    },
+    {
+      "chunk_id": "L041_C11",
+      "start": 676.2,
+      "end": 752.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=676s",
+      "text": "when you had an equation and you had two unknown variables can you solve it using one equation? Obviously no because I have two unknown variables. So I need two equations for sure. So this is why you will again go ahead to look for another equation with x and y. Let's go back again. This time we'll try to do something different. This time I'll say okay let's sum up the squares. I'll call it as S2. So I'll sum up the squares 4 square plus 3 square plus 6 square plus 2 square plus 1 square plus 1 square. I've summed up all the squares. And then I'll subtract summation of first n natural numbers like summation of first squares of n natural number which is 1 square plus 2 square plus 3 square something similar to the previous one but this time in terms of square. I'll call it as probably S2n or Sn2 whatever you want to call it. S2n I'll call it. Okay. What will be the value? Can I say 4 will go off with 4, 3 will go off with 3, 6 will go off with 6, 2 will go off with 2, 1 will go off with 1. What will be left? 1 square minus 1 square minus 5 square which is minus 24 simple maths. And what is this? 1 square what is this? 1 is the repeating number. Can I write it as x"
+    },
+    {
+      "chunk_id": "L041_C12",
+      "start": 752.84,
+      "end": 828.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=752s",
+      "text": "minus 24 simple maths. And what is this? 1 square what is this? 1 is the repeating number. Can I write it as x square? What is 5? The missing number y square. Can I write it equal to minus 24? I can. Do you see something over here? x square minus y square. Can you split it? Yes. A square minus b square x minus y x plus y equal to minus 24. If you remember you already have the value of x minus y. You already have the value of x minus y which is minus. And over here you generated a value of minus 24. The only thing that you'll get is minus 24. You'll not get anything else. You'll just get minus 24. So how can I figure out out of minus 24 that I have 1 and 5? I cannot. That is why I have to solve equations. So I have this. What's the value of x minus y? We know it. So x plus y can be written as minus 24 x minus y. What is the value of x minus y? I can just simply erase it and I can write this as minus 4. So minus and minus will go. I'll get a value as 6. So did I get the second equation? And I got something as 6. So I know one thing for sure from my observations. It's x minus"
+    },
+    {
+      "chunk_id": "L041_C13",
+      "start": 828.78,
+      "end": 901.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=828s",
+      "text": "I get the second equation? And I got something as 6. So I know one thing for sure from my observations. It's x minus y which gives me minus 4. It's x plus y which gives me 6. Can I sum it up? If I sum it up minus y plus y goes. I get 2x. 6 minus 4 2 and I get x as 1. And if you remember x was assumed to be the repeating number. So I got my repeating number. Got it? Next I have to find y and you can just take up you know x plus y was 6. You know the value of x now. So y will be 6 minus x. x's value is 1. So you get y as 5. So I got both of my numbers and you can eventually return it. Super simple. How do you find s to n? How do you find this value? Quite simple. Summation of first n, summation of squares of first n natural numbers is n into n plus 1 into 2n plus 1. Simple school formula by 6. And this can easily be found out by iterating. This can easily be found out by iterating in the array. Quite simple. Let's go back and try to code it up. So since we are summing up all the numbers and we are also summing up squares. So the number might exceed the integer boundary."
+    },
+    {
+      "chunk_id": "L041_C14",
+      "start": 902.02,
+      "end": 975.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=902s",
+      "text": "So since we are summing up all the numbers and we are also summing up squares. So the number might exceed the integer boundary. So please please take everything in terms of long log. So first let's take the size of the array. What is the next thing? If you remember first thing we have to figure out is s minus s of n. And the second thing that I have to figure out is s to like squares minus s to n. So I know one thing for sure. What is s n I know and what is s to n I know. I can just find it. s n is nothing but n into n plus 1 by 2. That's something we know for sure. This is s n. And I definitely also know s to n. And that's n into n plus 1 into 2 into n plus 1 whole divided by 6. We know this for sure. What is the first value of x minus y? This is equal to x minus y and this can be later found out. Okay. So let's iterate now. For i into i equal to 0, i less than n, i plus plus. I know I have to find out two values which is long log of s equal to 0."
+    },
+    {
+      "chunk_id": "L041_C15",
+      "start": 975.94,
+      "end": 1050.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=975s",
+      "text": "n, i plus plus. I know I have to find out two values which is long log of s equal to 0. I have to also find s to equal to 0. So can I say s will be nothing but very simple a of i. Quite simple. And can I say squares will be nothing but a of i into a of i. Please make sure these are integers. So it might overflow. So please convert them into long log before multiplying. Please typecast them into long log before multiplying. Otherwise they might overflow. Done. In order to get the first equation, can I say the first equation which is x minus y will be nothing but, maybe I can write it as x minus y or whatever it is. I'll write it as first. Or what should I write it as? Ah, x minus y. Cool. Let's have it as val 1. Val 1 will be this one, s minus s n. So what is s? s minus s n. Perfect. What is val 2? Now remember val 2 was nothing but, if you remember properly, this was x square minus y square. This was val 2. Correct? If you just do it. So it's like s 2 minus s of 2 n. This was val, val 2. And x minus y, x plus y,"
+    },
+    {
+      "chunk_id": "L041_C16",
+      "start": 1050.1,
+      "end": 1122.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1050s",
+      "text": "So it's like s 2 minus s of 2 n. This was val, val 2. And x minus y, x plus y, is equal to val 2. And you already had x minus y from this, equal to this value which is val 1. And this will be x plus y equal to val 2 by x minus y. So I know val 2 will be, val 2 divided by, this will come over because, because x minus y, x minus y. So this will be over here. So val 2 by val 1 will give you x plus 1. So you already have two values. Your val 1 which is x minus y, this is x minus y. And this now is x plus y. So I just need to find my x. What will be the value of x if I have to ask you? Again please take, take, take long, my bad. Take long, long otherwise might overflow. What's, okay. What will be x? Can I say x will be nothing but, if you remember, let's go back. If x minus y is val 1, x plus y is val 2, can I write this as val 1 plus val 2 by 2 is equal to x because 2x will be, this will cut off and 2x will be this. So can I write x as val 1"
+    },
+    {
+      "chunk_id": "L041_C17",
+      "start": 1122.3,
+      "end": 1192.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1122s",
+      "text": "to x because 2x will be, this will cut off and 2x will be this. So can I write x as val 1 plus val 2 divided by 2? And can I write y as, very simple, x minus val 1 will be y, coming from this equation. So can I say x minus val 1 will be my y. And can I return them? Just make sure you typecast it into integer again, otherwise there will be a returning problem. And this will be y. Perfect. Once you've done this, please go ahead and run it. Should be running. So it does it once and let's quickly submit it off. So if you submit it, it will be running fine. What is the time complexity? I just ran one loop, big O of n. Nothing else. Space complexity, big O of 1, just using long long variables. Nothing like a lot of array size. So the time complexity of this particular one is big O of n and the space complexity is big O of 1. I will highly recommend you to do it on your own on pen and paper. You'll get it very easily. It's just about doing it on pen and paper. If you do it, you'll understand everything and it's very very simple. So this will be the first optimal solution and you can always give this to the interviewer and stop. You don't have to give"
+    },
+    {
+      "chunk_id": "L041_C18",
+      "start": 1192.74,
+      "end": 1259.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1192s",
+      "text": "So this will be the first optimal solution and you can always give this to the interviewer and stop. You don't have to give the second one. But I'll still be teaching you the second one. So the second optimal solution will be using the XOR concept. So if you don't have an idea about bits, XOR and all of these things, you can stop over here. Probably you can watch it after sometime when I will be teaching you bit manipulation. And if you have idea about bits and everything, you can definitely watch it. So XOR method is what I will be using. Again same thing. I will say X will be my repeating and Y will be my missing number. Again assumptions taken initially. Let's quickly do one thing. Let's XOR all the elements of the array. All the elements of the array. And along with this, let's XOR all the elements from 1 to n. In this case 1 to 6. Perfect. So if you know one thing, in XOR, same numbers. If you XOR 1, XOR 1, it will be 0. If you XOR 2, XOR 2, it will be 0. But if you XOR 2, XOR 2, XOR 2, it will be actually 2 because 2 and 2 will go off but there will be still 1, 2 left. So even number of same numbers, even number of same numbers on XORing gives you"
+    },
+    {
+      "chunk_id": "L041_C19",
+      "start": 1259.1,
+      "end": 1323.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1259s",
+      "text": "off but there will be still 1, 2 left. So even number of same numbers, even number of same numbers on XORing gives you 0. Okay. So can I say 4 and 4 will go off. So it will give you 0 XOR. Perfect. 3 and 3 will go off. 6 and 6 will go off. 2 and 2 will go off. 1 and 1 will go off. And you will be left off with 1 XOR 5. It will give you some value. Yes, it will give you some value. And if you try to find out the value, it will be 001, 101. So this is 1 and 5. And if you try to XOR it, it will be 001. And the value that you will get is 4. So the XOR of 1 XOR 5 is 4. And I assumed 1 to be the X because 1 is the repeating number and 5 is the missing number. So I can write it as X XOR Y equal to 4. I know this thing for sure. So can I say one thing for sure? I have two different numbers. And if I have two different numbers, the XOR of two different numbers will be different at one bit. So b**. Please hear me out carefully. Since they are two different numbers, since they are two different numbers, they'rr bound to be different at one"
+    },
+    {
+      "chunk_id": "L041_C20",
+      "start": 1323.58,
+      "end": 1387.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1323s",
+      "text": "hear me out carefully. Since they are two different numbers, since they are two different numbers, they'rr bound to be different at one bit minimum. What do you mean by bit? This is the zeroth bit position. This is the first bit position. This is the second bit position. By the way, zero in bit manipulation is written like this. Five in bit manipulation is written like this. And this the zeroth bit, this is the first bit, this is the second bit. So if you have two different numbers, they'r bound to be different at one bit. So if you see they are same at this bit, they are same at this bit, but they are differentiating or they are different in this particular bit. And that is the reason you go to one because same bits will always give you zero. Same bits will always give you zero, but there is one different bit which is here. So in four, in four, you just have to find one different bit. That is what you have to do. So in this case, probably I will say the second bit, the second bit is the different bit. You can just find any of them. If it's a bigger number, there will be multiple different bits. Over here we just have one and that is enough and there will always be one because both of the numbers are different."
+    },
+    {
+      "chunk_id": "L041_C21",
+      "start": 1387.1,
+      "end": 1458.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1387s",
+      "text": "Over here we just have one and that is enough and there will always be one because both of the numbers are different. They are bound to be different at one bit. So you just have to find that one bit. And in this case, I'll probably take the right most. That's an easier thing to do. So I'll take the right most bit. So what I've done is I've taken the right most different, differentiating bit, which is the second one. And probably I can write the bit number as two. Done. I know the differentiating bit. Let's omit everything. Let's try to focus on the approach. So I know the differentiating bit is two. Over here, what do we have? We have numbers like four, three, six, two, one, one. Correct. And we also have numbers like one, two, three, four, five, six, which we took. We took this entire number in the, like all the elements in the array and we took all the elements from one to n. Can I say one thing for sure? The second bit position, it will either be zero or it will either be one. Like that bit position can either have a zero bit or it can either have a two bit. Right. And over here, if I try to count, one is happening to be three times. Please focus. One is happening to be"
+    },
+    {
+      "chunk_id": "L041_C22",
+      "start": 1458.58,
+      "end": 1536.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1458s",
+      "text": "Right. And over here, if I try to count, one is happening to be three times. Please focus. One is happening to be three times and five happens to be one day. Carefully observe. One happens to be three, five happens to be once. All the other numbers happens to be twice. All the other numbers happens to be twice. All the other numbers happen to be twice. So I know one thing for sure. Someone like the repeating number is thrice. The missing number is once, which is odd, which is odd. Let's try to now solve. So if I take four, if I take four, can I see if I try to write down four, that is how it is. The four will be looking like this in bit and the second bit is one. So four will be a part of the bit where we have one, where we have one. Okay. Then if I try to take three, three will be written as probably one, one. Yeah. So the second bit is zero. So three will be a part of the guys who are with zero. Then we have six. What is with six? What's the value of six? One, one, zero. So it's, it's basically one. So six will be a part of this next two. What's two? Zero, one, zero."
+    },
+    {
+      "chunk_id": "L041_C23",
+      "start": 1536.02,
+      "end": 1608.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1536s",
+      "text": "one, zero. So it's, it's basically one. So six will be a part of this next two. What's two? Zero, one, zero. So it's a part of the zero. Then we have one and one is zero, zero, one. It's a part of zero. Then we have another one. It's again part of this. Then we have another one. It's a part of this. Then we have two and two is nothing but this. So it's on this spot. Then we have three. Then we have three and it'll always be a part of this. Then we have four. It'll always be a part of this. Then we have five and we carefully observe five is one, zero, one. And it has one. So five will be a part of this. So this is the bit number. And these are the numbers which are part of next. We have six. What is six? One, one, zero. So six will be a part of this. So what I've done is I probably have figured out which numbers are part of the zero culture, sorry, zero bit and which numbers are part of one bit. Something I know for sure is all the numbers appear twice or rather even number of times, even number of times. Four appears twice, six appears twice. One, which is X, the repeating number happens to be thrice, happens to be thrice, which is odd,"
+    },
+    {
+      "chunk_id": "L041_C24",
+      "start": 1609.14,
+      "end": 1679.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1609s",
+      "text": "appears twice, six appears twice. One, which is X, the repeating number happens to be thrice, happens to be thrice, which is odd, which is odd. And Y happens to be once, which is again odd. All the numbers are happening even. And X appears to be odd and Y appears to be odd as well. So if you remember X was one, Y was five. And if I again just take you slightly back, one was zero, zero, one. Five was one, zero, one. When you solved, you got zero, zero and you got one. This bit was differentiating. This bit was differentiating. So that is the reason why was it differentiating. Because at one, you had zero and that's why one is a part of the zero club. And at five, you had one. That's why five is the part of the one club. All the other numbers are appearing even. So if three is a part of zero club, the other three will also be the part of the zero club. If one is a part of the zero club, all the ones will be a part of the zero club. If there's a two, so if there's one two, which is a part of zero club, the other two will also be. If there's a six, the other six will also be a part of the one club. If there's a four, the other four will always be. So since I know one thing,"
+    },
+    {
+      "chunk_id": "L041_C25",
+      "start": 1679.38,
+      "end": 1746.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1679s",
+      "text": "also be a part of the one club. If there's a four, the other four will always be. So since I know one thing, all other numbers are even times. If I solve all the numbers, if I sort out all the numbers, I know one thing for sure, all numbers are even. So three will cut off with three, two will cut off with two, the one will cut off with one and there'll be one left. Amazing. Over here, all numbers are even. Four will cut off with four, six will cut off with six, five. Amazing. So I got, I know there are numbers like there's only one guy left, one who has the, is a part of the zero club, which is part of the zero club. There's one guy which is five, which is part of the one club. And these are bound to be the repeating and missing numbers. But I'm not sure either one is the repeating or five is the missing. I am not sure. But I'm sure that one and five are my answers. I just have to figure out which is X and which is Y, but I am sure one and five are my answers. And why am I sure? Why am I sure? I'll repeat because all numbers appear even types. So when you buy, if you try to put them into zero and one clubs,"
+    },
+    {
+      "chunk_id": "L041_C26",
+      "start": 1748.02,
+      "end": 1821.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1748s",
+      "text": "I'll repeat because all numbers appear even types. So when you buy, if you try to put them into zero and one clubs, all the numbers like four, there are two fours. Either the two fours will be in the zero club or it will be in the one club. There are two threes. Either it will be in the zero club, either it will be in the one club. There are two six, either in the zero, either in the one. So at the end, when you take a XOR of everything, only the odd guys will remain. Only the odd guys will remain. And that's why they survive till the end. And that is why I try to differentiate on the differentiating bit. That is my funda. So if I have to go through the algorithm again, what do I do at first? I go through all the numbers in the array. There's basically all the numbers in the array. Zod with. Till end, probably this will give me a number. What's the next step? Find a differentiating bit. Find differentiating bit. That's what you do. Find a differentiating bit in number. So basically, what is the meaning of differentiating bit? If you see over here, the differentiating bit will always provide you one. Same bits will give you zero. Same bits will give you zero. First one, you have to find. First one from the right. First one from the right is what you have to find."
+    },
+    {
+      "chunk_id": "L041_C27",
+      "start": 1822.82,
+      "end": 1885.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1822s",
+      "text": "give you zero. First one, you have to find. First one from the right. First one from the right is what you have to find. What's the second? Third thing you have to do? Once you know the first one, once you know the number, just put them into two, put them into two parts. First part can be the zero part. Second part can be one. Once you have this, you just have to figure out is one the repeating number? Now to figure out, take one, go through the array. Oh, it happens to be twice. One happens to be twice. So I cross checked. On cross checking, I know one is my x and y is my five. If one was not appearing twice, one would have been my y and the other one would have been my x. Just have a cross check by doing a simple iteration. Very simple. Put them into two parts and XOR and you'll get the two numbers. Quite simple. I'll code it. It's very, very simple. Don't worry about that. So let us quickly code up this optimal solution. First, I'll be figuring out the size of the array. What is the next thing? If you remember what we did was we went through the entire array and then we took all the numbers from one to n and we did a XOR. So let's go through the"
+    },
+    {
+      "chunk_id": "L041_C28",
+      "start": 1885.7,
+      "end": 1953.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1885s",
+      "text": "entire array and then we took all the numbers from one to n and we did a XOR. So let's go through the entire array and this is how you can iterate. Let's take a XOR variable which will keep the XOR. And I know I have to XOR all the elements in the array. So XOR equal to XOR of array of i. So this will make sure that I do XOR of all of these numbers. Let's say I have to do a XOR of all the n numbers and the looping is from i zero. So if I do XOR of XOR of i plus one, will it do it? First time i is zero, so one will be XOR. Next time i is one, so two will be XOR and eventually everything will be XOR. So eventually this everything will be XOR and stored into XR. So if you remember over here XR was this one here. If I just erase it, on XORing XR will come up as one double zero which is four. So in four you have to find the bit number. You have to find this particular bit number. Right. And what is this bit number? It's the second index. How do you find it out? Quite simple in bit manipulation. What you can do is you have one zero zero. So you start with the zeroth bit and you"
+    },
+    {
+      "chunk_id": "L041_C29",
+      "start": 1953.7,
+      "end": 2015.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=1953s",
+      "text": "simple in bit manipulation. What you can do is you have one zero zero. So you start with the zeroth bit and you check if the zeroth bit is set or not. That is not. Then you go to the first bit. Is the first bit set? No. Then you go to the second bit. Is the second bit set? Yes. So basically what you'll do is probably I'll take bit number equal to zero and I'll keep on going till it is not set. And how do you check it is set or not? So if you have a one zero zero and if you put a one here and then you say XOR or AND it. Sorry AND it. So what will happen is you'll get zero zero zero. Why? Because AND only works for one and one. So you'll get zero and one as zero. So you got a zero. Right. But if you take the same thing as one zero zero and you put a one over here and you take zero zero you'll get zero zero and you'll get one. So you'll get a number for this. If you put a one over here and you put everything zero you'll again get zero zero zero. So. Beneath every bit index put a one. Beneath every bit index put a one. Beneath every bit index put a one. And anything that gives a number apart"
+    },
+    {
+      "chunk_id": "L041_C30",
+      "start": 2015.14,
+      "end": 2081.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=2015s",
+      "text": "a one. Beneath every bit index put a one. Beneath every bit index put a one. And anything that gives a number apart from zero will be the bit index which is set which is set. In this case it is one because four was nothing but one zero zero. So the second bit index was set. So the second bit index was set. Quite simple. And how do you put a zero? It's very simple. If you do one left shift of bit index one left shift of bit index or bit number that will do it. So what does this mean? If you say one left shift of zero times. If you say one left shift of zero times it will stay as one. If you say one left shift of one times one will be this one. This one will be left shifted by one and it will come over here. Next if you say one left shift of two times this one will be left shifted by two and it will come over here and form one zero zero. So what you will do is you'll say if you know the number is xr and of one left shift of bit number and if that is non-zero and if that is non-zero so you can just do it. If this value comes out to be non-zero fine this is my bit number and I can"
+    },
+    {
+      "chunk_id": "L041_C31",
+      "start": 2081.78,
+      "end": 2146.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=2081s",
+      "text": "so you can just do it. If this value comes out to be non-zero fine this is my bit number and I can break or else let's move to the next bit number and find it. So first what will happen bit number is zero. So this thing will happen where you'll put a one here and it'll try to do an and it'll give you a zero. Next it'll move here and it'll again give zero. Next it'll move here and again give this number. Done. So this will make sure that I get the bit number. So I have the bit number. What will be the value of bit number if I ask you? The bit number will be two. Let's quickly erase this so that you understand everything perfectly. So what is the next step? You already have the bit number two. Now you have to go through these numbers and segregate them. So four was if you remember on the part of this one. Why? Because four is one double zero and the bit number is two. So second index is said the four was a part of this one. So primarily I'll keep this portion and this portion as two variables. Let's keep as this as zero and let's keep this as one. So I'll keep two variables. Someone who is a part of the zero. Initially it's no one and someone is a part of one"
+    },
+    {
+      "chunk_id": "L041_C32",
+      "start": 2146.98,
+      "end": 2224.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=2146s",
+      "text": "So I'll keep two variables. Someone who is a part of the zero. Initially it's no one and someone is a part of one which is zero no one. Next let's go across these numbers. First I'll go across four. So if I go across four how can I go? Like this. If I go through this we'll get through four. Now for four it's one double zero. I have to check if the second bit is one or not. The second bit is one or not. How will I do? I'll put a one here which means I'll say if array of i and of one left shift of bit number. If I say this what will happen is there will be a one here and it will be zero. Do an add zero zero one and it is non-zero and it is non-zero. So what you can say is if this comes out to be just second yeah if this comes out to be non-zero that means it's a part of one. It's a part of one. This means it's a part of one. Very simple. Part of one club or else it's a part of the zeroth club. Again quite simple. What will be the next thing? Let's see. If this four as we see is a part of the one club. It's a part of the one club. So it will go to the one club and what did we do? Like do we need to"
+    },
+    {
+      "chunk_id": "L041_C33",
+      "start": 2224.82,
+      "end": 2288.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=2224s",
+      "text": "It's a part of the one club. So it will go to the one club and what did we do? Like do we need to store the numbers? Do we need to store the numbers like four six? No. What did we do at the end? We just did a XOR of four six four. Whatever numbers we got we just kept on doing a XOR and four got cancelled with four six got cancelled with six. The numbers in itself get cancelled according to maths. So it's not like it will wait for a four. It will get cancelled. That's how bit manipulation works. So eventually five was left. So what you'll do is instead of storing just keep XORing whenever you get it one equal to one XOR the number or else zero it will be a part of the zero club. Zero is all the number. Perfect. This is done for the entire array. This is done for the entire array. What's the next thing to do for all the numbers? Please go ahead and do for all the numbers. So you can do it on that loop as well or you can just run another loop as well. That's your choice. And you can just write the same thing part of the zero club or part of the one club. And over here instead of a of i it will be i because that's a number. Perfect. And over here"
+    },
+    {
+      "chunk_id": "L041_C34",
+      "start": 2288.5,
+      "end": 2364.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=2288s",
+      "text": "of the one club. And over here instead of a of i it will be i because that's a number. Perfect. And over here you'll do an i. Done. So once you have done this you will have the one ready. So once you have gone through this entire thing and this entire thing you will have the value of zero to be one. Why? Because everything will get cancelled and the value of one to be five. Right. So you have the zero and one. You just need to confirm. So what I'll say is count equal to zero. I'll go across the entire array and I'll be like if a of i is equal to one or rather zero. Counter plus plus. So if at the end of the day if the at the end of the day counter is two which means zero was my repeating number which means zero was my repeating number. So zero and the other one will be my missing number or else it's the opposite. Quite simple. Don't store numbers in a bucket because there's no point in storing everything. Because at the end of the day you were trying to XOR everything. So just do it. Do a XOR when you collect numbers. Why do you want to just store it and do it in the future? Just do it right away. Right. This is how"
+    },
+    {
+      "chunk_id": "L041_C35",
+      "start": 2364.74,
+      "end": 2438.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=2364s",
+      "text": "Why do you want to just store it and do it in the future? Just do it right away. Right. This is how it will be. Quite simple. So I can go ahead and run it off and this will be running absolutely fine. Yes it does. Now do I need to go like I did this because I wanted to explain you bit manipulation slightly. I did this to find the bit number and then I did this to generate that number. So what we did was I can print that as well. What I did was I knew the XOR was four. Right. And which is one double zero. Correct. And what we did was we figured out this was the second bit and every time we did like one left shift of second. So in order to generate that number because we were not doing anything. We were just taking the six one one zero and we're doing XOR with one double zero to check if this bit is set or not. Every time we were generating this number. Every time we're generating this number to check if the second bit is set or not. So instead of doing all of these things. Super easy bit manipulation trick. I think that number can be written as. I think it can be written as XOR and it will be AND of NOT of XOR minus one. Yeah. That's what"
+    },
+    {
+      "chunk_id": "L041_C36",
+      "start": 2438.18,
+      "end": 2498.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=2438s",
+      "text": "written as. I think it can be written as XOR and it will be AND of NOT of XOR minus one. Yeah. That's what it can be written as. Again I'll be teaching that in bit manipulation and you can just convert this into number. If you know bit manipulation you'll understand it. If I go ahead and run this. This will be running. Bit number was not declared. Oh sorry my bad. Okay you have to just make sure that it's everywhere. Cool. Done. If you run this this will also be running fine. I did it because I know some people will come up in the comment section and say hey why are you running it do it like this. This is how you can easily generate the number with a one at the differentiating bit. Very simple. So this is how easily you can do it and that will replace all those steps. But those steps were super intuitive. So I'll probably suggest you to do those steps in the interview because that will be much more helpful. Let's go back and compute the time complexity. B go of n, B go of n, B go of n and B go of n. Near about B go of 4n. This could have been clubbed over here. So B go of n. We can say near about B go of n is the time complexity. Near about B go of n is the"
+    },
+    {
+      "chunk_id": "L041_C37",
+      "start": 2498.98,
+      "end": 2543.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=2D0D8HE6uak&t=2498s",
+      "text": "go of n. We can say near about B go of n is the time complexity. Near about B go of n is the time complexity and the space complexity is B go of 1 because we're just using variables. We're not using any buckets. Just variables. This is the time complexity and the space complexity. I know this was slightly tough but if you have understood this your level is right up there with the best and you're doing really really good. So let's go back to the sheet and let's mark it as complete. So this one done as well. I hope you've understood all the four approaches. Just in case you did, please please do consider giving us that like because it won't cost you anything but it will highly motivate me to make these kind of content and if you're new to our channel what are you waiting for? Hit that subscribe button if you haven't followed us on Instagram, Twitter, LinkedIn. All the links are in the description. With this I'll be wrapping up this video. Let's meet in some other video. Till then bye bye. Take care."
+    }
+  ]
+}

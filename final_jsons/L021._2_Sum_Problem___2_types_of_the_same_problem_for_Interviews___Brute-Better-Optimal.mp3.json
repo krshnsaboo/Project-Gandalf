@@ -1,0 +1,127 @@
+{
+  "lecture_id": "L021",
+  "lecture_number": 21,
+  "lecture_title": "2 Sum Problem | 2 types of the same problem for Interviews | Brute-Better-Optimal",
+  "youtube_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k",
+  "chunks": [
+    {
+      "chunk_id": "L021_C1",
+      "start": 0.0,
+      "end": 67.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another video from the Stryber's A to Z DSA course. Just in case you're for the first time here, this is world's most in-depth course in DS Algo. Why do I say that? Because in this course, I will be covering 456 modules. By the end of the course, you would have solved 400 plus problems in DS Algo. You can go across the entire internet, you can buy any of the paid courses. None of them will be teaching DS Algo in such depth. So something that I can give you as a guarantee is, once you complete this entire course, you can crack any of the DS Algo rounds, any of the interviews, any of the companies in any part of the world. So till now we have covered till step 3.1. We will be starting with step 3.2 and the problem that we will be solving in this particular video is the two-sum problem. So what does this particular problem see? Now this particular problem has two different varieties and I'll be covering both of them. The first one is very simple. You will be given an array and the array will be containing integers and you'll be given a target value. Your task is to tell me, does there exist two elements A and B from the array such that"
+    },
+    {
+      "chunk_id": "L021_C2",
+      "start": 67.72,
+      "end": 138.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=67s",
+      "text": "be given a target value. Your task is to tell me, does there exist two elements A and B from the array such that if you add them up, you get this particular sum. For an example, if I give you target equal to 14, I can say if I pick 8, if I pick 6, 6 plus 8 will give you 14. For an example, if the target was 15, I would have said, can I make 15? Let's probably check out 11 plus 2, no. Six plus five, no. Eight plus six, no. I cannot find a way in which I can make 15. So 15 is not possible. 14 is possible. So the answer if the target is 14, it'll be yes. That's the first variety. Tell me yes, if it is possible. Tell me no, if it is not possible. What is the second variety? The second variety is slightly different. It does tell you that, hey, listen, you're given an array and we are shown, yes, we are sure that there are two elements which will give you the sum 14. We're sure about that. Your task is to tell me where are these two elements. So I'll be like, okay, eight is here, six is here. So the indexing is at one comma three. So you have to return me both the indexes, which will add up to give you 14 because at index one, I have six, at index three, I have eight."
+    },
+    {
+      "chunk_id": "L021_C3",
+      "start": 138.32,
+      "end": 194.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=138s",
+      "text": "me both the indexes, which will add up to give you 14 because at index one, I have six, at index three, I have eight. So six plus eight gives you 14. Your task is to return both the indexes instead of saying yes or no. The first variety says yes or no. And the second variety says, give me both the indexes, which will add up to give the particular target. So both the varieties are pretty much similar. The only difference is you have to tell us which, which elements are you picking up, right? So let's keep both the varieties in mind and let's try to solve this problem. So whenever this problem comes up in an interview, the first solution that you'll give is definitely the brute force. What is the brute force? The brute force is very simple. I pick up one element, then I check with every other element, does it sum up to give you the target? Then I pick up the next element, then I check with all the other elements, does it sum to give the target? And again, pick up the other element, then I check up with every other element, does it sum up to give this target? And I pick up one other element and then I check with every other element. That's a simple brute force solution."
+    },
+    {
+      "chunk_id": "L021_C4",
+      "start": 194.06,
+      "end": 258.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=194s",
+      "text": "this target? And I pick up one other element and then I check with every other element. That's a simple brute force solution. So if I have to write the code, can I say it will be like for i equal to 0, i less than n, i plus plus and can I say for j equal to 0, j less than n, j plus plus and then can I say if i is equal to equal to j then I'll not do anything. I'll just continue because we cannot pick up the same elements or else I'll say if array of i plus array of j is equal to equal to the target then it's a yes or if you want the indexes, the indexes are i and j. So both the varieties can be solved using the brute force method. This is the yes and this is the indexes if you wish to. So this is very simple. And once you've done this you can break out, you can return whatever you wish to do. It's a very simple brute force solution. What is the time complexity? n square because for every, for every element you are checking with every other element. For every element you are checking with every other element. So can I optimize them further? The answer to that is yes. Imagine you are at 2, you are checking with 6, 5, 8, 11."
+    },
+    {
+      "chunk_id": "L021_C5",
+      "start": 258.94,
+      "end": 326.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=258s",
+      "text": "I optimize them further? The answer to that is yes. Imagine you are at 2, you are checking with 6, 5, 8, 11. So 2 and 6 are already checked if you carefully observe, 2 and 6 are already checked as two elements. Now when you are at 6, is there a point on again checking for 2 because even if you again check for 2, it's like again 2 and 6. Similarly if you are at 5, is there a point for checking for 6? So can I say if you are at an element, you always start checking from the next. If you are at 6, you can start from 5 because 2 is done. If you are at 5, you can start checking from 8. So what you can do is instead of doing 0, you can say I'll start checking from the next and this line will go off. So this is slightly lesser than n square but it is still near about n square. So that is the brute force solution, quite simple. So the interviewer will not be happy with the brute force solution and he'll ask you to optimize this. This is when you go to the better solution. The better solution is going to use hashing. And what is my thought process behind it? It's more like I'm doing an n square. I'm trying to trim it down to somewhere near about n or n log n or somewhere which is better"
+    },
+    {
+      "chunk_id": "L021_C6",
+      "start": 326.8,
+      "end": 392.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=326s",
+      "text": "I'm doing an n square. I'm trying to trim it down to somewhere near about n or n log n or somewhere which is better than n square. Now when I think about a big O of n approach, it tells me that means I'm treating on an element once. That's how my brain should think. I'm treating on an element once. So if I'm treating on 8, what am I looking for? I'm looking for one more element that gives me the target. Simple thought process. If I'm looking for one more element, what will it be? If I'm looking for 14, if I have 8, the other element will be 6. Simple mathematics. If I'm looking for 6, how do I figure this out? Does 6 exist in the array or not? So we say yes it does. But how do you figure it out easily? You know the technique hashing. If you would have stored it somewhere that 6 is there, 6 is there, you can easily retract from it and you can use the map data structure which will tell you yes 6 is there. So you can easily say with 8 I have a 6. That's how you'll be using hashing. Got it? So I hope you've understood the thought process. Now let's do a dry run of the algorithm. So what I'll do is I'll take a hash map and in the hash map I'll be storing the array"
+    },
+    {
+      "chunk_id": "L021_C7",
+      "start": 392.1,
+      "end": 458.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=392s",
+      "text": "run of the algorithm. So what I'll do is I'll take a hash map and in the hash map I'll be storing the array element, I can say element and the index where the element will be the key, where the element will be the key and index will be the index of the array. This is what I'll be storing in the hash map. And let's quickly do a dry run. So when we are at 2, we will say, okay, we have one element as 2. And now I'm like, okay, how much, like what is the next number that we require? That's definitely 12 because 2 plus 12 will give you 14. Very simple. You just take 14 and you subtract 2. So if you subtract 2, you'll get 12. It'll be like, okay, I have 2. Do we have 12? You look in the hash map and you say, no, I do not have 12. So if you do not have 12, okay, not possible. If not possible, the index is 0. So tell 2 element with the index to be stored in the hash. And now you'll know, okay, we are 6, we have 6. Now if we have 6, how much more do we require? 8. We have 6. Do we have 8 in the hash map? We have 8 in the map. We have 8 in the array, but do we have it in the hash map? No."
+    },
+    {
+      "chunk_id": "L021_C8",
+      "start": 458.02,
+      "end": 529.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=458s",
+      "text": "hash map? We have 8 in the map. We have 8 in the array, but do we have it in the hash map? No. So presently with the 6, there is no 8. On the left, on the left, there is no 8. So if there is no 8, fine. Take 6 and put it with the index 1. Perfect. Next move ahead, we have 5. If we have 5, what I will do is, I'll take 5 and I'll say, with 5, how much do you require? He's like, it was 14. So I require 9. Do we have 9 in the entire hash map? No. So what you'll do is, you'll take 5 and you'll say it appears at the index 2. That's what you'll do. And then you'll move to 8. The moment you move to 8, it states, okay, you have 8. How much more do you require? He says, I require 6. I do have 8. Do I have 6? It states, yes, I have a 6 here. And the 6 that I have appears at index 1. Where am I currently at? Index 2. So if they are asking you yes or no, you simply return a yes the moment you find it. If they're asking you to return the indexes, you're like, okay, you just need the indexes now. So 8 currently is at index 3. And 6 is at index 1. So 3, 1. Simple as that. These are the two indexes."
+    },
+    {
+      "chunk_id": "L021_C9",
+      "start": 529.58,
+      "end": 602.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=529s",
+      "text": "now. So 8 currently is at index 3. And 6 is at index 1. So 3, 1. Simple as that. These are the two indexes. They do not care about the order. If they care about the order, then you can just put 1 at the front and then 3. You can easily customize it. So done. Once you've done, you stop the iteration. And if you have completed the iteration and you do not find any existence where you'd have got two elements, then you return no. Very simple. So let's quickly code the better solution. By the way, the problem link will be in the description. So we need a map. So let's take a map at first. And then we will be simply going across this one. Can I say my first element is this? How much more do I require? Can I say I require more as target minus 8? Can I say if I have to look in the map as a map.find more, are you there in the map? If you're in the map, then you'll not be pointing to the last iterator. If that's the case, we will be returning yes. Or else you just keep on going. And if you keep on going, what will you do? You will say mdv map of this particular guy who has this number and is this market at the index. That's it."
+    },
+    {
+      "chunk_id": "L021_C10",
+      "start": 602.18,
+      "end": 668.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=602s",
+      "text": "do? You will say mdv map of this particular guy who has this number and is this market at the index. That's it. And if after the complete iteration, you never found it, you return a no. Quite simple. If they wanted the index instead of this, you can easily write return. Okay. What are the indexes? They need the smaller one at first more and the next time. Quite simple. If they need the index, this is how you return if they need yes or no, this is how you do. So in this way you can solve both the varieties. So for the variety too, you can write the hashing solution on lead code and then you can quickly go and run this and it should be running on lead code as well. Let's quickly submit this as well. Cool. It does run. Okay. So what is the time complexity of such an approach? It's very simple. It's big O of n. I can say n if we are assuming the map to work in big O of 1. If the map works in logarithm of n, then it's log n. Depends on which map you take. I have already discussed that in time complexity lecture. You can go over there and watch. This is when we take a map and big O of n when we take an unordered map in the best and average case."
+    },
+    {
+      "chunk_id": "L021_C11",
+      "start": 668.12,
+      "end": 739.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=668s",
+      "text": "is when we take a map and big O of n when we take an unordered map in the best and average case. In the worst case of unordered map, it can go up to big O of n square the complexity because find takes big O of n in the worst case in unordered. Got it. What about those piece? I'm using a hash map where we are dumping every element, every element, and if you're dumping every element, we know it's going to show everything. So it's a big O of n. I hope you have understood this. Now at this moment, a lot of interviewers might not drill you more because the better solution is taking an n log n approach, which is exactly similar to the optimal approach. The only thing that they can drill you is they might ask you, hey, you're not allowed to use the map data structure. Can you solve this without using the map data structure? This is where you'll be like, okay, maybe I have a slightly better solution, not much, slightly better solution, and that solution will be using two pointer approach. It's a very simple one. So there is no particular thought process behind it. It's a very, very simple, greedy approach, greedy approach. So if I sort the array, what will I get? I'll get something like two, five, six, eight, 11. What is the target that I'm looking for? 14."
+    },
+    {
+      "chunk_id": "L021_C12",
+      "start": 739.2,
+      "end": 806.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=739s",
+      "text": "the array, what will I get? I'll get something like two, five, six, eight, 11. What is the target that I'm looking for? 14. Now I'm looking, I will apply a greedy approach. So what I'll do is I'll keep a left pointer at two. I'll keep a right pointer at 11. That's what I'll do. Left pointer at two and a right pointer at 11. Now I'll be like, okay, fine. What do we have? Two plus 11. That's giving me 14. No, it is not. It is not. How much is it giving me? It's giving me 13. One shot. We're one shot. Now, since the array is sorted, if you move to this portion, this will be eight and two plus eight will give you 10. So you will not reach the target. So what will you do? Since this is 13 and you want to reach 14, you have to do increment. If you have to do increment in which direction is the increment? If you move in this direction, then two will increase. So you have to increase the value. If you were left, 11 will decrease. So this is why I sorted the array. So what I'll do is I'll just take the left pointer and I'll move it to five. This is now five. On five, what do you get? 11 plus five is 16. I'm like, ah, this is more than 40. This is more than 40."
+    },
+    {
+      "chunk_id": "L021_C13",
+      "start": 806.28,
+      "end": 884.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=806s",
+      "text": "On five, what do you get? 11 plus five is 16. I'm like, ah, this is more than 40. This is more than 40. I'm like, okay, more than 14. Reduce. I know if I move left, then I'll reduce. So I'll just move over here. Now what is the value this time? Five plus eight. How much again do I get? 13. Five plus eight is 13. Okay. Again, you have to increase. So you move. So when you move, what will you get? You will get six and you'll get six plus eight, 14. And you can say, yes, I was able to. But if at any moment left and right cross, cross, and you did not find two elements which add up to give you the target, the answer will be no. They might be thinking, but Strabo, this is solving the variety one. How can I solve the variety two? Because the variety two tells me to give me the index. In that case, you have to put it in some other data structure and if to put it like two comma zero, six comma one, five comma two, eight comma three, 11 comma four. So if you put along with the indexes into some data structure, then you have to sort it so that along with two, you'll always have zero. Along with five, you'll always have two. Along with six, you'll always have one. Along with eight, you'll always have three."
+    },
+    {
+      "chunk_id": "L021_C14",
+      "start": 884.36,
+      "end": 946.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=884s",
+      "text": "always have zero. Along with five, you'll always have two. Along with six, you'll always have one. Along with eight, you'll always have three. Along with 11, you'll always have four. So that the indexes are preserved. But again, this is not an optimal approach for the variety two because you will be ending up using like more space because using a data structure of n cross two, because if to store it in some other data structure, then you have to sort it. So it's not an optimal solution for the variety two. For the variety one, where you just have to tell me yes or no, I can use this because we are no more using a map data structure. We're just using sorting and then we're using a traversal in order to find it. So let's jump into the editor and try to code this up again. The problem link will be in the description so you can keep the left pointer as zero and the right pointer of the last index, which is n minus one. What's the first step? Yes, you go ahead and say, I'm going to sort it so you can use the sorting function. Again, the Java port will be in the description. And now what I can do is I can run the while loop. So while left like this, and I can go ahead and say, Hey, listen, I need the sum."
+    },
+    {
+      "chunk_id": "L021_C15",
+      "start": 946.12,
+      "end": 1007.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=946s",
+      "text": "I can run the while loop. So while left like this, and I can go ahead and say, Hey, listen, I need the sum. So sum has to be book of left plus book of right. This is very short. First thing I know is if sum is target, then we are going to say, Hey, I got my answer. I don't care about you. Else, if you're going to say if sum is less than target, I'll be like, Hey, increase, decrease. So from the left else decrease if the sum is greater. At the end of the day, I can say return no. And also make sure after you've done this, you need to do, or you don't need to hash wrap. Yeah, this is how you can easily do it. And now we will quickly go and run this and see if it is running fine. It is. Let's quickly submit this. What is the time complexity? If I have to analyze, I can say the time complexity is very simple. Since we are moving from the left and the right and covering the data and array, the time complexity is big O of n because they're moving from the left, they're moving from the right. For the worst case, it might end up getting to the last point. As you saw, we went here, we went here. So we covered this much. We covered this much."
+    },
+    {
+      "chunk_id": "L021_C16",
+      "start": 1007.72,
+      "end": 1070.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=1007s",
+      "text": "up getting to the last point. As you saw, we went here, we went here. So we covered this much. We covered this much. The time complexity, this time surely is big O of n plus another big O of n log n for sorting. So what about, so what about the space complexity? I'm not using any extra space. So big O of one. Yeah. So you might argue that the, you are changing the array. You're like, yeah, I'm changing the array. So if he has to like take into account the space complexity of the array, because you have changed it, then it will become big O of n. So you can clearly tell him I'm not using anything extra, but I'm distorting. So if you want to consider, if you want to consider that distorted array space complexity, well and good. It's big O of n. If you don't want to consider, it's big O of n. It's something which is very theoretical and you can always explain that to the interview. Again, this for variety to a lot prefer this for variety to the better is the most optimal one for variety one. You can sort it and then use it. So coming back to the sheet, I can say this is done. If you need the C++ Java and Python code for all the three approaches, there is a link in the description. You can check it out."
+    },
+    {
+      "chunk_id": "L021_C17",
+      "start": 1070.56,
+      "end": 1092.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=UXDSeD9mN-k&t=1070s",
+      "text": "need the C++ Java and Python code for all the three approaches, there is a link in the description. You can check it out. And yes, to continue our tradition, please do comment understood, read the video. And if you're new to our channel, please, please do consider subscribing to us because that does motivate me to make such kind of content. And if you haven't followed me on Instagram, Twitter, LinkedIn, the links will be in the description. Please do follow me. And with this, I'll be wrapping up this video. Let's put in some of the video. Till then, bye-bye. Take care."
+    }
+  ]
+}

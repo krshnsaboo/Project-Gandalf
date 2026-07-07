@@ -1,0 +1,148 @@
+{
+  "lecture_id": "L145",
+  "lecture_number": 145,
+  "lecture_title": "G-20. Find Eventual Safe States - DFS",
+  "youtube_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM",
+  "chunks": [
+    {
+      "chunk_id": "L145_C1",
+      "start": 0.0,
+      "end": 79.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=0s",
+      "text": "So hey everyone, welcome back to the channel. I hope you guys are doing extremely well. One more problem in the graph series, which is the eventual safe states. What is the problem state? The problem states are given a directed graph of V vertices and E edges. And the graph is a zero based vexing graph. A node is a terminal node if there are no outgoing edges. So there should be incoming, there might be incoming edges, but there should be no outgoing edges. Then we call that node as a terminal node. A node is a safe node if every possible, very, very important point. If every possible path starting from that node leads to a terminal node. Okay. Now you need to return me an array containing all the safe nodes of the graph. The answer should be sorted in ascending order. So what does the question state? So this is the given example. They're asking you out of this, which are the safe nodes? That's what you need to figure out. What is a safe node? Every path, very important. Every path ends up at a terminal node, ends up at which node? A terminal node. What is a terminal node? No outgoing edges, or you can say out degree of that node is zero. So in this video,"
+    },
+    {
+      "chunk_id": "L145_C2",
+      "start": 79.42,
+      "end": 159.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=79s",
+      "text": "is a terminal node? No outgoing edges, or you can say out degree of that node is zero. So in this video, I'll be solving this using the cycle detection technique. And in the next video, I'll be solving this using the BFS or the toposort technique. So in this video, you need to be knowing about cycle detection in an undirected graph. If you haven't seen, you can go back or like three or four videos in the series, you'll get that video. So out degree has to be zero. So can I see this guy has one outgoing edge, but this is definitely not a terminal node. Can I say this has no outgoing edge? I can. And can I say this is a terminal node for me? I can. So the first terminal node I can spot is six. Do you spot any other terminal nodes? Yes, you do. If you see five has incoming, but no outgoing. So I spotted one more terminal, which is five. Do I spot any further terminal nodes? I do not. I do not because everyone has an incoming and an outgoing edge as well. So let's start with zero. Let's figure out the first part one, three. So it redirects me back to zero, not to any of the terminal nodes. So zero cannot be a part or zero cannot be called a central. Let's try it with one."
+    },
+    {
+      "chunk_id": "L145_C3",
+      "start": 159.34,
+      "end": 224.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=159s",
+      "text": "any of the terminal nodes. So zero cannot be a part or zero cannot be called a central. Let's try it with one. One goes to three, three goes to zero, zero comes back to one. So the one can also not be part of a safe node because it comes back to himself or it doesn't like all the parts do not end up at the terminal node. Let's check out two. Two has only one path. If you carefully see two has only one path and that ends up at five, two has only one path that ends up at five. So can I see this? Yes. Can I see this? That two is a safe node. I can definitely see that two is a safe node. So two is a safe node. Let's check out for three. Three. One of your paths is definitely ending up at the terminal nodes, but are all the paths. Let's check. Three has one more path like this, like this, and like this, which ends up at the three himself. So I can definitely see three cannot be a part of it. Can I have four as a part of it? Yes, it does end up at a terminal node five. So four can also be a part of my safe node. Let's check out for five. Five is himself a terminal node,"
+    },
+    {
+      "chunk_id": "L145_C4",
+      "start": 224.82,
+      "end": 296.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=224s",
+      "text": "five. So four can also be a part of my safe node. Let's check out for five. Five is himself a terminal node, which means it's a safe node. So five is a safe node. Let's check out for six. It's a terminal node. So a safe node. So I can say this is the array in the sorting order, which you have to return as an answer. So you have to figure out all the paths and if all of the paths end up at a terminal node, then you say that, okay, that guy is definitely a safe node. So the question is very straightforward. Give me all the safe nodes present in a graph. So do you remember the cycle detection technique where we detected a cycle? So can I see by observing this particular example, we did figure out that all the possible paths are going to end up somewhere, but if they return back to themselves, if they return back to themselves, like there was one, three, zero, right? These three were the part of the cycle and they can never be safe nodes. Something to observe. Anyone who's a part of the cycle can never be a safe node. So imagine if I have a seven, which is pointing to one, will seven be a safe node? No. Why? Because seven can have a path through the same cycle and"
+    },
+    {
+      "chunk_id": "L145_C5",
+      "start": 296.54,
+      "end": 371.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=296s",
+      "text": "is pointing to one, will seven be a safe node? No. Why? Because seven can have a path through the same cycle and end back at not a safe node or not a terminal node. So what you can say is everyone who's a part of the cycle, you carefully observe everyone who's a part of the cycle, everyone who's connected to the cycle, you can say everyone who's a part of the cycle and everyone who's connected to the cycle will never be safe nodes. And if you look at this, this is not having any incoming edges to the cycle, no incoming edges to the cycle. Thereby it will always end up at terminal nodes. If there's a cycle and anyone who's connected to that incoming edges, so it will turn back on that stuff. So you cannot end up at a terminal node. So a slight observation we have noticed is anyone who's a part of the cycle, anyone who is a part of the cycle cannot be a safe node. And anyone that leads to a cycle, anyone that leads to a cycle cannot be. So I have figured out two ways apart from them. Everyone else can be a safe node. I can definitely say that. Right? So the whole problem can be easily solved by figuring out which guys are a part of the cycle and which guys are"
+    },
+    {
+      "chunk_id": "L145_C6",
+      "start": 371.66,
+      "end": 431.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=371s",
+      "text": "So the whole problem can be easily solved by figuring out which guys are a part of the cycle and which guys are incoming to the cycle. That is what we need to figure out. Once you figure that out, I think we should be able to solve this problem very, very easily. So Sajith now you know both the points, right? So we have already learned how to detect a cycle using the DFS technique and if you do not know, please go back and watch it. And over there we used a couple of arrays. One is visited and one is the path visited, right? That is what we used. So we're going to do the same thing and we will run the same thing on this particular algorithm and we will see how can we figure out which is a cycle and which nodes are approaching the cycle. So we've learned cycle detection in the previous videos, right? And over there we used a couple of concepts. One is a visited and the other one is the path visited. Now over here we are going to apply the same concept and we are going to determine which are the safe nodes. So as of now for this particular graph, what you can do is you can draw the corresponding adjacency list. So this is how the corresponding adjacency list will look"
+    },
+    {
+      "chunk_id": "L145_C7",
+      "start": 431.9,
+      "end": 502.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=431s",
+      "text": "graph, what you can do is you can draw the corresponding adjacency list. So this is how the corresponding adjacency list will look for this particular graph. So what we will do is, if you remember we had a couple of visited arrays. So we will create both the visited arrays and assign them with zeros. So let's create both of them. Okay. So as of now, what I've done is I've created the adjacency list as well as I've made the visited array and the path visited array as well. So remember all of these are assigned with zeros. So let's start the DFS calls again, since this can have multiple components, we will start the DFS in the standard way where we write i equal to zero and then go for V and then we say not visited. Then we call the DFS. Remember this? So that's what we will do. The very basic standard way if there are multiple components. So which is the first one? It'll go from zero. So let's start from zero. So starting from zero, this is where we are. So we will start the DFS call from zero. So let's start the call from zero. The moment you are at zero, what you will see is, okay, hey listen, unless this call gets completed, unless this call gets completed, then only I'll call it as a safe node. And if this call gets a cycle anywhere, anywhere in the path,"
+    },
+    {
+      "chunk_id": "L145_C8",
+      "start": 502.7,
+      "end": 573.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=502s",
+      "text": "call gets completed, then only I'll call it as a safe node. And if this call gets a cycle anywhere, anywhere in the path, I will not call this as a safe node. Got it? So let's start. So DFS of zero says, hey listen, I'm visited and I'm path visited as well. I'm visited and I'm path visited as well. Done. Next it goes to the adjacent, which is DFS of one, right? This is the adjacent node. This is the adjacent node goes to it. And as of now says visited and path visited. One will now go to two. And when it goes to two, it says visited and path visited. Two will now go to three. So when it goes to three, it again says it as visited and path visited. Remember this starts from here, goes here, goes here. Now it has two options. Either it can from three, it has two options. Either it can go to five, either it can go to four. So three goes and checks. Who's the first in the adjacency list? The first it finds is four. So it'll go to four. Remember this, it'll go to four and then it'll come back and probably go to five, but that will be done in the later stage when the recursion is complete. Recursion classes guys. So December, sorry, DFS three to DFS four. So we"
+    },
+    {
+      "chunk_id": "L145_C9",
+      "start": 573.26,
+      "end": 648.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=573s",
+      "text": "done in the later stage when the recursion is complete. Recursion classes guys. So December, sorry, DFS three to DFS four. So we will go for four. Four is visited, path visited as well. Next four will go to home, four will go to six. Let's go to six. DFS of six. Again, it'll mark six as visited and path visited as well. Now six, it's a very important point. Six is pointing to seven. Six is pointing to seven. So it will call for seven. It will call for seven and it will mark it as visited and path visited. Visited and path visited. Now, when you go to seven, it states, Hey, I do not have anyone. I do not have anyone to further call DFS. So I'm like, did I get a cycle? No, we actually reached an end. We started our journey from here and we reached an end. Can I say every node in this is a safe node because you started a journey, but wait, there's one more part to be checked. Fine. We'll check it afterwards. But as of now, can I see from six, there's one outgoing edge, which ends at seven and seven is a terminal node where I'm standing at. So from seven, there cannot be any further DFS call. So can I say seven is definitely, seven is definitely a"
+    },
+    {
+      "chunk_id": "L145_C10",
+      "start": 649.42,
+      "end": 716.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=649s",
+      "text": "standing at. So from seven, there cannot be any further DFS call. So can I say seven is definitely, seven is definitely a safe node. I can say it's a terminal. So what I'll do is I'll just mark seven. You can use any map or a third array to just keep a mark, which is a check. So I see everything for seven is done. No further DFS calls. So this is a safe node, marked it as true, right? What's the next thing that we will do? What we will do is, okay, we marked it as true. Next we come back. So let's come back. Now six is, I had a call for seven and I ended. I do not have any further calls. Why? Six only had seven to go. Fine. DFS is over for six. No further calls. This guy is also a safe node. This guy's also a safe node. Mark it. And remember when you are returning, the path visit will go as zero. The path visit will go as zero. So now return to four. Now four says, I do not have any further calls. I just had four six and I did it. I'm back. Four doesn't have any DFS calls. Four is also a safe node. So mark it as true. Oh, why am I going up? Mark it as true. And at the same time, make sure four's path visit is done because four will now go back."
+    },
+    {
+      "chunk_id": "L145_C11",
+      "start": 717.02,
+      "end": 787.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=717s",
+      "text": "going up? Mark it as true. And at the same time, make sure four's path visit is done because four will now go back. So now three, which went, cannot call it as a safe node. Cannot call it as a safe node as of now. Why? Because there's one more path which he has to explore. What does safe node mean? All the paths should end up at terminal node. Over here three states, one path ends at a terminal node. I have one more path to figure out. Does it end at a terminal node? I have to figure that out. So that is what we're going to do. Let's start from six now. Sorry, five now. So we'll go to five and we'll say path visited, path visited. Now five goes to six. Five goes to six because five's next node is six. But the moment you go to six, you actually say, hey, wait, wait. Six is already visited. Six is already visited. It got visited in this direction. And if six is already visited and I did not get any cycle, I did not get any cycle. Six is visited, but six is not path visited. It's not in the same path. It went in this path. Now it's this other path. It's not in the same path. It's definitely not a cycle. And if six has been checked and we did not get a"
+    },
+    {
+      "chunk_id": "L145_C12",
+      "start": 787.98,
+      "end": 857.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=787s",
+      "text": "path. It's not in the same path. It's definitely not a cycle. And if six has been checked and we did not get a cycle, I will no more go and check for six. I'll no more go and check for six. And I'll be like, fine. I don't need to check for six. So I don't need to do a call because six has already been checked. If you carefully see, six has already been checked and it did not get a cycle. So I will not go because six is not definitely not a cycle. Why? Because it was in a different path and this is in a different path. Six is definitely not a cycle because if it was a cycle, it would have gone like this. So it is not a cycle. It is not a cycle. Can five do any further DFS calls apart from six? No. So I'll say five is a safe node. Mark five is unvisited and I'll go back. Now three explored this path, explored this path. Can I say for three, it explored both the paths, which eventually means it is a safe node. So mark three also has a safe node and I'll go back. Going back, make sure this is zero. Two says I'm also a safe node. So two marks itself and goes back. One says I'm also a safe node, marks itself and goes back. Zero says I explored all my paths."
+    },
+    {
+      "chunk_id": "L145_C13",
+      "start": 857.1,
+      "end": 931.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=857s",
+      "text": "marks itself and goes back. One says I'm also a safe node, marks itself and goes back. Zero says I explored all my paths. I'm also a safe node, marks it as zero and goes back. Everyone, the path has been traversed. We did not get a cycle because this path does not have a cycle and everyone ends at seven. If you see, everyone ends at seven. So thereby all of these nodes can be called as a safe node. So everyone done? Now this will change to one, to two, to three, to four and it finds everyone is visited, which means they have been checked. There's no need to check any. They have been checked. So what I will do is I'll now go to eight and that's when we find it as unvisited. We will go to eight and that is when we find it as unvisited. So what I'll do is I'll call a DFS for eight now. So I'll just quickly raise this up because the next call will go for eight. So as of now we have a DFS call for eight. So let's start the DFS for eight now. So I start the DFS for eight. When you start it for eight, you mark them as visited and path visited. Eight has a couple of them, one and nine. So one and nine. So as of now, can I see this?"
+    },
+    {
+      "chunk_id": "L145_C14",
+      "start": 931.9,
+      "end": 1001.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=931s",
+      "text": "path visited. Eight has a couple of them, one and nine. So one and nine. So as of now, can I see this? Eight goes to one, but will you go to one? That's my question. Will the eight call a DFS for one? No. Why? So when eight tries to go to one, it says, Hey, listen, I am already visited. I am already visited and I'm not path visited, which means I'm not, I'm not a part of a cycle or I'm not someone who gets into a cycle because if this guy was a part of a cycle, it would have been visited and path visited as well. Got it? It's not a part of the cycle because if you'd have encountered a cycle like this, the moment you encountered cycle out of return, I would have returned. So the path visited for this guy would have also been one because anytime you get a cycle, you break and return. You do not reset the path visit. You only reset the path visit if and only if you did not get a cycle. Got it? Cycle detection video. So eight states, one, it just visited. You did not get a cycle. So fine. This path is saved. I'll not call it, but this path is saved. I still have a path to explore, which is DFS of nine. Let's explore."
+    },
+    {
+      "chunk_id": "L145_C15",
+      "start": 1001.42,
+      "end": 1077.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=1001s",
+      "text": "I'll not call it, but this path is saved. I still have a path to explore, which is DFS of nine. Let's explore. So I go to nine and I say, fine, visited path visited. Nine states, I go to DFS of 10. 10 says, okay, visited path visited. 10 says, the next guy that I have is eight and that guy is saying visited, path visited, which means false, which means false. So this guy cannot be a safe node because 10 encountered an eight cycle, cannot be safe. Thereby, it doesn't, doesn't remarks it itself as zero. Doesn't. It just goes back. You just return. The moment you get a cycle, you return. Do not reset. Nine says, you got a cycle. 10 got a cycle. Return. Eight says, you guys got a cycle. I'll return. No one unmarked themselves. So all of them are marked as visited and path visited. The thing that I was explaining, everyone returned and none of them were safe nodes. Perfect. So we have, we're done with this next. This will go to like eight, nine, 10, that's step 11. At the moment you try for 11, see what will happen. 11 says, I have a nine."
+    },
+    {
+      "chunk_id": "L145_C16",
+      "start": 1078.06,
+      "end": 1148.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=1078s",
+      "text": "that's step 11. At the moment you try for 11, see what will happen. 11 says, I have a nine. The moment, the next one you try to go to 11's neighbor, which is nine, it says I'm visited and I'm path visited, which means I got a cycle. That's why I'm still path visited. Someone returned, someone did not unmark me. Thereby, this is also not safe. Eventually you'd have marked all the safe nodes and you can just store them. Very simple, very straightforward. Okay. So guys, I hope you understood the explanation. And the moment I'll start coding this, you'll see that this sticks into your head in a much better way. So I'll go to the detector cycle in a directed graph. I'll go to the summations and I'll pick the DFS code from there. So this was the code. If you remember, this was the DFS that I wrote. So I'll just pick up that and I'll paste it here. That's the first thing that I'll do. Next thing I'll do is I'll just pick up the internal thing for a cycle check. So once you've pasted it, it's very important to analyze that you need to return an vector or a list as an answer. So probably you can just store it as safe nodes. Right. And we need to keep a mark, which are the same nodes. So just make sure they are marked."
+    },
+    {
+      "chunk_id": "L145_C17",
+      "start": 1148.38,
+      "end": 1217.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=1148s",
+      "text": "it as safe nodes. Right. And we need to keep a mark, which are the same nodes. So just make sure they are marked. Just make sure they are marked. Okay. Now, something very important over here. We do not break whenever we get a cycle because we need to continue all the DFS calls. Remember this. We need to do all the DFS calls because we need to check for all the nodes. So it's not like you get a cycle and you break out. Do not do that over here. You need to check for all the possible nodes. Okay. All the possible unvisited nodes. That's a small thing that you'll do at the end of the day. You'll say, okay, let's quickly have a check for all the nodes and something like if the check comes out to be one, then I'll put them into the safe nodes. We will see how we mark safe nodes and then I'll return the safe nodes. Very simple, very simple and easy. Now the question is, how does check work? So in order to do that, let's carry check as well over here and over here as well and pass it over here as well. So what did I tell you that if the DFS is successfully completed for a node, you always see it as safe node because if there is a cycle,"
+    },
+    {
+      "chunk_id": "L145_C18",
+      "start": 1217.82,
+      "end": 1288.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=1217s",
+      "text": "that if the DFS is successfully completed for a node, you always see it as safe node because if there is a cycle, it will always break out either here or either here. If there's a cycle, it will always break out either here or either on this portion. That is for sure. And if there is no cycle, then it will explore all the adjacent paths over on this for loop. It'll explore all the adjacent paths over the for loop and if it reaches the line number 31, it means it did not find the cycle. So you can say that it is true. So whenever you just enter, just make sure whenever you enter this guy, just make sure you see it as zero. Perfect. Now whenever I get a cycle, whenever I get a cycle, it means for this particular node, for this particular node on this ID, I got a cycle. So this node definitely cannot be a part of it. This node definitely cannot be part of it. So safe nodes. So what you'll do is you just take the return node inside it and right before this, you will say this node cannot be a safe node. No, no way. This is not required because you're initializing it, but still I won't explain it. If there's a cycle, it cannot be. Similarly, if it is a cycle, this guy cannot be. If it is a cycle, this guy cannot be because"
+    },
+    {
+      "chunk_id": "L145_C19",
+      "start": 1289.26,
+      "end": 1363.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=1289s",
+      "text": "cycle, it cannot be. Similarly, if it is a cycle, this guy cannot be. If it is a cycle, this guy cannot be because it tried to explore a part of ID. It found the cycle. So it cannot be. And if it explored all the parts, then you say, yes, this is the minor change that you needed to do on the cycle detection and it does work fine. So that is the reason I see you that having concepts so strong that you can modify it whatever way you like and you can always submit your codes. So let's discuss the space complexity. We're using three arrays and it might take like 3N, but we can do this in a single array as well. If you try to maintain counters, but then I'll not do that. I'll keep it very simple because this is what industry requires. Industry doesn't require doing it in one array. They require something which is understandable. So this is code quality in interviews. Do not go for a single array where you do 0, 1, 2, 3, 4 and certain stuff because that is not good quality. That is where the interviewer might give you lesser number of points. Yes, you can state that in interview, always state this approach and then you can tell the interview that maybe I can optimize this to a single array in the space complexity by keeping like a counter 0, 1, 2,"
+    },
+    {
+      "chunk_id": "L145_C20",
+      "start": 1363.82,
+      "end": 1422.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=uRbJ1OF9aYM&t=1363s",
+      "text": "the interview that maybe I can optimize this to a single array in the space complexity by keeping like a counter 0, 1, 2, 3, 4, certain stuff. So you can try that out definitely by yourself, but that is something which you should not propose at the first stage because the code quality goes down, the readability goes very, very down. What about the space complexity? It's the same what DFS takes. I'm not going to discuss this any further. So that should be it for this problem. So in the next video, I'll be solving this using the toposort method. So guys, I hope you have understood this problem and the entire code. So just in case you did, please, please, please make sure you like this video. And if you haven't checked out our DP series and the HDAC, what are you doing? The links are in the description. Please make sure you check them out. And if you haven't subscribed to our channel, it is a very, very earnest request that please do consider subscribing to us. That is because that is the only thing that keeps you motivated to make these kinds of content. And with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye, bye. Take care."
+    }
+  ]
+}

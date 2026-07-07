@@ -1,0 +1,232 @@
+{
+  "lecture_id": "L195",
+  "lecture_number": 195,
+  "lecture_title": "DP 14. Subset Sum Equals to Target | Identify DP on Subsequences and Ways to Solve them",
+  "youtube_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI",
+  "chunks": [
+    {
+      "chunk_id": "L195_C1",
+      "start": 0.0,
+      "end": 76.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we finished 1D DP and DP on grids. Now the next pattern of dynamic programming will be DP on subsequences. Yes, we will be doing DP on subsequences. Now a lot of times instead of subsequences, you might be hearing the name subsets. So either subsequences or subsets is what we are going to solve. So what is subsequences? Let's first understand the definition of that and then we can definitely move across. Now any contiguous or non-contiguous, that's very important. Any contiguous or non-contiguous part of the array is known as subsequence. Like for an example, if I give you an array like 1, 3, 2, then I can say 1, 2 is a subsequence because you see 1, 2 is non-contiguous and it's following the order of 1, 2. 2, 1 cannot be a subset or subsequence. We need to understand this. Whenever I say subsequence, it has to follow the order. Subset might or might not follow, but subsequence has to follow. So"
+    },
+    {
+      "chunk_id": "L195_C2",
+      "start": 76.32,
+      "end": 155.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=76s",
+      "text": "it has to follow the order. Subset might or might not follow, but subsequence has to follow. So this is a subsequence. Again, is this a subsequence? Yes, this is also a subsequence because 3, 2 follows the order as well as it can be called as a subarray. Subarray also you can call and subsequence also you can call. So all the problems that we will be doing is based on DP on subsequence or subsets and we will also be having one other stuff as target. Generally, we will be dealing with problems where we will be said, this is the target, you have to pick elements from the array in order like they will give some conditions in order to reach that target. So all the problems that relates subsequence, subsets and target will be the part of the next pattern we will be solving. We'll be solving a bunch of problems and again, I promise the moment we finish the last problem in this pattern, you can solve any problem in this given pattern. So without wasting any time, let's get started with the first problem. What is the first problem? It states subset sum equal to k. So you're given an array list of n positive integers and an integer k. So you're given an array and an integer k. Your task is to check if there exists a subset in an array"
+    },
+    {
+      "chunk_id": "L195_C3",
+      "start": 155.28,
+      "end": 229.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=155s",
+      "text": "k. So you're given an array and an integer k. Your task is to check if there exists a subset in an array with a sum equal to k. Basically, does any of the elements combine to give you the sum equal to k? So if there exists, you have to return a true, otherwise you need to return a false. Like if you see in this example, we have one, two, three, four, and k is four. I can say if I pick up a probably just the four, I'll get the summation four. Or I can say if I pick up one and if I pick up three, I'll get the summation as four. So there are two subsets. And the question was if there exists a single subset. So the answer to this will be true. So that's what you have to solve. Okay. So first of all, how do you solve this problem? Now, obviously we can't be writing a greedy solution because that will never make sense. We have to generate like the first thing that comes to my mind is generate all the subsequences and check if any, yes, if any of them gives a sum of k. That's the first thing that comes to my brain. Now, how can you generate all the subsequences? There are two ways. One is the power set. I have already made a video on that. You can definitely watch"
+    },
+    {
+      "chunk_id": "L195_C4",
+      "start": 229.76,
+      "end": 304.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=229s",
+      "text": "all the subsequences? There are two ways. One is the power set. I have already made a video on that. You can definitely watch it. One is the power set, which uses bit manipulation or the other one is the recursion. Again, the lecture six where we have discussed or the lecture eight of recursion playlist, the combination sum problem where you have already discussed how to generate all the subsequences. But the question arises over here. What is the question? Does it ask us to generate all the subsequences? And the answer to that is no. So what's the question? The question states, does there exist a single subset? If I get a single subset, my job is done. So I don't need to generate all the subsequences. That's where we think of. Okay. So instead of generating all the subsequences, we just need to keep a check if there is any subset, right? So thereby we decide that, okay, we will follow the recursion method because we don't need to print all. We will just follow the recursion method. And hypothetically, when we just get one subsequence with the same subset target, we will return and we will stop. So that's my overall thinking. So we know recursion can help us to generate all the subsequences. And I've clearly told you what's the rule of writing the recurrence."
+    },
+    {
+      "chunk_id": "L195_C5",
+      "start": 304.88,
+      "end": 384.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=304s",
+      "text": "we know recursion can help us to generate all the subsequences. And I've clearly told you what's the rule of writing the recurrence. Any recurrence can always be written in, express everything in terms of index. Do we have an index here? Every array problem in DP will always have an index and that's the array index itself. So we definitely have an index. Do we have any other parameter? On every index, we need to take care of the target that we are looking for. So we can say we definitely have a target that we are looking for. So always remember this, whatever may be the problem on DP on subsequences and these subsets and target problems, we will always try to express everything in terms of index and everything in terms of target. Like in grid, it was I and J in subsequences, it is index and it is target. Thumb rule. Okay. Let's go to the second point. The second point is explore possibilities of that index. Now what am I talking about? Let's understand, explore possibilities of that index. So what am I talking about? I'm talking about an index and what the other thing, subset or subsequence. So what can be the possibilities if you ask yourself for an index, your brain will say striver, there will be two possibilities. Whether that array of an index is the part"
+    },
+    {
+      "chunk_id": "L195_C6",
+      "start": 384.2,
+      "end": 463.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=384s",
+      "text": "yourself for an index, your brain will say striver, there will be two possibilities. Whether that array of an index is the part of the subsequence. Make sense? So I can say it's the part of the subsequence. Like array of index is the part of the subsequence or array of index is not part of the subsequence. Like logically only these parts will be there, not part of the subsequence. So I have two choices. One is it's the part of the subsequence while the other one is it's not the part of the subsequence. So we have written all the possibilities. I don't see any other possibilities for a given index. We can think of the recurrence afterwards. Now what am I looking for? I'm looking for if any of them give a true, I'll return a true because the question was return true if you get. So I'll be like, okay, if return true or false, if both of the possibilities give, we will understand this in deep. So let's do one thing. Let's take the, so we have understood all the three points, right? Let's try to express. Now the question arises, how do I start with index? How do I start with target? Now always remember what out, what am I looking for? I'm looking for the entire array and if there exists a subsequence with the target, whatever is given to you. So I'll try to express it in terms of F of"
+    },
+    {
+      "chunk_id": "L195_C7",
+      "start": 463.0,
+      "end": 536.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=463s",
+      "text": "if there exists a subsequence with the target, whatever is given to you. So I'll try to express it in terms of F of N minus one saying in the entire array till index N minus one, hear me out properly in the entire array till the index N minus one. I repeat again in the entire array till the index N minus one, does there exist a target? That is what the recurrence will tell you in the entire array till index N minus one. Does there exist any target? For an example, if I'm giving you one, two, three, four as the array and I'm saying you the target as four, if I'm writing F of three comma four, that means I'm doing the indexing zero one, two, three, and I'm asking on this portion on this entire array, does there exist someone with a target for that's what I'm looking for. That's the meaning of F of N minus one target. And this is going to be valid throughout all the DP on subsequences pattern. Okay. So we have understood this. So thereby we write, okay, F of index and we have a target. So that's the first thing expressing the recurrence. So whenever we are expressing the recurrence, what are the base cases? I have to think about these base cases. What are the base cases actually? So my brain"
+    },
+    {
+      "chunk_id": "L195_C8",
+      "start": 536.92,
+      "end": 611.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=536s",
+      "text": "recurrence, what are the base cases? I have to think about these base cases. What are the base cases actually? So my brain tells me, okay, Stryver, what can be the base cases? The base cases is it might happen. We have achieved the target because you might be at a state where the target is no more like initially assume over here, the target was four and just imagine you took this four and you came out to this index. There is no further target to be achieved. Do you understand? So what I'm saying is, okay, I know one base case is for sure for the index target. So I'll be like, if at any moment the target becomes zero, I'll return a true. Why? Because we were looking for a subsequence, which gives me the target as zero. So I've written that. So we have written the base case for target. What about the other one index? So where is the call starting from N minus one? And we know we will go till the zero index because in an array it's from N minus one at index till the zero index. So if you're standing at an index zero and you have a certain target value, assume four, can this target be achieved at this index zero? How can you determine? You can be Stryver. If the array of"
+    },
+    {
+      "chunk_id": "L195_C9",
+      "start": 611.2,
+      "end": 690.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=611s",
+      "text": "assume four, can this target be achieved at this index zero? How can you determine? You can be Stryver. If the array of zero contains the value four, then this target can be achieved. Otherwise not. Make sense? Because what does F of zero comma target signify? It signifies till zeroth index can we achieve this target? And if it's zero index, it's only single element. So how can I achieve that target if it's the target itself? So thereby if index is equal to equal to zero, which is ultimately the base case, I will return true. If the array of zero is equal to equal to the target itself. Perfect. So first step express and write the base cases is completed. Always. If you're writing a base case, first think about the target. Then think about the index. Think about the states. What can be the ultimates of states? What's the next thing? Okay. So what's the next thing? Explore possibilities of that index, because as of now you're standing at an index. So you are at an index and they're asking, can I form a subsequence from zero to that index that gives me the target? Can I form a subsequence from zero to index that gives me a target? I'll be like, okay,"
+    },
+    {
+      "chunk_id": "L195_C10",
+      "start": 690.48,
+      "end": 765.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=690s",
+      "text": "me the target? Can I form a subsequence from zero to index that gives me a target? I'll be like, okay, there are two ways. One of the ways is I say I will not take it. So can I say if I don't take it? Yes. Can I say if I don't take it, then the function will be okay. I'm not taking that. So that guy is not taken. So I'll move to one less index, always move back and you'll say same target. So what does this signify? You were currently at this index and from zero to index, they were asking, can you form this target? Can you form this target? You said, hey, listen, I'm not going to pick this element. Thereby I reduce it to this index minus one. And I say from zero to index minus one, can I form the target? Because I'm not interested in taking this. So I reduce it and I say, okay, can I form this target now in the reduced portion of the array? I do a search on the reduced portion of the array. That's what this means. Make sense? It does. Okay. What's the other case? Boolean take. Let's keep the take as a true, sorry, initially false. I'll tell you when, when can you take an element into that? Now, if you're looking for a target, if you're looking for a target,"
+    },
+    {
+      "chunk_id": "L195_C11",
+      "start": 767.2,
+      "end": 842.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=767s",
+      "text": "you when, when can you take an element into that? Now, if you're looking for a target, if you're looking for a target, the target has to be greater than equal to that current index. Otherwise, how can you take it into the subsequence? Like for an example, if your array is something like one, three, six, and your target is something like two, you can't take six or three. Can you in the subsequence? Because you're looking for something as to, so I'm saying the target is greater than the array index, then only take it. Otherwise not. So if I take it, if I take it, I will move to the previous index. Now let's, let's understand what will happen to this particular target. Let's think about that. So what am I saying? I'm saying, okay, initially I had this, I had this recursion call in this guy. Can I achieve a subsequence that gives me a particular target? Now, what am I saying in this? Is there a subsequence? I say, okay, let's see this guy is that part of the subsequence, which I'm looking for. Let's say this guy is a part of the subsequence that I'm looking for. So I take this array of index and I say you're part of a subsequence. So if this guy is a part of subsequence, the target that I was looking for"
+    },
+    {
+      "chunk_id": "L195_C12",
+      "start": 842.72,
+      "end": 917.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=842s",
+      "text": "I say you're part of a subsequence. So if this guy is a part of subsequence, the target that I was looking for will not shrink, will not shrink because if initially the target was this big, it'll go smaller. Why? Because I've taken someone and now I look for zero to one lesser index in the shorter section of the array, in the shorter section of the array and the target will go down by array of index because I've taken that into consideration. Now, either not take or either take, I'll just keep on trying and the moment it reaches zero, if I can have this as the target, it will return me true or it will return me a false or if any of the moment the target is achieved, it'll return me true. So there were two choices. One was the take, the other one was the not take. So I can say I'm trying two possible ways and I'm looking, is there a possibility? Is there a possibility? So if I'm looking for, is there a possibility? Can I say it will be or of both of them? Because I'll try both the possibilities. If any one of them returns true, I return a true because it doesn't matter. If any of the possibilities give me a sum, I'm okay to go because I'm looking for one subset only. So if any of them give me the"
+    },
+    {
+      "chunk_id": "L195_C13",
+      "start": 917.04,
+      "end": 986.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=917s",
+      "text": "possibilities give me a sum, I'm okay to go because I'm looking for one subset only. So if any of them give me the possibility, I'm ready to go. And that's how your recurrence will look like in all the subsequence problem, not take and take, not take and take all the subsequence problem. You will be seeing that. So in order to understand this recursion better, let's do the recursion tree in the records that we have written so that you also try to see the overlapping subproblems, if there are any, and then probably we can figure out if this recursion can be optimized or something else. But before that, we need to understand the recursion in depth because it's the first problem on subsequences. So initially, where am I? I'm at this position, which is index three, and I'm looking for target four. So I say on this entire array, can I have a target four? So I'm like, okay, let's take this guy. So if I take this guy, I'll go to index two with a reduced sum of three. And if I say, I'll not take this guy, I'll go to two and I'll be having four, which basically means is, I was saying, does this have a target four? Now what I said, let's take this into account. So this took this into account. And now in this particular array,"
+    },
+    {
+      "chunk_id": "L195_C14",
+      "start": 986.64,
+      "end": 1053.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=986s",
+      "text": "target four? Now what I said, let's take this into account. So this took this into account. And now in this particular array, I'm looking for, can I have a sum of three? Can I have a sum of three in this shorter array? And if I say I'll not take this, then in this array, can I have a sum of four? That's what I'm looking for. So this is how I'm shrinking both of them. Perfect. Let's stop this and let's try to solve this. F of two, three. So again, you're having two and three. You can take this one or you cannot take this one. Assuming you take this and assuming you do not take this. So if you take this, you shrink it to one. And if you're taking the one, you are left off with one comma two. And if you do not take it, you are shrinking this to one and you still have three. So if you take this one, what happens is now you're shrinking it to this and you're saying in this, in this array, do we have a sum two? Do we have a sum two? Makes sense. Let's go across. We have something as three. Now one, two means in this, can I have a target of two? Now comes the take if else. Can I pick this three? Logic will say no. Why? Because this is two."
+    },
+    {
+      "chunk_id": "L195_C15",
+      "start": 1054.88,
+      "end": 1122.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=1054s",
+      "text": "a target of two? Now comes the take if else. Can I pick this three? Logic will say no. Why? Because this is two. And I'm looking for a target of two. How can I pick someone as three? So the take condition will never be there. It will always be false. The take condition will always be false. I'll say not take. If I don't take, I'll reach the zeroth index. Yes. I'll reach the zeroth index and I'll be like, just a minute. And I will be like on the zeroth index, can I have two? So on the zeroth index, can I have two? Can I have two? And when you reach the zeroth index, you're having a target two. Is it two? Yes. So the zeroth index itself can give you the target two that you're looking for. Thereby this guy returns a true. So f of one, two was calling take, which gave him false and was calling non-take, which gave him true. So you said, okay, non-take gave me a true. So I will return true. Now this f of two, three, yes, this f of two, three sees that this is giving him true and you can solve this f of one, three, but the moment it gets one true, it returns again. You can solve this, but there is no requirement of solving this. Since you've got a true over here,"
+    },
+    {
+      "chunk_id": "L195_C16",
+      "start": 1122.56,
+      "end": 1190.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=1122s",
+      "text": "true, it returns again. You can solve this, but there is no requirement of solving this. Since you've got a true over here, this can also return a true. Now you might ask, where are the overlapping sub problems? So if I had gone deep, you would have seen like in this case, if I'd have gone by taking, it would have been f of one and second index was this. So this would have been f of one, three. And if I would have not taken it, it would have been f of one, four. So you see f of one, three overlapping with f of one, three. So there will be overlapping sub problems for sure. So you saw how the recursion did work by taking and non-taking. So if we talk about the recursion time complexity, what are the recursion time complexity? It will be, we go off two to the power n because for every array element, you have a couple of options. Either you take that element into consideration or you say, I'm not going to take this element. So you just have a couple of considerations. So two to the power n. Space complexity is auxiliary stack space of big O of n. Now we saw that there were overlapping sub problems. Yes, we saw that there were overlapping sub problems. And how did we saw that? If you remember, we started with a very big problem."
+    },
+    {
+      "chunk_id": "L195_C17",
+      "start": 1190.88,
+      "end": 1269.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=1190s",
+      "text": "we saw that there were overlapping sub problems. And how did we saw that? If you remember, we started with a very big problem. We've started with the entire array. Then we reduced it to small. Then we reduced it to small. So the problem was broken down into sub problems, sub problems, sub problem, and eventually solved with a single base case. So thereby the sub problems, if you're breaking down the problem into sub problems, they are bound to repeat. And thereby, what can I apply? Memo-iation. Yes, thereby I can apply memo-iation. Let's think about the memo-iation. What did I say? How will you apply memo-iation? The first trick is figure out the changing states. So there is an index and there is a target that might change. There is an index and there is a target that might change. So assuming the constraint says target will be lesser than 10 to the power 3 assuming the constraint says this and assuming this is also something like this, the constraints. So index you will take as 10 to the power 3 plus 1, 1 more because there is something as 10 to the power 3. So in order to have this as an index, you need to plus 1 multiplied with a target of 10 to the power 3 plus 1. So this is the DP array that you will be requiring. And you know how to memo-ize. I have already taught you that. By the way,"
+    },
+    {
+      "chunk_id": "L195_C18",
+      "start": 1269.44,
+      "end": 1345.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=1269s",
+      "text": "this is the DP array that you will be requiring. And you know how to memo-ize. I have already taught you that. By the way, this will be a Boolean DP array. This can be a Boolean DP array because the function is Boolean. But you just need to return a true or false. So what I can say is, DP of index target and if DP of index target is not equal to, by the way, Boolean you can't take, you have to take true and false. So minus 1 and return DP of index target. So you can't take true and false in the memoization. So you can't take Boolean, you have to take an integer. For memoization in tabulation, you can take true and false. Why? Because you know minus 1 is marked for any unvisited state. So how will you determine if you mark true and false for the unvisited state? So it's very important minus 1 is marked. This is how the memoization solution will do. And the memoization solution is very simple. Time complexity will be n cross a target. And the space complexity will be n cross a target array and an auxiliary space of B of n, which is an auxiliary space complexity, which we have to reduce. That can only be done by"
+    },
+    {
+      "chunk_id": "L195_C19",
+      "start": 1345.84,
+      "end": 1416.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=1345s",
+      "text": "space of B of n, which is an auxiliary space complexity, which we have to reduce. That can only be done by tabulation. So the next step is tabulation. Let's quickly check that out. So how do you write the tabulation? I've already taught you the steps. How do you write the tabulation guys? First step is declare the DP array of the same size n and target. So please declare the DP array of the same size. Once you have declared the DP array of the same size, what's the next step? Next step was to figure out the base cases and write it. So just without, without thinking anything, go to the recurrence and see what are the base cases. The recurrence says, any moment the target is zero, any moment the target is zero, you return true. So if target is zero, what can be the possible value of index? Ask your brain, ask your brain, what can be the possible values of index? Zero, one, two, till n minus one. So for every one on zeroth index, you return a true. So just write it. Don't, don't think anything else. Just go and write. Tabulation, you should not complicate. You should keep it simple. For i equal to zero till n minus one, you write DP of i target is zero equal to true. That's what you did right"
+    },
+    {
+      "chunk_id": "L195_C20",
+      "start": 1416.96,
+      "end": 1490.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=1416s",
+      "text": "equal to zero till n minus one, you write DP of i target is zero equal to true. That's what you did right in the base case because for every index, if target is zero, you write true. So just write it now. What are you waiting for? Let's, let's look at the next base case. The next base case says if index is zero, so index is zero for sure. Return true if it's equivalent to target. So index is zero and target can be anything. Okay. But when will it be true? When will it be true? For every target, what can be the possible values of target at index zero? Think, think, ask your brain to think. It can be anything. Target can be zero, target can be one. It can't be zero, but it can be one. It can be two. It can be till any value of target, the given target. So you'll be like, but, but which guy will be true? Only A of zero will be true. In DP of zero, A of zero will only be true. Realize no matter what the target is, no matter what the target is, if it's equal to A of zero, then only it will be true. Everyone else will be false. So initially"
+    },
+    {
+      "chunk_id": "L195_C21",
+      "start": 1490.96,
+      "end": 1567.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=1490s",
+      "text": "is, if it's equal to A of zero, then only it will be true. Everyone else will be false. So initially you can mark the entire DPS false. So can I say only DP of zero and A of zero will be true? I can. So basically I can be like, okay, the next base cases, if DP of zero array of zero is true, why? Very obvious. I'm saying at index zero, can I form this target A of zero? And the answer is yes, because that only on the A of zero array, you can form a target A of zero. You can't form apart from that. So this, these are the base cases. First step done. Next step, form the nested loops. How many states are there? Two states. Index will be one. The other one will be target. Where does index start from? Go and look at the recurrence. In the recurrence, index was N minus one, N minus two, N minus three, and so on till zero. Top down. Top down. What's bottom up? What's bottom up? Ulta, ulta. Zero. Zero to ho chuka hai. One till N minus one. Correct. One till N minus one. Perfect."
+    },
+    {
+      "chunk_id": "L195_C22",
+      "start": 1567.76,
+      "end": 1643.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=1567s",
+      "text": "Ulta, ulta. Zero. Zero to ho chuka hai. One till N minus one. Correct. One till N minus one. Perfect. What about target? Target went on from target. You started with the eventual goal. You moved, moved, moved till zero. Over here what will happen? You go opposite. You go opposite. Yes. So you go opposite. One to target. Because, because zero has been already done. Zero has already been done. So this is what you do as nested loop. So without thinking, just write the nested loops. See how simple it is. Try the tabulation. I equal to one till N minus one. Target will be, you can call it as the J loop. In order to maintain easy, let's write the target as one minus, sorry, one to, whatever, let's assume the target is K. So one to K. Perfect. Now copy paste the recurrence. No need to do anything. Just copy paste the recurrence. So I'll show that when I code. So now it's time to code and then we will talk about the space optimization as well. But we just need to copy paste the recurrence and we will show that in the code because it becomes a lot easier. But only two steps you have to remember."
+    },
+    {
+      "chunk_id": "L195_C23",
+      "start": 1643.28,
+      "end": 1713.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=1643s",
+      "text": "we will show that in the code because it becomes a lot easier. But only two steps you have to remember. Write the base cases. Just think of the base cases. Then just think of the nested states. Remember the number of states is equal to the number of nested loops. It goes as simple as that. The number of states is equal to the nested loops and the nested loops in the opposite fashion. From base case to the up, bottom up, bottom up, base case to the up. So if you remember the recurrence tree, the base case was zero, zero to three, right? The base case was target was two to four, bottom up. So make sure you write it bottom up, base case. Bottom up doesn't mean zero to zero. Whatever means whatever is the base case right there from whatever was the recurrence call. So I've written the tabulation concept and we just need to write the recurrence. So if you write it or the time complexity will be N into target again and the space complexity will be big O of N into target and but there will be no auxiliary space. So I'll show you that by writing. So given the array, the N and the K. So we know we have to write the function. So we'll write return the function. The target initially is the index N minus one and the target is K and"
+    },
+    {
+      "chunk_id": "L195_C24",
+      "start": 1713.92,
+      "end": 1786.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=1713s",
+      "text": "write the function. So we'll write return the function. The target initially is the index N minus one and the target is K and there is an array. So we'll just write this off. Let's write the function. Let's keep it the function as a bullion function. I N T index, I N T target. And we know the vector and an array, right? So what are the cases? If the target is a zero, we return a true simple enough. If the index is zero, we return array of zero equal to target and they can be a not take case. So you can write bullion not take single not take, which means I'll go back with the same target and the array. They can be take case, which is initially false. And I can only take the array of index. If that's lesser than target, then only I can take it. So let's assume I take it. Then in that case, F of index minus one comma target will reduce by array of index. And I'll go to the array. And at the end of the day, I can return the take not take. And that's what you do. So let's quickly run this off. So it does, it does run fine, but we need to apply DP. So please, please apply DP, right? Vector, vector, and a DP. And we can definitely take it as N plus one. As I said,"
+    },
+    {
+      "chunk_id": "L195_C25",
+      "start": 1786.64,
+      "end": 1855.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=1786s",
+      "text": "So please, please apply DP, right? Vector, vector, and a DP. And we can definitely take it as N plus one. As I said, vector and other thing will be vector and you can take the target as K plus one and minus one. By the way, N plus one is not required. You can take N also because you're starting from N minus one, but the target has to be K plus one. So I've taken this. Now you can just pass on the DP and over here, let's copy paste this portion. This will go over here and it'll be the reference and just make sure you pass it over here. Make sure you pass it over here as well. And make sure before returning your IDP of index and target to it. Remember, uh, Boolean will be zero and one. So it will automatically convert that into an integer. So, and over here, if DP of index target is not, not equal to minus one, you can return it to DP of index and target. Okay. That's all. That's how you can do it. And now let's quickly run this off. Does run fine. Let's submit this. So you can see that it is running absolutely fine and we get a hundred marks, but we don't need to stop here. We need to make sure we had the records. So the"
+    },
+    {
+      "chunk_id": "L195_C26",
+      "start": 1855.36,
+      "end": 1921.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=1855s",
+      "text": "we get a hundred marks, but we don't need to stop here. We need to make sure we had the records. So the recurrence was saying, let's write the first base case, which is target equal to zero. So you can say I and D by the way, now we can convert this into Boolean because we don't need any minus one now because minus one for memorization check, but we don't need that over here. So I can go as zero and I can be like, we can go on to like plus plus, and I can say DP of I of all the target zeros will be true. Let's write this. The next thing will be DP of zero, which is the next base case. And on only array of zero. Yes. And only on array of zero, we will be having true. So why don't we write that simple. Now, what are the couple of things index and target? So please make sure right it, I'd index equal to one index goes on to N and index plus plus, but the target starts from I and D target. We'll go on from one and it'll go on till target and I plus plus not target. It will be key and I plus plus perfect. Just copy paste the recurrence. Don't even think of anything. Just copy paste the recurrence. Obviously the recurrence instead of F make it DP of index minus"
+    },
+    {
+      "chunk_id": "L195_C27",
+      "start": 1921.6,
+      "end": 2000.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=1921s",
+      "text": "the recurrence. Don't even think of anything. Just copy paste the recurrence. Obviously the recurrence instead of F make it DP of index minus one. Perfect. Target. Amazing. So that's it. And over here, you can just omit this portion, take as false and it will automatically make sure only takes if it's greater and again, make a DP. Just change the recurrence. Just change the recurrence. No need to do anything else. Don't over complicate. As I always say, don't over complicate. Okay. Done. Just remove this written. So if you remember, what did you call the function as you call the function as F of N minus one, so DP of N minus one and the target, which is key. So just now I'll just run this off and see if this was running fine. Okay. We did miss something. What did we miss? Okay. This will be vector of Boolean by the way. Okay. Another mistake. We will be having target over here. We will also be having a target over here. So let's quickly check this off. That's fine. Right. It looks fine. Let's do the summation. Well, runs fine. So what's the next step? Space optimization. And I told you space optimization is possible whenever you see something"
+    },
+    {
+      "chunk_id": "L195_C28",
+      "start": 2000.08,
+      "end": 2072.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=2000s",
+      "text": "runs fine. So what's the next step? Space optimization. And I told you space optimization is possible whenever you see something like that. What did you see? Index minus one. The moment you see index minus one, your eyes like, Oh man, this is possible. Yes, this is possible. So we can definitely space optimize this, but something we need to take care is remember this always something we need to take care. If we space optimize, this is I'll take the iPad and explain you. So if you're space optimizing, because I told you that when can we space optimize? We can space optimize if we have a state as I minus one because, because, because first time we always write the index zero, right? We always take the index zero and in this index zero, some A of I will be marked as true. Then we go to index one. Then we compute this. But over here, if you carefully observe in the base case, yes, if you carefully observe in the base case for every index, for every row, the zero index is marked as true. So please make sure whenever you take a row, whenever you take a row, whenever the road is car, this will be previous, right? Whenever the row is car, the zero index is marked as true."
+    },
+    {
+      "chunk_id": "L195_C29",
+      "start": 2073.84,
+      "end": 2146.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=2073s",
+      "text": "whenever the road is car, this will be previous, right? Whenever the row is car, the zero index is marked as true. Always, always, every time you declare a row, the zero index should be marked as true. That's a thumb rule because in the base case, if you see all the indexes are marked, so you compute the this, this, this, this, this, this, this, this, this, once you have completed this next year, move to the next one. And this guy will become previous. Now this guy will be car and it just uses I minus one, the previous state. So whenever there is a case of previous state, the concept of previous and car comes in again, I'm not going into depth because I've been teaching that from the last 12 lectures. So if you have not seen the previous lectures, it's your fault, not mine. So please make sure you go back and watch those lectures in order to understand space optimization in depth. So what did I see? I require a couple of steps. I require two rows to be stored. One is the previous, which will be of size, a target that is K plus one zero, because we just need to store the row. So the row will be having K columns. So that's what I need to store. That's what I've stored. And I also require a current"
+    },
+    {
+      "chunk_id": "L195_C30",
+      "start": 2146.96,
+      "end": 2220.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=2146s",
+      "text": "row will be having K columns. So that's what I need to store. That's what I've stored. And I also require a current for the current gap. So that's again, K plus one and zero. Perfect. What is this? DP of I of zero. So I don't need this any further, but I know one thing previous of zero, the first guy will be true. And the car of zero will be true because for anyone, the target zero has to be true. So everyone, the zero will be true. And over here, DP of zero. So instead of DP of zero, it's the previous one, because it's the previous one. Now we come to index of one. What did I tell you? Index of I minus one means previous index of I minus one means previous DP of index means DP of index means current. Whenever this is completed, the previous is now current. And then N minus one is the previous of current. Okay. Run this off. Let's quickly run this off. Runs fine. What is the time complexity now? It still stays the same N into target. But what is the space complexity? The space complexity has now boiled into just B go off target. And we are not using any index array. Just B go off target"
+    },
+    {
+      "chunk_id": "L195_C31",
+      "start": 2220.8,
+      "end": 2294.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=2220s",
+      "text": "has now boiled into just B go off target. And we are not using any index array. Just B go off target is helping us to solve this problem in just B go off case space. That's amazing. We're not requiring a 2D array. So remember this concept of previous and K whenever you see I minus one, it's just you need to store the previous row. Just see what are you computing in the previous row? So if you're facing a problem in computing the previous row, what I'll recommend is just go back, and do a dryRun of these for loops and fill the table step-by-step, and you will you slowly, slowly see in the table, this row helps you to get this row, then this row helps you to get this row, then this row helps you to get this row. Then this row helps you to get this row. Then this row helps you to get this row, and ultimately the answer is stored here. Fill the table, run the for loops, do it yourself. Okay, I can't just, I just can't spoon feed everything, do it yourself and you will slowly and slowly realize space optimization is the easiest thing in the world. It's just using a couple of rows and just swapping, swapping every time. So I hope you have understood the first problem on DP on subsequences. So just in"
+    },
+    {
+      "chunk_id": "L195_C32",
+      "start": 2294.82,
+      "end": 2325.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=fWX9xDmIzRI&t=2294s",
+      "text": "rows and just swapping, swapping every time. So I hope you have understood the first problem on DP on subsequences. So just in case you did, please, please, please make sure you like this video and to continue our tradition in the comment section, please make sure you write an understood so that I do get motivated that you're understanding the explanation of the problems. And yeah, if you're new to the channel, please, please, please do consider subscribing to us because we do put a lot of DSL content. You can check that out on our channel. And with this, we'll be wrapping up this video. Let's meet in the next one. Until then, bye bye. Take care."
+    }
+  ]
+}

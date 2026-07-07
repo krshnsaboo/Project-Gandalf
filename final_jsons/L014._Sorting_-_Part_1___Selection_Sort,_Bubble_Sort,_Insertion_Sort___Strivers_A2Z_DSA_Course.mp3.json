@@ -1,0 +1,253 @@
+{
+  "lecture_id": "L014",
+  "lecture_number": 14,
+  "lecture_title": "Sorting - Part 1 | Selection Sort, Bubble Sort, Insertion Sort | Strivers A2Z DSA Course",
+  "youtube_url": "https://www.youtube.com/watch?v=HGk_ypEuS24",
+  "chunks": [
+    {
+      "chunk_id": "L014_C1",
+      "start": 0.0,
+      "end": 79.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this will be another lecture from the Stryber's A2Z DSA course. Just in case you're for the first time here, this course is India's most, yes, most in-depth course on DS algo. Why do I say that? The course has 456 modules. You can go to the market, buy any of the paid courses, check out any of the free courses. None of those courses on DS algo will have 456 problems or modules. This is definitely by far one of the most comprehensive course on DS algo. And this is the only thing that you will be requiring if you are preparing for placements. So in the previous videos, we have covered the step one and now we will be going to step two. The step two states if you learn important sorting techniques in order to start a journey with DS algo, sorting is something which you have to know. Even if you're going for placements, they might ask you sorting algorithms and the sorting one, which is step 2.1, we have three algorithms, selection sort, bubble sort, insertion sort. So if you're appearing for placements, they might ask you, Hey, can you please tell me the code for insertion sort? And you have to tell them, right?"
+    },
+    {
+      "chunk_id": "L014_C2",
+      "start": 79.32,
+      "end": 140.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=79s",
+      "text": "they might ask you, Hey, can you please tell me the code for insertion sort? And you have to tell them, right? And sorting two will be based on recursion. So we'll be covering that in the next lecture. So without waiting, let's start with selection sort. So before moving ahead in the video, let me tell you about LearnBay. So LearnBay is an edtech platform that offers you data science and full stack development programs dedicated to professionals only. So at LearnBay, you will be getting 100% live online classes where you can interact with the faculties directly and get your doubt resolved one is to one. One thing I did like about LearnBay is you'll be getting an opportunity to work on industry based capstone projects, which will be certified by IBM. So you're going to get a global accreditation, which will be beneficial whenever you present that project anywhere. That's going to be very, very helpful. You also get in one is to one personal mentorship, and you also get a one is to one daily doubt session where you can actually get all your doubts resolved. Also they have project innovation labs across the country in Kolkata, Pune, Bangalore, Hyderabad, and a lot of other places. So you can go over there and create your projects in the offline mode as well. Once you enroll for any of the courses, you have three years of subscription."
+    },
+    {
+      "chunk_id": "L014_C3",
+      "start": 140.36,
+      "end": 214.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=140s",
+      "text": "and create your projects in the offline mode as well. Once you enroll for any of the courses, you have three years of subscription. So you can have all the learning modules and all the videos for three years. In this program, you'll also be getting 100% job assistance by their dedicated placement cell. And in the past, people have got hikes up to 250% and they are partnered with more than 250 companies like EY, Intel, SAP, and a lot others. LearnBay's alumni have also got placed in top companies like Amazon, TCL, Capgemini, etc. So what are you waiting for? There's a link in the description, click it and get your free one is to one career counseling session. So in this session, we'll talk about what is selection. What is selection sort? Does the name recommends selection? What do you select? We select minimums. Remember this, as the name recommends, what do you select? We select minimums, so as the name recommends, select minimums. So what you will do is you look at the entire array and you will say, who is the minimum? And it states nine is the minimum. So you'll take that nine and you'll place it here. Perfect. I place the nine here. And if this nine is the minimum and you're placing it at the first place, where will 13 go? 13 says, okay, no issues. I will go to your place because nine has to come at first."
+    },
+    {
+      "chunk_id": "L014_C4",
+      "start": 214.76,
+      "end": 293.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=214s",
+      "text": "first place, where will 13 go? 13 says, okay, no issues. I will go to your place because nine has to come at first. And now I'll write the remaining guys over here. That's how you do it. So that is the step one of the algorithm. Step one states, get the minimum from the entire and you've got the minimum. They place it at the first, whoever is at the first goes to that minimum. Simple as that. So swapping, select minimums and swap is what the algorithm is all about. So this is step one. Remember this, this is step one. What is step two? Let's see. So the step two states, okay. I know the first, I know the extreme smallest guy is at the first. Now we should select the next minimum. We know one thing. If the minimum is over here, this array is sorted. Which portion of the array is not sorted? That is this. Let's find the minimum. Can I say in this, 13 is the minimum. But 13 is the minimum. I know nine will stay where nine is. If 13 is the minimum, 13 will come at the first place. It will. And if 13 comes here, where will 46 go? 46 will go to 13. So 46 goes here and the rest remains as it is. Perfect. Step two done. That's true step three."
+    },
+    {
+      "chunk_id": "L014_C5",
+      "start": 293.84,
+      "end": 372.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=293s",
+      "text": "will go to 13. So 46 goes here and the rest remains as it is. Perfect. Step two done. That's true step three. So can I say after two steps, I got the first two minimums and this portion of the array is sorted. I can. I'm left with this portion. What to do? Get the next minimum. What's the next minimum? 20. As usual, 930 stays. 20 comes in. If 20 is coming in here, where will 24 go? 24 will go to 20. So take it to there and 50 to 46 stays. Step three is completed. Let's do step four. At step four, can you say that this portion of the array is sorted? You can. Which portion is not this one? So in this, which is the minimum 24? Place it 913, 20, 24, 52 goes at its place. 46. Let's do the step five. So can I say at step four, this is sorted and this is unsorted. Who's the minimum? 46. So 913, 20, 24, sorry, 46 will come here. And 52 will go here. Now at step five, if this is done, do you need to look like, do you need to sort one element?"
+    },
+    {
+      "chunk_id": "L014_C6",
+      "start": 372.8,
+      "end": 449.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=372s",
+      "text": "at step five, if this is done, do you need to look like, do you need to sort one element? One element will always be sorted. So apparently, can I say the entire array is sorted at step five, one, two, three, four, five, six, six elements, but actually took five steps to sort the entire array. What I did was get the minimum and swap it and swap it. Then what I did was get the minimum and swap it. Then what I did was get the minimum and swap it. So get the minimum and swap is the algorithm. Now the question comes, okay, we've understood the algorithm, but how do I implement this in code? I'll be writing the pseudo code so that you can write it in C plus plus as well as in Java as well as in Python. So in order to implement algorithms, you have to have something like observing power. Let's start observing. What's the first observation in the entire area? Very, very in the entire area, if we could have the minimum, can I say figured out the minimum and whichever index, the minimum appeared, whichever index, the minimum appeared, I swapped it with the first guy. That's what I did. That's why 13 is here and nine is here."
+    },
+    {
+      "chunk_id": "L014_C7",
+      "start": 449.72,
+      "end": 528.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=449s",
+      "text": "appeared, I swapped it with the first guy. That's what I did. That's why 13 is here and nine is here. So zero to five is what I went next. I took this, which is from index one to index five, and I got the minimum, which is 13 and I swapped it with 46. Thereby I got, I went from one to five and the swapping happened with one and the minimum next in this, I got the minimum and the swapping happened from two. So can I say first time trap happened at index zero and minimum index. Next time swap happened at index one and minimum index. And this minimum index is from the area zero to N minus one. This minimum index is from the area one to N minus one. Next time, can I say swapping happened at index two because till that zero and one are sorted and minimum index this time is from two to N minus one. So can I generalize this and can I see this will go like zero one two. Till what are you doing for the last guy?"
+    },
+    {
+      "chunk_id": "L014_C8",
+      "start": 528.76,
+      "end": 607.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=528s",
+      "text": "can I see this will go like zero one two. Till what are you doing for the last guy? Are you trapping the last guy? Is this still here? You got 46 and you swapped. Can I see it will go till N minus two at index? Why N minus two at index? Why? Because the last index is N minus one in arrays. So can I say, okay, swapping is happening zero one two and it'll go till N minus two. So thereby, can I write this as like this, a pseudocode? Okay. Zero. First time it'll go zero. Next time one, next time two, next time three. And it goes on till N minus two and I plus plus. Can I see this the first and whenever I is zero, I find the minimum from zero to N minus one. Whenever is I is one. I find it from one to N minus one. Whenever I is two, I find it from two to N minus one. So can I say you need to find the minimum guy minimum? So we know one thing I will be zero one two and there has to be an internal loop. Why? Because you have to find the minimum in this range. Minimum in this range, minimum in this range. So the internal loop, can you observe something from two to N minus one? So write the internal loop. What are you waiting for? Write the internal loop."
+    },
+    {
+      "chunk_id": "L014_C9",
+      "start": 607.04,
+      "end": 681.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=607s",
+      "text": "can you observe something from two to N minus one? So write the internal loop. What are you waiting for? Write the internal loop. Can I say the internal loop will be from J equal to I J less than N minus one because that is the last index and LJ plus plus. And you need to find the minimum. I know the internal loop as well. I know the internal loop as well. Now what is the next thing you have to do in this range? In this range, you have to find the minimum. How do you do it? Very simple. Can I say initially I will keep the mini, just imagine, just imagine since your array is from zero to N minus one, I will say, okay, while we start, let's consider this guy to be this small. While we start for this, let's consider this guy to be mini. While we start for this, let's consider this guy to be minimum. So I will say, Hey, my minimum appears at index I itself at index I. Whoever is the first guy, let's assume he's the minimum. I'm like, okay. Then I'm seeing if array of J is smaller than array of whatever minimum index you are considering, what does this mean? When am I treating, when am I treating element by element?"
+    },
+    {
+      "chunk_id": "L014_C10",
+      "start": 681.48,
+      "end": 759.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=681s",
+      "text": "of whatever minimum index you are considering, what does this mean? When am I treating, when am I treating element by element? I'm seeing, Hey, element, are you smaller than what I considered? If you are, can I say minimum? Okay. You are smaller. So my minimum appears at the Jth index, not at these guy. I updated. So can I say once you have I treated, can I say once you have I treated in the entire thing, you will get the minimum index stored at the mini variable. You will, you will, right? So once this is completed, what did we do? Let's go back to the algo. What did we do? So if you're, I treating over here, what will happen? Let's see. Minimum initially is zero at index, right? The minimum is zero. What happened? Let's see. In iteration, we're taking 13, it's like 13, lesser than 30 because minimum is zero. What happens? Array of zero, lesser than array of mini because mini is zero. It's not there. So it doesn't work. Next, it goes here. Array of one, lesser than array of mini. It's like 46, lesser than 30. No. Next time, 24, lesser than 30. Next time, 52, lesser than 30. No. Next time, 20, lesser than 30. No. Next time, nine, lesser than 13."
+    },
+    {
+      "chunk_id": "L014_C11",
+      "start": 759.44,
+      "end": 839.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=759s",
+      "text": "than 30. Next time, 52, lesser than 30. No. Next time, 20, lesser than 30. No. Next time, nine, lesser than 13. So the mini gets updated to five. So, you know, at the fifth index, the mini is, what did you do? You took the mini index and you took the highest index and you swap and you swap. So you can just do a swap. You can just do a swap. Swap up wherever, wherever is the mini, whatever is the value with the first guy, because if you have to take that mini and place it at the first, first we'll go to that mini index. The swap is also done. Simple as that. So by the way, how do you swap two numbers? It's very simple. Imagine I have array of I and I have array of mini. Okay. These are the two numbers that I have to swap. Imagine this is 15 and this is 12. So what I'll do is I will take a temporary variable. That's another third variable that I'll take. And I'll say array of mini to go there. So what will array of mini, what will temporary have as of now? Well, because array of mini is 12 and that was put in to the temporary. Now what I'll do is I'll say array of mini. Can you replace yourself to array of I? So what will be the value of array of mini?"
+    },
+    {
+      "chunk_id": "L014_C12",
+      "start": 839.32,
+      "end": 909.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=839s",
+      "text": "is I'll say array of mini. Can you replace yourself to array of I? So what will be the value of array of mini? It will not be 12. This value will go here and this will become 15. Right? Now I will say array of I, hey array of I, can you take the value of array of mini? But it is replaced to 15. This is where since you stored in the temporary that works and is a temporary, can you get it? So temporary will get it and this will become 12. So this is the swap that you have to write. This is the pseudocode of swap function. So if I had to code it up, imagine I've given the N, I take it as the input. Then I take this array of N and then I go across and I say this. So this is basically nothing but the array input that I'm taking. Now I have to write the selection sort. So maybe I can say selection. I'll just pass it into the function. I'll pass it. Let's write the selection sort. So void selection and this will be sort and I'll say let's take the array. Let's see the end. So I'm passing this and I'm assuming this will do it and post this. What I'll do is for I equal to zero, I lesser than N, I plus plus."
+    },
+    {
+      "chunk_id": "L014_C13",
+      "start": 909.24,
+      "end": 987.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=909s",
+      "text": "this will do it and post this. What I'll do is for I equal to zero, I lesser than N, I plus plus. Can I bring the array values to see if they are sorted or not? Okay. Let's see if they are sorted or not. We can take the same example that we do. That's six numbers, 13, 46, 24, 52, 20 and nine. It would be same example over here. Let's quickly write the code. So whatever pseudocode I did right now, I've converted into code now over here. And if I go across and run this particular task, you will see that this particular array is sorted over here in the output.txt. So you have understood the selection sort algorithm in depth. It's time to analyze the time complexity of this particular algorithm. Let's see. Can I see for the first time in the loop gets inside, this particular loop runs for N times exactly. Yes. Next time when it gets in, then this actually runs for one lesser. It runs for one to N minus one. So can I say it runs for N minus one? Next time when it gets in, it runs for one lesser. It's like N minus two. Next time when it gets in, it runs for one lesser. N minus one. So on, it kind of runs for till last."
+    },
+    {
+      "chunk_id": "L014_C14",
+      "start": 987.16,
+      "end": 1063.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=987s",
+      "text": "time when it gets in, it runs for one lesser. N minus one. So on, it kind of runs for till last. Last that we run for this is till here. That's for two types. So this is kind of, kind of, if I just try to take it to some near, near formula stuff, Can I say it's something like one plus two plus three plus dot, dot, dot, till N, which is nothing but the summation of the first N natural numbers, which is N into N plus one by two. Can I say this? I can. If I can say this, what is this? N square plus N by two. Can I say this is how it looks like? And if you remember the time complexity, remember the time complexity lecture, we did, we ignore smaller things because N by two in comparison to N square is very small and we ignore constant. Thereby I can say that the time complexity is near about big O of N square. And this is the best, this is the worst, and this is the average time complexity for this particular algorithm. So we can say that we have completed selection sort successfully. That's time to understand bubble shot, bubble shot."
+    },
+    {
+      "chunk_id": "L014_C15",
+      "start": 1063.44,
+      "end": 1141.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=1063s",
+      "text": "particular algorithm. So we can say that we have completed selection sort successfully. That's time to understand bubble shot, bubble shot. So when you talk about bubble shot, you have to remember it pushes the maximum to the last and opposite to the selections. Because selection sort was taking the minimum at the front. If you remember, pushes the maximum to the last, or does it do it by adjacent swapping? Adjacent swapping is the key over here. So how does the algorithm work? Let's understand. First two elements compares are the in the sorted order 13 and 46. They are because 13 is smaller than 46. Do not do anything. Go to the next two. Are they in the sorted order 46 before 24? No. Swap it. Okay. Swap 24, 24, 46. Perfect. Let's go to the next 46, 52. Are they in the sorted order? Yeah, they are. Why will you do any next 50 to 20? Are they in the sorted order? No, 20 should be before. Take 20 here, take 52 here. So 20, 52, let's go to the next 50 to 19. Are they in the sorted? No. So take here, take here. So let's do nine and then 52."
+    },
+    {
+      "chunk_id": "L014_C16",
+      "start": 1141.04,
+      "end": 1220.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=1141s",
+      "text": "to 19. Are they in the sorted? No. So take here, take here. So let's do nine and then 52. So can I say after adjacent swaps like this, like this, like this, like this, like this, one complete round of adjacent swap checkings. Do you observe something? The max 52 is at the last, the max 52 is at the last. Done. So the max 52 is at the last. What should be your next step? This portion of the array is kind of sorted. So I need to work on this, perform the same algorithm again. Let's do it. 13, 24. Is it okay? It is. 24, 46. Is it okay? Yes. 46, 20. No, no, no, no. Swap 46 here. Take 20 here. Let's swap it. 20, 46, 20. Let's do the next 46, nine. Are they? No, no. Take nine here. Take 46 here. 9, 46. Do you compare the last two? There's no point because 52 is already in the sorted file. There's no need. You only do it till here. Can I say no? In this particular area, 46 was the maximum and it's at the last."
+    },
+    {
+      "chunk_id": "L014_C17",
+      "start": 1220.52,
+      "end": 1298.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=1220s",
+      "text": "till here. Can I say no? In this particular area, 46 was the maximum and it's at the last. So thereby after two steps, the last two are in the correct orders. So step one is done. Step two is done. Let's do the step three. So this has done. This is done. Let's do the step three. Step three means this portion should be making sure that the maximum is over here. It's too late. 13, 24. Are they? They are. 24, 20. No, no, no. Stop it. 20, 24. Next 24, nine. No, no. Stop it. Done. In this, 24 was the maximum. It's at the last. Step three done. Step four. Can I say step three means last three elements done. This is left. 13, 20. Correct. 29. No. Stop, stop, stop. This is left. 13, 20. Correct. 29. No. Stop, stop, stop. This is left. This is left. 13, 20. Correct. 29. No. Stop, stop, stop. 9, 20. Can I say for this 20 was the largest and it's at the last. So thereby post step four, this is done. Next step five. What is step five? This let's do a combination. No. Stop. 9, 13."
+    },
+    {
+      "chunk_id": "L014_C18",
+      "start": 1298.2,
+      "end": 1375.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=1298s",
+      "text": "four, this is done. Next step five. What is step five? This let's do a combination. No. Stop. 9, 13. For this portion, 13 was the maximum and it's at the last. So for this portion, 13 was the maximum and it's at the last. So thereby this portion is sorted. Post step five, do you need to do for a single element? You do not. Thereby the entire array is sorted if you see. So you have understood the algorithm, but now the key factor comes in, which is implementing this two code because that is where the key lies. Let's try to do that. So what are we doing? Observation is the zero one, two, three, four, five. We're going till the first step. We went everywhere and we did adjacent components. So the first time we kind of went till zero till n minus one and we did adjacent swaps. If it was not in the order. Next time we went like zero to n minus two because the last was so next time we went from zero to n minus three. Next time we went to zero to n minus four."
+    },
+    {
+      "chunk_id": "L014_C19",
+      "start": 1375.52,
+      "end": 1445.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=1375s",
+      "text": "time we went from zero to n minus three. Next time we went to zero to n minus four. Can I say this is what we are doing and the next time zero to n minus five and so on. Can I say I will just do till zero to one, not till zero to zero because one element will not matter to them. If you carefully observe, first loop should run from here to next loop should run from here to here. So kind of, can I say I can probably keep the value of I from n minus one till I can I keep, I can. If I do it, I equal to n minus one, I greater than one and I minus one. This is what I have. And internally I can always run the loop from J equal to zero till J lesser than I and J plus plus. Is it similar? Is it similar? Observe zero to n minus one, zero to n minus one for the first time. Next time I is n minus two. So zero to n minus two. Next time I is n minus three. So zero to n minus three. So I have made sure the looping is done. What is the next thing that you're doing? The next thing is pretty simple. You take up two elements and you compare, you take up two elements, you compare."
+    },
+    {
+      "chunk_id": "L014_C20",
+      "start": 1445.84,
+      "end": 1525.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=1445s",
+      "text": "you're doing? The next thing is pretty simple. You take up two elements and you compare, you take up two elements, you compare. So when you're looping from zero to n minus one, it's kind of, this is J. So you're comparing J with J plus one. And if they're not, then you're swap. Right? So you're kind of comparing, what are you comparing? If A of J is kind of greater than J plus one, it's not in the correct order. Then you're saying swap, then you're saying swap both of them. A key thing to notice, a very key, important thing. If you are going from here to here, that is wrong because of 52, it will have no one to compare with. Do you actually go from here to here? Because of 46 gets compared with J plus one, which is this. Do you actually loop till here? So what you can do is you can go over here and say, instead of going till I exactly, I will go till I minus one. Because if I go till here, if I go, this will compare, this will compare, this will compare, this will compare. And 46, 52 will be compared because I'm doing J plus one. I'm taking the next index. I don't need to go to. So you can just go till one lesser. And if you do not do that, what will happen for 52, it will look for the next index, which"
+    },
+    {
+      "chunk_id": "L014_C21",
+      "start": 1525.8,
+      "end": 1603.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=1525s",
+      "text": "go till one lesser. And if you do not do that, what will happen for 52, it will look for the next index, which is not present. And if you are accessing an index, which is not present, it will throw a runtime error. Remember this. If you are accessing an index, which is not present, it will say runtime. I did not. It's a runtime. That's why it's very important to run your loops perfectly. That's when you swap. And once you have done this, all steps at the end of the day, that they will be sorted. So what we will do is now we will write void bubble sort. I will do the same thing, add it and N and instead of calling the selection sort, we will say, Hey, bubble. So I will just quickly go and write the same pseudo code. So if you remember, this was kind of array of G if greater than array of G plus one, then you swap. And in order to swap, I've already taught you how to do that shopping. You do this and then you say, okay, array of G plus one, any store area of G and an array of G. Can you take the value of the area of G, which is G plus one, which is stored in temporary. Once you have done this entire thing, the area will be sorted."
+    },
+    {
+      "chunk_id": "L014_C22",
+      "start": 1603.4,
+      "end": 1680.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=1603s",
+      "text": "G, which is G plus one, which is stored in temporary. Once you have done this entire thing, the area will be sorted. I'll just go and erase this output dot TXT and now go across and say to run it and see if the bubble short is actually producing it. It is. It is producing. So if I have to analyze the time complexity, can you analyze the time complexity for me for this particular case is quite similar to the selection sort. First time the algorithm kind of runs for N then for N minus one, then for N minus two, then for N minus three. So again, it's similar to selection sort where I see it's N plus N minus one plus N minus two plus so on. The last is two. It's something if you just add a one to it, it's similar to some of N natural numbers. Then N into N plus one by two, which is N squared by two plus N by two smaller constants dissolved. So the complexity is B go off and square. Can it be optimized? That's right. Yes, it can be. It can be optimized. This is the worst complexity. This is the worst complexity. You can also call it as the average complexity. In most of the cases, this will be the most of it."
+    },
+    {
+      "chunk_id": "L014_C23",
+      "start": 1680.32,
+      "end": 1757.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=1680s",
+      "text": "complexity. You can also call it as the average complexity. In most of the cases, this will be the most of it. But imagine if I give you an array, which is something like two, three, five, 15 and 20. If I give you an RLN, you'll be like, Trevor, this is solid. Yeah, it is. So do you run the loop for N squared? Do you go across every time, every day? So what is the algorithm? Correct order. No swaps. Correct order. No swaps. Correct order. No swaps. Correct order. No swaps. I read, dude, if everything is in the correct order and you're not performing a swap, if everything is in the correct order, what does it signify? The array is in the ascending order. If everything is in the correct order, the array is in the ascending order. So the first check, you did not find a swap to be done because everything was in the correct order. But can I say if I do not do any swaps, I do not do any swaps. That's when I stop. I do not. So it's kind of if no swaps done, I don't need to go. If on the first check, no swap is done. I don't need to go for this, for this, for this, for this. We stop."
+    },
+    {
+      "chunk_id": "L014_C24",
+      "start": 1757.6,
+      "end": 1836.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=1757s",
+      "text": "the first check, no swap is done. I don't need to go for this, for this, for this, for this. We stop. So the loop, the best case will run for B go off and if we do some optimizations, let's go and do some optimization. Can I say if I say I did swap equal to zero and over here, if I just can say did swap equal to one, which means if any, if at any moment a swap happened, then it's okay. But if did swap at any time is, there was no swap, then I break out. I will not go. If the array is sorted, we'll just check for the first time and it will break post it. Right? This also runs. I'll, I'll prove you this one. I'll prove you this one. So I'll give you an example. See six, five, four, three, two, one. Now what I'll do is I will just. Go ahead and print this. How many times the array runs again and runs. And I'll just give it and you can see how many times it runs. No terminal. And I'll go to run task. This is a descending order and it runs for five days because the size is six. But if I just change it to something like one, two, three, four, five, six, and I'll"
+    },
+    {
+      "chunk_id": "L014_C25",
+      "start": 1836.92,
+      "end": 1916.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=1836s",
+      "text": "because the size is six. But if I just change it to something like one, two, three, four, five, six, and I'll see how many times the first fall. Let's see. Did it run? Just a minute. Okay. Let's run it. Did you see something? It never came to this because it, it did break over here. So it just ran for the first, did not swap and broke. So can I say, can I say the best time complexity will be nothing but big O of N. The time complexity for the best of bubble short is big O of N. This might be asked in an interview. You have to critically tell them the use case. You have to explain them in the dryer and until them, the worst and the average might be N squared. But if the area is sorted, I will break out and I'll end up getting a linear time complexity because the area is already. So the bubble short is done. Now let's move on to the next one. That is the insertion sort algorithm. So talking about insertion sort, you need to remember one thing. It always takes an element and places it in its current position, takes an element and places it in its current position. Let's start. Yeah."
+    },
+    {
+      "chunk_id": "L014_C26",
+      "start": 1917.72,
+      "end": 1991.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=1917s",
+      "text": "element and places it in its current position, takes an element and places it in its current position. Let's start. Yeah. So the algorithm starts with looking at the first element as an area. And you will say that if this much is the area, the element 14 in a size one area is at the correct. If I look at this much and I ask you, is nine at the correct position, you'll be like, no, nine apparently should have been here and 14 should have been here. But this is what you do. You go to the next element and you ask on the left side where nine should have been. And that is where you take. So you basically do it like this. 940. Perfect. So then you go ahead to this one and you ask, is 15 at the correct position for a size three? And you say, then you go ahead and say, is 12 at the correct position for a size four? I say no. I believe 12 should have been here. 14 should have been here. 15 should have been. So do you see a pattern? It's like 14 will come here and 15 will come. Everyone right shifts by one and 12 kind of goes in its current model."
+    },
+    {
+      "chunk_id": "L014_C27",
+      "start": 1991.8,
+      "end": 2068.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=1991s",
+      "text": "will come here and 15 will come. Everyone right shifts by one and 12 kind of goes in its current model. So what you can do is you can take 12 and you can say, okay, 12, 15, 15 will come here. 12 will go here. Then you can say 12, 14, so you can 12 here and you can pass 14 here. You can go to the left and swap, swap, swap till it can be swapped. It can be swapped. So if you do like this, 12 goes here. It's like 12 and 15, then 12, 14. So 12 goes here and 14 come. Go to the left till it can be. Can 12 be swapped with 9? No, because that will distort the order. It just goes till here. Simple. So what will happen? It'll be like 12, 14, 15. Perfect. Next is six. If you look at six, where ideally should be six in this array, it should be here. Nine should be here. 12 should be here. 14 should be here. 15 should be here. So can I do this? Can I take the six here? But I have to, I have to write shift everyone by one. How do you do it? You take six, you take 15 and you say, okay, so I've been, so what happens is six goes here. 15 goes here. Next you take six, 14, 14 comes here and six goes here."
+    },
+    {
+      "chunk_id": "L014_C28",
+      "start": 2068.36,
+      "end": 2148.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=2068s",
+      "text": "I've been, so what happens is six goes here. 15 goes here. Next you take six, 14, 14 comes here and six goes here. Next you take six, 12, 12 comes here. Next you take six and nine, six goes here. Nine comes here. If I have to do it, it's like six, 15, not in the correct order. Let's wrap it. 15 comes here and six goes here. 14, six, no. Six comes here. 14 goes. Six, 12, no. 12 comes here. Six goes. Six, nine, no. Nine comes here. Six goes. Perfect. It's like six, nine, 12, 14, 15. So if I have to write it by raising, it's like six, nine, 12, 14, 15. Perfect. I just went on to the left. They live, would have been top shop shop, right? Next eight in this particular area, where does eight will go? Where will it go in this particular area? Where will it go? Ask yourself. The answer to that is eight will go. Yeah. So if eight has to go here, nine has to go here. 12 has to go here. 14 has to go here. 15 has to go. So again, what do you do? Eight, 15. Do you say, okay, eight goes here. 15. So left. Can eight, 14, can eight go till 14? Yes. 14 comes here. Eight goes here."
+    },
+    {
+      "chunk_id": "L014_C29",
+      "start": 2148.16,
+      "end": 2196.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=2148s",
+      "text": "okay, eight goes here. 15. So left. Can eight, 14, can eight go till 14? Yes. 14 comes here. Eight goes here. Can it go more left? Yes, it can. Eight goes here. 12 goes here. Can it go more left? Yes. Nine goes here. Eight goes here. Is it in the correct order? Yes. How do you know it? Because when you compared eight with six, it was not compared. None in dusted. Six, eight, nine, 12, 14, 15. Six, eight, nine, 12, 14, 15. Remember this? Six, eight, nine, 12, 14, 15. Next. 13 is the next guy that you are comparing. Can I say 13, ideally over here should have been here. So do it again. 13 goes here. 15 comes here. 13 goes here. 14 comes here. Can I do a 13, 12? No, stop. Can I say post the last? The array is sorted. Why? Because you picked the first one. But the next one is the last one. Can I say, okay, the next one is the last one? Yes, it is. The next one is the last one. And the next one is the last one. So you pick the last one. And the next one is the next one. And the next one is the last one. And the next one is the last one. That's the correct order. Stop. Can I say post the last the array is sorted? Why? Because you picked up every element"
+    },
+    {
+      "chunk_id": "L014_C30",
+      "start": 2196.2,
+      "end": 2275.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=2196s",
+      "text": "last one. That's the correct order. Stop. Can I say post the last the array is sorted? Why? Because you picked up every element and you did put it into its current one. So how did it work? I picked up one first time I picked up the first guy. Next time I picked up the second, next time, the third, next time, the fourth, next time, the fifth, next time, the sixth, next time, the seventh. Picked up every guy. I'm running from index zero to N minus one. That's for sure. That's something for sure. I'm running from zero to N minus one. And what am I doing? What am I doing? Every guy I'm looking at the left. Are you greater? Are you greater? And till I can do it like for 13, I could do till here, till it is possible on the left. So I'll be like, maybe J is I, and I can keep while J greater than zero. And I can say, and, and okay. Hey, left J minus one, because the last that you can compare is still here. I still hear that's the last you can compare. So imagine this was not 13. I'll give you an example. If this was like 14, 15, and this was seven, the seven would have last gone here. Or imagine this was five for an example, which is five. What would have happened? Five"
+    },
+    {
+      "chunk_id": "L014_C31",
+      "start": 2275.44,
+      "end": 2353.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=2275s",
+      "text": "seven, the seven would have last gone here. Or imagine this was five for an example, which is five. What would have happened? Five would have gone like till here. And then five would have got compared with six by standing here by standing here would have compared it on the left. That's why you don't go till zero because right before zero, you do the last comparison. That's why. And that's why J minus one, the last comparison, if it is greater than a of J, if it is greater, that means can you please swap? So I'm not writing the swap. You know how to write, you say, a of G minus one and a of G that's what you say, right? And that's when it ends. And you can just do a G minus minus over here, because what am I doing is I'm taking the element and I'm saying left, left, small, left, small. Okay. And go left. Again, come back left, small, again, go left, small, go. The moment it's not small, stop and go to the next guy. Why it's not time to write insertion. So avoid insertion, sort, int array and int n. As usual, we can just do this as insertion. Okay. And I'll quickly write the pseudocode. Until here,"
+    },
+    {
+      "chunk_id": "L014_C32",
+      "start": 2353.96,
+      "end": 2432.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=2353s",
+      "text": "and int n. As usual, we can just do this as insertion. Okay. And I'll quickly write the pseudocode. Until here, you know, the pseudocode, why G greater than zero, why not greater than equal to imagine if J goes equal to zero is G minus one. Like when J is zero, G minus one will be minus one. That's all right. So over here, you can go ahead and swap it. I need temporary equal to add a of G minus one. And then add a of G minus one is added of G. And then you can go ahead and say, add a of G is equal to temporary. And once you're stopped, let's go more left. So G minus minus, and let's go ahead and quickly run this and see if this is sorting this particular thing. Yeah, it is sorting. Done. Simple. If we analyze the time complexity, what will be the time complexity? Imagine for a reversed array, like something like five, four, three to one. What's up for the first time, five, no swaps. Next time it comes to four and does a swap. It's like four, five. Next time it comes to three, does a complete like three goes here. Then three goes here next time. So it's like three, four, five to one. Next"
+    },
+    {
+      "chunk_id": "L014_C33",
+      "start": 2432.28,
+      "end": 2505.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=2432s",
+      "text": "does a complete like three goes here. Then three goes here next time. So it's like three, four, five to one. Next time it's comes to two. It goes here to goes here. It kind of goes here. It's like two, three, four, five, one next time it comes to one. One goes here. One goes here. One goes here. One goes, this is like one, two, three, four, five. It's kind of going extreme extreme left to the, to the extreme left. This loop for the first time, ran for zero times when it was at five, when it was at five, when it went to four, it stopped the one place next when it was at three, it's up two places. Next, when it was at two, it's up three pieces. Next it will, when it was at one, it went left four pieces. It's kind of again going into the similar direction of summation of natural numbers, which is N cross at N plus one by two makes it near about the time complexity of N squared. If you remember the time complexity class. So I can see the kind of worst case is N square. The average case is also N square. But what about the best case? Imagine I give you something like one, two, three, four, five, one, two, three, four, five. And I go back to the code"
+    },
+    {
+      "chunk_id": "L014_C34",
+      "start": 2505.94,
+      "end": 2581.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=2505s",
+      "text": "Imagine I give you something like one, two, three, four, five, one, two, three, four, five. And I go back to the code and I go back to the code. So imagine I give you a completely sorted and I go back to the code and let's see how many times this loop runs. Go to the terminal and try to print it. This loop will not run a single day because for one, there's no one on the left or two. There's no one on the left. Three is already in its correct position. Four is already in its correct position. Five is already in its correct position. Six is already in. So this putting them into the correct position never happens. So apparently only this loop runs for check. So B go off. That's a B go off N. The best case for this is nothing but B go off N complexity because there is no swaps that happen. Everyone is at its correct order. Just go to everyone. That is what the time is taken for in case of insertion sort. So, so with this, I can tick mark insertion sort and it is completed. Uh, the time is 529. Yes, because I do take a lot of retakes while recording because I want it to be perfect. Like a lot of times I teach two or three times. So please, uh, please for this effort, if"
+    },
+    {
+      "chunk_id": "L014_C35",
+      "start": 2581.98,
+      "end": 2614.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=HGk_ypEuS24&t=2581s",
+      "text": "want it to be perfect. Like a lot of times I teach two or three times. So please, uh, please for this effort, if you understood everything, do consider hitting that like button and to follow our ritual, please do come into understood if you understood everything. And if you have doubts, you can definitely put that into the comment section. I'll be replying to them. And if you're new to our channel, what are you waiting for? Hit that subscribe button and follow strivers A to Z DSA course, share your learnings with the hashtag. And yes, if you haven't followed me on Instagram, Twitter, LinkedIn, all the links will be in the description. Make sure you follow me with this. I'll be wrapping up this video. Let's put in some other video. Tell them goodbye."
+    }
+  ]
+}

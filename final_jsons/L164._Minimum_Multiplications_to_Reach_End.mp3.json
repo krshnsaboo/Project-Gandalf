@@ -1,0 +1,120 @@
+{
+  "lecture_id": "L164",
+  "lecture_number": 164,
+  "lecture_title": "G-39. Minimum Multiplications to Reach End",
+  "youtube_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw",
+  "chunks": [
+    {
+      "chunk_id": "L164_C1",
+      "start": 0.0,
+      "end": 77.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. The problem that we are going to solve today is very, very special to me. Why? Because the problem setter of this problem is me. I did set this problem when I was an intern at GFG back in 2019 for one of the hiring contests. So it's very, very close to me. So the problem is minimum multiplications to reach the end. So given a start, end and an array of N numbers at each step, start is multiplied with any given number in the array and then mod operation with 10 to the power of five is done to get the new start. Your task is to find the minimum steps in which end can be achieved starting from start. If it is not possible to reach end, then you can definitely return something as minus one. So let's understand what does the problem state. So the problem is very simple. It will always give you a start. It will always give you an end. Okay. And you'll be given an array of N numbers like over here. They're giving you three numbers. Now what you can do is you can pick up this number three and you can actually multiply with two or you can actually multiply with five or you can actually multiply with seven. Okay. And you can probably"
+    },
+    {
+      "chunk_id": "L164_C2",
+      "start": 77.04,
+      "end": 151.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=77s",
+      "text": "actually multiply with two or you can actually multiply with five or you can actually multiply with seven. Okay. And you can probably get six. If you multiply with five, you'll get 15, three into seven is 21. You can do whatever you wish to as long as you are reaching the end. That is what matters. And the question states how many minimum multiplications you have to do in order to reach this, uh, from start to the end. Now assume I take something like a start as three and I say, Hey, listen, let's multiply something as into two. They'll be like, okay, one multiplication and I'll reach to six. And after this, I'll say, I'll pick up five from the array and multiply with six. So thereby I reach end. So can I say 30 is what the end is? And I've reached, how many multiplications did I do? I did one, I did two order of multiplications is something which I'm not concerned of. What I'm concerned of is counting the number of multiplication, which is one here to here. So in minimum, I have to do two multiplications in order to reach 30. Okay. Now you might be thinking, then what is this model all about? Because they said, whatever you get, you have to do a mod of it, right? Now, you know something, if you have six and you do six more, 10 to the power of five, it's still going to be"
+    },
+    {
+      "chunk_id": "L164_C3",
+      "start": 151.12,
+      "end": 229.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=151s",
+      "text": "right? Now, you know something, if you have six and you do six more, 10 to the power of five, it's still going to be six on a mod will only be applicable if your number is greater than 10 to the power of five. Okay. That is the case. Now let's see the second example so that you can understand. So we are given something like seven. Okay. Now what they have done is at first they multiplied seven into three, which gives them 21. Now they've taken 21 and multiplied with three, which gives them 63. Now what they have done is they've taken 63 and they multiplied with 65. Remember one thing you can multiply three or whichever number as many times as you want. There is no restriction on that. So now I'm taking 65 and I'm multiplying 63 into 65 to get something as 4095, which is still less than the value of this particular mod. But next case is 4095. I take and I multiply that with again 65. This time what I get is something like two, six, six, one, seven, five. Okay. Now this number has exceeded the mod. So if you apply a modular, a modular operation to this, which will be something like two, six, six, one, seven, five, modular 10 to the power of five, then the number that you will get"
+    },
+    {
+      "chunk_id": "L164_C4",
+      "start": 229.3,
+      "end": 300.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=229s",
+      "text": "be something like two, six, six, one, seven, five, modular 10 to the power of five, then the number that you will get is nothing but six, six, one, seven, five. And you will realize that that is the end and you'll realize that that is the end. So remember at any time you're just doing a multiplication, doing a multiplication, doing a multiplication, and you get a number which exceeds 10 to the power of five, then you got to do a modular with this number so that you again get back into the range of zero to 10 to the power of five minus one. I want you to be always in this range and I want you to do the operations in this range only. So whenever you exceed multiply and come back, okay. Now might be thinking, okay, this is where I got the answer. That's fine. How many multiplications did we do? One, two, three, and four. So I can say at a minimum of, I did four multiplications and that is going to be my answer. What if this was not the answer? What if this was not the answer? Then you'd have taken six, six, one, seven, five, and probably tried it multiplied with three or four or whatever you wish to. Our main goal is to start from the start and end at the end. And I need the minimum steps in order to reach the end. That is what the question"
+    },
+    {
+      "chunk_id": "L164_C5",
+      "start": 300.78,
+      "end": 377.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=300s",
+      "text": "from the start and end at the end. And I need the minimum steps in order to reach the end. That is what the question states. Now the question arises, what is the thought process behind solving this problem? So assume this is the start and I'm not taking any end as of now. And we know that this, these are the numbers which you can multiply with the, any given state. So assume the initial state is three. Okay. So let's write the initial state as three. Now what can you do with three? Like logically according to the problem, what can you do? Can you say you can multiply with two, you can multiply with five, you can multiply with seven. Can I see this? So if I multiply with two, I'll get to six, isn't it? And can I see this? If this took zero steps, because at three, that was zero multiplications. This will be one multiplications. Can I see that? Yes. Or I can be like, I can multiply five, which would be 15 comma one multiplication. Or I can say I can multiply seven, which would be 21 comma one multiplication. Can I see this? I can't. Now over here at six, what can you do? I'll again say I can do the similar thing and I can be like, I can multiply six with two, five, seven, go ahead and do it. So what I'll do is I'll say,"
+    },
+    {
+      "chunk_id": "L164_C6",
+      "start": 377.34,
+      "end": 456.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=377s",
+      "text": "I can be like, I can multiply six with two, five, seven, go ahead and do it. So what I'll do is I'll say, okay, I'll multiply with two to get 12. This time I'll take two multiplications, one more multiplication done. I can say I'll multiply with five to get 30 comma two multiplications, right? I can say I'll multiply with seven to get 42 comma two multiplications. Can I say I can now, what would be the next step? I have 15. What can I do with 15? Multiply with two, multiply with five, multiply with seven, right? So I can go ahead and multiply with two to get 30 comma two operation, right? And I can go ahead and say, I'll multiply with five to get something like 75 comma two. And I can say I'll multiply with seven to probably get 75, 90, 105 comma two multiplications. Similarly, I can take 21 and do with two with five with seven. Now something to observe over here. This is the first starting point. And then we are reaching different, different numbers. First we reached six, then we reached 15, then we reached 21, right? Then we reached 12, then we reached 30, then we reached 42, then we reached 30. Again, something to observe. I just mark it as of now. And then we reached 75, 105, and probably a"
+    },
+    {
+      "chunk_id": "L164_C7",
+      "start": 456.06,
+      "end": 531.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=456s",
+      "text": "we reached 30. Again, something to observe. I just mark it as of now. And then we reached 75, 105, and probably a lot of other numbers on two multiplications. Similarly, if I go again down and I multiply with two, probably I'll reach 24 with three operations. I'll again multiply with five. I'll reach 60 with three operations. I'll again multiply with seven. I'll probably reach 84 with three operations. Similarly, for 30, I'll multiply with two and I'll again reach 60. And similarly, I can go and go ahead. And my question is, if over here, I have a 30 over here, I have a 30, which 30 will I multiply? If I just go via this path, will that suffice? It will. Now, which algorithm this looks like? Yes. Something like an X-Plus algorithm, where you start with zero steps and you keep multiplying and you keep multiplying and you keep on going. And whenever you reach your end, assume, just in case, assume the end was given as 75. Assume. So you would have got 75 over here. So the answer would have been multiplication equal to two steps. Can I say that? Assume you would have something like end as 84, then you'd have got 84 over here. Right? And that would have been steps equal to three. So can I see, I can do a"
+    },
+    {
+      "chunk_id": "L164_C8",
+      "start": 531.82,
+      "end": 600.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=531s",
+      "text": "have got 84 over here. Right? And that would have been steps equal to three. So can I see, I can do a simple Dijkstra's algorithm and this problem will be solved. Isn't it? But over here, what is the main concern? What are the type of nodes? How many nodes are there? Can I see if this is the starting node? Can I call this as a source? I can. Can I call this as a distance? I can. I can definitely call this as a source and I can call this as a distance. Can I say six is a node, 15 is a node, 21 is a node, 12 is a node, 30 is a node. Everyone can be treated as a node. Can I see the nodes will be from zero one, two, three, dot, dot, dot, till this. Can I say this? Why? Because they're always seeing us. If it exceeds 10 to the power of five, you have to do a module of it. So module of 10 to the power of five is only going to work. Let me quickly check if it is 10 to the power of five. Yeah, it is 10 to the power of five. So module of 10 to the power of five is only going to work if your number exceeds. Because if you do four module, 10 to the power of five, it's"
+    },
+    {
+      "chunk_id": "L164_C9",
+      "start": 600.62,
+      "end": 678.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=600s",
+      "text": "five is only going to work if your number exceeds. Because if you do four module, 10 to the power of five, it's going to be four. If you do something like triple nine, sorry, four nines module, this, it's still going to be triple nine. But the moment you take something like this, this is a number and you do module of this, this will become zero. If you take one, this will become one. If you take two, this will become two. If you take three, this will become three. If you take two, one, three, this will become two, one, three. So the module will only work for numbers which are greater than four nines. Can I say that I can. So can I say if I'm doing a module, all my nodes, all my these guys, all my, these guys are definitely bound to lie between zero and four nines, every one of them. So can I see my nodes or my typical points can be from zero to nine, nine, nine, isn't it right? So thereby this is what our nodes are. We have a source node. If you have everything, what are we going to do at every step? What are we doing? We're taking three, multiplying with two, multiplying with five, multiplying with seven. That's it. And then you compare the distance. If you're getting six, just compare the distance. So in order to apply Dijkstra's algorithm, this is how the initial"
+    },
+    {
+      "chunk_id": "L164_C10",
+      "start": 678.94,
+      "end": 743.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=678s",
+      "text": "you compare the distance. If you're getting six, just compare the distance. So in order to apply Dijkstra's algorithm, this is how the initial configuration looks. We have a minimum heap, which is going to store steps and the number. We have an array, which you know, all the nodes are there. Zero, one, two, three, four nines. And everyone has marked as infinity. So we have the source or the starting point as three, the steps zero starting point three. And at three, the steps is zero. Now the array is nothing but let's quickly write the array as a two, five, seven, right? So add a is two, five and seven. So what do you do is very simple. You'll take out this and you'll say, Hey, listen, this is my first guy. So I'm taking steps zero to the node three. I can multiply this with two and I'll get six with step one. So six is definitely would be infinity. So you can update it with step one and six, right? Similarly, you can multiply with five. You'll get something like 15 comma step one. So one comma 15 goes again. And probably at 15, again, there'll be an infinity. You can update that with one and you can multiply with seven. You'll get 21 comma one. So one comma 21, and probably at 21, you can, instead of"
+    },
+    {
+      "chunk_id": "L164_C11",
+      "start": 743.74,
+      "end": 815.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=743s",
+      "text": "and you can multiply with seven. You'll get 21 comma one. So one comma 21, and probably at 21, you can, instead of infinity, you can do a one, right? And I can say this is done very simple, very straightforward, simple next one. Next get the next guy, one comma six, right? So step one, in order to reach six, again, do the same thing, multiply with two, 12 comma one steps. So one comma 12, probably at 12 somewhere, you can market as one, and then you can multiply five, you'll get 30 comma one. So one comma 30, you got right. And what do you can say is you've got one comma 30. So at 30, you can just update it. And similarly, you can do a multiply with seven, 42 comma one, one comma 42. And you can again, update 42 as well. Similarly, you can go ahead with the next guy. Who's the next guy? One comma 15. Now this is a point where you should understand one, uh, very small thing. When you do 15 multiplied with two, it gives you 30 with one steps. So if you remember, 30 has already been reached with one step. If someone has reached 30 with one step, let him go with that flow. Because at every flow, we are multiplying two, five, seven, again, taking a 30 again, multiplying two, again, multiplying five, again, multiplying seven is an"
+    },
+    {
+      "chunk_id": "L164_C12",
+      "start": 815.66,
+      "end": 885.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=815s",
+      "text": "at every flow, we are multiplying two, five, seven, again, taking a 30 again, multiplying two, again, multiplying five, again, multiplying seven is an excessive task. So I'll just see, you're not a better solution. You're still reaching in one step. I know any 30 at the future will reach in one step only. So why will I take you? I will not take you. Okay. So this is how you can go ahead, go ahead doing it. And you'll ultimately reach your, uh, 75 somewhere. Whenever you reach your end, those number of steps will be your answer. This is the simple diagram. The only catch over here is if you think about the mod, you have to figure out what are the node numbers, but figure out that the node numbers will be from zero to four nines. That is the catch. Once you figure out that the node numbers are in this order from zero to four nines, I think the problem is pretty much solved. So I hope I was able to explain you now a quick thing, you know, the steps are increasing by plus one or the multiplication is increasing by plus one. So the Q will automatically store everything in increasing order. So we do not need a priority queue. A simple queue will do. You've already done that in previous problems, a simple queue will do so no need to take a priority queue. So what I'll do"
+    },
+    {
+      "chunk_id": "L164_C13",
+      "start": 885.82,
+      "end": 956.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=885s",
+      "text": "You've already done that in previous problems, a simple queue will do so no need to take a priority queue. So what I'll do is, uh, I will now code it up. I hope you have understood the entire explanation. So I'll go to the C plus plus solution on the right, and you can figure out the exact similar Java code on the left. So we're given a, a start in the end. So we will take a queue and we'll take a pair. Okay. And initially in the queue, what you can do is you can say, Hey, listen, I can probably say start comma zero, right? And I can probably take a vector and market as distance. And whatever is this, I'll just take it and market with infinite or one E nine. Okay. And please, please make sure whatever is your start market as zero. And now let's iterate in the queue. Very, very simple. Like it's a very standard problem and go ahead and say auto, or you can say INT node is equal to q.front.first. And you can say the steps as of now is q.front.second. Once you have done this, what's the next step? Take it out of the queue. Now you need to multiply with all the numbers. So you can probably iterate in the list, go ahead, iterate in the list. What will be the number? Can"
+    },
+    {
+      "chunk_id": "L164_C14",
+      "start": 956.46,
+      "end": 1035.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=956s",
+      "text": "all the numbers. So you can probably iterate in the list, go ahead, iterate in the list. What will be the number? Can I say the number will be very simple. Uh, whatever is it multiplied with your node modulo. This you can do a modulo because it will give you the value lesser than, uh, 10 to the power of five bits. If it exceeds that. Now, what do you need to check is if steps plus one is lesser than the distance of this particular number. If that's the case, you can say distance. Can you please do steps plus one simple Dijkstra. Once you have done this, you can say, Hey Q, I got someone numb with steps plus one. But what if, uh, somehow you reach the guy is somehow this number is the end. If that's the end, you can actually return steps plus one simple. And if you do not reach the answer, you can go ahead and return minus one. And that should be it. So you're doing a mod. We forgot to declare the mod. So mod, you know, will be this. Let's declare this. And once you have done this, I'll just quickly compile this and see if it is working fine. It is. Let's quickly submit this and see if it is giving us correct answers. Yes, it is giving us correct answers. What is the time complexity of this particular approach? Like let's look at it normally."
+    },
+    {
+      "chunk_id": "L164_C15",
+      "start": 1035.74,
+      "end": 1113.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=1035s",
+      "text": "correct answers. Yes, it is giving us correct answers. What is the time complexity of this particular approach? Like let's look at it normally. So normally we are seeing a node and we know at the worst case, the number of nodes that we will generate is zero one, two, three, four, five, six, four nines, which is these many nodes. Can I say these many nodes? Yes. These many nodes are the nodes that I'll generate at the worst case. Right. And then I'm multiplying them with all the numbers individually. So that's it. But my question is, can you generate all the numbers like zero one, two, three, four, five, six accurately? Just think about it, because if you look over here, they're giving that the array will be somewhere of size 10 to the power of four. So can you generate all the 10 to the power of five numbers? I think mathematically it's going to be very, very hypothetical scenario where you get an array, you get this particular array and you're able to generate zero one, two, three, four, five, six, four nines, all the numbers hypothetical generation is impossible. So mathematically also, I don't think it's possible. So because you just have to be able to have four numbers, so all the numbers generation is not possible. So this is a very hypothetical scenario where this"
+    },
+    {
+      "chunk_id": "L164_C16",
+      "start": 1113.98,
+      "end": 1170.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=_BvEJ3VIDWw&t=1113s",
+      "text": "be able to have four numbers, so all the numbers generation is not possible. So this is a very hypothetical scenario where this code might go up to this, but it's pretty lesser than this. Again, we cannot predict the exact time complexity. Why? Because it will depend on the array. Whatever array is given, those many numbers you will generate. So it completely depends on that. But in an interview, you can say hypothetically, this is this, it's not possible. It's way lesser than that. But the space we're using a distance array, we're using a queue data structure. So you can just count them into the space complexity. So I hope I was able to explain you this particular problem and you understood the entire code. So just in case you did, please, please, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And yes, if you have not checked out our DP series and the SD sheet, the links will be in the description. And yeah, with this, I'll be wrapping up this video. Let's meet in some other video. Till then bye bye. Take care."
+    }
+  ]
+}

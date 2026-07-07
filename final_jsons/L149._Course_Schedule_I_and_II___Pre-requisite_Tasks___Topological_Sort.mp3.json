@@ -1,0 +1,78 @@
+{
+  "lecture_id": "L149",
+  "lecture_number": 149,
+  "lecture_title": "G-24. Course Schedule I and II | Pre-requisite Tasks | Topological Sort",
+  "youtube_url": "https://www.youtube.com/watch?v=WAOfKpxYHR8",
+  "chunks": [
+    {
+      "chunk_id": "L149_C1",
+      "start": 0.0,
+      "end": 76.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=WAOfKpxYHR8&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem co schedule one and two. Both the problems are interlinked. So we'll be solving both the problems in this particular video. So what does the problem state? A given total of N tasks leveled from zero to N minus one. Some tasks might have prerequisites. For example, to do task zero, you have to first complete task one, which is expressed as a pair zero comma one. Given the total number of tasks N and a list of prerequisite task B, find if it is possible to finish all tasks. So let's analyze the question. So it states, if I'm stating one comma zero, it means if you have to perform zero, you should have performed one before that. So I can probably stated something like this. One should have been performed before zero. That is what they demand. Okay. So this is about the first task. What is about the next task? They're saying in order to perform task one, you should have performed task two. So in order to perform task one before that, you should have performed the task two. So I can definitely align it."
+    },
+    {
+      "chunk_id": "L149_C2",
+      "start": 76.14,
+      "end": 146.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=WAOfKpxYHR8&t=76s",
+      "text": "in order to perform task one before that, you should have performed the task two. So I can definitely align it. So this is done. Next, what are they seeing? They're saying in order to perform task two, you should have performed task three. So in order to perform task two, you should have performed task three, which means I can definitely go and write three over here. So again, this task can also be performed. So what I see is if at first I perform three, I can actually perform task two, which will mean this. Then if I perform task two, I can actually perform task one, which will mean this. If I perform task one, I can actually perform task zero, which means this. So apparently I can actually perform all the given tasks that is given to us. So thereby I can say, yes, it is possible to perform such a particular task. So that was about when we can perform a task. Let's take one more example and let's analyze when we cannot perform a task. So if you carefully see this particular example, I'm saying, okay, one in order to perform task two, I should have performed task one. The task two, I should have performed task one, which means this can only be performed at task one is performed before it. Okay. So this is, this can be done. Let's go to the next one, which means we can"
+    },
+    {
+      "chunk_id": "L149_C3",
+      "start": 146.68,
+      "end": 220.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=WAOfKpxYHR8&t=146s",
+      "text": "task one is performed before it. Okay. So this is, this can be done. Let's go to the next one, which means we can only do three. If four is performed, we can only do three. If four is performed. So I can definitely say we can only do three. If four is performed. Perfect. Now this could have been written over here. I've written over here due to some reason. Let's go to the next thing I'm seeing four can only be performed if task two is done and we see task two can be performed before four because we do not have any dependency. Thereby this can also be performed. Let's analyze the last one. The last one says one can be performed if task four has been performed prior to that. So one has to be after four, one has to be after four, but wait, two has to be before four, which states this and one has to be before two. So is this possible? No, you see there is a cyclic dependency happening. You see there is a cyclic dependency. So if I analyze it properly, one has to be performed before two, two has to be performed before four. And in order to perform one, it has to be performed before four. So first four, then one. So you see a cycle getting formed."
+    },
+    {
+      "chunk_id": "L149_C4",
+      "start": 220.28,
+      "end": 291.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=WAOfKpxYHR8&t=220s",
+      "text": "order to perform one, it has to be performed before four. So first four, then one. So you see a cycle getting formed. So there is a cyclic dependency forming like one has to be performed before two, two before four and one four before one. So it's not possible because you have a cyclic dependency. You cannot perform the task. Got it? So thereby I cannot perform this task because of the prior conditions. Hence we will say no to this. Right? So this is what we have to figure out. Given a pair of tasks, you have to tell me yes, if you can perform, you have to tell me no, if you can't perform. So this is what the problem states. You'll be given a pair of tasks and if you tell me yes, if you can perform and you have to tell me no, if you cannot perform the given pair of tasks, which algorithm to use. Can I see that I can definitely use something as a topological sort, which you have learned in the previous video. Can we? Yes, we can. Why? The reason is very simple. If you remember the definition of topological sort, it stated if there is an edge between you and me, which we can treat it as the task you should have been done. If you want to perform the task, we, I can define this as"
+    },
+    {
+      "chunk_id": "L149_C5",
+      "start": 291.48,
+      "end": 368.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=WAOfKpxYHR8&t=291s",
+      "text": "treat it as the task you should have been done. If you want to perform the task, we, I can define this as an edge. Then the linear ordering of vertices must have you before we, then the linear ordering of vertices must have you before we, and that is what we are doing. We are saying, okay, in order to perform task one, it is something like this, a directed edge from one to zero and one should appear before like one should have been done before zero. Right? So can I read this problem to something as topological sort? Yes. So can I see, I need to figure out possibility or not. I need to figure out possible or not possible. So when is a topological sort possible? When can I write linear ordering of vertices only when it's a directed graph and we assume we are given, we can express the pairs as directed graphs. Like if we are given something like task two to four, we can actually see it as two to four. So we can definitely express this as a directed graph. What is the next thing? It's stated as cyclic graph. It's stated as cyclic graph. The graph must not have any cycles. The graph must not have any cycles. So thereby I can determine that topological sort is only valid"
+    },
+    {
+      "chunk_id": "L149_C6",
+      "start": 368.08,
+      "end": 440.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=WAOfKpxYHR8&t=368s",
+      "text": "not have any cycles. The graph must not have any cycles. So thereby I can determine that topological sort is only valid for that. And what does topological sort means? I can order them in such a way that you appears always before V. So over here, if you see, I cannot order these guys because you cannot make sure that four appears before one is not possible. Why? Because it's an, it contains a cycle. So thereby a toposort will not be possible. So can I see the question is very straightforward. Either you can solve it by saying, I will detect if the graph has a cycle. That's a very simple thing that you can do. Detect a graph has a cycle and you can use a DFS to do that because the directed graph, you can use the DFS way or you can use the BFS way which uses toposort. Yes, we can use the BFS way which uses toposort. Now you can go the DFS way in order to just tell me a yes or no. But in the next part of the question, they'll ask us the ordering. Thereby I'll solve this problem using BFS or the toposort. You can definitely do it using DFS. I've already taught you how to detect a cycle in a directed graph so you can go back and definitely do it using DFS as well. So guys, I hope you have understood the explanation why toposort or why cycle"
+    },
+    {
+      "chunk_id": "L149_C7",
+      "start": 440.6,
+      "end": 504.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=WAOfKpxYHR8&t=440s",
+      "text": "can go back and definitely do it using DFS as well. So guys, I hope you have understood the explanation why toposort or why cycle detection. So as usual, I'll be writing the C++ code on the right and you can figure out the Java code on the left. So you're given N, you're given the pair of prerequisites. So at first what I'll do is I'll try to create the graph because we need to create the directed graph in order to check for a cycle or toposort or whatever. So what I'll do is I'll at first create the adjacency list and I'm given the pair so I can just walk through the pairs. Let's walk through the pairs and I can say adjacency of it.first because I'm saying this guy should be performed before this. So there's an edge between this to that, right? So id.first.push back of id.second. So we're definitely sure that this is how we have to form the graph. So I can say the graph is formed and it's a zero based indexing. So it's fine. We need to check for toposort. We need the toposort to be checked. Now what is the next thing we need to check for topological sort. So what I'll do is I'll go over here to the topological sort and I'll just copy paste the entire code that we wrote for topological sort and I'll"
+    },
+    {
+      "chunk_id": "L149_C8",
+      "start": 504.6,
+      "end": 578.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=WAOfKpxYHR8&t=504s",
+      "text": "go over here to the topological sort and I'll just copy paste the entire code that we wrote for topological sort and I'll bring that and I'll try to copy paste it here. So this is the topological sort for any given graph. I'll just remove the, this one. So I can say, okay, this is how we have stored the topological sort. And if my ordering contains all of them, yes. If my ordering contains all the vertices, then I can say that there was definitely not a cycle. Thereby all the vertices where they're in the toposort. So I can say yes or which means true. Or I can say if not, then I can say a false. So once you have done this, let's quickly analyze if everything is fine. Okay. This is N so probably we can just convert this into V because in toposort we're using V and over here we can do it V. Perfect. Now let's compile and run. We compile and run, uh, and then I'll submit. So you see that this is running absolutely fine. Okay. So once we have solved this particular problem, we'll go to the next problem, which is course schedule. This problem has slight modifications. Now over here, if you have to do task zero, you have to first finish task one. So the ordering is late in the previous question it would have been given one comma zero over here. They've just reversed it."
+    },
+    {
+      "chunk_id": "L149_C9",
+      "start": 578.52,
+      "end": 642.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=WAOfKpxYHR8&t=578s",
+      "text": "one. So the ordering is late in the previous question it would have been given one comma zero over here. They've just reversed it. They're saying in order to perform zero, you should have done one. So there's an edge between one and zero. So just, uh, the mention of the pair has been reversed. Cool. Now you have to find the ordering of tasks in order to finish all the tasks. And there might be multiple correct answers. You just need to return one of them. If it is impossible to finish all tasks, return an empty array is what they're saying. So what I'll do is I'll go back over here and I'll just try to copy this and then I'll do the changes that I require. So if you see, uh, we're given N, we're given N. So if you see, we're given N and M. So I'll just convert this to capital V and let, let this be M. So we're given a vector. So over here, we know the pairs have been reversed. So it of one, because it is a vector and it will form a directed edge to it of zero because they're giving it in the opposite order this time. So this is how we'll do. Once you do everything, if this is possible, then we return the ordering to pull. And if it is not, then we return simply an empty array. This is what"
+    },
+    {
+      "chunk_id": "L149_C10",
+      "start": 642.72,
+      "end": 683.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=WAOfKpxYHR8&t=642s",
+      "text": "is possible, then we return the ordering to pull. And if it is not, then we return simply an empty array. This is what I will do. Once I've done this, I'll try to compile and run and see if it is running fine. And we see it is, and now we'll try to submit this. We see that all the test cases are running absolutely fine. So guys, I hope you've understood how to implement to push out in such problems. Whenever you see problems where they stay something before something that is when the intuition of toposort should jump to your brain. Remember this always. So I hope you've understood everything. So just in case you did, please, please, please make sure you like this video. And if you're new to our channel, what are you waiting for? Kill that subscribe button right away. And if you haven't checked out our DPCs and the HDC, the links will be in the description. And with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

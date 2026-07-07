@@ -1,0 +1,253 @@
+{
+  "lecture_id": "L215",
+  "lecture_number": 215,
+  "lecture_title": "DP 34. Wildcard Matching | Recursive to 1D Array Optimisation 🔥",
+  "youtube_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo",
+  "chunks": [
+    {
+      "chunk_id": "L215_C1",
+      "start": 0.0,
+      "end": 76.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=0s",
+      "text": "Hey everyone, welcome back to Take U Forward. So today we will be doing the last problem on DP on strings and it's a wonderful problem. Wildcard Matching. So what does this problem state? The problem states you'll be given a couple of strings as usual and in those strings yes in those strings you will be having a star like you will have characters but you can have a question mark or you could have a star. Now question mark means matches with single character remember this it means matches with single character star means matches with sequence of length zero or more. So what does this mean? Let me give you a couple of examples assume the string 1 to be question mark a y and remember one thing this question mark or the star will only be in the string s1 it will not be in the string s2 so the string s2 is ray okay"
+    },
+    {
+      "chunk_id": "L215_C2",
+      "start": 76.88,
+      "end": 151.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=76s",
+      "text": "it will not be in the string s2 so the string s2 is ray okay now let's see if they match y y matches a a matches this r is with question mark and it states question mark means it matches with single character it can match with any single character so i can say question mark matches with r so all of these three guys are matching thereby this s1 is matching with the text s2 thereby you need to return a true since they're matching you need to return a true. Let me take one more example in order to explain the star portion so assume the string s1 to be a b star c d okay and assume the s2 to be a b d e f c d okay now i need to figure out are they matching okay star means it can match any yes it can match any sequence so let's take it d matches with d c matches with c a matches with a b matches with b so i can see this star matches with the entire sequence d e f because it states matches with the sequence of lengths"
+    },
+    {
+      "chunk_id": "L215_C3",
+      "start": 151.6,
+      "end": 226.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=151s",
+      "text": "this star matches with the entire sequence d e f because it states matches with the sequence of lengths zero or more so this star matches with this d e f what if so this is this is definitely true what if i change uh the strings and i say what if the string would have been star star and something like a b c d okay and the string s2 is something like a b c d are they matching and the answer to that is yes they are matching why because d matches with d c matches with c b matches with b a matches with a now these star i can say a single star is a length zero so this is matching with the length zero this star is also matching with length zero so hypothetically a b c d is equal to a b c d star means it can match with someone or it cannot match with someone the string can be of any length it can be of a length zero it can be of length one it can be of length two it can be of length three and so on so let me take one more example which is false string s1 is a b question mark d string s2 is a b c c okay let's see if they are matching"
+    },
+    {
+      "chunk_id": "L215_C4",
+      "start": 226.88,
+      "end": 306.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=226s",
+      "text": "false string s1 is a b question mark d string s2 is a b c c okay let's see if they are matching a matches with a b matches with b question mark can only match with one so question mark matches with c but this d is not matching with c thereby this is false you will say they do not match so this is the question given a string s1 which will definitely which can or cannot have like it will have lowercase letters for sure it can have a question mark and it can have a star as well given a string s2 which will just have lowercase letters you need to tell me if the string s1 matches with the string s2 or not you just need to return me either a true or you just need to return me either a false you just need me you just need to make sure you return either of these so how do you actually proceed with this problem so in order to think i can say the first thinking that will come to my brain is hey striver why why a a string matching simple string matching question mark is bound to match with that so the first thing that comes to my brain is simple string matching and we have already done simple string matching in the previous dp problems so"
+    },
+    {
+      "chunk_id": "L215_C5",
+      "start": 307.76,
+      "end": 382.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=307s",
+      "text": "that comes to my brain is simple string matching and we have already done simple string matching in the previous dp problems so fine where is the main problem the main problem arises yes the main problem arises if it is a star because for question mark it's very straightforward they will match but for star is when the problem arises so let us take an example and understand assume you had a b star c d you had a b d e f c d so when you're matching you'll be like d matches with d c matches with c but for the star you exactly don't know how many will match because you know b matches with b but for the star you have to be very critical whether you take this f whether you'll take ef whether you'll take df whether you'll take bdf or whether you'll take a so for a star you can be like i will not take anyone and i'll start matching b with f or you can be like for a star i'll take f and then i'll start matching with B and E or you can be like for the star I'll take EF and I'll match B with D or you can be like for the star I will take DEF and then I'll match BB and then AA"
+    },
+    {
+      "chunk_id": "L215_C6",
+      "start": 382.48,
+      "end": 457.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=382s",
+      "text": "with D or you can be like for the star I will take DEF and then I'll match BB and then AA and it comes out to be true so you you without trying you cannot say that you have you will be taking three you have to try by taking zero by taking one by taking two by taking three by taking four you have to try always like for start you don't take then you're taking one then you're taking two then three and in three it matched so you moved across you have to try all possible ways and whenever a question comes across all possible ways what comes to your brain definitely recursion I will try recursion string matching by recursion is what I will try I will try out every possible portion perfect so rules to write the recursion come on it's very simple now what are the rules if there are two strings you express them in terms of I and J in order to compare try comparing like explore comparisons third out of all comparisons it's it is asking you can you or can you not so out of all comparisons out of all comparisons"
+    },
+    {
+      "chunk_id": "L215_C7",
+      "start": 457.48,
+      "end": 535.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=457s",
+      "text": "it's it is asking you can you or can you not so out of all comparisons out of all comparisons if anyone can or if any way can you return true because that is what that is how you solve true and false if you remember the lecture 6 of the recursion series I have told you whenever there is a problem which has to return a true or false the standard pattern is very straightforward you write an F and this in the base case you either return a true or you either return a false if there are multiple states if this returns true and if this returns false you will return true if you are looking for one true if both of them return false you return false that's what you do in true and false the recurrences you try out always this is one way this is one way and you basically say okay what are you returning and on that basis you do something right so out of all comparisons if anyone can you return true correct so how do you actually solve this problem so let's analyze F of IJ but we need to figure out what is F of IJ let's see I'd be like what if I write n minus 1 and m minus 1 what does this"
+    },
+    {
+      "chunk_id": "L215_C8",
+      "start": 535.96,
+      "end": 614.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=535s",
+      "text": "F of IJ let's see I'd be like what if I write n minus 1 and m minus 1 what does this signify this signifies nothing but if the string is a b star cd and the length is nothing but 0 1 2 3 4 so F of 4 comma a b d e f cd 0 1 2 3 4 5 6 this means in the string from 0 to 4 in the string 0 to 6 are they matching are these two strings matching is the string 1 from 0 to 4 matching with string 2 0 to 6 this is what this function signifies and it's going to return yes or no I hope that makes sense so going across we will be writing the base case afterwards so assume your I initially stands over here and the G initially stands over here so what are you thinking what can be the case you are like okay they are matching so if they're matching it's very straightforward the string gets reduced to this and this or what if there was a question mark and the question mark"
+    },
+    {
+      "chunk_id": "L215_C9",
+      "start": 614.04,
+      "end": 692.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=614s",
+      "text": "string gets reduced to this and this or what if there was a question mark and the question mark would have matched with D either both the characters match either both the characters match because it's very straightforward either both of them will match or you will be like hey listen if it's a question mark then also they will match so I can say whenever we did string matching problems what conditions we had one was the match condition one was the not match condition so for the match condition we have two conditions over here what are these two conditions you can be like if s of 1 of I matches with s of 2 of J that's definitely one of the conditions and the other condition is if this is equal to equal to question mark then also I can say question mark does match with anything on s 2 of J which is this is not and this will be or if either of these cases are true they are matching and if they are matching can I say I will be very very humble to return f of I minus 1 because they are matching so I shrink the string and I shrink the other string as well very straightforward we have been doing the match condition right from the beginning of all the strings well I"
+    },
+    {
+      "chunk_id": "L215_C10",
+      "start": 692.2,
+      "end": 764.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=692s",
+      "text": "other string as well very straightforward we have been doing the match condition right from the beginning of all the strings well I write from the beginning of DP on strings so very very simple we say these two are matching let's reduce our I let's reduce our J and look for the smaller strings if they can be matched or not we solved this was the bigger problem we solved a portion of it and we are asking the smaller portion to be solved by the recursion okay so that's what this will be doing return okay what can be the other condition let's analyze the other condition that I can think of is what if my I let's erase this I over here let's erase this J over here okay what if my I stands here what if my J stands here so what I see is we have a star yes we have a star and I clearly said a star means you can say this did not match with anything like you can say for star means empty so one of the cases that I can think of is you will say star means empty and you'll be like let's just shrink this a be let's have this drink I'll say star means nothing now"
+    },
+    {
+      "chunk_id": "L215_C11",
+      "start": 764.48,
+      "end": 836.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=764s",
+      "text": "empty and you'll be like let's just shrink this a be let's have this drink I'll say star means nothing now star means nothing or I can say this F matches with this star star means one character let's reduce this to a BDE which means J will go here and this gets reduced I'm still standing at I okay that can be one of the cases or I can say let's match EF and still stand at I so I can actually match zero I can actually match one I can actually match two I can actually match three I can actually match four I can match any number of characters for the star yes any number of characters for the star so I can either go that way probably I'll try to write a recursion so that that way is also taken care of easily can I write let's see if I can write so one thing is for sure I will always take the case where I'll say hey listen the star means nothing nothing so I'll reduce this and this will be a B and this will still be a BDF that's one of the cases for sure where I say star means nothing star means nothing so I will like okay"
+    },
+    {
+      "chunk_id": "L215_C12",
+      "start": 836.76,
+      "end": 913.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=836s",
+      "text": "that's one of the cases for sure where I say star means nothing star means nothing so I will like okay if s of 1 of I is equal to equal to star I will like let's assume it means nothing which means ice will go and J will still be there because I said the star is equal to nothing because zero length was allowed thereby this gets omitted and I am with a B and I'm still matching with this perfect okay what can be the other thing I need to check for a length of one I need to check for a length of two I also need to check for a length of three and so on how will I manage that either I write a for loop either I write a for loop where I say I'll take F then I'll take Fe then I'll take Fe D then I'll take Fe DB for the star that way on the ways can I do this in this straightforward recursion I can let me show you how assume let me write this recursion over here assume you are at a B star okay and this was a B know what was it I forgot a B D F yeah a B D"
+    },
+    {
+      "chunk_id": "L215_C13",
+      "start": 913.08,
+      "end": 992.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=913s",
+      "text": "star okay and this was a B know what was it I forgot a B D F yeah a B D E F perfect so I'm saying this star hey listen the star you are no one so I'm calling a branch when I'm saying okay go to this and go to and now start comparing so which automatically mean I meant nothing nothing so start comparing with BF I did it the other thing that I can say is hey listen a B star B F star and move this string to here which means I said I compared F I compared F so means I took one comparison so I came over to here again this is a string and and I'll again do the same thing I'll say hey listen the star means nothing the star means nothing so it will come to a B a B D E I said star means nothing so it automatically came to a B a B D E which means you stated start to be just F you stated start to be just F how did you do that you first said okay star means to 1 F let's reduce let's reduce then you said star means nothing 1 F and"
+    },
+    {
+      "chunk_id": "L215_C14",
+      "start": 992.76,
+      "end": 1070.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=992s",
+      "text": "first said okay star means to 1 F let's reduce let's reduce then you said star means nothing 1 F and nothing equal to 1 F equal to 1 F right now I needed the E F how will I do that I'll again do the same thing I'll say this star let's match it with this E so I'll go to another case where I'll be like okay I'll still stand at star I'll move to a B D now this means first you matched with F then you matched with E so a B D E so E F got matched thereby you are with a B D now if you say star means nothing then you'll come across to a B and a B D and you'll eventually start matching with B D which means you ended up eliminating F and E via this path how delete F delete E then it start to be null so you eventually came up to here or you can be like hey listen I'm for the star I'm going to delete D fine so if you delete D you'll be like a B star let's really D so a B perfect so what you did now was you deleted F you deleted E I deleted D so eventually you deleted three characters for a star after deleting three characters you are"
+    },
+    {
+      "chunk_id": "L215_C15",
+      "start": 1070.76,
+      "end": 1148.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=1070s",
+      "text": "deleted F you deleted E I deleted D so eventually you deleted three characters for a star after deleting three characters you are saying hey listen hey listen there is no one there is no one for the star so standing with a B and a B and eventually they will match so you'll be like okay a and a eventually they will match so you'll be like empty and empty so you tried out all patterns see you said zero you said single F which is this single F deleted you said delete EF it went up and deleted F and E so this was EF deleted and he said delete DF so this was DF we did it using a single recursion and how did we do it let's analyze every step when we started we said just delete this so this is nothing but I can say I minus 1 and let's be at G isn't it we are saying let's delete star which is I minus 1 let's stay at F that's the one stuff that you're doing that is the one stuff that you're doing what are you doing over here you're still standing here but you're deleting F which means you're still standing at I but you're deleting F so these are the two functions that you're doing these are the two functions"
+    },
+    {
+      "chunk_id": "L215_C16",
+      "start": 1148.2,
+      "end": 1224.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=1148s",
+      "text": "still standing at I but you're deleting F so these are the two functions that you're doing these are the two functions that you're doing yes perfect that's how we can easily do this so I'd be like okay either this or I am going to delete the other one either the empty I will delete I'll take it as empty or I'll just delete one character and the next step it will again delete one character in the next step it will again delete one character so eventually one one one all set of characters like zero one two three four will be taken care in case of deletions perfect what if what if this the string did not match or it is not a star what if you are standing at a case where you are somewhere like assume ABC AEC so the C and the C will match then you are at B this is neither a star this is not a star nor a question mark so this is not matching you cannot match them so at the end of the day if either the strings have to be matching it has to be question mark or it has to be a"
+    },
+    {
+      "chunk_id": "L215_C17",
+      "start": 1224.88,
+      "end": 1298.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=1224s",
+      "text": "if either the strings have to be matching it has to be question mark or it has to be a star otherwise you cannot match and if you cannot match let's return a true perfect return a true amazing so that's how I have explored comparisons expressed as well out of all comparison if any one of this true which is this case if any one of them is true you return them otherwise you return I'm extremely sorry this will be false perfect was the last step that you have to do you have to write the base case let's analyze the base case what will be the base case we have to actually think we have to think out of the box over here what will be the base case we are we have to think there is no other way so I know base case has to return true or false and I know one thing for sure I return true if comparisons have been done so whenever you're doing string comparisons in the previous class I told you there are two methods what are the"
+    },
+    {
+      "chunk_id": "L215_C18",
+      "start": 1298.68,
+      "end": 1378.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=1298s",
+      "text": "you're doing string comparisons in the previous class I told you there are two methods what are the two methods either the string one gets exhausted either the string one gets exhausted or the string two gets exhausted so let's think if the string s1 gets exhausted what will happen so this basically means my I pointer will go beyond zero this means string gets exhausted right if this gets beyond zero which means the s1 has no more characters left and in order to match with s2 this also has to have no more characters so can I say if I is lesser than zero then the other string would have to be exhausted as well for the comparison to be true make sense make sense both of them have to be exhausted in order to the comparison to be successful perfect what about if this gets exhausted when you're comparing is when you're comparing what if your s2 gets exhausted you need to think about that so before going to string two gets exhausted if this is the case it's fine or if just the string got exhausted if"
+    },
+    {
+      "chunk_id": "L215_C19",
+      "start": 1378.36,
+      "end": 1450.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=1378s",
+      "text": "string two gets exhausted if this is the case it's fine or if just the string got exhausted if just the string got exhausted and the other string did not get exhausted which means the J is still greater than equal to zero so there are some comparisons still left so return false but there can be the other way where I say hey listen hey listen the J is lesser than zero which means the second string got exhausted it got exhausted but on string s1 you still have something you still have something what will be this case you be like strangle it's written false no what does this mean the string 2 is nothing it is an empty string now what about this the string 1 still has something it might have something when can it match with an empty string when can a string s1 which has something match with an empty string think out of your box if this has all stars if this guy has all stars because stars can only be represented by empty if it has"
+    },
+    {
+      "chunk_id": "L215_C20",
+      "start": 1450.08,
+      "end": 1526.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=1450s",
+      "text": "stars if this guy has all stars because stars can only be represented by empty if it has anything as a character it cannot be so I can see if s1 is left it has to be all stars it has to be all asterix otherwise it's not possible so I can say for you just need to loop from zero or whatever it is zero to I and if anyone yes if anyone is not star rather you return false otherwise at the end of the day you have to return true right so that's what the base cases will be let's go back and try to write the base cases very straightforward I said if both of them got exhausted then the comparison has been successful I said hey listen if if this is exhausted and and J is still remaining that means there are still comparisons from the string s to remaining but you don't have anything to compare so you're like okay return false and the other case is definitely when this string got exhausted but there is still I left but there is still I left"
+    },
+    {
+      "chunk_id": "L215_C21",
+      "start": 1526.2,
+      "end": 1600.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=1526s",
+      "text": "is definitely when this string got exhausted but there is still I left but there is still I left so I can in a better way I can write it as and and there is still I left these are the pieces both gets exhausted one gets exhausted one does not the one gets exhausted and the one does not so in this case you need to run a for loop and you need to check I'll show you that in the code that's how you can definitely write the recursion correct I'll write that in the code but before that let me just quickly walk you through the time complexity obviously it's recursion so you're gonna try out all matchings and it is definitely going to be exponential again you're doing with asterix so they can be 0 1 2 so the time complexity will be exponential that is what I can say space complexity will be the stack auxiliary stack space which is again somewhere around n plus n plus m if you are doing the matching so we have to figure out if there are overlapping subproblems if there are overlapping subproblems then you end up doing memoization and how do you do my mesh very simple what are the changing"
+    },
+    {
+      "chunk_id": "L215_C22",
+      "start": 1600.96,
+      "end": 1678.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=1600s",
+      "text": "overlapping subproblems then you end up doing memoization and how do you do my mesh very simple what are the changing parameters I J what is the maximum possible value of I n minus 1 so an n cross MDP is what you require and you can memorize and the time complexity after memoization will reduce to be go off n into M because those many will be the number of different states and the space complexity will be n into M plus plus we go off n plus M which is the auxiliary stack space so without actually wasting any time let's get back into coding this and try let's try submitting this so we are given a string pattern and a text right so n will be patterned or text M will be our text or size and again return F of n minus 1 m minus 1 we can pass on the pattern and the text perfect and right here we can quickly write IDF and I and DJ string pattern string text and I know if both of them have exhausted we can definitely return our truth I know if"
+    },
+    {
+      "chunk_id": "L215_C23",
+      "start": 1678.04,
+      "end": 1755.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=1678s",
+      "text": "text and I know if both of them have exhausted we can definitely return our truth I know if this string exhausted and there is still some matchings to be left this is definitely never possible and I know if the other string exhausted which is s2 there is still some portion of the pattern left there is still some portion of the pattern left then all of those pattern yes what I can say is probably against restaurant loop from 0 till I all of those guys have to be yes in the pattern have to be equal to equal to asterisk if they're not equal to asterisk you can directly return a false and if all of these are equal to asterisk you can just return a true that's how you do or the other cases you can set the pattern of I matches with the text of J or or if the pattern of I is equal to equal to question mark then it's fine and you can directly return an F of I minus 1 because they are matching and a pattern and a text perfect what would be the other case if the pattern of I is an asterisk if it's an asterisk you know there can be two ways either I say I'm gonna go empty which is I minus"
+    },
+    {
+      "chunk_id": "L215_C24",
+      "start": 1755.2,
+      "end": 1829.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=1755s",
+      "text": "if it's an asterisk you know there can be two ways either I say I'm gonna go empty which is I minus 1 and J and the pattern and text or you can say okay listen I will not be going empty yes I will not be going empty and I'll just take away one guy but I'll still stay at the same place in the next step I'll go empty but I'll still stay at the same so I'll still stay at the same for I but I'll delete one guy that's perfect and that's how you can easily do perfect and this is what you return and if none of these cases exist I know you're going to return a false because they are not going to match amazing I think this should be perfect but that's how you can easily do it and now if I try to run this this should be running fine it does run fine we have to actually convert this into a dynamic programming so let's quickly do this into a dynamic programming which is DP of n cross vector of int again or you can definitely write m cross minus 1 that's what you have written okay looks like we just need to declare this right above this and please make sure you pass on the DP and over here just make sure you carry on the DP as well and right before returning every time you just"
+    },
+    {
+      "chunk_id": "L215_C25",
+      "start": 1829.84,
+      "end": 1909.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=1829s",
+      "text": "on the DP and over here just make sure you carry on the DP as well and right before returning every time you just before calling other functions if this state has been previously called kindly return the value stored over there over your rights please store the value over here again rightly store the value before returning over here again rightly store the value before returning so if you just do this it should be fine we need to make sure DB is passed every time we call it please make sure you do that look at the vector has not been declared so please make sure you declare hash include bits slash STD plus C++ dot H we are getting an 100% score that is indeed amazing but you know I'm not a big fan of memoization because because because it has auxiliary stack space isn't it so no I am I don't want this so we need to convert this into tabulation right let's let's go across and super quickly write this what are the rules of tabulation I think I think now after so many lectures this should be in your head rule number one write the base cases rule number two write the changing parameters rule number three copy the recurrence rule number four is return whatever call you made that's it"
+    },
+    {
+      "chunk_id": "L215_C26",
+      "start": 1909.0,
+      "end": 1977.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=1909s",
+      "text": "two write the changing parameters rule number three copy the recurrence rule number four is return whatever call you made that's it base case is something once you have done this these are just clean okay what is the base case let's go back into the code so if you see in the code you're doing I less than zero less than zero again so do you remember in all the previous matching of strings like if you haven't seen them please go back and watch it in all the previous lectures what did we do in order to in order to make sure that it does not goes into negative yes we converted this into a one based indexing so kindly do this into a one based indexing which is plus one guys does DP series is an extension of all the problems like if I'm teaching now I'm assuming you have seen all the previous videos so if you have not seen the previous videos you'll not be able to catch it what I'm doing over here so this is what you'll do and again you know this is the case again you know this will be the case again you know this will be the case and this will be simply greater than zero because you have done one base indexing over here it'll be equal to equal to zero and instead of greater than equal to it'll"
+    },
+    {
+      "chunk_id": "L215_C27",
+      "start": 1977.0,
+      "end": 2045.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=1977s",
+      "text": "because you have done one base indexing over here it'll be equal to equal to zero and instead of greater than equal to it'll be just this and what about here you are traversing yes that's a one base indexing so you have to traverse from one creator is if you traverse from one creator and you have to just go across doing till I right you are doing for one based indexing so you will be traversing for one reader correct now whenever you are at I I what will you do you're looking for one lesson so just make sure you look for one lesson and if you do this you are done and what about here look for one lesson what about here look for one lesson what about here you look for one lesson because one base indexing guys and right over here again one lesson I think this should be fine so you see it is giving correct answers but I'll not submit this and make sure you do it n plus 1 n plus 1 perfect so that's how you convert this into a one base indexing now what am I seeing I equal to zero J equal to zero right and that has to be returned to so let's convert this case into tabulation so I'll just go over here and I'll say okay this will be zero this will be false or you can be like Boolean perfect and what I'll be"
+    },
+    {
+      "chunk_id": "L215_C28",
+      "start": 2045.28,
+      "end": 2115.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=2045s",
+      "text": "over here and I'll say okay this will be zero this will be false or you can be like Boolean perfect and what I'll be like is okay I know DP of 0 0 is true that's what we have written I equal to 0 J equal to 0 has to be true and now for every I equal to 0 and whenever J is greater than 0 for every I equal to 0 whenever J is greater than 0 very important whenever the J is greater than 0 so whenever J is greater than 0 which means 1 less than equal to M and J plus plus and DP of I is 0 and for this you have to write a false perfect is that what you write because for every I equal to 0 whenever J is greater than 0 you just make sure it's a false so I just made sure I write it what is the next case for any J equal to equal to 0 let's read this for any J equal to equal to 0 for any I greater than 0 you have to actually check this figure out so for any I greater than 0 for any I greater than 0 let's write this for any I greater than 0 which means this definitely and what is J J is 0 you will have to check for this there is no"
+    },
+    {
+      "chunk_id": "L215_C29",
+      "start": 2115.56,
+      "end": 2192.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=2115s",
+      "text": "than 0 which means this definitely and what is J J is 0 you will have to check for this there is no other way you will have to check for this so just go across and you say I am going to check for this and if this is the case yes and if this is the case we are straight away yes we were straight away we will do nothing but you will say hey listen DP of what was I I was you if you remember I was sorry J was 0 so go across and say DP of this particular I and this particular J which is 0 is going to be false right if you have this particular I and this particular J is going to be false and if this is happening as false or probably you can just keep a flag as true in order to have a better one and you can just keep the flag as false and then you can just break out and right over here you come across you know DP of J was 0 and for any I and for any I which was greater than you can say whatever value of flag you get if you get any time false you store it and if this false never appears you just store the true that's what I've done for every J equal to 0 I greater than 0 for every J equal to 0 I"
+    },
+    {
+      "chunk_id": "L215_C30",
+      "start": 2192.72,
+      "end": 2272.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=2192s",
+      "text": "store the true that's what I've done for every J equal to 0 I greater than 0 for every J equal to 0 I greater than 0 you have done this now what about the changing parameters very simple what are the changing parameters definitely this and you do it in the opposite fashion I've been doing this from ages now do this next go across and copy paste everything in the records amazing this time be very careful about one thing guys you're writing if so please make sure because now return will not be there so the following statements will be executed or else okay just make sure you have something like else if because the following statements will be executed so over here what will be it DP of I minus 1 J minus 1 perfect so like to write it DP of I minus 1 and J minus 1 amazing over here DP of I minus 1 and J if you have I minus 1 and J or DP of I and J minus 1 that's what you write and you can just omit this portion that's how you convert this line easily and this will be normally false and right over here you can easily return DP of N and I think this should be fine let's quickly run"
+    },
+    {
+      "chunk_id": "L215_C31",
+      "start": 2272.32,
+      "end": 2351.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=2272s",
+      "text": "false and right over here you can easily return DP of N and I think this should be fine let's quickly run this off okay we got a matching call for the function are you still calling the function let's see okay so we did a mistake this will be brilliant my bad flag was not declared in the scope let's quickly check this off okay brilliant flag was declared here then flag was false then you did a break okay line number 16 not declared in the scope okay this was FL sorry my bad again fine runs fine let's quickly submit this it does run Wow amazing now can we space optimize this we can we definitely can space optimize this why because again you're dependent on I minus 1 which is the previous guy and you're dependent on I minus 1 again the previous and the current guys so you can definitely space optimizes but what are the problems that you'll face first problem that you'll face is you know you have to declare the base cases so it will become a bit tricky so if you have solved the problem till here I'll recommend you to try the space optimization by yourself and if you don't like I'll explain the space optimization now but if you don't understand there's nothing to worry with time probably try it out by yourself you'll understand but the key to using"
+    },
+    {
+      "chunk_id": "L215_C32",
+      "start": 2351.28,
+      "end": 2422.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=2351s",
+      "text": "but if you don't understand there's nothing to worry with time probably try it out by yourself you'll understand but the key to using space optimization is if you're using the previous rows previous rows then you definitely can space optimize so let's come back and try to do the space optimization so I know one thing for sure so I know one thing for sure that instead of this I will now be requiring one previous of M plus 1 false and one car of M plus 1 false okay so I know this previous is nothing but the 0 let's understand it is the 0th row and this is the first row so on the 0th row which means the previous without any doubt the 0th row means the previous okay amazing 0 previous I equal to 1 so what are you doing is you are doing this for every row for every row you are saying for every row see for every row you are"
+    },
+    {
+      "chunk_id": "L215_C33",
+      "start": 2422.92,
+      "end": 2502.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=2422s",
+      "text": "row for every row you are saying for every row see for every row you are assigning the first column or the 0th column value for every row you're assigning the 0th columns value so can I say every time you go across to I equal to 0 the car is the current rows column and that goes 0 throw has to be assigned every time do you agree because over here you ended up assigning every row like whatever row you had whatever row you had you assigned you assigned you assigned you assigned by this but this time you're starting with only two so you will have every time you are at curve you have to take care of this in the next time whenever you go to the curve you again have to assign this next time again you have to assign this so at every junction you have to assign so I know this is the room so this row is already running just make sure before entering before starting off assign it if we're starting off assign the car"
+    },
+    {
+      "chunk_id": "L215_C34",
+      "start": 2502.4,
+      "end": 2578.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=2502s",
+      "text": "running just make sure before entering before starting off assign it if we're starting off assign the car every time every row just make sure you assign the car every time and then you can easily start off by saying okay this is what the previous will be this is what the previous will be this is the car over here and this is definitely going to be the car this is definitely going to be the car right and this is going to be the car and right at the end you can say previous will be equal to car and over here you can say previous occur whatever you wish to and now you can run Wow Wow that is amazing the space optimization I am definitely sure you enjoyed the space optimization Wow we are getting 100% so guys go step by step and you do space optimization I know it's a bit tricky it's a bit tough but I'll always recommend try to do on pen and paper try to see what base cases you are writing I went step by step and I converted it I did not do a lot of things I just went step by step and I converted it so I'm using couple of 1d arrays and again an n cross m loop so guys I hope you understood the recursion"
+    },
+    {
+      "chunk_id": "L215_C35",
+      "start": 2578.68,
+      "end": 2624.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZmlQ3vgAOMo&t=2578s",
+      "text": "it so I'm using couple of 1d arrays and again an n cross m loop so guys I hope you understood the recursion which we started off the memory action you understood if I understood these two things you're pretty much comfortable and then we wrote the tabulation then we did the space optimization so just in case you understood the whole package and and the entire DP on strings because this is where we wrap up on DP on strings and I hope I was able to explain you all the DP on string problems not sure how but let me know in the comment section if you are not comfortable enough with DP on strings and you can solve all the problems so guys just in case you loved this video please give it a thumbs up and if you're new to this channel please please please do consider subscribing to us and here with this I'll be wrapping up this video let's meet in the next one till then bye bye take care"
+    }
+  ]
+}

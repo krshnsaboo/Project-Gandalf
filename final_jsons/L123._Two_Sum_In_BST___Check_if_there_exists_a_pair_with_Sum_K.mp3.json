@@ -1,0 +1,99 @@
+{
+  "lecture_id": "L123",
+  "lecture_number": 123,
+  "lecture_title": "L51. Two Sum In BST | Check if there exists a pair with Sum K",
+  "youtube_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4",
+  "chunks": [
+    {
+      "chunk_id": "L123_C1",
+      "start": 0.0,
+      "end": 78.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, To Sum 4 and the input will be BST. Now the prerequisite to solve this problem is To Sum Problem. I've already made a video on this. You can check that out. You can just find the link in the description or you can just write on YouTube To Sum. Take you forward. You can find the video over there. Now what does the problem state? The problem states that the input will be a binary search tree. Okay. And you'll be given K equal to 9. And your task is to tell us if there exists a couple of integers. I repeat, if there exists a couple of integers, not one, a couple of integers, and both has to be different integers such that they combine or they sum up to give you the value 9. Like over here, I can say 3 and 6. If you sum them up, you can get 9. Right? Or you can say 5 and 4. If you sum them up, you get 9. Correct? So you have to say if there exists a minimal of couple of integers that sum up to give you a value 9. For an example, if I take the value K equal to 4, I don't think there exists two integers. Yes, there does"
+    },
+    {
+      "chunk_id": "L123_C2",
+      "start": 78.64,
+      "end": 151.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4&t=78s",
+      "text": "value 9. For an example, if I take the value K equal to 4, I don't think there exists two integers. Yes, there does exist one integer 4, but I don't see a couple of integers which sum up to give you 4. So that doesn't exist. So if there doesn't exist, then you have to return a false. Okay? So you return a true if there exists. You return a false. Like in this case, it will be true. In this case, it will be false. That's as simple as that. So your task is to tell me, does there exist? Yes. Does there exist? No. So that's your task. So how do you solve this problem? What's the brute force method of solving this problem? The brute force is, we know one thing for sure. If I write down the in-order traversal for this particular binary search tree, I'll get the in-order traversal to be left and then the node and then the right. Okay? So that is the in-order traversal. And I know one more thing that whenever we write the in-order traversal, that is always sorted in nature. That is always, always sorted in nature. So if I write down the in-order traversal, it will be 2, 3, 4, 5, 6, 7. So once I have the in-order traversal such that I can keep a pointer here, I can keep a pointer here. I can definitely keep because I know one thing for sure that the"
+    },
+    {
+      "chunk_id": "L123_C3",
+      "start": 151.4,
+      "end": 216.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4&t=151s",
+      "text": "I can keep a pointer here, I can keep a pointer here. I can definitely keep because I know one thing for sure that the in-order is always sorted. You know that, I know that as well. Okay? So if I generate the in-order and I keep that in an array, I think the question boils down to a problem which is two-some. Isn't it? Yes, it boils down to two-some where you say, okay, I'm going to keep a pointer 2 and a 7 here. If 2 plus 7 is 9, I got it or else if it is exceeding, I move it to the left or I move it to the right. For an example, if this would have been 5, for example, if this would have been 5, then 2 plus 7 is 9. So 9 is greater than 5. You have to reduce the greater number. You have to reduce the greater number. So which one will you move? You'll move this pointer to here. 2 plus 6 is 8. 2 plus 6 is 8. So you require 5. So to reduce the greater number. 2 plus 5 is 7. Again, reduce the greater number. 2 plus 4 is 6. Again, reduce the greater number. 2 plus 3 is 5. Now this is, okay, we got it, right? So you have to make sure you move the pointers. If it is coming greater,"
+    },
+    {
+      "chunk_id": "L123_C4",
+      "start": 216.56,
+      "end": 282.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4&t=216s",
+      "text": "Now this is, okay, we got it, right? So you have to make sure you move the pointers. If it is coming greater, you reduce the right pointer. If it is coming smaller, you increase the left pointer. That's how the two-some problem was solved. So if you convert the BST by taking the in-order into a normal array, the question boils down to the two-some problem, right? So, but the time complexity over here will be, you have to convert it into a in-order. So that will take B go of n. Then you have to run a two-pointer that will again take a B go of n. And the space complexity used will be B go of n in order to store the in-order traversal. I think this method is okay if you're doing it on any platform, you'll get an accepted solution. But in an interview, you have to tell the better approach, the optimal approach because the interviewers always look for the best one, right? So let's check out the best one. Okay, so let's take this binary search tree. Now in order to have the better approach where, what can you make better? The traversal time is B go of n, right? So can we probably, like can we make it better? I don't think because at the worst case you have to traverse every element, but we can reduce the space complexity. The space complexity that we were using was"
+    },
+    {
+      "chunk_id": "L123_C5",
+      "start": 282.88,
+      "end": 355.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4&t=282s",
+      "text": "the worst case you have to traverse every element, but we can reduce the space complexity. The space complexity that we were using was B go of n and we are also doing a couple of traversals. One was to store the in-order and then the other one. So why can't we generate the in-order? So in order to solve this problem, there is a prerequisite. You have to watch out the video BST Iterator. It is the, right before this there was a video that I uploaded that was BST Iterator. You have to check that out. Okay. Now if you have checked that out, the BST Iterator teaches you how to find the next element, correct? And I did give you a homework where I asked you how to find the before element, correct? So we just give a quick recap for finding the next. What you did was you had the initial constructor where you push all the lefts, correct? And whenever someone asked for next, you just said that stack.top was your next and you moved right and you again pushed all the lefts. That is what you did to find the next. So in short, next was always giving you the elements of in-order, in sorted order. Like over here, the next will first give you one. And if you again call next, it will give you two. If you"
+    },
+    {
+      "chunk_id": "L123_C6",
+      "start": 355.8,
+      "end": 435.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4&t=355s",
+      "text": "Like over here, the next will first give you one. And if you again call next, it will give you two. If you again call next, it will give you three. If you again call next, it will give you four. And the order was, whenever you took out a stack, you went to the right and you pushed all the lefts. That is what you did in order to get the next. I did give you a homework that was before. So how will you do for before? Before will be exactly opposite. You push all right because if you do the in-order in the opposite order, which is right, node, left. If you do the in-order traversal in this order, that is right, node, left, like if you do the DFS in this order, then it will be sorted but in descending order. Yes, it will be sorted in descending order. If you do right, node, left, it will be sorted but in descending order. So how do you figure out before? It's very simple. It's very, very simple. Instead of pushing all left that you did in next, what you will do is, you will push on everything that's right. And whenever you pick for before, the stack.top, then you will go left and then all the rights, yes, all the rights you'll push, all the rights. It's just the opposite. Over there it was right and left. Over here it will be left and right,"
+    },
+    {
+      "chunk_id": "L123_C7",
+      "start": 435.64,
+      "end": 508.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4&t=435s",
+      "text": "you'll push, all the rights. It's just the opposite. Over there it was right and left. Over here it will be left and right, just the opposite. So please make sure you watch out the previous video, otherwise this will be absolutely blank. So we know we have an iterator. So the iterator gives us one next, one before. So we have definitely an iterator. So what we will initially do is, initially we will say, listen, my first pointer stands at the next and the jth pointer stands at the before. So logically, the next will be the smallest element, that's one and before will be the last element, that's 11. So i is at 1 and j is at 11. Now I'm requiring 16, correct? I'm requiring 16. So what we will do is 1 plus 11, how much is that? 12. 1 plus 11 is 12, that's lesser than 16. So I have to increase, you have to increase the value. So if you have to increase the value, what will you do? You'll be like, okay, let's take the next guy. So if you call the next iterator, you will get this as 2. Again, 11 plus 2 is 13. Yes, that's lesser than 16. So again, next you will take, so you'll get"
+    },
+    {
+      "chunk_id": "L123_C8",
+      "start": 509.16,
+      "end": 583.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4&t=509s",
+      "text": "2. Again, 11 plus 2 is 13. Yes, that's lesser than 16. So again, next you will take, so you'll get 11 plus 3 is 14. So again, lesser than 16. So you increase 11 plus 4 is 15. Again, less, again, increase 5. 11 plus 5 is 16. So you got 16. The moment you got 16, you can say, yes, this is my answer. Yes, this is my answer. And you can stop iterating. So very simple. If you know the BST iterator, you can use that next and the before in order to solve this particular to some problem. Simple as that, isn't it? And the time complexity that you'll be requiring is a single traversal. It's a single traversal. And the space complexity that you'll be requiring is big O of height of twice, because you'll be storing one for next and one for before. So big O of height into two, not a big O of n traversal. So we have actually optimized the space complexity to big O of height instead of big O of n, which is a better one. So I think you have understood the entire explanation. Now it's time to jump onto the code. So let's check out the C++ and Java code. As usual, the C++ code is on the left and the Java code is on the right. And so what I've done is,"
+    },
+    {
+      "chunk_id": "L123_C9",
+      "start": 584.36,
+      "end": 661.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4&t=584s",
+      "text": "As usual, the C++ code is on the left and the Java code is on the right. And so what I've done is, for to some, what do you require? You require a next and a before. Now, if you remember the BST iterator code for next, I just used that. I just included some statements. So let's check it out. So you will require a stack. Now I've introduced a variable, reverse. I say true, which means it's a reverse. It isn't next. The template is BST iterator for next that you have learned. Reverse means, no, it isn't next, it is before. So there are next and before, two iterators. So I'll say next. If it is true, it means before. If it is false, it means next. Now I have a BST iterator. It will be giving me a root and a reverse. Is it the next? If reverse is false, it is next. If reverse is true, it is before. Now reverse, I've initialized that as the root of the tree. Like reverse means, sorry, I have initialized whether it is the reverse or not. And then I've pushed all. Now if you remember in next, push all means, all left, all left. And if it is reverse, that means right, right, right, reverse, right? So let's check out push all. Push all says, okay, I'll start from the node and I'll push it. And then if reverse is"
+    },
+    {
+      "chunk_id": "L123_C10",
+      "start": 661.56,
+      "end": 732.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4&t=661s",
+      "text": "So let's check out push all. Push all says, okay, I'll start from the node and I'll push it. And then if reverse is true, means before, before. So I'll go right. If reverse is false, the normal one, left, left, left, left. So push all is very simple. If you're asking for reverse, it will push right, right, right. If you're asking for the normal next, it will push left, left, left. That's how you'll do it. Has next is very simple. If the stack is empty or not, it will tell you. And what is about next? Next is very simple. Again, you take out the stack stop and that will be your next for sure, or before, whatever you're calling it. Next or before, whatever you're calling it. Correct? Now, if you have popped out from stack, if you're doing for next, which is this case, then you have to go right and push all lefts. So you go right and it will automatically push all lefts. Why? Because of this reverse, because of this reverse that you have initialized. And or else if it's the reverse one, it is a push all of the left. Done. And then you can return whatever is it. You can return whatever is at the stack stop. So let's check out. So this is the iterator. This single iterator will work for next as well as before, just because of this"
+    },
+    {
+      "chunk_id": "L123_C11",
+      "start": 732.12,
+      "end": 805.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4&t=732s",
+      "text": "So let's check out. So this is the iterator. This single iterator will work for next as well as before, just because of this reverse variable. I could have done a couple of classes, but then it is repetition of code, which is not enjoyed, which is not liked by interviewers. If you're doing this, you have to always do a single iterator. Don't do it in double classes. Okay. Next, I have a single class, which is a different class. This was a different class. This was a whole lot different class for iterator. Remember, it's a different class and you have to also code it like this in an interview. It's the best practice to code. Next, what I've said is, okay, let's find the target. I've given the route and I've been given the value K. Perfect. So initially I say, if the route is null, that means we don't have a BST, return false. Or else I've initialized the left iterator and the right iterator. Left means next, right means before. So when I initialize the left iterator, I say reverse is false. You see false, then we'll say that, Hey, this is for next. You see true, then we'll say, Hey, this is for reverse. Got it? So this is for next and this is for before. So L for next, R for before. So I have I as L.next, J as R.next. Ideally, it should have been"
+    },
+    {
+      "chunk_id": "L123_C12",
+      "start": 805.08,
+      "end": 878.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4&t=805s",
+      "text": "is for before. So L for next, R for before. So I have I as L.next, J as R.next. Ideally, it should have been R.before, but I did not want multiple functions just to avoid codes, just to make a code quality better. So I've done it like this. So R.next, since R is initialized as true, next will automatically be from back. Now it's a simple one. If they are equal, it's true. If they're lesser, then the I will move. And if it's greater than J will move. And if they cross, it means false or else true. Simple two pointer, simple two pointer. The only thing that you have to understand is this BST iterator. That's a different class. And from here, you have just created objects, objects of the same class. Object means a single class object is created. So L will be a different object. R will be a different object. Remember this object means there's only single guy, but if you create an object, it is treated differently. If you create another object, it is treated differently. That's, that's it. That's all it's stuff. So guys, I hope you have understood the entire explanation and also you have understood this wonderful code. Make sure you write the same code in the interview because code quality matters. If you're giving an interview, just writing multiple FL statements will never help you to get through the rounds. Code quality does"
+    },
+    {
+      "chunk_id": "L123_C13",
+      "start": 878.04,
+      "end": 905.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=ssL3sHwPeb4&t=878s",
+      "text": "quality matters. If you're giving an interview, just writing multiple FL statements will never help you to get through the rounds. Code quality does matter a lot when you're interviewing for the top product based companies. So yeah, I hope you have enjoyed the entire explanation. So just in case you did, please, please, please make sure you like this video. And if you're new to the channel, do consider subscribing because that's, that is the only thing that keeps me motivated to make these kinds of content. And yeah, with this, I'll be wrapping up this video. Let's meet in the next one. Bye bye. Take care."
+    }
+  ]
+}

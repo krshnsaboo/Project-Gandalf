@@ -1,0 +1,127 @@
+{
+  "lecture_id": "L250",
+  "lecture_number": 250,
+  "lecture_title": "L14. Detect a loop or cycle in LinkedList | With proof and Intuition",
+  "youtube_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA",
+  "chunks": [
+    {
+      "chunk_id": "L250_C1",
+      "start": 0.0,
+      "end": 74.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=0s",
+      "text": "So let's continue with our playlist but before that, hey welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is detecting a loop in a given linked list. So what is the problem stating? It is stating that you'll be given the head of a linked list. Yes, you'll be given the head of a linked list and you'll have to return me true if there is a loop in that given linked list. So what is the definition of a loop when it comes to linked list? The definition is if there exists a minimum of one node where you start and you reach back then we can say that the linked list has a loop. Let me explain you. If I start at 4 and I move ahead, I'll be reaching back to 4. I'll be reaching back to 4. So I'm sure that there is a minimum of one node where I can start and reach back and if there does exist a minimum of one node, I can say that there is a loop and in that case I'll be returning true. Got it? Now over here there are multiple nodes 3, 4, 5, 6, 7, 8, 9. If you start from any of them, you will reach back. But if you start from one, you will never reach back one."
+    },
+    {
+      "chunk_id": "L250_C2",
+      "start": 74.22,
+      "end": 148.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=74s",
+      "text": "If you start from any of them, you will reach back. But if you start from one, you will never reach back one. So that is why I'm saying a minimum of one node is required. What if this problem comes up in an interview? We will be starting off with the extreme range solution and what will be that? What are we looking for? We are saying that in case there is a minimum of one node where you start and you reach back that means it is visited more than once. It is visited more than once. I'll have to remember. I'll have to remember somehow that I've seen it previously because when I'm traversing, I need to remember that I had seen 5 previously and that is when I reach back 5, I'll know hey I did see this node previously and that is what will tell me that hey there is one node minimum which has been seen twice and if it has been seen twice, it means that you are on a loop. You're on a loop. So which data structure to use to remember these things? Yeah, you're correct. We'll be using the concept of hashing. So what we will do is again we will not tamper head. We will take temporary and we will take a map data structure. So let's take a map data structure and what we will do is this map data structure will be of the type node."
+    },
+    {
+      "chunk_id": "L250_C3",
+      "start": 148.8,
+      "end": 223.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=148s",
+      "text": "structure. So let's take a map data structure and what we will do is this map data structure will be of the type node. Node will be the key and integer or boolean. So basically the node will be the key and integer 1 or boolean 1 or boolean 2 will tell me if I saw that or integer 0 will tell me that I haven't seen it. So what we do is we start with the temporary which is the node 1. So we keep the node 1 and we say I have seen it. Perfect. Let's move the temporary to the next goes to 2. I'll store 2 and say I've seen it goes to 3. I'll store 3 and I'll move ahead goes to 4. I'll store 4 and move ahead goes to 5. Remember you store the entire node not the values not the values because it might happen the values might repeat in the node the values might repeat in the node. So do not store the values store the entire node entire object in itself. OK. So 5 stored let's move to 6 6 stored let's move to 7 7 stored let's move to 8 8 stored let's move to 9 9 stored and the moment we move back to 3 the moment we move back to"
+    },
+    {
+      "chunk_id": "L250_C4",
+      "start": 223.56,
+      "end": 296.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=223s",
+      "text": "8 stored let's move to 9 9 stored and the moment we move back to 3 the moment we move back to 3 what do you do always is before storing it just a small step before storing it just introduce a small step to check if this 3 that you're currently at is it in the map is it in the map and you can see that there's a node with 3 there's a node exact same node I'm not considering the values I'll be comparing the object the object is it the same memory location he says yes it is the same memory location it is pointing to the same memory location if it is I can say that I've encountered a loop and I will stop. So this is what we can do like we can simply use hashing. So I have to write down the code. Can I see I'd be requiring a map data structure which will be storing the node node in Java Node star in C++ int and a map again I'll be writing the pseudo code you can find out the C++ Java Python JavaScript codes in the description below. So this is how we start off with right after that. What is the next step. I know I need a temporary which points to head because usually we do not tamper head so we will take the head to temporary and we will start moving."
+    },
+    {
+      "chunk_id": "L250_C5",
+      "start": 296.72,
+      "end": 375.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=296s",
+      "text": "which points to head because usually we do not tamper head so we will take the head to temporary and we will start moving. Is a temporary not null perfect and we need to insert it into the head but I did tell you before inserting have a check. So you say hey map a map find or whatever is your function whatever is your function depending on whatever language you're using just look look at the map so you can still look in the map so it can be find it can be search depending on your language. Note temporary if you can find it if you can find it it means it is there and you say hey return true return true means it's a loop or else you say map can you put in Java it is put in C++ you can straight away say temporary equal to one in Java you can write MPP dot put and you can put this value temp comma one that is your choice how you want to do once you put it into the map let's traverse to the next which is temp equal to temp next and understand one thing why have I written not equal to null because if I had a linear data structure because if I had a linear data structure temp would have started from here"
+    },
+    {
+      "chunk_id": "L250_C6",
+      "start": 375.64,
+      "end": 441.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=375s",
+      "text": "null because if I had a linear data structure because if I had a linear data structure temp would have started from here gone here gone here stored everything into the map and then at the end it would have ended at null the moment it would have ended at null the while will be done and I can straight away return false stating there is no loop got it that is why it's very important to have a check for null because it might not happen like there might not be a loop. So what about the time complexity can I say I'm traversing the entire linked list I am and at the same time I have couple of map operations if you carefully see one is inserting to the map the other is checking in the map so there are two map operations so depending on if your map takes logarithmic right depending on whatever your map takes it will be 2 into log of n or 2 into 1 if your map is a big of one time complexity I've already discussed the time complexity of maps in the hashing lecture please go back and watch it you'll understand this so depending on your language your maps time complexity you can determine that and what about the space complexity I'm storing all the nodes in the map so we go"
+    },
+    {
+      "chunk_id": "L250_C7",
+      "start": 441.6,
+      "end": 516.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=441s",
+      "text": "time complexity you can determine that and what about the space complexity I'm storing all the nodes in the map so we go off n because no matter what you do you will end up storing all the nodes that is something which will happen for sure so this is the time complexity and the space complexity this is where the interview will not be happy with the extra space that you're using and they'll ask you to optimize it so the optimal approach will be using the tortoise and the hair algorithm in case you are not aware of this please go back and watch out the lecture finding the middle of the linked list because that is where I've discussed this algorithm the slow and the fast pointer algorithm which is basically the tortoise and the hair algorithm so in this particular algorithm we take couple of pointers slow and the fast pointer slow will be moving by one step the fast pointer will be moving by two step and they will be moving simultaneously together so what we do is we're given the head of the linked list right so we will take two pointers slow and the fast pointer and we will try to move them simultaneously one by one the other by two so let's start slow and fast let's move them together slow as we said by one fast as we said by two that's the first step one two done let's"
+    },
+    {
+      "chunk_id": "L250_C8",
+      "start": 516.16,
+      "end": 586.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=516s",
+      "text": "let's move them together slow as we said by one fast as we said by two that's the first step one two done let's do the next step again slow and fast will move by one and one so slow will reach here and the fast will reach here so this is where they reach I'll be raising this so that it has more clarity in the next step again they will be moving two steps so the fast pointer will reach here and the slow pointer will reach here so this is how it moves step by step in the next step again they will be moving two steps so the fast pointer will reach here and the slow pointer will reach here so this is how it will look like perfect in the next step again move them by one and two so slow will be here and the fast pointer will be somewhere here because two steps it doesn't go like it does it will not go in this direction it has to go in this direction so this is what it will look like after the step it's do one more step slow and fast slow will go sorry my bad slow will be over here and the fast pointer will move over here perfect this is how they will look like and in the next step the slow will move over here and the fast pointer will move over here and this is when they"
+    },
+    {
+      "chunk_id": "L250_C9",
+      "start": 586.12,
+      "end": 657.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=586s",
+      "text": "like and in the next step the slow will move over here and the fast pointer will move over here and this is when they stop and this is when they stop and if they're meeting I repeat if they are meeting you will be like yes there is a loop so after this step you can see that the slow and the fast pointer are standing at the same node if it happens to stand at the same node at any junction you can definitely say that there was a loop there was a loop that is why they are standing at the same node and you will be returning true as of now just remember this you might be thinking why what if they cross over what if how are we so sure that they will be colliding at a single node what if they cross over I'll be telling you the entire intuition do not worry about that please stay with me till the end so before I move on to the intuition what if we have a linear linked list with odd number of nodes over here n is odd what if we have a linear linked list with even number of nodes in that case what will be our stop condition because in this case we'll be just rotating around there is no stop condition the stop condition is whenever we meet slow like whenever the slow and the fast"
+    },
+    {
+      "chunk_id": "L250_C10",
+      "start": 657.8,
+      "end": 732.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=657s",
+      "text": "be just rotating around there is no stop condition the stop condition is whenever we meet slow like whenever the slow and the fast pointer meets that is the stop condition what about linear linked list without loops what is the stop condition we did it while doing the middle of the linked list I'll be doing it again slow and the fast stands at the head simultaneously slow and the fast pointer will take one and two steps in the next the slow takes one step the fast pointer takes two step next you do not do anything you see that right after this there is now that means you're standing at the last node remember if at any moment you stand at the last node you stop then and there which means if you're fast dot next is not null is not null then only you'll move because if it is null it means it is the last node and you know in case of loops there can never be a last node there can never be a last node right let's check out the case for the other one so what I'll do is I'll quickly erase this I'll keep the slow and the fast pointer over here let's again try to do the same thing slow and the fast slow moves by one the fast pointer moves by two again let's do it the slow moves by one the fast"
+    },
+    {
+      "chunk_id": "L250_C11",
+      "start": 732.64,
+      "end": 812.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=732s",
+      "text": "and the fast slow moves by one the fast pointer moves by two again let's do it the slow moves by one the fast pointer moves by two perfect let's again do it slow moves by one and the fast pointer moves by two this moment it reaches null so please make sure that the fast pointer never reaches null as well because if it reaches, if it reaches that means it is a linear data structure, linear linked list and you are, you need to stop. Got it? So, what you'll do is you'll initially have slow equal to head. You'll also have the fast equal to head and let's do this thing. What are you waiting for? Slow equal to slow, next. Fast equal to fast, next, next. We know if at any moment, if at any moment the slow is standing with the fast, it means there is a loop, so you'll return true. In case the while loop executes, sorry, in case the while loop returns false, it means it's a linear data structure and if it means that, I will be returning false because it will never have a loop."
+    },
+    {
+      "chunk_id": "L250_C12",
+      "start": 812.34,
+      "end": 887.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=812s",
+      "text": "data structure and if it means that, I will be returning false because it will never have a loop. Otherwise, it will never reach the last node or the null. So, it'll be returning false. So, this is how the code will look like for the optimal approach and you might be thinking, you have understood the code, you have understood the algorithm but what is the intuition because how are we so sure that they will be colliding at a certain node because what if they cross over, they might cross over and they might never collide. So, how are we proving that they will collide? Let's understand that. So, what did we do? We took a slow pointer and we placed it at the head. We took a fast pointer and we placed it at the head and after that, simultaneously we moved slow by one and the fast by two. Correct? So, we moved the slow by one and the fast pointer by two steps. That was the first step. Right? What was the next? We took the slow and we moved it by one and we took the fast pointer and moved it by two steps. So, let's move it. We stop here and I will be proving you why they will collide and why they will never overlap. They will collide if there is a loop. Slow is standing here, the fast pointer is standing here."
+    },
+    {
+      "chunk_id": "L250_C13",
+      "start": 887.3,
+      "end": 962.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=887s",
+      "text": "and why they will never overlap. They will collide if there is a loop. Slow is standing here, the fast pointer is standing here. Can I say the distance between fast and slow, not slow and fast, fast and slow, how much is that? That's one, two, three, four, five. Can I say that the distance between them is d? Let's assume the distance d and in this example, it is five. In this example, it is five. Overall, we can assume it is d. d can be any number. It can be prime, it can be odd, it can be even, it can be any number. Now, tell me one thing. After this process, what will happen? Let's erase this. After this process, what will happen? The fast pointer will again move by one step, sorry, two steps and the slow pointer will move by one step. Can I say this? I can and I'll erase it. Now if I ask you, what is the distance between the fast and the slow, not slow and fast, fast and the slow, you'll be like the distance is one, two, three, four, d is four. What was the reduction in distance? One. The reduction in distance was one. Why did that happen?"
+    },
+    {
+      "chunk_id": "L250_C14",
+      "start": 962.1,
+      "end": 1041.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=962s",
+      "text": "four, d is four. What was the reduction in distance? One. The reduction in distance was one. Why did that happen? Because the slow is moving by one and the fast is moving by two and you had a distance between the fast and the slow as d. That was the distance. So, if the fast is moving towards slow, towards slow by two, by two and the slow is moving away, away by one, what is the net reduction? What is the net reduction that they will have? The net reduction will boil down to d minus one, will boil down to d minus one because fast is moving two, fast is moving two towards whereas slow is going farther by one. The overall reduction will be one. Fast will be closer by one. What will be the next? Three. Yes. What will be the next? Two. After every movement, the distance between them. Next one and there will be a point it will be zero. There will be a point it will be zero. So, one thing I have proved is no matter, no matter how far is fast from slow, the d can be any number or d can be anything, anything. It can be anything. But d will reduce to d minus one to d minus two and it will end up reducing to zero because we are reducing it by one."
+    },
+    {
+      "chunk_id": "L250_C15",
+      "start": 1041.74,
+      "end": 1113.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=1041s",
+      "text": "to d minus one to d minus two and it will end up reducing to zero because we are reducing it by one. It's one and you know d is always divisible by one. So, it is bound to reduce to zero. It is bound to reduce to zero. That is why, that is why we move it by two steps and move it by one step so that the difference is one. We can move it by three as well. But in that case, the difference will not be one and you might not reach zero because the difference in distance is one. Because the difference in distance is one, it's bound to reach zero. It's bound to reach zero and this is the intuition. So, that was about the proof that why will they collide and I hope you have understood the intuition behind moving the slow by one and the fast by two because you want to keep the difference as one so that they collide. Got it? So, I hope you have understood the intuition and the proof and you can watch out most of the YouTube videos. What they do is this moves by one step, this moves by two steps and whenever they collide, we return to that's it. They will never tell you why are we moving it by one? Why are we moving it by two? Why? They will never tell you that. Trust me."
+    },
+    {
+      "chunk_id": "L250_C16",
+      "start": 1113.46,
+      "end": 1169.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=1113s",
+      "text": "you why are we moving it by one? Why are we moving it by two? Why? They will never tell you that. Trust me. And this is the reason I'm telling you, please do watch my videos because I'll not be just cramming you up algorithms. I'll be telling you about the thought process so that you can solve new problems as well. I'll be teaching you real problem solving over here. So, what will be the time complexity? It will be somewhere around we go off and I cannot pinpoint that this is the time complexity because depending on different test cases, it might vary. You might just find it at the earliest step, might find it at the end, you might find it at the middle. Right? What about the space complexity? We're not using any external space. We're using just the slow pointer and the fast pointer. So that is about the time complexity and the space complexity. So let's quickly get back into the code editor. As you can see, we need to return a Boolean stating if there is a loop or there is no loop, you have to complete the function detect cycle and a given the head of the link list and we write the exact same code and I'll quickly go ahead and submit this and as I submit I'll it will run it does."
+    },
+    {
+      "chunk_id": "L250_C17",
+      "start": 1169.3,
+      "end": 1216.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=wiOo4DC5GGA&t=1169s",
+      "text": "write the exact same code and I'll quickly go ahead and submit this and as I submit I'll it will run it does. So what I do is I'll go to Java now and I'll copy paste the same code, the same function definition. What I'll do is I'll remove the pointers because in Java there is no concept of pointers and I'll make this in lower caps and after this I'll make it dot. This one as dot. If you see the logic stays the same, the logic is same. It is just the concept of the pointers that changes in Java and if I submit this code, it will be running as well. So I hope you've understood everything specifically the intuition part and in case you did, please do consider giving us a like and if you are new to our channel, do consider subscribing to us as well. With this I'll be wrapping up this video. Let's meet in some other video. Till then bye bye. Take care."
+    }
+  ]
+}

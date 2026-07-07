@@ -1,0 +1,85 @@
+{
+  "lecture_id": "L084",
+  "lecture_number": 84,
+  "lecture_title": "L12. Iterative Postorder Traversal using 1 Stack | C++ | Java | Binary Trees",
+  "youtube_url": "https://www.youtube.com/watch?v=NzIGLLwZBS8",
+  "chunks": [
+    {
+      "chunk_id": "L084_C1",
+      "start": 0.0,
+      "end": 78.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=NzIGLLwZBS8&t=0s",
+      "text": "Before starting this video, I would love to thank Relible for sponsoring this entire tree series. The placement season is here. I know a lot of you are planning to sit for companies which come on campus. In case you are disappointed that the top startups like Cred, UpGrad, Razorpay are not hiring directly from your campus, there is an easier way to work here. Just register for the Relible test conducted by Relible by Unacademy and you will get a chance to apply for front-end, back-end and business development roles at India's top startups and unicorn companies. Relible has 1000 plus openings by 50 plus companies and the best thing is it's absolutely free. So please make sure you check out all the links in the description and give the Relible test as soon as possible. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today I will be solving the problem, iterative post-order traversal. Now in the previous video, we did check that the post-order traversal can be done iteratively using a couple of stacks. But in this video, I'll tell you how to do this using one stack. So what's a post-order traversal? It's basically nothing but left, then you go to right and then it's C root. So it's a left-right root. That is what a post-order traversal is."
+    },
+    {
+      "chunk_id": "L084_C2",
+      "start": 79.0,
+      "end": 146.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=NzIGLLwZBS8&t=79s",
+      "text": "left, then you go to right and then it's C root. So it's a left-right root. That is what a post-order traversal is. So what did you do in the recursion? If you remember it was left, then it was right, then it was print. So logically thinking, it was kind of go to left, left, left, left, left, left, left, and then when it, when it ended, then go to the right, and then when the, right again recursion call, the right again go to left, left, left, left and again when the recursion ended, then go to the right, then again left, left, left, left, left, then again right. And then after that you print it right then after that when you came back right got printed so it's kind of a go left go left go left and the moment it gets you something as null try to go right and then again go left left left left left right so that is how our algorithm will focus on and we're going to use an external stack in order to maintain the stack trace or stack space. So I've already discussed the intuition you try to go to left left left left and then a right and then again left left left then a right then again left left left and I know the post order is left right root so this is the algorithm that I've already written"
+    },
+    {
+      "chunk_id": "L084_C3",
+      "start": 146.44,
+      "end": 215.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=NzIGLLwZBS8&t=146s",
+      "text": "then again left left left and I know the post order is left right root so this is the algorithm that I've already written why have I written it prior to this because otherwise it will get very tricky to understand so I've written the algorithm I'll do a dragon and when I do the dragon you will see that the intuition is being applied over here the going of left left left and then right and then left left left the intuition is being applied so let's start so what you will start as you will take a curve and I'll point to the root of the node okay I'll point to the root of the node remember this and you'll take a stack so take a stack and you know stack is nothing but a last in first out data structure so just take a stack which is pointing to like which is empty and start the traverse and try to go as left as possible so when you start the curve has to be not null and the stack like or the stack has to be non-empty so the curve is one which is the root curve is not null first condition stack dot push curve so what you'll do is you'll take this one and you will push it okay and it says curve curve dot left so I'll go curve dot left that's two perfect again you come back"
+    },
+    {
+      "chunk_id": "L084_C4",
+      "start": 215.92,
+      "end": 291.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=NzIGLLwZBS8&t=215s",
+      "text": "will push it okay and it says curve curve dot left so I'll go curve dot left that's two perfect again you come back not null so stack dot push curve and curve will go again curve dot left so curve will again go to three again come back stack dot push three curve equal to curve dot left so this will become null I hope you have understood I went like left left left left and why am I not printing because I print the extreme left right after that I print the right this is a sub tree for which I do not have a left so left is no more not printed so right will be printed then three will be printed so I have to go to the right perfect so how will that happen that is not null so the moment I come back again I see curve is null so this if is not executed so this guy is executed what happens is temporary is st dot top right threes right threes right is four so temporary is a variable that's assigned to threes right that's four so I sign that is temporary null no so curve will be reassigned to the right so curve is reassigned to four okay now again you come back stack will say okay I'll take"
+    },
+    {
+      "chunk_id": "L084_C5",
+      "start": 291.0,
+      "end": 364.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=NzIGLLwZBS8&t=291s",
+      "text": "reassigned to the right so curve is reassigned to four okay now again you come back stack will say okay I'll take you and I'll move left so when it for tries to move left it again finds a null so again this will happen the moment you again come back temporary this time says stack dot top four what's your right your right is five so temporary is assigned to five so what I see is temporary is not null so curve is reassigned to five so curve will be reassigned to five again I come back stack will say okay I'll store you and five why don't you go to left so the moment it tries to go to left it will be a null again comes back temporary says stack dot top dot right so temporary becomes six and this time temporary is not null so the curve will reassign itself to temporary so the curve becomes six again again it comes back stack says hey why don't I take six and I'll say curve why did you move left so the moment it moves left it becomes null I hope you understood I went left left left right there was no left so again right no left so again right similar to post order now the moment I've reached here it's time to print this how do you print this the moment"
+    },
+    {
+      "chunk_id": "L084_C6",
+      "start": 364.4,
+      "end": 433.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=NzIGLLwZBS8&t=364s",
+      "text": "right similar to post order now the moment I've reached here it's time to print this how do you print this the moment the the moment you come back again curve is null so temporarily this time says stack dot top right so that's null so temporary becomes null this time the moment temporary becomes null what happens see temporary says okay I'm gonna pick up the topmost element and pop it out so he is gonna pick up this element and pop it out so I popped it out at the same time I'm saying post order why don't you add it so post order says okay I'm gonna add this so this is my first post order logically correct left right so on this this is the extremist right so that's why next what is this fall look for what is this while you for it states the stack is non-empty and the temporary temporary is six if it is equivalent to stack dot top right so what is top five so fives right it is it is I have to go back I have to go back to five and if I'm going back to five as a temp why don't you reassign yourself to five right basically the previous value and pop it pop yourself out at the same time the post order will also add it so I've taken it perfect again the while loop executes and again I"
+    },
+    {
+      "chunk_id": "L084_C7",
+      "start": 433.92,
+      "end": 506.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=NzIGLLwZBS8&t=433s",
+      "text": "at the same time the post order will also add it so I've taken it perfect again the while loop executes and again I check for right is five or not and it is so I again do the same thing I again pop this value out and I reassign temp at the same time I say post order why don't you have yourself again I do the same thing I say three is your right four yes so I take three out and I reassign temp at the same time I say post order why don't you have so basically I'm going up root root root I've gone now what's left to do is your right three no so this there is no more root for three there is no more root for three shall not go back and when I don't go back what happens this while loop is over this time there is still null so I'll go back again and temporary will be st.top right so when I have st.top that's two the right will be null again so if I have null again temporary I again perform these following steps temporary says why don't you take the top so two is taken and it's popped out and the moment I take two it says post order why don't you have it post order has it does it have a root like does it have a root it says this while loop will say no it"
+    },
+    {
+      "chunk_id": "L084_C8",
+      "start": 506.88,
+      "end": 581.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=NzIGLLwZBS8&t=506s",
+      "text": "it post order has it does it have a root like does it have a root it says this while loop will say no it doesn't have a root so nothing to be printed so it's over again I'll come back again I'll come back and the car is still null so I'll say st.top.right this time the top is one so the right becomes seven so this time temporary becomes seven so the temporary is not null car is reassigned to temporary so car becomes seven this time so the moment the car becomes seven again start your same thing st.push seven and car becomes car.left the seven will go to eight again comes back st.push eight car says why don't you go left the moment it goes left it becomes null okay so this is what is being stored in your stack as of now it's not again comes back temporary says st.top eight what's your right so temporary says eight's right is null if it is I say temporary why don't you take your top so temporary says okay I'll take the top so it will become you make you eight after that it says post order why don't you have it so I'll say okay I'll have it does eight have any root no so this while loop will not be executed and I will come out again and the moment I come"
+    },
+    {
+      "chunk_id": "L084_C9",
+      "start": 581.08,
+      "end": 655.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=NzIGLLwZBS8&t=581s",
+      "text": "have any root no so this while loop will not be executed and I will come out again and the moment I come out I again get car as null so again temporary says cool I'm going to take the right I'm going to take stack.top's right so seven's right I'm taking because eight has been traversed it's time to go to the right of this sub tree so seven says my right is null so temporary again becomes null again this will be executed temporary says st.top so the top is seven correct so you just take this seven and you reassign temporary and the post order will also take the seven perfect well does seven have a root yes seven has a root why because seven has a root one so what it does is it takes temporary now as one and this guy re post or the post order is added with one once this is added your stack ultimately becomes empty once the stack becomes empty you will end up getting stack empty as well as car null like as you can see stack is empty and the car is null as soon as it happens you can say that the post order is ultimately printed for this given tree binary tree and that's the answer that this is how the iterative post order traversal will look like so guys"
+    },
+    {
+      "chunk_id": "L084_C10",
+      "start": 655.04,
+      "end": 716.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=NzIGLLwZBS8&t=655s",
+      "text": "this given tree binary tree and that's the answer that this is how the iterative post order traversal will look like so guys what will be the time complexity of this the time complexity will end up being big O of twice of n now you'll ask hey striver why it is twice of n the answer will be very very simple c what did you do initially if you remember like as you muzzie you might give you a binary tree which looks something like this just having a right node so what will you do you will start with this doesn't ever left so you'll add this to the stack then you'll go to the right and add this to the stack will go to the right you add this to the stack it'll go to the right you'll add this to the stack while coming back you'll print this then you'll check this then you'll check this then you'll check this and so this while loop will be extremely executed for n times and first you took n times in order to insert all these elements in order to insert all these elements into your stack so can i say the worst case complexity will be twice of n but i will be using only a single stack yes you are using a post order but that's used for storing like that's used for storing so i can ignore that so i can say the"
+    },
+    {
+      "chunk_id": "L084_C11",
+      "start": 716.64,
+      "end": 752.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=NzIGLLwZBS8&t=716s",
+      "text": "using a post order but that's used for storing like that's used for storing so i can ignore that so i can say the space complexity will be the go of n so i hope you have understood the entire explanation as well as the code just in case you did please please please make sure you like this video because it took a lot of efforts to make this entire tree series also if you wish you can definitely drop in a comment that will keep motivating me to make such further series also if you're new to this channel please do consider subscribing because i'm going to bring in such more series in the upcoming future as well with this uh let's wrap up this video let's meet in the next lecture bye bye take care you"
+    }
+  ]
+}

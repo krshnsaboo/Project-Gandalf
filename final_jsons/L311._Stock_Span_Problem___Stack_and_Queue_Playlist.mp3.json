@@ -1,0 +1,120 @@
+{
+  "lecture_id": "L311",
+  "lecture_number": 311,
+  "lecture_title": "L15. Stock Span Problem | Stack and Queue Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=eay-zoSRkVc",
+  "chunks": [
+    {
+      "chunk_id": "L311_C1",
+      "start": 0.0,
+      "end": 74.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=0s",
+      "text": "So, let's continue with our Stack and Queue playlist. Before starting off, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is online stock span problem. So, what is the problem statement? So, initially you will be starting off with this particular call which is stock spanner call. So, you can say that this is when the stock market starts. After that, you will be having next function calls. You will be having next function calls. Now, the next function call will be given an integer. So, you will be basically given next and an integer value. Now, your task is to return a possible integer. Your task is to return a possible integer. Now, what does this possible integer define? That defines maximum consecutive days for which the stock price was less than or equal to the current day. Let us understand. So, if I check the first one. So, this is where the stock, you know, the stock market starts. So, we are coming across 7. So, can I say that, okay, this is day 1 and before this there are no days."
+    },
+    {
+      "chunk_id": "L311_C2",
+      "start": 74.56,
+      "end": 147.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=74s",
+      "text": "coming across 7. So, can I say that, okay, this is day 1 and before this there are no days. So, I can surely say that for this one, maybe I could write it over here, for this one I should return 1 because there are no previous days. So, I cannot compare. So, for this day, the stock price is less than or equal. It is, right, 7 is lesser than or equal to the 7 itself. Let's go to the next one, which is a next call again with a value 2. So, this time when you check out a value 2, what you do is you look to the past and the previous day had a 7. The 7 is not lesser than or equal to the current day. So, that day cannot be computed. So, again you can say that this is the only day, thereby, we will again return 1. We go to the next, which is 1. The moment I have a 1, I again do the same thing. I look backwards and this day is 2, which is not lesser than or equal to. It's not. So, I cannot compute this or I cannot count this, thereby, 1 itself, the current day itself will be the answer. Next, I have a 3. This time when the stock price is 3, what I can say is when I look backwards, this day can be computed, this day can be computed, but this cannot be."
+    },
+    {
+      "chunk_id": "L311_C3",
+      "start": 147.4,
+      "end": 216.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=147s",
+      "text": "is 3, what I can say is when I look backwards, this day can be computed, this day can be computed, but this cannot be. Remember, you are looking for consecutive days. So, what I can say is, including today, these three days, like this is today, including today, all of these three days are following the property of lesser than or equal to the current day, thereby, it's 3. After that, I again have a 3. So, I can say that the current day price is 3, the previous day price is 3, the previous day price is 1, the previous day price is 2. So, consecutively, 4 days, I had something which was lesser than or equal to the current day, that is 3. Understood? So, I could head over and return again 4. I have a 1. This time when I have a 1, only the current day, this time when I have a 8. So, can I say I could actually take across everyone because everyone is lesser than equal to the current day price, right? So, I can say that 1, 2, 3, 4, 5, 6, 7. So, 1, 2, 3, 4, 5, 6, 7. So, the answer will be 7. So, every next function is going to return an integer value. So, how do I solve this particular problem like brute force? What will be the brute force? I think you got to just, what will be the brute force?"
+    },
+    {
+      "chunk_id": "L311_C4",
+      "start": 216.92,
+      "end": 281.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=216s",
+      "text": "this particular problem like brute force? What will be the brute force? I think you got to just, what will be the brute force? You have an array or you have a list, which is dynamic in nature. So, I can have a list which is dynamic in nature. So, let's have a list. This can be defined globally under the Stock Spanner class. This can be defined globally under the Stock Spanner class. First time when I get a 7, I just take the 7 and what I do is I start iterating from here till backwards and the value that I get is 1. I'll check for this particular condition. Perfect. Next I get a 2, I insert it, I start from here, I count 1, I go to the next one and it doesn't count. So the count is 1. Perfect. After that I have a 1. So this time when I have a 1, I just put it into my dynamic list, I start the iteration from here and I check backwards, it's not lesser than equal. So again the count stays as 1. Next time when I have a 3, I put that into my list, I stand over here and I start counting. This can be counted, this can be counted, this can be counted. So I can count 3 and I stop over here, I stop over here. So I could actually count 3."
+    },
+    {
+      "chunk_id": "L311_C5",
+      "start": 281.88,
+      "end": 358.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=281s",
+      "text": "this can be counted. So I can count 3 and I stop over here, I stop over here. So I could actually count 3. After that again when I have a 3, I could do the same thing, I could stand over here and I can go back, go back, go back and I could count every 1. So that's 4. After that I have a 1, it won't count anything. So just 1. After that I have a 8, I can go all the way back till the last and the count will be 7. So simple brute force, I stand at the current day and I just count back. So if I have to write down the code, it's very simple. Similarly you will have class based solutions. So I can say class solution or maybe the stock spanner class. And inside that you will have a constructor. So you can define an array or a list, whatever you define. It can be initially empty. Always make sure it is defined as an empty whenever this particular function is called because stock spanner means we are starting fresh. So make sure it is an empty dynamic list, dynamic in nature. After that you could easily write the next function. So next function is going to take an integer value. So you could take an integer value. It's going to return an integer as well. So what we do is very simple."
+    },
+    {
+      "chunk_id": "L311_C6",
+      "start": 358.36,
+      "end": 435.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=358s",
+      "text": "integer value. So you could take an integer value. It's going to return an integer as well. So what we do is very simple. We say okay, hey value, could you just come across and say array.add, just insert yourself. Perfect. I could start the count equal to 1. The current day will always be counted because we have something as equal. So the current day will always be counted. And then what I could do is I could start from the back. The back will be nothing but array.size minus 2 because the last index is array.size minus 1. So I won't count the current day. I could straight away start from minus 2 and I could head over to minus, to 0 rather. If the value of array of i is lesser than equal to, remember if it is lesser than equal to the current day, which is val, you could simply do a counter plus plus or else you could break out and the for loop will be completed. Once it is completed, you can end up returning the count. So yeah, that will be it. That is it. What is the time complexity? So I can say that for every next function, I'm looking backwards. I'm looking backwards at the number of days. So at the worst possible case, whatever is the number of days, I'll end up going through the entire thing. I'll end up going through the entire thing till 0."
+    },
+    {
+      "chunk_id": "L311_C7",
+      "start": 435.96,
+      "end": 515.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=435s",
+      "text": "whatever is the number of days, I'll end up going through the entire thing. I'll end up going through the entire thing till 0. So every next function, I could say in the interview that every next function is taking bigot of number of, or maybe I could write it somewhere else. So I can say that the time complexity for every next function is bigot of number of days till now. At the worst possible case, I can say that the space complexity will be the total number of next calls till now. Total number of next calls till now. Why? Very simple. If three times next has been called, we'll be storing 7 to 1. So the number of next calls till now. So this is where the interviewer will be not happy because every time you're taking number of days. So every time I'm doing the next call, typically checking through the entire data. That is something which we don't want. We want to process it faster. So can we optimize it? So we need to optimize our brute force solution. But in order to do that, let's understand what was taking time and if I can optimize from there. So for this particular function call, for this particular next call, what I did was I stood at the current element and I went back, I went back, I went back and I said"
+    },
+    {
+      "chunk_id": "L311_C8",
+      "start": 515.0,
+      "end": 593.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=515s",
+      "text": "what I did was I stood at the current element and I went back, I went back, I went back and I said this 7 is not possible. The reason the 7 was not possible was 7 was greater than 3 and that violates the condition less than or equal because 7 was not an element which was lesser than or equal to. So it cannot be counted in the consecutive days. So eventually I figured out the length to be 4 and in order to do that, I had to traverse back and that is what was taking time. So can I do it without traversing back? I can do it. If someone comes up and says me, hey, for 3, for 3, you know, the previous greater element was 7. If someone comes up and says, hey, for 3, the previous greater element was at 7 and it was found at index 0. It was found at index 0 and you are currently at index 4, you are currently at index 4. So current index minus wherever the previous greater element was found, that 0 gives you the number of consecutive days which you could actually take into your answer. Okay. I think I got an intuition. All I need to do is somehow figure out previous greater element for an element and we have done similar problems."
+    },
+    {
+      "chunk_id": "L311_C9",
+      "start": 593.7,
+      "end": 672.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=593s",
+      "text": "an intuition. All I need to do is somehow figure out previous greater element for an element and we have done similar problems. We have done the problem NGE, we have done the problem PSE which is next greater element and previous smaller element. If you have done both the problems, I think we could also write PGE which is previous greater element. It is nothing but you just tweak the condition that you used in PSE, just tweak the condition. Go back and watch my lectures. If you have done that, you know how to do it. This is super simple. So what we will be doing is, we will not be storing anything in an array. Rather, because we know in order to compute PGE which is the previous greater element, we will have to traverse from left to right because whenever we are at 3, we could have these elements somewhere in the stack data structure and from the stack, we could easily figure out the previous greater element. All I need to store is at which index it appeared so that I could subtract and get the maximum consecutive piece. Fair enough? So let us try to go through it by doing a simple trial. So what I will do is, I will start off by taking a stack data structure. Remember the stack will initially store the value and will initially not store anything"
+    },
+    {
+      "chunk_id": "L311_C10",
+      "start": 672.08,
+      "end": 740.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=672s",
+      "text": "will start off by taking a stack data structure. Remember the stack will initially store the value and will initially not store anything but will be storing in the stack a pair which is containing a value and the index. So whenever we are the first element, we check the stack and the stack does not have anything and the stack does not have anything, you remember what we returned, the value would be minus, like the value can be anything but if the stack does not have anything, the index could be called as minus 1 which means it does not have anything. So the current index, can I say this current index is 0? So 0 minus of minus 1 is 1. So can I say that the consecutive number of days will be 1 which is correct, he himself and after that you could straight away take 7, 0 and put it into the stack data structure. After that you go to the next one and that is at index 1. You could keep a counter that keeps increasing. So you have 2. Now when you look at the stack, you look into the stack, there is a 7. It is greater than 2. It is greater than 2. So what you will be doing is, you will be like okay, I know I have a greater element. So that is 7 and that occurs at a index 0. Currently I am at an index 1."
+    },
+    {
+      "chunk_id": "L311_C11",
+      "start": 740.68,
+      "end": 812.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=740s",
+      "text": "know I have a greater element. So that is 7 and that occurs at a index 0. Currently I am at an index 1. So 1 minus 0 will be nothing but 1 element which kind of makes sense because 2 will itself be the consecutive day. Perfect. So I got an answer for this as well which is 1. So I could write it for 1, I could take 2 comma 1 and I could put it into the stack data structure. After that I get the next one which is 1 which is 1. Again you look in the stack and you get the first element to be 2 which is greater than 1. So you get the index which is 1 and this current index is 2. So 2 minus 1 will be 1. So the answer will be 1 again. You take 1 comma the index and you put it back into the stack. Perfect. So you get 3 and that is at an index 3. Now when you get 3, you say that this cannot be the next like previous greater element. This cannot be the previous greater element. So you could kick them out. You could kick them out. Why do you kick them out? Understand if you have a 3, now if you are looking from 8, if you take 3 as the previous greater element, these 1 and 2 can never be the previous greater element, can never be the previous either."
+    },
+    {
+      "chunk_id": "L311_C12",
+      "start": 812.32,
+      "end": 873.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=812s",
+      "text": "you take 3 as the previous greater element, these 1 and 2 can never be the previous greater element, can never be the previous either. So you just kick them out. They can never be the previous greater element for of anyone ahead of anyone ahead. So you just kick them out. This logic I've explained in NGE, go back and watch it. So when you've kicked the smaller elements out, you actually get a greater, you actually get a greater which is at 0. So you're currently at 3, 3 minus 0 will be 3 consecutive days and the answer for this will be 3. So you could take the 3 now and insert it at a third index. Next you go to this which is 3 comma 4. So you look into the stack and you got a 3 which is equal, not greater. So what you do is you can kick it out. So you kick it out, you get 7 which is at an index 0 and currently at 4, 4 minus 0 will be 4. So you take 4. So this time you put 3 comma 4. Next you go to 1. Now when you go to 1, this current element is greater. So that's at an index 4. You're currently at an index 5. So the number of elements will be 1. Perfect. You just take 1 comma 5 and you put it into the stack."
+    },
+    {
+      "chunk_id": "L311_C13",
+      "start": 873.06,
+      "end": 950.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=873s",
+      "text": "index 5. So the number of elements will be 1. Perfect. You just take 1 comma 5 and you put it into the stack. Next you come to 8 which is at an index 6. Now when you come across 8, this will be kicked out, this will be kicked out because they are smaller. They cannot be previous greater. So you come across to 7 and you'll also kick out 7. So when you kick out 7, it's a minus 1, it's a minus 1. So 6 minus minus 1 will give you 7. Thereby that's going to be 7 and after that you're done. And there are no more next calls. This will be your answer. This will be your answer. Quite simple. What I did was I carried a stack which is maintaining an order which gave me the previous greater element. So time to write down the pseudocode. So what I'll be writing is class stock spanner. So I could write stock spanner. What do we need? We need a stack data structure. So a stack containing a pair. So you can have a pair of stack in my handwriting is super bad. So I'll just write it again int and you can have an index which is initially minus 1 and then you can have a stock spanner which basically initializes your index to minus 1 and make sure that the stack is not having any limit."
+    },
+    {
+      "chunk_id": "L311_C14",
+      "start": 950.68,
+      "end": 1025.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=950s",
+      "text": "can have a stock spanner which basically initializes your index to minus 1 and make sure that the stack is not having any limit. So you could write the clear function by yourself. So make sure every time the stock spanner is called the index is re-initialized to minus 1 because it's a global variable and the stack is cleared. So you start with fresh data. Perfect. After that we'll be writing int next and it will be giving me a value. So what we do is we got an element. So index equal to index plus 1. That's the first thing. Right after this I go through the stack which is while stack empty and I say hey listen a containing couple of values. So if your value at the top dot first because that is where you contain the value. If that is smaller than equal to my current value it don't mean anything to me. It don't mean anything to me. So you could just go off. Okay. So after this what I could do is I could get the answer and can I say that the answer will be the current index minus if the stack is empty I end up taking minus 1 but if the stack is not empty I end up taking stack dot top dot second because that is where I'm storing the index stack."
+    },
+    {
+      "chunk_id": "L311_C15",
+      "start": 1025.96,
+      "end": 1104.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=1025s",
+      "text": "the stack is not empty I end up taking stack dot top dot second because that is where I'm storing the index stack. After that you could do a stack dot push and you could say that the value can be pushed as well as the index. So because you needed the index that's why I did a top dot second and right at the end you could just end up returning the answer. Remember to compute answer before pushing anything into the stack because if you push the new value you will end up missing the next grader element. That's it's very important to compute the answer before it. So what will be the time complexity. So can I say this that if I have if I have n next calls if I have n number of next calls in that scenario the time complexity overall throughout all the next calls will be bigo of 2n. We know it. Why. Because in order to compute next grade element or previous grade element for n elements the overall again I'm repeating the overall time complexity will be bigo of 2n and the overall space complexity will be bigo of n because at max at max my stack will store all the elements given to me throughout the n number of next calls. Can I figure out the time complexity for individual calls."
+    },
+    {
+      "chunk_id": "L311_C16",
+      "start": 1104.92,
+      "end": 1151.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=eay-zoSRkVc&t=1104s",
+      "text": "all the elements given to me throughout the n number of next calls. Can I figure out the time complexity for individual calls. It is not practical enough to say that okay individual calls are going to take this much because you never know. What if every time you don't need to pop anything and the stack always keeps giving you you know the next grade element something like this 7 6 5 4 3 2 1. So for all the next calls it will be bigo of 1 because every time you just check back you get someone who's greater. I cannot say for individual calls but I can say it for overall and this will be the most optimal approach. I hope you have understood it. If you're still now watching and if you've understood everything please please do consider giving us a like and if you're new to our channel do consider subscribing to us as well. With this I'll be wrapping up this video. Let's meet in some other video till then bye bye take care."
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "lecture_id": "L178",
+  "lecture_number": 178,
+  "lecture_title": "G-53. Most Stones Removed with Same Row or Column - DSU",
+  "youtube_url": "https://www.youtube.com/watch?v=OwMNX8SPavM",
+  "chunks": [
+    {
+      "chunk_id": "L178_C1",
+      "start": 0.0,
+      "end": 76.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem maximum stone removal. So the question states there are N stones at some integer coordinate points on a 2D plane. Each coordinate point may have at most one stone. You need to remove some stones. A stone can be removed, very, very critical. A stone can be removed if it shares either the same row or the same column as the other stone that has not been removed. Now given an array of stones, which represents the i-th stone, written the maximum possible stones that you can remove. Now the critical thing was you can only remove a stone if it shares a row or a column with some other stone. For an example, I can say if I take this stone, this can be removed because this stone shares, it doesn't share a column with any other stone, but it shares a row. If you see this stone and this stone shares a row with each other. So what I'll do is I'll go ahead and say I will remove this. So I'll cross it off. So one stone I have removed. Okay. One removed."
+    },
+    {
+      "chunk_id": "L178_C2",
+      "start": 76.08,
+      "end": 153.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=76s",
+      "text": "and say I will remove this. So I'll cross it off. So one stone I have removed. Okay. One removed. Next I can say, Hey, can I cross this off? Let's think about this. Can I cross this off? I can, because I know on this row, we don't have any further stones because this is removed. Currently on this row, we do not have any further stones, but can I see over here, if you see there is another stone, thereby I can remove because this column has another stone. Perfect. Again, over here, this column does not have any other stone, but this row has one more stone. So I can remove this as well. Now coming across, can I remove this? Let's have a quick check. No, no, because this is already removed. So we cannot. Now, can I remove this? No. Yes. Yes. Because there is another stone. Go ahead and remove it. So apparently, can I say at the end of the day, there are two stones left and you are able to remove one, two, three, four. So the answer to this will be four. You are able to remove four stones right at the end of the day. Let's look at one more example. Can I say over here, this cannot be removed? No. Can I say this cannot be removed? No. Can"
+    },
+    {
+      "chunk_id": "L178_C3",
+      "start": 153.88,
+      "end": 232.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=153s",
+      "text": "at one more example. Can I say over here, this cannot be removed? No. Can I say this cannot be removed? No. Can I say this can be removed or this can be removed? So let's quickly start off by removing this, right? So I can say this guy shares with us. So let's remove this. Perfect. Next I have this. This shares with two other guys. So let's remove one more. Again, I have one more which can be removed because shares with one more. Can this be? No, no. So apparently three left, but I was able to remove three stones at the end of the day. You can try out every other possible configuration, but you'll not be able to remove these stones because they do not share a row or a column with any other given stone. So let's not think about any of the algorithm as of now. Let's look at the thought process, maybe do some dry run and then figure out which algorithm will be used. So we see, okay, kind of, can I say I can connect these guys? I can. Can I say I can maybe connect this? Yes, I can. Can I say this and this? Yes. So somewhere down the line, can I see connected, connected, connected? Can I say this? Yes. So can I say there are four stones which are ideally like connected? Can I see this? There are four stones which are connected. I can."
+    },
+    {
+      "chunk_id": "L178_C4",
+      "start": 233.2,
+      "end": 310.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=233s",
+      "text": "I say there are four stones which are ideally like connected? Can I see this? There are four stones which are connected. I can. And if I go across removing, I can remove one, two, three, but I cannot remove the last guy out of all the connected guys because he will have no other stone remaining. This guy will get this guy. This guy will get this guy. This guy will get this guy. But when you try to remove this, since all of these are removed, you will not get anyone. Okay. Makes sense. Now over here, again, if I try to connect it, it's like a connection, right? So again, if I try to remove, I cannot remove both of them. So I can actually remove just one of them. Correct. Okay. Let's look at one more example. So over here, this guy, no connections, single. This guy, no connections, single. So let's look at these guys. Can I see this guy, this guy, this guy, this guy, something like this? Yes. So thereby I'd be like, okay, okay, okay, okay. Connected, connected, connected. Can I see, I can remove this, this, this, but I cannot remove the last guy. Or I can remove this, this, this, I cannot remove this. Whatever I do, I will not be able to remove one guy. That is for sure. Correct. So these guys cannot be removed. So can I see that if I can"
+    },
+    {
+      "chunk_id": "L178_C5",
+      "start": 310.8,
+      "end": 383.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=310s",
+      "text": "able to remove one guy. That is for sure. Correct. So these guys cannot be removed. So can I see that if I can somehow connect these guys, the answer is going to be pretty simple, right? If I can somehow connect these dots, the answer is going to be pretty simple. What will be the answer? Can I see the answer? It will be, whatever is the component size of this, whatever is the component, like whatever the number of stones are there, that is four minus one, because I cannot remove one for sure, but I can remove three. And can I say, I cannot remove one, but I can remove one. This total was two. So in total, I can remove four. Can I see this? I can. Over here again, can I see over here? If you see the size of this is one. So one minus one, again, the size of this is one minus one, because this is the component. You cannot remove one guy apart from that you can remove everyone, but he's alone, right? Again, there are four guys, but I can not remove one guy. So can I say I'll be removing zero plus zero in the first two sets and then three people, which makes it three. Can I see this? So can I see this is somewhere boiling down to a connected component. Like I can assume this stone to be a node, this stone to be a node,"
+    },
+    {
+      "chunk_id": "L178_C6",
+      "start": 383.12,
+      "end": 452.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=383s",
+      "text": "this is somewhere boiling down to a connected component. Like I can assume this stone to be a node, this stone to be a node, this stone to be a node, this stone to be a node. Can I see this? I can. I'm not going to the implementation details as of now. I'm just assuming this stones to be the node of the graph. Can I assume this to be a component in a graph, which has four nodes? Can I assume this to be a component in a graph with single nodes? I can. So thereby, what I will say is if I can assume them to be components, can I say in short, if there are N stones, if there are N stones, and there is component, let's say component one, component two, component three, and the component has X stones in it, like something like this, assume this was the component. So how many stones are there? Three. So X becomes three. Assume over here, there were two. So here, I can say there are X two stones. And over here, X two will be two. Over here, X one will be three. Similarly, I can say component three, which will have X three, component four, which will have X four. I did take these examples, you can remove them. So if I write in terms of X one, X two, X three,"
+    },
+    {
+      "chunk_id": "L178_C7",
+      "start": 452.88,
+      "end": 521.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=452s",
+      "text": "four. I did take these examples, you can remove them. So if I write in terms of X one, X two, X three, can I see overall X one stones, X two stones, X three stones, plus dot dot dot will be equal to N stones, because these are individual components. If you sum up the individual components, that will be the total number of stones. I definitely know that. What is the answer of stones? Like how many stones are removed? How many stones are removed? I know in a component, I know in a component, I can remove everyone apart from one guy. The last guy will be alone. He doesn't find anyone in the row or in the column. Can I say it will be X one minus one plus X two minus one plus X three minus one plus X four minus one and so on. I can. Now, can I write them as X one plus X two plus X three plus dot dot dot dot. And this minus one, minus one, minus one, minus one can go out common, right? So thereby, can I write this as X one plus X two plus X three plus dot dot dot minus taken out common one plus one plus one plus one from all the components, from all the components. So can I say this is nothing but it's taken from all the components. We already proved this value,"
+    },
+    {
+      "chunk_id": "L178_C8",
+      "start": 521.84,
+      "end": 598.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=521s",
+      "text": "components, from all the components. So can I say this is nothing but it's taken from all the components. We already proved this value, which is yes, yes. And which is the number of stones minus what is this taken? One is taken from every component. Can I see it's nothing but number of components. Yes, this is your answer. You need to derive it. You need to derive it. The answer is very simple. N minus number of connected components is what you need as your answer. So the question boils down in a 2D matrix, in a 2D matrix where the row and column are connected and the row and column are connected. You have to figure out the number of components. Once you figure out the number of components, the question boils down to N minus number of components. So if you go back to the example, this example, one stone, two stone, three stone, four stone, five stone, six stone. The answer was six minus the connected components. Three components were there. So three over here, one, two, three, four, five, six, six stones. How many components? Two. Four stones can be removed. Quite simple, isn't it? Whenever you hear about connected components, which algorithm comes to your brain, either you say we will do something like a traversal algorithm and apply DFS, BFS,"
+    },
+    {
+      "chunk_id": "L178_C9",
+      "start": 599.28,
+      "end": 669.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=599s",
+      "text": "components, which algorithm comes to your brain, either you say we will do something like a traversal algorithm and apply DFS, BFS, or you say we have a disjoint set data structure, which helps us to connect people because over here we are connecting, over here we are connecting, over here we are connecting. So it's about connection. So in connection, we do not use traversals. It doesn't make sense. Whenever you're connecting two stones, the proper algorithm to use is disjoint set data structure. Don't know about it? I've already taught you in this particular graph series. Go back and watch it. Go back and watch. Come back. Pause this video. Do not watch the video afterwards because you'll not understand anything. So what will I do? I know one thing. I can say these two guys can kind of belong to the zero throw. Can I say this is an entire node where I have two people? I can. I can. Can I say a row is a node? A row is a node in the disjoint set. Till now you know how is disjoint set. One, it's self-parent. Two, it's self-parent. Three, it's self-parent and so on. Can I say that I will treat a row as a node? Yes, I will treat a row as a node and that is very simple. So I'll be like, okay, I have zero, I have one, I have two, I have three, I have four."
+    },
+    {
+      "chunk_id": "L178_C10",
+      "start": 669.92,
+      "end": 748.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=669s",
+      "text": "that is very simple. So I'll be like, okay, I have zero, I have one, I have two, I have three, I have four. So these are my rows, which will be treated as node in disjoint set. Very simple. If there is a stone, I say it belongs to node zero. If there's a stone, I'll say it belongs to node zero. Right? Very simple. So now then how will you treat the columns? We'll say, we'll treat the columns as the next set and they will be again treated as nodes in disjoint set. But how do you treat column? Because you have zero column and you've already used zero. So if you're using till the fourth index and there were five rows, there are five rows. So can I say post four, the fifth guy can be treated as the zero column. The sixth guy can be treated as the first column. The seventh guy can be treated as the second column and the eighth guy can be treated as the third column. Can I see this? I can. There'll be like five, six, seven, eight. These four, you just do a coordinate mapping. Zero column will be treated as the fifth node. One column will be treated as the sixth node. Two will be treated as the seventh and the third will be treated as eight. Just did a"
+    },
+    {
+      "chunk_id": "L178_C11",
+      "start": 748.72,
+      "end": 826.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=748s",
+      "text": "treated as the sixth node. Two will be treated as the seventh and the third will be treated as eight. Just did a coordinate shift. Shift. How much did you shift it? Can I say you shifted it by column plus whatever is the last value over here? This is the last value. Column plus four plus one, because this is five is where you start and the column was zero. The column was zero. So zero plus five the first time it went here. Next one. So one plus five went at the six. Two. Two plus five went here. So I did a shift by column plus four plus one. That's it. And you can have the disjoint set data structure. Now let's quickly implement the disjoint set data structure. Now we know we have zero through first row, second row, third row, fourth row, right? And we know you have the fifth column, which is the zero column, sixth, which is the first column, second column, and the third column. We know this. So we have all these nodes, which are individually alone as of now. Right? So let's quickly start. So we are seeing there's a stone on the zero through and the zero column. So anything on the zero through and the zero column will get combined. Zero row and zero column get combined. You don't combine stones. There's no"
+    },
+    {
+      "chunk_id": "L178_C12",
+      "start": 826.72,
+      "end": 901.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=826s",
+      "text": "the zero through and the zero column will get combined. Zero row and zero column get combined. You don't combine stones. There's no point in combining stones. You take everyone with you. Do you say anyone here and anyone here, just go and connect. I'd be like, okay, fine. So I'll be like, okay, zero. That's this row. Can you go ahead and get combined with the zero column, which is the fifth. So you'll just go ahead and say, okay, let's see this and connect it with the fifth. Okay. Perfect. Amazing. So what's the next thing? Next one is here. So it's at the zero through and the second column. What is the second column? Seven. So you say zero and this one is going to get connected. I'd be like, okay, so I will just connect these guys and I'll just omit this. Nice. Next, which is the stone? Here's a stone, which is at the first and at the third, which is eight. The first and the third eight will get connected. So go ahead and connect it. Okay. Done. What's the next stone? Yeah. So three and the zero. So three. And what is zero for you? It's five. It's five. Do you realize what happened? What is five? It's ultimate parent is zero. So this three goes and"
+    },
+    {
+      "chunk_id": "L178_C13",
+      "start": 901.2,
+      "end": 974.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=901s",
+      "text": "It's five. It's five. Do you realize what happened? What is five? It's ultimate parent is zero. So this three goes and gets connected to this. Again, I'll repeat. This was at three, three was this. This is zero. Zero, you know, is treated according to this formula. Zero plus four plus one, five, five, ultimate parent in disjoint set is zero, zero and three will get connected. So connect three to it. Did you see how efficiently all of these guys got connected here? If you carefully see, right next, which is the next one? Next one is this. If you carefully see, where is it? Three and two. So basically three, which is this, what is two? Two is nothing but seven, which is already connected. No need to do it. So done. So once you have done this, what is the next job? The next job is very simple. It's the last one. So it's at the fourth. It's at the fourth and it's at the three, which is the eighth. Okay. Eight is here. So four goes and connects here and this will be over. So after the dry run, if you carefully observe, this is one of the disjoint set, this is another, and this is another, and this is another, right? Let's analyze."
+    },
+    {
+      "chunk_id": "L178_C14",
+      "start": 974.64,
+      "end": 1051.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=974s",
+      "text": "this is one of the disjoint set, this is another, and this is another, and this is another, right? Let's analyze. This is the row zero, who is the ultimate parent? It's connected to column two. Okay. It's connected to row three. Okay. It's connected to column zero. Okay. Everyone gets covered. So understood. Next row one. Where's row one? Yeah. Connected to row four. Let's see. Okay. Connected to column three. Makes sense. Because if anyone was here, it would have got into it. Okay. Next row two. Let's look at row two. Oh, doesn't exist. It's connected to no one. Column one. It doesn't exist. No stones. So can I see, I kind of can discard these guys and I can see they're actually two valid disjoint sets, like two valid parents. There is just two valid parents. So there are two valid parents. Can I say there are two connected components? I can. So how do you figure out the valid parents? It's very simple. Just take the stone and look at its ultimate parent. Like for this stone, the ultimate parent of zero or the zero will be this. For this stone, the ultimate parent will be"
+    },
+    {
+      "chunk_id": "L178_C15",
+      "start": 1051.52,
+      "end": 1105.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=1051s",
+      "text": "stone, the ultimate parent of zero or the zero will be this. For this stone, the ultimate parent will be this. For this stone, the ultimate parent will be this. For this stone, the ultimate parent will be this. So for all these stones, there'll be one ultimate parent, right? So you can just keep a count. I'll tell you how to implement. Then for these guys, there'll be one ultimate parent. There'll be two unique ultimate parents for all the stones. For all the stones, there'll be two unique ultimate parents. That's it. If there are two ultimate parents and they were like six stones, six minus two, four is the answer. The implementation is going to be very, very simple. Don't worry about it. So I hope you understood the entire explanation. Now it's time to code it up. So I'll be coding the C++ solution on the right. And you can figure out the exact similar Java solution on the left. So given these stones, we're given the end, but no one is seeing us the size of the grid. So what we will do is we'll kind of figure out where's the last stone in the grid on the row. That will kind of give us this length. I'll figure out where's the last stone in the column. So that'll also kind of give us the dimension of the"
+    },
+    {
+      "chunk_id": "L178_C16",
+      "start": 1105.76,
+      "end": 1177.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=1105s",
+      "text": "this length. I'll figure out where's the last stone in the column. So that'll also kind of give us the dimension of the grid. So I can probably keep it as max row equal to zero. And I can probably keep it as max column equal to zero. And I can iterate on the list of stones. And I can say max row will be max of max row comma it like wherever, whatever is, whichever row the stone is at a max column, max column, comma ID one. So in this way, we can figure out the dimension. So we have the last index is that's the last index where the stone is. So that's the grid. So, so what is the next thing that we require? We require the disjoints and data structure. If you remember the previous lecture, I've already given you a snippet of code, which can be reused in almost every problem. So I'll just go ahead and maybe copy and just paste it here. Okay. And maybe just hide it. Yeah. All the functionalities. Perfect. So this is the disjoint set of code snippet that I've been reusing. You can watch it out from the previous lecture. What's the next thing we need to declare the disjoint set. Correct. So can I say disjoint set DS, what will be the size? That's a big question. So if you remember the first where the number of rows and then where number of columns,"
+    },
+    {
+      "chunk_id": "L178_C17",
+      "start": 1177.52,
+      "end": 1246.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=1177s",
+      "text": "be the size? That's a big question. So if you remember the first where the number of rows and then where number of columns, so can I say the total nodes will be rows plus columns? Yes. So it'll be like max row plus max column. Let's take plus one for safety reasons. You're not required, but yeah, let's still take plus one for safety reasons. Perfect. So this is something which I have already taken. Now, what is our next job? We know for every store, we say this row and this column combine yourself. So, okay. So auto of it, I'll go across the stones again. And now I'll be like, I know the node for the rule. What will be the node number? It's going to be simply whatever is the row, because if you remember, row was zero, one, two, three, four, but the column started after that. So for the node column, I will have to go like it's a normal one, but it will repeat itself. Like it'll, it'll overlap with the rules. So I will have to go one after the max row, whatever is the max row. I'll just have to go one after that. Right? So I take one after that. And after that, I can just keep on going. And I go ahead and say, Hey, listen, can you go ahead and say DS dot union by"
+    },
+    {
+      "chunk_id": "L178_C18",
+      "start": 1246.32,
+      "end": 1326.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=1246s",
+      "text": "can just keep on going. And I go ahead and say, Hey, listen, can you go ahead and say DS dot union by size, please go ahead and combine them. That's it. Just make sure disjoints it does it. Once this is done, I need the unique parents for all the stores. So maybe you can have a set or you can have an unordered map, which will kind of have the unique rows and columns like unique nodes. That's one of the ways to see it like map of income and unique notes, because all the notes will not be generated. I'm just taking the notes where the stones are, or you can say the stone notes. Like if you remember the dry run, I showed you all the columns, but over here, only the, only the notes which are present in the disjoint set will be there. So you can probably say stone notes equal to the node row. This is there and stone notes. And you can say node column is there. Perfect. Once you've done this, you need to count the connected components. So you can go ahead and say, count zero and four or two off. You can just, I trade in the map and the map is stone notes. They're not stones. It is stone notes. And in the map, you can say, hey, listen, if ds. you can just"
+    },
+    {
+      "chunk_id": "L178_C19",
+      "start": 1326.0,
+      "end": 1402.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=1326s",
+      "text": "stone notes. They're not stones. It is stone notes. And in the map, you can say, hey, listen, if ds. you can just take the find ultimate parent, find ultimate parent of this particular guy. Remember map will just store unique rows or like if in a row, there are multiple stones, then also it'll just store one note. So this is basically storing which, which notes are there in the disjoint set. Find parent of ID dot first is what the node is. If this is equal to equal to the node itself, say it is the boss. Then you counted number of boss counted. The answer will be number of stones minus the number of connected components. And if you do this and if you go ahead and compile, they should be running absolutely fine. Indeed it does. And let's quickly submit this and see if it is running fine. I am too proud of myself. I'm writing codes without any compilation errors and it's submitting at once. So you saw how easy was it. Once you know this particular snippet, it's just reusing this. It's a bit of constructive thinking. And once you have this constructive thinking, you can actually implicate disjoint set data structure and can solve any problems, you will not find it tough. So before wrapping up this video, a small request is going through the statistics of our channel. Nearly 50% of the viewers of our channel do not"
+    },
+    {
+      "chunk_id": "L178_C20",
+      "start": 1402.32,
+      "end": 1429.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=OwMNX8SPavM&t=1402s",
+      "text": "up this video, a small request is going through the statistics of our channel. Nearly 50% of the viewers of our channel do not hit that subscribe button. I know it's not an entertainment channel, but still it's a very, very honest request that please, please do consider subscribing to us. And if you've seen the video till here, do consider hitting that like button. And if you haven't checked out our DPCs and the HTC, the links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

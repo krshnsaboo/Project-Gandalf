@@ -1,0 +1,253 @@
+{
+  "lecture_id": "L194",
+  "lecture_number": 194,
+  "lecture_title": "DP 13. Cherry Pickup II | 3D DP Made Easy | DP On Grids",
+  "youtube_url": "https://www.youtube.com/watch?v=QGfn7JeXK54",
+  "chunks": [
+    {
+      "chunk_id": "L194_C1",
+      "start": 0.0,
+      "end": 79.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the last problem on DP on Grids. And I told you the day when we started DP on Grids, we're going to solve six problems. And after that you can solve any problem. I repeat any problem on DP on Grids. And that did happen. Like a lot of you, a lot of you were commenting on the previous video that without watching the video, just watching the question, we were able to solve the question. But this question is slightly different. This question will involve a 3D DP concept. 3D? Bro, 2D, 3D? Don't worry, I'll make it very easy for you. So we will be learning the concept of 3D DP over here. So without waiting, let's get started. So what is the problem? So the problem is Ninja and his friends. And the problem states that Ninja has a grid of size R x C. So there is a grid of size R x C and each cell of the grid contains some chocolates. So there is a grid and every grid has some chocolates. Now Ninja has a couple of friends, which is Alice and Bob. And he wants to collect as many chocolates as possible with the help of his friends. Initially, Alice is in the top left position that is 0, 0. And Bob is"
+    },
+    {
+      "chunk_id": "L194_C2",
+      "start": 79.56,
+      "end": 151.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=79s",
+      "text": "chocolates as possible with the help of his friends. Initially, Alice is in the top left position that is 0, 0. And Bob is on the top right position that is 0, C-1 in the grid. So on the first row, Alice is on the left corner and Bob is on the right corner. So which kind of thing? Fixed starting point. Each of them can move from the current cells to the cell below them. When anyone passes from any cell, he will pick all the chocolates in it. Assume he was here, he was here. So when he moves down, he'll pick up all the chocolates in it. And then number of chocolates in that cell will become 0. If both stay in the same cell, only one of them will pick the chocolates in it. Like both of them cannot pick the chocolate. If Alice and Bob are at I and J, they can move to I this, this, this, this. So your task is to find the maximum number of chocolates Ninja, that means Alice and Bob can collect with the help of his friends by following the rules. So let's take an example and explain. So let's assume this is the grid and Alice is here, Bob is here. So how in how many ways, how can you reach the last row and what is the maximum path Alice can give you and Bob"
+    },
+    {
+      "chunk_id": "L194_C3",
+      "start": 151.6,
+      "end": 224.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=151s",
+      "text": "in how many ways, how can you reach the last row and what is the maximum path Alice can give you and Bob can give you? So I can say that, hey listen, Alice is having two. Let's move Alice to here. That's fine. In the next step, let's move Alice to here. I'm like, okay, what about Bob? Bob is initially here. Let's move him here. Then let's move him here. So the part that Alice takes is the green one and the Bob takes is the blue one. So I can say Alice a sum will be 12. Alice's sum will be 12. It makes sense. And Bob's sum I think will be five plus two, seven plus two, nine, nine and 21. And this is the maximum part that both the maximum number of chocolates that both can collect. So your task is to figure out this possible value of 21 and maximize this as much as possible. Now remember this, there is this edge case, like assume the cells are like this and Alice and Bob started. So Alice took this path. Alice took this path for an example and Bob took this path. So this cell is a common in both the parts. It will just be counted once. It'll just be counted once. So that is what the question stated. So what is given over there? Let's analyze."
+    },
+    {
+      "chunk_id": "L194_C4",
+      "start": 224.8,
+      "end": 302.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=224s",
+      "text": "be counted once. It'll just be counted once. So that is what the question stated. So what is given over there? Let's analyze. We have a fixed starting point. We have a fixed starting point. We have a variable ending point because you don't know where you will end. There can be multiple points of ending because you know it's going to end at the last row, but both of Alice and Bob can end anywhere. But we definitely know Alice starts at zero zero and Bob starts at zero M minus one. That is something which we definitely know. Now will greedy work? Obviously not. Why? We have talked about this uniformity nature. Due to uniformity nature, greedy doesn't work because it might happen you consider someone in a path, but if you would have considered other path, then in the future you would have got a bigger value. So since the values are not uniform, someone is small, someone is growing, someone is very less. So don't know how is the values. So due to uniformity, greedy cannot be applied. So if greedy cannot be applied, what does come to your brain? All paths by Alice plus all paths by Bob together. If I can together take them and making sure that if there is any common one and then I'll"
+    },
+    {
+      "chunk_id": "L194_C5",
+      "start": 302.08,
+      "end": 369.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=302s",
+      "text": "by Bob together. If I can together take them and making sure that if there is any common one and then I'll consider it as one. If I can together take it, then whatever is the maximum will be my answer. So how do you generate all paths? I have to write a recursion for this and I have to write a recursion for this. So that's, that's the main intuition. So we understood that we have to write the recursion and then we have to. So in order to write the recurrence, we have to make sure Alice and Bob move together. Why? Because it might happen. There is a common cell that Alice and Bob passes. So you have to consider it at once. That's why it's very, very important that you don't be like, okay, let's do the Alice one and get the maximum sum for Alice. Then do the Bob one and get the maximums up for Bob and then just sum it up. That can be done, but then you have to trace the path. Then you have to subtract if there is anything common. So it will be a very long process if you follow that path. So instead of individually doing it, I hope you understood why can't we do it individually? Because there might be a cell in common and you have to trace back the path and then you"
+    },
+    {
+      "chunk_id": "L194_C6",
+      "start": 369.4,
+      "end": 445.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=369s",
+      "text": "we do it individually? Because there might be a cell in common and you have to trace back the path and then you have to omit that common cell. In this example, as I showed you, assume Alice gives you this path, Bob gives you this path. So this is the common cell which you have to trace and delete. So that's something which we will not do because there might be a lot of common cells. So what we will do is we will try to write a recursion together. What are the rules to write the recurrence? I've taught you the rules. Now, previously in the grid questions, it was express everything in terms of i and j. Over here can I see express everything let's understand express everything in terms of now there are two guys. You are combining couple of recursions. There is Alice. So for Alice, you can say i1 j1 and then there is Bob that's i2 j2. So I can say that express everything in terms of i1 j1 and i2 j2. That's the first thing and write down all the base cases. So and write down all the base cases as a step one. Step two is explore all the paths. Explore all the paths. How many parts are there? One is this. The other one is this and the other one is this. Let me just quickly"
+    },
+    {
+      "chunk_id": "L194_C7",
+      "start": 445.44,
+      "end": 519.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=445s",
+      "text": "How many parts are there? One is this. The other one is this and the other one is this. Let me just quickly check it off. Yeah, that's these are the three ways and they're saying give me the maximum sum. So just give me the maximum sum possible. That's it. This is how you write the recurrence. So something to observe. We were having a fixed starting point and generally when we have a fixed starting point and a variable ending point because we know it can end at any column in the last row. Yes, it can end at any column in the last row. So if there is a fixed starting point and a variable ending point, we generally tend to write the recursion starting from yes, starting point and then going to ending point. Had it been both variable which we have done in DP 12, then we could have analyzed as we did in DP 12. But over here since we have a fixed starting point, I will always recommend you to not think so much and directly start from fixed starting point. The problem can be solved in the other way. Yes, it can be solved in the other way, but I will always recommend you to not go that path. So thereby we will write a recursion that starts from starting point. So can I"
+    },
+    {
+      "chunk_id": "L194_C8",
+      "start": 519.32,
+      "end": 593.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=519s",
+      "text": "always recommend you to not go that path. So thereby we will write a recursion that starts from starting point. So can I say the starting point will be F of 0, 0 which is the Alice's position and F of 0, M minus 1 which is Bob's position. So this is what Alice is standing at and this is where the Bob is standing at. So we can start off with taking these four parameters. So why don't we take these four parameters. So let's take it. So I1, J1 is where Alice is. I2, J2 where Bob is. Now what are the base cases? Let's analyze what can be the base cases. So if I'm thinking of what can be the future, the future can be explore all the paths and it's a matrix. If I'm exploring all the paths, I might go left. So I might just cross this boundary. I might go right. So I might cross this boundary. Will it have anything else? I might cross this, but I can say this is my base case or the destination. So I should not care so much. Now can I see this? Yes. Can I see this? That if I cross the boundary in the left or if I cross the boundary in the right, then that path will not be considered."
+    },
+    {
+      "chunk_id": "L194_C9",
+      "start": 594.24,
+      "end": 669.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=594s",
+      "text": "cross the boundary in the left or if I cross the boundary in the right, then that path will not be considered. So base case can be of two types. One is the destination base case where you say you have reached the last row. One is the out of bound base case. So always write the out of bound first. So can I say the out of bound is if Alice might cross or might cross the other one or Bob might cross or might cross the other one. Perfect. So I've written for both of them and if both of them cross, then I can return a very negative value. Now a lot of people were asking in the comment section, Stryver what if we return int mean? Now remember if you return int mean, it will get added up to some integer. If that integer is negative, plus integer will go beyond the limits of integer. Thereby it will give you wrong answers. So that's where I always recommend you to probably return something 1e8 or probably you can just convert that into long if you're wanting to return int mean. So that's a specific way why I don't return int mean because on addition of int mean to a negative integer, it will go out of bound. That is the shuttle reason. So we have written the first base case"
+    },
+    {
+      "chunk_id": "L194_C10",
+      "start": 669.2,
+      "end": 746.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=669s",
+      "text": "to a negative integer, it will go out of bound. That is the shuttle reason. So we have written the first base case which is out of bound. What is the destination? Let's analyze the destination. So I know one thing for sure. Now over here there is a case to consider. Alice is moving, Bob is also moving. Will both of them reach the destination at the same time is my question to you. You'll be like, yeah, both of them will definitely reach the destination at the same time. Why? Let's analyze. So what are the movements given? The movements given are this, this, this. No matter what you do, no matter in which column you go, at every step you will move to the next row. At the next step, you'll move to the next row. Be it Alice or be it Bob, you will move to the next row. That is for sure. Do you agree? You do agree. Initially they were at the zeroth row. Next movement they will move to the first row. Next movement they'll move to the second row. Together, Alice and Bob will move to the next rows. So I can say, Stryver, instead of maintaining I1 and J1, sorry I1 and I2, can't I write a single I? Because I will be same. Only the columns will change, but they will move"
+    },
+    {
+      "chunk_id": "L194_C11",
+      "start": 746.64,
+      "end": 819.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=746s",
+      "text": "I1 and I2, can't I write a single I? Because I will be same. Only the columns will change, but they will move to rows simultaneously. I'll be like, yeah. So what I'll do is, I will now just store a I. Yes, I will now just store a I. Instead of storing I1, J1, I'll say, let's have a common I because Alice can be I1, J1. Bob can also be I1, J2. I and J2. So I have maintained, I've just omitted one extra variable because both of them were carrying similar values. So can I say, if I reaches the last row, which is N minus one, if I reaches the last row, I've reached the destination. Now there are still a lot of things to think. You just cannot return the Alice's cell and Bob's cell. You have to think. What do you have to think? You'll be like, okay, if I have reached the last cell, Alice would have reached to some column. Bob would have reached to some column. Make sense? Now assume, let's go back to the example. Assume Alice reaches here and Bob reaches here. So you can return this plus this. That is okay. But what if Alice reaches here and Bob also reaches here?"
+    },
+    {
+      "chunk_id": "L194_C12",
+      "start": 819.56,
+      "end": 891.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=819s",
+      "text": "So you can return this plus this. That is okay. But what if Alice reaches here and Bob also reaches here? They reach to the same column. Then it'll only be added once. If they reach to different columns, it gets added twice. So I can say, okay, fine, Striver, that makes sense. If J1 is equal to equal to J2, then I will just return once, which is A of I of J1 or J2, whichever you can. But if they're not equal, then I will return A of I J1. That's for Alice and that's for Bob. Does that make sense guys? So what I can say is, okay, fine. The destination has been written. Remember in this question, you have to always think, always think in deep because there is a condition as common. You have to always write cases, thinking those stuff. What happens when you reach? Always tell your brain to think what happens. So we have done the first thing. We've done the tough thing, explore everything. Sorry, we've done the express everything in terms of I and J. Next thing is, explore all the paths. So can I say, this is nothing but I plus one or rather I minus one."
+    },
+    {
+      "chunk_id": "L194_C13",
+      "start": 891.72,
+      "end": 971.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=891s",
+      "text": "explore all the paths. So can I say, this is nothing but I plus one or rather I minus one. Because I plus one comma J, I plus one J plus one and I plus one J minus one. These are the three directions. Now we have to again think. Let's think. So I'll just draw a matrix to enable you to think. Let's draw a matrix. Assume Alice is here, Bob is here. Now you're asking in one step, move both Alice and Bob. I repeat in one step, move Alice and Bob both. Because you're writing a recurrence together. So you need to make sure that they move simultaneously. That is very important. So how do you make sure in one step they move Alice and Bob simultaneously? That's very important. Now you'll be like, okay, Striver, Alice can move here. And when Alice can move here, Bob can either move here, Bob can either move here or Bob can either move here. So for one movement of Alice, Bob can move in any of the other movements. Like they together can move like this or they together can move like this or they together can move like this. For"
+    },
+    {
+      "chunk_id": "L194_C14",
+      "start": 971.16,
+      "end": 1046.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=971s",
+      "text": "together can move like this or they together can move like this or they together can move like this. For one left movement, Bob can have three different movements. Makes sense. Alice can move like this, Bob can move like this, or Bob can move like this, or Bob can move like this. For this also, it can have three different movements. Like this, this, this, this, this and this. Similarly, Alice can move here, Bob can move here. Similarly, Alice can move here, Bob can move here. So can I say for every movement of Alice, I know there are three movements of Alice, for every three movement of Alice, Bob also has three simultaneous movements. So can I say in total there will be nine combos or nine combos of paths that I have to try. Nine combos of path, one this diagonal, one this diagonal, one this diagonal. Nine combos of path is what you are going to try. Make sense? Now how can you try nine combos? Now one of the ways is you write all the nine combos individually or probably we can do some trick here and there and probably"
+    },
+    {
+      "chunk_id": "L194_C15",
+      "start": 1046.24,
+      "end": 1124.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=1046s",
+      "text": "you write all the nine combos individually or probably we can do some trick here and there and probably write all the nine combos by ourselves. So let's think of this. So can I say we have a movement here which is I plus one and J minus one. Can I say there is a movement here which is I plus one and J. Can I say there is a movement here which is I plus one and J plus one. So there is a change in the row and the changes are like every time you're doing a plus one. Like if you carefully observe the row is always changing to plus one. So there is no requirement of storing the row change. Let's store the column change. Can I say the first time the column changes by minus one, next time by plus zero, next time by plus one. Make sense? It's like changing from minus one to plus one. From minus one to plus one. So can I say there are three different possible values of column change. Thereby can I run it something like this delta one from minus one to plus one. That's the first loop. Next loop will be delta two from minus one to plus one. So thereby first time whenever it is minus one, it assumes minus one, then it assumes zero, then it assumes"
+    },
+    {
+      "chunk_id": "L194_C16",
+      "start": 1124.6,
+      "end": 1201.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=1124s",
+      "text": "to plus one. So thereby first time whenever it is minus one, it assumes minus one, then it assumes zero, then it assumes one. Next time when this goes to zero, it assumes minus one, zero and one. Next time when this goes to plus one, this is minus one, zero, one. So you're exploring three crossed three paths easily. So this is what you just need to write. So can I say there are three different paths. So now explore all the paths. Let's explore all paths Alice and Bob can go together. Let's explore them. So can I say it will be for probably you can write a D J one, which is the change in column of Alice that goes from minus one to plus one and I can say the DJ two, which is the Bob's change, which is minus one to plus one. And now can I see that in inside of this, there will be the parts which will be considered now. So we have written the for loop that generates all the nine possible parts that's trying to write the state changes. Can I say the state change will be very simple. The state change will be, it'll go to the next column. Alice and Bob both will go to the next column. Alice will go to DJ one. That's this particular part, whether it be minus"
+    },
+    {
+      "chunk_id": "L194_C17",
+      "start": 1201.4,
+      "end": 1279.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=1201s",
+      "text": "and Bob both will go to the next column. Alice will go to DJ one. That's this particular part, whether it be minus one, zero or one. And Bob will go to DJ two plus, rather J two plus DJ two, which is a change in Bob. So in this way I can say this is how the transition will happen. And this will make sure all the nine transitions have happened. Now this will be the state, but you are at the current cell. Now can I see if, if, if J one, Alice and Bob are both at the same cell, then you will just add it once to this. And if they're not in the same cell, then Alice's cell plus Bob's cell gets added to the same function. It'll be the same function call. And out of all of these states, you remember in the previous grid questions, you used to write two and then you are like something and something. And then you took maximum of both or maximum of three. Over here, there'll be nine stuffs that will be generated among these maximum of all of them. So probably you can store a maxi equal to zero and you can write maxi equal to max of this comma maxi. Similarly, maxi equal to"
+    },
+    {
+      "chunk_id": "L194_C18",
+      "start": 1279.52,
+      "end": 1354.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=1279s",
+      "text": "a maxi equal to zero and you can write maxi equal to max of this comma maxi. Similarly, maxi equal to max of maxi comma, this sort of all the maximums will be generated and you can directly return the maximum. So in this way you can easily write the recursive code. I know it was a kind of complicated thing, but it's not that complicated if you try to write it by your self. Now it's time to understand the time complexity. Let's recursion. What was the time complexity? I can say at max, you will travel the number of rows. Alice will travel the number of rows and Jack, Bob will also travel the number of rows for every time. Alice has three options. Bob also has three options. And that's it. Alice has three options for every column. Bob also has three options for every column and the number of rows they have to travel is n. So 3n into 3n is what the time complexity will be like near about exponential. Space complexity will be again a big O of n, which is the number of rows"
+    },
+    {
+      "chunk_id": "L194_C19",
+      "start": 1354.4,
+      "end": 1425.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=1354s",
+      "text": "near about exponential. Space complexity will be again a big O of n, which is the number of rows because that's the auxiliary stack space. So how do you optimize this? In order to optimize this, you just need to see if there are overlapping sub problems. Obviously you have seen in the DP lectures till now, if you're writing a recursion and in the grid, you know you will be visiting a cell from different ways a lot of times and there will be overlapping sub problems. And since there will be overlapping sub problems, you can definitely apply something as memoiation. So in order to apply memoiation, you see in the recursion, which parameters are there? First parameter is I. Next parameter is J1. Next parameter is J2. So there are three parameters. Tell me what is the maximum value of the first parameter? What can be the values of I's that the recursion will attain? It will be from zero to n minus one. So n different values that I might attain in the recursion. What will be the possible possible values of J1? Zero to n minus one. So m. What will be J2? Zero to n minus one."
+    },
+    {
+      "chunk_id": "L194_C20",
+      "start": 1425.52,
+      "end": 1500.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=1425s",
+      "text": "possible values of J1? Zero to n minus one. So m. What will be J2? Zero to n minus one. So another m. So it's an n cross m cross n DP. 3D. Nothing special. Very simple. 3D. How do you convert this? Just write DP of I J1 J2 equal to maxi before returning. And right here, just make sure if DP of I J1 J2 is not equal to minus one, return DP of I J1 and J2. So that's how it will be. Now what will be the time complexity of this one? We go off number of states. N cross m cross n. Number of different states will always be a time complexity because apart from that, other calls will be returned by the value stored in the table. So n cross m cross n, but over here multiplied by nine because for every state, remember this, for every state you're running this loop of three cross three, you're running nine states. In the previous grid questions, there were three states. So into three would have been there into two would have been there. But over here, there is something as nine states."
+    },
+    {
+      "chunk_id": "L194_C21",
+      "start": 1500.8,
+      "end": 1575.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=1500s",
+      "text": "would have been there into two would have been there. But over here, there is something as nine states. You cannot ignore nine. Nine is almost near to 10. It will increase one more zero. So you can't ignore nine. So this is the time complexity. Space complexity, we go off n into m into m for the DP array and we go off n for the space like auxiliary stack space of the recursion. So that's what the memo I Asian solution will be giving you. So let's code this so that this gets into your head completely and then we will think of the tabulation and then of the space optimization. It's still a lot far away. So let me now try to quote this off. So we know we had a function of I J one for Alice and J two for Bob and I will be common in both of them and both of them will definitely have the grid. So kindly carry the grid as well. First case will be where Alice and Bob run out of bound. So can I say if J goes this or J one rather J one grows this or or J two goes this or or J one crosses the grid of like you can just carry the C as well crosses the C. It's carry the C as well"
+    },
+    {
+      "chunk_id": "L194_C22",
+      "start": 1575.6,
+      "end": 1647.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=1575s",
+      "text": "one crosses the grid of like you can just carry the C as well crosses the C. It's carry the C as well so that we don't have to write it or or if J two crosses the C like if any moment they cross the left boundary or the right boundary I can return a very negative value as minus one eight not an intimate because intimate plus negatives will be overflown. That's what I can do. What is the other base case when you reach the destination. What is the destination. If you by chance reach the last row. So please carry R as well. So we reach the last destination that's the last row. But if I know if Alice and Bob has reached the same same position we just need to return one of like we just need to count it once. So very simple we just count it once. But if they have reached two different positions it's very important that you count both of them. So please count Alice as well as the sky. So that's done. Now we know that we have to explore all the paths explore all parts of Alice and Bob simultaneously. So why don't we explore all the parts. So for I and I equal to we know we it'll be D.J. one which will start from minus one and D.J. one goes still plus one and D.J."
+    },
+    {
+      "chunk_id": "L194_C23",
+      "start": 1647.96,
+      "end": 1722.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=1647s",
+      "text": "to we know we it'll be D.J. one which will start from minus one and D.J. one goes still plus one and D.J. one plus plus. That's for the change of Alice. And then for this the corresponding Bob will be minus one till D.J. two of greater than plus one till D.J. two plus plus. That's how Bob will figure. Now can I see I will be having all the parts. So I need to store the maximum. Probably you can just store a negative value. So over here what can I see. If Alice and Bob are at the same position then the answer. The value the value that you will get will be stored as something as great of only once it will be taken into consideration. So once you take it into the consideration and then you move across and over here else the value that will be taken will be twice into consideration which will be I of J one plus for Bob it will be I of J two. And after that what value will do is value will call the recursion in order to compute for the remaining portion which is I plus one and J plus D.J. one J. Sorry J one plus D.J. one rather and J two plus D.J. two and you can pass the R C"
+    },
+    {
+      "chunk_id": "L194_C24",
+      "start": 1722.84,
+      "end": 1790.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=1722s",
+      "text": "one J. Sorry J one plus D.J. one rather and J two plus D.J. two and you can pass the R C and the grade which is required. Whatever value you generate you take the maximum of all of these states sitting the maximum and once you've taken the maximum you can simply return the maximum. That's how you can easily do it. So over here you can say return. Initially Alice starts at zero. Bob starts at zero and Alice starts at zero zero and Bob starts at zero and M minus one which is C minus one. After that R C and grade is what you will pass. So just make sure you pass it. Let's not run it off. So you see that it's running absolutely fine but it will give you DLE because this code is exponential in nature. So in order to convert this you have to apply my machine. So 3D vector. This is how you declare 3D vector. First three. So basically let's first write what do you require. You require this right. D.P. of R.C.C. That's what you require. So what I'll do is instead of this I'll create a vector of int int int int D.P. first size R. Now there's still a 2D vector which is required inside this vector of int. Perfect. Next R.C.C. is the size and inside this you can be like"
+    },
+    {
+      "chunk_id": "L194_C25",
+      "start": 1790.48,
+      "end": 1868.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=1790s",
+      "text": "2D vector which is required inside this vector of int. Perfect. Next R.C.C. is the size and inside this you can be like vector of int. And inside the C is the size and minus one. This is how you generally declare a 3D vector. So you've declared a 3D vector. Pass it over here and just copy paste this. Simple enough. And you can just give a comma. Just copy paste over here. Pass it by reference. Make sure you pass it by reference otherwise the values will not change. Over here D.P. of I.J.1.J2. And just make sure this D.P. value is not is if it's repeated. You can just return the D.P. value. That's it. As simple as that. And once you've done this can you please just run the code. So make sure you run it off and let's see what are the problems. D.P. was not declared in the scope. Looks like. OK. Sorry. And. So it's running absolutely fine. Let's try to submit this off and see if the test cases run using recursion or not. So we are getting a score of 100. We have to now write the tabulation one in order to understand this in a better way. So memoization done. Now we need to reduce the. We need to remove this external stack space. That's where something as tabulation comes in. So just a quick"
+    },
+    {
+      "chunk_id": "L194_C26",
+      "start": 1869.08,
+      "end": 1938.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=1869s",
+      "text": "need to reduce the. We need to remove this external stack space. That's where something as tabulation comes in. So just a quick stuff. If you feel that you don't need to learn it you can stop it over here because memoization solution will work for 3D D.P.s in interviews. I don't think tabulation will be required so you can stop it over here. But if you want to learn you can definitely learn it from here. So tabulation. Let's you know what are the first things that I have told you. So in order to convert tabulation I've taught you some steps. First write the base case. So in order to write the base case exact same D.P. will be declared. N. M and M. Exact same D.P. will be declared. Let's quickly check out the base case. So what was the base case in recursion. Can I say this is the base case. But I'm saying I is N minus 1. Whenever I reach I equal to N minus 1 it's the base case. So can I say this can I say this that for I equal to N minus 1 there can be different possible J's. I know I is N minus 1 that's the base case. But can I say for this particular D.P. of N minus 1 that's the last row because that's the"
+    },
+    {
+      "chunk_id": "L194_C27",
+      "start": 1938.84,
+      "end": 2011.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=1938s",
+      "text": "the base case. But can I say for this particular D.P. of N minus 1 that's the last row because that's the base case. The other two parameters might vary. It might vary because if you go in the base case what can be the other two parameters. J1 can be can be anywhere between the first column and the last column. J2 can be anywhere between the first column and the last column. You'd never know. So why don't you write that. Because what might happen is see Alice might end here. Bob also might end here. Alice might end here. Bob might end here. Alice here. Bob here. Alice here. Bob here. Alice here, Bob here. Alice here, Bob here. Alice ends here, Bob ends here. Alice ends here, Bob ends here. Alice ends here, Bob ends here. So there can be multiple base cases where they might end up anywhere. So, can I say this? That if there are multiple cases, can I write something like this? For j1 from 0 to m-1, for j2, 0 to m-1 again. And in both the cases, can I say if Alice"
+    },
+    {
+      "chunk_id": "L194_C28",
+      "start": 2025.9,
+      "end": 2103.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=2025s",
+      "text": "0 to m-1, for j2, 0 to m-1 again. And in both the cases, can I say if Alice and Bob are ending at the same position, can I say dp of Alice and Bob is equal to dp of the last row, the j1 and j2, would be just taking one value of grid, which is grid of n-1 and j1. One value. But if they are not ending at the same position, then dp of n-1 and j1 and j2 will be grid of n-1, j1 plus grid of n-1, j2. So, can I say this is what the base case will be? Absolutely makes sense. It does make sense because these are the different base cases. So, we're done with the base cases. So, base case was n-1. Remember this. Base case was n-1. The base case has been done. What's the next step in tabulation? The next step in tabulation comes express every state in four loops. State was i, state was j1, state was j2. So, there will be three nested loops. Always, if there are two, it will be two. If there is one, there will be one. Now, what is i? What is tabulation? From base case to up. The base case was n-1. What is the"
+    },
+    {
+      "chunk_id": "L194_C29",
+      "start": 2104.1,
+      "end": 2181.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=2104s",
+      "text": "one. Now, what is i? What is tabulation? From base case to up. The base case was n-1. What is the next case? n-2. Then n-3. So, i will be from n-2 till 0. What about j1? You can run this from anywhere because we are basically concerned about the i because that is what is the base case. If you see in the base case, we are concerned about i. So, j can run from anywhere. So, what you will do is, you know what are the possible values of j. For any given i, the j can be anything from 0 to m-1. This j2 can be anything from 0 to m-1. So, what are you waiting for? Just write that off. For i equal to n-2 till 0, for j equal to 0 to m-1, for j1, j2 equal to 0 to m-1. This is how the looping will look like. Then you just need to copy the recurrence. I will go into the editor and I will write it because over here I don't think I will be able to explain you much better. In the editor I will be easily able to explain you because the recurrence is written right at"
+    },
+    {
+      "chunk_id": "L194_C30",
+      "start": 2181.94,
+      "end": 2259.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=2181s",
+      "text": "much better. In the editor I will be easily able to explain you because the recurrence is written right at the top. This was the memetization code. I will write the tabulation now. If you remember, what we need to do is, just remove this and this will be 0 definitely. Just to make things easy I will just make it n and m so that I don't have issues while explaining. Let's make it n and m. The dp array is ready. What is the first thing that we did? We wrote the base cases if you remember. Let's quickly write the base cases. The base cases, you know j1 will be 0 and it will go on till m and j1++. Let's quickly write that. j2 will be 0, j2 will go on till m and j2++ and it will be dp of i j1 j2 equal to something. But over here also there was a catch. If Alice and Bob tend to finish at the same position then there will just be an addition of one guy. But if they are happening to land at two different positions then in that case there will be something like i and j2. We have written the base cases. After the base cases we need to write the nested loops. Since"
+    },
+    {
+      "chunk_id": "L194_C31",
+      "start": 2259.84,
+      "end": 2339.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=2259s",
+      "text": "like i and j2. We have written the base cases. After the base cases we need to write the nested loops. Since the base case was n-1 this will definitely be n-1. This will also be n-1. This will also be n-1 because it was the last row. For the last row you have to write n-1. Since the base case was n-1 I will start from this and we can easily go on like this. After this there will be a j loop which will definitely be something like from 0 to m. Let's quickly run this and then there will be a j2 as well which will be from 0 to m again. Now you don't need to do anything. Just go over here. Whatever you wrote in the recurrence copy and paste. Nothing extraordinary or out of the box. Just copy and paste. Once you have copied and pasted you just need to make sure instead of the f's you write dp. That's what you will write. Now what you will do is you will erase this portion. Are we done yet? No. There is something like j1 plus dj1 and j2 plus dj2 that might go out of bound. Please make sure you write those cases. For j1 and dj1 you can just copy paste and write over here. It has to be greater"
+    },
+    {
+      "chunk_id": "L194_C32",
+      "start": 2339.32,
+      "end": 2410.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=2339s",
+      "text": "you write those cases. For j1 and dj1 you can just copy paste and write over here. It has to be greater than 0 and it has to be lesser than m. There is something as j2 plus dj2 as well. This also similarly has to be greater than 0 and lesser than m. If that's the case we are perfect with value and if not then in that case we have to make sure that it's added with a negative number so that it's not considered. In this way you can easily make sure this is the case. And now what do you need to return? The call was for Alice starts at 0, 0. Bob starts at 0, m-1. Just make sure you have that call. Now let's run this off. It's time that we submit and see if it is giving us the correct answer. Let's check that out. It is indeed giving us the correct answer. This is the tabulation and you see it's the 3D Db3 loops and then another insertion. Looks so cool isn't it? But it was so easy. The question is how do we space optimize this? If you remember in the classes, in the starting lectures we space optimized 1D to 2 variables. 2D Db to 1D Db. So the 3D Db will be space optimized"
+    },
+    {
+      "chunk_id": "L194_C33",
+      "start": 2415.44,
+      "end": 2493.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=2415s",
+      "text": "starting lectures we space optimized 1D to 2 variables. 2D Db to 1D Db. So the 3D Db will be space optimized to how much? It will definitely be space optimized to one dimension less. How can I make sure that it is space optimized to one dimension less? Because we see there is an use of i plus 1. So front and current concept because just the front row will be required. So we will be just using that concept. So instead of having this entire stuff, I can definitely have something like int dp of m and m because we don't require the front row. We just require 2D. We just require this portion. Nothing of i plus 1. So the second parameter is of m and the last parameter is also of m. So just make sure you declare it something like this and over here instead of dp you can say front and you can also declare a current of m m. Once you have done this instead of dp of n minus 1 you can say front because that is everywhere of dp just make it front and over here dp of i plus 1. So make it front. Over here you are saying dp of i so that will be current and over here this entire couple of loops end. So this thing will be computed. The curve of entire 2D will be computed. Once"
+    },
+    {
+      "chunk_id": "L194_C34",
+      "start": 2493.0,
+      "end": 2560.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=2493s",
+      "text": "and over here this entire couple of loops end. So this thing will be computed. The curve of entire 2D will be computed. Once it is computed you can say front to be curved and over here instead of dp of 0 it will be front. This is how you space optimize this. So if I just run this code you will see this is also running fine. So it says front is equal to curve. It's an invalid assignment. So why did it give invalid assignment because we are using something as arrays. So let's convert this into vectors. It will not give us any invalid assignments. So converted it into arrays and now let's quickly run this off. So you see it is running fine. Let's quickly submit this off. So it does give us correct answer. So you saw only in the name it was 3D but apparently it is if 3 parameters you are taking 3 parameters then you memorize 3 parameters. If you take 4 parameters then you memorize 4 parameters. So there is nothing like 3D, 4D, 5D, dp. You just have to understand how many states are there, how many exploration you are doing and in that sense you can easily optimize the space complexity and the time complexity. So the time complexity is basically you can see 3 loops which is n cube or you"
+    },
+    {
+      "chunk_id": "L194_C35",
+      "start": 2560.0,
+      "end": 2593.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=QGfn7JeXK54&t=2560s",
+      "text": "space complexity and the time complexity. So the time complexity is basically you can see 3 loops which is n cube or you can say n into m into m and this is into 3 into 3 which is 9. Again and the space complexity will be 2D. So that's m into m. So that's what the tabulation will be. So guys I hope you have understood the recursion, the memetion, the tabulation, the space optimization. So just in case you did please please please make sure you like this video and to continue our tradition. Make sure you comment understood if you have understood and yeah if you are new to this channel please do consider subscribing to us please please because we have got a hell lot of data structure algorithmic content. So yeah with this I will be wrapping up this video. Let's meet in the next one. Till then bye bye take care."
+    }
+  ]
+}

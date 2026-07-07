@@ -1,0 +1,99 @@
+{
+  "lecture_id": "L069",
+  "lecture_number": 69,
+  "lecture_title": "BS-24. Search in a 2D Matrix - I | Binary Search of 2D",
+  "youtube_url": "https://www.youtube.com/watch?v=JXU4Akft7yk",
+  "chunks": [
+    {
+      "chunk_id": "L069_C1",
+      "start": 0.0,
+      "end": 75.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=JXU4Akft7yk&t=0s",
+      "text": "Okay, so let's continue with our binary search playlist but before that, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So the problem that you're going to solve today is search in a 2D matrix. What does the problem state? The problem states that you'll be given a sorted matrix. If you carefully see 3, 4, 7, 9, 12, 13, 16, 18, 20, 21, 23, 29. They're in the sorted fashion. So you'll be given a sorted matrix and your task is to find out if the given target, so you'll also be given a target, if that given target is in the given matrix or not. If it is there, you have to return me a true. If it is not there, you have to return me a false. This is what the question states. Now what is the extreme naive solution? The extreme naive solution is traversing the entire 2D matrix and checking if the target is there or not. And you know that the matrix is of size n cross m. So the matrix is of size n cross m where n is 3, m is 4. Thereby the indexing of rows will be 0, 1, 2 and the indexing of columns will be 0, 1, 2, 3. Like it goes as zero based indexing in a 2D matrix. And how can you traverse? It's very simple."
+    },
+    {
+      "chunk_id": "L069_C2",
+      "start": 75.76,
+      "end": 141.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=JXU4Akft7yk&t=75s",
+      "text": "0, 1, 2, 3. Like it goes as zero based indexing in a 2D matrix. And how can you traverse? It's very simple. You first go to 0, 0, 0, 1, 0, 2, 0, 3, and this is 1, 0, 1, 1, 1, 2. And how do you go? You basically start iterating from i equal to 0 to n minus 1. Then you traverse from j equal to 0 to m minus 1 because that is the last column. And then you basically check if matrix of i, j is equivalent to the target. That means the target is found and you can say return true. And if in case the follow did not find the target, you can return a false, not a true. You can return a false. And what will be the time complexity of the extreme naive solution? n cross m. The space complexity, we go off one. So can I optimize n cross m? Yes, I can. How will I do that? The point to note over here is the matrix is sorted in itself. If you look at every row, it is sorted. If you look at every row, it is sorted. So what I can do is I can straight away take this target and I can go to the 0th row and instead of going every element, instead of going through every element that I'm doing"
+    },
+    {
+      "chunk_id": "L069_C3",
+      "start": 141.54,
+      "end": 216.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=JXU4Akft7yk&t=141s",
+      "text": "and I can go to the 0th row and instead of going every element, instead of going through every element that I'm doing via this for loop, what I'll check is the first element is 3 and the last element is n. Is the target between 3 and 9? Is the target between 3 and 9? No. If it is not, it cannot be there because this entire row is sorted. Hence it cannot be. So it is not present in the 0th. I am not checking for every element. I am no more checking. Next I'll go to the 1st row and I'll be like 12, 18. Is target in between them? He's like, no, it's not. I will again not check. I'll go to the next. That's 2nd. Over here it's 20 and 29. Maybe, maybe, I'm not sure. Maybe 23 is over there. How will I check? Maybe one of the ways is go through every element, have a check. That is one of the ways. Or the other one is the entire array, like the entire row, if you look at it, that's a 1D array and that is sorted in itself. If it is sorted in itself, you can do a binary search on this 1D array and you can check if it is there or not. Quite simple. So what I will do is I'll omit the inner loop."
+    },
+    {
+      "chunk_id": "L069_C4",
+      "start": 217.84,
+      "end": 296.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=JXU4Akft7yk&t=217s",
+      "text": "and you can check if it is there or not. Quite simple. So what I will do is I'll omit the inner loop. I'll omit the inner loop and I'll be like, hey listen, if array of i, 0, because that's the 1st one, is smaller than equal to target and, and if target is smaller than equal to the last one, which is array of i, m minus 1 is the last index. If that's the case, maybe I can do a binary search. Maybe I can do a binary search. And I'll be like return binary search. You know how to do a binary search on a 1D array. Return binary search. What is your 1D array? Your 1D array is array of i. If you do array of i, this is like, sorry, matrix of i rather. If you just do matrix of i, my bad, matrix of i, it'll be matrix everywhere. What do you mean by matrix of i? It doesn't mean the entire one. Matrix of 2 will mean this array. When you say matrix of 2, it actually means a 1D array. If you say like two dimensions, it means a 2D array. So you're just picking up this one. You're sending this and you're asking the binary search function to check if the target is there or not. And you know how to write a binary search function. Whatever it returns, if it finds, it will return you a true."
+    },
+    {
+      "chunk_id": "L069_C5",
+      "start": 296.8,
+      "end": 375.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=JXU4Akft7yk&t=296s",
+      "text": "or not. And you know how to write a binary search function. Whatever it returns, if it finds, it will return you a true. If it doesn't find, it will return you a false. And depending on that, you do the return statement and the if will close. What will be the time complexity? You might think you're doing this every time. No, you're going through every row. That's a big O of n. And for once, just for once, you will do a logarithmic of m. You'll do a logarithmic of m. Why m? Because the length of the 1D array is m elements, which is the number of columns. Thereby logarithmic base to m is the time taken for binary search. And be very careful that it only happens once. Only happens once, not more than that. That's it. What about the extra space? Big O of 1. Can I optimize this? Yes, we can still do better than big O. This is as good as big O of n. This is as good as big O of n. But I can still optimize. So the previous complexity was as good as big O of n. How can I optimize that? If you carefully notice, the entire array, rather the entire matrix is sorted in itself. If I hypothetically, not in the real world, hypothetically try to flatten this matrix, flatten it 2D into a 1D array."
+    },
+    {
+      "chunk_id": "L069_C6",
+      "start": 375.04,
+      "end": 450.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=JXU4Akft7yk&t=375s",
+      "text": "in itself. If I hypothetically, not in the real world, hypothetically try to flatten this matrix, flatten it 2D into a 1D array. Hypothetically again, flatten a 2D into 1D. I'll just do it in my brains. Will it look something like this? 3, 4, 7, 9, 12, 13, 16, 18, 20, 21, 23, 29. Yes, it does look like that. What would be the size of this? Can I say the size of this will be n cross m. The size of this will be n cross m. And it looks like a 1D array. It looks like a 1D array. And it is sorted. I need to look for target. So if I look for target in a 1D sorted array, what is the time complexity? I just need to apply binary search and the time complexity will be big O of logarithmic of the size of the array. And the size of the array is n cross m. So if I can flatten a 2D into 1D, not in the real world, in my brain, just hypothetically, if I can do that in my imagination, if I can deduce some formula and do that, I can actually search in a 1D array, the time complexity of big O of logarithmic n cross m. Now if you go ahead, if you go and flatten it into an original 1D array, that will be"
+    },
+    {
+      "chunk_id": "L069_C7",
+      "start": 450.2,
+      "end": 521.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=JXU4Akft7yk&t=450s",
+      "text": "logarithmic n cross m. Now if you go ahead, if you go and flatten it into an original 1D array, that will be of no use because in order to flatten every element, you will end up taking big O of n cross m because you'll go through every element, you'll put it into a 1D array, that will end up taking a lot of time. So technically you cannot flatten it in real world because if you try flattening it, the flattening process will take n cross m. So you should not flatten it. Just think it in your brain, how can you flatten it? So let's look at this. Can I say one thing? This index is zero and over here n is three, m is four. So n cross m, the total number of elements is 12. Thereby the last index will be 11. So what you will do is, you will perform a binary search where low is zero and high is 11 and you'll find out the middle to be zero plus 11 by two, that is five. So the value of middle is five. If you would have converted it into a 1D array, you can easily see that the value at the fifth index is 13, but you actually don't have this 1D array. You don't have it. You don't have this hypothetical array that you're thinking in the back of your mind."
+    },
+    {
+      "chunk_id": "L069_C8",
+      "start": 521.28,
+      "end": 592.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=JXU4Akft7yk&t=521s",
+      "text": "don't have this 1D array. You don't have it. You don't have this hypothetical array that you're thinking in the back of your mind. What you have is a 2D matrix and zero, one, two, three, four, five. At the fifth index, you have 13. So somehow, somehow, if you can figure out that this is the fifth index, which is zero, which is zero, one, half, half, zero, one, two, zero, one, two, three, which is basically this one at the index one, comma, one. If you can figure out this 2D coordinate for index five, because you're looking for index five, if you can figure out this 2D coordinate, which is one cross one, sorry, one, comma, one, then you know at one, comma, one, there is 13. And then you can compare that. Okay. We have 13. We are looking for 23. Thereby, it will never be on the left half. It will never be on the left half. And then we can do a binary search on the right half, but we don't have this 1D array. Somehow, I have to convert. If I have to write it, I have to convert the 1D coordinate to a 2D coordinate. If I can figure out a formula to do that, I think my job will be done. It's very simple. If you have an index, the formula to convert it is very simple."
+    },
+    {
+      "chunk_id": "L069_C9",
+      "start": 592.6,
+      "end": 670.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=JXU4Akft7yk&t=592s",
+      "text": "I think my job will be done. It's very simple. If you have an index, the formula to convert it is very simple. What you do is, in order to get the row, you basically do index by m, where n is the number of columns. In this case, 5 by 4, which is 1. And you do, in order to get the columns, is index modulo m, which is column equal to 5 modulo 4, again gives you a 1. So you got the row number as 1 and you got the column number as 1. And if you take some other examples, it will work. I will give you the intuition. Don't worry. If I take something like index 10 and try to convert it into a 2D coordinate, it's very simple. It's 10 by 4. That's the column number 2. 10 modulo 4, that's again column number 2. So let's take index equal to 11 and see if it is working or not. 11 by 4, 2. 11 modulo 4, 3. That's 2 comma 3, which is basically this one and this one, that's 29. If you look at this, 11 had 29. Yes, it works. It does work. So you might be thinking, divided by m, modulated by m is working fine. But what is the intuition behind it? The intuition is super simple. We have three rows, four columns."
+    },
+    {
+      "chunk_id": "L069_C10",
+      "start": 670.64,
+      "end": 749.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=JXU4Akft7yk&t=670s",
+      "text": "by m is working fine. But what is the intuition behind it? The intuition is super simple. We have three rows, four columns. I've taken an example. I've written down the hypothetical 1D coordinates. I've written them down. Let's observe something. The first column is always having multiples of 4. The first column is always having multiples of 4. Why? Because every row has m or 4. Every row has m numbers. Every row has m numbers. Every row has m numbers. That is why, since you start the indexing from 0, the first element is always a multiple of m, which in this case is 4. So, in order to get the row, you divide by m. Because if it's 4, you do 4 by 4 and you get the row number 1. If it's 5, you do 5 by 4 because 4 elements have gone by. 4 elements have gone by. How many 4 have gone by? How many 4 have gone by? That will determine which row number is it. Got it? That's why divided by m. What about column? I know these many m have gone by. So, if I'm standing at 9, I'm doing 9 modulate 4, which means 1 4, 1 4."
+    },
+    {
+      "chunk_id": "L069_C11",
+      "start": 749.08,
+      "end": 824.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=JXU4Akft7yk&t=749s",
+      "text": "have gone by. So, if I'm standing at 9, I'm doing 9 modulate 4, which means 1 4, 1 4. That's basically these have gone by. So, how much is remaining? That's basically 9 modulo m is the remainder, which is 0 1 because this is exactly divisible. What about column? Column is super simple. It's going to be modulated by m and you know why. Because if the first element is starting for the multiple, in order to get the indexing, which is basically 0 1 2 3, you can observe that this is something which is divisible by m. This is something which leaves a remainder 1. This is something which leaves a remainder 2, leaves a remainder 3. That is why modulate m will give you the column number. I hope you have got the intuition. Quite simple. What I have done is basically flattened the 2D into 1D in my head. I'm doing a binary search. So, what I will do is I'll write the low to be 0 and the high to be what's the hypothetical index? Last one. Yes, n cross m minus 1 because we have n cross m elements in a 2D matrix. So, the last one will be n cross m minus 1. Done. Let's quickly start the binary search."
+    },
+    {
+      "chunk_id": "L069_C12",
+      "start": 825.36,
+      "end": 905.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=JXU4Akft7yk&t=825s",
+      "text": "a 2D matrix. So, the last one will be n cross m minus 1. Done. Let's quickly start the binary search. So, that's same process while low lesser than equal to high and the mid and the mid will be low plus high by 2. But we will not be doing like array of mid. We need the row number and the column number. We'll do row equal to mid by m. We'll do column equal to mid modulated n. That's it. What's the next thing? The matrix of row column if you are equivalent to the target, we got you, we got you, return true. Else if this is lesser than target, then if it's lesser, it'll never be in the low half. So, do it on the 1D coordinate, not on the 2D coordinate. Do it in the 1D coordinate. Else high equal to mid minus 1. If at the end of the day, you never found it, you go ahead and return false. Done. That's how it looks like. And what will be the time complexity of this one? B go of logarithmic base 2 n cross m because that is the number of elements in the 2D matrix. What is the space? A B go of 1. And that is how it looks like."
+    },
+    {
+      "chunk_id": "L069_C13",
+      "start": 905.12,
+      "end": 933.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=JXU4Akft7yk&t=905s",
+      "text": "elements in the 2D matrix. What is the space? A B go of 1. And that is how it looks like. Quite simple and straightforward. So, let's quickly get back into the code editor. I've written the exact same code. So, what I'll do is I'll go ahead and try to submit this and see if it is running fine. Should it is. So, I hope you've understood the concept of flattening a 2D into a 1D array just in case you have and you're still watching. Please do consider giving us that like and if you're new to our channel, what are you waiting for? Hit that subscribe button. And if you haven't followed me on Instagram, Twitter and LinkedIn, all the profile links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

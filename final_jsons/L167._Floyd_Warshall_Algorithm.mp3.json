@@ -1,0 +1,183 @@
+{
+  "lecture_id": "L167",
+  "lecture_number": 167,
+  "lecture_title": "G-42. Floyd Warshall Algorithm",
+  "youtube_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw",
+  "chunks": [
+    {
+      "chunk_id": "L167_C1",
+      "start": 0.0,
+      "end": 72.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be learning one more shortest path algorithm, which is the Floyd Worshall shortest path algorithm. Now this is very, very different from the Dijkstra or the Bellman Ford that you learn because Dijkstra and Bellman Ford were a single source shortest path algorithm where you were given a source and you have to find out till all the other nodes, the shortest path, there was only a single source. But when you talk about Floyd Worshall, it is different. Over here, there are five nodes. So from every node, be it from zero, one, two, three, four, from every node, you have to tell me the shortest path to every other node over here. If I'm asking you from four to one, you should be knowing. If I'm asking you from one to three, you should be knowing. So there are multiple, multiple source. So this is why this is known as a multi source shortest path algorithm. Remember this, it"
+    },
+    {
+      "chunk_id": "L167_C2",
+      "start": 72.88,
+      "end": 147.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=72s",
+      "text": "source. So this is why this is known as a multi source shortest path algorithm. Remember this, it helps you detect negative cycles as well, helps you detect negative cycles as well. So I hope pretty much you've understood what you need to find. Now, what is the shortest path? Very simple. If I'm asking you from zero to one and I ask you, what is the shortest path in order to reach from zero to one? So you can take multiple parts. One of the parts will take you six. You can take this part, which is going to take you five. You can take probably this part, which is again going to take you five, or you can take the shortest one, which is go here, go here, go here. It's going to take two, one, one, which is an addition of I think four. Yeah, that's the shortest path. So the shortest path from zero to one is zero to two, two to four, four to one. This is the shortest path. If I'm asking you, what's the definition of shortest path? Any path that takes the least amount of edge weights is known as the shortest path. So what is the thought process behind the Floyd Worshall algorithm? Now it's very simple. It states go via every edge, go via every node rather,"
+    },
+    {
+      "chunk_id": "L167_C3",
+      "start": 147.72,
+      "end": 213.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=147s",
+      "text": "thought process behind the Floyd Worshall algorithm? Now it's very simple. It states go via every edge, go via every node rather, or go via every vertex or node, whatever you wish to write. So it's very simple. It states go via every vertex and node, go, go and try, try, try, try and get the shortest one. So for an example, for an example, let's take a, we want to find from zero to one, right? So if you're trying to find from zero to one, assume the distance you're trying to find is from zero to one. Okay. So what are the possible ways that you can go? You can be like striver. I can go from zero to one directly. I'd be like, yeah, that does make sense. Right? Because that's the straightaway path zero to one. If there's an edge, I go by that. That's one of the ways. But if I ask you, go via every vertex, then you can be like, okay, I can probably go via two. So which will mean I will go to two and then from two, I'll go to one. Does that make sense? Yes. And if I go from zero to two, it's going to cost me two and from two to one, it's going to cost me three, which will give me a total cost of five, which is nothing but this particular path. That is, if I go via two, that is, if"
+    },
+    {
+      "chunk_id": "L167_C4",
+      "start": 213.76,
+      "end": 281.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=213s",
+      "text": "give me a total cost of five, which is nothing but this particular path. That is, if I go via two, that is, if I go via two, can I go via three? I can. So that will be something like, I'll go from zero to three and then I'll go from three to one. Correct? So if I go from zero to three, that's going to cost me four from three to one, that's going to cost me one, which will be a total cost of five. Again, can I go via four? I can go via four. So if I go via four, let me write that in white. If I go via four, it will be zero to four and four to one, right? But zero to four, if you see, it's not direct path, it's a path via two. Probably someone would have computed. Assume as of now, someone has computed that and given you from zero to four, it's a three. Okay. So I'll be like, okay, three and four to one, it's a one. So a total of four. So apparently we notice that from zero to four and four to one, it's taking me a cost of four, which is indeed the shortest one. So what I did was in order to go from zero to one, I tried out every different vertex can be two, can"
+    },
+    {
+      "chunk_id": "L167_C5",
+      "start": 281.32,
+      "end": 356.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=281s",
+      "text": "So what I did was in order to go from zero to one, I tried out every different vertex can be two, can be three, can be four. And apparently I took the minimal path and this is what it is. So the logic is very simple. Assume all the vertex are from like the vertices are definitely from zero to N minus one. So I can say all the vertex. So if I'm trying to look, can I see if some somewhere down the line, if this is I and this is J and can I say this is nothing but I go from straight I to J, which is nothing but the edge itself. And can I say this, this, this to be K assume. So can I write the path to be minimum of, if you try out all the case, it will be from I to K very obvious because you go from zero to two and then from two to this, which is nothing but the J. Correct. So can I write this plus J of K? I can. That's what the path is from I to K I'll go. And from G to K is what I have to go. And if I take minimum of all of them, five, five, four minimum of all of the go through vertex, then the answer I'll have the answer somewhere down the line"
+    },
+    {
+      "chunk_id": "L167_C6",
+      "start": 356.12,
+      "end": 428.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=356s",
+      "text": "them, five, five, four minimum of all of the go through vertex, then the answer I'll have the answer somewhere down the line I can have understood, but I need to implement this on a wider scale. What do I mean by a wider scale? Because over here, zero to four was not a direct edge because zero to four meant it went via two. So it was going via two. So somewhere down the line in the past, someone would have also computed zero to four and they would have implemented via two via two understand. So zero to four would have been computed and stored. This is where you get an idea. Okay. Something like a dynamic programming, because we're using something which has already been computed. So you get an idea that, okay, this is a dynamic programming solution. It's not necessarily that, you know, dynamic programming. I'm just saying, try to relate. We are using something which is pre-computed. If I write it properly, I can write something which is pre-computed, which was in this case, this one, because zero to four was pre-computed. It did not compute at the point. Someone already knew what was the value to go from zero to four. That is what you need as a pre-computation. So you pretty much got the formula. Now what I'll do is I'll try to give you a sense of the"
+    },
+    {
+      "chunk_id": "L167_C7",
+      "start": 428.76,
+      "end": 498.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=428s",
+      "text": "a pre-computation. So you pretty much got the formula. Now what I'll do is I'll try to give you a sense of the graph and then slowly and slowly, step by step, implement this algorithm so that you understand how is this algorithm implemented. Till now in all the problems we have been using the adjacency list in order to store the graph. But in the lecture two, I've also taught you one more method, which is the adjacency matrix method. So you're going to use the adjacency matrix method in order to store this particular graph. Okay. It's very simple. In case you haven't seen the lecture two, it's very, very simple. Something we know for sure is if zero is the node and I want to go to zero itself, the cost will be zero. If I want to go from one to one, the cost will be still zero. So from any given node to the node itself, the cost is going to be zero no matter what you do, because you're already standing in the node. Something I know, zero, zero. So this portion will be storing the cost. So I can call this as a cost matrix. So zero to zero will be zero. One to one will be zero. Two to two will be zero. Three to three will be zero. So basically I'm saying this is zero, zero, zero. This is one, one, zero. This is two, two, zero."
+    },
+    {
+      "chunk_id": "L167_C8",
+      "start": 498.74,
+      "end": 574.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=498s",
+      "text": "to three will be zero. So basically I'm saying this is zero, zero, zero. This is one, one, zero. This is two, two, zero. This is three, three, which is again, zero. Pretty much understood. Right now, what are the other, it says zero to one is two. So go to zero to one and store two. Go to zero, go to one and store two. It says one to zero is one. So you go to one, you go to zero and you store one. Okay. It says three to zero is three. So go to three, go to zero and store three. Do not store the opposite vertex because it's a directed graph. It is a directed graph. If it's an undirected graph, for example, if it's an undirected graph and you want to apply this Floyd Worshel, just split this into something of this five, five, as you see our dual direction edge, but with different values in undirected, just make sure you assign them same values. Now remember you just store three zero as three because there is no zero three. Okay, nice. Next is three, one as five. So go to three and one and assign five. Next is one, two as three, go to one and two and assign as three. Perfect. One, two, one, two assigned as three. Do we have any other thing? One, two, three, four, five, one, two,"
+    },
+    {
+      "chunk_id": "L167_C9",
+      "start": 574.66,
+      "end": 650.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=574s",
+      "text": "as three. Perfect. One, two, one, two assigned as three. Do we have any other thing? One, two, three, four, five, one, two, three, four, five. Okay. We have three to two as four, three to two as four. So what I've done is I've assigned the cost, make sure everyone else is infinity, which means unreachable as of now, which means unreachable as of now. So this is the initial cost matrix, which you can always derive from the given graph. Now you must be thinking, but Stryver, this is a DG, a directed graph. What if it's a UG? How will we implement the Floyd Worshel? Simple. If there is an edge like this, it has a cost of five. You say, okay, five, this way, this way. So this is how you convert a UG to a DG make dual direction edge. Similar to something like this. If you see over here, there's a dual direction edge, but with different weights. Okay. So if you have to apply a Floyd Worshel in an undirected graph, just split that edge into two edges of same weights. That's how you can easily convert a UG to a directed graph. So this is the initial cost. Now, what did I say? Let's as of now, assume that I'm going to move via vertex"
+    },
+    {
+      "chunk_id": "L167_C10",
+      "start": 652.26,
+      "end": 726.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=652s",
+      "text": "this is the initial cost. Now, what did I say? Let's as of now, assume that I'm going to move via vertex zero. That's my first thing I'll move via vertex zero. So if I move over to zero, I will have some upgraded distance, something for sure. So let's start off with vertex zero and see what will be the resultant matrix that we will get. Now, what I'm saying, you have to move via the root zero. So can I say at first this is zero to zero stored as zero next is zero to one. So which means you're moving via root zero, which is zero to zero plus zero to one. Can I say it's similar to saying zero to one because zero to zero will always be zero and zero to one is what we have already stored to. So I can just copy paste to next is zero to two. Can I say it's similar? Zero to two is nothing but saying zero to via zero, by the way, by zero means zero to zero, which is again, zero plus zero to two, which is nothing but infinity. So similarly, this will also be infinity. Why zero to three will mean zero to zero and zero to three. Similarly, this will mean one to zero. What does one to zero mean? One to zero means via zero"
+    },
+    {
+      "chunk_id": "L167_C11",
+      "start": 726.18,
+      "end": 796.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=726s",
+      "text": "and zero to three. Similarly, this will mean one to zero. What does one to zero mean? One to zero means via zero means one to zero itself. And then zero to zero via zero means that only right by zero means that because this is I, this is J you're moving via zero. So can I say this one, this one, this one will just copy paste these values. It is go across, copy paste these values. Why? Because very simple. If your destination is zero, you can move via zero. So whatever you're taking in order to read zero, that is what you copy. But what about these places? Let's fill them up. So I'm saying this place is one to two. So I'm saying one to two via zero, which means one to zero plus zero to two. Let's see the value of one to zero. One to zero is one. So I'll just write one plus zero to two plus zero to two is infinity. So that means it's an infinity, which I do not need to write. So what I'll do is I will keep it as of now and whatever is the value, because I know in order to reach one to two, I'm taking three. And if I go via zero, I'm taking infinity. So three is a better option. So let's keep three. No offense. Let's keep three. Next one I see is"
+    },
+    {
+      "chunk_id": "L167_C12",
+      "start": 796.42,
+      "end": 869.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=796s",
+      "text": "zero, I'm taking infinity. So three is a better option. So let's keep three. No offense. Let's keep three. Next one I see is one to three. You see next one is one to three. Okay. So for one to three, it will be, I'll go from one, sorry. I'll go from one to zero plus zero to three. Now what is one to zero? That's one. Let's see what is zero to three. So zero to three is again infinity. So if you go via zero, you'll again get infinity. And for one to three, are we reachable in one to three? No infinity. We'll just copy paste infinity. So similarly, I can say this is done. Similarly, what I'll do is I'll figure out the next guys, which is this, which is nothing but two to one. Now two to one, why is it? Let's see. I'll go from two to zero. How much is it? Two to zero is infinity. So the path will not be considered. Next I'll do two to two. So if I go again, two to zero, it is again, infinity not to be considered. Next I'll go two to three, which will be via zero, which is again, infinity not to be considered. So apparently everyone else is infinity in this case, because it was previously infinity. Now also I'm getting infinity. So infinity, infinity, proper next, let's say the next part, which is somewhere this"
+    },
+    {
+      "chunk_id": "L167_C13",
+      "start": 869.38,
+      "end": 942.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=869s",
+      "text": "because it was previously infinity. Now also I'm getting infinity. So infinity, infinity, proper next, let's say the next part, which is somewhere this one, this one and this one. Okay. So three to one, let's see if we can get something better. Three to one, what am I seeing? Via zero, via zero. Let's see if I go via zero, which is three, zero three, zero is three. Okay. Perfect. Plus zero to one because I have to reach one. So zero to one, zero to one is two. So that gives me a total of five, which is already what I'm taking. So nothing better. We just copy paste the values. We just copy paste the values. So three to one is done. Let's get the next guy. What is the next guy? I'm saying three to two, which means I'll go via zero, which is three, zero, right? Plus zero two. Let's see. What's the value of three, zero three, zero is three. What's the value of zero to zero to infinity? Nothing better. So you're already reaching three, two at four. We'll keep four. Perfect. So this is what happens if I try to go via zero. So via zero, via zero, I build all the paths, all the paths have been built. Let's move to the next one. So next one, I'll see via one. Let's go via one and see what"
+    },
+    {
+      "chunk_id": "L167_C14",
+      "start": 942.42,
+      "end": 1021.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=942s",
+      "text": "have been built. Let's move to the next one. So next one, I'll see via one. Let's go via one and see what is the new, because remember via zero path has been built here. Via zero path has been built here. I'll figure out the via one path now. Once I figured out the via one, I'll figure it out via two, via three and so on. We'll get all the answers. So again, we know if, even if I go via one, something I know for sure is these guys will be zero. Note to note, and anyone who goes one, like if the source is one, like for this guy, this entire portion will be nothing but this. Why? Because if you're trying to reach one zero, it actually means one to, via one means one to one plus one to zero. So you're actually going to himself only. If you're saying, starting from one, going via one, it doesn't make sense. So you just copy paste whatever is there. You just copy paste one, zero, three and infinity. Similarly, can I say if this is one, the destination, it still doesn't make sense. Via, going via one and reaching one. Will that make sense? Going via one and reaching one. Will that make sense? No. You copy paste this row as well. Two, zero, infinity, five. Done. Copy paste it. So now let's compute this, this, this, this,"
+    },
+    {
+      "chunk_id": "L167_C15",
+      "start": 1021.62,
+      "end": 1095.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=1021s",
+      "text": "No. You copy paste this row as well. Two, zero, infinity, five. Done. Copy paste it. So now let's compute this, this, this, this, and this, this. Five values left to be computed. Let's do it. So first one is zero to via one means zero one plus one to let's compute this. So zero one means zero. Sorry. You'll take this zero and this one, which is two. So zero one means two plus one, two, one, two means three. You get a three, which makes it five. What is the value already stored? Infinity. You are reaching at a better position. Five. You go via one, you're reaching at five. Much better, much better. Next zero three via one means zero one is two plus one, three. Let's see the value of one, three. So if I take the value of one and three, that's infinity not to be considered. So whatever is the value, we'll just copy paste. Perfect. Let's copy paste the value. Amazing. Next, let's erase this. Let's go to the next row. So if I go to the next row, what's the next row? It's this one and this one to zero. So if I go over to zero, that's going by one, which is two one, and then going from one to zero, let's see the values of two one. So I go to one infinity not to be considered. So whatever is the value, just copy paste."
+    },
+    {
+      "chunk_id": "L167_C16",
+      "start": 1095.38,
+      "end": 1172.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=1095s",
+      "text": "see the values of two one. So I go to one infinity not to be considered. So whatever is the value, just copy paste. Still, we have been figured out. Next is this one, which is two, three. So if I go via two, which will be two one plus yes, plus nothing but one, three. What is two one? Let's see. Two one infinity again, not to be considered. Next. This is the next one, three zero. So if we take three zero, that's nothing but three one plus one zero. Correct. So what's the value of three one? What's the value of three one guys? Three one's value is very simple. It's five. So let's write five plus one zero. What's the value of one zero guys? One zero is one. So plus one, which is six. So as of now, what is the value of three zero? It is three. I'm already reaching three zero at a value three. So why will I take six? So I'll keep reaching directly, reaching previously, whatever previous ways I've taken to reach three, that's better. I need to take the new upgraded version. Next is three two. Let's compute three two. So if I try to compute three two, it'll be three one again, which will be five, right? Plus one, two, which is nothing but three this time. That's eight. So if you see it's already reaching at four. So why will"
+    },
+    {
+      "chunk_id": "L167_C17",
+      "start": 1172.9,
+      "end": 1247.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=1172s",
+      "text": "Plus one, two, which is nothing but three this time. That's eight. So if you see it's already reaching at four. So why will I take the eight one? So via one, I have computed. I've computed the matrix via one as well. Similarly, what you'll do is you will go via two and then you will get a matrix using that matrix. You will do a via three and you will get the ultimate matrix. Whenever you get this ultimate matrix, this will be your shortest path between everyone, between everyone. So if someone tomorrow comes up and says, you, Hey, give me the shortest path between three and zero. So you go three, you go zero and you say, whatever is stored here, that's the shortest path. So you can figure out from every node, one to every node to the shortest path from this ultimate matrix that has been generated. So what are we doing exactly? At first we are going via zero, then via one, then via two, then via three. So can I say I'm going with everyone? And whenever I'm going via zero, I'm basically taking this, then I'm taking this, then I'm taking this, then I'm taking this, then I'm taking this. It's basically for this, taking this for this, taking this for this, I'm taking this for this, I'm taking this. So in every iteration, can I say what I'm doing is"
+    },
+    {
+      "chunk_id": "L167_C18",
+      "start": 1247.94,
+      "end": 1325.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=1247s",
+      "text": "this, taking this for this, I'm taking this for this, I'm taking this. So in every iteration, can I say what I'm doing is very straightforward and very simple. And that's nothing but I'm going from I equal to zero to the last node. And this is what I'm doing because I want to go from I to J. So this is what I'm doing at every node. Can I say this? Yes or no? I can. And what am I doing? I'm trying to go for an example, cost of IJ. I'll take the cost as minimum of either what I have taken to reach it. That is currently what I'm taking. Currently, if I'm taking five, I'll consider that five and I'll consider the new one via one. So the new one via will be nothing but cost of I via whatever you're going via plus cost of that via of J. Can I say this? I can. And this is what I'm doing at every iteration, every iteration. First via zero via will be zero here. Next via one. So via will be one here. Next via two, it'll get two. I'm trying out everyone and automatically these will be zeros because you have initially would have assigned zero. So this will take care that it will always be zeros when you do comparisons. So what is this"
+    },
+    {
+      "chunk_id": "L167_C19",
+      "start": 1325.7,
+      "end": 1400.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=1325s",
+      "text": "would have assigned zero. So this will take care that it will always be zeros when you do comparisons. So what is this via? First it is zero, then it is one, then it is two, then it is three. So can I say for via equal to zero via lesser than N because zero one, two, three, every node till via plus plus is what this will be. And once you have done this N cube loop operation at the end of the day, you will have your resultant matrix, which will be your answer. So if you see, we are pretty much derived this one for every iteration, and then we have wrapped it under a via because via will always change. Let's get the via zero via one via two. And ultimately the cost of IGA will be storing your ultimate shortest distance. Now, a couple of questions. First question is how to detect a negative cycle? What if the graph has a negative cycle? Because we know for a negative cycle, imagine a cycle like this, where we see, okay, it is minus two, minus three, plus two. The total costing is minus two plus two minus three minus two plus two guys goes. So total costing is minus three. So what will happen is the cloud version will work properly and it will figure"
+    },
+    {
+      "chunk_id": "L167_C20",
+      "start": 1400.66,
+      "end": 1477.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=1400s",
+      "text": "goes. So total costing is minus three. So what will happen is the cloud version will work properly and it will figure out a path via one, two to reach zero. So the costing of zero and zero will be minus three. And apparently the costing of any given node to itself should be zero because the node to node could always be zero. And if it is anything less than zero, if the costing of any node, can I see this? If the costing of any node from zero to N it's very simple. If the costing of I and I, which is the node to node itself is lesser than zero. I can always see negative cycle exist. I can always see negative cycle exist. Very simple. If we are going from all the nodes and node to node is less than zero means cloud. Rochelle has gone by this and has reduced the cost from zero to something lesser because of a negative cycle. And you know, if it has a negative cycle, it doesn't make sense to find the shortest path because someone will do unlimited terms and you'll just reduce it cost every now and then. So thereby it's not possible for a negative cycle. So I hope you've understood the entire explanation. It's time to go to it up. So as usual,"
+    },
+    {
+      "chunk_id": "L167_C21",
+      "start": 1477.14,
+      "end": 1555.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=1477s",
+      "text": "for a negative cycle. So I hope you've understood the entire explanation. It's time to go to it up. So as usual, the C++ solution is on the right and the exact similar Java code is on the left. So you have to find the shortest distance between every pair of vertices in a given edge weight directed graph. The graph is represented by an adjacent matrix and the matrix denotes the weight of the edges. If it exists as minus one, remember they are stating minus one, not as infinity. If there is an edge, they're stating it as minus one. So you have to probably do a bit of a thing before doing it. So do it in place. You have to do it in place is what you have to do. And I'm assuming that the graph does not contain negative cycles, otherwise they would have stated it. So you have to do it in place. That means whatever the matrix is given, you have to update it with the shortest path instead of actually doing a cost matrix and returning it. So remember else minus one. So I'll get the N at first. Now in order to ease out understanding, what I'll do is I will just go across the entire matrix once just in order to ease out understanding, you can avoid this step as well. So you can say if, if, if matrix of IJ is equal to minus one, which actually"
+    },
+    {
+      "chunk_id": "L167_C22",
+      "start": 1555.3,
+      "end": 1625.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=1555s",
+      "text": "you can avoid this step as well. So you can say if, if, if matrix of IJ is equal to minus one, which actually means that it's not possible to reach it. So I can say one in analysis, give it a very big value. And while I return, I'll just change it to minus one. And one of the condition I'll always keep, if I is equal to equal to J, which is the diagonal, I know the reaching place is always zero. So that's what I'll initialize. And before returning, just make sure you do the same thing. Yes. Before returning, just make sure you do the opposite of it. Okay. So before returning, if it's one in nine still, which means it's not reachable. And if it's not reachable, do it a minus one before returning, you do this. Okay. Now let's perform our algorithm. It's very simple. We know K will be zero and K will go to less this. And after that, we know I will be zero. And I will also go to this. And we know the other thing will be J equal to zero and J will go less than this. And the other thing we know is matrix of IJ will be minimum of matrix of IJ comma matrix of IYK. So this and matrix of K2J. And I think this should be more or less it about the"
+    },
+    {
+      "chunk_id": "L167_C23",
+      "start": 1625.22,
+      "end": 1692.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=1625s",
+      "text": "IJ comma matrix of IYK. So this and matrix of K2J. And I think this should be more or less it about the algorithm. It's a very straightforward one. So we see on compilation, it is giving the correct output. So I'll submit it and yeah, it does pass. So one more thing to add before I wrap it up. If in an interview, someone does ask you, what if there is a negative cycle? So you'll say, Hey, I'll just probably write something like this over here. If it's a negative cycle, I'd like if the matrix contains I I lesser than zero before assigning this less than zero, then I can probably bring something or something like this. I can do it over here. So let's discuss the time and space complexity, the time complexity of the algorithm. Major time complexity is N cube. Definitely. Now, a lot of you will be thinking the space complexity is big off one because you're using the given matrix. No, whenever we talk about space complexity, it's generally the space that I'm using to solve the problem in order to solve this problem. I'm using matrix. So that is the space that I'm using. If I would have not been using this, then I can avoid it. But if I'm using that goals inside my space that I've been using, I'll say the N square of the space, we're using a cost matrix. The cost matrix will be a space,"
+    },
+    {
+      "chunk_id": "L167_C24",
+      "start": 1692.5,
+      "end": 1769.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=1692s",
+      "text": "that I've been using, I'll say the N square of the space, we're using a cost matrix. The cost matrix will be a space, which is N square. You can't see if someone is giving you something. It does contain a space. We're taking it. You need place to store it, right? So you are using some space, which is N square over here. So I hope it is clear. I might be thinking, but Stryver, what if you'd have implemented Dijkstra? So let's go back and analyze that as well. So if you remember Dijkstra does not, yes, does not work for negative cycles. It will fall under yes, a TLE loop. So that's where Dijkstra cannot be implemented. But if the graph does not have negative cycles or something, you can actually apply Dijkstra for all the nodes. Does Dijkstra in itself takes a lobby. So what you can do is apply Dijkstra on every individual node to find out the answer, every individual node, and it'll still be N cross E log V. So it'll still be less like V cross E log V. It won't go till N cube, which the Floyd-Oschild is taking. Apply individual Dijkstra on every node to get every pair distance. You can do that, but it doesn't work for negative. Now, if in an interview, someone does ask you about Floyd-Oschild, do not just tell the algorithm, tell about these extra things, like why does something like a"
+    },
+    {
+      "chunk_id": "L167_C25",
+      "start": 1769.62,
+      "end": 1812.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=YbY8cVwWAvw&t=1769s",
+      "text": "interview, someone does ask you about Floyd-Oschild, do not just tell the algorithm, tell about these extra things, like why does something like a Dijkstra will not work? Where, how can you detect a negative cycle? If you add up these extra points in an interview, it's always a cherry on the cake. So make sure you add these extra points. If the interviewer does ask you about the Floyd-Oschild algorithm. So guys, I hope I was able to explain you the Floyd-Oschild algorithm and you've understood everything just in case you did. Please, please, please make sure you like this video. And if you're new to our channel, what are you waiting for? I think it's time that you hit that subscribe button. And if you haven't checked out our DPC and the HDC, the links will be in the description. Please make sure you check them out. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

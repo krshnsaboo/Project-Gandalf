@@ -1,0 +1,127 @@
+{
+  "lecture_id": "L312",
+  "lecture_number": 312,
+  "lecture_title": "L16. Sliding Window Maximum | Stack and Queue Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=NwBvene4Imo",
+  "chunks": [
+    {
+      "chunk_id": "L312_C1",
+      "start": 0.0,
+      "end": 77.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=0s",
+      "text": "So let's continue with our stack and queue playlist to the first starting off. If you all come back to the channel, I hope you guys are doing extremely well. So the problem that we will be solving today is sliding window maximum. So what is the problem statement stating that you will be given an arms array, you will be given a value of K. Now your task is to start with the first window of the size K. So over here you start with the first window of size K and you get the maximum out of it. So what will be the maximum? That will be 3 of the first window of size K. Perfect. If I ask you what is the next window? Now this was the window. Which one is the next window? Can I say if I slide it by one place, this will be the next window, which is typically this one. And what is the maximum in it? Again 3. So you write a 3. So I can say that in this particular window, the maximum is 3. Again you go to the next window. So if I have to go to the next window, can I say that this is my next window? So I'll end up just erasing this. I'll have the new window as this one. What is the maximum? Can I say 5? I can. And if I ask you what is the next window?"
+    },
+    {
+      "chunk_id": "L312_C2",
+      "start": 77.98,
+      "end": 146.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=77s",
+      "text": "window as this one. What is the maximum? Can I say 5? I can. And if I ask you what is the next window? I can just slide it and this will be my next window. So I'm at my new window now. What is the maximum? 5. Again I slide it. This time this will be my new window. Can I say this? Yes, I can. So I can erase it. What is the maximum? Again 5. Again, make sure you move to the next window, which is this one. So if I move to the next window, what is the maximum? The maximum is 3. Again I can say move to the next window, which is this one. So I can just erase the current window and move to the next. And the maximum is 6. After that, I don't have any other window. And if I don't have any other window, stop. So if you try out all the windows of size 3, you will get a maximum of from each of these windows. You store them in a list or an array and that is what you will be returning. So what is the naive solution to this one? I know one thing for sure. We start from index 0 and we could straight away scan the next k elements. After that, we move to the next index and again scan the next, you know, 3 elements"
+    },
+    {
+      "chunk_id": "L312_C3",
+      "start": 146.48,
+      "end": 218.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=146s",
+      "text": "straight away scan the next k elements. After that, we move to the next index and again scan the next, you know, 3 elements or k elements and again move to the next and again scan 3, again move to the next and again scan 3, again move to the next and scan 3 and so on. I can go on till here because this is where I'll get the last 3 elements. If I have to write down the indexes, it's 0, 1, 2, 3, 4, 5, 6, 7, 8. Till 6th index is where I'll go for n equal to 9. So that's 9 minus 3, 9 minus k is where I'll go till. Okay. I know that for sure. So what I'll do is I'll keep a list where I'll store all the answers and I'll start by saying, okay, I can traverse from i equal to 0 till n minus k because that is where till I can generate all the windows. I can store a maximum and I can say that the maximum initially will be array of i. I know the elements will be from i equal to how many? If I say this is 0, this is 1, 2. So I take till k elements which is nothing but 0 plus 3 minus 1 which is nothing but i plus k minus 1. Can I say this? I can because if i is here, it'll be i plus k minus 1."
+    },
+    {
+      "chunk_id": "L312_C4",
+      "start": 218.72,
+      "end": 292.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=218s",
+      "text": "but i plus k minus 1. Can I say this? I can because if i is here, it'll be i plus k minus 1. So I'll go till i plus k minus 1. Perfect. And it'll be very simple. Max e equal to max of max e comma array of j. That'll give me the maximum of that particular window. Once I have it, you could do a list dot add or whatever language you're using. You could just push the max e to it and once you're done, you could end up returning the list and that's it. So what will be the time complexity? I can say that this is running for big O of n minus k for sure. I can say that this is running for big O of k. So the overall time complexity will be n minus k multiplied with k for sure. A big O of n minus k multiplied with big O of k. What about the space complexity? I'm running it for n minus k because, till n minus k because I have n minus k windows. So I can say the number of windows will be equal to the number of maximum size tool. That'll be the size of the list. So n minus k is the size of the list. Perfect. So this is where the interviewer will not be happy because you're running a nested loop kind of a, you know, algorithm. They'll ask you to optimize this."
+    },
+    {
+      "chunk_id": "L312_C5",
+      "start": 292.12,
+      "end": 366.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=292s",
+      "text": "where the interviewer will not be happy because you're running a nested loop kind of a, you know, algorithm. They'll ask you to optimize this. So we need to optimize our brute force solution. And the brute force what I was doing was, I was scanning through each and every window and that is the reason I ended up taking quadratic time complexity. And the interviewer is asking you to optimize somewhere near about big O of n time complexity. That means it's an indication that you should start looking at a big O of n time complexity, which means I'll have to solve it while doing a single traversal. While doing a single traversal. Can I do it? What was I doing previously? I was going through each and every window and then I was scanning through it to get the maximum. What if I say that, Hey, maybe I can just traverse, maybe I could just traverse and keep a track of k elements. How will I do that? It's simple. Yes, yes, yes, yes. But when you add minus three, you are having four elements with you. So you just trim it off. After that, when you have a five, you trim it off. After that, when you have a three, you trim it off. After that, when you have a seven, you trim it off. After that, when you have a one, you trim it off. So every moment you're keeping a track of k elements."
+    },
+    {
+      "chunk_id": "L312_C6",
+      "start": 366.6,
+      "end": 445.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=366s",
+      "text": "you trim it off. After that, when you have a one, you trim it off. So every moment you're keeping a track of k elements. So the first priority is, you know, tracking, they keep a track of k elements. They keep, they just keep the window elements. Don't keep anything outside, keep the window elements. That's the track. Keep the window elements. Perfect. So, which means whenever I'm at seven, I'll add it, I'll add it and at the same time I'll delete it. So I need a data structure which adds and, you know, throws out the outside. What else I need? Imagine I'm at this particular place, which is 5, 3, 7 and I need the maximum. In order to get the maximum, I'll have to scan through each and every element in that window and that is what was taking time. So I cannot scan through, I cannot scan through. This is where I'll use the concept of monotonic stack. I'll explain you, it's very simple. And I'll be like, I'll be storing elements in a decreasing order. Why decreasing order? As I go through in a dry run, you'll start understanding why decreasing order. How did I end up understanding that it is a monotonic stack? You'll have to do, you know, a bit of here and there. You'll have to do play around with pen and paper, then it will start coming to your brain. It will take time."
+    },
+    {
+      "chunk_id": "L312_C7",
+      "start": 445.4,
+      "end": 523.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=445s",
+      "text": "and there. You'll have to do play around with pen and paper, then it will start coming to your brain. It will take time. But if you have the knowledge of monotonic stack, you should implement whenever you need the greatest or you need the smallest, you know, in constant complexity. Whenever you need greatest or smallest in constant, you should think of monotonic stack. Got it? Okay. So I know one thing, I need to keep the window elements. That means I need to add and I need to delete. I need to add from the front, I need to delete. And in order for monotonic stack, I need just a stack. I need a data structure stack. I need a data structure which kind of, you know, adds and deletes. I need a two way data structure, like something which is, you know, open from both ends so that I can, I can add and I can delete. Okay. So do I use a stack and a data structure for k elements? No. I need a single data structure and that is nothing but the doubly dequeue. My bad, maybe I can try something like this. This is the dequeue data structure. So what this allows is, this allows you to, you know, push from the back. This allows you to pop from the back. And this is what acts as your stack."
+    },
+    {
+      "chunk_id": "L312_C8",
+      "start": 523.48,
+      "end": 601.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=523s",
+      "text": "to, you know, push from the back. This allows you to pop from the back. And this is what acts as your stack. You could always push back that is similar to, you know, stack dot push and you can pop back that is pretty much similar to pop in stack. Okay. And what you could do is you could also push front. You could also push front and you could also pop front. Quite simple. Now this is what will be required to take out elements because you will be taking out elements every time you move. So this is a data structure where the right end can be used as a stack and the left hand, left side could be used to remove elements. So what I have done is I have drawn the dequeue. Yes, but I kept it open so that you know that from the top we insert stack elements and from the bottom you could always remove elements. So this is a dequeue which is going to store index and values. Not values, values is just for your reference. So what I will be doing is I'll be starting with the first element, right? And that is one index zero and the dequeue doesn't have anything. So you could simply just push back in the stack. So it will be like zeroth index with a value of one. Value is just for reference."
+    },
+    {
+      "chunk_id": "L312_C9",
+      "start": 601.98,
+      "end": 669.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=601s",
+      "text": "just push back in the stack. So it will be like zeroth index with a value of one. Value is just for reference. I'll be moving to this one. So when you are at the index one, first thing you'll have to keep in mind is, is are you storing anything outside window? Remember the window is something here. So it's still not storing, like storing zeroth index. It is still not outside your window of size three. Say, okay, but you have a three, you have a three. And as I told you, we will be maintaining a monotonic stack, which is decreasing in nature. So I have a three. Now tell me one thing. When I have a three, is there a point, because I'm looking for maximum, is there a point of storing one? No, there's no point of storing one. Because if you have a three, there's literally no point of storing one. This is where you'll say that, hey, listen, can you just, you know, go out? Okay, he's gone. So I'll be storing index one and a value three. Perfect. After that, I'll be coming to minus one. So when I come to, you know, minus one, I'll be like, this is my window. This is my window. So look at the stack. Stack is having element one, right? That's the last element that we have. That is okay. That is inside the window, because the window ends at zero."
+    },
+    {
+      "chunk_id": "L312_C10",
+      "start": 669.02,
+      "end": 737.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=669s",
+      "text": "element one, right? That's the last element that we have. That is okay. That is inside the window, because the window ends at zero. That is inside the window. So the window, we are still carrying the, you know, correct window. What is the next thing? We have a minus one. Now you might say that, hey, we have a three. Why will we store minus one? I'll tell you why. Imagine this is minus five. And when the window is this much, tell me which is the maximum? Minus five is not maximum. Minus one is maximum. So you'll have to store minus one, because when three is gone, when three is gone, you need the next, you need the next greatest element. Got it? That's why I'm storing like this three minus one. So when three is gone, still have minus one. So what you'll do is, you'll take that minus one, which is at index two, and you'll put it in. So we are storing in a monotonic decreasing fashion, if you see, which is like this here. No, not like this, like this. Monotonic decreasing fashion. Perfect. What is the next? So before going next, you are at your first window size. So can you get me the maximum? Yes, because I'm storing in an increasing fashion, you could straight away get the element from the back, you know, from the front. In Deque, this is front. In Deque, this is front."
+    },
+    {
+      "chunk_id": "L312_C11",
+      "start": 737.98,
+      "end": 800.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=737s",
+      "text": "could straight away get the element from the back, you know, from the front. In Deque, this is front. In Deque, this is front. So you could straight away get from the front. So I'll get the element and that is three. So I can straight away write the element three. After that, I'll move here. So when I move here, again, I'm at three. I know the window is still one. Is it valid? Yeah, the last element is still valid. So I can keep it. So I have a minus three. Can I put it into the stack? Yes, I can, because even if I put it, it still maintains a decreasing order. And the index is three. If I want, because I want the maximum, because this is new window, I want the maximum for it. So again, you look at the front element and that's three. So you could just pick it up. Next, you go to four. So when you go to the fourth index, you know this is where you are. This is where you are, correct? Till second is what you can allow. So at max, one element will go up from the stack, which is the last element. So you could go and do a pop front. You could go and do a pop front. So this will go. You could easily take it out. That's why you need a double ended queue. Perfect. So I've taken it out."
+    },
+    {
+      "chunk_id": "L312_C12",
+      "start": 800.52,
+      "end": 862.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=800s",
+      "text": "So this will go. You could easily take it out. That's why you need a double ended queue. Perfect. So I've taken it out. So I'm maintaining the window now. What is the next thing? So you need to retest. Tell me if you have a five, if you have a five, you actually need minus three, you actually need minus one. That's where you end up first deleting this, then deleting this, and eventually entering the fifth element, which is at index four. So now you are again at a window. And if I ask you what is the maximum, you look at the front element, which is five. So you'd see that five is my thing. And then you go across here. So when you go across here, first thing is maintain the key elements. So you'll be like, okay, which is the last three? And this is still four. It is inside my window. What's the next? You got a three. So you could straight away say that, okay, I can just keep the lower element and I can write the indexes five. Perfect. And if I ask you for this window, which one is the maximum? You'll again look at and you'll see that five is the maximum. So you'll take five. After that, you'll move across. Now this is where you get seven. So when you get seven, you're like, hey, listen, I don't need three. I don't need five."
+    },
+    {
+      "chunk_id": "L312_C13",
+      "start": 862.4,
+      "end": 935.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=862s",
+      "text": "Now this is where you get seven. So when you get seven, you're like, hey, listen, I don't need three. I don't need five. But before that, please make sure this is where you are. This is where you are. Okay. And this is the last index of the window. And this is still valid. You don't have to remove it. Now you're looking for seven. Seven is very big. So what you'll do is you'll take this out. You'll take this out. Everyone has gone. I'll take the window six and the value seven. And for this window, the answer will be seven. After that, we come across to one. So you could just keep on doing this process. Very simple. Very, very simple. So what I'll do now is I'll write down the pseudocode. So I'll have to write down the function and the function will be having an array and a value k. What do I need to return? I need to return a list, right? So I can define a list and what will be that, like what will be the size of the list? Can I say this number of, you know, number of maximums of windows will be n minus k? You already did it. These many windows we'll have. So you can define a list of that size. Perfect. Now what you can do is you can also define a dequeue. I'll start traversing from i equal to zero till n minus one."
+    },
+    {
+      "chunk_id": "L312_C14",
+      "start": 935.12,
+      "end": 1010.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=935s",
+      "text": "Perfect. Now what you can do is you can also define a dequeue. I'll start traversing from i equal to zero till n minus one. What's the first thing you'll do? You'll check, hey, if there's someone who is not in my window. So let's go back. Imagine you're standing at five and you know the window is valid till three, which is typically five minus k, which is three. That gives you two. So if anyone is equal to two or anything under two, anything equal to or under two, so you'll be taking it out. So you'll be like, hey, listen, I know at max there can be one element because when you're adding one, you'll always remove one from the back. You'll be like, hey, listen, if the dequeue is not empty, please always check it. Please always check it. If the dequeue is not empty and and the dequeue.back is lesser than equal to, very important, the current index minus k. That's the case. Hey, hey, you can't stay. By the way, dequeue.front, not back, dequeue.front, not back. You could say that dequeue.off front. Perfect. So you'll be just taking it out. So I've made sure that it is maintaining the correct window elements. What is the next job? To make sure that we maintain greater elements. So I'll be like, okay, I need to maintain greater elements."
+    },
+    {
+      "chunk_id": "L312_C15",
+      "start": 1010.74,
+      "end": 1088.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=1010s",
+      "text": "is the next job? To make sure that we maintain greater elements. So I'll be like, okay, I need to maintain greater elements. So maybe I could do a while stack.empty, not stack, dequeue.empty. And and we're playing with stack, like we're playing with dequeue, which is treated as stack. So I'll be like, hey, array of dequeue.back. If that value, you know, is lesser than, or you can say lesser than equal to, because there's no point in storing the same elements as well. Array of i, do I need to store it? No. This is when you say dequeue.popback. So you throw out, you end up throwing out everything. And once you are through, like thrown out everything, you basically end up saying dequeue.push, because this is where you push i, very important you push i, not the element. And after this, where does your first window start? Remember, the first window starts at k minus one. So if your window has started, which means if i is greater than equal to k minus one, then your list will have an answer to add. And what will be that answer? That answer will be array of dequeue.front, because the stack is maintaining a monotonic order."
+    },
+    {
+      "chunk_id": "L312_C16",
+      "start": 1088.9,
+      "end": 1165.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=1088s",
+      "text": "what will be that answer? That answer will be array of dequeue.front, because the stack is maintaining a monotonic order. The last element, so the last element is front and that will be your answer. Perfect. And I could say that the for loop is over and eventually I could end up returning the list and the function is over. So now it's time to analyze the time complexity. When I say this, that this is definitely taking a bigo of n. And then what I'm doing is I'm popping out, I'm taking it out, I'm pushing elements. So at max, at max, I'll end up pushing n elements. So at max, even if I'm popping it out, it'll be n times. So even if the while loop, if I combine everything, because what they're doing is, you know, taking elements out. So if I've pushed n elements, if I've pushed n elements, the maximum they can take out is n elements. Thereby, this will be bigo of n overall as nothing else. So what I can say is the time complexity is bigo of 2n because n for traversal and n popbacks, n pulling out elements. What about the space complexity? At any moment in the dequeue, I'm not storing more than k elements. I'm just storing the window size elements. Plus, I need the answer."
+    },
+    {
+      "chunk_id": "L312_C17",
+      "start": 1165.64,
+      "end": 1191.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=NwBvene4Imo&t=1165s",
+      "text": "in the dequeue, I'm not storing more than k elements. I'm just storing the window size elements. Plus, I need the answer. So that's a n minus k for the list. Because I'm storing the answer as well. This will be the overall time complexity and the space complexity for this particular solution. I hope you have understood. So if you're still now watching and if you've understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. For this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye. Take care. Bye."
+    }
+  ]
+}

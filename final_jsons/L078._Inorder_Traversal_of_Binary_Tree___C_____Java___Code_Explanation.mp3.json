@@ -1,0 +1,50 @@
+{
+  "lecture_id": "L078",
+  "lecture_number": 78,
+  "lecture_title": "L6. Inorder Traversal of Binary Tree | C++ | Java | Code Explanation",
+  "youtube_url": "https://www.youtube.com/watch?v=Z_NEgBgbRVI",
+  "chunks": [
+    {
+      "chunk_id": "L078_C1",
+      "start": 0.0,
+      "end": 77.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z_NEgBgbRVI&t=0s",
+      "text": "Before starting this video, I would love to thank Relible for sponsoring this entire tree series. The placement season is here. I know a lot of you are planning to sit for companies which come on campus. In case you are disappointed that the top startups like Cred, UpGrad, Razorpay are not hiring directly from your campus, there is an easier way to work here. Just register for the Relible test conducted by Relible by Unacademy and you will get a chance to apply for front-end, back-end and business development roles at India's top startups and unicorn companies. Relible has 1000 plus openings by 50 plus companies and the best thing is it's absolutely free. So please make sure you check out all the links in the description and give the Relible test as soon as possible. Hey everyone, welcome to another lecture of the Free Cut Tree series. Now in one of my previous videos, I have explained to you about the traversal techniques and one of the traversal techniques was the in-order traversal technique. So in this video, we are going to see the implementation of in-order traversal. If you remember, in-order traversal was left, root, right. Now in binary trees, we generally implicate recursion in order to travel because you have to go to every sub-tree and then do the task and then again come back and then again go to the sub-tree. It's a kind of a recursion that we do. Go, come, go."
+    },
+    {
+      "chunk_id": "L078_C2",
+      "start": 77.18,
+      "end": 151.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z_NEgBgbRVI&t=77s",
+      "text": "and then again come back and then again go to the sub-tree. It's a kind of a recursion that we do. Go, come, go. So that's a recursion. That is why this is a simple. Don't complicate binary trees. Keep it as simple as you can. So initially, we always will start from the root of the tree. So that's where we initially call the recursion from. That's the root of the tree. And what we do is, we go as a cross, like left, left, left and then root we print and then go to the right. So how will that be implicated? So this is the base case. Basically whenever we go and it's over, it's over. That means we are at the leaf node and we don't have anything. At that case, we will return. But in normal, we will say in order node.left. So let's do this. Node.left will go here and stand over here. Again, the call will come to this in order. This is not executed. Again, it says in order node.left. So this will go over here and come over here. Right now, again, node.left goes over here to a null position. So whenever it goes to null position, it returns. So as soon as it returns, it comes back. So this line was there, right? Went to left, comes back. After that, print is executed. So 4 will be printed. 4 is printed. So this line is done."
+    },
+    {
+      "chunk_id": "L078_C3",
+      "start": 151.18,
+      "end": 227.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z_NEgBgbRVI&t=151s",
+      "text": "right? Went to left, comes back. After that, print is executed. So 4 will be printed. 4 is printed. So this line is done. Next, in order of node.right. So it will come to the right and again it will find a null. So if it finds a null, it will return. So when it returns, it will go back. Goes back. Now this, this was a call. Went to left, printed, went to right. So it's completely over. Once it is over, what it will do? The recursion is over. If the recursion is over, it will go back. So this guy which called for left, it did its task and now it's coming back. Since it is coming back, the next line will be print. So this 2 will be printed. Once this 2 is printed, again node.right. So this will go, node.right. Now you will come to this node. Again the same steps. Node.left. So this will be the node.left. Again node.left. So this will be the null. If it is null, goes back. So left is gone, goes back. So this guy will be print. So 6 will be printed. Right after that, since 6 is printed, it will go to the right. Right. Finds null. Comes back. When it comes back, 6 is over. So 6 will now go back. 5 will say, I called for left. This is done. Now currently I have to print myself because left root. I have to print myself."
+    },
+    {
+      "chunk_id": "L078_C4",
+      "start": 227.72,
+      "end": 305.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z_NEgBgbRVI&t=227s",
+      "text": "5 will say, I called for left. This is done. Now currently I have to print myself because left root. I have to print myself. So I printed. Once it is printed, it will go to the right. Again it will find null. It will go back. When it goes back, there is a 5. Correct. So what it will do is, it will simply go back because left is over, printing is over, right is over. Right. So go back. So for 2, left is over, printing is over, right is over. So can I say 2 is also over. So I will now go back. So for 1, left is over, came back. So the next step is print. So 1 will be printed. Next right. So when you come to right, again this is a node. If it is a node, left will be called. So call the left. 7. Now you have 7. So again the left will be called, which is null. So it will go back from null. When it goes back from the left, 7 will be printed. So at the next step, 7 will go right and it will find null, come back. So I can say for 7, left, print, right is over. So it will go back. Now for 3, left is over. So 3 will be printed. Again it will go right, come to 8. For this node, left. For this node, left. Again, it's a null. Correct."
+    },
+    {
+      "chunk_id": "L078_C5",
+      "start": 305.18,
+      "end": 379.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z_NEgBgbRVI&t=305s",
+      "text": "will be printed. Again it will go right, come to 8. For this node, left. For this node, left. Again, it's a null. Correct. So it will go back. So it will go back. When it goes back for 9, left is over. So 9 will be printed. It will go right. Again, it will find null. So it will go back. So when it goes back, for 9, left is over, printing is over, right is over. So it will go back now. For 8, left is over. So this guy 8 will be printed. Now for 8, left is over, root printing is over. So it will go over here. Now for 10, it will again call left, which is null, go back. So for 10, left is over, so it will print 10, then we'll go right, again it will find null. So it will go back. Now for 10, left is over, printing is over, right is over, goes back. For 8, left is over, printing is over, right is over, goes back. for 3, left is over, right, for 3, left is over, printing is over, right is over, goes Back for 1, left is over, printing is over, right is over. So ultimately, this is your in-order traversal that you did do by printing. So don't complicate things. Whatever is over here, just write them in recursive code."
+    },
+    {
+      "chunk_id": "L078_C6",
+      "start": 379.92,
+      "end": 418.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=Z_NEgBgbRVI&t=379s",
+      "text": "your in-order traversal that you did do by printing. So don't complicate things. Whatever is over here, just write them in recursive code. So this is how the recursion will make sure that 4, 2, 6, 5, 1, 7, 3, 9, 8, 10 is printed as the in-order traversal technique. So this was the pseudo code. You can find the code links in the description for both C++ as well as Java. So guys, I hope you have understood the entire code as well as this wonderful recursive flow. So just in case you did, please make sure you give a like to this video and you can find the C++ as well as the Java code link in the description. With this, let's wrap up this video and meet in the next video. Bye-bye!"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "lecture_id": "L211",
+  "lecture_number": 211,
+  "lecture_title": "DP 30. Minimum Insertions/Deletions to Convert String A to String B",
+  "youtube_url": "https://www.youtube.com/watch?v=yMnH0jrir0Q",
+  "chunks": [
+    {
+      "chunk_id": "L211_C1",
+      "start": 0.0,
+      "end": 73.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=yMnH0jrir0Q&t=0s",
+      "text": "Hey everyone, welcome back to TechieForward. Today we will be solving the problem minimum number of operations to convert a string 1 to string 2. So what does the problem state? Now in operations, you are basically allowed couple of operations. One is you can delete any character in string 1, delete anything in string 1 and insert anywhere, yes insert in string 1 and by doing that you have to convert a given string 1 to another string 2 and the number of operations can be many. You have to tell me what is the minimum possible number of operations that you might end up taking. Is an answer possible always? Can you convert a string 1 to string 2 always? The answer to that is yes. How? I can say let's delete everything, that's 4 operations, it's an empty string then insert a n c so that's 3 another operations. So you got the string s2. Delete"
+    },
+    {
+      "chunk_id": "L211_C2",
+      "start": 74.04,
+      "end": 150.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=yMnH0jrir0Q&t=74s",
+      "text": "a n c so that's 3 another operations. So you got the string s2. Delete everything and insert every character of string 2. So 7 operations is what you will take. So I can be like ok the max operations that I will be taking is I will have to delete so n deletions in the first string and m insertions which is exactly insert this stuff. So these are the maximum number of operations. So I have proved that this is possible. Now I need to figure out in what minimum possible way can I do this. So again whenever something like removal, insertion comes in my brain starts thinking what can I not touch, what can I not touch because ideally if I touch the minimal things then the operations will be minimal. So like the first thing the intuition comes up is what can I not touch, what can I not touch because if I touch the minimal items the number of operations will automatically be minimal. But before that let's see how can we actually"
+    },
+    {
+      "chunk_id": "L211_C3",
+      "start": 150.2,
+      "end": 228.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=yMnH0jrir0Q&t=150s",
+      "text": "the number of operations will automatically be minimal. But before that let's see how can we actually convert an a b c d to an a n c in the minimum number of operations. I can be like ok let's delete a not a let's delete b and d. So if I delete b and d we will have something like a c and now insert a n, insert n. So I can be like I can have two deletions, I can have one insertion. So if I have two deletions, one insertion I think I will be taking total of three operations and I can convert this given string to this particular given string. So how do you minimize the number of operations? So what is the intuition that is striking your head? It's like what can I not touch because if I touch the minimal portions like over here if you see we touched b and d and then we inserted n. We did not touch something like a c. Why did we do that? Let's understand. So what are the operations? It's like you can delete anyone right? So anyone you can delete and there is something like you can"
+    },
+    {
+      "chunk_id": "L211_C4",
+      "start": 228.4,
+      "end": 300.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=yMnH0jrir0Q&t=228s",
+      "text": "operations? It's like you can delete anyone right? So anyone you can delete and there is something like you can insert anywhere. You can insert again anywhere. So delete anyone and insert anywhere actually gives you an idea that ok if I have a b c d, a b c d and a n c in the minimum number of operations, what is the common portion among them? And my brain says the common portion among them is somewhere around I think a c. If you carefully see a c is the longest common portion. So if I can keep this intact, I'll keep this intact and I'll try to do everything in between them. I'll keep a and c intact and I'll try to do everything in between them. So in order to make a b c d into a c, what do I need to do? I will have to go across making two deletions which is deleting b and d and then again if I want to make this, can I say the number of guys left? Left is one. So you have to make one insertion so that"
+    },
+    {
+      "chunk_id": "L211_C5",
+      "start": 302.38,
+      "end": 381.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=yMnH0jrir0Q&t=302s",
+      "text": "I say the number of guys left? Left is one. So you have to make one insertion so that you get that guy. Ok make sense? So what is this? This is nothing but the longest matching among them and I know this is something which is known as longest common subsequence. Again I've already taught this in the previous lectures. If you have not seen this, pause this video out, go back to my previous lectures, watch out longest common subsequence and you will get an idea about how to find this. So can I say the number of deletions is very simple. I can write the number of deletions to be whatever is the length of the string n minus the length of the lcs. Make sense? n minus the length of the lcs and the number of insertions will be, I know this is ac, I need to convert this into something as str2. So can I say m minus the length of the lcs is what I need to insert. Those will be the insert operations and can I say if I require the total number of operations, that's gonna be n plus m minus 2 into length of lcs. Absolutely yes and this is what my answer is. You already know how to find lcs, just need to copy paste the code and if you copy paste the code it becomes"
+    },
+    {
+      "chunk_id": "L211_C6",
+      "start": 381.9,
+      "end": 440.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=yMnH0jrir0Q&t=381s",
+      "text": "You already know how to find lcs, just need to copy paste the code and if you copy paste the code it becomes very very very simple. So without wasting any time let's code this up. So you can see the code we have the lcs code so we'll just copy paste this and go across to our problem. We're given couple of strings that we need to convert. Let's copy paste the lcs string and I know the answer is very simple. It's gonna be str.size plus the other string pdr.size minus 2 into the length of the lcs of str and pdr. If I just write this, I've just taken the code from the lcs that we wrote. It does run. Now guys just make sure you take the space optimized code. This is not the space optimized one. But yeah the main concept is you understand how to use lcs in order to solve this problem. So guys just in case you did understand, please please please make sure you like this video and if you're new to this channel please do consider subscribing and yeah with this I'll be wrapping up this video. I'll see you in the next one. Till then bye bye, take care."
+    }
+  ]
+}

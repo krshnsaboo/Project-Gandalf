@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L099",
+  "lecture_number": 99,
+  "lecture_title": "L27. Lowest Common Ancestor in Binary Tree | LCA | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=_-QHfMDde90",
+  "chunks": [
+    {
+      "chunk_id": "L099_C1",
+      "start": 0.0,
+      "end": 77.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-QHfMDde90&t=0s",
+      "text": "So before starting off this video, I would love to thank Relevil for sponsoring this entire free series. We need experienced candidates. How many times has this sentence shattered your dream to work in a good company or a job description which requires experience? You won't ever have to listen to the sentence ever again. If you use a platform like Relevil by unacademy, he conducts a test which is completely based on skills and you need to perform in your chosen field. Relevil has around 1000 plus job openings by 50 plus top Indian companies and unicorn startups. What you need to do is you just need to register for this test, apply on the test and after that your interview will be scheduled and you will be hired. And the best thing about this is the Relevil tests are free and you can check out all the links in the description below. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, finding the lowest common ancestor in a binary tree. So assume this is the binary tree that is given to you, right? And you have to find the lowest common ancestor. So let's understand what is lowest common ancestor. So if I consider the nodes four and seven, okay, so where is the node four? Here is the node four. Here is the node seven. Okay."
+    },
+    {
+      "chunk_id": "L099_C2",
+      "start": 77.44,
+      "end": 146.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-QHfMDde90&t=77s",
+      "text": "consider the nodes four and seven, okay, so where is the node four? Here is the node four. Here is the node seven. Okay. And if I talk about the ancestors, seventh ancestor is five and then two and then one. So I can say seventh ancestor is five to one. If we talk about fourth ancestor, it's two and one. So the guy who is at the like deepest level is basically known as the lowest common ancestor. So we draw the path between them. So this guy will become the lowest common ancestor because out of all the ancestors, this is the one which is at the deepest level. So if I talk about five and nine, which one will be the lowest common ancestor? Five is here, nine is here. So if I draw the path between them, so can I say this is what is going to be the path? And if this is, this guy is going to be the lowest common ancestor. That is the root of the tree. So the root of the tree can also be the lowest common ancestor. Let's talk about the next one. That's the LC of two and six. So if I'm talking about two and six, which will be your lowest common ancestor? Over here we have a two, over here we have a six. So basically the path will be this, right? That's going to be the path."
+    },
+    {
+      "chunk_id": "L099_C3",
+      "start": 146.94,
+      "end": 225.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-QHfMDde90&t=146s",
+      "text": "we have a two, over here we have a six. So basically the path will be this, right? That's going to be the path. So I can say six, six ancestors are five, two and one. So one of the ancestor is the node itself. Hence the ancestor, the lowest common ancestor become two because the node, the node two itself is an ancestor of six. So that, that is what the definition of lowest common ancestor is. The ancestor that exists at the deepest level, right? Because if you look at this yellow line, there are two ancestors, two and one, but the deepest one is two. So what is the brute force in order to find the LC of the node four and seven? So let's take the node four. And if I try to write the path, yes, let's try to write the path from the root to this node. So the path will be one, two, and four. That's the path, right? Let's take the node seven. And if I write the path, it's going to be one, two, five, seven. Correct? So I've written the path. So now what we can do is we can now start checking out from the front. So that's the first element. So they're matching. Perfect. That's the second element. Again, two and two are matching."
+    },
+    {
+      "chunk_id": "L099_C4",
+      "start": 225.08,
+      "end": 304.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-QHfMDde90&t=225s",
+      "text": "from the front. So that's the first element. So they're matching. Perfect. That's the second element. Again, two and two are matching. This is the third element, which is indeed not match. They do not match. So which was the last element that matched? So I can say the last element that matched was two and two. So whichever is the last element that matched will ultimately become the LCA. So in order to do this, you have to actually traverse once and you have to find the root till the node path. And probably you can store this in some data structure. So a time complexity of V go of n to find the path and time complexity of V go of, like the space complexity will be V go of n. And for this node to seven, I can say that the path will be taking the same time complexity around V go of n and the space complexity of V go of n. So there is an extra use. Yes, there is an extra use of a space complexity of V go of n in order to store both the paths. In order to store both the paths, there is an extra use of time complexity, which is definitely not, definitely doesn't make sense. So we have to improve the time complexity, we have to improve the space complexity."
+    },
+    {
+      "chunk_id": "L099_C5",
+      "start": 304.32,
+      "end": 376.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-QHfMDde90&t=304s",
+      "text": "which is definitely not, definitely doesn't make sense. So we have to improve the time complexity, we have to improve the space complexity. Assuming I'm looking for the LCA of the node four and node seven. So you're going to follow a traversal technique. Okay. And that traversal will be the, and that traversal technique will be the recursive traversal technique where we move left and where we move right. Basically the DFS traversal is what we are going to follow. So what we initially will do is, we'll start the DFS traversal. We will be over here, you know, it has to go to the left and it has to go to the right. So first it'll go to the left, we go to the left. Then again, we know that it will go to the left. So we go to the left. Now remember, the moment, I repeat, the moment you reach a node, which is a part of your node four, like which is one of the nodes that you're looking for. What you will do is, you will, instead of going further left and right, you will return four from that part. I repeat, you will return four from that part. So the left, the left gave you four. Now it's time to go to the right. So what you'll do is, you'll go to the right. So that's over here. From here, the left gave you four and it's time to go to the right."
+    },
+    {
+      "chunk_id": "L099_C6",
+      "start": 376.56,
+      "end": 446.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-QHfMDde90&t=376s",
+      "text": "is, you'll go to the right. So that's over here. From here, the left gave you four and it's time to go to the right. So when you go to the right, five, five is not what you're looking for. So you will go to the left. Okay. So you went left. You are at six. So this guy six goes to the left, finds a null. So a null is returned. This guy six goes to the right, finds a null. So a null is returned. So if, if both of them are returning nulls, what you'll do is, you will directly return a null. Don't need to think of anything. You'll directly return a null. Okay. Now from the left, you got a null. Time to come to the right. The moment you come to the right, you find something as seven. And as I said, the moment you find any one of the nodes, there's no further need of going to the left and right. You will directly return seven. Okay. Let's return directly seven. Now the five, the five from the left, from the left got a null. From the right, got a seven. Remember what this signifies is, it's not a null that you'll take. Instead, you'll take the seven. Because seven is the node that you are looking for. So this guy will take seven. So if it's a null, you're going to take the other one."
+    },
+    {
+      "chunk_id": "L099_C7",
+      "start": 446.8,
+      "end": 517.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-QHfMDde90&t=446s",
+      "text": "node that you are looking for. So this guy will take seven. So if it's a null, you're going to take the other one. If this guy is a null, you're going to take the other one. Okay. So now we are coming across to two. For the guy two, from the left, you're getting four. From the right, you're getting seven. What does that signify? What does that signify? It signifies, why did you return four? Because you actually figured out four. Why did you return seven? Because you actually figured out seven. Had you not figured out these guys, you are actually returning null. If there was a case when you're not figuring out these guys, you were returning null. But just because you figured out, on the left, there was four, on the right, there was seven. What does that signify? That actually signifies that you have indeed got both the nodes under you. And if you have got both the nodes under you, can I say this guy is the LCA over here? Hence, I'll return two. So if both the guys are found, that means both are not null. Both are not null. That means both the guys are under you. So you can easily return two. Perfect. Now the left guy returns two. So I'll go to the right guy. That's three. We'll go to the left guy. And this guy will not find anything. So it's going to return a null."
+    },
+    {
+      "chunk_id": "L099_C8",
+      "start": 517.44,
+      "end": 583.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-QHfMDde90&t=517s",
+      "text": "right guy. That's three. We'll go to the left guy. And this guy will not find anything. So it's going to return a null. Again, we'll go to the right guy. This nine is not equivalent to this. We'll go to the left, we'll go to the right, and we'll again return a null. So null, null. And if it's a null, you're going to return a null. So if you carefully observe this one, this guy one, from the left got a two, from the right got a null. So which one will you take? Obviously, as I said, if one guy is null, you take the other guy. So ultimately, you get returned two. And that's what your LCA is indeed. Did not understand, not an issue. Let's take one more example. Okay, so let's take this tree. And let's take a couple of nodes, that being seven comma eight. Okay, so I've taken a couple of nodes, seven comma eight. Ideally, eight is over here, seven is over here. So the LCA should be three. Now that is clear to you, right? Let's see how does the traversal works, the DFS1. We are initially at the root, right? So we'll go to the left. It doesn't have, the left is null, the right is null. So both are going to return you null. And if it returns null, you know, it's going to return a null. Perfect."
+    },
+    {
+      "chunk_id": "L099_C9",
+      "start": 583.68,
+      "end": 648.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-QHfMDde90&t=583s",
+      "text": "is null. So both are going to return you null. And if it returns null, you know, it's going to return a null. Perfect. So for one, when you went left, you got a null return. That's time to go to the right. So you go to the right, you're on three, you go to the left, you're on four. Again, you go to the left, you're on eight. So can I say eight is one of the nodes that I was actually looking for? Indeed, I can. Indeed, I can. And if I can, can I say that I'm going to return this eight? So from left, I actually got eight. Now four, when it goes right, it's not going to find anything. And it's going to find, like if it goes right, it's going to find null. So it's going to return null. So if you remember, if from four, you're getting left as eight and right as null, which one will you take? The guy who is not null. So you're going to take the not null guy. So I took the not null guy. So three from the left got eight. Now three will go right. That's to five. It'll go to the left. That's to six. Six on the left is null. Six on the right is null. If it is null, I'm going to return a null. Super simple. Now five on the left got a null. So it'll go to the right."
+    },
+    {
+      "chunk_id": "L099_C10",
+      "start": 648.8,
+      "end": 718.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-QHfMDde90&t=648s",
+      "text": "is null, I'm going to return a null. Super simple. Now five on the left got a null. So it'll go to the right. So the moment it goes right, it sees that this is the node he was looking for. Yes, this is the node he was looking for. And if that's the node, he'll return that node. Perfect. Five on the left gets null. On the right gets seven. So I said you're right. If one of them is null, you're going to return the other one. That's seven. So three from the left gets eight. From the right gets a seven. It gets two nodes which are not null. It gets two nodes which are not null, which actually signifies that both the nodes that you're looking for lies inside this, like under this node three. Hence, you're going to return the three itself. So one from the left got a null. One from the right got a three. So can I say that if it's a null, if it's a three, I'm going to return the non-null value. That's three. Hence, the LCA becomes three. Super simple. What did I do? A single traversal. Yes, I did a single traversal. So I eliminated the extra space that I was using to store the path from the root to any given node. Right? So guys, as usual, the C++ code is on the left and the Java code is on the right. Right?"
+    },
+    {
+      "chunk_id": "L099_C11",
+      "start": 718.72,
+      "end": 781.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-QHfMDde90&t=718s",
+      "text": "any given node. Right? So guys, as usual, the C++ code is on the left and the Java code is on the right. Right? Both are identical, so you can definitely follow. So we're given the root of the tree. We're given the node P and the node Q. Correct? So initially, you know, when you're doing a DFS traversal that is left and right, we're going to check this. If we end up reaching null, by any chance we end up reaching null, we're going to return that null. So that is what is written. Or else, if we reach any of the given nodes, basically we've been asked to find LCA of the node P and Q. So if we reach any of the given nodes P or Q, we don't go deep. We return that. We return that. Right? So that's what is written. After that, we move to left and we move to right. Super simple. While coming back, while coming back, if you remember, while coming back, it had a left, it had a right. Correct? So if the left appears to be null, the left appears to be null, I'll take the right guy. I'll take the right guy, no matter what it is. If it is null, it is okay. If it is having a value, we'll return that. Or else, if the right guy is null, then I'm going to take left."
+    },
+    {
+      "chunk_id": "L099_C12",
+      "start": 781.76,
+      "end": 848.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=_-QHfMDde90&t=781s",
+      "text": "okay. If it is having a value, we'll return that. Or else, if the right guy is null, then I'm going to take left. But what if both these conditions turns out to be false? That means the root, under this root, both these P and Q lie. Hence, you can return the node. Hence, you can return the root itself or the node itself. This is how the lowest common ancestor code will look like with a time complexity of V go of N and a space complexity. This is the auxiliary stack space used for the recursive travesty. That is V go of N and this is the worst case which might happen in terms of the skew trees. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to this channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

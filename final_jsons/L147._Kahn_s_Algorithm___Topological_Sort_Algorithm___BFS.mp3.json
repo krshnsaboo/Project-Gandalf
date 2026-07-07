@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L147",
+  "lecture_number": 147,
+  "lecture_title": "G-22. Kahn's Algorithm | Topological Sort Algorithm | BFS",
+  "youtube_url": "https://www.youtube.com/watch?v=73sneFXuTEg",
+  "chunks": [
+    {
+      "chunk_id": "L147_C1",
+      "start": 0.0,
+      "end": 78.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=73sneFXuTEg&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we're going to learn about topological sorting and we are going to use the BFS algorithm. We have done the DFS algorithm in the previous video and this algorithm is famously known as the Kahn's algorithm. Kahn, Kahn, whatever you can call it. So what is a topological sorting? So it's basically a linear ordering of vertices such that if there is an edge between U and V, U always appears before V in that ordering. So let me give you an example. So if I write five, four, then I can write something like zero, two, three, one. Okay. Now this is a valid linear ordering of the graph. What I can do is I can write down all the edges. So let's write down all the edges. So the first edge is five zero, then four zero, then five, two, then four, one, then two, three, and then three, one. So these are all the six edges of that given graph. Okay. So we have six edges. Let's check out five zero. So if you see five zero, five appears before zero. So this is perfect."
+    },
+    {
+      "chunk_id": "L147_C2",
+      "start": 78.8,
+      "end": 157.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=73sneFXuTEg&t=78s",
+      "text": "edges. Let's check out five zero. So if you see five zero, five appears before zero. So this is perfect. Four zero, four appears before zero. And that is what the lining stated. Five, two, five appears before two. Four, one, four appears before one, two, three, two appears before three, three, one, three appears before one. Even I can have something like four, five, two, three, one, zero. This is also a valid linear ordering. Let's check it out. Five zero, five appears before zero, four zero, four appears before zero, five, two, five appears before two, four, one, four appears before one, two, three, two appears before three, three, one, three appears before one. So there can be multiple such linear ordering of vertices. As long as all the edges satisfy this particular condition, I can say any of that linear ordering to be a topological sort. Now our task is to print any such topological sort. So remember one thing, topological sort or toposort is only valid in DAGs. What is DAG? It is nothing but directed acyclic, which means does not have a cycle. Directed"
+    },
+    {
+      "chunk_id": "L147_C3",
+      "start": 157.04,
+      "end": 235.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=73sneFXuTEg&t=157s",
+      "text": "DAGs. What is DAG? It is nothing but directed acyclic, which means does not have a cycle. Directed acyclic graph. Why a directed? Assume I'm saying you to take an undirected vertice, say like one to two. So this is an undirected edge between a node one and between a node two. So if you carefully see, this is from one to two and from two to one. So in the linear ordering, you can't have such a linear ordering says that one appears before two at the same time two appears before one because the edges by directional, if we call it a undirected graph, thereby it has to be a directed graph. What about acyclic? Let's understand. So imagine I draw one, then I go to two, then I go to three and then I go to one back again. So there's an edge between one to two. There is an edge between two to three. There is an edge between three to one. So what I'm saying is in the linear ordering, one should be before two, two should be before three, three should be before one. So a cyclic dependency is there. So thereby you cannot have one at both the places. You cannot have one before three or you cannot have one after three. You cannot satisfy it. Thereby we have to have a graph which does not contain a cycle. So directed acyclic graph is where a toposort"
+    },
+    {
+      "chunk_id": "L147_C4",
+      "start": 235.08,
+      "end": 301.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=73sneFXuTEg&t=235s",
+      "text": "cannot satisfy it. Thereby we have to have a graph which does not contain a cycle. So directed acyclic graph is where a toposort is valid. Now previously we have solved topological sorting using the DFS. Since we are using BFS over here, we know what we need. We need a Q data structure. This is nothing but the first in first out data structure. This is the particular adjacency list. And this is a new thing that we will introduce because it is not exactly the BFS algorithm, a slightly modified version of it. So we're going to use an indegree. What is the definition of an indegree? Number of incoming edges to a node. Yes, very important. Number of incoming edges to a node. I have already talked to you about this in the first video. So if I ask you for zero, what is the number of incoming edges? Can I say it is two? So I will say the number of incoming edges for zero is two. For one, how much is it? It is again two because there are two incoming edges to one as well. So two. Now if I ask you what is for three, there's just one incoming edge. This is outgoing. So indegree is just one. So this is, uh, sorry for two it is actually one because there is one for three also there is one. And now for"
+    },
+    {
+      "chunk_id": "L147_C5",
+      "start": 301.92,
+      "end": 376.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=73sneFXuTEg&t=301s",
+      "text": "this is, uh, sorry for two it is actually one because there is one for three also there is one. And now for four, are there any incoming edges? Do you see any incoming edges? No. So you'll be like zero. And for five, are there any incoming edges? No. So you'll be like zero. Now what is, what was the definition of toposort? If there is an edge between U and V, U appears before V in the linear ordering. That was the definition of toposort, right? So can I say since five and four do not have any of the incoming edges, so you can place five or four at the starting. You can place either five or four at the starting of your linear ordering because there has to be no one before five because there is the indegree is zero. There is no one before five or four. They can place them at the starting. So what do you do is you say, okay, initially there will always be a node. There will a minimum of one node who's indegree is zero. So the step one is very clear. Insert all nodes with indegree zero with indegree zero. So can I say I'll insert four and five, you can do five and four as well. So I've inserted four and five. Okay. Now the ordering can have four and five."
+    },
+    {
+      "chunk_id": "L147_C6",
+      "start": 377.0,
+      "end": 446.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=73sneFXuTEg&t=377s",
+      "text": "you can do five and four as well. So I've inserted four and five. Okay. Now the ordering can have four and five. Now four and five would be having the incoming edge to someone, right? So they were getting into someone. So what I'll do is I'll take four out at first. I took four out. Now four was into someone. Let's see. Four was into zero and four was into one. So I'll be like, let's take it off because I already have four before it. I already have four before it. So I'm placed in my ordering four. I placed in my ordering four. So I have four before it. So from zero, take out four. So the all, uh, indegree will reduce to one and from one also take out four. So the indegree will reduce to one. So what I did was I said, let's take it out. Yes, let's take it out. So kind of, you can say I removed these edges. I kind of removed these edges. I'm saying take them out, take them out because they're no more into consideration. Okay, perfect. So I've taken them out, right? After taking four out is the zero having an indegree zero. No, there are still a lot of edges which are into it and are not yet in my direction or in my linear ordering. Okay, fine. So I've done"
+    },
+    {
+      "chunk_id": "L147_C7",
+      "start": 446.56,
+      "end": 516.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=73sneFXuTEg&t=446s",
+      "text": "of edges which are into it and are not yet in my direction or in my linear ordering. Okay, fine. So I've done the work for four. Next take out five. So five will be in my linear ordering now. Who, uh, like five, if you see is entering two and is entering zero. So if I take it out from zero, the indegree will become zero. So the indegree of zero now becomes zero. So you can take that zero and put it into the queue and from two also you'll take it out. So the indegree of two will also become zero. So you can put that out as well. Perfect. Now can I say, since you took four and five out, since you took four and five out, four and five was already entering zero. Thereby the indegree becomes zero. So you're very sure that you have placed four and five before, right? Now when you take the next element out of the queue, it is zero and you can place that into the linear ordering because it is now an indegree of zero because four and five have been taken out. Got it. Perfect. For zero, you will see, does it have any indegree anywhere? Any adjacent nodes? No. So nothing to be done. Next you take out two. Where is two heading to? Two is heading to three."
+    },
+    {
+      "chunk_id": "L147_C8",
+      "start": 516.52,
+      "end": 588.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=73sneFXuTEg&t=516s",
+      "text": "adjacent nodes? No. So nothing to be done. Next you take out two. Where is two heading to? Two is heading to three. The adjacent node of two is three. So you reduce the indegree of three by one and become zero. So now you can take three and put it into the queue. Perfect. Next you take out three. Now you have three. Now three is saying, who am I? Like you can take out three and three was getting into one. So one will now reduce its indegree to zero. So now you can take out one. Perfect. Now you can remove it. Suddenly this indegree will become zero and this will be done. So apparently now you have one. So you can take out one and over here you can place out one. So does one have any adjacent node? No. So I can say at the end of the day, we have four, five, zero, two, three, one as a valid to posort. So what I did was super simple. I insert all the nodes with indegree zero, take them out of the queue and just remove the adjacent, like just reduce the indegree of the adjacent nodes. And if the adjacent nodes have the indegree zero, I see them. You have your guys said before, so you can now go to the queue because you will be a part of the toposort. Got it. So"
+    },
+    {
+      "chunk_id": "L147_C9",
+      "start": 588.2,
+      "end": 655.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=73sneFXuTEg&t=588s",
+      "text": "your guys said before, so you can now go to the queue because you will be a part of the toposort. Got it. So quite simple. Quick question. How do you figure out the indegree? How do you figure out the indegree? Very simple. If I'm saying two is having an adjacent node to three, which means two is directed to three. So can I see the indegree of three will increase by plus one. So what I do is I traverse in the adjacent node and whatever is there, whatever is there, I sit in degree of three can do a plus plus. If there is zero, I can say indegree of zero will do a plus plus. If there is one, I can say indegree of one will do a plus plus because if I'm saying three to one, it means there is an inner edge to one. There is an incoming edge to one. So very simple. You traverse in the adjacent node and you can increase the indegree. So we will now go back to the code editor. As usual, the C++ code is on the right and the Java code will be on the left. So what was the first thing that you do? You'll obviously have an indegree. Yes. And since it's a zero based indexing, you can keep it like this. Let's traverse in the adjacency node. In the adjacency matrix,"
+    },
+    {
+      "chunk_id": "L147_C10",
+      "start": 655.84,
+      "end": 727.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=73sneFXuTEg&t=655s",
+      "text": "And since it's a zero based indexing, you can keep it like this. Let's traverse in the adjacency node. In the adjacency matrix, my bad. So it'll be like, you know, there are these many guys. So let's traverse for all these guys. Auto of id, adjacency of i. Now you know on indegree what you'll do is these nodes will be plus plus. The indegree is ready. Right after this, you go to all the nodes and you say, Hey, listen, who is the guy who is having an indegree of zero? If you have an indegree of zero, I can say Q of int Q. Can you just take it into the queue? Like, fine, I'll take it into the queue. You have the queue ready. Someone will always be there with an indegree zero because it is a directed acyclic graph. So you get the first node saying Q.front and you can always do a Q.pop. Perfect. And since you need to store the toposort, probably you can do a vector of int or topo. And over here you can say topo.pushback of the node to store the toposort. And now you need to traverse for all its adjacent nodes, which is something like this. And you know one thing for sure, you have to take it off. So indegree of that node, because node is done now, node is removed,"
+    },
+    {
+      "chunk_id": "L147_C11",
+      "start": 728.04,
+      "end": 797.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=73sneFXuTEg&t=728s",
+      "text": "one thing for sure, you have to take it off. So indegree of that node, because node is done now, node is removed, node is in your toposort. So something I can write, node is in your toposort. So please remove it from the indegree because the node is already there. So if I have removed from the indegree and if after removing the indegree of ID of that node becomes zero, I can say I have one more element and I can put that into the toposort. Once I've done this, I can simply return the topo and that will be my answer. Perfect. This is how easily I can write the toposort. Now let's quickly run this off and see if it is running fine. Okay, it is. Let's quickly submit this. Remember any of the topological sort will be accepted. If you see over here, you can find any of the topological sort. It is absolutely okay. So this is how you can easily do it. Again, which of the, what is the space complexity? Using an indegree of big O of N, we're using a Q again, which can take a big O of N and then it's a simple BFS algorithm that we are doing, which is going to take a big O of, it's a directed graph. So V plus E because every edge will only have like, it's considered"
+    },
+    {
+      "chunk_id": "L147_C12",
+      "start": 797.04,
+      "end": 829.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=73sneFXuTEg&t=797s",
+      "text": "to take a big O of, it's a directed graph. So V plus E because every edge will only have like, it's considered like once. So V plus E is the time complexity. So guys, I hope I was able to explain you this particular algorithm. So just in case I was, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And if you haven't checked out our DP series and the SDC, the links are in the description. And with this, I'll be wrapping up this video. Let's spin in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

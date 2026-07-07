@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L262",
+  "lecture_number": 262,
+  "lecture_title": "L26. Sort a Linked List | Merge Sort and Brute Force",
+  "youtube_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc",
+  "chunks": [
+    {
+      "chunk_id": "L262_C1",
+      "start": 0.0,
+      "end": 77.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=0s",
+      "text": "So, we will be continuing with our playlist and for that, Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is, sorting a list. So what is the problem exactly stating? It's stating that you'll be given a link list, that basically means that you'll be given the head of the link list. And every node will be containing an integer. And your task is to sort all the integers. Once you have done that, you'll have the updated link list as this. So once you have the updated link list, you'll have to return me the head of that updated link list. Now this is what the problem is. What if this problem comes up in an interview? The extreme naive solution that I can think of is, I'll take all the elements, put it into an array and then do something. So what I will do is, I will take a temporary and place it at the head. And I'll take the first element that is 3 and put it into an array. It can be a list as well. Once I've done that, I'll move the temporary to the next and the element is 4. So I'll pick up the 4 and I'll put it into the array. I'll again move the temporary and this time the element is 2."
+    },
+    {
+      "chunk_id": "L262_C2",
+      "start": 77.3,
+      "end": 154.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=77s",
+      "text": "pick up the 4 and I'll put it into the array. I'll again move the temporary and this time the element is 2. So I'll pick it up and put it into the array. Temporary moves. This time the element is 1. I'll pick it up and put it into the array. Temporary again moves. This time the element is 5. I'll put it into the array and I'll move. Right at the end when temporary reaches null, that's when you stop. So the traversal is completed. I've taken every element and it's inside the array. What is my next job? The next job is, I can probably apply any sorting algorithm, merge sort, quick sort, anything you can apply. Once you have sorted down this array, you'll have an array which has all the integers in the sorted manner. So it'll look like 1, 2, 3, 4, 5. Once you have the numbers in the sorted manner, what you can do is, you can call the convert function. We've already done this. You can call the convert function which can give you a new linked list or what you can do is, instead of calling the convert function, I will be reusing the given linked list. Let's see how I can do that. So I'll be erasing this temp. I'll be placing the temp again at the head. I'll be taking an index i and this time index i will be placed at the zeroth index."
+    },
+    {
+      "chunk_id": "L262_C3",
+      "start": 154.4,
+      "end": 226.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=154s",
+      "text": "the temp again at the head. I'll be taking an index i and this time index i will be placed at the zeroth index. So what is the value at the zeroth index? 1. So I'll take this 1 and I'll place it at the temp. Once that is done, I'll be moving temp and I'll be moving i as well. Now what is the value at the index i? 2. So I'll be placing 2, I'll be moving temp to the next, I'll be moving i to the next. So 2 is taken. What is the next? 3. So I'll be placing 3, moving temporary to the next and once I've done that, i will be moving as well. Next is 4, so temporary and i will go to the next. Next is 5, so 5 is taken and temporary goes to the next and i goes out of the boundary. So the moment i reaches out of the boundary or temporary reaches null, that's when you stop. So technically what you have done is, you've taken down all the elements into an array, sorted them and put them back into the linked list. Once that is done, you can return the head of that linked list and that will be the same head because you are replacing the integers. So this will be the extreme name solution. If I have to write down the pseudocode, it's going to be super simple. I'll be writing down a function."
+    },
+    {
+      "chunk_id": "L262_C4",
+      "start": 226.3,
+      "end": 304.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=226s",
+      "text": "the extreme name solution. If I have to write down the pseudocode, it's going to be super simple. I'll be writing down a function. It will be taking a head. Now what is my first job? The first job is to initialize an array. So I can take an array or a list which is empty. After that, I'll have to take a temporary which is pointing to head. Then I'll have to traverse through the linked list. So I'll be traversing till temporary reaches null. Now what is my first thing that I'll do? I'll take the integer, put it into an array. So I can say array dot add and I can say temporary data or value, whatever it is. Once that is done, I can say temporary. Can you move to the next? So temporary will go to the next. Done. Once that is done, I can apply quick sort or merge sort depending on your preference. So you can apply the sorting algorithm on the array. Once the sorting algorithm is applied, the next job is to take i equal to zero and reinitialize temporary to head. We have to replace the integers. So maybe we can again do the traversal. So the traversal will be simple. I'll be traversing till temporary is not null. And we will say temporary value or data will be array of i."
+    },
+    {
+      "chunk_id": "L262_C5",
+      "start": 304.6,
+      "end": 378.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=304s",
+      "text": "be simple. I'll be traversing till temporary is not null. And we will say temporary value or data will be array of i. Once that is done, what is my next job? I will be saying, I bad, I will be saying i equal to i plus one. I'll be saying temporary. Can you move to your next? So temporary will go to my next. So the while loop is completed. Once that is completed, I can return down the same head because that will be my head of the updated linked list. Done and dusted. If I ask you the time complexity, it's going to be super simple. This will be taking a bigot of n. Very simple. This will be taking a n log n because merge sort or quick sort takes n log n. And again a retraversal will be taking a bigot of n. So the overall time complexity will be n plus n log n plus n. And the overall space complexity will be bigot of n because you are using an extra array to store all the elements. So this will be the time complexity and the space complexity. Now this is where the interviewer will not be happy with the extra space that you are using and he'll ask you to optimize it. So the brute force algorithm was taking a space complexity of bigot of n. Now we are not allowed to use any external space."
+    },
+    {
+      "chunk_id": "L262_C6",
+      "start": 378.9,
+      "end": 453.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=378s",
+      "text": "So the brute force algorithm was taking a space complexity of bigot of n. Now we are not allowed to use any external space. That excel gives us a hint that whatever we need to do, we need to do within the linked list itself. Right. So what are the sorting algorithms that you know of? The most optimized ones are one is merge sort while the other is quick sort. In case you don't know about them, please go back and watch it. I have videos on both of them. Please please go back and watch it. You should be knowing in depth. Once you know both these algorithms in depth, you will realize that this one is easier to implement while quick sort is frankly tough to implement. So what I will do is I'll try to implement merge sort within the linked list itself. Got it. A quick recap about merge sort. You always take an array, you break it down into two parts. One is the left and one is the right and you always break it down from the middle. After that you again break it down into two parts again from the middle. After that you again break it down into two parts again from the middle. Once you reach single elements, you try merging them back and you merge them into sorted. You merge them into sorted and after that you again merge them"
+    },
+    {
+      "chunk_id": "L262_C7",
+      "start": 453.9,
+      "end": 522.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=453s",
+      "text": "elements, you try merging them back and you merge them into sorted. You merge them into sorted and after that you again merge them and eventually you get a sorted array. This was a quick recap about merge sort. In case you don't know about it, please pause this one, go back and watch it. Got it. Okay fine. How do I implement merge sort in a linked list? It's going to be super simple. What was the first step? The first step was breaking them down from the middle. Now you have five elements. So obviously if I'm breaking them down into middle, I cannot do 2.5 and 2.5. So what I'll do is I'll take three elements on the left, I can take two elements on the right. You can do the other way as well, two and three, that's your choice. So what I'll do is I'll take three, pointing to four, pointing to two. So this is a linked list and this will be pointing to null and the right linked list will be from one to five to null. What I've done is I've broken them down here and I made sure that this is pointing to null. Please make sure you do this so that it is an individual linked list. Now this is an individual linked list. It needs to be sorted. I'll again apply merge sort on it. So this will again be broken down into two parts."
+    },
+    {
+      "chunk_id": "L262_C8",
+      "start": 522.9,
+      "end": 591.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=522s",
+      "text": "linked list. It needs to be sorted. I'll again apply merge sort on it. So this will again be broken down into two parts. This time from here. So it will be three, pointing to four, pointing to null and the right one will be just two pointing to null. So this is how the left part will look like. And you know in recursion, the left part gets executed at first. So let's do it again. This one will be broken down. So this time it will be three and this will be four and both of them will be pointing to null. So the left recursion will go in, right? So you have single elements, you have single elements. Now this will be your base case. Whenever you have single elements, you stop them in there. Whenever you have single elements, you stop them in there. So you have three, you have four. Let's merge them back. Let's merge them back. So I'll try to merge them back. So when I try to merge them back, can I see that they'll still stay as three and four because three and four are sorted in itself. Perfect. Now you have three, four, you have two. I've already done a previous video. I've told you how to merge two sorted lists. I've told you how to merge two sorted lists. Go back and watch it."
+    },
+    {
+      "chunk_id": "L262_C9",
+      "start": 591.9,
+      "end": 665.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=591s",
+      "text": "I've told you how to merge two sorted lists. I've told you how to merge two sorted lists. Go back and watch it. So can you merge this list one and list two because both of them are sorted. Can you merge them? Yes you can. So please merge them back. So once you merge them back, it will be having two, three, four. Perfect. Now we will go to the right part. Now we will go to the right part because the left part is completed. The left part is completed. So we'll go to the right part. I'll give you the dry run as well. Don't worry about that. So you'll have one. You'll have one pointing to null and you'll have five pointing to null. Again, base case because you have one element. So let's return. So when you return, you'll still have one in five. So I can say that the right portion is done as well. So the right portion is completed. So what will happen is the right portion will try to return and the left has already returned. So what do you have? You have a list L1 on the left. You have a list L2 on the right. Left and right. You can merge them. You know how to merge two sorted list. You know it right? We already did it. Try to merge them. So when you try to merge them, you will eventually get one, two, three, four, five."
+    },
+    {
+      "chunk_id": "L262_C10",
+      "start": 665.9,
+      "end": 738.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=665s",
+      "text": "We already did it. Try to merge them. So when you try to merge them, you will eventually get one, two, three, four, five. So what do you have is a merge sorted, rather what you have is a sorted list after performing merge sort. So the dry run was very simple because you already know about merge sort. What I'll try to do is, I'll try to write down the pseudo code. Again, it won't be language specific. In case you want codes in C++, Java, Python or JavaScript, it will be given in the description. So let me write down the code. Please remember this code snippet. This is directly from the merge sort of arrays. Remember this code snippet. You always take an array, low and high. This is the left point and the right point. Right? After that, if it is a single element, the left and the right point are same, it means it is a single element. You return. Otherwise, you find the middle and you break them down. So there's low, there's high, you find the middle and then you break them down to low to mid, low to mid and mid plus one to high, mid plus one to high and then you call merge sort, merge sort. You call it, it comes back. You call it, it comes back. And once that is done, you call the merge function in order to merge the left half and the right half."
+    },
+    {
+      "chunk_id": "L262_C11",
+      "start": 738.9,
+      "end": 813.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=738s",
+      "text": "it comes back. And once that is done, you call the merge function in order to merge the left half and the right half. Remember this code snippet because I'll write the exact same code but I'll write in terms of linked list. Let's try to write it. So I'll be writing down the function and this function will be taking the linked list. Now when I say linked list, it basically means I'll be taking the head because the head denotes the entire linked list. In our earlier snippet of code, we always took down the array in terms of merge sort in arrays. And the low and high was used to figure out which portion of array was being sorted. Got it? But in our function, we'll just be taking down the head of the linked list. What is my first thing that I have to write? The base case. Can I say if the head is empty, what if the linked list is empty? That might be a case. That might be a case. Or what if it's of a single element? If it's of a single element, I don't need to sort it. It's already sorted. So I can straight away return the head. I can straight away return the head. Perfect. What after this? After this, I'll have to make sure that if I've been given a single linked list, I need to break it down."
+    },
+    {
+      "chunk_id": "L262_C12",
+      "start": 813.9,
+      "end": 890.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=813s",
+      "text": "after this? After this, I'll have to make sure that if I've been given a single linked list, I need to break it down. The first step is to figure out the middle. How can I do that? By Tortoise and the Hare algorithm. I've already done that in my previous videos. Go back and watch it. So what I'll do is, I will be calling findMiddle. FindMiddle. I'll be passing on the head of the linked list. And this will be giving me the middle. So which one will be the middle? This one will be the middle. If I ask you which is the left linked list? Will be like this one is the left linked list. Can I say the head? Can I say the head denotes the left linked list? It denotes. But which one is the right linked list? Middle.next. Middle.next denotes the right linked list. Perfect. So I can say, okay, I know one thing. Left head is my head. And I know one thing, right head is nothing but middle.next. Perfect. So I know now the left portion and the right portion. What is my next job? My next job is to make sure this linked list is separated from this one. So I'll be making sure that the middle points to none."
+    },
+    {
+      "chunk_id": "L262_C13",
+      "start": 890.9,
+      "end": 965.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=890s",
+      "text": "to make sure this linked list is separated from this one. So I'll be making sure that the middle points to none. So I'll be doing that. My middle.next will be pointing to null. None industry. So what have I done? I made sure that this is pointing to null. So I have a left, I have a right. I need to call them. I need to call the merge shot again. So I'll be going ahead and calling this function that is merge shot again. So I'll be calling merge shot with the left. So the left will be left head. I'll be calling with the right and the right will be right head. Perfect. But when I call this, it will be returning me a sorted head which contains the left portion. So I can say that the sorted head can be re-initialized to the left head and the right sorted head can be re-initialized to the right head. This one will also call and come back. Done. If you look at the snippet, you've already done up till this. The middle was done by finding the middle. After that, it's a similar snippet. What is the last step? To combine the left and the right. To combine the left and the right."
+    },
+    {
+      "chunk_id": "L262_C14",
+      "start": 965.9,
+      "end": 1040.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=965s",
+      "text": "similar snippet. What is the last step? To combine the left and the right. To combine the left and the right. So this is what we will do. We will go ahead and say, hey, merge two. And we have already done how to combine two sorted list. So please go back and watch it. So merge two, left head and right head. I'll again be calling it. This will be returning me a head. So I'll be returning this one. Remember one thing in linked list, you will have to write return. In your array, you never did write return. Why? Because the array was reference based. So whatever changes you did, it was done on the memory location itself. In the merge short for linked list, you need to return the head of the updated linked list. That is why you will be returning whatever is returned. So please make sure you do it. In case you want to understand the dry run for this code, please go back to my merge short video and watch the dry run on merge short. You will understand that in depth. If you understand that, you will be understanding this as well. Take a pen and paper, do a dry run. This will get into your head."
+    },
+    {
+      "chunk_id": "L262_C15",
+      "start": 1040.9,
+      "end": 1110.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=1040s",
+      "text": "will be understanding this as well. Take a pen and paper, do a dry run. This will get into your head. So before I move on to the code editor, there's one slight edge case that I will be talking about. Now we're using find middle in order to find the middle. Now on the back it uses tortoise and hare algorithm. Now tortoise and hare algorithm, whenever the length of the linked list is even, it always returns the second middle and not the first middle. But in terms of merge short, I'm asking you which one is the middle. It will be like you need to break it over here. So you need middle to be pointing here. So that you can straight away point this to null and this will be a left portion. This will be a right portion. Correct. Please make sure that you modify the tortoise and hare algorithm slightly so that you get the first middle and not the second middle. Super simple. I'll be showing you in the code editor. So time to get back into the code editor and check out the code. So if you look on the first line, very simple. After this, finding the middle. Now this is the tortoise and the hare algorithm. But there's a slight change. If you look at this, in tortoise and hare algorithm, slow pointer and fast pointer always stand at the head."
+    },
+    {
+      "chunk_id": "L262_C16",
+      "start": 1110.9,
+      "end": 1181.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=1110s",
+      "text": "there's a slight change. If you look at this, in tortoise and hare algorithm, slow pointer and fast pointer always stand at the head. What I've done is I made sure that the fast pointer is standing one place ahead. That is at head dot next. Why have I done that? I was talking about an edge case. Right. I want the middle to stop at the first middle. I want middle to stop over here. Right. I want middle to stop over here. That is why I made sure that the fast pointer is one place ahead so that it stops one place behind. You might think, will it work for odd length? It will work. You can take some examples and do a bit of try run. It will work. So this is the only change you need to do. And apart from that, you do the same thing and the left, the right and then you call the merge to list. Again, I've done this in the previous video. Go back and watch it in case you haven't seen it. So this is the entire code. If I go ahead and click submit, it will be submitted. So it is time to discuss the time complexity. But before I move on to that, let's understand the time complexity of merge shot in arrays. It was n log in. And the space complexity was big O of n, which was an external space that we were using. Right."
+    },
+    {
+      "chunk_id": "L262_C17",
+      "start": 1181.9,
+      "end": 1255.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=1181s",
+      "text": "arrays. It was n log in. And the space complexity was big O of n, which was an external space that we were using. Right. The time complexity n log in was because the height of the tree or the recursion depth was logarithmic of n. Right. And at every step, we're doing a merge operation that was taking a big O of n. So thereby the overall time complexity was n log n. Over here, remember, the mid was not taking any time. The mid was not taking any time. Right. And the extra space was because we were using a third array in order to merge to left and right arrays. Right. That was the time complexity and space complexity. Over here, what will be the time complexity and space complexity? One thing we know for sure is the height or the recursion depth will be logarithmic of n. That's very sure. Basically, this depth will be logarithmic of n. We know that for sure. We know one thing for sure. The merge to is also taking big O of n one plus into near above n. So I can see that logarithmic of n into n is something I'm very sure about. Right. Why n? Because at every step I'm doing a merge to. But am I doing something extra? I think I'm doing. I'm doing."
+    },
+    {
+      "chunk_id": "L262_C18",
+      "start": 1255.9,
+      "end": 1320.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=8ocB7a_c-Cc&t=1255s",
+      "text": "n? Because at every step I'm doing a merge to. But am I doing something extra? I think I'm doing. I'm doing. Finding the middle. Now over here, finding the middle is not done in constant time. It's taking a big O of n by two time. So what I can see that the time complexity over here is logarithmic of n into n plus n by two. Because at every step, you're playing n by two and a big O of n for this one. Right. And logarithmic of n is a recursion depth. So I can see that the time complexity is near about logarithmic of n into n plus n by two. That's n log n. That's around n log n. But the extra space is big O of one. Why? Because I'm not using any extra space. We know we can merge two sorted list in place. We know that we have done that in our previous videos. So the time complexity and the space complexity will be this one. So that will be it for this one. I hope you've understood everything. And if that is the case, please, please do consider giving us a like. And if you're new to our channel, what are you waiting for? Hit that subscribe button. And with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

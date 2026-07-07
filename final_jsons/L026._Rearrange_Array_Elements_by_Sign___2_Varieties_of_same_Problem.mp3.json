@@ -1,0 +1,141 @@
+{
+  "lecture_id": "L026",
+  "lecture_number": 26,
+  "lecture_title": "Rearrange Array Elements by Sign | 2 Varieties of same Problem",
+  "youtube_url": "https://www.youtube.com/watch?v=h4aBagy4Uok",
+  "chunks": [
+    {
+      "chunk_id": "L026_C1",
+      "start": 0.0,
+      "end": 78.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=0s",
+      "text": "Hey everyone and welcome back to the channel. I hope you guys are doing extremely well. So this is another video from the Stryver's A-Z DSA course. Just in case you're for the first time here, this is world's most in-depth course in DS Algo. Why do I say that? Because this course has 455 modules. By the end of the course, you'd have solved more than 400 plus problems when it comes to DS Algo. You can go across the entire internet. You can buy any of the paid courses. None of them will be teaching you DS Algo in such depth. One thing that I can assure you is once you complete the entire course, you can get any of the DS Algo rounds in any of the companies in any part of the world. So till now we have covered till stock buy and sell. And in this particular video, we will be covering the problem, rearrange array elements by sign. Now what does the problem state? You will be given an array with equal positive elements and equal negative elements. That means if the length of the array is n, there will be n by 2 positive elements and there will be n by 2 negative elements. That is for sure. That means n will always be an even number. So if I take this first example, over here you can see that n is 6. So there are 3 positive numbers."
+    },
+    {
+      "chunk_id": "L026_C2",
+      "start": 78.9,
+      "end": 154.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=78s",
+      "text": "even number. So if I take this first example, over here you can see that n is 6. So there are 3 positive numbers. If you see 3, 1 and 2 and there are 3 negative numbers, minus 2, minus 5, minus 4. Now they can be given in any random order. Positive, positive, negative, negative, positive, negative, positive, negative, negative, negative, positive, positive, doesn't matter. It can be given in any order. So your task is to rearrange those elements by sign. What do I mean by rearrange? First one has to be positive, then it has to be negative, then it has to be positive, then it has to be negative, positive and negative. So when I say positives, positives, positives, let's write the positive 3, 1, 2. These are the 3 positives and you have put them one here, one here and the other one here. So they are in the order 3, 1, 2. If you look at the order here, it's 3, 1 and 2. So the order is maintained but they are making sure that they are alternate like positive, negative, positive, negative. If you look at the negatives, minus 2, minus 5 and minus 4. Let's look at the order in the original array, minus 2, minus 5, minus 4. The order is maintained but they are making sure they are in the alternate like positive, negative, positive, negative. So your task is to solve this particular problem."
+    },
+    {
+      "chunk_id": "L026_C3",
+      "start": 154.02,
+      "end": 216.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=154s",
+      "text": "but they are making sure they are in the alternate like positive, negative, positive, negative. So your task is to solve this particular problem. So whenever this question is asked to you in an interview, the first solution that you should definitely tell the interviewer is the brute force. The first solution that strikes your head, that's very obvious. You'll be like, okay, listen, I'm going to take a empty array and I'll call it as positive array. I'll take an empty array and I'll call it as negative. Again, it can be an array, it can be a list. I'll prefer a list. You can also take an empty array because you know the size will be n by 2 and n by 2 because the number of positives are n by 2, the number of negatives are n by 2. But I'll prefer taking list. Now what I'll do is, I'll iterate in the entire array. It's 3. So I'll be like, put it into the positive. It's positive, put it into the positive. It's negative, put it into the negative. It's positive, put it into the positive. So I can say, once I've done the first iteration in the brute force, I have all the positives and I have all the negatives. So after one iteration, can I say that I have all the positive elements in the correct order and I also have all the negative elements in the correct order."
+    },
+    {
+      "chunk_id": "L026_C4",
+      "start": 216.82,
+      "end": 285.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=216s",
+      "text": "say that I have all the positive elements in the correct order and I also have all the negative elements in the correct order. If I go back and recall the rearranged array, it would look something like 3, minus 2, 1, minus 5, 2, minus 4. Now, if I ask you, in terms of indexes, where are the positive elements? It's like at the 0th index, at the 2nd index, at the 4th index. Do you see a pattern? Yes, you do. All these are even indexes. All these are even indexes. So all the positive elements appear to be at the even indexes. What about the negatives? They appear to be at the odd indexes. So I'll try to take an advantage of it. I know one thing. 3 will be at the 0th index, 1 will be at the 2nd index, 2 will be at the 4th index. And if I have to write down their particular index, it is like 0, 1, 2. Do you see a pattern? 0 belongs to 0, 1 belongs to 2, 2 belongs to 4, and the 3rd index, if there was, would have belonged to 6. Yes, you have noticed the pattern. So what I'll do is, I'll be like i equal to 0, i lesser than n by 2, because I know there are n by 2 positive elements. Array of 2 into i, because that is what index where it belongs to, array."
+    },
+    {
+      "chunk_id": "L026_C5",
+      "start": 285.16,
+      "end": 364.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=285s",
+      "text": "I know there are n by 2 positive elements. Array of 2 into i, because that is what index where it belongs to, array. Because that is the index where it will go in the array. Equal to positive of i. Quite simple. Similarly, for negative, this belongs to index 1, this to 3, this to what? Yes, 5. So can I say I'll write array of 2 into i plus 1, 2 into i plus 1, equal to negative of i. Quite simple. One more iteration and that is done. So I can say, I did a single iteration of big O of n in order to pick up all the positives and negatives. Then I did another big O of n to reassign them to the array. Once this is done, the array will be rearranged. But I ended up taking a space complexity of big O of n in order to store them in order in two different arrays of n by 2 and n by 2 each size. So this will be the overall time complexity and space complexity. So the solution is taking a couple of passes and it is using some extra space. The interviewer might ask you to optimize. Can we remove this extra space? I don't think we can because somewhere we have to do something in order to find the answer or to store. We have to use some extra space. But can we reduce this two pass into one pass?"
+    },
+    {
+      "chunk_id": "L026_C6",
+      "start": 364.84,
+      "end": 427.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=364s",
+      "text": "order to find the answer or to store. We have to use some extra space. But can we reduce this two pass into one pass? That is where my focus will be. And that's where the optimal solution comes. I'll be like, hey, listen, let's take an answer array. And what was the first observation? My first observation was, I know one thing, all the positive elements will be at the even index. So I've written the index 0, 1, 2, 3, 4, 5. Can I say all the positive elements will be like the first positive element will be at the zeroth index. The next one will be at the second index. The next one will be at the fourth index. And can I say the first negative will be at the first index? I can. Now, what I will try to do differently in order to do it in a one pass is I will go to this three and I'll say, hey, you are three, you're positive, right? So can you go to your our first place, which was assigned for a positive? Is like I can go and then you'll be like, okay, you're gone. So what is the next possible like possible place where you can put a positive? It's like this one. That's for sure, because the zeroth index is occupied. Perfect. Done. Next, it's again a positive. So which place is there? Is this second index? Put it."
+    },
+    {
+      "chunk_id": "L026_C7",
+      "start": 427.6,
+      "end": 505.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=427s",
+      "text": "because the zeroth index is occupied. Perfect. Done. Next, it's again a positive. So which place is there? Is this second index? Put it. And if you have put it, where will the next place like where is the next available place? That's the fourth index. So you move next, you move minus two is like minus two negative. First available place, this one, put it. Once you put this, move to the next. What is the next? Minus five. Where do you put it? We know it is a negative. So first available place, put it. And then what do you do? Move it next to positive. First available place, put it and then move. What is the next? Minus four. So where is minus four? It goes to the first available negative place. Once you've done it, move. So once you've done it, it just took you one plus. You picked up, you picked up into the, you put that into the answer array and done. Yes, we are not rearranging in the original array. We know that. We're rearranging it in a new array and we will use this as the array that you will return. Got it. But this can be done in B go of n plus. By passing, keep on putting them into the answer array and the space complexity is B go up in again. This is used to return the answer is used to return the answer."
+    },
+    {
+      "chunk_id": "L026_C8",
+      "start": 505.52,
+      "end": 579.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=505s",
+      "text": "array and the space complexity is B go up in again. This is used to return the answer is used to return the answer. So this will be the time complexity and the space complexity for the optimal approach. Not a huge improvement from the better, not much by very slight margins. So coming back to the code editor, let's try to code it up. So given the nums, what I'll do is I'll initialize an answer and I'll keep the size as n. Let's quickly declare the size and as nums dot size. And now let's quickly have a couple of other things. Positive index equal to zero negative index equal to one because that is where we start the first positive and negative from. And now let's quickly go across the entire array. And now we say, Hey, listen, if nums of I is lesser than zero, that's a negative. As it is a short that the area will never have zeros. The answer of positive index will be nums of or other negative index will be nums of I and negative index. The next one will be two places ahead. So you can do. And similarly in the else what you can write is if it's a positive one, we will put it into the positive and we will move the positive index by two. Once you have done the entire thing, we can go ahead and say, this is my answer."
+    },
+    {
+      "chunk_id": "L026_C9",
+      "start": 579.94,
+      "end": 646.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=579s",
+      "text": "will move the positive index by two. Once you have done the entire thing, we can go ahead and say, this is my answer. Can we quickly go and return this? Click on the submit and see if it is running absolutely fine. This one is done, but we will be solving one more variety. So in code studio, the problem is saying it is having positive and negative, but there is no mention that they will be equally like n by two and n by two. If you read this line, if any of the positive and negative numbers are left, add them at the end without altering the order. So if there is still something left, you have to add them at the end without altering the order. So let's go for this particular variety. Let's let's look at the solution for this. Okay. So coming to the variety two, let's take this particular example. So one thing we know for sure is if positive is not equal to negative, there can be two cases. Either the number of positives are greater than negatives or the number of negatives are greater than positive. Right. That is something we know. Like for this one, we have two negatives and four positives. So the number of positives are greater than negatives. So what will be the answer after rearranging? Can I say the answer will be very simple."
+    },
+    {
+      "chunk_id": "L026_C10",
+      "start": 646.1,
+      "end": 717.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=646s",
+      "text": "of positives are greater than negatives. So what will be the answer after rearranging? Can I say the answer will be very simple. First I'll put up a positive done, then I'll put up a negative done, then I'll put up a next positive done and I'll put up a next negative done. And after that, whatever remaining because positives were in excess, you just pick up the next positives, the next negative, next positive and put it into your answer array. And this will be your final answer. So how do you solve this particular variety as what we have to figure out? So let's quickly solve the second variety of this problem. So the second variety of this problem is clearly stating you that we're not sure if positive is equal to equal to negative. We are not sure about that. It can be more, it can be less. We're not sure. So we have already solved the case of positive equal to negative. Right. And now this is stating that it might be, might not be. So if it is not, if positive is not equal to negative, what can it be? So there can be two cases. Yes, the number of positives are greater than negatives or the number of negatives are greater than positives. There can only be two cases, either the positives are more, either the negatives are more. So definitely we cannot use the optimal solution because the optimal solution was lying on"
+    },
+    {
+      "chunk_id": "L026_C11",
+      "start": 717.16,
+      "end": 791.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=717s",
+      "text": "either the positives are more, either the negatives are more. So definitely we cannot use the optimal solution because the optimal solution was lying on the fact that we have same number of positives and negatives and we are filling them. We are filling them alternatively alternative. So what we do is we fall back to the brute force solution. Now this is an amazing follow up question. Why? Because a lot of times people take it will be something else. They do not fall back to the brute force. They're not confident about their initial solution. So you fall back to the brute force solution. And what do you say is, since we know the positives are not equal to negatives, I will fall back to my brute force. I'll say, okay, I'll probably keep two more arrays, which is like positive and a negative array. I'll iterate and I'll collect all the positives in the relative order. And I also collect all the negatives in their relative order. So let's quickly do this. Once you have done this, we do one thing for sure over here, the number of positives are greater than number of negatives. So there are two negatives. So can I say the first four elements will be in order, which is like two minus one, three minus three. They will be in the exact alternating order because the number of negatives were two and which was lesser."
+    },
+    {
+      "chunk_id": "L026_C12",
+      "start": 791.26,
+      "end": 865.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=791s",
+      "text": "minus one, three minus three. They will be in the exact alternating order because the number of negatives were two and which was lesser. So we are sure of having two positive, so two positive, two negative, four numbers and they can be in the alternate order. So what is remaining? Two positives are remaining. After that, you can put up the two positives. Something I know is for the first two elements, for the first two elements, I can follow the pattern. I can follow the pattern. So what I will do is for the first two elements, I will follow the same pattern. So I know one thing for i equal to zero and I know the number of negatives are smaller. So it is like i less than two in this case. And I'll say, hey, array, i into two, because for that was the brute force. If you remember, the brute force was i into two is equal to positive of i. And similarly, I'll say array of i into two plus one, because for negative, it was that index. If you write down the indexes in the answers, it's like zero, one, two, three. And these, these people will be filled because there are two negatives and two positives for sure. I'll say negative. Can you pick up? Perfect. So this will make sure till the place the positives were equal to equal to negatives, that is done. That is for sure."
+    },
+    {
+      "chunk_id": "L026_C13",
+      "start": 865.98,
+      "end": 935.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=865s",
+      "text": "Perfect. So this will make sure till the place the positives were equal to equal to negatives, that is done. That is for sure. So you'll fall back to the brute force. But now we know one thing for sure. There are some more positives. There are some more positives who have to be taken care of. Now, where are the positives starting from? If there were two, if there were two positives and two negatives, which are placed in the correct order, it will start from the second index in the positive array. So let's start from the second index in the positive array. It's very simple. And then I'll go till positive dot size. I plus plus and they will take place at which place in array. So can I say if there are two negatives, two positive, they would have taken the first four places. So the place where I will start off is index four index equal to positive I and then I can go ahead and move index plus plus simple. So this is an extra addition of code that you have to do extra addition to fill the remaining values to fill the remaining values. I hope you've understood this. Okay, so coming back to the code editor, let's quickly code this up. So what do we know, we need to store positives and negatives. So we need to read a structures positive and negatives."
+    },
+    {
+      "chunk_id": "L026_C14",
+      "start": 935.36,
+      "end": 1003.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=935s",
+      "text": "this up. So what do we know, we need to store positives and negatives. So we need to read a structures positive and negatives. Then what we know is we have to go through the entire array. So we need the size of the array. So let's take a dot size. This will give me the size of the array. Now let's quickly iterate like this. I've iterated like this. What will be my next job? I'll say, okay, if array of I is greater than zero, it's a positive. Otherwise it's a negative. And in this case, what I'll do is I'll say positive dot push back. Basically, I'll store it in the positive list array of I. Or else I will say negative dot push back A of I. So this will make sure we have the positives stored in the relative order in positive and the negatives stored in the relative order in negative. Now we know one thing, there can be two cases. If positive is greater than negative, right? Or else it can be the other case when negative is greater. And this will cover the equal to case as well when negatives are equal to positive. If this is the case, what will you do? We know negatives are the limited guys. So we'll just go for those many, those many negatives. We will just go for those many negatives. So let's go for those many negatives."
+    },
+    {
+      "chunk_id": "L026_C15",
+      "start": 1003.58,
+      "end": 1071.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=1003s",
+      "text": "we'll just go for those many, those many negatives. We will just go for those many negatives. So let's go for those many negatives. And for, so those many negatives are there, those many positives will also be there. So let's quickly go into the array and say, okay, in the even place, can you take the positive of I? And in the odd place, can you take the negative of I? Perfect. You remember this, we have already explained in the brute force solution. Two into I will be there. Even and two into I plus one will be there. So this will make sure. So if the negatives are two, four elements are done. Two from negative, two from positive. How many, how many positives are left in this example? This many. So you start from the second index in the positive array. You start from the second index in the positive array. What is two? Size of the negative. Just take it. So you start from the negative dot size. How long do you go? It'll positive dot size because those many are left. And which index do you start? Which index do you start on in the array? So can I see if I'm taking two elements from here, two elements from here and I'm taking the first four, which is index zero, one, two, three. So the index that I start is four, which is nothing but the size of negative into two"
+    },
+    {
+      "chunk_id": "L026_C16",
+      "start": 1071.62,
+      "end": 1135.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=1071s",
+      "text": "is index zero, one, two, three. So the index that I start is four, which is nothing but the size of negative into two size of negative into two. So I get the size of negative, negative size. Can you do an into two? Perfect. And now what I'll do is a array of index. Can you take the positive of I and after that, can you index plus plus quite simple? This will make sure this is done. And can I do the same thing for the else? I'll quickly do the same thing for the else as well. So in the else, can I see this? This will be opposite. So I'll quickly copy paste this. Can I say this will be positive? I can. And the remaining elements, can I say it'll be just the, just the opposite, which is instead of this, it'll be from here, from here, this will be from negative and this will always take from negative because this time it's the opposite. And if they're equal, this array will never execute. If they're equal, it'll be done and dusted from here and this will never get executed. Once you've done this, can you return the same array? Because in the same array, you did the changes so you can return the same array. So I can quickly go and run this off and see if it is running fine. Should. Okay. One go and I wrote a long code."
+    },
+    {
+      "chunk_id": "L026_C17",
+      "start": 1135.98,
+      "end": 1205.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=1135s",
+      "text": "can quickly go and run this off and see if it is running fine. Should. Okay. One go and I wrote a long code. I'm going to run this. So let's discuss the time complexity for the second variety. Can I say I'm running a big off an iteration to basically get all the positives and negatives. And then can I say I'm running a loop for minimum of the positives on negatives will decode this afterwards. Yes, we are running. And then can I say I'm running for leftovers? I'm running for the leftovers. Yes, I can. If I have to decode this, let's decode the minimal value of this and the max value of this. We know this is for short. First, we run for minimums and then whatever are left over speed. So what can be the minimum of this? Like what can be the minimum time it runs? I say all of our positives or I say all are negatives. So either I say this is zero or I say this is zero. There are no negatives or there are no positives. In that case, this one will become big of zero. But the leftovers will be big often. Can I say this? There are still leftovers of big often because there are no positives and have to still put all the negatives by running a loop. What can be the max? Like what can be the max of this guy?"
+    },
+    {
+      "chunk_id": "L026_C18",
+      "start": 1205.46,
+      "end": 1270.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=1205s",
+      "text": "to still put all the negatives by running a loop. What can be the max? Like what can be the max of this guy? The max of this guy can be this is N by two. This is N by two. Because imagine they're equally divided, they equally divided. Then the leftovers will be zero. So what I can say is this particular thing has a worst complexity of big often when everything is positive or everything is negative. And this is for the first iteration. So this boils down to big of two N. Got it? And what about the space complexity? Big of N. Why? Because you're storing all the positives and all the negatives. I hope you have understood. And going back to the first variety of the problem, in the first variety, I did say that the brute force solution is taking two and it is not. It's taking N plus N by two because the second loop we are running for N by two times. There's N plus N by two. That was a typo from my end. But I hope you have understood. Right? So this is how we can solve the second variety as well. So going back to the sheet, I can just see that this is done. And I hope you've understood everything. So just in case you have, please, please do consider giving me a like because it won't"
+    },
+    {
+      "chunk_id": "L026_C19",
+      "start": 1270.46,
+      "end": 1295.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=h4aBagy4Uok&t=1270s",
+      "text": "And I hope you've understood everything. So just in case you have, please, please do consider giving me a like because it won't cost you anything, but it will definitely motivate me to make more and more videos. And to continue our tradition, please do comment and so that I understand that you're understanding everything and you haven't followed me on all social media handles. LinkedIn, Instagram, Twitter, all the links will be in the description. Do try out the problem from the problem link in the description. And with this, I'll be wrapping up this video. Let's meet in some other video. Till then, buh-bye. Whenever your heart is broken, don't ever forget you're golden. I will find a light in you."
+    }
+  ]
+}

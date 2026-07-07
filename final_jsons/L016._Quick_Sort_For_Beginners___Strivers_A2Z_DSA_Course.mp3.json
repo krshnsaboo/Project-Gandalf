@@ -1,0 +1,218 @@
+{
+  "lecture_id": "L016",
+  "lecture_number": 16,
+  "lecture_title": "Quick Sort For Beginners | Strivers A2Z DSA Course",
+  "youtube_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ",
+  "chunks": [
+    {
+      "chunk_id": "L016_C1",
+      "start": 0.0,
+      "end": 74.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another video from the Stryber's A2Z DSA course. Just in case you don't know about this and if for the first time here, this is world's most in-depth DS algo course. Why do I say that? Because you can go over the entire internet, you can buy any of the paid courses in the market. None of them will be covering any DS algo stuff in such depth. This course has 456 modules and we'll be covering 400 plus problems in this particular course itself. So once you complete the course, you will be ready for any of the DS algorithms in any of the companies in any part of the world. That is my guarantee to you. So in this video, we will be learning about quicksort. What about these couple of topics? Now, these couple of topics are very self-explanatory. So what I will be doing is I'll be adding notes to them so that once you go through the entire notes, you will be able to understand that by yourself. A video is not required for these couple of topics. So that's why I will not be adding videos. So in this video, we will be talking about quicksort. So without waiting, let's get started. Quicksort algorithm. What does the algorithm do? Very obvious to guess."
+    },
+    {
+      "chunk_id": "L016_C2",
+      "start": 74.04,
+      "end": 140.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=74s",
+      "text": "we will be talking about quicksort. So without waiting, let's get started. Quicksort algorithm. What does the algorithm do? Very obvious to guess. Yes, it does sort any of the given data structure in an ascending order. But if you do some minor tweaks to it, yes, if you do some minor tweaks to it, it will be also sorting it in an descending order. So in this video, I'll be teaching you the quicksort algorithm that sorts the given data structure in an ascending order in depth so that you can do the minor tweaks by yourself and you can sort the data structure in a descending order as well. So what will be the flow of the lecture? Very simple. First, I'll be explaining the algorithm. Then I'll be telling you the intuition behind every step of the algorithm. Once we are done with that, we'll be going and writing the pseudocode. Now remember one thing, I'll be writing the pseudocode in such a way that you can code it in C++, Java, Python or any of the programming languages you code in. So this tutorial is going to be language independent. And then we will be doing a dry run on the pseudocode so that the recursion is clear on your head. Once these three steps are done, we'll be moving to the online compiler and compiling it so that you get an essence of the online compiler."
+    },
+    {
+      "chunk_id": "L016_C3",
+      "start": 140.6,
+      "end": 214.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=140s",
+      "text": "three steps are done, we'll be moving to the online compiler and compiling it so that you get an essence of the online compiler. Post that, I'll be discussing the time complexity and the space complexity as well. So you must be thinking, but Shraiva, wait, we already know about the merge sort algorithm which has a time complexity of n log n and has a space complexity of O of n where we use an extra temporary array. Why quick sort? So quick sort has a time complexity similar to merge sort n log n but doesn't use any extra temporary array. Yes, it uses recursion stack space but no temporary array. So quick sort is slightly better than merge sort. But does that mean you don't need to know merge sort? No, you need to because there are a lot of problems which can be solved just by using merge. And we will be seeing that in the arrays playlist when we will be solving problems related to merge sort. So it's very important that you understand all the sorting algorithms because you never know. So in the interview, the interviewer might ask you any of the sorting algorithms, might ask you any question that might be similar to a particular sorting algorithm. So do not skip any of the sorting algorithms. That is what my recommendation to you will be. So let's get into the explanation of the algorithm and we will be using this particular array"
+    },
+    {
+      "chunk_id": "L016_C4",
+      "start": 214.36,
+      "end": 290.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=214s",
+      "text": "is what my recommendation to you will be. So let's get into the explanation of the algorithm and we will be using this particular array as an example to understand the algorithm. So the first step of the algorithm is very simple. If you're given an array, the first step is very simple. Pick a pivot. Remember this, pick a pivot. What is a pivot? Pivot can be any element in the array, any element. Can be the first element, can be the last, can be the median, can be the random or can be any element by your choice, any element by your choice. There is no particular rule to pick a pivot, no particular rule. Now once you pick the pivot, so for an example, we say that we will be following the first rule and we'll be picking up the pivot as the first element of any given array to us. So we'll be like, okay, we're given this array, so we will be picking up the pivot as four. That is my job. I'll say, okay, given this array, so I'll be picking pivot as four, first element of the array. What after that? Pick that element and place it in its correct place in the sorted array. What does it mean? Now this array is unsorted. Agreed? But if I have to ask you, what is the sorted array? Can I say the sorted array will be one, two, three, four, five, six, seven, nine?"
+    },
+    {
+      "chunk_id": "L016_C5",
+      "start": 290.74,
+      "end": 370.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=290s",
+      "text": "have to ask you, what is the sorted array? Can I say the sorted array will be one, two, three, four, five, six, seven, nine? Can I? And if I have to write it, will it be something like one, two, three, four, five, six, seven, nine? And if I ask you, what is the correct place of four? If I have to ask you, what is the correct place of four? You'll be saying, correct place of four is this, which is the fourth place. It is currently lying at the first place, but actually the correct place of four is at the fourth place. That is what you'll do. You'll pick up four and you'll say, picked up an element and place it in its correct place and just take it and place it in its correct place. That is what you have to do. Pick up a pivot and place it in its correct place. Now, how will that help? Let's understand. I said, pick a pivot. So you picked up four and you placed it in its correct place. Done. That is the reason the intuition was very simple."
+    },
+    {
+      "chunk_id": "L016_C6",
+      "start": 370.62,
+      "end": 445.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=370s",
+      "text": "four and you placed it in its correct place. Done. That is the reason the intuition was very simple. Pick up a pivot and pivot can be anything. Doesn't matter what you pick because at the end of the day, if you're putting them into its correct place and every element is put, the array will be sorted. It doesn't matter what you pick. As long as you're putting them into the correct place at the end of the day, if I picked up every element, the array will be sorted. That's the reason any of them will work, but we will go with first element. You can go with the last, median, whatever you wish to. Okay. So we've understood the algorithm. Pick up a pivot and place it in its correct place in the sorted array. But what happens to other elements? So the rulers, step number two is very simple. Smaller on the left, remember this, smaller on the left and larger on the right. How? I'll explain you that afterwards, but as of now, just understand the explanation and the intuition of the algorithm. Small on the left and the larger on the right. So what are the smallest? Is six smaller? No. So six will go on the right. Is two smaller? Yes. On the left. Is five smaller? No. Greater. So goes on the right. Is seven smaller? No. Goes on the right. Is nine smaller? No. Goes on the right. Is one smaller?"
+    },
+    {
+      "chunk_id": "L016_C7",
+      "start": 445.82,
+      "end": 522.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=445s",
+      "text": "Greater. So goes on the right. Is seven smaller? No. Goes on the right. Is nine smaller? No. Goes on the right. Is one smaller? Yes. Is three smaller? Yes. So if you see, can I see, I have two, one, three and I have six, five, seven, nine. So these are greater and these are smaller. And can I see after one step, after one step, can I see this, that one element is at its correct place in the array? I can. So what is left? Can I say the left portion is still an unsorted and the right portion is still unsorted. Now why is the step? What is the intuition behind smaller on the left and larger on the right? If you think, if you think in a very logical manner, if four is at its correct place, the left guys to the four in the sorted array will be smaller and the right guys will be greater. That's why it's logical to say smaller go on the left and larger go on the right. So that's the intuition behind the step two. You have understood the intuition behind both the steps. What do you need to do is repeat these steps, repeat these steps again and again. And how do you do that? Very simple. Can I say four is done? What is left? The left portion and the right portion. Let's take the left portion two, one, three."
+    },
+    {
+      "chunk_id": "L016_C8",
+      "start": 522.74,
+      "end": 596.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=522s",
+      "text": "Can I say four is done? What is left? The left portion and the right portion. Let's take the left portion two, one, three. Can I say it's an individual array? It is. So let's take that individual array two, one, three. And let's again apply the same rules. What is the step one? Pick a pivot. What is our rule? First element. Let's go and pick up the first element as a pivot. Step two, if I ask you the correct order, if I have to write the sorted array, can I say this will be the sorted array? Can I say the correct order of two will be here? Thereby step two, correct order I put it, I've picked up a pivot and put it into the correct order. Step two, small on the left. So one is smaller on the left. Three is larger on the right. So can I say two is done and you're left with one and three. So again, two smaller arrays, but whenever an array has one element, no need to do anything. Why? One element is sorted in itself. So can I say at the end you made this array to one, two, three. So at the original places, this will change, this will change, and this will change. So the left guy got sorted. That's the time for the right guy. Six, five, seven, nine. So let's do it for the right guy as well. Six, five, seven, nine."
+    },
+    {
+      "chunk_id": "L016_C9",
+      "start": 596.62,
+      "end": 675.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=596s",
+      "text": "the time for the right guy. Six, five, seven, nine. So let's do it for the right guy as well. Six, five, seven, nine. So I'll write it six, five, seven, nine. Rule one on this array. Yes. So I did it very simple. Four was done. Did the same algorithm on the left, did the same algorithm on the right. So kind of recursion, kind of get, you get an idea of recursion. Take the array, get the pivot, do everything, then call it for the left, call it for the right. Kind of, you're getting this? Yes. Next. What's the next stop for the right array? Six, five, seven, eight. What's your pivot? Six. You have to hypothetically again, same rule, hypothetically, you have to write it. What will be it? Five, six, seven, eight. So what's the correct order of six? Yes. This one, smaller on the larger on the right. So can I say two arrays again? Five, seven, nine. So can I hypothetically say that six was placed at its correct place? I'll go ahead and say six was placed at its correct place. Right. And can I say five, can I say five is a single array? Five is also placed at its correct place. I can. What is left? This seven, nine. So again, another array. So let's take the seven, nine as another array. Again, pick up and pivot. Seven is the pivot. What's the correct place of pivot? Seven itself."
+    },
+    {
+      "chunk_id": "L016_C10",
+      "start": 675.3,
+      "end": 746.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=675s",
+      "text": "take the seven, nine as another array. Again, pick up and pivot. Seven is the pivot. What's the correct place of pivot? Seven itself. And the other one is nine, which is the greater. So on the right. So seven is placed again, go ahead and say seven is done. And now nine is a single element. That's also done. So at the end, can I say this is also sorted? So at the end, can I say the array automatically did it for all the elements and each of them is at its correct place? Can I say that I can thereby the quick sort algorithm works? This is the explanation and the intuition done. Explanation and the intuition. It's very simple. If I have to explain it in a shorter way, pick up a pivot, place it in its correct place, smaller on the left, larger on the right. And now the question comes, how do you do this in a code? How do you do this in the code? So this is what we will be understanding in the pseudo code, because it's picking a pivot is very easy because first element is kind of easy. But now you might be thinking, but how do you place the four in its correct place? Because by naked eye, it's very simple. This is the sorted way. So you're seeing four here. So you're saying four will be here. How do you code it?"
+    },
+    {
+      "chunk_id": "L016_C11",
+      "start": 746.36,
+      "end": 816.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=746s",
+      "text": "very simple. This is the sorted way. So you're seeing four here. So you're saying four will be here. How do you code it? That's where you have to understand the algorithm in depth. This other thing that you have to understand in order to do the pseudo code. So if you carefully see, this is the entire array, right? And once you've placed four, you go for the left and you go for the right. Now the next doubt that might be coming up to your mind is, but Stryver, we have an entire array and then you're placing the pivot at its correct place. Then you're going to the left and going to the right. So do you create new arrays? No. We'll be using the concept of low and high that we use in the merge sort. Instead of building new arrays, we'll be using pointers to explain that, okay, the left array is from here to here. The right array is from here to here. We'll be using kind of pointers. So let's understand the explanation in terms of pseudocode so that we can code. So before going to the pseudocode, let's understand how do we perform these couple of steps using a bit of variables and code logic so that we can actually write the pseudocode. So imagine you're given this particular array and you have to apply quicksort to it. And this is an unsorted array. So will you be carrying this entire array?"
+    },
+    {
+      "chunk_id": "L016_C12",
+      "start": 816.58,
+      "end": 890.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=816s",
+      "text": "this particular array and you have to apply quicksort to it. And this is an unsorted array. So will you be carrying this entire array? Logically doesn't make sense. Why? Because in the future, you know, these arrays will be broken down into smaller steps. So we have to recreate new arrays. So we will not be doing that. Instead of that, we'll be creating loop pointer, which will be pointing to the zeroth index, which is the first guy. I'll be keeping an high pointer, which will be pointing to the last guy. So what does low and high mean? It means the array is from here to here. Very simple. Now what did I see? What's your pivot? So your pivot is very simple. Your pivot will be array of loop. Why? We said pivot will be the first element. So the first element in the array is array of loop. So first step is done. That was picking up a pivot. What's the next step? Placing the pivot in its correct place. Right? So let's do it. How do you do that? In order to do that, you take a high pointer, place it at the lowest or the leftmost part of the array. And then take a J and place it to the rightmost part of the array. Done. Now you say, okay, let's find the first element, which is greater than my pivot."
+    },
+    {
+      "chunk_id": "L016_C13",
+      "start": 890.06,
+      "end": 961.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=890s",
+      "text": "to the rightmost part of the array. Done. Now you say, okay, let's find the first element, which is greater than my pivot. Because if it's smaller than it is at the correct place, but if it is greater than, then we will find it. So let's find. Is four greater than the pivot? No, because what's your pivot now? If I have to write the pivot, the pivot is four. So is four greater than the pivot? No. Is six greater than the pivot? Yes. So what you will do is you will say, okay, six is greater than the pivot. So you'll stop at six. So your high pointer stops at six. And then you will go and say, okay, let's find the first element that is smaller than the pivot from the right. I'll say three. Are you smaller than the pivot? He says, yes, I am. So I'll stop because three is smaller. So you have figured out the first guy who is greater than the pivot on the left. And the first guy was smaller than the pivot on the right. So you just have a swap. So you said three and you say six. So you just swap them. Done with the swap. What is the next job that you will do? Next job, again, come back and do the same thing. Figure out the first element from the left, which is greater than the pivot. Is three greater than the pivot? No."
+    },
+    {
+      "chunk_id": "L016_C14",
+      "start": 961.34,
+      "end": 1038.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=961s",
+      "text": "the same thing. Figure out the first element from the left, which is greater than the pivot. Is three greater than the pivot? No. So just go ahead. Is two greater than the pivot? No. Go ahead. Is five greater than the pivot? Yes. Five is greater than the pivot. So I has stopped at the element, which is greater than the pivot. Now go to the right and find the first element that is smaller than pivot. Is six smaller than pivot? No. So move. Is one smaller than the pivot? Yes. Stop. So five and one will swap. One and five swapped. Perfect. Let's again continue the same step. We say, okay, on the left, find the first who is greater. Is one greater? Is one greater than pivot? No. Is seven greater than pivot? Yes. We stop there. So it stops at seven. On the right, find the first who is lesser than pivot. Is five lesser than pivot? Is five lesser than pivot? No. So we move. Is nine lesser than pivot? No. We move. Is seven lesser than pivot? No. We move. Is three, is one lesser than pivot? Yes. And we stop. And we stop. So we stop here. So J stops here."
+    },
+    {
+      "chunk_id": "L016_C15",
+      "start": 1038.76,
+      "end": 1118.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1038s",
+      "text": "is one lesser than pivot? Yes. And we stop. And we stop. So we stop here. So J stops here. Like J goes here, J goes here, and J then stops here. So apparently we stopped at a position where J has crossed I. It has crossed I. You stop. You do not swap anymore. You do not swap anymore, which means you are in the territory. You are in the territory where if you see everything is smaller than the pivot. And on the right, you are at a territory where everything, seven, nine, five, six is greater than pivot. So you stop. What's the last job you'll do? Since you stopped at one, you just take this four and you place it here. So you basically say, okay, one and four goes here. So if you see what happens is one, three, two, four is at its correct place, seven, nine, five, six. That is super simple. That's very simple. And we are done with this. Yes, that's, that is how easy it was. So once you have placed your pivot at the correct index in the sorted array, can I call this as the partition index? Why can I call this as a partition index? Very simple. The reason being, this is where it's at the correct order in the sorted array. This is not in the correct order."
+    },
+    {
+      "chunk_id": "L016_C16",
+      "start": 1118.6,
+      "end": 1184.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1118s",
+      "text": "simple. The reason being, this is where it's at the correct order in the sorted array. This is not in the correct order. And this is not in the correct order. It's a kind of partition. Left is still to be done and the right is still to be done. That is why you call it as a partition. So can I see, as of now, the low was pointed here and the high was pointed here. Can I see the new array that you have to sort according to the same algorithm is from here to here and is from here to here. So can I see the new array? One array will be low to partition minus one and the other array will be partition plus one comma high. This is where this array is this and this array is this. So what do you do is perform a quick sort again and perform a quick sort again on this. That's it. And on this array, again, repeat the same algorithm. And once you have done this, you will be able to completely sort the array. So I think you've understood the explanation, the intuition and kind of the algorithm as well as of now. It's time to write the pseudocode. The pseudocode is going to be very simple. We say quick sort and we know it will be given an array and we know the array in the"
+    },
+    {
+      "chunk_id": "L016_C17",
+      "start": 1184.92,
+      "end": 1255.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1184s",
+      "text": "to be very simple. We say quick sort and we know it will be given an array and we know the array in the array, the array that we have to sort will be from low to high. That is something which we definitely know. And we know we will only sort the array if it has more than one elements. That means if low is lesser than high, because if low is equal to high in that case, assume high is here, which means this is the array. One element is already sorted. So if low is lesser than high, that means it has more than one elements. Thereby we will be sorting it. And this is what kind of the algorithm's gesture will look like. If low is lesser than high, what do we do? Imagine you're given this array. What did we do at first? We figured out the pivot, put it at its correct place and then sorted the left half and then the right half. So what did we do at the first step? Place the pivot at its correct place and found out where it was placed and then called for the left and then called for the right. So can I say, okay, let's call a function, let's call a function which will do that. So I'll tell the function that for this array, low to high, please find out a pivot, place"
+    },
+    {
+      "chunk_id": "L016_C18",
+      "start": 1255.16,
+      "end": 1331.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1255s",
+      "text": "a function which will do that. So I'll tell the function that for this array, low to high, please find out a pivot, place it at its correct place and tell me where you placed it. Like for this case, you will be placing it here. Tell me where you placed it. And I'll call that as partition index, partition index. Done. Once I've placed it at its correct place, I'll have other guys because after the algorithm, after the function has taken place, how will it look like? It'll look like something like two, one, three, and this side it'll look like six, five, seven, nine. After the function has taken place. Because now you have to sort this portion of the array and this portion of the array and the partition index is here. So can I again call it quick sort, go for the left now, which is from, which is the array. But in this array, take from low to partition index minus one. And in the right array, take it from partition index plus one comma high. Again, the lines can swap. This can be at the first and then this can also be there. It doesn't matter. Even if you swap it like this, it's still okay. Because you have to sort the left and the right or the right and then the left. Any, any way works as long as you're sorting it."
+    },
+    {
+      "chunk_id": "L016_C19",
+      "start": 1331.74,
+      "end": 1405.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1331s",
+      "text": "to sort the left and the right or the right and then the left. Any, any way works as long as you're sorting it. This is simple because the recursion will do a job because recursion has been called for this. So again, it will do its job. Quite simple. But the question comes up. Okay. I understood. But how do we write the function? Let's understand how do you write the function? The function, remember I'll write it with maybe a yellow. The function has taken an array and has taken a low and has taken a high. And you know, it has to find a pivot. And in our case, the pivot is very simple. We were saying the pivot to be array of low, which is the first element. And what did we do at every step? If you remember, we first kept the I here and we kept the J here. So let's do that. We said I is equal to array of low. Perfect. Or, or maybe just, just write it for the index. I is at low and J is at high. This is something which we said. And what did we do? We kind of said, okay, if I is here, which is the first element greater than pivot. And we stopped here and then we swapped and we kept on doing this, kept on doing this till I cross J and we had a left and a right."
+    },
+    {
+      "chunk_id": "L016_C20",
+      "start": 1405.14,
+      "end": 1484.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1405s",
+      "text": "we swapped and we kept on doing this, kept on doing this till I cross J and we had a left and a right. So we kind of write, okay, while I lesser than J keep on doing this. So we keep repeating the steps. Now, what are the steps? Find out because I was here. Find out the first guy that's greater than the pivot. So we're okay. While array of I is lesser than array of pivot. That means it's okay. This is not the guy that I'm looking for. If four is lesser than equal to four, I'm not looking for you. I'm looking for someone greater than you. So this is a correct condition. And obviously I cannot exceed the array's boundary, which is definitely high. It cannot exceed the array's boundary. If that's the case, we say, okay, I plus plus. That means it keeps on going, keeps on going till it doesn't find an element greater. So the moment it is at six, the while loop will stop because that's where it has to. And similarly from the right, we say array of J. From the right, what do you need to find? Someone who is smaller. So if this guy is greater than pivot, then what you will do is you will say, okay, J"
+    },
+    {
+      "chunk_id": "L016_C21",
+      "start": 1484.82,
+      "end": 1560.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1484s",
+      "text": "who is smaller. So if this guy is greater than pivot, then what you will do is you will say, okay, J again, since you're going left, just say this. And you'll say, okay, J minus. So what these lines will do is this will find the first element, which is greater than the pivot. And this will find the first element that is lesser than pivot. And at the end of the day, remember, if they haven't crossed, if they haven't crossed, if you remember, then you swap them. You say array of I and array of J to be swapped. Quite simple. And then you can close this. This while loop gets closed here. Very, very simple. So if I have to show you the algorithm again, let's do a dry run. What happens? First time I stops here and J stops here. So six and three get swapped. Six and three. Next I will stop here. Next J will be stopping here. So next one and five get swapped. Next I goes and stops at seven because seven is greater than four, but J kind of stops here. J goes here. Doesn't stops because nine is greater. J goes here. Doesn't stop because seven is greater. J goes here. Stops."
+    },
+    {
+      "chunk_id": "L016_C22",
+      "start": 1560.14,
+      "end": 1634.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1560s",
+      "text": "goes here. Doesn't stops because nine is greater. J goes here. Doesn't stop because seven is greater. J goes here. Stops. If you see J has crossed I, J has crossed I because J is at one. So if J crosses, I do not swap anymore because you are already at the left half three to one and you're already at the right half seven, nine, five and six. You're already at the correct halves. So you do not do a swapping. If they have crossed, they're already in the correct zones. So at the end of the day, where is J? J is at here and lower is at here. So at the end of the day, when this has, this has crossed, we stop and we say, okay, it's time for the pivot to come. It's correct. Please. So we have a pivot, which is the first element with the array of J, which is the last element of the left index, which is the last element of the left index. We just swap it and this will come here and this will go here. Quite simple. So eventually what you will get is three to one. Perfect. Done. So once you've done this, what do you need to do? You need to tell them the partition index and you know, the index is nothing but J because that's where the pivot came in. So return J. So this is how the function will look like. Quite simple."
+    },
+    {
+      "chunk_id": "L016_C23",
+      "start": 1634.78,
+      "end": 1702.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1634s",
+      "text": "is nothing but J because that's where the pivot came in. So return J. So this is how the function will look like. Quite simple. This is how the function will look like. Again, repeating, find the first element greater than pivot, find the first element smaller than pivot swap. Again, keep doing the same thing till you haven't left and right. Once you have that, just swap with the last element. So if you are able to understand this, it's pretty much done. Also before going into the code, I'll just like to mention one thing. This portion is something which we have to be careful about. And this portion is something again, which we have to be careful about. Why? Because when you write this and you're doing I plus plus, this might exceed the low to high array boundary because you are standing at the last and you're checking for the last and then you're moving. It might exceed the boundary. This instead of high will be high minus one. This instead of low will be low plus one. And there is other doubt that might come into your head. Why are we doing lesser than equal to and a greater here? Imagine you had four and you place three, one, two on the left and let's say five, six, seven, nine on the right. Four is placed. What if there was another four?"
+    },
+    {
+      "chunk_id": "L016_C24",
+      "start": 1702.58,
+      "end": 1761.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1702s",
+      "text": "two on the left and let's say five, six, seven, nine on the right. Four is placed. What if there was another four? Then you would have either placed four on the left or either on the right. So I will say on the left, we will place everything lesser than equal to on the right. We'll place everything greater than equal to. That's why we are finding greater and we are finding lesser over here. Got it. Why? Because you have to decide where do you put the equal to guys? Like if there is someone equal to where do you place them? You have to decide on that as well. So you place it on the left. In that case, you do it like this. You place it on the right. Then you have to do the vice versa. I hope that does make sense. So I can say that we are done with the pseudocode and the dry run as well because while I was writing the code, I was doing the dry run as well. And going back to the recursive dry run for these couple of things, I'll recommend you to watch my merge sort video because in that I've explained how these couple of things split the arrays and how individual steps work. So just in case you are not aware how the recursion works, merge sort tutorial is a"
+    },
+    {
+      "chunk_id": "L016_C25",
+      "start": 1761.62,
+      "end": 1832.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1761s",
+      "text": "arrays and how individual steps work. So just in case you are not aware how the recursion works, merge sort tutorial is a classic example where I've done the entire dry run so that you understand recursion in depth, how sub problems are solved and everything. By the way, before moving to coding it in an online compiler, I just wanted to quickly tell you something. This is a divide and conquer algorithm because we're kind of dividing it. And when you divide it, every part is getting solved by itself. So that's why divide and then you conquer basically solve. It's a divide and conquer algorithm. Now coming into the online compiler, we'll be quickly coding the quick sort algorithm. By the way, the problem link is in the description. Make sure you code it as well and submit. So coming to over here, we have to return a vector. So assume we have a quick sort, we say array zero and array dot size minus one. At the end of the day, we are returning the array itself because we have to return it. And now let's write the void quick sort and vector in and then array and then ind low ind high. And we know if low is lesser than high, then only we do it like for one elements on that we will not do it. And we have to get the partition index."
+    },
+    {
+      "chunk_id": "L016_C26",
+      "start": 1832.86,
+      "end": 1899.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1832s",
+      "text": "only we do it like for one elements on that we will not do it. And we have to get the partition index. And for that we can call the partition function and the partition function can take array low and high. And then we can call the quick sort for array and low p index minus one. And we can also call the quick sort for array p index plus one comma high. That's it. That is what I will do. And over here we can say partition and we can say vector and array and we can take the low, we can take the high. And can I say that the pivot will be array of low? We can say the array I will be this. We can say the G pointer will be this. If you remember well enough and we can just go on till I lesser than J and we know that we have to go on till finding the first element that is greater than pivot on the left. So we go on till it is lesser than equal to and we stop at lesser than high minus one so that it doesn't cross the boundary when we do I plus plus. And we also on the right have to find the element that is smaller. So we go on till it is greater than pivot not equal to because the equal to guys will"
+    },
+    {
+      "chunk_id": "L016_C27",
+      "start": 1899.7,
+      "end": 1971.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1899s",
+      "text": "the element that is smaller. So we go on till it is greater than pivot not equal to because the equal to guys will be on the left and we go on the same reason low plus one that we do not cross it. And at the end of the day if they haven't crossed let's take the right guys put them on to the left and if the left guys put them on to the right. The swap of array of I array of J perfect. At the end once everything is done we know J will be at the last of the left. So swap the pivot which is an array of low with the last of the left and since the pivot goes to J we say that's the partition index. That's how you can write the partition. Once you've done this you can quickly go and run this. It's giving me time limit exceeded. Why is that happening? Because I've written less than equal to it will be greater than equal to my bad. It all passes now quickly let's submit it and see if it's running absolutely fine. It is. So now moving back to the iPad to discuss the time complexity. So the time complexity of this particular algorithm is n log n. Why is it n log n? Again for the same reason as merge sort because every time you're kind of splitting them into two halves."
+    },
+    {
+      "chunk_id": "L016_C28",
+      "start": 1971.78,
+      "end": 2046.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=1971s",
+      "text": "is it n log n? Again for the same reason as merge sort because every time you're kind of splitting them into two halves. Now over here the halves are for sure getting into like something and something. Then again this is getting into something and something. So it's kind of not getting equally split as in most short but they're getting into a couple of halves. So this half will be going on like the height of the tree. If you remember the most short video will be log base to n. That's how because two to the power something log base to n and why n because every partition every this function is going through the entire array itself. So it's a big off n for everything. So n cross log n and the space complexity we are not using any extra space as there's a recursion stack space but let's not compute it. So this is the time complexity in the space complexity. I did not explain n log n in depth because this is a continuous course. I'm assuming you have seen the merge sort video where I have discussed in depth about n log n. So go back and watch it because over here we perform the similar kind of recursion calls. So it's very unlike this being big off n is self-explained. Why big off n because you're moving i from low till high and you're moving j from high till low."
+    },
+    {
+      "chunk_id": "L016_C29",
+      "start": 2046.02,
+      "end": 2105.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=2046s",
+      "text": "off n is self-explained. Why big off n because you're moving i from low till high and you're moving j from high till low. That's a big off n. It's a very obvious case and for these couple of things it's log n. So it comes from merge sort. I've explained that over there. So the time complexity is n log n and the space complexity is big off one not taking recursive stack space into account. That's the time complexity and space complexity. So with this I can say I have wrapped up merge sort as well and the couple of notes will be added very very soon. So guys with this we complete step two of striver's A to Z DSA course. The next thing will be step three where we will be starting with the arrays playlist. So guys I hope you have understood the quick sort algorithm in depth. Just in case you did please make sure you hit that like button and if you're new to our channel what are you doing. Kill that subscribe button right away and to continue our tradition do comment and distribute so that I understand that you have understood everything and also as an assignment. Yes as an assignment you have to write this code for descending and you have to paste that code in the comments. I'll be checking out the comments for sure. And with this I'll be wrapping up this video."
+    },
+    {
+      "chunk_id": "L016_C30",
+      "start": 2105.3,
+      "end": 2115.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=WIrA4YexLRQ&t=2105s",
+      "text": "to paste that code in the comments. I'll be checking out the comments for sure. And with this I'll be wrapping up this video. Let's meet in some other video. Till then bye bye. Take care. Whenever your heart is broken don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

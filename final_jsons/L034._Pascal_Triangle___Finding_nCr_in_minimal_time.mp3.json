@@ -1,0 +1,169 @@
+{
+  "lecture_id": "L034",
+  "lecture_number": 34,
+  "lecture_title": "Pascal Triangle | Finding nCr in minimal time",
+  "youtube_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8",
+  "chunks": [
+    {
+      "chunk_id": "L034_C1",
+      "start": 0.0,
+      "end": 69.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another lecture from the Stryber's A to Z DSA course just in case you are for the first time here. This is world's most in-depth course when we talk about DSALGO. Why do I say that? This course has 450 pipe modules. By the end of the course, you would have solved more than 400 plus problems in DSALGO. You can go over the entire internet. You can buy any of the paid courses in the market. None of them will be teaching you DSALGO in such depth. Something that I can give you as assurance is once you complete the entire course, you'll be able to clear any of the DSALGO rounds in any of the companies in any part of the world. So till now we have covered in the easy and medium section of arrays. Now today we will be starting with the hard section of arrays and the first problem that we will be solving is the Pascal's triangle. Now what does the problem state? Before diving into the problem statement, let's understand what is a Pascal triangle. So the first row will always have one and in the second row it is one at the starting, it is one at the last and on the third row it is again one at the starting and one at the last and then"
+    },
+    {
+      "chunk_id": "L034_C2",
+      "start": 69.72,
+      "end": 130.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=69s",
+      "text": "is one at the last and on the third row it is again one at the starting and one at the last and then you see in the previous row how many elements were there? There were two. If there were two elements, there will be a middle element like there will be a middle place between them. So what you'll do is you'll take this and you'll take this and you'll add it up. So it gives you two and you place it in the middle in the next row. Done. In the next row it's again one and one at the first and last. After that you'll see, okay there are three elements. So there will be two middle. There will be two middle. In that middle what you'll do is you'll take one, you'll take two and you'll add it and you'll get three. And again the other middle is here. So you'll take two, you'll take one and you'll add it, you'll get three. Perfect. What about the next? Again one at the start and one at the last. How many middles? Can I say one middle here, one middle here, one middle here. So there are three middles. This will be one plus three which is four, three plus three six, three plus one, four. So basically three plus three six and three plus one, four. If"
+    },
+    {
+      "chunk_id": "L034_C3",
+      "start": 130.68,
+      "end": 206.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=130s",
+      "text": "which is four, three plus three six, three plus one, four. So basically three plus three six and three plus one, four. If I go ahead, one at the start, one at the back and then one middle here, one middle. So there are four middles. Add it up, five, ten, ten, five and you can keep on going and this is what the Pascal triangle looks like. So if you go to an interview there can be three types of problems that might be asked to you. The first one is super simple. Given the row number, given row and column, tell me the element at that place. Tell me the element at that place. What does it mean? Imagine I give you r equal to five, c equal to three. So this is first row, this is second row, this is third row, this is fourth, this is fifth, this is sixth. So in the fifth row I'm asking you the third element. So that is six. So the answer to this will be six. This is the first type of problem. What can be the second type of problem? They might ask you, print any nth row of the Pascal triangle, nth row of Pascal triangle. Imagine I give you n as five. So what will be the fifth row? It will be this one. So what do you need to return is, you just need to return one, four,"
+    },
+    {
+      "chunk_id": "L034_C4",
+      "start": 206.76,
+      "end": 282.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=206s",
+      "text": "be the fifth row? It will be this one. So what do you need to return is, you just need to return one, four, six, four, one. This is the second type of problem. What can be the third type? The third type will be, print the entire Pascal triangle. Give it n, given n, print the entire triangle. So imagine I give you n as six. In that case, you have to print the entire triangle. Got it? So let us solve the first question. And the first question it is stating, given r and c, you have to tell me the element at that row number and the column number. So one of the traditional ways is, you say that you're going to generate the entire triangle and then get the value at r and c. And that kind of makes sense. And that is the brute force solution, which we will be doing at the third type. But do we have an easier way? Yes, we do have. There's a very simple formula to it. So if you're given the row number, then you do an r minus one. And if you're given the column number, you do a column minus one. And you say r minus one combination of c minus one. So I'm sure that you know the ncr. So in mathematics, ncr is nothing but n factorial by r factorial into n minus"
+    },
+    {
+      "chunk_id": "L034_C5",
+      "start": 282.42,
+      "end": 348.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=282s",
+      "text": "So I'm sure that you know the ncr. So in mathematics, ncr is nothing but n factorial by r factorial into n minus r factorial. I hope you know that, right? And how do you find this out easily? Because over here, we know for this, the answer is this. So if you're given five, what you'll do is five minus one is four, c minus one is three minus one is two. So the answer is four c two, and the value of four c two is nothing but four into three into two into one, according to n factorial, what's the value of r factorial, two into one, and then it says n minus r, which is four minus two. So another two factorial, it's basically two and two gets off and two and two. So the value is six, which is ideally the value if you carefully see, that is the value, right? So we know the formula, but how do you find it out? One of the easiest ways is you figure out n factorial, you figure out r factorial, you figure out n minus r factorial. And what do you do is numerator by denominator one into denominator two. And you know how to find out factorial, that's a very simple step. If you said n factorial, you run a loop for n, if you said r factorial, you run a loop"
+    },
+    {
+      "chunk_id": "L034_C6",
+      "start": 348.1,
+      "end": 427.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=348s",
+      "text": "very simple step. If you said n factorial, you run a loop for n, if you said r factorial, you run a loop till r, n minus r till n minus one. So the simplest way to find out this value ncr is nothing but just n factorial, r factorial, and you just run loops. But that is the extreme brute force. Can we have a shortcut? We can. Let's have some observation. Imagine you give it seven c two. Formula states seven factorial by two factorial into seven minus two, which is five factorial. This is what the formula states. So if I have to write it, can I write it something like this? Seven into six into five into four into three into two into one. Seven factorial is this two factorial can be written as two into one into five factorial is five into four into three into two into one. Can I say this and this will go off always and the remaining values will be seven into six and two into one. Something carefully to observe. This one went for two places like two into one. So from seven you go to places. So what is the shortcut that you noticed? If I take 10 c three, what you'll always do is you will say three went three places three into two into one. So 10 will also go three"
+    },
+    {
+      "chunk_id": "L034_C7",
+      "start": 427.14,
+      "end": 501.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=427s",
+      "text": "what you'll always do is you will say three went three places three into two into one. So 10 will also go three places 10 into nine into eight. So this is the shortcut that you will be applying. Okay, but make sure when you compute this using for loop, you should be computing from like in the sense 10 by one into nine by two into eight by three. Why is that? Because if you initially take three and you try to divide by 10, that will give you nothing. But if you initially take 10 by one, it is divisible. And if you take 10 into nine by two, two will kind of divide it. And then if you take three, in three numbers, one will definitely be divisible by three. And hence, it will be easier. So what will the code look like? Can I say I know definitely for I know definitely one thing. If it is three, I'll run it for three times. So let's go ahead and run it for three times. So can I say I equal to zero, and I'll run it till whatever like if I have to write, probably I'll write the function that will be a better job. So imagine I did a function, which finds me n, c, r, and it is taking n and is taking r, okay. And what we say is, okay, we have a numerator, or rather, we can"
+    },
+    {
+      "chunk_id": "L034_C8",
+      "start": 501.9,
+      "end": 575.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=501s",
+      "text": "and it is taking n and is taking r, okay. And what we say is, okay, we have a numerator, or rather, we can have a resultant as one, it's a resultant as one, and we run a loop from i equal to zero, and we will run till r. Okay, why? Because we know that if it is three, we just run three times. So we'll run it like this. And initially, what we will do is resultant equal to resultant into if you carefully see initially, it was 10, which is basically n, right? And then it was nine, which is basically nothing but 10 minus one, then it is eight, which is basically 10 minus two. So whatever this i is, what you'll do is you'll say n minus i, because the first time n is 10, so 10 minus zero will be 10. And the next time n is still 10, but i is one, so it will be nine. So the numerator keeps on getting multiplied. And what do you do is, once you've done the multiplication, you will go ahead and divide it with what value, it's going to be very simple, you say i plus one, why i plus one, whenever i is zero, the first time you take one, then whenever i is one, you take two, whenever i is two, you take three. So apparently what will happen is first time 10 and one,"
+    },
+    {
+      "chunk_id": "L034_C9",
+      "start": 575.02,
+      "end": 645.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=575s",
+      "text": "i is one, you take two, whenever i is two, you take three. So apparently what will happen is first time 10 and one, then nine by two, then eight by three, and this will be done. Once this is done, you can return the result. And this will be your extreme brute force. If I ask you the time complexity, can I say the time complexity will be very simple, you're running a loop for big O of r. So in order to find ncr, the time complexity taken is big O of r, and the space complexity taken is big O of one, please do not go ahead and run a loop like this because this will be n factorial. If you go ahead and run a loop, it will take big O of n plus big O of r plus big O of n minus r, which might end up taking a lot of time. And also when you calculate n factorial, the values might be very big. Also remember one thing, for such problems, it's always safer to take the largest data type as long long so that there is no overflow, got it. So I've written my function ncr. In order to solve the first type, what I'll say is function ncr r minus one and c minus one. If I pass these couple of parameters, what will happen is this ncr will find me the value"
+    },
+    {
+      "chunk_id": "L034_C10",
+      "start": 645.98,
+      "end": 716.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=645s",
+      "text": "minus one and c minus one. If I pass these couple of parameters, what will happen is this ncr will find me the value of r minus one and c of c minus one and it will give me the answer. And this is how you can easily solve the first type of problem. Now let's move to the second one. So what is the second type of problem stating? Print any given row. So imagine you've been asked to print the sixth row. Let's carefully observe something. The first row has one element, the second row has two elements, the third row has three and similarly the sixth row has six elements. Can I say n row, like the nth row rather, nth row will always have n elements. I definitely can say that, right? So this is what we know at first that we have to run a loop for n times. Now we know one thing for sure, everyone has a, has this formula of r minus one and c of c minus one. We know that. So what we can do is the extreme brute force can be super simple. We say we know one thing for sure, the column will start from one and the column will go till the number of rows and then we can do a column plus plus and every time we can say rather print not c out, we can easily say print. We will call"
+    },
+    {
+      "chunk_id": "L034_C11",
+      "start": 716.86,
+      "end": 783.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=716s",
+      "text": "do a column plus plus and every time we can say rather print not c out, we can easily say print. We will call the function which computes ncr and what we will pass is, we will pass the row number which is n minus one and we know the formula is c minus one, so c minus one and every time c changes, because for the first time c will be one, then c will be two and apparently it will keep on printing this one, then this one, then this one, then this, then this. So what will be the time complexity for this? Can I say we are running a loop for n times, so it will be n and we know this function takes b go of r. So the time complexity will be n into r. This is where the interviewer will not be happy. He will be like, why are you using formula repeatedly? Can you do it in a better way? And this is where we will try to optimize it. Okay. So in order to optimize, we have to dive deep into the formula. The formula was r minus one c and c minus one, correct? So let's look at the first element. The first one is one. Let's look at the next. It is five. Probably I can write it as five by one. Probably. What is the next one? 10. And that is at the third column. That's at"
+    },
+    {
+      "chunk_id": "L034_C12",
+      "start": 783.26,
+      "end": 852.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=783s",
+      "text": "I can write it as five by one. Probably. What is the next one? 10. And that is at the third column. That's at the third column. What would be the formula? Six minus one, five c three minus two, three minus one, two. And it'll be like five into four and two into one. Can I say the 10 is coming from here, which is this formula? I can. So what did you add more? Did you add four into one more from the previous one you did? So this one is this, this five is this, and this can be written as five into four and one into two. I can. So we are done with the third column. It's time for the fourth column. The fourth column, what will be the formula? N minus one, five c four minus one, three, five c three. It'll be like three into two into one. Correct? Or if I have to write it in the other way, it'll be one into two into three and five will also go three times. So if you carefully see what was the addition, this was already there in the previous one and we just added this one. So, okay, fine. It'd be like five into four into two into three by three. So there's an addition of this one. Let's look at the next at this one. So this is going to be like five c. What is"
+    },
+    {
+      "chunk_id": "L034_C13",
+      "start": 852.9,
+      "end": 925.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=852s",
+      "text": "an addition of this one. Let's look at the next at this one. So this is going to be like five c. What is this column? This is the fifth column. It's five minus one, four, five c four. So one into two into three into four and five into four into three into two. So if you carefully observe, this was the answer for the previous one. So as of now you are saying, please add an extra, this two by four. Amazing. And you can keep going. So if you carefully observe at first five by one got added. Next four by two got added. Next three by three got added. Next two by four got added. So if you start with answer equal to one at column one and at column two, what happens at column two, you probably add a five by one and then at the next, you probably add a four by two and in the next probably add a three by three. So if you, if you can somehow figure out a formula to do this, I think our job will be pretty much done. So let's try to figure out a formula. So what will be the formula? Let's try to think and see if we can analyze the formula. Something I know for sure. Now what is the one thing that you know for sure? The one thing that I know for sure is the"
+    },
+    {
+      "chunk_id": "L034_C14",
+      "start": 925.38,
+      "end": 1005.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=925s",
+      "text": "know for sure. Now what is the one thing that you know for sure? The one thing that I know for sure is the first element will be one and the last element will definitely be one. So we don't have to think about the first and the last that much, but without it, you need to think about everyone else. Okay. So we probably can start with answer as one. We can start with answer as one. Uh, in the first attempt, we are doing a five by one and the column number was two column number was two. So this is okay. What if, what if I take the columns in terms of zero based indexing? Will it be an easier job? Let's see. So let's write down the zero based indexing. This is zero, zero, one, two, three, four. Does it make it easier? Yes, it does. Over here, one is here. Over here, two is here. Over here, three is here. Over here, four is here. Kind of makes it easy, right? And if you go ahead and write the next one, which is the fifth one, it'll be like five into four into three into two was common. One into three into four would be common. The last one will be five. This one will be one. So can I see what we are doing is answer into whatever is this column. We're always"
+    },
+    {
+      "chunk_id": "L034_C15",
+      "start": 1005.02,
+      "end": 1077.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=1005s",
+      "text": "five. This one will be one. So can I see what we are doing is answer into whatever is this column. We're always dividing it by column, column, column, column, column, whatever was the previous answer. We're dividing it by column. What are we multiplying? You're multiplying at first five, then four. It's like if n row is six, can you relate? Six becomes five, reduction of one. Six becomes four, reduction of two. Six becomes three, reduction of three. Can I say it's n, which is the row number? Probably you can write row number. Row minus column. Yes, this is what you have to keep multiplying. If you do this, you'll be able to generate the entire row. So I have to write it. If I have to write it, it'll be like, I know one thing for sure. Probably I'll write it again. I know one thing for sure that for rather let's keep answer equal to one. And I know one thing that this will be my first. This will be my first because for the zero throw, I know the answer will, sorry, zero column, the answer will always be one. So now I will start from, for i equal to one, this is where I start"
+    },
+    {
+      "chunk_id": "L034_C16",
+      "start": 1077.38,
+      "end": 1154.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=1077s",
+      "text": "answer will always be one. So now I will start from, for i equal to one, this is where I start from. And I will go on till the last, which is n, because the last one is fifth index and n was six. So we go on till this. Perfect. And what will we do? We will say answer equal to, first we'll try to multiply. First we'll try to multiply. What will we multiply? Obviously this one, which is nothing but whatever is n minus this i because this is i. So minus, and then we will say answer equal to answer divided by i. Super simple. Once this for loop, like this for loop will always keep on printing and this will print the entire thing. Pretty simple, isn't it? What did I do? I just kept on multiplying first five, one by one. Then in the next step, four by two, I kept on generating, kept on generating and we kept on printing. So eventually we first print this, then this, then this, and then this, and we will end up printing the entire nth row of the Pascal triangle. Got it? If I talk about the time complexity, can I say the time complexity will be whatever is the number of rows, those many columns you have to print. So the time complexity"
+    },
+    {
+      "chunk_id": "L034_C17",
+      "start": 1154.54,
+      "end": 1221.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=1154s",
+      "text": "the time complexity will be whatever is the number of rows, those many columns you have to print. So the time complexity will be big of n and the space complexity will be big of one. Quite simple. So you're done with the first and the second type. What about the third type? The third type is stating you'll be given n and you have to print this entire Pascal triangle. Does it mean you have to give all these spaces? No, it's not pattern printing. What do you have to do is, the first row is containing one, so you return one in a list. Then it is one, one, so you return one, one, next one to one, next one, three, three, one, next one, four, six, four, one, next one, five, ten, ten. This will be the answer if n is six and everything will be inside a list and all of these lists will be put inside a list and then this is what you have to do. So what is the extreme naive brute approach that you can think of? It's definitely using the formula r minus one c, c minus one. What you do is, you know the rows will be from one to n, so you can run a loop from one to n for rows and you know the columns will be from one to this current row. Why is that? Because for the first row"
+    },
+    {
+      "chunk_id": "L034_C18",
+      "start": 1221.62,
+      "end": 1290.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=1221s",
+      "text": "n for rows and you know the columns will be from one to this current row. Why is that? Because for the first row it is one element, for the second row it is two elements, for the fifth it is five elements. For the row number, the columns are equivalent to the row number. So we know the answer will be a list which we have to return. So probably take a temporary list and take an answer list. Now what you do is, inside the inner formula, temporary list dot add as the ncr function that you wrote in the first to generate the answer for every element, individual element and you can add it up. Once this temporary list is generated, you can ask the answer to add this up, temporary list. And eventually what you can do is, you can return this answer. Yes, eventually you can return this answer and this is how easily you can do it. By the way, the code for this, you can find it in the updated article in the description below in case you want to see the code for this. So what will be the time complexity? Can I say I'm running an n loop, another n loop and this, if you remember took big O of r, it's near about, not exactly, near about n into n into r, near about, which is near about"
+    },
+    {
+      "chunk_id": "L034_C19",
+      "start": 1290.54,
+      "end": 1354.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=1290s",
+      "text": "took big O of r, it's near about, not exactly, near about n into n into r, near about, which is near about big O of n cube in the worst, like near about, not exactly, big O of n cube. We will not talk about the space complexity because we're storing the answer to return, we're not using it to compute, it is the answer which is stored. So the time complexity is this. Obviously the interviewer will not be happy and he'll ask you to optimize it. So how can you reduce it from big O of n cube? So we will use the second type. If you remember the second type, given any row number was generating you the entire row. So we'll be using this to generate every row and this was taking a big O of n complexity. So for every row that there are n rows, we will take big O of n to generate that row. The total complexity will boil down to big O of n square and this is what will be the optimal solution for the type three. Okay, so time to code the third type up. Again, the problem link will be in the description. Please, please make sure you try the problem from the link in the description itself. So what are the first thing you'll write? Probably we'll write a generate row function, which"
+    },
+    {
+      "chunk_id": "L034_C20",
+      "start": 1354.06,
+      "end": 1428.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=1354s",
+      "text": "from the link in the description itself. So what are the first thing you'll write? Probably we'll write a generate row function, which will take the row number and it will give me a list of all the elements in that row. And if you remember properly, as I always said, you please, please take a long, long over here because you'll be multiplying, multiplying so the numbers might close. Please take long. What's the first thing? You know, this will be your answer, the root. And we know one thing for sure. We will always have one at the starting. And then if you remember, we started with zero based indexing. If you remember, this was considered as the zero where the answer was one. This was considered as one and then it went across and did a five cross one. This was considered as two and then it went across and did a two divide and a four. So for this two, what you did was n was six, the row number was six, six minus two. At the bottom you divided it by two. So this is something you'll do. So you will go ahead and say, okay, column now goes from one. And if you remember, the last one will be three, four, five. The last one will be five. So column will go to the row, not equal to equal to rather this. And over here, let's probably take answer is there. So what you'll"
+    },
+    {
+      "chunk_id": "L034_C21",
+      "start": 1428.98,
+      "end": 1503.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=1428s",
+      "text": "column will go to the row, not equal to equal to rather this. And over here, let's probably take answer is there. So what you'll do is answer equal to answer into at first, let's have it on the top. What is the top row minus column? Perfect. And then you will say divide and what will be at the bottom was the column. Okay. Done. Once you've done this, you will say answer row, can you please take this? They'll take it and then you can return this answer row. So what you've done is you've written a function that's basically the type two, which takes a row number and gives you the entire row. And now it is wanting the entire triangle. So you will say list of list and this will be, okay. And maybe, yeah, triangle or answer would have. And now we know the number of rows will go on from this to this and I plus plus, we definitely know this and we know there will be temporary probability category. And this temporary will call the generator and it will pass the store number. And once it is generated, you will say answer, can you please store this temporary and instead of taking it in a temporary, you"
+    },
+    {
+      "chunk_id": "L034_C22",
+      "start": 1503.42,
+      "end": 1567.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=1503s",
+      "text": "is generated, you will say answer, can you please store this temporary and instead of taking it in a temporary, you can also directly write it because the function returns a list. The list itself will get into the answer. Once you have done this, you can go ahead and return this and that will be your answer. Got it. So whenever you're appearing for an interview, please, please make sure that you maintain core quality. Now, what do I mean by code quality? I've written the function like this and got it from here. I could have also written it something like this. Probably I'll just have answer row here and I'll just copy paste this portion. I'll put it over here. Now this will also run this will and I'll erase the function. This will also be submitted and you might think I've given a correct solution, but that doesn't work like that. The interviewers will focus on your core quality. So please make sure if the code is getting longer, break it down into parts, put them into functions, a functions which are readable so that, okay, I know that this is a function which is generating row. It is quite readable. So try to have core quality of this format. Then only it will be very easy for you to clear interviews. It is just not about solving problems. Trust"
+    },
+    {
+      "chunk_id": "L034_C23",
+      "start": 1567.02,
+      "end": 1602.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=bR7mQgwQ_o8&t=1567s",
+      "text": "of this format. Then only it will be very easy for you to clear interviews. It is just not about solving problems. Trust me on this. So going back to the sheet, I can say that this is done. I hope you have understood everything just in case you have, please, please consider giving us that like because it won't cost you anything. That is something that will definitely motivate me to make such kind of content more and more. And yes, if you're new to our channel, what are you waiting for? Hit that subscribe button man and to continue our tradition, do comment understood and if you haven't followed me on LinkedIn, Twitter, Instagram, all the links will be in the description. With this I'll be wrapping up this video. Let's meet in some other video. Till then bye bye. Take care."
+    }
+  ]
+}

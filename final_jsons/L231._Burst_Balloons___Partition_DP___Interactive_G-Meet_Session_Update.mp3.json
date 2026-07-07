@@ -1,0 +1,211 @@
+{
+  "lecture_id": "L231",
+  "lecture_number": 231,
+  "lecture_title": "DP 51. Burst Balloons | Partition DP | Interactive G-Meet Session Update",
+  "youtube_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns",
+  "chunks": [
+    {
+      "chunk_id": "L231_C1",
+      "start": 0.0,
+      "end": 69.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=0s",
+      "text": "So before starting the video, I'd love to tell you that I'll be taking a session on career guidance which will be an interactive session on this Saturday at 10 p.m. So you can check out the link in the description and make sure you enroll for it. On this session, I'll be sharing you a Google Meet link where you can join and ask your doubts to me personally. So guys, let's meet in the session. Check out the session link in the description. Hey everyone, welcome back to Take U Forward. So today we will be solving the problem Burst Balloons. Now what does the problem state? The problem state, you're given n balloons. Like over here, n is 4. So you're given 4 balloons. Every balloon has a number written on it. Like this first balloon has a number 3 written on it. The second balloon has a number 1 written on it. The third balloon has a number 5 written on it and the fourth balloon has a number 8 written on it. Okay. So you have to burst them. Now imagine if I'm bursting 5, then the number of coins that you will get will be the left side of it, he himself and the right side of it. So it is 40 coins is what you will get if you burst out 5. 40 coins is what you'll get if you burst out 5."
+    },
+    {
+      "chunk_id": "L231_C2",
+      "start": 69.7,
+      "end": 137.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=69s",
+      "text": "is 40 coins is what you will get if you burst out 5. 40 coins is what you'll get if you burst out 5. So the question states you have to burst the balloons in any order you wish. You can burst 5, then you can burst 8, then you can burst 1, then you can burst 3 or you can go 3, then 5, then 8, then 1. You can follow any order. And in following the order, you will be getting some coins because every time you burst a balloon you get some coins. So the summation of the coins, so the summation of those coins should be maximum is the question. For an example, if I decide that the first coin, sorry the first balloon that I'll burst is 3, then what will be the number of coins that it will be adding? The left of 3 is 1, the right of 3 is 1 and he himself is 3. So the number of coins added will be 3. After bursting this, you're left with 1, 5 and 8. Imagine I say, hey listen, can you please burst out 1? Can you please burst 1? Now remember, previously 1 had a 3 on the left, but since you have bursted that balloon out for this 1, there is no 1 on the left. There is no 1 on the left."
+    },
+    {
+      "chunk_id": "L231_C3",
+      "start": 137.34,
+      "end": 204.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=137s",
+      "text": "you have bursted that balloon out for this 1, there is no 1 on the left. There is no 1 on the left. So since it is no 1, you take 1, you take 1 itself and on the right it is a 5. So you take 5. So the total will be 5. Now I decide after this you have 5, 8. Now I'm deciding that, hey listen, let's burst out 5. So if you're bursting out 5, you'll get 1 on the left, 5 himself and 8 on the right. 1 on the left, 5 itself, 8 on the right. So I guess this will be 40. Right after this, you'll be left out with 8. So if you're left out with 8, the left has nothing. Like if you're bursting 8, he himself and the right has nothing, which is this. So if you add this up, I think you will get 56. So the total number of coins that you get if you are bursting out first 3, then 1, then 5, then 8, the total number of coins that you'll get is 56. So the order that we took was very simple. First 3, then 1, then 5, then 8. What if I say, at first, let's try bursting out 1. At first, let's try bursting out 1. So if I try bursting out 1, it will be giving me 3 on the left, 1 himself and 5 on the right,"
+    },
+    {
+      "chunk_id": "L231_C4",
+      "start": 204.86,
+      "end": 283.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=204s",
+      "text": "1. So if I try bursting out 1, it will be giving me 3 on the left, 1 himself and 5 on the right, which is a summation of 15. Right after this, we will have 3, 5, 8. So after this, what I'll do is I'll try to burst out 5. So if I burst out 5, 5 himself, on the left we have a 3, on the right we have a 8. So the summation total will be 120. Right after this, we have a 3, 8. Now I decide that, hey, listen, I'm going to burst out 3. So if I'm bursting out 3, 1 on the left, 3 himself and 8, which gives me 24. Right after this, I have a 8, which means 1 on the left, 8 himself, 1 on the right, which is 8. So if I summarize this entire stuff, you get 120 plus something like, I think you'll get 167. If you summarize this up, you'll get 167. This is the summation of coins that you're getting. And the question stated, you have to maximize it. So 167 is the maximum coins that you can get. If you follow the order of, at first 1, 5, 3, 8. Like if you follow 1, 5, 3, 8, the maximum coins that you'll get is 167. You can follow various other ways, but you will see that 167 is the maximum that you can obtain. Right? So pretty much that is the question."
+    },
+    {
+      "chunk_id": "L231_C5",
+      "start": 283.08,
+      "end": 352.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=283s",
+      "text": "follow various other ways, but you will see that 167 is the maximum that you can obtain. Right? So pretty much that is the question. So how do you solve this question or how do you approach this question? So I can write down the example. It was very straightforward. 3, 1, 5, 8. So do you see a pattern to this question? Because is this somewhere related to the partition or the MCM question that we did? By the way, if you have not seen the MCM DP and the previous DP 50, I'll recommend you to watch both these, because if you're not watching those, both couple of videos, you'll not understand this. Okay. So please go back and watch out the MCM video as well as the DP 50 and come back and watch this. Okay. So you have to follow an order, right? Like you can follow 3, then 1, then 5, then 8. You can follow an order like 1, then a 3, then a 5, then an 8. You can follow an order of 8, then a 1, then a 3, then a 5. So there can always be various set of orders, but you need to understand which will be the first you pick. So apparently this is the entire range of elements. Right? Like 3, 1, 5, 8, anyone among them can be the first. 3, 1, 5, 8, anyone can be the first."
+    },
+    {
+      "chunk_id": "L231_C6",
+      "start": 352.24,
+      "end": 420.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=352s",
+      "text": "of elements. Right? Like 3, 1, 5, 8, anyone among them can be the first. 3, 1, 5, 8, anyone can be the first. Like you can burst out 3, you can burst out 1, you can burst out 5, you can burst out 8, you can burst out anyone. Okay. So can I say the range is this, like if I take, this is the starting point, this is the ending point. In between them, including 3 and 8 or 1 or 5, anyone can be your first element. Make sense? So I can think it in the direction of MCM because in the MCM, if you remember, there were matrices like A, B, C, D, then we decided that we will first take B and C, multiply, then the resultant goes and gets multiplied with these couple of guys. That is what we did. So can I similarly say, if I consider this as an entire stuff, you decide which one is the first element. It can be 3, it can be 1, it can be 5, it can be 8. Then we start thinking of the second element, then we start thinking of the third element. So we can follow that order, but can we? So let's understand, can we or can we not? By taking a simple example of B1, B2, like I'm just not taking numbers, I'm randomly writing balloons."
+    },
+    {
+      "chunk_id": "L231_C7",
+      "start": 420.52,
+      "end": 500.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=420s",
+      "text": "we or can we not? By taking a simple example of B1, B2, like I'm just not taking numbers, I'm randomly writing balloons. So it's like balloon 1 has this value, balloon 2 has this value, balloon 3 has this value, balloon 4 has this value and so on. So imagine, I say you, okay, hey listen, let's burst this guy out. That is B4. If I'm bursting B4, what is the value that I add up to the answer? Can I say B3 into B4 into B5 is the coins that I'll get? Like B4 himself, B3 on the left and B5 on the right. Is this the value that we will get? Definitely. So I will be left with this sub-portion to solve. So I will be left with a sub-portion of B2, B3. This is a sub-problem. I can call it as a sub-problem. This sub-problem has to be solved and I'll also be left off with another sub-problem of B5, B6. So apparently, can I say this? Can I say this? What this? This is a value plus this sub-problem be solved plus this sub-problem be solved. Can I say this? The answer to this is no, I cannot. I cannot say this. Like I cannot just burst B4 and then solve this individually and then solve this individually, add up this answer, add up this answer. Will that work? The answer to this is no. Why will that not work?"
+    },
+    {
+      "chunk_id": "L231_C8",
+      "start": 500.02,
+      "end": 576.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=500s",
+      "text": "this individually, add up this answer, add up this answer. Will that work? The answer to this is no. Why will that not work? Let's understand. So I'll just erase this. I hope you got it. If I burst B4 at first, what will happen? Why solving them independently will not work is the main concept of this problem. So why this problem and this problem cannot be solved independently is the main concept of this problem. If you understand that, you are pretty much through. So imagine if you're bursting or B4, it is over. And what is the state? Like if you imagine the state, what is the state? The state after this will be B1, B2, B3, B5, B6. So imagine, just imagine if you would have taken this as an individual subset, if you would have taken this as an individual subproblem and you would have bursted out B3. Apparently right after this, right after B4, if you had decided to burst out B3, who would have been the right guy of B3? B5. So can I say, even if I take this subproblem independently, this B3 depends, like B3 will be taking a dependency of B5, might. Or if I say, after B4, I decide to burst out B5, then also, like if I burst out B5, then right on the parallel, it has a B3 dependency and it has a B6 dependency."
+    },
+    {
+      "chunk_id": "L231_C9",
+      "start": 576.48,
+      "end": 653.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=576s",
+      "text": "also, like if I burst out B5, then right on the parallel, it has a B3 dependency and it has a B6 dependency. So imagine if you're bursting out B5, after this you will have B1, B2, B3, B6. So after this, if you decide to burst out B6, this B6 still has a dependency on B3. So you cannot just randomly decide that this is an individual subproblem because for DP to work, this has to be an individual subproblem. You should not be depending on the values of this. Understood? Now you might argue, but Stryver, if B6 is getting bursted, we just take the B3 as the left guy? No, that will not work. Imagine after bursting B5, imagine after bursting B5, you had B1, B2, B3 and B6 and you decided to burst out B3. So this B3 was dependent not on B5, rather on B6. So depending on who is getting bursted, B3 might be dependent on B5, B3 might be dependent on B6. So you cannot individually solve these couple of problems. You need to understand, you cannot individually solve these problems. You absolutely cannot. So a key point to notice is, if I start from the front, we basically go across this."
+    },
+    {
+      "chunk_id": "L231_C10",
+      "start": 653.08,
+      "end": 724.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=653s",
+      "text": "absolutely cannot. So a key point to notice is, if I start from the front, we basically go across this. Like if I just take you over here, we first had 1, then we had 5, then we had 3, then we had 8. So you cannot go in this direction. Instead of this, I will say, why can't I go in the opposite direction? We will start thinking in the opposite direction. Like I will say, if there are 4 elements, who was the last guy? And the answer that I'll get is 8. And the answer that I'll get is 8. Then I'll say who's the second last guy? And if this is a sub-problem, I get this is the second last guy. After that I'll say, who is the other guy? So it says 5. After that I'll ask, who's the other guy? It'll say this. Let's realize. Let's take this example only and understand. 3, 1, 5, 8. So 3, 1, 5, 8. I say 8 is the last guy to be bursted. So as of now, we had this entire range that has to be solved. That has to be solved. Now to avoid complications, we know on the right of 8 there is no one. We know on the left of 3 there is no one. So what I'll do is just to avoid complications, I'll add a 1 and I'll remove this."
+    },
+    {
+      "chunk_id": "L231_C11",
+      "start": 724.2,
+      "end": 791.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=724s",
+      "text": "of 3 there is no one. So what I'll do is just to avoid complications, I'll add a 1 and I'll remove this. And I'll also add a 1 on the right and I'll remove this. But these are the numbers that I have to solve. Just to avoid complications, I added a 1. I added a 1 on the left and right. Now imagine this is the last guy to be solved. And initially this is the range that you're looking for. And I'm saying instead of now on this range deciding which is the first guy, I decide who is the last guy left. So if I decide who is the last guy left, can I say the cost will be 1 into 8 into 1 if 8 is the last guy. Just imagine if 8 is the last guy. Can I say the cost will be 1 into 8 into 1 which is if this is the range, the left of the range, the right of the range and the number itself. So I've decided 8 is the last guy. So this is the coin that will be added. I'm just going in the reverse way. Right before this, if 8 is the last guy to be bursted, right before this, if you remember there was 3 and 8 or what was it? Let's go back and watch. 3 and 8. Yeah. So 3 and 8 was the guy and I decided to burst out 3."
+    },
+    {
+      "chunk_id": "L231_C12",
+      "start": 791.2,
+      "end": 862.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=791s",
+      "text": "it? Let's go back and watch. 3 and 8. Yeah. So 3 and 8 was the guy and I decided to burst out 3. So if 3 and 8, realize if 3 and 8 is remaining, that means you have bursted out 8. You have bursted out 8. Now you just have this much range. So I'll just erase out. You're going from the back. So you just have this much range. This has been bursted. So now I'm saying you have a 3 that has to be bursted. So can I say for this 3, I definitely know since I've bursted out before, 8 will be the right guy to enter because I'm going in the reverse direction. Just because 8 was here, in the next step, I was able to burst 8. So I'm very much sure that 3 has the right guy 8 because all the others would have been bursted in these steps. Like 1 would have been bursted here, 5 would have been bursted here. So 3 definitely has the right guy as 8, which is again 3 itself. This is the range. This is the range. On the left of range is 8, on the right of range is 8. So 1 into 8. On the left of is 1, on the right is 8. Perfect. So I bursted out 3. If you burst out 3, what are you left with? Can I say this is the range that you're left off with?"
+    },
+    {
+      "chunk_id": "L231_C13",
+      "start": 862.9,
+      "end": 937.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=862s",
+      "text": "out 3. If you burst out 3, what are you left with? Can I say this is the range that you're left off with? And in this previous, if you go across and you see you're just having 3, 5, 8 and in this you decide to burst out 5. Yes, in this you decide to burst out 5. Again if you're deciding to burst out 5, you are definitely sure this is the range. And 5's right is 8, 5's this guy is 3. So you see 5 on the right is 8 and on this range on the left is 3. Again why does this work? Because you know this guy will be bursted over here. So anyone who is not in the range would have been bursted in the next counter, will be bursted in the next counter. So he exists over here, he exists over here. Since you're going in the opposite, you definitely know 3 and 8 exist because you're moving in the opposite fashion. So 3 and 8. Perfect. Now you go back. Now when you go back, you would have bursted 5. So the remaining range will be just 1. In order to burst 1, again you look on the left which is 3, 1 itself and on the right which is 5 and you get a 15, you get a 120, you get a 24, you get a 8. You just moved in the opposite direction."
+    },
+    {
+      "chunk_id": "L231_C14",
+      "start": 937.54,
+      "end": 1015.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=937s",
+      "text": "and you get a 15, you get a 120, you get a 24, you get a 8. You just moved in the opposite direction. You just moved in the opposite direction. And if you move in the opposite direction, the sub-problems will be independent. Like if I just take one more example of B1, B2, B3, B4, B5 and B6. So if I'm taking this example, if I just decide that, hey listen, I am going to burst out for an example B5. If I'm deciding to burst out B5 out of this range, then what I'll do is if this is I, this is J, I know the left guy of this is A of I minus 1. I know the guy itself. Imagine this is index, is A of index. Imagine the right guy is J plus 1. This is the coin that you will get if this guy is bursted right at the end. And this is a sub-problem that has to be solved. This is a sub-problem that has to be solved. So you will say, can you please solve the sub-problem from here to here, which is I comma index minus 1? Because if this is index, this is index minus 1. And if this is index, this is index plus 1 to J. So these are the two sub-problems which you can easily solve."
+    },
+    {
+      "chunk_id": "L231_C15",
+      "start": 1015.5,
+      "end": 1092.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1015s",
+      "text": "And if this is index, this is index plus 1 to J. So these are the two sub-problems which you can easily solve. Now are these sub-problems independent is my question. Are these sub-problems independent is my question. Obviously they are independent. Yes, they are independent. Let me give you a proof. Are they independent or not? I have taken B1, B2, B3, B4, B5 and B6. I have taken this. Now imagine I'm saying B4 is the last guy to be executed, bursted rather. So B4, you're definitely sure the answer is 1 into B4 into 1. Right before the step, what will be the step? This is a sub-problem as I said that you have to solve or this is a sub-problem that you have to solve. As I know, B4 was the last guy to be bursted. I definitely know, I definitely know B4 will exist over here because only if B4 exists, then only in the next step it will get bursted. I repeat, B4 has to exist in the second last burst and this is the last burst. B4 has to exist because if B4 exists in the last burst, then only it can get bursted. Right? So this is a problem that you're solving."
+    },
+    {
+      "chunk_id": "L231_C16",
+      "start": 1092.9,
+      "end": 1168.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1092s",
+      "text": "B4 exists in the last burst, then only it can get bursted. Right? So this is a problem that you're solving. So can I say, since this is lying over here and B4 exists, B4 will definitely be the guy who is on it. Yes. And can I say, probably it can be B1, B4 in the last step. Probably, probably. Or it can be B2, B4 in the second last step. Or it can be B3, B4 in the second last step. Or B4, B5. Or B4, B6. It can be either this or this or this or this or this. Anyone. No matter who is. No matter who is, who it is. I am not dependent on these guys. Dependent of that for B5 or for B6, I'm just dependent on B4. Who is the guy to the left of it? Who is the guy to the left of it? I'm not dependent on this sub-problem. Carefully see, I have proved that it is not dependent on the left sub-problem. Even if you are solving for B1, it is dependent on the range right guy, not on anyone over here. That is the proof. So I have easily proved to you how this formula comes up. Again, I've given you why."
+    },
+    {
+      "chunk_id": "L231_C17",
+      "start": 1168.38,
+      "end": 1240.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1168s",
+      "text": "That is the proof. So I have easily proved to you how this formula comes up. Again, I've given you why. Just the trick is there that you have to start from the bottom instead from the front. You must be thinking, but how will we think that we have to think from the bottom? Again, this will come with practice. When I did this problem at the first instance, it did not strike me. I had to go through a lot of blogs, forums. Then I understood that they're actually starting from the bottom and then I realized that this is how we need to solve it. So not an issue if you're not getting the solution right at the go and you have to watch this video. So B1, B2, B3, B4, B5. Now as I said, the first thing that you'll do is 1 and 1. So these are five balloons. Definitely n will be five, five balloons. And if I write down the next set, it will be 0, 1, 2, 3, 4, 5. So can I say if n is five, the first range that you're looking to solve, the first range that you'll be looking to solve will be F of 1, 5. Or this is the range that you're looking to solve. This is the sub problem that you're looking to solve. Now in this range, like if B1, B2, B3, B4 is a range and you've added 1 and 1 and this"
+    },
+    {
+      "chunk_id": "L231_C18",
+      "start": 1240.7,
+      "end": 1304.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1240s",
+      "text": "you're looking to solve. Now in this range, like if B1, B2, B3, B4 is a range and you've added 1 and 1 and this is the range. Can I say this is I, this is J. Who can be the last guy? If you're thinking on the last step, this guy can be your last guy. This guy can be your last guy. This guy can be your last guy or this guy can be your last guy. Anyone can be your last guy. And if anyone can be your last guy, can I say, then it's very simple to write the recursion. It's very simple. So since anyone can be the last guy, what I'll do is I'll just write the F and I know this will be I and this will be the J. So this is a sub problem that I'm solving. So I've been given this, I'll try to solve it. And remember one thing, when will you stop? Even if we are having I and J over here and this is a single sub problem, you still solve it. You still solve it. So if you're taking B2, then J will be moving here. So the sub problem will reduce. If there is a sub problem, you will solve it. But if there is no sub problem, then you stop. Like if at any moment I crosses J, if at any moment, like you're just shrinking, you're shrinking like this, like this."
+    },
+    {
+      "chunk_id": "L231_C19",
+      "start": 1304.36,
+      "end": 1375.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1304s",
+      "text": "you stop. Like if at any moment I crosses J, if at any moment, like you're just shrinking, you're shrinking like this, like this. And at any moment you have shrinked it enough so that there is no more sub problem. The least sub problem could be I equal to equal to J where you're solving a single. But beyond this, beyond this, there'll be no sub problem. And if there is no sub problem, the coins that you will get will be zero. If there is no sub problem, the coins that you will get will be zero. Now can I say this can be the first guy, this can be the last guy, last guy, last guy, anyone. So can I actually run a loop, something like index will start from I and go till J. I can, I can. So if you remember the cost that we encountered was A of the right of range, the number itself whom we are assuming to burst, the right guy. So if, if, if we are bursting this guy index, then we are taking I until index minus one and index plus one till J. So the two sub problems that we have to solve will be I index minus one index plus one comma J. So can I say this will be the cost for every index, if we decide to burst this, this will be the cost. If we decide to burst this, this will be the cost."
+    },
+    {
+      "chunk_id": "L231_C20",
+      "start": 1375.7,
+      "end": 1444.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1375s",
+      "text": "for every index, if we decide to burst this, this will be the cost. If we decide to burst this, this will be the cost. If we decide to burst this, this will be the cost. So every time the for loop runs, first time I'll get the cost to burst this, next time I'll get the cost to burst this, next time I'll get the cost to burst this, next I'll get the cost to burst this. So what will I be taking? I'll be taking the maximal because that is what the question states. So probably I can keep a maximum is equal to an int mini. In Java it can be integer dot min value. OK. And what I can do is I can say mini equal to minimum of mini and comma cost is what I can simply do. Once I've done this, the for loop ends. And can I return the mini? I can definitely return the mini. I can definitely return the mini. This is how the recursion will be. Now so what are the time complexity? Now we know that whenever we are applying recursion, it is going to be exponential in complexity. That is something we know. So what we need to do is if there are overlapping subproblems, there will definitely be an overlapping subproblem. If we try to draw them to a tree, you will see that there are overlapping subproblems."
+    },
+    {
+      "chunk_id": "L231_C21",
+      "start": 1444.88,
+      "end": 1516.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1444s",
+      "text": "there will definitely be an overlapping subproblem. If we try to draw them to a tree, you will see that there are overlapping subproblems. And whenever there is an overlapping subproblem, we can memoize the solution and we can apply memoization in order to reduce the time complexity. Now what is the shortcut that I've taught you? You go back and see in the recursion, what are the changing parameters? One is i, one is j because they will be just changing. So what do you do is you say, OK, let me write down the changing parameters. One is i, one is j. And what is the maximum value of i? Can I say it starts somewhere from 1 to n? So n is the maximum. So I can probably take it of a size n plus 1. What is the maximum value of j? Again it can be from 1 to n. So again, I'll take n plus 1. So this is the DP array that it will create. And for every state i, j, you will just plunge in over here, DP of i, j is equal to many. That is what you'll plunge in. And you'll just write one line over here. If that state has not been like initially, you can assign that with minus 1 and plunge that in over here and return DP of i, j. This shuttle change will make your time complexity to be. Now what are the number of states?"
+    },
+    {
+      "chunk_id": "L231_C22",
+      "start": 1516.96,
+      "end": 1585.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1516s",
+      "text": "over here and return DP of i, j. This shuttle change will make your time complexity to be. Now what are the number of states? Two. n and n, i and j are n and n, n square. And there is an internal loop that you're running. If you carefully see the recursion, there's an internal loop for every state that you're running. So for every state, the total number of states are n cross n. For every state you're running in, not exactly n, but somewhere near about a loop. So this can be roughly written as an n cube solution. Whereas the space complexity will be n square, which you are using for the DP array and an auxiliary stack space. Yes. And an auxiliary stack space, which will be near about B go of n. Because if you're bursting out n balloons, it will take up a depth of n because every time you select a balloon, balloon one, balloon two, balloon three. So the depth will be B go of n. This is what the time complexity and the space complexity will be. And the next step, I will be coding this recursive solution. And then we will try to tabulate it by using our generic formula that I have taught you till now. So in the function, we are given a vector. Now, the first thing that I'll do is I'll just do an a dot size."
+    },
+    {
+      "chunk_id": "L231_C23",
+      "start": 1585.32,
+      "end": 1664.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1585s",
+      "text": "So in the function, we are given a vector. Now, the first thing that I'll do is I'll just do an a dot size. And now I'll return the function for the first range is this. And now if you remember well enough, what we did was we said we will be inserting one at the front and the back. So at the back, I've inserted. And now I will be just doing an insert of right at the front. So if you use insert function, done. Next thing that I'll do is I'll include hash include. It's important because, okay, that's something which I've done. Now let's try the function int i, int j and we can take the vector int. Okay, done. Now we know that if it crosses, we can yes, we can return a zero. We know many will be or rather we need maxi. So maxi will be int mean rather for int i index equal to i goes to j index plus plus perfect. What is the cost? The cost will be a of i minus one into a of index into a of j plus one plus f of i comma index minus one comma a plus f of index plus one comma j comma a right."
+    },
+    {
+      "chunk_id": "L231_C24",
+      "start": 1664.64,
+      "end": 1739.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1664s",
+      "text": "plus f of i comma index minus one comma a plus f of index plus one comma j comma a right. Once you've done this, you will say maxi equal to minimum or other max equal to maxi comma cost. Once you've done this, what you just need to do is you just need to return maxi. And I think you should be good to go. So yeah, that is a simple code. And if you write this, you'll see that you're getting all the corrected answer. But this is a recursive code, which will be exponential in nature. Just make sure you have a dynamic programming, the memory attached to it. So n plus one vector int again, you can just do n plus one comma minus one and just make sure you pass the DP over here. You can just copy paste the same DP and pass it over variable. Please make sure you pass a DP over here, pass a DP over here and right over here you can write DP of i j equal to this. And over here you can say if DP of i j is not equal to minus one return of DP of i j. Perfect. And if you've done this, you can simply go across and run this off. You run this, you're getting all accepted. And if you submit this, it will be accepted. So definitely this is still using an auxiliary stack space."
+    },
+    {
+      "chunk_id": "L231_C25",
+      "start": 1739.68,
+      "end": 1816.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1739s",
+      "text": "this, you're getting all accepted. And if you submit this, it will be accepted. So definitely this is still using an auxiliary stack space. Now we will be learning about the tabulation concept, which is super duper easy. So if you remember the formula that I've taught you in order to convert, what are the steps? Do you remember the steps that you used to convert? The first thing is write the base case. The second thing is changing variables, write the changing variables as nested loop. The third thing is copy the recurrence in the recursion. Don't think much, just copy the recurrence in the recursion. So what is it? Write the base case. What are the base case? If I go back to it, can I say the base case was very straightforward or very simple, which is this i is greater than j. So is it a generic one? No, it is not. I is greater than j. So probably I can think of this afterwards because there can be multiple values of i and there can be multiple values of j. So let us, now if I look at the base case, it is i greater than j. So let us keep this apart because we'll just be needing all the i's which are greater than j. So probably you can think of this afterwards. And one more thing is it's return zero."
+    },
+    {
+      "chunk_id": "L231_C26",
+      "start": 1816.56,
+      "end": 1884.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1816s",
+      "text": "the i's which are greater than j. So probably you can think of this afterwards. And one more thing is it's return zero. So the best way to encounter this is you just declare a dp of n plus one and n plus one. And initialize it with zero. So apparently everything will be zero. That base case gets covered. Okay. Now i is the first changing variable. J is the first changing variable. So if you remember the function call, it went from one comma n where this was i and this was j. Correct? Now what do I always say? I always see recursion is a top down approach. And I always say that tabulation is a bottom up approach. It does not mean that you have to move from bottom or something like that. That means from the base case to the call. So the call was from one. So it will go till one, two, three, four, till n. So you do the opposite. You do the opposite for i, which is you move from n to one. Similarly for j, the call started from n. So in the recursion, it will go from n, n minus one, n minus two, and so on till one. So in the tabulation, you go opposite from one, two, three, till n. So you do the opposite. You just go from one to n."
+    },
+    {
+      "chunk_id": "L231_C27",
+      "start": 1884.84,
+      "end": 1957.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1884s",
+      "text": "the tabulation, you go opposite from one, two, three, till n. So you do the opposite. You just go from one to n. And after that, you just copy the recurrence right inside it and you are pretty much good to go. Okay. So yeah, without actually, so let's get back to the code. So this will be zero. I will start from n and I will go on till one. And i minus one. J will start from one and j will go on till this. J plus plus. Okay. So this is what you can directly write. Once you have written this, you just have to copy paste this recurrence. If you see, this is the recurrence. So you just take it and paste it. Okay. Done. Once you have pasted it, remember one thing for sure. Instead of f, we write dp of i of index minus one. dp of i of index minus one. Instead of index plus one and j, you write dp of index plus one and j. Now something that you have to take care of is for this i, for this j, you know, for any of the state, which is this, you don't need to do anything because for any i, which is greater than j, you will not have a range because if i is greater than j, then there is no range. Thereby, you can easily say continue. This is the same base case that is over here."
+    },
+    {
+      "chunk_id": "L231_C28",
+      "start": 1957.92,
+      "end": 2015.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=1957s",
+      "text": "greater than j, then there is no range. Thereby, you can easily say continue. This is the same base case that is over here. I've written the base case. Now still, still there is a thing that you have to change. This return is what you have to change. And instead of calling one comma n, you say, what is the value stored at one comma n? It will still give you a run time error. It will still give you a run time error. Imagine if at the state where j is equal to equal to n. It will search for j plus one, which will be found because you have made sure by inserting at the back one that will be taken care. But in dp, whenever you do index plus one, that means n plus one index, but you have just declared till n plus one. Just make sure this is n plus two. Just make sure it is n plus two so that whenever you try to access index plus one, it does not get out of bound. Once you have done this, you can try running this and that should be fine. This is fine. And if you try to submit this, it will be giving you the correct answer. Again, what will be the time complexity? Two loops n square n cube. And the space complexity is just the dp array that you are using nothing separate from that."
+    },
+    {
+      "chunk_id": "L231_C29",
+      "start": 2015.92,
+      "end": 2030.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=Yz4LlDSlkns&t=2015s",
+      "text": "complexity? Two loops n square n cube. And the space complexity is just the dp array that you are using nothing separate from that. So guys, I hope I was able to explain you this tough problem. Just in case I was able to explain you, please, please, please hit that like button. And if you're new to the channel, please, please, please, please do consider subscribing to us. And with this, I'll be wrapping up this video. Let's meet in the next one. Till then, bye bye, take care."
+    }
+  ]
+}

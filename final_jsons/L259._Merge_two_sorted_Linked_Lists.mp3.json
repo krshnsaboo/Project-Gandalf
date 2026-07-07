@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L259",
+  "lecture_number": 259,
+  "lecture_title": "L23. Merge two sorted Linked Lists",
+  "youtube_url": "https://www.youtube.com/watch?v=jXu-H7XuClE",
+  "chunks": [
+    {
+      "chunk_id": "L259_C1",
+      "start": 0.0,
+      "end": 79.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=0s",
+      "text": "So let's continue with our playlist, but before that, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. The problem that we will be solving today is merge two sorted linked list. What is the problem exactly stating? It is stating that you will be given list L1, you will be given list L2 and both of them are sorted. Now your task is to take all the elements from L1, all the elements from L2, combine them together. Once you have combined them, you sort them. Once you have sorted them, you will get the elements, all the elements in a sorted manner. Put them into a new list L3. Once you have put all the elements into the new list L3, you will have to return me the head of that new list L3. So what if this problem comes up in an interview? What is the extreme name solution that you can think of? Now what I can think of is, okay, I need all the elements. I'll go through all the elements of L1. Okay. I'll go through all the elements of L2. Put it into some container. Let's do that. So what I'll do is, I'll take temporary one, I'll take temporary two."
+    },
+    {
+      "chunk_id": "L259_C2",
+      "start": 79.92,
+      "end": 155.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=79s",
+      "text": "Put it into some container. Let's do that. So what I'll do is, I'll take temporary one, I'll take temporary two. Okay. I'll take an array after this. Yes, I will take an array. And I'll start traversing in list L1. So the first element is two. I'll pick it up. I'll move forward. The next element is four. I'll pick it up and I'll move forward. The next element is eight. I'll pick it up. I'll move forward. The next element is 10. I'll pick it up and then I'll move forward. And then we reach null. Now this is the moment I stop traversing in L1. The next is an L2. Let's traverse, I have one and then the move to the next. I have three, then I move to the next. Again have three, I'll pick it up and I'll move to the next. A 6, I'll pick it up and then move to the next. I have 11, I'll pick it up and I'll move to the next. I have 14, I'll pick it up and I'll move to the next. And eventually I'm at null. In the moment I'm at NULL, I will stop. So you have an array with all the elements from L1 and L2. Now what is your task? Your task is to get the sorted version. How can you get the sorted version? You can simply sort this array. I can simply apply a sort operation in this array."
+    },
+    {
+      "chunk_id": "L259_C3",
+      "start": 155.24,
+      "end": 233.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=155s",
+      "text": "version. How can you get the sorted version? You can simply sort this array. I can simply apply a sort operation in this array. Once I've sorted them, will I get the sorted array? I will. So I'll have a sorted array with all the elements, something like one, two, three, three, four, six, eight, 10, 11, 14. I'll have all the elements in the sorted manner. Once I have them, what I can do is, I can simply convert an array into a list. So I'll call the convert function, which we have already done, converting an array to a list. I've already done it in the previous videos. So once the conversion is done, I'll return the head of that new list, as simple as that. So can I write down the pseudo code? I think I can, it is super simple. I need to take an array. So let's take an array. I need to take a temporary one, which is standing at head one. I need to take a temporary two, which is standing at head two, right? I'll have to traverse through the L1. So I'll traverse till it is not null. And in the array, I will end up adding the value or data of temporary one. Once that is done, I'll ask temporary one, hey, can you move to the next? Perfect."
+    },
+    {
+      "chunk_id": "L259_C4",
+      "start": 233.92,
+      "end": 311.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=233s",
+      "text": "value or data of temporary one. Once that is done, I'll ask temporary one, hey, can you move to the next? Perfect. So this will be the traversal in L1. Similarly, I can also traverse in L2. So I'll say temporary two is not null. And I can say, array.add temporary two of data. And then I can say, temporary two, can you move to the next? So the traversal in L1 and L2 is completed and I have all the elements in the array. After that, I can simply call the sort function and the array will be sorted. So the sort function, you can write it according to your language. You'll find the code in the description below. So once I've sorted it, what is my next job? My next job is to call the convert function. We've already written this convert function in our previous videos. Call the convert function with the array, which converts an array to a linked list. And this convert function will return you the head of that new linked list. Once you have it, you can simply return that head. Very simple. What will be the time complexity of this extreme naive solution? Can I say this while loop will be taking a big O of N1? Yes."
+    },
+    {
+      "chunk_id": "L259_C5",
+      "start": 311.2,
+      "end": 388.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=311s",
+      "text": "complexity of this extreme naive solution? Can I say this while loop will be taking a big O of N1? Yes. This while loop will be taking a big O of N2? Correct. And can I say capital N will be N1 plus N2? That's basically the total number of elements. So this sort will be taking N logarithmic of N, where N is the total number of elements. The convert function will be taking another big O of N, where N is the total number of elements and eventually you return this. So the overall time complexity will be big O of N1 plus big O of N2 plus big O of capital N log N, where N is the total number of elements plus big O of capital N. So this will be the overall time complexity. What will be the space complexity? Can I say I'm using an external space of big O of capital N? That's an array to store all the elements. And if you take into consideration the space required in creating the new list, that's another big O of N, right? Where N is basically this one. So this will be the overall time complexity and the space complexity of the extreme naive solution. Obviously the interview will not be happy with this and he'll ask you to optimize this. So in order to optimize the previous solution,"
+    },
+    {
+      "chunk_id": "L259_C6",
+      "start": 388.78,
+      "end": 468.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=388s",
+      "text": "the interview will not be happy with this and he'll ask you to optimize this. So in order to optimize the previous solution, I'll be using the property of sorted and the concept of two pointers. A very simple question. The final list L3, first element in it was one. How did I get this one? It was either this one or this one. I'm very sure about it. Very obvious, right? Because L1 was sorted and L2 was sorted. So the first element has to be either this or this. So I'll be using this concept of sorted in order to get the elements in the sorted order. The next thing, I was creating a new list L3. Do I actually need to create a new list L3? I have four elements in L1. I have six elements in L2. And the final list had 10 elements. So basically I had 10 nodes. Do I need to create 10 new nodes? Why? Can I not reuse them? Can I not reuse them? I just need to change the links. I just need to change the links. I'll be reusing the same nodes in order to optimize the space complexity. The first thing is, I will be doing, like I'll be using the property of sorted in order to save time. Then I will be reusing the nodes"
+    },
+    {
+      "chunk_id": "L259_C7",
+      "start": 468.12,
+      "end": 546.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=468s",
+      "text": "be doing, like I'll be using the property of sorted in order to save time. Then I will be reusing the nodes in order to save space complexity. So I don't need to create a new list. So the initial configuration will be having a T1 placed at head one, or T2 placed at head two. And I need to create a new list, but I'll not be creating a new list. I'll just be changing the links. So in order to change links or do similar kind of activities, we use the concept of dummy nodes. I've already explained this concept in the previous videos. Go back and watch it. So we'll be using the concept of dummy node. It's very simple. You assign a minus one or any value to a node and you call it as a dummy node. You make sure initially it is pointing to null and you take one more node which is temporary in order to traverse. Let's start the traversal. I'll be like, which element should be taken? Which will be your smallest? You'll be like this one. So let's take this element. Do not create a new node. Take this node in itself and make sure this temporary which is pointing to null is pointing to this directly. Pointing to this directly. So you can be like, okay, instead of pointing to null, can you directly point to one?"
+    },
+    {
+      "chunk_id": "L259_C8",
+      "start": 548.12,
+      "end": 626.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=548s",
+      "text": "this directly. Pointing to this directly. So you can be like, okay, instead of pointing to null, can you directly point to one? It's not a new node. It's pointing to this existing node itself. Once you have done this, can you move temporary ahead? Done. So I've taken this one. I'll move the temporary to its next. The next step. This one or this one? Which is smaller? Two is smaller, so we'll take two. Again, this temporary which is as of now pointing to null will be now pointing to this one. Got it? So I'll make sure this temporary is pointing to two. Again, it's not a new node. It's pointing to that node with two. Once it is done, you move the temporary to this two. To this two. When I'm moving to this two, it means it's actually over here. It's actually over here. I'm just doing the link changes. But I'm reusing the same nodes. Done. I'll move T1 to the next. Three or four, which is the smallest? Three. This time, this temporary will be pointing to this. Perfect. So I'll be just pointing this to three. I'll move the temporary. Once this is done, you can move the temporary to T2. After this, three or four, you will be like three. Take it."
+    },
+    {
+      "chunk_id": "L259_C9",
+      "start": 629.72,
+      "end": 705.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=629s",
+      "text": "this is done, you can move the temporary to T2. After this, three or four, you will be like three. Take it. Once that is done, move temporary. And at the same time, make sure move T2. Four or six? Four. Very simple. So make sure temporary is pointing to four. It's not a new node, I repeat. And make sure temporary goes to add. And T1 will be moved to this one. Perfect. Six or eight? It will be like six. So let's take six. Perfect. And temporary now moves to this place. And after this, T2 will move here. Eight or 11? You will be like eight. So let's take eight. And then you move temporary. And after that, you move T1 over here. 10 or 11? You'll be like 10. Let's move 10. And temporary moves over here. And T1 moves over here. Now T1 is at null. T1 is at null. It means the traversal in L1 is completed. But you still have some elements left over here. You still have some elements left over here. What you can do is, you can straightaway say, hey temporary, can you get connected? Can you get connected to this? So what will happen is, 10 will get connected to 11, and then 14, and then null."
+    },
+    {
+      "chunk_id": "L259_C10",
+      "start": 705.52,
+      "end": 785.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=705s",
+      "text": "get connected to this? So what will happen is, 10 will get connected to 11, and then 14, and then null. So instead of traversing, you have picked up these elements. Instead of traversing, you have picked up these elements. So it will look something like this. 11, and then it will have 14, and then it'll be pointing to null. You straightaway connect temporary to this. Done and dusted. Done and dusted. And this will only be done once either of T1 or T2 is exhausted. Over here, T2 was done. So you take all the leftover elements, and you make sure this is pointing to this. Done and dusted. Once this is done and dusted, can I say that the head of the new linked list, the head of the new linked list will be dummyNode.next. dummyNode.next. That means this node, and these are not new nodes. What I have done is, I made sure one is here, then it points to two, then it points to three, then three points to three, then it points to four, then four points to six, and six points to eight. All of these links have been changed, and I've reused these particular nodes. Again, since I've used the concept of dummyNode, the implementation will be simple. I just need to return dummyNode.next. Done."
+    },
+    {
+      "chunk_id": "L259_C11",
+      "start": 785.34,
+      "end": 863.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=785s",
+      "text": "particular nodes. Again, since I've used the concept of dummyNode, the implementation will be simple. I just need to return dummyNode.next. Done. It's time to probably implement it. So time to write down the pseudocode. Again, this is not a language-specific code in case you want C++, Java, Python, or JavaScript codes. The links will be in the description. So let's quickly start. So I'll be taking a temporary one. This is at head one. I'll be taking a temporary two. This is at head two. I'll also be taking a dummyNode, so it can have any random value. I'll be taking minus one. I'll be taking a temporary, which will be used for traversal. This will be pointing to dummyNode. So the next step is to traverse. So I'll be traversing till either of T1 is null or T2 is null. If either of them is null, I stop. So I'll be doing the traversal till both of them are active. What is the first step? The first step is pick up the small element, right? So if T1.data is smaller than T2.data, that means the data in T1 is small. I have to pick it up. I'll have to pick that node. So my temporary will be pointing to this T1,"
+    },
+    {
+      "chunk_id": "L259_C12",
+      "start": 863.72,
+      "end": 942.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=863s",
+      "text": "I have to pick it up. I'll have to pick that node. So my temporary will be pointing to this T1, the node itself, the node itself. Once that is done, I'll ask temporary to go to T1. Done. Since my temporary has gone to T1, now T1 has taken, let's go to the next. Done. What if T2 was smaller? In that case, I'll have to write a else. Then temporary will be pointing to, temporary is next, will be pointing to T2. Temporary will move to T2. And then T2 will move to T2.next. Done. The while loop is completed. When will the while loop terminate? Either T1 has been exhausted or T2 has been exhausted. So can I say at the end, either I'll have T1 left with me or else T2 will be left with me. If T1 is left, if T1 is not none, so I still have some portion of T1 left. So I'll make sure temporary points to that portion of T1. So basically I just pick it up."
+    },
+    {
+      "chunk_id": "L259_C13",
+      "start": 942.08,
+      "end": 1021.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=942s",
+      "text": "I'll make sure temporary points to that portion of T1. So basically I just pick it up. I just pick it up. Done. What if T1 is exhausted and there's some portion of T2 left? And temporary will be pointing to T2. Quite simple. Once that is done, I can straight away return the dummy nodes next. So that was about the implementation. If you look at the implementation, it is very, very clean and it's very readable. Why? Because I've used the concept of dummy node. So please, please make sure whenever you get a problem which involves the creation of a new list, you should be using the concept of dummy node. Let's get back to the time complexity. What will be the time complexity? I'm using T1, I'm using T2. Let's go back to the diagram of T1. And at the end of the traversal, it has traversed an entire big O of N1, right? And T2 has traversed somewhere near about big O of N2. At the worst possible case, it might end up traversing till the end. So I can again say that T2 will also be traversing for N2. Now going back to the code,"
+    },
+    {
+      "chunk_id": "L259_C14",
+      "start": 1021.16,
+      "end": 1100.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=1021s",
+      "text": "end. So I can again say that T2 will also be traversing for N2. Now going back to the code, the while loop is the only thing that contributes to the time complexity. And it is dependent on T1 and T2. So can I say at the worst possible case, T1 might go to the end, T2 might go to the end, correct? So the overall time complexity will be big O of N1 plus N2, right? And the overall space complexity will be big O of one. Why? Because I'm reusing the nodes in L1 and L2. Thereby, the space complexity is big O of one. No extra space has been used. So this is about the entire code. So now what I'll do is I'll quickly go back into the code editor. I've written the exact same code, but over here you can see that there is a data type given over here, can be double as well. If such is the parameter or function called definition, please make sure that whenever you define, you also have a similar format. It's nothing, you might get similar function parameters in your coding test. So get used to this. This can be double, this can be anything. So whenever you define a class, something as this, basically gives you an option to have as integer,"
+    },
+    {
+      "chunk_id": "L259_C15",
+      "start": 1100.08,
+      "end": 1134.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=jXu-H7XuClE&t=1100s",
+      "text": "this can be anything. So whenever you define a class, something as this, basically gives you an option to have as integer, as double, as string, any possible data types, got it? So this is a very simple code, the same code. I will do is I'll click the submit. This will be submitted. And if you're still watching, I'm very sure that you've understood everything. And that is the case, please, please do consider giving us a like. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. With this, I'll be wrapping up this video. Let's play some other video. Till then, bye, take care. ♪ Whenever your heart is broken ♪ ♪ Don't ever forget you're golden ♪ ♪ I will find the light in you ♪"
+    }
+  ]
+}

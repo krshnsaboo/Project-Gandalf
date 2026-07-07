@@ -1,0 +1,78 @@
+{
+  "lecture_id": "L098",
+  "lecture_number": 98,
+  "lecture_title": "L26. Print Root to Node Path in Binary Tree | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=fmflMqVOC7k",
+  "chunks": [
+    {
+      "chunk_id": "L098_C1",
+      "start": 0.0,
+      "end": 65.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=fmflMqVOC7k&t=0s",
+      "text": "So before starting this video, I would love to thank Relible for sponsoring this entire three series. So do you wish to work with companies like CRED, UpGrad, Urban Company, Raise Your Pay but you are not able to apply because of your lack of experience and lack of opportunities? So here's the solution to this problem. Relible by Unacademy is a hiring platform that helps freshers and experienced people to get jobs in India's top companies. All you need is skills. So what you need to do is you just need to give the Relible test that is completely based on your skills. Depending on your performance, your interview will be scheduled and you will be hired from the Relible platform and the best thing about this is it's absolutely free. So what are you waiting for? Please make sure you check out the links in the description. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, Root to Node Path or you might find a question like Root to Leaf Path. That's why I will be solving Root to Node Path and then you can easily solve any question like Root to Leaf Path also. So what does the problem state? The problem states you will be given a node. A node value will be given to you."
+    },
+    {
+      "chunk_id": "L098_C2",
+      "start": 65.82,
+      "end": 142.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=fmflMqVOC7k&t=65s",
+      "text": "So what does the problem state? The problem states you will be given a node. A node value will be given to you. So either the node value will be given to you or the node will be given to you. You need to figure that out. So assuming the node is given to you, 7. So from this root, that's 1. You have to tell me the path to that. So it's basically 1, 2, 5, 7. That's the path. Had this tree pointer been having the parent pointers, like just in case if it had the parent pointers, then the question would have been super easy. You start from 7, go to the parent 5, go to the parent 2, go to the parent 1 and the moment you reach the node, you stop. But we don't have the parent node. So how do you solve this problem? Now, in order to solve this problem, we will be using the in-order traversal. Why not some other traversal? Yes, you can use pre-order. You can use the post-order as well, but that will be a bit complicated. So generally we try to use the traversal, which is very simple because in an interview, you have to explain the solution also. So if you complicate the solution, the tougher it will be for you to implement as well as to explain it. So always try to use the traversal, which gives you a simpler solution and a simpler code. Okay."
+    },
+    {
+      "chunk_id": "L098_C3",
+      "start": 142.84,
+      "end": 219.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=fmflMqVOC7k&t=142s",
+      "text": "implement as well as to explain it. So always try to use the traversal, which gives you a simpler solution and a simpler code. Okay. So that's why I'll be using the in-order traversal, nothing special. So what I will do is, I'll try to use recursion. So initially I'll start with the root. Now when I reach this root, I'll be having a data structure. And that data structure will be empty. The moment I reach the node 1, I will see this guy is not null. So I will take this guy and also just make sure this guy is not equivalent to this. So just take this. Now, where can I go? I know that I can either go to the left and I can either go to the right. So at first, remember this, at first the call for the left will go, then it will come back, then the call for right will go, and then the right call will come. So first the left recursion has to appear. So the left recursion happens and you come to the node 2 with an array having 1. So you see that this node 2 is not equivalent to your node 7. So you take this node 2 and you insert that into your array. It's very important that you insert that into your array. Now node 2 will say, I can go to the left, I can go to the right."
+    },
+    {
+      "chunk_id": "L098_C4",
+      "start": 219.24,
+      "end": 290.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=fmflMqVOC7k&t=219s",
+      "text": "that you insert that into your array. Now node 2 will say, I can go to the left, I can go to the right. But first, as I said, you have to go to the left. So you will go to the left. And the moment you go to the left, you have a node 4. You have a node 4. That's not equivalent to 7. So you will again take that node and you'll insert that into 4. Now over here, you again go to the left. The moment you go to the left, you will find null. Remember this, remember this, the moment you find null, you're going to return a false. Please remember, you're going to return a false. So the left call got a false. Remember this, the left call got a false. Now you will go to the right. So the right went and the right also returned a false. So the right call also got a false. So which apparently meant that neither on the left, neither on the right, did you have this node 7? You did not have. So if you did not have, if both of them, both of them say that on the left, on the right, we do not have the node 7. And do you remember while we came, we checked for 4. So what I can say is on this path or on the subtree, we do not have 7. So it's time to go back."
+    },
+    {
+      "chunk_id": "L098_C5",
+      "start": 290.6,
+      "end": 359.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=fmflMqVOC7k&t=290s",
+      "text": "So what I can say is on this path or on the subtree, we do not have 7. So it's time to go back. So remember, remember, since you're using a single array, so since you've added 4 to that array, while going back, remove this 4, remove this 4 and go back. So if you remove and go back, you will again come back with an array as 1, 2. If you will not remove, then this will come back with 1 to 4 as the array. The array that we are using is being passed by reference. So whatever changes you're making, just make sure you redo them. If you have added 4, you remove it. Now over here, then again, so you'll return false. So this 2 guy, which went to the left, came back with again a false. Oh goodness, he came back with a false. So what he'll do is, he'll go to the right. Again when he goes to the right, please note, you're coming to 5. So you'll add 1, 2, 5. You will add 5 to it because, and you will check, is 5 equivalent to 7? And you'll find 5 is not equivalent to 7. No, no, no, it is not. So what you will do is, again take the same journey of left. Moment you come to the left, again you will add 1, 2, 5, 6 to your array. Same thing you'll do again."
+    },
+    {
+      "chunk_id": "L098_C6",
+      "start": 359.92,
+      "end": 433.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=fmflMqVOC7k&t=359s",
+      "text": "of left. Moment you come to the left, again you will add 1, 2, 5, 6 to your array. Same thing you'll do again. Go to the left and you'll say, no man, no, not 7 here. You'll again go to the right, you'll say, no man, no 7 here, come back. Both sides, left and right, came back as false. If they are coming back as false, can I say I'll just take it out and go back and again return false? Remember, 5 went to left, returned a false. Okay, now 5 will go to the right. The moment it gets to right, I have a 1, 2, 5, 7. I'll insert 7 into my array and, and, and, I see that this 7 is ultimately equivalent to my node. And if that's the case, and if that's the case, there's no need to go for left and right. You will directly return a true. Remember this, without removing 7, you'll directly return a true. So can I say this 5, which called for left, got a false, but the moment it called for right, it got a true. So if any of the left calls or right calls give you a true, any of, any of, that means on that path you figured that out. So again, without removing 1, 2, 5, you'll go back by passing it true. So this guy will be actually 5 now because it was passed by reference."
+    },
+    {
+      "chunk_id": "L098_C7",
+      "start": 433.96,
+      "end": 500.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=fmflMqVOC7k&t=433s",
+      "text": "1, 2, 5, you'll go back by passing it true. So this guy will be actually 5 now because it was passed by reference. So it inserted 5 and it came back as true. Again this 2 guy called left, it got a false, but called right, it got a true. So the moment it gets true, it'll go back. This time the reference variable would have made the array 1, 2, 5. Now on 1, you made a left call that gave you true. Will you go to the right? Will it? Will it make sense? Will it? No man, no. So what you'll do is, you'll not go to the left. So remember if any of the left or any of the right call gives you a true, that means you've got your path. Go back man, go return. Vapas. So at the end, you'll go back with a true. So you've got that guy and I can say the array that you are carrying, that's 1, 2, 5, by the way, I forgot to add 7. I forgot to add 7. So please make sure you add 7. The array that you are carrying, the array that you are carrying, 1, 2, 5, 7 at the end is ultimately your path. I hope you have understood the at least thought process. I try to go every direction and if I do not get it, I return false and I just remove that guy from my array."
+    },
+    {
+      "chunk_id": "L098_C8",
+      "start": 500.12,
+      "end": 563.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=fmflMqVOC7k&t=500s",
+      "text": "try to go every direction and if I do not get it, I return false and I just remove that guy from my array. And if I get it, I don't remove and I pass on true, true, true. So that that true will signify don't remove. You've got the path. Take this array and carry it as the answer. Got it? Not an issue. Let's check out the code. You'll definitely get it over there. So guys, as usual, the C++ code is on the left and the Java code is on the right and they're extremely identical. So I'll just be telling you about the C++ code. So I've been given the node A and I've been given the node B, which I have to find or rather the value. And remember, this can be the value, this can be the node address, this can be anything. So initially I declare a vector and then if the root is null, I just say there's no path possible. And then I call the get path. And the question mentions, the question mentions that does B always exist? That is why I'm not putting any extra check. The question says you have to check whether B exists or not. Then you have to check. Like you have to call this function and you have to check whether I got it true or not. Whether I got it true or not. You have to put an external check. Perfect."
+    },
+    {
+      "chunk_id": "L098_C9",
+      "start": 563.2,
+      "end": 629.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=fmflMqVOC7k&t=563s",
+      "text": "to check whether I got it true or not. Whether I got it true or not. You have to put an external check. Perfect. I've been passing the root, the array and the value that I have been looking for. If it is null, then I'll return false. If you remember, if we reach any left, right where we did not get it, we'll return false. And we will always add that guy to my array. And after that, it was very simple. If that guy is equivalent to what I'm looking for, I've got my path. There's no need to go for left and right. I'll return true. If it is not, then I'll go left. Then I'll go right. And if any of them is returning true, if any of them is returning true, I'll return true and go back. And if they're not, then I have to do the tedious task of removing. I'll remove my path back. And then I'll return a false because I did not get it. As simple as that, guys. If either of left and right gets true, true, or else you'll return false saying, ah, no path here. Perfect. Time complexity. Definitely, be go off as you're doing in order traversal. Space complexity, definitely be go off height of the tree. As you're doing in order, you'll be using a recursive stack space. So I hope you've understood the entire explanation as well as the code."
+    },
+    {
+      "chunk_id": "L098_C10",
+      "start": 629.68,
+      "end": 652.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=fmflMqVOC7k&t=629s",
+      "text": "you're doing in order, you'll be using a recursive stack space. So I hope you've understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

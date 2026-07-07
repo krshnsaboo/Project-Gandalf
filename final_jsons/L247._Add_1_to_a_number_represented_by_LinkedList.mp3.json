@@ -1,0 +1,155 @@
+{
+  "lecture_id": "L247",
+  "lecture_number": 247,
+  "lecture_title": "L11. Add 1 to a number represented by LinkedList",
+  "youtube_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0",
+  "chunks": [
+    {
+      "chunk_id": "L247_C1",
+      "start": 0.0,
+      "end": 74.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=0s",
+      "text": "I will be continuing with our playlist. But before that, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is adding one to a given linked list. So the problem is stating that you will be given a linked list where every node is representing a digit. So if I try to write down the number, it will be 159. So this is the number that is given to you in terms of a linked list. Your job is to add one to that number. So if I add up one, it will be zero carries over 16160. So the result after adding one will be 160. Now your task is to return this 160 in terms of a linked list. So if I basically change this to zero, this to six, this stays as one and I return this head. So I can say that this head represents a linked list that is containing the number 160 in terms of digits in nodes. Got it. So I'm going to return the head of the new linked list, which has the result. So let's take one more example. In this example, you have 999. If I add up one, it will be zero carries over 10 carries over 10 carries over 10 carries over one. So it will be something like that."
+    },
+    {
+      "chunk_id": "L247_C2",
+      "start": 74.72,
+      "end": 144.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=74s",
+      "text": "it will be zero carries over 10 carries over 10 carries over 10 carries over one. So it will be something like that. So what you can do is you can represent, replace this to zero, this to zero, this to zero, this to zero, and there will be one more node which will be having one and this will be pointing to this and this can be called as the new head of the linked list. Got it. So this is what you need to return. How do I approach this problem? So what is given to us is a number in terms of a linked list. What do we need to do? We need to add one to it, right? So at first, if I'm adding one, we have to start off with nine basic mathematics. We add one to it. That's 10 thereby zero carries over one. After the step, what do we do? We go to five, add that one to five, we get six and there is no carry over. So we go to one and we basically write the same value again and we get the number 160. Did you observe something? We need to start with nine, then we need to go to five, then we need to go to one. Correct? So it's a backward traversal. I need to start from nine, then go to five, then go to one. But can I traverse backwards in a singly linked list?"
+    },
+    {
+      "chunk_id": "L247_C3",
+      "start": 144.46,
+      "end": 215.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=144s",
+      "text": "I need to start from nine, then go to five, then go to one. But can I traverse backwards in a singly linked list? I cannot do because there is no backward link. Has this like, if this was a doubly linked list, there would have been a backward link. Thereby I cannot traverse backwards. Hence what do I need to do? I definitely need to traverse from nine to five, then from five to one in order to do the addition. Hence I will end up reversing this linked list. I've already taught you how to reverse in a previous video. Please go back and watch it. The link will be in the description. So I need to reverse this particular linked list. So after you call the reversal, the linked list will look something like this. Nine will be pointing to five, five will be pointing to one and one will be pointing to null. Ready? What is the next job? The next job is to start from nine. Can I say the initial value that you have to add up is one? So maybe let's take it as carry. Maybe take it as carry. Why? You'll understand. Let's start at this particular head. Remember one thing, please make sure you store the head. Do not alter it. Take another variable temp to traverse in that particular linked list. I've taken temp. What is the value of temp? Nine."
+    },
+    {
+      "chunk_id": "L247_C4",
+      "start": 215.14,
+      "end": 285.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=215s",
+      "text": "not alter it. Take another variable temp to traverse in that particular linked list. I've taken temp. What is the value of temp? Nine. So you'll take nine and you'll add the value carry. That's why I took carry as one because the initial addition is one. The moment you add it, you'll get 10. If you get 10, what does that mean? The number that will be zero. Can I say this? The number after addition will be zero or the digit after addition will be zero. So you'll basically replace this to zero. Once you have done this, can I say the next carry will be one? Because if I'm taking zero, it will be carrying over one. So you'll take the carry as one. After that, you'll move the temporary to the next. Perfect. What is the value at this particular node? Five. So you'll take five and the value of carry is one. This time you get six. The moment you get six, you'll replace this to six. You'll replace this to six. You'll see carry as zero. Remember if carry is zero, if carry is zero, you break out then and there, you break out then and there. Why? Because if you're carrying over zero, zero plus one on adding will give you the one. It's the same number that is already on the node. If there were other nodes in the front, it didn't matter. It can be two, three."
+    },
+    {
+      "chunk_id": "L247_C5",
+      "start": 286.02,
+      "end": 357.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=286s",
+      "text": "same number that is already on the node. If there were other nodes in the front, it didn't matter. It can be two, three. It doesn't matter because if there is no carry over, there'll be no increment of the number. So what I will do is whenever the carry is zero, I will stop the traversal and I will break out. Once I've broken out, can I say I have the number? I have the number, but it is in reversed order. It is in reversed order. So what I'll do is I will again call a reverse. I'll again call a reverse and this time the reversal will make sure that the link list is back into its shape. Then once you have done this, you can straight away return the head of this link list. So this is how I can easily solve this problem. So this particular example had three digits to start off with, right? After adding one to it, the result also has three digits. So the number of digits are same in initial number and in the result. So it's quite easy to do. Let's look at one more example. Now this one has four digits. If I add up one to it, the resultant will have five digits. Why? Because if it is four nines and then you add up one, it'll be zero, zero, zero, zero, one. So this will be the result."
+    },
+    {
+      "chunk_id": "L247_C6",
+      "start": 357.54,
+      "end": 425.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=357s",
+      "text": "if it is four nines and then you add up one, it'll be zero, zero, zero, zero, one. So this will be the result. And if I look at the number of digits, it has one extra digit. So this will be slightly complicated, but we will follow the same mathematical scenario. We had nine, nine, nine. If I add up one, we will start off with this nine, then we will go to this nine, then we will go to this nine, then we will go to this nine. So it's still a backward traversal. So the first step stays the same. We will end up reversing the given link list. So once the reversal is completed, we can again follow the same process. Let's take temporarily, which is pointing to the head. Do not alter head. Let's take carry, which is initially one. Let's start off. What is the value? Nine, nine, nine, nine, nine, nine, nine, nine, nine, nine, nine. Carry is one. That's a 10. So what do you do is replace this with zero. The carry over is one and you will move the temporary. Perfect. Again, you have a value of nine, nine plus carry one is 10. Replace this with zero. Carry will be one and let's move temporary. Again the value is nine. So nine plus one will be 10. Replace this to zero. Carry over will be one and let's move temporary."
+    },
+    {
+      "chunk_id": "L247_C7",
+      "start": 425.12,
+      "end": 496.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=425s",
+      "text": "the value is nine. So nine plus one will be 10. Replace this to zero. Carry over will be one and let's move temporary. So this point you have a temporary pointing to nine, right? So it's nine plus one again, 10. Replace this with zero. Carry will be one and move temporary. So right at the end, right at the end, if you see that there is still a carry left over here, the carry over is one, which means there will be a new node, which means there will be a new node. So currently the temporary will be at null. Don't do anything. Yes, do not do anything. What you can do is you can again call the reverse function. Yes, you can again call the reverse function and this time after reversal, it will be having zero pointing to zero pointing to zero and pointing to zero and that will be to null and this will be your head of the linked list. You know one thing, you still have a carry over of one, which means there will be a extra digit. So if there is an extra digit, let's create a new node. So you'll create a new node with this value, which is basically one, the carry over, and then you'll point this new node to the head of that particular linked list. Once you have done this, you can say that this will be my new head."
+    },
+    {
+      "chunk_id": "L247_C8",
+      "start": 496.32,
+      "end": 575.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=496s",
+      "text": "node to the head of that particular linked list. Once you have done this, you can say that this will be my new head. After that, this can be returned. You can straight away return this. Once you've done this, can I say that the resultant number is stored in this particular linked list? Super simple. Just one additional step. Right at the end, if there is a carry over left, add a new node, point it to the head and then return this particular head. So let's write down the pseudocode for it. In case you want the code in C++, Java, Python or JavaScript, the links will be in the description. I'll be writing down a function which is taking the head of the linked list. What is the first step? Reverse it. Let's do it. Head equal to reverse of head. So this reverse is something that I've already explained in my previous video. So go back and watch it. I'll not be re-explaining it over here. What is my next step? The next step is to traverse. So I'll be requiring a temporary which is pointing to head. I'll be requiring a carry which is initially one because initially we add one as we start off. Let's have a traversal. So the traversal is very simple. I simply traverse the temporary node till it reaches null. The first step is let's add this carry. So I'll say temporary.data equal to temporary.data plus carry."
+    },
+    {
+      "chunk_id": "L247_C9",
+      "start": 575.16,
+      "end": 655.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=575s",
+      "text": "the temporary node till it reaches null. The first step is let's add this carry. So I'll say temporary.data equal to temporary.data plus carry. Done. What is your next job? What if it is under 10? That means there will be no more carryover. If after adding the data, the data is under 10, it's done. It's done. You can say the carry is zero. The carry is zero and you can break out and you can break out. What if it is not under 10? In that case, the data will replace itself by zero and the carry will be one. Since you're adding on one, it will always be 10, not beyond it. What is the next job? Else is completed. So we need to traverse to the next node which is temporary equal to temporary.next. Traverse to the next node. So once the traversal is completed, it can be because of two reasons. One is you break out if there is no carry, otherwise you complete the traversal. So can I say this, if at the end the carry is one, carry is still one, then I'll need a new node. I will need a new node. So maybe I can call or rather I can create a new node. New node with this particular value one carry will always be one. What after this?"
+    },
+    {
+      "chunk_id": "L247_C10",
+      "start": 655.06,
+      "end": 732.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=655s",
+      "text": "rather I can create a new node. New node with this particular value one carry will always be one. What after this? I can make sure that whatever linked list I had, let's quickly reverse it as well. So I'll end up reversing it. After I've reversed it, can I say that the new node will be pointing to this head? I can, once I've done this, can I straight away return this new node? Because this will be my new head. What if the carry is not one? In that case, we'll simply end up reversing. In that case, you will simply end up reversing the linked list because the addition is done. So reverse the head. Once the reversal is completed, you can return the head and that will be the end of the first quite simple. What is the time complexity? Let's analyze. This reversal will be taking a bigo of n, right? This traversal will be taking a bigo of n. Again you're doing a reversal which will be taking a bigo of n. So the overall time complexity will be bigo of 3n. Whereas the space complexity will be bigo of 1 because I'm adding 1 to that given linked list, not any new one."
+    },
+    {
+      "chunk_id": "L247_C11",
+      "start": 732.74,
+      "end": 810.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=732s",
+      "text": "the space complexity will be bigo of 1 because I'm adding 1 to that given linked list, not any new one. So this will be the overall time complexity and the space complexity. So this is where the interviewer will not be happy. Why? Because you're using 3n. You're reversing, traversing and again reversing. What if the interviewer is asking you to do it without reversing? This is where something like recursion will come in. So how will I solve this without actually reversing it? Because the entire mathematics is you start off with 9, you add 1 and if there is a carryover, you move to 5 and you add it. And if there is a carryover again, you move to 1. So the entire mathematics is you move in this direction. So if you do not reverse, you cannot move back because there are no back pointers. So recursion is the only way in which you can move back because in recursion we have something as backtracking. So that is what we will use over here. What I will do is I will start off with the first node which is 1. I will not do anything. I'll just go to the next one. I'll call the recursion for the next node which is 5. Again I'll not add anything. I'll go to the next which is 9. Don't do anything. Go to the next and this is null. This will be my base case."
+    },
+    {
+      "chunk_id": "L247_C12",
+      "start": 810.38,
+      "end": 882.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=810s",
+      "text": "go to the next which is 9. Don't do anything. Go to the next and this is null. This will be my base case. I'll go deep, deep, deep, deep and then whenever I reach the base case, I'll ask, hey, how much do I need to add? The base case will tell me that, hey, you needed to add the value 1 because that is what the question is asking you. You needed to add the value 1. So this can be called as your carry. I'll be sending this carry saying, hey, 1 is what you need to add. So I have a carryover of 1 from the base case. Now whenever I come back to this node, this is when the backtracking starts. I come back to the node because the recursion is completed. I'm at the node 9 and I have the carry of 1. So I'll say 9 plus 1 is 10. If it is 10, you will replace this with 0 and you will say, can you please return the carry as 1? So you return the carry as 1 and now you reach the node 5. Again there is no back pointer. It is just the backtracking that does it. So when you add the node 5, you'll be like, okay, 5 plus 1 is 6. It is not 10. So let's replace it with 6. Let's return the carry as 0."
+    },
+    {
+      "chunk_id": "L247_C13",
+      "start": 882.9,
+      "end": 952.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=882s",
+      "text": "like, okay, 5 plus 1 is 6. It is not 10. So let's replace it with 6. Let's return the carry as 0. Now when you come to this node, which has 1, it has the value of carry as 0. So 1 plus 0 will be 1. So it stays as 1 and now you return stating the carry as 0. So at the end, at the end, you have the carry as 0, which means there is no addition of new node. So you stop. You say there is no addition of new node. I can stop and whatever was the head given to me, I can straight away return. So this is how I can easily do it using recursion. I will show you this example as well. After that I'll write the code as well. After that I'll do the dry run on the code as well. Do not worry. I'll explain you this in depth. So let's again do the same thing. I will start off with this particular node, which is the head, which is 9. I go to the next, which is again 9. I go to the next, which is again 9. I go to the next, which is again 9. And then I again go to the next. This time, this is my base case. Whenever I reach null, that will be my base case. This is when I will end up returning 1 as the carry."
+    },
+    {
+      "chunk_id": "L247_C14",
+      "start": 952.18,
+      "end": 1030.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=952s",
+      "text": "base case. Whenever I reach null, that will be my base case. This is when I will end up returning 1 as the carry. I'll say, hey, the carry is 1. Return 1. Fine, fine. I'll come to this 9 and I'll have 1 returned to me. Now I'll do the backtracking steps. OK, 9 plus 1 is 10. Replace this with 0 and return the carry as 1. Perfect. I'll come to this 9. I'll again add 9 plus 1 to be 10. Replace this with 0 and return the carry over as 1. Perfect. I'll again come to this 9 on the backtracking. I'll say 9 plus 1 is 10. So return the carry over as 1. Again I'll come to this place 9 plus 1 is 10. This will be 0. So thereby return the carry over as 1. So during the initial call, when you did the call for the head, now this is returning you a carry of 1, which basically means that there is a new node, which basically means that there is a new node. So what you will do is you will basically create a new node with the value 1 and then you'll point it to the head. After you have done that, you will move the head over here. Once this is done, you can straight away return this particular head. Without reversing, during the backtracking, I can do the job."
+    },
+    {
+      "chunk_id": "L247_C15",
+      "start": 1030.46,
+      "end": 1108.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=1030s",
+      "text": "over here. Once this is done, you can straight away return this particular head. Without reversing, during the backtracking, I can do the job. So I will be writing down the pseudocode in case you want the code for C++, Java, Python or JavaScript. The links will be in the description. I will be writing down the code as of now. After that, I will show you the dry run in depth. Don't worry about it. So maybe I can just write a function which is taking the head. And this function will call something like a helper function where it is passing on the head and this carry will be the final carry. What is this final carry? This is nothing but this one that you're getting, the final carry after the end. In the first example, the final carry was 0. You will add a new node or you will not add a new node. So I need to write this helper function. But let's analyze something. What if the carry is 1? What if the final return is 1? In that case, you will end up creating a new node which will be new node of 1. And then you'll say new node, your next will be pointing to head. And the new node will be your new head. So you can straight away return this."
+    },
+    {
+      "chunk_id": "L247_C16",
+      "start": 1108.6,
+      "end": 1181.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=1108s",
+      "text": "next will be pointing to head. And the new node will be your new head. So you can straight away return this. Otherwise, you will return whatever head you had. Very simple. You just need to write this helper function because what I've done is I've done the job for the extra digits. So let's write down the helper function. So helper is taking, let's say a node as temporary. I know what is the base case. The base case was whenever I reach null. So let's write it. If the temporary is reaching null, in that case, the carry over will be 1. I will be returning 1. Apart from that, what did I do? I just went deep. I just went deep. I did not do anything. While coming back is when I started doing, while coming back is when I started doing. So let's go deep and let's call it as carry as helper again. And let's go to the next one, which is temporary.next. Okay. Imagine the base case happened and you returned a carry of 1. So it got a carry of 1 return. It got a carry of 1. It called it and it got a carry of 1. What is the next job that you did? Yes."
+    },
+    {
+      "chunk_id": "L247_C17",
+      "start": 1181.32,
+      "end": 1260.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=1181s",
+      "text": "of 1. It called it and it got a carry of 1. What is the next job that you did? Yes. So you basically said, hey, temporary data, hey, temporary data, can you add carry to it? And it will add what after this? What if I'll write this? What if the temporary data is lesser than 10? In that case, the return will be zero because don't do anything. The carry will be zero. Isn't it? Let's go back and look at this. When you added 5 plus 1, 6, you returned a carry of zero. You returned a carry of zero. This is what I wrote. In case, in case this is not happening, then what will you do? You will say, hey, temporary data, you can be zero because I need to send the carry over and I will be returning a one. Very simple. And this will be my recursion. So this is the entire backtracking that we will do while coming back. I'll perform the job. This is very much similar to what we did right in the iterative solution. Isn't it? So let's do an in-depth dry run on the recursive code. So we are given this linked list. We are given this particular head. It goes to the function, calls the helper. So imagine this is the initial place."
+    },
+    {
+      "chunk_id": "L247_C18",
+      "start": 1260.84,
+      "end": 1339.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=1260s",
+      "text": "list. We are given this particular head. It goes to the function, calls the helper. So imagine this is the initial place. So what do you basically do is you pass on this one to this. So you pass on the temporary, temporary. So what happens is the first node nine comes in, which is this one comes in right after that this case is not met. The helper condition calls temporary dot next. So again, a call goes for this node, which is nine. Perfect. Again the base condition is not met. So the helper condition is called. So the call goes for this nine. Again the base condition is false, goes to the helper, calls this one for this particular nine. The base case is not satisfied. Again calls the helper. This is when the call goes over here and this time it is for null. Whenever the call goes for null, this one executes and it returns your value of one. So the value of carry is one. So the value of carry is one. So temporary data plus carry, what happens? That becomes 10, becomes 10. If temporary data is under zero, no it is not. If temp, then reduce the temporary data to zero, reduced and return one and return one."
+    },
+    {
+      "chunk_id": "L247_C19",
+      "start": 1339.38,
+      "end": 1413.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=1339s",
+      "text": "zero, no it is not. If temp, then reduce the temporary data to zero, reduced and return one and return one. So you returned one and the value of carry is one. Again add temporary data plus carry. So this will become 10 again. Is this? No. So again make it zero, make it zero, return one. Again the value of carry is one. Make it 10. This one false, make it zero, return one, returned one. The value of carry is one. Again do the same thing. This will be zero and this will be returning one. This will be returning one. So eventually what happened was you made everyone zero on the backtracking and you got a value one, you got a value one. So this carry eventually gets a value of one. So the carry is one. You create a new node with a value one. So let's create a new node. So you created a new node with a value one. What is the next job? New node dot next is head. You know dot next is head. And then you say return this particular new node. So you end up returning this one as the head of the linked list. Done. Quite simple. So it is very important that you understand backtracking because it is going to help you solve so many of the problems. So it is very important that you understand backtracking in depth and that can only be"
+    },
+    {
+      "chunk_id": "L247_C20",
+      "start": 1413.86,
+      "end": 1478.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=1413s",
+      "text": "help you solve so many of the problems. So it is very important that you understand backtracking in depth and that can only be done if you take a pen and paper and do the dry run as I did as of now. So what will be the time complexity? Can I say it is B go of n because one step, two step, three step, four step. So B go of n and there's a space complexity of B go of n because you store one, two, three, four. So this is stored in the recursive stack space, right? And after coming back, you do the, you solve it while backtracking, but there will be a recursive stack space that is in picture. So this will be the time complexity and the space complexity. So you might be asking me, Hey, is the iterative solution better or is the recursive solution better? Both of them have their pros and cons. I've written it over here. You can pause this video and read it and you'll understand the pros and cons. So let's quickly get back into the code editor. In the editor, you can see that we are given the add one function. We are given the head of the link list. I call the recursive function. It returns me a carry. Depending on the carry, we add a new node. Otherwise we return the existing head and the recursive function will be something like"
+    },
+    {
+      "chunk_id": "L247_C21",
+      "start": 1478.54,
+      "end": 1518.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=aXQWhbvT3w0&t=1478s",
+      "text": "carry. Depending on the carry, we add a new node. Otherwise we return the existing head and the recursive function will be something like this where we take the temporary node. If it reaches null, we return one. Otherwise we go to the next and during the backtracking, we do the addition logic and if it is under 10, we return zero as the carry. Otherwise we make sure that the value over there is zero and then we return one. Very simple. If I hit the submit button, it will be running fine. In case you want the C++, Java, Python and JavaScript code, the links will be in the description. Please make sure you check them out. And if you are still watching, I'm very, very sure that you've understood everything. And if that is the case, please, please do consider giving us a like. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And with this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

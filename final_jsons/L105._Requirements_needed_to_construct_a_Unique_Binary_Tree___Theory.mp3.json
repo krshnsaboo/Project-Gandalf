@@ -1,0 +1,64 @@
+{
+  "lecture_id": "L105",
+  "lecture_number": 105,
+  "lecture_title": "L33. Requirements needed to construct a Unique Binary Tree | Theory",
+  "youtube_url": "https://www.youtube.com/watch?v=9GMECGQgWrQ",
+  "chunks": [
+    {
+      "chunk_id": "L105_C1",
+      "start": 0.0,
+      "end": 77.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=9GMECGQgWrQ&t=0s",
+      "text": "So before starting off this video, I would love to thank Relevil for sponsoring this entire free series. We need experienced candidates. How many times has this sentence shattered your dream to work in a good company or a job description which requires experience? You won't ever have to listen to the sentence ever again. If you use a platform like Relevil by unacademy, he conducts a test which is completely based on skills and you need to perform in your chosen field. Relevil has around 1000 plus job openings by 50 plus top Indian companies and unicorn startups. What you need to do is you just need to register for this test, apply on the test and after that your interview will be scheduled and you will be hired. And the best thing about this is the Relevil tests are free and you can check out all the links in the description below. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video, we will be understanding what kind of traversals are required in order to construct a binary tree. And when I say binary tree, you can construct any kind of binary tree, right? So let's rewrite that as construct a unique binary tree. That's important because given an in order, you can actually construct a lot of binary trees."
+    },
+    {
+      "chunk_id": "L105_C2",
+      "start": 77.76,
+      "end": 157.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=9GMECGQgWrQ&t=77s",
+      "text": "that as construct a unique binary tree. That's important because given an in order, you can actually construct a lot of binary trees. So I actually want to teach you what traversals are required so that you can actually construct a unique binary tree. Assume you're given a pre-order and assume you're given a post-order. So the pre-order traversal is 1, 2, 3. So you know the pre-order is basically root, then a left, then a right. And you know what is a post-order traversal? It's a left, right and then a root. So if I say pre-order for 1, 2, 3 and something like a post-order. So can I say the answer will be tree which is something like this 1, 2, 3. Is this correct? I'll be like, yes, this is correct. Why? Pre-order is 1, 2, 3. Root, left, root, left, root. So it's 1, 2, 3. The pre-order stands as 1, 2, 3. And what is the post-order? It's left. You're going here, left, going here, left. So it doesn't have a left, it doesn't have a right. So the root is 3. Comes back, has gone through the left, doesn't have a right. So the root is again 2. Goes back, has came from left, doesn't have a right. So I can say the furthest tree, the pre-order is 1, 2, 3 as well as the post-order is 3,"
+    },
+    {
+      "chunk_id": "L105_C3",
+      "start": 157.68,
+      "end": 222.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=9GMECGQgWrQ&t=157s",
+      "text": "have a right. So I can say the furthest tree, the pre-order is 1, 2, 3 as well as the post-order is 3, 2, 1. But is this the answer? Is this the only answer rather? No. So I can actually construct a different tree which gives the same pre-order and the same post-order. Let's check that out. What if I have a 1 here? What if I have a 2 here? What if I have a 3 here? Like a slightly different tree. Will this be giving the same pre-order? Let's check that out. Root, left, on left, you are standing here. So again root, doesn't have a left, no. Comes back, doesn't have a right, yes, goes here. Root, doesn't have a left, doesn't have a right, no. So the pre-order for this tree is also 1, 2, 3. And if I write the post-order, it's going to come as 3, 2, 1. Like root, you don't write that, go to here, you don't write that, go to left, doesn't have a left, go to the right, has a right. So you write that, come back, left, right is done. So you write the root and you again go back, left is done, right, no one, so again write the root. So I can see that for the tree 1, I have a pre-order as 1, 2, 3, the post-order as 3, 2, 1."
+    },
+    {
+      "chunk_id": "L105_C4",
+      "start": 222.86,
+      "end": 296.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=9GMECGQgWrQ&t=222s",
+      "text": "So I can see that for the tree 1, I have a pre-order as 1, 2, 3, the post-order as 3, 2, 1. And similarly for this second structure of tree, at the same pre-order and the same post-order. So what I can say is, I can definitely create binary trees, that's not a doubt. Because see, we can create binary trees, that is not a problem. But the main problem is, can we create a unique binary tree, like only a single binary tree, which only gives the pre-order like this and only gives the post-order like this. And the answer will be no, we cannot create. So we come to the conclusion that, if you're given a pre-order and if you're given a post-order, we cannot conclude, like sorry, we cannot construct a unique binary tree. So what if you're given an in-order, which is nothing but in, as root will be in the middle, so left, root, right, you have this, correct? What if you're given a pre-order? So I can say, if you're given a pre-order, you will definitely have something like, pre means first root, then a left, then a right. So can we actually create a unique binary tree? And the answer will be yes. The answer will be yes. Why? It's very simple. Because if I'm talking about pre-order, this is definitely my root of the tree, because the first guy will always be my root of the tree."
+    },
+    {
+      "chunk_id": "L105_C5",
+      "start": 296.52,
+      "end": 368.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=9GMECGQgWrQ&t=296s",
+      "text": "I'm talking about pre-order, this is definitely my root of the tree, because the first guy will always be my root of the tree. So I know the root of the tree is this. So if I know the root of the tree is three or the first root of the tree is three, so I can definitely say, this is the root of the tree. And since in-order means, root is in the middle, so the entire left subtree will become nine and the entire right subtree will become 15, 20 and 7. So I can say, this tree will have a bunch of nine, like if a complete subtree involving nine and this will have a complete subtree involving 15, 20, 7, correct? So pre-order, what it does is, it goes from root, then goes to the left and on this, it again starts root, left, right. So can I say again, this is my root. This is my root. So this guy becomes my root. Perfect. And on nine, I do not have anything on the left. On nine, I do not have anything on the right. Like I don't have anything left out on the night. Like before three, I don't have anything. So I can say, nine is the only element on the left. So that's done. Next, I come to, so root, you went to the left, it has a nine. So you wrote that and it doesn't have anything."
+    },
+    {
+      "chunk_id": "L105_C6",
+      "start": 368.86,
+      "end": 442.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=9GMECGQgWrQ&t=368s",
+      "text": "Next, I come to, so root, you went to the left, it has a nine. So you wrote that and it doesn't have anything. So it will come back to over here. So I can say, in this portion, again, this will be considered as the root. 20 will be your root. So this subtree, instead of 15, 20, 7, it will take 20. So it took 20. Now, can I say, if this is 20, this guy will be at left. That's 15. And this guy will be at right. That's seven. So ultimately I ended up creating a binary tree and unique binary tree. You can try out creating other binary trees. You'll never get a unique binary tree. So guys, don't worry. If you did not understand how I got the tree from inorder and preorder traversal, I will be doing a separate video on that where I'll be coding this. Don't worry about that. I just gave a quick overview about can you create a tree using inorder as well as preorder traversal. And the answer to that is yes. So what we understood is, again, unique. So what we understood is something like an inorder is very, very important because just knowing about the root will not help. What is on the left of the root, what is on the right of the root is very, very important to create that tree, right? Create a unique binary tree."
+    },
+    {
+      "chunk_id": "L105_C7",
+      "start": 442.02,
+      "end": 506.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=9GMECGQgWrQ&t=442s",
+      "text": "the root, what is on the right of the root is very, very important to create that tree, right? Create a unique binary tree. So you can actually create a unique binary tree if the inorder along with inorder something is given as a preorder or a postorder also. If you're also given something like a postorder, then also you can create a unique binary tree because in post, the root will start from the last last. So guys, just remember, if you are given an inorder and if you're given any other order like postorder, preorder, which tells you about the root of the tree, like you're very much sure that the root of the tree is this guy, then you can easily construct a unique binary tree. And if you're just given preorder, postorders, and you're not given the inorder, remember, you cannot classify a unique binary tree. You can definitely create a lot of binary trees, but not a unique binary tree. So I hope you've understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to the channel, please do consider subscribing because I'm going"
+    },
+    {
+      "chunk_id": "L105_C8",
+      "start": 506.5,
+      "end": 512.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=9GMECGQgWrQ&t=506s",
+      "text": "that will keep motivating me to make such further series. Also, if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lecture_id": "L218",
+  "lecture_number": 218,
+  "lecture_title": "DP 38. Buy and Stock Sell IV | Recursion to Space Optimisation",
+  "youtube_url": "https://www.youtube.com/watch?v=IV1dHbk5CDc",
+  "chunks": [
+    {
+      "chunk_id": "L218_C1",
+      "start": 0.0,
+      "end": 75.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=IV1dHbk5CDc&t=0s",
+      "text": "Hey everyone, welcome back to Techie Forward. So, stocks, DP on stocks. In the first problem, we did one transaction only. In the second problem, we did as many infinite transactions. In the third problem, we did two transactions. In the fourth problem, we are just allowed to do at most k transactions. Yes. So, by the way, if you're watching this video, please make sure you go and watch stock 1, stock 2, stock 3 and then come across and watch stock 4. So, if you're allowed at most k transactions. So, the stock 3 problem that we did was allowing us at most two transactions. If you remember well enough, it was allowing us at most two transactions. So, can I actually copy paste the same code? Can I? So, let's check out if I can copy paste the same code or not. So, here I go to the solution of the stock 3 problem and what I'll do is I'll just copy paste the same portion of the code."
+    },
+    {
+      "chunk_id": "L218_C2",
+      "start": 75.06,
+      "end": 153.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=IV1dHbk5CDc&t=75s",
+      "text": "3 problem and what I'll do is I'll just copy paste the same portion of the code. Okay. Let's copy paste the same portion of the code. Let's come back over here. So, over here, the capacity, they're saying that they will be giving you at most k transactions. The problem is going to be straight away similar, but what they're saying is, hey, listen, you're just allowed to perform two transactions. A k can be three, not more than that. Like for an example, I see, okay, buy, sell, buy, sell, four profit, three profit in total of seven profit. So, if they were allowing three transactions, then you could have done any any different transactions as well. But over here, it's not possible. Like this is the problem. K can be anything. In the previous questions, in the previous stock 3 question, k at max was two. Over here, they're saying k can be anything. So, instead of two, I've been said that it can be anything. So, over here, if it can be anything, this is the size of the k now. Everyone know this is the size of the k. This is the size of the k. Same question. We just change it to something like this. And over here, I know this will be instead of two, it will be three. Now, if I run it, will it run? Let's quickly have a check. Yeah,"
+    },
+    {
+      "chunk_id": "L218_C3",
+      "start": 153.62,
+      "end": 230.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=IV1dHbk5CDc&t=153s",
+      "text": "this will be instead of two, it will be three. Now, if I run it, will it run? Let's quickly have a check. Yeah, it is. If I submit, will it? Indeed, it does. If you carefully see, it will. Let's wait. It is. It is submitted. Same question. We just modulated it to k instead of two transactions. It's a similar question. Right? So, guys, if you remember, in the previous question, we, stock 3, we did discuss about another possible variation, like another possible solution where we said that we will be maintaining an index and then we will be saying transaction number. Remember, where we said that the transaction number will be from 0, 1, 2, 3. In case of, if at most two transactions were allowed, like this would be the buy cell first transaction. Then the other one will be buy cell, the second portion of transaction. So, if I am looking to code the same thing, if you remember, this was the code that we wrote, where we said that, hey, listen, this is index, this is transaction. This is index, this is transaction. You are given an index and transaction to be this. And then if it isn't even, it's a buy because you did see that at even transaction, you were buying. So, if it's even, you just"
+    },
+    {
+      "chunk_id": "L218_C4",
+      "start": 230.82,
+      "end": 305.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=IV1dHbk5CDc&t=230s",
+      "text": "isn't even, it's a buy because you did see that at even transaction, you were buying. So, if it's even, you just give it to the market and you move with the next transaction. Or you say, I'm not doing anything. So, you move to the next without having anything on the current transaction. So, what I can say is, if I try to write this and let's try to optimize this, because we did it in the previous way, but we did not code it. So, let's quickly take this and try to actually solve this because we did it using the other way, but this method we did not try. So, we are having index and we are having the transaction number, you can say, TRAN number. And we know we will be having a vector of n, let's quickly do this, of prices. We will have an n, we will have a k. And we know one thing for sure, if the index by chance reaches n or we have completed all the transactions, we cannot do further transactions, it will be zero. And if the TRAN number is modulated to equal to zero, that means it's a buy, without any doubt, it's a buy. And you're going to return the max of, you either buy it. So, if you're buying, you're losing out and you're moving to the next day and the TRAN number"
+    },
+    {
+      "chunk_id": "L218_C5",
+      "start": 305.74,
+      "end": 373.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=IV1dHbk5CDc&t=305s",
+      "text": "of, you either buy it. So, if you're buying, you're losing out and you're moving to the next day and the TRAN number will also increase and you'll pass on the prices n and the k. Or else, if you don't buy, you take zero and you move on to the next, but the TRAN number still, like the transaction number still stays the same and you move on to the next with the same k. Or else you move into buy, right? That's where you move into, sorry, sell. So, in sell, you'll be like, okay, if I sell it, this is what I'm going to get, whether I'm moving to the next one and the TRAN number will increase by plus one with the prices n and k. Or I say, I'll not have anything, I'll take zero plus f of index plus one, TRAN number, prices n and k. That's what you can do. And over here, you can say return f of index of zero, the total number of transactions that you are looking to do is starting from zero to k. So, you can directly start from zero and it'll go on till k number of transactions. Amazing. And you can take on the prices n and k, right? And over here, what you can do is you can simply run the code and you'll see that it is again giving some issues. So,"
+    },
+    {
+      "chunk_id": "L218_C6",
+      "start": 373.3,
+      "end": 448.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=IV1dHbk5CDc&t=373s",
+      "text": "here, what you can do is you can simply run the code and you'll see that it is again giving some issues. So, you can see why, okay, we did not open the, open the if that's why. So, what mistake are we doing? We know if there are two transactions given to us, we will do four. So, this should be two into k, right? So, slight mistake because we can perform up till two into k transactions. So, be very careful about that. So, if you perform two into k transaction, it works. So, if you have to memorize this, what are the changing parameters, index and TRAN number, right? So, what I can do is vector of vector of int dp n vector of int and you know, till transaction number is two into k or minus one, just make sure you just carry this off and you can easily pass on the dp and if like fine, and this is where it goes and you take and of dp and it's a dp of index of TRAN number, very simple. And again, simply optimize this way. Also, you can memorize and a way you can ride. If this is not equal to minus one, please feel free to return this, right? And if you do this, it should be fine. Probably"
+    },
+    {
+      "chunk_id": "L218_C7",
+      "start": 448.34,
+      "end": 523.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=IV1dHbk5CDc&t=448s",
+      "text": "not equal to minus one, please feel free to return this, right? And if you do this, it should be fine. Probably vector will not be taken. Hash include bits has to be declared as usual. So, if I declare this, I should run fine. So, you see it is running absolutely fine. And now let's quickly try to submit this and see if this is working. Indeed, it does work right now. Let's quickly try to come across to the tabulation part. What are the base cases? If you carefully see all the base cases are zero. So, in tabulation, you start with all zero. So, you don't need to explicitly write for base cases. What are the variables, index and transaction numbers? So, write two nested loops for them in opposite direction. So, in opposite direction will be this. And the transaction number also in the opposite direction. So, trend number will start from, will you do it for two into K? That's a simple question. Obviously not because for any trend number, two into K, it will always be zero. So, you simply start for two into K minus one, and you go on to trend number greater than equal to zero. And you can go on like trend number minus, minus simple. And right after that, what you can do is you can simply go across and copy, paste this stuff. That's what I generally do. And over here, you can say else, right? Instead"
+    },
+    {
+      "chunk_id": "L218_C8",
+      "start": 523.7,
+      "end": 594.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=IV1dHbk5CDc&t=523s",
+      "text": "you can simply go across and copy, paste this stuff. That's what I generally do. And over here, you can say else, right? Instead of a, you'll just remove it. And now what will you write instead of this? Can I say you will be writing DP of index plus one comma, what will you write trend number plus one? Perfect. And over here, DP of index plus one and trend number. So, just omit this and write DP of index plus one and trend number. Perfect. So, just copy paste this portion because the same thing that you will be copy pasting over here. Correct. And just copy paste the same thing because it is again, the same thing that it will be copy pasting here. Perfect. Once you've done this, return DP of zero, zero. Once you do this, try to run this and you will see that, okay, it will give you a runtime error because so we are getting a runtime error. So, we are getting a runtime error. The possible reason is because you are at index N minus one and you're trying to access index plus one. So, this will give you a runtime error. Similarly, you are at 2K minus one and you're trying to access 2K. So, this has to be plus one. Just make sure you declare one extra size. And once you do this, it will be running fine. It does. And I'll quickly submit this and"
+    },
+    {
+      "chunk_id": "L218_C9",
+      "start": 594.18,
+      "end": 669.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=IV1dHbk5CDc&t=594s",
+      "text": "sure you declare one extra size. And once you do this, it will be running fine. It does. And I'll quickly submit this and you will see that this is working fine as well. Indeed, it does run fine. What's the next step? Index plus one. I've always said whenever you see index plus one, index plus one, index plus one, index plus one, what should come to your brain? Space optimization. Yeah, you are that correctly. So, just submit this portion and this will be the vector that will be remaining. Right. And you can say we will have a couple of these vectors. One is the previous and you can just copy paste this to get one more, which is the current or you can say after and current because over here it's index plus one. Everything will be zero. So, no need to worry. So, instead of index plus one after, after, after, after, and over here instead of db of index, curr, instead of db of index, curr, and over here what? After equal to curr. Yeah, perfect. And over here, and either after or whatever you write, it works fine. So, let's quickly run this. It's running. Let's quickly now try to submit this and see if this is submitted. Indeed, it is. It is submitted. So, guys, the space complexity in the space optimization solution is 2k, which is as good"
+    },
+    {
+      "chunk_id": "L218_C10",
+      "start": 669.22,
+      "end": 743.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=IV1dHbk5CDc&t=669s",
+      "text": "submitted. Indeed, it is. It is submitted. So, guys, the space complexity in the space optimization solution is 2k, which is as good as we go of k. And you're using an n into k, 2k minus one loop, that's n into 2k. So, that's the time complexity that you're using. And this is the solution that you should definitely give it to the interviewer. Right. And are there edge cases? No, this does work for everything. Even if yes, even if there are cases where assume you are like, assume that is very small, array is very small of size three and k is given as a hundred. Doesn't matter. It will still perform the transactions because what we are saying is on the base case, we are very sure that please stop whenever it reaches n. So, whatever the transactions it would have performed till index equal to n, it'll still take care of that. You don't need to separately handle that. Right. So, this is how you can easily solve this particular problem. So, guys, I hope you have understood this different solution to this problem. So, just in case you did, please, please, please make sure you like this video. And if you're new to the channel, please do consider subscribing to us. And yes, with this, I'll be wrapping up this video. Let's meet in the next one. Bye-bye. Take care."
+    }
+  ]
+}

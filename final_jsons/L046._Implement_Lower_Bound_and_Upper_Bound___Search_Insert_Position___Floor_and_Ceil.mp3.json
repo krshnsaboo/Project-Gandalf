@@ -1,0 +1,197 @@
+{
+  "lecture_id": "L046",
+  "lecture_number": 46,
+  "lecture_title": "BS-2. Implement Lower Bound and Upper Bound | Search Insert Position | Floor and Ceil",
+  "youtube_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k",
+  "chunks": [
+    {
+      "chunk_id": "L046_C1",
+      "start": 0.0,
+      "end": 70.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=0s",
+      "text": "So, what is lower bound? The definition goes as the smallest index. Yes, the smallest index such that the number at that index is greater than equal to the given number. Let's take an example. So, this is a sorted array. Again, the array has to be sorted for lower bound to be implemented. Imagine I give you x as 8. If I give you x as 8, I can see the smallest index is 3. No, it's 5. No, it's 8. Yes. Why? Because 8 is greater than equal to 8. That's why this is the first index where you get a number that is greater than equal to. Got it? So, what is the index? If I have to write down the index, 0, 1, 2, 3, 4. So, the lower bound will go as 2. Quite simple. What if x is 9? In this case, let's see. Can 3, can 5, can 8, 15? Yes, 15 can be because 15 is greater than equal to 9 because x is 9. So,"
+    },
+    {
+      "chunk_id": "L046_C2",
+      "start": 70.6,
+      "end": 150.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=70s",
+      "text": "Yes, 15 can be because 15 is greater than equal to 9 because x is 9. So, thereby the index will go as 3. Perfect. What if x is, let's say, 16? In that case, is it? No. Is it? No. Is it? No. Is it? No. Yes, this is 19 greater than equal to 16. So, thereby the lower bound will be 4 in this case. What if x is, let's say, 20? For 19, it will be this itself. What if it's 20? This? No. This? No. This? No. This? No. This? No. So, the last hypothetical index is 5. So, the lower bound will be the size of the array or the index, the last hypothetical index because there is no one who is greater than equal to 20. So, thereby it will be the last hypothetical scenario. So, what if I give you something as let's rename this as 19, 19 and probably remove this and add one more 19. In this case, then is 7. What if this time x comes up as 19? What will be the answer? Which index? Obviously, the smallest index. So, this one will be your answer. First index where the number at that index is greater than equal to, very important, greater than equal to."
+    },
+    {
+      "chunk_id": "L046_C3",
+      "start": 150.48,
+      "end": 210.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=150s",
+      "text": "your answer. First index where the number at that index is greater than equal to, very important, greater than equal to. So, by getting equal to find, if you're not getting, find the greater. So, that's what you have to do. Got the definition of lower bound? So, let's take x as 11. So, if I ask you to find out the lower bound of 11, what's the first approach that comes to your brain? The first approach is very simple. We'll go to 1, we'll go to 2, we'll go to 3, we'll go to 3, we'll go to 7, we'll go to 8, we'll go to 9, we'll go to 9, we'll go to 9 and this is where we stop because it's greater than equal to 11. It's kind of a linear search and I have to do a big O of n iteration. I can use a for loop because that will work. So, it's a big O of n approach. Obviously, this is something which you don't want because it's extremely easy. Now, we know that the array is sorted. So, if we know that the array is sorted, we have to search. We kind of have to search. So, we have to think in the direction of searching. So, whenever the search space is sorted and I have to search, which algorithm? Binary search. Yes, there's the reason I'll apply binary search. But in order to explain"
+    },
+    {
+      "chunk_id": "L046_C4",
+      "start": 210.08,
+      "end": 278.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=210s",
+      "text": "is sorted and I have to search, which algorithm? Binary search. Yes, there's the reason I'll apply binary search. But in order to explain binary search better, I'll change the value of x to 1 and let's see how binary search works. So, I'll be keeping my low at the 0th index and my high as the 9th index. Now, you know one thing for sure, no matter what happens, even if the low bound doesn't exist, even if there doesn't exist any number greater than equal to x, I will always have an answer equal to the size of the array. In this case, 10. Basically, the hypothetical index. Even if there is no answer possible, even if there is no element possible, I will always return the last hypothetical index. That is something I know for sure. So, I'll try to keep an answer. Why am I taking an answer variable? You'll understand. And this is a trick which you have to keep in your mind throughout the binary search and it will be very, very useful. So, what I'll say is, okay, let's find out mid. What is mid? It'll be 0 plus 9 by 2, 4.5, 6, integer value of 4. So, the mid will be pointing to 7. I'm like, yes, 7 is greater than equal to 1. I got my low bound. No, no, I need to find the smallest. I need to find"
+    },
+    {
+      "chunk_id": "L046_C5",
+      "start": 278.66,
+      "end": 348.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=278s",
+      "text": "7 is greater than equal to 1. I got my low bound. No, no, I need to find the smallest. I need to find the smallest. So, can I say I did not get my low bound, but probably I got a number, probably I got a number which is greater than equal to 1. I definitely got a number which is greater than equal to 1. This can be my answer. Maybe, maybe, can be my answer. So, I know this maybe or can be my answer. So, thereby, whatever is the index, I will say I probably got someone who is greater than me, who is greater than me. So, let's keep it. So, if I've got someone, I need the smallest index. So, if you need the smaller one, will you go left or will you go right? He'll go left. Smaller will always exist on left. So, you'll try to eliminate the right search space, eliminate the right search space. So, you'll try to eliminate this. So, this high will come over here. So, what you'll do is, this high will be going to one place before the mid, which is this. Perfect. I have a probable answer. Let's see if I can get better. I'll again take mid. There'll be 0 plus 3, which is low plus high, 1.5, that's 1. So, this will be pointing to this portion. Let's see."
+    },
+    {
+      "chunk_id": "L046_C6",
+      "start": 348.82,
+      "end": 421.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=348s",
+      "text": "There'll be 0 plus 3, which is low plus high, 1.5, that's 1. So, this will be pointing to this portion. Let's see. Let's analyze. We have a 2. Yes, we have a 2. So, we're like, can this be my answer? Let's analyze. 2 greater than equal to 1. I'm like, yes, it can be. So, I probably found a better index because I moved to left, because I moved to left. So, I definitely found a better index because I never moved to right. So, if I'm moving to left, that's definitely smaller and this is greater than equal to 1. Can be, maybe my answer, maybe. I don't know. So, I'll probably keep that index 1 because 2 occurs at index. I'll keep it. I'm like, okay. So, if I have kept it, I know this is an answer. So, I'll never look on the right anymore. I'll go to the left. So, I'll move the high to this index and I'll eliminate mid again. Let's do the next thing again. We are at low and high. Mid will be 0 plus 0 by 2, which is 0. So, mid will also be this. Perfect. Let's see. Can this be my answer? What is there? 1. So, like 1 greater than equal to 1. He's like, yes, this might be an answer. I'm like, okay, the 0th index might be my answer. And I still have to look"
+    },
+    {
+      "chunk_id": "L046_C7",
+      "start": 421.14,
+      "end": 500.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=421s",
+      "text": "He's like, yes, this might be an answer. I'm like, okay, the 0th index might be my answer. And I still have to look for smallest. So, I have to go left. So, what will happen is this high will go left and it will go at minus 1. So, high crosses low. I stop. When I stop? So, the last smallest, which could be my answer is 0. Thereby, the low bound is 0. I hope you understood this. So, let's take one more example to understand low bound better. So, I'll take x to be 9 plus 10. Let's see what how binary search will work. So, I'll keep the low here. And as usual, I'll keep the high here. And initially, what will be the answer? I know even if I do not find any numbers which are greater, the hypothetical index will be my answer, which is the last index, which is index 10. Let's try to analyze. What is the value of mid low plus high 0 plus 9 by 2, which is near about 4 integer, which is this 5 is 5 greater than 9. No, can 5 be your answer? Maybe and look, it cannot be because 5 is not greater. So, it doesn't have a probability to be my answer. So, if it doesn't have a probability to my answer, so if it doesn't have a probability to be my answer, can I"
+    },
+    {
+      "chunk_id": "L046_C8",
+      "start": 500.62,
+      "end": 578.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=500s",
+      "text": "answer. So, if it doesn't have a probability to my answer, so if it doesn't have a probability to be my answer, can I say I'll not replace answer? I will not. So, I'll never find an answer on the left as well because if 5 is not an answer, anything to the left of 5 can never be my answer. Very obvious, very obvious. So, where will I move? I'll go on the right and I'll try to do a search thereby the slow will go here and try to do a search. Quite simple binary search. Next, I'm over here. So, let's try to figure out the mid again. Mid will be 5 plus 9 by 2, which is 7, which is this. Let's see. I'm like, how much is this? 10. It's greater than equal to 9. Yes, you can be my answer. You may be. I'm not sure. Let's store you. What index? 7. Let's store the index 7. I stored it. So, this might be my answer. So, I need smallest. So, this might be my answer. I don't need to look at right because I need small, I go to the left. So, the search space will be trimmed down to the left. Sorry, trimmed on the right and we'll move left. Amazing. Binary search is such an amazing algorithm. Next, let's find out the new mid. It's 5 plus 6 by 2, 11.5. Okay. So, mid will also be pointing"
+    },
+    {
+      "chunk_id": "L046_C9",
+      "start": 578.78,
+      "end": 645.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=578s",
+      "text": "an amazing algorithm. Next, let's find out the new mid. It's 5 plus 6 by 2, 11.5. Okay. So, mid will also be pointing to this. How much is the value? 8. Is 8 greater than equal to 9? No. Cannot be my possible answer. Don't, don't, don't alter the answer. Don't alter the answer. Don't alter the answer because the value at mid is not greater than equal to 9. So, do not alter the answer. Do not even touch because this doesn't have a probability to be my answer. So, if this doesn't have, I have to go and look for, probably right. Yes. So, I will this time take low and I'll move one ahead of mid. So, thereby low will be pointing here. That's one ahead of mid. Perfect. What's the next job? We're standing at 8. Very important. We're standing at 8. This time what will happen? Mid will be pointing to here and we'll get 8 which is at index 6. Please, please observe which is at index 6. But this value is not greater than 9. So, not to be done. And we will again move on the right and the search space will be completed. And we just got one occurrence and that's my answer. So, index 7 is my answer which is actually my answer. The first index where the value is greater than equal to."
+    },
+    {
+      "chunk_id": "L046_C10",
+      "start": 645.72,
+      "end": 723.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=645s",
+      "text": "answer. So, index 7 is my answer which is actually my answer. The first index where the value is greater than equal to. There's no 9. So, I have to find the greater value. You got it. So, this is how we can easily find out the lower bound. How can we implement this? Quite simple binary search. You don't have to think a lot. Follow the same template. Take a function, take an array, take a target and take the size of the array. Let's follow the same template. We know binary search will always have 0 and the high will always point to the last index which is n minus 1. And we know the search space. Over here there's a slight difference. We take an answer variable. So, answer will be pointing to, answer will be n. And then while low lesser than equal to high is what we'll do. And the generic tendency is mid equal to low plus high by 2 if you remember. And what is the next thing? If you remember in binary search you always did a equal to, then you did a greater, then you did a lesser. Right. You don't need to do it here. You don't need to do it here because you know maybe an answer is a possibility. Maybe an answer or cannot be an answer. There are only two possibilities."
+    },
+    {
+      "chunk_id": "L046_C11",
+      "start": 723.24,
+      "end": 794.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=723s",
+      "text": "here because you know maybe an answer is a possibility. Maybe an answer or cannot be an answer. There are only two possibilities. Maybe an answer or cannot be an answer. So, if you remember low was here, high was here and mid was pointing here. In this case when x was 1, I said this might be an answer. So, can I say if because I'm not searching, I'm rather looking for a particular smallest index, not searching for an element. That's why I'll write if this is lesser than equal to or sorry greater than equal to is my condition. Is greater than equal to x or my target whatever it is. I know this may be an answer. So, I'll say this may be an answer. So, please store that maybe index in answer because it may be an answer. And trim down the search space, go to the left and find out, go to the left and whenever you go to left, high goes, high goes. So, that's it. Or else if that is not the case, imagine if x was 9 in this case, what will happen? I'll say this cannot be an answer. Cannot be an answer. So, the low will just go here. So, the low will just go here. So, just you move the low to mid plus 1. Is that so tough? It isn't. So, you just move the mid to, sorry you just move the low"
+    },
+    {
+      "chunk_id": "L046_C12",
+      "start": 794.68,
+      "end": 863.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=794s",
+      "text": "low to mid plus 1. Is that so tough? It isn't. So, you just move the mid to, sorry you just move the low to mid plus 1. Done. And at the end of the day, if you found out an index, fine, you'll get it in answer. Otherwise answer stays as n, which is your hypothetical answer always. So, that's what you'll return. It's a very, very important algorithm, low bound. It can solve so many of your problems. So many, trust me. Please, please keep this in mind. So, coming to the code editor, you can find the same code I've written in C++. You can find the equivalent Java, Python and JavaScript code from the link in the description. So, what I'll do is I'll quickly go ahead and submit this and you'll see that this is running fine. So, please, please make sure that you kind of keep in your brain what is low bound. So, if you're a C++ user and you're giving coding rounds, you don't have to write this entire long piece of code. If it comes up in a coding round, you can simply write low bound index equal to lower underscore bound. And you can get the starting of the array like the starting iterator. In case of arrays, it will be array. In case of vector, it will be array.begin, array.end. So, it will define the search space, starts from begin, goes"
+    },
+    {
+      "chunk_id": "L046_C13",
+      "start": 863.56,
+      "end": 940.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=863s",
+      "text": "it will be array. In case of vector, it will be array.begin, array.end. So, it will define the search space, starts from begin, goes to end and looks for x. So, this will return an iterator pointing to that index. And in order to get the index, you just subtract this beginner iterator. Because if you subtract the beginner iterator, the beginner iterator and wherever the low bound is, you'll get the index. You'll get the index. So, this is how you can easily do it in C++. If it's an array, you write array comma array plus n. Imagine I ask you that the array is given from here to here, which is basically this much. I ask you to find the low bound in this portion of the array, not the entire array. In that case, what you will write is, this is the second index, this is sixth index. So, you'll write array plus second index, array plus seventh index. Seven means the next one. So, it will go till six. So, this will go till two comma six and we'll do a low bound in this. Got it? So, this is how you can easily do it using the low bound C++ STL in Java. I'm not aware of such equivalent, but yeah, for Java people, you can always write the pseudocode yourself. So, what is the time complexity of the low bound algorithm? Obviously, the same as binary search. Hence, the time complexity is,"
+    },
+    {
+      "chunk_id": "L046_C14",
+      "start": 941.56,
+      "end": 1013.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=941s",
+      "text": "pseudocode yourself. So, what is the time complexity of the low bound algorithm? Obviously, the same as binary search. Hence, the time complexity is, we go off logarithmic base to end. So, we're done with low bound. Now, we will be moving to upper bound. What is upper bound? Same concept. The only difference is, it's a smallest index, but there's just the greater symbol. The number at that index must be greater than x. There's no equal to any further. So, you have to find me the smallest index such that the number at that index is greater than x is what is the definition of upper bound. Imagine I give you x as six. What is the upper bound of six? So, if I write down the indexes, zero, one, two, three, four, five, six, seven, eight, nine. So, n is over here, 10. So, for six, I know six is there, but six cannot be said as greater than six. So, thereby, the upper bound will be index equal to three. Why? Because at three, you have seven and seven is greater than six. Thereby, it is your upper bound. Imagine I give you something as x as 11. In that case, 11 will be a low bound, but it's not the upper bound. The upper bound is 12. So, it will be like index equal to nine. Imagine I give you x as"
+    },
+    {
+      "chunk_id": "L046_C15",
+      "start": 1013.24,
+      "end": 1087.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=1013s",
+      "text": "the upper bound. The upper bound is 12. So, it will be like index equal to nine. Imagine I give you x as 12. In that case, there's no one greater than 12. So, in that case, the index will be the hypothetical scenario, which is 10. Imagine I give you x as 13. Even in this case, the hypothetical scenario 10. Imagine I give you x as zero. So, the first element is two, which is greater than zero. So, the index will be zero. Got the definition of upper bound, but find the greater. So, how can you do it? Isn't it similar to the lower bound? It is. What is the difference that we will do? We will kind of, in low bound, what did we do? We will like array of mid, if you remember the low bound, greater than equal to x or, yeah, greater than equal to x. You are my probable answer. You may be my probable answer. And go and look at the left for smallest or else, this was the binary search code that you wrote or else, go on the right and look for someone who can be an answer. For upper bound, can I say, I'll try to perform a similar search."
+    },
+    {
+      "chunk_id": "L046_C16",
+      "start": 1087.08,
+      "end": 1160.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=1087s",
+      "text": "look for someone who can be an answer. For upper bound, can I say, I'll try to perform a similar search. And I will see if array of mid is greater than x, you can be my probable answer. Or, if you are my probable answer, I need smallest, I need smaller index, go on the left and find me out or else, go on the right and figure out because if at this index, I'm not getting, go on the right, go for greater indexes and find me out. So, the only difference is this greater than equal to gets converted into greater. You can again do the draw iron for this and not be going into depth because there's just a sign change because if I go into depth about all of these smaller, smaller things, we'll end up making a playlist of 100 hours and that's not possible. Okay. So, I am expecting you to understand a slight change. After the code editor, what I'll do is, I'll copy paste this. I'll go to upper bound. I'll paste this and I'll just remove the equal to, and I'll go ahead and submit this and see if it is running fine as I said you. It should be. Yeah, it does. So, that's the only change that we have to do in upper bound. So, what is the time complexity? The time complexity is again, we go off logarithmic base to n. And if you're using"
+    },
+    {
+      "chunk_id": "L046_C17",
+      "start": 1160.44,
+      "end": 1239.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=1160s",
+      "text": "upper bound. So, what is the time complexity? The time complexity is again, we go off logarithmic base to n. And if you're using something as C++, just change this lower to upper and you have a C++ STL that does it. So, this is very, very important if you're going for coding now. So, you don't have to write longer codes. This will help you immensely. So, this is for C++ users. So, let's go ahead. So, I can go back to the sheet and let's see what we have done. Let's go to the binary search section and I can say that this is done and this is done. What is the next question? Search insert position. Let's read the question. You're given a sorted array of distinct values, very important distinct values, and a target value m. You need to search for the index of the target value in the array. If the value is present in the array, then it's very simple. Return its index. If the value is not present, determine the index where it would be inserted in the array while maintaining the sorted order. Let's take this example and understand this problem. It's kind of saying array is given as 1, 2, 4, 7 and the number is given as 6. So, this is a sorted array and this number has to be inserted in the sorted array. What they're asking is where should this number be ideally inserted?"
+    },
+    {
+      "chunk_id": "L046_C18",
+      "start": 1239.0,
+      "end": 1313.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=1239s",
+      "text": "sorted array and this number has to be inserted in the sorted array. What they're asking is where should this number be ideally inserted? So, if I just write down the indexes, 0, 1, 2, 3 will be the indexes. So, ideally can I say if I have to insert 6, it will be like 1, 2, 4 and 6 will go here and 7 will go here. Can I say this? I can because that is what will happen. So, 6 will go at index 3 and that is what they want. You have to return the index where the 6 will be inserted. What if for this example, only I would have given you x equal to 2. In that case, if I have to insert 2, that 2 will go here and then the rest of the array can follow. So, in this case, 2 was inserted at the first index. So, what will be your answer? How can you find the search position? Isn't it similar to saying finding the low bound? Isn't it? Just for a second think, isn't it? Because if there is 2, if there is 2, you just insert it wherever 2 is and if there is no 2, like if there is no 6 and you go to the next guy, isn't it equivalent to saying find the index where the value is either equal to because then I'm going to insert it"
+    },
+    {
+      "chunk_id": "L046_C19",
+      "start": 1313.32,
+      "end": 1386.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=1313s",
+      "text": "next guy, isn't it equivalent to saying find the index where the value is either equal to because then I'm going to insert it or else greater or else greater. Isn't it equivalent to saying if it's there, I go and insert it at the smallest index wherever it is or else I go and insert it right at the greater index. So, I just have to figure out the low bound and my job will be done. So, I'll quickly go ahead and probably copy paste the same code and let's see if it works. I'll go here and I'll try to copy paste the same code. I'll hit a run. Let's see if it works. There's some compilation errors. Okay, I'm assuming, okay, this is given as m. So, let's quickly replace this as x. Let's quickly say n as array.size. And now let's quickly submit it and see if it is running fine. It does. So, as I said, if you know low bound, that will actually solve so many of your problems. Going back to the sheet, I can say that this one is done as well. I'll be completing the next problem as well, which is floor and seal in sorted array. So, if you ask me the definition of floor, it's very simple. The largest number in the array that is either equal or lesser than x. And what is"
+    },
+    {
+      "chunk_id": "L046_C20",
+      "start": 1386.76,
+      "end": 1464.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=1386s",
+      "text": "definition of floor, it's very simple. The largest number in the array that is either equal or lesser than x. And what is the definition of seal? I think everyone knows. The smallest number in the array which is either equal or greater than x. So, if I give you x as 25, can I say for x 25, the floor will be 20 because that is the largest. 10 is definitely smaller than 25. But 20 is smaller than 25 as well. And we need the largest number. So, the largest number is 20. The floor is 20. It cannot be 30 because we need smaller than equal. Perfect. What is the seal? If I ask you the seal, that's 30 for sure. Why? Because 50 is definitely greater than equal to 25. 40 is greater than equal to 25. 30 is greater than equal to 25. And I need the smallest number. So, the smallest is 30. So, thereby the floor seal is 30. What if I change the array? I just change the array this time. I say 10, 20, 25, 30, 40. And I give x as 25. So, can I say in that case, the floor will be 25 and the seal will also be 25 because we have the number itself. So, how do we solve this? Do you have any idea on how to solve this?"
+    },
+    {
+      "chunk_id": "L046_C21",
+      "start": 1465.08,
+      "end": 1538.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=1465s",
+      "text": "25 because we have the number itself. So, how do we solve this? Do you have any idea on how to solve this? Something I know for sure is, what is this? Smallest number in an array greater than equal to I think everyone knows this. This is nothing but lower bound. We have done it. We have done it. This is nothing but lower bound because we know for sure that it is lower bound. Why? Because if x was 25, 25 is the answer. And if I just trim it down to something like 30, 40, 50, in that case for 25, the seal instead of 25 will this time become 30 and the floor will be 20. Why? Because 25 was not there. So, it figured out the next small element. And this is what was the definition of lower bound. Figure out the element that's greater than equal to x. And that is exactly the definition of seal. So, I know how to find seal. We just implement what we have implemented in lower bound. We just have to be careful about a certain thing. In this case, they might ask you if that doesn't exist any number. In that case, you have to probably return minus one or something. So, you have to be careful about that case. But yeah, it is quite similar to what you do in lower"
+    },
+    {
+      "chunk_id": "L046_C22",
+      "start": 1538.04,
+      "end": 1612.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=1538s",
+      "text": "or something. So, you have to be careful about that case. But yeah, it is quite similar to what you do in lower bound. But what is this? This is different. The condition now changes. And if the condition changes, you know how to implement it. You just do some tweak to your implementations and that should be done. So, how do we tweak our implementation? Let's quickly check it out. So, you have seen how we have implemented the lower bound. It's pretty similar. It's just a reversal of sign. It's pretty much similar. So, can I write probably the pseudocode for floor something as like probably let's write it here. Floor array is given and the number x is given. Probably you can keep the answer as minus one to start off with because in case there is no one, we will have minus one. We will have low as zero and the high as n minus one. Remember, we need the number. We do not need the index. We need the number. So, we also whenever you find the low bound, send the number and that index. Don't send the index. Okay. So, what can I write? Can I write while low lesser than equal to high? Again, the pattern will be similar. The pattern will be similar. Mid will be figured out. Low plus high by two. I'm repeating the pattern is going to be very much similar throughout the binary search."
+    },
+    {
+      "chunk_id": "L046_C23",
+      "start": 1613.16,
+      "end": 1685.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=1613s",
+      "text": "will be figured out. Low plus high by two. I'm repeating the pattern is going to be very much similar throughout the binary search. So, can I say I'm looking out at if this is smaller than equal to mid, if this is smaller than equal to mid, then this can be my answer. Whatever is I'm not looking for index. I'm looking for the value. Keep it. And now I'll be like, this might be my answer. So, I'll just have it and then I'll move the low to mid plus one. So, remember, I'm going to the right. I'm going to the right. So, whatever value you always get here will always be greater because you're going to the right. So, when you move to the right, whatever value you get will always be greater. That is why I'm not comparing for largest. That is why I'm not comparing for largest because binary search, since it eliminates the left search space, since it eliminates the left search space, whatever I'm getting is going to be big, is going to be big. So, there is thereby no need to compare for largest. No need to compare for largest. Whatever you get will always be bigger than the previous one. Got it? Very simple. Or else, you go to the left and you figure out. That's as easy as it can get. It's just playing around"
+    },
+    {
+      "chunk_id": "L046_C24",
+      "start": 1685.32,
+      "end": 1755.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=1685s",
+      "text": "simple. Or else, you go to the left and you figure out. That's as easy as it can get. It's just playing around with the symbols. That is why I was telling if you understand lower bound in depth, you will be able to solve so many questions. So, you can find the problem link for floor and seal in the description. Please make sure that you submit these problems so that you gain confidence. So, a quick note over here, we had to return the element. That is why I'm returning. In a lot of places, they might ask you for index as well. So, make sure you read the problem properly before submitting. So, we are pretty much done with low bound, upper bound and we have done some implementations of it. In the next set of the lectures, I'll be doing more problems based on low bound and upper bound. But as of now, I know you might have a small doubt. How is binary search making sure that we get the smallest index or something like that? So, as I said, binary search eliminates whenever I'm saying smallest index, binary search eliminates the left half or the right half. So, you always move in a direction to find the smallest. Over here, whenever you're trying to move for smallest, you always move in the left direction. You always eliminate, you always eliminate. So, you're always moving on the left. Right. So, that is why whatever is"
+    },
+    {
+      "chunk_id": "L046_C25",
+      "start": 1755.64,
+      "end": 1820.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=1755s",
+      "text": "move in the left direction. You always eliminate, you always eliminate. So, you're always moving on the left. Right. So, that is why whatever is stored, whatever is stored, if you remember in the example, where was the example? If you remember this example, we took some example where we started with 10, it boiled down to 7, then boiled down to 4, then boiled down to 1. Remember, it is always decreasing. So, binary search, because the search space is eliminated in such a technique that it makes sure that if you're replacing it, it gets replaced by smallest or largest depending on your conditional. So, binary search by default takes care of the smallest or in this case, the largest number or in this case, the smallest number. It does it for you because you're eliminating search spaces. You're moving in a direction so that you can find the largest. Over here, when he is moving in this direction, you're moving to find the largest. That is why whatever you replace will always be bigger. Don't have that doubt. And if you're still having a doubt, take longer exam. So, in order to understand binary search in depth during my college days, the technique that I used was, I took a lot of examples and I used to do a dry run. I used to write everything. I used to do dry run on pen and"
+    },
+    {
+      "chunk_id": "L046_C26",
+      "start": 1820.92,
+      "end": 1891.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=1820s",
+      "text": "examples and I used to do a dry run. I used to write everything. I used to do dry run on pen and paper and then the understanding got much better and better with time. It's just not about watching the lecture or it's just not about copy pasting the code that I'm writing. Try to take examples by yourself. Try to take the value of x by yourself. Try to do a dry run on the code so that the understanding goes better. Now, in a lot of places, you will find that this particular answer variable is not used. They kind of return the low or high as the answer. I'll not go into that. That is super complicated. But once you get to that expert level in binary search, you will figure this out that you don't have to store the answer. You don't have to store the answer. Either of low or either of high will always be your answer. Again, these things I'll dive deep as we move forward. But as of now, use the technique of answer. When we are starting off, use the technique of answer. Use another variable to store it. As you gain confidence and as you become an expert, you will notice that you don't need this answer. This low or this high, either of these indexes will be pointing to your answer. You will notice this. You can take"
+    },
+    {
+      "chunk_id": "L046_C27",
+      "start": 1891.64,
+      "end": 1936.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=6zhGS79oQ4k&t=1891s",
+      "text": "this answer. This low or this high, either of these indexes will be pointing to your answer. You will notice this. You can take examples and you will see when you run out of search space, low and high, one of them will be pointing to your answer. Just have a notice this. Again, this we will discuss in depth as we move forward. But for this video, I think we have discussed a lot of things. Going back to the sheet, I can mark this one as done as well. So I hope you have understood everything about low bound and upper bound because it is going to be very, very important as we move forward. It is very important for coding rounds as well. In case you have understood everything, please, please do give that like because that is very, very important for me. It keeps you motivated. If you're new to our channel, please, please, please do consider subscribing to us. And yes, if you haven't followed me on Instagram, LinkedIn and Twitter, all the links will be in the description. With this, I'll be wrapping up this video. Let's finish up with the video. Tell them about it."
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "lecture_id": "L188",
+  "lecture_number": 188,
+  "lecture_title": "DP 7. Ninja's Training | MUST WATCH for 2D CONCEPTS 🔥 | Vacation | Atcoder | 2D DP |",
+  "youtube_url": "https://www.youtube.com/watch?v=AE39gJYuRog",
+  "chunks": [
+    {
+      "chunk_id": "L188_C1",
+      "start": 0.0,
+      "end": 78.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. Today is the seventh lecture of the dynamic programming playlist and this problem is quite interesting because you're going to learn a lot of stuff. Yes, trust me when this video ends you'll be like wow, dynamic programming is so so super cool. So the question goes by the name Ninja's training. So Ninja is planning this 10 days long training schedule. Each day he can perform any one of these three activities. So there are three activities that the Ninja can perform running, fighting practice or learning new moves. I forgot about these stuffs. Each activity has some merit points on each day. So there are three activities. If you perform any activity on a given day, you get some points. Now as Ninja has to improve all his skills, he can't do the same activity in two consecutive days. That means if on the first day he has done running on the second day, he again cannot run. So two activities cannot be done on consecutive days. Something similar to the lecture five where it was stated that you cannot pick up consecutive numbers, but over here you have to perform something like you cannot skip the next"
+    },
+    {
+      "chunk_id": "L188_C2",
+      "start": 78.88,
+      "end": 152.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=78s",
+      "text": "that you cannot pick up consecutive numbers, but over here you have to perform something like you cannot skip the next day. You have to perform something. This is where the question is slightly different. So can you help Ninja find out the maximum merit points that the Ninja can earn if he has N days. Now you're given a 2D array of size N x 3. It's a slightly different one. N x 3. So basically there will be three columns and N rows with the points corresponding to each day and activity. Your task is to calculate the maximum number of merit points that Ninja can earn. So let me just explain to you what does this mean. So basically it means these are the three columns. So this is running. This is some activity. Second, like I can say first activity, second activity, third activity. This is what I can easily say. And this is day one and this is day two points. If there was someone else, it would have been day three. It is as simple as it can get. This is how it looks. So I can say this is definitely day one or zero, whatever you can call it. This is a day one. So you have to perform on two given days. So greedy again, the first step that always comes to our brain"
+    },
+    {
+      "chunk_id": "L188_C3",
+      "start": 152.32,
+      "end": 219.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=152s",
+      "text": "day one. So you have to perform on two given days. So greedy again, the first step that always comes to our brain is greedy. So first of all, if I perform on the zero today, my greedy nature will say on the zero today I have three tasks that I can perform. Which one gives me the maximum? And the answer that comes up is 50. 50 gives me the maximum. So what I'll do is I'll take 50 and perform it. So that is greedy. Next, on the first day, I know since I performed 50, I cannot perform 100. That is what the question states. If you have performed a certain task, like this was the task, whatever, what is like fighting practice, something. If this task has been performed on the next day, you cannot perform that. On the next day you can do, but on the exact next day you cannot do. On consecutive days you cannot perform two tasks. So this cannot be performed. So either of five or either of 11. So the maximum is 11 that you can take. So 11. If I sum this up, you'll get 61. At max, you can collect 61 merit points. But is this the maximum? Now the answer to that is no, this is not the maximum. You did greedily, but you will fail. Why? Because since you did greedily,"
+    },
+    {
+      "chunk_id": "L188_C4",
+      "start": 219.84,
+      "end": 298.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=219s",
+      "text": "answer to that is no, this is not the maximum. You did greedily, but you will fail. Why? Because since you did greedily, you took 50, you missed out on something which was much bigger in the next step. So ideally, better would have been if you'd have taken 10, correct? And then you would have taken 100. So if you'd have taken 10 on the zero day, like you have performed this task, then you'd have performed this task. Thereby, the total would have been 110, which is indeed the maximum merit points that you can earn. That is what the question states. So we observed that greedy fails and whenever greedy fails, you know what, what do you need to do? First thing comes, try all possible ways. Yes. We're going to try all possible ways. That's the, that's definitely the first thing that comes to my mind. And whenever I say try all possible ways, the first thing that comes to my mind is let's apply recursion and try to do every possible stuff that I can do. Right now, if you remember, in order to write recurrence, I've told you three steps. What are the three steps? Step number one, express every possible problem in terms of index. Second, do stuffs on that index. Very, very important."
+    },
+    {
+      "chunk_id": "L188_C5",
+      "start": 298.16,
+      "end": 362.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=298s",
+      "text": "three steps? Step number one, express every possible problem in terms of index. Second, do stuffs on that index. Very, very important. Do stuffs on that index. Third, according to the question, like over here, the question states, find the maximum merit points. So you have to find the max. You have to find the max. So if you follow these three steps, you can definitely write any of the recurrence relationships. Correct? Now, if I ask you in this particular question, can I say, can I say I can, I can definitely do an index because we have day zero, we can treat that as an index. We have day one, we can treat that as an index. So the day can be treated as an index because I have to decide on a given day what I'm trying to do. So I have, I have definitely decided what is going to be my index. So I can say, okay, fine. Hey, listen, Stryver, we have decided that the day is going to be my index. So that's the first thing. Index is day. Like I'm naming the variable as day, but yeah, that's, that's what overall. So we have decided whatever we are going to do is going to be on the day. On the zero day, we're going to do something. On the first day, we're going to do"
+    },
+    {
+      "chunk_id": "L188_C6",
+      "start": 362.72,
+      "end": 440.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=362s",
+      "text": "going to be on the day. On the zero day, we're going to do something. On the first day, we're going to do something. On the second day, we are going to do something, but whatever we do will be on the index. So first step is done. We have decided the index. Okay. Now, before thinking of any other logic, because I don't, I don't want you to cram the code before deciding anything. Let's understand do stuffs. Okay. Let's understand do stuffs. So generally we will be doing recursion, which is definitely top down. And I generally tend to write it from nth minus one of the index to the zeroth index. That is how I do it. You can do it the opposite way where you take it from zeroth index to the nth minus one of the index. That is absolutely okay. So can I say, can I say, let's assume that like there are multiple days. Let's assume there are multiple days. Okay. And your recursion is somewhere over here. And there are three activities on these days, activity one, activity two, activity three. Now when your recursion is over here and you have already performed this, this, this. In order to select a task over here, in order to select a task on this particular day, ask yourself, what do you require? Ask yourself, what do you require?"
+    },
+    {
+      "chunk_id": "L188_C7",
+      "start": 440.4,
+      "end": 519.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=440s",
+      "text": "here, in order to select a task on this particular day, ask yourself, what do you require? Ask yourself, what do you require? You will be like Stryver in order to perform any of the tasks, like either I can perform this, the task one or the task two or the task three, there is something that I require. And what is that something? I need to know what was the last task performed. Like if you're going in this direction, someone has to tell you, what did you perform here? Because if someone doesn't tell you what you perform here, how can you maintain the question? How can you solve the question of not performing two similar tasks on two consecutive days? Because the question clearly states, you cannot perform two similar tasks on two consecutive days. So thereby, always remember, according to the condition, I repeat, according to the condition, along with the index, you can add a parameter in the recurrence because over here, in order to decide what stuff I'll do on an index, I need to know what I did on the previous index. I repeat, I need to know what I did on the previous index, because if someone comes and tells me that, hey Stryver, previous day, I did the task three, then over here in this, I cannot perform the task three. So someone has to"
+    },
+    {
+      "chunk_id": "L188_C8",
+      "start": 519.52,
+      "end": 595.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=519s",
+      "text": "Stryver, previous day, I did the task three, then over here in this, I cannot perform the task three. So someone has to tell me on the last day, what did you do? Yes, what did you do? Because if you don't tell me, what did you do? How will I do? Got it? So what I'll do is, I'll have the next parameter, which is last. This is how you solve. Go step by step. You solved index. Then you decided to do a stuff, but then you realized, oh, in order to do a stuff on an index, I need to know what task was done on the last day. Thereby, you introduced another variable as last, where you'll say last. That means this task was done on the last day. Got it? That's how you think. That's how you think of recurrence. We have done this first step. First step is done of recurrence relationships, which is identifying along with index if you need something else. We identified along with index, we need the last day, the last task, whatever you did. Let's keep it quite simple, because we will be having zero-based indexing arrays. Let's keep it something like task. Let's keep the numbers very straightforward. Can we keep something like, assume if I'm passing last as zero means"
+    },
+    {
+      "chunk_id": "L188_C9",
+      "start": 596.16,
+      "end": 674.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=596s",
+      "text": "something like task. Let's keep the numbers very straightforward. Can we keep something like, assume if I'm passing last as zero means task one was done or task zero, like the first task was done. If I'm passing one, the task one was done. If I'm passing two, that means a task two was done. Remember all zero-based indexing, I'm not assuming. Just to be familiar with the arrays. If I'm passing three, that means no task was done. No task was done. Again, when will the case of three arise? You're very smart. You're very smart, isn't it? When will the case of three arrive? Obviously, when you start from the last day, which is n minus one a day, because when you start on the last day, what options do you have? You have an option of performing this task or this task or this task, any task you can perform and thereby you go across all the possible paths. That's how you decide. I can say initially the call will be made for f of n minus one comma three, which states what does this recurrence means? Give me the maximum merit points. Give me the maximum merit points that you can earn on the array that starts from zero, ends at n minus one, and before n minus one,"
+    },
+    {
+      "chunk_id": "L188_C10",
+      "start": 674.0,
+      "end": 751.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=674s",
+      "text": "points that you can earn on the array that starts from zero, ends at n minus one, and before n minus one, you perform three, means no task were performed. Got it? So if someone writes f of two comma one, it means give me the max merit points. Give me the max merit points that you can get if you perform the task from zero to the second index, what maximum you can get in this particular section of the array, given that you performed task one right at the third index. This is what f will be signifying. I hope that makes sense. Now let's go on and write the recurrence. So can I say the recurrence will be quite simple? As usual, if I'm starting from n minus one, where will it go? n minus one, n minus two, n minus three, it'll go on till zero and zero will be the kind of stopping point for you. The base case, very straightforward. Whenever you're solving problems on index, zero is bound to be a base case. So I can be like, okay, so we have realized that zero is going to be my base case. I'm fine. Zero is going to be my base case. Now, can I say if I've reached the zeroth index or probably this portion, this guy,"
+    },
+    {
+      "chunk_id": "L188_C11",
+      "start": 752.08,
+      "end": 830.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=752s",
+      "text": "going to be my base case. Now, can I say if I've reached the zeroth index or probably this portion, this guy, there will be three tasks over here, right? There'll be three tasks. And out of these three tasks, you will have to perform the largest one, which is not equivalent to whatever you have performed here, which is not equivalent to whatever you have performed here. Make sense? So what I can say is, okay, Stryver, let's do one thing. We know there are three tasks and you know that this is the last guy, right? So Stryver, do one thing. Just run a for loop from i equal to zero to task number two. And if this i is not equal to the last task, probably you can keep a max equal to zero. Can you just give me the max of max of maxi or probably you can give this as maxi, maxi comma, whatever task, like as you, whatever task you are having, task of i on the zeroth index or rather let's write it properly. Task of on the zeroth day task i. Whatever maximum you're getting, can I surely return this? Can I say this is my basis? Think properly. Make sense? Because you were having task"
+    },
+    {
+      "chunk_id": "L188_C12",
+      "start": 833.6,
+      "end": 909.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=833s",
+      "text": "can I surely return this? Can I say this is my basis? Think properly. Make sense? Because you were having task zero one two, correct? You said something was performed on the last day. So during that, apart from that, consider all the other tasks and take the maximum among them and return. Make sense? Because the last, last portion, you just, if this was performed, you don't take this and you take this and this and the maximum of that kind of makes sense, right? So we have figured out the base case. Now, if you figured out the base case, I think you'd have also figured out what will you be doing on that given day? You'd be like, Stryver, the best thing that I can do is I can try out performing the task, performing every task apart from the last task that I performed. Again, make sense? So what I'll say is, okay, if you perform something on the last, I'll not perform it. But apart from that, I'll try out all the possible ways. Okay. Kind of makes sense. So what I'll do is I'll say it's the same thing again. I'll keep maximum as zero and I'll similarly run a loop from i equal to zero till two. And I will say if i is not equal to last,"
+    },
+    {
+      "chunk_id": "L188_C13",
+      "start": 909.68,
+      "end": 981.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=909s",
+      "text": "similarly run a loop from i equal to zero till two. And I will say if i is not equal to last, that means if you have not performed this task on the last day, then you can perform this task. Now I'll just erase this because you've understood this quite clearly now. Now, if you're performing a task, can you tell me how much points will you earn if you're performing a task i? That's very simple. On that given day, if you perform the task i, this is the number of points you'll earn. Correct? And if you're performing this task, you're earning this much points for this portion of the array, you have to find the answer. But that is something which recursion will do for you. Right? So you'll be like, okay, let's go to the previous day. That's a very, very important stuff. Whenever you go to the previous day, whenever you're going to the previous day and asking the function to find this answer, the function to find this answer, you have to tell that guy that, hey, I performed the task i on the last day. I performed the task i on the last day. So please tell him that I have performed this particular task. If you perform the second task, tell him you performed the second task. If you perform the first task, tell him you performed"
+    },
+    {
+      "chunk_id": "L188_C14",
+      "start": 981.6,
+      "end": 1057.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=981s",
+      "text": "If you perform the second task, tell him you performed the second task. If you perform the first task, tell him you performed the first task so that whenever this guy is, whenever this guy is encountered, he doesn't again performs the first task. So you will be like, go to the previous day and tell him that on this particular day, like right before this, you performed the i task. So do not perform that. So can I say the current plus the reduced array is what the total merit points will be? Right? Thereby, if I'm doing it on all the tasks, if I'm doing it on all the tasks, can I say the maximum of all the tasks, the maximum of all the tasks will be indeed my answer? That makes sense. So I will say, let's return maximum because that is the maximum merit points that I can definitely make. So if I just keep the recurrence together, this is how it looks quite straightforward, quite simple. Just make sure you perform every task apart from the task that was performed in the other day. So if whenever you start off with f of n minus one,"
+    },
+    {
+      "chunk_id": "L188_C15",
+      "start": 1058.48,
+      "end": 1128.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=1058s",
+      "text": "task that was performed in the other day. So if whenever you start off with f of n minus one, whenever you start off with f of n minus one, you can pass on three, right? So whenever you are at the last index, which is n minus one, you try out this task, then you try out this task, then you try out this task because this will be three and the task numbers are from zero to two and the task numbers are from zero to two. So you can try out all the tasks when you start off with, right? But this is what the recurrence or the recurrence will look something like. So in order to understand if there are overlapping sub problems or not, or how does the recursion work just in case you're not comfortable with recursion, let's quickly draw the recursion tree by taking n equal to four, where this is day zero, this is day one, this is day two, and this is day three. Okay. And the task zero is like this, the task zero, task one and task two. That is what the points you'll get if you perform them on days, zeros and ones. So ideally what you did was you started from the bottom, like the last row, which is the third row. And you said three, what does three signified? If you remember well, three signified that none of the tasks have been performed in the previous"
+    },
+    {
+      "chunk_id": "L188_C16",
+      "start": 1128.0,
+      "end": 1196.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=1128s",
+      "text": "And you said three, what does three signified? If you remember well, three signified that none of the tasks have been performed in the previous day because this is the last day where you're starting off. So before this, there was no days. So none of the tasks have been performed. So what are the options that you have if you're over here? Logically, you can perform either task zero or task one or task two, that's on you. You can perform any one of them. Right? So what you'll do is you will be like, okay, let's perform the task zero. Let's perform the task one. Let's perform the task two. You try to perform every possible task. So you'll be like, okay, let's go to F of two. And since you performed the task zero, tell them that you have performed the task zero. Go to F of two, tell them you performed the task one. Go to F of two and tell them you performed the task two. Why do you do this? If you're over here and if you're saying you're performing the task zero. So whenever you go to the next day, like the next day, you don't want to perform ten. Thereby you told him, hey, take zero. Do not perform zero. So he will go and perform only T1 and T2, which is task one and task two. Got it? So that's how it will work."
+    },
+    {
+      "chunk_id": "L188_C17",
+      "start": 1197.2,
+      "end": 1270.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=1197s",
+      "text": "he will go and perform only T1 and T2, which is task one and task two. Got it? So that's how it will work. If I carefully observe, we are at F of two, zero. And you know, whenever there are three recursion calls, which one tends to happen first, this one, then this one, then this one. Let's perform F of two, zero at first. So if you're at F of two, zero, that means over here, zero means you cannot perform this. Thereby you have two options, either this or either this. So you can be like, I can perform task one or I can perform task two. You don't have any other options. You don't have. So you'll be like, okay, if I'm performing task one on day two, I'll go to day one and I will be like taking task one because I'll have to tell day one that I have performed task one in the previous day. Similarly, I have to go to one and I'll tell him that task two, please carry task two. Task two has been performed previously. Okay. Makes sense. Again, this recursion will happen first and then this. Let's do F of one, one. So when you are at F of one, one, which means you're at here and you're saying one has been performed. Thereby you cannot perform task one. So you can perform task zero and task two. So you can perform task zero and"
+    },
+    {
+      "chunk_id": "L188_C18",
+      "start": 1270.24,
+      "end": 1343.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=1270s",
+      "text": "been performed. Thereby you cannot perform task one. So you can perform task zero and task two. So you can perform task zero and task two. So if I perform task zero, I'll be like, I will go to zero with task zero. I'll go to zero with task two. This is only what I can do. Okay. Makes sense. Again. Now, a very, very interesting question to you. So where were you? You're like F of one, one, and you called something like you perform the task zero. So if you perform the task zero, what will be the points that you'll add on F of one, one, you're performing the task zero. So on F of task zero, three, three is what you'll add if you perform task zero. So three plus you're calling this F of zero comma zero. Remember this? So whenever this F of zero comma zero goes, it's a base case. If you remember the recurrence, it's a base case. Let's go back to the recurrence. It's a base case. Whenever the day comes to zero, it's a base case. So in the base case, what did you do? Let's come back. You know this, that zero has been performed previously. So either of this or either of this, and you don't have any anywhere else to go. So if this is the only day remaining, then you don't have to think of the"
+    },
+    {
+      "chunk_id": "L188_C19",
+      "start": 1343.36,
+      "end": 1414.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=1343s",
+      "text": "you don't have any anywhere else to go. So if this is the only day remaining, then you don't have to think of the future. So the maximum of that is three. Thereby, this guide ends to return a three. So this element comes out to be three. Got it? Similarly, there will be this call, which will be task two. So if you perform task two, which is six, like six plus F of zero comma two. So if you perform this task, you can either take two or you can either take one on this guy. Thereby, this returns two. So you will return two. So this will be two. Now three plus three is six, six plus two is eight. Which one will you take? You'll be like, let's take eight. Let's take eight. Again, it makes pretty much sense. So I'll take eight. So I'll just take eight. Perfect. F of one, one is eight. Now we have F of one, two. So definitely F of one, one is returning eight. So let's come back to the next solution, which is you're at F of one, two rather. So you're at F of one, two. So whenever you're at F of one, two, what will happen? You will like, let's call F of zero. Let's perform task zero. Let's call F of zero. Let's perform task one. That's what you'll"
+    },
+    {
+      "chunk_id": "L188_C20",
+      "start": 1414.72,
+      "end": 1487.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=1414s",
+      "text": "will like, let's call F of zero. Let's perform task zero. Let's call F of zero. Let's perform task one. That's what you'll do. So again, same thing will happen. If you perform task zero, you will get three plus and F of zero, zero will return three. And if you perform F of zero, one, that's task one, you will get task one for four. So four plus F of zero, one will be what? If you perform zero, one, that means you're coming here and you're saying you cannot perform this. So either of three or two, three you'll get, right? So either seven or six, thereby this gives you six. Perfect. So you're getting six. Let's not try to write it again. Now you're at here. So whenever you add F of two, zero, it states, okay, I cannot perform task zero. Whenever you add this guy, remember this, it is saying that you are over here. You cannot perform task zero. So either you can do this, which is task one, gives you one point. So one plus you called F of one, one, because you performed the task one, or you can be like, let's perform six. So it's like six plus F of one comma two. So either you perform the task one or task two, because task zero was there, right? So one"
+    },
+    {
+      "chunk_id": "L188_C21",
+      "start": 1487.36,
+      "end": 1566.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=1487s",
+      "text": "F of one comma two. So either you perform the task one or task two, because task zero was there, right? So one plus F of one, one, what is F of one, one, eight, what is F of one, two, six. So nine and 12, which one is maximum? 12. So you return 12. Got it? Now you'll start seeing overlapping sub-problems. I hope you've got the basic, how's the recursion working. So the first, I'll just show you one more. So over here, if you are doing the task one, you'll be like task zero and task two. So F of one comma zero and F of one comma two. So if you carefully see, do we still see an overlapping? Yeah. This is the first overlapping sub-problems that you'll see. So you saw an overlapping sub-problems. So if the value of N is larger, you'll tend to see a lot more overlapping sub-problems. Like over here, if you go T zero and T one, it will like F of one comma zero. So again, overlapping sub-problems over here. So you will, the more you enlarge the tree, you will see overlapping sub-problems. And this is how they will solve each other. And after that you can easily get the answer. So we have again concluded that there are overlapping sub-problems. And if there are overlapping sub-problems, what do you need to do? You need to do one thing. What does that? Memorization. Yeah."
+    },
+    {
+      "chunk_id": "L188_C22",
+      "start": 1566.8,
+      "end": 1641.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=1566s",
+      "text": "sub-problems. And if there are overlapping sub-problems, what do you need to do? You need to do one thing. What does that? Memorization. Yeah. And what is the easy step? You go back and say, okay, hey function, what are your changing parameters or what are your states? I see there are two states. One is index, the other is day. Oh sorry, last. One is index or day and the other is last. There's two parameters for which you have to give an answer. Like we are being said F of N minus one three stating, give me the entire array's maximum earning point given that the task three has been done. So two guys dependent. So there was the first guy day and there's the next guy last. How much is the value day? It can be like zero. It can be like one. It can be like two till N minus one. So there are N different values that D can have. What is the possible value of last? If I ask you on a very simple term, we like, strival last can be zero, one, two, three, nothing more than that. So four different values, which are zero, one, two tasks, zero task, one task, two and three, which states that all of these tasks have been performed and none of these tasks have been performed. So there are N, four."
+    },
+    {
+      "chunk_id": "L188_C23",
+      "start": 1641.2,
+      "end": 1719.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=1641s",
+      "text": "which states that all of these tasks have been performed and none of these tasks have been performed. So there are N, four. For every N state, there can be four different possibles. Thereby you'll require an N cross four DP size array. Remember this thereby you'll require an N four initialized with minus one N four initialized with minus one. And it was the first step. Definitely over here, you tend to write DP of index last equal to maxi. And over here, just one line. If DP of index last not equal to minus one, return DP of index last. 2D DP done. If I reiterate, always the first parameter will be index. Next, depending on what stuff you're doing, in order to preserve the condition, you might require some more. And that's when the second parameter is introduced. If you require some more. Remember these three tricks, you can write any recurrence in the world. So let's try to put this up. What we are given is the N and the points. So I'll try to write the recurrence at first. So the first thing was D and the end and then the vector vector again and in and points. Now, I know one thing for sure. If the day is the zero day, then I need to figure"
+    },
+    {
+      "chunk_id": "L188_C24",
+      "start": 1719.28,
+      "end": 1793.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=1719s",
+      "text": "in and points. Now, I know one thing for sure. If the day is the zero day, then I need to figure out the maximum among them, apart from the whatever was done on the last day. So really, I can keep it as maximum zero. And I can say I can go across to all the task, but rather name it as task or task equal to zero. I can go across to task and there will be three tasks. So task plus plus and we can say maxi. Okay. We just need to make sure this task is not equal to the task done on the last rather than the last rather. So thereby, this will be maximum equal to max of what maxi comma points on the day zero and definitely on the task. So on the day zero, whatever task you're doing, so just make sure you take it off and return the maximum. And if that's not the case, I will be like, okay, maximum zero. If it's any other day, I will perform again the similar thing. Probably I'll be performing all the tasks again. How many tasks are there? Tasks will be this divided by three. So I can be like task plus plus. Now what I can do is if this task"
+    },
+    {
+      "chunk_id": "L188_C25",
+      "start": 1793.6,
+      "end": 1870.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=1793s",
+      "text": "be this divided by three. So I can be like task plus plus. Now what I can do is if this task was not done on the last day, let's do this task. But if I do this task, how many points will I generate? The points that I'll generate will be points on this day. This task, if I perform, plus I'll have to go to the minus one day to solve the smallest sub problem. And I'll have to tell him that, hey, listen, this is the task that I did on the current day. I have to pass on the points so that he gives me the answer. Once he gives me the answer, whatever he gives are these, I'll take whatever is the maximum. So I'll take the maximum. And once I have the maximum, I can definitely return this one. It makes sense. I think this is looking quite good. So now I can return the function n minus one initially start off with three and we can definitely pass on the points. It should be fine. So I'll just give it a run. So as you can see, there is time limit exceeded. So let's memorize it. So that's, that's the way you can create DP variables, DP, and then you can get the first size, which is n. Then you can declare the second one, which is vector of int, four size and a minus one. That's how you declare"
+    },
+    {
+      "chunk_id": "L188_C26",
+      "start": 1870.08,
+      "end": 1945.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=1870s",
+      "text": "is n. Then you can declare the second one, which is vector of int, four size and a minus one. That's how you declare a 2Ds array, 2D DP array of n cross it for in vector. Why vector? Because I generally prefer vectors. It's very easier to pass in reference. That's the only reason. Java people can probably do arrays, not a big stuff. Either way for Java people, you'll find the code links in the description. Okay. So DP is done and yeah, you're calling F over here. So you can just pass on the DP over here. Right over here, you can say DP of probably D and then there's something that's last. So you can just give it like this and right before returning, just make sure you check it across. If DP of day last, this sub problem has been previously solved. If this sub problem has been previously solved, what you can do is DP of day and you can say last. And please return that. And now let's code this up. It gives me a correct answer. Now let's quickly submit this. As you see, I was solving this before this class and yeah, it, it runs. So we used recursion plus memorization in order to solve this particular problem. That's time to check out other next possible stuff, which is tabulation just in order to reduce the stack space."
+    },
+    {
+      "chunk_id": "L188_C27",
+      "start": 1947.28,
+      "end": 2018.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=1947s",
+      "text": "this particular problem. That's time to check out other next possible stuff, which is tabulation just in order to reduce the stack space. So what's the next step? The next step is tabulation because the recursion, as we saw, we were using something like the time complexity of memorization will be N crossered because see, there are N cross four steps. Understand how many different states we can have. That's N cross four, right? Like not in all cases, we'll have four states, but yeah, let's, let's assume for the worst case it's N cross four states that we can have. If you carefully observe for every state, we were actually running a for loop of size two, like for every state or size three, rather. So for every state you're running a for loop of size three. So I can say it's N crossered 12 is the time complexity and space complexity of B go off. The recursion stack space will be N because at max you'll go for N days, but the space complexity will be N crossered four. So this will be the recursion plus memorization time complexity. And this is an extra, is this an extra that you have to omit and this, this you cannot reduce. So how can we first omit"
+    },
+    {
+      "chunk_id": "L188_C28",
+      "start": 2018.88,
+      "end": 2097.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=2018s",
+      "text": "is this an extra that you have to omit and this, this you cannot reduce. So how can we first omit this recursion stack space? So we will be doing something as definite, which is tabulation. What did I tell you? What's the first rule of tabulation? Declare the similar size. Yes, declare the similar size DP array. That's the first thing that you will do. And you declare the similar size DP array. Next, whatever base case you have written, you have written on index zero, right? You've written on index zero. Now, whenever you're doing two D's because these are two DDPs, right? Whenever you're doing something as two DDP, what should you keep generically in your brain? What can be D whenever you come across here? Try to think in this perspective of these cases. Okay. So that's the trick. You'll be like, Stryver over here, index, if it is zero, either last can be zero or it can be one or it can be two. So I can say there are base cases like zero comma zero, zero comma one, zero comma two. In all of these recursion calls, do you agree? In all of these recursion calls or zero comma three rather, in all of these recursion calls, do you agree that this base case, yes,"
+    },
+    {
+      "chunk_id": "L188_C29",
+      "start": 2098.4,
+      "end": 2172.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=2098s",
+      "text": "these recursion calls or zero comma three rather, in all of these recursion calls, do you agree that this base case, yes, this particular base case will be executed? You agree, right? Because if index is zero, no matter what is the value of last, they will be executed. Now let's analyze what if it is zero? If it is zero, then you end up taking the maximum of task one and task two. If it is zero, if it is one, you end up taking maximum of task zero and task two. If it is two, you end up taking the maximum of task zero and task one. If it is three, which might be the case, if there is a single day, then you might directly call zero three. You will end up taking task zero, task all these guys maximum. So can I say the first form of tabulation will be nothing but, I can simply write that as dp of zero zero will be max of, so max of array of the zero on the zero task one or task two. Similarly, the dp of zero one will be max of array of task zero"
+    },
+    {
+      "chunk_id": "L188_C30",
+      "start": 2174.24,
+      "end": 2248.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=2174s",
+      "text": "task one or task two. Similarly, the dp of zero one will be max of array of task zero and array of day zero task two. Similarly, dp of zero two will be max of array of zero zero array of zero task one. Similarly, dp of zero three, like I'm just writing it like this, you could have used the similar for loop to write it. Anyways, while writing the code, we will do that. This was done in order to explain you. So, these are the base cases. Base cases are done. Now, what's the next thing? Next thing is this. You have to convert this into a dp solution. Now, this portion of the code, yeah, this portion of the code is executed when the value of this particular day becomes equal to zero, sorry, equal to one, two, three, four, and so on till n minus one. Whenever this becomes equal to this, you execute that. Correct? And what can be the possible"
+    },
+    {
+      "chunk_id": "L188_C31",
+      "start": 2248.72,
+      "end": 2321.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=2248s",
+      "text": "Whenever this becomes equal to this, you execute that. Correct? And what can be the possible values of last? I again ask you the same question. And to that, you will be like a striver. It'll be like similar to a one comma. It can be zero. It can be this. It can be this. It can be this. It makes sense. For two, it can be zero. It can be one. It can be two. It can be three. For three, day three, it can be last, can be zero. Last can be one. Last can be two. Last can be three. Right? So, we can definitely follow this. So, thereby, we know for every day. So, let's first write the code for day. So, if I know that I'm going to start because what is tabulation? Previous class, guys, what is tabulation? Tabulation is nothing but bottom up. So, from zero to the up, like if I show you the recursion tree, you'll start from here, then you'll compute this, then you'll compute this, then you'll compute this. Bottom up, bottom up, recursion top down. This is what you require as the answer, but you go down, you go down,"
+    },
+    {
+      "chunk_id": "L188_C32",
+      "start": 2321.44,
+      "end": 2399.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=2321s",
+      "text": "bottom up, recursion top down. This is what you require as the answer, but you go down, you go down, you go down, then you forget the answer. Top down. Okay? So, what I know is, let's come back. What I know is, I have I equal to, or I can say day equal to one, and I'll go until the day n minus one. Now, over here, can I say for every day, for every day, there are four different task values, zero, one, two, three, four. So, I can say for every day, there are four different task values from zero to three. Again, makes sense. Done. Once you have written the for loop, it's just copy pasting the recursion part. Once you have written the for loop, it's just copy pasting the recursion part. So, whatever was written over here, yes, whatever you have written over here, just copy paste. I just copy paste that. So, I can say, now you have to perform task, correct? So, if this is, or you can say this is last rather, instead of task, you can say this is last. So, can I say over here, you'll just copy paste, what did you write? You wrote I equal to, or task equal to zero to two. And if, like you just computed, similar, just write the similar stuff. Like, it's getting a bit messy over here, but you can write the similar stuff. Like,"
+    },
+    {
+      "chunk_id": "L188_C33",
+      "start": 2399.52,
+      "end": 2472.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=2399s",
+      "text": "just computed, similar, just write the similar stuff. Like, it's getting a bit messy over here, but you can write the similar stuff. Like, instead of F, it'll be DP of day minus one. And I is basically this guy. That's what it will be. So, what I'll do is I'll try to write this in code and then I'll come back again, because it's absolutely getting messy over here. So, in order to write the tabulation, what you will do is, you'll declare a DP array of N cross four and super quickly, or I, or something like zero on zero, where max of, or definitely points of zero of one comma points of zero comma two. That's very obvious. And similar, I can just copy paste this thing for the other tasks, which is task one. So, if you're doing task one, this will be zero and two. And if you're doing task two, this will be definitely zero and one, correct? And for the last guy, it's very simple. It'll be zero and three, which means all the tasks, just take all the tasks, simple as that. So, max of points of zero comma one. That's what you can definitely do. So, yeah, I've taken all the three guys. So, that's the base case. Now, what did I say? Where does the day start from? The day starts from one"
+    },
+    {
+      "chunk_id": "L188_C34",
+      "start": 2473.28,
+      "end": 2550.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=2473s",
+      "text": "three guys. So, that's the base case. Now, what did I say? Where does the day start from? The day starts from one till end. So, just go until end. How many last can you have per day? Number of last that you can have is definitely from zero till three. So, you can just go on last plus plus. Now, what did I say? Just copy paste whatever is written over here. Whatever is written over here, just try to copy paste this stuff. Okay. So, let's copy paste this stuff in terms of tasks. You see me copy pasting. Okay. So, I need the maximum. Now, remember, what am I looking to compute? I'm looking to compute DP of last, correct? So, really we can keep this as zero. So, we're trying to compute it. Okay. And assume, assume, sorry, assume I'm taking a maxi variable. And at the end of the day, whenever I'll compute this, okay. At the end of the day, whenever I'll compute this, I'll store the maxi. How do you convert the recurrence? See, I'm going to copy this exact same thing for INT task. I'm not copy pasting because the indentation will go wrong. Task. There are three tasks. So, I'll just go like this. What is written over here? If the task is not equal to last, right? I write the same thing. See, I'm writing the same thing. That's"
+    },
+    {
+      "chunk_id": "L188_C35",
+      "start": 2550.96,
+      "end": 2625.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=2550s",
+      "text": "over here? If the task is not equal to last, right? I write the same thing. See, I'm writing the same thing. That's not equal to last. How many point does it gather? Point equal to points of day task. Same thing, see, same thing. Plus, instead of F, now you're doing bottom up. This F would have been computed and stored in your DP. So, DP of day minus one. Very good. Comma task. So, take this off. Okay. Done. Next, you'll update maxi equal to max of maxi comma point. So, out of all points, whatever you got this, you'll just take it across. So, instead of storing maximum, what you can do is you can directly store it in the DP. That's the better version. So, you store it in the DP and yeah, you just keep it DP of day last. Instead of using a maxi variable, what I did was I just used this particular stuff. So, I'll just omit this. And where is your answer? Was the initial call that you made to recursion? The initial call that you made to recursion was F of N minus one, DP of N minus one and three. So, just made it, just make it. And now what you"
+    },
+    {
+      "chunk_id": "L188_C36",
+      "start": 2625.44,
+      "end": 2702.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=2625s",
+      "text": "N minus one, DP of N minus one and three. So, just made it, just make it. And now what you can do is you can definitely run this and you see this running fine. Yeah. And you just submit it. Was tabulation tough? Was it tough? If you would have written recursion, it was not. I told you not in the starting of the DP playlist. Once I teach you DP, you'll never forget it. So, that's how I wrote the wonderful recursion. And I just told you how to make sure the first couple of for loops are written. Once for loops are written, whatever is the recurrence, how do you just write them? And once you write them, you get your particular answer. That's how simple it is. It takes a time complexity of N cross four cross three, because there are three loops. And the space complexity is still N cross four. We have eliminated the recursion stack space. But how do you eliminate this? That's where something as space optimization comes in. Yes. So, let's learn. Now, if I show you the code, how do you determine that there can be a space optimization? Whenever you see the DP of day last is actually using something like point."
+    },
+    {
+      "chunk_id": "L188_C37",
+      "start": 2702.64,
+      "end": 2782.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=2702s",
+      "text": "that there can be a space optimization? Whenever you see the DP of day last is actually using something like point. Something like point. And if I just cover this off, like I can just write it over here, which is nothing but this. Like I just write it in one line, which is this. DP of day last is nothing but max of some DP of day last comma something plus something. Now, this something is a previous state of DP of day minus one. Now, remember, whenever you're computing DP of day last and you're taking day minus one. So, that's when you can space optimize. Whenever there is something like minus one, minus two, then we can think of space optimization. Let's see how. So, specifically, how did this problem, how was this problem solved? Like if there are multiple days, we created a DP array, right? Of like, assume, assume over here N is five and there were DP arrays, something like this. Task one, task zero, task two, task three. And the days were like zero, one, two, three, four, five. So, initially what you did was, initially you filled these guys. I'll show you in the code. That's what you have done over here. This is what you've done. You've initially filled them. Then you went on to fill this, fill this, fill this, fill this. Now, when you are trying to fill this, what was the line that you wrote? So,"
+    },
+    {
+      "chunk_id": "L188_C38",
+      "start": 2782.08,
+      "end": 2855.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=2782s",
+      "text": "fill this, fill this, fill this, fill this. Now, when you are trying to fill this, what was the line that you wrote? So, let me just write it over here so that I just, I don't have to, again, switch and switch. Last equal to something plus DP of day minus one comma task, right? That's what you wrote. So, basically, if I carefully observe, what can be task? Task can be anything like this. So, in order to compute this row, this row, what did you require? You required this particular row's values because day minus one. Either this value, either this value, either this value, either this value. This is what you required. So, assume you computed these guys. And then you move to the next day. What did you require? When you are trying to compute the row two, you just require these values. There is no more requirement of these guys. It's not required. Using these values, you can actually compute these guys. And then again in the next, using these values, you can again compute these guys. Then again on the next, using these values, you can compute these guys. And again, when you go back, this guy is your answer. Correct? So, do we need to store an entire array? Can't we do something like this? Let's start off"
+    },
+    {
+      "chunk_id": "L188_C39",
+      "start": 2856.24,
+      "end": 2928.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=2856s",
+      "text": "is your answer. Correct? So, do we need to store an entire array? Can't we do something like this? Let's start off with a very small array. And what we do is, we store this guy, this guy, this guy, this guy over here. And then create a dummy size four array and try to compute them. And then again store it. And then use this to compute the next. And then again store it. Then again use this to compute the next. Then again store it. And at the end, compute the last. And thereby this will be the answer. Can I do this? I just stored a size four array. If I just store a size four array, I don't require an n cross four array because there's no need to store previous information. Because what I require is just the previous guy. Thereby, I'll do a space optimization now. So, I will be like, I don't need the entire thing. So, what I'll do is, hey, why can't I just do this? I think I can definitely do this. I will be like, I'll declare a size four array. And I'll make the, I just made it. The first four is declared. So, what I can say is, this is declared."
+    },
+    {
+      "chunk_id": "L188_C40",
+      "start": 2931.04,
+      "end": 3011.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=2931s",
+      "text": "I'll make the, I just made it. The first four is declared. So, what I can say is, this is declared. Declared. The first four is declared. Next. I'm at DP. So, in SID, now what I'm doing is, I'm trying to compute the current day, which means I'm trying to create this. Which means I'm trying to create this. Trying to create this. So, what I'll do is, I will simply, yes, I'll simply keep something like this. Vector of int temporary of size four is what I'm looking to create. And what I'll do is, instead of DP, I'll just create temporary. Okay. So, this is for the current one. So, the current day will be stored in temporary. And this DP of day minus one. Now I know the previous is this current DP, like the previous gap. So, what I can do is, or probably in order to name it better, so that you understand, we can just make it previous. So, the previous row is over here. So, what I can do is, previous, instead of day minus one, I can directly take it because I just, I'm concerned with four values. So, I can directly take it. Once the stamp is computed after this entire iteration, what I can do is, I can say, okay, F has been computed. Now let's make the DPS stamp. So,"
+    },
+    {
+      "chunk_id": "L188_C41",
+      "start": 3011.04,
+      "end": 3087.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=3011s",
+      "text": "this entire iteration, what I can do is, I can say, okay, F has been computed. Now let's make the DPS stamp. So, that again on the next day, again on the next day, when this guy has been computed, this can serve as for this guy and we can again compute this. So, we keep on doing. And at the end of the day, instead of this, I can say the previous has my answer. Oh, sorry. This will be previous. The previous has my answer. Right. And once the previous has your answer, you can definitely run it. Let's see if it runs. Yeah, it runs. And now let's try to submit it. It runs. I look at the time, 426 AM in the morning. And, uh, I hope I was able to make you understand. And the time complexity now boils down to N cross four cross three. But what about the space? Just using a four size, which is as good as constant, which is as good as constant. I converted a 2D matrix into as good as constant, like 1D, again, cross four into four, which is very, very good. So that's about the space optimization. I think I'm gone with voice because it's a very, very long video. So guys, I hope I was able to explain you the entire problem, all the three approaches, just in case I was, please, please, please give me a like, because"
+    },
+    {
+      "chunk_id": "L188_C42",
+      "start": 3088.0,
+      "end": 3136.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=AE39gJYuRog&t=3088s",
+      "text": "able to explain you the entire problem, all the three approaches, just in case I was, please, please, please give me a like, because it takes a hell of effort to make this content. And please do consider commenting us because that tells me that, okay, the people who are watching the video are understanding it. This is, this is, please, please, a mandatory stop. Do it on every video. If you're watching it, US understood is what you need to comment. And also guys, if you're new to this channel, please do consider subscribing us because, uh, that's numbers do motivate me to work more and more. And now with this, I'll be wrapping up this video, but yes, if you haven't checked out our SD sheet, the link is in the description. Make sure you check it out with this. Let's, um, let's wrap up this and meet in the next video. And then bye-bye."
+    }
+  ]
+}

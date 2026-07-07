@@ -1,0 +1,358 @@
+{
+  "lecture_id": "L013",
+  "lecture_number": 13,
+  "lecture_title": "Hashing | Maps | Time Complexity | Collisions | Division Rule of Hashing | Strivers A2Z DSA Course",
+  "youtube_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g",
+  "chunks": [
+    {
+      "chunk_id": "L013_C1",
+      "start": 0.0,
+      "end": 77.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is yet another lecture from the Stryber's A2Z DSA course and this is India's most in-depth DSAlgo course. Why do I say that? Because you can check out all the free courses, all the paid batches. You will not find any courses, any batches with 455 modules or 455 problems solved in it. This is the reason I'm saying that this is India's probably world's most in-depth DSAlgo course. In the previous lectures we have covered till step 1.5. In this lecture we will be covering basic hashing. Once I cover this, we will be covering everything related to basics that we require in order to start with DSAlgo. So without waiting, let's get started with the hashing lecture. So we're solving a lot of interview problems, isn't it? But whenever you go for interviews, the first round will always be coding route. So in order to clear that coding route, you have to actually give a lot of similar coding routes in your preparation. So one such coding route is CodeRushX by Newton School. This is India's biggest competitive programming contest that is happening in the year. Why do I say that? Because it has prizes worth 10 lakh rupees. So what you need to do is there's a link in the description. Go to that and you can click on register. The moment"
+    },
+    {
+      "chunk_id": "L013_C2",
+      "start": 77.52,
+      "end": 139.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=77s",
+      "text": "So what you need to do is there's a link in the description. Go to that and you can click on register. The moment you click on register, you will get a form. You can sign up with Google or you can fill up your details. And the contest is on 28th of January. Now just need to register post that you will be participating. There will be eight questions that you have to solve in three hours. After that, there will be a thorough plagiarism check and the results will be announced. The first prize is one lakh rupees. The second is 50,000 and so on. And there are a lot of prizes for other people as well. Till the top hundred, you can get a lot of goodies and going forward, you will also be getting a lot of gift vouchers. So the prizes are worth 10 lakh rupees. So what I will recommend you is the link in the description. Make sure you go and register and participate in such contest because this will help you in your preparation journey. So without waiting, let's get back to the video. Now when I talk about hashing, it is one of the most important topics in DS algo. If you do not understand hashing, you will not be able to solve a lot of problems in data structures and algorithms. So please do not miss this lecture because I'm going to teach you hashing and I'll be"
+    },
+    {
+      "chunk_id": "L013_C3",
+      "start": 139.68,
+      "end": 200.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=139s",
+      "text": "of problems in data structures and algorithms. So please do not miss this lecture because I'm going to teach you hashing and I'll be using pseudocode. So language will not matter. Everything that I'll be teaching will be in terms of pseudocode because for loops are similar in C++, similar in Java and Python. So once you understand the pseudocode, once you understand the concept, you can actually code it in any of the languages that you are following this particular course in. So in order to understand hashing, let's take a initial problem. Imagine you're given this particular array and now suddenly I come up and say, Hey, can you tell me how many times does one appear in the array? And you can see that, Hey, one appears twice in the array, right? Because one is appearing once here and one is appearing once here. So one appears twice in the array and again come up and say, Hey, can you please tell me how many times does three appear in the array? And you'll be saying three appears once. Now imagine I again come up and say, Hey, can you tell me how many times four appears in the array? You'll be saying it doesn't appears in the array. Now imagine I again come up and say, Hey, can you tell me how many times does two appear in the array? You'll be like"
+    },
+    {
+      "chunk_id": "L013_C4",
+      "start": 200.04,
+      "end": 261.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=200s",
+      "text": "I again come up and say, Hey, can you tell me how many times does two appear in the array? You'll be like two appears twice. Imagine I again come up and say, Hey, how many times does 10 appear in the array? You'll be like, Hey, listen, and doesn't up here in the array, but then is appearing zero times. So given an array and you ask a lot of times, very, very important points. Very, very important point. You asked a lot of things. First, you might be asked for any given number than any other number. Then again, the same number, you could be asked for any given number of times or any number. And they might ask you how many times it appears. And you have to tell what is the first approach that comes to your mind when you think about it, because you know, for loops, right? The first approach that comes up is, Hey, if I'm given, if someone says the number is one, the first approach that comes up to my mind is I will iterate through the entire array. What I'll do is I'll take this one and I'll compare it with the first guy one. And I say, yes, I'll take a counter variable, which is zero. I'll say this is equal to this. So I updated to one. Next, I'll go to two and I'll say, is this equal to one? I'll say,"
+    },
+    {
+      "chunk_id": "L013_C5",
+      "start": 262.4,
+      "end": 331.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=262s",
+      "text": "is equal to this. So I updated to one. Next, I'll go to two and I'll say, is this equal to one? I'll say, next I'll go to one and I'll say, this is equal to this. The counter which was one previously will be updated to two. Next, I'll go to this and I'll say, is this equal to this? No. Next, I'll go to this and I'll say, is this equal to this? And no, the counter stays at two. So if I have to write the brute force method in order to find how many times it appears, can I see, it will be a function which takes a number, writing a plain pseudocode. It will be a function which takes a number and probably an integer function because it has to return how many times it appears. And you can be like, for loop I and the I or other, you also need the array in the function. So go ahead and take the array as well. In function and probably array. Again, I'm writing the pseudocode guys, just writing the pseudocode. Please focus on the logic. So can I see, probably I'll take a counter equal to zero and I'll say for I will loop from zero and I'll loop till the last of the array. You already know this. How do you loop in the array? Right? And you will say, Hey, if array of I is equal to equal to number,"
+    },
+    {
+      "chunk_id": "L013_C6",
+      "start": 331.8,
+      "end": 395.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=331s",
+      "text": "this. How do you loop in the array? Right? And you will say, Hey, if array of I is equal to equal to number, can I see counter equal to counter plus one and I can end this for loop and I'll say return counter and this will be my code. Can I see this? Yes, I can say this. Why does this work? Because it's very simple. If you're given a number one that number one is given over here and the array is given over here and you iterate through the entire array. What is zero index? This is this. What is after this first index? This is this. And what are you doing? You're seeing array of zero equal to equal to one. Then you're increasing the counter. So eventually you will iterate through the entire array and the counter value will be updated at the end of the for loop. Once it is updated, you return the counter. Correct? So in order to find how many times one appears in the array, what you can say is, Hey function take one and take this particular array and tell me how many times it appears and it will return you to not to find out how many times three appears. You'll say fun. Hey function, take three and take this particular array and say how many times does three appear and it does a linear iteration."
+    },
+    {
+      "chunk_id": "L013_C7",
+      "start": 396.04,
+      "end": 466.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=396s",
+      "text": "Hey function, take three and take this particular array and say how many times does three appear and it does a linear iteration. It goes to every element and checks if it is equal and it counts it. And at the end of the day it returns the count. Simple. So if I have to ask you what is the time complexity, can I see I'm running a loop for B go off 10 times and there is certain number of operations that we are doing, but we do not calculate that in time complexity. So can I say I'm running the loop for N times there by the time that I'm taking in order to compute how many times a number appears is B go off N. So for this I will take B go off N for this. I will take another B go off N for this. I'll take another B go off N for this. I'll take another B go off N for this. I'll take another B go off N. So can I see the five times if I have to do five things like these are five numbers, five numbers. If I have to find how many times each of these numbers appear, can I say the time complexity is five into B go off N I can say and imagine if I give you a lot of such numbers, like a lot of such numbers."
+    },
+    {
+      "chunk_id": "L013_C8",
+      "start": 467.48,
+      "end": 532.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=467s",
+      "text": "B go off N I can say and imagine if I give you a lot of such numbers, like a lot of such numbers. If I give you a lot of such numbers and imagine there are Q numbers, I give you Q numbers and for every Q number, sorry, for every number you have to tell me how many times it appears. Can I see the time complexity will be Q into N. Can I say the time complexity will be Q into N because for every time you're taking a full loop and computing it, so thereby the time complexity will be Q because there are Q numbers and for every time you're computing N the time complexity boils down to you into N and this is something which might not be good. If you imagine Q is very large, imagine, just imagine I am giving you Q to B, 10 to the power of five. I'm giving you 10 to the power five numbers and imagine I give you an array size. I give you a huge array of 10 to the power of five size and what will happen? Then it will be B go off 10 to the power of five because 10 to the power of five numbers will be there and the array size is 10 to the power of five because it's a huge array. So the number of operations will be 10 to the power 10 and the number of"
+    },
+    {
+      "chunk_id": "L013_C9",
+      "start": 532.2,
+      "end": 602.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=532s",
+      "text": "power of five because it's a huge array. So the number of operations will be 10 to the power 10 and the number of operations is 10 to the power 10. How many time, like how much time will it take? If you remember, I told you, 10 to the power eight roughly takes around one second. Most of the problems you'll find on DS algo will be taking one second or two seconds. So if I'm taking 10 to the power 10 operations, how many times, how much time will it take? It will take 10 to the power. 10 seconds will take approximately hundred seconds. How do I get that? Very simple. If 10 to the power eight takes one second, then one operation will take one second by 10 to the power eight. Then 10 to the power 10 operation will take one by 10 to the power eight into 10 to the power 10 which is nothing but 10 to the power square, which is nothing but hundred seconds. The 10 to the power 10 will take hundred seconds, which is a lot of time. You cannot wait for one and a half minutes for a program to execute. This is where something like hashing comes in. It's a technique which will help you to do it in a much faster way. So if I have to define hashing in extremely naive terms, what is it? It is something like pre-storing and fetching."
+    },
+    {
+      "chunk_id": "L013_C10",
+      "start": 604.48,
+      "end": 680.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=604s",
+      "text": "much faster way. So if I have to define hashing in extremely naive terms, what is it? It is something like pre-storing and fetching. This is what hashing is. Restore something and fetch when required. Let's understand this in depth. Now this is an array. Okay. Now imagine the problem statement states, the array will at the max have numbers till 12 or 15. Let's say 12 at max, it will have 12. What does it mean? Over here you're seeing one, two, one, three. So at max over here it is three. But imagine a problem statement where I state, I'll give you an array and the array at max will have 12. Over here it is having three at max, but the array can have at max of 12. So what hashing says is, okay, I know I can have numbers from zero one, two, three, till 12. So what I will do is I will create another array. Okay. Remember this, I'll create another array and I'll call this as hash array. And in this hash array, what I'll do is I'll say zero, one, two. So what I'll do is I'll create an array of size 30 and I know the indexing starts from zero and the indexing will go on till 12 and I'll assign everything as zero initially. And this is something which I'll call as hash array. This is something which I'll call as hash array,"
+    },
+    {
+      "chunk_id": "L013_C11",
+      "start": 681.12,
+      "end": 758.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=681s",
+      "text": "assign everything as zero initially. And this is something which I'll call as hash array. This is something which I'll call as hash array, or you can call it as a frequency array as well. Now what I will do is I will do some pre-calculation. Remember this, I will do some pre-calculation. Now what is this pre-calculation? It's very simple. I go to the first number, which is one and I say, okay, you are one. So I'll go to the first index and I'll say, Hey, can you just remember that I have one, one? So he will say, okay, I'll remember you have one. Next I'll go to this two. So it will come to this two and say, Hey, can you remember I have one, two? I'll say, okay. Next I'll go to this one. And it will say, go to one and say that he has one more one. He goes to one and says, you have one more one. This is okay. I know I have two ones. He'll go to three and say, you go and remember you have one. He will do that. He goes to two again, says, go and remember you have one, two. So two increases to two. So apparently the moment you have traversed for all the elements in the array, the hash array, if you properly observe in one index, because one is the number representation in one, it states I'm appearing twice in two,"
+    },
+    {
+      "chunk_id": "L013_C12",
+      "start": 758.92,
+      "end": 828.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=758s",
+      "text": "hash array, if you properly observe in one index, because one is the number representation in one, it states I'm appearing twice in two, it states I'm appearing twice in three, it states I'm appearing once and all the others are marked as zero because they do not appear. So now this is the pre-store that you have done. This is the pre-store. It's a pre-fetching that you have done. Now what will happen? You come over here and you say, Hey, listen, how many times one appears? Now you do not loop and find out how many times one appears. What do you say is, Hey, how many times one appear? I don't, I have done a pre-fetching. I'll go to one and I'll say, it appears twice. I get twice for this one. I go and say how many times it appears and I'll get this value at hash of one. Instead of iterating in the entire array, I say hash of one and it tells me two. For this three, I'll say hash of three and it'll give me one. For this four, I'll say hash of four and it'll tell me zero. For this two, I'll do hash of two. It'll give me two. For this 10, I'll do hash of 10. It'll give me zero. For this 12, I'll do hash of 12. It'll give me zero. So can I say, I just did a single,"
+    },
+    {
+      "chunk_id": "L013_C13",
+      "start": 828.96,
+      "end": 891.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=828s",
+      "text": "give me zero. For this 12, I'll do hash of 12. It'll give me zero. So can I say, I just did a single, can I say just did a single pre-computation and that apparently solved all of my queries in one go. I have to code this up. Can I say, I'll first be given the size of the array. Imagine this is five size array and one, three, two, one, and three. They're given this array. Then probably I'll give you the number of numbers for whom I require, how many times they appear. I tell you, I need for five numbers and the number is first I'll say, how many times one appears next? I'll say how many times let's say four appears next time. How many times two appears next time? How many times three appears? Next, how many times 12 appears? So five numbers for which I have to find how many times they appear. So this is the size of the area. This is the area. How many numbers, like how many queries are you giving? And these are the queries. One, four, two, three, 12. Tell me how many times one appears. Tell me how many times four appears. Tell me how many times two appears. Tell me how many times three appears. Tell me how many times 12. So I need to take all of these inputs. It's a very simple week. First n,"
+    },
+    {
+      "chunk_id": "L013_C14",
+      "start": 892.04,
+      "end": 965.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=892s",
+      "text": "three appears. Tell me how many times 12. So I need to take all of these inputs. It's a very simple week. First n, and then C of n, then you declare the array of size n. And then you say for i equal to zero, i less than n, i plus, plus then you go across and say C of array of i. Perfect. You've done this. What's the next step? If you take the query, let's first I'm taking up all the inputs. Okay. C of Q. So you can run a while loop like Q minus minus, and then you can say, take me the number and C of number. So this is what is the input. First the array, then the queries and for every query, the number. You need to tell me how many times the number appears. So this is where you do some pre-compute and this is the fetch method. This is where you fetch. So can I say for pre-computation, I need hash. I need a hash. And over here, for simplicity purpose, let's take 13 because I know at max the size can be till 12, whatever the problem states. If the problem states the maximum size can be till 10 to the power of five, then you will go across and say 10 to the power of five. If the problem states 10 to the power of six, you go across and declare it."
+    },
+    {
+      "chunk_id": "L013_C15",
+      "start": 965.4,
+      "end": 1030.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=965s",
+      "text": "and say 10 to the power of five. If the problem states 10 to the power of six, you go across and declare it. Over here, I've kept it simple. I've said that maximum size will be 12. I require a size 13 because in order to have the 12th index, I need a size of 13 because the last array index is 12. All of us know that. Now the pre-computation was very simple. I will go like this to the array. This is the iteration of the array. Now I know for array element, I have to go to that index and do a plus one. So I say, Hey, go to that index, which is array of I, because that is the index that I have to go and I will tell him, can you increase your value by one and increases because previously it was zero. And he will put every number it goes to that index and says plus equal to once this is done. Now I have my hash array. So if I go back to the iPad, can I say I have this particular hash array ready after the pre-computation? Because one means hash of one plus equal to one that goes to this and does a one. And similarly for this number, similarly for this, for this, and for this, this hash array is ready. The input is different, but it's okay."
+    },
+    {
+      "chunk_id": "L013_C16",
+      "start": 1030.92,
+      "end": 1102.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=1030s",
+      "text": "similarly for this number, similarly for this, for this, and for this, this hash array is ready. The input is different, but it's okay. Once the hash array is ready, you have the number, you just fetch it. So you say C out of hash of number. This is the number of times it appears. And you can just go ahead and do this. I'll go ahead and quickly run this and see if it is running fine. If you see this, these are the answers. How many times one appears twice? How many times four appears? Zero. How many times two appears? Once. How many times three appears twice? How many times 12 appears? Zero. Depending on what is the maximum size of the array, you declare the hash. Now a question that might come up to your mind, Stryver in this, you said the array could be having a max element till 12. It was very obvious that you declare an array of size 13 because the last index then we will get as 12 and we can keep how many times 12 appears. But what I tell you that the maximum element can be till 10 to the power nine. Like it can have numbers till 10 to the power nine or maybe 10 to the power 12 or maybe 10 to the power 15. What if they have larger numbers? Can we declare an array of size 10 to the power nine plus one?"
+    },
+    {
+      "chunk_id": "L013_C17",
+      "start": 1102.8,
+      "end": 1176.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=1102s",
+      "text": "to the power 15. What if they have larger numbers? Can we declare an array of size 10 to the power nine plus one? Because apparently that is what we are seeing. If there was an array of size at max till 12, we declared a size 13. So if the array has max element till 10 to the power nine, can we declare an array of size 10 to the power nine plus one? The answer to that is no, you cannot. The maximum size array that you can declare is 10 to the power six. If it is of integer inside, very important inside main inside main, what does it mean? If I go back to the code, this is where you declare. If you're declaring it inside, mean it can only go up to 10 to the power six, like somewhere near about, you cannot declare something like 10 to the power seven. This will throw you segmentation for it will not be able to allocate that much memory. But, but, but if you go across and declare it somewhere globally, which means over here, if I go across and declare somewhere globally, I can actually do it till one is seven, which is 10 to the power seven. So if you're declared globally, the array, the array can go till 10 to the power seven as well. If it is declared globally,"
+    },
+    {
+      "chunk_id": "L013_C18",
+      "start": 1176.4,
+      "end": 1251.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=1176s",
+      "text": "if you're declared globally, the array, the array can go till 10 to the power seven as well. If it is declared globally, like in the past seven plus one might also work near about 10 to the power seven. It will go. But if it is declared globally, very, very important. This is something which I'm talking for integers because we are dealing with hashing for Boolean. Yes. For Boolean, this value will be, if you're declaring a Boolean array inside, in domain, you can go till 10 to the power seven. Globally you can go to 10 to the body. You can run them and see if you declare anything like 10 to the power eight inside. Yes. Inside your intermediate, it is going to throw you a segmentation. So let's, let's go to the code editor and imagine instead of 30 nicer 10 to the power seven. Okay. And let's, let's try to run this and see if it is taking 10 to the power seven. So if you look at the terminal, it actually sees that as a problem, because the memory size is something which it cannot allocate. But the moment I reduce one zero and I try to read on, you will see that this is actually running fine. It's run this, see it as running fine. And if I add one more zero and I go across and declare this globally, you will actually see this is like,"
+    },
+    {
+      "chunk_id": "L013_C19",
+      "start": 1251.44,
+      "end": 1327.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=1251s",
+      "text": "running fine. And if I add one more zero and I go across and declare this globally, you will actually see this is like, you don't need to give zero because if you declare globally, everything is initialized as zero instead of garbage values. If you go over there, I declared it. Hey, what does the problem it's giving? Let's run this. Hash is ambiguous because let's do double hash because the name is something which is already taken. Let's not run it. Okay. And you see it is working fine. If I declared it globally as 10 to the power seven, it did run fine. So this is something which I wanted to tell you. This is something which I wanted to tell you. If you are using array in order to do hashing, you can only go up to 10 to the power six inside a mean or 10 to the power seven globally, not beyond that. Or something like 10 to the power nine. What will we be using? That is something which we'll be discussing in the later half of the video. So make sure you watch the video till the end. So till now, what have we learned? We kind of learned about number hashing. If there is a problem which requires number hashing, we can use arrays to hash them, right? What's the next thing that we will be learning? There is something as character hashing."
+    },
+    {
+      "chunk_id": "L013_C20",
+      "start": 1327.96,
+      "end": 1401.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=1327s",
+      "text": "hashing, we can use arrays to hash them, right? What's the next thing that we will be learning? There is something as character hashing. Can we do character hashing using arrays? Yes, we can. And that is something which we will be learning. Imagine I give you a string like ABCD, ABFC, and I give you certain queries and I ask you, how many times does A appear? Can I see once, twice is what A appears? How many times does C appear? To ask you how many times C appears, it will be one and again, twice. How many times Z appears? It will be zero. If you look at over here, that doesn't appear. And similarly, I can give you a lot of other things like Q queries. I can ask you Q times ABC. I can, I can give you any character and it is your task to tell me how many times does that character appear in this particular string. Again, what is the standard procedure? The standard procedure is very simple. You pick up A and you iterate in the string and you say A equal to A. Yes, count A equal to one. A equal to A here, count A equal to two. So you just basically iterate through the string. And in a similar way, you compare the character with each of the characters and you count it."
+    },
+    {
+      "chunk_id": "L013_C21",
+      "start": 1402.04,
+      "end": 1477.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=1402s",
+      "text": "basically iterate through the string. And in a similar way, you compare the character with each of the characters and you count it. So if I have to write the pseudocode, this is how the pseudocode will look like. You take the character C and you probably take the string C and what you do is you keep a counter zero. And now you go through the string, I equal to zero. Imagine the size of the string is N. You go till that and you say F if S of I is equal to equal to character C, then I will do a counter plus plus. And at the end of the day, I can return that counter. So this is what the simple pseudocode will be for every character. You go ahead. Again, if you do the similar thing for Q queries, how much time will you end up taking for every query you're taking N. So for Q queries, you'll be taking big O of Q into N time, similar to the previous problem. So the question is can you hash them into arrays? And the answer to that is yes. The question comes up, how do you hash them using arrays? Because if we remember, the arrays have indexes like zero, one, two, three. And if I have to talk about these characters, imagine, strictly stating, imagine the array only has lowercase letters. Imagine the array only has lowercase letters."
+    },
+    {
+      "chunk_id": "L013_C22",
+      "start": 1478.2,
+      "end": 1553.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=1478s",
+      "text": "I have to talk about these characters, imagine, strictly stating, imagine the array only has lowercase letters. Imagine the array only has lowercase letters. In that case, how can you hash? Now I know lowercase means it will have A, B, till Z. How many elements? I know there'll be 26 elements because those many elements is what we 25 or 26. So I know there will be 26 characters, 26 lowercase characters. So if I have to practically think, can I have an array of size 26? I'll be like, yes, I can. So imagine if you have an array of size 26, what will it be indexed from? It'll be indexed from zero, then to one, then to two, then to three, and probably to four, then probably to five, then probably to six and so on till 25. Can I say this? This will be the array indexing. Can I see this? Since I know there are 26 alphabets, can I correspond A to zero? Can I correspond B to one? Basically I'm mapping them in my memory. I'm saying, okay, wait, can I say A to B the zeroth index? I do not have any relation, but I will say, I will assume, I'll assume A to be this, I'll assume B to be this, C to be this, this and this, and this to be Z. Can I see this? For every character, I will have an index. I will."
+    },
+    {
+      "chunk_id": "L013_C23",
+      "start": 1554.68,
+      "end": 1628.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=1554s",
+      "text": "be this, this and this, and this to be Z. Can I see this? For every character, I will have an index. I will. Simple as that. If I can do that, I think my problem will be solved. Now you might have a question in your head. So straight away, you are saying A will be this, B will be this, C will be this, this will be this. And how do I program it? Because in program I cannot visualize. I need something which works programmatically code wise. So if I have to talk about F, I can visualize over here that F is five. But how do I do that in program? This is where something like ASCII value comes in. If you do not know about ASCII, it's basically American standard code for information interchange. So if I have to show you the ASCII, so there are 256 characters and these, this is how the ASCII looks like. So if I just scroll across, these are the ASCII values for everyone. The digit zero has an ASCII value of 48. The digit one has an ASCII value of 49. Going across the uppercase A, the uppercase A has an ASCII of 65. If I go across the lowercase A has an ASCII of 97. The lowercase Z has an ASCII of 122. What do I mean by ASCII? So imagine if you're writing a code where you say int x equal to character A."
+    },
+    {
+      "chunk_id": "L013_C24",
+      "start": 1629.64,
+      "end": 1708.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=1629s",
+      "text": "of 122. What do I mean by ASCII? So imagine if you're writing a code where you say int x equal to character A. So what will x store? Because you are storing a character into x and x is an integer data type. So what happens is this A is converted. Yes, this A is converted into its ASCII and this is a small a. The ASCII is 97. The x stores the ASCII of A. That is 97. Got it? It will not throw a syntactical error. Instead it will typecast it. So we know about ASCII. So something I know for sure is small a is 97 and small z is 122. So how can you represent now? It's very simple. So imagine you have to represent for F. So you say F minus A. What is F's ASCII value? If I look at the F's ASCII value, that's 102 because when you're doing a subtraction, subtraction happens between two integers. So computer says, what's the integer? It says 102 because that is my ASCII. What is the ASCII of smaller a? 97. So I get five, you get five. And that is what you require. If you're required for A, that's A minus A equal to zero. If you're required for B, that's B minus B equal to one. If you're required,"
+    },
+    {
+      "chunk_id": "L013_C25",
+      "start": 1708.44,
+      "end": 1781.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=1708s",
+      "text": "that's A minus A equal to zero. If you're required for B, that's B minus B equal to one. If you're required, sorry, B minus A equal to one. If you're required for C, that's C minus A equal to two. So apparently the formula that you need is character minus A. If you do this, you get the corresponding index in the hash array and then you can easily index it. You can easily hash it. So imagine you are having an A minus A, you get zero. So you go to zero and you say one, right? Next is B. So you do B minus A, that is one. So you do a one. Next is C. You do C minus A, that's two. You do one. Next is D. That's D minus A. So you go and do over here. Next is A. That says A minus A equal to zero. So you do a two. Next is B. You do a two. Next is E. E minus A is nothing but four. So if E minus A is four, you go to four and do A. F, F minus A is five. So you go and do one. C, C minus A is nothing but two. So you do a two. Done. As simple as that. This is how you hash it. You require 26 and imagine if the string contains uppercase as well. You just saw that you have 256 characters into two."
+    },
+    {
+      "chunk_id": "L013_C26",
+      "start": 1782.32,
+      "end": 1854.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=1782s",
+      "text": "hash it. You require 26 and imagine if the string contains uppercase as well. You just saw that you have 256 characters into two. You can just go across and create an array till 256 size. And this time you don't have to subtract anything. For smaller A, the value is 97. So the smaller A will get at 97. For smaller B, the value is 98. So it goes to 98. Simple. Just because you just had lowercase letters. That is the reason you took a 26 size array. You could have taken a 256 size array that would have worked as well. I'll show you that in code. So let's look at the input. We're given the string, we're given the queries, and these are the number of queries that we are given and we have to print the output. So what is the first thing that we're given? String. So let's take string and we say CNF S to take in the string. Now we need the query. So let's take all the queries. Very simple. And I say while Q minus minus. And now we need the character. So let's take the character and that's it. These are the inputs that we have to do. We know we need to do some pre-compute because we're performing hashing. And we know we have to fetch it over here in order to print the answer. Let's do the pre-computation."
+    },
+    {
+      "chunk_id": "L013_C27",
+      "start": 1855.52,
+      "end": 1929.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=1855s",
+      "text": "because we're performing hashing. And we know we have to fetch it over here in order to print the answer. Let's do the pre-computation. Can I see that I require a hash because we are sure that it will be of size 26. I require an hash of 26 size. And now I will go across the string. In order to go across the string, this is one of the ways you say S dot size, and then you go across I plus plus, and you say hash of S of I minus a plus plus. Now what this will do is this is your indexing character minus C. I'll give you the index at which you have to do it for the hash. And over here in order to fetch, you say, see how hash of C minus C, because the index in order to get the index, it's character minus C. That's what you do. Then you go across and do an endl. I'll go across and let's quickly run this off and see if it is running fine. It is. We saw that it is giving us the correct answers. Now we took hash of 26. I know that was done because we knew that they were just lowercase letters. Imagine it doesn't state that it has just lowercase letters. In that case, we know the number of characters that exist. If that exists is 256. I'll do 256."
+    },
+    {
+      "chunk_id": "L013_C28",
+      "start": 1929.88,
+      "end": 2004.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=1929s",
+      "text": "it has just lowercase letters. In that case, we know the number of characters that exist. If that exists is 256. I'll do 256. Instead of doing this, I'll do S of I. If it's A, it goes to 97. If it's B, it goes to 98. So, and over here also, I don't do anything. Even if you do this, this is still gonna run fine. Because it's, it's taking a bigger size, but it's mapping it correctly. Just because we did not require uppercase and all the other characters, I took it off size 26. If it doesn't states about the exclusivity of the characters, you have to take 256. This is how you hash all the characters. So are there any complications in order to hash characters? Because in number hashing, we saw that if the number goes till 10 to the power nine, there might be a problem. But in character, there will never be a problem because at max there are 256 characters and array can store 256 elements. So for character hashing, you don't have to think much. Always prefer arrays always. And always use this logic character minus A for lowercase. If they're uppercase, it'll be character minus capital A. And if there are all characters, 256 and simply hash the character, it will be auto converted. Yes. If I'm saying S of I, this auto converts itself to its ASCII because hash of I,"
+    },
+    {
+      "chunk_id": "L013_C29",
+      "start": 2004.32,
+      "end": 2074.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2004s",
+      "text": "character, it will be auto converted. Yes. If I'm saying S of I, this auto converts itself to its ASCII because hash of I, hash needs an index and the index is an integer. S of I is a character, but it auto casts itself into an integer. Got it. So this is a character S of I, but the hash inside its bracket, hash inside its brackets needs an integer. So even if you write a character, it will auto cast itself to its integer value, which is the ASCII value. This is why coming back to the problem that we had in number hashing. So in number hashing, when we were trying to hash it into the arrays, we saw that we can at max do it till 10 to the power seven. That also if we declare the array globally and for numbers exceeding 10 to the power seven, like 10 to the power nine or 10 to the power 12 or 10 to the power 18, we cannot hash it using arrays. That was not possible. This is something that we need to solve. And that is where in C plus plus STL comes in. If you have not seen the STL video, please go back and watch it. And in Java, the collection comes in. So in STL, there are two things. One is the map while the other one is the unordered map, which I'll be talking in depth."
+    },
+    {
+      "chunk_id": "L013_C30",
+      "start": 2075.08,
+      "end": 2153.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2075s",
+      "text": "in STL, there are two things. One is the map while the other one is the unordered map, which I'll be talking in depth. And most of the concepts that I'll be talking about map and unordered map also apply to the hash map. It is just the same stuff. Just the writing format is different and the concept inside it is the same. So let's understand map and unordered map. So till now we were taking an array, right? If you remember, we took an array of size 13 and then we hash it. In C plus plus, let's talk about map. So what happens is, imagine you're given an array, something like one comma, two comma, three, comma, one comma, three, comma, two. Imagine you're given something like this. So in C plus plus what happens is map is a data store. So I'll just represent this with a bucket. So what do you do is you say, okay, I know there has to be a key. What is the key over here? So this is the key. The number is the key. So the number is the key. Remember this. And there has to be a corresponding value to it. And the value over here is the frequency. So this is how it is defined. You basically say, okay, what is your key? Is your number? How many times it appears is the value."
+    },
+    {
+      "chunk_id": "L013_C31",
+      "start": 2154.28,
+      "end": 2230.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2154s",
+      "text": "how it is defined. You basically say, okay, what is your key? Is your number? How many times it appears is the value. This is what you do as simple as that. So what I do is, okay, I know one thing. At the first step I have one. So I will say, can you go ahead? And if, if demo one thing before, before I trading in the area, before I trading in the area, if you say MPP of one, this will return you zero because it doesn't exist in the map. So the value, the corresponding value will be zero. Right? So the moment you go to one, you say MPP of one plus plus. So what will happen if it doesn't exist in the map, it'll go to the map and say one, you do not exist. That's zero. It's zero zero plus plus is one. So it will store a key value, key map to a value. Next it goes to two and does a map to us and it sees it doesn't stores to. So what happens is it goes and stores to next, it goes to three again, goes and sees doesn't stores three. So three plus plus next is goes to one and sees, okay, I already have, let's go back to that one and say, can you please increase my value? It just increases its value to do next,"
+    },
+    {
+      "chunk_id": "L013_C32",
+      "start": 2230.8,
+      "end": 2306.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2230s",
+      "text": "have, let's go back to that one and say, can you please increase my value? It just increases its value to do next, goes to three again, increases its value to do next, goes to two, again, increases its value to. So what do you need to do is MPP of area of I plus plus. That's what you need to do. And imagine I'll just erase this. Imagine I had a number like 12 then what would have happened? So you'd have done MPP 12 plus plus. So 12 would have gone as one. Quite simple. Very, very simple. So something to observe over here, even if the number was still 12 and you would have used adding hashing, you would have ended up taking a size 13 ad in the ad hashing. And over here, how many elements are you storing? We're just storing the elements that are required because you require one, two, three, and 12. So four elements are stored. Whereas in ad hashing, you had to declare a 13 size ad if the maximum was still 12 in order to get the 12th index. This is where map is slightly beneficial. It takes a little less memory because it will just store the elements that are"
+    },
+    {
+      "chunk_id": "L013_C33",
+      "start": 2307.32,
+      "end": 2380.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2307s",
+      "text": "is where map is slightly beneficial. It takes a little less memory because it will just store the elements that are required. If you do for MPP of four, it is not there in the map. It'll automatically throw you a zero, but it doesn't store. It doesn't store. Got it. So if I go back to the code, you see that you have an N you have the array, you have the queries, and then you have all the queries. So it's quite simple. You say N is a scene of N and then you say int array of N. Then you say for I and D I equal to zero I less than an I plus plus. And then you go across and say, let's take these areas, values, area of I, and now you need the queries. Let's take the queries. I and D Q C of Q and I, you do while Q minus minus, and then you take the number and you take number over here and you say, see out, this is where you fetch. So you precompute your and then you catch it over here. So we have to do the precompute. So what do you do as map of key? And you know, the key is a number which will be integer. If the number goes still like 10 to the one nine or 10 to the 12,"
+    },
+    {
+      "chunk_id": "L013_C34",
+      "start": 2380.64,
+      "end": 2446.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2380s",
+      "text": "is a number which will be integer. If the number goes still like 10 to the one nine or 10 to the 12, and you could also go out and take along because there'll be bigger numbers or you can take long, long as well. Depending on the size of numbers, you can define your keys data type done. And now what do you do is you go across and say, I, D I equal to zero, I less than an I plus plus. And you say, map of area of I need to work plus plus quite simple. And in order to fetch it, you say, see out of map of number. And once you've done this, you could go ahead and say, can you please run this? And if you run this, you will see that everything is fine for a PS zero. That's why it will be a PS once it does run fine. So remember one thing, the map stores, all the values in sorted on. There's something which you have to keep in mind. The map stores all the values in sorted on. What does that mean? This will be at the first place in the map. This will be at the second place. This will be at the third place. This will be at the fourth. How can I prove it? What I'll do is I'll go ahead and say, let's iterate in the map. So if you just iterate in the map,"
+    },
+    {
+      "chunk_id": "L013_C35",
+      "start": 2446.68,
+      "end": 2517.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2446s",
+      "text": "prove it? What I'll do is I'll go ahead and say, let's iterate in the map. So if you just iterate in the map, this is how you iterate in the map and auto-iterate on the map. And if you do see out of it.first, something like this and do it.second, this is how you can get it. So if I just try to run this, you will see what will happen. Before printing all of this, it actually shows you one appears twice. And this is how it is stored in the map. This is how you get also I trade in the map. So let's quickly comment this off. And you might have a question. You're pre-computing here's driver. That's like running a loop or taking the input and then doing the pre-compute. You can also do this over here. It is okay. Like you can declare this before this and it's still, and you can just omit the pre-computation can be done while taking the input as well. It doesn't matter. It'll save you one for loop, but that is okay. That won't change anything or that won't make your program super fast. Why won't it make super fast? Because it's N plus N and not N into N. N into N generates a bigger value. N plus N is like 2N. And if you remember the time complexity, we ignore two three and all these smaller values. Remember?"
+    },
+    {
+      "chunk_id": "L013_C36",
+      "start": 2518.72,
+      "end": 2592.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2518s",
+      "text": "value. N plus N is like 2N. And if you remember the time complexity, we ignore two three and all these smaller values. Remember? So we did learn about map. Can this map be used in something else? Yes. You can also use map in string hashing. Now what is the key over here? If you remember the key is a character. So what you can do is you can say map of character and storage frequency. So instead of using an array for hashing, you can go ahead and see map of character. And now you can say map of whatever is your character S of I plus, plus this will not be converted into integer. Now your map will be storing something like this. A appears twice, B appears once, C appears once. So depending on what you are trying to hash, that will become your key and what are you storing that will become your value over here. We are storing the frequency. That's why it's doing plus plus. Got it? In Java. So in Java there is something as hash map. You can use it. It works in the similar fashion. Now let's talk about something very, what is the time complexity of this map? So in order to do something like map of something plus plus that is basically storing in the map, you have to fetch from the map that is MPP of you're doing"
+    },
+    {
+      "chunk_id": "L013_C37",
+      "start": 2592.2,
+      "end": 2672.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2592s",
+      "text": "of something plus plus that is basically storing in the map, you have to fetch from the map that is MPP of you're doing area of I or something like this. So that's fetching from the map, the storing of fetching. Remember this storing of fetching, both of them in a map in a map takes logarithmic of n, takes logarithmic of n in all cases, in best in average, in worst, in all cases takes logarithmic of n. Remember this, but there is something as unordered map. There's something as unordered map, which we will be talking about now. So let's go back to the code. So even if I write this unordered, will it run? And if I go ahead and run this, it will actually run. You see the values are getting printed. So even if you take unordered map, it does run. Now what is the meaning of unordered map? So the name recommends unordered. So imagine now I go across the map and try to print it. So if you remember in the map, it was storing everything in this sorted fashion. But over here, by the way, just my bad. Let's amend this up. In the map, everything was stored in the sorted order. But over here, if you see there is no particular order, there is absolutely no order."
+    },
+    {
+      "chunk_id": "L013_C38",
+      "start": 2672.6,
+      "end": 2752.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2672s",
+      "text": "was stored in the sorted order. But over here, if you see there is no particular order, there is absolutely no order. It can change on every program, like overheads 3, 12, 2, 1. If you run it, if you run the same code on some other compiler, it might be having some different order. So the order is something which you cannot decide. So as the name recommends, it is unordered. But then you might ask, what is the advantage of using this? Let's talk about this. When you are storing something in the map, which you are doing, and when you're fetching in the map, the average and the best time complexity is a constant one. The average and the best is average. Like in most of the cases, in most of the cases it will be big of one for storing and fetching. But there is something as the worst case and that ends up taking linear time. Linear time. What do you mean by linear time? This is nothing but the number of elements in the map. This is nothing but the number of elements in the map. When I talk about n, I'm talking about log n. This is nothing but the number of elements in map data structure. Depending on the number of elements, the time will be computed. So the average and the best case will be big of one."
+    },
+    {
+      "chunk_id": "L013_C39",
+      "start": 2752.6,
+      "end": 2829.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2752s",
+      "text": "Depending on the number of elements, the time will be computed. So the average and the best case will be big of one. In most of the cases, it will be big of one. In very minor cases, it will happen once in a blue moon. If the problem setter is extremely like he just wants to make your code feel, he might end up giving a worst case. It might end up taking big of n and your code apparently will take n squared. Because imagine if this line is taking big of n and you're running a loop over it, it's like n and this is n. So n into n, n into n happens. But if this line is big of one, then it becomes n into one. Most of the times what you need to do is you need to do, you need to use unordered map. Yes. If it fails, if it gives you a time limit exceeded, that means taking a lot of time, then you switch back to map. But the first preference should be unordered map because the worst case very rarely happens. I know it's, it has a worst case, but it very, very rarely happens. Why does the worst case happens? Because of internal collisions, because of internal collisions. So since we are talking about collisions, let's understand how does hashing work? Because if you remember,"
+    },
+    {
+      "chunk_id": "L013_C40",
+      "start": 2829.84,
+      "end": 2909.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2829s",
+      "text": "internal collisions, because of internal collisions. So since we are talking about collisions, let's understand how does hashing work? Because if you remember, I told you that the moment it crosses 10 to the power seven and add a hashing cannot be done. So how does, how's a map data structure created? Well, someone asked you might not like, in interviews that generally don't ask that much, even if they ask, only telling them about division method will work. These two methods are something which you just need to know the names might come up in your semesters, but this is the method that you have to understand. So how is the internal map designed? Because if I'm talking about design, I know I can design an array hash, but for numbers like 10 to the power 18, how do I store it? This is where internally you might see like these map data structures are implemented in different, different ways. They might be using division method. They might be using folding mid square. They are implemented in a very complex way. You don't need to know it, but let's understand what is the division method because we'll take the division method. Then I might be able to explain you what is collisions. So let's understand the division. So imagine, imagine I'm giving you numbers, like in an area, I'm giving you numbers like two, five, and then 15 and then 55, not 55, uh, not 15. Let's take 16."
+    },
+    {
+      "chunk_id": "L013_C41",
+      "start": 2910.04,
+      "end": 2978.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2910s",
+      "text": "like in an area, I'm giving you numbers like two, five, and then 15 and then 55, not 55, uh, not 15. Let's take 16. And let's say 28 and let's take one 39. Okay. So these are the numbers that I've given. So you can do array hashing because I'm not talking about map. If you have to do array hashing, you can actually go ahead and create an array of size 140, but you go like zero one and tell, tell one 39, because if you create an area of size one 40, you'll get one 30 and then you can hash it. But imagine I tell you, imagine I tell you, you cannot create an array for a time being. You cannot create an array of size greater than 10. This is not allowed. An array of greater than size 10 is not allowed. I'm taking very small values in order to explain. You can map this to bigger values. So you can map this to the bigger problem that we are trying to solve in the bigger problem. Imagine you have number like 100, 10 to the power 18 and then 10 to the power 16 and then 10 to the power four. And the maximum size allowed is 10 to the power seven beyond this. It's not allowed. Right? So it's same problem you're solving. We have bigger numbers, but as of now we have a restriction that you cannot create an array greater than"
+    },
+    {
+      "chunk_id": "L013_C42",
+      "start": 2979.08,
+      "end": 3055.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=2979s",
+      "text": "it's same problem you're solving. We have bigger numbers, but as of now we have a restriction that you cannot create an array greater than size 10 greater than equal to like at max 10 is allowed, not more than how will you do it? So this is where something like a division method comes in. Yes. This is where something like a division method. What does division method say? Division says, okay, I just have 10 size are allowed, which means I can only store zero to nine. Right? So it's like zero one two. So as I said, an array of greater than size 10 is not allowed. So this is what we can have at max zero nine. And we will be using the division method in order to hash it. How will we use the division method? It's very simple. If we have to, whatever number we have, we will try to modulate it with 10. So for two, the corresponding value will be two. I'll go to two and I'll see it appears one five and modulate it with 10. I'll get five for 16. I'll modulate with 10. I'll get six for 28. I'll modulate with 10 and I will get something like, what will I get? I'll get eight for 139."
+    },
+    {
+      "chunk_id": "L013_C43",
+      "start": 3055.88,
+      "end": 3131.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=3055s",
+      "text": "for 28. I'll modulate with 10 and I will get something like, what will I get? I'll get eight for 139. I will modulate with nine and I'll get nine. I'll do a one. Right now, what I do is I have used the division method to kind of trim down the number and have been able to somehow add a hashing. Right? This is what the division, but your brain might be thinking a lot of things. I'll come to that one. Don't worry. So this is how the division method works. If someone does ask you and someone does comes up and ask you, Hey, how many times 139 appears? So you say 139 modulo 10 is equal to nine. What is the value at nine? It's one. So it appears one time. That's how you retrieve the division method is modulate in. That's how you put it. And that's how you retrieve it. So that's how you trim down the number. Now you might have a lot of questions. I'll come to each of these questions. Now what I've done is I have kind of drawn the area in the vertical fashion. And the first question that might come to your head, what if on modulo 10 they are same numbers because this is two. So now I'll do it a slightly different. This is two. Okay. We have one, two, we have one, we have five,"
+    },
+    {
+      "chunk_id": "L013_C44",
+      "start": 3131.8,
+      "end": 3210.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=3131s",
+      "text": "is two. So now I'll do it a slightly different. This is two. Okay. We have one, two, we have one, we have five, we have one, five, we have 16, we have one, six. So I'll probably store the numbers in some chaining, in some chaining. This is what you call as linear chaining. Again, these things will be done using linkless. You don't need to know, just understand the logic and concept. 28 modulo 10 is eight. So in eight you put 28, 139 modulo 10 is nine. So in nine you say 139, 38, here comes the collision factor. This was also modulo eight. This was also modulo eight. So you cannot store. So you chain it. You say I have one more 38. Next 48. Again, you do a modulo 10 and you're getting, so you go and say chain it. And this time again, you get eight, but this time you get 28. So you chain it, but you do not chain it in the back. Instead of that, you chain it somewhere like this 28 and back over here. And you kind of break this. This is something which can be done using linkless and in a very simple way. You'll be learning it, learning this in linkless. So you chain it. 28 is there twice. And then again, you get 18. So you chain it something like 18 and then you make 28."
+    },
+    {
+      "chunk_id": "L013_C45",
+      "start": 3211.12,
+      "end": 3288.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=3211s",
+      "text": "chain it. 28 is there twice. And then again, you get 18. So you chain it something like 18 and then you make 28. It's like 18, 28, 28, 38. They chained it. Right? So this is how it works. Now, if someone does comes up and ask you how many times 28 appears. So what, what we do is we say 28 modulo eight, we go to eight direct, and we know there'll be limited numbers and we know it is sorted. So there are a lot of search algorithms which are applied internally and you can easily do a binary search on and you'll find that there are two numbers and it can be done in minimal time, minimal time. Got it? So this was the division method that I did talk about. So you can do some chaining and you can keep it in certain ways. Imagine you had 22, then this will be chained here. So chaining can be done and you can always keep them in limited memory storage. So do you need to implement this? No, you just need to understand the concept. What then, but so then what is collision? So in order to find out how many times 28 appeared, what did you do? You just went to eight and then you figured out when it appears twice because it was chained in a sorted order because it has chained in a sorted order."
+    },
+    {
+      "chunk_id": "L013_C46",
+      "start": 3289.2,
+      "end": 3366.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=3289s",
+      "text": "then you figured out when it appears twice because it was chained in a sorted order because it has chained in a sorted order. So it is quite easy to find out 28 twice. But, but, but but if, if this, this realize this eight, this chain would have been all true. Do they use the division method in turn? No, they use some method, which is a mixture of everything. Depending on the input, they find out some method and they use it. Imagine they using a method internally which falls under collision. What is collision? You're given an array. Imagine they using division. Just imagine they're not just imagine. And I give you something like 18, 28, 38, 48 and all that is are ending with eight. So how will the chain look like? The chain will be on eight. You will have all the numbers, all the numbers. So happily all the other memories are not used. And in eight you had all the numbers. The huge chain collision happened. Everyone went to the same hash place. Collision is this. Everyone went to the same hash place. If everyone went to the same hash place, you have to find it out. It's going to be tough. I'll take a lot of pain. Got it. This is what we mean as collision. Whatever hash they're using. Remember this, whatever hash they're using internally can be anything."
+    },
+    {
+      "chunk_id": "L013_C47",
+      "start": 3366.76,
+      "end": 3440.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=3366s",
+      "text": "Got it. This is what we mean as collision. Whatever hash they're using. Remember this, whatever hash they're using internally can be anything. You cannot say what they use. Whatever hash they're using. It ends up that all your keys, all your keys end up at the same hash value, hash index ends up at the same hash index. This is when the worst case will happen and be goffin. Now you understand why I said it's a very, very minor piece. It might not happen. It like the problems that has to be extremely brilliant. He has to find out and then he might be able to do it, but it's an extremely rare case to have. This is why in interviews when you talk about the time complexity, tell them in the best and average, if I'm using an ordered map, it's big off one. If I go across the worst case, it will be big off. And this is how it works. So I hope you've understood the division method. This is the normal, simple division and linear chaining is done if there are multiple values, folding and mid square method, not required, not required. I just told you the division method because I wanted to explain you what is collision. And in order to explain collision, then I could have explained to you why big off and it's such a, like it never happens. It just happens once in a blue moon. A quick,"
+    },
+    {
+      "chunk_id": "L013_C48",
+      "start": 3441.2,
+      "end": 3509.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=3441s",
+      "text": "explained to you why big off and it's such a, like it never happens. It just happens once in a blue moon. A quick, another thing. Can the key be an integer? Yes. Can, can it be a double? Can it be a character? Can it be a spring? It can be anything. It can even be a pair of integers. It can be pair of two guys as well. This can also be a key. He can be anything. Any data structure can be a key in a map, but when it comes to another map, you can only have individual data types. You cannot say pair of end comma end to be a key and the value to be in. This cannot be a key in an ordered map. This cannot, but in map, any data structure, any particular data type can be a key in on ordered map. It's limited to integer, double characters, string. You can not take like pair of end comma and or something like a vector of it. It will not allow you to remember this in mind. A lot of you might be thinking of this chaining stuff and everything. No need to worry. No one is going to ask you in interviews. It's just for understanding what are collisions. And if someone will ask you about this complexity, just for explaining, no one is going to ask you to implement this. No one, no one. Trust me on this."
+    },
+    {
+      "chunk_id": "L013_C49",
+      "start": 3510.24,
+      "end": 3570.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=3510s",
+      "text": "about this complexity, just for explaining, no one is going to ask you to implement this. No one, no one. Trust me on this. So coming back to the course, you can do this. Can you do this? Find the highest and lowest frequency. I'll give you this as homework. It's quite simple. The hint is you can use map or you can use the added hashing. And then depending on how many times they appear in map, you can iterate like this. And this is what has to be maximum if you're finding highest frequency. So try to do this. It's quite simple. Some FL statements will do. This will be a homework. Once you've done this, you can put the code in the comments. I'll check it out. And the other people will also get help from it. So with this, I can say that the learn the basic stuff module is completed from the strivers A to Z course. The next module, we will go to step two. So guys, I hope you've understood everything I taught just in case you did, please hit that like button and yeah, to follow our tradition, make sure you comment understood in the comments so that I get to know that you've understood everything. And if you're new to our channel, what are you waiting for? Hit that subscribe button because that is the only thing that keeps you motivated to me, such kind of content."
+    },
+    {
+      "chunk_id": "L013_C50",
+      "start": 3570.4,
+      "end": 3603.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=KEs5UyBJ39g&t=3570s",
+      "text": "are you waiting for? Hit that subscribe button because that is the only thing that keeps you motivated to me, such kind of content. And I do get disheartened because nearly 60% of the users who watch my video do not hit that subscribe button. I know, I know a lot of people watch videos. They do not consider hitting it. So please, please do consider hitting it because it does motivate me a lot. And if you haven't followed me on Instagram, Twitter, LinkedIn, all the links will be in the description. Make sure you follow me across everywhere and do share your learnings using the hashtag with this. I'll be wrapping up this video. Let's meet in some other video. Don't ever forget your golden."
+    }
+  ]
+}

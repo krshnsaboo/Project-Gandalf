@@ -1,0 +1,78 @@
+{
+  "lecture_id": "L254",
+  "lecture_number": 254,
+  "lecture_title": "L18. Delete all occurrences of a Key in DLL",
+  "youtube_url": "https://www.youtube.com/watch?v=Mh0NH_SD92k",
+  "chunks": [
+    {
+      "chunk_id": "L254_C1",
+      "start": 0.0,
+      "end": 75.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=Mh0NH_SD92k&t=0s",
+      "text": "So, we will be continuing with our playlist and for that, Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is deleting all occurrences of a given key in a doubly linked list. So, what is the problem stating? It is stating that you will be given a doubly linked list. So, basically you will be given the head of the doubly linked list and you will also be given a key. Now your task is to delete all the occurrences of this particular key in that doubly linked list. So, if I look for the occurrences of 10, over here I have 1, over here I have 1 more, here is 1 more, here is 1 more. So, what you need to do is, you need to make sure they are deleted. Once you have deleted all of these, you will just have 4 and 6 left. So, the new or rather the updated doubly linked list will have 4 pointing the next to 6, 6 previous pointing to 4, 6 next pointing to null, 4 previous pointing to null and this will be the updated head of the doubly linked list. Whenever, wherever you find the key, you will have to delete that particular node and once"
+    },
+    {
+      "chunk_id": "L254_C2",
+      "start": 75.12,
+      "end": 148.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=Mh0NH_SD92k&t=75s",
+      "text": "head of the doubly linked list. Whenever, wherever you find the key, you will have to delete that particular node and once you have deleted all the nodes with this particular key, you will have to return me the updated head of the updated doubly linked list. So, I will have to delete all the occurrences. What does it mean? You will have to go through each and every node and whichever has the value key, you will end up deleting it. That's what you need to do. You need to go through each and everything. That basically means a simple traversal through the doubly linked list. How can I do that? I will take a temporary, I will place it at the head. I will never ever alter the head because we will need it. Let's do the traversal. The temporary is standing at the head. It's at the head. What is the value? The value is 10 and that's equivalent to the key and if it is equivalent to the key, you will have to delete it. You will have to delete the head. You will have to delete the head. The temporary is equivalent to head. You are deleting the head which means the head has to be updated. If the head is deleted, you update it. How do you know that the head is deleted? Because the temporary is equivalent to the head. Hence, the head is deleted. Got it? So head will be moved."
+    },
+    {
+      "chunk_id": "L254_C3",
+      "start": 148.16,
+      "end": 219.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=Mh0NH_SD92k&t=148s",
+      "text": "the head is deleted? Because the temporary is equivalent to the head. Hence, the head is deleted. Got it? So head will be moved. What is the next step? You will take the next node. So this is your next node you know. You will also take the previous node. In this case, we do not have a previous node so it will be null. After this, you will have to do the link changes. If there was a previous node, then its next would have pointed to this but there is no previous node. So this link change will not happen. But there is a next node. So its previous will be pointing to the previous node. The next node's previous will be pointing to the previous node. In this case, null which is absolutely okay because if this is the new head, the previous will be pointing to null. So what will I write? I will write next node, your previous will be pointing to previous node. In this case, it will be null which is okay. But do I need to? Do I need to have the previous node's next pointing to this? I do not. Why? Because I do not have a previous node in this case. Because it is the head. Don't do anything. One link change and it is done. So can I say this will be pointing to a null?"
+    },
+    {
+      "chunk_id": "L254_C4",
+      "start": 219.44,
+      "end": 289.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=Mh0NH_SD92k&t=219s",
+      "text": "the head. Don't do anything. One link change and it is done. So can I say this will be pointing to a null? And after this what you can do is, you can free up the current node. So just delete it. Just delete it. So this will be deleted. I will just delete it. Once this is deleted, you will say, hey temporary, can you go to the next node? Can you go to the next node? So you will just move it to the next node. So what I have done is, I have taken temporary to the next node. Now let's do the next. Traversal, what is the value? 4. What is the value of k? 10. Not. It is not matching. So I will just move it to the next. What I will do is, I will take temporary to the next. This time the value is 10 which is equal to the key. We will have to delete this. Again do the same steps. Is it the head? It is not the head. So the head stays wherever it is. Let's write the same thing again. The previous node and the next node. Return, what is the next job that you do? You basically take the next and point this to this one. Right? So what I will do is, I will say previous. This time you are there. So your next will be pointing to next node. Done."
+    },
+    {
+      "chunk_id": "L254_C5",
+      "start": 289.12,
+      "end": 362.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=Mh0NH_SD92k&t=289s",
+      "text": "what I will do is, I will say previous. This time you are there. So your next will be pointing to next node. Done. And after this you will see the previous pointing to this. So the next node's previous will be pointing to previous node. Done. Once this is done, what you will do? You will end up deleting this. Right? Done. So this is a temporary. Can you move to the next? Perfect. So temporary is standing at a new node. And if you look at the value, that's again equivalent to the key. So what will you do? You will again delete it. Let's do the same process. It's not the head. No need to update the head. So this will be my next node. This will be my previous node. Again the same thing will happen. This time the previous node's next will be pointing to this. And the sixth, since previous will be pointing to this. Done. Once you have done this, you take temporary to the next. Simple and sorted. In C++, please make sure that you free up that node. Otherwise it will still be there in the memory. So in C++, please, please make sure that you free up that node. Otherwise it will still be in the memory. In Java, garbage collection takes place. So it is automatically deleted or freed up. Okay, let's have the next node. It is six."
+    },
+    {
+      "chunk_id": "L254_C6",
+      "start": 362.72,
+      "end": 433.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=Mh0NH_SD92k&t=362s",
+      "text": "memory. In Java, garbage collection takes place. So it is automatically deleted or freed up. Okay, let's have the next node. It is six. If you carefully observe, the value is not equal to the key. So what you'll do is you'll take the temporary to the next. So let's take it. So temporary is at a node which is having a value equal to key. So you have to delete it again. Let's do the same thing. This is my previous node. And this is my next node. How many link changes? Only one. Why? Because the previous node will be pointing to this. Right? But do we have a next node? We do not have. So there is no previous that will be pointing back. Once you have done this, you can just free this up. Just free this up. And after that, you can move temporary to the next node, which is basically null. And you stop. And if you carefully observe, the head is pointing to the new updated head, which is four. It's perfect. Four is pointing to the next, which is six. Six is previous is pointing to four, which is okay. And after that, this next is pointing to null. So it's the updated linked list with all the pointers change. And this is what you have to return. So let's quickly write down the pseudocode. Again, this is pseudocode, not C++, Java, Python code."
+    },
+    {
+      "chunk_id": "L254_C7",
+      "start": 433.4,
+      "end": 507.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=Mh0NH_SD92k&t=433s",
+      "text": "And this is what you have to return. So let's quickly write down the pseudocode. Again, this is pseudocode, not C++, Java, Python code. In case you want C++, Java, Python, JavaScript codes, the link will be in the description. So at first, what I'll do is I'll take temporary and point it to the head. We will not alter the head. Remember this. I'll keep a traversal. I'll do the traversal till it reaches the last. First thing that I'll do is if temporary's value is equivalent to the key, then there has to be something done. We have to do the deletion. And before doing the deletion, please make sure to check if this is the head. If this is the head of the linked list, I'll just update the head to head dot next. I'll just move to the next because the next one will be the new head because the head is deleted. Right. What after this? You take the next node. Let's take the next node. What will be the next node? Can I say temporary dot next will be the next node? I can. What will be the previous node? Can I say temporary dot previous will be my previous node? And I know one thing. There will be two link changes. If there is a next, if there is a previous, but there will only be one link change if"
+    },
+    {
+      "chunk_id": "L254_C8",
+      "start": 507.76,
+      "end": 587.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=Mh0NH_SD92k&t=507s",
+      "text": "be two link changes. If there is a next, if there is a previous, but there will only be one link change if either of them is there, which basically means if the next node is there, if it is there, if it is there, then the next node's previous will be pointing to previous node. I know that for sure. If the previous node is there, that the previous nodes next, if it is not now, then we make it point simple sorted next node. Once I've done this only in C++, not in Java, I'll free up this temporary. I'll free up this temporary. And after this, I'll say temporary. Then you go to the next node, which is basically the next node that you have already stored. And this will be where your if finishes. What if it goes to the else? If it goes to the else, it means the value is not equal to key. If it is not just straight away, move, move it. Don't think much, move it to the next. Done. The while loop ends. Once you've done this, you can straight away return the head. That's it. None and dusted. Please make sure that you have these checks."
+    },
+    {
+      "chunk_id": "L254_C9",
+      "start": 587.36,
+      "end": 656.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=Mh0NH_SD92k&t=587s",
+      "text": "you can straight away return the head. That's it. None and dusted. Please make sure that you have these checks. It's very important because if you don't have these checks and imagine you're standing at something which is not there and you're saying null dot previous. Null cannot have a previous. It will throw you a null pointer exception. If you do this, remove these lines, you'll get null point exceptions. Got it. Let's quickly get back into the code editor and check out the code. Again I've written down the pseudo code in case you want the C++, Java, Python or JavaScript codes. The link will be in the description. Please make sure you check it out. So if the exact same code that I've written, what I'll do is I'll go ahead and hit the submit button. If I talk about the time complexity, how much is it? I'm doing a simple traversal, a simple traversal. Can I see if N is the number of nodes in doubly linked list, the time complexity will be big O of N. And what is the space complexity? Am I using any extra space? I'm not using, I'm just doing the link changes. So can I see that the space complexity will be big O of 1? I can, right? So if you're still watching, I'm very, very sure that you've understood everything. And if that is the case, please, please make sure that you do hit that like button."
+    },
+    {
+      "chunk_id": "L254_C10",
+      "start": 656.58,
+      "end": 671.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=Mh0NH_SD92k&t=656s",
+      "text": "very, very sure that you've understood everything. And if that is the case, please, please make sure that you do hit that like button. And if you're new to our channel, please, please do consider subscribing to us as well. So with this, I'll be wrapping up this video. Let's finish some other video till then. Bye bye. Take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

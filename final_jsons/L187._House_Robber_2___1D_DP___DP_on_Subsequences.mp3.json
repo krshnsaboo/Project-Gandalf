@@ -1,0 +1,64 @@
+{
+  "lecture_id": "L187",
+  "lecture_number": 187,
+  "lecture_title": "DP 6. House Robber 2 | 1D DP | DP on Subsequences",
+  "youtube_url": "https://www.youtube.com/watch?v=3WaxQMELSkw",
+  "chunks": [
+    {
+      "chunk_id": "L187_C1",
+      "start": 0.0,
+      "end": 77.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=3WaxQMELSkw&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today is the lecture 6 of the dynamic programming playlist and the problem that we will be solving is house robber. Yes. Now this problem is quite similar to the lecture 5. So if you have not seen the lecture 5, I'll recommend you to go back, watch lecture 5 and then come across and watch this because I won't be explaining this problem in deep because this problem can be solved using the same technique that I have used in lecture 5. I'm using the same code, just there is a slight moderation in the problem. So let's read the problem. What does the problem state? So Mr. X is a professional robber planning to rob houses along a street. Each house has a certain amount of money hidden. All houses along the street are arranged in a circle. Okay. That means the first house is the neighbor of the last one. Make sense? Meanwhile, adjacent houses have a security system connected. That means the houses that are adjacent have a security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night. So you're given"
+    },
+    {
+      "chunk_id": "L187_C2",
+      "start": 77.36,
+      "end": 153.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=3WaxQMELSkw&t=77s",
+      "text": "and it will automatically contact the police if two adjacent houses were broken into on the same night. So you're given an array, a list of non-negative, very important, non-negative integers array representing the amount of money at each house. Your task is to return the maximum amount of money Mr. X can rob tonight without alerting the police. So basically it states that you have to pick up, you have to steal from houses without alerting the police. And how does the police gets alerted if two adjacent houses, like if you steal from two adjacent houses? Now the previous question was quite same. You're supposed to return the maximum sum of the subsequence with a constraint that no elements are adjacent in the given array. The only difference in this problem is they're saying that the last house is the adjacent of the first one. So it's a circular kind of thing that they have given to you. So yeah, you need to solve this. So how will you solve this is a very, very good question. Now let's take the first example. 2, 3, 2. Ideally, according to lecture 5, you could have picked this two and this two because"
+    },
+    {
+      "chunk_id": "L187_C3",
+      "start": 153.84,
+      "end": 228.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=3WaxQMELSkw&t=153s",
+      "text": "first example. 2, 3, 2. Ideally, according to lecture 5, you could have picked this two and this two because they're not adjacent. Since they're not adjacent, you'd have picked up and you'd have got four. But in lecture 6, in this problem, this first and last guy are adjacent. So you cannot pick them. So apparently you will, you're only allowed to pick this. So the maximum that you can do is three. So just a shuttle changes the question. Like the lecture 5 had stated clearly that you will have adjacent. But over here, it states that you cannot have adjacent, sorry, you will not have adjacent, cannot have adjacent and the first and last are adjacent. That's the change in this question. So how can you solve this question? Now, you might think of a lot of logic, but do you actually need to think of a logic? That's the question. Do you actually need any new logic? Do you need new logic? And the answer to that is, I don't think I need a new logic. I can solve using the previous logic in the lecture 5. But how? How can I do that? Can I say, can I say? I am definitely sure that whatever my answer will be, it cannot contain"
+    },
+    {
+      "chunk_id": "L187_C4",
+      "start": 228.8,
+      "end": 305.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=3WaxQMELSkw&t=228s",
+      "text": "do that? Can I say, can I say? I am definitely sure that whatever my answer will be, it cannot contain both of the first and the last. Whatever my answer is, cannot contain the first one and the last one. This is practically impossible because according to the question, first and the last one are adjacent. So you cannot contain them. Make sense? Can I say my answer will either contain, like it might, it might, or it might not, but this thing is for sure, first and last will not be together. So can I say, can I say, if I say, what if I consider the array from, like I leave out the last element, whatever is the array, leave out the last element. Let's leave out the last element and consider the remaining portion of the array. And, and then apply the lecture 5 logic in saying, find the maximum sum of the subsequence with adjacent. Remember, I'm leaving out the last possible element. So I've left out the last possible element. Okay. Make sense. But you might say, but Shreya, what if the last possible element was in the answer? So what I can do is, okay, this is a possible stuff that I can do. I can leave out the last element and I can apply the same logic on the remaining array. Or I can say, let's leave out the first element. Yes. Let's"
+    },
+    {
+      "chunk_id": "L187_C5",
+      "start": 305.28,
+      "end": 376.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=3WaxQMELSkw&t=305s",
+      "text": "element and I can apply the same logic on the remaining array. Or I can say, let's leave out the first element. Yes. Let's leave out the first element and apply the same logic on the remaining portion of the array. Yes. The lecture 5 logic. Make sense? Now I definitely know that first and last cannot be together. So either this array will give you the answer or this array will give you the answer because that's what it does. If you just think slowly. So can I say if this is giving me answer one, and if this is giving me answer two, like leaving out the last and leaving out the first, can I say my answer to this question is max of both the answers? It's very intuitive. Like it's very, very intuitive because first and last cannot be together. Thereby, I do one thing. I remove the last and I apply the same logic of the previous question because the question was more or less similar. I just was confused with the first and last. I just removed that. And now the question becomes very straightforward as the previous question. So it's time that we will try to code this up. So in the code, just make sure that there is so in the code, just make sure that there is long, long int because 10 to the power"
+    },
+    {
+      "chunk_id": "L187_C6",
+      "start": 376.64,
+      "end": 447.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=3WaxQMELSkw&t=376s",
+      "text": "make sure that there is so in the code, just make sure that there is long, long int because 10 to the power cube 10 to the power 9. I think long, long int is not required. Long, long or long would have done. So what I'll do is I'll just copy paste this one. Let's copy paste this one. So I've taken the, taken from the previous lecture 5. So this is nothing but the lecture 5 space optimization solution. So remember this, this is nothing but lecture 5 space optimization solution. Okay. The last one. So we know it will take a nums array and it will give me the maximum sum. So over here, I know one thing for sure. I will be computing the answer for the first half. If I don't take the last one, last element, and I'll be computing for the rest half. If I do not take the first element. So assume I create a couple of temporary arrays. Okay. Makes sense. And what I'll do is in these temporary arrays, if I is not equal to zero, I know, let's assume the temporary array is this one, like temporary one contains everything apart from the first element."
+    },
+    {
+      "chunk_id": "L187_C7",
+      "start": 447.92,
+      "end": 524.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=3WaxQMELSkw&t=447s",
+      "text": "I know, let's assume the temporary array is this one, like temporary one contains everything apart from the first element. So I can just keep it like this value in house of I. Okay. Makes sense. If I is not equal to last index, by the way, just make sure you declare N as this value in house dot size. Okay. Just make sure you do that. So if this is not equal to, can I say temporary to dot push back value in house I. So what I did was apart from everything apart from the last element, I pushed everything into the temp to apart from the first element, I pushed everything into the temp one. That is what I've done. So I have the temp one ready at the temp two ready. So temp one is containing. Now what I know is, okay. I know the answer is max off. If I just call the same function, let's call the same function with temp one. Let's call the same function with temp two. Okay. Makes sense. Well, does this work for all of these? What if the array has only single element? So that's the case that I have to consider. Just in case the array has single elements, probably you can keep it away. If the array has single elements, then you can just pick the, that element itself, because it cannot have any adjacents. Just pick it. Now, if I try to run this code,"
+    },
+    {
+      "chunk_id": "L187_C8",
+      "start": 525.12,
+      "end": 580.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=3WaxQMELSkw&t=525s",
+      "text": "you can just pick the, that element itself, because it cannot have any adjacents. Just pick it. Now, if I try to run this code, you see it as running. Let's quickly submit it and check. Yeah. Runs absolutely fine. So you can see, by the way, submission time. So we're watching this video. Just make sure you like it because I do make these videos late night because I have my office hours in the day. So yeah, please make sure you like it. So yeah, 253, it works absolutely fine. Now this is how we can easily do it. It is just a variation of the previous problem. So always keep your eyes open. Whatever logic I'm teaching, try to keep it and try to implicate them by slightly changing the logic. Don't change it wholeheartedly. Okay. So guys, this will be it for this video. If you've watched the video till now, please make sure you like it. Let's follow our tradition. Please, please do comment understood or US in the comment section. If you've understood this problem and you can solve this problem on LeetCode, it goes by the name HouseRobot2. Okay. So with this, let's wrap up this video. Bye-bye."
+    }
+  ]
+}

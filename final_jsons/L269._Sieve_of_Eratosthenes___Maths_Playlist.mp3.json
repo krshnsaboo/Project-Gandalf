@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L269",
+  "lecture_number": 269,
+  "lecture_title": "L6. Sieve of Eratosthenes | Maths Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk",
+  "chunks": [
+    {
+      "chunk_id": "L269_C1",
+      "start": 0.0,
+      "end": 79.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=0s",
+      "text": "So, let's continue with the Math section in Stryver's A to Z DSA course but before that, hey, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is C of eras cross themes, something like that. So, this algorithm is something which is related to prime numbers. So, in order to understand that, let's pick up a very simple problem. Given a number n, we have to print all the primes up till n. So, assume I give you n as 10. So, you'll have to print down all the primes till the number 10. So, that will be 2, 3, 5 and 7. So, there are 4 primes till 10. So, you'll have to print down all the 4 prime numbers. Now, what is the extreme nice solution that you can think of? We know how to check a prime number, right? So, it will be like, okay, we'll start from i equal to 2 because that is the first prime number. We can go ahead till n and we can call the prime function that we already know how to write. If this is a prime number, we can print the prime. So, this will be the extreme nice solution, the brute force. And what will be the time complexity? The outer loop is running"
+    },
+    {
+      "chunk_id": "L269_C2",
+      "start": 79.48,
+      "end": 142.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=79s",
+      "text": "So, this will be the extreme nice solution, the brute force. And what will be the time complexity? The outer loop is running for b go of n and the prime check we know can be done in square root of n. So, this will be the time complexity. Will there be any space complexity? No, the space complexity will be b go of 1. Obviously, this is an extremely expensive operation. Why? Imagine I give you n as 10 to the power 5 and I ask you to print down all the prime numbers till 10 to the power 5. Then the time complexity will be b go of 10 to the power 5 into square root of 10 to the power 5, which is a lot of time. And if I give you 10 to the power 6, then that's a lot of operations, right? So, that is why this method is something that we will not be following and we will try to optimize this. So, what will be the optimized method? So, what is taking time over here? The first one is the loop which is iterating through each and every integer and then there is a prime check. If I can optimize this prime check and if I can do it in a constant time, if I can do the prime check in a constant"
+    },
+    {
+      "chunk_id": "L269_C3",
+      "start": 142.8,
+      "end": 210.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=142s",
+      "text": "this prime check and if I can do it in a constant time, if I can do the prime check in a constant time, then the square root of n will go off and that is what I will be trying to do and that is where this particular algorithm, sieve of erratosthenes or something like that comes in. So, what I will try to do is, I will try to create a black box where if I pass on an integer, it tells me if it is a prime or not. But this black box will be working in b go of one time complexity. So, in order to do that, what I will be doing is, I will be taking n equal to 30 just to explain you what algorithm I am thinking of, like what is the black box that I am thinking of. n equal to 30, I will be declaring a prime array of 31 size, that is one more than the number, okay. I would have started the index from 2, I have omitted the zeroth index and the first index because I know that these numbers are never prime, like 1 is not a prime number, so we will be starting off at 2. So, to start off what I have done is, I have initialized everything with 1, all the indexes with 1 till the last"
+    },
+    {
+      "chunk_id": "L269_C4",
+      "start": 210.12,
+      "end": 285.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=210s",
+      "text": "So, to start off what I have done is, I have initialized everything with 1, all the indexes with 1 till the last index which is 30. Start from the second index till the 30th index, everything is 1, okay. Now to start off what I will do is, I will start with the number 2 and I know that 2 is a prime number, that is for sure because that is the first prime, I am very sure. Can I say this, if 2 is prime, any multiple of 2 will never be prime, something like 2 into 2 which is 4, that is never going to be prime because it has a factor 2. 2 into 3 that is 6 will never be prime because it has a factor 2. For a number to be prime, the factors can only be 1 and the number itself. So, obviously 2 is a factor so it cannot be a prime. 2 into 4, 8. 2 into 5, 10. These numbers cannot be prime, I am very sure of it. So, what I will do is, I will be like, okay, let us go ahead and mark them as 0. So, I will go ahead and mark them as 0. Perfect. 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0. So, I have marked every multiple of 2 as 0 till the number that is 30. Done. So, 2"
+    },
+    {
+      "chunk_id": "L269_C5",
+      "start": 285.72,
+      "end": 362.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=285s",
+      "text": "0, 0, 0, 0, 0, 0. So, I have marked every multiple of 2 as 0 till the number that is 30. Done. So, 2 is completed. What is the next number? 3. Again do the same thing. I will be like, okay, 3 is a prime number. How do I know it? Because it is marked as 1. It is marked as 1. It did not get a factor before. Okay, fine. So, what is 3 into 2? That is 6. What is 3 into 3? That is 9. So, I will be marking all the multiples of 3 starting from 6 till 30 as 0. Let us do it. So, 6 is already marked as 0. 9 will be marked as 0. 12 is already marked. 15 will be marked as 0. 18 is already marked. 21 will be marked as 0. 24 will be marked as 0. 27 will be marked as 0. 30 is already marked as 0. So, 30 is done. What is the next number? The next number is 4. Tell me one thing. Is 4 a prime? No, it is not because it is already marked as 0 which means someone marked it. 2 did mark it. That means it is a multiple of 2. Tell me one thing. What are the multiples of 4? That is 8. That is 3. That is 16. All the multiples of 4 will also be multiples of 2. Agreed? Basic maths. All"
+    },
+    {
+      "chunk_id": "L269_C6",
+      "start": 364.08,
+      "end": 435.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=364s",
+      "text": "That is 8. That is 3. That is 16. All the multiples of 4 will also be multiples of 2. Agreed? Basic maths. All the multiples of 4 will be multiples of 2 as well. So, do I need to go ahead and mark 8, 12, 16? I do not because it is a non-prime number. Got it? So, I will not do anything. I will go to the next number which is 5. For 5, is it a prime? It is because it is marked as 1. It did not find any factor before it. So, I will start off with 5 into 2. That is 10. 10 is already marked. 5 into 3 is 15. 15 is already marked. 5 into 4 is 20. 20 is already marked. 20 is already marked. 5 into 5 is 25. That is where I mark it. 0. Perfect. 5 is done. What is the next number? 6. For 6, do I need to go ahead and mark it? No, I do not. Do I need to do anything? Because 6 is not a prime. 6 into 2 is basically 12. That would be marked by someone who marked 6. 6 was marked by 2 and 3 because 2 and 3 both have multiples as 6. So, they would have marked 12 and 6 into 3, 18 as well. 6 into"
+    },
+    {
+      "chunk_id": "L269_C7",
+      "start": 435.84,
+      "end": 503.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=435s",
+      "text": "and 3 both have multiples as 6. So, they would have marked 12 and 6 into 3, 18 as well. 6 into 4, 24 as well. So, I do not need to do anything. Got it? Perfect. Let us go to the next number. 7 is 1. 7 into 2 is 14. So, you can go ahead and mark it. 7 into 3 is 21. You can go ahead and mark it. 7 into 4 is 28. You can go ahead and mark it. All of them were marked. So, you do not do anything and you move ahead. For 8, do I need to do? No. For 9, do I need to do? No. For 10, do I need to do? No. For 11, do I need to do? Yes, because 11 is a prime. So, 11 into 2 is 22. So, you can go ahead and mark 22. 11 into 3 is 33. That is beyond the boundary. So, you stop. Perfect. For 12, no need. For 13, again you can do and you can keep on doing. You can keep on doing. At the end of the day, this is the array that you will be having. At the end of the day, this is the array that you will be having. Right? If I see what numbers are marked as 1. So, 2 is marked as 1. 3 is marked"
+    },
+    {
+      "chunk_id": "L269_C8",
+      "start": 507.28,
+      "end": 584.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=507s",
+      "text": "you will be having. Right? If I see what numbers are marked as 1. So, 2 is marked as 1. 3 is marked as 1. 5 is marked as 1. 7 is marked as 1. 11 is, 13 is, 17 is, 19 is and 29 is and 23. What is 23? Is 23 a prime? Yes, it is a prime. 23 is also marked as 1. So, all of these numbers that are prime till 30 are marked as 1. Apart from that, all the numbers are marked as 0. Very simple. Now, I have an array. I have an array of primes. If I ask you, hey, if 5 is a prime, you will be like, prime of 5 equal to equal to 1. Yes, it is a prime. So, I have a black box that can tell me the answer in big O of 1. But what I need to do is some pre-computation. Some pre-computation is what I need to do. Now, this pre-computation is known as shape of Eratosthenes. Got it? I will write the code. Then, I will try optimizing that as well. The code is very simple. Function which takes n. I will have to print down all the prime numbers till n. So, first of all, we can have a prime array of size n plus 1."
+    },
+    {
+      "chunk_id": "L269_C9",
+      "start": 585.36,
+      "end": 665.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=585s",
+      "text": "down all the prime numbers till n. So, first of all, we can have a prime array of size n plus 1. Please make sure you run a for loop from 2 to n and mark everything as 1. Mark everything as 1. So, that is very simple. You can start off the loop from 2 and you can go on till n and you can say prime of i equal to 1. If you are using C++, you can use Memset for Java. There might be something like that. You can use it as well. So, this is what I will do initially. Done. What is my next job? My next job is to iterate from the number 2 till n. And what do I do? I am saying, hey, if the number is prime, if it is marked as 1, if it is marked as 1, then I go over its multiple and mark all the multiples as 0. That is what I am doing. Okay. So, I am saying, okay, fine. I will start a loop j and that starts from 2 into i and j goes till n because that is the max I need and will it be j++? No, it won't be j++. It will be j plus equal to i. Why? If I take 5, 5 into 2 is 10, 5 into 3 is 15. So, the shift of 5, there is a shift of 5. That is why I am"
+    },
+    {
+      "chunk_id": "L269_C10",
+      "start": 665.36,
+      "end": 738.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=665s",
+      "text": "2 is 10, 5 into 3 is 15. So, the shift of 5, there is a shift of 5. That is why I am doing plus i. That is why I am doing plus i. Got it? Okay, fine. What do I do? I mark all the multiples as 0. That is the thing that I am doing. If it is completed, for loop is completed. I will not be calculating the time complexity because you cannot pinpoint the time complexity of this one. This loop is easy to compute but this one will be varying according to the i so we cannot pinpoint. I will try to optimize this. Is this the most optimal solution? Probably not. But you have your prime ready. You have your prime array ready. So, now in order to print all the prime numbers till n, what you need to do is, you run loop till n and you need to say if prime of i is equal to equal to 1, you just have to print i. So, I have trimmed down, trimmed down the square root of n into big of 1. The only thing I need to do is, make sure this pre-computation is done in the most optimal time possible. So, now I will try to optimize this. Let us try to optimize this. Some observations."
+    },
+    {
+      "chunk_id": "L269_C11",
+      "start": 741.36,
+      "end": 820.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=741s",
+      "text": "in the most optimal time possible. So, now I will try to optimize this. Let us try to optimize this. Some observations. So the first observation, some of, so in order to optimize this, we will have to do some observations. Let us start with the first observation. It is very simple. We started with the first prime 2 and we marked 2 into 2, then 2 into 3, then 2 into 4, then 2 into 5 and so on. For the next prime which is 3, we started marking 3 into 2, 3 into 3, 3 into 4, 3 into 5 and so on. For the next prime 5, we started 5 into 2, 5 into 3, 5 into 4 5 into 5 and so on. For the next prime 7 into 2, 7 into 3, 7 into 4, 7 into 5, 7 into 6 and 7 into 7. Okay. I will tell you one thing. For this 2, it is absolutely okay to start with 2 into 2. But for this 3, I am saying 3 into 2, I am saying 3 into 2. Do I need to do it? Because this is already been marked over here. This 2 would have already marked 3 into 2. Right. So do I need to start from 3 into 2? Doesn't make sense. 3 into 3 is the first number that I start from. 9 and then I go ahead for 12, 12 would be marked"
+    },
+    {
+      "chunk_id": "L269_C12",
+      "start": 820.64,
+      "end": 895.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=820s",
+      "text": "sense. 3 into 3 is the first number that I start from. 9 and then I go ahead for 12, 12 would be marked but that is okay. But if I start from 3 into 3, will it work? It will. Let us look at over here. 5 into 2 would have already been marked by 5 into 2. 2 into 5, 2 into 5. 2 into 5 would have already marked. 3 into 5 would have already been marked here. 5 into 4 which is 20 and 4 is a multiple of 2. So that has already been marked by 2. Okay. So you actually start from 5 into 5 which is 25 and that is the first number you mark. Same with 7. 7 into 2 would have been marked by 2. 3 into 7 by 2 by 5 and by 2 or 3. 42 because this is 42 which would be marked by either 2 or 3. Agreed. So you actually start from 7 into 7. So what I observe is, I don't need to start from 7 into 2. Like basically I don't need to start from i into 2. I can straight away start from i into i. I can straight away start from i into i. Okay perfect. I can straight away start from i into i. I know this. One"
+    },
+    {
+      "chunk_id": "L269_C13",
+      "start": 896.0,
+      "end": 974.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=896s",
+      "text": "straight away start from i into i. Okay perfect. I can straight away start from i into i. I know this. One optimization done. What is the next optimization? If I am starting from i into i, let us take the number as, the number is 30 right. n is 30. At the moment I reach 6, the moment I reach 6, what happens is, i is 6. Okay. And this is false. Fine. After that i is 7 and this is true. What happens to the j loop is, 7 into 7 that is 49. 49 less than 30 is false. So actually you don't mark anything beyond. You don't mark because 7 into 7 would have exceeded your number. Right. So do I need to go till n? I don't need because you have a condition as i into i. The max you need to go is, till square root of 30 that is 5 point something. See if you go till 5, it will work. If you go till 5 it will work because for 5, the inner loop will be 5 into 5 that is 25 and you will mark 25 as 0. So you have"
+    },
+    {
+      "chunk_id": "L269_C14",
+      "start": 976.16,
+      "end": 1051.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=976s",
+      "text": "inner loop will be 5 into 5 that is 25 and you will mark 25 as 0. So you have got it. So you don't need to loop till this. Instead of it you can do square root of n. So you can write the for loop as, for i equal to 2, i into i lesser than n and i plus plus. If you write this, it will be absolutely fine. So you are optimizing and you have optimized a lot. So you might be thinking, okay we are doing a lot of pre-computation but what is the time complexity? First of all, we are running a bigot of n loop in order to mark all the numbers as 1. So that's a bigot of n. This one, I cannot explain you because this is something which is mathematically proven and the time complexity is n logarithmic of log of n. That is the time complexity and it's because it's a prime harmonic series and no one will be asking you to derive the time complexity because it is extremely complicated. So do not get into it. Just remember that the time complexity is n log of log n. It's not log n. It's log of log n. Okay and after that this is another bigot of n. So in order"
+    },
+    {
+      "chunk_id": "L269_C15",
+      "start": 1052.4,
+      "end": 1101.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=g5Fuxn_AvSk&t=1052s",
+      "text": "It's not log n. It's log of log n. Okay and after that this is another bigot of n. So in order to print all the primes till n, the time complexity is bigot of n plus 1. So this is the time complexity of n logarithmic log of n plus bigot of n. Again this is a pseudo code. You will find the C++, Java, Python and JavaScript code given below. You can check it out. And what will be the space complexity? I am using an extra space of bigot of n in order to make sure I create that black box. Got it? So that was it for CWOP, Eratos, Theins. I hope I got that correct. So if you understood everything, please please do consider giving us a like and if you are new to our channel, do consider subscribing to us as well. With this I will be wrapping up this video. Let's meet in some other video. Till then bye bye. Take care."
+    }
+  ]
+}

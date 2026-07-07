@@ -1,0 +1,155 @@
+{
+  "lecture_id": "L033",
+  "lecture_number": 33,
+  "lecture_title": "Count Subarray sum Equals K | Brute - Better -Optimal",
+  "youtube_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA",
+  "chunks": [
+    {
+      "chunk_id": "L033_C1",
+      "start": 0.0,
+      "end": 69.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another video from the Stryver's A2Z DSA course. Just in case you're for the first time here, this is world's most in-depth course when you talk about DS Algo. Why do I say that? 455, this course has 455 modules. By the end of the course, you'll have solved more than 400 plus problems in DS Algo. You can go over the entire internet, you can buy any of the paid courses. None of them will be teaching you DS Algo in such depth. But the thing that I can give you as assurance is, once you complete this entire course, you can create any of the DS Algoron in any company in any part of the world. So till now I have covered till this particular problem and this video I'll be covering this one. But before that, please make sure that you should have seen these two videos like there's one single video. But you should know how to solve these couple of problems because the solution to this particular problem is highly dependent on these couple of problems or this one single video. So please make sure you do watch it. The link will be in the description. So what does the problem state? It's very clear by the name. You have to find me the number of subarrays which gives you a sum K."
+    },
+    {
+      "chunk_id": "L033_C2",
+      "start": 69.36,
+      "end": 137.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=69s",
+      "text": "the problem state? It's very clear by the name. You have to find me the number of subarrays which gives you a sum K. Now what is the definition of a subarray? It means any contiguous part of the array. Very, very important word. Any contiguous part of the array. What does it mean? If I take this, this is a subarray. If I take this, this is a subarray. If I take this portion, this is also a subarray. Now I cannot say one for two, basically one for two. This is not a subarray. Rather, it is a subsequence. So it's very important to understand the definition of subarray is contiguous part of the array. It can be the entire array as well. It can be a single element as well. It can be two elements. It can be three elements. It can be any portion of the array. But it has to be contiguously taken. Got it? Let us take this particular example with K equal to three and try to analyze how many number of subarrays we can get with the sum equal to K. So we're looking for a sum equal to three. So I can say first I will take one and two, which will give me like if I take this one, it will definitely give me the sum as three. Okay. Can I take one, two, three minus three? Yes, I can. Can I take something like three individually? Yes, I can."
+    },
+    {
+      "chunk_id": "L033_C3",
+      "start": 137.48,
+      "end": 209.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=137s",
+      "text": "sum as three. Okay. Can I take one, two, three minus three? Yes, I can. Can I take something like three individually? Yes, I can. Can I take something like two, three minus three, one? Yes, I can. Which is this one. Three, three will go. This will still give me the summation as K. Can I take something as three comma minus three comma one comma one comma one? Yes. Can I take something as one comma one comma one? Yes. So do we see something else? Yes, I do. Something like four comma two comma minus three, which is basically this one. And I also see one more, which is minus three, one, one, one, and then a four, two minus three. Because even if you sum up this one, minus three, this, this will go and then four plus two six minus three, three. So I can see eight subarrays. So for this particular example, there will be exactly eight subarrays, which will give me the sum as three. It's very important to understand subarray means contiguous. What if the question comes up in an interview? What are the first solution that you'll give to the interview? That is definitely the gruesome solution. So what is the extreme main solution that you can think of? It's generate all the subarrays and see how many are giving you some K. So how do you generate all the subarrays? If you carefully observe, this is your first subarray."
+    },
+    {
+      "chunk_id": "L033_C4",
+      "start": 209.88,
+      "end": 277.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=209s",
+      "text": "how many are giving you some K. So how do you generate all the subarrays? If you carefully observe, this is your first subarray. This is your second subarray. This is your third. This is your fourth. This is your fifth. This is your sixth and goes on till the last. Basically it starts with one element, then adds one more, adds one more, adds one more, adds one more and keeps on adding. And then the next starts from two by taking just two, then takes two, three, two, three minus three goes on, goes on, goes on and so on. Next stands up three, takes three, three minus three, then this, then this, then this and keeps on going and eventually you can move this point. So can I say if I put a pointer I over here, initially when I is here, the first subarray is this so I can keep I J here. The next subarray is this so I can move J. The next subarray is this. I can go here. Next subarray is this and similarly I can move J till the last, which basically means J started from here and J went on till the last index, which is N minus one, right? And then what I can do is I can move I over here and I can again say that J will be here and then J will move and eventually J will go till the end."
+    },
+    {
+      "chunk_id": "L033_C5",
+      "start": 277.12,
+      "end": 346.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=277s",
+      "text": "here and I can again say that J will be here and then J will move and eventually J will go till the end. And at the next step I can again move I and J will be here and J will go till the end. So similarly I can keep on moving I till the end, right? So if I have to write, can I say I will always start from zero, I will go till N minus one, rather N and I plus plus and the pole loop will be for J will be right from I till N minus one and I'll go like this. So can I say one thing for sure? If I is here, J is here, the subarray is only this much and if J moves here, the subarray is this. If J moves here, the subarray is this much. So can I surely say that the subarray is from I to J? I definitely can say. So what I get, what I'll do is I'll keep the summation as zero and I'll run a loop K from I to J because I know the subarray is from I to J and I'll say sum equal to sum plus array of K, correct? What this particular loop will do is this will go through the entire subarray and accumulate the sum. Once you have collected the sum outside the pole loop, you can say if sum is equal to"
+    },
+    {
+      "chunk_id": "L033_C6",
+      "start": 346.38,
+      "end": 407.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=346s",
+      "text": "entire subarray and accumulate the sum. Once you have collected the sum outside the pole loop, you can say if sum is equal to equal to K, you do a counter plus plus and this count can be initialized right at the starting. Now this pole loop will end and then this pole loop will end. So eventually this ends here and then this ends here. So what I can say is once you have run the three nested loops, the counter will be storing the number of subarrays with some K. But what is the time complexity? Can I say it's near about big O of N cube? Why? Because you're running near about three loops. It's not exactly N cube but it's somewhere near about N cube because first time it's running for the entire, next it's running for this, next it's running for this. So not exactly N cube but somewhere near about N cube. So obviously the interviewer will not be happy with the N cube and he'll ask you to optimize it and this is when you'll move to the better solution. So what will be the better solution? Let's have some observations. What are we doing over here? We're saying I is here and J is here and the first subarray is this. Then we are moving J to here and we're seeing second subarray is this. Then we're seeing J is here and the third subarray is this."
+    },
+    {
+      "chunk_id": "L033_C7",
+      "start": 407.34,
+      "end": 477.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=407s",
+      "text": "are moving J to here and we're seeing second subarray is this. Then we're seeing J is here and the third subarray is this. Then we're seeing J is over here and the fourth subarray is this. And we're running a pole loop in order to accumulate the sum. But do we actually require the pole loop? Think carefully. Whenever I is here, J is here, what are you doing? You're iterating from I to J and accumulating the sum. Do you need to do that? Because initially the first subarray is having 1. So can I say sum is 1? And when J moves, can I say the second subarray will be 1, 2? So there is only an addition of 2. So just add 2. Then when J moves, then in the third subarray there is just an addition of 3. So add 3. Then when J moves, there is just an addition of minus 3. So just add minus 3. So what you can do is, instead of accumulating the sum by running a loop from I to J, you can say, hey listen, I will not accumulate every time. Instead of that, I'll keep a summation 0 and every time there is an addition, yes, just a second, every time there's an addition, I will just add that number. Because I know initially this much, then 2 will get added, then 3, then minus 3, then 1. So every time the number gets added."
+    },
+    {
+      "chunk_id": "L033_C8",
+      "start": 477.92,
+      "end": 547.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=477s",
+      "text": "I know initially this much, then 2 will get added, then 3, then minus 3, then 1. So every time the number gets added. So every time, instead of accumulating separately by running a loop, you can directly add it and then you can check. So I have decreased the inner loop. What is the time complexity? Somewhere near about big O of n square. Somewhere near about big O of n square. Are we using some extra space? No. But the interviewer will not be happy with the big O of n square and he'll ask you to optimize it. This is when you'll move to the optimal one. So it's time to discuss the most optimal solution. The most optimal solution will be using the concept of prefix sum. In case you don't know about it, I've already explained it in depth in this particular video. I'll be leaving the video link in the description. Watch this particular video, go back and watch it and then you can come back over. So what is the concept of prefix sum? Let's understand that. So assume I say I'll go till this particular element and if I ask you what is the summation of all the prefix elements? So basically 1 plus 2, 3 plus 3, 6 minus 3, 3, 4, 5, 6. So I can say the prefix summation is 6. And can I say the summation of these three elements is 3? I can."
+    },
+    {
+      "chunk_id": "L033_C9",
+      "start": 547.0,
+      "end": 625.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=547s",
+      "text": "6. So I can say the prefix summation is 6. And can I say the summation of these three elements is 3? I can. I can say that the summation of these three elements are 3. And if I ask you what is the sum of these elements, the remaining elements, please do not add it up. Please do not add up single elements. I'm just asking you as a normal maths. If the total summation is 6 and this one's sum is 3, how much will this be? 3 because this minus this will give you 3. And this is the concept that I'll be using. So what I'll try to look forward is I know till a particular, till a particular index, we will have a prefix sum as x, assume. And I know I'm looking for, I know I'm looking for a subarray with some k. So what is the remaining portion? What will be the sum of the remaining portion? Can I say it will be x minus k? I can because if the prefix sum till here is x and probably there is a subarray, probably. Like over here there was a subarray. Over here there was a subarray. That's why the sum, the sum came as 3. What if there is a subarray whose sum is k? Then in the backward, there will always be a prefix sum."
+    },
+    {
+      "chunk_id": "L033_C10",
+      "start": 625.88,
+      "end": 705.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=625s",
+      "text": "as 3. What if there is a subarray whose sum is k? Then in the backward, there will always be a prefix sum. There will always be a prefix sum till here, which will have a summation of x minus k. Till here, the prefix sum will always be x minus k. Similarly, if I have to visualize it again, can I say this, if I just rub it off, can I say this? Till here also the summation is 3. Thereby these two elements will also give you how much? 6 minus 3, which is 3. Agreed? What did you observe? You observed one thing. The total summation was 6 and there was, I was looking for 3. I was looking for 3. Because we were looking for a subarray which ends at this index. We are looking for a subarray which ends at this index. And apparently over here, there was one which was ending over here and there was other one which was ending over here. So if there are two subarrays which are ending at here with a summation of 3, if there are two subarrays which is ending at here with a summation of 3, can I say there will be two subarrays, there will be two prefix sum of x minus k? I can. We had till here 3. We had till here 3. I can."
+    },
+    {
+      "chunk_id": "L033_C11",
+      "start": 705.1,
+      "end": 777.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=705s",
+      "text": "will be two prefix sum of x minus k? I can. We had till here 3. We had till here 3. I can. Right? Because there was 2, because there was 2, so in the backward, there will also be 2, there will also be 2 with the same sum, with the same sum. So can I say if I am looking for k over here, so instead of looking for k because it's somewhere in the middle, I will look for prefix sum. How many are x minus k? How many are x minus k? Like in this case, let's again go back. Like in this case, what did we see? We had 3. But instead of looking for 3, if I just erase it off, and this is 3. So basically what I am saying is, till here the prefix sum was 3 and till here the prefix sum was 3. So I know there was 6 and I was looking for 3. So in the backward, there was 2 elements with 3, there was 2 elements with 6 minus k, there were 2 sub prefix with 6 minus k. That means, that means there will be 2 subarrays. One is this and the other one is this. This is the reverse engineering. We just did the reverse engineering. What did we say?"
+    },
+    {
+      "chunk_id": "L033_C12",
+      "start": 777.92,
+      "end": 856.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=777s",
+      "text": "this and the other one is this. This is the reverse engineering. We just did the reverse engineering. What did we say? We said, if till a point the prefix sum is s and I am looking for k, so in order to figure out how many k are there, I will look out how many s minus k are there. How many s minus k? The number of s minus k will be equivalent to the number of k. Over here, 3, 1, 2. So equivalent. If you take this, this will be the other subarray. If you take this, this will be the other subarray. So I did look in the opposite direction. Why did I look in the opposite direction? Because we can easily store the prefix sum. We can easily store the prefix sum. But we cannot find out between sum. That's not possible. That is why. And I hope you kind of got the intuition. In case you did not, do not worry about it. The moment I do the dry run, everything will get crystal clear. So let us quickly do a dry run on the algorithm. So what are the data structures that we require? So if you remember, till here, we had a prefix sum as s and we were looking for a subarray with some k. So previously I was looking for if there is an occurrence of s minus k, if you remember properly."
+    },
+    {
+      "chunk_id": "L033_C13",
+      "start": 856.24,
+      "end": 925.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=856s",
+      "text": "a subarray with some k. So previously I was looking for if there is an occurrence of s minus k, if you remember properly. And that means we are looking for was there a prefix sum. We were looking for did it happen in the past. So what better than a hash map. So we will be using a data structure as hash map, which will be storing prefix sum, how many times it occurred and that will be count. Why and everything you'll understand as you move forward in the dry run. And we will take two variables, one that keeps a track of what is the prefix sum, the other that keeps a track of the number of subarrays. So initially the prefix sum is zero. So please make sure you enter zero as one saying is a prefix sum of zero and count as one. Why? Because when we started, we did not pick up anyone and you'll understand the significance of zero as we move forward. So initially we will be standing at one. So let's add it to the prefix sum as one. So what are we saying? We have some elements that gives us a prefix sum of one. So in that some elements, we will look for a subarray that ends at this index with a summation of k. So the previous, there must be some previous elements which can be excluded who has a sum of s minus k."
+    },
+    {
+      "chunk_id": "L033_C14",
+      "start": 925.44,
+      "end": 997.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=925s",
+      "text": "summation of k. So the previous, there must be some previous elements which can be excluded who has a sum of s minus k. Agreed because if this is s and if I'm looking for k, the excluded people should be s minus k, which is one minus three, that is minus two. Do we have a minus two? Do we have any previous elements that gives me prefix sum minus two? No, so not possible. Next take one and put it as one comma one. So there is a prefix sum of one that occurs once. Perfect. Let's move ahead. So we have a two. We have a two. Now, if we have a two, we add it to the prefix sum saying we have a summation of three. What are we saying? We are saying there are some elements which gives me a sum as three. I'm looking for some elements which ends at this particular index who gives me a sum of k. So I need to exclude elements with a summation of s minus k, then only I'll get k. So what is s three? So I need to exclude elements which gives me a summation of zero. That means no elements. That's why storing the zero has significance. Got it? So the called will increase by one because there's one. So there can be one prefix sum which on removal will give me this one. So done."
+    },
+    {
+      "chunk_id": "L033_C15",
+      "start": 997.1,
+      "end": 1070.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=997s",
+      "text": "will increase by one because there's one. So there can be one prefix sum which on removal will give me this one. So done. Next, please take three and put it over here. Let's move. We have a three again. Let's add it up. Six. So this time we have a summation of six and we are looking for k equal to three. So we have to remove s minus k. If you remove elements with sum up s minus k. So what is s six? What is k? So if you remove prefix sum three, so that is, yeah, we got it. We got it once. That is very eminent because if you remove this, you'll just have this one. So this is why this works. Thereby since three occurs once, the count will increase by one and six will go as one. Perfect. Let's move ahead. The moment you move ahead, there's a minus three. Take this minus three, add it up. What do you get? Three. And if you're getting three, this is the moment you start again looking forward. You are like total three looking for three. How many? Exclude anyone who gives you a summation of zero. Exclude anyone who gives you a summation of zero. And we just have one, which are exclusion gives me a summation of zero, which is no one. So thereby, so there's only one addition. Perfect. And there's three. Increase the count."
+    },
+    {
+      "chunk_id": "L033_C16",
+      "start": 1070.14,
+      "end": 1141.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=1070s",
+      "text": "gives me a summation of zero, which is no one. So thereby, so there's only one addition. Perfect. And there's three. Increase the count. Do not put it into the hash map. Increase the count. Next move. We have a one. So summation increases to four. What are we looking for? We're looking for four and we know we are looking for k equal to three. So you're looking for s minus k, which is four minus three, which is one. And we have it. We have it, which is this single element. If you exclude this single element, these elements will give you some area with some k it will. So there's one element increase and store four comma one. Let's move. We have a five. This time we have a five. If you have a five, you're looking to remove how much elements which give you some three. Do we have to, do we have to know nothing to be done? Just take five, including the hash map and move it. You have six, very important point. You have six, you know, you will be requiring three. So you have to remove elements which will give you summation of three. And there are two occurrences. If you see, there are two occurrences. If you remove this, this gives you summation of three. If you remove this, this also gives you a summation of three. So there are two occurrences. This is why I was storing count."
+    },
+    {
+      "chunk_id": "L033_C17",
+      "start": 1141.38,
+      "end": 1209.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=1141s",
+      "text": "If you remove this, this also gives you a summation of three. So there are two occurrences. This is why I was storing count. So there are two occurrences which on removal can give you this particular sum and then you will be ending up with three. So add up to six sub-arrays found. So for six, I've added the number of sub-arrays. What is the next time? Add one. So six will be added over here. Please make sure add six over here instead of adding it again into the hash. Let's move forward. We have a four, 10. If we have a 10, we are looking for three. So we have to remove seven. Do we have a seven? No, we don't have a seven. Not to be done. Put up 10 and move forward. So we have a 12 now. What do we have? 12, we are looking for three. We have to remove something of nine. Do we have a nine? Do we have a nine? No. 12 comma one. Next, move ahead. You have to remove, you have to add minus three. So it's nine. So in addition of minus three, you get nine. So it's basically you have a nine and you're looking for three. So the remaining is six. You have to remove elements who are giving you a summation of six and it occurs twice. Once here, once here, it's basically once you remove this, this sub-array also gives"
+    },
+    {
+      "chunk_id": "L033_C18",
+      "start": 1209.18,
+      "end": 1284.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=1209s",
+      "text": "giving you a summation of six and it occurs twice. Once here, once here, it's basically once you remove this, this sub-array also gives you a summation of three. Even if you remove everyone, this also gives you a summation of six. Thereby two more occurrences. Go ahead and add it up. Once you have done this, put it into the one and your iteration is over. Once your iteration is over, the count will be storing your answer. This is why I said storing of count is very, very important and also storing of zero is also very, very high significance. And if you want to know why, I'll just give you a shuttle example. You can try it out at your home. So take this example, three minus three, one, one, one. Okay. Take this example and you will see what will happen if you do not store zero. So please try out this example, do a trial and you'll understand why storing zero is very, very important. Got it? So the entire logic is super simple, isn't it? You have a prefix sum, which is the entire sum till a particular index and you are looking for K. So you'll just look for how many times S minus K appeared and that will be the number of sub-arrays that ends at this particular index. That is what the intuition was. So let's quickly go back to the code editor and try to code it up again."
+    },
+    {
+      "chunk_id": "L033_C19",
+      "start": 1284.78,
+      "end": 1350.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=1284s",
+      "text": "particular index. That is what the intuition was. So let's quickly go back to the code editor and try to code it up again. You can find the problem link in the description. Please make sure you try out the problem from the link in the description. So we will take a map and you can also take an unordered map. And initially I will say map of zero is equal to one. Let's store a prefix sum as zero and let's store a count as zero. And at the end of the day, we will return the count. Let's not quickly start the iteration. So we will iterate throughout the array. So this is how we will iterate. And we will say prefix sum plus equal to array of i every time I get in. And what am I looking for? What am I looking to remove if I ask you on the backwards? What will I look for remove? It's very simple. I'll try to remove this one. So it's basically stating if I can get, how many are there with this removals? Like how many initial prefix sums are there which can be removed? And that will be my count of sub-arrays. And before going ahead, what I'll say is MPB prefix sum. Can you just update yourself in the hash map? Once this is done, I can just return it and that will be it."
+    },
+    {
+      "chunk_id": "L033_C20",
+      "start": 1350.66,
+      "end": 1412.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=1350s",
+      "text": "Can you just update yourself in the hash map? Once this is done, I can just return it and that will be it. It's highly a four line code and it solves the entire problem. So much of logic, but four lines of code. So what will be the time complexity? I can say we are linearly iterating on the array. That is going to take a big O of N and for the unordered map, we know the average case is big O of one. Yeah, the worst case in case of collisions can be big O of N. So depending on that, you can explain to the interviewer that if we take the simple map, it will be logarithmic of N. If you take unordered map, the best in the average will be big O of one for map, but the worst might be big O of N. So depending on what complexity you assume for the map, the logarithmic thing will alter. So that will be the time complexity. What about the space complexity? We're using a map to store all the prefix sums. So the worst case, all the prefix sums can be different and we might end up storing N prefix sums. So that will be the space complexity. This will be the time complexity and we cannot do anything better than that. So going back to the sheet, I can say that this particular problem is completed with this."
+    },
+    {
+      "chunk_id": "L033_C21",
+      "start": 1412.38,
+      "end": 1439.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=xvNwoz-ufXA&t=1412s",
+      "text": "we cannot do anything better than that. So going back to the sheet, I can say that this particular problem is completed with this. We wrap up the medium section of arrays as well. I hope you've understood all the three approaches just in case you did. Please, please consider giving us that like because it won't cost you anything, but that will motivate me a lot to make these kind of videos. And if you're new to our channel, what are you waiting for? Hit that subscribe button and to continue our tradition, please make sure you do comment understood and if you haven't followed me on Instagram, Twitter and LinkedIn, all the IDs will be in the description. With this, I'll be wrapping up this video. Let's finish some of the video. Till then bye bye, take care."
+    }
+  ]
+}

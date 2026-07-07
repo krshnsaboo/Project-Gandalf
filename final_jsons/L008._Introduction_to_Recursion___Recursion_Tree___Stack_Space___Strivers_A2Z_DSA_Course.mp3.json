@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L008",
+  "lecture_number": 8,
+  "lecture_title": "Re 1. Introduction to Recursion | Recursion Tree | Stack Space | Strivers A2Z DSA Course",
+  "youtube_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE",
+  "chunks": [
+    {
+      "chunk_id": "L008_C1",
+      "start": 0.0,
+      "end": 74.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=0s",
+      "text": "So before starting this video, I'd love to thank the sponsor of this video which is CodeStudio. Now if you are willing to practice interview problems topic wise, this is the place where you should look for because CodeStudio has over 2000 plus problems and has all the problem solution in C++, Java as well as Python. If you're looking for a guided path, then you can find for Python, for DBMS, for object-oriented programming, operating system, computer networks, system design, web development, any other thing that you're looking for, you'll find guided paths for every other thing over here. Also, if you're looking for any top company questions, let's say if you have an interview at Amazon, if you're looking for Amazon questions, you can get all the top Amazon coding questions via tag and all the solutions in C++, Java as well as Python. Also, if you have an interview schedule, you can read their interview experiences where there are 600 plus interview experiences from companies like Amazon, Microsoft, Adobe, Google, etc. So what are you waiting for? CodeStudio has a lot of free resources for interview preparation. The link will be in the description. Make sure you check it out. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. Precaution. Yes. One of the toughest topics for the beginners is what I'm going to start today."
+    },
+    {
+      "chunk_id": "L008_C2",
+      "start": 74.64,
+      "end": 149.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=74s",
+      "text": "you guys are doing extremely well. Precaution. Yes. One of the toughest topics for the beginners is what I'm going to start today. So it's going to be an entire playlist. Do you need to know any prerequisites? Yes, there is a slight prerequisite. You should be knowing what is a function. Yes. What is a function? Like how do you write a function to add two numbers? You should be knowing that much. If you know how to write a function to add two numbers, that is more than enough to watch this playlist. Will this playlist be in C++ or in Java? Doesn't matter. Just watch this because I'm going to write pseudocodes and I'm going to write, I'm going to explain the entire concept. So language will not matter. C++, Java, Python doesn't matter. Okay. So to start off with, what is a recursion? Let's read the first line. When a function calls itself, very important. When a function calls itself, that means if I'm writing this function and inside that, this function, inside this function, there is this function being called again. So this is what is the definition of the first line. So in order to understand this first line in depth, how does it work and everything, let's take a super quick example to print one using a function, like using a recursive function. And once you've understood how recursion works,"
+    },
+    {
+      "chunk_id": "L008_C3",
+      "start": 149.28,
+      "end": 227.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=149s",
+      "text": "take a super quick example to print one using a function, like using a recursive function. And once you've understood how recursion works, then we can understand the second line, which states until a specified condition is met. So generally there is a main, if you're using Java, there's a public static void main. If you're using C++, it's an int main. So if there's a main and I'm saying a function, let's assume I write the function as f. This is what I'm calling. And the f function is a void f function, which says, hey, can you please print one. In C++, it's going to be cout. In Java, it's going to be system.out.println. And I call the same function again. So how does the program run? First, the program comes to the int main, the execution. Then it comes to the f. And whenever you're calling the function, it straight away goes and calls this function void f. So I'm going and calling this function void f. And the void f goes and prints this line one. Yes, it executes this line one. So I can say, if I'm having an output screen, on that output screen at this moment, one will be printed. After this, this line is executed, which states calling of the function, like calling of the"
+    },
+    {
+      "chunk_id": "L008_C4",
+      "start": 227.92,
+      "end": 306.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=227s",
+      "text": "this moment, one will be printed. After this, this line is executed, which states calling of the function, like calling of the self function f. So how will this work? Will it again call back like this or how will it work? It eventually calls back the same function. But in order to understand in a much better way, what I'll do is, I know if I just write it over here, there's a problem. So I'll just create a replica of this function and I'll write it over here. So I'm calling the replica of the function print one and again f. So this f again calls the same function. So basically it calls the same function again, because this function is in your memory. So it calls the same function again. And again, this first line, yes, again, this first line is executed. So again, there will be an output of one. And again, after this, this particular line will be executed. So how will this particular line get executed? It again calls the same function in memory. So if I write down the f function again, print one, f again. So this f will now go and call it. Perfect. So again, this line will be executed, print one. So again, you print it one. And again, this line will be executed, which again calls one more, same function in the memory, which is"
+    },
+    {
+      "chunk_id": "L008_C5",
+      "start": 306.32,
+      "end": 379.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=306s",
+      "text": "you print it one. And again, this line will be executed, which again calls one more, same function in the memory, which is avoid f. And again, it prints one. And after that again, calls f. So this, if you write the program, this keeps on going for every day. Why? Because there is no stop condition. Yes, there is not a condition where you say, okay, wait, no more going to call me again and again and again. There is no such condition. Thereby, if I keep on writing, if I keep on writing, this will keep like, sorry, this will keep calling someone. Again, this will keep calling someone. Again, this will keep calling someone. And this will keep on going forever. So it's a non-ending recursion, or I can say an infinite recursion, because you're calling the function again and again and again. And there is no specified condition mentioned where you say that, hey, listen, now you're going to stop. If there is no specified condition mentioned, it's going to fall under an infinite recursion, goes in calling, goes in calling. So if I show you this in my code editor, by the way, this is a sublime text editor that I use. If you want to use the same format, you can watch my video, how to install a sublime text. So this is for sublime text."
+    },
+    {
+      "chunk_id": "L008_C6",
+      "start": 379.44,
+      "end": 454.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=379s",
+      "text": "want to use the same format, you can watch my video, how to install a sublime text. So this is for sublime text. This is the int main. You can write it in Java as well. Print. Print is calling c out of one, which is again a print statement. And again, print. So if I run this, if I just have a run on this, what will happen is it will print unlimited once till it runs out of memory and throws a segmentation for it. Because it just, see, it did print so much, but after this, it did run out of memory because the program cannot keep on running, keep on running. So this is what we call as stack overflow. What is stack overflow? Let's understand. Let's come back to the code. So if I show you the code, this was the main, correct? This was your main and this main called this F, right? This main called this F. And after this, this F called this guy. So this F is not yet completed. This function call is not yet completed. So it will be waiting in the memory, correct? So the wait, so there is a stack. Yes, there is a stack. You don't need to know any specific"
+    },
+    {
+      "chunk_id": "L008_C7",
+      "start": 454.4,
+      "end": 533.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=454s",
+      "text": "correct? So the wait, so there is a stack. Yes, there is a stack. You don't need to know any specific definition of stack. Just, you can just take it as a thumb rule. There is a stack. Whenever you read data stream algorithms in the next chapters, you'll understand what is the stack, but let's understand. This function call, yes, this function call calls this F, which indirectly calls this. So this function call is waiting. Why? Because this function call has called this. So this will wait. Where does this function call wait? I can say this function call waits in line number two because the line number two has been called and it is waiting. Now this function call is called, over here you're calling this guy. If you see you're calling this guy. So apparently another function call with line number two is waiting. Now this function call is called, again this guy is called. So another function call at line number two is waiting. So if you just keep on calling them, yes, if you just keep on calling them again and again and again, so these particular function calls will be waiting in memory, will be waiting in memory because they are yet not completed. Now when do you call a function to be computed? If the last line has been successfully executed, but this has not been because, because this call this guy, hence the last line has not been"
+    },
+    {
+      "chunk_id": "L008_C8",
+      "start": 533.2,
+      "end": 612.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=533s",
+      "text": "last line has been successfully executed, but this has not been because, because this call this guy, hence the last line has not been completely executed. So this is the wait. This wait is what we call a stack overflow. Now remember, if you keep on calling, if you keep on calling, like in the example, in the sublime text, you kept on calling, it went print one, print one, print one. And at the end, it stopped at five, two, three, zero, three, seven, like it's, it's a compiler independent. So in some compilers, it might go beyond that. So it did stop. Why? Because this particular stack space would be keeping F, yes, it would be keeping another F, would be keeping another F, would be keeping another F, but this has a specific memory. It cannot just keep on, keep on compiling up a lot of function calls because these function calls are yet not completed. So it cannot just keep on piling up in the memory. So that is when the segmentation fault happens. And it's commonly known as stack overflow. When there is numerous function calls waiting due to recursion, because you call the recursion. So one function call was waiting, you got another, you got another, you got another. So it kept on waiting. This is what we call as stack overflow. Got it? So this is why infinite recursions are not written because, because you'll end up having stack overflow."
+    },
+    {
+      "chunk_id": "L008_C9",
+      "start": 612.72,
+      "end": 688.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=612s",
+      "text": "we call as stack overflow. Got it? So this is why infinite recursions are not written because, because you'll end up having stack overflow. And this is the stack space, like these function calls are waiting. So in short, this is the definition of the first line definition, when a function call calls itself. I hope you have understood how the function call calls itself. Now we are going to understand until a specified condition is met. What does this mean? Now, if you carefully observe, we call this, then this guy called this, then this guy called this, then this guy, this guy called this, then again, this guy called this, then this, it will keep on going. But there has to be a condition where you stop calling. That condition is something which is known as base condition. Yes, base condition. So let's quickly write down the function. So assume I'm writing an F, and just assume there is a global variable, I've kept it as count equal to zero, a global variable. And over here, I'm writing print count, and I'm doing a counter plus plus, and I'm calling the function. Now, if I keep on doing counter plus plus, what will this function like? I've already told you, from the main, if I call this function, what will happen?"
+    },
+    {
+      "chunk_id": "L008_C10",
+      "start": 691.2,
+      "end": 765.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=691s",
+      "text": "plus plus, what will this function like? I've already told you, from the main, if I call this function, what will happen? Can you think what will happen? Yes, I think you can. This function call will ultimately call this guy, then the print of count will happen. And what's the value of count? Initially zero. So the output screen will print zero. The output screen will print zero. Next counter plus plus will happen. So the counter value will change to one. And after this, this function will again be called to F of zero. And again, print of count will be called, but this time counter value is one. So one will be printed. Again, you'll do a counter plus plus. So counter is increased to two. Again, you'll call this function. And again, this will call someone else. So it keeps on going like this, and you'll be doing print count, counter plus plus again, and again F. So you keep on doing, and again, print of count will print the next two, counter plus plus will make it three. And again, this will call, this will keep on going. Now you need to stop it somewhere. So the condition that you use to stop it is known as the Bayes condition. Yes. The condition that you use to say that, hey, listen, you're no more going to call it. You're going to stop."
+    },
+    {
+      "chunk_id": "L008_C11",
+      "start": 766.48,
+      "end": 843.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=766s",
+      "text": "condition. Yes. The condition that you use to say that, hey, listen, you're no more going to call it. You're going to stop. So as you might say that we're going to print only up till three. As I'm saying, you are going to only print up till three. So how will you modify it? So you'll basically say function, let's understand how this works. Right at the starting, right at the starting of the function, you're going to say, initially the count is zero. You're going to say, if count is equal to equal to four, I am going to return. I'm going to return. I'll explain you this as well. I'm going to return one. Else I'm going to print count. I'm going to do a counter plus plus, and I'm going to call the function. And in the main, yes, in the main, I'm going to call this function. So if I ask, how will this work? Let's understand. So let's first keep the output screen. Let's see how this works. So I'm saying function, this function is called by a main. So it goes and calls this particular function. What's the first line? Counter is equal to equal to four. Is it? Counter is zero. So counter is not equal to equal to four. Perfect. Next goes to the next line,"
+    },
+    {
+      "chunk_id": "L008_C12",
+      "start": 843.04,
+      "end": 922.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=843s",
+      "text": "four. Is it? Counter is zero. So counter is not equal to equal to four. Perfect. Next goes to the next line, which says print count. What's the value of count? The value of count is zero. So you print zero. Correct. Next counter plus plus. That means counter becomes one. This line is executed. Next function has been called. So in the stack space, this function will be awaiting. This function will await in the stack space. So in the stack space, this function, which is the line number, line number one, two, three, four, five. In line number five, this function awaits. Why? Because it goes and again calls the same function in the memory, which this time checks is count equal to equal to four and then returns. Print again the same thing. Count. Counter plus plus. F. This time is count equal to equal to four. No. Print count. Count's value is one. So to make things simpler, let's keep count as two so that we don't have to print a lot of times. Or count as three. Count as three. Let's keep count as three so that we don't have to print a lot of times. So counter is printed. Again, counter plus plus. So this line has been executed. Function has been"
+    },
+    {
+      "chunk_id": "L008_C13",
+      "start": 922.56,
+      "end": 998.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=922s",
+      "text": "a lot of times. So counter is printed. Again, counter plus plus. So this line has been executed. Function has been called. So the moment you call the function, this guy, yes, this guy goes into the stack space. Saying that, okay, another function call at line number five awaits to be completed. So you again go and say F of if counter is equal to equal to three. Is it? Counter is two. So it's not. So this line is still not executed. You will print counter. Then you will do a counter plus plus. So print counter will be executed. Print. Counter plus plus makes it three. And then again, you'll call the function. Okay. Now this guy will again go into the stack space saying I'm still awaited. I'm still awaited to be completed. And this time, this function call will again call some other function. But this moment, counter equal to equal to three and counter is, if you carefully observe, counter is indeed, yes, counter is indeed three. Counter is indeed three. So you can say that this line, yes, this line will be executed and you will say return and you will say return. Thereby,"
+    },
+    {
+      "chunk_id": "L008_C14",
+      "start": 998.4,
+      "end": 1077.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=998s",
+      "text": "that this line, yes, this line will be executed and you will say return and you will say return. Thereby, all these lines, like all these lines will not be executed. All these next three lines will not be executed. And the moment you return, this function is terminated. Remember, if you're writing a return statement inside a function, the function gets terminated then in there. So this says, okay, I'm over. I'm over. So this function called, called this, but this is over. Now, the moment you come over here, this guy gets out of the stack space saying, okay, it's time to be executed. So this line is over now. And this time it comes over here and now it goes back. Why? Because the function call is over. If the function call is over, you can directly go back. Next, it comes over here again. You can say this is done. Again, goes back because this function call is again over. Now this is also completed, goes back to the F and this line gets completed. So this is at the end completed. So what happened was you called, called, called, called. This guy said, I'm over. Went back, went back, went back. This is what we call as a specified"
+    },
+    {
+      "chunk_id": "L008_C15",
+      "start": 1077.2,
+      "end": 1151.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=1077s",
+      "text": "called, called. This guy said, I'm over. Went back, went back, went back. This is what we call as a specified condition because you specified that counter has to be three only till then keep calling, keep calling. The moment the counter was three, if you carefully observe over here, the moment the counter was three, you said stop and return. You stopped it. You no more call this function line because you stopped. And due to that stoppage, the other guys also completed their function calls. And this time there was no stack overflow because you did not call any further than three recursion calls. So this stop condition is what we call as base condition. Now remember, there can be a single base condition. There can be a multiple base condition. I'll be talking about all of them in the upcoming video, but I am assuming you have understood the entire stuff. I'll try to code this up. So if you see the code, now this time, what we will do is we'll keep a counter variable as a zero. And what we are doing is we are printing count and we have something like count is equal to equal to three, then you can simply return. Or else you can see out count and do a counter plus plus. This was the code. Now let's run it this time. So if"
+    },
+    {
+      "chunk_id": "L008_C16",
+      "start": 1151.52,
+      "end": 1229.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=1151s",
+      "text": "you can see out count and do a counter plus plus. This was the code. Now let's run it this time. So if I run it this time, you'll see this zero one two being printed because print went on and call the functions. And this is the simple dry run. Now, what is the recursion tree? Now there's something in recursion, which you'll be hearing a lot recursion tree. Now, if you carefully observe in order to explain you, I wrote the entire function, then I again wrote the entire function, then I again wrote the entire function, then I again wrote the entire function, but will someone do this every now and then? No. So this is basically truncated into a very simple thing. What we call is a recursion tree. So basically I'll say the first function was called, which is specifically a which is specifically this guy and then this guy called F. So this guy again called F. Then this guy again called F. And then this guy again called F. So again called F, but this guy returned this guy. If you can really observe this guy returned. So what you'll do is you'll return. So you went, you went, you went and you returned"
+    },
+    {
+      "chunk_id": "L008_C17",
+      "start": 1229.36,
+      "end": 1307.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=1229s",
+      "text": "observe this guy returned. So what you'll do is you'll return. So you went, you went, you went and you returned and you returned and you returned. So instead of writing the entire function, we basically represent them in terms of F. And that is what we call as recursion tree. We'll be talking about depth and recursion tree. I'll be doing a lot more problems. So you'll understand what is the concept of recursion tree. So basically the same function call is what I've represented in a smaller representation. And that is what we call as recursion tree. So in order to summarize the class, I hope you have understood everything. Like what is a recursion, like calling the function within itself, infinite recursion. After that, you have understood what is a base case. The moment you say that, Hey, listen, you are not going to perform the below lines. You go back. There's no more, no more recursion being called go back. So that is what the base cases. You also understood what is a stack overflow or stack space stack space is the space where the remaining non-executed functions, like non-completed functions rather, because this function, this guy was called. So this function was yet to be completed. So stack space stores yet to be completed once. And there is something which is known as recursion tree. It's basically"
+    },
+    {
+      "chunk_id": "L008_C18",
+      "start": 1307.92,
+      "end": 1356.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=yVdKa8dnKiE&t=1307s",
+      "text": "be completed. So stack space stores yet to be completed once. And there is something which is known as recursion tree. It's basically the diagram in which the function calls someone, then that guy calls someone. It's basically a shorter version of the diagrammatic explanation that I gave you. So I hope you have understood all these three things. Okay. So in the next video, I'll be doing a couple, I think three or four problems. I'll be learning recursion in more depth. So just in case you have understood recursion in entire depth, like the theory concept, please, please, please make sure you like this video. And if you're new to our channel, please do consider subscribing. And yes, if you haven't yet checked our Stryver's SD sheet, the link will be in the description. Please check it out because a lot of people are getting placed using that particular SD sheet. And yeah, with this, I'll be wrapping up this video. Let's meet in the next one, where we will be solving some problems from recursion. Bye-bye. Take care."
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "lecture_id": "L197",
+  "lecture_number": 197,
+  "lecture_title": "Dp 16. Partition A Set Into Two Subsets With Minimum Absolute Sum Difference | DP on Subsequences",
+  "youtube_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc",
+  "chunks": [
+    {
+      "chunk_id": "L197_C1",
+      "start": 0.0,
+      "end": 74.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving DP 16 and the prerequisite to this DP 16 is you must have seen the DP 14 which is the subset sum problem because this problem will entirely be solved with the idea of subset sum. So let's check out the question. So the question says partition a set into two subsets such that the difference of subset sums is minimum. So a given an array containing n non-negative integers, again very important, it has all non-negative integers. Your task is to partition that array into two subsets. So basically subset one and subset two such that the absolute difference between both of the subset sums is as minimal as possible. Your task is to find the minimum absolute difference considering any valid division of array elements. So let's quickly check out an example. So if we see this example one, two, three, four, let's discuss over here. So if I take this example one, two, three, four, what are the different kinds of subsets that you can divide it into? So"
+    },
+    {
+      "chunk_id": "L197_C2",
+      "start": 74.78,
+      "end": 148.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=74s",
+      "text": "example one, two, three, four, what are the different kinds of subsets that you can divide it into? So you can say one of the subsets is one, two, the other subsets is three, four, and the summation of this guy will be three and the summation of this guy is seven and the absolute difference is seven minus three and that's four. So this can be one of the partitions or you can say the other partition is one, three and two, four. When you say one, three belong to a subset and two, four belong to a subset. So the summation is six over here and the summation is four. So six minus four is equal to two. Similarly, there can be a lot of different patterns, different partitions rather not patterns. So I can be like, okay, can I divide this into something where we have one and four and the other place we have two and three. So again, make sense. And this time the summation over here will be five and the summation over here will be five. So five minus five will be zero. And if you carefully see, this is the minimal difference that you can obtain by dividing them into a couple of partitions. So in short, you will be given an array. If you take all the elements and you put some elements in a subset one and you put some elements in a subset"
+    },
+    {
+      "chunk_id": "L197_C3",
+      "start": 148.54,
+      "end": 221.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=148s",
+      "text": "array. If you take all the elements and you put some elements in a subset one and you put some elements in a subset two and the subset one, some assume it to be some one and the subset two, some assume to be some two. So the absolute of this is as minimal as possible. This is what the question states. Now, how do you solve this question? Because this is something different than what we have been doing. What have we done till now? We have done a lecture 14. Yes, we have done a lecture 14. Over there, what have we discussed? We have discussed a given an array is given an array and I will give you a target. And your task is to tell me if this target, if there is a subset, if there is a subset whose sum is equal to this target. So you are given an array. We have already done a problem where we have to tell is there a subset which is equivalent to the given some target. And if you remember what concept did we use? We use the concept of pick and non-pick or take or non-take the concept that we used. So if you remember the reference, it was something like this. We wrote int index, then"
+    },
+    {
+      "chunk_id": "L197_C4",
+      "start": 221.86,
+      "end": 301.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=221s",
+      "text": "non-take the concept that we used. So if you remember the reference, it was something like this. We wrote int index, then we wrote the target. Then it was something like if at any moment the target is achieved, we will return a true. And if the index reaches equal to equal to zero, that means basically we started from F of n minus one and with the given target, if you remember well, and over here we returned array of zero is equal to equal to the remaining target. Because if we are standing at the last element and some target is yet to be achieved, then the array has to, the array of zeroth index has to have that target. So you remember these were the couple of base cases. Then we wrote a non-take case where it was like we will move to the previous index with a similar target. And similarly, we wrote a take case which was initially false. And we can only take the array of index into our subsequence if that's lesser than equal to target. And over here we said take will be, if we take it, it's index minus one and target minus array of index. So I hope you remember this recurrence. And at the end of the day we said take and non-take. So that was a quick revision."
+    },
+    {
+      "chunk_id": "L197_C5",
+      "start": 301.42,
+      "end": 375.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=301s",
+      "text": "hope you remember this recurrence. And at the end of the day we said take and non-take. So that was a quick revision. So we have done this problem and we will be using this problems concept only to solve the given problem. So let's forget about the current problem and let's analyze this recurrence relationship. So what did we do on this recurrence relationship? We did apply something as a memoiation, right? And what after memoiation? After memoiation, you went on to write the tabulation if you remember. And how was the tabulation written? The tabulation clearly stated that, Hey listen, if the target is equal to equal to zero, then over here the index can be n minus one, n minus two, anything till zero, basically any index, it can be any index. So we went on to write the tabulation as firstly though we declared a dp of n of target. And then we went on to write f of index equal to zero till n minus one. And over here we went on to write dp of i and every index, uh, rather dp of index and every target zero as true. So this is what we wrote because it's almost equivalent to this. If target is zero return true. So if target is zero on any given index, you return true."
+    },
+    {
+      "chunk_id": "L197_C6",
+      "start": 375.34,
+      "end": 448.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=375s",
+      "text": "almost equivalent to this. If target is zero return true. So if target is zero on any given index, you return true. There's the first base case that you wrote. And the next base case was if index is zero, you're saying this array of zero to be equal to target. So only at array of zero, you can just write it true because the target is equivalent to array of zero, then only it will be true. So if you remember the next base case was very straightforward. Uh, you basically said dp of zero, which is this case and then array of zero being equivalent to target. So array of zero being equivalent to target, we're just to, but we just need to make sure since we are declaring the dp array to be like the second dimension of a parameter target. We just need to make sure this second dimension yes has to be a lesser than target has to be lesser than equal to target. Just make sure this condition is written and yeah, over here it will be of size plus one by the way. Perfect. So that was the tabulation and what after that you basically wrote a couple of loops, which was starting from one is to N minus one. And then you wrote something which started from the target from zero."
+    },
+    {
+      "chunk_id": "L197_C7",
+      "start": 448.12,
+      "end": 522.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=448s",
+      "text": "which was starting from one is to N minus one. And then you wrote something which started from the target from zero. Since zero was already done, you can easily start from one till the target K. Right? That was it. And you wrote the same thing, not take equal to dp of F of I minus one. So dp of I minus one and target and the take was initially true. Just making sure if the array of index can be taken into account, which is basically array of I here. If that's equivalent, if that's a lesser than target, what did it was you said, by the way, it will be false over here. Not true. It will be false. And you then say, it will be dp of I minus one and zero target minus array of index. Right? That is something which you wrote. And at the end of the day, you said dp of I target is equal to eight or not take similar recurrence of copy pasted. So this was the tabulation format, right? This was the tabulation for it. So what will this tabulation format create? What does a dp of IJ signify? That's what"
+    },
+    {
+      "chunk_id": "L197_C8",
+      "start": 522.2,
+      "end": 601.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=522s",
+      "text": "the tabulation for it. So what will this tabulation format create? What does a dp of IJ signify? That's what my question is to you. What does dp of IJ signify? If we are able to figure this out, then that will help us immensely in solving the next problem. So basically we would have taken something like this. Assume, assume, uh, the number of elements to be five and the target that we have been asked is seven. Like for an example, let's assume. So can I say we will declare a dp of size five, cross it eight. So five rows is what I'll declare. So let's quickly declare the five rows, zero, one, two, three, every day at the five rows and they will like zero, one, two, three, four, five, six, seven. So I'll also declare seven or rather eight columns. So can you declare all the eight columns? So this is how the dp table is declared. Now, can you tell me where did you find your answer at the end of the day? You said you call the recurrence. If you remember, you call the recurrence with F of N minus one and target. And you said, can an array of N minus one, like ending at N minus one, achieve a target? Can this entire array achieve this target?"
+    },
+    {
+      "chunk_id": "L197_C9",
+      "start": 601.52,
+      "end": 679.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=601s",
+      "text": "an array of N minus one, like ending at N minus one, achieve a target? Can this entire array achieve this target? That was the stuff. So you also said that the answer will be lying at dp of N minus one target. So what does this mean? You are saying for this guy, if N is five and the target is seven, you're saying if dp of four, yes, if dp of four and the target is eight, so target is seven over here because if you carefully observe the target is seven. So you're basically saying if this guy is equal to equal to two, then we can have a subset sum of seven. Right? So can I say, how's the dp array being filled in tabulation form? Firstly, all the base cases are filled, like all the base cases, what are the base cases? Index equal to something and target true. So firstly, you are filling this true, true, true, true, true. That is what you filled. Now, you know that if, if the array is something like let's assume that is, so we know that the array is of five elements, right? So assume the array to be something as one, three, probably two, five and six and the target"
+    },
+    {
+      "chunk_id": "L197_C10",
+      "start": 679.36,
+      "end": 751.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=679s",
+      "text": "five elements, right? So assume the array to be something as one, three, probably two, five and six and the target to be seven. Okay. And the target to be seven. Let's assume this is the array that we have taken and this is the target. So what is the first tabulation that you wrote over here? This is done. The next thing you're writing is dp of zero, array of zero is equal to two. So what is the array of zero over here? It is one. So you placed a true over here and rest, everything will get filled, filled, filled, filled, filled, filled. Then this will be filled. Then this will be filled. Then this will be filled. Then these guys will be filled. And at the end of the day, this will be filled. And whatever answer is over here. Yes. If it is a true or if it is a false, whatever answer is there, you say, according to this, I get my answer. That's what you told. But in finding the target equal to seven, if you write the tabulation, you end up filling this guy because at the index four, like in the entire array, the target zero can be achieved. That's very common sense because if I do not pick up any element in the subset, the target zero can be achieved. Similarly, whatever value will be here, I can say I can achieve the target one or I"
+    },
+    {
+      "chunk_id": "L197_C11",
+      "start": 751.12,
+      "end": 827.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=751s",
+      "text": "subset, the target zero can be achieved. Similarly, whatever value will be here, I can say I can achieve the target one or I cannot achieve the target too. Similarly, whatever value is year, I can say I can achieve the target one or I can not. Similarly, whatever value is your, I can say I can achieve the target tool or I cannot similarly, whatever value is your, I can say I can achieve the target three or I cannot. So can I say, I can tell yes or no for every target value from one to seven. Can I achieve every target value from one to seven? I can definitely say yes or no. If I write the tabulation, because the tabulation makes sure that I fill the entire, yes, entire matrix. And eventually I will get to know if I can achieve one, if I can achieve two, if I can achieve three, if I can achieve four, if I can achieve five, if I can achieve six, if I can achieve seven. And just because the question asked seven, we picked up this guy and we said, this is our answer. This is our answer, DP of four of seven. If the target was, if someone comes up and gives you a different target, now you"
+    },
+    {
+      "chunk_id": "L197_C12",
+      "start": 827.54,
+      "end": 898.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=827s",
+      "text": "answer, DP of four of seven. If the target was, if someone comes up and gives you a different target, now you still can say without calling the tabulation again, this DP will strictly help you to tell if you can achieve a target five or not. So this is what I wanted to portray you. This is what tabulation signifies. For here three means, till only the third index, a target of four can be achieved or not. Till only the third index, that means, till here a target of four can be achieved or not. This is signified by the third row. Similarly, every row is signifying something. Make sense? Okay. That does make sense. Right? Okay. So we have understood this. So just keep this in your mind that as of now, what have from subset sum, what we have derived from subset sum, the tabulation one, what have we derived? We can, like if we check, if we check for a target equal to K, we can derive, we can derive if every"
+    },
+    {
+      "chunk_id": "L197_C13",
+      "start": 898.18,
+      "end": 971.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=898s",
+      "text": "if we check for a target equal to K, we can derive, we can derive if every possible target, I repeat, if every possible target between one and K is possible or is not possible. If I'm just checking for target equal to K, the tabulation automatically will tell me for every value between one to K, I don't need to do any extra steps. Make sense? So with the help of this, I'll solve the next problem. Okay. So now let's come back to the DP 16, which was the original problem. What did the original problem state? Divide them into a couple of subsets. Like if one subset is containing some elements, the other elements will be in the other subset. This will have a sum one, this will have a sum two. So both of the sums, like absolute difference should be as minimal as possible. That was the question. So we were like, how can we solve this? Because we have just now learned, yes, we have just now learned that we can easily check if any subset of any given sum is possible in an array or not with the use of the matrix. Right? So can I say, can I say if I can just"
+    },
+    {
+      "chunk_id": "L197_C14",
+      "start": 971.1,
+      "end": 1044.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=971s",
+      "text": "array or not with the use of the matrix. Right? So can I say, can I say if I can just figure out S1, S2, I don't have to figure out. Think it yourself. I repeat, if I can figure out S1, I don't have to figure out S2. Why? Let's realize if I give you an array like three, two, seven, okay. And if I say one of the partition contains three, so the summation is three. Do I need to find the other partition like two, seven, do the summation as nine? Do I need to do that? The answer to that is no. Why? Because if I know the total sum, because the total sum over here is 12. If I know the total sum, so can I say, can I say that the summation is three for the first partition, the summation for the next partition will be total sum because total sum means all the elements minus the sum of the elements that are in the partition one. So 12 minus three is nine. Again, it makes sense because if the total summation is 12, which is that all the elements, if you take out three, the remaining elements will be nothing but 12 minus three. So you get the"
+    },
+    {
+      "chunk_id": "L197_C15",
+      "start": 1044.78,
+      "end": 1122.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=1044s",
+      "text": "the elements, if you take out three, the remaining elements will be nothing but 12 minus three. So you get the easy sum of S2. Can I say, can I say in this way, can I also say if I take just two, there will be two, which will be S1 will be two and the next partition will be 10, like the summation will be 10 because if I take two, these guys will be in the next partition. Again, it makes sense. So can I say what am I looking for? I'm looking for S1 minus S2 to be as minimal as possible. So if I'm looking for S1 minus S2 to be as minimal as possible, do we actually require this? Do we actually require all the possible, like if I can give you all the possible S1s, then your job is done. If I can give you all the possible S1s because I can say, I'll try out all partitions of S1. You'll be like, but Shrivel, how's it going to work? Again, it's going to work. If I ask you, what can be the, all the partitions of S1? Can I say the minimal summation, the minimal summation of S1 will be zero. When I say I don't pick up any element, when I say I do not pick up any element. Make sense?"
+    },
+    {
+      "chunk_id": "L197_C16",
+      "start": 1122.08,
+      "end": 1194.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=1122s",
+      "text": "zero. When I say I don't pick up any element, when I say I do not pick up any element. Make sense? And the maximum summation will be when I say all the elements are in my partition. Okay. So can I say the minimal value of the partition one summation will be zero. When I say none of the elements are in my partition and the maximum value that I can get, and the maximum value that I can get is 12, when I say all the values are in my partition. So I know the minimal value is zero and the maximal value is 12. So 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12. Now I ask you, I know the S1 will be in this range, but I need to determine which are the valid S1s because everyone cannot be S1. All the partitions are not possible. So you'll be like, okay, we remember DP 14. Just now I taught you, just now I taught you, the last row will tell you if zero is possible, if one is possible, if two is possible, if three is possible, if four is possible, if five is possible, if six is possible, if seven is possible. So can I say, can I say, I know one thing, 12 is possible because I will take"
+    },
+    {
+      "chunk_id": "L197_C17",
+      "start": 1194.74,
+      "end": 1269.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=1194s",
+      "text": "possible, if seven is possible. So can I say, can I say, I know one thing, 12 is possible because I will take all the elements. So if I call the tabulation method for this, which is size three and 12, if I call the tabulation for DP 14, the DP 14's last row, yes, the DP 14's last row will tell me if zero is possible, one is possible till 12 in that case, it will. So now what I can say is, okay, let's check if zero is possible and it will tell me yes, zero is possible. Let's check if one is possible. It will tell me no. Let's check if two is possible. It will tell me yes. Why? Because two is possible. Three is possible. Yes. Four is possible. No. Five is possible. Yes. Because three, two, six is possible. No. Seven is possible. Yes. Eight is possible. No. Nine is possible because seven, two. Ten is possible. Yes. Because seven, three, 11 is possible. I don't see, I don't see any way I can make 11. Can I? Seven, three will be 10. No, I can. 12 is possible. So I figured out what values are possible and this can easily be done with the help of the last row that has"
+    },
+    {
+      "chunk_id": "L197_C18",
+      "start": 1269.96,
+      "end": 1343.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=1269s",
+      "text": "figured out what values are possible and this can easily be done with the help of the last row that has been generated in this DP array. If I call the tabulation method of subset sum. So can I see, can I see that zero is possible? Four is possible. Six is possible. Eight is possible. 11 is possible. So these are the valid S1s which are possible. These are the partitions that are possible for S1. So can I find the corresponding S2? Just think inside your brain. Can I find the corresponding S2? And the answer to that will be yes. This will be 12. Right? This will be 10. Right? This will be a nine. This will be a five, seven. This will be five. This will be three. This will be two. This will be zero. So I see, so I see that I got for every S1, I got the corresponding S2. For every S1, I got the corresponding S2. Can I say the difference, the absolute difference over here is 12. Absolute difference over here is 8, 6, 2, 2, 6, 8, 12. What do I need? The minimal. And what's the minimal that I"
+    },
+    {
+      "chunk_id": "L197_C19",
+      "start": 1343.38,
+      "end": 1419.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=1343s",
+      "text": "is 8, 6, 2, 2, 6, 8, 12. What do I need? The minimal. And what's the minimal that I see? It's 2. So that's my answer. Using subset sum, I did it super duper easily. I don't find any problem in this. And this is definitely going to be my answer. Now we can probably write it. Assume you have called the subset sum problem, the DP has been generated. So it's basically you call the DP for N and summation plus one. And you can say this is the total summation because that's the maximum value you can call the subset sum code. Okay. I'll show you in the code, call the subset sum code. So the DP of the last row will be right there. So now you can say that I know from zero till the total sum it is possible. And assume you can keep the mini as one in nine. Can I say, if DP of the last row and this target I is possible, then what will be S1? I know S1 like if I just write it, S1 will be I, S2 will be total sum minus I. Correct? So thereby I can say minimal, because I need"
+    },
+    {
+      "chunk_id": "L197_C20",
+      "start": 1419.28,
+      "end": 1495.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=1419s",
+      "text": "will be I, S2 will be total sum minus I. Correct? So thereby I can say minimal, because I need the minimal absolute difference, mini comma absolute of S2 minus S1. So that's how you can easily write this. So if you try to write this in terms of formula, it's going to be total sum minus two into I. So you can also write that. But yeah, in this way, if it is possible, if this summation is possible, you directly check on the last row. You take S1, you take S2 and you get the minimal possible value. Now can we optimize this? Yes. If you carefully observe 0, 12, 12, 0, 2, 10, 10, 2, 3, 9, 9, 3, 5, 7, 5, 7. So basically what happens is the subsets. So you had 3, 2, 7. So first time it might have taken three in the subset, in the partition one. In the next time, the partition one might have two. The next time the partition one might have seven. Going across, there will be a moment, there will be a moment, the partition two will be having three. Partition two will be having"
+    },
+    {
+      "chunk_id": "L197_C21",
+      "start": 1495.38,
+      "end": 1567.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=1495s",
+      "text": "a moment, there will be a moment, the partition two will be having three. Partition two will be having two. The partition three will be having seven. Like it can also have single elements. So do we need to check because we're just checking for absolute difference. So thereby I can say if I check for half of the sum, if I check for the half of the sum, then also we should be good enough because I know whatever partition one looks like, if I make the partition two look like the same, the answer is not going to vary so much. If you carefully observe, we took a summation zero and going across, we said the partition two have summation zero. We took a summation two, going across, we said the partition two, two, two have a summation two. So it doesn't really make sense. That's why if you still do till the half, you get your possible answer. So that's how we can easily solve this problem. That's time to show you the code so that it gets much more clear to you. So by the way, this was the lecture 14 subset sum equal to, and this was the entire code. Okay. So what we will do is let's check out over here what's given array and then, so at first let's keep a total sum. Okay. Let's just keep a total sum as zero and probably we can just sum it up by"
+    },
+    {
+      "chunk_id": "L197_C22",
+      "start": 1567.88,
+      "end": 1641.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=1567s",
+      "text": "first let's keep a total sum. Okay. Let's just keep a total sum as zero and probably we can just sum it up by going to zero till n, which is I plus plus. And I can say total sum is equal to array of I. That's something which we'll do right. Right after this, what you will do is you'll just call this guy. Nothing else. Just call this, just copy paste, because this is a subset sum and this is the N into K plus one vector. So instead of K, you know, K will be the target over here is initially total sum because that's the maximum that's possible. And yeah, there was edge case that was missing over here. The array of zero has to be a lesser than equal to the target that you're looking for. Otherwise it will overflow. So just make sure you do this, the array of zero. So I can see the entire vector is generated and over here, can I see the array of or rather the DP of N minus one and the entire column from zero to the total sum will tell you the answer I get. So I know I need the minimal. So minimal can be one in nine and I know I can start the target. Like I can start the S one rather from zero and the S one can go on till total sum by two. You know that we have already"
+    },
+    {
+      "chunk_id": "L197_C23",
+      "start": 1641.68,
+      "end": 1714.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=1641s",
+      "text": "the S one rather from zero and the S one can go on till total sum by two. You know that we have already proved that and S one plus plus. So can I see this if, if DP of the last row in the last row, if S one is true, then only it's possible. Then only it will be possible. And if it is possible, can I say mini will be min of mini comma total sum minus S one is what your S two will be minus of S one and an absolute of the entire stuff. Yes. And absolute of the entire stuff. And at the end of the day, can I say I will return the mini. So if I just write this, let's run this off and let's see if it's running fine. It does run. So let's quickly submit this off. So you see it is running absolutely fine. Did we do anything extra? Just these couple of lines and just a total summation that I did. Apart from that, the entire concept of subset sum was used. So if you remember in subset sum, we did a space optimization, so you can do a space optimization over here as well. So what I'll do is I'll just copy paste the pre the space optimization code. This is the space optimization code. So let's quickly take this off and copy paste, copy paste the"
+    },
+    {
+      "chunk_id": "L197_C24",
+      "start": 1714.06,
+      "end": 1778.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=1714s",
+      "text": "the pre the space optimization code. This is the space optimization code. So let's quickly take this off and copy paste, copy paste the space optimization code. So instead of a DP of N minus one, this will be previous because in space optimization, this is what we usually do. So let's quickly now run this off and also try it with the space optimization. That's your choice. So if you do the space optimization, it will take a bit lesser space complexity. The time complexity still will be equivalent to N into target plus total sum by two plus a big of N linear loop. So a couple of linear loops and the total sum N into K and the time space complexity will be big O of these guys. That's a single linear loop that you, a single linear array that you're using. So guys, I hope I was able to make this tough problem easy. And just in case I was able to make it, please, please like this video because I'm recording the set 5am in the morning and yeah, I'll be editing it for the next one hour. This video will go tomorrow morning. So I'll just make sure you like this video and if you're new to the channel, please do consider subscribing and in the comment section, please, please do write understood if you have understood because that does motivate me a lot. And yeah, with this, I'll be wrapping"
+    },
+    {
+      "chunk_id": "L197_C25",
+      "start": 1778.42,
+      "end": 1789.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=GS_OqZb2CWc&t=1778s",
+      "text": "section, please, please do write understood if you have understood because that does motivate me a lot. And yeah, with this, I'll be wrapping up this video. Let's meet in the next lecture. Till then, bye bye, take care. I will find the light."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "lecture_id": "L068",
+  "lecture_number": 68,
+  "lecture_title": "BS 23. Row with maximum number of 1s | Binary Search on 2D Arrays",
+  "youtube_url": "https://www.youtube.com/watch?v=SCz-1TtYxDI",
+  "chunks": [
+    {
+      "chunk_id": "L068_C1",
+      "start": 0.0,
+      "end": 76.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=SCz-1TtYxDI&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we will be continuing with our binary search playlist that is a part of the strivers A to Z DSI course. In case you haven't checked it out yet, you should definitely check it out from the link in the description. Otherwise, you'll be missing out on a lot of things. So in this video, we will be starting off with binary search on 2D arrays. The first problem that we will be solving is find the row with maximum number of ones. You will be given a 2D matrix and the matrix will just have zeros and ones and every row of the matrix will be sorted. That's a very critical point. Every row in the matrix will be sorted. Now you have to tell me which row contains the maximum ones in case there are multiple rows with maximum ones. Return the row with the smallest index. Let's understand what does that mean. So zero through first row, second row, third row and fourth row. So if you carefully observe, this row has three ones. This row has zero ones. This row has four. This row has zero. This row has four."
+    },
+    {
+      "chunk_id": "L068_C2",
+      "start": 76.18,
+      "end": 149.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=SCz-1TtYxDI&t=76s",
+      "text": "row has three ones. This row has zero ones. This row has four. This row has zero. This row has four. So if I ask you which row has the maximum ones, you can say this one and this one, which is basically the second row and the fourth row. So which one will you return? If there are same instances of maximum ones, you end up returning the smallest row number, which is two. So over here the answer will be two. So what is the first solution that comes to your brain? The extreme name one. It's go through every row and count the number of ones and the row with the maximum number of ones. You just return it. So can I say that we have an n cross m matrix, thereby I can go through every row by traversing from zero to n minus one because if you know the rows are numbered like zero, one, two, three, four and the last one is n minus one. So I'll go like that and maybe I'll say count row, like count row one equal to zero and I'll keep the max count initially as minus one because minus one is never possible. And I'll also keep the index, the row index as minus one. This time I'll go through the entire column, which is basically every single element. Whenever I zero, we go through every single element. Whenever I is one, we go through every single element."
+    },
+    {
+      "chunk_id": "L068_C3",
+      "start": 149.56,
+      "end": 220.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=SCz-1TtYxDI&t=149s",
+      "text": "which is basically every single element. Whenever I zero, we go through every single element. Whenever I is one, we go through every single element. So that is something which we can do, which is basically going from zero to m minus one. And this time what I'll do is I'll say, please count the ones. So I can just go ahead and add array of IJ. So if I add array of IJ, that will make sure that like it adds zero plus zero plus one plus one plus one. Basically it will simply add up all the ones. Once I have the count rows, can I say if the count rows, very important count rows has to exceed the max count. It cannot be equal to because if there are instances of same number of ones, you always return the minimal one. It's very important to write greater. In that case, you will see max count equal to count row. And you also update the index to I quite simple. And at the end of the day, you can simply go ahead and print the index. That will be your answer. What will be the time complexity? Can I say the time complexity is big O of N and M like N cross M will be the time complexity of this particular solution. And what is the space complexity? A big O of one."
+    },
+    {
+      "chunk_id": "L068_C4",
+      "start": 221.18,
+      "end": 293.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=SCz-1TtYxDI&t=221s",
+      "text": "N cross M will be the time complexity of this particular solution. And what is the space complexity? A big O of one. The interviewer will not be happy with the N cross M and he'll ask you to optimize it. Remember, whenever you have been asked to optimize N cross M and you see something as because the entire rule is sorted, entire rule is sorted, entire rule is sorted, entire rule is sorted. So what do you think of as okay, sorted the entire rule is sorted. And this is where I'm traversing in the entire rule. And that is taking me a big O of M time. So I can probably optimize this. I cannot optimize the road traversal, but I can optimize the way I'm computing the number of ones I can optimize that. That is when you start thinking of a binary search solution. Why binary search? Because the entire, because the entire row is sorted. So can you treat this as an individual array? Like if I just treat this as an individual array, which has just treat this as an individual array, which has three ones. Just think it as an individual array. In this case, what will happen? You just have to figure out the first one. The moment you figure out the first one, I think the number of ones are very simple because it is a sorted array. So the size of this is five."
+    },
+    {
+      "chunk_id": "L068_C5",
+      "start": 293.26,
+      "end": 370.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=SCz-1TtYxDI&t=293s",
+      "text": "first one, I think the number of ones are very simple because it is a sorted array. So the size of this is five. And if I have to figure out the first one, it lies at the index two, it lies at the index two. So the number of ones will be the number of ones will be the size of that row, which is M, M is the size of that row minus wherever the first one occurs, which is two in this case, five minus two, three, which is exactly the number of ones in that thing. So if I can figure out the first occurrence of one, and you know how to figure out the first occurrence of any number, one of the possible ways is you say lower bound of one, and that will be pointing to the first one. Or you see upper bound of zero, even if you say upper bound of zero, that will also be pointing to this or you see first occurrence of one. Now, all of these three problems have been solved in binary search of one D arrays have already done that. So we can use either of them. And we can easily find out the number of ones. And I can do it for every row individually. I can do it for every row individually. So if I have to pick up this array, it's nothing but this array is nothing but matrix of zero."
+    },
+    {
+      "chunk_id": "L068_C6",
+      "start": 370.14,
+      "end": 440.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=SCz-1TtYxDI&t=370s",
+      "text": "for every row individually. So if I have to pick up this array, it's nothing but this array is nothing but matrix of zero. So if you see if you pass matrix of zero, this first part of the first row goes as an array. If you pass matrix of one, then this one goes as an array. If you pass matrix of two, this one will go as an array. So it's very simple. In binary search, remember, you cannot change the row traversal. What you can do is you can optimize the things that you are doing on every row. You cannot optimize this. Hence you optimize this traversal. Got it. So let's quickly go back to the code editor and try solving it. So what I'll do is I'll try to just copy paste the low bound code because like you can do any of them upper bound first occurrence any of any of them. So I have to find the number of this. So what I'll do is I'll say count max equal to zero. I'll keep an index equal to let's say minus one. Okay. Count max can be kept as minus one. The same what I'll do is let's quickly traverse from zero till end. Perfect. And now I'll, I'll have to count. Right. So can I say the count will be what will be the count? The count will be nothing but I can just go ahead and say low bound, low bound."
+    },
+    {
+      "chunk_id": "L068_C7",
+      "start": 440.04,
+      "end": 510.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=SCz-1TtYxDI&t=440s",
+      "text": "count will be what will be the count? The count will be nothing but I can just go ahead and say low bound, low bound. It needs an array. It needs an array. So I'll be like matrix of I, because if I just pick up the row, it's an array in itself. The size of that array is M because M is the size of the array and the element that I'm looking for the low bound of one. So this will give me wherever it occurs. And if I subtract the number of elements, which is M minus, I'll get the count of ones. I'll get the count of ones. Once I get the count of ones, I can say if the count of ones exceeds the count of max, then go ahead and do a count of max equal to count of ones and also update the index to I. Once you've done this, you can straight away return the index. This is how easy it gets. So as you see that one test case is failing. Why? Because it clearly states if there is no row with at least one, they return minus one. So basically what I'm saying is, okay, let's take this array and let's try to do an upper or lower bound or upper bound, whatever. Zero, zero, zero, zero. So if you're trying to do an upper bound over here, M is five, sorry, lower bound of one."
+    },
+    {
+      "chunk_id": "L068_C8",
+      "start": 510.26,
+      "end": 573.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=SCz-1TtYxDI&t=510s",
+      "text": "whatever. Zero, zero, zero, zero. So if you're trying to do an upper bound over here, M is five, sorry, lower bound of one. So if you say lower bound of one, it will point to the hypothetical index of zero, one, two, three, four, five. So even if you do five minus five, the count will come up to be zero. So remember, the count is zero. You don't need to update it. So what I can do is, hey, listen, what I can do is I can keep the count max as zero and I can initially see the index to be minus one. If the count is zero, I don't update it. Simple as that. Any moment I get anything greater than zero, I update the index. Now let's quickly run and see if it is running fine. It will be because we have made sure that this case is taken care of. Again, if you want the Java, Python, JavaScript code, the links will be in the description. So I'll be running this and we see that it is running absolutely fine. So what is the time complexity now? A big O of n for sure. And this lower bound ends up taking logarithmic of n. So I can say the time complexity this time is n cross logarithmic of base two m. Very important m because that row's size is m, not n. So n into log base two. So you can just write it."
+    },
+    {
+      "chunk_id": "L068_C9",
+      "start": 573.1,
+      "end": 609.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=SCz-1TtYxDI&t=573s",
+      "text": "two m. Very important m because that row's size is m, not n. So n into log base two. So you can just write it. Log base two m will be the time complexity. What about the space? Am I using any space? No, I'm not using any space. Again, you can use the upper bound. You can also use the first occurrence concept. You can use whatever you wish to. The main thing is you have to do it on that particular row and that will be working fine. So if you're watching till here, I hope you have understood everything. Just in case you have understood everything, please, please do consider giving us that like and if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And if you haven't followed me on Instagram, Twitter and LinkedIn, all the profile links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

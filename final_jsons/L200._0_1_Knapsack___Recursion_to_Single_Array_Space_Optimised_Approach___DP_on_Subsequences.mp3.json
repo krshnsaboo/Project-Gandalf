@@ -1,0 +1,239 @@
+{
+  "lecture_id": "L200",
+  "lecture_number": 200,
+  "lecture_title": "DP 19. 0/1 Knapsack | Recursion to Single Array Space Optimised Approach | DP on Subsequences",
+  "youtube_url": "https://www.youtube.com/watch?v=GqOmJHQZivw",
+  "chunks": [
+    {
+      "chunk_id": "L200_C1",
+      "start": 0.0,
+      "end": 76.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=0s",
+      "text": "Hey everyone, welcome back to take you forward. So we will be discussing DP 19 today and the problem is going to be 0 1 nap sack and This problem is a very very very very very very very very important problem for any Interview that you might have now or in the future This is going to be one of the most most common asked problems If you are given a problem in dynamic programming really some variation can be asked and which will be doing in the upcoming videos So 0 1 nap sack now, you might see a lot of videos, but in none of the videos they will be doing the space Optimized approach of big O of W not even two rows. You're gonna optimize this into a single array Yes, as of now till DP 18, we have been learning how to optimize how to space optimize using two rows generally But over here we will be seeing how to optimize this using just a single row and that's what we are going to learn So 0 1 nap sack without waiting. Let's get started. What is the problem stating? The problem is stating there is a thief Okay, there is a thief who goes to some house to steal items and in that house There are three items like there are n items and let's assume there are three items"
+    },
+    {
+      "chunk_id": "L200_C2",
+      "start": 77.14,
+      "end": 150.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=77s",
+      "text": "to steal items and in that house There are three items like there are n items and let's assume there are three items Each of the item has a particular weight and a particular value So, let's assume there are items with weight three four five and the weight three item will cost you So I will have a value 30. This will have a value 50 and this will have a value 60 so he has gone obviously he's gonna steal out things So you cannot steal like he cannot just take things in his hand and go so what he has he he has a bag Okay, and this bag now a bag cannot carry everything in the home it can only carry Items till it does not exceeds the given weight and over here The given weight is 8 the back and carry as long as it does not exceeds the weight 80 now if you're going to steal at a home like if you're the thief and you're going to steal at a home What's what is that what is the first thing that you will think I'm gonna steal in such a way that the valuable the Value of those items should be maximized. So over here. I'll be like, okay fine the thief will decide I'm going to steal this and if I steal this I have a value of 60"
+    },
+    {
+      "chunk_id": "L200_C3",
+      "start": 150.64,
+      "end": 228.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=150s",
+      "text": "like, okay fine the thief will decide I'm going to steal this and if I steal this I have a value of 60 But my weight will reduce to three because this guy is having a weight of five So in my bag five weight will be there so I'll just be left out with the three weight next you'll be like let's Steal this so we will steal this and we will have another value of 30 this time the value will reduce to zero now the thief cannot steal any further things because He has stolen this item and this item and his bag has got full So he cannot steal this item and in stealing both of these items it manages to have a total value of 90 so the question states you will be given n You'll be given a weight array It'll be given a value array, right and you'll be given a bag with a weight you have to steal things From the home in such a way that this total value is as maximal as possible now, you could have also As a you could have also gone with this guy and this guy so if you'd have stolen the blue items then the bag weight would have been 7 but the total value that you would have generated would have been 50 plus 30, which is 80"
+    },
+    {
+      "chunk_id": "L200_C4",
+      "start": 229.28,
+      "end": 301.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=229s",
+      "text": "weight would have been 7 but the total value that you would have generated would have been 50 plus 30, which is 80 So thereby this is not a preferable way because if you steal the blue items, then the total value is not Maximum the maximum that you can generate is 90 why can't you steal this and this? Because the weight is 5 over here. The weight is 4 over here. So you cannot steal both the items because 5 plus 4 will be 9 and the bag permits you just 8 weight Thereby this and this cannot be stolen together make sense So you might be thinking then striver we will apply greedy approach Like striver the best thing is let's steal the valuable items at first and then we will be stealing according to the weight Left in our bag again. Now that he's a thief, right? So he doesn't knows a lot of maths So that's that's the first approach that you'll think I'll go to the house and I'll see. Okay this Let's assume this this is an iPhone. This is the costliest thing So I'll just put this into my bag Similarly, I can assume that okay I'll take this mouse and put this into the bag because it is another costly thing Thief will be going in the direction of picking up the most costly thing"
+    },
+    {
+      "chunk_id": "L200_C5",
+      "start": 301.72,
+      "end": 376.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=301s",
+      "text": "into the bag because it is another costly thing Thief will be going in the direction of picking up the most costly thing But if you go will you do that? Let's analyze will the greedy approach work? The answer to that is no Let's take an example n is equal to 3 and let's take The bag that the thief is carrying is having a weight of Assume to be 6. Okay, and I'm giving you weights and I'm giving you values So assume there is a bag of weight like there is a there's an item of weight 5 There is an item of weight 3. There's an item of weight 2 okay, and this gives you 30 value. This gives you 40 value and this gives you 60 value now since the weight of the bag is 6 since the weight of the bag is 6 If you go into the home Your first criteria will be I'll steal the costliest thing and the costliest thing comes out to be this I like I'll steal this one because it's the costliest So I will have a value of 60 and the bag will just have a space of one remaining because I've stolen five Can you steal this now? No because this requires two and you just have one. Can you steal this? No, because it has one left so the thief will steal this because the thief is"
+    },
+    {
+      "chunk_id": "L200_C6",
+      "start": 376.96,
+      "end": 448.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=376s",
+      "text": "you just have one. Can you steal this? No, because it has one left so the thief will steal this because the thief is Not educated. So you'll just have a value of 60, but if I go I'm educated So if I'm educated what I'll do is I'll steal this guy which will Initially if it is 6 it will still be left with 4 and I'll get a value of 40 Then I'll steal this and I'll get a value of 30 and the weight will still be Like the remaining weight will still be one you can still you can still steal elements of weight one and I made a weight of 70 because I was educated and I applied dynamic programming. Why did greedy feel? law of Uniformity that I have explained Uniformity was not there Uniformity was not there because because over here at 60 then it is 40 then it is 30 is nothing uniform Over here for less weight the value is more over here for more weight the value is less. So there is no uniformity You're not sure that if you pick the valuable items the other elements Might as you see over here if I pick these two they ended up summing up more So uniformity is not there. You don't know in the future. You might get someone who adds up to give better"
+    },
+    {
+      "chunk_id": "L200_C7",
+      "start": 448.96,
+      "end": 527.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=448s",
+      "text": "up more So uniformity is not there. You don't know in the future. You might get someone who adds up to give better So so as long as uniformity is not there, you definitely cannot apply greedy. So you're educated That's why you'll think of Trying out. Yes, you will think of trying out all combinations Yes, you are Educated so you'll think of trying out all combinations and among those combinations You will take the best Value best total value giving combination Make sense and how do you try out all combinations? There's only one way and that's Recursion. Yes, you try out Recursion to have all the combinations and whichever combination gives you the maximal remember this gives you the maximal Value will be your answer. So in order to write recurrence, what are the rules? follow the standard rules Express everything in terms of index The first element will be index, how does that make sense because again we are given a assume these are three items So you can say zero item first item second item express this as an array So you can think in terms of indexes. This can be an index. This can be an index This can be an index first rule satisfied expressed in terms of index"
+    },
+    {
+      "chunk_id": "L200_C8",
+      "start": 528.88,
+      "end": 608.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=528s",
+      "text": "be an index. This can be an index This can be an index first rule satisfied expressed in terms of index Because in the entire DPC that have been saying So that's what we do. What is the next thing that you will do the next parameter as what is the next parameter? the thief Has gone to steal with a bag. So he needs to be careful if the bag is full or not So I can say bag weight I can say bag weight is the next criteria Where we see that if the weight is still there or not so I can say the bag weight I can say is capital W. So I can say the bag weight is capital W So you'll express everything in terms of index as well as W Okay, so that's what you will be doing fine. What's the next thing? Explore all possibilities Now what possibilities can he have if he's at? What possibilities he can have Dp on sub sequences is what we are learning big and non-pick. Yes, the possibilities will be pick and non-pick already Explained this in DP 14 DP 14 is the first one of DP on sub sequences. So go and watch it pick and non-pick next You're looking for the maximal. Yes, you're looking for maximal. So max of All possibilities is what you take. So if you can do this, you can easily solve the knapsack using the recursion"
+    },
+    {
+      "chunk_id": "L200_C9",
+      "start": 608.28,
+      "end": 687.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=608s",
+      "text": "So max of All possibilities is what you take. So if you can do this, you can easily solve the knapsack using the recursion So what are you waiting for? Let's get started So assume the initial call to be made to F of n minus 1 and W Where you say that hey listen for an example Let's take this example of 3 or 2 4 where we had 30 40 and 16 So if this is the array you're basically saying if I write down the indexes It's 0 1 2 you basically saying f of 2 with a bag weight of 6 So if you're saying that this is the array you're basically saying It's So what does this mean till the index to till the index to What is the maximum that you can generate? Till let me write this till index to What maximal value you will get? With Weight of bag as 6 that is the meaning till index to Till index to what is the max value you can get with the weight of bag to be 6. That's the meaning fine So we have written this and we can think of base cases afterwards That's the state. So if we have a more of more or less express them in terms of index and W Next is explore all possibilities"
+    },
+    {
+      "chunk_id": "L200_C10",
+      "start": 687.68,
+      "end": 755.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=687s",
+      "text": "if we have a more of more or less express them in terms of index and W Next is explore all possibilities Now tell me one thing if you're standing at a particular guy What options does the thief have what options does it have again? Very very easy They'll either steal it or he'll not steal it. So you will have two options either he will decide to not Take it Or he'll decide to take it like I don't think of any other options Can you do something apart from this obviously not either you can pick up that element and put it into your bag Or else I'll not put that into my bag. Again makes sense So I'm saying not take if I'm saying not take then what happens you'll move to the next item You'll move to the next item make sense and the value that you will add to yourself Because what does F mean F means max value So the value that you will add will be zero because you haven't added anything and you'll move to the next index Which is index minus one because if you are standing at this guy you did not pick this so you'll go to the next and you'll start seeing from here and Will the weight to be same obviously if you're not stealing anything will the weight of the bag"
+    },
+    {
+      "chunk_id": "L200_C11",
+      "start": 755.92,
+      "end": 832.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=755s",
+      "text": "start seeing from here and Will the weight to be same obviously if you're not stealing anything will the weight of the bag Diminish obviously not it will not diminish right so move back of it. Now. Can you take is the question? So since you're trying out maximal minimal maximals, probably initially you can keep it as intermean Assuming you did not take it. So thereby the costing will be intermean Why intermean? Question might arise whenever you compute maximal try to initially assume it as intermean so that the take case is not Considered why because assume your bag assume your bag has a weight of six and there is an item with weight of seven and Let's a value of ten thousand a huge value. Can you steal this? No, why because the weight of the item because the weight of the item is greater than the weight of the bag So it's very important that when you are checking out for the take case when you're checking out for the take case You always check. Yes, you always check. Am I allowed to steal it? Can my bag even take this so I'll be like, okay Weight of this guy has to be lesser than equal to the weight of the bag That I still have like if I'm having a bag with weight It should be still lesser than this and over there You can say okay"
+    },
+    {
+      "chunk_id": "L200_C12",
+      "start": 832.96,
+      "end": 908.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=832s",
+      "text": "still have like if I'm having a bag with weight It should be still lesser than this and over there You can say okay If it is then I can steal and if I steal The value that I will add will be value of index and if I'm stealing this current guy I will move to the next previous guy. I'll move to the previous guy make sense and what will happen to the bag? Dude, you're stealing something You're putting that into the bag. The bag will reduce now. So what what are you waiting for? Let's reduce the bag with W minus WT index That is the value to reduce and what did the question say? Give me the maximal value. So there are two choices either not take or either take So whichever choice gave you the maximal you will directly return it So that's a very simple one and we have been doing this not take and take in all the DPM sub sequences Just a slight change of pattern you have to find the max So whenever you're looking for values add them add them add them add them generate the values But keep by adding adding adding generate the values. Okay. So now the question arises. What are the base cases? So we have completed all the three steps of the recursion which is express them in terms of index and W Explore all possibilities and take the max of all possibilities, right?"
+    },
+    {
+      "chunk_id": "L200_C13",
+      "start": 908.2,
+      "end": 984.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=908s",
+      "text": "steps of the recursion which is express them in terms of index and W Explore all possibilities and take the max of all possibilities, right? So what is the next step obviously writing the base case and We we have started the started the recurrence from n minus 1. So we will write the base case at 0 remember this Always you're starting it from n minus 1 try to write it as 0 you're starting from 0 try to write it of n minus 1 So what I'll do is I'll write the first thing if index equal to equal to 0 is my base case of the recursion Now we can think of it afterwards. Let's try right? Let's try to think So, what does this mean f of 0 W What does this mean? The thief has come? Like the thief just has a single element and with a bag weight of W What is the max value that he can get? What is the max value that he can get if the thief is just at here and he has a W weight Assume the weight is 6 of this guy and it's giving me a value of 10,000 The thief is coming with f of 0 and the W as 8 and This is the last element. What will the thief do? What will the thief do?"
+    },
+    {
+      "chunk_id": "L200_C14",
+      "start": 985.16,
+      "end": 1061.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=985s",
+      "text": "of 0 and the W as 8 and This is the last element. What will the thief do? What will the thief do? And today it's the last element at the home in the home. Will he steal it? Why will he not steal it? He still has a bag weight of 8 left and it will just take 6 As long as he can fit this in he will steal and go so do that He will like okay if if the last element Can fit in my bag? I will take this and if I take this what is function giving the max value max value So it's a single element There's only one value that you will get which is value of 0 Make sense, but but but but but If the thief comes up with something like a bag weight of 4, can he steal? Can he steal? No, he cannot why he cannot he has come to the last item, but the weight that he carries is 4 and Despite this guy giving is giving him a lot value 10,000 it will take a place of 6 and he just has 4 so he cannot so if he cannot Can you get some value? No, so what you can say is if it is less I'll steal it or else I'll return a 0 saying I don't I cannot steal it There is absolutely no way that I can steal it"
+    },
+    {
+      "chunk_id": "L200_C15",
+      "start": 1061.64,
+      "end": 1132.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=1061s",
+      "text": "it or else I'll return a 0 saying I don't I cannot steal it There is absolutely no way that I can steal it That's how you can easily think of a single element try to think it try to think the base case in terms of a single Element always so that's how the entire Recursion can be easily written. So if I talk about the time complexity of Recursion what will be it again? You are trying out couple of ways So the time complexity will be 2 to the power n and The space complexity will be big O of n because there's a lot of recursion stack space that you're using So we saw that the recursion time complexity is 2 to the power n and the space required is big orphan But definitely need to optimize this and it's very simple memory action before that. Let's understand. How is this entire? Code working by taking the example that we did take to see where the greedy was feeling Let's take the weight as a 3 2 and 5 and let's take the values as 30 40 and 60. Okay let's take the bag weight as Capital W. That is as 6 So initially we start at F of this is the index 0 1 2 so we started index 2 and we have a bag weight of 6 what options do you have?"
+    },
+    {
+      "chunk_id": "L200_C16",
+      "start": 1132.72,
+      "end": 1197.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=1132s",
+      "text": "the index 0 1 2 so we started index 2 and we have a bag weight of 6 what options do you have? You have a two options whether to not take it whether to take it, right? So if we decide that we're not going to take it, can I say I will still be Next we'll go to the previous index, but we'll still be having the same weight. It makes sense. But if I decide to take it This element will be a part of my back So thereby this will give me a weight like the value of 60 But it says it is taking a weight of 5 from the baggage out So, can I say I'll move to the back index? with 6 as The initial weight but since you have taken a 5 if the remaining out with 1 makes sense Absolutely. Now you are at F of 1 6. What options do you have of not taking of taking? So imagine at index 1 you decide you will not take it So where will you move you'll move to the 0th index and the bag weight still stays a 6 and If you decide to take it rather What will happen you move to the previous index and if you take it there will be a plus 40"
+    },
+    {
+      "chunk_id": "L200_C17",
+      "start": 1197.4,
+      "end": 1274.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=1197s",
+      "text": "it rather What will happen you move to the previous index and if you take it there will be a plus 40 There will be a plus 40 and then there will be a weightage loss of 2 then there will be a weightage loss of 2 So there is a 6 So 6 minus 2 will be 4 correct. So we have two options not pick Pick so at F of 1 6, how will F of 1 6 look? F of 1 6 will be something like this there will be something like not take which will be 0 plus F of 0 6 and take will be 40 plus F of 0 comma 4. So tell me one thing if you are at F of 0 6 yes, if you are at F of 0 6 and You have a weight still 6 of the bag will you try to steal it obviously so thereby this returns value 30 and if you're at here and the bag weight is 4 you can again steal this because this is a 3 weight So I'll decide to steal this and there will be a 30 So 0 6 returns 30, 0 4 also returns 30 thereby not take becomes 30 and Take becomes 40 plus 30 70 which one will you prefer? Take so thereby this guy gets 70 so that's what F of 1 6 will return"
+    },
+    {
+      "chunk_id": "L200_C18",
+      "start": 1274.56,
+      "end": 1345.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=1274s",
+      "text": "30 70 which one will you prefer? Take so thereby this guy gets 70 so that's what F of 1 6 will return 70 perfect. So I'll just erase the bottom tree So F of 1 6 got 70 now, let's come back to this F of 1 1 if I decide I'll not take it What will happen? if I'm not taking it, I'll move to the previous index and I will still have the same way agreed what will happen at F of 1 1 again You'll decide to not pick it and you'll decide to pick it But can you pick it is my question You are at the first index and it requires a weightage of 2 but you're having a weightage of 1 so you definitely cannot pick It so thereby if you remember the recurrence it will stay as int mean Right. So this will be int mean because you take is not possible And if we decide to not take it you'll move to 0th index with a bag weight of 1 now tell me one thing This is demanding a weight of 3 but a bag weight is 1 can you you cannot so this will return a 0 So let's analyze of 1 comma 1. So at 1 comma 1 not take says 0 plus F of 0 1 this gives you 0 and the take is int mean because that's not possible to take"
+    },
+    {
+      "chunk_id": "L200_C19",
+      "start": 1346.78,
+      "end": 1419.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=1346s",
+      "text": "take says 0 plus F of 0 1 this gives you 0 and the take is int mean because that's not possible to take So 0 is maximum or int mean is maximum Definitely 0 so F of 1 of 0 will return 0 this guy will return 0. So let's quickly erase this Let's write the next step What's the next step F of 2 6 so you had F of 2 6, correct? What are the options you decide to not take so if we decide to not take you get 0 plus F of 1 6 Which is 70 and if we decide to take that's 60 plus F of 1 1 and this is 0 So 70 is more or 60 is more definitely 70 So this returns 70 and that's very obvious because if you pick up these couple of guys it gives you 70 So actually we're trying out always and we eventually got 70 Right. So what is the next step? Obviously the next step is memo I Asian Right and what are the indexes like what are the changing parameters index and W So according to the rule very simple was the maximum n. What is the maximum W? So we create this Plus this size array because index will be from 0 to n minus 1 weight can be from 0 to W"
+    },
+    {
+      "chunk_id": "L200_C20",
+      "start": 1419.22,
+      "end": 1495.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=1419s",
+      "text": "create this Plus this size array because index will be from 0 to n minus 1 weight can be from 0 to W So thereby we create n and W plus 1 array. So this is the DP array that we will create right? So over here we can write DP of index of W equal to this and over here we can just insert a line of DP of index and W not equal to minus 1 then return the value. So the memorization has been done and what will be the time complexity guys? We go off n cross it W What is the space complexity we go off n cross it W But there will be a stack space of big O of 1 due to the recursion that goes deep so there will be a Auxiliary stack space, but do I like that? Obviously not so I need to remove it. And how do you remove it? We convert this into a tabulation code. And what is the rule of tabulation? Base case is what you first write then write the changing parameters index and W Write both the changing parameters in nested loop if there are three it will be three nested There are four changing parameters four nested five changing parameters five nested Depending on the number of changing parameters you write them. What is the last thing? Copy the recurrence that you have been doing. Why? Because because what is memorization?"
+    },
+    {
+      "chunk_id": "L200_C21",
+      "start": 1495.62,
+      "end": 1572.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=1495s",
+      "text": "changing parameters you write them. What is the last thing? Copy the recurrence that you have been doing. Why? Because because what is memorization? What is rather recursion plus memorization? It's top Down and then accumulate and get the answer top down What's tabulation bottom up? Bottom up bottom up to get your answer bottom up so I can see what is the base case? firstly intDP of n W to be declared Right was the base case. Let's quickly check out the base case. So time to think about the base case now We know this is n this is W and this is the weight that the thief has on his back Can I say if I analyze? For what states will the value be zero Whenever index is zero so I can say for anything like zero But the state W has to be greater than WT 0 Assume WT 0 to be 5 assume assume the weight to be 5 then if I bring in 4 like this this one is 4 then it will return you a 0 if I bring in 2 it will return you a 0 if I Bring in 1 it will return you a 0 But if I bring in the weight to be 6 that's possible if I bring in to be 5 then this guy will be executed"
+    },
+    {
+      "chunk_id": "L200_C22",
+      "start": 1572.9,
+      "end": 1650.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=1572s",
+      "text": "I bring in the weight to be 6 that's possible if I bring in to be 5 then this guy will be executed So can I say for everything for every weight greater than 5 I can steal it Make sense. So I'll be like, okay For Every weight from 0 till W I Can steal it and if I steal it the value that I will get is 0 and apart from this everyone will have 0 So probably I can keep it as 0 everyone will have 0 only for the weights that are greater than this guy or Beyond this can steal it. So there were value 0 done first job done What's the next step look out at the changing parameters of your recursion index WT How are you moving them? How are you moving them? Just have a clear-cut Vision of it. So you're like, okay striver. We are moving the index from n minus 1 to 0 in the recursion But this is bottom up. So you'll move it opposite. The 0th case is done over here. So you'll move it from 1 to n minus 1. What about the weight? Again, you're moving the weight from W till 0 so do it opposite It will be 0 to W. It will be 0 to W"
+    },
+    {
+      "chunk_id": "L200_C23",
+      "start": 1650.42,
+      "end": 1725.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=1650s",
+      "text": "the weight from W till 0 so do it opposite It will be 0 to W. It will be 0 to W Okay, and then copy the records. So that's the funda that you have to apply Just write two nested loops and copy the records You will be pretty much done with the tabulation and after that I'll teach you space optimization But yes, don't skip the video now because at the end I'll teach you how do you convert a two row like we have learned Two row space optimization, right? We have learned two row space optimization, but over here we will learn one row space Optimization, okay, so without without wasting any time Let's quickly code this up. So I've been given a weight a value n a max weight Okay, so can I write a function? I defunct and index and the bigger W a vector of Weight Weight value Ring ID there will be known requirement of n. Yeah, I think that that makes sense. I know if index is 0 and if the weight of 0 is less than W I can definitely steal it. So val of Value rather value. Really? Let's call it as WT Let's call it as well so that we don't have to write a lot"
+    },
+    {
+      "chunk_id": "L200_C24",
+      "start": 1725.78,
+      "end": 1800.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=1725s",
+      "text": "value. Really? Let's call it as WT Let's call it as well so that we don't have to write a lot Val of 0 else it will be returning a 0 perfect now. Can I say there'll be two cases I and T not take Perfect, and if I don't take it, it'll be 0 plus F of I'll move to the next index I'll have the same weight and I just carry the weight and back and if I take it really I can say initially it will be in Mean and Can I say if if if the WT of index is Indeed lesser than the W. I can definitely steal it and if I steal it, it will be value of index plus F of index minus 1 W minus weight of index comma WT comma bal at the end of the day, I will return the max of take Not take right and over here. I can say return F of 0 sorry rather n minus 1 max weight the weight array and the value array and I think that should be pretty much it for the knapsack and I think if I run this should be giving me correct answer. Let's see. Okay, it is giving time limit exceeded again Very obvious what I'll do is I'll just take vector of vector ain't Probably I can take a DP and I can have it as n then I can take a vector of int"
+    },
+    {
+      "chunk_id": "L200_C25",
+      "start": 1801.34,
+      "end": 1874.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=1801s",
+      "text": "of vector ain't Probably I can take a DP and I can have it as n then I can take a vector of int Remember this this guy will be max Weight plus 1 and comma minus 1 and just make sure you pass on the DP as well over here. And yeah Let's carry it over here as well Vector of vector of int again reference very important always take it by reference DP over here DP over here and right before returning DP of index and this will be W Equal to and right over here. There will be a case where you check if the state has been previously visited or not So DP of index and W is what you return So if you just run this should be super fine see that the recursion is working fine It's time to convert this into tabulation. First thing is this and you know for every W which is greater than this So the base case is very simple for every W Which is you can say greater than WT 0 Let's make it WT and Val which is from here to I can say DP of 0 and W will be value of 0 it makes sense and Right after this I can say there will be couple of loops one is the index"
+    },
+    {
+      "chunk_id": "L200_C26",
+      "start": 1875.18,
+      "end": 1950.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=1875s",
+      "text": "of 0 it makes sense and Right after this I can say there will be couple of loops one is the index Starts from 1 goes until 1 and index plus plus for int W equal to 1 or rather 0 W lesser than max weight, which is the max weight And W plus plus and what you write is these just copy paste the records As simple so see how easy the tabulation is Like I don't think it's that tough now to you guys if you are following the DP series So I will just erase this and you'll see that okay, let's quickly write this as well DP of WT index W minus WT right and over here I can just quickly erase this as well and this will be DP of index W Does that make sense? Yeah, and over here return of DP of n minus 1 Max of weight so that will be it over here and I can and you see everything is passing Let's quickly submit this so we have pretty much done it and now you know how to space optimize this into Because whenever there is an index minus 1, you know what to do instead of this you end up declaring just couple of rows So let's declare a couple of rows again. I have been doing this"
+    },
+    {
+      "chunk_id": "L200_C27",
+      "start": 1951.3,
+      "end": 2024.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=1951s",
+      "text": "this you end up declaring just couple of rows So let's declare a couple of rows again. I have been doing this Throughout that if there is index minus 1 you space optimize. We're not following the DP series, then it's your problem You're missing out on a lot of things. Please make sure you follow the DP series So I can say I'll take a previous of max weight plus 1 because what we are using is we're just using the previous Those right because the DP is computed like this guy this guy like if I just write it How the DB computed first you filled up are these guys, right? With help of this then these loops will fill this this this this then this then this then this then this and so on So whenever you're filling a particular row, what are you using using the previous index minus 1 means this row? So you're just using the previous we don't need this any further whenever you are feeling this guy We just require this guy There is no requirement of this. So just keep on keep on using this concept and we can easily do it so, how do you do it previous this comma zero and curve of Max of weight plus 1 comma 0 right and I can just simply omit this and once I vomited this What's the next thing instead of DP of 0?"
+    },
+    {
+      "chunk_id": "L200_C28",
+      "start": 2024.42,
+      "end": 2103.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=2024s",
+      "text": "comma 0 right and I can just simply omit this and once I vomited this What's the next thing instead of DP of 0? Can you please write previous we can and over here instead of this we'll write current Instead of index minus 1 will write previous Amazing instead of DP of index minus 1. We will again write previous make sense and Over here. What I can say is I'll return previous of max weight and over here curve will become Rather previous will become curve and this is how you can space optimize this into only couple of rows Like I've just done couple of rows and you'll see it's definitely running fine But can we optimize this because over here also we're using couple of rows Can we optimize this? Yes, we still can optimize this if we apply some of the brains. We definitely can optimize this Let's let's actually look at the records What are you using actually you're saying? Okay, W minus WT It makes sense W minus WT is what I am using right? So can I see can I see let's let's try to write this on iPad and try to understand so whenever You are trying to compute this Index assume this is the index W starts from 0 goes on till max weight"
+    },
+    {
+      "chunk_id": "L200_C29",
+      "start": 2104.82,
+      "end": 2184.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=2104s",
+      "text": "whenever You are trying to compute this Index assume this is the index W starts from 0 goes on till max weight First you try to compute this in this case. What are you using? You're saying the previous row Index minus 1 which is the previous rows Whatever W minus whatever some value. So imagine your W is standing here. Yes, imagine your W is Standing here then W minus WT of index. Where will this guy be? It cannot be in this half. Can it be in this half? Definitely not it will be somewhere here Somewhere over here on to the left It makes sense because W minus WT index will be somewhere here Correct. Now you'll be like but striver tell us one thing. How does this help because We are we are first feeling this guy Then this guy then this guy then this guy then this guy who has said you to do this who has said you to do This can't you do it opposite like if I ask you if we do it in this way, is it wrong if I start W from here and then I go filling this this this this this this this can I actually do this? Is it possible? Yeah, it will still give the correct answer Why because when we are filling this it is never dependent on these values. It is actually dependent on the previous Row"
+    },
+    {
+      "chunk_id": "L200_C30",
+      "start": 2184.58,
+      "end": 2264.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=2184s",
+      "text": "correct answer Why because when we are filling this it is never dependent on these values. It is actually dependent on the previous Row It is actually dependent on the previous row previous row so in the code, even if I write the opposite where I say I will just Do it like this WT and Weight can be greater than equal to zero and W minus minus and if I try to run this You'll see this is also fine because we are Not dependent on the previous guys. We are dependent on just the Upper upper row. We're just dependent So you see it is running fine because we're not dependent on these guys This guy is computed with the help of the previous row. So what if I just change it? So that's the first change I do not tell me one thing. Tell me one thing if This is the previous And This is the current right and initially this current is having nothing So I'll come over here and I'll try to fill it So when I try to fill it when I try to fill it I will definitely use some value from here probably from here or probably from here or probably from here due to this concept So instead of filling it here Instead of using the current instead of using the current Can I not fill it here? For this guy. Can I not fill it here? I can I can"
+    },
+    {
+      "chunk_id": "L200_C31",
+      "start": 2264.46,
+      "end": 2343.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=2264s",
+      "text": "current instead of using the current Can I not fill it here? For this guy. Can I not fill it here? I can I can For this guy. Can I not like for this guy? Can I not fill on the previous itself? I can for this guy Can I not fill on the previous itself? I can for this guy. Can I not on The previous I can for this guy. Can I not fill here? Yes Why does this work because? This guy means there is no need of the right elements If I'm starting to fill here if I fill till here, we will never require these elements of the previous row any further Whenever we are here, this portion will never be required. This portion will be filled with the left guy So you'll use the same previous row. You'll use the same previous row to fill it up. Make sense Thereby what I said was I'll use the same previous instead of using the current row any further I'll use the same previous again and again why let's repeat this. What did I see? If I'm trying to fill this Then I'm just requiring the left guys Now if I try to fill it from the right as well. If I'm filling this, these guys are intact Poinsettia When I require this guy, I'll just require these guys"
+    },
+    {
+      "chunk_id": "L200_C32",
+      "start": 2343.74,
+      "end": 2415.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=2343s",
+      "text": "the right as well. If I'm filling this, these guys are intact Poinsettia When I require this guy, I'll just require these guys and when I require this guy, There'll be no one then no one. So apparently, eventually, there was a previous with some values. When the next row calculation came, you stored it over here, then here, then here, then here, then here, then here. So automatically the previous is acting as the current row every time, every time because you're filling from right to left. Why can't you fill from left to right? Very obvious reason because, because if it is storing some values, like if it is storing some values, if you start filling here, then if you start filling here, then if you start filling here, this guy will require the previous guys, but you have overwritten the previous guys. You've overwritten the previous guys. So when you try to compute this, you'll use the current values, which are not correct. So thereby left to right cannot work. Only right to left will work only right to left. Thereby I can say, let's go back to the code. I don't need the current. Yes, I don't need the current. Instead of that, I just require the previous and over here I can see previous and there is no need of this. So assuming"
+    },
+    {
+      "chunk_id": "L200_C33",
+      "start": 2415.8,
+      "end": 2475.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=GqOmJHQZivw&t=2415s",
+      "text": "that, I just require the previous and over here I can see previous and there is no need of this. So assuming I omitted everything, now let's run this and see if this is running fine. We see some error, which is saying W is not declared in the scope. Why is it not declared in the scope? Okay. Sorry. Oh yeah. Fine. Let's try to run this off. Amazing. One row and it does submit this single array space optimization, not even two rows. And I bet you did love this. So just in case you're dead, please hit that like button in the comment section. Let me know how was this? Like, did you love the one array optimization technique? If you did, please do right, please, please do right. Like I will, I'll really appreciate that. Also, if you're new to this channel, please do consider subscribing to us and with this, let's wrap up this video and meet in the next one. Till then, bye bye. Take care."
+    }
+  ]
+}

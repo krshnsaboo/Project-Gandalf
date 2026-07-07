@@ -1,0 +1,267 @@
+{
+  "lecture_id": "L237",
+  "lecture_number": 237,
+  "lecture_title": "L1. Introduction to LinkedList | Traversal | Length | Search an Element",
+  "youtube_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg",
+  "chunks": [
+    {
+      "chunk_id": "L237_C1",
+      "start": 0.0,
+      "end": 78.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=0s",
+      "text": "So, I'll be starting off with one more playlist and that is the link list playlist. But before that, hey, welcome back to the channel. I hope you guys are doing extremely well. So just a disclaimer that this lecture will be super long. Why? Because I'm going to teach you a bunch of things. Yes. And one more thing, I'll not be writing code in C++ nor will I be writing code in Java. I'll try to give you the thought process, the logic, the pseudocode and you will see while I write the code, even if I'm writing on C++, I'll just make two changes. Yes, I'll just make two changes and the C++ code will be running in Java as well. And similarly, if you are someone who's using Python or JavaScript, you can also do similar kind of changes like one or two lines of changes and the code will start running in Python and JavaScript. So, it doesn't matter which language you're coding in, you can definitely watch this entire playlist. So without waiting, let's get started with the first thing. What is a linked list? Now till now you know data structures which store elements. Now one of the data structures you know is array. So imagine I define an array of size four, it'll be storing something like one, three, two, five. It stores four integers. Why does it store four integer? Because the data type is defined as integer."
+    },
+    {
+      "chunk_id": "L237_C2",
+      "start": 78.6,
+      "end": 155.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=78s",
+      "text": "something like one, three, two, five. It stores four integers. Why does it store four integer? Because the data type is defined as integer. Now if in the future I come across and say, hey, can you please add one more element to this array? Hey, can you please add eight to this particular array? Can you add? No, you cannot add. Why? Because the array is of fixed size four. So the size is fixed four, you cannot add one more element. So arrays are of fixed size. Where is the array stored? So there is something as heap memory in the computer and the array is stored in a contiguous location. What do I mean by contiguous location? And this is the index zero, this is the index one, index two, index three. So the index zero is followed by index one, followed by index two, followed by index three and they are in the contiguous location. So imagine if this zeroth index is at some memory address, seven, eight, seven, eight, nine, five, something like this, then this one will be at seven, eight, seven, eight, nine, six, right? One after this one will add be nine, seven, this one will be at nine, eight. So they are at the contiguous location. So that is why an array is easy to traverse index wise. So you cannot increase the size of the array. At the same time, you cannot decrease the size of the array."
+    },
+    {
+      "chunk_id": "L237_C3",
+      "start": 155.06,
+      "end": 230.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=155s",
+      "text": "traverse index wise. So you cannot increase the size of the array. At the same time, you cannot decrease the size of the array. So this is where something like linkless comes in. It's a data structure which helps you to increase the size as well as decrease the size. So how does this data structure look like? Now array will be like over here if I'm defining array as integer, it will be storing integer. What if I define it as double? In that case, the array will be storing double. What if I define it as a list? In C++, the list is vector int, in Java it is list of int. If I define it as vector or list, what will be like, what will every index store? It will technically store a list at every index, yes. It will technically store a list at every index, right? So what is a linked list? Linked list is a similar data structure, but the difference is they're not in contiguous location. Yes, they're not in contiguous location. So imagine I ask you to store these four elements in a linked list. So what happens is you store one, you store three, you store two, you store five, but they're stored in the heap memory in like, it's not a contiguous location. So if I have to draw you, imagine this is the heap memory."
+    },
+    {
+      "chunk_id": "L237_C4",
+      "start": 230.9,
+      "end": 310.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=230s",
+      "text": "the heap memory in like, it's not a contiguous location. So if I have to draw you, imagine this is the heap memory. One might be here, three might be here, maybe two is here and maybe five is here. So there is no certainty that one will be here. One can also be somewhere on the right of two or somewhere like this. If the memory location of this is 985697 something, this can be anything, anything. So they are not in contiguous memory location. So that is the first thing about not in, about linked list that the not in contiguous location that can be anywhere. So if they can be anywhere, it definitely cannot go like index zero, index one, index two, index three. And how do you store these elements? So one thing in linked list also you can store integer, double list, strings, characters, whatever data structure you want to store similar to array. The only difference is they're not in contiguous location and their size can be increased at any moment. Their size can be increased at any moment. Why? Because array was in contiguous like memory location. So you're not sure if the next, like wherever this was, if the next location is free or not, but when it comes to linked list, there is no next location. It can just, if you add one more six, this final place in the heap memory and store it."
+    },
+    {
+      "chunk_id": "L237_C5",
+      "start": 310.28,
+      "end": 383.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=310s",
+      "text": "there is no next location. It can just, if you add one more six, this final place in the heap memory and store it. This is the advantage of linked list over arrays. You can increase the size, you can decrease the size. Other question comes up, how do we store it? So what happens is over here in an array, it was index zero, index one, index two, index three, and we could easily traverse, right? How do we traverse? In linked list, we do something different. We are storing element, that's basically the data. At the same time, we store something as next. At the same time, we store something as next with every data. Now what is next? You need to know. If this is at zeroth index, how do you know this is at the first index? Because it is exactly the next memory location. So in linked list, if you know the starting point, if you know this is the starting point, how do you know the next? Only if you can somehow remember where is the next guy in the entire heap memory. If someone can tell you where is this three in the heap memory, then it's easy to locate it. So this is how you'll traverse. How will you traverse? Very simple."
+    },
+    {
+      "chunk_id": "L237_C6",
+      "start": 383.36,
+      "end": 461.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=383s",
+      "text": "in the heap memory, then it's easy to locate it. So this is how you'll traverse. How will you traverse? Very simple. So for example, let's call it as memory location one, memory location two, memory location three, memory location four. So basically the first element is at memory location M1. M1 can be anything in the heap memory. Second one is at M2. This one is at M3. This one is at M4. So what we do is, we remember. We remember the starting point. Usually the starting point of the linked list is called head of the linked list. Remember this. Usually the starting point of the linked list is called head of the linked list and the head of the linked list is stored at the M1 location. Remember this. Head of the linked list is stored at the M1 location. Where is the next? The next is stored at M2. So this starting element is storing the next. So what you do is, you basically say next is at M2. So whenever you are starting from head because you know the head is at M1. So in order to go to the next one, you go to this element and you say where is the next? This is at M2. So you straight away go to M2. Straight away go to that memory location and access that element. So what you are doing is, you are invisibly creating a link. How are you creating a link?"
+    },
+    {
+      "chunk_id": "L237_C7",
+      "start": 461.64,
+      "end": 529.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=461s",
+      "text": "that memory location and access that element. So what you are doing is, you are invisibly creating a link. How are you creating a link? You are saying, hey one, your next element is this one. Then over here you are storing your next is at M3. So again, you are creating a link. Over here you are saying the next is at M4. So you are creating a link. Correct? Where will this point to? Does it have any new element? I repeat, does it have any new element? No. So there is nothing beyond M4. If there is nothing beyond M4, what you will do is, you will straight away see null. In Java it is null. In C++ it will be null pointer. Null pointer. That's it. So what you did was, you stored M2 which is basically, this link will not be created in the heap memory. Just to explain, that you know from one, here is the link created. Then there is the link created. And how is the link stored? Just remember where is my next. If you remember it is at M2, you can straight away jump to M2. And then you know the next is at M3, you can straight away jump to M3. Then you know the next is at M4, you can straight away jump. Then you know the next is null, which means this is the tail of the link list. What is it called?"
+    },
+    {
+      "chunk_id": "L237_C8",
+      "start": 529.08,
+      "end": 603.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=529s",
+      "text": "straight away jump. Then you know the next is null, which means this is the tail of the link list. What is it called? The tail of the link list. Tail. Remember this word. It's called tail of the link list. Okay. So we have understood what is a link list. I will not go into the implementation details as of now. I just wanted to give you a context, how to store it. So just imagine someone tells you, increase the size. I want to add 8. How do you add 8? You basically say, put that into the heap memory at some random location M5. Put that into the heap memory at some random location M5. Once you have done this, I knew that the tail of the link list was at this portion, which is at M4. I knew that the tail was at M4. If I know the tail was at M4, what I'll do is very simple. I'll just go and I'll say, Hey, your next is now at M5. It is basically you hypothetically create one more. Just erase it. You create one more and that one more will store 8 and this next one, use blue color. Yeah. The next will be, what will be the next for this null? Yes. Or null pointer for C++. That's it."
+    },
+    {
+      "chunk_id": "L237_C9",
+      "start": 603.68,
+      "end": 676.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=603s",
+      "text": "color. Yeah. The next will be, what will be the next for this null? Yes. Or null pointer for C++. That's it. It is easy to add because you don't have to be dependent on the next memory location. Wherever you find a place, just store it. Again, this M5 can be anything. This is how you can increase the size. I know you can think how to decrease as well. It's very simple to decrease as well. Just remove it. Yes. So anyways, I'll not go to the, go to these things. So we'll talk about that when we do these things. We'll be talking about that. No way. Okay. What's the next? So I've got the concept of link list. The next question that is, that might be in your head is, Hey, where is it used? So if I talk about data structures, it is used in stack queue. Uh, there's the most commonly just up to that can come to your head. Why? Because what is linked list? No fixed size. And if you know stack, stack has no fixed size. You put on elements, it keeps on increasing. You take out elements, it keeps on decreasing. So stack and queue are primary examples where the link list data structure is used. You cannot use an array data structure because they're flexible in size. That is where it is used. Where in real life? In real life, we always use it in a browser. Yes."
+    },
+    {
+      "chunk_id": "L237_C10",
+      "start": 676.44,
+      "end": 755.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=676s",
+      "text": "flexible in size. That is where it is used. Where in real life? In real life, we always use it in a browser. Yes. We always use it in a browser. So this link list that we did talk about was a 1D link list. What do we mean by 1D? It's just keeping a forward pointer. I'm just remembering what is the next. I'm not remembering what is the previous. So it is an 1D, like it's in one direction. Got it? So basically I remember the next, so it's a direction in one. I can go from one to three, but I don't know at three, I don't know what is my previous one. From three, I can go to this two, but I don't know what is my previous one. So it's a 1D link list. Since I'm talking about real life example, one of the classical real life examples is a browser. Yeah. Let's talk about a browser. What happens in a browser? You open a tab and let's say you search something. First tab, this is the first page you landed. You search something. It gives you some results. Imagine you search TQ Forward. It gives you TQ Forward.org. You go to there. From there, you go to that E2Z course. From there, you go to our article and you do everything in one tab. What are you doing? Initially, it started with search."
+    },
+    {
+      "chunk_id": "L237_C11",
+      "start": 755.84,
+      "end": 828.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=755s",
+      "text": "From there, you go to our article and you do everything in one tab. What are you doing? Initially, it started with search. After that, you went one place ahead. After that, you went one place. After that, you went one place ahead. But on the tab, if you click the back button, it actually takes you back. It again takes you back. It again takes you back. And if you again click the forward button, it takes you front. And if you go beyond that something, it again takes you. Right? It looks like a linked list. You don't know the size initially. How many things will you be searching? How many things will you be going deep into? And you can always come back as much as you want. You can always go as much as you want. So perfect example where linked list is used. Got it? Next question. What is the data structure that we will be using? In order to understand the data structure, we'll have to know about struct and class in C++ as well as in Java. I'll be like, I'll be telling you about the concept of self-defined objects. So please hear it out properly. It doesn't matter if it is C++ or Java because both of them are identical. So just hear me out in C++. After right after C++, I'll be telling you in Java. Don't skip to Java. Here the C++ part because it's super easy."
+    },
+    {
+      "chunk_id": "L237_C12",
+      "start": 828.92,
+      "end": 906.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=828s",
+      "text": "in C++. After right after C++, I'll be telling you in Java. Don't skip to Java. Here the C++ part because it's super easy. So before going into the struct and class concept, I'll write a couple of lines. int x equal to 2, int star y equal to and of x. What are these couple of lines doing? And if I write c out of y, so basically c out means print of y. What happens? I'll tell you what happens. This line creates x. This line basically creates x in the heap memory somewhere. In the heap memory somewhere. Stores the value 2. This line, when I say and of x, gives me this memory location. Imagine the memory location is m1. This x is located in the heap memory at some memory location m1. So it will give me m1. That m1 can be anything. It can be any random number. And this is being stored here. So you cannot store a memory location. You cannot store a memory location. So in C++ what you do is, you store a pointer to it. You store a pointer to it."
+    },
+    {
+      "chunk_id": "L237_C13",
+      "start": 906.24,
+      "end": 982.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=906s",
+      "text": "So in C++ what you do is, you store a pointer to it. You store a pointer to it. So what I know is I have a pointer to this memory location. I have a pointer to this memory location. So if you try to print c out, like if you try to print y, you'll get the pointer to this memory location. Got it? So this is very important and how do you, this is the pointer system. This is the pointer system. int pointer. So this is how you store it because this variable was 2. Sorry, this thing was an integer. That's why in order to store a pointer to its memory location, you have to give int r. That's how it works in C++. In Java, you just have to store the instance and it's very simple. I'll be coming to that afterwards. What are we storing? If you are defining an array, you're just storing int, array of size 10 and it always stores ints, right, integers. In linked list, what are we storing? Let's scroll up. We're storing the data for short. At the same time, we're storing the pointer. Please carefully observe. We're storing the pointer to the next, to the next, which is basically m2 here. We're storing the pointer to the next. So we're storing two things. One is the data itself."
+    },
+    {
+      "chunk_id": "L237_C14",
+      "start": 982.72,
+      "end": 1060.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=982s",
+      "text": "next, which is basically m2 here. We're storing the pointer to the next. So we're storing two things. One is the data itself. The next thing is the pointer to the next. So I know one thing. My box. My box as of now is storing the data and the pointer to the next. So this is together. If you remember the example, this just has an integer. That's why I could get, like I could get a pointer to its memory location by saying int star. But if I have two things inside that box, which is the data and the next pointer, data and the pointer itself, which data, which, which data type is this? There's no data type. This is where you have to define a self-defined data type. This is where you have to define a self-defined data type. So what you do is you go ahead and say struct, struct node star, sorry, not star. Open this up and then you say int not x data. After that you're storing a pointer. What is the self-defined data type? Node. The self-defined data type that you're creating, that's called as node. So you are storing a pointer to the next."
+    },
+    {
+      "chunk_id": "L237_C15",
+      "start": 1060.84,
+      "end": 1139.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=1060s",
+      "text": "The self-defined data type that you're creating, that's called as node. So you are storing a pointer to the next. So node star, because to the next, next, which is basically the memory location next, that's what you store. And in order to initialize these values, you need a constructor. Let me explain you what is a constructor. You write node and you take the data. You can take data one, you can take next one. Okay. And then you say, over here, data's value will be data one. Over here you can say next value will be next one. And then you can close this and then you can go ahead and close the struct as well. So this is how a self-defined data type looks like. So what you have done is, let's erase this off. What you've done is, you've defined a self object where there's a data. At the same time there's a next. So this data is an integer. Next is the next pointer. It's the memory where next exists. This is self-defined data type. Got that? Now the question arises, how can I? The question arises, how can I initialize a value? Imagine I've been asked to add a value to, how can I initialize that? So there are multiple ways to do it."
+    },
+    {
+      "chunk_id": "L237_C16",
+      "start": 1139.16,
+      "end": 1212.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=1139s",
+      "text": "Imagine I've been asked to add a value to, how can I initialize that? So there are multiple ways to do it. One of the ways is definitely you can say, node x, similar to how you do it in a integer declaration, int x, node x equal to, just call the constructor node and you give the value 2 and you give null pointer, very important, null pointer. So it's basically null PTR. That's what you give. So if you give this, what happens is, this is nothing but a 2 and this is null pointer next. So you created a variable of your type, node, your type node. If you want a pointer to this, you can say node of star y and this quite simple. This is how you can do it. But if you just define this, this is just that variable. This is not the memory location. Remember this is just an object, not the pointer to this one. In order to get the pointer, you have to do node star y. Got it? The easiest way. Don't go via this. The easiest way is, say node star, whatever is your variable name."
+    },
+    {
+      "chunk_id": "L237_C17",
+      "start": 1212.92,
+      "end": 1288.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=1212s",
+      "text": "The easiest way. Don't go via this. The easiest way is, say node star, whatever is your variable name. If your variable name is, let's say y in this case, y equal to, just give this new variable, sorry, new, just give this new keyword and then write new node to null pointer. So what happens is, whenever you define something like this, it automatically stores a pointer to the memory location. Pointer to the memory location. So this is how you can do it. Got it? So I jumped into the code editor straight away and I've written the same thing. The only difference is I've defined these things to be public and the constructor to be public as well. After this, what I do is I say node star y equal to new node. Let's say I take the array zero value, comma, null pointer. If I've taken this and now I go ahead and say c out of y, see what will happen. I'll just run this. See this memory location being like a pointer to this memory location being printed. Got it? So you understood the new keyword, right? It directly gives you the memory, like a pointer to the memory location and then you can store it. But what if I define it like, I don't use the new keyword and I define it like this."
+    },
+    {
+      "chunk_id": "L237_C18",
+      "start": 1288.52,
+      "end": 1359.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=1288s",
+      "text": "you can store it. But what if I define it like, I don't use the new keyword and I define it like this. So what technically you are doing is just creating an object where these two things are there. Array of zero, which is technically two and null pointer. These two things are there. So we now try to print c out. It throws you an error because it's an object. You can either take data from it and then print it. So if you take data, it'll print two or you can take the next and you can print it. So if I print the next, it's basically the null pointer. That's how you do it. Got it? So in case I have, I would have defined it as this and a new keyword. In that case, I cannot print this. Why dot data will be giving me an error. I have to do something like this and it will be printing me the two value. Got this thing. So technically use this. I did tell you about the other thing because the concepts have to be clear, but technically just use this a new keyword and you can straight away do this. And in a lot of declarations, you'll find that, Hey, they'll be writing something like this as well. We'll have multiple constructors where they just have the data one and this might have multiple constructors as well. Why multiple constructors?"
+    },
+    {
+      "chunk_id": "L237_C19",
+      "start": 1359.36,
+      "end": 1432.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=1359s",
+      "text": "as well. We'll have multiple constructors where they just have the data one and this might have multiple constructors as well. Why multiple constructors? What if I just don't want to pass null pointer again, again, again. So what they do is they say new node array of element and it automatically assumes it to be null pointer. So you might have multiple constructors. So constructor is nothing. It's just a special type of member function, which is used to initialize the objects. If you see, these are the objects of the class of the class in the sense, self-defined object. Okay. So this is how you define a struct. Now with struct, you don't get the object oriented programming concepts like abstraction, encapsulation, inheritance. You don't get these concepts, but if you have to use these kind of data structure in industry, you need to have object oriented programming. This is where what most of the people do is instead of struct, use class. Even if I use class, it's going to work in the exact same manner. Let me quickly run this off. So if I still run it, it still prints me too. Right? Why? Because it's the same thing. Struct only doesn't offer you these extra things like the object oriented programming concepts. With class, you get this benefit. That is why always define, like whenever you're taking self-defined objects, always take class."
+    },
+    {
+      "chunk_id": "L237_C20",
+      "start": 1432.2,
+      "end": 1509.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=1432s",
+      "text": "oriented programming concepts. With class, you get this benefit. That is why always define, like whenever you're taking self-defined objects, always take class. And you will see that in the coming lectures in graph series, we have something as this joints and data structure and we have used self-defined object. Over there we have defined it as class, not as struct and it has helped us significantly. So this is how you can do it in C++. So this is about C++. Now you might be thinking, hey, but we are Java people. How to do this in Java? So in Java, there is no concept of pointers. There's no concept of pointers. So what I'll do is, I'll straight away take you to the Java code. So let's quickly go to the Java code and over here, I'll copy the same thing. Let's quickly copy this down. Class node and over here, the differences will be, I'll remove the star. Yes, I'll remove the star from everywhere and this will become this dot because in order to access the class, class objects, we have to do this dot so that for that object, it can directly initialize and this one will be null instead of null pointer. How many changes did I do? So basically, okay, by the way, you cannot define public because it's already by default public, no need to define it. How many changes did I do? I removed the pointer. The null pointer becomes null."
+    },
+    {
+      "chunk_id": "L237_C21",
+      "start": 1509.04,
+      "end": 1581.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=1509s",
+      "text": "it's already by default public, no need to define it. How many changes did I do? I removed the pointer. The null pointer becomes null. It's the same concept. How do you define it over here? You don't give pointers. You say node of Y equal to new node of, let's say, array of zero. You can either give null or you can leave it because you have multiple constructors. I'll just leave it and now I can give system dot out dot print and I can straight away print Y. In C++, we wrote this. In Java, it will be dot and your data. So if you write Y dot data and if I just run this, maybe I'll take array of four so that, okay, no, array of four is not there. Array of three. Let's take array of three. You see eight is coming across. You see this, right? Eight is coming. So what are the differences? There's no pointer and in order to access it, it's dot. That's the only difference in Java. I copy pasted the exact same code. So going forward, let's say if I'm writing C++ code, converting that into Java code is like just removing pointers and replacing this thing with dot. That's it. That's the only change that you have to do. I'll be showing you throughout the course how easy it is to convert a C++ to a Java and vice versa."
+    },
+    {
+      "chunk_id": "L237_C22",
+      "start": 1581.24,
+      "end": 1657.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=1581s",
+      "text": "have to do. I'll be showing you throughout the course how easy it is to convert a C++ to a Java and vice versa. So C++ has struct and class, but Java has only class. Remember this? This one is done as well. And the question arises, what about the memory space? So let's talk about what things are you storing? So as of now, we are storing a data and a pointer. That is what we are storing. And the memory space will depend on the system. Imagine I'm operating on a 32 bit system. In that case, the integer will take four bytes and the pointer will take four bytes. I'll summarize to eight bytes. Whereas if it is a 64 bit system, the integer will end up taking four bytes, whereas the pointer will end up taking eight bytes. So depending on the system, the memory location might take more. In that case, it'll be 12 bytes. That'll be the memory space. Is it important? No. I was just telling you. Just know about it. Done. That's why I just ran through it quickly. Depending on the system, the memory space used might be different. As well as, what if I'm storing one more thing? INTH. Let's store one more data in it."
+    },
+    {
+      "chunk_id": "L237_C23",
+      "start": 1657.0,
+      "end": 1734.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=1657s",
+      "text": "might be different. As well as, what if I'm storing one more thing? INTH. Let's store one more data in it. I'm telling that, hey, object, please store one more information with you. In that case, you'll have to add plus four, plus four, and it'll become 12, and so on, 16. So depending on what you are storing, you have to analyze manually. This one is done as well. I think I've explained the difference between node and node star, right? Pointer. I've explained this. So this is also done. Now we come up with the main thing. How do we convert an array to a linked list in C++ or in Java? It's a very simple thing. It's a very, very simple thing. Let's, I'll just be talking about the logic here, and then I'll be writing the C++ code. I'll be copy pasting and making the changes I told, and I'll be running in Java as well. So let's, let's assume we are given this array, which has two, one, three, and eight. And given this array of size four, what do we need? I always told you that we need to remember where is our head. We will have this node, uh, self-defined data type where we can store all the data. Initially we define the head. So what we do is we go to the heap memory and use the new keyword and create this data"
+    },
+    {
+      "chunk_id": "L237_C24",
+      "start": 1734.44,
+      "end": 1804.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=1734s",
+      "text": "we define the head. So what we do is we go to the heap memory and use the new keyword and create this data type where we store the two, which is array of zero. And at the same time we say the next pointer. So what I'll do is I'll always point the next pointer like this. It's pointing to null. Null is basically X as of now. So this is something which you'll create for the first variable. I'll do it for the first variable. I've done it for the first variable. So where is my head pointing? Head is always pointing to this. Remember this head is always pointing to this. So what I can say is, I'll erase this. My head will always be this. Always. You will never ever like forget head because if you forget head, you don't know where's your starting point. So you have to keep a track of it. Keep a track of it. And now what I'll do is I'll take a variable mover. You'll understand why am I doing it? It's very simple. I'll take a variable mover. I'll go to the next index, which is index one. And I'll start iterating for index one, index two and index three. Basically apart from the first element, because first element will always be head, I start iterating through every other element. That is what I'll do. So I iterate through this element."
+    },
+    {
+      "chunk_id": "L237_C25",
+      "start": 1804.8,
+      "end": 1884.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=1804s",
+      "text": "first element will always be head, I start iterating through every other element. That is what I'll do. So I iterate through this element. So I need to store it in my data type. So I'll again create node equal to new node and put this. So what I'll do is I'll put this into some, sorry, I'll put this into some data type where the next is always null. Where is my mover as of now? Where is my mover as of now? Over here. And imagine this is my temporary, which is created. The temporary I've created. I've gone here. I've created a temporary by calling new node of one null. So this is created and this is pointing to null. In order to create the linked list, what should happen? This previous element, instead of pointing to null, it should remember that its next is this. It should remember the pointer to this memory location. Correct? This is basically mover. So can I say mover your next will be temporary? Because if you remember, how will we create temporary? Node star, temporary, new, node and the variable one. That's how we'll create. The temporary is already a pointer to this."
+    },
+    {
+      "chunk_id": "L237_C26",
+      "start": 1884.54,
+      "end": 1963.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=1884s",
+      "text": "star, temporary, new, node and the variable one. That's how we'll create. The temporary is already a pointer to this. So this temporary can be assigned to this. Can be. If I create this, what will happen? Instead of pointing here, this will start pointing here. Perfect. Once you have done this, don't move ahead, don't move ahead. Move this mover to this portion. And your temporary can be like, just forget about temporary. Next. This is done. You move to this three. Let's do the same thing again. I'll create three and this will point to null. I'll create three and this will point to null. Correct? And this will be my temporary. But, but, but, but this is connected to this. This has to be connected to this. What will I write? The movers next will be temporary. Isn't it? So what will happen? This will no more be pointing to this and it will be pointing to this. Quite simple. And once I've done this, I'll take the mover and I'll move it ahead. Afterwards I move ahead to this, which is eight. So let's again create eight in a temporary. So temporary will now go to the next. And what thing will happen? The movers, the mover, instead of pointing to null, will start pointing here."
+    },
+    {
+      "chunk_id": "L237_C27",
+      "start": 1963.94,
+      "end": 2033.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=1963s",
+      "text": "go to the next. And what thing will happen? The movers, the mover, instead of pointing to null, will start pointing here. And this is definitely pointing to null. Done. After this, the iteration is over. What we have done is, we have created a link to all the nodes I created. I created all the nodes while traversing and I then attached them. So at the end, the mover will be moved here and will stop here. Can I say, since I stored the head, I know my starting pointer to the memory location. I know the pointer to this. I know that this is there because head is storing this. Head is storing a pointer to this first node. I know where it is. So one thing that you need to remember in the questions related to arrays, they're always asking to return array or something like that. In questions related to link list, you cannot return the entire link list. So what they'll ask you is to return the starting point. Then then they will be traversing it on the backend. They will ask you to return the starting point. Got this. So let's quickly get back into the code editor and write the code. I'll be writing the C++ code in case you're someone who is doing it in Java, Python, JavaScript doesn't matter. Understand the C++ code because the Java code, there's a slight change in the Python code."
+    },
+    {
+      "chunk_id": "L237_C28",
+      "start": 2033.78,
+      "end": 2105.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=2033s",
+      "text": "doing it in Java, Python, JavaScript doesn't matter. Understand the C++ code because the Java code, there's a slight change in the Python code. There's a slight change and I'll be showing you that. Don't worry about that. So what's this code? After that, I'm writing the Java code. Do not worry. And in the links, you'll be finding the Python and JavaScript code as well. So what do we need to do? We need to convert an array to a link list. That's what we need to do. So we'll be taking a function which will be taking this array. What do we need to return? I told you we cannot return the entire link list. So we technically return the head. What is head? You need a pointer to the head. That is what we will be returning. Right? So can I say the head will always be the first element, which is array of zero. Since I have a multi constructor, I don't need to pass the null pointer. It'll always be doing that for me. What is the next step? I need a mover which initially points to head. So the mover is standing in the first place. Perfect. Done. What's the next thing? Let's iterate. We skip the first element, which is the zeroth index, and we go till the last. Let's go. What after this? We'll be creating a, like we'll be storing this value. Stored in temporary. What is the next job?"
+    },
+    {
+      "chunk_id": "L237_C29",
+      "start": 2105.5,
+      "end": 2181.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=2105s",
+      "text": "last. Let's go. What after this? We'll be creating a, like we'll be storing this value. Stored in temporary. What is the next job? I need mover. Next because I need to create the link. Next to point to this temporary. And after that, I need to move because mover, if I go back over here, this temp was created. I had mover here. It pointed to this. After this, the mover has to go ahead. The mover has to go to front to the next one. So either you say mover go to your next, or you say mover equal to temp, because it's the same thing. Because the same thing was temporary. Is it the same thing? So either you say mover equal to temp or you say mover equal to mover dot next. Same thing. Once you've done this, can I say everything is done and you can straight away return the head. So imagine I say node head equal to convert. And I pass on this array and then I try to print the heads data. You will see that it is converted. I'll also be telling you how to travel stone. If I try to print this, you see to a spender. If I just change it, make it 12 year, also be seeing 12. Right? So very simple. So let's quickly copy paste this and go back to the job I did inside the class. You can paste it."
+    },
+    {
+      "chunk_id": "L237_C30",
+      "start": 2181.98,
+      "end": 2261.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=2181s",
+      "text": "So very simple. So let's quickly copy paste this and go back to the job I did inside the class. You can paste it. The first thing is remove all the pointers. It's going to remove all the pointers. Next thing, remove this one to dot. What is the next thing? Uh, this will be length. Remove this. This vector will go as int array. We need to have a private static. Otherwise we'll have to create an object. Okay. It looks like, yeah, everything is done. What's the next thing? No, I've had equal to convert, pass on the array and then try to sprint it. So I'll print head of, sorry, head of data, not head of zero. Okay. Let's try to print it. 12 is printed. Wow. Same code, same logic. This removed couple of things. Starts working. What is the time complexity? Simply traversing. So we go off and yes. You traverse through every element and you store it. That will be the time complexity. So I read to link list is done. What is the next thing? Traversal in link list. Now this is very, very important because if you understand how to traverse in a link list, you can literally do everything. So traversal is something that you will have to learn because even if you remember the array problems, he always travels in an array. So similarly in link list, in all the problems, you'll have to traverse through the entire"
+    },
+    {
+      "chunk_id": "L237_C31",
+      "start": 2261.42,
+      "end": 2331.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=2261s",
+      "text": "array problems, he always travels in an array. So similarly in link list, in all the problems, you'll have to traverse through the entire link list. How do we traverse? So once the array is converted to a link list, a link list will look something like this again. Uh, it will be somewhere in random, random memory space. We will always have the head and what is the head pointing to? Starting the head of the link list, the starting of the link list. And as I said, you never ever tamper the head. That's the first rule of link list. Never ever tamper the head because if you move the head from here to here, you forget which is the starting point. Who will remember it? So never ever tamper the head. The first thing I'll do is I will take a temporary variable which is also at head. Tell me what do I need to print? Two, how can I print this? That's basically temp of data. If I do this, it'll give me the value two. Correct? But after that I need three. How do I get three? I'll have to take this temp to here. How can I take this? We have the next stored. Just go to the next. After that I'll have to take one. Again go to the next. After that I'll have eight. Again go to the next. After that, the temp will reach at the moment null."
+    },
+    {
+      "chunk_id": "L237_C32",
+      "start": 2331.94,
+      "end": 2411.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=2331s",
+      "text": "go to the next. After that I'll have eight. Again go to the next. After that, the temp will reach at the moment null. The moment it reaches null, it stops. So can I say, if I have to implement this, it's probably I'll just take the code editor and write it. It's going to be super simple. Node start temp head because I don't want to tamper my head. Node start temp equal to head. While temp not equal to null. Or maybe you can just say while it is valid. After this, cout temp data and this. And then temp will move to the next. So let's move to the next. Let's try to play it. So if I, yeah, the entire array is printed. Done. If I have to show you in Java. Now you will appreciate me that, Hey, it's very, very easy. So just take this instead of this, I'll just say temp.data and probably do a plus this. And instead of this, I'll write this and I'll just take this. And while this is not equal to null because in Java, okay, perfect. Let's try to, should be perfect. Yeah. Let's try to play it. Done. Simple. It's easy. The C++ Java codes are same."
+    },
+    {
+      "chunk_id": "L237_C33",
+      "start": 2411.7,
+      "end": 2490.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=2411s",
+      "text": "try to, should be perfect. Yeah. Let's try to play it. Done. Simple. It's easy. The C++ Java codes are same. So you don't have to think about it. So next one, length of a linked list. How can you find the length of a linked list? Imagine you're given a linked list and you'll have to find out a length. Can I say private or maybe length of LL and always you'll be given the head. So node star head will be given to you. What do you do? You take a counter zero. You copy paste the traversal. Yes. You just copy paste the traversal and inside the traversal, you give a counter plus plus and you can return the count. That's it. That's how you print the length. So if I have to print the length, I can simply say C out length of the linked list. Oh my bad. Length of the linked list and head. And I can go ahead and run this. Yeah, it should be good. I don't need to print this. I can omit this off and I've appended this. The length is four. Perfect. Super simple. Again, Java. Yes, you need Java code now. Isn't it easy? This remove this, remove this, do this, do this. Done. Is it that tough? Okay. Let's, let's take system.output."
+    },
+    {
+      "chunk_id": "L237_C34",
+      "start": 2490.34,
+      "end": 2559.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=2490s",
+      "text": "Isn't it easy? This remove this, remove this, do this, do this. Done. Is it that tough? Okay. Let's, let's take system.output. Otherwise I'll have to write this and the linked list head should be good. Should be good. Right? Let's run it. My bad. Let's run it now. Four done. Quite simple. I just removed two things and Java code also runs. So let's take the same code and we'll go to the code studio and copy paste here and try to submit it. Let's see if one time submission works. It will. So it's pretty easy. Isn't it? So once the linked list is done, it'll be taking a bingo of end time complexity. The next thing, search in a linked list. Most of you can do it. So what is the question given a linked list? So whenever it is said that you're given a linked list, you'll always be given the head of the linked list and given an element. Tell me if that element exists in a linked list or not. So search or check if present. So it'll be given. Yes, it'll be given the head and you'll be given the value that you have to check for. One thing is for sure. You always copy paste the traversal. So please, please copy paste the traversal. Never ever tamper the head. So how do I check?"
+    },
+    {
+      "chunk_id": "L237_C35",
+      "start": 2559.86,
+      "end": 2633.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=2559s",
+      "text": "You always copy paste the traversal. So please, please copy paste the traversal. Never ever tamper the head. So how do I check? Can I set any moment if temp.data equal to equal to val I return yes, which is one or else I return zero at the end if the entire traversal is complete. Quite simple. Can I write this? I'll just remove this analysis. This check if present and I'll probably pass on the head and I'll ask them to check for S5 there. Let's see. Let's run. Oh yeah, it is there. Let's see. 15 is there. No, it's not there. So this is running. So the next thing I'll do is I'll take this code and I'll copy paste in code studio. Why am I running in code studio? Because the environment in your coding rounds or your online assessments will be similar. It's just be given the function. It will not be given this intermain or these things. You have to understand. So over here you are seeing that it's slightly different. It's saying the type name, the template is slightly different. So whenever there is something like T, which means you define it, it can be integer. It can be double like over here, the defining it that it will be integer. So this is how you write a, you know, like global template that can be reused for anything. If I write it as int, I can only use it for int."
+    },
+    {
+      "chunk_id": "L237_C36",
+      "start": 2633.34,
+      "end": 2692.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=2633s",
+      "text": "you know, like global template that can be reused for anything. If I write it as int, I can only use it for int. But if I write it for T, I can use it for string, arrays, anything. This is how you write it. Got it. So if you run this, this will not run. You'll have to specify over here like this. Yes. You'll have to specify over here. Otherwise it will not run. And this is K. So let's do it K and try to submit it straight away. So these are the things that is why I'm using compilers, something which are similar to online assessment so that you understand how the questions will be asked. What is the time complexity? Obviously we go off N at the worst case in case the element is not found. We go off N at the best case in case the element is the head itself and the average will be N by 2 in case it is somewhere in between or somewhere like that. So this is also done. So you're still left with deletion and insertion. We'll be doing that in the next lecture. In case you're still watching, please, please do consider giving us a like. And if you want all the codes, you'll be finding the links in the description. I'll be adding the note link in the description. We're finding the C++ Java, Python, JavaScript code."
+    },
+    {
+      "chunk_id": "L237_C37",
+      "start": 2692.9,
+      "end": 2708.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=Nq7ok-OyEpg&t=2692s",
+      "text": "be finding the links in the description. I'll be adding the note link in the description. We're finding the C++ Java, Python, JavaScript code. And if you're for the first time on this channel, please do consider subscribing to us because that is the only thing that motivates me. And if you haven't followed me on Instagram, Twitter, LinkedIn, all the profile links will be in the description. With this, I'll be wrapping up this video. Let's play in some other video. Tell them bye bye. Take care."
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L136",
+  "lecture_number": 136,
+  "lecture_title": "G-11. Detect a Cycle in an Undirected Graph using BFS | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=BPlrALf1LDU",
+  "chunks": [
+    {
+      "chunk_id": "L136_C1",
+      "start": 0.0,
+      "end": 75.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we're going to learn about detecting a cycle, yes cycle in an undirected very very important in an undirected graph. So in this video we will be learning how to solve this using BFS. In the next we will be learning how to solve this using DFS. Now since now like till now you have seen how do we use BFS in order to solve matrix related problems or how to traverse in a graph. But how do you detect the cycle? So if you remember the definition of a cycle, you start from a node and you go and you go and you go and you go you go and you come back to the same node. So if you're able to come back to the same node, then only we see that the graph has a particular cycle. So how do you detect a cycle? But before that, let's do one thing for this particular graph, create the adjacency list. If you don't know what is an adjacency list, lecture two or lecture three. So what is BFS? So this is how the adjacency list will look like. So we're going to detect this using BFS. What is BFS? It is nothing but a traversal technique where you start from a node and you visit all the nodes in that graph. So if you're starting from this node"
+    },
+    {
+      "chunk_id": "L136_C2",
+      "start": 75.04,
+      "end": 150.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=75s",
+      "text": "traversal technique where you start from a node and you visit all the nodes in that graph. So if you're starting from this node one, yes. What do you visit in the next step? You visit two, three because they are at a distance of one or level one. At the next step you visit five, six, four. Why? Because they are at a distance of two. If you see they are at a distance of two. At the next time you visit this seven. This is what the BFS traversal is. It goes in level wise like level one, level two, level three. So basically it visits simultaneously these two nodes, then these three nodes, then this node. This is what we call as BFS traversal. Whereas DFS is different where you just go, go, go, go, go. So you go basically. Okay. What is the intuition of the algorithm? Let's understand. So we know BFS is nothing but a traversal technique, right? So imagine the first thing is one where you start from where, from one, where do you go? You go to two, you go to three at the same junction. Remember this from one, you go to two and three at the same junction because they are at level one. So you went to two and three, but remember this, you came from one, you came from one to two"
+    },
+    {
+      "chunk_id": "L136_C3",
+      "start": 150.72,
+      "end": 215.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=150s",
+      "text": "at level one. So you went to two and three, but remember this, you came from one, you came from one to two and three separately, but you went into two and three because they are at the same distance of the level one. Now from two, where can you go? So if you carefully see from two, you can go to one and you can go to five, but will you go to one? Dude, you just came back from this. You just came from one only. So why will you go back to the guy from whom you came? You need to do a traversal. So apparently from two, you can go to five, right? So from two, you can go to five. So from one, you came to two from two, you can go to five. Now there is something as three. If you remember, we had two and three from two, we went to five, but now where will you go from three from three, you can go to six, you can go to four, you can go to one, but why will you go to one? You just came from one, right? So you'll go to six and you'll go to four. So apparently the two and three went to five, six, four, went to five, six and four. And remember this from two, you go went to five."
+    },
+    {
+      "chunk_id": "L136_C4",
+      "start": 215.8,
+      "end": 282.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=215s",
+      "text": "and three went to five, six, four, went to five, six and four. And remember this from two, you go went to five. Okay. And from three, you went to six and four. Correct. So if you carefully see from five, where can you go? You can go to seven, you can go to two, but from five, why will you go to two? Because it is nothing but where you came from. So you will try to go to seven. And when you try to go from six, you'll never go to three because you came from three and you again go to seven. So there are two guys who are actually going to the same place. But if you remember when you started, you went in different directions. Now, how did you arrive at the same position? That is only because it is cycle and it is connecting. This is how the BFS will work. So I hope you've got the intuition. The intuition is very simple. You started in two different parts and now if you are colliding in some portion, that will only be because there is something as a cycle. So what does the BFS algorithm state? If you remember well enough, the BFS algorithm, the first step of the BFS algorithm is define a queue and insert the first node. So this is the first node or the source node with"
+    },
+    {
+      "chunk_id": "L136_C5",
+      "start": 282.04,
+      "end": 345.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=282s",
+      "text": "the BFS algorithm is define a queue and insert the first node. So this is the first node or the source node with the parent. You need to remember where it came from. Very, very important. So I can say it came from zero or minus one. That is your choice. It came from minus one. At the same time, you need to create a visited array. Do you remember? Yes, you have to. It's like one, two, three, four, five, six. So it's like one, two, three, four, five, six, seven. And all of these will be marked as zero apart from the guy one. So this is how the visited array will look like. Okay. Which one is your source node? The source node is one. Correct? The one is visited. So what do you do at the first step is you'll take this one out. So you'll take this one out and you say this came from nowhere. That is minus one. It did come from nowhere. That is why minus one. Let's remove this. So you have one. Where can this one go? It can go to two and it can go to three. How, how will you know this? You will go to the adjacency list and you will see what it is stored and you see two and three are stored. So you can go to two and you can go to three. So you go to two"
+    },
+    {
+      "chunk_id": "L136_C6",
+      "start": 345.12,
+      "end": 411.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=345s",
+      "text": "you see two and three are stored. So you can go to two and you can go to three. So you go to two and you say it came from one. You go to three and you say it came from one. So one can go to two. The market has visited and put that into the queue. Then you can go to three market has visited and put that into the queue. Once this is done, we can just omit this. Perfect. Now again, get the next guy, get the two comma one. So we got the two comma one. Perfect. So can I see two came from one? It did. So from two, where can you go again? Go to the adjacency list and it says you can go to one, but do they just came back from one? Why will I go back to one? I will not. So I'll just go back to five. So I'll go to five and say visited and I'll insert five came from two. Perfect. So five came from two and five is visited. Let's omit this. The next guy will be three comma one. So three came from one. See this observe this three came from one from three. Where can you go? You can go to one, but you came from one. You can go to four. Yes, you can go to six. Yes."
+    },
+    {
+      "chunk_id": "L136_C7",
+      "start": 411.24,
+      "end": 484.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=411s",
+      "text": "go? You can go to one, but you came from one. You can go to four. Yes, you can go to six. Yes. So apparently you can go to four and six so you can go to four and you can go to six from three. You can go to four market has visited and four came from three. You can go to six market has visited and six came from three. Perfect. This is also done. What is the next step? Next step is to get the five comma two. So there is five which came from two from five. Where can you go? You can go to two as well as seven, but he just now came from two. So you'll not go. They'll try to go to seven. So you will go to seven. The seven came from five. So you went to seven. Perfect. And now omit this. At the next step you get four comma three. So you get four and it came from three. So four has just three as the neighboring node. So it came from three. So it will not do anything and it will omit this. Next there is six and it came from three. Important part, important part, very, very important part. Where can six go? Six can go to three, but it came from three. Six can go to seven, but if you go and seen the visited, it says, Hey, we have already visited seven,"
+    },
+    {
+      "chunk_id": "L136_C8",
+      "start": 484.62,
+      "end": 554.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=484s",
+      "text": "came from three. Six can go to seven, but if you go and seen the visited, it says, Hey, we have already visited seven, but BFS tells me, but BFS tells me, but, but we travels always in equal direction. How can someone visit seven? It can only happen if someone touched it right before me. And now if I go and touch it, it means it's a cycle. Someone at a level two and now I'm at a level two, someone right before me at level two, touch the seven. And now I'm at level two and I'm touching it. Thereby there is a cycle. If someone has visited it because we took two different parts and if someone has already touched seven, it means it has a cycle. So we will say, yes, it has a particular cycle. That is how easy we can do this. So I hope you've understood this particular BFS algorithm. So we will not go back and try to write this BFS algorithm, which detects a cycle. So let's go this up. So I'll be coding the C++ solution and the Java solution as usual is on the left. You can follow it. So we're given the number of vertices or the number of nodes and the adjacency list. So what I'll do is I'll just have private function. I just want to write for a graph, okay? Where"
+    },
+    {
+      "chunk_id": "L136_C9",
+      "start": 554.9,
+      "end": 632.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=554s",
+      "text": "the adjacency list. So what I'll do is I'll just have private function. I just want to write for a graph, okay? Where we know that this is the source or something like this. So we have the source. Why am I writing like this? I'll tell you as you move forward. Okay. Adjacency. So this is what I'm trying to write and I'll write visited. We need a visited array as well. So please carry a visited array with it as well. We'll write something like visited of this source is equal to one. We will declare a queue and it will have a pair of income. I, why pair is need to store where it came from. If you remember and initially the source and it came from minus one always. So we did something as a not q.md, which means let's travel still. The queue is not empty. We can see the node that we are currently standing is front dot first. We can say the parent is nothing but q.front.second. And once you have got both of these, you can always say q.front, right? Super simple. Now what's the next step? You need to go to all its adjacent nodes. So please go to all its adjacent nodes. If the adjacent node has yet not been touched, no one has visited it. Then I say, Hey, listen, if it"
+    },
+    {
+      "chunk_id": "L136_C10",
+      "start": 632.46,
+      "end": 708.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=632s",
+      "text": "adjacent nodes. If the adjacent node has yet not been touched, no one has visited it. Then I say, Hey, listen, if it is not, let's visit this guy. Let's put the, uh, put this into the queue saying it came from node. Perfect. But what if it is visited? This is where we need to understand. So whenever we were at five, we knew five came from two, five came from two. We know. And five had something as to as the first adjacent node. Remember whenever you run the fall loop, the first adjacent node will be two. But will you see this two forms a cycle? No, no way. Because you came from two to five. But this two would have been visited because it has previously been touched, but not, not in something like this. Just because you came by that part, that is where this two was touched. That is why it was marked as visited. Right? But let's go to the other keys. When you go to seven, from five to seven, seven was unvisited. Thereby you went to seven. Thereby you had something like seven comma five because seven was unvisited. Right? So if it is unvisited, you go and just put it in. But what if it is visited? Let's come to this at six, it came from three. So six has adjacent node as three, but this guy is visited"
+    },
+    {
+      "chunk_id": "L136_C11",
+      "start": 708.22,
+      "end": 773.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=708s",
+      "text": "visited? Let's come to this at six, it came from three. So six has adjacent node as three, but this guy is visited because it came from three. But why is this guy visited? Why is this guy visited? It did not come from seven. Why is this guy visited? If someone is visited, remember this, if someone is visited and it did not come from it, if someone is visited, that means it will come to else. And it did not come from it, which means it's not the parent, which means it is a cycle. If this guy is visited, it will come here and it's not the parent. How did it visit himself? That's because it's a cycle. Someone else touched it. And if it is a cycle, you say cycle. Or else if you just go across and you traverse everything, something like, I'll give you an example. If you traverse everything in sense, imagine you have something like zero, one node, two node, three node, and over here at four, you had five, you had six. Imagine a graph like this. What will happen is you'll start from the zero node, then you'll go one, four, then you'll go two, five, then you'll go three, six over. So your queue, at the end, you traverse everything. And there is no guy who's previously visited and it's not the parent. Then you say there is no"
+    },
+    {
+      "chunk_id": "L136_C12",
+      "start": 773.18,
+      "end": 851.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=773s",
+      "text": "the end, you traverse everything. And there is no guy who's previously visited and it's not the parent. Then you say there is no cycle. So this is how you can always do from a source, from a source. This over here, the source was zero. Over here, the source was one. What if the graph is broken into multiple components? Please go back and watch the lecture connected components. Please go back and watch the lecture connected components. What if the graph is broken into multiple components? So something like this, imagine one, two, three, this is a graph, five, six, seven, eight, nine. So what will happen is for the first time, when you call it from one, it'll go and visit this, this, then this, but it will not find a cycle here. Then you have to again call it for two, but will you, there's no point. There's no point again, calling for two, because if one went ahead and did a traversal of the entire thing, and it did not find a cycle, calling for two, calling for three, calling for four, will never be able to find it a cycle. Will it be? Obviously not. Right? The next step is like, okay, fine. We go to then five, five, six, no cycle. Then we call it for seven. Now seven says I got a cycle. Yes. With the same method. So you need"
+    },
+    {
+      "chunk_id": "L136_C13",
+      "start": 851.02,
+      "end": 918.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=851s",
+      "text": "no cycle. Then we call it for seven. Now seven says I got a cycle. Yes. With the same method. So you need to call for this one once you need to call for this one, once you need to call it for this one, once. So apparently you need to write like in terms of whenever there is a problem of multiple components, like if you see over here in the example, do we have something like a multiple component thing? So what do you need to do is you need to always write something like this for I equal to the start link. If the nodes are one beast, you start from one equal to N and you go like I plus plus. Okay. And over here, what do you do is you say, if not visited, I please call the detect cycle or whatever is your detect cycle and start the source with I. And if this is true, I will say, Hey, listen, this came down as a true. So can you say that there is a cycle? And if you have visited all the components and you never got a cycle, you say false. This is the standard procedure to do for components. So what will happen is let's analyze what will happen for the first time. It is one. So it'll go for one and find that it is not visited"
+    },
+    {
+      "chunk_id": "L136_C14",
+      "start": 918.7,
+      "end": 987.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=918s",
+      "text": "analyze what will happen for the first time. It is one. So it'll go for one and find that it is not visited because you will have a single visited area. Remember this, you'll have a single visited area with all marked as zeros. So it'll, whenever it goes to one and it finds zero, it goes and calls the detect cycle and the detect cycle will go and mark visit, visit, visit, and visit. So all of these guys will be visited, correct? And it will not return a cycle. So apparently next time it'll be two. So two will be already visited. We've already visited the component that has two. Next will be three already visited for already visited by not visited. Go for five. So you're getting called for five. So five goes visit, visit. So five goes and visits it. No cycle again. So then I will increase to six. Six is visited. Then it'll increase to seven. The moment it increases to seven and calls it for seven, it gives him a cycle. It says, Hey, it's true. We have a cycle. If we start from seven and it says true, this is how you check for components. So always remember, by the way, let's check out. Okay. So they have clearly used something like zero over here and it's a zero based indexing. So what we can do is"
+    },
+    {
+      "chunk_id": "L136_C15",
+      "start": 989.26,
+      "end": 1061.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=989s",
+      "text": "Okay. So they have clearly used something like zero over here and it's a zero based indexing. So what we can do is we can declare something like visited of V and we can mark it as Z. Okay. Means all of them are non-visited and we can say we can, since it's a zero based indexing graph, something like this, if not visited of I, that means not visited. If let's call the detect that we wrote. And now please go and detect from the source. This is true. Tell them that this is a cycle. And if none of them is true, then there is no cycle. We see a graph to have a cycle. If any of the component has a cycle, remember this, we see a graph to have a cycle. If any of the components of a cycle. So let's quickly run this and see if it is running fine. Perfect. As you see, it is giving us correct answer. So if I discuss the time complexity now, can you help me analyze that? What would the time complexity, how many nodes will we visit at the worst case? I can say this detect will be like N into all the adjacent nodes and into, because it's going to visit all the adjacent nodes one by one. So for every node, for the first time, if I go back here,"
+    },
+    {
+      "chunk_id": "L136_C16",
+      "start": 1061.5,
+      "end": 1131.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=1061s",
+      "text": "going to visit all the adjacent nodes one by one. So for every node, for the first time, if I go back here, for the first time, it'll go here, then here, then here, then here, then here, then here. So can I say it's a summation of degrees? Remember the BFS algorithm? You should remember the BFS algorithm I taught you. So whatever time the BFS algorithm takes, it's going to take the same time, which is first, it'll be N things twice of edge. Why twice of edge? Because for every node, you're traversing for all its adjacent nodes. And the adjacent nodes is nothing but the degree. So the summation of all adjacent nodes is equal to the summation of degrees. Summation of adjacent nodes is what you're doing, which is equal to the summation of degree, which is equal to 2E in undirected graph, if you remember the first lecture. So N plus 2E. Are we using any extra space? If you carefully see, we're using a Q data structure. So somewhere around Bico of N and then a visited Bico of N. So yeah, we can just wrap it up to something as Bico of N. And you might argue, but Trevor, we are running a for loop and for every for loop we are calling it. No, no, you're not calling it for every for loop. You can just do a"
+    },
+    {
+      "chunk_id": "L136_C17",
+      "start": 1131.58,
+      "end": 1195.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=1131s",
+      "text": "for every for loop we are calling it. No, no, you're not calling it for every for loop. You can just do a Bico of N because for the first time, when you called for this component, it went in. For one only it went and it went like four times. It never went for two, never for three, never for four. Once you called for five, it went for five and it touched six. Similarly, when you'll call for seven, it'll touch this. It'll be like calls will go, but in total, the moment you touch everyone, there'll be no more calls. So in summation, it's not like every time you're going like N, N, N, N, it's not like that. Okay. So that's why you don't need to complicate stuff. You can just keep it simple and say that the complexity is near about N plus 2E. And if you want to include the component thing, Bico of N because in overall, I'm going to touch everyone, which is going to take this. And then there's a for loop that is running, not into because overall, I'll make sure I take this, right? But that will be the time complexity and the space complexity for this one. So guys, I hope I was able to explain you how to detect a cycle in an undirected graph using BFS. Just in case I was, please make sure you like this video."
+    },
+    {
+      "chunk_id": "L136_C18",
+      "start": 1195.42,
+      "end": 1218.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=BPlrALf1LDU&t=1195s",
+      "text": "you how to detect a cycle in an undirected graph using BFS. Just in case I was, please make sure you like this video. And if you're new to our channel, what are you waiting for? Still now hit that subscribe button, because that is the only thing that keeps me motivated to make these kinds of videos. And yeah, with this, I'll be wrapping up this video. Let's meet in some other video. Till then wait, check out the DPC and SDC. Till then bye bye. Take care."
+    }
+  ]
+}

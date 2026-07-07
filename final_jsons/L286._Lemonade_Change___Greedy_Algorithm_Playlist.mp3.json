@@ -1,0 +1,57 @@
+{
+  "lecture_id": "L286",
+  "lecture_number": 286,
+  "lecture_title": "L2. Lemonade Change | Greedy Algorithm Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=n_tmibEhO6Q",
+  "chunks": [
+    {
+      "chunk_id": "L286_C1",
+      "start": 0.0,
+      "end": 71.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=n_tmibEhO6Q&t=0s",
+      "text": "So time to continue with our greedy algorithms playlist. But before that, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is lemonade change. So you have a lemonade stand and every lemonade will cost you $5. The denominations in the market are $5, $10, $20. Now you are given n customers. You are given n customers. You start with zero. You don't have anything with you. You'll have to tell me, will you be able to sell n customers lemonade? Now what you are given in the array is what is the denomination that every customer comes off it. For an example, if a customer comes up with a 20 denomination note, the lemonade is costing you $5. So you'll have to return $15. You'll have to return $15 to the customer. Let's understand the question in a better way."
+    },
+    {
+      "chunk_id": "L286_C2",
+      "start": 71.4,
+      "end": 150.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=n_tmibEhO6Q&t=71s",
+      "text": "have to return $15 to the customer. Let's understand the question in a better way. So initially you start off with 05 denominations, 010 denominations and 020 denominations. First customer comes up with a five denomination. You're like, okay, you can take away the lemonade and I'll have one five denomination with me. Perfect. I can sell one customer, sell to one customer for sure. I go to the next customer, it's again five. I'm like, okay, you take the lemonade, go away. I'll go to the next, I have a five. So I'm like, okay, I can still sell to this customer. So I'll have three denominations of five. The next customer comes up with a 10 denomination. I'm like, okay, you're coming up with 10, give that to me and take away one five because if you're giving 10, the lemonade costs you five. So you'll be taking away, taking back five. You'll give it back. Next I'll go to 20. Someone is coming up with 20, the lemonade will cost me five. I'll get a 20, but I'll have to give him back 15 and one possible way is I'll give one 10 and one five because 10 plus five is 15 because 10 plus five is 15 so I can return 50 and"
+    },
+    {
+      "chunk_id": "L286_C3",
+      "start": 150.28,
+      "end": 225.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=n_tmibEhO6Q&t=150s",
+      "text": "and one five because 10 plus five is 15 because 10 plus five is 15 so I can return 50 and that is it. And what I see is, yeah, this is possible. I can sell to all the possible customers that are coming to my lemonade stand. Possible. Let's take one more example. What if I take this particular example? Again, let's start with zero denominations. So what I will do is I'll again start off with zero denominations. Let's start off with the first one. First customer comes up with a five denomination. I'm like, yes, I can sell it to you. The next customer comes up with a five. Yes, why not? I can sell it again to you. The next customer comes up with a 10. I'm like, yes, I can sell it to you because I can take that 10 and I can return you a five. I can sell it to you. Next customer comes up with a 10 again. I'm like, I can still sell it to you. How? I'll take that 10 and I'll return him a five. The next customer is having 20. So when he comes up to me, I'm like, no, I cannot sell it to you. Why? Because you're coming up with 20. I have two 10s, but I don't have a zero. I need to return you 15. The only way I can return you 15 is 10 plus five or five plus five plus five."
+    },
+    {
+      "chunk_id": "L286_C4",
+      "start": 225.08,
+      "end": 303.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=n_tmibEhO6Q&t=225s",
+      "text": "I need to return you 15. The only way I can return you 15 is 10 plus five or five plus five plus five. I do not have either of them. So I cannot sell to the last customer. And if I cannot, I will be returning a false for this particular given array. For this particular given array, I will be returning a true. Very simple, isn't it? How do you solve this problem? You typically say, okay, I'll be getting a variable that keeps a track of five, a variable that keeps a track of 10, a variable that keeps a track of 20. Anytime a customer comes up with a five denomination, I add it to this. Anytime a customer comes up with a 10 denomination, I add it to the 10 and I reduce from five. So with five, what I'll do is I will add it up. With 10, what I'll do is I will reduce one five and I'll add a 10. Correct? And if anyone comes up with a 20, there are two possible scenarios. One is obviously I'll keep the 20. Along with that, either I give up a 10 or a five, I give up either a 10 or a five, or"
+    },
+    {
+      "chunk_id": "L286_C5",
+      "start": 303.24,
+      "end": 381.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=n_tmibEhO6Q&t=303s",
+      "text": "with that, either I give up a 10 or a five, I give up either a 10 or a five, or I say I'm going to give up three fives. Right? Either of this should be possible. That's it. That is what you'll have to write. If at any moment I'm not able to return to the customer, that means I cannot sell. I cannot sell. I break out and I will be returning a false. Can I write down the code? Probably yes, it's going to be super simple. Obviously a Boolean function. Again, I'll be writing down the pseudocode. You're given an array. What is the first thing that you start off with? You need three variables. One is a five, which is going to be zero. The other one is going to be 10, which is zero. The other one, you can say it as 20, which is going to be zero. Remember one thing, there is no significance of 20 because you're not going to return 20 to anyone. Right? So, basically I don't need 20. What I return is either fives or either 10 or fives. Right? Perfect. So, what I'll do is I'll start off with four, I equal to zero and I'll go until n. If the array says I am a five, that means perfect. You don't need to do anything."
+    },
+    {
+      "chunk_id": "L286_C6",
+      "start": 381.04,
+      "end": 457.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=n_tmibEhO6Q&t=381s",
+      "text": "and I'll go until n. If the array says I am a five, that means perfect. You don't need to do anything. Five equal to five plus one. That is as easy as it gets. What is the next thing? What if it's a 10? What if it's a 10? In that scenario, I'll be like, okay, if you are a 10, I should have, I should have a minimum of one five. If I have a five, well and good. But if I don't have a five, that's where the problem rises. If I don't have a five, I can straight away say return false, stating not possible. But if I have, what I'll do is I will say five, can you just take off one from you? Yeah, I can. And 10, can you just add a one to you? Perfect. And the else goes. Now, what is the else? Else is going to be very straightforward. I'm getting a 20, right? So I'll have to return. So I can only return if I have a 10 and a five, I can return. And if I can return, it'll be 10 equal to 10 minus one. And if I can return a five, it'll be five minus one. Perfect. Or else I need five to be greater than equal to three."
+    },
+    {
+      "chunk_id": "L286_C7",
+      "start": 457.92,
+      "end": 530.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=n_tmibEhO6Q&t=457s",
+      "text": "can return a five, it'll be five minus one. Perfect. Or else I need five to be greater than equal to three. In that scenario also I can return. If it is not happening, if it is not happening, in that case, I will have to return a false. And there is no need to count it. There's no need to count it because 20 is of no significance to me. And if the entire for loop is executed, I can go ahead and return true. Super simple greedy algorithm where I say if someone is coming up with a 20, I do the basic minimal stuff, give him the 10s and then give him the fives. Simple. Instead of doing three times five first, we'll have to do this first because five is the smaller denomination. You keep it intact. Greedy algorithm works fine. What is the time complexity? Obviously we go off and nothing else. We go off and that is the time complexity space using two variables. So we go off. So yeah, that will be it for this one. So if you're still now watching and if you understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's bring in some other video. And then we'll see you in the next video."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "lecture_id": "L112",
+  "lecture_number": 112,
+  "lecture_title": "L40. Search in a Binary Search Tree | BST | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=KcNt6v_56cc",
+  "chunks": [
+    {
+      "chunk_id": "L112_C1",
+      "start": 0.0,
+      "end": 76.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=KcNt6v_56cc&t=0s",
+      "text": "So before starting this video, I'd love to thank Relible for sponsoring this entire tree series. Did you know that companies like Google, Apple, Starbucks are now hiring people without any degree or experience? Why? Because they believe that skills are more important than anything else. Now top companies in India like the top startups have also started following this trend by hiring through a platform which is Relible which is backed up by an academy. All you have to do is to give the Relible test and based on your score, send your candidate profiles to 50 plus companies which includes Cred, UpGrad, Vedantu, Razorpay etc. and you can get selected for a job role within a week. Another amazing thing about Relible is it's absolutely free. So please make sure you check out the links in the description. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem, search in a binary search tree. Now assume you are given a node with a value for an example 10. And I want you to return the reference of the address whatever you can call. I want you to return this entire node which contains this value. Basically I will be giving you the integral value and I want you to return the entire node. What if this value doesn't exist?"
+    },
+    {
+      "chunk_id": "L112_C2",
+      "start": 76.84,
+      "end": 155.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=KcNt6v_56cc&t=76s",
+      "text": "I will be giving you the integral value and I want you to return the entire node. What if this value doesn't exist? Then I want you to return something which is null. Now remember this is a binary search tree, not a binary tree. Had this been a binary tree then you could have done an inorder, or a pre, or a post, or a level and you could have just written if root.value equal to equal to this node.value then yes return this. But it's not. So binary tree search will end up taking big of n. As I said in the first lecture almost every binary search tree that is given to you is of logarithmic base 2 and height. Yes it's of logarithmic base 2 and height. So how will you solve that? Now we know a property. In binary search tree the left is always lesser than the current node that you are standing and the right is always greater than the current node that you are standing. So assuming I started 8, I have a 10. That's not equal. 8 is not equal to 10. And if that's not equal what does your brain say? Your brain knows this left part is lesser than 8. That is something which your brain definitely knows."
+    },
+    {
+      "chunk_id": "L112_C3",
+      "start": 155.14,
+      "end": 222.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=KcNt6v_56cc&t=155s",
+      "text": "your brain say? Your brain knows this left part is lesser than 8. That is something which your brain definitely knows. This right part is something which is greater than 8. Again your brain knows that definitely. So where will this 10 lie? On the lesser part or on the greater part? Your answer will be it will definitely lie on the greater part. So what you will do is you will move to the greater part and you end up at 12. Is this 12 equivalent to this 10? No it isn't. So what do you look as? You again look at the left. The left is smaller. The right is greater. So apparently 10 is smaller than 12. So it should definitely lie on the left part. So again you move to left and you end up at 10. Is this 10 equivalent to this value 10? And you will be like yes it is. It is equivalent. So you will take this entire node and you will end up returning it. Yes you will end up returning this node. Hence you can easily get your answer. What if I had made this value 9? Yes what if I would have made this value 9? The moment you reach 10 you will be like 10 is not equivalent to this 9. So it will either be on the left or on the right."
+    },
+    {
+      "chunk_id": "L112_C4",
+      "start": 222.88,
+      "end": 292.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=KcNt6v_56cc&t=222s",
+      "text": "you will be like 10 is not equivalent to this 9. So it will either be on the left or on the right. So since left is smaller you end up going to the left which is indeed a value null. So you end up reaching null. So you automatically be whenever you reach null you're going to return null. Or else if you reach the value desired to be you return that entire node. As simple as that. So that's how search in a BST works. And if you carefully observe you are not traversing the entire tree. It will be something like this, this, this, this, this, this. You'll be actually traversing somewhere around the height of the tree. And as I said the height of the tree is always going to be log base 2n like in almost all the cases in BST the height is definitely going to be log base 2n. So can I say I'm not traversing the entire tree. Hence my time complexity will never be big O of n. And my time complexity will be the height of the tree. Because I'll be traversing log n height. If I just go on this all these nodes will never be traversed. So I'll be traversing log base 2n height because either I'll be moving right or left or right right or left or right. So I'll end up going to the leaf node at the worst case."
+    },
+    {
+      "chunk_id": "L112_C5",
+      "start": 292.4,
+      "end": 362.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=KcNt6v_56cc&t=292s",
+      "text": "moving right or left or right right or left or right. So I'll end up going to the leaf node at the worst case. Hence the traversal time will be log base 2n. So that's the advantage of having a BST over something as a binary tree. So as usual the C++ code is on the left and the Java code is on the right. So what are you given? You're given root and you're given val. Correct? Both of these things are given. So what I do is I keep on traversing till I don't reach null. Very simple. So if I don't reach null I'll keep on traversing or if my value does not coincide with the value that I'm looking for. Perfect. Now if the value is less than root val. If it is. If it is. Then I always end up moving left or I'll move right. If it's less I'll move left or I'll move to right. If it was equal it would have stopped at this condition. If it was equal it would have stopped at this condition and I would have returned null. If it was not there then whenever root becomes null it will return null. Simple as that. You can take any binary search tree and you can easily do that out. So I hope you have understood the entire explanation as well as the code."
+    },
+    {
+      "chunk_id": "L112_C6",
+      "start": 362.56,
+      "end": 384.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=KcNt6v_56cc&t=362s",
+      "text": "search tree and you can easily do that out. So I hope you have understood the entire explanation as well as the code. Just in case you did please please please make sure you like this video because it took a lot of efforts to make this entire tree series. Also if you wish you can definitely drop in a comment that will keep motivating me to make such further series. Also if you're new to this channel please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this let's wrap up this video. Let's meet in the next lecture. Bye bye. Take care."
+    }
+  ]
+}

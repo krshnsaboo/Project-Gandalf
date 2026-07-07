@@ -1,0 +1,134 @@
+{
+  "lecture_id": "L055",
+  "lecture_number": 55,
+  "lecture_title": "BS-11. Find the Nth root of an Integer",
+  "youtube_url": "https://www.youtube.com/watch?v=rjEJeYCasHs",
+  "chunks": [
+    {
+      "chunk_id": "L055_C1",
+      "start": 0.0,
+      "end": 74.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we will be continuing with our binary search playlist which is the part of the strivers A to Z DSA course in case you haven't checked it out yet. There's a link in the description you can definitely check it out. So today's problem will be find the nth root of a given integer m. So what is the problem state? Imagine you're given an integer 27. You have to find the third root of 27 which basically means this. So you know 3 will be the third root of 27. Why? Because 3 on being multiplied thrice will give you the number 27. But if I take one more example, let's take this example m equal to 69. I ask you to find the fourth root of 69. You will not find any. Why? Because imagine you take 1, you multiply it 4 times and gives you 1. If you take 2, you multiply it 4 times you get 16. If you take 3 and you multiply it 4 times you get 81. So none of the numbers on multiplying 4 times will give you 69. So there doesn't exist a fourth root of 69. Thereby the answer will be minus 1. How do you solve this problem? If I ask you to do it by linear search, the problem is"
+    },
+    {
+      "chunk_id": "L055_C2",
+      "start": 74.6,
+      "end": 150.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=74s",
+      "text": "will be minus 1. How do you solve this problem? If I ask you to do it by linear search, the problem is super simple. What do you do is you take 1 and you're like okay 1 into 1 into 1, not possible. 2, 2 into 2 into 2, not possible. 3, 3 into 3 into 3, yes 27, possible. I got my answer. I got my answer and you're done. So if you take this example as well, 1 into 1 into 1, 1. 2 into 2 into 2 into 2, 16, nah. 3 into 3 into 3 into 3, 81. Oh it exceeded. It exceeded 69. I never reached 69. Thereby not possible. So linear search will be super simple. You straight away go and run a loop from 1 and you know the maximum answer can be the number itself. You just do this and you call some function and you say him a i raised to the power n because if I give you 1, you have to multiply 1 4 times in case I'm finding the fourth root. You have to multiply 1 4 times. If I give you 2, you have to multiply 2 4 times. So this, this will be done by function. You can write it yourself and if that's equivalent to what I'm looking for which is m, this i is my answer or else if this value has exceeded,"
+    },
+    {
+      "chunk_id": "L055_C3",
+      "start": 150.88,
+      "end": 215.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=150s",
+      "text": "and if that's equivalent to what I'm looking for which is m, this i is my answer or else if this value has exceeded, very important, this value has exceeded, I can never find my answer because the multiplication has exceeded. In that case, you can just break of this for loop and right at the out of the for loop, you can write return minus 1. So this will be the extreme naive brute force solution. So if I have to talk about the time complexity, this is a bigot of m because you're running a m loop. Ideally, it will never go till m but yeah, in the worst case, it might end up going till m. If you give this as 1, it might end up going till like if you have to find the first root of 69, it will go till that. So yeah, ideally at the worst case, it will be m. What about this? You're running a function where you're saying multiply i n times. If you're given 2, multiply it. If n is 4, multiply it 4 times. If n is 5, multiply it 5 times. Ideally, you're saying this. You have to run a for loop. Like how do you find any number 1 raised to the power 4 or 2 raised to the power 4 or 3 raised to the power 4?"
+    },
+    {
+      "chunk_id": "L055_C4",
+      "start": 215.28,
+      "end": 294.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=215s",
+      "text": "find any number 1 raised to the power 4 or 2 raised to the power 4 or 3 raised to the power 4? There are two ways. Either you run a for loop which will take a bigot of 4 times, in this case which is bigot of n or you use the power exponential method which takes bigot of logarithmic base 2 n. So either of them. Either you use this or either you use this. You can use either of them. So I've already taught this power exponential method. I'm not sure if I've taught this or not but I'll be teaching this in future. You can get this from the internet. It's super simple. The complexity will be m into logarithmic base 2 n given that you use the power exponential method in order to find this value like i raised to the power n. In order to find this, we'll use logarithmic base 2 n. So this will be the overall time complexity. Obviously, this is what is kind of not good. Is this the optimal approach? No. Why? Because we're using a bigot of m and I need to optimize it and this is where something like binary search on answers will come in. Can I apply binary search on answers? Probably I can. Why? I'll tell you. So I was being asked to find, imagine I've been asked to find the fourth root of 69 in this case."
+    },
+    {
+      "chunk_id": "L055_C5",
+      "start": 295.4,
+      "end": 363.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=295s",
+      "text": "I'll tell you. So I was being asked to find, imagine I've been asked to find the fourth root of 69 in this case. What did we do? We took 1 and 1 into 1 into 1 into 1 was 1 and we said it's not possible. I have a simple question. Why did you go to the next number? Why did you not stop? Because the value that you got was lesser than 69. So internally you thought maybe I can slightly increase the number and if I slightly increase the number I might end up getting there. Thereby, you went ahead and increased the number to 2. That is the reason you did it and then you were like 2 into 2 into 2 and it was like 16. I was like no this is not still not and then again you slightly increase because 16 was lesser than 69 and this time you went to 3 and you're like 3 into 3 into 3 into 3 and this time you got it as 81. Why did you stop here? Because you are sure that if this is not possible like this has exceeded anything beyond this anything beyond this will not be possible because if you do 4 into 4 into 4 into 4 that will always exceed 81. So this is not possible. That's why you stopped and this is what will help you to find apply binary search because"
+    },
+    {
+      "chunk_id": "L055_C6",
+      "start": 363.48,
+      "end": 426.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=363s",
+      "text": "exceed 81. So this is not possible. That's why you stopped and this is what will help you to find apply binary search because you're very sure if it is lesser you have to move right and if you are greater you have to move left. So you know when to move right because it's kind of moving right and if you're at 5, 5 is not possible so you move upwards. So you know that direction. So we are seeing a pattern. Can I utilize that pattern? Let's probably take some examples and that might help us. Let's try to find out the third root of the integer 27. Let's try to apply our pattern. I know one thing for sure the answer is always going to lie between 1 and 27. So remember whenever you're applying binary search on answers it's very important whatever minimal you like whatever value that you think can be your starting answer you always assign that to low and whatever you think can be the highest answer just go and assign that to high. That's the first thing of binary search on answers. So you have defined the range. You know the range of answer can lie between 1 to 27. Once you have declared you start applying the binary search. So if I ask you where will the mid point"
+    },
+    {
+      "chunk_id": "L055_C7",
+      "start": 426.92,
+      "end": 500.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=426s",
+      "text": "to 27. Once you have declared you start applying the binary search. So if I ask you where will the mid point to initially? It's 1, it's 27. That's 28 if you add them up by 2 will be 14. So the mid will be pointing to 14. You're 14. What do you do? You say 14 into 14 into 14. You can have a function written. You can just ask the function to return the value. 14 into 14 into 14 is actually greater than this 27. What does that signify? Anything like 15, anything like 16, anything like 17, everything on the right will always be greater than 27 which means they can never be your answer which means they can never be your answer. Thereby can I surely say that none of them will be my answer? I can, I can. Hence I'll eliminate. The moment I eliminate the high will move to one place lesser than 14. Thereby the high will come over here which is at 13. So what I've done is in a moment I trimmed down the search space by half and I was able to do it because I know if something is not possible anything on the right is not possible. Okay fine. Mid, what's mid again? 1 plus 13 that's"
+    },
+    {
+      "chunk_id": "L055_C8",
+      "start": 501.0,
+      "end": 578.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=501s",
+      "text": "if something is not possible anything on the right is not possible. Okay fine. Mid, what's mid again? 1 plus 13 that's 14 by 2, 7. Perfect. What about 7? 7 into 7 into 7, whatever value you get that's greater than 27. I'm like if that's greater than 27 everything will actually be greater than 27 when I do raise them to the power 3. Thereby you can actually eliminate everything on the right because they can never be your answer. I'll again end up eliminating everything on the right and the high will move to 6. Amazing. Look at the speed at which I am trimming down the search space. Okay where does the mid point to? 1 plus 6 is 7, 7 by 2 is 3.5 so 3. So mid is pointing to 3. This is the point you're like okay let me do 3 into 3 into 3, 27. I got my answer. Stop the binary search, return because remember over here the question stated if you do not get it you have to return minus 1. So you've got someone, return. You don't have to return the floor value. You just return the exact third root of 27 if there is no floor, no max, nothing. So you got your answer, stop and return. Let's take one more example and try to see what happens when the answer is not"
+    },
+    {
+      "chunk_id": "L055_C9",
+      "start": 578.84,
+      "end": 655.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=578s",
+      "text": "you got your answer, stop and return. Let's take one more example and try to see what happens when the answer is not possible. In the last example the answer was possible. What if it is not possible? Let's take an example. N is given as a imagine 4 and M is given as 69. For this if you remember the answer was minus 1 because there is no fourth root of 69. What's the range? Yes 1 and 69. So that's the first step of binary search on answers. Always define the range and assign low and high. Done. What's the next job? Assign mid. What will be mid? 1 plus 69 that's 75. That's 35. 35 yeah. 35. 4, fourth root. So 35 into 35 into 35 into 35 will obviously be greater than 69. If it is. Can I say everything to the right will be greater than 69? Yes. Yes. Hence you eliminate the right portion because they cannot be your answer. Thereby this high will end up moving to one place before the mid which is 34. So just move it. Perfect. Again I am on the road to eliminate search spaces. I'm over here. What is the next job? Again find the mid. 1 plus 34 that is 35 by 2"
+    },
+    {
+      "chunk_id": "L055_C10",
+      "start": 655.0,
+      "end": 734.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=655s",
+      "text": "spaces. I'm over here. What is the next job? Again find the mid. 1 plus 34 that is 35 by 2 that is 17.5. Hence 17. Again if you take 17 into 17 into 17 into 17. If you do this that's greater than 69. Not possible. Hereby everything on the right gets eliminated and this high will be at 16 this time. Perfect. Let's quickly erase everything and high will be at 16. Where will the mid point to? The mid will point to 1 plus 16 which is 17 by 2, 8.5. So mid will be pointing to 8. Again the same thing 8 into 8 into 8 into 8 is greater than 69. Hence everything on the right will be eliminated. So it will be like 7 because everything on the right is eliminated. So the high moves. What is the mid? It is 4 because 1 plus 7 by 2 is 4. 4 into 4 into 4 into 4 is again greater than 69. So everything on the right is eliminated. So eliminate and this moves to 3. So high will move to 3. Let's quickly do it now. We're almost there. What will be the mid? 2. When you do 2 into 2 into 2 that's lesser than 69. If it is lesser than 69 it's not equal to 69 by the way. It's not equal to 69. It's lesser than 69. If it is lesser than"
+    },
+    {
+      "chunk_id": "L055_C11",
+      "start": 734.68,
+      "end": 806.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=734s",
+      "text": "than 69 it's not equal to 69 by the way. It's not equal to 69. It's lesser than 69. If it is lesser than 69 what do you do? You're like okay 1 cannot be my answer. 2 cannot be my answer. Maybe the low has to move. The low will move here and you'll eliminate this. Where are we? We are at 3. Okay let's see because the mid will now point to 3. 3 into 3 into 3 into 3 is 81. That's greater than 69. So 3 can never be your answer. So the right portion will be eliminated and the high will move one place before mid. Stop. At the moment you reach here what do you see? High is here. Low is here. They crossed. And if they crossed and there was no portion where you are equal to 69 thereby the answer was not fine. Hence return minus 1. Quite simple. The trick is on binary search on answers identify the range, assign low to the lowest, assign high to the highest possible answer. Again the range can vary. I have taken 1 and m. You can vary that range as well to optimize it. But yeah the classic way to cover all the cases is to take 1 and m in this particular one because that will also cover this case. Okay done. Now time to write the code. I think it's going to be super simple."
+    },
+    {
+      "chunk_id": "L055_C12",
+      "start": 807.4,
+      "end": 882.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=807s",
+      "text": "one because that will also cover this case. Okay done. Now time to write the code. I think it's going to be super simple. I'm going to say function and I take n and I take m. What's the first thing? I know low will be 1. I know high will be m. And quite simple. The same structure of binary search. Nothing special. Just coming out of that array phase. There's nothing as an array over here. So we're like okay what's mid? Mid is low plus high by 2. Quite simple. I have to call the function which does the multiplication job like there will be a function which will do mid to the power n. If if I given 2 it will do 2 into 2 into 2 into 2 if n is 4. If n is 4. So yeah we'll have to write that function. So write that function which does it for you where you pass the mid and you give him n. And that value is equivalent to m. You got your answer. If it is lesser than m in that case you have to go on the right and find a better version so that you increase the number or else the right is never possible. So you have to basically come one step back. So if if if if this line never executes"
+    },
+    {
+      "chunk_id": "L055_C13",
+      "start": 882.76,
+      "end": 948.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=882s",
+      "text": "the right is never possible. So you have to basically come one step back. So if if if if this line never executes the while will be stopped when this cross crosses rather and then you return a minus 1. Simple. The function is done. The function is done. What is the time complexity? So if I have to discuss about the time complexity what is the search space? It's between 1 to m. So the search space is m size in which you are doing the binary search. So the number of elements is m in which you are doing the binary search. So it's logarithmic base to m. It's logarithmic base to m. Got it? And whatever if you're using the exponential method that will take logarithmic base to n. If you're using the normal for loop method that will take a big go often depending on you. Got it? This will be the time complexity which is much much better than the previous one. So let's quickly go back into the code editor because we still have to deal with some edge cases and yeah you can find out the problem link in the description. So I've written the exact same code low and high and then mid and the function finds us out the mid to the power n and if it's equal to m we say we have found out"
+    },
+    {
+      "chunk_id": "L055_C14",
+      "start": 948.92,
+      "end": 1027.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=948s",
+      "text": "the function finds us out the mid to the power n and if it's equal to m we say we have found out our answer. If it's smaller then we go to the right. If it's greater then we come to the left. Now if we run this this will actually fail. Why? Let's look at the test case. The test case is super big and it's failing. Why does it fail? Let's understand. Let's go back to the iPad. Imagine I'm giving you n as 10 and I'm giving you m as 10 to the power 9. I'm asking you to find the 10th root of 10 to the power 9. So what you'll do is you'll take low as 1 and you'll always take high as 10 to the power 9 and your mid will be 1 plus 10 to the power 9 by 2 which is somewhere near about 10 to the power 9 by 2. Near about this. So what you do is you're calling the function and you're saying take 10 to the power 9 by 2 and raise it to the power 10 and which is approximately 10 to the power near about 90. Yeah if I'm not wrong. Yeah it's near about 10 to the power 90. Can we store this? No. This is where the overflow case happens. Hence we don't do this. Because if you write a function which finds you out like mid to the power n this might overflow."
+    },
+    {
+      "chunk_id": "L055_C15",
+      "start": 1027.08,
+      "end": 1091.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=1027s",
+      "text": "happens. Hence we don't do this. Because if you write a function which finds you out like mid to the power n this might overflow. You have to deal with this. So what you will do is you will start off multiplying. Like what do you basically do is you have to find it raised to the power 10 right. So you're like 10 to the power 9 by 2 into 10 to the power 9 by 2 into 10 to the power 9 by 2. So the moment while on multiplying while multiplying the moment you see it's crossing the m it's crossing them you stop. Because that is what you care about. If it's crossing them it's not possible. Why do you want to find out the ultimate answer? The moment you cross you say hey dude you have crossed m and that is what matters to me. Because if you cross you're not possible and I can eliminate the right half. Just focus on that. Why are you focusing on computing mid to the power n. Don't focus on that. Just focus if it is crossing if it is equal or if it is lesser that will be done. So going back to the code editor let's quickly try to rewrite the code. So as of now the code is returning mid to the power n. You have to rewrite this function. So maybe just omit this because that was binary"
+    },
+    {
+      "chunk_id": "L055_C16",
+      "start": 1091.56,
+      "end": 1165.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=1091s",
+      "text": "the code is returning mid to the power n. You have to rewrite this function. So maybe just omit this because that was binary exponentiation. A lot of people might not be knowing it. So let's just write a function which kind of tells me hey return 1 if it's equal to m. Return 0 if it's lesser than m because that is what I just need in binary search. And return 2 if it's greater than m because that is what I need in binary search. I don't need apart from this. So I'll take the mid I'll take the n and I'll take the m. And this time I'll be like long long answer equal to probably I'll keep 1 and I'll start with int i equal to 1 straight simple answer equal to answer into mid because I'm trying to find mid to the power n. And if at any moment answer crosses m I say return 2 because that is what I need to do and I just keep on going. And if this doesn't happens if this doesn't happens then answer will be equal to equal to m which returns 1 or else I end up returning 0 which basically means it's lesser than m. So I've written a small for loop and I just have to change over here. I say"
+    },
+    {
+      "chunk_id": "L055_C17",
+      "start": 1165.4,
+      "end": 1227.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=1165s",
+      "text": "means it's lesser than m. So I've written a small for loop and I just have to change over here. I say if it's equal that means it's 1 right. If it's smaller it means it's 0. Quite simple. And now if I try to run this ideally should run okay in it it needs one more parameter. Let's pass that on. Ideally should run let's see it runs now you will be submitting it. So it does work and if you see I did not make any changes to the binary exponentiation code because a lot of you will not be knowing that methods if I make changes over there you might not understand. That's why I just wrote the simple for loop so that you understand how to deal with such cases in every question which deals with binary search and answers. You have to think of these edge cases where they're overflowing and you have to deal with them and make sure to take long long because you're multiplying so it might exceed. Got it? So I hope you've understood the entire lecture and you've understood how to apply binary search and answers. Now how to deal with edge cases as well. In case you're still watching please please do consider giving us that like and if you're new to our channel what are you waiting for hit that subscribe button and if you haven't followed me"
+    },
+    {
+      "chunk_id": "L055_C18",
+      "start": 1227.32,
+      "end": 1243.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=rjEJeYCasHs&t=1227s",
+      "text": "that like and if you're new to our channel what are you waiting for hit that subscribe button and if you haven't followed me on LinkedIn, Twitter and Instagram all the links will be in the description. With this I'll be wrapping up this video. Let's meet in some other video. Till then bye bye. Take care."
+    }
+  ]
+}

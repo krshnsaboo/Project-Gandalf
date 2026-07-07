@@ -1,0 +1,64 @@
+{
+  "lecture_id": "L265",
+  "lecture_number": 265,
+  "lecture_title": "L2. Print all Divisors of a Number | Maths Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=Ae_Ag_saG9s",
+  "chunks": [
+    {
+      "chunk_id": "L265_C1",
+      "start": 0.0,
+      "end": 72.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=Ae_Ag_saG9s&t=0s",
+      "text": "So, let's continue with the math section of striver's A to Z DSA course. But before that, hey, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is printing divisors of a number. So, what is the problem exactly stating? It's stating that you'll be given n equal to 36 and you'll have to return me all the divisors of this particular number. Order doesn't matter. So, we have to write down all the divisors. 1 is definitely a divisor. 2 is, yes, 2 is a divisor. 3 is a divisor. Is 4 a divisor? Yes. Is 5 a divisor? No. Is 6 one? Yes. Is 7, 8, 9? Yes, 9 is 1. 10, 11, 12. 12 is 1. 13, 14, 15, 16, 18 is 1. And 36. I hope I haven't missed out any anything. Yeah. So, these are the divisors and this is what you'll have to return. Again, the order doesn't matter. As long as you return me all the divisors, I'm okay with it. Got it? So, how do I print down all the divisors? That is an important question. First of all,"
+    },
+    {
+      "chunk_id": "L265_C2",
+      "start": 72.76,
+      "end": 146.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=Ae_Ag_saG9s&t=72s",
+      "text": "it. Got it? So, how do I print down all the divisors? That is an important question. First of all, the extreme name solution is, okay, I know one thing. The divisors can lie between 1 to n. They're not going to, like 37 cannot be a divisor. It's definitely going to be between 1 to n. Correct? So, the first thing that I will do is, I'll start off a for loop from 1 till n. Okay. I'll say, okay, hey listen, if n is, because divisor means it should be divisible. So, if the remainder is 0, when I divide by i, that means it is divisible. It is divisible, right? Hence, I can probably keep an array or a list, whatever you can, according to your language. I'll say array dot add i. So, I have the divisor i with me. Done. But what will be the time complexity? So, the time complexity of this particular approach will be big O of n and what will be the space complexity? Now, I'm not using any space. The space that is being used is for returning the answer. So, typically I'm not using any space for solving it. Whatever space I'm using, it is for storing the divisors"
+    },
+    {
+      "chunk_id": "L265_C3",
+      "start": 146.98,
+      "end": 221.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=Ae_Ag_saG9s&t=146s",
+      "text": "answer. So, typically I'm not using any space for solving it. Whatever space I'm using, it is for storing the divisors and returning it. Again, the space complexity will be depending on the integer n. So, you cannot pinpoint. So, you can tell the interviewer that if n is 1, I'll be requiring a big O of 1 space. If n is 2, I'll be requiring a big O of 2 space. So, depending on the number, the space complexity will vary and that is only required for storing the answer. Got it? But obviously, the interviewer will not be happy with the time complexity and he'll ask you to optimise it. Now, this is where the optimisation will come in and you'll have to observe minutely. So, what do you need to observe? First of all, let's observe something. If 1 is dividing 36, if 1 is dividing 36, 1 should be multiplying by something to get 36 and that is 36. So, if 1 is a divisor, the number that it is getting multiplied to is another divisor. Agreed? Okay. If 2 is a divisor, it's definitely getting multiplied with something that is all, that's how it gets 36. So, if 2 is a divisor, the number that it is getting multiplied to will be another divisor. Okay. So, can I say, if I can figure"
+    },
+    {
+      "chunk_id": "L265_C4",
+      "start": 221.3,
+      "end": 297.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=Ae_Ag_saG9s&t=221s",
+      "text": "divisor, the number that it is getting multiplied to will be another divisor. Okay. So, can I say, if I can figure out 1, I can also figure out 36. If I can figure out 2, I can also figure out 18. If I can figure out 3, 3 into what? 12. If I can figure out 4, I can figure out 9 as well. Okay. And if I can figure out 6, 6 into 6 will be 36. So, typically, I don't need to loop till 36. If I can loop till 6 for this particular example, and what is 6? 6 into 6, kind of square root of 36, square root of 36. So, if I can loop till square root of 36, I can get the other side divisor as well. I can get the other side divisor as well. You see this pattern, you do see, right? So, what I will try to do is, I'll say, hey listen, I know one thing for sure, 1 into 36 is 36, 2 into 18 is 36, 3 into 12 is 36, 4 into 9 is 36, 6 into 6 is 36. Now, these are the divisors, 1, 2, 3, 4, 6 and the next"
+    },
+    {
+      "chunk_id": "L265_C5",
+      "start": 297.34,
+      "end": 370.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=Ae_Ag_saG9s&t=297s",
+      "text": "is 36, 6 into 6 is 36. Now, these are the divisors, 1, 2, 3, 4, 6 and the next divisor is 9, 9 into 4 is 36 and then 12 into 3 is 36, 18 into 2 is 36 and 36 into 1 is 36. So, what I was doing was, I was looping from 1 to 36, but actually I don't, for finding 9, 12, 18, 36, I don't need to loop in the second half. If I can just loop till 6, my job will be done because for 1 I'll get 36, for 4 I'll get 9. I don't need to explicitly do for 9. So, what I'll say is, hey listen, I'll start the looping from 1, but I'll do it just till square root of n, that is what I'll do and I'll say array is empty or list is empty. So, if my n modulo i is equal to equal to 0, I am very sure that i is a divisor, I am very sure about that, right. So, I can say array dot add i, okay. What is the other"
+    },
+    {
+      "chunk_id": "L265_C6",
+      "start": 370.34,
+      "end": 450.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=Ae_Ag_saG9s&t=370s",
+      "text": "very sure about that, right. So, I can say array dot add i, okay. What is the other divisor? The other divisor is definitely n by i. You have a doubt this, if 12 is a divisor, 36 by 12 is 3, 3 is the other divisor. If 3 is a divisor, 36 by 3 is 12, 12 is the other divisor, right. But you have an edge case, you'll have to think about the edge case. If 6 is a divisor, 36 by 6 is also 6, so you'll have 6 twice, but you need the uni divisors, 6 is just once in the answer. So, please make sure if n by i which is the other divisor, if that's not equal to i, then only I'll add it to the array. Perfect. If completes, for loop completes, I am done. Again, the order will not be in the sorted fashion, it'll be 1, then 36, then 2, then 18, then 3, then 12, then 4, then 9 and then 6. This is how the order will be if you follow this method. But, if you follow this method, the time complexity will be coming out to be b go of square root of n. This is what the time complexity will be. Again, the space complexity is something which will be varying according to the number, so you cannot pinpoint"
+    },
+    {
+      "chunk_id": "L265_C7",
+      "start": 450.18,
+      "end": 526.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=Ae_Ag_saG9s&t=450s",
+      "text": "the time complexity will be. Again, the space complexity is something which will be varying according to the number, so you cannot pinpoint the space complexity. I am not using space complexity to solve the problem. I am using space complexity to return the answer because the problem statement demands it. So, I cannot optimise that. Got it? Okay. So, one thing I just wanted to say, if you're writing i equal to 1, i lesser than equal to square root of n, that's one way of writing the loop, if you're looping till square root. While the other way is, you can start from i equal to 1 and you can say i into i lesser than equal to n, i plus plus, this will also work out. Quite simple. 6 into 6 lesser than equal to 36 works out. 7 into 7 lesser than equal to 36, no. So, this is a better way. Why? Because square root is a C++ or STL function in C++, in Java it's a collections, inside the collections. Because square root is a library function which ends up taking some time complexity. So, avoid it. Instead of it, write it like this. Quite simple. Write just a multiplication and this is a better way to write. Got it? Okay. Perfect. This is how I can code it and yeah,"
+    },
+    {
+      "chunk_id": "L265_C8",
+      "start": 526.18,
+      "end": 549.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=Ae_Ag_saG9s&t=526s",
+      "text": "multiplication and this is a better way to write. Got it? Okay. Perfect. This is how I can code it and yeah, this will be it for this one. So, if you're still now watching, I hope you've understood everything and if that is the case, please, please do consider giving us a like and if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

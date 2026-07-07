@@ -1,0 +1,169 @@
+{
+  "lecture_id": "L035",
+  "lecture_number": 35,
+  "lecture_title": "Majority Element II | Brute-Better-Optimal",
+  "youtube_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8",
+  "chunks": [
+    {
+      "chunk_id": "L035_C1",
+      "start": 0.0,
+      "end": 67.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=0s",
+      "text": "Hey everyone welcome back to the channel, I hope you guys are doing extremely well. So this is another lecture from the Stryver's A to Z DSA course just in case you are for the first time here. This is world's most in-depth course when we talk about DSL Go. Why do I say that? This course has 455 modules. By the end of the course you would have solved more than 400 plus problems in DSL Go. You can go over the entire internet, you can buy any of the paid courses. None of them will be teaching you DSL Go in such depth. The only thing that I can give you as assurance is once you complete this entire course, you can clear any of the DSL Go in any of the companies in any part of the world. So till now we have covered up till this particular problem. Now in this video I'll be covering up the problem majority element n by 3 times. But please before watching this video, go back and watch the video majority element n by 2 times. In that video I've explained the algorithm and intuition in depth. And for this particular problem I'll just be using that algorithm and intuition to derive a solution for n by 3 times. So if you haven't seen that particular video, there's a link in the description. Pause this video, go back and watch it and then only resume it because if you haven't"
+    },
+    {
+      "chunk_id": "L035_C2",
+      "start": 67.16,
+      "end": 128.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=67s",
+      "text": "particular video, there's a link in the description. Pause this video, go back and watch it and then only resume it because if you haven't seen it, you won't understand anything that I'll teach in this particular video. So what does the problem actually state? It states that you'll be given an array and that will be consisting of integers. And you have to return me all the integers that are appearing more than floor of n by 3 times. What does it mean? So over here n is given as 8. So if I write 8 by 3, the value will be 2 point something. So if I take the floor of the division, it will actually be 2. So you have to return me all the integers that are appearing more than 2 times. So can I say 1 is definitely one of the integers that is appearing more than 2 times because it appears 3 times. And can I definitely say 2 is another integer that is appearing more than 2 times because 2 is also appearing 3 times. So there are 2 integers that are appearing more than 2 times and these 2 integers have to be returned. So before we move on to the solution, I have a very simple question for you. How many integers do you think at max will be there in the answer? Like over here, you did see that the answer had 1 and 2."
+    },
+    {
+      "chunk_id": "L035_C3",
+      "start": 128.9,
+      "end": 200.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=128s",
+      "text": "do you think at max will be there in the answer? Like over here, you did see that the answer had 1 and 2. So they were at max of 2 integers. I'll ask you how many at max will be there in the answer? Can I say the answer will be at max having 2 integers? Can I say this? Why? So over here n was 8 and when I did a floor of it, the value that I got was 2. Correct? And I wanted someone greater than 2. Like any element that is appearing more than 2 times. So more than 2 times means at minimal it will be 3. At minimal it has to appear 3 times. So if I take 3 plus 3, it is giving me 6. But if I take 3 integers, if I take 3 integers, each of them appearing 3 times, then the total will be 9. 9 integers. And but n was just 8. So can I definitely say that at max there will just be 2 elements which will always appear greater than floor of n by 3. I can take any other value of n. Imagine you take n as 9 and if I do something like 9 by 3 and a floor, that gives me 3. If I take more than 3, I want integers that are appearing more than 3. So that is at minimum of 4 times, 4 plus 4 will be 8."
+    },
+    {
+      "chunk_id": "L035_C4",
+      "start": 200.48,
+      "end": 268.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=200s",
+      "text": "3, I want integers that are appearing more than 3. So that is at minimum of 4 times, 4 plus 4 will be 8. And if you add another one which appears 4 times, it becomes 12. But n was just 9. So at maximum, at maximum, the answer just can have 2 integers. At minimum, it can have 0 integers. It can have no one appearing more than n by 3 times. But at max, we can just have 2 integers. So that is the first thing we have observed. So we know something for sure that the answer will always have 2 elements. Now what is the first solution that comes to your mind like the brute force? The brute force is very simple. What do you say is you pick up every element and you check through the array which is appearing more than floor of n by 3 times and that is the extreme brute force. So probably I'll take a list which is initially empty. Okay. And then I start with the first element 1. And I pick up 1 and I traverse in the entire array. I pick up 1 and I traverse in the entire array. I say 1, are you appearing? How many times? Like 1 says once, twice, thrice, no, no, no, no. So 1 appears thrice. And that is greater than the floor of n by 3. Thereby I can say that, okay, 1 is a possibility."
+    },
+    {
+      "chunk_id": "L035_C5",
+      "start": 268.84,
+      "end": 331.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=268s",
+      "text": "1 appears thrice. And that is greater than the floor of n by 3. Thereby I can say that, okay, 1 is a possibility. Thereby I just take it. Then I move forward and I again see 1. But that is already in the list. And if it is already in the list, I'll not do anything. I'll just move. And then I have a 1 and I again see it is already in my answer. So I'll not do anything and I'll move. I say I have a 3. If I say I have a 3, I pick up 3 and I'll probably start counting it. And it's like no, no, no, yes, yes, no, no, no. So two times which is not greater than floor of n by 3. So nothing to be done. Let's move ahead. We have a 3. Again the same thing. Next we have a 2. The moment you take a 2. No, no, no over here. And then a yes, yes. So three times which is more than floor of n by 3 times. Thereby 2 will be in the answer. The moment you see that the list has two elements, you can stop. You can stop the iteration over here because you know at max you'll just have two integers that can appear more than floor of n by 3 times. So you just stop and you can return this list as the answer."
+    },
+    {
+      "chunk_id": "L035_C6",
+      "start": 331.36,
+      "end": 400.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=331s",
+      "text": "that can appear more than floor of n by 3 times. So you just stop and you can return this list as the answer. So let's quickly write down the pseudocode for the brute force. And I say I'll probably take a list which is initially empty. And then I'll start iterating from i equal to 0 till the last index which is n minus 1. And I know one thing for sure. If the list is empty, then I need to check. I don't need to do anything. I can just go ahead and take that element and count in the entire array. Or I can say if the list is not empty, if the list is not empty, then whatever is at the first index, whatever is at the first position, I will say if that's not equal to the current element, can I say this? That means this is not a part of my answer. So what I'll do is I'll probably keep a count equal to 0 is count equal to 0. And then I'll just run a loop from j equal to 0 to n minus 1. And I'll say, hey, listen, if array of j is equal to equal to this particular nums or rather nums of j, if nums of j is equal to equal to nums of i, then Kun, please keep a counter, counter plus plus."
+    },
+    {
+      "chunk_id": "L035_C7",
+      "start": 400.52,
+      "end": 467.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=400s",
+      "text": "of j, if nums of j is equal to equal to nums of i, then Kun, please keep a counter, counter plus plus. So once this entire for loop is over, I can simply say if counter is greater than n by three, then what I say is list, can you just add this possible element and you will add it and this is how you do it. So basically what I did was if list has no answer, we check for the element or if it has one element, then I'll say if that one element is not equal to the current, then go and check. And it just simply does a linear search. And once this if is completed, what do you do is if at any moment the list size becomes equal to equal to two, you break, there's no need to do any further iterations, you break and at the end of the day, you can return the list that will be your answer. So if I ask you what is the time complexity, can I say the time complexity is we're running a big O of n loop over here, we are another big O of n loop inside. So can I say the time complexity is near about big O of n square and what about the space complexity? Are we using any extra space? Yes, we are. We are taking a list, but that is hardly going to stop two elements."
+    },
+    {
+      "chunk_id": "L035_C8",
+      "start": 467.7,
+      "end": 532.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=467s",
+      "text": "complexity? Are we using any extra space? Yes, we are. We are taking a list, but that is hardly going to stop two elements. So big O of two is the space which is as good as the constant space. So this will be the overall time complexity and the space complexity. Obviously the interviewer will not be happy with n square and he'll ask you to optimize it. This is where we will move to the better solution. So we have to improve from n square. So what can you think of? You know, one thing for sure, we are counting as we move forward. So you have to keep a track of how many times it did appear. We have to remember. And whenever these things come in, what is the logic? What is the technique that comes to your mind? It is the hashing technique because you have to remember. So maybe we can hash it. So what I will do is I'll do a hash it and that is when I'll probably take a empty hash map. This is the better solution. I'll take an empty hash map and in the hash map what I'll do is I'll keep the number and I'll keep the count as the key and value. And I'll start iterating over the array. First element is one. I'll say one. You appear one day. Okay. Next move forward. It's again one. So I'll just go ahead and increase the count."
+    },
+    {
+      "chunk_id": "L035_C9",
+      "start": 532.94,
+      "end": 607.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=532s",
+      "text": "one. I'll say one. You appear one day. Okay. Next move forward. It's again one. So I'll just go ahead and increase the count. Next again one. Go ahead and increase the count. Perfect. Next again one. Go ahead and again increase the count. Next three. Put it into the hash map. Next two. Put it into the hash map. Next two. Increase next two. Increase. Once you've iterated through the entire array, your hash map is containing every unique element. If you carefully see every unique element with its count, what did you require? How many of them appeared more than floor of N by three? So now I'll go through the hash map. I'll go through the hash map and I'll say, okay, one, you're bearing four times. That's more than what I require. So one will be my answer. Next three. No. Next two. Yes. So I have two possible answers and this I can store in a list and return. So what did we do as the part of the better solution? We first iterated over the array. Then we iterated over the hash map. So two iterations with it. But do we actually need two iterations? Can we do better? We can. Let's see how. So at present we were basically going through the entire array and then iterating through the entire map and we need to remove this step."
+    },
+    {
+      "chunk_id": "L035_C10",
+      "start": 607.5,
+      "end": 685.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=607s",
+      "text": "present we were basically going through the entire array and then iterating through the entire map and we need to remove this step. So what I'll try to do is whenever I take an element and I put it into the map, that is the only way to do something. Correct. So what I'll do is I will at first figure out what is floor of N by three. So floor of N by three is nothing but two in this case. So we need any element that appears a minimum of three times because greater than two means a minimum of three times is what I require. Right? So now what I'll do is I'll take up the first element, which is one. I'll put it into the hash map with one by comma one. Okay. Next I'll take up one and I'll increase the count. Next I'll take up one and I'll increase the count to three. Very important point. The moment someone's count goes to three, the moment someone's count goes to three, you'll be like I need a minimum of three times it. So I'll take that into my answer. Next I go to one and the count increases to four. But if the count increases to four, no need to take because I'd have already taken it when I would have compared it with three. So no need to take it. Move forward. Three. Put it into the hash map. One no. Next two. No."
+    },
+    {
+      "chunk_id": "L035_C11",
+      "start": 685.16,
+      "end": 762.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=685s",
+      "text": "have compared it with three. So no need to take it. Move forward. Three. Put it into the hash map. One no. Next two. No. Next increase. No. Next increase. Again, the moment you increase it to three, three is what you required for a minimum time for it to be counted as an answer. Take it and put it into answer and the iteration is over. So what I did was a single iteration. Yes. A single iteration. We go off n iteration and that does it. So one iteration does it. Let's quickly write down the pseudocode. So I'll require a list and I'll definitely require a map, right? So let's quickly iterate on the array. So it goes from zero to n minus one as you know. And we know one thing. If we do something like NPP of array of i plus plus. Now, if the element doesn't appears, it automatically takes it as zero. Remember this. If the element doesn't appears, it automatically considers the value to be zero for that particular key and it does a plus plus on it. So for the first time and there's a one, it will not find it. So it'll do a plus plus and we'll enter into the map one comma one. So you have entered it into the map. you've done it, you say if NPP of array of i, if the value in the hash map is equivalent"
+    },
+    {
+      "chunk_id": "L035_C12",
+      "start": 762.68,
+      "end": 836.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=762s",
+      "text": "it into the map. you've done it, you say if NPP of array of i, if the value in the hash map is equivalent to your minimum value, which is floor of, so you can say n by three plus one because no plus one will be what you'll take floor of this plus one is equal to minimum. Then you could probably add it to your list. Yes. So you can go ahead and add it to your list. Quite simple. So this will be the super simple code for the brute force solution. What is the time complexity? Bigo of n for normal iteration. And if I consider this one to be logarithmic of n, you can take logarithmic of n. If you are taking a map, which is working in bigo of one, which is the unordered map, then this can be a bigo of one as well. But remember one thing, the unordered maps, worst time complexity is bigo of n. Okay. So this is how easily you can do the better solution. But obviously the interviewer will not be happy. Why? Because you're using an extra space. Time complexity is n or n log n, but the space that you're using is bigo of n. Why? Imagine if I give you an array like one, two, three, four, then you end up putting every element into the map. So the space complexity will be bigo of n at the worst case."
+    },
+    {
+      "chunk_id": "L035_C13",
+      "start": 836.94,
+      "end": 893.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=836s",
+      "text": "four, then you end up putting every element into the map. So the space complexity will be bigo of n at the worst case. And this is where the interviewer will ask you, can you please try to optimize the space complexity? So in case you want to submit the better solution, the problem link will be in the description. Please do make sure that you submit it from the link in the description itself. And this is how it will look like. I've just added one statement which states the moment you get the answer, stop iterating. And over here, they've asked you to return the array of in the sorted order. That's why I've just sorted the answers before returning it. So this is how the better solution will look like. Will it add to the time complexity? No, because it is hardly an array of size two. So two logarithmic two is what you're adding if you're sorting it. It's like bigo of two log two, which is like as good as constant. Okay. It's time for the optimal solution. But if you remember the starting of the video, I've told you that the optimal algorithm will be derived from greater than n by two times. So if you haven't seen it, the video link is in the description. Please go back and watch it. Let's quickly go to the optimal code."
+    },
+    {
+      "chunk_id": "L035_C14",
+      "start": 893.98,
+      "end": 959.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=893s",
+      "text": "haven't seen it, the video link is in the description. Please go back and watch it. Let's quickly go to the optimal code. So this is the optimal code where at first we apply the algorithm and whatever element we get, we check if that element is appearing like we just do a another iteration and we check if it is appearing more than n by n by two times just to be sure. So let's come back to the iPad. So this is the algorithm that we are writing for greater than floor of n by two times, right? This is the algorithm that we are writing. Now we have to kind of simulate this algorithm for greater than floor of n by three times. What was the intuition? If you remember the like, if you have seen the previous video, the intuition was very simple. If you have one, one, one, and if you have two, two, two, then we know for sure if this one is taken and this appears four times for someone else to cancel it, it has to appear four times. Then only they will cancel it off, right? That was the logic. And that is why if it's equal, we're doing count plus plus, and if it's not equal, we're doing counter minus minus. So over here it appears four times, this appears three times. So the one will not be canceled."
+    },
+    {
+      "chunk_id": "L035_C15",
+      "start": 959.02,
+      "end": 1035.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=959s",
+      "text": "we're doing counter minus minus. So over here it appears four times, this appears three times. So the one will not be canceled. And at the end of the day, the element will be this particular one. So it has the cancellation logic that we did apply at greater than floor of n by two times. We're going to apply the same cancellation logic in this problem as well. So let's try to simulate. So we know over here, we just had one answer because there can only be one element which appears more than n by two times. Over here, we know there'll be two possible elements. So instead of count, what I'll do is I'll take counter one equal to zero and counter two equal to zero. You're trying to simulate the same algorithm. I'll take element one and we'll take element two. And same way, I'll probably try to iterate from zero till n minus one. Same I'm writing the same code. What are the first thing? We're saying if counter is zero. If counter is zero, please take that element and say, okay, this element might be my answer. Okay, fine. I'll take if counter one instead of this, I'll let counter one is equal to zero. I will say, hey, counter one is one and probably the element one this time instead of element, it's element one will be nouns of I or array of I, whatever you can."
+    },
+    {
+      "chunk_id": "L035_C16",
+      "start": 1035.9,
+      "end": 1115.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=1035s",
+      "text": "probably the element one this time instead of element, it's element one will be nouns of I or array of I, whatever you can. And this will be my first step. Now after this, it goes for check in. But if you see over here, we have a counter one, we have a counter. Similarly, you can write another one. So this is pretty much similar to this. Just for the second element, you'll write counter two is equal to equal to zero. And then you'll say, in that case, counter two will be one and element two will be nums of I. Perfect. So this has been simulated to two because overhead is for count, overhead will be for counter one and counter two. Done. Let's do the next step. It is stating if it is equal, let's increase the count. So let's write it. Else if the element one is equal to equal to array of I or nums of I, whatever. In that case, can you please do a counter plus plus which is counter one and again simulated for two variables. So else if element two is equal to equal to nums of I, can you please do it a counter two plus plus. So this one has been simulated for two. Now what's the next one? Else. So the next one is else. The next one is else."
+    },
+    {
+      "chunk_id": "L035_C17",
+      "start": 1115.5,
+      "end": 1191.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=1115s",
+      "text": "one has been simulated for two. Now what's the next one? Else. So the next one is else. The next one is else. Let's clearly erase this. Over here it says counter minus minus. So in the else you will see counter one minus minus because it is neither equal to this or neither equal to this. So let's subtract from both because I have to eliminate both. If you remember the intuition, it's subtracted from both. So subtracted. Now will this algorithm work? This is an exact replica of this just for two elements. Will it work? The answer to that is no, it won't work. Why? I'll give you a test case and I'll tell you why this will not work and why you have to do a slight modification. So I've taken this particular example. Now what I'll do is, I'll at first have counter one as zero and the element can be initialized to a very, a number which is not in the array. So counter two is again zero and element two is also there. So what are the first step that happens? First step, we add this two and we move ahead and counter one is definitely zero. So counter one makes itself one and initializes itself with this particular two. Done. Let's move ahead. We have one. Next time it comes again to this one two and we add this element. Counter one is zero. No, it is not. Counter two is zero."
+    },
+    {
+      "chunk_id": "L035_C18",
+      "start": 1191.66,
+      "end": 1268.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=1191s",
+      "text": "time it comes again to this one two and we add this element. Counter one is zero. No, it is not. Counter two is zero. Yes, it is. So please initialize it with one and increase the value of element two to one. Rather initialize the value of element two to one. Next you'll move. Remember one thing, all of these are else if statements. So if one statement executes, the other will not. So we have a one. If counter one zero, no. If counter two zero, no. Is element one, element is two and this is one. So no. If element two is one, yes. So counter two increases. Counter two increases to two. Counter two increases to two. Very important. Next move ahead. Two, three. The moment you move ahead to three, is counter one zero? No. Is counter two zero? No. Is element one equal to this? No. Is element two equal to this? No. Because it is three and this is two and this is one. So all of these statements are false. So apparently the else tends to work. The moment you work out the else, the counter will reduce. By it, the counter reduces. So basically what happened was, this three cancelled off one one and one two. It cancelled off. Perfect. Done. So what is the next step? It goes over to the next element. Whenever it goes to the next element, it again starts checking. Is counter one zero? It is."
+    },
+    {
+      "chunk_id": "L035_C19",
+      "start": 1268.76,
+      "end": 1348.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=1268s",
+      "text": "step? It goes over to the next element. Whenever it goes to the next element, it again starts checking. Is counter one zero? It is. What it will do is, it will say counter one one and it will say element one is numsy. So it will initialize this one to here, which is a wrong thing. Why? Because element two is already holding one. So you should not. You should not. Because if you execute this, then for this one, the counter will not increase itself. Ideally this should be executed and this will not. So please make sure to include a simple edge case over here stating that, hey listen, we will see if if if this numsy should not be equal to element two, that should be very sure because if I'm considering this numsy to be element one, that should never be element two. And similarly, can I say over here, just a second, over here as well and and numsy should not be equal to element one. Why? Because I'm considering this to be element two. This should never be element one. And if you just modify these couple of lines, this will work. And this is why I told you, please go back and watch the previous video because the intuition is similar to the previous video. We just keep canceling. And at the end of the day, once you have done this, please do a manual check."
+    },
+    {
+      "chunk_id": "L035_C20",
+      "start": 1348.64,
+      "end": 1420.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=1348s",
+      "text": "the previous video. We just keep canceling. And at the end of the day, once you have done this, please do a manual check. Please do a manual check on element one and on element two if they can be the possible answers or not. Got it. So let's quickly code up the optimal solution again. from the link in the description itself. So we we required a couple of counts. So count one equal to zero and count two equal to zero. We required an element one which can be taken as int mean because that is definitely not going to be the answer. We can take an element two as int mean as well. Again, what's the next step? Let's quickly start iterating from zero till the end of the array. And this is how you do it. And then we go ahead. And then we say if counter one is equal to zero and please make sure that the element two is not equal to V of I. That's very important. You say counter one is equal to one. At the same time, you say element one is equal to V of I. Again, you write else if. Very important that you write else if. Otherwise everything will fail. And you make sure that element one is not equal to this particular one. This counter two is equal to one and element two is equal to V of I. Once you've done this, you say else if."
+    },
+    {
+      "chunk_id": "L035_C21",
+      "start": 1420.48,
+      "end": 1486.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=1420s",
+      "text": "one. This counter two is equal to one and element two is equal to V of I. Once you've done this, you say else if. What if this is equal to element one? Then you say counter plus plus. What if you say V of I is equal to equal to element two? Then you say counter two plus plus. And what if both of these cases are not there? You say counter minus minus and counter two minus minus. Simple as that. Once you've done this, you can say a vector int ls. And please go ahead and take another counter. We take the same counters and initialize it as zero and counter two initialize it as zeros. So once the iteration is done, you will have something stored in the element one and something in the element two. But you cannot surely say that those elements are the majority elements. So what do you do is you do a manual check. And for that, what I've done is I've reinitialized count one and count two to be zero. And we will start iterating again. And this time, I just manually have a count. If element one is equal to equal to V of I, I'll do a counter plus plus. If element two is equal to equal to V of I, I'll do a counter two plus plus. And at the end of the day, if what was the value?"
+    },
+    {
+      "chunk_id": "L035_C22",
+      "start": 1486.14,
+      "end": 1558.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=1486s",
+      "text": "equal to V of I, I'll do a counter two plus plus. And at the end of the day, if what was the value? If you remember, it was n by three plus one is what you require it to be a minimum of. So you basically say if this counter one is somewhere equal to or greater than this, then you probably add it to your answer. So go ahead, add it to your answer. And this will be element one. And if you see counter two to be greater than meaning again, you add it to your answer, which is the element two. And once you've done this, just go ahead and sort it. You can manually sort it as well by swapping. But yeah, I'll sort it. Once I've done this, I'll go ahead and return this particular list, which is going to be my answer. So let's quickly run it off and see if it is running fine. There's some compilation errors. Okay. N is not there. So it'll be V dot size. I think we should have declared N because we've declared V dot size so many times. Okay. It does run. Now let's quickly submit it off and see if it is getting submitted. So what is the time complexity? B go of N over here because it's just a simple iteration. Another B go of N. So B go of two N. And this is like as good as constant because it's just"
+    },
+    {
+      "chunk_id": "L035_C23",
+      "start": 1558.94,
+      "end": 1610.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=vwZj1K0e9U8&t=1558s",
+      "text": "a simple iteration. Another B go of N. So B go of two N. And this is like as good as constant because it's just two elements which are getting sorted. So B go of two N. Are we using any extra space? We're using four variables, which is as good as constant. So B go of one is the space complexity. The time complexity is two N. So going back to the sheet, I can mark this one as done as well. I hope you've understood the proof, the better and the optimal. In case you are thinking, why did I not discuss about the intuition in depth? The reason is because we've already discussed about this in this particular video. The link will be in the description. In case you're watching till here, please, please do consider giving us that like because it won't cost you anything. But that is something that will highly motivate me to make these kind of videos. If you haven't followed me on Instagram, what are you doing? I'm putting a lot of informative content over there. So please follow me on Instagram. It goes by the name Scriber underscore seven nine. And yes, if you're new to our channel, do consider subscribing to us. With this, I'll be wrapping up this video. Let's finish up with the video. Till then, bye bye. Take care."
+    }
+  ]
+}

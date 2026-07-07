@@ -1,0 +1,64 @@
+{
+  "lecture_id": "L202",
+  "lecture_number": 202,
+  "lecture_title": "DP 21. Target Sum | DP on Subsequences",
+  "youtube_url": "https://www.youtube.com/watch?v=b3GD8263-PQ",
+  "chunks": [
+    {
+      "chunk_id": "L202_C1",
+      "start": 0.0,
+      "end": 74.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=b3GD8263-PQ&t=0s",
+      "text": "Hey everyone welcome back to take you forward. Today we will be solving the 21st problem from the dynamic programming playlist and the problem is target sum. So let's understand the problem first and then we will see how can we solve this problem. So the problem states you're given an array and the array consists of 1, 2, 3, 1 and you're also given a target 3. Now your task is to assign signs either positive or negative to the array elements. For an example if I assign positive to 1, positive to 2, negative to 3, negative to 1 and if I sum it up so plus 1, plus 2 is 3, minus 3 is 0, minus 1 is minus 1 so you get minus 1. Similarly if I assign something as assume minus, plus, plus, minus then minus 1, plus 2 is 1, 1 plus 3 is 4, 4 minus 1 is 3 so you get 3. So you have to assign signs"
+    },
+    {
+      "chunk_id": "L202_C2",
+      "start": 74.48,
+      "end": 153.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=b3GD8263-PQ&t=74s",
+      "text": "4, 4 minus 1 is 3 so you get 3. So you have to assign signs either positive or negative and by assigning signs you have to tell us how many ways, how many ways can you assign signs such that you get the given target. For an example over here if I assign this as 1, 2, 3, 1 if I assign minus, plus, plus, minus this is the first way in which I can assign signs such that I get the summation as 3 or the other way is I can say what if I assign like let's remove this once what if I assign something as plus, minus, plus, plus so 3 plus 4 plus 5 minus 2, 3 so there are two ways yes there are two ways one is plus, minus, plus, plus while the other one is minus, plus, plus so if you assign signs in these couple of ways one is this the other is this you will end up getting the sum of 3 so that is what they are asking you in how many ways can you assign so there are two ways. So the question is pretty much clear to you right now if this question comes up obviously straightforward since you have been doing DP on subsequences your brain will"
+    },
+    {
+      "chunk_id": "L202_C3",
+      "start": 153.04,
+      "end": 229.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=b3GD8263-PQ&t=153s",
+      "text": "to you right now if this question comes up obviously straightforward since you have been doing DP on subsequences your brain will start saying let's apply recursion let's write f of index target and there will be a couple of possibilities either assigning like everyone would be like either assign positive either assign negative and keep on doing the recursion that is correct that is correct but can we do in something better because yeah you can definitely write a recursion which is like you take couple of ways basically saying something like this where you say f of index f of target and there will be a couple of ways where you assign the plus sign the negative sign and since the question says count the number of ways you return plus, plus, negative that that is the common recurrence that you can do but can we solve this using any of the problems that we have solved previously because if we can solve like what have we learned till now we have learned problems like subset sum we have also done a problem which says count like partition subsets into two such that you have to count how many have s1 minus s2 is equal to d so you can see that this is the problem that I was talking about count partitions with the given difference s1 minus s2 equal to 2 so you must have done"
+    },
+    {
+      "chunk_id": "L202_C4",
+      "start": 229.04,
+      "end": 306.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=b3GD8263-PQ&t=229s",
+      "text": "the problem that I was talking about count partitions with the given difference s1 minus s2 equal to 2 so you must have done these couple of problems in order to solve this particular problem now let's let's see so what was I given I was given 1 2 3 and 1 okay so can I say what am I doing specifically if I'm assigning minus over here I'm assigning minus I'm assigning positive positive I'm basically doing 3 plus 2 minus 1 minus 1 and that gives me 3 right so can I say I am assigning some portion to a subset s1 which is 3 and 2 and then if I take a negative common I'm assigning 1 and 1 right thereby this summation is 5 this summation is 2 which gives you 3 is this question done yes this is done we have already done a problem where we see that given an array divide them into two subsets such that this subset like the first partition has subset some s1 the second partition has subset some s2 and if you subtract d you have to count these many guys you have to count these many guys we have already done this problem and if I say this problem is pretty much similar to that I won't be wrong because this is one of the ways now if I just erase this if I erase this and I say I'll apply"
+    },
+    {
+      "chunk_id": "L202_C5",
+      "start": 306.4,
+      "end": 383.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=b3GD8263-PQ&t=306s",
+      "text": "be wrong because this is one of the ways now if I just erase this if I erase this and I say I'll apply the science in the opposite fashion minus plus plus minus then 3 1 1 go or to one subset and the other subset will just have to so this is basically 5 this is basically 2 again gives you 3 so the question is exactly the similar they have just changed the language yes they've just changed the language the question is very much similar divide them into two partitions divide them into two subsets such that s1 is a subset s1 is the sum of the subset 1 s2 is the sum of the subset 2 and the difference is the target that you're looking for because that is what you have been doing this is the target right this is the negative elements you can say these are the positive elements you can say or can be vice versa as well so we have actually boiled down the problem into dividing them into two subsets such that the difference between those subsets are target because I know one of the subset will have all the positive elements or the negative and the other subset will always have all the negative elements so if I'm able to do that I think we will be able"
+    },
+    {
+      "chunk_id": "L202_C6",
+      "start": 383.16,
+      "end": 457.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=b3GD8263-PQ&t=383s",
+      "text": "the other subset will always have all the negative elements so if I'm able to do that I think we will be able to solve this particular problem so yeah let's without wasting any time let's get into the code now so in the code you're given n which is the size of the array the target and the array right so let's get back to the question partitions with a given difference where you were given an array you were given a D and you had to find how many subsets are there where s1 minus s2 was equal to D we have already solved this problem in I think DP 18 so you can definitely check that out so can I say let's copy paste this entire portion of code yes this is this is the portion of code which I'll copy paste apart like the tabulated format so I've copy pasted the tabulated one okay and this is the count partitions what I require is I will just call the same portion count partitions I'll pass n and I'll pass target and I'll pass array and I'll try to run this let's see if this runs or not so so there so there are some mods that you have to remove because in the previous question there was mention of mod let's remove that mod and not ready to run this now it does run so you see so you saw it's exactly the same"
+    },
+    {
+      "chunk_id": "L202_C7",
+      "start": 457.84,
+      "end": 522.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=b3GD8263-PQ&t=457s",
+      "text": "let's remove that mod and not ready to run this now it does run so you see so you saw it's exactly the same problem I did not do anything I called the same code and it did run what did they do they just confused you the change they change the language from s1 minus s2 equal to D from s1 minus s2 equal to D they change it to plus minus so you have to figure out these kind of patterns and if you're able to figure out I think you will be able to do every bit of DP problem be it on DP on grids 1D DP DP on subsequences or going forward any DP if you can figure out the patterns you will be able to do it right whether you can definitely solve this problem by a couple of probabilities of plus minus but I'll I'll recommend you to not go that path instead of going this path because because if you go in that path the target because you are doing positive negative the target might go into negative and you might face space complexity issues but over here it's very straightforward you should definitely convert this problem into the previous problem and try to solve this this should be the best way going forward so guys I hope you have understood the entire problem so"
+    },
+    {
+      "chunk_id": "L202_C8",
+      "start": 522.6,
+      "end": 535.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=b3GD8263-PQ&t=522s",
+      "text": "try to solve this this should be the best way going forward so guys I hope you have understood the entire problem so just in case you did please please please make sure you like this video and if you're new to this channel please do consider subscribing and to continue our tradition make sure you write understood in the comment section and here with this let's wrap up this video and meet in the next one till then bye bye take care"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "lecture_id": "L160",
+  "lecture_number": 160,
+  "lecture_title": "G-35. Print Shortest Path - Dijkstra's Algorithm",
+  "youtube_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8",
+  "chunks": [
+    {
+      "chunk_id": "L160_C1",
+      "start": 0.0,
+      "end": 77.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we're going to solve shortest path in weighted undirected graph. So what does the problem state? You're given a weighted undirected graph having n vertices and m edges describing that there are edges between a to b with some weight. Find the shortest path between the vertex one and the vertex two. And if the path does not exist, then return a list consisting of only minus one. So if you see this particular graph, it states that the shortest path is one, four, three, five. So let's understand the question. So till now you know how to find the shortest path. And if you do not know, I highly recommend you to go back and watch my videos on Dijkstra's algorithm. I've already made three videos on them. So go back and watch them so that you have clarity about what Dijkstra's algorithm is and how to find the shortest path in any given graph. After that you can come back to this video in order to understand how to print the shortest path. So the question is nothing but you have to print the shortest path this time. You do not need to find the value of the path. Instead of that you have to print the path. That is the difference"
+    },
+    {
+      "chunk_id": "L160_C2",
+      "start": 77.6,
+      "end": 147.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=77s",
+      "text": "do not need to find the value of the path. Instead of that you have to print the path. That is the difference between this problem and all the other previous problems. So they have clearly stated that the source is given as one. Yes. And they've clearly stated that the source is always one and the destination is always n. That is five in this case. And it seems to be a one indexed graph. So if I talk about one to five, I can have multiple paths. One of the path is this, which gives me two plus five, a value of seven, right? One of the paths is this, this, this, which gives me a value of two plus four plus one again, seven. I can say the other path is I go to four, I go to three, I go to this. That's one plus three plus one, which is nothing but I think five. This is the shortest path that you can get. Thereby I can say the shortest path is go from one to four, then to three and then to five. So what do you need to return is you have to return this in a list. And if there is no path, that means you cannot reach. In that case, you'll return a list which contains only minus one. That is the problem that you have to solve. Okay. So how do you solve this"
+    },
+    {
+      "chunk_id": "L160_C3",
+      "start": 147.0,
+      "end": 224.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=147s",
+      "text": "return a list which contains only minus one. That is the problem that you have to solve. Okay. So how do you solve this problem? And you know, definitely something as a Dijkstra does exist, which helps me to find the shortest path. Dijkstra will tell me that the shortest paths value is five, but I do not need the value. I need the path. So what I'll do is I'll do a slight modification to Dijkstra. I'll probably use something like a caching or a memo, I Asian, which you generally do in dynamic programming, how we will see that. But I'll try to remember where am I coming from? Remember this point? I'll try to remember where am I coming from? If I can do this, I think I'll be able to solve this problem. So you can take this as a hint where I'm coming from and then you can backtrack the path. So take this as a hint, pause the video, think of a solution. And if you cannot, then you can watch the video. Okay. So think, sorry, remember where I'm coming from. So what I'll do is I will take initially a priority queue and a distance array and a memorization array. So let's see the initial configuration. So the initial configuration will look something like this, where we have a priority queue. Okay. We have a distance area with everything marked as infinite and we will have a caching area or"
+    },
+    {
+      "chunk_id": "L160_C4",
+      "start": 224.4,
+      "end": 294.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=224s",
+      "text": "we have a priority queue. Okay. We have a distance area with everything marked as infinite and we will have a caching area or a memorization area, which will be called as that means where am I coming from? I'll always remember that. Okay. We will see the implementation, but you will just assign it to the index value. Whatever is the index value, just go and assign that. Okay. Done. Now, whatever is your source node, which we know in this case is always one and the destination is always N. Whichever is your source node, take it and put it into the priority queue. So basically the distance is zero and the source node is one. Go over there and mark it as zero. So when you start from one, are you coming from somewhere? That's my simple question to you. Are you actually coming from somewhere? The answer to that is no, because I'm starting from one. That is my starting point. So thereby I will say one, we'll say one is the starting point. Okay. Next let's iterate in the priority queue. So I know I'm taking a distance of zero in order to reach the node one. Okay. So from one, where can you go? You can go to two and you can go to four. Correct. You can again, figure this out from the adjacency list. So if you decide to go to two, you'll be requiring a distance of"
+    },
+    {
+      "chunk_id": "L160_C5",
+      "start": 294.24,
+      "end": 357.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=294s",
+      "text": "You can again, figure this out from the adjacency list. So if you decide to go to two, you'll be requiring a distance of two, which will make it a total distance of two, which is actually better than the infinite. So I can say I took a distance of two in order to reach the node two. Right now here comes the point. So in order to come to two, where did you come in from? You came in from one, go and store it. So I'm saying I came in from one, two came in from one. Perfect. Next I can also go to four. And if I go to four, I'll take a distance of four, which will make me like, which will make it a total distance of one. So what I can say is in order to reach four, I can have a better distance one. So one comma four is what I'll put into the priority queue. Remember this priority queue is nothing but a minimum heap data structure, which stores the minimum at the top. So where does the four come in from? Can I say it came in from one again, makes sense because four came in from one. So I'll remember where does the four came in from? So I'll just store at the index four, that it comes from one. The previous node of four is one. That is what I'll remember. Got it. Once"
+    },
+    {
+      "chunk_id": "L160_C6",
+      "start": 357.04,
+      "end": 420.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=357s",
+      "text": "at the index four, that it comes from one. The previous node of four is one. That is what I'll remember. Got it. Once I've done it, I can say the entire iteration for this guy is done and thereby I'll go and pick up the next element. So can I say I have two elements in the priority queue, which one will you get? You'll always take the shortest one because that is what the concept of minimum heap is. You'll get one and the node is four. Correct. Now, where can you go from four? Can I say I can go to one, but if I try to go to one, that will yield me another one, which will make me a total distance of two. And that's not considerable because I have a distance of zero. So I will not go there. Can I go to three? Yes, I can go to three. So I'll try to go to three and that will take me a distance of three, which will make, remember this, which will make a total distance of four. Correct. And if it makes a total distance of four, what he will say is, okay, I got a total distance of four. Shall I stop right now? The answer to that is no. So I'm taking a total distance of four. So this is better than infinite. So I take distance for"
+    },
+    {
+      "chunk_id": "L160_C7",
+      "start": 420.24,
+      "end": 478.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=420s",
+      "text": "to that is no. So I'm taking a total distance of four. So this is better than infinite. So I take distance for the node three and put it into the priority queue. So where does three arrive from? It arrives from four. It arrives from four. So go to three and say, you're arriving from four and store it over there. Perfect. So I can say the iteration over here is also done. Now we have four comma three and two comma two. If you do a PQ dot top, which one will be at the top two comma two. So I know I'm taking a distance of two in order to reach the node two from two. Where can you go? You can go to one. So if you go to one, that will be taking a distance of two and will make a total distance of four, which will not be considered because it has a zero, right? I can go to three now. So let's take three. So if I try to go to three, I'll take a distance of four, which will make a total distance of six, which is not to be considered because three can be reachable in a distance of four. Can I go to five? I can go to five. If you see, you can always go to five by taking a distance of five, the total distance will be seven. So you'll say five, your distance is"
+    },
+    {
+      "chunk_id": "L160_C8",
+      "start": 478.0,
+      "end": 544.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=478s",
+      "text": "can always go to five by taking a distance of five, the total distance will be seven. So you'll say five, your distance is seven and seven comma five is what you'll insert into the priority queue. And you'll say five, remember you came in from two five. Remember you came in from two and you assign that to the parent array, right? And once you've done this, you'll simply go and omit this off, right? Next, you'll get the next smallest. So two comma two is done. Next is four comma three. So I'm like, okay, four, three from three. Where can you go? Three can actually go to four. If it decides to go to four, it will take three, make a distance of seven, which will not be considered because four can be reachable at a distance of one, not considered. Three can also go to two. So if three decides to go to two, it will take a distance of four, make a total distance of eight, which will not be considered because I have a distance of two, but three can Actually go to five. And it will take a distance of one, make a total distance of five, which will be considered because 5 was previously reachable with a distance of 7. So I'll say 5, you're now reachable with a distance of 5. So 5,5 is what will go into the priority queue."
+    },
+    {
+      "chunk_id": "L160_C9",
+      "start": 545.12,
+      "end": 613.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=545s",
+      "text": "of 7. So I'll say 5, you're now reachable with a distance of 5. So 5,5 is what will go into the priority queue. Now you will say 5, you have a new, yes you have a new parent and the new parent is 3. Because now when you come in from 3, you're taking a better distance. So why don't you store 3? So he stores 3. So what I can say is, this is done. Next you go to the priority queue and say which is the next guy? And you tend to get, this is the next guy. From 5, where can you go? You can go to 2, which will take you a distance of 5, total distance of 10, not to be considered. From 5, you can go to 3, again takes a distance of 1, total distance of 6, not to be considered because can be reachable at 4. So I can say 5,5 will yield me nothing. So 5,5 is done. Next will be 7,5. If you again try 7,5, it will also yield you nothing. So as of now, I can say the priority queue turns out to be empty. The priority queue turns out to be empty. So once the priority queue is empty, you can say, okay, I have figured out the minimum distance and you can see in order to reach your destination, because the destination was clearly stated as n, which is 5 in this case."
+    },
+    {
+      "chunk_id": "L160_C10",
+      "start": 614.24,
+      "end": 685.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=614s",
+      "text": "and you can see in order to reach your destination, because the destination was clearly stated as n, which is 5 in this case. In your destination, the value is 5, which is indeed the shortest path or the shortest value path that will be 5. Now, how do you figure out the path? So how do you figure out the path? Very simple. You know, what is the destination? Start from the destination. The destination says, I am 5. Okay. Now you remember, in order to reach 5, the shortest thing is 5, but you have stored where did 5 arrive from? So, you know, 5 arrived from 3 and how will you get this? It's very simple. If you go and say, parent of 5, it will give you 3 and you will go back to 3. Now, you know, you are at a 3. So you say 3. Okay. To reach 3, I'm taking a distance of 4. But where did 3 come in from? 4. So I'll be like, okay, if I do a parent of 3, that will take me back, take me back to 4. If you see 3 stores 4, it takes me back to 4. Fine. So at 4, in order to reach 4, I'm taking a distance of 1. But where did 4 came in from? 4 came in from 1. So I'll be like, okay, 4 came in from 1. Perfect."
+    },
+    {
+      "chunk_id": "L160_C11",
+      "start": 685.04,
+      "end": 761.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=685s",
+      "text": "1. But where did 4 came in from? 4 came in from 1. So I'll be like, okay, 4 came in from 1. Perfect. Now, if I go to 1, I see 1 is taking a distance of 0, which I can say is the source node. I can probably stop over there because I know the source node will always be 0. Or the other way to check is if the parent is he himself, when I find where did 1 came in from? He says he came in from 1, which means it's the parent itself. Thereby, you stop. Thereby, you stop. And in order to write this, it's pretty straightforward. What do you just need to do is really you can keep the node as let me erase this. It's very simple. You can probably keep the node as 5 and you can have a array, let's say, let's call it array. And then you can just have a while loop with states. Hey, listen, if the parent of node is not the node itself, is not the node itself, that means it's not the source. So you can just go ahead and say, Eric, can you please store this node? So at first, what will happen? 5 will get stored. Now, 5 has to go back to where it came from. So you say 5, can you go back to where you came in from, which is parent of node that"
+    },
+    {
+      "chunk_id": "L160_C12",
+      "start": 761.04,
+      "end": 839.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=761s",
+      "text": "where it came from. So you say 5, can you go back to where you came in from, which is parent of node that goes back to parent of nodes at first 5. This will not be equal. Thereby, array will be added to 5. So at first, array will be added with 5. Next, at this step, node will become 5 has 3. So node becomes 3. Correct. Again, it comes to this and doesn't. So again, at 3, separately, 3 will be added. So in similar way, 4 will be added. And then when the node becomes 1, what will happen is this case with states parent of 1 not equal to 1 is unsatisfied because that is the case. And the while loop will end at the end of the day. You have to say array dot add whatever the sources or whatever the node is at the end, because the loop does not go in for this guy and does not add sin. So if to add it manually afterwards, so once you add it manually, you will have the path, but in the reverse order. So you have to reverse the array. If you reverse the array, that will be your answer. Because if you reverse the array, you will get 1435, which was your shortest path. It can be multiple shortest path, but this is a way in which you can find one of them. And this is definitely one of the shortest paths."
+    },
+    {
+      "chunk_id": "L160_C13",
+      "start": 840.0,
+      "end": 913.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=840s",
+      "text": "multiple shortest path, but this is a way in which you can find one of them. And this is definitely one of the shortest paths. So I hope the explanation is clear. So it's time to code it up now. So as usual, I'll be coding the C++ on the right and you can figure out the exact similar Java code on the left. So what are we given? We are given the number of nodes. Remember, it's a one base indexing array because the constraint states one base. I just said M and this is the edges given to you. So just create the graph at first. So the graph is very simple and plus one. Let's go ahead and create the graph. So edges are given like this in a vector. So something I know for sure is it's a weighted graph. So this will be paired, right? Because it's a weighted graph. So you have to store adjacency list in that way. So I'll be like adjacency of it of zero, because that is what the first you is. You can say push back of it of one comma it of two. That is how you can easily get the weight and the adjacent node. Right. And if you do the opposite way as well, which is adjacency of it of one dot push back of it of something like zero comma idea of two. Quite simple. So I can say my graph is created."
+    },
+    {
+      "chunk_id": "L160_C14",
+      "start": 913.04,
+      "end": 983.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=913s",
+      "text": "one dot push back of it of something like zero comma idea of two. Quite simple. So I can say my graph is created. Next is to perform the Dijkstra's algorithm. So let's declare a priority queue. So I have defined a priority queue and this is how the priority queue looks like. Now, what is your next step? If you remember, you always require a distance array. So go ahead and declare a distance array, but be careful that you declare it of size n plus one, because it is a one beast array. And you know, the source node is always one. So you can mark it as zero. Next, what is the thing? Okay. Remember, you also need a parent. So please make sure you declare a parent of the same size n plus one. But there's a twist. All the parents. Yes. All the parents have to be marked with themselves. So parent of I has to be I themselves. So make sure you do this. Once you have done this, you can see a PQ dot empty. Correct. And you can just go ahead and do the standard stuff, which is not equal to ID dot second. And you can say this take it to now is ID dot first. And you can say PQ dot pop. Then you can go ahead and do the very, very standard thing of going through. What is the adjacent node? That's again, very simple."
+    },
+    {
+      "chunk_id": "L160_C15",
+      "start": 983.6,
+      "end": 1061.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=983s",
+      "text": "Then you can go ahead and do the very, very standard thing of going through. What is the adjacent node? That's again, very simple. First, what is the edge? Wait again. Second, you know, what is the check? The check is very simple. If the distance taken till now with the add weight is lesser than the distance taken to reach the adjacency node, you go ahead and say distance of adjacency node equal to this plus add weight. And you say PQ dot push. And you can say distance plus 80 weight is the new weight. And the adjacent node is the new adjacent node. And with this, you see parent of this adjacent node is no one but the node itself. So quite easy. Once you've done this, you need to store the answer. But remember, in case, yes, in case you were not able to reach the destination, this will always be my one in nine. So you just return and list containing minus one. If not, then you go ahead and say this is my path. I'll store the path here. And now let's quickly find the path. I can start in from n. Remember, you have to start from n, not from one because you're storing where did you came in from? Got it. So while I can say parent of node is not equal to node."
+    },
+    {
+      "chunk_id": "L160_C16",
+      "start": 1062.56,
+      "end": 1134.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=1062s",
+      "text": "you're storing where did you came in from? Got it. So while I can say parent of node is not equal to node. And that's the case. I'll say path. Can you please go ahead and add this particular node? Perfect. And I can say node. Can you go back to where you came in from? Perfect. At the end of the day, can I see a path? Can you please add on the first guy, which is one? Once you have done this, can I say path? Can you please reverse yourself? And he'll be like, why not? So I'll go ahead and reverse myself. And once I've done this, I can return the path. Okay, this code works. But what is the time complexity of this particular solution? So the time complexity of this particular solution is nothing but e log v, which is similar to dextrose algorithm. So apart from that, we are backtracking the path. So at the worst case, what can be the path? One, two, three, four, five, six, seven, eight, nine, 10, 11, till n. You take a linear path, linear graph. So this at max might take Bico off n. So extra plus Bico off n, which is e log v plus Bico off n is the time complexity. We're using space, you can easily determine the space complexity. So guys, I hope I was able to explain you this particular problem. And you understood everything, including the code."
+    },
+    {
+      "chunk_id": "L160_C17",
+      "start": 1134.8,
+      "end": 1156.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=rp1SMw7HSO8&t=1134s",
+      "text": "determine the space complexity. So guys, I hope I was able to explain you this particular problem. And you understood everything, including the code. Just in case you did, please, please, please make sure you like this video. And if you're new to our channel, what are you waiting for? Hit that subscribe button right away. And if you haven't checked out our DP series and the SD sheet, the links are in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care. You're golden."
+    }
+  ]
+}

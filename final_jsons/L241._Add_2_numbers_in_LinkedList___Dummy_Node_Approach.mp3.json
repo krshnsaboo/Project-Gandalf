@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L241",
+  "lecture_number": 241,
+  "lecture_title": "L5. Add 2 numbers in LinkedList | Dummy Node Approach",
+  "youtube_url": "https://www.youtube.com/watch?v=XmRrGzR6udg",
+  "chunks": [
+    {
+      "chunk_id": "L241_C1",
+      "start": 0.0,
+      "end": 79.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=XmRrGzR6udg&t=0s",
+      "text": "So I will be continuing with our playlist. Before that, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is adding two numbers in linked list. So you'll be given L1 and you'll be given L2. So L1 is basically a number given to you in reversed order. So the number is 642. If you write down the number, it is 642. It is given to you in reversed order and every digit is in a node of the linked list. Got it? You have L2. Now L2 is 783, again in the reversed order. So once you write down the numbers, the task is to add them up. If you add them up, you'll get five, right? You'll get five. After that, you will get 12 carrying over one. Six plus one is seven. Seven plus seven is 14. So you'll get 1425. So the result is 1425. You don't return the number. Instead you put all the, yes, you put all the digits into a node in a reversed manner. So at first you will have five. So what I can do is I can take five. Perfect. That will be pointing to two."
+    },
+    {
+      "chunk_id": "L241_C2",
+      "start": 79.74,
+      "end": 157.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=XmRrGzR6udg&t=79s",
+      "text": "you will have five. So what I can do is I can take five. Perfect. That will be pointing to two. That will be pointing to four and that will be pointing to one. Once this is done, you will be returning the head of the linked list, which is this one. So this one is nothing but some list. Now what is this? It's a list storing the result of addition of two numbers, but in the reversed order. So let's look at one more example. This is L1. This is L2. So if I write down the first number, that's 53 because 35 in the reversed is 53. Let's look at L2. That's 9954. 9954. Let's add them up. You will get seven. You'll get 10 carries over 110 carries over 110110007. Again you need to return the sum list, but in the reversed order. So at first you will have seven. So let's have seven. Perfect. After that you will have zero. After that you will again have zero. After that you will again have zero followed by one and then pointing to null. Once this is done, this will be the head of the linked list that you will be returning. And over here, this is the sum list, which is storing the summation of two numbers, but in the reversed order."
+    },
+    {
+      "chunk_id": "L241_C3",
+      "start": 157.08,
+      "end": 235.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=XmRrGzR6udg&t=157s",
+      "text": "returning. And over here, this is the sum list, which is storing the summation of two numbers, but in the reversed order. In order to solve, so in order to solve this particular problem, you should have deep understanding about mathematics. When you add two numbers, we basically start from the unit place, right? Starts from the last and you add them up, right? After that you take the carry over and then you add the next one. Then you take the carry over, you add the next one and you take the carry over, then you add it. That's what you do, right? Where do you start from the unit place? And if you look at your L1 and L2, the first head is nothing but the unit place because the number is given to you in the reversed order. So can I straight away say, okay, three plus four will go to a new node. Makes sense, right? And after that, if there is a carry over, I will take it. Otherwise I'll go to the next nodes. Five plus five is ten. That's basically zero because ten modulo ten is zero and then we carry over one. So one plus nine is zero, ten zero and then we carry over one. So one plus nine is again ten. So it goes to the new node and we carry over one. One plus there's nothing so we can straight away put them into a new node."
+    },
+    {
+      "chunk_id": "L241_C4",
+      "start": 235.42,
+      "end": 306.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=XmRrGzR6udg&t=235s",
+      "text": "to the new node and we carry over one. One plus there's nothing so we can straight away put them into a new node. Do I need to do anything different? It is just a simple traversal, isn't it? We simply traverse and we add them up and we put them into a new nodes, right? We just need to formulate or we just need to form a new sum list. That is what our goal should be. And the good thing is the sum list will also be in the reversed order. So I don't need to return this one. So I just simply put them up, put them up, put them up and we return the head because we need to return the sum list in the reversed order as well. So you have got the intuition right? Now let's quickly see how can we solve this particular problem. What I will do is initially I will assign a dummy node. So this is my dummy node and it will have a value let's say minus one. You can put anything according to your choice and I'll take a variable current. This current will be used to traverse in your sum list. You'll understand. At the same time I will take a temporary one and I'll take a temporary two, right? And I'll take a variable carry. Let's take a variable carry. Initially the carry is having zero. Let's start. We are at T1. We are at T2."
+    },
+    {
+      "chunk_id": "L241_C5",
+      "start": 306.94,
+      "end": 384.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=XmRrGzR6udg&t=306s",
+      "text": "take a variable carry. Let's take a variable carry. Initially the carry is having zero. Let's start. We are at T1. We are at T2. What are the values? Three plus four, add them up, seven plus a carry of zero gives you a total value of seven. It's seven under 10, right? So what do you do is you create a new node and you put that value seven and make sure the current it's next is pointing to this. Done. Once you have done this, take current over here because this current will be used to traverse in your sum list. So after this, we will take T1 and T2 to the next. We have five and five. That's basically 10. 10 plus carry over zero is 10, right? So how much will you take? Zero. So you'll take it and put it into a new node. So if you're putting zero, what is the carry over? One. Very simple mathematics, right? Done. What is the next job? So what current is pointing to this and then move current over here? What current is basically doing is it is forming your sum list. Once this is done, you will take T1, it will move to null and T2 will move over here, right? So over here you see that T1 is pointing to null. So you don't have any value from there. Whereas T2 is still having nine."
+    },
+    {
+      "chunk_id": "L241_C6",
+      "start": 384.0,
+      "end": 459.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=XmRrGzR6udg&t=384s",
+      "text": "over here you see that T1 is pointing to null. So you don't have any value from there. Whereas T2 is still having nine. So nine plus the carry over one is 10. So the value is zero, right? Then you do a modulo. Create a new node, put zero and again take the carry over as one. Make sure the current is pointing to the new node and then the current moves to the next. Done. You cannot move T1. So just move T2. Again do the same thing. You have nine, you have the carry over one. Nine plus one is 10. We'll again take zero. So create a new node, put zero and then make sure the current is pointing to this and then the carry over is one and then you move the current over here. Done. Once this is done, T2 moves to the next which is null. The moment T1 is pointing to null and T2 is pointing to null, both of them, both of them are pointing to null. You stop. So once your T1 is reaching null and T2 is reaching null, it means that the traversal is completed via all the digits. What is left? There is a carry over left. So make sure at the last step you add this carry over to a new node and the current is pointing to this new node and this new node is obviously pointing to null."
+    },
+    {
+      "chunk_id": "L241_C7",
+      "start": 459.32,
+      "end": 531.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=XmRrGzR6udg&t=459s",
+      "text": "carry over to a new node and the current is pointing to this new node and this new node is obviously pointing to null. Once this is done, you have added everything. Where is your head? This is your head, but you took a dummy node, right? You took a dummy node. So can I say dummy nodes next is your head? Yes. So the dummy nodes next is your head and this is what you will return. So you might have a question. Hey, why do we need the dummy node? Because technically my sum list should be starting from here. And what is the use of dummy node? Let me write the code and then you will understand when we use the concept of dummy node, the implementation is very simple. Like if I don't use dummy node, the implementation will get a lot messier. Let me write down the pseudo code and in case you want the code for C++, Java, Python or JavaScript, the links will be in the description. So let's write this function where you're given head one, which is the head one of the L1 and you're given head two, which is the head two of the L2. What is the first job? Let's declare T1 to be head one. Let's have T2 to be head two. What is the next job? Having a dummy node. So maybe a dummy node. You can assign any value to it. I'll be assigning minus one."
+    },
+    {
+      "chunk_id": "L241_C8",
+      "start": 531.24,
+      "end": 609.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=XmRrGzR6udg&t=531s",
+      "text": "is the next job? Having a dummy node. So maybe a dummy node. You can assign any value to it. I'll be assigning minus one. And let's have a current which is pointing to this dummy node. Perfect. What is the next job? Traversing. And you know that I will traverse till both of them are null. So if this is not null or T2 is not null, I will be traversing. I'll only stop if both of them are null. Perfect. What is my next job? I need a carry, right? So maybe a carry initialized to zero will help. Perfect. What will be my sum? Can I say sum will be carry to start off with? And then if T1 is there, I will say sum equal to sum plus T1's data. Perfect. If T2 is there, if these nodes are there, they haven't reached null. I'll be adding them. Sum equal to sum plus T2 data. What after that? I need to create a new node. So let's create a new node. So new node equal to new node and the value will be sum modulo 10. Right? What will be the value of carry? The carry will be sum by 10."
+    },
+    {
+      "chunk_id": "L241_C9",
+      "start": 609.56,
+      "end": 689.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=XmRrGzR6udg&t=609s",
+      "text": "will be sum modulo 10. Right? What will be the value of carry? The carry will be sum by 10. Perfect. And can I say the current will be pointing to this new node or rather the current's next will be. The current's next will be pointing to this new node. So go ahead and point it. And after that you can say, Kerr, can you go to this new node? So basically Kerr of next. After this, you have done everything that's required to add them up. The next job will be to take T1 and T2 to the next. But please, please make sure if T1 is not at null, then only you'll do T1 dot next. Otherwise it will throw a null pointer exception. If this is null and you say null dot next, null dot, whenever you say null dot something. So you are doing something dot on something. So it's a null pointer exception. And then you write if T2. So T2 will be T2 dot next. Perfect. The while loop is completed. Am I done? No, I'm not done. What is the next job? The next job is to make sure if there is a leftover carry, if there is a leftover carry,"
+    },
+    {
+      "chunk_id": "L241_C10",
+      "start": 689.04,
+      "end": 767.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=XmRrGzR6udg&t=689s",
+      "text": "job? The next job is to make sure if there is a leftover carry, if there is a leftover carry, then take a new node, put it into a new node, this carry and make sure the Kerr next is pointing to this new node. Once this is done, what is the last step? The last step is to return the head. So return of dummy node next. Because the dummy nodes next will be a head. So this dummy node dot next is basically this one. So this will be a head and this is what you will return. Did you observe something? Because of the dummy node, the implementation was clean. If you did not take this dummy node in case, then you would have said if T1 is at the head If T2 is at the head 2, whatever is the addition, it goes to a new node and this new node will become my head of some list and you store it somewhere. So it gets messier. You need to write if T1 equal to equal to something, something. So always remember whenever you need to create a new list where you store the result or something,"
+    },
+    {
+      "chunk_id": "L241_C11",
+      "start": 767.36,
+      "end": 843.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=XmRrGzR6udg&t=767s",
+      "text": "something, something. So always remember whenever you need to create a new list where you store the result or something, always prefer the concept of dummy node. You can always point it and then get the next or rather get the head by saying dot next. It's very clean. It's easier. It doesn't mess up your implementation. Got it? What about the time complexity? Can I say that the time complexity will be bigot of max of n1, n2 where n1 is the length of linked list l1 and n2 is the length of l2. What about the space complexity? Same bigot of max of n1, n2. But remember this is used for storing the result that the question is asking. So technically I'm not using anything to solve the question because this one is used for storing the result the question is asking. I cannot optimize this because I need to store the result. That is what the question is asking me. So this is the time complexity and the space complexity for this one. So if I go back to the code editor, you can see that there's a function add two numbers. We are given num1 and num2. We take a dummy head, take a current, temporary one and temporary two, carry as zero, traverse both of them. Yes, both of them. After that, you have the sum as carry. If they exist, you add them up, create a new node, have the carry."
+    },
+    {
+      "chunk_id": "L241_C12",
+      "start": 843.66,
+      "end": 883.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=XmRrGzR6udg&t=843s",
+      "text": "of them. After that, you have the sum as carry. If they exist, you add them up, create a new node, have the carry. And after that curve will be pointing to the new node, move the cut to the next. If the temporary one is there, move it to the next. Otherwise you move temporary two, like both of them. And then if there exists a carry after the traversal is completed, you create a new node, point it and right at the end, return dummy head of next. If I go ahead and submit this, this will be running fine. So if you're still watching, I'm very sure that you've understood everything. And if that is the case, please do consider giving us a like. And if you're new to our channel, what are you doing? Consider subscribing man. And with this, I'll be wrapping up this video. Let's make some other video till then bye. Take care. Bye. Don't ever forget your golden. I will find the lighting. I will find the lighting. I will find the lighting. I will find the lighting. I will find the lighting."
+    }
+  ]
+}

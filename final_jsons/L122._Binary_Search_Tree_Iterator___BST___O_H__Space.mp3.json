@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L122",
+  "lecture_number": 122,
+  "lecture_title": "L50. Binary Search Tree Iterator | BST | O(H) Space",
+  "youtube_url": "https://www.youtube.com/watch?v=D2jMcmxU4bs",
+  "chunks": [
+    {
+      "chunk_id": "L122_C1",
+      "start": 0.0,
+      "end": 80.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2jMcmxU4bs&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving an interesting problem. That is, you have to design a BST iterator. Now what is this designing BST iterator? So you will be given some steps and you have to perform that. Now the first step will be definitely that you will be given a BST iterator with the root. So this 7 will be basically a node which will be containing 7. So that represents that you have a root with the entire BST. So at the first step you will be given a root of the tree that is the binary search tree. So that's the first step. So you are done with the first step. Next you will be asked, hey what is next? Now let me explain you the stuffs. So there will be couple of stuffs. One is next. The other one is has next. So let me explain you first what does this signifies then I can move forward. Now if you write the in order traversal, yes if you write the in order traversal, that will be 3, 7, 9, 15, 20 for this particular BST. For this particular BST the in order traversal will be this. So whenever I say next, so initially the pointer will be pointing to a null."
+    },
+    {
+      "chunk_id": "L122_C2",
+      "start": 80.0,
+      "end": 157.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2jMcmxU4bs&t=80s",
+      "text": "BST the in order traversal will be this. So whenever I say next, so initially the pointer will be pointing to a null. Like it is pointing to a non-existent value. The moment I say next, you should be returning 3. Next when I say next, you should be returning 7. Whenever I say next, 9. Next, 15. Next, 20. And whenever I say has next, assume you are standing at 20. Assume you were standing at 20 and if I ask has next, has next, then you will say no, no, no next. Got it? Next means initially you are starting with a non-existent. Next will be the in order guy. Next, the next in order guy. Next, the next in order guy. So for an example if I explain you, you are given this particular binary search tree with the root 7. First, the moment they say next, it will be 3 because that is the first next. Again whenever they say next, it will definitely be 7. Whenever they say has next, so you are currently standing at 7. Does it have any other next? Yes, it does have. So true. Again you say next, so you will be like yes. The next is 9. Has next? Yes, true. Again you are saying next, so that will be 15. Does it have next? Yes."
+    },
+    {
+      "chunk_id": "L122_C3",
+      "start": 157.0,
+      "end": 235.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2jMcmxU4bs&t=157s",
+      "text": "next is 9. Has next? Yes, true. Again you are saying next, so that will be 15. Does it have next? Yes. What's the next? 20. Has next? False. Because it does not have any next after 20. Thereby has next will be false. So this is what you have to design a class of functions such that this particular functions are operated. So how do you operate these particular functions? Any idea? Any sort of idea? Now the first thing that comes to your mind is, okay, Striver, whenever you are given BST iterator, why don't we keep a vector? I think, yeah, that makes sense. We will keep a vector where we will be storing the in-order traversal. So we're going to store all the in-order traversal. And we're going to initially have the pointer over here. Whenever someone says next, I'm going to just return it and then move the pointer ahead. Whenever someone again says next, I'm going to return it and move the pointer ahead. Has next? Is this pointer pointing to a value? If it is, yes, or else false. So I can store the in-order and then next has next becomes very easy. But what is the time complexity? It will be big O of 1 in order to return the next as well as has next."
+    },
+    {
+      "chunk_id": "L122_C4",
+      "start": 235.0,
+      "end": 314.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2jMcmxU4bs&t=235s",
+      "text": "is the time complexity? It will be big O of 1 in order to return the next as well as has next. But the space complexity will be big O of n because you'll be storing the entire in-order traversal. The space complexity taken will be big O of n. It looks a very straightforward one. Like if you are allowed to store the in-order, it looks a very straightforward one. But the moment I say no, you're not allowed to store the in-order one, then there is a problem. Then there lies the problem. Now, if you remember well, if you remember well, what is in-order? In-order was left, then node, then right. That is what you always did. Like you went into the extreme left and the moment you reach null, then the first node will be your in-order traversal's first guy. Then right after this, you moved on to right and then to left. That is what you kept on doing. Right, again, you started going on left. So can I borrow the logic from that stuff? That in recursion or in the in-order traversal, it was left, node, and then right. So basically you went to left, first node. After that, right and then left. So you're going to borrow that logic and you're going to do the same thing."
+    },
+    {
+      "chunk_id": "L122_C5",
+      "start": 314.0,
+      "end": 380.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2jMcmxU4bs&t=314s",
+      "text": "node. After that, right and then left. So you're going to borrow that logic and you're going to do the same thing. Because they have asked us to solve this problem in big O of h space where h is the height of the tree. And they've said us that next and hasNext can be easily done in big O of 1 on average. Sometimes it might take up more than 1, but on an average you have to take big O of 1. So throughout it will be, if you add up all of them, it should be big O of 1. So the time complexity has to be this and the space complexity has to be this. You have to design an algorithm. So it's time that we think of an algorithm. So let's come up with an algorithm. So remember, in order to design this algorithm, you have to write a constructor. Now the constructor will be given the BST iterator and that will be initially the root, which is as of now 7. So whenever that's given to you, what you will do is you will take a stack data structure. Yes, you're going to take a stack data structure. What is a stack data structure? It is last in, first out, if you remember well. Last in, first out. The guy who gets in last comes out first. So you're going to use a stack data structure."
+    },
+    {
+      "chunk_id": "L122_C6",
+      "start": 380.0,
+      "end": 453.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2jMcmxU4bs&t=380s",
+      "text": "remember well. Last in, first out. The guy who gets in last comes out first. So you're going to use a stack data structure. Now, whenever a BST iterator of 7 is given, you have to remember, you have to remember one thing that it is left, node and right. So every time you go to extreme left. Okay, so if you're given 7, if you're given 7, in the constructor, what you will do is you will take 7 and you'll go to the extreme. Yes, I repeat, you will go to the extreme left and put everything into the stack. So let's do that. So 7 is what I put. What is 7's left? 3. What's 3's left? 2. What 2's left? 1. You take up all the elements of 7, 7's left and put it into the stack. That is what you will always do. Next, there was, assume there is a next. The moment someone says next, that means in orders, first element, as of now, because this is the first time, next is being called. So what you will do is you will say, okay, who is stack's first element? Take it out. That will be my next. But wait, what was in order? Whenever you take out node, you go to its right, you go to its right, but as of now, right of 1 is nothing."
+    },
+    {
+      "chunk_id": "L122_C7",
+      "start": 453.0,
+      "end": 532.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2jMcmxU4bs&t=453s",
+      "text": "you take out node, you go to its right, you go to its right, but as of now, right of 1 is nothing. Right of 1 is nothing. So you don't take anything. Perfect. Next. Again a next is called. This time stack has 2, so you take out 2. Does 2 have a right? No. So there is no right traversal as of now. Amazing. Next, again next is called. This time you take out 3. Here comes the twist. The moment you take out 3, 3 is taken out. 3 has a right. So you go to right and you put everything into the stack. You go to right and you put everything into the stack. So again the same way, 6, 5, 4, because right will be called, that's 6. And again the same procedure of left, left, left, left, left, 6, 5, 4 will be inserted. So if you observe it carefully, you're actually following the in order using this particular stack. So it's an iterative in order that you are currently doing. Just making sure that you only store the height order elements. Perfect. Next, if someone comes up and says, hey, do you have an has next? Do you have next? That's very easy to answer. If your stack is non-empty, which in this case stack has multiple elements, so be like, hey, dude, listen, I still have elements."
+    },
+    {
+      "chunk_id": "L122_C8",
+      "start": 533.0,
+      "end": 612.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2jMcmxU4bs&t=533s",
+      "text": "If your stack is non-empty, which in this case stack has multiple elements, so be like, hey, dude, listen, I still have elements. So that's going to be true. So the stack is empty. That becomes very simple. You said true. Next time whenever a call like next comes, again, very straightforward, you pick up 4 and you give it. Does 4 have a right? I don't see 4 having a right. I definitely don't see 4 having a right. So no right. Next, you pick up 5. Does 5 have a right? No. Next, you pick up 6. Does 6 have a right? No. Next, you pick up 7. But does 7 have a right? Yes. Insert all of them. 10, 9, 8, insert it. Go to right, go to right and insert all the left. So if there is a right, like 7 has a right, so take all of these guys and insert into the stack. That is what you'll do because that's very obvious. Left node, then right. Whenever you go to the right, then again left, left, left, left. That logic is being used. Perfect. Next, called. So 8 you got. Next, called. 9 you got. And remember, none of them have rights."
+    },
+    {
+      "chunk_id": "L122_C9",
+      "start": 612.0,
+      "end": 691.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2jMcmxU4bs&t=612s",
+      "text": "used. Perfect. Next, called. So 8 you got. Next, called. 9 you got. And remember, none of them have rights. So again, next call, 10. Now this is the moment the stack becomes empty. And if someone calls has next, you can say false. Yes, you can say false. That's how you can easily design this particular data structure. So if I talk about the time complexity, I can say that space complexity is definitely big O of H. That's the height of the tree because I'm just storing left, left, left, left at any instance. I'm not storing a lot of elements. And the time complexity will be big O of 1 on average. Not on every call because you're pushing left, left, left. But sometimes you're not pushing. A lot of times you're not pushing. So if you average it out, there are n elements. So you'll be pushing on n elements. You'll be pushing on n elements in total and there might be n next calls. So n by n on average is big O of 1. Because if you're pushing n elements throughout, across all, you're pushing n elements and there are n next calls. So on average, per single call, it will be big O of 1. That is the reason I can easily say the time complexity on average is big O of 1 and the space complexity is big O of H. That is how you can easily design this BST iterator."
+    },
+    {
+      "chunk_id": "L122_C10",
+      "start": 691.0,
+      "end": 755.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2jMcmxU4bs&t=691s",
+      "text": "is big O of 1 and the space complexity is big O of H. That is how you can easily design this BST iterator. So it's time to discuss the C++ as well as the Java code. C++ code as usual is on the left and the Java code is on the right. Both are extremely identical. So I'll just be discussing the C++. You can follow the Java code on the right. So what I've done is initially I have declared a stack. You can just declare it private so that it's a memo function. So you can just declare it private. I've declared a stack of tree nodes because I have to store all the tree nodes in a stack. And this is the constructor. Now whenever you're given root, so if you remember when I was given the root, what did I do? I took the root and every left into the stack. Remember? So I call the push all. Now push all's duty is to take all the lefts and push it onto the stack. Stack push and all the lefts. Push all means I'll give him a node and I'll push all the lefts into the stack. That is what push all's duty is. So he does that whenever you're given the constructor. Next. Has next. How's the has next function written? It's very simple."
+    },
+    {
+      "chunk_id": "L122_C11",
+      "start": 755.0,
+      "end": 821.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2jMcmxU4bs&t=755s",
+      "text": "duty is. So he does that whenever you're given the constructor. Next. Has next. How's the has next function written? It's very simple. If the stack is non-empty, you say I do have elements. Simple as that. If the stack is empty, I don't have elements. As simple as that. Next one is something which is the stuff. I want the next guy of in order like the pointer is pointing to. So what I do is I know the stack.top element is the next guy. That's for sure. We discussed. Because if you're going left, left, left, the last guy is the smallest element. So I just pick it up. Top. And then you pop it off. The stack. Now if you remember, if there does exist a right, you go to the right and push all the left. Remember, you go to the right and you push all the left. So you go to the right and push all does your job pushing all the left. So push all will push all the left. And once you've done this, you just needed the value. So the temp node that you have taken out over here, you can just return it as simple as that. This is how the C++ code will look like. And similarly is how the Java code will also look like. So guys, I hope you've understood the entire explanation as well as the C++ and the Java solution."
+    },
+    {
+      "chunk_id": "L122_C12",
+      "start": 821.0,
+      "end": 839.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=D2jMcmxU4bs&t=821s",
+      "text": "Java code will also look like. So guys, I hope you've understood the entire explanation as well as the C++ and the Java solution. Just in case you did, please, please, please make sure you like this video. And if you are new to this channel, do consider subscribing. And yeah, with this, I'll be wrapping up this video. Let's meet in the next one. Bye bye. Take care. I will find the light."
+    }
+  ]
+}

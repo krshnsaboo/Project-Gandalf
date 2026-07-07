@@ -1,0 +1,204 @@
+{
+  "lecture_id": "L004",
+  "lecture_number": 4,
+  "lecture_title": "Time and Space Complexity - Strivers A2Z DSA Course",
+  "youtube_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E",
+  "chunks": [
+    {
+      "chunk_id": "L004_C1",
+      "start": 0.0,
+      "end": 74.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this lecture we'll be learning about time complexity and this is a continuation of Stryver's A to Z DSA course slash cheat. So if you remember in the previous video we have covered all of these green tick mark things and this video will be covering the time complexity, learn basics and then analyze the next steps. What does that mean? I'll be teaching the basics of time complexity, what is time complexity, how to compute time complexity and all the terms related to it. And then eventually when you go through all the latest steps at every problem that we solve, we will be discussing time complexity of every problem in depth. So eventually when you complete all the steps or all the problems, you will have a very, very good hold on the time complexity part. Now in this video I cannot teach you time complexity of a very complex codes because you do not know them, right? So once you learn the complex codes and recursion backtracking, we will be discussing time complexity in depth over here. But as of now, just let's start with the basics. So the first question, what is time complexity? Now what, why is time complexity required"
+    },
+    {
+      "chunk_id": "L004_C2",
+      "start": 74.92,
+      "end": 153.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=74s",
+      "text": "now, just let's start with the basics. So the first question, what is time complexity? Now what, why is time complexity required for stuff? Now whenever you're going to an interview, you might end up writing a piece of code, right? Now that code, how do, how does an interview judge that code? This is where they will analyze the time complexity of the code. They're not going to take your code, run into a machine and see how much time does the machine take and on the basis of that, tell you that your code is right or wrong. That is not going to happen. This is where something like time complexity comes in. Whatever code you're going to write in an interview, in every interview, they're going to analyze you. What is the time complexity and what is the space complexity? And then on the basis of that, you will be judged, right? So whenever you write a code that might end up taking, let's say two seconds on a machine or might end up taking three seconds on a machine, might end up taking five seconds on a machine. So the time taken, will you call it the time complexity? No, you will never call time complexity as time taken. Now you might ask, but why? If a code is taking certain time, that should be its time complexity. Let's give you a very, very easy example to"
+    },
+    {
+      "chunk_id": "L004_C3",
+      "start": 153.22,
+      "end": 229.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=153s",
+      "text": "but why? If a code is taking certain time, that should be its time complexity. Let's give you a very, very easy example to explain why not. Imagine I take this code, I take this code. This can be any code, any code. I take this code and I run it on two machines. One is the old windows machine and the other one is the new Mac book machine. Now I'm sure the old windows hypothetically might end up taking two seconds to run that code. Well, the new Mac book, which is a lot more in terms of the like lot more latest in terms of the configuration might end up taking one second. So does it mean that your code is taking one second or does it mean that your code is taking two seconds? It might happen. I bring up on some other machine the next day, it might end up taking less than one second. So depending on the system, the code ends up taking a different time. So that is why time complexity cannot be set as time taken because it is dependent on system. It is different, dependent on configuration, right? So this is why that is, this is the first point. Time taken is never equal to time taken. Never ever. So you might ask if time complexity is not time taken, then what is it? That is where I see the definition. The rate, remember the rate at which the time"
+    },
+    {
+      "chunk_id": "L004_C4",
+      "start": 229.36,
+      "end": 307.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=229s",
+      "text": "complexity is not time taken, then what is it? That is where I see the definition. The rate, remember the rate at which the time taken increases, the rate at which the time taken increases with respect to the input, with respect to the input size rather. So what does it mean? Let's explain this with the help of a graph. So again, let's take the same example where I'm seeing I have a old windows machine and I have a new Mac book. Okay. Now imagine you're giving the old windows a size 10 just as hypothetical, a size 10 input size, and I'm plotting the graph and this is one second, this is two seconds, this is three seconds, this is four seconds, this is five seconds, this is 10 input size, 20, 30, 40 at 10 input size, it might end up taking two seconds at 20 it might end up taking four at 30 it might end up taking six, which will be here. So you see the time increasing at some, at some theta angle, like it's increasing at a certain slope. So this increase, this increase, this theta angle is what you call"
+    },
+    {
+      "chunk_id": "L004_C5",
+      "start": 307.34,
+      "end": 383.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=307s",
+      "text": "like it's increasing at a certain slope. So this increase, this increase, this theta angle is what you call as the rate of increase. This is what you call the rate of increase. Okay. Now let's see the new Mac book. So if I take the new Mac book, the 10 might end up taking one second, the 20 might end up taking two seconds, the 40 might end up taking three seconds. So it's here, here, here. So this is the rate and this theta is the rate for the new Mac book. So I can see the rate at which it increases time is what you call as time complexity, depending on the input. If they're giving you more input, it might end up taking a certain more time. So the rate at which the time increases is what is generically referred as time complexity of any given goal. The next question that might come to your brain is okay, Stryber, if we are saying the time complexity is not computed in terms of seconds or minutes, then how do we, how do we write it? This is where something like a big, Oh, a big O notation comes in. Now, in all the interviews that you're going to give or in all the examinations,"
+    },
+    {
+      "chunk_id": "L004_C6",
+      "start": 383.06,
+      "end": 460.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=383s",
+      "text": "a big O notation comes in. Now, in all the interviews that you're going to give or in all the examinations, if you're writing a piece of food, they will ask you to analyze the time. That is when you do not like, you will not say two seconds. No, you will see it in terms of big O notation. Every piece of food takes time in terms of big O notation. What is big O notation? I'll just give you a prime example. So it's like a capital O open parenthesis and a close pattern. This is what big O notation is. And inside it, you write whatever the time is taken inside is you write the time taken or the hypothetical time, which I'll show you how to compute. Let's take a very, very small example to compute the time complexity of a certain code. So imagine I read the full loop. I've already taught you loops in the previous video. I equal to one, I less than five, I plus plus, and then I write C out and my name Raj. Okay. So can you tell me what is the big O of this? This is nothing but the number of steps that this code will take. First step is very short assigning. The second step is comparison. The third step is printing, right? And then you come across and this is your fourth step."
+    },
+    {
+      "chunk_id": "L004_C7",
+      "start": 460.48,
+      "end": 539.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=460s",
+      "text": "assigning. The second step is comparison. The third step is printing, right? And then you come across and this is your fourth step. And then again, you check, this is your fifth step. And then again, you print, this is your sixth step. This is how every step is computed. So whatever is the total number of steps, that is what you write inside it. And that is what you call as the prime big O notation. But you cannot just keep on counting step one, step two, step three, step four, step five, step six, step seven. That is insane. You just cannot keep on manually counting the steps. This is where three rules come in and I'll write the rules. The three rules are very simple. Always compute time complexity in terms of worst case scenario. Time complexity to be computed in terms of worst case scenario. Why worst case? I'll explain you. The next one is avoid constants. Avoid constants. And the third is avoid lower values. So if I have to compute the time complexity or the big O of this piece of code, let's look at it on a very higher level. Can I say this for loop is running for five days? I can. At every"
+    },
+    {
+      "chunk_id": "L004_C8",
+      "start": 539.4,
+      "end": 617.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=539s",
+      "text": "it on a very higher level. Can I say this for loop is running for five days? I can. At every time what is happening? It's like increment, check, print, increment, check, print. So can I say for every time it's operating twice, for every time it is operating three times, increment, check, print five into three. Can I see this? I can. So can I see a total of 15 times? That is how you write it. You write it as big O of 15 is what you write. This is time complexity. It runs for 15 times, but this is a number. This is a number. You generally do not represent your code in terms of numbers. Okay. So let's, let's change this. Now can I see this? If I change this to less than N, less than equal to N. Now can you say how many times will this loop run? I know one thing. This is going to run for big O of N times. The loop, the code will run for N times, N iteration. And at every iteration, one, two, three things will happen. At every iteration, three things will happen. Pretty"
+    },
+    {
+      "chunk_id": "L004_C9",
+      "start": 617.32,
+      "end": 696.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=617s",
+      "text": "iteration. And at every iteration, one, two, three things will happen. At every iteration, three things will happen. Pretty obvious. This is what will be the time complexity. Big O of 3N. Big O of 3N will be your time complexity. So whenever you're saying big O, you go to the code and you see how many times it is running. And then you write big O of 3N as your time complexity. Does that make sense? It does, right? Okay. Let's now come back to the three points that I've written. Always compute time complexity in terms of worst case scenario. Now there are three things. One is the best case. One is the average case. And the other one is the worst case. Now let's take a snippet of the code and explain you what is best case, what is average case and what is worst case. Okay. Let's, so this is the snippet of the code. Now imagine the snippet of the code is very simple. It states if marks is less than 25, print grade D. It states if marks is less than 45, print grade C. If marks is less than 65, then you go ahead and print grade B or else you go ahead and print grade A. So let's talk about the best case scenario. What is best case? When the program takes the least amount of time. So"
+    },
+    {
+      "chunk_id": "L004_C10",
+      "start": 696.4,
+      "end": 772.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=696s",
+      "text": "A. So let's talk about the best case scenario. What is best case? When the program takes the least amount of time. So over here, can I see if someone gives you an input of marks equal to let's say 10, what will happen? This will execute it and grade D will be printed and none of these lines will be executed. None of these things. So can I take, can I say the number of operations will be just one, a check and a print, which is like two operation, which is like two operation. Can I say, imagine if I give you marks equal to 70, so at marks 10 it was B go off two operation, correct? B go off two operation. Now if I give you marks equal to 70, what will happen? Check, false, check, false, check, false. It comes in three and then four. Can I say four operations were here like one, two, three, and then goes to else somewhere around four operations. So it takes four operations. So whenever you're analyzing the time complexity, will you say that my code runs in B go off or will you say that your code runs in B go off four? Obviously you will say B go off four because that might be the worst case"
+    },
+    {
+      "chunk_id": "L004_C11",
+      "start": 772.16,
+      "end": 850.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=772s",
+      "text": "code runs in B go off four? Obviously you will say B go off four because that might be the worst case that the computer might encounter when it is given an input. So always, yes, always compute the time complexity in terms of worst case scenario. And if they will ask you the best case, you know the best case, whatever is the best case. Like in this case is the first statement getting executed, which is B go off two operations. So you've got an idea about the best case and the worst case. You know what is the average case? There's nothing but the best plus worse and divided by two. It's the median of it. So pretty self explanatory. Why? If I give you a question, why do we compute it in terms of worst case? The answer is again, self explanatory. If you're building a system, will you build it for one person or will you build it for 1 million person if given an option? If given an option, you will say 1 million because you want to build a system which can scale up. You always think of the worst that can happen. That is why when I talk about time complexity, your code extreme worst case is what is considered while computing time complexity. Now let's talk about constants. I'm saying avoid constants. Why am I seeing that? Let's"
+    },
+    {
+      "chunk_id": "L004_C12",
+      "start": 850.4,
+      "end": 927.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=850s",
+      "text": "is what is considered while computing time complexity. Now let's talk about constants. I'm saying avoid constants. Why am I seeing that? Let's take a shuttle example. Let's take something like 4n cube, something like 3n square plus 8. Let's say this. So over here, 4n cube plus 3n square plus 8. These are the number of operations that your code is taking. Hypothetically, I do not support. I'm just taking a hypothetical we go expression. Now imagine if I tell you that the input size n, the input size n is somewhere around 10 to the power of 5. Right? I'm saying 10 to the power of 5 is the input size. So when I say 10 to the power of 5 and you put that in, what will, what will it be? 10 to the power of 15, 10 to the power of 5 cube, 15 plus 3n square. That's 3 10 to the power 10 plus 8. Tell me a very easy thing. 10 to the power of 15 plus 10 to the power of 10 into plus 8. Will this 8 have any significance in the operations? This is in itself such a huge number. If you add 8, will it, will it matter to them? I take it like billion, like whatever is 10 to the power of 15. I'm not sure what it is. It's like billion trillion, whatever, like more than that, I guess. With that, a plus 8, does it"
+    },
+    {
+      "chunk_id": "L004_C13",
+      "start": 927.8,
+      "end": 1001.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=927s",
+      "text": "I'm not sure what it is. It's like billion trillion, whatever, like more than that, I guess. With that, a plus 8, does it have a significance? It doesn't. If you're earning 1 million and I give you 1 buck, that will not have any significance. That is why we do not consider constants. We do not consider constants. Now in terms of code, imagine I see you something like this, int x equal to 2. So this is the modified code. This is a modified code. X equal to 2 and then the for loop. This is one operation. It's, it's something like n into 3 plus 1. The time complexity updated will be n into 3 plus 1 operation. And this is the one operation. So you never ever take this unit operation. So you will not consider this. You will say no, it will still stay as n into 3. I will avoid constants because whenever the input size is very large, those constants have very less significance. Got it? Now let's take the next thing. Avoid lower values. Let's take the same example. I'm saying 10 to the power of 15, 10 to the power of 15. If you add 10 to the power of 10 to it, will it have any significance? It won't. So adding 10 to the power of 10 to 10 to the power of 15, 10 to the power of"
+    },
+    {
+      "chunk_id": "L004_C14",
+      "start": 1001.12,
+      "end": 1079.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1001s",
+      "text": "significance? It won't. So adding 10 to the power of 10 to 10 to the power of 15, 10 to the power of 15 will have absolutely no significance. It is similar to saying, I will add, let's say 1 to 1000, even less than that. It's similar to actually saying 1, 2. Yeah. I'm adding 1 to this much or 1 more 0. Yeah. Will it have any significance? No. So adding this one to this one, will it have any significance? No. The number of operations will be like slightly more, slightly more because 10 to the power of 15 in itself is such a huge number. This is why again, something very important. Avoid the lower values, which does not change its significance by much. So avoid lower values. Correct? So these are the three points that you will always keep in mind while computing the Bigo notation because Bigo notation is what you will be expressing your code in interviews. Always. All the problems that I'll be solving, I'll be telling you about Bigo notation only. Apart from Bigo notation, there are certain other terms like theta notation, omega notation. They'll find a lot of other terms in textbooks. Are they required in interviews? No. No one is going to ask you these things. No one. But just for knowledge, let me tell you, the Bigo notation is always the highest complexity"
+    },
+    {
+      "chunk_id": "L004_C15",
+      "start": 1079.52,
+      "end": 1154.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1079s",
+      "text": "to ask you these things. No one. But just for knowledge, let me tell you, the Bigo notation is always the highest complexity or the worst case complexity. Remember this worst case complexity or the highest or generally known as the upper bound complexity. It's known as the upper bound. The omega is the lower bound. As I said, the kind of the best case is the lower bound or the lowest bound or whatever you can. And this is nothing but the average complexity. Just a quick disclaimer. There are a lot of theoretical stuffs revolving around Bigo, theta, omega, a lot of limit derivations. But I'm not teaching you theory stuff. I'm not teaching you for your semester examinations. I am teaching you for interviews. I'm preparing you for the DAC coding rounds and they will not be asking you. Over there, they'll be asking you programming logic. You'll have to solve problems. They won't be asking you, tell the formula for Bigo notation in limit terms. No one is going to ask. Might be asked in semesters. For that, you'll find different teachers on YouTube. If you're learning from me, you're learning for interviews, for coding rounds, for problem solving abilities, not for your semester exam. So please do not comment that"
+    },
+    {
+      "chunk_id": "L004_C16",
+      "start": 1154.96,
+      "end": 1234.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1154s",
+      "text": "learning for interviews, for coding rounds, for problem solving abilities, not for your semester exam. So please do not comment that you did not teach the mathematical derivation because that is something which is not required while problem solving. Right? So you know how to compute Bigo now. Let's do one thing. Let's quickly solve some questions. Okay. So the first snippet of the code for which you have to find the time complexity. Imagine inside your main, you have something like int i equal to zero, i lesser than n, i plus plus. And for int j equal to zero, j lesser than n, j plus plus. And imagine it has a block of code, like something, a single line of code. And this is your entire snippet of the code. Okay. This is your, some block of code. You can consider this to be taking very constant time, constant time. So this can be avoided. Tell me the time complexity. You know, time complexity will be computed in terms of Bigo notation. Tell me the time complexity of this particular code. Pause the video and maybe think about it and then see if you are correct or not. So how do you analyze the time complexity of snippets of the code? It's very simple. Analyze how's the code work. So if you see the outer loop"
+    },
+    {
+      "chunk_id": "L004_C17",
+      "start": 1234.08,
+      "end": 1305.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1234s",
+      "text": "time complexity of snippets of the code? It's very simple. Analyze how's the code work. So if you see the outer loop is starting from i equal to zero and going till n, that's definitely running for n types. And the inner loop is going from j equal to zero till n. This is also running for n types. Now, if you're a beginner, you might find it a bit difficult. So what do you will do is, you will say at i equal to zero, what is happening? Let's see. Whenever i is zero, what is happening? Whenever i is zero, it goes inside and j starts its value from zero and goes till n. And this completes n iterations. Can I say when i is zero, j goes from one, zero, one, two, three, dot, dot, dot, till n. Can I say that? And then again, when the i's value increases to one, can I say j again goes from zero, one, two, three, because it's inside it. It's reiterating again from zero. Can I say if i is two again, it again goes from zero till n. Can I say till i is n minus one, why n minus one? Because it is lesser than n. Can I say it again goes from zero till n or rather than n minus one to be very accurate. Can I say this? So what is happening?"
+    },
+    {
+      "chunk_id": "L004_C18",
+      "start": 1306.24,
+      "end": 1379.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1306s",
+      "text": "goes from zero till n or rather than n minus one to be very accurate. Can I say this? So what is happening? Every time it is running for n, n, n, n, every time it is running for n and n. So can I say it's running for n times first, then for another n times, second time, then for another n times second, and then dot, dot, dot, dot, till n times. How many times is it running? Can I say it's running for exactly n times? So can I say this is nothing but n into n? Yes. Thereby n square is the number of iterations it is taking. Yes. There are other things as well, like increase comparison, but we usually do not consider which rule avoid lower values. If you remember, because three into something won't matter that much, because you can avoid it. What I can say is it's running for n square. Yeah. If you want to consider all these constant operations, you can do it. That is your wish. I usually do not do it. So we go off n square is what is the time complexity of this particular, let's say the next example and try to compute the time complexity of this one. So it's like the first loop is definitely running for n and second loop is running from"
+    },
+    {
+      "chunk_id": "L004_C19",
+      "start": 1380.4,
+      "end": 1456.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1380s",
+      "text": "the time complexity of this one. So it's like the first loop is definitely running for n and second loop is running from zero to I. So let's analyze slowly and probably we'll get the time complexity. So can I see if I equal to zero, J is nothing but from zero is only running for zero. Can I see this? Because when I is zero, J is running for zero, J less than equal to zero. It will run for just one time. When I becomes two, what happens? J now runs for zero. Sorry. When I becomes one, rather and I becomes one, what happens? Gina runs for zero and one. And I say, why? Because I is one. It's like zero lesser than one. Correct. Nice. Can I see if I is equal to two, what happens? Gina runs for zero one two. So when I at the end becomes n minus one, what will happen? J will be zero one two daughter dot n minus one. Can I see this is how many operations it is taking again? I'm ignoring all these constant operations. I'm taking the overall iterations. Now, the first time it's one iteration. Next time it's two, next time it's three, four until n. So can I say the number of iterations the first time it is one, the next time it is two, the next time it is three, the next time it is four."
+    },
+    {
+      "chunk_id": "L004_C20",
+      "start": 1456.0,
+      "end": 1536.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1456s",
+      "text": "the first time it is one, the next time it is two, the next time it is three, the next time it is four. So until n I can I see. And do you remember the formula for this particular thing? Some of the first n natural numbers, simple maths, n into n plus one whole divided by two, which is nothing but n square by two plus n by two. Thereby this is the exact time complex, but we can avoid, if you remember the rules constant to be avoid, like the smaller values to be avoided. So it'd be like n square by two. So this is the time complexity. Again, if you try to remove the constants like one by half, you can say the time complexity is near about we go of n square. But if someone does ask you the exact time complexity, this is the exact time complexity. But according to the rules, this is what it boils down to. So these were the basics of time complexity. Okay. Now next I'll be doing all these patterns in the next lecture, where I'll be writing all the nested for loops. And there you can analyze time complexity in a much better way. But eventually all the time complexity terms like log in and log in n square n cube, uh, n square log in"
+    },
+    {
+      "chunk_id": "L004_C21",
+      "start": 1536.0,
+      "end": 1606.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1536s",
+      "text": "way. But eventually all the time complexity terms like log in and log in n square n cube, uh, n square log in all of these things, you will see as I proceed with the playlist, I do not want to rush you in. I just want you to get an overview of what is time complexity, how to think on it, how to compute, how to avoid terms. These things should be crystal clear to you. So I'm assuming the time complexity, our stuff is crystal clear to you. We'll now be moving to something like space complexity. Again, what is space? It's the memory space that your program takes. It is the memory space that your program takes in a very, very naive term. When I talk about memory space, again, it will vary from machine to machine. So you cannot be dependent on the machine. And that is why, again, in order to complete space complexity, we will be using the big O notation again. So big O notation is kind of very, very important. And all the interviews, big O in terms of time, big O in terms of the space. So we'll again be using big O notation and you know the reasons why not in terms of KB, MB, GB, etc. So what is exactly the"
+    },
+    {
+      "chunk_id": "L004_C22",
+      "start": 1606.88,
+      "end": 1684.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1606s",
+      "text": "big O notation and you know the reasons why not in terms of KB, MB, GB, etc. So what is exactly the definition of space complexity? It is nothing but auxiliary space plus input space. What is auxiliary space? The space that you take to solve the problem. The space that you take to solve the problem. Input space, the space that you take to store the problem. Space that you take to store the input rather, not the problem. So let's give a very, very small example in order to explain what is auxiliary space and what is input space. So I'll write a very, very small thing. Imagine I'm taking an input of A and B. In Java, you know how to take it and C++ you know. So I'm assuming I'm taking an input of A. So I'm not writing any syntax because then it'll be C++ or Java specific. I just want you to learn pseudocode and the logic. So imagine I give an input to variable A. Imagine I give an input to variable B and I'm saying C"
+    },
+    {
+      "chunk_id": "L004_C23",
+      "start": 1684.4,
+      "end": 1760.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1684s",
+      "text": "give an input to variable A. Imagine I give an input to variable B and I'm saying C equal to A plus B. Now I'm saying C equal to A plus B. So the auxiliary space that you're using is an extra C variable. This is the auxiliary space. Why? Because you're using a C variable in order to solve the problem. You cannot use that. That is okay. But I'm saying if you use any extra variable or extra space to solve the problem, that is what you refer to as auxiliary space. What about the input space? This is one and this is one. So both of these can be referred as input space, whereas this can be referred to as auxiliary space. And combined, I can say this is the space complexity or I can say we go off three over here because you're using three different variables. You can convert them into bytes. If you're taking integer, you can convert them into bytes. I'm not concerned about this. In an interview, you will have to say it in terms of we go off something, not in terms of bytes, KB, MB. So for an example, if I define an array of size N, it means I'm consuming B go off N size or N space complexity. So in an interview, if you're"
+    },
+    {
+      "chunk_id": "L004_C24",
+      "start": 1760.0,
+      "end": 1828.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1760s",
+      "text": "of size N, it means I'm consuming B go off N size or N space complexity. So in an interview, if you're solving a problem which uses an area of size N, you say B go off N is the space complexity that I'm using as simple as that. Now, a thing that I want to highlight over here is if you're doing space complexity, a lot of times it will happen is imagine you're given an input to a, imagine you're given an input to B and the task is to sum, add both the numbers. A lot of people say, I'll do this B equal to A plus B. So the summation of A plus B will be stored in B and I'll not be using the third variable. It is okay to do. It is okay. But this is something you should avoid. It takes less space, but in an interview, the interview will say this method is not done. Why is it not done? Just think in perspective of software engineering. Imagine you are writing a code for a big MNC and they're giving you some data. They've given you some set of data and they want you to do something on that data. And you're like, you manipulate the data. Over here, you change the data. You changed B. This is why never ever do anything on the input. Very, very crucial"
+    },
+    {
+      "chunk_id": "L004_C25",
+      "start": 1828.48,
+      "end": 1898.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1828s",
+      "text": "data. Over here, you change the data. You changed B. This is why never ever do anything on the input. Very, very crucial rule in interviews. Never do anything to the, never do anything to the input unless the interviewer sees anything to the input because data should not be touched. You can do whatever you wish by taking the data, but you cannot do on the data because if you manipulate the data, it has an issue because in software engineering, that data might be used in some other place. So never ever manipulate data. This might save you a bit of space, but the interview will end up rejecting you because this is a very, very bad practice. So never ever do anything to the input given. Always take extra variables, extra array, extra matrix. It might be tempting that if you use the same input variables, you will end up taking lesser space, but it's not a big concern. If you're using big off end space, like if two N is used by taking an extra ad, it is okay. This is okay. No one is going to reject you if you're using big off to an incident of big off. If the interview specifically says do it on the input, then you can use them. Otherwise do not. And you can tell that to the interview. You can explain that. I do not want to,"
+    },
+    {
+      "chunk_id": "L004_C26",
+      "start": 1900.08,
+      "end": 1973.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1900s",
+      "text": "can use them. Otherwise do not. And you can tell that to the interview. You can explain that. I do not want to, I do not want to tamper with the data. That is why I'm taking an extra variable in order to solve this problem. Keep this in mind for ever. This was about the high level idea about space complexity and the practices you should follow regarding the in-depth knowledge. When we solve different problems on different data structures, you will see how I'll be explaining space complexity in depth because the more problems you solve, the space complexity gets into your head in a much, much better way. So before ending up this lecture, in case you are into competitive programming, then remember one thing over there, you do not run your codes on your Mac book or your windows, whatever code you write, you send it to the server. There is a server, you send it to the server. Everyone sends to the same server and these servers in competitive programming, or let's say you're using lead code or let's say code studio, or let's say GFG, any platform, if you're using, they have their servers and most of the servers take one second for 10 to the power eight operations. Remember this, most of the servers, most of the server take one second for roughly 10 to the power eight operation might be 10 to"
+    },
+    {
+      "chunk_id": "L004_C27",
+      "start": 1973.36,
+      "end": 2040.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=1973s",
+      "text": "this, most of the servers, most of the server take one second for roughly 10 to the power eight operation might be 10 to the power eight plus something might be 10 to the power eight minus something, but roughly it is 10 to the power eight operations is what you can execute in one second on the server. Most of the servers are relatively the same. And if they're seeing two seconds, it doesn't mean 10 to the power 16. It doesn't, it doesn't. It means two into 10 to the power eight operations. If they're seeing five seconds, it means five into 10 to the power eight operations. Do not do 10 to the power eight to the power. Do not. A lot of people do that. Okay. So this is something just keep in your mind because a lot of times you will see time limit one second, they'll write it, they'll write it in your, uh, let's say coding round, but the time limit given to you is one second where you should analyze that the time complexity of your snippet of the code or your entire code should be roughly be go off 10 to the power eight operations. If in a coding round, they're stating time limit one second, it means roughly when you compute the time complexity of your code, avoiding constants, avoiding lower values, it should be B go off 10 to the power"
+    },
+    {
+      "chunk_id": "L004_C28",
+      "start": 2040.88,
+      "end": 2114.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=FPu9Uld7W-E&t=2040s",
+      "text": "when you compute the time complexity of your code, avoiding constants, avoiding lower values, it should be B go off 10 to the power eight operations. So with this, I will be completing the step 1.1 guys. I hope you have understood everything over here. And the next lecture will be about, uh, do all these patterns. Yes. I'll be doing all of these patterns, each of 22 of them in the next lecture, just in case you have understood time complexity and space complexity in depth. We have a ritual on taking forward on every lecture. If you understand everything right at the end of the lecture, you drop a comment understood in the comment section so that I get that belief that you guys are understanding. I get that motivation that I come back and record these videos. So please, please do consider dropping the comment understood. If you're new to our channel, please, please do consider subscribing to us. If you haven't checked out our strivers, it was a DSA course. The link will be in the description. And you get everything on the description, my LinkedIn, Instagram, Twitter, everything. You can follow me at any, any of these places. And if you're learning online, you can always use the hashtag that is over here. And with this, I'll be wrapping up this video. Let's play in some other videos."
+    }
+  ]
+}

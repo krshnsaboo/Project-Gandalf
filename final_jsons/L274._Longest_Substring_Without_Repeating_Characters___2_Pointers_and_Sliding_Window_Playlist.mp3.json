@@ -1,0 +1,141 @@
+{
+  "lecture_id": "L274",
+  "lecture_number": 274,
+  "lecture_title": "L3. Longest Substring Without Repeating Characters | 2 Pointers and Sliding Window Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo",
+  "chunks": [
+    {
+      "chunk_id": "L274_C1",
+      "start": 0.0,
+      "end": 70.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=0s",
+      "text": "So, we will be continuing with this drivers A to Z DSA course and today we will be solving a problem which involves the concept of sliding window and two pointer. But before doing that, hey, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is longest substring without repeating characters. The problem states you will be given a string which might have any character, lowercase, uppercase, special character, any possible character out of the 256 characters that do exist on the planet. It can have any of them. Now, your task is to figure out the longest substring. What is the definition of a substring? Any portion of the string which is consecutive in nature, BZEB is consecutive. So, this is a substring. Something like CA and C is not a substring because it is not consecutive. Now, your task is to figure out the longest substring without repeating characters."
+    },
+    {
+      "chunk_id": "L274_C2",
+      "start": 70.48,
+      "end": 145.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=70s",
+      "text": "is not consecutive. Now, your task is to figure out the longest substring without repeating characters. So, if I take something like CAD, this is a substring with a length 3 and every character is appearing once. C appears once, A appears once, D appears once. Let's take CADBZ. CADBZ is a possible substring which has a length 5 and each of the characters is appearing once only. Okay, length 5. Can I take this one? CADBZA. No, I cannot take this one. Why? Because A is appearing twice. So this cannot be a substring. I cannot have repeating characters. So, thereby, this could be a possible substring. Maybe this could be a possible substring because ZABCD does not have any repeating characters. You can try out and you will find out that the length 5 is the maximum that you can get and this is what you will have to return. Not the substring, just the length of the substring."
+    },
+    {
+      "chunk_id": "L274_C3",
+      "start": 145.96,
+      "end": 220.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=145s",
+      "text": "is what you will have to return. Not the substring, just the length of the substring. So, if this problem comes up in an interview, what is the extreme next solution that you can think of? Probably generate all the substrings which is C is a possible substring, CA is a possible substring, CAD, so basically CA, CAD and then CADB and then CADBZ. So basically what I am doing is I am keeping on adding a character to character where C is my first character always. So what I do is I start with C, I keep on adding, keep on adding, keep on adding and eventually I will cover all the substrings that starts with C. I can do the same with A. I can start with A, then I can add a D, then a B, then a Z and I can keep on adding and that will generate all the characters that starts with A. Similarly I can do a D, D, DB, DBZ and I can keep on doing this. Very simple. I can have a I pointer initially at C, I can have a J and then I can move J, then I can move J, then I can move J and J will keep on adding to every substring that starts with C. Similarly for the next time I will move here and J will be here and then J will be here,"
+    },
+    {
+      "chunk_id": "L274_C4",
+      "start": 220.12,
+      "end": 286.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=220s",
+      "text": "that starts with C. Similarly for the next time I will move here and J will be here and then J will be here, then J will be here and then eventually till the end. Similarly for the next time I will be here, J will be here, J will be here, J will be here, J will be here and J will go here. So I can generate all the substrings by using I and J. So maybe I can write the pseudocode. Then we will be thinking about how to figure out that there are no repeating characters. So I know that I equal to zero, that's my first substring with C. Okay. I can go ahead till N which is the size of the string and I know I can have a J. I can have a J that starts with I because that is the first character that will be there in the substring and then I can go ahead till N and I can do a J plus plus. Very simple. Now what is the next thing? I know one thing, if I have to generate all the substrings, I can take a sub equal to empty string and I can keep on adding sub equal to plus S of J. Will this generate all the substrings? Yes, because initially I'll add C and I'll add A to it, then D to it and I'll keep on adding everything."
+    },
+    {
+      "chunk_id": "L274_C5",
+      "start": 286.68,
+      "end": 366.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=286s",
+      "text": "the substrings? Yes, because initially I'll add C and I'll add A to it, then D to it and I'll keep on adding everything. So for the first time when I is zero, I will generate all the substrings. When I is one, I'll generate all the substrings that starts with A. This for loop structure kind of generates all the substrings that starts with C and then A and then D and then B then Z and so on. So I know the brute force to generate all the substrings. What do I need to add? I need to make sure there are no repeating characters. Let's analyze. I start with C. Okay. I start with C, sorry I didn't add A, then D, then B, then Z and then A. Can I say something that the moment I get A, this is repeating. Shall I go beyond? No, because I'm looking for no repeating characters. If I go beyond it, C, A, D, B, Z, A and D, we could possibly go beyond, but then A is already repeating. So there's no point in going beyond. So I can break out the moment I get a repeating character because beyond that, it will always have a repeating character. We've already seen it. I know something, I'll have to take a concept like hashing so that I can keep in my memory"
+    },
+    {
+      "chunk_id": "L274_C6",
+      "start": 366.22,
+      "end": 444.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=366s",
+      "text": "We've already seen it. I know something, I'll have to take a concept like hashing so that I can keep in my memory that A, this A was seen previously. Now we know one thing that there are 255 characters. So what we could do is we could probably use the hashing technique where we can start from zero till 255. Why can I do that? Because let's assume you write int value equal to character A. You know what happens? A's ASCII value, which is 97, goes into the value. So smaller A is 97. So each of these, each of the characters that do exist on the planet starts from zero and ends at 255 when you convert them into integer, the ASCII format. So I can probably do it. So what I will do is I'll keep a hash array of 256 size initially with zero. All of them are initialized with zero. And then what I will do is whenever I'm getting a character, which is basically the jth character, because I standing here, j is the one which is moving, j is the one which is moving. Whenever I'm getting a character, I will check, was it seen previously? Was it seen previously? I'm like, okay, let's maybe try to write down the code."
+    },
+    {
+      "chunk_id": "L274_C7",
+      "start": 445.5,
+      "end": 521.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=445s",
+      "text": "will check, was it seen previously? Was it seen previously? I'm like, okay, let's maybe try to write down the code. So I'll be like, hey, if hash of s of j, if you write this, this possible thing gets converted into the integer format, you don't have to do anything extraordinary. And if this was seen previously, you can break out because there's no point in going forward. Perfect. And if this was not seen, that means I'm okay. I'm okay. And if I'm okay, can I compute the length? Imagine your j is here and i is here. What is the length? This much is the length of the substring. Can I say the length is j minus i plus one? Very obvious. And then I need to make sure that I need the maximum. Maybe I can store the max length as zero. And over here, I can say max length equal to max of length comma max length. Done. And once I've done this, I need to remember this. I need to remember this j. So maybe I can call the hash of j, hash of s of j, a. Yeah, I've seen you. So this a, this a will be marked. I've seen you. Marked. Okay, done. Finish the for loop. Finish the for loop. And eventually you can go ahead and print out the max length."
+    },
+    {
+      "chunk_id": "L274_C8",
+      "start": 521.34,
+      "end": 599.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=521s",
+      "text": "Marked. Okay, done. Finish the for loop. Finish the for loop. And eventually you can go ahead and print out the max length. So this will be exploring all the substrings and printing down the answer. What will be the time complexity? B go of n. Near about B go of n. So n into n is typically n squared. What about the space complexity? I'm using a hashing, hash array. So that's B go of 256 because that is the size of the hash array. I'm reinitializing it and that is perfectly okay. This will be the time complexity and the space complexity. And this is where the interviewer will not be happy with you. And he'll ask you to optimize this. So we need to optimize our previous solution. How do I figure out what algorithm should I use? First of all, previous solution was taking n square. You've been asked to optimize it, which means somewhere around n, n log n 2n 3n, somewhere around n, right? And over here, there's something as substring. So on any problem which involves finding the maximum substring or something like that, you should straight away start thinking of a two pointer and a sliding window approach. Remember that. Okay. I'll be using a two pointer and sliding window. It's not a specific algorithm. It's rather a constructive algorithm, which keeps on changing according to the problem statement."
+    },
+    {
+      "chunk_id": "L274_C9",
+      "start": 599.1,
+      "end": 672.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=599s",
+      "text": "pointer and sliding window. It's not a specific algorithm. It's rather a constructive algorithm, which keeps on changing according to the problem statement. The only thing that stays constant is the window. You keep on moving the window. How you move the window that depends on the problem statement. And you'll have to do more and more problems. You'll have to do a lot of Braylon in order to understand two pointer and sliding window. It's not a specific algorithm. I repeat. So first of all, what I'll do is I'll take a note down the indexes. That's the first thing I'll do. So I've noted down all the indexes. The next thing that I'll do is I'll take two pointers, which is the left and the right. Okay. And at the same time, I'll take a hash. Why am I taking a hash? I need to remember when did I see the character. You'll understand as I move. So I'll take a max length, which is initially zero. And in the hash, I'll be storing the character and the index where I've seen it previously. So in sliding window, whenever we consider L and R, that means L to R is the substring or the answer that I'm looking at. So over here, when I'm saying N is here, R is here. That means this is the substring that I'm considering. Got it? First of all, we're looking for no repeating characters."
+    },
+    {
+      "chunk_id": "L274_C10",
+      "start": 672.92,
+      "end": 744.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=672s",
+      "text": "here, R is here. That means this is the substring that I'm considering. Got it? First of all, we're looking for no repeating characters. So what I'll do is, because this is my first character, I'll go and look in the map. Have I seen C previously? No, I haven't. I haven't. So what I'll do is I'll be like, okay, what is the length? And this typically R minus L plus one. How much is R? Zero. How much is L? Zero plus one. So that's one. And that's greater than my max length. It's fine. So what I'll do is I'll take C, put the index and put it into my map or whatever data structure I'm using. And the next thing I'll do is I'll take R and I'll move it to the next, which is at A. This time I'm considering this to be my substring. And for this to be considered my substring or my answer, this A shouldn't have appeared previously. Shouldn't have appeared previously. I look and I don't see it, so I can take it. So what will be my length? One minus zero plus one, which is two. So I can update that to the max length because greater than max length. And at the same time I can take A and put it into my hash map saying that A was seen at the first index. Perfect. What is my next thing?"
+    },
+    {
+      "chunk_id": "L274_C11",
+      "start": 744.76,
+      "end": 819.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=744s",
+      "text": "take A and put it into my hash map saying that A was seen at the first index. Perfect. What is my next thing? I will take R and I'll move it to D. Again, I'm considering this to be my answer. And for that, D shouldn't be in the hash map and it is not. So thereby this can be a possible substring and the length will be three, which is greater than the maximum length. So I'll be updating the max length. Amazing. And I'll take D and I'll put it into the hash map at the second index. Next I'll move out to B. Again, for this to be considered my answer, B shouldn't be in the hash map and it is not. And if it is not, can I consider the length to be four? I can. That's greater than max length. So update it. At the same time, take B and put it into the hash. Let's take R and move it forward. This time R is at Z. So if R is at Z, again, for this to be considered my hash map, Z is being added correctly. So I'll see Z. Are you in the hash? It says no, I'm not in the hash. So if it is not in the hash map, I can say that this is the length, which is five, which is greater than max length. So max length can be updated. Perfect. What is the next job?"
+    },
+    {
+      "chunk_id": "L274_C12",
+      "start": 819.96,
+      "end": 897.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=819s",
+      "text": "is the length, which is five, which is greater than max length. So max length can be updated. Perfect. What is the next job? A, Z and put it into your hash map. Nice. Let's move on. What is R? R is at A. So I'm saying this is my possible substring. But, but, but when I look for A, I see A at the first index. I see A at the first index. So can I see this? Can I see this? That this left pointer will be here? Can I see? No, because if I keep it here, then there will still be repeating characters. So L typically goes to wherever I have seen A, wherever, let's say this is map, wherever I've seen this A plus one, that's where, that's where it will go to. Correct or not? And what is this A? Can I say this A to B? Nothing but this one, this character, which is S of R. Correct. So left will go to one place ahead of that. So I'll say, okay, maybe I can keep it here. Then I'll not find that A, then I'll not find that A. I'm like, okay, then you'll not find that A for sure. And if this happens, the length turns out to be four, which is not greater than max length. So I do not update it. I do not update it."
+    },
+    {
+      "chunk_id": "L274_C13",
+      "start": 897.02,
+      "end": 975.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=897s",
+      "text": "turns out to be four, which is not greater than max length. So I do not update it. I do not update it. But before moving the R, the last A has been seen here. So I'll go ahead and update this to five. I'll update the A to five. So I can go ahead and update the A to five and again move R. Perfect. This time I'm saying that this is my window and this is my answer. I'm like, okay, have I seen B? I have seen B at the third index. I've seen B at the third index. Okay. I've seen B at the third index. I'm like, I can definitely not consider this, but what can I consider? One more, this one, L can move here because I cannot consider B. Okay. Make sense? So I'll take L, I'll move it here. So what is the length now? The length turns out to be three, which is definitely not more than max length. Perfect. Let's move R. But before that, before that, before that, please go ahead and update this to six. And then you'll move on. Update B to six. Now what is the next one? Next one is this one. And I'm saying C is to be added. I'm like, can I add C? Can I add C? Like, yes, yes, this could be a possible sub, this could be a possible substring because"
+    },
+    {
+      "chunk_id": "L274_C14",
+      "start": 975.38,
+      "end": 1048.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=975s",
+      "text": "can I add C? Can I add C? Like, yes, yes, this could be a possible sub, this could be a possible substring because C is not in the substring. But if you look properly, you look properly, C is in the hash map. C is in the hash map. Can I consider this? I'm like on the naked eye, yes. But if you look carefully, C is there in the hash map. So you'll have to be careful. You'll have to be careful. When you're updating L, please make sure, please make sure the C that you're seeing, that should be after L, after L, not before, because this is the portion you're considering. This is the portion you're considering. So whatever map you have seen, whatever map, what is basically map of S of R, because S of R is C, that should be greater than equal to L, then only, because this is the substring you're considering. You shouldn't see beyond it, before it, no. So C is not there. C is not there. Thereby, the length is 4. And can I update? No, because I've got a better length. Perfect. What will I do? I'll update C to 7. I'll update C to 7. And I'll move R. I'll move R to D. This time, when I look for D, I'll move R to D. S there, S there in the hash. But, but, but, but, I'm only looking for this one."
+    },
+    {
+      "chunk_id": "L274_C15",
+      "start": 1048.98,
+      "end": 1120.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=1048s",
+      "text": "for D, I'll move R to D. S there, S there in the hash. But, but, but, but, I'm only looking for this one. And L is at 4th index, whereas D is at 2nd index. So I do not update it. And what is the length? The length turns out to be 5. Can I update? No, I already have 5. No need to update. So eventually, what happens is, after this, you update D to 8, and then you move R, and R goes out. The moment it goes out, you stop then and there. Got it? So this is how the sliding window works. You take initially an empty window, and you start with the first, and then you keep expanding, keep expanding. And the moment you get something which violates your condition, you move the left. You move the left. Got it? So time to write down the pseudocode. Again, this won't be any language-specific code. I'll be keeping it as generic as possible. If you want your language-specific code, you can find them below. So I'll be writing down the function. Now the function gets a string, right? String s. Now what is the first thing that we do? First of all, we need to have a mapped data structure. I know that there are 256 characters. Let's not define a mapped data structure because that will be taking something like a logarithmic time."
+    },
+    {
+      "chunk_id": "L274_C16",
+      "start": 1120.14,
+      "end": 1199.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=1120s",
+      "text": "know that there are 256 characters. Let's not define a mapped data structure because that will be taking something like a logarithmic time. So what I'll do is, I'll take a hash array of 256, and initially, I'll run a loop from 0 to 255 and make sure that it is initialized with minus 1 everywhere. Minus 1 means I haven't seen the variable. What is the next thing? I need the left pointer. I need the right pointer. Both of them can be kept at the 0th index. And I need the max length, and the max length is initially 0. I'll keep on moving the right till it doesn't exceed. So quite simple. I can take n equal to s.size, and I can keep while r is lesser than n. Very simple. r is lesser than n. What's the first thing that I do? I know this is my substring. I check. I check if this character is in the map or not. Okay, let's do it. If the character is in the map, which is like hash of s of r is my character. Is it in the map? If it is in the map, that's not going to be minus 1. That means it is in the map. That means it's in the map. Right? So we know that it is not in the map."
+    },
+    {
+      "chunk_id": "L274_C17",
+      "start": 1199.86,
+      "end": 1278.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=1199s",
+      "text": "it is in the map. That means it's in the map. Right? So we know that it is not in the map. What after that? What if your l is standing here and r is standing here? So you're looking for this particular substring. And the c is here, which doesn't make sense because you're just looking for this particular substring. So I check it's within l to r. Okay, let's see where it is. If hash of s of r, if that's greater than equal to l, that means it's within the range and I'll have to update l. So the l will be updated to s of r plus 1. So I've updated l. Once I've updated l, I can finish. So I know that if I've seen it, l would have been updated if needed. And then I can figure out the length, which is length equal to r minus l plus 1. And I can say max length equal to max of length comma max length. Very obvious. And what we do next is before moving ahead, please make sure you do an hash of s of r to the current index, which is r. At the same time, move r plus plus."
+    },
+    {
+      "chunk_id": "L274_C18",
+      "start": 1278.52,
+      "end": 1357.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=1278s",
+      "text": "hash of s of r to the current index, which is r. At the same time, move r plus plus. This is what you will do. And that's it. Yes, that is it. And eventually you can return the max length. And that will be it. So that was about the code. It's time to analyze the time complexity. We have a while loop, correct? And the while loop is being run by the r variable. And the r is moving by one, one place. Where do we start? We always start l and r with this one. And at every step, r is moving one step ahead. And eventually it reaches the end. r always keeps moving by one step. l is moving, but that is not contributing to my while loop, correct? Only the r is. So the r moves from here to here, which is the length. So thereby, the time complexity is b go of n. Not more than that, because I'm just moving r. The while loop is dependent on r. And this one hash, that's b go of one because I've taken an array. And to access the array, it's b go of one, not b go of log n. What about the space complexity? The space complexity is b go of 256, which is pretty good. So yes, that will be it."
+    },
+    {
+      "chunk_id": "L274_C19",
+      "start": 1357.32,
+      "end": 1379.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=-zSxTJkcdAo&t=1357s",
+      "text": "about the space complexity? The space complexity is b go of 256, which is pretty good. So yes, that will be it. And that was two pointer and sliding window algorithm. Not a specific algorithm. You keep on tweaking it according to the problem statement. So this will be it for this one. And if you're still now watching, and if you've understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. I'll see you in some other video. Till then, bye bye, take care. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

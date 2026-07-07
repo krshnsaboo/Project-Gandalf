@@ -1,0 +1,246 @@
+{
+  "lecture_id": "L020",
+  "lecture_number": 20,
+  "lecture_title": "Longest Subarray with sum K | Brute - Better - Optimal | Generate Subarrays",
+  "youtube_url": "https://www.youtube.com/watch?v=frf7qxiN2qU",
+  "chunks": [
+    {
+      "chunk_id": "L020_C1",
+      "start": 0.0,
+      "end": 74.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another video from the Stryber's A to Z DSA course. Just in case you're for the first time here, this is world's most in-depth course in DS Algo. Why do I say that? This course alone has 456 modules. When we end the course, we would have solved over 400 plus problems. You can go over the entire internet, you can buy any of the paid courses. None of them will be covering DS Algo in such depth. The one thing that I can give you as a guarantee is if you complete this course, you can actually clear DS Algo rounds of any of the companies in any portion of the world. So till now we have covered till step 3.1 this problem. Now in this video, we will be covering the remaining two problems from step 3.1. So to start off, let's get started with the first problem that is longest subarray with given sum and it just has positives in the array. What does the problem state? Find me the longest subarray with a summation of k. So the first question that might be coming up to your mind is, but what is the meaning of subarray? We haven't heard about this before. So just keep this in your mind."
+    },
+    {
+      "chunk_id": "L020_C2",
+      "start": 74.6,
+      "end": 150.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=74s",
+      "text": "your mind is, but what is the meaning of subarray? We haven't heard about this before. So just keep this in your mind. When I say subarray, it means contiguous, very, very important word, contiguous part of the array, contiguous part of the array. So I can say that this in itself is a array of one. So that's a subarray, a part of the array. I can say this is one comma one comma one. So it's a contiguous part inside the array. So it is called a subarray. I can say four to three is a subarray. I can say one to three is a subarray. What I cannot say is one, two. I cannot say when I take one from here, when I take two from here, I cannot say it's a subarray. But if I take one from here, if I take two from here, that's a subarray. So a subarray has to be taken from contiguous portions. Otherwise it is not a subarray. Imagine if you take like one, four, three, yeah, you have taken two people who are consecutive, but then the other guy is not. So this is not a subarray. Rather, this is a subsequence. So I hope you have understood the definition of subarray."
+    },
+    {
+      "chunk_id": "L020_C3",
+      "start": 150.6,
+      "end": 217.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=150s",
+      "text": "So this is not a subarray. Rather, this is a subsequence. So I hope you have understood the definition of subarray. Now what they are asking you is, find me the longest, very important, find me the longest subarray who has a sum of K. So can I say, if I take these two elements, if I take these two elements, they will have a sum of three. They will. And what is the length of this subarray? Two. If I take just this one, this is also subarray, a summation is also three, right? Because that is what they are looking for. And the summation is also three. But the length of the subarray is one. And what they are asking is, give me the longest, give me the longest. So if I take this, the summation is three, and the length is three as well. The summation matches, and the length is the longest. You cannot have a longer length than three. Yeah, this is also a subarray with length three. So there are two, but they're not asking you the count. That problem we will do in the future. But as of now, they're not asking you about the count. What they're asking you is, give me the length of the longest. So what I can say is, the length of the longest over here is three. That is what they're asking you to return."
+    },
+    {
+      "chunk_id": "L020_C4",
+      "start": 217.64,
+      "end": 293.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=217s",
+      "text": "So what I can say is, the length of the longest over here is three. That is what they're asking you to return. So this question comes up in an interview, what is the first solution that you'll give to the interview? Obviously, the brute force solution. What is the brute force solution? It's very simple. Let's say, hey, I'm going to generate all the subarrays. Yes, that's the most obvious thing that comes to your head. Generate all the subarrays. And I pick up one by one, one by one, and I find every one. I generate every subarray, and I find every one. And whoever is the longest, that's my answer. So that's the obvious brute force, like the most simplest approach that can come to my mind. But the question arises, how do you generate all the subarrays? So we need to observe a pattern. Can I say, can I say one is a subarray? I can. Can I say one, two is a subarray? I can. Can I say one, two, three is a subarray? I can. Can I say one, two, three, one is a subarray? I can make. Can I say one, two, three, one, one is a subarray? Do you see a pattern? Yes, you do. It's extending by one. And it's extending by one every time, and it goes on till the last. And each of them is a subarray. Starting from here, and ending at all these indexes, variables."
+    },
+    {
+      "chunk_id": "L020_C5",
+      "start": 293.46,
+      "end": 354.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=293s",
+      "text": "and it goes on till the last. And each of them is a subarray. Starting from here, and ending at all these indexes, variables. The next pattern. Can I say this is a subarray? Yes. Can I say this is a subarray? Yes. Can I say this is a subarray? I'll say yes. Can I say this is a subarray? I'll say yes. Can I say this as a subarray? I'll say yes. Can I say this as a subarray? I will say yes. This, this, this. Again, can I say 3 has a subarray, 3 1 has a subarray, 3 double 1, 3 triple 1, 3 4 1, 3 1 1 1 4, this, this, yes. Can I say this has a subarray? Yes, yes, yes. So do I see a pattern? I do. Every time if I keep a pointer i here, then I can just take a pointer j and the j will always start from i. And then what I can do is, I can say the subarray is from i to j. Do you see the first time j is here, i is here, so the subarray is here. Then what I do is, I move j. Can I say the subarray is from i to j now? Yes. And then again I do, I move j. And can I say the subarray is from i to j? And then again I do, I move j."
+    },
+    {
+      "chunk_id": "L020_C6",
+      "start": 354.34,
+      "end": 420.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=354s",
+      "text": "I do, I move j. And can I say the subarray is from i to j? And then again I do, I move j. Then again I move j and I keep on moving till it reaches last, till it reaches last. If it reaches last, the entire array is a subarray. By the way, an entire array is also a subarray. So fine, I can move j, I can move j. Next, once j has reached the end, what do you do? You move i. And now can I say j this time again starts from exactly i because this is a subarray. And then again you do the same thing, move j, move j, move j, move j, move j, move j, move j, move j. That's what you do. And eventually this is a subarray, then this. So i and j keeps on moving. So something I know for sure is I'll keep i and I'll keep j as moving. So let's write that. So can I say I can write this as for i equal to zero, i lesser than, why i lesser than n? Because first time i was here, then i will be here, then i will be here, then i is here. Eventually it will go till the end. Where does j start in from? When i is here, j starts from here and goes till the end. So can I say the inner"
+    },
+    {
+      "chunk_id": "L020_C7",
+      "start": 420.46,
+      "end": 492.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=420s",
+      "text": "does j start in from? When i is here, j starts from here and goes till the end. So can I say the inner loop will be very simple. j starts in from i and j goes on till n j plus plus. This is, this is how it will look if I have to generate all the subarrays. And where is the subarray from i to j? Where is the subarray from i to j? Is it because if j is here, i is here, can I say the subarray is this? How do you find the summation of this subarray? It's easy. If the subarray is from i to j, run a loop na, run a loop. So I'll say, okay, k is equal to i and it can run till j and the summation can be zero, the summation plus equal to array of k. This way I can submit the entire subarray from i to j. In this way I can submit the entire subarray from i to j. Now what was required? Longest equivalent to k. So equivalent to k. Okay, let's write that condition. If s is equivalent to k, then the length and maybe you can keep the longest length as zero. So the length will be max of the previous length comma, what is the length between i and j? What is the length"
+    },
+    {
+      "chunk_id": "L020_C8",
+      "start": 492.86,
+      "end": 567.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=492s",
+      "text": "So the length will be max of the previous length comma, what is the length between i and j? What is the length between i and j? Imagine i is here and j is here. What's the length? Two. So that's i, j minus i plus one. That's j minus i plus one. Very simple maths. J minus i plus one. And eventually wherever there is an equality, we take the longest and right at the end we can print the answer as length. Done. What is the time complexity? Three loops, somewhere near about we go off nq, near about, not exactly. Why? Because this loop is diminishing. This also will reduce. So I can say somewhere around nq, not exactly, not exactly. Am I using any space? The answer to that is no, we are not using any extra space. So we've kind of understood the brute force, which is nq. But the interviewer will say you, hey, wait, do you actually need nq for the brute? Can you optimize your brute? I'd like, maybe yes. I'll say, wait, I'll probably remove this and try to figure out an observation. And the observation is going to be very simple. See, where is the first sub-array? And then,"
+    },
+    {
+      "chunk_id": "L020_C9",
+      "start": 567.94,
+      "end": 639.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=567s",
+      "text": "out an observation. And the observation is going to be very simple. See, where is the first sub-array? And then, and then, and then, and then, and then what is happening? The first time the summation of the first sub-array is two. Then the summation becomes five. Then the summation becomes six. Then the summation becomes one. What is being done to the sum? First two was added. Then in the next sub-array, we know the summation will be two. Only one new element came up. So just add the one new element. Then again, one new element come up. So I add the one new element. And again, one new element come up. Add the one new element and get a summation seven. Do I need to iterate the entire sub-array? We do not. Because when the j is moving, when the j is moving, I just keep on, keep on adding, keep on adding. Quite simple. So what I'll say is, let's keep the s as zero. And every time j moves, I'll just add it. What will be the value for the first time? If i is here, first time two will be added. Then j will move here, then three will be added. Then j will move here, one will be added. And eventually everything will be in s. And you can easily compare. If I do this, the brute force boils down to somewhere near about n square with"
+    },
+    {
+      "chunk_id": "L020_C10",
+      "start": 639.34,
+      "end": 715.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=639s",
+      "text": "be in s. And you can easily compare. If I do this, the brute force boils down to somewhere near about n square with a space complexity of b go of one. So this is what you'll tell the interviewer. That the brute force that I can do is b go of n square at the best case. So obviously the interviewer will not be happy with the brute force solution. And he'll ask you to optimize it. And that's when you will come up with the better solution. And the better solution is going to use hashing. So what is the thought process behind hashing? Let's understand that. So what I'll write is, I'll write, I'll just write dots. I'll not assign them any numbers because I don't want you to just think it in terms of an example. I want you to think it in a very general perspective. So this is an array with random numbers. And what am I looking for? I'm looking for any subarray with a sum k. That's what I'm looking for. So we will do some reverse mathematics. Imagine you are standing here. Just imagine you are standing here. How many elements are from the front? Five. So imagine I can call it as prefix sum. What does prefix sum means? From the front till that portion. Prefix. Got it? So prefix sum is assume some x. So what am I saying is,"
+    },
+    {
+      "chunk_id": "L020_C11",
+      "start": 716.46,
+      "end": 791.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=716s",
+      "text": "sum means? From the front till that portion. Prefix. Got it? So prefix sum is assume some x. So what am I saying is, the complete sum is x. Okay. Now a very simple question to you is, this is the last element. How many subarrays will be there? Who will have the last element as this dot? You'll be like, okay, one subarray is this. Who will have this dot as the last? The other one is this. Who will the dot element as the last? Can I say this, because the dot element is not there. I need the dot element to be the last. I cannot even say this because the dot element is not the last. Only there are five subarrays. One is this. The other one is this. The other one is this. The other one is this the other one is this there are five subarrays with a dot element as the last and that's what my focus will be so can I say if there exists I'll write this if there exists a subarray with summation k as dot as the"
+    },
+    {
+      "chunk_id": "L020_C12",
+      "start": 791.96,
+      "end": 868.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=791s",
+      "text": "if there exists I'll write this if there exists a subarray with summation k as dot as the last element dot as the last so hypothetically imagine these three numbers give you the summation of K hypothetical probably there exists a subarray who has a summation of K but you you cannot have this sum of some middle subarray in between but can you do reverse engineering and can I say wait probably there is a subarray probably there is a subarray with a summation of K so if there is a summation of K what will be the summation of this reverse reverse mathematics if the entire is X if this is K can I say this will be X minus K X minus K I can this is what I will use can I say if I'm standing here and they'll hear the sum is X and if anywhere previously anywhere previously I got a some X minus K I got a some X minus K if anywhere previously I go to some X minus K can I see this that this will be K this will be K this will be K I can I just did the worst mathematics I cannot find the middle"
+    },
+    {
+      "chunk_id": "L020_C13",
+      "start": 868.66,
+      "end": 940.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=868s",
+      "text": "will be K this will be K I can I just did the worst mathematics I cannot find the middle some I cannot find them middle some out of nowhere so I didn't reverse mathematics I said I can carry the sum till here and that will be X I would have carried the sum till here as well which is X minus K so if over here standing it is X if at previous there is someone with X minus K that means I have a mid subarray with K I got some subarray at K and I can do that with every element I can do that with every element as the last element hence proven that I can generate all the subarrays understood probably a bit probably not probably completely doesn't matter let's get back to the dry run it will get to your head directly so let's do the dry run so that this concept gets into your head so what I'll do is I will take an hash map okay why will I take this hash map getting back to this thought process if till here it is X I just want to see if previously there was X minus K you cannot see out of the blue you cannot see out of the blue so whatever do is you have to kind of hash it till here the sum was X minus K have to hash this so that's the thought process did not"
+    },
+    {
+      "chunk_id": "L020_C14",
+      "start": 940.2,
+      "end": 1018.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=940s",
+      "text": "have to kind of hash it till here the sum was X minus K have to hash this so that's the thought process did not understand not an issue let's do the dry run so we will be at the first element and you'll do a summation 0 and initially no subarrays are found so then 0 first element 1 increase the summation to 1 the summation is 1 and that's not equivalent to 3 so you take 1 and you say it occurred at index 0 probably I'll write the index for better understanding so 1 occurred at index 0 and that next move the pointer to summation increases to 3 summation increases to 3 which is equivalent to K which is equivalent to K so what do you say is okay wait this entire prefix sum this entire prefix sum is equivalent to the K that means this in itself is an array or a subarray who is get giving me this sum so if the subarray is till index 1 so the length will be 2 0 based indexing so the length will be 2 perfect and at the same time say you got 3 till here which is index 1 perfect let's move you got 3 you got 3 the summation will be 6 the prefix summation is 6 the prefix summation is 6 now comes the"
+    },
+    {
+      "chunk_id": "L020_C15",
+      "start": 1018.52,
+      "end": 1087.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1018s",
+      "text": "got 3 you got 3 the summation will be 6 the prefix summation is 6 the prefix summation is 6 now comes the twist so 3 elements until now the prefix sum is 6 and you're looking for someone with 3 and that someone is this so this is 3 I did a reverse engineering the remaining was 3 I said hey wait did we get some 3 before and he says yes till index 1 you got a 3 that means this sub there does exist a subarray with a K reverse so what I'll do is I'll say till here it is 6 now you need 3 now 6 minus 3 is 3 now look from the front is there a 3 he says till 1 there is 3 till 1 there is a 3 I'm getting a subarray I'm getting a subarray you're standing at 2 till 1 there is a 3 so 2 minus 1 so the length of that subarray is 1 the length of that subarray is 1 but that's not greater than 2 so you'll not do anything so 6 comma 2 perfect let's go you got 1 7 is the new sum so what can I see I have 4 elements and the prefix sum of this is 7 what am I looking for 3 for someone to be 3 someone from the start has to be 4 do we have someone from the start as 4"
+    },
+    {
+      "chunk_id": "L020_C16",
+      "start": 1087.76,
+      "end": 1162.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1087s",
+      "text": "for 3 for someone to be 3 someone from the start has to be 4 do we have someone from the start as 4 no so did not find take the 7 and put it at index how much is that 3 perfect and now let's move when you move ahead you get 8 so when you're getting 8 which means you're having 5 elements and again right you're having 5 elements it is having 8 so some for someone to be 3 someone has to be 5 if is there someone with 5 no just put 8 comma 4 and move next you move ahead so that's 9 so there are now 6 elements 6 elements are giving a summation of 9 6 elements are giving you a summation so someone to be 3 someone has to be 6 and I get a 6 I get a 6 at index 2 adding so this is 6 so these many remaining will be 3 so you're currently at 5 till 2 there was 3 so the subtraction the length is 3 so you got in better you want a better one so this is how you can go ahead and you can figure out if someone was there in the back this is what I will call as a better solution so I hope you understood the thought process and the dry run I will be coding this up because I want your coding skills to go up because this"
+    },
+    {
+      "chunk_id": "L020_C17",
+      "start": 1162.24,
+      "end": 1233.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1162s",
+      "text": "understood the thought process and the dry run I will be coding this up because I want your coding skills to go up because this is a very important question so given the vector and you're given the cake something important to notice it notice is it is given as long long first declare the map so map will be long long because that is where we will store the prefix sum so you can say pre map 3 some map or something others perfect done now what I'll do is I'll go across the entire array which is something like a dot size so let's go across the entire array now what I'll do is I'll declare a sum and again please please take a look and over here I'll also take a length as 0 and the end of the day I can say return length or this can be max length to a better naming so I can take max length of over here I'll say sum plus equal to a of I and remember initially always check if the array from start till the current index is giving you K if it is giving you then the max length will always be max of max length comma I plus 1 it will always be like even if you do not write max it will work because if you are died that's always"
+    },
+    {
+      "chunk_id": "L020_C18",
+      "start": 1233.36,
+      "end": 1309.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1233s",
+      "text": "1 it will always be like even if you do not write max it will work because if you are died that's always the maximum if that's the case that's perfect what can be the other case I'm looking for remaining bring the reverse mathematics how much do I require this is what I require if my map has this remaining which means it will not be pointing to the end so remember this is free some map so please write free some map dot n if it does exist there means it does so thereby what would the length of this summary is the length of this will be I minus 3 some map of the remaining wherever it is and then you can do a same max length equal to max max length comma length right at the end of the day whatever sum you have generated is a pre some map this is a pretty some map of this particular sum is equal to I something to ponder over here like this if I if I try to submit this this will run there's a slight edge case that I want to talk about or this code that we have written is that correct that is correct but only for positives if I tell you that the array has zeros the code that you have written"
+    },
+    {
+      "chunk_id": "L020_C19",
+      "start": 1309.32,
+      "end": 1385.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1309s",
+      "text": "that is correct but only for positives if I tell you that the array has zeros the code that you have written will be wrong why let's understand that by an example so imagine I take an array which has something like 2 comma 0 comma 0 comma 3 and looking for a summation of 3 that's what I'm looking for how does it work it's very simple we take a prefix sum we keep a pointer here we have a hash map right and then we have a length as 0 initially and prefix sum as 0 let's start the integration when we add 2 which is index 0 we do the prefix sum as 2 and we say this is 2 is that equivalent to this that's not we know one element is 2 so is there any one previous no so that's fine and then we go across and say in the hash map 2 occurs at index 0 done next we move how much is it 0 so 2 plus 0 will still be 2 so till here we have 2 again again and that's not equivalent to 3 and 2 elements are having 2 which is this so for this to have 3 someone has to have minus 1 which is not possible right so okay fine but till here it is again having 2 so the hash map this time replaces to 2 comma 1 then we move again"
+    },
+    {
+      "chunk_id": "L020_C20",
+      "start": 1385.48,
+      "end": 1464.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1385s",
+      "text": "fine but till here it is again having 2 so the hash map this time replaces to 2 comma 1 then we move again 0 2 plus 0 again 2 hash map this time represents to 2 comma 2 so the erase this it'll be 2 comma 2 done next when I go here it becomes 5 and it's like 4 elements are having 5 which is not 3 how how much am I looking for I'm looking for 3 so I need someone with a sum 2 I need someone with a sum 2 and when I look at the hash map it says till here the summation is 2 which is correct which is correct so thereby this much is the summary which is again correct but we need longest we do not need shortest we do not need shortest we need longest so apparently we should have just stored we should have just stored 2 for index 0 and this sub array 0 comma 0 comma 3 would have been the answer for longest thereby if a sum previously does exist you should not re-update you should not re-update because because if there is something like this and this one has a summation of X and you're looking for K you'll try to look as left as possible"
+    },
+    {
+      "chunk_id": "L020_C21",
+      "start": 1464.04,
+      "end": 1542.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1464s",
+      "text": "this and this one has a summation of X and you're looking for K you'll try to look as left as possible for X minus K you'll try to look as left as possible for X minus K did you get this I hope you did get this because you'll try to look for the leftmost guy for the sum of 2 because sum of 2 is here here and here but you take the leftmost so that you get the longest summary this is where it will fail so there is a slight change in the code that you have to do so if I go back to the code this line will be inside braces and if you're putting that into the putting that into the map what will you write you will say okay wait what's the map's name this dot find was the sum previously not there if it was not there previously then I will go ahead and say okay cool that was not there so I'll just put it so it's a minor change by the way looks like okay sorry my bad okay should be good and let's just format this okay perfect now let's quickly run this and see what is running right so what did I say if it does exist I will not now I will go and submit this and this will be running oh it did not"
+    },
+    {
+      "chunk_id": "L020_C22",
+      "start": 1542.88,
+      "end": 1618.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1542s",
+      "text": "if it does exist I will not now I will go and submit this and this will be running oh it did not why also you've got to change this to long long and now you can go ahead and submit this it should be running fine yeah it does so I hope you've understood how do we cover the edge case and the same code will also run if it has negatives because in the negative we apply the same logic and it does run if you observe this particular code is partially accepted why because this was the better solution that we were discussing we still need to optimize this but the same code will work for a problem that has positives and negatives in the array because in that case the better one for the positive and zeros is the optimal you cannot optimize this code any further if the array has negatives zeros and positives so I'll just quickly go and submit this and you'll see that this is actually okay so just change the name now okay cool so you'll see that this is actually running for this particular problem and it will be completely accepted yes while over here it was not because this is a better solution so let's discuss the time complexity and see if we can get an"
+    },
+    {
+      "chunk_id": "L020_C23",
+      "start": 1618.52,
+      "end": 1690.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1618s",
+      "text": "it was not because this is a better solution so let's discuss the time complexity and see if we can get an optimal or not so we did code up the better solution and if you saw that that better was an optimal one if the array has positives as well as negatives but if I ask you for the better solution yes what is the time complexity I can say I'm definitely I treating in the array and we're using an hash map to find and initialize in the hash map so it can be logarithmic of it and if you are using ordered map in C++ or else it will be n into we go of one if you're using unordered map but again another map if the it goes to the worst case like the constraints are in such a way that it ends up having a lot of collations then this one that we go of one search time in the map ends up being we go of n hence of the worst case can be n square if you use unordered map so tell that to the interview that I can use unordered map if if I do not have collisions I'll end up having n cross 1 which is be coffin and I will have n logarithmic of n if I'm using are not I ordered map it will not have any collisions what would"
+    },
+    {
+      "chunk_id": "L020_C24",
+      "start": 1690.16,
+      "end": 1762.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1690s",
+      "text": "and I will have n logarithmic of n if I'm using are not I ordered map it will not have any collisions what would be the space complexity the space complexity will be we're using an hash map where we are storing every prefix so the worst case every index will have an individual prefix so they are by a big of n because all the prefix sum are stored so this will be the time complexity in the space complexity for the better solution and for the optimal in case the array has positives and negatives and we are telling the solution in an interview make sure that you tell them about the better solution and then explain the edge case about 0 and the negatives and then tell them descriptively that that will only work for like that will be the optimal solution for positives and negatives but if the array just contains positives and zeros I will turn to the most optimal solution that will be using the two-pointer approach it'll be like a two-pointer and a greedy approach very simple let's start off so the thought process is something like this before moving on to the dragon let me tell you the thought process it's something like this we have a single point we have a single point then we keep increasing keep increasing keep increasing so the moment we move right in the array the moment we move right in the array the"
+    },
+    {
+      "chunk_id": "L020_C25",
+      "start": 1762.84,
+      "end": 1839.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1762s",
+      "text": "keep increasing keep increasing keep increasing so the moment we move right in the array the moment we move right in the array the summation is bound to increase summation is bound to increase and there will be a point where it will go beyond the sum that I'm looking for if we will go beyond the sum I'll not move here rather I'll try to trim it down I'll try to trim trim trim and then it will just be this it's like go if it increases trim from the left go trim from the left go trim from the left go trim from the left that's what we will do that's the thought process if you did not understand the thought process not an issue look at the dry run you'll understand it clearly let's go to the drive so what I'll do is I'll have a pointer here I'll have a pointer here and I'll keep the summation initially so what does the pointer means it means the subarray that we are considering is just having one so the summation will be that element itself the summation will be that element itself remember we are looking for a summation of 6 and the maximum length subarray till now is 0 move move so take as of now the summation is 1 which is lesser than 6 it doesn't matter let's hope we have 2 so add up 2 we get 3 so"
+    },
+    {
+      "chunk_id": "L020_C26",
+      "start": 1839.54,
+      "end": 1910.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1839s",
+      "text": "summation is 1 which is lesser than 6 it doesn't matter let's hope we have 2 so add up 2 we get 3 so this is the subarray 3 is still lesser fine move we get 3 again 6 6 is equal to 6 if it is equal fine from here to here is the subarray and you can easily find the length by subtracting this minus this and the length will be 3 quite simple next move how much is that 1 added up 7 now the next time when you try to move before moving you say wait wait I know I need to move before moving the summation is 7 which is greater why will you move if you move the summation will further increase wait let me let me reduce it a bit then you will move let me reduce I'm like take out 1 so if you take out 1 it will be back to 6 if you take out 1 you'll come over here so just erase this so that it's cleared I'll just erase this and I'm like okay wait what's the sum now 6 okay equivalent now let's do it I'm like okay one more subarray equivalent to 6 what's the"
+    },
+    {
+      "chunk_id": "L020_C27",
+      "start": 1910.3,
+      "end": 1987.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1910s",
+      "text": "sum now 6 okay equivalent now let's do it I'm like okay one more subarray equivalent to 6 what's the length 3 fine not an issue now let's move again 7 in the next step when you try to move is like 7 I wait you have exceeded let me shrink so I'll I'll now remove 2 the moment I remove 2 it becomes 5 so we move 2 it does become 5 next I'll try to move now this if I try to move I'll again get 6 and again get 6 and now I'll be like okay full length fine update the length next if I try to move this to here this will be taken like gain exceed so the next step before moving this every time before you move you will see the sum it's more shrink summation will be reduced to 4 because 3 has been omitted 3 has been omitted perfect now let's move 3 is added what's happening again 7 went up that's a lot of them so cool done next when you try to move when you try to move you will not why because you still have to shrink let's shrink 1 taken off 6 again now"
+    },
+    {
+      "chunk_id": "L020_C28",
+      "start": 1987.66,
+      "end": 2063.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=1987s",
+      "text": "to move you will not why because you still have to shrink let's shrink 1 taken off 6 again now you'll move we have 3 added up 9 so when I'm at here this 3 is added the next step before you try to move you'll be like wait sum is 9 which is greater remove sum from back remove from back then you will move then you move okay remove this one if I remove this one I'll move ahead it'll be 8 okay remove this one move ahead it'll be 7 okay remove this one move ahead 6 now like okay this is equivalent one more guy but this is length 2 not to be considered next time you move done and dusted so apparently I got 3 subarrays or 4 subarrays and we got the maximum as 4 and the moment it exceeds you stop got it very simple it's a 2 pointer move exceeds move again move exceeds move move exceeds move quite simple okay so let's quickly go into the compiler and try to code this up if you want to try this problem the link will be in the description so we were having a left pointer as 0 and a right pointer as 0 and we were having a long long sum so initially what's the subarray is the single element so sum will be array of"
+    },
+    {
+      "chunk_id": "L020_C29",
+      "start": 2063.56,
+      "end": 2139.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=2063s",
+      "text": "and we were having a long long sum so initially what's the subarray is the single element so sum will be array of 0 perfect and we do one thing long rather not rather max int will do max length is equal to 0 and int n equal to 8 8 of size okay perfect what were we doing we were moving right till it doesn't crosses the boundary quite obvious till it doesn't crosses the boundary what else I was doing think on yourself what else I was doing I was like okay I know one thing for sure if I'm moving right I'll have to add someone I'll have to add someone but if you go back to the iPad initially you were here summation was 1 and you added the next guy so if to go to the next and then you have to add the to go to the next then you have to add the two so can I see first I'll move then I will add very obvious first I move to the next then I add but before adding I need to be sure I need to be sure about one thing am I still under the boundary am I still under the boundary because what if I'm standing it here and I move to the next and I try to add and it's not there so we need to be careful only if"
+    },
+    {
+      "chunk_id": "L020_C30",
+      "start": 2139.04,
+      "end": 2217.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=2139s",
+      "text": "here and I move to the next and I try to add and it's not there so we need to be careful only if it's inside the boundary then add but can we do this always that's my question can we do this always it's like I don't think we can do that we can only do that for summation is somewhere still inside the mode agreed but for that can I say while summation is greater than if the sum exceeds the key that you're looking for then it's very easy just subtract what the left guy and move the left is it that tough what I'm what am I saying if if it's more from the left keep on subtracting keep on subtracting quite easy and keep on subtracting and move the left there will be a point when summation will exceed key that's it that's what you have to do and probably you can just write one more thing till left is right which means till there is a subarray till there is a subarray this means left there is a subarray if left crosses there's no point in like because if if you have taken till here you can only go till here and subtract these guys that's what I'm doing this is as easy as it gets but before adding this is the moment you have subtracted this is where you check okay I've subtracted"
+    },
+    {
+      "chunk_id": "L020_C31",
+      "start": 2217.8,
+      "end": 2295.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=2217s",
+      "text": "is as easy as it gets but before adding this is the moment you have subtracted this is where you check okay I've subtracted now assume this is equal to K because I subtracted everything which is greater assume after this it's equal to K if it is I say max length is equal to max of max length comma what thing on this I'm at left and right it's like right minus left is it plus one yes and then over here you can go ahead and return max length quite simple let's quickly run this and see where is running frame it is let's quickly submit this and see if all the test cases do pass or not this time no really and it is giving us a correct answer so what I can say is this is an optimal solution if the array contains positive and zeros but if negative then this is the optimal one you cannot optimize this okay so what is the time complexity on the naked eye it might look like two while loops might be big O of n square but that is not the case the time complexity at the worst case is big O of 2n why let's analyze so can I say the outer the outer while"
+    },
+    {
+      "chunk_id": "L020_C32",
+      "start": 2295.38,
+      "end": 2365.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=2295s",
+      "text": "at the worst case is big O of 2n why let's analyze so can I say the outer the outer while loop is the right pointer running till n can I say I can so the right pointer is somewhere here it runs till here which is a big O of n in itself you might argue inside this there's a while loop inside this there's a while loop and this is running for big O of n but is this always running for n n n n n this while was always running for n then this would have been a big O of n then it would have been a big O of n square can I see this while loop is actually running for maybe for the first time it ran for once for the next time for twice for next time thrice for next time once for next time twice so overall overall in the entire iteration it will run for a big O of n but that's overall so it might happen first time in the right pointer moved the while did not run so it's like zero iterations of while next time in the while right moved there was again zero next time in the right moved the while was zero next time in the while move there's zero next time when it moved maybe then it took three iterations"
+    },
+    {
+      "chunk_id": "L020_C33",
+      "start": 2365.86,
+      "end": 2442.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=2365s",
+      "text": "the while was zero next time in the while move there's zero next time when it moved maybe then it took three iterations so it's like one iteration two three four five three means eight so it's like three got added to the number of iterations got it so you got added to the number of iteration except the right might have moved then the right might have moved and then again maybe two iterations was done so it's something like this will be n this will be big O of n and this will be in itself big O of n it's like n plus n thereby the time complexity is big O of 2 n got it because this isn't happening every time it will be like 0 0 0 0 or maybe it'll be like 1 1 so it's like 1 iteration 2 iteration 3 4 5 6 7 8 9 10 11 12 13 maybe 0 again 14 maybe 15 and then 16 17 this is how the iterations goes thereby 2 n at the worst case because this pointer will go here this point at the worst case can go here that's why 2 n what about the space complexity no extra space so a big O of 1 that's what the optimal solution will be and if you tell this entirely to the interview he will be he will be super duper impressed so"
+    },
+    {
+      "chunk_id": "L020_C34",
+      "start": 2442.5,
+      "end": 2500.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=frf7qxiN2qU&t=2442s",
+      "text": "the optimal solution will be and if you tell this entirely to the interview he will be he will be super duper impressed so coming back to the sheet I can see that these couple of problems are done with this I'll be completing the step 3.1 and you can try this problem number of sub arrays this was the longest you can try finding the number of sub arrays with the sum K so again hash hashing will be used in the optimal solution give it a thought we will definitely be solving this in the upcoming days but till then you can probably take this as an assignment so with this I'll be wrapping up this video I hope you have understood everything so to continue our tradition do comment understood we need the video because that is the only thing that motivates me that you guys are understanding everything and yes if you haven't followed me on Instagram Twitter LinkedIn all the links will be in the description and if you are new to our channel what are you waiting for do it that subscribe button and yes so with this let's wrap up this video let's be in some other videos remember I take care is broken don't ever forget your golden"
+    }
+  ]
+}

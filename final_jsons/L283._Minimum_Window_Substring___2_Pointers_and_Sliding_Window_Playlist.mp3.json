@@ -1,0 +1,155 @@
+{
+  "lecture_id": "L283",
+  "lecture_number": 283,
+  "lecture_title": "L12. Minimum Window Substring | 2 Pointers and Sliding Window Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=WJaij9ffOIY",
+  "chunks": [
+    {
+      "chunk_id": "L283_C1",
+      "start": 0.0,
+      "end": 79.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=0s",
+      "text": "So, let's continue with the two pointer and sliding window playlist from this driver's A to Z DSC course. But if you are starting off, hey, welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is minimum window substring. Now what is the problem exactly stating? It is stating that, you'll be given a string s, you'll be given a string p. You'll have to give me the minimum length, the minimum length substring in the string s which has all the characters of p in it. Let's understand, you know what is a substring, right? Any contagious portion of the string, any contagious portion of the string. Okay. So what I'm trying to do is, let's pick up this one, which is D triple A. Does it have all the elements of D in it? No, it doesn't. It doesn't have a B, it doesn't have a C. So I cannot consider this substring. Okay. Can I pick up this one? Double A, double B, C. Yes, it has A, it has B, it has C. It has more occurrences, but I'm fine. I'm fine with that."
+    },
+    {
+      "chunk_id": "L283_C2",
+      "start": 79.6,
+      "end": 158.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=79s",
+      "text": "it has A, it has B, it has C. It has more occurrences, but I'm fine. I'm fine with that. Okay. But what do I need? I need the minimum length. So if you look at this string, you'll figure out that the minimum length is this one because B C A, again, the order doesn't matter. It has A, it has B, it has C. So this can be a valid answer or rather this is the smallest substring and this is what you'll have to return. You'll have to return B C A, not the length. You'll have to return the substring in s which contains all the characters of p. A quick edge case, even if it has something like A double B C, in that scenario B C A will not be a possible substring. Why? Because in the character T, A occurs once, B occurs twice, C occurs once. So the substring that you consider, this should be the minimum occurrences. And over here B is not appearing two times. B can appear five times, but minimal has to be satisfied. All the characters, all the characters should be there, even if they're duplicates, doesn't matter. So for A double B C, I can say that this is a possible one because it has B two times and that is what I want. Got it?"
+    },
+    {
+      "chunk_id": "L283_C3",
+      "start": 158.68,
+      "end": 227.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=158s",
+      "text": "I can say that this is a possible one because it has B two times and that is what I want. Got it? So keep that in mind. What if this problem comes up in an interview? The extreme naive solution that I can think of is generate all the substrings. Like that's the first solution that comes to my brain. You know, we stand at the first character and this is the first substring. This is the second one. This is the third one. This is the fourth one. This is the fifth one and so on. We can generate all the substrings. Got it? Or I can stand over here and I can again generate all the substrings that starts with this one and I can do that with every index. Correct? Okay. But another question arises. Imagine, imagine. You're standing over here and trying to generate all the substrings and you're standing over here. Now this is having D triple A double B C. Now we know for sure that it has all the elements of T in it. A is there, B is there, C is there and has all the elements of T in it. But how do you check it programmatically? One of the ways to check it programmatically is you basically say A occurs once, B occurs"
+    },
+    {
+      "chunk_id": "L283_C4",
+      "start": 227.48,
+      "end": 307.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=227s",
+      "text": "do you check it programmatically? One of the ways to check it programmatically is you basically say A occurs once, B occurs once, C occurs once and you'll have to check, okay, D no, A yes, A, A, B yes, B yes, C yes. So all of the three do appear like whatever minimum number of times I want. They do appear. That's one of the ways to do it. But you'll still have to scan through the entirety, scan through the entirety to make sure that everything appears in this. Is there a better way? There is, there is. That is what I'll try to explain now. Let me erase this and let's assume we start with the first index, which is D like the zeroth index and we have a G. So what we will do is we will take a map data structure and we'll store all the characters of T along with its frequency in it. That means A occurs once, B occurs once, C occurs once. So basically I stored a character comma frequency in it. Now what I'll do is I'll take a count as zero. Now I'll start. I'm standing at D. So what you do is you get into the map and you do a D minus one because D doesn't appear. And if it doesn't appear, I don't care."
+    },
+    {
+      "chunk_id": "L283_C5",
+      "start": 307.2,
+      "end": 386.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=307s",
+      "text": "into the map and you do a D minus one because D doesn't appear. And if it doesn't appear, I don't care. I don't care. Okay. Next I take the J and I move it to D and D counter goes to minus two. Next I take the J, I move it to A. Now this is the moment you see that A already appears and it has a positive value. Why does it have a positive value? Because it was pre inserted because it was pre inserted and if it is pre inserted, it has a positive value. That means you got one of the characters in D, one of the characters in D agreed. Okay. Let's reduce the value. You're always reducing value when you enter, reducing value when you enter. Okay. Let's take J and move it here. Now this time when you look for this A, it is appearing zero times. It's not positive. It's not positive. So you no more increment the count because it's gone. You've got your one occurrence. You've got your one occurrence. None industry. So you'll just head over and reduce its value. Always reduce insertion over here will mean reduction again gets reduced its value to minus two. Next you take the J and you end up at B. So when you see B, it's a positive. Why is it positive?"
+    },
+    {
+      "chunk_id": "L283_C6",
+      "start": 386.96,
+      "end": 465.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=386s",
+      "text": "Next you take the J and you end up at B. So when you see B, it's a positive. Why is it positive? Because it was pre inserted as of now I'm just reducing. Why is it positive pre inserted? So you increase it and then you reduce it to zero. Perfect. Next you go to B and when you are at B you are seeing it's zero. So it's not positive. So you can just make it minus two. Next you can go to C. The moment you go to C, you see that it is positive. Why is it positive? Because it was pre inserted and if it is pre inserted, what you can do is you can increase the count, reduce it and before moving you see one thing, the value of count is three. You got three pre inserted numbers of pre inserted characters in your map. What does that mean? This three is equivalent to the size. That means you got all the characters, all the characters of T in this particular substring. So thereby you can say that this is a valid substring. Do we need to add this one? No, you're looking for a minimum so you can stop over here. You can stop over here and you can store its length and the starting index. Store its length and the starting index, which will help you to generate the substring afterwards. Got it? Perfect."
+    },
+    {
+      "chunk_id": "L283_C7",
+      "start": 465.6,
+      "end": 540.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=465s",
+      "text": "length and the starting index. Store its length and the starting index, which will help you to generate the substring afterwards. Got it? Perfect. Next, what I'll do is I'll try to write down the pseudocode. You can generate all the substrings and for all the valid ones, you pick up the minimum, you pick up the minimum. Got it? So what do I require? Let's quickly try to think of the pseudocode. I'll be requiring, maybe I can just start writing. I'll be requiring the length. Yes. So I will be requiring a minimum length that can be initially stored as a big number, something like a 10 to the power 9 or somewhere around that. I'll be requiring the starting index. So maybe I can write it as starting index where the answer starts and initially I can keep it as minus 1. I'll be heading over and I'll be like 0 to n because all the starting indexes I will be considering and I can simply do a hash of 256 because it's storing all the English alphabets and I can initially put it as 0. Let us pre-insert all the characters of T in it. Let us pre-insert all the characters of T in it. So what I'll do is I'll just start iterating from i equal to, sorry, rather j equal to 0 to m. Again, considering n to be the size of the string s, m to be the size of the string t."
+    },
+    {
+      "chunk_id": "L283_C8",
+      "start": 540.2,
+      "end": 618.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=540s",
+      "text": "equal to 0 to m. Again, considering n to be the size of the string s, m to be the size of the string t. Hash of T of j plus plus. Pretty simple. Okay, done. What is the other thing that I require? I require a variable count. Variable count can be 0. I can write down the inner loop. So the inner loop will be from j equal to 0 to n, not m. It will go till n because I'm still iterating over the string s. Now what is the next thing that I'll do? I will straight over check. Yes, very important. I'll check if hash of s of j was pre-inserted. Was it pre-inserted? Was it? Yes, count equal to count plus 1. Okay. After that, I'll be like hash of s of j minus minus. You inserted into the map. Inserting into the map means taking the numbers down. Okay. Right after this, what you can do is you'll be like, okay, done with the thing. Is the count equivalent to m? And if that is the case, is the length? j minus i plus 1 is the substring length. Is it smaller than whatever you have got previously?"
+    },
+    {
+      "chunk_id": "L283_C9",
+      "start": 618.92,
+      "end": 696.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=618s",
+      "text": "the length? j minus i plus 1 is the substring length. Is it smaller than whatever you have got previously? And if that is the case, can you update the minimum length to this count? You're going to be like, why not? Done. After this, you can just store the starting index to be i and you can break out. There is no need to go further. You can finish the if, you can finish the for, and you can finish the out of for. Once this is done, you know the substring will be from the starting index. Depending on the programming language you're using, the second variable can differ. C++ users can straight away write the length. It will pick up till like minimum length number of elements of like from the starting index. That's it. That will be it. This will be your substring. What will be the time complexity? Let's analyze. Again, two for loops. That's a big O of n square because hashing will take big O of 1. And the space complexity is big O of 256 because I'm using a simple array to store all the English alphabets. That will be the time complexity and the space complexity. Obviously, the interviewer will not be happy with the big O of n square. It's quadratic in nature and he'll ask you to optimize. We need to optimize on n square."
+    },
+    {
+      "chunk_id": "L283_C10",
+      "start": 696.36,
+      "end": 775.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=696s",
+      "text": "the big O of n square. It's quadratic in nature and he'll ask you to optimize. We need to optimize on n square. That definitely means you have to think of a solution which is around big O of n. The problem is involving substring and minimum, and most importantly, the term window, which means you'll have to think of a solution which is around sliding window. If you're thinking of a sliding window, what do you require? Two pointers, L and R. Already done a lot of problems in the past, isn't it? Super simple. That's what I'll do. Okay. Now I know one thing. I will be using sliding window. For that, what I need is a left pointer and a right pointer. Let's start thinking what all do I need. Imagine I'm at this particular window. I need to check if it has all the elements of T in it. We just now did it in the brute force. I'll be using the map concept. Okay, fine. So if I have to use the map concept, I need the map, right? I need the map to pre-store all the values. So what I'll do is I'll pre-store all the values. A is ones, B is ones, C is ones. So basically character comma frequency is what you have to pre-store in the map. Perfect. What else do I need? I need to count how many characters did I see from the string T."
+    },
+    {
+      "chunk_id": "L283_C11",
+      "start": 776.12,
+      "end": 852.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=776s",
+      "text": "pre-store in the map. Perfect. What else do I need? I need to count how many characters did I see from the string T. Maybe I can keep a counter equal to zero. At the same time, I also need a minimum length, which can initially be 10 to the power nine. And I need to store the starting index because for this question, I need the string. I need the substring. Okay. So this is what I will be keeping. Can I start the window? Maybe yes. So we'll be standing at the zeroth index. That is my first segment. Are we seeing D in the map? No. That means it is not a part of the string T. So my count will not increase. Your count is the number of characters that I've figured out from T. I haven't figured out any. So what I'll do is I'll go ahead and insert D into the map. Over here insertion means reducing the value by minus one. Okay, fine. Next, I'll take R and I'll move it to the next, which is D. I'll again reduce the value so that will end up becoming two. Next I'll again take R. This is the moment you need to understand. Over here, we're standing at A. What is the value of A?"
+    },
+    {
+      "chunk_id": "L283_C12",
+      "start": 852.6,
+      "end": 928.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=852s",
+      "text": "take R. This is the moment you need to understand. Over here, we're standing at A. What is the value of A? One, which means it's a positive value. What does a positive value signify? It was inserted from T into it. Three, three window, right? Before starting the window thing, it was inserted. And if that is the case, you will end up doing a plus one. You did figure out one character. Amazing. But is the count equivalent to the number of characters you need in T? No. So this is not a valid window. You move ahead and you move R to here. Before moving ahead, please make sure you reduce it to zero and then you move ahead the R. Next time, we are standing at A, but the value of A is zero. And if it is zero, no. I've already counted one occurrence. Now it doesn't signify. I just pre-inserted one A and that's counted. So let's not count for this one. So what I'll do is I'll reduce it to minus one and I'll take R and I'll move ahead. I'll again have a E, again not to be counted, reduce it and move ahead. This time when R moves to B, it is B, right? And this is occurring once pre-inserted."
+    },
+    {
+      "chunk_id": "L283_C13",
+      "start": 928.14,
+      "end": 1007.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=928s",
+      "text": "it and move ahead. This time when R moves to B, it is B, right? And this is occurring once pre-inserted. Positive means pre-inserted because all I'm doing is reducing. So if there is a positive means it was pre-inserted. If it is pre-inserted, I can increase the count to two. And what I can do is I can reduce its value to zero and I can take R and move it to the next one. I have again B, I can reduce it to minus one and I can move R. This time when I move R, I have a C and C has a value of one, which means it was pre-inserted. If it was pre-inserted, I can increase the value to three. This is the movement you say, okay? You can increase the value to three. Please make sure you reduce. Count is three, count is three, which means it's equivalent to the size of the string T. And if it is equivalent, can I say that this particular substring has all the characters of T in it? It does. And what is the length? One, two, three, four, five, six, seven, eight is the length. So you can go ahead and update minimum length to eight and the starting index to zero. Done. I'm standing at a window, but what am I looking for? A minimum window. Can I get rid? Can I shrink it? Because I know these D are of no use."
+    },
+    {
+      "chunk_id": "L283_C14",
+      "start": 1007.06,
+      "end": 1085.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=1007s",
+      "text": "am I looking for? A minimum window. Can I get rid? Can I shrink it? Because I know these D are of no use. Maybe I can shrink and try to make it as small as possible till the answer is possible. Okay. Let's try to do it. First thing I'll do is I'll take off this D, which means I'll reduce it to minus one. Doesn't matter. I'll reduce it to minus one. And I'll take L to the next T. Now this is the moment I say, Hey, wait, this is a new substring. Is it valid? It is because the count is still three. So this particular substring is a smaller window, is a smaller window. And the size of the window is this much, which is seven. Yes. So I can update the minimum length to seven and I can say that I can probably start at one as well. Okay. Next I can just remove this D which will make this D to be zero and it will take this L to the next step, which is A. Okay. So I'm standing at A. So when I'm standing at A, this is when you need to start. A is having minus two. Okay. So I'll take it out, which means I'll make it minus one. I'm reducing it. Okay. Fine. So even if I take this out, even if I take this out, the count still stays as three,"
+    },
+    {
+      "chunk_id": "L283_C15",
+      "start": 1085.26,
+      "end": 1159.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=1085s",
+      "text": "I'm reducing it. Okay. Fine. So even if I take this out, even if I take this out, the count still stays as three, the count still stays as three, which means this segment is also valid, which is of length six and starting at two. Perfect. Amazing. So you can take this out and you can take the L and move to the next. This time you have another A and this turns to be zero. So you took it off. And now you're saying, is this valid? It says yes, because the count is still three. It is still valid. And if this is still valid, what you can do is you can update it to length five and you can say we can start at the next three as well. Okay. Let's take this A off and let's move to the next L. The moment you move to the next L, what happens is when you try to take this A off, it gets inserted back to T. It gets to a positive number. And if it gets to a positive number means that, okay, the count can reduce, the count can reduce. Agreed? Agreed? So before, before, before taking this off, because I haven't taken it off, haven't taken it off, this window is also valid. This window is valid. Yeah. When I take it off, it might not be valid, but as of now, this window is still valid,"
+    },
+    {
+      "chunk_id": "L283_C16",
+      "start": 1159.38,
+      "end": 1239.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=1159s",
+      "text": "This window is valid. Yeah. When I take it off, it might not be valid, but as of now, this window is still valid, still valid because the A is zero as of now. We'll just go back one step. Yeah. So if I take L over here, oh my bad, L over here, and I'm seeing that the value of A is zero, doesn't, okay, fine. The count is still three. I haven't taken it off. The count is still three, which means this window is valid. Thereby, the minimum length goes to four and I can still start at the fourth index. This is the moment when you take it off. When you take it off, the A becomes one. After taking it off, the A becomes one and you can reduce the count to two. Someone got reinserted. Someone got reinserted. I haven't figured out A yet. This is when you say you'll move L and you'll be like, hey, is this window valid? No, it is not valid. Why? The count is two. If that is the case, you straight away start increasing, straight away start increasing. So R goes over here to A. So again, when it goes to A, you're standing at A and you're like, what's the value of A? It's positive, man. And so count will increase, count will increase and A will reduce to zero. And if the count again increases to three and if that's equivalent, this segment is"
+    },
+    {
+      "chunk_id": "L283_C17",
+      "start": 1239.14,
+      "end": 1309.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=1239s",
+      "text": "count will increase and A will reduce to zero. And if the count again increases to three and if that's equivalent, this segment is also valid and that is of length four, which I already have, which I already have. And if there are multiple answers, just have to return one. Perfect. Now what? The count is three. You have a big window. You have to shrink, you have to shrink. Let's try to shrink it. So when I'll try to shrink it, I'll take off this B. So when I take off this B, this turns out to be zero. And I'll take the L to the next one. Is this a valid one? Yes, because the count is still three. The count is still three. This is still valid. Hence the length comes down to be three and the starting point is zero, one, two, three, four, five, six. Done. This is still valid. Next, try to shrink it more. Take off B. So when you take off B, it goes down to be one and the count again reduces to two. So you've taken off. The value of count has reduced. Now this time we'll try to increase R. The moment you try to increase R, done and done. Finish. So basically the minimum length is three, starting index is six. So if you need the substring, you can easily figure it out. Quite simple. Maybe it's time to write down the pseudo code."
+    },
+    {
+      "chunk_id": "L283_C18",
+      "start": 1309.14,
+      "end": 1389.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=1309s",
+      "text": "six. So if you need the substring, you can easily figure it out. Quite simple. Maybe it's time to write down the pseudo code. It's going to be very, very simple one. I'll take the function. I'll take the string. Do I have anything else? Yeah. String T. Okay. What do I need? I need a map. So hash of 256, assuming you have given all the English alphabets. L equal to zero, R equal to zero and definitely minimum length equal to a big value and maybe a starting index as minus one. I think that should do. What will you do initially? You will iterate from zero till M where M is the length of the string T and you'll say T of I plus plus. You pre-insert them into the hash map. And again, maybe you can take a count equal to zero as well. Perfect. And M will be T.size and will be S.size. Super simple. By the way, I'm writing the pseudo code. You can find out the length, like the language specific code given below. Okay. So we'll be starting off with a while loop. So while will be R lesser than S.size because that is how much we will go. I know one thing."
+    },
+    {
+      "chunk_id": "L283_C19",
+      "start": 1389.1,
+      "end": 1463.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=1389s",
+      "text": "loop. So while will be R lesser than S.size because that is how much we will go. I know one thing. If I'm standing at R and that R is already a positive in the hash map, that means I have got to one among the T. Perfect. And then I can straight away increase it. Sorry, decrease it. Because that's what I was doing. Perfect. What is the next? If, if, if the counts value is equivalent to T.size or M, if that is the case, can I say this is a possible answer? This is a possible answer. I can. I'll be like, hey, let's compare the length. The length is R minus L plus one. And if the length is comparable to minimum length, I can straight away update minimum length to this length, which is R minus L plus one. And I can say starting index is equal to L. Done. But if this is equal, I'll try to shrink it. I'll try to shrink it. So what I'll do is I will run a while loop and I'll try to shrink it as much as possible. So what I'll do is, okay, while loop is running. So I'll be like, let's remove this cell. Let's remove the cell."
+    },
+    {
+      "chunk_id": "L283_C20",
+      "start": 1464.34,
+      "end": 1543.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=1464s",
+      "text": "what I'll do is, okay, while loop is running. So I'll be like, let's remove this cell. Let's remove the cell. So I'll be like, okay, hash of S of L. Let's try to remove it. So after removal, after removal, if this value turns out to be greater than zero, that means I reinserted it. I reinserted it into the map, which means I will be doing a counter equal to counter minus one. Perfect. And the while loop will keep on going till I have a valid substring. I'll keep on shrinking the window. Once that is done, I can straight away do R equal to R plus one. I can just again start expanding. I'll expand it here and then I'll put it over here and then keep on doing. And this is where the while loop ends. At the end of the day, I can go ahead and say, hey, return. If the starting index has never been updated, please return an empty string because I didn't find a substring which has the string P. Otherwise, return SU, like substring, starting from starting index till the length, which is typically minimum length, depending on your programming language, this might vary. And that will be it."
+    },
+    {
+      "chunk_id": "L283_C21",
+      "start": 1543.06,
+      "end": 1616.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=WJaij9ffOIY&t=1543s",
+      "text": "the length, which is typically minimum length, depending on your programming language, this might vary. And that will be it. That will be it. What will be the time complexity? Now I'm taking a bigot of M in order to put everything into the map. I'm taking a bigot of N over here. And again, the while loop at the worst case overall might run till bigot of N. So can I say that the time complexity is 2N plus bigot of M, which is for this one. Am I using anything else? No. And the space complexity will be bigot of 256, assuming you have all the English characters given. And that will be the most optimal solution. Yeah. That's the cleanest code that I could have written so that you understand. Cleanest readable code. I can, if you are smart enough, you can combine these two statements into one and also these two statements into one. But again, in interviews, do not do it. Always try to write it in this possible way because it's more and more readable. The interview can understand you much better. So that's it. Yeah, that will be it for this one. So if you're still now watching and if you understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video."
+    }
+  ]
+}

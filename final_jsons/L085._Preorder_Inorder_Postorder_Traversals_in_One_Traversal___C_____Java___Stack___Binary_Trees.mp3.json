@@ -1,0 +1,78 @@
+{
+  "lecture_id": "L085",
+  "lecture_number": 85,
+  "lecture_title": "L13. Preorder Inorder Postorder Traversals in One Traversal | C++ | Java | Stack | Binary Trees",
+  "youtube_url": "https://www.youtube.com/watch?v=ySp2epYvgTE",
+  "chunks": [
+    {
+      "chunk_id": "L085_C1",
+      "start": 0.0,
+      "end": 75.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=ySp2epYvgTE&t=0s",
+      "text": "So before starting the video, I would love to thank Relevul for sponsoring this entire three series. So, if you're tired of waiting for companies to respond to your applications through different job portals, the next few seconds are very very important for you. Because Relevul by Unacademy is India's first hiring platform that can get you a job within a week itself. Yes. All you have to do is to register for the Relevul test and within a week, your interview will be scheduled with India's top companies and the top budding unicorns. So what are you waiting for? Make sure you check out the links in the description and apply for the Relevul test because it is free. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video, we will be solving pre-order, in-order, as well as the post-order traversal in a single flow. Yes, you heard that right. In a single flow. So in the previous video, you did see that I used three different methods to find pre-order, in-order and post-order. So over here in this video, I'll be using a single stack. Yes, you heard that right. And that stack will be basically storing a node, a number. Okay. A node, a number is what this stack will be storing. For people who do not know what is a stack, it's a last in first out data structure. This is going to be the prerequisite."
+    },
+    {
+      "chunk_id": "L085_C2",
+      "start": 75.68,
+      "end": 152.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=ySp2epYvgTE&t=75s",
+      "text": "people who do not know what is a stack, it's a last in first out data structure. This is going to be the prerequisite. And also please watch out what is a pre-order, what is an in-order, what is a post-order before watching this video. So what I'll do is I'll create three different lists. The first one will be the pre-order list. Well, the next one will be the in-order list. And the next one will be the post-order list where I can definitely store all the pre-orders, in-orders and the post-orders. So let's start. So remember, whenever you start, you take the root of the node and you insert the number as one. That's, that is what you will always do when you start off with. I'm going to tell you some rules that you have to follow. Okay. So remember this, if, if, if, whenever you are taking out an element from the stack, if that number is one, then that guy will go on to the pre-order. Remember this, that guy will go on to the pre-order. Okay. And after that, you will push that number by doing a plus plus. Okay. You'll push that number by doing a plus plus. And if there exists a lie left, you will enter that left. That is what you will do whenever you get a number equal to one. What if you get a number equal to equal to two, a number equal to equal to two, whenever"
+    },
+    {
+      "chunk_id": "L085_C3",
+      "start": 152.6,
+      "end": 224.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=ySp2epYvgTE&t=152s",
+      "text": "get a number equal to one. What if you get a number equal to equal to two, a number equal to equal to two, whenever you get, what you will do is you will say that, okay, this is the second time. So as you know, second means like in pre-order it's root left, right? So that's first in, in order it's left root, root is in the second. So the number is two, you'll say, I'll take it to the in order. I will increment the value. Yes. I'll increment the value and I will push if there exists a right, if there exists a right, because after left root, there is right. What if it's a three? Yes. What if it's a three? If it's a three is the last time, right? So what you'll say is, okay, I'll take this into my post order. I'll take this into my post order and there's no need to pop or do anything. Fine. So at every iteration, this is the initial configuration that you start off with. And at every iteration, just make sure you take out the topmost element of this, right? So what is the topmost element? That's one. What is the value? What is the number one? So it'll go to the pre-order. So pre-order takes one. And again, you will reinsert one comma. Like if I just rewrite it over here, I can just write one comma two is what is reinserted"
+    },
+    {
+      "chunk_id": "L085_C4",
+      "start": 225.04,
+      "end": 293.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=ySp2epYvgTE&t=225s",
+      "text": "you will reinsert one comma. Like if I just rewrite it over here, I can just write one comma two is what is reinserted into the stack and the pre-order will have one. Okay. Now, does there exist a left of one? Yes, there exist. So you'll insert two comma one into the stack. Perfect. Done. Now on the next reiteration, you again take the topmost value. That's two comma one. So the number is one. Again if the number is one, you will take that into the pre-order. So once you've taken that into the pre-order, what's your job? Your job is to increment this. And if there exists a left of two, there does exist. You will take that and you'll insert that into your stack. So what I'll do is I'll insert that into my stack. Right after this on the next iteration, you again get three comma one. So again, that will be one. Hence it is a pre-order. So take that into the pre-order. You will increase it. And if there exists a left, there doesn't. So you will not insert anything. Now on the next iteration, when you come back, you get three comma two. Now when you get three comma two, what will you do? It's a part of the in-order, right? So it's a two, three comma two, two. So it's a part of the in-order. So three will go to the in-order, right? And again, you'll increase it."
+    },
+    {
+      "chunk_id": "L085_C5",
+      "start": 293.6,
+      "end": 350.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=ySp2epYvgTE&t=293s",
+      "text": "three comma two, two. So it's a part of the in-order. So three will go to the in-order, right? And again, you'll increase it. So this will become three. And does there exist a right? Does three have a right? No. So no more insertions. Again, you come back. This time you have a three comma three. So it's three, three. So it'll go to the post-order, right? And once it goes to the post-order like this, this, this will no more be incremented. So this won't be in your stack any further. And the next iteration, when you come across, you have a two comma two. So can I say two comma two means number is two. So it'll go to the in-order. So you go to the in-order, right? Then you will do a plus plus. Does it have a right? Does two have a right? Yes, that's a four. So it's a four comma one. Why don't you go and insert yourself? Perfect. So you've inserted it, right? Again, you'll come across. It's a one. So it's a one. It goes into the pre-order. So four will go into the pre-order. Perfect. After that, plus plus. After that, does four have a left? No, nothing done. Again, comes back. Four is having two. So this time it'll go to the in-order and this will be a plus plus. Does four have a right? No. So again, it'll come over. This time it's a post-order."
+    },
+    {
+      "chunk_id": "L085_C6",
+      "start": 350.88,
+      "end": 429.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=ySp2epYvgTE&t=350s",
+      "text": "in-order and this will be a plus plus. Does four have a right? No. So again, it'll come over. This time it's a post-order. So four will go to the post-order and we will like, this will no more be incremented. So it's over. On the next iteration, when you come back, you get two comma three. So it's a two comma three. So it's a two comma three. So it's a two comma three. So it's a two comma three. there will be a five comma one that will go in. Next you again come across, it's a five comma one. So this five will be the part of pre-order and this will take a value five comma two. And does five have a left? Yes. So six comma one will be inserted. Perfect. Again, you come across, six is having one. So six will go to the pre-order. Does six have a, uh, six will be incremented? Does it have a left? No. Again, comes over, six comma two, it's a two. So it will be a part of in-order. So take it to the in-order, increase it. Does six have a right? No. Again, come over, six comma three. So six is again into the post-order. So you just take it into the post-order."
+    },
+    {
+      "chunk_id": "L085_C7",
+      "start": 429.76,
+      "end": 505.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=ySp2epYvgTE&t=429s",
+      "text": "Again, come over, six comma three. So six is again into the post-order. So you just take it into the post-order. So once you've taken that into the post-order, what's your job? The job is very simple. You just take it off. Next again, you come across five comma two. So the five will go across to in-order and the value will increase to three and you have a right. So that is seven. So seven comma one will be inserted. Perfect. Next you again come over seven comma one. So that will go to the pre-order. So seven goes to the pre-order. Value increased. Does it have a left? No. Comes over again, seven comma two, goes here, value increase. Does it have a right? No. Again, comes over seven comma three, goes to the post-order. No more here. Erased. Again, come over five comma three, again goes to the post-order, three. So again, erase. Again, comes over one comma three, again three. So goes to the post-order. No more. Erase. So at the end, when you see the stack is empty, you can say that you have actually generated your pre-order, in-order as well as post-order. Right? What was the time complexity that you took? I can say you ended up taking a time complexity of bigger of twice into n. Why thrice into n? Because if you carefully observe, you are actually iterating for thrice, like one, two, three, for every node. So that's three into n."
+    },
+    {
+      "chunk_id": "L085_C8",
+      "start": 505.12,
+      "end": 569.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=ySp2epYvgTE&t=505s",
+      "text": "into n? Because if you carefully observe, you are actually iterating for thrice, like one, two, three, for every node. So that's three into n. What about the space complexity? You're using a stack, you're using three different lists. I can call it as three n, four n. That is what the time complex, space complexity will be. Three n or four n, you can just write it like that. So on generalizing, I can say it's a linear time complexity that I'm taking in order to get the pre-order, in-order, post-order traversals at a single instance. In your interviews, time complexity, space complexity won't matter. They won't need to do that in like one piece of code. That is when these kind of problems can be asked. So guys, as usual, the C++ code is on the left and the Java code is on the right. So we're given the root of the tree, right? So what we do is we start off by declaring a stack of pairs. That is what I'll do. Right after that, I just push on the root with the number as one, initially. After that, I've defined a list of vector of pre, in, and post where I'll be storing all the traversals. I keep on traversing until the stack is non-empty. I get the topmost element, yes. I get the topmost element and I pop it out."
+    },
+    {
+      "chunk_id": "L085_C9",
+      "start": 569.88,
+      "end": 638.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=ySp2epYvgTE&t=569s",
+      "text": "on traversing until the stack is non-empty. I get the topmost element, yes. I get the topmost element and I pop it out. After that, if the topmost element's second, or in Java it's the num, right, because it's a self-created pair class. If that's one, what I do is I just take it into my pre-order. If that's two, I take it into my in-order. If that's three, I take it into my post-order. If it's a one, if you remember, it was a plus plus. So I do a plus plus. And then I again push it back to the stack. And if there exists a left, I'll also push that. Over here, the similarity, plus plus. And if there exists a right, I'll push it onto the stack. And over here in the post, I'll not do anything. I'll not push it back again, right? I'll erase it. So I'll not push it back again. So if I do this, I will end up generating all the traversals with a single piece of code. So I hope you've understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series."
+    },
+    {
+      "chunk_id": "L085_C10",
+      "start": 638.5,
+      "end": 649.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=ySp2epYvgTE&t=638s",
+      "text": "tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to this channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

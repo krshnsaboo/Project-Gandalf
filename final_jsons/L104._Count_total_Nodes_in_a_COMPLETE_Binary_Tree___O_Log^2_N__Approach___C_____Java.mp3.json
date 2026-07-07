@@ -1,0 +1,106 @@
+{
+  "lecture_id": "L104",
+  "lecture_number": 104,
+  "lecture_title": "L32. Count total Nodes in a COMPLETE Binary Tree | O(Log^2 N) Approach | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=u-yWemKGWO0",
+  "chunks": [
+    {
+      "chunk_id": "L104_C1",
+      "start": 0.0,
+      "end": 71.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=0s",
+      "text": "So before starting this video, I would love to thank Relible for sponsoring this entire three series. So do you wish to work with companies like CRED, UpGrad, Urban Company, Raise Your Pay but you are not able to apply because of your lack of experience and lack of opportunities? So here's the solution to this problem. Relible by Unacademy is a hiring platform that helps freshers and experienced people to get jobs in India's top companies. All you need is skills. So what you need to do is you just need to give the Relible test that is completely based on your skills. Depending on your performance, your interview will be scheduled and you will be hired from the Relible platform and the best thing about this is it's absolutely free. So what are you waiting for? Please make sure you check out the links in the description. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem count complete tree nodes from the Freecut Tree series. So what does the problem states? The problem states that you'll be given a root of a complete binary tree. Now if you remember the definition of complete binary tree, this is what it is. Every level except the last is completely filled and all the nodes in the last level are as far as left as possible."
+    },
+    {
+      "chunk_id": "L104_C2",
+      "start": 71.74,
+      "end": 146.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=71s",
+      "text": "Every level except the last is completely filled and all the nodes in the last level are as far as left as possible. So you need to design an algorithm that definitely runs in lesser than big O of n time complexity. Like over here you can see 1, 2, 3, 4, 5, 6. The total number of nodes over here is 6. So you have to print the total number of nodes in a complete tree. Very very important and a complete tree is where you have to print the total nodes. So what is the first solution that comes to your mind whenever you hear about count nodes? That's very simple. We are either going to do an in-order, pre-order, post-order, level order or any traversal we do and probably we can count during that traversal. Whenever you are doing the traversal because we know traversal means visiting nodes. So if you're visiting this node, this node, then this node, then this node and so on, every time you visit a node, just make sure you increase the counter to counter plus plus. So that's going to give us the count of nodes in a complete tree. But what is the time complexity of such a solution? That's going to be big O of n because you're traversing for every node. And what is the space complexity for such? So if you're using something like an in-order, pre-order or a post-order traversal, the space"
+    },
+    {
+      "chunk_id": "L104_C3",
+      "start": 146.62,
+      "end": 224.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=146s",
+      "text": "node. And what is the space complexity for such? So if you're using something like an in-order, pre-order or a post-order traversal, the space complexity is going to be big O of h where h is the height of the binary tree. And since it's a complete tree, point to be noted, since it's a complete tree, the height of the binary tree at the worst case will be big O of logarithmic of n where n is the number of nodes in your tree. It's going to be logarithmic of n. So I can see the space complexity, the auxiliary space, the auxiliary space that the in-order traversal takes is big O of h. If it would have been a normal binary tree, then you would have said big O of n because skew tree might come in, but in complete tree, it's not a skew tree. It's a log n tree. So that's why this is going to be the time complexity and the space complexity of the brute force solution in order to count the number of nodes. So we're going to use a property of complete tree. Now as you can see, this tree is completely filled. It's completely filled. None of the levels have any node shortage. So can I say, if the height of the tree, like if I see the height of the tree, that's three. So can I say the number of nodes? Yes."
+    },
+    {
+      "chunk_id": "L104_C4",
+      "start": 224.06,
+      "end": 294.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=224s",
+      "text": "height of the tree, like if I see the height of the tree, that's three. So can I say the number of nodes? Yes. The number of nodes are nothing but two to the power three minus one. That's seven. You'll be right. Yes, you're correct. So we're getting an idea that what if I can somehow compute the height of the tree, then I can actually see that the number of nodes is two to the power three minus one, but then you'll tell me, but how will that help? Because it might happen that this portion is not present because it's a complete tree. It's a complete tree. So might happen the seven is not present. So we're going to deduce an algorithm where we use this height property, but smartly. Let's check that algorithm out. So this is the binary tree for which you have to count the number of nodes. So as you can see that this portion is unfilled, but this is still a complete tree because in the last level, we do not have all the nodes filled, but whatever nodes we have, we have on the left side. So we can say that it is a complete tree, but how do we count the number of nodes? Very, very simple. Let's check out how do we do this? Just for an example, assume this, just for an example, assume this, that you're standing"
+    },
+    {
+      "chunk_id": "L104_C5",
+      "start": 294.54,
+      "end": 374.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=294s",
+      "text": "simple. Let's check out how do we do this? Just for an example, assume this, just for an example, assume this, that you're standing at this second node and you figure out that the height of this tree, this sub tree, like I'm talking about this sub tree. So height of this sub tree is nothing but three. So the number of nodes over here can be easily said as two to the power three minus one. That's seven. Make sense? One, two, three, four, five, six, seven. Similarly, if I talk about this sub tree, can I say the height of this sub tree is nothing but two. Hence, the number of nodes, can I say that as two to the power two minus one, that's three and, and, and. If I ask the total number of nodes, can I say, if I'm standing here, that's one for the root itself, plus seven on the left tree, plus three on the right tree, which makes it around 11 nodes. And that was the answer. So can I actually check for every sub tree? I think I can. I think I can. So what I'll do is, I'll try to check for every sub tree. If any sub tree is a full binary tree, like if it has every, like all the nodes, then I can directly apply the formula and I think I can get the number of nodes of that sub tree without actually traversing."
+    },
+    {
+      "chunk_id": "L104_C6",
+      "start": 374.08,
+      "end": 443.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=374s",
+      "text": "then I can directly apply the formula and I think I can get the number of nodes of that sub tree without actually traversing. So I hope you have got an idea, but if you haven't, not an issue. If you've understood it, it is absolutely okay. If you haven't, not an issue because I'm going to do a dry run, which will make things more clear. So during the traversal, what we will do is, we'll start the traversal from the root of the tree. Okay. And now what do you do is, you simply traverse till the left and find the left height of the tree. So what's the left height of the tree? That's one, two, three, four. So I can say if I'm standing at the root of the tree, the left height, this height is four. And travel for the right of the tree and get the right height of the tree. So I can see that the right height of the tree, as you can see, is nothing but three. So what we are seeing is the left height is not equal to the right height if I'm standing at one, which gives us an idea that this entire sub tree is not a full binary tree. Like it's not a, it's not completely filled. Hence we cannot implicate the formula. Please understand this. We cannot implicate the formula."
+    },
+    {
+      "chunk_id": "L104_C7",
+      "start": 443.04,
+      "end": 506.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=443s",
+      "text": "tree. Like it's not a, it's not completely filled. Hence we cannot implicate the formula. Please understand this. We cannot implicate the formula. So what we have to do is we have to start traversing in the left as well as in the right. So for us, the answer will be one for this guy. Okay. And let's traverse on the left. Let's traverse on the right. So whatever answer we get from the left and whatever answer we get from the right, we're going to simply add it. And we can say that this is going to be my answer. And for this left, like this is a individual tree again, right? As you can see, this is an individual tree again. Again, implicate the same idea. Okay. So that's what we are going to do. Recursion, recursion. If left height is equivalent to the right height, then we can actually directly see the answer. If it is not, we're going to take one for this current node and we're going to say the left tree and the right tree to compute their answers themselves. You have to be good at recursion in order to understand this. So what I can see is one plus I'm saying the left subtree plus right subtree. So let's go to this left subtree at first, then we'll go to the right subtree."
+    },
+    {
+      "chunk_id": "L104_C8",
+      "start": 506.34,
+      "end": 581.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=506s",
+      "text": "saying the left subtree plus right subtree. So let's go to this left subtree at first, then we'll go to the right subtree. So when I go to the left subtree and I figure out the left height, so can I say the left height came out to be one, two, three? Perfect. And I said the right height came out to be three. So apparently if I'm standing at this two node, I can see that the left height is three and the right height is three. Both the heights are same, which actually tells us that this subtree is indeed a complete tree. Hence, can I directly say the answer will be two to the power three minus one, that's seven. So instead of traversing anywhere, like anywhere down, what we do is we directly return something as seven. So this guy gets a value seven. I did not have to traverse any further beyond this and I got a value seven. Perfect. Next time when I'll come across this, that's for this guy. When I come across this, what I see is I'm standing at three, right? And I again figure out what's the left height and I get that as two, right? The left height is two and I get the right height. What's the right height? Right height is also two. So can I say the left height is two, the right height is two, which actually tells me that"
+    },
+    {
+      "chunk_id": "L104_C9",
+      "start": 581.5,
+      "end": 655.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=581s",
+      "text": "Right height is also two. So can I say the left height is two, the right height is two, which actually tells me that this is a complete subtree in itself. Yes, it is. And if it is a complete subtree in itself, can I say the number of nodes in that subtree will be two to the power two minus one? That's three. So instead of traversing anywhere, anywhere, like inside that, what I do is I directly return something, which is three. Hence I get a three from here. So this guy, this guy, which called this left, it, it got it a value of seven, called the right that got it a value is three. So this guy ultimately returns one plus left subtree that's seven, one plus seven is eight plus three, 11. So ultimately I get the total number of nodes as 11. So I hope you're understanding what I'm trying to do is every time I visit a node, I repeat, every time I visit a node, I compute the left height, I compute the right height. If they come out to be equal, I directly figure out their total number of nodes. And I return, if they do not come out to be equal, then I add one for it. And then I go to the left as well as I go to the right. So I again call for them and I keep on working this."
+    },
+    {
+      "chunk_id": "L104_C10",
+      "start": 655.02,
+      "end": 715.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=655s",
+      "text": "go to the left as well as I go to the right. So I again call for them and I keep on working this. This is how I can actually think of an algorithm. And this is how I can implement that two to the power height minus one. Two to the power height minus one formula in order to get the total number of nodes. I'll discuss the time complexity, but before that, let's check out the code so that the idea is clear to you. And after that, you can easily understand the time complexity. So I'm going to discuss the C plus plus as well as the Java code. So the C plus plus code is on the left and the Java code is on the right. So both of you guys can follow this. So what I've done is I've initially taken the root of the tree and I know if the root is null, what I'll do is I'll return a zero saying that the total number of nodes is zero. Or else what I'm doing is I'm currently standing at the root, right? I'll figure out the left height, I'll figure out the right height. If the left height and the right height are equal, what I do is I say two to the power h, like two to the power height minus one. That's going to be my number of nodes."
+    },
+    {
+      "chunk_id": "L104_C11",
+      "start": 715.14,
+      "end": 780.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=715s",
+      "text": "I say two to the power h, like two to the power height minus one. That's going to be my number of nodes. If this is not equal, then I know what I have to do. One for the current node, I go to the left, I go to the right and I again call the same function which keeps on performing the same thing. Find left height, find right height. If equal return or else again go deep, again go deep. It's kind of a recursion that keeps on happening for every node. That's how you can easily get the count nodes. Now you might be asking, how do you get the left height? So I'm calling a function, find height of left. It's a very simple function. If you carefully observe, what I've done is I've taken the node, I know if I'm standing here and I want to find what's the left height, I have to go to the left, left, left, and I don't reach end. So what I've done is I've run a while loop and that keeps on going to the left till this exists. I keep on incrementing the counter and at the end I return a counter. Similarly, in order to find the right height, I'll keep on incrementing, keep on going right and keep on incrementing. That's how I get the right height by going on right, right, right, right, right."
+    },
+    {
+      "chunk_id": "L104_C12",
+      "start": 780.02,
+      "end": 850.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=780s",
+      "text": "incrementing, keep on going right and keep on incrementing. That's how I get the right height by going on right, right, right, right, right. Now since I know it's a complete tree, these nodes, these nodes will be filled. These nodes will always be filled. Right? That's the reason it's a complete tree. So in this way I can find, find height from left, find height from right. And this is how my recursive code will look like. So guys, just in case if you have still got like, you still have confusion, what I'll suggest you is to draw a lot of trees. Yes, to draw a lot of trees and try to do the recursion by yourself. Keep on doing this for three or four examples. The idea will get clear to you like by yourself. I don't have to help you any further. Now you might be thinking, what is the time complexity of this solution? The time complexity of this solution is big O of log n whole square. You might be asking, why is that big O of log n whole square? Let me tell you this. The height of the tree at any instance will not be more than log n. So whenever you're finding the height, that's, that's going to take you log n. And are you traversing for all the nodes? You're, if you think, if you just have a pause and think, you're actually never traversing for all the nodes."
+    },
+    {
+      "chunk_id": "L104_C13",
+      "start": 850.86,
+      "end": 925.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=850s",
+      "text": "for all the nodes? You're, if you think, if you just have a pause and think, you're actually never traversing for all the nodes. At max, you will traverse for log n nodes. Not more than that. At max you'll traverse for log n nodes. For an example, let me give you a tree. This is the tree that I will draw for you. Just imagine this is the, this is the worst case tree possible. So what will happen is you'll traverse here, then you'll traverse here, then you'll traverse here, then you'll traverse here. Right. But over here, the moment you come to this right portion, you will not traverse beyond this because this is a complete subtree. So at the worst case, like at the worst case, you will end up traversing log n time, right? Because the righter guys will be complete subtrees and they will be falling under this formula and you'll just be traversing this left portion. So that's why a log n for traversing. And since you're finding height, so every time you're going right or you're going left, that's height of the tree that you're traversing. So that's a log n. So that's why log n square is the time complexity. For the space complexity, again, we're not using any external space apart from the recursive space that we're using. The recursive space can go as deep as log n because that is the height of the tree and"
+    },
+    {
+      "chunk_id": "L104_C14",
+      "start": 925.24,
+      "end": 964.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=u-yWemKGWO0&t=925s",
+      "text": "recursive space that we're using. The recursive space can go as deep as log n because that is the height of the tree and we can go up till the last, last node in order to compute the height. So the space complexity will be logarithmic of n and the time complexity will be log n square instead of the big O of n that we discussed. So I hope you have understood the entire explanation as well as the code, just in case you didn't please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to this channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye bye. Take care."
+    }
+  ]
+}

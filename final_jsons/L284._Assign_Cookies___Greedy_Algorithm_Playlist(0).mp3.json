@@ -1,0 +1,71 @@
+{
+  "lecture_id": "L284",
+  "lecture_number": 284,
+  "lecture_title": "L1. Assign Cookies | Greedy Algorithm Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=DIX2p7vb9co",
+  "chunks": [
+    {
+      "chunk_id": "L284_C1",
+      "start": 0.0,
+      "end": 79.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=DIX2p7vb9co&t=0s",
+      "text": "So with this video we will be starting off with the greedy algorithms playlist. As usual it will be a continuation of the strivers A to Z DSA course and in case you haven't checked it out yet there is a link in the description. Make sure you check it out. We are starting off. Hey everyone welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is assign cookies. So what is the problem statement? Problem statement is there is a parent right. He has n children. Every children has a greed factor. The first children has a greed factor of one. The last children has a greed factor of four. So every children has a greed factor. Along with this the parent also has m cookies. The parent also has m cookies. Every cookie size is known to the parent. The first cookie has a size of four whereas the last cookie has a size of three. Now what is the definition of greed? Let's take the third children. The third children has a greed factor of three. So it will only be satisfied if you give him a cookie which has a size greater than equal to three which means you can give this one you can give this one."
+    },
+    {
+      "chunk_id": "L284_C2",
+      "start": 79.72,
+      "end": 158.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=DIX2p7vb9co&t=79s",
+      "text": "cookie which has a size greater than equal to three which means you can give this one you can give this one. You can only give this particular cookie or this particular cookie. Nothing apart from this. So you can satisfy this children by giving one of the both cookies right. Now there is a twist. You can pick up one cookie and you can give it to only one children. You can pick up one cookie and you can give it to only one children. Now your task is to make sure that you can assign maximum number of cookies to the children. The more children should get the cookies. Let's try out. If I have a greed factor of one can I give this particular cookie? Maybe yes. So I'll give four to it. So this is gone. Okay. If I have a greed factor of five can I give it a cookie? I cannot because I don't have anything that's greater than equal to five. I cannot. So I cannot satisfy this particular children. Okay. Can I satisfy this one? Yes. Four is gone but I still have a three. I still have a three. So I'll give three and this is also gone. Can I satisfy this children? I cannot because I don't have anything else and I cannot reuse three. I cannot reuse four. I don't have anything. So I cannot. Can I satisfy four? I cannot."
+    },
+    {
+      "chunk_id": "L284_C3",
+      "start": 158.18,
+      "end": 236.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=DIX2p7vb9co&t=158s",
+      "text": "anything else and I cannot reuse three. I cannot reuse four. I don't have anything. So I cannot. Can I satisfy four? I cannot. So overall I was able to satisfy two childrens. But the question is that you have to maximize the number of childrens. So maybe I can try some other pattern. Let's try out some other pattern. What if for this I'll give this particular one or maybe this particular one. Doesn't matter. Okay. I'll give one. That's done. For this five again that's not possible. So that's all. For the three I can take up three. Okay. For the next three I can take up four. Okay. For the next four I don't have anything. So if I follow this particular distribution I'll be able to satisfy three children and this is the maximum you can do. You can try out different scenarios but this is the maximum that you can do. You don't have to return which children you are able to satisfy. Just have to return the number of childrens you were able to satisfy. So did you see a pattern? What did I do? If it was one I need someone who is greater than equal to one. So I tried assigning the smallest values, the nearest values to one, the nearest values to one. Not four, not three, not two."
+    },
+    {
+      "chunk_id": "L284_C4",
+      "start": 236.74,
+      "end": 316.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=DIX2p7vb9co&t=236s",
+      "text": "I tried assigning the smallest values, the nearest values to one, the nearest values to one. Not four, not three, not two. I was acting greedily. I don't want to spend a lot. Let's assign this one. Let's keep the bigger values for someone who has a better greed factor. Right. Better greed factor and this is greedy. You're being greedy. You're being greedy because you only want someone greater than equal to one. You don't give him a lot. You say ah, you're satisfied by one. Keep one. Why take four? You're being greedy and this is what greedy algorithm is. So what I will do is I'll take the size array and I'll sort it because I need the smallest number of cookies like the smaller numbers and that will be one, one, two, two, three. So what I've done is I sorted down the cookies. Okay. After that what I'll do is I'll take the greed factor and I'll sort it as well, which is one, three, three, four and a five. So I've sorted this as well. Perfect. Now what I will do is I'll take two pointers. So maybe you can call it as the left pointer and you can call it as the right pointer. Now what I'm seeing is, hey listen, I have a cookie which has a size of one. Can I assign this to this one?"
+    },
+    {
+      "chunk_id": "L284_C5",
+      "start": 316.36,
+      "end": 393.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=DIX2p7vb9co&t=316s",
+      "text": "what I'm seeing is, hey listen, I have a cookie which has a size of one. Can I assign this to this one? Yes, I can. So if I can assign this, I've satisfied one children. I've satisfied one children. So I'll move to the next. I'll move to the next. Now once I've moved to the next, I know one thing. This is done. This cookie has been assigned. So I'll move to the next. And I'm asking, can I assign this one to any one? So I am at three. I cannot, and if I cannot assign it to three, I'll not be able to assign it to anyone beyond three because this is a sorted array. I'll not be able to assign it anyone to the right of three as well. So not possible. This cookie cannot be assigned. Okay. So I'll move to the next one. Can two be assigned? No it cannot be. So I'll try the next one. Can this two be assigned? No it cannot be. So I'll try the next one. Can this three be assigned? Yes, it can be assigned because this three can be assigned to this one. So you'll assign this to this particular children. This children is satisfied. Hence, we'll move to the next children. So what I can say is this particular cookie has been assigned. Let's move to the next one."
+    },
+    {
+      "chunk_id": "L284_C6",
+      "start": 393.88,
+      "end": 471.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=DIX2p7vb9co&t=393s",
+      "text": "move to the next children. So what I can say is this particular cookie has been assigned. Let's move to the next one. Can I, can I assign this cookie to this one? Yes, because this particular children has a grade factor of three. So I can, and if I can, this children is also satisfied. So I'll move to the next children. And at the same time, I know this cookie has been assigned. So the left pointer crosses the cookies array. I don't have any further cookies left. So what you can see is if I have to write down the indexing, zero, one, two, three, you're able to satisfy three childrens. And that is why you're standing at this one because this was not satisfied. You're standing at a third index, which means you've satisfied three childrens. So wherever R is standing at whatever index it is standing, that is the number of childrens you were able to satisfy. And that will be your answer. Quite simple. If I have to write down the pseudocode, can you? Probably yes. What you'll write is, okay, assume you're given a function. What are you given? You'll be given two arrays. Definitely one is the grid array while the other one is the size array. Very simple. Maybe I can say n equal to a grid dot size. And I can say m equal to size dot length or size dot size. Maybe you can call it some other."
+    },
+    {
+      "chunk_id": "L284_C7",
+      "start": 471.36,
+      "end": 549.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=DIX2p7vb9co&t=471s",
+      "text": "grid dot size. And I can say m equal to size dot length or size dot size. Maybe you can call it some other. The name can be changed. Okay. So m is size dot size. What after this? I know there are two pointers. L will be at zero and R will be at zero. There's one more thing. I need to make sure the grid is sorted. So depending on your language, you can call the internal sorting and then you can sort the size as well. So both of them are sorted. And you know, you're testing for every cookie. So I'll be like, okay, I'll be like while L can go on till M because I have M number of cookies and I'll check, hey, listen, can I satisfy, can I satisfy, what is this? The grid of R because the children are, can this be satisfied? And it will only be satisfied if the cookies size is greater than the grid. And if that is the case, I'll be satisfying R. I'll be satisfying R. Perfect. That's done. If it's not, if it's not, doesn't matter if it's or if it's not, I go to the next cookie. If this cookie was satisfied, fine. I'll move to the next children."
+    },
+    {
+      "chunk_id": "L284_C8",
+      "start": 549.88,
+      "end": 627.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=DIX2p7vb9co&t=549s",
+      "text": "if it's not, I go to the next cookie. If this cookie was satisfied, fine. I'll move to the next children. Otherwise I'll have to anyway move to the next cookie. Perfect. What I'll do is I'll end up the while loop. And at the end of the day, what you can straight away do is you can return. What will you return? You'll return R, yes, because that is where your answer lies and you can complete the function done and dusted. What is the time complexity? Can I say that the time complexity will be run by this while loop because that is the only loop you're running and there are two sorting functions. So can I say that for sorting will be N log N plus M log M plus running a while loop on M. So that's a big of N. So can I say that the overall time complexity will be this one? And can I say that the overall space complexity will be big of one because I'm not using any external space, but yeah, I'm definitely distorting the arrays. That is a disadvantage, but yeah, this is like this problem will be solved in this particular way only. And this is what greedy algorithm is. You're greedily try to assign the smallest values possible because that is how you can maximize the number of children who are satisfied."
+    },
+    {
+      "chunk_id": "L284_C9",
+      "start": 627.84,
+      "end": 642.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=DIX2p7vb9co&t=627s",
+      "text": "You're greedily try to assign the smallest values possible because that is how you can maximize the number of children who are satisfied. So yeah, this will be it for this one. So we are still now watching and if you understood everything, please, please do consider giving us a like and if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care."
+    }
+  ]
+}

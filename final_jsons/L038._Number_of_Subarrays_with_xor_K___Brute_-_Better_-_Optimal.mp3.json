@@ -1,0 +1,155 @@
+{
+  "lecture_id": "L038",
+  "lecture_number": 38,
+  "lecture_title": "Number of Subarrays with xor K | Brute - Better - Optimal",
+  "youtube_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME",
+  "chunks": [
+    {
+      "chunk_id": "L038_C1",
+      "start": 0.0,
+      "end": 69.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So this is another lecture from the Stryber's A to Z DSA course. Just in case you're for the first time here, this is the world's most in-depth course when you talk about DSL, though, why do I say that? 455? Yes, this course has 455 modules. By the end of the course, you'd have solved more than 400 plus problems when it comes to DSL where you can go over the entire internet. You can buy any of the paid courses. None of them will be teaching you DSL in such depth. Something that I can give you as assurances, once you cover up the entire course, you'll be able to clear any of the DSL grounds in any of the companies in any part of the world. So till now I have covered up till this particular problem. Now in this video I'll be solving the problem, count number of sub-arrays with a given XOR K. But please, please make sure that before attempting this particular problem, you should go back and watch this problem, which is counting the number of sub-arrays with some K. Because the concept that I've used in this particular problem will be reused in this problem as well. So I'll be leaving the video link in the description. In case you haven't seen it, please go back and watch it and then you can resume this particular video."
+    },
+    {
+      "chunk_id": "L038_C2",
+      "start": 69.36,
+      "end": 142.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=69s",
+      "text": "video link in the description. In case you haven't seen it, please go back and watch it and then you can resume this particular video. So what does the problem state? It states that you have to count the number of sub-arrays with a given XOR as K. Now what is the definition of sub-array? Any contiguous, very important word, any contiguous part of the array. So something like 2 to 6 is a sub-array. Something like 2 and 4 is not a sub-array where you pick this 2 and this 4. Why? Because it is not a contiguous part. So a sub-array is a contiguous part of the array. Something like 6 is also a sub-array. Something like the entire array is also a sub-array because it is a contiguous part of the array. So that is what you mean by sub-array. Now you'll be given a K. Over here you're given this particular array and you're given the value of K as 6. Can you tell me how many sub-arrays are there who will give you the XOR as 6? So I can say there are exactly 4. Why? This one, if you take 4 and 2 and you do a XOR of 4 and 2, the value that you'll get is 6. If you do not know about the XOR operator, you can Google about it. You will get to know what does XOR operator does. Again if you take this particular one, it's a single element."
+    },
+    {
+      "chunk_id": "L038_C3",
+      "start": 142.8,
+      "end": 218.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=142s",
+      "text": "can Google about it. You will get to know what does XOR operator does. Again if you take this particular one, it's a single element. So any single element, you do not need to do XOR with anything else. So the XOR will be 6. For this, 2 XOR 2, XOR 6 and as you know XOR of similar elements means 0. So XOR is 6. For this, 4 and 4 will cut off because they are similar. 2 and 2 will cut off because they are similar. So it will be basically 0 and you'll be left off with 6. So you're getting this particular XOR. So how many sub-arrays are there? 1, 2, 3, 4 and that is what you have to return. You have to return me the count of the sub-arrays with the given XOR as K. That is what the problem states. So this problem comes up in an interview. What is the first solution that you'll give to the interviewer? That is definitely the brute force and if you're talking about sub-arrays, what is the extreme range solution that comes to your mind? Generate all the sub-arrays and how can you generate all the sub-arrays? It's very simple. You know one thing, the first sub-array is this. The second sub-array is this. The third sub-array is this. The fourth sub-array is this. The fifth one is this. And then this one is the sixth, seventh, eighth, ninth. Then this, this, this."
+    },
+    {
+      "chunk_id": "L038_C4",
+      "start": 218.46,
+      "end": 288.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=218s",
+      "text": "The fourth sub-array is this. The fifth one is this. And then this one is the sixth, seventh, eighth, ninth. Then this, this, this. Something we know for sure is you stand at 4 and you keep on expanding. So what I can say is maybe I can start a loop from 0 and I can go on till N. Again, I'm not going into deep because I've already taught you how to generate sub-arrays. So I can probably stand here and now I can say, okay, 4 is the first sub-array. So I can just start with 4. Then I can take 4 too. So something I can say is, okay, maybe there'll be another loop G which will start from I and it will go on till N. So if I have to look at the values, at first I will be 0 which is this and J will be at this portion. So this is the entire sub-array. Then what happens to J? I stay here, J moves here because J will move with J plus plus. So this is the sub-array. Then what happens to J? J will move here and I will still be here. So this is the sub-array. Next J will move here and I will stay here. So this will be the sub-array. Next J will move here and I will stay here. So this is the sub-array. After J has completed, what will happen to I?"
+    },
+    {
+      "chunk_id": "L038_C5",
+      "start": 288.36,
+      "end": 361.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=288s",
+      "text": "Next J will move here and I will stay here. So this is the sub-array. After J has completed, what will happen to I? I will move to 1 and the same I will be here. What about J? J will start from here. So this will be the sub-array. Next J will move here, I will be here. So this will be the sub-array. And similarly you can go on. So can I say, can I say this, that the sub-array is from I to J? Can I say this? Because if I is standing here and J is standing here, I definitely know this is the sub-array, right? So probably we can keep the XOR value as 0 and I can say XOR equal to XOR of array of K. So what this will do is, this will iterate through the entire sub-array and give me the XOR stored in the XOR variable. After this loop is done, I can say the XOR of that sub-array, if that is equivalent to what we are looking for, we can do a counter plus plus. Quite simple and this is how the code will look like. So if I have to analyze the time complexity, can I say it's near about big O of NQ? Near about because we are running three loops. First to generate the sub-array, next to go through the sub-array and compute the XOR. So the time complexity is near about big O of NQ."
+    },
+    {
+      "chunk_id": "L038_C6",
+      "start": 361.1,
+      "end": 437.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=361s",
+      "text": "generate the sub-array, next to go through the sub-array and compute the XOR. So the time complexity is near about big O of NQ. What about the space? We are not using any space. So big O of 1 is the space complexity. Maybe the interviewer will not be happy with NQ and he'll ask you to optimize it. This is when we will move to the better solution. What about the better solution? Can we observe something? Do we actually need the third array? We do not need it. Why? I'll tell you. So imagine I just end up removing this. I'm removing this. Let us have some observation. So imagine I was here and J was here. I know the first sub-array will just have four. So the XOR will be four. Next J moves here. So the next sub-array is having four two. One more element added. What will be the XOR? Four XOR two. Next J moves here. So another two will be added to the sub-array. So eventually as J is moving, the next sub-array is including one more element. So can I say if I can keep a XOR variable, next time two gets added, next time another two gets added, next time four XOR two XOR two XOR six will get added, next time there"
+    },
+    {
+      "chunk_id": "L038_C7",
+      "start": 437.28,
+      "end": 510.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=437s",
+      "text": "added, next time another two gets added, next time four XOR two XOR two XOR six will get added, next time there is already this, four will get added because of this one. Eventually I can keep on adding. This is what I'll do. I've already done this previously. XOR can be zero and every time I move forward, I just add up the new element and whatever XOR I'm getting, if that is equivalent to J, I keep a count. So what I've done is I've boiled down the time complexity to be go off N square by just using two loops. Again, I've explained this in depth in the previous video. That is one not going in depth because I know you know how to generate sub-arrays, how to optimize it to N square. So I'm not going into the depth. Okay. So this will be the better one. Obviously the interviewer will not be happy with N square and he'll ask you to optimize it and this is when you'll move to the most optimal solution. So what will be the most optimal solution? Let us have some observations. Now can I say one thing for sure? Let's take this sub-array. I know this sub-array will be giving me a XOR of six. I know that for sure. If I have to ask you, where is the sub-array starting from? It is starting from here. Where is it ending? It is ending here."
+    },
+    {
+      "chunk_id": "L038_C8",
+      "start": 510.8,
+      "end": 585.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=510s",
+      "text": "I have to ask you, where is the sub-array starting from? It is starting from here. Where is it ending? It is ending here. So I know one thing for sure. Every sub-array will have an ending point for sure, like this one has an ending point as this, this one has an ending point as this, this one has an ending point as this, this one has an ending point as this. Every sub-array, every sub-array has an ending point because it will and it also has a starting point. starting point. So, I will be focusing on the ending point. I'll be focusing on the ending point. Let's see how I will do it. So, if I have to just manually write down this particular array, let me write down 4 2 2 6 4 and I'm asking you till this portion which is if I take up all the elements and I say the XOR till 6 very important till 6 is XR. Imagine the XOR of all the elements till 6 is XR. Now, I'm asking you imagine"
+    },
+    {
+      "chunk_id": "L038_C9",
+      "start": 585.14,
+      "end": 663.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=585s",
+      "text": "is XR. Imagine the XOR of all the elements till 6 is XR. Now, I'm asking you imagine these many elements have a XOR as K. Imagine just imagine hypothetical scenario. These many elements have a XOR as K. Can I say then this will again let's hypothetically take it as X. So, what I'm saying is first element has a XOR as X. From here to here it has a XOR of K and the entire thing has a XOR of XR. Can I write something like this X XOR K will be XR. Again makes sense because this element and all the 3 elements if you XOR that is equivalent to the XOR of all elements. Now, I will say take XOR of K on both the sides. Do a XOR of K on both the sides. So, in XOR if you XOR same elements it will always be 0. If you XOR same elements it will always be 0. So, K and K's XOR will be 0. So, you will be left off with X. X will be nothing but XR XOR K. X will be nothing but XR XOR"
+    },
+    {
+      "chunk_id": "L038_C10",
+      "start": 663.22,
+      "end": 738.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=663s",
+      "text": "left off with X. X will be nothing but XR XOR K. X will be nothing but XR XOR K and remember this formula. X is nothing but XR where XR is the XOR of the first elements till this index in any particular index where K is the XOR that you are looking for. Now, just imagine just imagine forget about this everything forget about everything and just have this derivation. So, if I ask you till here it's like 4 XOR 2 XOR 2 XOR 6. What will be the total XOR? It's like 2 and 2 will cut off. It's like a 4 XOR 6. So, I have to do a 4 XOR 6 it's nothing but 0 1 0 the value is 2. So, till here the value is 2. What am I looking for? I am looking for is there any subarray I repeat is there any subarray that it end that is ending at 6 and is having a XOR of 6. Is there any subarray that is ending at 6 and having a XOR of 6. I'll write it so that it sticks to your head. Is there"
+    },
+    {
+      "chunk_id": "L038_C11",
+      "start": 738.5,
+      "end": 812.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=738s",
+      "text": "6 and having a XOR of 6. I'll write it so that it sticks to your head. Is there a subarray ending at 6 and having a XOR of K. Now, you'll be like maybe, maybe not. So, I don't know anything I just know the XOR of these elements which is 2. So, what I will say is that is only possible if I have a X if I have a X whose value is XR XOR K. You remember when we took this then only it's possible. There can only be a subarray who will give me a K only if there is an X. What is X? Some elements from the start some elements from the start which will give me X. So, over here XR will be 2 what will be K? K is 6 I am saying 2 XOR 6. What is the value of 2 XOR 6? That is 4 because 1 1 0 is 6 2 is this. So, if we do a XOR it will be 0 0 1 which is 4. So, 4 do we have do we have do we have someone from the start which is giving me 4? I say yes from the start we have a 4 we have someone who is"
+    },
+    {
+      "chunk_id": "L038_C12",
+      "start": 812.18,
+      "end": 877.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=812s",
+      "text": "start which is giving me 4? I say yes from the start we have a 4 we have someone who is giving me a 4 XOR thereby I can surely say there exists some elements which will give me the K that's it that is the fun now. What we will try to do is we will try to move we will try to move and we'll keep a track of the pre XOR like the entire XOR of all the elements and then we will see is it possible to end over here by taking some K and if I can figure out from the front if I can figure out an element so basically I will move taking an XOR and then I'll say till the is this the end is this the end point so maybe someone will be K for someone to be K for someone to be K from the front from the front someone has to be X and I'll think I'll just find out is someone X is someone X and if someone is X that's it my job is done and how many X is what we have to look for as well how many X are there is also I have to look for got it so I'll tell you as we move forward perfect I hope we have got the intuition the intuition is pretty straightforward we are kind"
+    },
+    {
+      "chunk_id": "L038_C13",
+      "start": 877.38,
+      "end": 953.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=877s",
+      "text": "I'll tell you as we move forward perfect I hope we have got the intuition the intuition is pretty straightforward we are kind of looking from the backward direction if anyone is there I can certainly raise it and now we will start doing it so what do we need what do we need let's go back I will be carrying the XOR of all the elements and I'll be looking for does there exist any subarray with K XOR for that to happen I will look from the front from the front is there anyone with X so it's like from the front means I have to keep a track of the XOR of the front elements to keep a track of the XOR of the front element that is what I will do let's quickly start so in order to keep a track which data structure yes hash map hash map is what we require so we'll take a hash map we will say front XOR or something like this which will be my key front XOR X I'll say how many times how many times and initially we don't have anything so maybe 0 comma 1 will be a good element because no one means 0 comma 1 I don't have anyone 0 comma 1 let's start XR is 0 first element 4 first element 4 so XOR 0 XOR 4 is"
+    },
+    {
+      "chunk_id": "L038_C14",
+      "start": 953.5,
+      "end": 1028.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=953s",
+      "text": "don't have anyone 0 comma 1 let's start XR is 0 first element 4 first element 4 so XOR 0 XOR 4 is 4 so what I am saying is as of now XR is 4 so this entire thing is 4 I'm looking for K is there any so I'll be like 4 XOR 6 what's the value 2 the value is 2 did we get a 2 previously no we did not get it to previously that's not in the hash so nothing keep a count which will keep it track of the count as well let's move before moving please make sure you remember front XOR 4 appeared once and then move to 4 XOR 2 will be nothing but 6 4 XOR 2 will be nothing but 6 now what you are saying is from the front it is 6 so what are you looking for you're looking for a K you're looking for a K equal to 6 and you're looking for X then what will be X if you remember the formula X was XR XOR K XR is 6 so K is 6 X is 0 so you're looking for you're looking for did you get a front X as 0 anyone with 0 and you know while you started you had a 0 so that means this"
+    },
+    {
+      "chunk_id": "L038_C15",
+      "start": 1028.74,
+      "end": 1106.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=1028s",
+      "text": "a front X as 0 anyone with 0 and you know while you started you had a 0 so that means this entire thing is a sub-added which is your answer thereby you say count is 1 next front XOR 1 6 front XOR because these two elements are giving you 6 store it with one occurrence and move you move such as XOR of 2 it's a XOR of 2 6 XOR 2 will be 4 so go ahead and write 4 written next let me erase this and show you what will happen so you are saying I have 4 I'm looking for a K equal to 6 so how much X am I looking for how much XM did something appear before how much is it 4 XOR 6 what is 4 XOR 6 that is 2 you can just do it it's very simple 1 0 0 1 1 0 0 1 0 so 2 do we have a 2 you look no there is no front as 2 so this 6 is not possible so I cannot get thereby I'll just erase it I'll just erase it I'll keep a track of this 4 so when I keep a track of this 4 it will be like to remember this this will increase at 2 times next let's move we move to 6 what will be"
+    },
+    {
+      "chunk_id": "L038_C16",
+      "start": 1106.26,
+      "end": 1178.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=1106s",
+      "text": "it will be like to remember this this will increase at 2 times next let's move we move to 6 what will be 4 XOR 6 that will be 2 very good this time what I'm in looking for I am saying I'm having XR as 2 I am looking for a K equal to 6 so I'll be looking for front X what will be the value of front X it will be XR 2 and XOR K because that was the formula if you remember that that was the formula so 2 XOR 6 2 XOR 6 is how much it is 4 it is exactly 4 so you will go back into the hash map hash map will say there are two elements whoever friends or a 4 again eminent because even if you take this this entire sub array will give you a so on as 6 okay even if you take this which is your front X equal to 4 and even if you take this this will give you this so there can be 2 X there can be 2 X so once X can be just this one and the other time X can be a significantly large number of elements which is the three elements which is the three elements to have to again"
+    },
+    {
+      "chunk_id": "L038_C17",
+      "start": 1178.34,
+      "end": 1257.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=1178s",
+      "text": "can be a significantly large number of elements which is the three elements which is the three elements to have to again write it just for explanation 4 2 2 6 so what happened you said get this is giving me a K 6 and this is my X equal to 4 and similarly you can also say this is also giving me X equal to 4 and is giving me K equal to 6 so there can be 2 sub arrays ending at 6 there can be 2 sub arrays ending at 6 one is this well the other one is this that is why in the hash map I was storing the count how many X were there it told me there were 2 X one is this and the other is this thereby this 2 will get added and the count will become 3 quickly I'll erase this next I'll move before moving I have a 2 I'll I'll insert it with the count 1 and then I'll move to 4 2s or 4 what is the value 6 very good 6 so if you're looking for 6 entire thing is 6 sorry XR is 6 you're looking for a K equal to 6 what will be X X will be 0 because 6 or 6 is what you're looking for 0 do we have a"
+    },
+    {
+      "chunk_id": "L038_C18",
+      "start": 1257.62,
+      "end": 1327.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=1257s",
+      "text": "what will be X X will be 0 because 6 or 6 is what you're looking for 0 do we have a 0 yes what does that signify if you end up taking it the entire thing that will make sense that is why I was storing the 0 so eventually X is 0 the count increases and the count ends up being 4 perfect after that you can again go ahead and put the 6 the count will increase and the iteration is over and overall the count will be storing your total number of sub arrays which in this case is 4 and that will be your answer got it so then to code it up so you can find the problem link in the description please please make sure that you try out the problem from the link in the description itself we are given an array we are given a K first thing I'll do is I'll take an XR and I'll say 0 and I'll take a map and this is what I'll do so I know initially I can keep XR plus plus so if it is not in the map it will automatically take it as 0 and it will make sure that 0 comma 1 is inserted in the map so while we start let's quickly iterate on the vector of the list and"
+    },
+    {
+      "chunk_id": "L038_C19",
+      "start": 1328.1,
+      "end": 1398.82,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=1328s",
+      "text": "that 0 comma 1 is inserted in the map so while we start let's quickly iterate on the vector of the list and every time we go we have an element so we say XR XOR of that element and that will be it now what do we have we have XR we are looking for K so we will look for did we have any previous occurrence of X which is XR XOR K you remove the formula and you have to look in the map how many times does X appear and that will be added to account if it appears 0 time we cannot have it because we need X to be appearing so count plus NPP X so if it doesn't appears in the map it will automatically be 0 and that is how map works and if it appears it just takes how many times if you remember this 4 was 2 times so if it appears it will take 2 and you'll add it up to the count at the end of the day you can go ahead and return count 4 line code for such a wonderful concept the lines of code is hardly 4 I did a mistake that's because we have to also make sure that before going we put it into the map so put it into the map and now we will be running this off so if you see this will"
+    },
+    {
+      "chunk_id": "L038_C20",
+      "start": 1398.82,
+      "end": 1461.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=1398s",
+      "text": "it into the map so put it into the map and now we will be running this off so if you see this will be running fine and now I will go ahead and submit this so what is the time complexity big O of n and we're using a map data structure you can say login if you use unordered map it will be big off one in the best case but in the worst case it might be something else so you can explain that to the interviewer so n n can be the time complexity or n log n depending on the time that your map ends up taking so that will be the time complexity whatever the space complexity we go off it why because you're using a map data structure and every time you are storing something in the map so if this XR that you are storing happens to be unique every time so you'll end up storing n difference and n different elements the time complexity can be big off n or n log n depending on the maps time complexity and the space complexity will be big off n at the worst case if all of them are unique elements in the map so that will be the time complexity and the space complexity so going back to the sheet I can say that this one is done as well I hope"
+    },
+    {
+      "chunk_id": "L038_C21",
+      "start": 1461.74,
+      "end": 1493.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=eZr-6p0B7ME&t=1461s",
+      "text": "time complexity and the space complexity so going back to the sheet I can say that this one is done as well I hope you have understood everything just in case you have please hit that like button because it won't cost you anything but trust me that is something that motivates me highly to make these kind of videos and if you're new to our channel what are you waiting for hit that subscribe button if you haven't followed me on Instagram you're missing out on a lot of informative content so please make sure you do check me out on Instagram Twitter and LinkedIn and everything and here with this I'll be wrapping up this video let's meet in some other video till then bye take care I will find"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "lecture_id": "L116",
+  "lecture_number": 116,
+  "lecture_title": "L44. Delete a Node in Binary Search Tree | BST | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=kouxiP_H5WE",
+  "chunks": [
+    {
+      "chunk_id": "L116_C1",
+      "start": 0.0,
+      "end": 70.4,
+      "timestamp_url": "https://www.youtube.com/watch?v=kouxiP_H5WE&t=0s",
+      "text": "So before starting this video, I would love to thank Relible for sponsoring this entire three series. So do you wish to work with companies like CRED, UpGrad, Urban Company, Raise Your Pay but you are not able to apply because of your lack of experience and lack of opportunities? So here's the solution to this problem. Relible by Unacademy is a hiring platform that helps freshers and experienced people to get jobs in India's top companies. All you need is skills. So what you need to do is you just need to give the Relible test that is completely based on your skills. Depending on your performance, your interview will be scheduled and you will be hired from the Relible platform and the best thing about this is it's absolutely free. So what are you waiting for? Please make sure you check out the links in the description. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we are going to delete a node in a binary search tree. Now you know a binary search tree is nothing but the left should be lesser than the node and the right should be greater than the node and the entire like the subtree, the left subtree should also be following this property as well as the right subtree. So assuming that this node 3 is given to you, so you have to basically delete this node"
+    },
+    {
+      "chunk_id": "L116_C2",
+      "start": 70.4,
+      "end": 149.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=kouxiP_H5WE&t=70s",
+      "text": "as well as the right subtree. So assuming that this node 3 is given to you, so you have to basically delete this node 3 and after that these nodes will get rearranged to form a rearranged BST and then you have to return it. So logically I can say if I delete this node, like this node 3 is over here. So logically if I delete this node, I will be left out with a binary search tree which looks something like this. This is possible because if I take out 3, then if I have 4 over here, the left side should be smaller and that's 2. So this is perfect. Now you might say, hey Strago, what if we just rearrange this and I can delete it in such a way that we get a binary search tree which looks something like this, like we can have a 2 here and the 4 can be on the right. Again is this a possible answer? This is also a possible answer. So there can be multiple answers, right? You just need to return any one of the answers where the node, the given node is deleted and after deleting this node, you have to just return the root of the tree. That's the question. So the problem link is in the description. You can try that out and if you cannot solve it, you can definitely watch the solution."
+    },
+    {
+      "chunk_id": "L116_C3",
+      "start": 149.02,
+      "end": 224.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=kouxiP_H5WE&t=149s",
+      "text": "the problem link is in the description. You can try that out and if you cannot solve it, you can definitely watch the solution. So node equal to 5, that is what you have to delete in this binary search tree. How will you do this? So the ideal stuff that I can do is, I can just divide this question into a couple of parts. Like the relation can be first I have to search whether this node exists or not, like search node and after that I can actually think of deleting, right? So I need to search node and then delete. So once I search this node, I can definitely find it over here. So can I say everything that's on the left of 5, everything I repeat, everything that's on the left of 5 is actually smaller than everything that's on the right of 5. Makes sense, right? It absolutely makes sense. So we're going to follow this stuff in order to delete node 5. Let's see how. What if I say, I will make sure that this guy, yes, this guy, like I'll just remove this node. Like if I take the eraser, what if I remove this node? Okay, let's remove this node. And I connect this. Then that is correct."
+    },
+    {
+      "chunk_id": "L116_C4",
+      "start": 224.98,
+      "end": 302.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=kouxiP_H5WE&t=224s",
+      "text": "the eraser, what if I remove this node? Okay, let's remove this node. And I connect this. Then that is correct. That is still correct because the node 5 ideally was here, which was removed and this was connected, correct? So 2 is less than 8 and it still makes sense. What about this portion? Yes. What about this portion? 7, 6, 8. Like if I ask you a simple question, where will you prefer this to be connected? You will be like, hey, Stryver, I know I have 2 and on this 2, everything on the right is greater than 2. And since I know all the right elements are greater than 2 because everything on the left was smaller than this right. So 7, 6, 8 is actually greater than 2. So can I say I can connect 7, 6, 8 to the right? Okay, makes sense. What would be the easiest possible connection that you can do? I know 4 is the greatest element in this left subtree. Makes sense? 4, I repeat, 4 is the greatest element in this entire subtree. You will be like, correct. So what if I just take this 7 and connect it over here, like I just take it and connect it. Will that make sense? It will."
+    },
+    {
+      "chunk_id": "L116_C5",
+      "start": 302.42,
+      "end": 378.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=kouxiP_H5WE&t=302s",
+      "text": "this 7 and connect it over here, like I just take it and connect it. Will that make sense? It will. Because ideally, the entire left was smaller than this. So I take the greater part, this is the greater part, I take this greater part and attach it to the extreme right. I attach it to the extreme right. Makes sense? Yes, makes absolute sense. So that's how I can think of solving this problem. Are there edge cases? There are indeed edge cases. Is there any different way of solving? Yes, there is a different way of solving. So let's take the same tree and let's see if we can do it other way. Like what if we would have deleted the, like we have deleted this link. Let's do it the other way also so that you have a clarity about the solution. Now what is the other way that we can actually solve this? Over there you saw that we took this right part and attach it over here. Over here, what I can do is, this time I will detach this part. Yes. I will detach this part and delete five. What do I do this? If I do this, I will have a tree like this. Again, makes sense? Like I'll have a tree which is directly connected. It's left is directly connected to seven. So I have deleted the node five which was existing over here. Like I've deleted that."
+    },
+    {
+      "chunk_id": "L116_C6",
+      "start": 378.34,
+      "end": 448.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=kouxiP_H5WE&t=378s",
+      "text": "connected. It's left is directly connected to seven. So I have deleted the node five which was existing over here. Like I've deleted that. Now if I ask you, where will you attach the left part? That's a very obvious answer. Everything on the right is actually a greater than these left subtree. So I'll just take this two and if I can attach it to the left of six, I know that, I definitely know that six is greater. Like the smallest number, the smallest number on the right subtree is six. So onto the left of six, everything can be smaller. So I'll just attach the left portion and I can actually rebuild the BST in this way. So there are two ways. Either you cut off the link of the right portion and then you take the right and connect it to the left's right or you do the other way. That is, you simply cut off the left portion and take the left and connect it to the right's leftmost guy. So these are the two ways that you can think of. I'll come to the code. It's very simple. I'll come to this code. Are there edge cases? There are. There are indeed edge cases. So let's talk about that edge case. What if we're given this binary search tree and I've been asked to delete something which is two. How will you delete that? Very straightforward."
+    },
+    {
+      "chunk_id": "L116_C7",
+      "start": 449.32,
+      "end": 523.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=kouxiP_H5WE&t=449s",
+      "text": "if we're given this binary search tree and I've been asked to delete something which is two. How will you delete that? Very straightforward. Just delete this and just connect this link because there will be no left. So the edge case is very simple. If there exists a left or right, then you have to reattach it. Otherwise, just reattach this link. Just make sure five's left is pointing to two's right. Just make sure five's left is pointing to two's right. Nothing else, guys. Nothing else. As simple as that. This is the edge case that you have to take care. So if I talk about the approach, it's very straightforward. Figure out where the node appears. Once you have figured out where the node appears, make sure that this guy's left is pointing to the five's left. So assuming this is eight, so make sure eight's left is indeed pointing to five's left. So what that will do is that will cut off this link and this link will be attached. So if you write like this eight's left is pointing to five's left, this link will be attached. Till now, five's right is a node which is not there now, like not connected to eight. But five's right will be pointing to seven. So again, just make sure that in two's, that is five's left, in two's, go to the extreme right."
+    },
+    {
+      "chunk_id": "L116_C8",
+      "start": 523.0,
+      "end": 590.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=kouxiP_H5WE&t=523s",
+      "text": "be pointing to seven. So again, just make sure that in two's, that is five's left, in two's, go to the extreme right. So guys, go to the extreme right and make sure four's right is connected to five's. Like four's right is connected to five's right. That's it. So if you just do these two connections, your binary search tree will be ready. So I've written for this. You can definitely try out for the other one where you detach this link and attach this guy over here. You can try that for yourself. Now I'll go to the code and I will just give you a dry run so that everything gets very clear to you. So as usual, the C++ code is on the left and the Java code is on the right. So for Java people, you can pause this video and you can see that the entire, yes, I repeat, the entire left code is like ditto similar to the right code, like C++ and the right codes are similar, right? Exactly similar, line by line. Only difference is in C++ we write capital null, you write small null, something like we say root, this, we use this arrow left. You say root dot left. This is the only difference in both the codes. So guys, I'll just be keeping the C++ code over here. You can understand it completely."
+    },
+    {
+      "chunk_id": "L116_C9",
+      "start": 590.92,
+      "end": 658.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=kouxiP_H5WE&t=590s",
+      "text": "the only difference in both the codes. So guys, I'll just be keeping the C++ code over here. You can understand it completely. And after that you can check out the code in the description and you can use the Java code. Okay, fine. So I'll be removing the Java code. Okay. So in the code, you're given the root of the tree. So that is where the root is and you're given the key. So assuming the node that has been asked to delete is node five. So what do you do is initially just assuming there is a null binary tree, you'll return null. And if, if the root of value, like it's the root that you have to delete, then, then it's very simple. Then you have to just take this guy and you have to like, if this is the node that you have to delete, what do you do is you just take the left guy and that's right has to point this. So I'll come to this afterwards. As I'll come to this afterwards. Okay. So as of now, as of now, let's focus in the main part. If we are given a middle node to be deleted, if this node, like if node nine has to be deleted, it's very simple, right? This guy's left, that's eights, right? Okay. This guy's left, that's eights, right? Should be pointing to 12. Very simple that you can easily write it."
+    },
+    {
+      "chunk_id": "L116_C10",
+      "start": 658.96,
+      "end": 728.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=kouxiP_H5WE&t=658s",
+      "text": "left, that's eights, right? Okay. This guy's left, that's eights, right? Should be pointing to 12. Very simple that you can easily write it. So I'll come to this portion afterwards. Let's check this out. So I'm saying dummy is root. So I've just made sure that I store root because it will be destroyed when I travest. So I've stored that in the dummy because at the end I have to return that dummy. I have to return the roots I've stored it. Okay. Let's start. Is the key that's five greater than root val? Root val is nine. Is it greater? No. So we come to else, we traverse. So root val is, so we come to this. If is the root val nine greater than five? It is. That means five exist on the left. Perfect. We are currently standing over here. Root is here. Five exist on the left. So we check is the left not null? Is the left not null? Yes, it is. Is the left val equivalent to key? No, it is not. So what we'll do is root.root left. So root will come over here. Perfect. Again comes back. Is the root val, that's eight greater than five? It is. This time when we check root left not null, five is not null. And is the root left, root left val equal to equal to key? It is. It is equal to five."
+    },
+    {
+      "chunk_id": "L116_C11",
+      "start": 728.48,
+      "end": 807.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=kouxiP_H5WE&t=728s",
+      "text": "five is not null. And is the root left, root left val equal to equal to key? It is. It is equal to five. So what we see is roots left, roots left, very important, roots left is pointing to this helper function. Understand, this guy's left is pointing to this helper function. And now the helper function will do the work of taking this three and making sure the connections are made in a proper way. So this will make sure, like you don't have to think about this. So let's try doing that. So let's go to the helper function. So let's see the helper function, what the helper function is doing. So the helper function states that if root.left is null, then return root.right. So basically if this portion, I repeat, basically if this portion did not exist, then what it would have done is it would have written root.right. So what would have happened was root.left, that is eight, the left would have pointed to this portion entirely, got it? Because right is this seven. So this connection would have been made. Perfect. What if, what if root.right was not present? If this was not present, then root.left helper would have written this and it appointed directly to three. So if either of them are not available, it's very simple, right? It's very simple. But what if, what if this if is not correct, this else is not correct, then what happens?"
+    },
+    {
+      "chunk_id": "L116_C12",
+      "start": 807.66,
+      "end": 886.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=kouxiP_H5WE&t=807s",
+      "text": "very simple, right? It's very simple. But what if, what if this if is not correct, this else is not correct, then what happens? I am saying right child, root.right. Right child, root.right. So currently root is five, remember root is five. So right child is this. Let's write right child. Okay. Now I'm saying last right, find last right of left. So I'm saying go over here and find the last right. Last right is very simple. Go across right, go across right and find the last right. So this is the last right as of now. Perfect. So I'm writing the variables also. So this is the last right. Next I'm saying last right, dot right equal to right child. Last right, dot right equal to last child. So I have made this pointer. So I made this right subtree connected to four. Perfect. Now what's the next thing? I'm saying root.left, why don't you return? So I'm saying three, please return yourself. So I'm saying this, please return the node three. So over here I'm saying root.left equal to, currently root was standing at eight. So I'm saying left is equal to three because the helper returned nothing but three. So automatically it broke down, right? Automatically it broke down. This is how you can delete a node in a binary search tree. Similarly, if it would have been on the right, it would have done on the right, like it would have just said 12s, right?"
+    },
+    {
+      "chunk_id": "L116_C13",
+      "start": 886.7,
+      "end": 940.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=kouxiP_H5WE&t=886s",
+      "text": "tree. Similarly, if it would have been on the right, it would have done on the right, like it would have just said 12s, right? Connected to over here. Else the delete, the delete, this is the main helper function, which does your work of basically joining this right pointer and returning this node. That's as simple as that guys. Complexity. Again, I can say the complexity is indeed the height of the tree because it is searching the node and then you're deleting it. So it's generally the time complexity is the height of the tree and the space that you're using is none because you're not using any external space. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye bye. Take care."
+    }
+  ]
+}

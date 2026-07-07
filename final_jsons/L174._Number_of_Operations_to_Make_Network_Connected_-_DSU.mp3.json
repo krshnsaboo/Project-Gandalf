@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L174",
+  "lecture_number": 174,
+  "lecture_title": "G-49. Number of Operations to Make Network Connected - DSU",
+  "youtube_url": "https://www.youtube.com/watch?v=FYrl7iz9_ZU",
+  "chunks": [
+    {
+      "chunk_id": "L174_C1",
+      "start": 0.0,
+      "end": 76.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=FYrl7iz9_ZU&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving the problem connecting the graph. It states a given a graph with n vertices and m edges. You can remove one edge from anywhere and add that edge between any two vertices in one operation. Okay. That is what the question states and you have to find the minimum number of operation that will be required to make the graph connected. So let's understand the question. Imagine currently your graph looks something like this and it is in three parts. It is in three parts, three different components. Here's a component, here's a component, here's a component. What they want is you have to make the entire graph connected. But wait, how will that happen? Maybe if I join three, four, maybe if I join six, seven, can I see now the graph is a single component? I can, but wait, they've clearly stated you cannot draw imaginary edges. Like you cannot just draw random edges to make the graph connected. You need edges which already exists. For an example, if you see this particular component, if I remove this edge for an example, I remove"
+    },
+    {
+      "chunk_id": "L174_C2",
+      "start": 76.5,
+      "end": 156.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=FYrl7iz9_ZU&t=76s",
+      "text": "exists. For an example, if you see this particular component, if I remove this edge for an example, I remove this edge. Let's do it. So I'll just quickly remove the search and I'll take the search and I'll connect three and four. You can connect two and six, two and five. You can connect it anywhere. It can be used anywhere. But in order to use an edge, you have to take it out from somewhere. Okay. I took it out. Now you see, I took it out. It's still a component and it held me to get connected to this particular component. Now I'm like, okay, fine. What if I go ahead and take out one more edge? I'll take out one more edge. I'll take that edge and maybe connect six and eight, maybe connect six and eight. I could have connected five, seven. That is okay. Now can I see, even if I remove this, it is still connected. It is still connected and it ended up connecting all the three components. It did. So thereby I can see I needed two edges, which I had to remove and plant somewhere so that the entire graph was connected. This is the question and you need to find the minimum edges that you need to remove and planted so that all the graphs, like all the components gets connected into a single component. Now, before solving this problem, we have to analyze what are"
+    },
+    {
+      "chunk_id": "L174_C3",
+      "start": 156.46,
+      "end": 235.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=FYrl7iz9_ZU&t=156s",
+      "text": "all the graphs, like all the components gets connected into a single component. Now, before solving this problem, we have to analyze what are components and how can we connect components? Can I see if I have this component and if I have this component, they can be connected by connecting any of the two nodes in both the components. If I pick up any node and connected to any node, the two components will get connected. So can I say if there are, let's say one, two, three, four, five components, if there are five components, I am asking you a very simple question. How many edges do you actually require to connect five components into a single component graph? It will be like, it's very simple. I'll connect this component and this component. That means connect any node of this component to any node of this one. And then I'll connect here. Then I'll connect here. Then I'll connect here. So can I see I required one, two, three, four, can I say for n components, for n components, I required n minus one edges to make it a single graph, which is very sensible. If I just have a single component graph, which means one component will require zero edges to make it connect. Does it make sense? It"
+    },
+    {
+      "chunk_id": "L174_C4",
+      "start": 235.06,
+      "end": 311.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=FYrl7iz9_ZU&t=235s",
+      "text": "have a single component graph, which means one component will require zero edges to make it connect. Does it make sense? It does. It is completely connected. So can I say, okay, if I can somehow figure the number of connected components, which is very simple. If I can somehow figure the number of connected components, the answer will be n, like assume this to be n, the answer will be, or nc, the answer will be nc minus one. That's very simple. And that is always going to be minimum. You can do more than it, but we won't minimum. Right? This is what we have been asked. So this will be the answer. So how do you approach this problem? It's very easy. Just imagine these two components and ask you, can I pick up any node from this? Yes, I can pick up, let's say zero, and I can pick up five, or maybe I can pick up one and I can pick up five. Maybe I can pick up three. I can pick up four. I can pick up any node, any node connected to any other node will make these two components connected in each other. Okay. That's the first observation. Next thing. What if I have, let's say one component, these square boxes are component. Okay. What if I have"
+    },
+    {
+      "chunk_id": "L174_C5",
+      "start": 311.98,
+      "end": 388.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=FYrl7iz9_ZU&t=311s",
+      "text": "first observation. Next thing. What if I have, let's say one component, these square boxes are component. Okay. What if I have five components like this and inside this, we have graphs. Okay. So how many edges do we require to connect this? I did tell you right now, but two components, you can pick up any node and any node and connect it, right? But two components, you can pick up any node and connect again for two components. You can pick up any node and connect it. And similarly, again, any node and connect. Can I see if there are five components I will be requiring one, two, three, four. So for five components, I required four edges. Can I do in any lesser than this? I don't. Can I do it in any more than this? Yes. But do I need more? No. Why? Because the question clearly states minimum. So can I see if I can figure out the number of connected components, my answer will be very simple. Number of connected components, minus one, but we still have a problem to solve. It states, we have to take out an edge, take out an edge and reuse it. Like we cannot just build an edge. We"
+    },
+    {
+      "chunk_id": "L174_C6",
+      "start": 388.1,
+      "end": 467.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=FYrl7iz9_ZU&t=388s",
+      "text": "have to take out an edge, take out an edge and reuse it. Like we cannot just build an edge. We have to take it out from somewhere and we have to reuse it. Now, question comes, which edges can be taken out? Now, why was I able to take out this edge? If I ask you a very simple question, why was I able to take out? Because the moment I took out this edge, the graph was still connected. Rather, the component was still connected. Even if I took out this edge, the component still stays connected. So any extra edges in the component can be used somewhere else. So I'll be like, count the extra edges. How will I do this? It's very simple. I'll tell you, count the extra edges. And once you have done this, once you have done this, since you know, your answer is number of connected components, minus one. If these extra edges somehow are greater than answer, then we can always do it. And our answer will be answered or else the answer will be minus one. Pretty simple. This is the, this is the required amount. If the extra edges is greater than equal to that, that will be the answer. Or I'll"
+    },
+    {
+      "chunk_id": "L174_C7",
+      "start": 467.62,
+      "end": 540.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=FYrl7iz9_ZU&t=467s",
+      "text": "is the required amount. If the extra edges is greater than equal to that, that will be the answer. Or I'll say it's not possible. Makes sense. It does. Right? So now question comes, how do I count the extra edges? And then we have to also figure out the number of components, which is very simple. So in order to count the extra edges, what we will do is we'll write down all the edges. So let's write down all the edges. We have zero one, right? We have zero three, we have zero two, we have one, two, we have two, three. So if you see there's one, two, three, four, five, I've written all the edges, right? And over here, let's write it. It's like four, five and five, six, and we have a seven, eight. Let's quickly start connecting. So which data structure to use? I'm going to ask you, and you're going to tell me this. The data structure, which helps us in connecting dynamically at every step. Yes. This giant set data structure is what we will be using. Anytime you see dynamic connections happening, that's the only data structure which can be used. We don't know about this data structure. I've made a very detailed video on this. Go back and watch it because the code snippet that I've got in that video will be used in every problem, in every problem without a"
+    },
+    {
+      "chunk_id": "L174_C8",
+      "start": 540.86,
+      "end": 619.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=FYrl7iz9_ZU&t=540s",
+      "text": "and watch it because the code snippet that I've got in that video will be used in every problem, in every problem without a shuttle change. Okay. So zero one. Now, what is the initial configuration of this giant set? Everyone alone, everyone alone till eight. So let's quickly write down everyone alone. So initially, this is how the disjoint set configuration will look like. Now let's quickly perform the first connection. Zero and one. Are they connected? No. So go ahead and connect. So I'll go ahead and connect. Perfect. Next, zero and three. Are they connected? No. So go ahead and connect. Amazing. Next, zero and two. Oh, sorry, my bad. Pencil. Zero and two. Are they connected? No. So go ahead and connect. What are you waiting for? So connect. Next, one and two. But wait, one is having an ultimate parent of zero. Two is having an ultimate parent of zero. So I am like, hey, it's already connected. So can I see? I have an extra, I have an extra. So this guy, one, two can be treated as an extra. Fine. Next, two, three. I see two. I see three already connect. Same ultimate parent. So can I see? It's another extra."
+    },
+    {
+      "chunk_id": "L174_C9",
+      "start": 620.02,
+      "end": 698.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=FYrl7iz9_ZU&t=620s",
+      "text": "two, three. I see two. I see three already connect. Same ultimate parent. So can I see? It's another extra. Perfect. Next, four, five. Four and five can be added. Next, five and six. So you can go ahead and say five and six. They'll add it like this. Disjoint set makes sure that you connect it to the ultimate parent. Right. Next, seven and eight. So go and connect it to the seven and eight. Done. At the end of the day, can I say I got two extra edges? Okay. Now the question comes up, how many components? Very simple. Very, very simple. Can I see? We will have only three parents who will be pointing to themselves. We will only be having three parents will be pointing to themselves. So in the parent array, you can just check zero is pointing to zero. Four is pointing to four. Seven is pointing to seven. So anyone who points to himself is an ultimate parent or is a component boss, or it can be counted as a component. So zero for one, two, three. So three components. So the required answer will be two. Do we have two extra edges? Yes, because connected, connected. Two extra edges are there. And the answer is pretty simple. So I hope you understood the entire explanation. So as usual, I'll be coding the C++ solution on the right, and"
+    },
+    {
+      "chunk_id": "L174_C10",
+      "start": 698.46,
+      "end": 766.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=FYrl7iz9_ZU&t=698s",
+      "text": "pretty simple. So I hope you understood the entire explanation. So as usual, I'll be coding the C++ solution on the right, and you can figure out the exact similar Java code on the left. So the snippet of the disjoint set, which I have been teaching throughout this course. So you see, like I'm not making any changes and this is solving almost all the problems. So by the way, edges are given, like we don't need to distort the graph. The edges are already given to us. So let's create the disjoint set. We know for all the nodes we have to create. So we have already written a disjoint set, which makes sure that one based or zero based graphs or all the real structures will be taken care of in this constructor. Okay, cool. What's the next step? We have to count the extras. So let's count the extras, which is very simple. I go across to all the edges. I know I have an edge U which is at ID zero. And I know I have an int V which is ID one. This is something which I know. I have to connect U and V. It's a two nodes. But wait, if the DS says my ultimate parent of U is equal to equal to DS dot ultimate parent of V, they're already connected. If they already are having the same parent, they're connected. So"
+    },
+    {
+      "chunk_id": "L174_C11",
+      "start": 766.86,
+      "end": 839.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=FYrl7iz9_ZU&t=766s",
+      "text": "equal to equal to DS dot ultimate parent of V, they're already connected. If they already are having the same parent, they're connected. So can I say they will go under the count extra? And if they do not, then I go ahead and say, can you do an union by size of U and V? Perfect. Once you've done this, you need to find the number of connected components. So maybe you can just expose this to public so that it can be used outside. And going ahead, what you can do is let's count the connected components. And what you can do is you can go out from zero to n because it is zero based indexing graph. And you can see a DS dot parent of I, if that's he himself, so count C plus plus. Be amazing. What's the next step? If count extras, remember the answer is count C minus one number of connected components minus one. So if this is greater than the answer, I say this is my answer or else I say it is not possible. And I say minus one. So let's quickly compile and see if it is running fine. Okay. It's edge. So slight error. Okay."
+    },
+    {
+      "chunk_id": "L174_C12",
+      "start": 840.02,
+      "end": 885.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=FYrl7iz9_ZU&t=840s",
+      "text": "minus one. So let's quickly compile and see if it is running fine. Okay. It's edge. So slight error. Okay. Does run. Let's quickly submit this and see if it is giving us correct answers. It is. It is giving us correct answers. Looks like they haven't mentioned the case of minus one. I'll ask the problem setter to add it up. So if you have understood everything, please do consider hitting that subscribe button because I was checking out our channel statistics and nearly 50% of the users who watch our video do not hit that subscribe button. So please, please, it's an honest request. Do consider subscribing to us. And if you have understood everything and if you have watched till here, consider hitting the like button as well. And if you have not checked out our DP series and the HD sheet, links are in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye bye. Take care. Don't ever forget your golden."
+    }
+  ]
+}

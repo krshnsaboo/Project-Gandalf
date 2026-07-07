@@ -1,0 +1,64 @@
+{
+  "lecture_id": "L076",
+  "lecture_number": 76,
+  "lecture_title": "L4. Binary Tree Traversals in Binary Tree | BFS | DFS",
+  "youtube_url": "https://www.youtube.com/watch?v=jmy0LaGET1I",
+  "chunks": [
+    {
+      "chunk_id": "L076_C1",
+      "start": 0.0,
+      "end": 77.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=jmy0LaGET1I&t=0s",
+      "text": "So before starting this video, I'd love to thank Relible for sponsoring this entire tree series. Did you know that companies like Google, Apple, Starbucks are now hiring people without any degree or experience? Why? Because they believe that skills are more important than anything else. Now, top companies in India, like the top startups, have also started following this trend by hiring through a platform which is Relible, which is backed up by Anacademy. All you have to do is to give the Relible test and based on your score, send your candidate profiles to 50 plus companies which includes Cred, UpGrad, Vedantu, Razorpay, etc. and you can get selected for a job role within a week. Another amazing thing about Relible is it's absolutely free. So please make sure you check out the links in the description. Hey everyone, welcome to another lecture of Free Cut Tree Series. Now in order to solve any problem on trees, what do you require? You definitely need to traverse in the tree. Otherwise, how will you be able to solve the tree? So in order to traverse in a tree, there are basically a couple of techniques. The first one is the breadth-first search technique while the second one is the depth-first search technique. So let's first understand for this tree, the depth-first search and then I'll explain you the breadth-first search. So what is depth-first search?"
+    },
+    {
+      "chunk_id": "L076_C2",
+      "start": 77.0,
+      "end": 156.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=jmy0LaGET1I&t=77s",
+      "text": "So let's first understand for this tree, the depth-first search and then I'll explain you the breadth-first search. So what is depth-first search? There are basically three types of depth-first search technique. The first one is the in-order traversal technique. The second one is the pre-order traversal while the third one is the post-order traversal. So the first technique is the in-order traversal. It states, go to the extreme left subtree and then apply this logic. Once you've done this, go to the extreme right subtree and then apply this logic. Let's understand by the meaning. So when I say left, which is the extreme left subtree, can I say this is the extreme left subtree if I just draw it in the black marker. This is the extreme left subtree. In this left subtree, apply left, root, right. Left, root, right. So that's how you apply it. Once you've done this, you come to the, left is done, now come to the root. The root is 1. So this is your root. Perfect? Now go to the extreme right. So this is your extreme right. Okay. Once you've gone to the extreme right, what's your next job? Again apply the same logic. Left, root, right. So 6, 3, and 7. So I can say the in-order traversal will be 4, 2, 5, 1, 6, 3, 7. That will be the in-order traversal for this tree."
+    },
+    {
+      "chunk_id": "L076_C3",
+      "start": 156.68,
+      "end": 233.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=jmy0LaGET1I&t=156s",
+      "text": "can say the in-order traversal will be 4, 2, 5, 1, 6, 3, 7. That will be the in-order traversal for this tree. If you did not understand, no issues. I'll be printing the in-order traversal for one more tree. Let's first do the pre-order, post-order, after that I'll do that. Pre-order traversal. Root, left, right. Which is the root? 1. It says go to the left subtree. Left subtree. So this is your left subtree. Okay. In this left subtree, apply the logic root, left, right. Root, left, right. So 2, 4, 5. Root, left is done. Go to the right. So this is your new right subtree. Correct? In this right subtree, root, left, right. Root, left, right. 3, 6, 7. So this will be the pre-order traversal for this tree. So this will be the pre-order traversal for this tree. Again, simple. 1, root, left, left. Then, root, left, right. So root is done, left is done. Go to the right. Again, apply the same logic. Root, left, right. That's the pre-order traversal. Now what about the post-order traversal? It's left, right, root. So basically, left, left. So this is the left subtree. Right? So in this subtree, again apply left, right, root."
+    },
+    {
+      "chunk_id": "L076_C4",
+      "start": 233.24,
+      "end": 312.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=jmy0LaGET1I&t=233s",
+      "text": "So basically, left, left. So this is the left subtree. Right? So in this subtree, again apply left, right, root. So left, right, root. So that's done for the left subtree of the entire tree. Then you go to the right. So this is your right. In this right, apply left, right, root. Left, right, root. 6, 7, 3. Left is done. Right is done. Again, this will be your root. So this will be the post-order traversal for this tree. Now you must be thinking, yeah, names are very confusing. No. I will give you a simple technique. Pre. So whenever there is a pre, root will be there. At starting. Post. Root will be right. After. After. In. In. In. So it will be in between. So that's how you remember the naming conventions. So I've expanded the tree a bit now. Now again, let's try to write the in-order traversal. So I'm saying left, root, right for in-order. Cool. So which is the left subtree now? Can I say this is the left subtree? Yes, indeed, I can say. So in this subtree, which is the left? Can I say this is the left? So this will go as the left. Correct? Now, root. Root is what we need. In this subtree, which is the root? 2 is the root. Perfect. Now on the right we come. So this is the right subtree. Can I say this is the right subtree? Yes."
+    },
+    {
+      "chunk_id": "L076_C5",
+      "start": 313.28,
+      "end": 393.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=jmy0LaGET1I&t=313s",
+      "text": "the root. Perfect. Now on the right we come. So this is the right subtree. Can I say this is the right subtree? Yes. So in this subtree, again apply left, root, right. Left, root, right. So 8 and 5 will go. So I can say if I do this, my job for the left guy is done. That's time for root. So the root will be 1. So left, root, now will come the right. So now in this right, again you'll apply left. So left will be 6. Then root. Then right. So right will be entire this thing. See, right will be entire this thing. Correct? In this, again apply left, root, right. So 9, 7, 10. 9, 7, 10. So this will be the inordered traversal for this modified tree. Let's now understand the preordered traversal for this modified tree. It says root, left, right. Root. Root is this. So root will be 1. Now this is your left tree. This is the left tree. And this is your right tree, right. So in this left tree can I say this is your root. Correct? Now this is your left tree but this is your root. This is your right tree but this is your root. In this tree, can I say this is your left root. So can say the entire left portion is done. Time for right. In this right can I say this is your root. This is your left."
+    },
+    {
+      "chunk_id": "L076_C6",
+      "start": 393.12,
+      "end": 468.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=jmy0LaGET1I&t=393s",
+      "text": "say the entire left portion is done. Time for right. In this right can I say this is your root. This is your left. This is your right. Root, left, right. Root, left, right. 7, 9, 10. So basically you go to the sub-trees and again apply the same formula. Go to the sub-trees and again apply the same formula. That's the funda over here. So let's now do the post-ordered traversal. Says left, right, root. So if I start, which is the left sub-tree? Left sub-tree, right? In this left sub-tree, left, right, root. So left is 4, right is this. In this, left, right, root. So left is 8, right is nothing, so you'll take root. So I can say left is done, right is done, time to take the root. So this is how this sub-tree will be done. Let's come to the right. So in this right, can I say I need a left? Left is 6, I need a right? In this right, left is this, right is this, root is this. So 9, 10, 7. So I've done left, I've done right, time to take the root. Once I've taken the root, left is done, right is done, take the root. So this will be the post-ordered traversal for this modified"
+    },
+    {
+      "chunk_id": "L076_C7",
+      "start": 468.6,
+      "end": 543.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=jmy0LaGET1I&t=468s",
+      "text": "the root, left is done, right is done, take the root. So this will be the post-ordered traversal for this modified version of the tree. So even after this example, if you're still confused or I'm very much sure that you're not still confident about these traversals, I'll give you the best way to be confident. Draw a lot of trees on your copies. And try to write manually. Try writing manually. Go to sub-trees and try writing in order, pre-order, post-order. Do that for around 10 trees and trust me, after you do that for 10 trees, you should be comfortable enough. You will be. So make sure you do that. That was about BFS. Now let's talk about the BFS traversal. So the easier of the two traversals that is the BFS traversal. As the name suggests, breadth first search. Breadth. Breadth. Breadth. Wasn't it easy? Much, much easier than BFS, isn't it? So this is how the BFS traversal is. Basically goes level-wise. These things are called level of a tree. So it goes level-wise. So the breadth first search travels level-wise and the depth first search goes depth-wise."
+    },
+    {
+      "chunk_id": "L076_C8",
+      "start": 543.24,
+      "end": 589.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=jmy0LaGET1I&t=543s",
+      "text": "tree. So it goes level-wise. So the breadth first search travels level-wise and the depth first search goes depth-wise. As you saw, we went deep into the sub-trees and then did width. That is why depth first search and BFS because they go breadth-wise. So that was it about the BFS as well as the In the next set of videos, I'll be discussing the C++ as well as the Java solution for the BFS as well as the BFS traversal. So I hope you have understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye-bye. Take care."
+    }
+  ]
+}

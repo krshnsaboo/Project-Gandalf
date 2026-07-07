@@ -1,0 +1,141 @@
+{
+  "lecture_id": "L100",
+  "lecture_number": 100,
+  "lecture_title": "L28. Maximum Width of Binary Tree | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=ZbybYvcVLks",
+  "chunks": [
+    {
+      "chunk_id": "L100_C1",
+      "start": 0.0,
+      "end": 73.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=0s",
+      "text": "So before starting this video, I'd love to thank Relible for sponsoring this entire tree series. Did you know that companies like Google, Apple, Starbucks are now hiring people without any degree or experience? Why? Because they believe that skills are more important than anything else. Now top companies in India like the top startups have also started following this trend by hiring through a platform which is Relible which is backed up by an academy. All you have to do is to give the Relible test and based on your score, send your candidate profiles to 50 plus companies which includes Scred, Upgrad, Vedantu, Razorpay etc. and you can get selected for a job role within a week. Another amazing thing about Relible is it's absolutely free. So please make sure you check out the links in the description. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be solving finding the maximum width of any given binary tree from the Free Cut Tree series. So let's take this first binary tree to be the second binary tree and the third binary tree. Let's understand the term width of a binary tree. Now when I say width of a binary tree, so what is the definition width?"
+    },
+    {
+      "chunk_id": "L100_C2",
+      "start": 73.08,
+      "end": 150.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=73s",
+      "text": "term width of a binary tree. Now when I say width of a binary tree, so what is the definition width? It basically is the number of nodes between any two nodes. That is what is like the maximum number of nodes in a level. If I just write the definition in a much better way, it will be maximum number of nodes in that particular level between any two nodes. So when I say maximum width, so it is basically among which two nodes on a same level do I have the maximum number of nodes. So let's take this first binary tree as the example. So I can say that the width of this binary tree is nothing but four. Now you'll ask why is this four? Very simple. If I consider this level, yes, this is one node. This is another node. Just imagine there would have been a node. If it has a left, it would have had a left node and this was one of them and then this. So the maximum width in any level of this binary tree one is four. So I can say maximum width of this binary tree is four. Let's consider this example. So over here, I can say that the maximum width of a binary tree is two because if I consider"
+    },
+    {
+      "chunk_id": "L100_C3",
+      "start": 150.28,
+      "end": 224.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=150s",
+      "text": "this example. So over here, I can say that the maximum width of a binary tree is two because if I consider this level, over here I have one, over here I have one. So it's two. I cannot take this because this is a node but on the right I do not have any node. Remember, between any two nodes, so this was one node here, this was one node. So between these two nodes, the number of nodes that is practically possible, that is what I call as width. So let's understand this binary tree three. Pause this video and think what can be the width of this binary tree and if your answer is eight, then you're correct or else you are wrong. Now you might ask why is it eight? It should not be eight. So let's draw this imaginary. Just in case if these two nodes would have had nodes in between them, how did that look like? This would have had an imaginary node in between. This guy would have a right. This guy then would have a here, would have a node here. This guy would have had a left and this guy would have had a left and had a right. And this four would have had a left. So, imaginary had this binary tree three had nodes on every node, like left, right on every node and this is what it would have had."
+    },
+    {
+      "chunk_id": "L100_C4",
+      "start": 224.84,
+      "end": 302.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=224s",
+      "text": "had this binary tree three had nodes on every node, like left, right on every node and this is what it would have had. So on this level, what's the number of nodes it could have between seven and six? I can be like, it is one, two, three, four, five, six, seven, eight. So width is the number of nodes in a level between any two nodes. So hypothetically, there could have been eight nodes if I start from seven to six. So I can say that the maximum width of this binary tree is eight indeed. So if I'm looking to find a width and the maximum width, which traversal should I follow? The width is dependent on the level. So I can say it's basically the number of nodes between the first node in that level and the last node in that level. Ideally, I can say this. So if I'm looking for the first node and the last node in a particular level, which traversal should I think of? I should definitely think of something which is level order traversal. So that's the first thing that comes to your mind that we should definitely follow the level order traversal in order to get the maximum height. Now this is the tree that is given to you. Every node has any random value."
+    },
+    {
+      "chunk_id": "L100_C5",
+      "start": 302.2,
+      "end": 379.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=302s",
+      "text": "order to get the maximum height. Now this is the tree that is given to you. Every node has any random value. But don't you think if the tree was indexed in such a way that this guy was one, this guy was two, this guy was three, this guy was four, this guy was five, this guy was six, this guy was seven, this guy was eight, fourteen, fifteen. So in case I could have, just in case, if I can index the tree like this, don't you think the question becomes very, very simple? Indeed, because what I need to do is go to every level, pick up the first node, like on this level, pick up the first node index, pick up the last node index and just subtract it and add a plus one. I just need to subtract it and add a plus one in order to get the width. That is what I need to do. Again, go to this, take eight, take fifteen, fifteen minus eight plus one, that's eight nodes in between them. So if I can index them, yes, if I can index them such that I can easily, just because of the indexing, I can easily subtract. Now you might ask, will the indexing depend? What if these nodes are not there?"
+    },
+    {
+      "chunk_id": "L100_C6",
+      "start": 379.08,
+      "end": 457.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=379s",
+      "text": "of the indexing, I can easily subtract. Now you might ask, will the indexing depend? What if these nodes are not there? We saw an example where we had something like this, right? Like in our binary tree three, we had something like this. In that case, will we index it like one, two, three, four, five? No. We're going to index something like this only. This will be one, this will be two, this will be three, this will be four, hypothetically this will be seven. I know there is no nodes in between, but we're going to index it in such a way that it holds its value. Hypothetically, there should be some nodes here, but there are no nodes, but still I'm going to index it in the proper format. So if I can index it, then my question becomes very simple. In any level, the first index minus the last index, plus one, in any level, the maximum value of this across levels will be my answer. So the question boils down to a very simple question where I just have to index every node. So the indexing is very simple. Now since we know that the binary tree is something like it has two nodes at maximum, so what we will do is if we are indexing this as one or zero, let's assume we are indexing this as zero."
+    },
+    {
+      "chunk_id": "L100_C7",
+      "start": 457.32,
+      "end": 530.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=457s",
+      "text": "so what we will do is if we are indexing this as one or zero, let's assume we are indexing this as zero. So there are a couple of kinds of indexing generally we do. If it's a zero based indexing that we start off with, and if we're considering a node which is having an index i, the left one will always have an index two into i, whereas the right one will always have an index, sorry, two into i plus one, and the right one will always have two into i plus two. This is when we consider zero based indexing. If you're considering one based indexing, then if this node is having i, then the left guy will have two into i indexing, whereas the right guy will have two into i plus one. That's what it will have if it's a one based indexing. So if I'm taking zero, the left guy will have two into zero plus one. So this becomes first index. The right guy will have two into zero plus two. So this becomes two. For the here, the left guy will have two into one, that's two plus one. So this becomes three. Two into one plus two, this will become four. Two into two plus one, this becomes five. Two into two plus one, this becomes six. Similarly, two into three plus one, this becomes seven. This will become eight."
+    },
+    {
+      "chunk_id": "L100_C8",
+      "start": 530.88,
+      "end": 601.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=530s",
+      "text": "this becomes five. Two into two plus one, this becomes six. Similarly, two into three plus one, this becomes seven. This will become eight. this will become nine, this will become ten, this will become 11, this will become 12, this will become 13, this will become 14. So this is how you can do the zero based indexing. indexing again you could have done a one based indexing also so this is how even if you do not have these nodes like if you do not have these hyperlink just imagine these nodes are not present then also the indexing will be maintained if you follow this format now if you might ask how does this intuition come in it's a very simple like this is generally used in segment trees that is where from this comes in this is used in segment trees from where this logic comes in and it is solely dependent because this node has two nodes and after that we have again two nodes so that is the reason this two into Allah stuff works okay so we have pretty much done this but is this is this the answer no this is not the answer why let me give you a case where this will feel like if you follow this 2 into i plus 1 2 into i plus 2 methodology to assign indexes it's gonna"
+    },
+    {
+      "chunk_id": "L100_C9",
+      "start": 601.72,
+      "end": 678.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=601s",
+      "text": "will feel like if you follow this 2 into i plus 1 2 into i plus 2 methodology to assign indexes it's gonna fail why let me tell you that now imagine this guy is 0 and you do not have any other tree it's a skewed tree so the left guy will definitely have 2 into 0 plus 1 becomes 1 this guy will have 2 into 1 plus 1 so that's 3 this guy will have 2 into 3 plus 1 becomes 6 this guy the next guy will have 2 into 6 plus I hope you are understanding what I'm saying if it's I this becomes 2 into I correct and the next guy will become twice of this realize this twice of this plus 1 right so increasing it by twice by twice by twice so don't you think if it's a skew tree and this length assume like it's a worst length of 10 to the power 5 like the entire length of the tree is 10 to the power 5 the number of nodes is 10 to the power 5 don't you think the the twice increase will be a lot more and it will be an overflow indeed it will be an overflow because if you keep on doing twice of this like it's gonna be 2 to the power somewhere around 10 to the power 5 that's going to give you an overflow because next time"
+    },
+    {
+      "chunk_id": "L100_C10",
+      "start": 678.16,
+      "end": 745.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=678s",
+      "text": "it's gonna be 2 to the power somewhere around 10 to the power 5 that's going to give you an overflow because next time it will be 12 then it'll be 24 25 around there are 50 it's gonna increase and it'll end up giving you overflow so that is the reason we cannot exactly use something as I and 2 into I plus 1 and 2 into I plus 2 we need to modify this in order to prevent overflow and I'm going to tell you how will you modify this so in order to prevent overflow what we will do is if this is 0 right this is going to be 0 so this is definitely going to be 2 into 0 plus 1 this is also going to be 2 into 0 plus 2 so that's 2 now in the next level when I start giving this numbers ideally ideally this should have been 2 into 1 I repeat 2 into 1 plus 1 that's 3 this should have been 4 this should have been 5 and this should have been 6 instead of this yes instead of this I will try to have it as 0 1 2 3 again over here ideally this should have been like ideally it should"
+    },
+    {
+      "chunk_id": "L100_C11",
+      "start": 745.56,
+      "end": 823.0,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=745s",
+      "text": "try to have it as 0 1 2 3 again over here ideally this should have been like ideally it should have been 7 8 9 10 11 12 13 14 but instead of that I'll try to have this as 0 1 2 3 4 5 6 7 so you'll be like how will we do that so in order to reduce this overflow stuff what we will do is now when this node was having a value 1 this had the left as 3 this had the left as 4 right what if instead of 1 I try to make it 0 and the left guy will have a value 1 and 2 so what I'll do is I'll try to convert this into 1 and 2 I'll try to convert this into something as 3 and 4 that's that's what I'll try to do so how can I do that so if I can convert 1 to 0 then I'll get this 1 2 right ideally this 2 should have got 5 and 6 but I want something as 3 and 4 so if I can convert this 2 into 1 then I think I think my job is done I'll get 3 and 4 right so can I say whatever is the minimal in this level that's 1 I'll do 1 minus 1 0 and then I'll get the left"
+    },
+    {
+      "chunk_id": "L100_C12",
+      "start": 823.0,
+      "end": 900.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=823s",
+      "text": "I say whatever is the minimal in this level that's 1 I'll do 1 minus 1 0 and then I'll get the left children and the right children according to the formula of 2 into i plus 1 and similarly I'll do 2 minus 1 equal to 1 and then I'll get the left children 3 and the right children 4 similarly if I take this 1 and I do 1 minus 1 I'll get 0 then the left children will become 1 and the right childish 1 will become 2 this 2 I can do 2 minus 1 equal to 1 and then the left children will become 3 and the right channel become fold similarly this will become 3 minus 1 2 and the left children will become 5 and the right children will become 6 similarly this can be made 4 minus 1 equal to 3 as the left children will become 7 and the right children will become 8 so can I see that if I do this change I'll end up making everyone like I end up making everyone in terms of 1 2 3 4 and if I want the next children's that's very simple 2 minus whatever is the minimal this will be your value of I for getting 2i plus 1 and for getting 2i plus 2 that's going to be your value you can easily compute I so I think I have solved the issue of I think I've solved"
+    },
+    {
+      "chunk_id": "L100_C13",
+      "start": 900.76,
+      "end": 969.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=900s",
+      "text": "that's going to be your value you can easily compute I so I think I have solved the issue of I think I've solved the issue of overflowing I think I have solved the issue of overflowing if there is a I just make sure you make I equal to I minus whatever is the minimal value on that level and after that once you've got I minus minimal treat this I to get 2 into I plus 1 and 2 into I plus 2 and after that it's very simple on every level take the minimal like take the leftmost guy take the maximum index and just subtract it and plus 1 will be your answer so in order to solve this problem we are going to do a level order traversal so what we will do is we'll take a Q data structure and we're gonna store a pair so first I'll store the root of the tree as well as the index that we are going to start off with so I'm gonna start off with the zeroth index as to 1 comma 0 so initially when I start off with this I have a single node in this level so I'll just pick up this entire stuff so I have the node 1 with the level sorry with the index 0 so since I have one node can I say that my width as of now yes my width will be the"
+    },
+    {
+      "chunk_id": "L100_C14",
+      "start": 969.7,
+      "end": 1033.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=969s",
+      "text": "the index 0 so since I have one node can I say that my width as of now yes my width will be the maximum width that I can have is 1 because this is the first guy itself and this is the last guy itself and if you remember the formula was very simple the last index minus the first index plus 1 since the last guy and first guy are equal they'll cancel of each other and I'll have plus 1 so the width is 1 right now what you need to do is you need to get the left guy with the left guy guys the left guy will be 3 so you take that 3 and will be the index the left guy will have an index of 2 into 0 plus 1 that's 1 so 3 comma 1 will go in the right guy will have an index of 2 into 0 plus 2 so 7 comma 2 will go in that is what I'll enter into the Q data structure so once I'm done with this this is done next time I will do the next iteration on the number of nodes available in the queue so basically I have 3 comma 1 and I have 7 comma 2 so I can say this guy this guy since we are doing a level order traversal this guy will be the leftmost guy with the index 1 this guy will be the rightmost guy"
+    },
+    {
+      "chunk_id": "L100_C15",
+      "start": 1033.38,
+      "end": 1095.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=1033s",
+      "text": "are doing a level order traversal this guy will be the leftmost guy with the index 1 this guy will be the rightmost guy with the index 2 so since I know the formula is last minus first so 2 minus 1 plus 1 that's that means our width of 2 so the width of 2 will be like we will increase the width to 2 because we got a width which is better now for 3 which is the left guy the left guy is 8 the right guy we do not have a right guy so if you remember we will not consider 1 instead we will take 1 minus 1 equal to 0 so that we do not have an overflow so 1 minus 1 is 0 so this guy will have 2 into 0 plus 1 so 8 comma 1 so indexing will start from 1 so I will have something as 8 comma 1 so the right doesn't have like we do not have a right so let's have for this guy have a left so this will be 7 doesn't have a left so let's have a right so when we have a right we have a 4 comma or in the next again we will not consider 2 indeed we will consider 2 minus 1 yes whatever is the minimal on this level like minimum index is 1 so we'll take this and we'll"
+    },
+    {
+      "chunk_id": "L100_C16",
+      "start": 1095.98,
+      "end": 1153.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=1095s",
+      "text": "will consider 2 minus 1 yes whatever is the minimal on this level like minimum index is 1 so we'll take this and we'll get a 1 so 2 into 1 plus 2 is right right so that's gonna be 4 so you're gonna take this so over here we will have 4 comma 4 as the next so again this level is done so I can say that this level has been completed so in the next set of iteration we will take the next set of nodes that are in the queue so I will have an 8 comma 1 and I'll have a 4 comma 4 so if you can see that this was indexed as 1 and this is indexed as 4 so you have made sure that we do not have an overflow because always the indexing is starting from 1 and going till 4 so if you have an 8 comma 1 we do not have a left we do not have a right similarly we do not have a left we do not have a right so nothing new will come and in order to get the width you'll take the minimal guy that's the first guy which is 1 you'll take the last guy that's over here 4, 4 minus 1 is 3 plus 1 is the maximum width becomes 4 so I can say that the maximum"
+    },
+    {
+      "chunk_id": "L100_C17",
+      "start": 1153.58,
+      "end": 1219.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=1153s",
+      "text": "over here 4, 4 minus 1 is 3 plus 1 is the maximum width becomes 4 so I can say that the maximum width for this given binary tree comes out to be 4 which I can definitely print so I hope you have understood how to do a level order traversal and how to make sure that you do not end up having overflows so guys it's time to discuss the C++ as well as the Java code as you know the C++ code is on the left and the Java code is on the right so it's identical so you can definitely follow you are given a root right and if the root is null there there will be no width so you'll be returning 0 and what we will assign is an answer which is going to store the maximum width we're going to take a queue of pair we're going to take the tree node and int in Java I have created this pair class so what we will initially have Q as the root and 0 and we are going to iterate till the queue is not empty so let's iterate till the queue is not empty and what we always did was whatever is on the queue we were taking it right so this for loop will be used for that like whatever is the size of the queue we're"
+    },
+    {
+      "chunk_id": "L100_C18",
+      "start": 1219.42,
+      "end": 1291.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=1219s",
+      "text": "we were taking it right so this for loop will be used for that like whatever is the size of the queue we're going to iterate on all the elements yes we're going to iterate on all the elements so what I have done is I have taken the first guy yes whichever is the first guy I have taken that index so I have the minimum index possible on that level right and right after that I made sure that the current index is nothing but is current index will always be the subtraction by a min so basically if it is having something as 2 I'll make sure that the current index is subtracted by the minimal that's 1 okay so you can argue that it will always be 1 but it will not be imagine if you have a tree which is something like this so in that case on this level this will not be starting with 1 this will not be starting with 1 it will be 2 so the minimal on the level will always not be 1 it might be 2 it might be 3 it can be anything so please make sure you subtract okay just in order to avoid overflow so once you've subtracted very simple just take the node and if there is a left you take the node left and after subtraction into 2 plus 1 after subtraction into 2 plus 2 for the right"
+    },
+    {
+      "chunk_id": "L100_C19",
+      "start": 1291.5,
+      "end": 1354.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=ZbybYvcVLks&t=1291s",
+      "text": "is a left you take the node left and after subtraction into 2 plus 1 after subtraction into 2 plus 2 for the right guy now always make sure you store the first guy and the second guy okay so the first guy and the last guy and right after this entire like you have traversed for all the elements you will have your last guy first guy subtracted plus 1 compared with max answer and at the end return the answer which is going to be your ultimate answer and complexity since you're doing a level order traversal it's going to be B go off n space complexity using a q data structure so big off and near about so that's that is what the time complexity and space complexity will be for this particular solution so I hope you've understood the entire explanation as well as the code just in case you did please please please make sure you like this video because it took a lot of efforts to make this entire tree series also if you wish you can definitely drop in a comment that will keep motivating me to make such further series also if you're new to the channel please do consider subscribing because I'm going to bring in such more series in the upcoming future as well with this let's wrap up this video let's meet in the next lecture bye bye take care"
+    }
+  ]
+}

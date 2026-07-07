@@ -1,0 +1,127 @@
+{
+  "lecture_id": "L280",
+  "lecture_number": 280,
+  "lecture_title": "L9. Binary Subarrays With Sum | 2 Pointers and Sliding Window Playlist",
+  "youtube_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM",
+  "chunks": [
+    {
+      "chunk_id": "L280_C1",
+      "start": 0.0,
+      "end": 78.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=0s",
+      "text": "So, let's continue with the two pointer slash sliding window playlist from the strivers A to Z DLC course. But before starting, hey, welcome back to the channel. I hope you guys are doing extremely well. So, the problem that we will be solving today is binary subarrays with sum. But before starting off with this problem, please, please go back and watch my video on count subarray where the sum equals k. Now this is a problem that I have already done in the arrays and the hashing playlist. Please go back and watch it. So I'm assuming that you have seen that video. So let's understand what is the current problem stating. It is stating that you will be given an array. The array will be a binary array. That means it will be containing one and zeros in it. And it will also be given an integer goal. Now your task is to compute the number of subarrays. What is subarrays? A consecutive portion of an array, right? So you'll have to compute the total number of subarrays where the sum is equivalent to this particular given goal. So let's pick up one of the subarrays. If I pick up this subarray, the sum of the subarray is one."
+    },
+    {
+      "chunk_id": "L280_C2",
+      "start": 78.48,
+      "end": 154.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=78s",
+      "text": "So let's pick up one of the subarrays. If I pick up this subarray, the sum of the subarray is one. So this is not equivalent to the goal. So you cannot count it. So which subarrays can I count? Probably I can count this one. So if I take this one, the sum is two. So I have one subarray, right? Can I take this one? Yes, because the sum is again two. So the count is two now. Can I take this subarray? Yes, I can. So I have three subarrays. Can I take this one? Yes, I can. I have four subarrays. Do I see anything else? No, I don't see any other subarray. So in total, there are four subarrays and this is what you return. And you might be thinking, hey, Stryver, it is the exact same problem because the problem counts subarray where the sum is equivalent to the given k. It is the exact same problem. Now in this problem, it was given that the array can have positive as well as negative integers. So we did a brute, we did a better and the most optimal solution was the hashing solution, right? Which was taking a time complexity of big O of n and a space complexity of big O of n. Again, I'm assuming that the map is working in big O of one."
+    },
+    {
+      "chunk_id": "L280_C3",
+      "start": 154.08,
+      "end": 228.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=154s",
+      "text": "n and a space complexity of big O of n. Again, I'm assuming that the map is working in big O of one. If you assume that the map takes logarithmic of n, you can add that as well. So this was the most optimal solution. This most optimal solution will also work for this particular problem statement. But over here, it is mentioned that it is a binary array. So what we can do is we can further optimize it. This particular solution was working for positive and negative, but we can still further optimize. The only reason is we're given a special condition that the array contains one and zeros in it. Now if I'm looking to optimize a time complexity of big O of n and a space complexity of big O of n. I definitely cannot optimize big O of n time because I have n elements. I cannot do better than that. That's for sure. So the only place that I can optimize is the space. Can I get rid of the external map that I was using? Again I'm assuming that you have seen that video. So that is why I'm referencing like that. So I'll have to get rid of that map data structure. So that is where the optimization will come in. Okay, so if I get rid of the map, so I'm looking at a time complexity of big O of n and a space"
+    },
+    {
+      "chunk_id": "L280_C4",
+      "start": 228.96,
+      "end": 307.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=228s",
+      "text": "Okay, so if I get rid of the map, so I'm looking at a time complexity of big O of n and a space complexity of big O of one and the problem is involving sub-arrays. So if I'm not using external data structures, which algorithm comes to your brain? Yes, the two pointer and the sliding window. That is where I have to think. But wait, whatever problems I've done till now has been something like finding the longest sub-array or a substring. But this is slightly different. Over here the problem is finding the number of sub-arrays with a given sum. Number of sub-arrays, you have to count. You don't have to find the longest, you have to count. So how can I do it? First of all, let's try to analyze how the sliding window and two pointer works and see if can like if at all can we solve it by two pointer or sliding window. So let's take an example where it is something like one, double zero, one, one, zero and the goal is two. So what do we do generally in two pointer? We take a L point, we take a L, we take a R and we make it stand at the first place. We're looking for a sum of the segment and we are also looking for the count of sub-arrays. So let's initially have it as zero. So initially I'm standing at this element."
+    },
+    {
+      "chunk_id": "L280_C5",
+      "start": 307.14,
+      "end": 372.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=307s",
+      "text": "and we are also looking for the count of sub-arrays. So let's initially have it as zero. So initially I'm standing at this element. So this is the segment itself. So can I take this number and add it to the sum? I can. Once I've added it to the sum, is it equivalent to the goal? It is not. So what I can do is I can go ahead and take this R and move forward. At the moment I move it forward, I get a zero. I can add it to the sum, no change. Sum is, the sum is no more equivalent to the goal. So what I do is I again move the R. Again the segment will not have it. So I'll again take the R and I'll move it forward. This is the moment I'll add it to the sum and the sum will be two. And this is the entire segment. Correct? And the sum is two, which is equivalent to the goal. So I can say that this is definitely a sub-array. Right? Can I count this? I can. Once you've counted it, now what is your next step? We'll straight away take this R and you'll move it ahead. Isn't it? Right? So I moved it ahead. I have a one. So what you can do is you can add it to your sum and your sum is three."
+    },
+    {
+      "chunk_id": "L280_C6",
+      "start": 372.76,
+      "end": 443.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=372s",
+      "text": "ahead. I have a one. So what you can do is you can add it to your sum and your sum is three. Now this is the moment you look for the segment and the sum is three, which is not equivalent to the goal, but the sum has exceeded the goal. So thereby, if you keep on adding numbers, you keep on adding numbers to the window, the sum will increase. You'll have to decrease the sum because the sum has exceeded the goal. So if I have to decrease, I'll have to eliminate numbers from the left. I have to shrink the window. Shrink the window. I'm looking to shrink the window. The first element that I'll remove is this one. So if I remove this one, what will happen is the sum will again shrink back to two and the L will be over here. Now this is where I can say that, hey, is this segment a valid one? It is because the sum is two. Can I have a count? I can have a count. So I can count this as well. Now ideally what I will do is because the sum is equivalent, I'll take the R and I'll move ahead. If I do this, what happens is you did consider this segment, right? You did consider this segment, but it could have also considered this segment, right? You could have also considered this segment, but you didn't because you made sure that"
+    },
+    {
+      "chunk_id": "L280_C7",
+      "start": 443.44,
+      "end": 517.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=443s",
+      "text": "but it could have also considered this segment, right? You could have also considered this segment, but you didn't because you made sure that the L was standing. Now you might be thinking, okay, keep moving L, keep moving L. Okay. It doesn't work like that. If you keep moving L, what will happen is you'll miss out on this segment. This is also a valid segment, right? And you move R and you move R and you keep the L here. This is a valid segment, correct? So we are not sure. We are not sure whether to move L or whether to move R. We are in dilemma, right? So I know one thing for sure. As of now, I cannot, I cannot figure out where to move L and R. I'm looking for a sum equivalent to the goal because it's saying equal to, it's saying equal to. And why is the problem coming up? Because we have zeros. On removing zeros, sum is not getting affected. That is where the problem is coming up. Okay. So we need to find a better solution. If I know that I cannot solve this problem to find out the exact sum equivalent to goal, can I do this? Can I do this? Let's try to solve a different problem and see if I can figure out a sliding window solution to it."
+    },
+    {
+      "chunk_id": "L280_C8",
+      "start": 517.42,
+      "end": 595.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=517s",
+      "text": "I do this? Let's try to solve a different problem and see if I can figure out a sliding window solution to it. Can I figure out the number of sub-arrays where the sum is lesser than equal to goal? I know that the problem is asking you to find equal to goal, but I'll try to solve it for lesser than equal to goal. And again, I'll try, again, I'll try the same method. Let's take an L, let's take an R because we know this, this is how we deal with windows. We will take sum, my bad, we will take sum and that can be initially zero and we will take count and that can also be initially zero. So where am I standing? I'm standing at this segment so I can add it to the sum. Is that lesser than equal to goal is my very simple question to you. Is this lesser than equal to goal? It is. So can I say this segment is a valid segment? I'm like, yes, this is a valid segment. And if it is, increase the count. Perfect. And what is the next one? I'll take the R and I'll move it here. Now this is where you need to apply some mathematics. I'm asking you a very simple question. When you move it to here, you add it to the sum, the sum still stays as one and this is"
+    },
+    {
+      "chunk_id": "L280_C9",
+      "start": 595.42,
+      "end": 672.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=595s",
+      "text": "very simple question. When you move it to here, you add it to the sum, the sum still stays as one and this is lesser than equal to goal. Now if, if, if the sum is lesser than equal to goal, even after adding an element, can I say that element individually, can I say that element individually can be a subarray where the sum is lesser than equal to goal? I can, I can. So this element individually is a subarray as well as this element can combine with the left element. So I can say I have two subarrays. I can say two subarrays where the sum is lesser than equal to goal. One is the zero itself. One is the one zero. Agreed. So I add another two. Okay. What is the next step? I'll move R. The moment I move R, sum will not change. Sum will not change and the sum is still lesser than equal to goal. Why did that happen? Because the element in itself is not allowing it to exceed more than goal. Okay. So can I say this element individually can be a subarray? I'm like, yeah, can be a subarray. I'm very sure. Okay. Can this be a subarray? It can. Can this be a subarray? Yes. So what I'm trying to do is I'm adding this element."
+    },
+    {
+      "chunk_id": "L280_C10",
+      "start": 672.94,
+      "end": 751.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=672s",
+      "text": "be a subarray? It can. Can this be a subarray? Yes. So what I'm trying to do is I'm adding this element. If I'm adding this element, I'm trying to figure out how many subarrays this element can form with the previous valid answer. And that is one itself, two and three. That's nothing but the length, the length. So I add three more to the answer. Perfect. Let's move R. So this is where I move R and this reaches one and the sum gets updated to two. Now this time what happened? The sum is still lesser than equal to goal. The sum is still lesser than equal to goal. Okay. So I'm very sure that this element in itself is possible, is possible. If this is possible, how many subarrays can it form? I already have a valid, I already have a valid segment. So one, two, three and a four. I can form four, which is typically the length, which is typically the length. Okay. Perfect. What is the next step? Now this is when you start understanding. I'm going over here, the sum gets increased to three. Now when the sum gets increased to three, what happens this time is I'm saying, Hey, on adding this, no, no, no. You'll have to shrink. You'll have to shrink. I won't undergo, I won't undergo."
+    },
+    {
+      "chunk_id": "L280_C11",
+      "start": 751.22,
+      "end": 827.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=751s",
+      "text": "saying, Hey, on adding this, no, no, no. You'll have to shrink. You'll have to shrink. I won't undergo, I won't undergo. This three is exceeding, exceeding. So I'm like, okay, okay. Let's try to make a valid segment. So I'm like, can I just take it off? Take it off. If we take it off, the sum decreases and the L will go ahead. And now you stop. Why do you stop? Because this is less than two. So you stop. Now, when you're stopping, now you can definitely say that this entire segment is a valid one. This entire segment is a valid one, right? And can I say that this is one subarray? This is another, this is another. And this is another. I can. So I again have four subarrays. And you might have a question. Hey, hey, hey, wait, did you consider this? We did. We did. Did you consider this? We did. When we were standing at zero, when the R was at zero, I considered this. You remember, I considered zero and then I considered this. When I was standing here, I considered this. I considered this. I considered this. I've already considered these subarrays. Perfect. Wow. Next, I'll take R and I'll move it here. So on moving it here, it's still valid. It's still valid because the sum is still less than equal to gold."
+    },
+    {
+      "chunk_id": "L280_C12",
+      "start": 827.36,
+      "end": 903.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=827s",
+      "text": "it here. So on moving it here, it's still valid. It's still valid because the sum is still less than equal to gold. So again, you'll add the length and this will be your overall count. And right after the step, what will happen is R will move out of the boundary and you will be stopping. So now I know one thing for sure. How many subarrays are there that is less than equal to gold? I know that. I know an algorithm to find it. Correct? So I'll try to write this algorithm and after that I'll see how can I find an answer for sum equal to equal to gold because that is what we'll have to solve. Let's try to write down the algorithm. Can I say, maybe I'll write a function and the function will be taking a list of integers. Let's call it nums and it will be taking a gold. What is the first step? I need an L which is zero. I need R which is zero. I need a sum which is zero. Do I need anything else? Yeah, I definitely need a count. Count is zero. What I can do is I can start like while R lesser than equal to something like nums.size. I can do that. Perfect. Okay, I've done that. Okay, I've done that. What is the next thing that I'll do?"
+    },
+    {
+      "chunk_id": "L280_C13",
+      "start": 903.74,
+      "end": 978.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=903s",
+      "text": "like nums.size. I can do that. Perfect. Okay, I've done that. Okay, I've done that. What is the next thing that I'll do? The next thing that I'll do is I'll be like sum plus equal to nums of R. I know it. And after this, I'll add it to the answer. Only if I can combine the while and the check. If the sum by any means exceeds the gold, then you know what to do. You will be taking out from the back. You will be shrinking it, which is nums of L and you can do L equal to L plus one. So what I've done is I've combined a conditional check with a while loop because if this is true, it will keep removing. And if it is not true, it will go ahead and add your valid segments. How many valid segments will you get? We did see it was the count. It was the count that was added and the count is R minus L plus one. Remember, we always, if L was here, R was here, we said one, two and three. That's not nothing but the count R minus L plus one. So I've added this."
+    },
+    {
+      "chunk_id": "L280_C14",
+      "start": 978.9,
+      "end": 1058.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=978s",
+      "text": "said one, two and three. That's not nothing but the count R minus L plus one. So I've added this. Once I've added this, you can do R equal to R plus one and the while loop can end over here. There is an edge case. Please make sure if not here, please make sure if the goal is less than zero, you can return zero again. At the starting, I said the goal will be from zero to N. I'm writing this edge case for a specific reason. You'll understand in the next step. In case your goal is under zero because the elements in the array are one and zero. So you can never achieve any subarray where the goal is lesser than zero. This case will come up when we'll understand. Okay. So I know one thing for sure. I have an algorithm that tells me how many subarrays for a sum lesser than equal to goal. What am I looking for? Sum equal to equal to goal. Can I apply simple mathematics and say, Hey, for this, the answer will be, I can call the function with the nums array and I can ask him to find how many are lesser than equal to goal. It will give me right."
+    },
+    {
+      "chunk_id": "L280_C15",
+      "start": 1058.54,
+      "end": 1138.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=1058s",
+      "text": "array and I can ask him to find how many are lesser than equal to goal. It will give me right. And then I can subtract with how many are with goal minus one. Isn't that will work because if I can get, because if I can get how many are lesser than equal to goal and how many are lesser than equal to goal minus one, and if I can subtract them, that will be equivalent to goal. That will be, isn't it? And that is why I introduced this condition. If the goal is given as zero, whenever you write zero minus one, this will be minus one. That's when this condition will come into effect. I hope this is clear. This is a very, very simple condition. Very simple maths. Just say that's it. And that will be the answer. If I have to deduce the time complexity, let's first figure out the time complexity for the function over here. We have a big O of n for sure. And then there's a while loop, which is excluding, which is excluding something. Now overall, overall, it might be running for like, if you sum it up throughout the course of this while loop, this might run for big O of n throughout, not at an individual"
+    },
+    {
+      "chunk_id": "L280_C16",
+      "start": 1138.12,
+      "end": 1216.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=1138s",
+      "text": "up throughout the course of this while loop, this might run for big O of n throughout, not at an individual occurrence. So, can I say the time complexity of this function is big O of 2n at the worst possible scenario? And the space complexity is big O of 1. And this is the worst possible test case. It is not going to happen every now and then. And I'm calling it for two times. So can I say big O of 2 into 2n will be the time complexity and the space complexity will be big O of 1. So I've optimized my space complexity. Yes, I've compromised a bit on the time, but again, it will be only for extreme bad test cases, not for everything. So this will be the most optimal solution. I'm not discussing the brute better because we have seen this particular video, you can figure out what is the brute and better. The brute will be generating all the sub-arrays and the better will be the hashing solution. And this can be the optimal solution. And in case you want the codes, you can find them below. So I hope you understood it and that will be it for this one. So if you're still now watching and if you understood everything, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video."
+    },
+    {
+      "chunk_id": "L280_C17",
+      "start": 1216.2,
+      "end": 1219.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=XnMdNUkX6VM&t=1216s",
+      "text": "us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, goodbye, take care. Whenever your heart is broken, don't ever forget your golden. I will find a light in you."
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "lecture_id": "L168",
+  "lecture_number": 168,
+  "lecture_title": "G-43. Find the City With the Smallest Number of Neighbours at a Threshold Distance",
+  "youtube_url": "https://www.youtube.com/watch?v=PwMVNSJ5SLI",
+  "chunks": [
+    {
+      "chunk_id": "L168_C1",
+      "start": 0.0,
+      "end": 77.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=PwMVNSJ5SLI&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So in this video we are going to solve the problem city with the smallest number of neighbors at a threshold distance. So what does the problem state? The problem states there are n cities numbered from zero to n minus one given the array edges where edges I will be a couple where we will be having a from two and a wheat which is basically representing an edge from two with a particular weight. Okay. Now you'll also be given an integer distance threshold. You need to find out a city with the smallest number of cities that are reachable through some part and those distances at most very important at most threshold distance. If there are multiple such cities, again, very important. Our answer will be the city with the greatest number. So let's understand what does the question state. Imagine this is an undirected graph and I'm giving you the threshold board. So if I ask you from city zero, this is the city zero. If you want to go city one, what will be the shortest part that you'll take? That will be with a distance of three. Is that under the threshold?"
+    },
+    {
+      "chunk_id": "L168_C2",
+      "start": 77.96,
+      "end": 149.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=PwMVNSJ5SLI&t=77s",
+      "text": "will be the shortest part that you'll take? That will be with a distance of three. Is that under the threshold? It is. So I can say I can reach from zero to one under the threshold. Okay. Now let's try to reach two. Can I reach two under the threshold? The threshold is four and I'm taking exactly four. That is okay because you have been clearly told at most we can use the threshold value. So in order to reach from zero to two, I'm using three plus one, which is four. So I can also reach two. So can I say I can also go to two? Yes, I can. Perfect. Now let's look from zero to the other one. Three. So if I try to go to three in the shortest possible path, this is the one which is going to take five, which is crossing the threshold. So I cannot go from city zero to city three under like at most with the threshold value. So city three will not be counted. So as of now from city zero, we can go to one and two. Similarly, from one, where can you go? Let's look at it from one. You can go to zero because it will take a three distance. I can go to zero from one. I can go to two as well, which is going to take me one, which is again under the threshold. I can also go to three. Why?"
+    },
+    {
+      "chunk_id": "L168_C3",
+      "start": 149.64,
+      "end": 220.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=PwMVNSJ5SLI&t=149s",
+      "text": "go to two as well, which is going to take me one, which is again under the threshold. I can also go to three. Why? Because if I take this path, it's going to take a total costing of two, which is under the threshold. So similarly, we can figure out for two and three. So I'll just copy paste for two. It's zero one three and four three. It is going to be one two. So I figured out for every city with cities I can travel with this at most threshold distance value. So we can see we have two cities with the lowest number of cities that I can travel to. Like from zero, I can just travel to two cities from three. I can travel to two cities, but from one and two, I can travel to three cities. So I need to figure out the lowest number of cities that I can travel to. So I see these two are the options, either zero or either three, because these are the lowest link, which can just go to the lowest number of cities from here. Now, if there are multiple such options, you choose the largest one, which is the largest one, three. So your answer comes down to be three. So this is what the question states. You have to give me this. You have to give me the note or the city number"
+    },
+    {
+      "chunk_id": "L168_C4",
+      "start": 220.08,
+      "end": 291.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=PwMVNSJ5SLI&t=220s",
+      "text": "So this is what the question states. You have to give me this. You have to give me the note or the city number from where you can go to the least number of cities with at most. Yes, very important at most this particular threshold value. So in order to solve this particular problem, there is a prerequisite. Please go back and watch Floyd Warshall algorithm. So if you have not seen the Floyd Warshall algorithm, you have to watch it. So in the previous video, explain the Floyd Warshall. But if you watch the Floyd Warshall algorithm, you know from every city from zero to all the cities, how can you get the distance from one to all the cities? How can you get the distance from two to all the cities again? How can you get the distance similarly from three to all the cities? How can you get the how can you get the distance that is using the Floyd Warshall algorithm if you remember? So if you have seen the video of Floyd Warshall algorithm, you know that Floyd Warshall algorithm helps us to generate a 2d matrix. Yes. Where? When I see from zero, you want to go to three, the shortest distance value will be stored here. If you want to find from two in order to go to two, the shortest distance will be stored here. If you want to find from three to one, the shortest distance will be stored here."
+    },
+    {
+      "chunk_id": "L168_C5",
+      "start": 291.54,
+      "end": 366.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=PwMVNSJ5SLI&t=291s",
+      "text": "to two, the shortest distance will be stored here. If you want to find from three to one, the shortest distance will be stored here. So Floyd Warshall will help us to generate this. So let's quickly generate this particular. So I have filled up the 2d matrix and this is how it looks. So for the city zero, in order to go to city zero, city one, city two, city three, these are the distance from city one in order to go to city zero, one, two, three, these are the distance. Similarly, for two, these are the distance. Similarly, for three, these are the distance. So I've filled up all the distance. Now what I can do is I can definitely keep a counter equal to zero. Okay. And let's keep something as counter max is counter max equal to something like the maximum number of cities possible or something more than that. So over here we have four cities. So let's assume we keep five. Yes, let's assume we keep five and let's assume we keep city equal to minus one initially because as of now, no city has been found. So at first we'll do an iteration on the city zero. We have a threshold of four. So zero, okay. Under the threshold count one, three under the threshold count to four under the threshold count three. Okay. Five not under the threshold. So no more counts."
+    },
+    {
+      "chunk_id": "L168_C6",
+      "start": 366.36,
+      "end": 440.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=PwMVNSJ5SLI&t=366s",
+      "text": "count one, three under the threshold count to four under the threshold count three. Okay. Five not under the threshold. So no more counts. So we got a count of three cities, which includes himself as well. So that is okay because zero to zero is himself, which is okay. So we have three cities, which includes itself, which are under or at most with a threshold value of four. Now we had assigned five, which is the maximum. So you got someone better. We got less a number of cities under the threshold. So I can say, okay, three to be updated. And the city that I got is zero. Perfect. Let's go to the city one, three under the threshold, zero under the threshold, one under the threshold, two under the threshold. So four cities, including one to one itself, four cities under the threshold or at most the threshold, right? So what is the least that I've got till now? That is three, correct? We have four. So should we know because we are looking for minimum number of cities, which takes at most this threshold. So not to be considered next city to threshold, threshold, threshold. Threshold."
+    },
+    {
+      "chunk_id": "L168_C7",
+      "start": 440.46,
+      "end": 515.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=PwMVNSJ5SLI&t=440s",
+      "text": "of cities, which takes at most this threshold. So not to be considered next city to threshold, threshold, threshold. Threshold. Four cities again, not to be considered next three, not threshold, threshold, threshold, threshold, count three similar. But if you remember, if we have similar, we take the bigger city. So we will keep it as three or we will replace three by three, your wish. And we replace the city by the bigger one, which is three. If it is equal, you replace the city index as well. So at the end of the day, once I've iterated all the cities, I know that city three is my answer. And that is what you have to return. You have to just find the city, not how many are less. If how many are less than you have to subtract one because we are counting themselves as well. Because when we did, we did count three to three as well. We did count zero to zero as well, which will always be zero. So make sure you do this. If the question states how many cities, but as of now, the question states which city. So this is definitely going to work. So I hope you have understood the entire explanation. Now it's time to put it up. So we see find city and given an M edges distance threshold. So what I'll go ahead and do is I'll create the distance area first."
+    },
+    {
+      "chunk_id": "L168_C8",
+      "start": 515.02,
+      "end": 592.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=PwMVNSJ5SLI&t=515s",
+      "text": "see find city and given an M edges distance threshold. So what I'll go ahead and do is I'll create the distance area first. I know it'll be N cross N size. And initially we will fill it with intermax or one nine, whichever you wish to. Next, I will go across all the edges. I'll see. Okay. Let's distance of I T zero, because this is where from the, like it's a bidirectional edge. So fill it both the ways. It's a bidirectional edge count. Remember this guys, you have to fill it both the ways. Okay. So you put one and then you see I T of zero and then you can say I T of two. So I filled up the bidirectional edge both ways. Now I know one thing from itself to itself that is zero. So you have filled that as well. Right. Now let's quickly get the Floyd Warshall algorithm working. So we know the Floyd Warshall has a via like via this edge, then via this node rather. And then it has an I loop and then it has a J loop. If you remember properly. Now I know one thing, if, if very, very important point to write, if distance of I K, that means it's not reachable, which means it will be into max."
+    },
+    {
+      "chunk_id": "L168_C9",
+      "start": 592.78,
+      "end": 667.14,
+      "timestamp_url": "https://www.youtube.com/watch?v=PwMVNSJ5SLI&t=592s",
+      "text": "very important point to write, if distance of I K, that means it's not reachable, which means it will be into max. If it's not reachable or, or distance of KG, if it's also not reachable, there is no need to take them into account. Remember this. There is no need to take them into account. And you can say, continue. I'm not concerned because if by this, that is, it's not reachable. It doesn't make sense. Otherwise I'll be like, okay, if it is not, then I can go ahead and write distance of I K plus distance of K G simple. And I can see the entire Floyd Warshall algorithm is ready. And we have the shortest distance stored in the distance. Okay. Now what is the next thing I need? The count of city as you initially does this. And then I can say, I need the city number. Assume initially it is minus one. Now let's go across all the cities. So the first city is zero and we will go across till this. And then I can be like, okay, I need to adjust in city. So adjacent city will be from zero and adjacent city will be going on from here. Perfect. And now I can say, this is the city, this is the adjacent city. So the distance will be city to adjacent city."
+    },
+    {
+      "chunk_id": "L168_C10",
+      "start": 667.14,
+      "end": 733.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=PwMVNSJ5SLI&t=667s",
+      "text": "And now I can say, this is the city, this is the adjacent city. So the distance will be city to adjacent city. So the Floyd Warshall tells me if it is less than the given threshold, can I do a counter plus plus, but I need a counter. I need a counter, which is for every city. So probably we can assign it here. This is for every city. Now once this counter has been computed, can I save the count of city is less than the count of the city. I can go ahead and say less than equal to, because largest city is what we need. So the count of city can be written as town and the city number can be written as the city. Once you've done everything, you can go ahead and say, okay, city is what I am. I will be returning the city number and I'll quickly compile and see if it is working fine. It is let's submit this and see if all the test cases are passing or not. All the test cases are passing. So I have solved this problem using the Floyd Warshall algorithm. I'll give you a small assignment. I have done this problem using the Floyd Warshall. That's your time to do it using the Dijkstra's algorithm. You know what is it? Dijkstra's algorithm. I've already done a lot of problems on it."
+    },
+    {
+      "chunk_id": "L168_C11",
+      "start": 733.58,
+      "end": 767.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=PwMVNSJ5SLI&t=733s",
+      "text": "to do it using the Dijkstra's algorithm. You know what is it? Dijkstra's algorithm. I've already done a lot of problems on it. So go back and try to solve it using the Dijkstra's algorithm and you can paste the code in the comments so that the people watching might find it useful in the later half of time. Okay. So, so before finishing up this video, I have a very quick request to make us checking out our channel stats. Nearly 50% of the viewers who watch our videos do not subscribe to us. Please do consider subscribing to us. And if you understood everything, please do it that like button. If you haven't checked out our DP series and the HDC, the links will be in the description. With this, I'll be wrapping up this video. Let's finish up with the video. Till then, bye bye. Take care."
+    }
+  ]
+}

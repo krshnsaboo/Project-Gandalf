@@ -1,0 +1,148 @@
+{
+  "lecture_id": "L242",
+  "lecture_number": 242,
+  "lecture_title": "L6. Odd Even Linked List | Multiple Approaches",
+  "youtube_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q",
+  "chunks": [
+    {
+      "chunk_id": "L242_C1",
+      "start": 0.0,
+      "end": 77.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=0s",
+      "text": "So let's continue with our playlist but before that, hey everyone welcome back to the channel I hope you guys are doing extremely well. So the problem that we will be solving today is odd and even linked list. What is the problem stating? It is stating that you'll be given the head of the linked list and your task is to group the odd index nodes. What do you mean by odd index nodes? If I try to number them, then this is a odd index node, this is a odd index node, this is an odd index node, 1, 3, 5. So you have to group them together and you have to group the even index node together. So these are the even index node. You have to group the even index node together and then you have to return it. So basically what you have to do is, you'll have to group 1, then this is an odd, this is an odd, this is an odd. So after 1 you'll have 4, after 4 you'll have 5, that's done. So you've grouped all the odd index nodes. Right after that you group all the even index nodes. So the even index node will go after that. Right after that it will be 6 and then it will be null. So what I've done is, I've basically taken the odd index nodes at first, after that I've"
+    },
+    {
+      "chunk_id": "L242_C2",
+      "start": 77.12,
+      "end": 155.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=77s",
+      "text": "and then it will be null. So what I've done is, I've basically taken the odd index nodes at first, after that I've taken the even index nodes and I've connected them. So a group of odd and then a group of even, then you connect them. Once you've connected them, return the new head of the linked list. This is what you have to return. So what if this problem comes up in an interview? You will be starting off with the extreme name solution and what will be that? Data replacement. What do I mean by that? You have odd index nodes. These are the odd index nodes and if you visualize the final linked list, these are at the front. These are at the front. So you'll take them, yes you'll take them and you'll place it on the front. So basically you replace the data of the nodes in the first half. Once this is done, you will go through the even nodes. 3, 2, 6, 3, 2, 6. Then you'll do the data replacement in the second half. Once you have replaced the data, you can return the initial head and your linked list will be ready. It will not be reordered but you will rearrange the data such that, such that the data is in the rearranged state. Got it? How can I do that? What I will do is, I will take a list. I'll take a list and I'll start traversing."
+    },
+    {
+      "chunk_id": "L242_C3",
+      "start": 155.5,
+      "end": 235.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=155s",
+      "text": "it? How can I do that? What I will do is, I will take a list. I'll take a list and I'll start traversing. I'll take a temporary and I'll place it at the head. What is the first thing I need to do? I need to get the odd index data. So I'll start at the head and I'll jump in by two indexes. I'll jump in by two places. Right? So the temp is standing at the head. I'll get the first data which is 1. Once I've got that, I'll move the temporary to next of next two places. I'll get the next data. After that again I'll move it to the next of next. I'll take the next data. Once I've done this, temporary will reach null. Temporary will reach null. Once it has reached null, we will stop. So what I can say is, one iteration is done but it did jump by two places. So technically, it just ended up taking n by two time because you're jumping by two places. The next iteration should be done to get the even index nodes. How can I do that? Maybe I'll place temporary at heads next because that is where the even index starts. Correct? Again, I'll take the data and I'll put it into the list. And then I'll again jump it by two. I'll put the data into the list. I'll jump it by two. After this, yes, you'll again put it."
+    },
+    {
+      "chunk_id": "L242_C4",
+      "start": 235.36,
+      "end": 309.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=235s",
+      "text": "again jump it by two. I'll put the data into the list. I'll jump it by two. After this, yes, you'll again put it. So when you try to jump, you will not be able to jump because there is a null and if it's a next of next, it doesn't exist. Nulls next doesn't exist. So you'll not be able to jump. So remember whenever you reach the last node, you will have to stop. Got it? So what I've done is I've got a list. I've got a list which has the odd and then the even index data. What is the next step? I'll have to go through the linked list again and replace it. This time what I'll do is I will go through it. So I'll keep temporary placed at head and I'll keep one more pointer i placed at the zeroth index of the list and I'll start traversing. Okay, I have one. That's fine. Let's move temporary to the next. Let's move i to the next. That's four. Let's replace it by four, move temporary and move i. Next we have 5 replace it by 5, move temporary and move i. Next you have three, replace it by 3, move temporary and move i. Next we have five, replace it by two, move i, move temporary. Next we have six straight away replace it by six and then move temporary, and move i."
+    },
+    {
+      "chunk_id": "L242_C5",
+      "start": 309.86,
+      "end": 380.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=309s",
+      "text": "it by two, move i, move temporary. Next we have six straight away replace it by six and then move temporary, and move i. I will exceed the length of the list and temporary will reach null. This is when you stop. And if you carefully observe data replacement has been done and this is your brute force solution. So let's quickly check out the pseudocode again I'll be writing the pseudocode in case you want C++ Java Python JavaScript for the brute force. The link will be in the description make sure you check it out. So what is the first step we need an array. So maybe let's assign the array to be an empty array. We need temporary and first thing is take the odd index out. So let's place temporary at head that was the first step and what I will do is I'll keep the while condition empty and what we will do is we'll go inside and say array dot add or push back whatever depending on your language and we use a temporary can you give your data a value whatever is your structs definition. Once you've done this you will say temporary can you move yourself and since I am going to odd index it will be a jump of two. So temporary of next and next it will jump. Can you tell me what will be the while condition."
+    },
+    {
+      "chunk_id": "L242_C6",
+      "start": 380.78,
+      "end": 456.7,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=380s",
+      "text": "a jump of two. So temporary of next and next it will jump. Can you tell me what will be the while condition. I'm doing temporary so this should definitely not be null because null of next it will throw you an error. So temporary should definitely not be null. That's for sure. And what will be the other condition. I'm doing temporary next of next. So this should also not be null because if this is null there's a problem. Null of next is not feasible. So what I'll do is temporary next is not equal to null. Perfect. Once I've done this is it done is it done. Have I taken up. Is it done. Have I taken up all the odd index elements. The answer is no. I'll take an example. Imagine you have one that's pointing to two and that's pointing to three and it's pointing to null. And this is where your head stands. So if you have temporary was the first step that will happen. It will go inside adds the value one right. And then it will move temporary to temporary next of next. So temporary will go here when you are a just as one when you are a just as one. This is what the array has. And when the temporary stands at the last note very important to notice when the temporary"
+    },
+    {
+      "chunk_id": "L242_C7",
+      "start": 456.7,
+      "end": 525.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=456s",
+      "text": "one. This is what the array has. And when the temporary stands at the last note very important to notice when the temporary stands at the next last note this condition this condition temporary of next becomes null isn't it. Empiricalities of next is not so it will never go inside if it happens to be a odd length if it happens to be odd length linked list it will end up missing the last element. So you will have to check if at the end of the day yes temporary was there if it was not null you will say array can you please add that element because we might be skipping because of this condition we might end up skipping the last element. So this is how you can put up all the odd elements and the time complexity will be n by two because you're jumping twice. What is the next job. The next job is again repeating the same piece of code but this time the temporary will be the temporary will be pointing to head of next because that is where we start off head of next the same line of code the exact same."
+    },
+    {
+      "chunk_id": "L242_C8",
+      "start": 525.66,
+      "end": 605.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=525s",
+      "text": "of next because that is where we start off head of next the same line of code the exact same. So I will be like while temporary is not null and and temporary dot next is not null. I will say array can you please add temporary dot data and can you say temporary can you move to temporary dot next next. So what this will do is this will take all the even index nodes. Why because you started with head next. Once this is done again it might happen to be the last node. So if in case there is a last node ask your array to add that last node and that will be temporary of data perfect that will be temporary of data. Once you have done this it's done. What is the next job. Next go through the index index will be zero and reassign temporary to head and reassign temporary to head and start writing the code. So you say while temporary not null. And what do you say is temporary your data or value whatever you can call it equal to array of I. And once you have done this you move I to the next index and is a temporary can you"
+    },
+    {
+      "chunk_id": "L242_C9",
+      "start": 605.1,
+      "end": 683.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=605s",
+      "text": "of I. And once you have done this you move I to the next index and is a temporary can you move to the next. So temporary says why not I'll move to the next. So it's like temporary dot next. Once it has done it's going to be hey can I return the head. Just make sure there is an edge case. The edge cases when you start off you check if it's a single node. What if the head is to be null. If the head is null or or if it's a single element node. So if this is not any of the cases if that's the case you will end up returning whatever is given to you single element or an empty linked list you will not be doing anything. Otherwise you end up performing the step and again the step this is a big O of N by 2 and this is another big O of N because you're traversing through all the elements. So what would be the overall time complexity. Can I say the overall time complexity will be 2 and yes I can say what would be the overall space complexity. Can I say that it will be big O of N. Why because we're using an external data structure and added to store all the elements. This is where the interview will be like hey I'm not happy with the external space that you're using. Can you please optimize it."
+    },
+    {
+      "chunk_id": "L242_C10",
+      "start": 683.56,
+      "end": 758.12,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=683s",
+      "text": "This is where the interview will be like hey I'm not happy with the external space that you're using. Can you please optimize it. So we need to optimize the space complexity of big O of N which technically means you're not allowed to use any external data structures. That gives an hint that hey whatever we need to do we need to do within the given linked list itself. So let's try to think in that direction. What is the final state that you need to return. It starts off with the head of the linked list because that's the first odd index node. Then you take the next odd index node. Then you take the next odd index node. And once you've done this you start with the even index nodes. So that's basically 3 4 and then 6. That's what you do and 6 is pointing to null. And then you basically connect the last of odd to even and you return the current head itself. You return the current head itself. That's what you do. So we need to do link changes in such a way that 2's next is pointing to 1. 1's next is pointing to 5. That's it. So you need to make sure that the odd is connected. Once you have done for the odd the even 3 is connected to the even 4. The even index 4 is connected to the 6."
+    },
+    {
+      "chunk_id": "L242_C11",
+      "start": 758.12,
+      "end": 834.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=758s",
+      "text": "you have done for the odd the even 3 is connected to the even 4. The even index 4 is connected to the 6. Once this link change of odd and even is done what is remaining. This 5 because 5 should connect to even starting. So make 5 connect to this 3. That's it. Just make 5 connect to this 3 and your job should be done. So can I do the link changes. I think I can. So I need to find a logic and the logic will be in two steps. The first is changing the links for the odd index nodes. The second is changing the links for the even index nodes. Correct. So what I'll do is I'll take odd and it starts with the head because that is where the odd index starts. I will take even I'll place it at head of next. I'll place it at head of next. Done. Let's try to change the links. For the odd can I say this should ideally be pointing to the next odd but it is pointing to 3 which I don't want. So what I will say is hey odd your next can it point to odds next of next. Can I say this because if I say this then this next ends up pointing to this. It does. That's what I'll do. That's what I'll do. So I will basically change the link and point it to one. Done."
+    },
+    {
+      "chunk_id": "L242_C12",
+      "start": 834.84,
+      "end": 914.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=834s",
+      "text": "this. It does. That's what I'll do. That's what I'll do. So I will basically change the link and point it to one. Done. Right after that you say odd move move to your next and if I say next now the next is this so it moves. I've changed the link for odd at the same time simultaneously I can do it for even as well. No need to do it after like in one more loop you can do it in the same loop. Let's do for the even. Can I say even hey your next is pointing to one which I don't want. I want you to point to four. Can you do this. It will be like yes as even dot next it should point to even dot next dot next isn't it. That's what it should be. So straight away say hey instead of pointing it here can you point it to fourth. Like why not. Sure. Done. After this move the even to the even node. Perfect. Next step will be the same. Odd this is pointing to four which is wrong. Can you point to next of next which is this. Perfect. Once you've done this move the odd. Simultaneously do it for the even. Even this is wrong. So you should technically be pointing to six and the even reaches here. Right after this step. Remember one thing the even will always be ahead of odd."
+    },
+    {
+      "chunk_id": "L242_C13",
+      "start": 914.2,
+      "end": 984.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=914s",
+      "text": "be pointing to six and the even reaches here. Right after this step. Remember one thing the even will always be ahead of odd. The even will always be in front of odd. So whatever checks you write like whatever your last check is should be based on even should be based on even. And you're seeing that even as at last you stop. Similarly odd no need to do anything. You stop. You have stopped. So once you have done the two phases which is basically pointing the odd index nodes to the odd index nodes pointing the even index nodes to the even index nodes. The next job we have to do and the next job will be I know I'll start off with two. I'll go to one. I'll go to five and that's my last odd. But this last odd cannot point to six because six is the last even. This five should technically point to three because in the real world two should point to one one should point to five and five should point to three and then the even starts. Right. But the problem is five is pointing to six. I still have to do a link change after those two phases. I'll have to do a link change. So I need to make sure five points to three. But do you have access to three. Do you have access to three. You cannot call it as head next. Can you call it."
+    },
+    {
+      "chunk_id": "L242_C14",
+      "start": 984.08,
+      "end": 1059.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=984s",
+      "text": "three. But do you have access to three. Do you have access to three. You cannot call it as head next. Can you call it. No. So remember before starting. Memo Memoize this. Remember this in the memory. Memoize this. Remember this in a separate variable even node even head or whatever. And right after this after your phases you can say odds next should be because odd is pointing to five. This next should be pointing to even head. So what will happen is this link will go off and this will be pointing to if I have to it'll get messier I know. If you're pointing to this. So basically it goes like this this and this this this and this. This looks messy but if you carefully look around it has been arranged according to the question. So I'll be writing the pseudocode in case you want the C++ Java Python and JavaScript codes link will be in the description make sure you check it out. What do we need. We need a odd. We need even. Where will the odd start at the head. Where will the even start head of next. And where will the even head be. It's at the head next."
+    },
+    {
+      "chunk_id": "L242_C15",
+      "start": 1060.4,
+      "end": 1136.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=1060s",
+      "text": "Where will the even start head of next. And where will the even head be. It's at the head next. So if you remember we need to memoize even head so that it can be used for the linkage. OK let's try to write down the while loop because we need to traverse and I'll not write the condition. What's the first thing that we are doing. We see odd your next should be pointing to odds next of next again depending on language it can be dot it can be arrows. Right. That's done for odd. What about even even dot next equal to even dot next dot next. Once this is done what is your next job. You say odd can you go to your next. I'd be like odd dot next. That's it because you've already pointed to next next and is even it be even dot next of next. Done. Once this is done I'll write the while loop condition. Once this is done you say odd wherever you're standing your last should definitely be pointing to the even head. Now this this line is for this one. Done. Once you have done what will be your head."
+    },
+    {
+      "chunk_id": "L242_C16",
+      "start": 1136.08,
+      "end": 1211.76,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=1136s",
+      "text": "even head. Now this this line is for this one. Done. Once you have done what will be your head. The initial head will be the head itself because that is where the odd starts from. And please make sure if the head is null or or that means an empty link test or or if it is a single element you will not be doing any of these you will not be doing any of this and you'll be returning whatever is given to you whatever head is given to you. If it's an empty it goes as null if it is a single element which is it goes as single element. So what will be the while condition. Will I just write for odd. Will I just write for even. Will I write for both. That is the question. Let's understand. We have two nodes odd and even rather two pointers which are traversing. Can I say one thing if even has not reached the end I repeat if even has not reached the end odd will also not reach. Why. Because even is bound to be in front of odd. If you see even is here odd is below previous like previous to it. If even is here odd will also not reach null. So if I can determine when even what for even if I'm sure it is not it hasn't reached null that's it. That's my job."
+    },
+    {
+      "chunk_id": "L242_C17",
+      "start": 1211.76,
+      "end": 1286.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=1211s",
+      "text": "if I can determine when even what for even if I'm sure it is not it hasn't reached null that's it. That's my job. So what I'll do is I'll try to determine even has reached or not. If it hasn't reached odd will also not reach and I can do the operations. I can do the operations. So let's analyze. What am I writing. Even dot something. So this definitely cannot be null. This definitely cannot be null. For sure let's write it. So even definitely cannot be null. That's for sure. I'm again doing even dot next dot next. So this also cannot be null because null of next will throw a null pointer. So even dot next also cannot be null. Simple way to analyze. You don't need to check for this because if even dot next next is null that basically means even is null. So you don't need to check for anything else. You just check for this and this that will work. Remember one thing even if you reach the end even if you reach the end in case of odd number of indexes wherever odd ends that's the correct position. So you might be thinking hey you've just written for even even is reaching the end right. What if odd hasn't. You might think that right. Let's take an example. You're taking odd to be here. You're taking even to be here. Right. So what are you doing."
+    },
+    {
+      "chunk_id": "L242_C18",
+      "start": 1286.2,
+      "end": 1351.8,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=1286s",
+      "text": "that right. Let's take an example. You're taking odd to be here. You're taking even to be here. Right. So what are you doing. We're seeing odd point this to this and then odd moves here and then you're saying even point this to this and then even moves here. And this is when you stop. You say even you are the last node right because even dot next is null. You're the last node to stop. No need to do. And we carefully observe if this stops you're at the correct place for odd. You're at the correct place. So if you're just doing for even this will work out. This will work out. No need to think. So what will be the time complexity of this portion of code. What I'll ask you is please think about it and write it in the comment section. I want to see what you are thinking. OK. And after that hear me out. So if you remember in the brute force we first wrote a while loop to separate the odd elements to a array and that while loop was taking big O of n by 2. And then we went on to write another while loop to separate the even elements that was taking n by 2 and both together added up to big O of n to segregate them into an array. Right. Over here what I've done is it's a single while loop."
+    },
+    {
+      "chunk_id": "L242_C19",
+      "start": 1351.8,
+      "end": 1427.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=1351s",
+      "text": "up to big O of n to segregate them into an array. Right. Over here what I've done is it's a single while loop. But I'm doing the odd and the even operations to get the I'm doing it to get the simultaneously. So technically the while loop technically the while loop is running for 1 2 3 which is basically n by 2 times. Not more than that. It's basically running for n by 2 times. OK. So if it is running for n by 2 times. Can I say that the time complexity is n by 2. Maybe yes. But you cannot. You need to compute these unit operations you're doing two steps like they need to be computed as two steps because you're doing two operations tooling changes. So it's basically big O of n by 2 into 2 which boils down to big O of n itself. So this will be the time complexity. This will be slightly faster than doing it in two while loops slightly not a huge difference because if you write odd and even in two while loops it will be of the similar time complexity slightly slightly greater slightly not much. What about the space complexity. It's a big O of 1 just doing in changes nothing else. So if you're still watching I'm very very sure that you have understood everything. And if that is the case please please do come and understood and please do consider giving"
+    },
+    {
+      "chunk_id": "L242_C20",
+      "start": 1428.12,
+      "end": 1436.1,
+      "timestamp_url": "https://www.youtube.com/watch?v=qf6qp7GzD5Q&t=1428s",
+      "text": "very sure that you have understood everything. And if that is the case please please do come and understood and please do consider giving us a like as well. When you do our channel what are you waiting for. Hit that subscribe button right away. And with this I'll be wrapping up this video. Let's put in some other video till then bye bye."
+    }
+  ]
+}

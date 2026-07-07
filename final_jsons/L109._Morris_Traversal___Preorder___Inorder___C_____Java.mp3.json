@@ -1,0 +1,155 @@
+{
+  "lecture_id": "L109",
+  "lecture_number": 109,
+  "lecture_title": "L37. Morris Traversal | Preorder | Inorder | C++ | Java",
+  "youtube_url": "https://www.youtube.com/watch?v=80Zug6D1_r4",
+  "chunks": [
+    {
+      "chunk_id": "L109_C1",
+      "start": 0.0,
+      "end": 72.16,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=0s",
+      "text": "So before starting the video, I would love to thank Relevul for sponsoring this entire three series. So, if you're tired of waiting for companies to respond to your applications through different job portals, the next few seconds are very very important for you. Because Relevul by Unacademy is India's first hiring platform that can get you a job within a week itself. Yes. All you have to do is to register for the Relevul test and within a week, your interview will be scheduled with India's top companies and the top budding unicorns. So what are you waiting for? Make sure you check out the links in the description and apply for the Relevul test because it is free. Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So today we will be discussing the Morris Traversal. So in the first section of the video, I'll be telling you how to find the in-order and right after that, I'll just be doing a one line change to the in-order and I will teach you how to find the pre-order using the Morris Traversal. Now you'll be thinking, what about the special in Morris Traversal? We already know a recursive traversal. We already know a stack traversal. So if you know the recursive traversal, that actually takes up a big of n time and a big of n space, which is the auxiliary stack space."
+    },
+    {
+      "chunk_id": "L109_C2",
+      "start": 72.16,
+      "end": 151.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=72s",
+      "text": "the recursive traversal, that actually takes up a big of n time and a big of n space, which is the auxiliary stack space. And the iterative also takes the similar amount of time, but the Morris Traversal nearly takes up a nearly big of n, but the specialty is it does not consume any extra space. Yes, it does not consume any extra space and it does everything in big of n. And how does it do in big of n? The Morris Traversal uses the concept of threaded binary tree. Might sound very scary, but don't worry. I'll be teaching you in such a way that this will look the easiest question in the entire binary tree playlist. Now you have seen a lot of videos about Morris Traversal, but trust me in this video, I'm going to tell you the intuition. Yes. And I'll be coding it live so that the code remains in your head forever along with the intuition and you can code it by yourself. So let's get started. So what is the in order traversal of? So when I say in order, what does that mean? It basically means left first, then the root and then something as the right, right? Now what is the left? The left is four, right? At first, like you go left, left, left. So left is four. Then right root, that's two."
+    },
+    {
+      "chunk_id": "L109_C3",
+      "start": 151.72,
+      "end": 226.48,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=151s",
+      "text": "left? The left is four, right? At first, like you go left, left, left. So left is four. Then right root, that's two. And again, you go to this. So there's no left. Then you take five, correct? Then you take six, then you come back to one and then you end up taking three. So that's the in order traversal for the binary tree on the left, correct? Now, if you observe something from four, you are actually like you traverse from one to two, two to four. And in the binary tree, you know, the pointers are like this, like into the child's. So from four, if you had a backward, if you had a backward pointer, which said after four, why don't you go back to two? And after that, why don't you go to right? And then you do for five and then you do for six. And after six, if you carefully see, it's one where you go, correct? Why is it one? Very simple, because in an in order to travel, so what do you do? You do the entire left and then you go to the right, correct? So the entire left, last guy is six. So left root, right. So right, after right, you have to go it. In recursion, why don't you have to, how does it work? Because six backtracks to five, five backtracks to two, two backtracks to one, and then goes to right."
+    },
+    {
+      "chunk_id": "L109_C4",
+      "start": 226.48,
+      "end": 284.92,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=226s",
+      "text": "have to, how does it work? Because six backtracks to five, five backtracks to two, two backtracks to one, and then goes to right. So in recursion, it's very simple because you don't have to do a lot of stuffs because backtracking takes care of six coming back to five, five coming back to two, two coming back to one. It comes back to the call where it was made. But if you're doing it iteratively, if you have gone from one to two, two to four, there is no way that you can come, you can come back to two because there is no parent pointer and we cannot have a parent pointer definitely because a binary tree, as we know, always has a left pointer and a right pointer. Like we will not be introducing any parent point as of now. So how will you do this? Because introducing a parent pointer will mean I'm introducing a single, a single kind of a pointer at every place, which is something which I don't want. So how will you do this? Let's think. So the first thing to notice is now on the left sub tree, this is the left sub tree, which is only having four. In this four, whichever is the right guy, four is the right guy, four is the left, four is the root, like everything on the sub tree, left, root, right, everything is four."
+    },
+    {
+      "chunk_id": "L109_C5",
+      "start": 284.92,
+      "end": 353.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=284s",
+      "text": "is the right guy, four is the left, four is the root, like everything on the sub tree, left, root, right, everything is four. Since this is the last guy of this in order, after that you have to go back, right? That's the first thing to observe. Now, now over here, if I again draw this on this left sub tree, I can say this guy is the left, this is the root and the entire thing is the right. And this right, this is a single, single sub tree. So over here, this is the last guy. So after this, since the left, left sub trees in order is completed, you go back to the root. So do you see a pattern? The pattern states from the last node of any sub tree, you go back to the root, like on the left, which is, whichever is the last node of that sub tree, you go back to the root, right? And after that, you again go back to the, like you do in order to traverse all of three. That's the observation that I can give you. Okay. So let's keep this observation and try to think of cases, like what cases can we have during traversal? So the first case that I can think of, like on a very high level that I can think of is if you're doing a traversal, it's left is where you go at first and you go to the root,"
+    },
+    {
+      "chunk_id": "L109_C6",
+      "start": 353.72,
+      "end": 417.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=353s",
+      "text": "that I can think of is if you're doing a traversal, it's left is where you go at first and you go to the root, then you go to the right. So just in case, if I give you a tree, which starts with one and there is two on the right and then everything is on the right. Just imagine everything is on the right. So, and the left is null. So it's, it doesn't have a left. So do you need to connect any pointers? Like if you're starting off your traversal from this one, do you need to connect any pointers to one? Like over here, when you started from here and you will go left, but you have to connect the pointer so that you can come back to one. But over here, you just start with one and then you go to two because you don't have to come back to one. Correct? So can I say the first case will be if like the left is somewhere around null, then without doing anything, I can say, okay, this is a part of my inorder traversal because left does not exist. I'll always have a root. So I can say print the current guy and then you can just move to the right. So can I say that's my first case? Like if I just categorize it, if it does not have a left, I'll bring the root and then I'll move to the right."
+    },
+    {
+      "chunk_id": "L109_C7",
+      "start": 417.96,
+      "end": 496.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=417s",
+      "text": "case? Like if I just categorize it, if it does not have a left, I'll bring the root and then I'll move to the right. Okay. So in that sense, let's think of other cases. What can be the second case that I can think of? Now the second case that I can think of is if I'm standing over here before moving to here, I should actually make this connection, make this yellow threaded path. Why? Because if you have once moved here, you cannot come back. So before moving, you have to make this path. So can I say before moving left? Yes. Before going to left, can I say whichever is the rightmost guy, right most guy on left sub tree, rightmost guy on the left sub tree will be connected, will be connected to the current. Like if you're standing here and after that, yes. And after that I can say current, please go to the left. Okay. Makes sense. Once I have connected this yellow, then I can say current, you can now go over here. Okay. That's one of the cases that I can think of. Now you will argue, you will argue, but Stryver, you have done traversal, you have went. Now again, when you are doing a traversal, you will point force a threaded to two."
+    },
+    {
+      "chunk_id": "L109_C8",
+      "start": 496.2,
+      "end": 569.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=496s",
+      "text": "have done traversal, you have went. Now again, when you are doing a traversal, you will point force a threaded to two. But again, when you're coming back, you again reach one. So whenever you reach back one, how will you determine whether to move left or whether to move right? Makes sense. Because see, when the, at the first instance, when you add one, you moved left, but when you coming back via this threaded, whenever, whenever you did a in order four, two, five, six, and then you came back to one, how will you determine that you have to move to right? Valid question. So can I say, can I say the other case will be if, if the same thing, the rightmost guy, and it's the same thing. The rightmost guy is already pointing to curve, like the threaded binary tree already exist. And if it already exist, then I will remove this thread three because I cannot keep this thread forever. So I'll remove, yes, I'll remove thread because basically if previously there was no thread, I just create this thread, right? And if there exists thread, I remove the thread. Okay. Makes sense. What about the other ones? You have once you've removed the thread, now you can move, right? So how did you determine? So the determination was very simple."
+    },
+    {
+      "chunk_id": "L109_C9",
+      "start": 569.68,
+      "end": 644.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=569s",
+      "text": "have once you've removed the thread, now you can move, right? So how did you determine? So the determination was very simple. What I said was if the rightmost guy, right, of the left sub tree does not have a thread, so connect the thread. Once you have connected the thread, move left so that afterwards you can actually come back directly to this guy. Correct? So if on the rightmost, there already exists a thread, there already exists a thread, then remove it. And now you can say you will move to right because why is there a thread? Because you have already made a thread and went left. Very simple. So I can say these are the cases in which I can actually make it. Okay. Makes sense. So makes sense, right? I'll code it. I'll code it. But let's understand how this actually works. So I've almost told you the edge cases, like what cases you have to think. Now let's see how will this work. So if I'm standing here, okay, if I'm standing here, I know for in order to happen, I have to go to the left. So if I'm going left, I know I cannot, I cannot come back. So before going left, if there is a left, if there is a left on this left sub tree, take the rightmost guy, take the last guy, the last guy is six, create the thread, create the thread. Perfect. I've created the thread."
+    },
+    {
+      "chunk_id": "L109_C10",
+      "start": 644.64,
+      "end": 710.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=644s",
+      "text": "take the rightmost guy, take the last guy, the last guy is six, create the thread, create the thread. Perfect. I've created the thread. Once you have created the thread, then move. Nice. After that, again, you have to move to the left. So again, you see on the left, who's the last right guy. So you'll say, this is the only guy who will ultimately be the last guy. So let's create the thread. So I've created the thread. Once you've created, move. Perfect. Now, can I say this four, this four, if you're treating it as a sub tree, if you're treating it as a sub tree, can I say this four will never have a left? Yes, it will never have a left. So this guy will be the root itself. So I can say, let's print four. Yes, let's print four. So my in order is getting printed. Okay. Now I need to go back. I need to go back to the root. So what I'll do is I'll go via this thread and I'll again reach back here. See, I went via this thread and I reached back over here. See how I went back. So the moment I went back to the root, I know it has to be printed. So let's print it. Perfect. Now the curse is, will I go left or will I go right? Because I'm standing, I don't know where to go, whether to left or whether to right."
+    },
+    {
+      "chunk_id": "L109_C11",
+      "start": 710.2,
+      "end": 772.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=710s",
+      "text": "will I go left or will I go right? Because I'm standing, I don't know where to go, whether to left or whether to right. Let's judge that. So when I go to the left, the last guy on the left sub tree is already pointing to himself. Very important. It's pointing to himself and not null. Ideally, the last guy should have been pointing to null, but it's pointing to someone, which is himself. Can I say then that means this left arena has been visited. So what you'll do is go to the left, find the rightmost guy and cut off the link. Once you have cut off the link, take the car and move to right. So this is how you determine whether to go left or whether to go right. Okay. So I have gone to the right, which is at five. Now when I'm at five, does it have a left? No. So there's no need to have a thread. So what you'll do is since there is no left, he himself is the root. So print the root, no left. So now root is printed. Now what I'll do is since this is printed, root is printed, I'll go to the right. So I'll go to the right. Six. Does it have a left? No. So he himself is the root. Let's print it. Once the root is printed, he has to go to the right."
+    },
+    {
+      "chunk_id": "L109_C12",
+      "start": 772.28,
+      "end": 840.32,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=772s",
+      "text": "a left? No. So he himself is the root. Let's print it. Once the root is printed, he has to go to the right. But ideally the right takes him to this guy. If it takes him to this guy, because there was a thread, it took you back. Now Cur is over here. Okay. So you came back to a node, which is ultimately the root. So you'll print that root. Now Cur can go left, can go right. So when he goes left, he sees that left's rightmost guy is having a thread, which means has already visited the left arena. So he will cut off this. Yes, he will cut off this. And after that, he'll just go on to the right. So when he goes to the right, three says, I'm the guy who does not have a left. So I'll be the root itself. So he'll have the root. And does it have a right? So the moment it goes to the right, it ends up going to a null. So the moment it goes to the null, it says, okay, I am over. So this is how you got the inorder traversal. So you saw that actually came back. I went to the left and I easily came back to the root using the threaded binary, threaded binary tree. So I was creating threats. Just make sure you erase off threats. Don't leave the threats. Okay. Otherwise the binary tree will be wrong."
+    },
+    {
+      "chunk_id": "L109_C13",
+      "start": 840.32,
+      "end": 917.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=840s",
+      "text": "So I was creating threats. Just make sure you erase off threats. Don't leave the threats. Okay. Otherwise the binary tree will be wrong. So make sure you leave the threats. It's interesting, right? If I have these cases coded, I think I can do this. So let's try to code it. And again, I'll show it how to code on life. So initially I have this function, a vector, which takes a root. So what I'll say is let's take an inorder vector. And Java people can take ArrayList. So what I'll say is I'll take tree node, a curve, and I'll point it to root. So that root does not get destroyed because I'll be moving on curve. So I have this curve, correct? So once I have this curve, I know it was moving till the curve did not reach null. So I'll keep on moving till the curve does not reach null. You remember the first edge case, the first edge case stated, if the curve has a left, which is equal to equal to null, what does that signify? That basically signifies that it does not have a left. So this guy itself is the root. So no left. So root will be printed, right? So let's take the root inorder.pushback. Again Java people can do that, ArrayList.add. I'll say curve.val will be added. So I'll add this. Once I've added this, can I say curve will move curve of right? Perfect."
+    },
+    {
+      "chunk_id": "L109_C14",
+      "start": 917.68,
+      "end": 989.52,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=917s",
+      "text": "I'll say curve.val will be added. So I'll add this. Once I've added this, can I say curve will move curve of right? Perfect. So I've done the first case. Can I say I've done the first case, which is left.null. Print, which means I've taken it into the inorder. And after that I moved, right? First case is done. Let's see the second case. The second case says, if there exists a left, which is the case over here. If there exists a left, I'll come to the else. So what did I do? What did I do? If I'm standing here, what did I do? I basically went to the left subtree and figured out the last guy of the left subtree that will be visited in that inorder. So can I say this is the last guy, which will be visited in the inorder of the left subtree, which ultimately means go to the left, go to the rightmost guy, go to the left, go to the rightmost guy. So why don't I write that? So I will say tree node start previous equal to, I'll go to the left, which is curve left. A lot move curve. Very, very important. Now I'll go to as right as I can. If there exists a right, okay. If there exists a right, very important. If there exists a right and the right is not pointing to himself, that is also again, very important."
+    },
+    {
+      "chunk_id": "L109_C15",
+      "start": 989.52,
+      "end": 1052.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=989s",
+      "text": "exists a right, very important. If there exists a right and the right is not pointing to himself, that is also again, very important. It should not point to itself because they might happen. There might be a case where you come back, like whenever you come back again to curve by the thread, then when you go to the left and you find the right, it will be pointed to one. Okay. So you'll, you'll understand this while I do a dry run. So it should have a right. So if it is a right, keep on moving it to the extreme, right? Then the guy who has the last right. So I moved it. Okay. Now, what are the, what are the cases? The first case will be if this right will come null, that's the first case. So I can say the first case will be if the right comes out to be null. Okay. That's the first case. What would be the other case? The other case can be when you're doing a pre-order, this guy is having a thread where you say previous right is pointing to the curve. Previous right is pointing to the curve. That can be the other case. Okay. Perfect. So there can be two cases. Now if I'm saying previous right is null, I think, I think the task is very simple. I'll say previous right, instead of pointing to null, why don't you create the thread and"
+    },
+    {
+      "chunk_id": "L109_C16",
+      "start": 1052.84,
+      "end": 1120.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=1052s",
+      "text": "think, I think the task is very simple. I'll say previous right, instead of pointing to null, why don't you create the thread and the thread will be pointing to curve. Correct? So I've made sure that six is pointing to curve. Perfect. Now, once I've done that, can I say, now I'll do my traverse. Nice. So what I'll do is after this, I'll move the curve to here. And again, same thing will happen. This will create a thread and after that curve will move. Okay. This time when curve tries to move, it again comes back. So again, when it comes back over here, again, when it tries to find force right and it points to two, this is the case when this will be happening. Okay. So this time it will come to else. When this time it comes back to else, what do you need to do? What do you need to do? So the force right is still pointing to curve. So can I say the previous right is no more like I have to cut the thread. So please cut the thread and say curve. You can now, since I visited the left, you can go to the right. Simple. And can I say if, if I've came back, yes, I've came back. That is the reason my previous right will be pointing to curve. Since I've came back to curve."
+    },
+    {
+      "chunk_id": "L109_C17",
+      "start": 1120.56,
+      "end": 1198.88,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=1120s",
+      "text": "back, yes, I've came back. That is the reason my previous right will be pointing to curve. Since I've came back to curve. Otherwise why will the right, why will the thread point to curve back? Since I've came back. Can I say my in order will simply take the curve.val because it's the root now, it's a root now. First it took, this is the, this is once you visit the root and this is the other time you'll visit the root. Okay. For this guy four, he himself will be the root. So it will automatically be taken. So this is how a simple Morris traversal code might look like. And you can simply return the in order. Traversal. So guys, uh, I've almost explained everything. I've written the code in order to get a much further clarity. I highly recommend take a two or three more binary trees and keep a dry run on this so that the idea of thread gets further clarified. Okay. Now the question is what if I change it to pre-order? How will the question be solved for something which is a pre-order traversal? Because I said in the beginning that if you can learn in order, the pre-order will be a shuttle one line change. So this thing, just think what can be, what am I doing? I'm doing left root right on in order. Okay."
+    },
+    {
+      "chunk_id": "L109_C18",
+      "start": 1198.88,
+      "end": 1263.68,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=1198s",
+      "text": "line change. So this thing, just think what can be, what am I doing? I'm doing left root right on in order. Okay. So ideally what I'm doing is I'm printing the roots. Whenever I'm reaching the root, I'm printing it. Like for an example, the thread brought me back to this root. I printed it down. For example, if, uh, if someone does not have a left, so I'll, I'll be standing at root. So what's pre-order pre-order is the root, then the left, then the right. So don't do you think when I'm starting, I'm starting at the root. So whenever I'm starting, whenever I'm starting and you're marking this thread, when you're marking this thread, can I say this is the moment you're standing at root because you're marking the thread, then you're taking it to the left, then you're taking it to the left. Can I say, instead of having, like if I just copy, paste the same code, it's probably the same code. Okay. So if I copy the same code, can I say, instead of having it over here, when it comes back to the root, like from left, when it comes back to the route, when you point, when you're marking the thread, when you're marking the thread, can I say, that is the moment, can I say that is the moment you're standing like you're standing over here, you mark the point then you moved over here."
+    },
+    {
+      "chunk_id": "L109_C19",
+      "start": 1263.68,
+      "end": 1327.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=1263s",
+      "text": "moment, can I say that is the moment you're standing like you're standing over here, you mark the point then you moved over here. So when you're standing, you're standing at the root. So whenever you're marking this, yes, whenever you're marking this, why don't you store that into the pre-order? Simple. And this case will still stay same because just ideally if you're standing here and there's no left, he himself is the root. After root, you'll move right because there's no left. So root and left. So this case will still stay same. I just did a one-liner change. Yes, I just did a one-liner change and the in-order was converted into a pre-order traversal because I just have to place root at front. When you're starting the visit, just visit it. And you come back via thread, there's no need to visit. Just go right. Simple as that. No need to take it into your pre-order. That's how the pre-order code will look like. So guys, if I talk about the time complexity, since at every time, like whenever you're over here, you're going to the rightmost guy pointing to the... So every time you're going to the rightmost guy, so assuming that every time you go over here, go over here, go over here. So that's a branch length that you're going. So technically speaking, it won't be a lot."
+    },
+    {
+      "chunk_id": "L109_C20",
+      "start": 1327.56,
+      "end": 1396.96,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=1327s",
+      "text": "here, go over here, go over here. So that's a branch length that you're going. So technically speaking, it won't be a lot. Like sometime, if I arguably say sometime it might be a branch length of one, sometime it might be a branch length of two, because every time you're going to the notes right, every time you're going to the notes right, every time you're going to the notes right, that is what this while loop is doing. Right? And then you're pointing to this thread, then you're taking this thread, then you're taking this thread. That's logically what you're doing. So first time you might go one, then two, then again one, then might something like five. So can I say it's an amortized, I repeat, it's an amortized n complexity that you're going. When I say amortized, it means one plus two plus one plus all the iterations together will make it big off n. This while loop throughout will run for n, like not on individual terms. In total will run for n. So can I say in total this while loop will run for n and since I'm traversing all notes, I'm running for big off n furthermore. So it's near about again, it's not exactly when it's near about a big off n time complexity. If I summarize that, but the important thing is the space complexity taken is big off one, which is indeed our main point."
+    },
+    {
+      "chunk_id": "L109_C21",
+      "start": 1397.16,
+      "end": 1421.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=80Zug6D1_r4&t=1397s",
+      "text": "complexity. If I summarize that, but the important thing is the space complexity taken is big off one, which is indeed our main point. So I hope you've understood the entire explanation as well as the code. Just in case you did, please, please, please make sure you like this video because it took a lot of efforts to make this entire tree series. Also, if you wish, you can definitely drop in a comment that will keep motivating me to make such further series. Also, if you're new to the channel, please do consider subscribing because I'm going to bring in such more series in the upcoming future as well. With this, let's wrap up this video. Let's meet in the next lecture. Bye bye. Take care."
+    }
+  ]
+}

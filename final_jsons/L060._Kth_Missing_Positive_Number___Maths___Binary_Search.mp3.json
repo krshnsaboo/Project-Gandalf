@@ -1,0 +1,141 @@
+{
+  "lecture_id": "L060",
+  "lecture_number": 60,
+  "lecture_title": "BS-16. Kth Missing Positive Number | Maths + Binary Search",
+  "youtube_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps",
+  "chunks": [
+    {
+      "chunk_id": "L060_C1",
+      "start": 0.0,
+      "end": 74.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=0s",
+      "text": "If you wanna come back to the channel, I hope you guys are doing extremely well. So we will be continuing with our binary search playlist. Now this is the part of the ongoing Striver's A to Z DSA course. In case you haven't checked it out yet, there's a link in the description. Make sure you check it out. Otherwise, you're going to miss out on something extremely special. So the problem that you're going to solve today will be finding out the kth missing number. What does the problem state? It states that you'll be given an increasing array where you'll be having positive integers. Your task is to figure out the kth missing number. What does it mean? You can see that the last number is still 11. So if I start writing all the positive numbers, you know the positive numbers start from one. So let's quickly write it till 11. So the moment I write it till 11, if I ask you which of the numbers are missing, you can say 2 is there, 3 is there, 4 is there, 7 is there, 11 is there. So apparently, this is the first number that is missing. This is the second number that is missing. This is the third. This is the fourth. This is the fifth. This is the sixth. And the question is specifically asking you to figure out the fifth missing number."
+    },
+    {
+      "chunk_id": "L060_C2",
+      "start": 74.84,
+      "end": 150.9,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=74s",
+      "text": "fourth. This is the fifth. This is the sixth. And the question is specifically asking you to figure out the fifth missing number. So if you carefully see that the fifth missing number is 9. So this is what you have to return, which is basically 9. So given an array of increasing positive integers and given an integer k, you have to return the kth missing positive integer. That is what the problem states. This problem might have a lot of brute force solutions, but the one that I'm going to speak will be super easy and clean. So imagine I give you an example where the array is starting from 5 and then it has 7 and then primarily 10 and then 12. I'm asking you to figure out the fourth missing integer. What will be the fourth missing integer? Your answer will be 4. Why? Because the array itself starts from 5. Thereby all the first four numbers will be missing. And since the question is fourth missing integer, I say that the number is 4. What if I ask you what is the sixth missing integer? You cannot say straightaway 6 like you did when k was 4. You cannot say straightaway 6. Why? Because there is an integer 5. Thereby the answer will be like if I have to write 1, 2, 3, 4, 5 is there, 6, 7. So if I'm looking for the sixth missing integer, it's 1, 2, 3, 4, 5, 6."
+    },
+    {
+      "chunk_id": "L060_C3",
+      "start": 150.9,
+      "end": 222.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=150s",
+      "text": "1, 2, 3, 4, 5 is there, 6, 7. So if I'm looking for the sixth missing integer, it's 1, 2, 3, 4, 5, 6. This is it. One more. So if you carefully observe, what do you observe? There was one integer which was lesser than 6. Thereby you kind of added that and you got this particular number 1 ahead. Because the 5 took a place in between, hence the 6 could not be the answer. So this is what the brute force will be. So let's quickly do the brute force on the given example. So what I'll do is I'll take the k equal to 5 and I'll start iterating. I get 2. I say that this 2 will take one place. So now I'm looking for the sixth possible number like the answer can be 6. Then I'll move to the next and I'll say 3 will take one more place. So 7 can be my possible answer. Now I'll move forward. I have 4. 4 will take one more place. Thereby I'll move to 8. Then I'll go to 7. 7 will take one more place. Thereby I'll move to 9. The moment I move to 11, I see this has exceeded. I see this has exceeded. So I stop then and there and I see that this particular 9 is my answer. So this is going to be my answer for the brute force. Super simple."
+    },
+    {
+      "chunk_id": "L060_C4",
+      "start": 222.66,
+      "end": 297.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=222s",
+      "text": "and I see that this particular 9 is my answer. So this is going to be my answer for the brute force. Super simple. Basically the numbers that are lesser than k will take its place. Thereby you have to move, move, move and wherever you stop that will be your answer. It's going to be super simple. I'll just start from 0. I'll go until the last integer and I'll say if array of i is lesser than equal to k, I'll just do a k plus plus. If I get any number because it is an increasing order. If I get any number which is greater than k, I stop. I stop. Hence, you can straight away see break. And this is what the possible solution will be. And what will be the time complexity? We go off and what will be the space complexity? We go off one. Now this is what the brute force solution will be. The moment you give the solution to the interviewer, he might ask you to optimize it. If you have to optimize, we go off n. What should you use? Because what is better than B go off and primarily logarithmic off and that does make sense over here because the array is sorted and whenever we see something as sorted, we and we need something better than B go off and logarithmic off and that kind of gives us an idea that okay, binary search might be a solution."
+    },
+    {
+      "chunk_id": "L060_C5",
+      "start": 297.86,
+      "end": 376.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=297s",
+      "text": "something better than B go off and logarithmic off and that kind of gives us an idea that okay, binary search might be a solution. This is how you get the intuition of binary search that okay, sorted increasing need better than B go off and thereby we move towards a logarithmic and solution. So can we apply the typical binary search algorithm? We cannot. Why? Because we are looking for the missing number. This number is not there in the array. So we cannot apply the typical binary search in a sorted array. So binary search is not possible like the normal one. Can we apply binary search on answers? We cannot because binary search on answers is only applicable when you are looking for something like minimum or maximum and you know that some portion is not possible and the other portion is possible. So either you look for the min or either you look for the max, something like that. But over here, that's not the case. The case is very different. If you carefully notice this particular answer 9 should have been between 7 and 11. So if I somehow can figure out between which, which indexes this particular answer should have been, I think my problem will be solved. So how do we apply binary search in this particular question? Can I say I'm very much sure that the answer will be between 2 and between 11 for k equal"
+    },
+    {
+      "chunk_id": "L060_C6",
+      "start": 376.98,
+      "end": 456.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=376s",
+      "text": "in this particular question? Can I say I'm very much sure that the answer will be between 2 and between 11 for k equal to 5. I am very much sure about that. Can I say that I'm also like for this k equal to 5, I know the answer is 9 and that always lies between 7 and 11. I'm also very much sure about this. What if k is 3? In that case, the answer is 6 and that is lying between 4 and 7. I know one thing for binary search, I take the entire range. If somehow I can figure out like for k equal to 5, I know the answer will be between 7 and 11. If I can figure out the smaller range, I'm very much sure that it will be between 2 indexes. If I can figure out that 2 nearby indexes, my question is solved. So first target is to figure out the 2 nearby indexes. That's what our target will be. And then we'll figure out how to, how to get the answer. Once I'm standing here and once I'm standing here, I will figure out 9. I'll figure out 9. As of now, what do I have? I have an increasing array. I have k equal to 5. And what do I need? I need to make sure that I stand between, like I stand on those 2 indexes between which the answer will be."
+    },
+    {
+      "chunk_id": "L060_C7",
+      "start": 456.3,
+      "end": 525.26,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=456s",
+      "text": "I need? I need to make sure that I stand between, like I stand on those 2 indexes between which the answer will be. So that's my first task, figure out the 2 nearby indexes. So the next thing that you should be thinking is, hey Stryver, you did know that the answer was 9. That is why it was easy for you to say that 9 was between 7 and 11. But wait, we do not know what the answer is. We are just given k and we have to find that number. So how do I figure out that it is between 7 and 11? Because I do not know the number. This is where k will come in. It will help us. Let's observe something. If I write down the indexes, this is how it will look like. Ideally, on a normal scenario, the numbers should have been this 1, 2, 3, 4, 5 in the array if nothing was missing, if nothing was missing. But over here we have 7 and we should have had 4. Why can I say till this particular index, there are 3 numbers missing. If I again write down the integers 1, 2, 3, 4, 5, 6, 7, you have 7 and before that you have 4 and before that you have 3 and before that you have 2. So you have 3 numbers missing. And how did you figure that out? It's very simple. You had 7."
+    },
+    {
+      "chunk_id": "L060_C8",
+      "start": 525.26,
+      "end": 599.72,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=525s",
+      "text": "before that you have 2. So you have 3 numbers missing. And how did you figure that out? It's very simple. You had 7. So you said 7 is present. Ideally 4 should have been present there. Ideally 4 should have been present there. Thereby there are 3 numbers missing. I'm like okay, there are 3 numbers missing. Over here, there's 11. So if I have to again say 11 is there, ideally what should have been there? 5 if I write down the numbers. So how many numbers are missing? Can I say 11 minus 5 equal to 6 numbers is what is missing over there. You can again go ahead and write down the numbers. You'll figure out that 11 is there. Thereby 1, 2, 3, 4, 5, 6. Six numbers are missing. So can I say that, can I say on the basis of K, on this index 3 numbers are missing, on this index 6 numbers are missing. If I can figure out the numbers of missing, what am I looking for? I'm looking for the fifth number which is missing. Thereby can I surely say that it will lie between this, it will lie between this. If I again write for this one, if you write for 4, how many numbers are missing at 4? Ideally there should have been 3. But 4 minus 3 is one number is missing over here. So there is just one number, which is missing at 4."
+    },
+    {
+      "chunk_id": "L060_C9",
+      "start": 599.72,
+      "end": 669.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=599s",
+      "text": "been 3. But 4 minus 3 is one number is missing over here. So there is just one number, which is missing at 4. If I have to write it for this, ideally there should have been two. So there is again one number missing. Ideally for this, 2 minus 1 because there should have been 1. So one number is missing. If you carefully observe till this particular index, one number is missing. Till this particular index, one number is missing. till this particular index 3 number is missing till this particular index 6 number is missing and what is the what is that you're looking for you're looking for the fifth missing number thereby you can easily figure out that between this is where it will lie so what I've done is I've written down the missing numbers at every index now can I perform a binary search in order to figure out where will the fifth missing number land I can what I'll do is I'll take the low pointer to be at the zeroth index I'll take the high pointer to be at the last index right so what will be my first mint mid will be 0 plus 4 by 2 which is second index so mid will be pointing to this place which is the second index and over here we notice that the number of missing numbers is 1"
+    },
+    {
+      "chunk_id": "L060_C10",
+      "start": 669.38,
+      "end": 740.38,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=669s",
+      "text": "be pointing to this place which is the second index and over here we notice that the number of missing numbers is 1 what am I looking for I'm looking for the fifth missing number so I know that this one can be eliminated because 5 is greater than this missing number I'm looking for fifth missing number and 5 is greater than 1 so the left portion can be eliminated so please go ahead and eliminate and move to this so this is what I'll do I'll eliminate and I'll move ahead next what is my job my job is to figure out the next mid which is index is 3 3 plus 4 is low plus high by 2 thereby it will be 3 so the mid will be pointing to 3 this is the moment you notice that hey listen over here we are seeing that this is having 3 missing numbers and we are looking for 5 missing numbers so this is also not possible so can you please because this was already eliminated can you please eliminate this and at the same time take low and move to mid plus 1 we will just move there at the next step mid will also be pointing to this at the next step mid will also be pointing to this because 4 plus 4 by 2 is 4 so the mid is already pointing to"
+    },
+    {
+      "chunk_id": "L060_C11",
+      "start": 740.38,
+      "end": 816.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=740s",
+      "text": "step mid will also be pointing to this because 4 plus 4 by 2 is 4 so the mid is already pointing to this over here we have 6 missing numbers we have 6 missing numbers but we are looking for 5 like the right has to be eliminated the right has to be eliminated and when the right is eliminated high goes as mid minus 1 so we'll move high to one place back of mid and this is the moment you see that hey the low and high have crossed so if you carefully observe high is standing at 3 which is lesser than K low is standing at 6 which is greater than K did you notice something initially the low was at a point which was lesser where has the low gone to a higher point to higher than K opposite polarity comes in let's see where was high high was at 6 which was greater where is high ending at a lower opposite polarity so eventually you are ending up at 2 nearby indexes so I figured out my nearby indexes done what is my next job if my low is pointing to the nearby indexes the next job is find the number"
+    },
+    {
+      "chunk_id": "L060_C12",
+      "start": 816.94,
+      "end": 893.06,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=816s",
+      "text": "is my next job if my low is pointing to the nearby indexes the next job is find the number find the number is my next job it's going to be super simple is going to be super simple why let's analyze so the high is pointing to like the area of high is pointing to 7 right how many numbers are missing can I say 3 numbers are missing I can so if 3 numbers are missing how many else am I looking for I need more 2 that's very obvious because K is 5 and you know till here the missing are 3 because ideally if I write down there should have been 4 so the missing are 3 how much more do I need 2 so what do you do is is a 7 can you go to your next number he says 8 can you go to one more because I need 2 more that's 9 so 9 is the answer so 9 is the answer this is the answer so what do you do is you say high plus how many more you need how many more you need that is what you have to say high plus how many more you need and this more will come back and do it like will come back and find out a formula but as of now just remember high like whatever is area of high because area of high is 7 and whatever more you"
+    },
+    {
+      "chunk_id": "L060_C13",
+      "start": 893.06,
+      "end": 952.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=893s",
+      "text": "formula but as of now just remember high like whatever is area of high because area of high is 7 and whatever more you need because you already have K equal to 5 and there are 3 missing numbers still here so more will be 2 so that's what you add it up that's what you add up again if I have to give an example 1 2 3 4 5 6 7 8 9 10 11 this is here this is here this is here this is here and this is here so this was not here this was not here this was not here so 3 were not there and till here you got it so the next two numbers which are not there will be 8 and 9 thereby just add the more numbers that are not there okay so you have got area of high plus more is what you have to do got it we'll try to figure out a formula so that we are not dependent on the value of array and we will do that afterwards but let's quickly write down the binary search code where am I starting the binary search at so at first so let's write the array and we are looking for the key missing number so let's just write it I'm starting the binary search at the zeroth index and I'll go till the last index which is n minus 1 that is very"
+    },
+    {
+      "chunk_id": "L060_C14",
+      "start": 952.58,
+      "end": 1026.22,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=952s",
+      "text": "I'm starting the binary search at the zeroth index and I'll go till the last index which is n minus 1 that is very much sure let's quickly do the generic binary search which is low lesser than equal to high again the standard low lesser than equal to high and everything will be standard no changes in that I'm trying to keep it consistent so that you understand the concept in a much better way what's the next job finding out the mid which is low plus high by 2 right what is the next job how many are missing you have to figure out how many are missing because on that basis you either eliminate left or you either eliminate right how many are missing can I say array of that mid index minus what should be there originally because if I'm having 7 originally it should have been 4 which is 1 plus index can I say 7 minus index plus 1 will be the missing number can I say this because 7 minus whatever is the index plus 1 will be the number of missing number I can thereby I'll write this as array of mid mid plus 1 that will be my missing numbers if missing is lesser than K then I'll eliminate the left half because I'm"
+    },
+    {
+      "chunk_id": "L060_C15",
+      "start": 1026.22,
+      "end": 1101.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=1026s",
+      "text": "plus 1 that will be my missing numbers if missing is lesser than K then I'll eliminate the left half because I'm looking for the range or else I'll eliminate the right half quite simple done done now you have to return array of high plus more but I'll try to figure out a formula for this because array of high might not be correct why I'll tell you imagine your array is given as four seven nine and I am looking for K equal to three so where will the high point to this will be here because third missing number will be somewhere before 4 before 4 so the high will be pointing here and the low will be pointing here so high will be pointing to negative index so array of high cannot be written just take this example try to do the binary search try to do the binary search and see where is high ending at you will see that high is ending at the minus 1 index and the low will stay at the 0th index because this is where the third missing number will be this is where the third missing number will be so you cannot say array of high plus something so we have to figure out a formula for this we will do that now okay so let's figure out the formula at array of high because if you remember this"
+    },
+    {
+      "chunk_id": "L060_C16",
+      "start": 1101.18,
+      "end": 1175.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=1101s",
+      "text": "formula for this we will do that now okay so let's figure out the formula at array of high because if you remember this particular example I was standing at this and low was standing at this so at array of high we had seven right and the missing numbers were three what is the formula for missing numbers if I ask you it's array of high minus that index plus 1 because that is what it is 7 minus 3 plus 1 sorry 3 plus 1 that's 7 minus 4 equal to 3 because ideally there should have been 4 here so we know the formula for missing is this how many more do you need that is what the thing is what is your answer array of high plus more what is more what is more can I say more is nothing but K minus missing can I say more is nothing but K minus missing because K was 5 missing was 3 so more came out to be 2 whatever you are looking to find and wherever you are at K minus missing will be your more right so can I say this was my answer this was my answer which is answer of high plus more cell right array of high plus more what is more K minus missing"
+    },
+    {
+      "chunk_id": "L060_C17",
+      "start": 1175.02,
+      "end": 1254.54,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=1175s",
+      "text": "my answer which is answer of high plus more cell right array of high plus more what is more K minus missing K minus missing what is missing array of high minus high minus 1 what I've done is that simply put values K minus missing was more in missing I've put this value this will go here and this becomes this perfect now what will happen array of high plus K minus array of high plus high plus 1 so array of high and array of high will go off and the formula turns out to be high plus K plus 1 or I can say high plus 1 plus K this is what the formula turns out to be this is your missing number or you can say you know one thing for sure low is also high plus 1 low is also high plus 1 if you carefully notice because low is one place ahead of high so low is also high plus 1 so either you can return this or you can go ahead and return low plus K as well this is the reason in a lot of solutions you'll find low plus K being returned and in a lot of solution you'll find high plus actually you will not find in any of the solution this being return everyone is returning low plus K and no one is explaining the reason"
+    },
+    {
+      "chunk_id": "L060_C18",
+      "start": 1254.54,
+      "end": 1324.3,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=1254s",
+      "text": "not find in any of the solution this being return everyone is returning low plus K and no one is explaining the reason behind it the reason is this derivation I hope you have understood this so let's quickly go back to the code and over here we will return high plus 1 plus K or else you can return low plus K as well that is your choice either this or either that that's it done what is the time complexity you're doing a typical binary search in the array so it's a big off n what is the space complexity a big off one and this will also be running for this example four seven eight and looking for the third missing number so since you know that at the end of the binary search high will be pointing at the minus one index and the low will be pointing at the zeroth index so there is no array of high because it's an array of negative index so you do a high plus one which is minus one plus one plus if you remember it's K so you do three so the answer will be minus one plus one will be zero and the answer comes out to be plus three which is indeed your answer this is why I converted it into a formula I could have written array of high plus more but that is technically not feasible for such cases where the"
+    },
+    {
+      "chunk_id": "L060_C19",
+      "start": 1324.3,
+      "end": 1363.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=uZ0N_hZpyps&t=1324s",
+      "text": "it into a formula I could have written array of high plus more but that is technically not feasible for such cases where the high ends up pointing to this place got it so let's quickly get back into the code editor by the way you can find out the problem link in the description and you can also find out the C++ Java Python and JavaScript code links from the description as well so this is how the code will look like you can return K plus high plus one or you can also return low plus K as your wish so I submitted this code and it works and if you're still watching I hope you understood everything and in case you have please please do consider giving us that like and if you're new to our channel do consider subscribing as well and yeah if you haven't followed me on Instagram Twitter and LinkedIn all the profile links will be in the description with this I'll be wrapping up this video let's meet in some other video till then bye bye take care"
+    }
+  ]
+}

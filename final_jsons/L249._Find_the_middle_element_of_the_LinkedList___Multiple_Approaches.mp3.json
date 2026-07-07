@@ -1,0 +1,92 @@
+{
+  "lecture_id": "L249",
+  "lecture_number": 249,
+  "lecture_title": "L13. Find the middle element of the LinkedList | Multiple Approaches",
+  "youtube_url": "https://www.youtube.com/watch?v=7LjQ57RqgEc",
+  "chunks": [
+    {
+      "chunk_id": "L249_C1",
+      "start": 0.0,
+      "end": 68.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=7LjQ57RqgEc&t=0s",
+      "text": "So let's continue to our playlist, but for that, hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So the problem that you're going to solve today is finding out the middle of a given linked list. So what does the problem state? You will be given a linked list and you have to return me the node which is the middle of that given linked list. So for this linked list, we have five nodes, right? So I can say that this particular node is the middle node. Why? Because on the left, we have two elements. On the right, we have two elements, correct? So you'll have to return me this entire node, not the value, the entire node. So this is what the question is asking you. Now you might be thinking n equal to five was odd. So getting a middle was super simple. What if it has even number of nodes? So let's take the second example. Over here we have six nodes and it is even. In this case, I cannot say that this is the middle because on the left we have two elements, on the right we have three elements. It is not exactly the middle. I also cannot say that this is the middle because on the left we have three, on the right we have two. So the middle is somewhere between it."
+    },
+    {
+      "chunk_id": "L249_C2",
+      "start": 68.34,
+      "end": 139.84,
+      "timestamp_url": "https://www.youtube.com/watch?v=7LjQ57RqgEc&t=68s",
+      "text": "is the middle because on the left we have three, on the right we have two. So the middle is somewhere between it. So I can say this is middle M1, this is middle M2. Somewhere between will be the exact middle. So in such cases, whenever there are even number of nodes, you'll be returning the second middle. Yes, you'll be returning the node four. So this problem comes up in an interview. I'll be starting off with the extreme naive solution and the extreme naive solution that I can think of is I need the third node over here. I need the fourth node over here. And in this case, the number of nodes are five. In this case, the number of nodes are six. I need to find a relation between n and the middle node, n and the middle node. Can I say if I know the number of nodes, if I know the number of nodes, the middle node will be n by two plus one. Can I say that? Why? Because if I take n equal to five by two plus one, five by two integer division is two. So two plus one is third node, which is what we are looking for. Let's look for six. Six by two plus one. Six by two is three integer division plus one. So you're looking for fourth node, which is again correct. So can I say this?"
+    },
+    {
+      "chunk_id": "L249_C3",
+      "start": 139.84,
+      "end": 213.2,
+      "timestamp_url": "https://www.youtube.com/watch?v=7LjQ57RqgEc&t=139s",
+      "text": "Six by two is three integer division plus one. So you're looking for fourth node, which is again correct. So can I say this? If I have the value of n, because what we are given is the head of the linked list. If somehow I can find out the value of n, then I just need the n by two integer division plus one node and that node will always be my middle node. Can I surely say this? I surely can. So how can I find n? Because we're not given n. We'll do the traversal technique because we already have done a problem to find the length of the linked list. We'll do the same. I'll keep a temporary at the head because we don't want to alter the head. And after that, we'll keep a count equal to zero. Let's check if temporary is null. Initially it is not. So count will increase and temporary will move. Is temp null? No. So count will again increase. Again, I'll move temp. Is temporary null? No. So count will again increase. Let's move. Is temporary null? No. So count will again increase. Is temporary null? No. So count will again increase. Is temporary null? Yes. The moment temporary is null, you stop and the value of count is five. Can I say that this is the n that we were looking for? Yes, this is the n. So once you have n, you need the middle node."
+    },
+    {
+      "chunk_id": "L249_C4",
+      "start": 213.2,
+      "end": 290.5,
+      "timestamp_url": "https://www.youtube.com/watch?v=7LjQ57RqgEc&t=213s",
+      "text": "this is the n that we were looking for? Yes, this is the n. So once you have n, you need the middle node. So can I say the middle node will be five by two plus one, which is three. So let's look for the middle node. Can I look for it? Yes. Very simple. You have the middle node's value as three. So let's start with temp. Again let's place the temp at head because that is the starting point. That is where we start off. Let's start. I'm at temp. What I'll do is I'll have the mid node as three. Okay. So I can reduce it. Let's reduce three by one and then we will move. Perfect. Again, we are at a node. Let's reduce it again and let's move. Let's reduce it again. The moment you reach here, the moment you reach here and you reduce, what you see is temporary is pointing to the middle node and the value is zero. What does that mean? You have encountered three nodes. You have encountered three nodes. That is why the middle node, which was three, has, see on three encounters, it will reduce itself and the ultimate value will be zero. So what I can say is wherever temp stops, that will be my middle node. What if I need to write the code? It'll be super simple, isn't it? Two steps. First temporary will be head. I need the value of count."
+    },
+    {
+      "chunk_id": "L249_C5",
+      "start": 290.5,
+      "end": 369.24,
+      "timestamp_url": "https://www.youtube.com/watch?v=7LjQ57RqgEc&t=290s",
+      "text": "need to write the code? It'll be super simple, isn't it? Two steps. First temporary will be head. I need the value of count. So let's say count zero and I'll keep on going till temporary is not null because I need to count. So let's do counter plus plus. What is the next thing that we will do? We will simply say, hey, temporary. Can you go to temporary dot next? We will say, why not? So what this will do is this will count to the number of nodes, correct? Once you have the number of nodes, can I say that the step one is done? Step one is done. What is the next thing to get the middle node? So can I say the middle node will be integer division of count plus one? I can integer division of count by two plus one. Once this is done, let's again place temp at head. That is something which I'll do right after that. I will be moving to, I'll moving the temp, right? Until how much? Can I say that we can probably move it till we don't reach null and we'll stop. This is the first node, right? This is the first node temp. So let's reduce mid equal to mid node minus one. And this is the node. What if this is my middle node?"
+    },
+    {
+      "chunk_id": "L249_C6",
+      "start": 369.24,
+      "end": 436.64,
+      "timestamp_url": "https://www.youtube.com/watch?v=7LjQ57RqgEc&t=369s",
+      "text": "temp. So let's reduce mid equal to mid node minus one. And this is the node. What if this is my middle node? So I'll check, hey, if after reduction, did you turn zero? If you did, that means you are the node. That means you are the node. Maybe you can break. That'll be better. Let's break. And in case you did not turn zero, let's go to the next. So what I'll do is I'll say temporary equal to temporary dot next. Once this is done, over here you can return the temp, whatever is your temp. Because after the break, it will be coming over here and it will be returning your temp. So can I say this will be step two? What will be the time complexity? I can surely say that the step one will be taking big O of n, where n is the number of nodes and the step two will be taking big O of n by two because we'll be going halfway through the linked list. So the overall time complexity will be big O of n plus n by two and the space complexity will be big O of one. This is where the interviewer will ask you to optimize this because what you're doing is you're doing a two pass solution. You're going once, then you're going again to find it out. Can you do it in one pass?"
+    },
+    {
+      "chunk_id": "L249_C7",
+      "start": 436.64,
+      "end": 511.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=7LjQ57RqgEc&t=436s",
+      "text": "you're doing a two pass solution. You're going once, then you're going again to find it out. Can you do it in one pass? This is what the interviewer will ask you in the next step. So the optimal approach will be using an algorithm known as tortoise and hare algorithm. So this algorithm involves the concept of slow and fast pointers. I'll be explaining you, I'll be explaining you the intuition as well. So what we do is we take a slow pointer. At the same time, we take a fast pointer and both of them are pointing to the head of the linked list. You will not alter the head. Yes, you will not alter the head. And what you will do is you'll move the slow pointer by one step, you'll move the fast pointer by two step and you'll do that simultaneously. You'll do that to get the, so let's do it. So what do you do is you move both of them together. So slow moves here and the fast pointer will move here. That is the step number one. In the next step, you will again move slow and fast to get the slow moves here and the fast will move two steps, two steps. So the fast reaches here. Remember this, the moment the fast pointer reaches the last node, the moment the fast pointer reaches the last node, that is when you will stop. That is when you'll stop."
+    },
+    {
+      "chunk_id": "L249_C8",
+      "start": 511.46,
+      "end": 590.56,
+      "timestamp_url": "https://www.youtube.com/watch?v=7LjQ57RqgEc&t=511s",
+      "text": "reaches the last node, the moment the fast pointer reaches the last node, that is when you will stop. That is when you'll stop. And you can see that the slow pointer is pointing to the middle node. Why I'll explain you, don't worry. So that was for the linked list with the odd length. Let's look at the linked list with the even length as well. So over here again, we'll do the same thing, slow and the fast pointer. Let's try it out simultaneously together. Slow fast, one step, two step. Perfect. Step number one. Next step, slow fast to get the slow one step, fast two step. Perfect. Carefully observe. Fast pointer is not at the last, is not at the last. If it is not at the last, you keep moving it. Let's do the next step. One step and two step, one step and two step. So one step and two step. So over here you can see that the fast pointer has reached a position where it is standing at null. So if it is standing at null, you will stop. And the moment you stop, you will see that the slow pointer is pointing to your middle node. So what did you observe? In case where the linked list length is odd, the fast pointer will be reaching your last node."
+    },
+    {
+      "chunk_id": "L249_C9",
+      "start": 590.56,
+      "end": 668.6,
+      "timestamp_url": "https://www.youtube.com/watch?v=7LjQ57RqgEc&t=590s",
+      "text": "what did you observe? In case where the linked list length is odd, the fast pointer will be reaching your last node. In case of even length linked list, the fast pointer will be reaching your null because it will never reach the last. It will never reach the last. So if you carefully observe, the fast pointer is at null. It will never reach the last node. It will never reach the last node. Why? Because it starts at an odd index, odd number one. If it is jumping two steps, it will go to the next odd number. It is again jumping two steps, it will go to the next odd number. But if the length is even, the last number is an even. So it cannot go to an even. It cannot go to an even. So one thing I know is in odd, it will go to the last. In even, it will go to the null. That is what I know for sure. What is the intuition? The intuition is very simple. Isn't it simple? Like if there are two people P1 and P2 and the P1 is travelling with a speed x and the P2 is travelling with a speed x by 2. If this person covers a distance d, what will be the distance that P2 will cover? It will cover a distance d by 2. Isn't that obvious? That is the logic over here. You are moving one pointer by one step."
+    },
+    {
+      "chunk_id": "L249_C10",
+      "start": 668.84,
+      "end": 744.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=7LjQ57RqgEc&t=668s",
+      "text": "It will cover a distance d by 2. Isn't that obvious? That is the logic over here. You are moving one pointer by one step. You are moving the other pointer by two steps. So when the fast pointer reaches the end, I'm sure that the previous pointer will be standing somewhere in the middle. It will be standing somewhere in the middle. And this is how it is solved. So what I'll do is I'll now quickly write down the code. It's going to be super simple. Slow is, maybe I'll use some other color. Slow is pointing to the head. The fast pointer is also pointing to the head. And what is your first thing? You need to take into account two conditions. One is it might reach the end because you do not know whether it is an odd length linked list or whether it is an even length linked list. You don't have any idea. So maybe it will reach the last or maybe it will reach the null. So if it is reaching the last, can I say the next is always null? So I know one thing, maybe the fast pointer will reach the last, which is null. So it shouldn't be the last. It shouldn't be null. It shouldn't be null. And the next of it should also not be null. Why is this condition written?"
+    },
+    {
+      "chunk_id": "L249_C11",
+      "start": 744.34,
+      "end": 818.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=7LjQ57RqgEc&t=744s",
+      "text": "It shouldn't be null. It shouldn't be null. And the next of it should also not be null. Why is this condition written? Because if my fast is standing here and the next is null, in that case I stop. So if it is not, if it is not, if it is not the null or the last, then I go ahead and do the steps together. So what I'll do is I'll say slow. Can you move to slow next? You'll be like, why not? I will. And the next fast, can you move to fast next? Once both of them are done, you can straight away return the slow and that will be your answer. What will be the time complexity? Very obvious. B go of n by two, we're doing it in one pass and in just n by two time. What is the space complexity? B go of one because we are not using any external space. So let's quickly get back into the code editor and check out the code. So over here you're given a function and you're given the head of the linked list and what they're expecting you is to return a node, not the value. So you basically write the slow and fast pointing to head and you write the while loop and after that you simultaneously move them together and then return the slow. So if you go ahead and submit this, it will be running absolutely fine."
+    },
+    {
+      "chunk_id": "L249_C12",
+      "start": 818.34,
+      "end": 867.86,
+      "timestamp_url": "https://www.youtube.com/watch?v=7LjQ57RqgEc&t=818s",
+      "text": "you simultaneously move them together and then return the slow. So if you go ahead and submit this, it will be running absolutely fine. So this was about the C++ code. In case you want for Java, you can copy paste the same code, go back to Java, paste it over here and if you have been following my playlist, you know what to do. Remove the pointers. What is the next step? The null gets converted to small caps. After that, what is the next step? This gets converted to dots. Anything else should be good. Let's quickly submit it straight away and see if it is running fine. So C++ and Java codes are pretty much similar. You just need to do minor changes and it will start working. So we're watching till now. I hope you have understood everything and in that case, please do consider giving us a like. If you are new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care."
+    }
+  ]
+}

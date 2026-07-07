@@ -1,0 +1,106 @@
+{
+  "lecture_id": "L050",
+  "lecture_number": 50,
+  "lecture_title": "BS-6. Minimum in Rotated Sorted Array",
+  "youtube_url": "https://www.youtube.com/watch?v=nhEMDKMB44g",
+  "chunks": [
+    {
+      "chunk_id": "L050_C1",
+      "start": 0.0,
+      "end": 76.02,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=0s",
+      "text": "Hey everyone, welcome back to the channel. I hope you guys are doing extremely well. So we will be continuing with our binary search playlist, which is the part of the strivers A to Z DSC course, in case you haven't checked it out yet. The link in the description, please, please make sure you check it out. So till now I've covered up till this particular problem. In this video, I will be covering up, find the minimum in the rotated sorted array, but please make sure that you should have seen these two videos before. I'll be leaving the video links in the description in case you haven't seen them. Please go back and watch it. Then you can resume with this particular video. So what does the problem state? So you're given a rotated sorted array, and I've already explained to you the definition of rotated sorted array. It's like ideally, this should have been 0124567. So here's the pivot. They have rotated it. So this comes at the front. So 4567 and then this shifts. So this is the rotated sorted array. Over here, you have to tell me the minimum. So the minimum is zero. You have to return me the value of the minimum. So if I take one more example, over here, the minimum value is one. So you have to return this. Over here, the minimum"
+    },
+    {
+      "chunk_id": "L050_C2",
+      "start": 76.02,
+      "end": 154.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=76s",
+      "text": "if I take one more example, over here, the minimum value is one. So you have to return this. Over here, the minimum value is one. So you have to again return this. So how do you solve this problem? So this problem comes up in an interview. What is the brute force that you can think of? Find the minimum. Find the smallest number in an array. Yes, that's a typical big O of n solution. We basically do a single pass through the array. Obviously, big O of n is something which the interviewer will not like. They'll ask you to optimize it. And we see sorted, we see find and binary search comes to our head. So we have to apply binary search. But how can we apply binary search? What is the step one of binary search? It always eliminates either the left or the right because in binary search, we move from n to n by 2 size array to n by 4 size array and so on. We move on till one and then it ends and the element is not there. So we have to somehow eliminate the left half or eliminate the right half. How can we? So if you remember. In the rotated sorted array, we actually cannot straight away eliminate. You have to first figure out which is the sorted half. Identify the sorted"
+    },
+    {
+      "chunk_id": "L050_C3",
+      "start": 154.62,
+      "end": 233.28,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=154s",
+      "text": "rotated sorted array, we actually cannot straight away eliminate. You have to first figure out which is the sorted half. Identify the sorted half. Again, I've already explained this in the previous video. Please go back and watch it if you haven't seen it. So you have to identify the sorted half and why I've told you the reasons in the previous video. So over here, let's let's try to think we have a low here, we have a high here. And when we start, we have a mid here and we know that the left half is sorted. Why do I say that? Because 4 is lesser than equal to 7. Thereby the left half is sorted, whereas the right half is not sorted. Why? Because 7 ideally should have been lesser than 2, but that is wrong. So thereby I know that the left half is sorted. If I ask you, hey, why is the right half not sorted? If I ask you this question, what will be your answer? Your answer will be. If the array was a straight like something like 1,2,3,4, then even if you stand here, the left and right are always sorted. Since you did a rotation on this point, thereby the left half was sorted and because of the rotation, the right half was not sorted because of the rotation. Because the rotating point is on the right half, because the rotating point is on the right half, thereby it is"
+    },
+    {
+      "chunk_id": "L050_C4",
+      "start": 233.28,
+      "end": 310.08,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=233s",
+      "text": "of the rotation. Because the rotating point is on the right half, because the rotating point is on the right half, thereby it is not sorted. And if the rotating point is on the right half, can I say the rotating point will always have the minimum element? Yes. Hence, the left sorted part will never have your answer and the right part might have your answer. Why do I say might? Let me give you some other examples. Let's take one more example and see if the statement that we made is correct or not. So over here, can I say that the right half is sorted and it doesn't contains the minimum. It doesn't. Which does make sense and the minimum is here. Why is that? Because the point of rotation is this. Hence, the left portion is not sorted. Hence, the left portion is not sorted. Thereby, the left portion contains the minimum. But I can still prove my statement wrong. Let me give you one more example. This one. So over here, can I say that if the mid is here, the low is here, the high is here, the right half is actually sorted and it contains the element. It contains the minimum. I know the left half is not sorted and this also contains the element. So a bit of conflict. The right half might"
+    },
+    {
+      "chunk_id": "L050_C5",
+      "start": 310.08,
+      "end": 389.46,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=310s",
+      "text": "I know the left half is not sorted and this also contains the element. So a bit of conflict. The right half might have the element. Might just have the element. So we have to be careful about these things. We cannot straight away say that, hey listen, because if I give you one more example, 1,2, in this case low will be here, high will be here, mid will be here. Again, the left half is sorted and it does have the answer. It does have the answer. So we have to be careful. We have to be careful because we know one thing for sure. We can eliminate the right half and then probably look for it. We can eliminate the right half and probably look for it. We can probably eliminate the left half and probably look for it. So we know one thing for sure. The sorted half may or may not have the answer. Can I say this? The sorted half may or may not have the answer. So what I will do is, pick the minimum from that, pick the min from the sorted half and eliminate and eliminate. Because I know if I eliminate this, then I can look for this one because I can, I know this is sorted. I know this is sorted. So I'll use the property of sorted here and how I'll tell you when"
+    },
+    {
+      "chunk_id": "L050_C6",
+      "start": 389.46,
+      "end": 466.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=389s",
+      "text": "know this is sorted. I know this is sorted. So I'll use the property of sorted here and how I'll tell you when I do the driver. Let's let's try to use the property of sorted. So where am I? I'm over here. What do I know? This left portion is sorted. This left portion is sorted. I'm looking for minimum. Let's keep an answer which will keep the minimum value. So can you tell me if I take this, which is the smallest element? I know this is sorted. Please use, please please take the advantage of this being sorted. This is sorted. Which is the minimum element in this? The low. Because if this entire thing is sorted, the leftmost element will be the minimum. So update it. Can I say in this entire sorted portion, I have picked up the minimum. I've picked up the minimum. This is of no more use because I picked up the minimum. He's like, yes, thereby I will go ahead and I'll erase this. So what I did was I picked up the minimum and I erased it because eliminate, eliminate, because there's no point in doing a search for 5, 6, 7, eliminate. Next, a medium is here because I eliminated the left half. Now, again, the left half is sorted. And what is the minimum? Zero. Just pick it up and eliminate the left half saying, hey, I'm done with you. I'm done with"
+    },
+    {
+      "chunk_id": "L050_C7",
+      "start": 466.34,
+      "end": 538.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=466s",
+      "text": "And what is the minimum? Zero. Just pick it up and eliminate the left half saying, hey, I'm done with you. I'm done with you. The left half is sorted. Point to notice. The right half is also sorted, but it's okay. If I figure out the left half is sorted, let's eliminate. I just need to eliminate one half. I'll eliminate the left half. You can eliminate, eliminate the right half as well. That is your choice. Let's have it. We have a two and the mid will be here and the left half is this, which you compare with answer. No need to. And then obviously the binary search ends when you eliminate. Eventually the answer is stored as zero. Let's try to do more and more. So let's try with one more example. We have a low, we have a mid, we have a high. Let's keep answer as int max. What are the first thing that I'll do? I'll try to eliminate. Which half will I eliminate? Can I eliminate this half? It is not sorted. So I cannot be sure if we have the minimum there. This half is sorted. So I know if that half is sorted, pick up the smallest element and rest. I don't need them. I'm finding minimum. Pick up the smallest and get rid of them. Pick up the smallest and get rid of them, which is basically"
+    },
+    {
+      "chunk_id": "L050_C8",
+      "start": 538.42,
+      "end": 616.66,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=538s",
+      "text": "finding minimum. Pick up the smallest and get rid of them. Pick up the smallest and get rid of them, which is basically get rid of them. Thereby the high will come. Next medium is here. Let's see. The left half is sorted. The left half is sorted, which is the minimum in the left half. The low, pick up that, compare it to, no need. Now eliminate the left half, eliminate the left half and move the low to this portion. So when you move the low to that portion, the medium will be this. Now what is your left half? This. Thereby pick up the minimum, which is one itself, update and then eliminate. So it's over. So eventually you got the answer as one. Wow. Let's do one more example and see if it is working fine on this one as well or not. Low is here, high is here, mid is here. I say answer equal to int max. I say answer equal to int max. I'm like, okay, the left half is not sorted. It's not sorted. How did you know this? Because four is not better than one. The left half is not sorted. Is the right half sorted? Is the right half sorted? Yes. Pick up the smallest and eliminate and eliminate. How much do you have? Four, five. Write the medium, which is the left"
+    },
+    {
+      "chunk_id": "L050_C9",
+      "start": 616.66,
+      "end": 691.58,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=616s",
+      "text": "Yes. Pick up the smallest and eliminate and eliminate. How much do you have? Four, five. Write the medium, which is the left half? Four. Which is the smallest in the left half? Four. Will it update? No. So eventually eliminate the left half. So basically the low will go here and the medium will go here and again you can do it. So the answer stores as one. So yeah, works. So can I say, if I have to write the pseudocode, takes an array, takes an n, takes a value of low equal to zero, takes a value of high equal to n minus one and takes an answer equal to int max. Can I say this for sure? I can. Let's write the standard by research, which is low lesser than equal to high standard. What do we say? A mid equal to low plus high by two. We say that. What's the next thing we say? Eliminate the left half or eliminate the right half. So I know the left half is sorted. If array of low is lesser than array of mid, lesser than equal to rather. Why do I write equal to? It might have one element. What if, what if you have an array which is like two, one, the low is here, the high is here, the mid is also here. So the left half is this. So for single elements, it's very important you"
+    },
+    {
+      "chunk_id": "L050_C10",
+      "start": 691.58,
+      "end": 770.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=691s",
+      "text": "here, the high is here, the mid is also here. So the left half is this. So for single elements, it's very important you give this equal to sign. So this is the left half. In case of left half, which is the smallest? If I talk about the left half, okay, this one here. If I talk about the left half, low is here, mid is here, which is the smallest? The low. So you always pick up the low and you're like answer equal to answer, sorry, answer equal to minimum of answer comma array of low. So you update it and eliminate. So low will be moving to mid plus one. First update and then move mid. Okay. Or else eliminate the right half if that is sorted. If the left half is not sorted, the right half will be sorted. That's how the property of rotated sorted array works. If the right half is there, then you're like answer equal to min of answer comma array of mid. Why, why, why, why? Hey dude, very obvious. Let us go back to this example. Four, five, one, two, three, low here, high here, mid here. The right portion gets eliminated, which is the smallest, whatever is at mid. So take it, take it, take in, eliminate the right high equal to mid minus one. That's it. That's your binary search. And whatever"
+    },
+    {
+      "chunk_id": "L050_C11",
+      "start": 770.34,
+      "end": 834.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=770s",
+      "text": "take it, take it, take in, eliminate the right high equal to mid minus one. That's it. That's your binary search. And whatever is stored in your answer, whatever is stored in your answer at the end will be a minimum. Got it? So in case you want to try out the problem, you can check it out from the link in the description. What I've done is I've written the same code in C plus plus. You can find out the Java, Python, JavaScript code from the notes in the description. So if I submit this, this actually runs because eliminate the left half and take the smallest on the left half, eliminate the right half and take the smallest in the right half and keep on updating your answer. That's what you're written. Can I optimize this? I can actually optimize this. So let me tell you how can I optimize this? This optimization is not needed. If you want to do it, that's your choice. If you don't want to do it, that's your choice again. So when I have low here, high here, and the mid is pointing here, what do you eliminate? You basically eliminate the left half because it is sorted and you store answer equal to four. Right? So you eliminate the left half and it's sorted. And then you take the low to here. Carefully observe one thing in this portion. Let's, let's get"
+    },
+    {
+      "chunk_id": "L050_C12",
+      "start": 834.78,
+      "end": 908.34,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=834s",
+      "text": "the left half and it's sorted. And then you take the low to here. Carefully observe one thing in this portion. Let's, let's get rid of this. In this portion, the left half is also sorted and the right half is also sorted. How do you recognize that a left half and the right half both are sorted? And that only happens when you cross the point of rotation. When you cross the point of rotation, the entire array is sorted or when you're on the other side of it. So can I say I can easily figure out that by saying if that's lesser than equal to mid, like array of mid and array of mid is lesser than equal to high. Can I say this? If these two conditions are met left sorted and right sorted, and this together can be written as array of low lesser than array of mid. Sorry, array of high. Together can be written as this. That means the low is lesser than equal to high, which is this case. That means the entire array is sorted. And this case happens. Do you need to perform a binary search on this because the array is sorted and you know the smallest element will be the low. You don't need to. So we can actually do an optimization saying, hey, listen, if the search space is already sorted,"
+    },
+    {
+      "chunk_id": "L050_C13",
+      "start": 908.34,
+      "end": 982.18,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=908s",
+      "text": "the low. You don't need to. So we can actually do an optimization saying, hey, listen, if the search space is already sorted, then array of low will always be smaller in that search space. In that case, you just compare and you update answer and you break. So this will stop the binary search. Because if a search space is already sorted, if both the left and right are sorted, you stop, you don't do anything. So if I submit this, this will be running with a slightly better time complexity. So what is the time complexity? Since we're doing with unique elements, it's going to be big O of logarithmic base 2n for duplicates. I'll leave that as a homework. If you have seen my, I'll go back to the sheet with the sheet. Yeah. If you have seen this particular video search in rotated sorted array part two, you can actually do it for this one as well. So I leave that for you as a homework and I'll mark this as done. I hope you have understood the entire concept. In the discussion forum of a lot of websites, you will see that people are using the concept of low lesser than high. Now I'm not a big fan of it. I'll try to keep all the concepts in a similar code format. Where am I? Yeah. I'll try to keep all the concepts in this similar format. I'll do equal to mid plus"
+    },
+    {
+      "chunk_id": "L050_C14",
+      "start": 982.18,
+      "end": 1026.78,
+      "timestamp_url": "https://www.youtube.com/watch?v=nhEMDKMB44g&t=982s",
+      "text": "similar code format. Where am I? Yeah. I'll try to keep all the concepts in this similar format. I'll do equal to mid plus one and high equal to mid minus one. I'll try to keep it in the same form so that you understand binary search in depth. I'll not be doing low equal to mid or high equal to mid. I'll not be doing that. I'll try to keep every code in a same format as we do. Right? So in case you have understood everything and you're still watching, please, please, please consider giving us that like, and if you're new to our channel, what are you waiting for? Like, please, please do consider subscribing to us because it does highly motivate me. And if you haven't followed me on Instagram, Twitter, LinkedIn, all the profile links are in the description. With this, I'll be wrapping up this video. Let's put in some other videos and then go back to it. Whenever your heart is broken, don't ever forget your golden. I will find the light in you."
+    }
+  ]
+}

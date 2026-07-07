@@ -1,0 +1,113 @@
+{
+  "lecture_id": "L293",
+  "lecture_number": 293,
+  "lecture_title": "L10. Minimum number of platforms required in a railway station",
+  "youtube_url": "https://www.youtube.com/watch?v=AsGzwR_FWok",
+  "chunks": [
+    {
+      "chunk_id": "L293_C1",
+      "start": 0.0,
+      "end": 79.62,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=0s",
+      "text": "So let's continue with the greedy algorithms playlist. Before starting off, a very welcome back to the channel. I hope you guys are doing extremely well. So the problem that we will be solving today is minimum number of platforms required for a railway station. So what is the problem statement? You're given n number of trains and for every train you have the arrival time and you also have the departure time. Like the first train arrives at 9 and it leaves at 9.20. So you know the arrival time and the departure time for each of the n trains. Now your task is to tell me what is the minimum number of platforms required such that each of these n trains can arrive and depart. Let's understand. So when I'm at the first, like when the first train arrives at 9, how many platforms do I need? I just need one. So can I say that a platform number one, the train will arrive at 9 and it will leave at 9.20. Okay. Let's check out the next train. It arrives at 9.45. Do I need a platform number two? No, I don't need because this train will depart at 9.20."
+    },
+    {
+      "chunk_id": "L293_C2",
+      "start": 79.62,
+      "end": 159.42,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=79s",
+      "text": "at 9.45. Do I need a platform number two? No, I don't need because this train will depart at 9.20. So this platform will be empty. So what I can do is I can just say, Hey, can you go and take the platform number one? Perfect. Let's check the next one out. The next one is going to arrive at 9.55. So if it is arriving at 9.55, can it arrive at platform number one? No, it cannot because there is already a train from 9.45 to 12 on that platform. So what I can do is maybe I can say, Hey, can you go to the platform number two? It will go to 9.55. 11.30 will go to the platform number two. Perfect. And the next one is arriving at 11. So can it go to the platform number one? No. Can it go to the platform number two? No. So it will be going to the platform number three. So arriving at 11 and leaving at 11.50. Perfect. What about the next one? 15 and 19.00. Arrives at 15, leaves at 19.00. So when it arrives at 15.00, can I say that all of the three platforms will be empty? All of the three platforms will be empty. I can send it to anyone. So maybe I'll ask him to go to the platform number one. 15.00, 19.00. The next one is arriving at 18.00. So will it go to platform number one?"
+    },
+    {
+      "chunk_id": "L293_C3",
+      "start": 159.42,
+      "end": 236.04,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=159s",
+      "text": "to go to the platform number one. 15.00, 19.00. The next one is arriving at 18.00. So will it go to platform number one? No, it cannot because the train will leave at 19.00. So it will go to the platform number two at 18.00 and leave at 20. So if you look at the entire journey, like entire day of n trains, what was the maximum number of platforms that you needed? At max, if you have three platforms, you can have all the trains arriving and departing. Do you need four? Four will also work, but that will be overkill because what's the use of the fourth platform? That is what the question is asking. How many minimum number of platforms will be able to accommodate all the trains arriving and departing? Over here I can say three platforms will be enough because at the worst case, there are three trains which are intersecting, which are intersecting in terms of arrival time and in terms of departure time. Understood the problem statement? So what will be the brute force? What is the brute force? Again, I did say a word intersecting, right? Because the arrival times and the departure times, if you carefully notice this one, this one, and this one, all of the three were intersecting at some point."
+    },
+    {
+      "chunk_id": "L293_C4",
+      "start": 236.04,
+      "end": 315.44,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=236s",
+      "text": "departure times, if you carefully notice this one, this one, and this one, all of the three were intersecting at some point. That is why you needed three platforms to accommodate these three trains. So if I can figure out the maximum number of intersections, I think that will be doable, right? So what I'll do is I'll pick up this, uh, like the extreme naive solution. I'll pick up the green number one and I'll say, is this train like intersecting with anyone else? No, no, no, no, no. So this green will require at the max of one platform. Perfect. Let's take this one. Is this train intersecting with anyone else? Not with this one, but with this one and with this one, because if you see the time times are intersecting like 945, if you say it's from here to 12 is here, 955 will be somewhere here and 1130 will be somewhere here. So this is definitely intersecting. Then there is 1100, which is 1100 and 1150 will be here. So it is also intersecting. So I can say this one is intersecting with this and this. So thereby I need three platforms over here. Perfect. This one is also intersecting with this one and this one. This one is also intersecting with this one and this one. This one is only intersecting with this one and this one is also intersecting with this"
+    },
+    {
+      "chunk_id": "L293_C5",
+      "start": 315.44,
+      "end": 391.36,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=315s",
+      "text": "intersecting with this one and this one. This one is only intersecting with this one and this one is also intersecting with this one. So what I can say is at max, the number of intersections that I did see was three. That's it. Understood. So if I have to ask you about intersections, imagine a train is arriving at this time and it's leaving at this time. The dots are there. How can it intersect with other trains? One of the ways is the other train that it is intersecting with is has arrived previously and it will depart after it. The other case can be it has arrived previously and it will depart before this particular train departs or it will arrive later and it will depart in some other case or it will arrive and depart somewhere between them. So there are four cases that you'll have to consider. Arriving before departing later, arriving before departing middle, arriving middle departing later arriving middle and departing middle. So I'll have to consider four cases when you are considering the case of intersection, right? So quite simple. That's what we will have to do."
+    },
+    {
+      "chunk_id": "L293_C6",
+      "start": 391.36,
+      "end": 469.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=391s",
+      "text": "when you are considering the case of intersection, right? So quite simple. That's what we will have to do. So what I can do is I can write down the function for the brute force. I'll be given the arrival time. I'll be given the departure time, right? What do I need to do? I just need to find out the maximum intersection at any point. So maybe I can keep a max count equal to zero and I can start from the first platform, super simple. I'll go on to the last and I'll start checking how many intersections does it have for the train itself. It will require a platform so I can keep the count as one and I'll start comparing j equal to i plus one can go up till n minus one. Perfect. And I'll have an intersection check. So you can write this check by yourself. Quite simple. I'll leave that to you. Count plus plus. If it is intersecting, you'll do a count plus plus. And whenever there is a count plus plus or maybe after this, you can do a max count equal to max of max count comma count. That's it. And you can end this for loop. You can end this for loop. And at the end of the day, what you can do is you can end up returning the max count and that will be the maximum rather the minimum number of platforms required to accommodate"
+    },
+    {
+      "chunk_id": "L293_C7",
+      "start": 469.98,
+      "end": 542.98,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=469s",
+      "text": "is you can end up returning the max count and that will be the maximum rather the minimum number of platforms required to accommodate all the end trains. This condition when you compare, you're comparing between arrival of i departure of i with arrival of j and departure of j. I've already told you four conditions. You have to write down all the four conditions. Again, this is a brute force. You can definitely optimize slightly here and there. But this is going to be the extreme naive solution that comes to my brain. And if I implement this, what will be the time complexity? A big O of n, a big O, near about big O of n. So can I see that the time complexity will be somewhere around big O of n square? I definitely can. And can I say that the space complexity will be somewhere around big O of one because not using an external space. And obviously the interview will not be happy with this n square because it is quadratic in nature. And this is where lastly to optimize. So we need to optimize n square. This is a clear indication that the algorithm that we are looking for will be somewhere around n log n or a big O of n. Okay, so how do I optimize this? Now in a real world, what I'll do is I'll go outside the railway station and I'll start observing as the time passes by."
+    },
+    {
+      "chunk_id": "L293_C8",
+      "start": 543.06,
+      "end": 617.74,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=543s",
+      "text": "this? Now in a real world, what I'll do is I'll go outside the railway station and I'll start observing as the time passes by. So I see that the train number one arrives at nine o'clock. This is the first time that you see something happening. So the train number one will arrive and it will take the platform number one or whatever platform number you can assign it. As the clock ticks by, as the clock ticks by, what is the next time that you see? 9.20. At 9.20, again something is happening and that is the train number one leaving. Train number one leaving. Okay, done and understood. Platform is empty. Platform is empty. What is the next time? 9.45 is when the train number two arrives. So I can say that at 9.20, 9.45, train number two arrives. What is the next time as your clock passes by? 9.55, the train number three arrives. As the clock passes by 11 o'clock, the train number four arrives. As the clock passes by, what is the next? 11.30, 11.30, not 12, 11.30. Okay, that's train number three. It goes off. As the clock passes by 11.50, the train number four goes off."
+    },
+    {
+      "chunk_id": "L293_C9",
+      "start": 617.74,
+      "end": 692.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=617s",
+      "text": "Okay, that's train number three. It goes off. As the clock passes by 11.50, the train number four goes off. As the clock passes by 12.00, train number two goes off. As the clock passes by 15.00, which is train number five arriving. As the clock passes by 18.00, which is train number six arriving. As the clock passes by 19.00, is the train number five leaving. As the clock passes by 20.00, is the train number six leaving. Throughout the journey, you did see that at max, you required three platforms. You did observe that three platforms were used at max. Perfect. So what am I doing? I'm standing and observing as the time passes by, as the time passes by. So can I sort everything according to time? Because then it'll be easy. So if I sort everything according to time, what will happen is I'll get something like 9 o'clock, first arrival. 9.20, first departure. 9.45, arrival. 9.55, another arrival. 11.00, another arrival. After that, 11.30, a departure. After that, 11.50, a departure. And I can keep on going."
+    },
+    {
+      "chunk_id": "L293_C10",
+      "start": 692.94,
+      "end": 771.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=692s",
+      "text": "another arrival. After that, 11.30, a departure. After that, 11.50, a departure. And I can keep on going. I can combine these arrays and sort them according to the time because as the day passes by. And what I can do is I can keep a count variable initially as zero because when I arrived at the railway station, the count was zero. And this is the first train. It arrives at nine. So I say, okay, it's going to take up one. It's going to take up one because it is arriving. After that, I go to the next time when something happens. That's a departure happening, which means, okay, one platform released. After that, I go to the next. 9.45, an arrival happening. Count one. 9.55, another arrival happening. Count two. 11.00, another arrival happening. Count three. 11.30, departure happening. Count two. 11.50, departure happening. Count one. And you can keep on going. Eventually, throughout the journey, the max count that you'll figure out is three. And that is the minimum number of platforms that you will require. Got it? I'm doing everything as per time. I can follow this, which is typically combining the arrival, combining the departure, and putting them into a third array. But this will require an extra space complexity. Can I do it on the same array? Probably yes. Because what I require is time sorted by. Because I'm doing everything on time as the day passes by."
+    },
+    {
+      "chunk_id": "L293_C11",
+      "start": 771.94,
+      "end": 850.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=771s",
+      "text": "the same array? Probably yes. Because what I require is time sorted by. Because I'm doing everything on time as the day passes by. Can I sort everything according to time? Because I'm not concerned about arrival and departures staying together. Because as the day passes by, I'm keeping a count. So what I will do is, I'll sort the arrival time separately. And if you see that this array is already sorted. So it's already sorted. I'll sort the departure time independently. It is not sorted. So let's quickly sort the departure time as well. So what I've done is I've sorted the arrival time and the departure time. So both of them are sorted. Now what I will try to do is, I'll keep a pointer at the arrival. I'll keep a pointer at the departure. And when I start off, I know the number of platforms as of now is zero. I'm starting to observe. What I'm starting to observe is 9 o'clock is going to happen first as the day passes by. So 9 o'clock happens and I go to the next. 9.45 or 9.20? 9.20 is going to happen, which is a departure. So count decreases and I go to 11.30. 9.45 or 11.30? 9.45."
+    },
+    {
+      "chunk_id": "L293_C12",
+      "start": 850.94,
+      "end": 928.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=850s",
+      "text": "9.20 is going to happen, which is a departure. So count decreases and I go to 11.30. 9.45 or 11.30? 9.45. That's a count of one. I go to the next. 9.55 or 11.30? 9.55. That's a count of two. I go to 11. 11 or 11.30? 11. That's a count of three. 15.00 or 11.30? 11.30. Count decreases. Goes to 11.50. 15.00 or 11.50? 11.50. Count decreases. 15.00 or 12.00? 12.00. Count decreases. 15.00 or 19.00? 15.00. Count increases. Goes to 18.00. 18.00 or 19.00? 18.00. Goes off. The arrival is done. If all the trains have arrived, there's no more trains going to arrive. So no more platforms will be used. So at max, throughout the journey, you again saw that at max I used three platforms. That's what you'll have to return. Super simple. Can I super quickly code this up? As the day goes by, right? So function, what do you need? An arrival time, a departure time. Perfect. What are we doing? Sorting. Let's quickly sort them up. So arrival, comma, you can sort arrival. Again, depending on the language, you can write your sorting. Sorted both of them. Let's keep I for the arrival. Let's keep a G for the departure."
+    },
+    {
+      "chunk_id": "L293_C13",
+      "start": 928.94,
+      "end": 1008.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=928s",
+      "text": "write your sorting. Sorted both of them. Let's keep I for the arrival. Let's keep a G for the departure. And I know the arrival will always be exhausted at first. We can simply do I less than N. Perfect. What after this? Okay, I know one thing. I need to keep a count. That's zero. I also need to keep a max count throughout the journey. So max count will be zero. Perfect. I need to figure out when the day passes by, which is happening first. So if someone is arriving first, so that's departure of G. What I can do is I can do a count plus plus. Perfect. At the same time, when this arrival is done, I go to the next event, which is I plus one. But if someone is departing, I'll do a count equal to count minus one. And I'll say J equal to J plus one. It's a simple two-pointer concept. Done. What after this? After this, I simply say, okay, what's the max count? Max count is going to be max of max count comma count. And I can say the while loop is done. And I can straightaway return the max count. Okay, done. Undusted. Complexity time. N log in, N log in."
+    },
+    {
+      "chunk_id": "L293_C14",
+      "start": 1008.94,
+      "end": 1078.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=1008s",
+      "text": "is done. And I can straightaway return the max count. Okay, done. Undusted. Complexity time. N log in, N log in. So that's a 2N log in. And that's a B go of N. Is it a B go? No. It's not a B go. Why? Because at the end of the day, you're traversing throughout this array as well and throughout this array as well. Because sometime I plus one is happening, sometimes J plus one is happening. So overall, I can say this is taking B go of 2N because you're traveling in two arrays. Sometimes in the first, sometimes in the second. And this is 2N log in. So overall, time complexity can be said as 2 into N log in plus a B go of N. And the space complexity will be B go of 1. I'm distorting the given array. But if in an interview, the interviewer is asking you not to distort a given array and follow the other approach where you take a third array, put everything and then so on. And follow that as well. Time complexity and space complexity will be pretty much similar. So, yeah, this will be it for this one. I hope you understood it. So if you're still now watching and if you've understood the entire intuition, please, please do consider giving us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video."
+    },
+    {
+      "chunk_id": "L293_C15",
+      "start": 1078.94,
+      "end": 1081.94,
+      "timestamp_url": "https://www.youtube.com/watch?v=AsGzwR_FWok&t=1078s",
+      "text": "us a like. And if you're new to our channel, do consider subscribing to us as well. With this, I'll be wrapping up this video. Let's bring in some other video. Till then, bye. Thank you."
+    }
+  ]
+}
