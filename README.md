@@ -75,6 +75,9 @@ Evaluation was performed on a manually curated benchmark consisting of 200 repre
 - 5,752 indexed transcript chunks
 - Dense vector retrieval with FAISS
 - Direct timestamp navigation to the original YouTube lectures
+- The processed dataset is also available on Kaggle for reproducibility and experimentation.
+
+**Kaggle Dataset:** https://www.kaggle.com/datasets/krshnsaboo/strivera2z
  
 ---
 
