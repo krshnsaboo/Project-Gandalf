@@ -175,6 +175,9 @@ Selecting the recommendation opens the original YouTube lecture at the suggested
 
 This project was built to explore practical Retrieval-Augmented Generation (RAG) systems beyond question answering. The focus was on semantic retrieval, reranking, and improving navigation across long-form educational video content while preserving the original teaching material.
 
+## Why "Project Gandalf"?
+Like Gandalf in The Lord of the Rings, the system acts as a guide rather than providing all the answers itself. Instead of solving DSA problems, it directs learners to the exact point in Striver's lectures where the concept is explained.
+
 ---
 
 ## Future Improvements
