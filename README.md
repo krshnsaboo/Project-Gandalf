@@ -42,103 +42,47 @@ Evaluated via `python evaluate.py` across 150 curated queries:
 
 ---
 
-## 🏗️ Architecture
-
-```mermaid
-flowchart TB
-    %% STYLES & CLASSES
-    classDef inputStyle fill:#e1f5fe,stroke:#0288d1,stroke-width:2px,color:#01579b,font-weight:bold;
-    classDef processStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c;
-    classDef storeStyle fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#e65100,font-weight:bold;
-    classDef modelStyle fill:#e8f5e9,stroke:#388e3c,stroke-width:2px,color:#1b5e20,font-weight:bold;
-    classDef uiStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f,font-weight:bold;
-
-    %% STAGE 1: OFFLINE PREPARATION & INDEXING
-    subgraph Offline["Phase 1: Offline Knowledge Base Indexing (315 Lectures)"]
-        direction LR
-        Audio["🎙️ YouTube Audios"] --> Whisper["🤖 Whisper ASR<br/>(Transcription)"]
-        Whisper --> Chunking["✂️ Semantic Chunking<br/>(200-250 words, 10% overlap)"]
-        Chunking --> Embed["🧠 BAAI/bge-m3<br/>(1024-d Dense Embeddings)"]
-        Embed --> FAISS[("📦 FAISS IndexFlatIP<br/>5,752 Dense Vectors")]
-        Chunking --> BM25[("📑 BM25 Sparse Index<br/>Keywords & Titles")]
-    end
-
-    %% STAGE 2: INFERENCE & HYBRID RETRIEVAL
-    subgraph Online["Phase 2: Runtime Hybrid RAG Pipeline (< 1.5s Latency)"]
-        direction TB
-        Query(["🔍 User Query or LeetCode URL"]):::inputStyle --> Normalizer["🔗 Query Normalizer<br/>(Extracts problem title)"]:::processStyle
-        
-        Normalizer --> HybridRetriever["⚡ Hybrid Retrieval Engine<br/>(Reciprocal Rank Fusion)"]:::processStyle
-        
-        FAISS -.->|Dense Similarity| HybridRetriever
-        BM25 -.->|Keyword Matches| HybridRetriever
-        
-        HybridRetriever -->|Top 30 Candidates| Reranker["🚀 MiniLM Cross-Encoder<br/>(Re-score & Pre-prune in ~37ms)"]:::modelStyle
-        
-        Reranker -->|Top 5 Contexts| PromptBuilder["📝 Prompt Builder<br/>(Strict Navigation Guardrails)"]:::processStyle
-        
-        PromptBuilder --> LLM["🤖 OpenAI gpt-4o-mini<br/>(Extracts exact lecture & time)"]:::modelStyle
-        
-        LLM --> Parser["🎯 Response Parser<br/>(Robust Markdown & URL Matcher)"]:::processStyle
-    end
-
-    %% STAGE 3: PRESENTATION & OBSERVABILITY
-    subgraph Output["Phase 3: Delivery & Observability"]
-        direction LR
-        Parser --> UI["📺 Streamlit Web App<br/>(Embedded Video at Timestamp)"]:::uiStyle
-        Parser --> Telemetry["📊 Search Telemetry<br/>(Logs latency & quality metrics)"]:::storeStyle
-    end
-
-    %% Apply Classes
-    class Audio,Whisper,Chunking,Normalizer,HybridRetriever,PromptBuilder,Parser processStyle;
-    class Embed,LLM,Reranker modelStyle;
-    class FAISS,BM25 storeStyle;
-    class UI uiStyle;
-```
-
----
-
 ## 📁 Clean Repository Structure
 
 ```text
 Project Gandalf/
-├── app.py                     # Streamlit web application with embedded video player
-├── main.py                    # Interactive CLI search tool
-├── rag_pipeline.py            # End-to-end RAG orchestrator
-├── retrieval.py               # Hybrid Search: BM25 (sparse) + FAISS (dense) via RRF
-├── reranker.py                # Ultra-fast cross-encoder with candidate pruning
-├── prompt_builder.py          # Navigation prompts & timestamp formatting
-├── llm.py                     # OpenAI client with retries & graceful fallback
-├── response_parser.py         # Robust parsing of recommendations and timestamps
-├── query_normalizer.py        # Extracts problem names from LeetCode URLs
-├── config.py                  # Centralized configuration & lazy secrets loader
-├── logger.py                  # Structured query telemetry logging
-├── analyse_logs.py            # Real-time search telemetry & analytics
-├── evaluate.py                # Retrieval accuracy benchmark runner
-├── evaluation_queries.json    # 150 curated benchmark test cases
-├── requirements.txt           # Project dependencies
-├── README.md                  # Complete documentation
-├── LICENSE                    # MIT License
-├── .gitignore                 # Git ignore rules
+├── app.py                                 # Streamlit web application with embedded video player
+├── main.py                                # Interactive CLI search tool
+├── rag_pipeline.py                        # End-to-end RAG orchestrator
+├── retrieval.py                           # Hybrid Search: BM25 (sparse) + FAISS (dense) via RRF
+├── reranker.py                            # Ultra-fast cross-encoder with candidate pruning
+├── prompt_builder.py                      # Navigation prompts & timestamp formatting
+├── llm.py                                 # OpenAI client with retries & graceful fallback
+├── response_parser.py                     # Robust parsing of recommendations and timestamps
+├── query_normalizer.py                    # Extracts problem names from LeetCode URLs
+├── config.py                              # Centralized configuration & lazy secrets loader
+├── logger.py                              # Structured query telemetry logging
+├── analyse_logs.py                        # Real-time search telemetry & analytics
+├── evaluate.py                            # Retrieval accuracy benchmark runner
+├── evaluation_queries.json                # 150 curated benchmark test cases
+├── requirements.txt                       # Project dependencies
+├── README.md                              # Complete documentation
+├── LICENSE                                # MIT License
+├── .gitignore                             # Git ignore rules
 │
-├── tests/                     # Automated unit test suite (16 tests)
+├── tests/                                 # Automated unit test suite (16 tests)
 │   ├── test_response_parser.py
 │   ├── test_query_normalizer.py
 │   ├── test_prompt_builder.py
 │   └── test_config.py
 │
-├── lecture_embeddings/        # Runtime vector indices
-│   ├── faiss_index.bin        # 5,752 indexed passage vectors
-│   ├── all_lecture_embeddings.pkl # Complete chunks & metadata
+├── lecture_embeddings/                    # Runtime vector indices
+│   ├── faiss_index.bin                    # 5,752 indexed passage vectors
+│   ├── all_lecture_embeddings.pkl         # Complete chunks & metadata
 │   └── faiss_info.json
 │
-└── scripts/                   # One-time data prep pipelines
-    ├── videos_metadata.py     # Metadata scraper using yt-dlp
-    ├── create_chunks.py       # Whisper ASR transcription
-    ├── merge_chunks.py        # Subtitle grouping & token bounding
-    ├── absorb_tiny_chunks.py  # Tiny chunk absorption
-    ├── chunk_analyzer.py      # Statistical inspection of chunks
-    └── create_faiss_index.py  # FAISS index builder
+└── scripts/                               # One-time data prep pipelines
+    ├── videos_metadata.py                 # Metadata scraper using yt-dlp
+    ├── create_chunks.py                   # Whisper ASR transcription
+    ├── merge_chunks.py                    # Subtitle grouping & token bounding
+    ├── absorb_tiny_chunks.py              # Tiny chunk absorption
+    ├── chunk_analyzer.py                  # Statistical inspection of chunks
+    └── create_faiss_index.py              # FAISS index builder
 ```
 
 ---
