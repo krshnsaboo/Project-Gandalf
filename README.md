@@ -1,14 +1,18 @@
 # 🎯 Project Gandalf: Striver A2Z DSA Lecture Navigator
 
 [![Release v1.1](https://img.shields.io/badge/Release-v1.1-brightgreen.svg)](https://github.com/krshnsaboo/Project-Gandalf/releases/tag/v1.1)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://project-gandalf.streamlit.app)
+[![Kaggle Dataset](https://img.shields.io/badge/Kaggle-Dataset-20BEFF.svg)](https://www.kaggle.com/datasets/krshnsaboo/strivera2z)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.46+-FF4B4B.svg)](https://streamlit.io)
-[![FAISS](https://img.shields.io/badge/FAISS-CPU-00599C.svg)](https://github.com/facebookresearch/faiss)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+> **Live Demo**: [https://project-gandalf.streamlit.app](https://project-gandalf.streamlit.app)  
+> **Kaggle Dataset**: [https://www.kaggle.com/datasets/krshnsaboo/strivera2z](https://www.kaggle.com/datasets/krshnsaboo/strivera2z)
 
 **Project Gandalf** is a production-grade Video Retrieval-Augmented Generation (RAG) navigation engine designed specifically for [Striver's A2Z DSA Course](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2) (315 lectures on YouTube).
 
-Instead of generating abstract code answers or forcing learners to manually scrub through hours of video, Gandalf pinpoints the **exact lecture, timestamp, and playable in-app video player** where Raj Vikramaditya (Striver) explains the exact intuition, algorithm, or problem.
+### 🧙 Why "Project Gandalf"?
+Like Gandalf in *The Lord of the Rings*, the system acts as a **wise guide rather than an answer machine**. Instead of generating abstract code solutions or forcing students to scrub through hundreds of hours of video, Gandalf pinpoints the **exact lecture, timestamp, and playable in-app video player** where Raj Vikramaditya (Striver) explains the intuition, algorithm, or problem.
 
 ---
 
@@ -41,25 +45,55 @@ Evaluated via `python evaluate.py` across 150 curated queries:
 ## 🏗️ Architecture
 
 ```mermaid
-flowchart TD
-    subgraph Offline_Indexing["Offline Preprocessing & Indexing (scripts/)"]
-        audios["YouTube Audios (315 Lectures)"] --> whisper["Whisper ASR Transcription"]
-        whisper --> merge["merge_chunks.py (200-250 tokens, 10% overlap, 80s cap)"]
-        merge --> absorb["absorb_tiny_chunks.py (< 80 tokens absorbed)"]
-        absorb --> bge["BAAI/bge-m3 Vector Embeddings (1024-d)"]
-        bge --> faiss["FAISS IndexFlatIP (5,752 Vectors)"]
+flowchart TB
+    %% STYLES & CLASSES
+    classDef inputStyle fill:#e1f5fe,stroke:#0288d1,stroke-width:2px,color:#01579b,font-weight:bold;
+    classDef processStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c;
+    classDef storeStyle fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#e65100,font-weight:bold;
+    classDef modelStyle fill:#e8f5e9,stroke:#388e3c,stroke-width:2px,color:#1b5e20,font-weight:bold;
+    classDef uiStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f,font-weight:bold;
+
+    %% STAGE 1: OFFLINE PREPARATION & INDEXING
+    subgraph Offline["Phase 1: Offline Knowledge Base Indexing (315 Lectures)"]
+        direction LR
+        Audio["🎙️ YouTube Audios"] --> Whisper["🤖 Whisper ASR<br/>(Transcription)"]
+        Whisper --> Chunking["✂️ Semantic Chunking<br/>(200-250 words, 10% overlap)"]
+        Chunking --> Embed["🧠 BAAI/bge-m3<br/>(1024-d Dense Embeddings)"]
+        Embed --> FAISS[("📦 FAISS IndexFlatIP<br/>5,752 Dense Vectors")]
+        Chunking --> BM25[("📑 BM25 Sparse Index<br/>Keywords & Titles")]
     end
 
-    subgraph Online_Inference["Online Inference Pipeline"]
-        user["User Query / LeetCode URL"] --> qnorm["query_normalizer.py"]
-        qnorm --> hybrid["retrieval.py: Hybrid Search (BM25 + FAISS RRF)"]
-        hybrid -->|Top 30 Candidates| rerank["reranker.py: MiniLM Cross-Encoder (~37ms)"]
-        rerank -->|Top 5 Contexts| prompt["prompt_builder.py: Navigation Prompts"]
-        prompt --> llm["llm.py: OpenAI gpt-4o-mini"]
-        llm --> parser["response_parser.py: Robust Parser"]
-        parser --> log["logger.py: Telemetry JSONL"]
-        parser --> ui["Streamlit Web App: In-App Video Playback"]
+    %% STAGE 2: INFERENCE & HYBRID RETRIEVAL
+    subgraph Online["Phase 2: Runtime Hybrid RAG Pipeline (< 1.5s Latency)"]
+        direction TB
+        Query(["🔍 User Query or LeetCode URL"]):::inputStyle --> Normalizer["🔗 Query Normalizer<br/>(Extracts problem title)"]:::processStyle
+        
+        Normalizer --> HybridRetriever["⚡ Hybrid Retrieval Engine<br/>(Reciprocal Rank Fusion)"]:::processStyle
+        
+        FAISS -.->|Dense Similarity| HybridRetriever
+        BM25 -.->|Keyword Matches| HybridRetriever
+        
+        HybridRetriever -->|Top 30 Candidates| Reranker["🚀 MiniLM Cross-Encoder<br/>(Re-score & Pre-prune in ~37ms)"]:::modelStyle
+        
+        Reranker -->|Top 5 Contexts| PromptBuilder["📝 Prompt Builder<br/>(Strict Navigation Guardrails)"]:::processStyle
+        
+        PromptBuilder --> LLM["🤖 OpenAI gpt-4o-mini<br/>(Extracts exact lecture & time)"]:::modelStyle
+        
+        LLM --> Parser["🎯 Response Parser<br/>(Robust Markdown & URL Matcher)"]:::processStyle
     end
+
+    %% STAGE 3: PRESENTATION & OBSERVABILITY
+    subgraph Output["Phase 3: Delivery & Observability"]
+        direction LR
+        Parser --> UI["📺 Streamlit Web App<br/>(Embedded Video at Timestamp)"]:::uiStyle
+        Parser --> Telemetry["📊 Search Telemetry<br/>(Logs latency & quality metrics)"]:::storeStyle
+    end
+
+    %% Apply Classes
+    class Audio,Whisper,Chunking,Normalizer,HybridRetriever,PromptBuilder,Parser processStyle;
+    class Embed,LLM,Reranker modelStyle;
+    class FAISS,BM25 storeStyle;
+    class UI uiStyle;
 ```
 
 ---
