@@ -1,27 +1,77 @@
-# Python
+# =========================================================================
+# 1. SECRETS & ENVIRONMENT VARIABLES (CRITICAL - NEVER COMMIT)
+# =========================================================================
+.env
+.env.local
+.env.*.local
+.streamlit/secrets.toml
+
+# =========================================================================
+# 2. PYTHON CACHE & BYTECODE
+# =========================================================================
 __pycache__/
 *.py[cod]
-*.pyo
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Virtual environments
+# =========================================================================
+# 3. VIRTUAL ENVIRONMENTS
+# =========================================================================
 .venv/
 venv/
 env/
+ENV/
 
-# Environment variables
-.env
-
-# Logs
+# =========================================================================
+# 4. TELEMETRY & USER LOGS (Search logs contain user query history)
+# =========================================================================
+logs/
+*.log
 logs/*.jsonl
 
-# Temporary files
+# =========================================================================
+# 5. TESTING & COVERAGE
+# =========================================================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+
+# =========================================================================
+# 6. RAW AUDIO & TEMPORARY DATA
+# =========================================================================
+Audios/
+jsons/
+new_json/
+new_jsons/
 temp/
 *.tmp
+*.joblib
 
-# IDE
+# =========================================================================
+# 7. IDE & OPERATING SYSTEM CLUTTER
+# =========================================================================
 .vscode/
 .idea/
-
-# OS
+*.sublime-workspace
 .DS_Store
 Thumbs.db
+desktop.ini
