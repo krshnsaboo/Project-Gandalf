@@ -9,7 +9,7 @@
 > **Live Demo**: [https://project-gandalf.streamlit.app](https://project-gandalf.streamlit.app)  
 > **Kaggle Dataset**: [https://www.kaggle.com/datasets/krshnsaboo/strivera2z](https://www.kaggle.com/datasets/krshnsaboo/strivera2z)
 
-**Project Gandalf** is a production-grade Video Retrieval-Augmented Generation (RAG) navigation engine designed specifically for [Striver's A2Z DSA Course](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2) (315 lectures on YouTube).
+**Project Gandalf** is an AI-powered Video Retrieval-Augmented Generation (RAG) navigation engine designed specifically for [Striver's A2Z DSA Course](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2) (315 lectures on YouTube).
 
 ### 🧙 Why "Project Gandalf"?
 Like Gandalf in *The Lord of the Rings*, the system acts as a **wise guide rather than an answer machine**. Instead of generating abstract code solutions or forcing students to scrub through hundreds of hours of video, Gandalf pinpoints the **exact lecture, timestamp, and playable in-app video player** where Raj Vikramaditya (Striver) explains the intuition, algorithm, or problem.
@@ -24,7 +24,7 @@ Like Gandalf in *The Lord of the Rings*, the system acts as a **wise guide rathe
 - **🔗 LeetCode Problem URL Normalizer**: Paste any LeetCode problem link (e.g. `https://leetcode.com/problems/add-two-numbers/`) and Gandalf automatically extracts the problem title and navigates to the matching lecture.
 - **📺 In-App Video Playback**: Embedded YouTube players inside Streamlit cards cued directly to the exact explanation timestamp.
 - **📊 150-Query Benchmark Suite**: Evaluated on 150 diverse test cases with **90.67% Recall@1, 98.67% Recall@5, 99.33% Recall@10, and 0.9421 MRR**.
-- **🛡️ Production Resilience**: Lazy configuration loading, OpenAI retry policies, and automated fallback to top reranked context during API outages.
+- **🛡️ System Resilience**: Lazy configuration loading, OpenAI retry policies, and automated fallback to top reranked context during API outages.
 
 ---
 
@@ -116,10 +116,10 @@ Project Gandalf/
 ├── analyse_logs.py            # Real-time search telemetry & analytics
 ├── evaluate.py                # Retrieval accuracy benchmark runner
 ├── evaluation_queries.json    # 150 curated benchmark test cases
-├── requirements.txt           # Production dependencies
+├── requirements.txt           # Project dependencies
 ├── README.md                  # Complete documentation
 ├── LICENSE                    # MIT License
-├── .gitignore                 # Production-hardened ignore rules
+├── .gitignore                 # Git ignore rules
 │
 ├── tests/                     # Automated unit test suite (16 tests)
 │   ├── test_response_parser.py
