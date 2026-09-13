@@ -5,7 +5,7 @@ from prompt_builder import PromptBuilder, format_timestamp
 from llm import LLM
 from logger import SearchLogger
 from response_parser import ResponseParser
-from query_normalizer import normalize_query
+from query_normalizer import normalize_query, enhance_query
 from config import FAISS_TOP_K, RERANK_TOP_K, USE_HYBRID_SEARCH
 
 
@@ -31,16 +31,11 @@ class RAGPipeline:
         rerank_k: int = RERANK_TOP_K,
         hybrid: bool = USE_HYBRID_SEARCH,
     ) -> dict:
-        """
-        Executes full RAG search pipeline and returns rich structured results,
-        including parsed recommendations, raw contexts, timings, and normalized query.
-        """
         t0 = time.perf_counter()
 
-        # Step 0: Normalize Query (e.g., LeetCode URLs)
         clean_query = normalize_query(query)
+        enhanced_query = enhance_query(query)
 
-        # Step 1: Retrieve (Dense or Hybrid BM25+FAISS)
         candidates = self.retriever.search(
             query=clean_query,
             top_k=retrieval_k,
@@ -48,7 +43,6 @@ class RAGPipeline:
         )
         t1 = time.perf_counter()
 
-        # Step 2: Rerank
         contexts = self.reranker.rerank(
             query=clean_query,
             candidates=candidates,
@@ -56,14 +50,12 @@ class RAGPipeline:
         )
         t2 = time.perf_counter()
 
-        # Step 3: Build Prompt
         system_prompt, user_prompt = PromptBuilder.build(
-            query=clean_query,
+            query=enhanced_query,
             contexts=contexts,
         )
         t3 = time.perf_counter()
 
-        # Step 4: LLM Generation (with graceful fallback if LLM fails)
         try:
             raw_response = self.llm.generate(
                 system_prompt=system_prompt,
@@ -83,17 +75,14 @@ class RAGPipeline:
 
         t4 = time.perf_counter()
 
-        # Parse recommendations
         parsed = ResponseParser.parse(raw_response)
 
-        # Attach snippet context to parsed results if matching
         for i, rec in enumerate(parsed):
             if i < len(contexts):
                 rec["text_snippet"] = contexts[i].get("text", "")
                 rec["rerank_score"] = contexts[i].get("rerank_score", 0.0)
                 rec["dense_score"] = contexts[i].get("dense_score", contexts[i].get("score", 0.0))
 
-        # Step 5: Logging
         retrieval_time = t1 - t0
         rerank_time = t2 - t1
         llm_time = t4 - t3
@@ -120,6 +109,7 @@ class RAGPipeline:
         return {
             "query": query,
             "normalized_query": clean_query,
+            "enhanced_query": enhanced_query,
             "response": raw_response,
             "recommendations": parsed,
             "contexts": contexts,
@@ -137,9 +127,6 @@ class RAGPipeline:
         retrieval_k: int = FAISS_TOP_K,
         rerank_k: int = RERANK_TOP_K,
     ) -> str:
-        """
-        Backwards-compatible search method returning the raw response string.
-        """
         result = self.search_details(
             query=query,
             retrieval_k=retrieval_k,

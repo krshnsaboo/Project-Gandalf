@@ -3,8 +3,6 @@ import json
 import os
 
 model = whisper.load_model("medium")
-# model = whisper.load_model("large-v2")        
-# use this if you have a good GPU and want better accuracy, but it will take much longer to run
 
 audios = os.listdir("Audios")
 

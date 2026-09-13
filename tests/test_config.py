@@ -17,7 +17,6 @@ class TestConfig(unittest.TestCase):
         self.assertGreaterEqual(config.TEMPERATURE, 0.0)
 
     def test_lazy_api_key_loading(self):
-        # With required=False, it should return str or None without raising an exception
         key = config.get_openai_api_key(required=False)
         self.assertTrue(key is None or isinstance(key, str))
 

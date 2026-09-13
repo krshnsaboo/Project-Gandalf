@@ -3,7 +3,6 @@ import streamlit as st
 from rag_pipeline import RAGPipeline
 from config import OPENAI_MODEL, RERANKER_MODEL
 
-
 st.set_page_config(
     page_title="Project Gandalf - Striver A2Z DSA Navigator",
     page_icon="🎯",
@@ -19,7 +18,6 @@ def load_pipeline():
     )
 
 
-# Custom CSS for modern styling
 st.markdown("""
 <style>
     .main-header {
@@ -69,11 +67,9 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Load pipeline with spinner
 with st.spinner("Initializing Project Gandalf (BGE-M3 + FAISS + BM25)..."):
     pipeline = load_pipeline()
 
-# Title Header
 st.markdown("""
 <div class="main-header">
     <h1>🎯 Striver A2Z DSA Lecture Navigator</h1>
@@ -83,14 +79,15 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Quick Examples state handler
 if "query_input" not in st.session_state:
     st.session_state["query_input"] = ""
 
+
 def set_query(query_text):
     st.session_state["query_input"] = query_text
+    st.session_state["auto_submit"] = True
 
-# Example Query Chips
+
 st.markdown("##### 💡 Try Popular Searches:")
 chip_col1, chip_col2, chip_col3, chip_col4 = st.columns(4)
 
@@ -116,7 +113,6 @@ with chip_col4:
 
 st.write("")
 
-# Search Input Form
 with st.form("search_form"):
     col_input, col_btn = st.columns([5, 1])
     with col_input:
@@ -129,8 +125,8 @@ with st.form("search_form"):
     with col_btn:
         submitted = st.form_submit_button("🔍 Search", use_container_width=True)
 
-# Search Execution
-if submitted:
+auto_submitted = st.session_state.pop("auto_submit", False)
+if submitted or auto_submitted:
     if not query.strip():
         st.warning("⚠️ Please enter a search query or LeetCode URL.")
     else:
@@ -142,7 +138,6 @@ if submitted:
             recommendations = result["recommendations"]
             norm_query = result.get("normalized_query", query)
 
-            # Latency Badge
             if norm_query != query:
                 st.info(f"🔗 Detected LeetCode URL! Searching for: **{norm_query}**")
 
@@ -176,7 +171,6 @@ if submitted:
                             else:
                                 st.markdown('<span class="badge-mod">⚪ Context Match</span>', unsafe_allow_html=True)
 
-                        # Embedded YouTube Player
                         if rec.get("url"):
                             st.video(rec["url"])
                             st.link_button(
@@ -185,7 +179,6 @@ if submitted:
                                 use_container_width=True,
                             )
 
-                        # Transcript Snippet Expander
                         snippet = rec.get("text_snippet")
                         if snippet:
                             with st.expander("📝 View Transcript Snippet from Lecture"):

@@ -1,5 +1,5 @@
 import unittest
-from query_normalizer import normalize_query
+from query_normalizer import normalize_query, enhance_query
 
 
 class TestQueryNormalizer(unittest.TestCase):
@@ -23,6 +23,26 @@ class TestQueryNormalizer(unittest.TestCase):
     def test_empty_query(self):
         self.assertEqual(normalize_query(""), "")
         self.assertEqual(normalize_query("   "), "")
+
+    def test_leetcode_acronyms(self):
+        url = "https://leetcode.com/problems/lru-cache/"
+        self.assertEqual(normalize_query(url), "LRU Cache")
+
+        bst_url = "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
+        self.assertEqual(normalize_query(bst_url), "Lowest Common Ancestor Of A Binary Search Tree")
+
+    def test_leetcode_roman_numerals(self):
+        url = "https://leetcode.com/problems/course-schedule-ii/"
+        self.assertEqual(normalize_query(url), "Course Schedule II")
+
+    def test_enhance_query_expansions(self):
+        self.assertIn("Priority Queue", enhance_query("dijkstra with pq"))
+        self.assertIn("Dynamic Programming", enhance_query("frog jump dp"))
+        self.assertIn("LRU Cache", enhance_query("https://leetcode.com/problems/lru-cache/"))
+
+    def test_enhance_query_question_framing(self):
+        enhanced = enhance_query("4Sum Optimal Solution")
+        self.assertTrue(enhanced.startswith("Which lecture and timestamp covers"))
 
 
 if __name__ == "__main__":

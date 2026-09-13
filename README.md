@@ -16,73 +16,75 @@ Like Gandalf in *The Lord of the Rings*, the system acts as a **wise guide rathe
 
 ---
 
-## 🌟 What's New in v1.1
+## ⚡ Key Capabilities
 
-- **⚡ Sub-2-Second End-to-End Latency**: Slashed total query latency from **20+ seconds down to ~1.0–1.8s**.
-- **🚀 Ultra-Fast CPU Cross-Encoder Reranker**: Integrated `cross-encoder/ms-marco-MiniLM-L-6-v2` with candidate pre-pruning, dropping rerank latency from **16.4s to 0.037s (~400x speedup)**.
-- **🔍 Hybrid Search (BM25 + Dense FAISS via RRF)**: Blends keyword search with semantic vectors using Reciprocal Rank Fusion, guaranteeing exact hits for LeetCode titles, problem numbers, and specific algorithms.
-- **🔗 LeetCode Problem URL Normalizer**: Paste any LeetCode problem link (e.g. `https://leetcode.com/problems/add-two-numbers/`) and Gandalf automatically extracts the problem title and navigates to the matching lecture.
-- **📺 In-App Video Playback**: Embedded YouTube players inside Streamlit cards cued directly to the exact explanation timestamp.
-- **📊 150-Query Benchmark Suite**: Evaluated on 150 diverse test cases with **90.67% Recall@1, 98.67% Recall@5, 99.33% Recall@10, and 0.9421 MRR**.
-- **🛡️ System Resilience**: Lazy configuration loading, OpenAI retry policies, and automated fallback to top reranked context during API outages.
+- **🔍 Hybrid Search Engine**: Integrates dense semantic vector search via **FAISS** (`BAAI/bge-m3`, 1024 dimensions) with sparse keyword retrieval via **BM25Okapi**, blended seamlessly using **Reciprocal Rank Fusion (RRF, $k=60$)**.
+- **🚀 Sub-Second Cross-Encoder Reranking**: Re-scores top candidate passages using `cross-encoder/ms-marco-MiniLM-L-6-v2` with candidate pre-pruning ($k=20$) and relevance thresholding (`-5.0`), delivering precise rankings in ~50–100ms on standard CPUs.
+- **🧠 Query Enhancement & Terminology Expansion**: Automatically detects and expands shorthand technical terms (`pq` $\to$ Priority Queue, `dp` $\to$ Dynamic Programming, `bst` $\to$ Binary Search Tree, `dfs/bfs` $\to$ Depth/Breadth First Search, `mst` $\to$ Minimum Spanning Tree, `ll` $\to$ Linked List, `tc/sc` $\to$ Time/Space Complexity) and structures intent for clearer retrieval.
+- **🔗 LeetCode URL Auto-Normalization**: Directly extracts and normalizes problem titles from LeetCode URLs (e.g., `https://leetcode.com/problems/lru-cache/` $\to$ `LRU Cache`, `course-schedule-ii` $\to$ `Course Schedule II`) before querying.
+- **⚡ Token-Optimized Navigation Prompting**: Streamlined, high-density prompt design that slashes prompt token consumption by **>60%** while strictly enforcing factual timestamp extraction without algorithm hallucinations.
+- **📺 Interactive Streamlit Web UI**: Full-featured web application featuring embedded YouTube players that jump directly to the target timestamp, relevance score badges, transcript snippets, and one-click popular search chips.
+- **🖥️ Dual Interface**: Supports both a modern Streamlit web application and an interactive terminal CLI (`main.py`).
+- **📊 Telemetry & Observability**: Real-time structured query logging (`logs/search_logs.jsonl`) recording retrieval, reranking, and generation latency breakdowns alongside ranking metrics.
+- **🛡️ Built-in Resilience**: Automatic exponential retry policies on OpenAI API calls and zero-downtime graceful fallback to the top reranked context during external API outages.
 
 ---
 
-## 📊 Benchmark Results (150-Query Suite)
+## 📊 Benchmark Results (150-Query Evaluation Suite)
 
-Evaluated via `python evaluate.py` across 150 curated queries:
+Project Gandalf was quantitatively benchmarked against a ground-truth dataset of 150 diverse DSA questions across all topics (Arrays, Trees, Graphs, Dynamic Programming, Greedy, Linked Lists, etc.):
 
 | Metric | Score | Performance Details |
 | :--- | :---: | :--- |
-| **Recall@1** | **90.67%** | **136 out of 150 queries** ranked target lecture at #1 |
-| **Recall@5** | **98.67%** | **148 out of 150 queries** found target lecture in top 5 |
-| **Recall@10** | **99.33%** | **149 out of 150 queries** found target lecture in top 10 |
-| **Mean Reciprocal Rank (MRR)** | **0.9421** | High precision across all DSA domains |
-| **Average Retrieval Latency** | **~0.10s** | Full 150-query suite evaluates in ~18 seconds |
+| **Recall@1** | **90.67%** | **136 out of 150 queries** matched the exact lecture at rank #1 |
+| **Recall@5** | **98.67%** | **148 out of 150 queries** found the target lecture in the top 5 |
+| **Recall@10** | **99.33%** | **149 out of 150 queries** found the target lecture in the top 10 |
+| **Mean Reciprocal Rank (MRR)** | **0.9421** | Extremely high rank precision across complex queries |
+| **Retrieval Throughput** | **~0.10s / query** | Complete 150-query suite evaluates in ~18 seconds |
 
 ---
 
-## 📁 Clean Repository Structure
+## 📁 Repository Structure
 
 ```text
 Project Gandalf/
-├── app.py                                 # Streamlit web application with embedded video player
-├── main.py                                # Interactive CLI search tool
-├── rag_pipeline.py                        # End-to-end RAG orchestrator
-├── retrieval.py                           # Hybrid Search: BM25 (sparse) + FAISS (dense) via RRF
-├── reranker.py                            # Ultra-fast cross-encoder with candidate pruning
-├── prompt_builder.py                      # Navigation prompts & timestamp formatting
-├── llm.py                                 # OpenAI client with retries & graceful fallback
-├── response_parser.py                     # Robust parsing of recommendations and timestamps
-├── query_normalizer.py                    # Extracts problem names from LeetCode URLs
-├── config.py                              # Centralized configuration & lazy secrets loader
-├── logger.py                              # Structured query telemetry logging
-├── analyse_logs.py                        # Real-time search telemetry & analytics
-├── evaluate.py                            # Retrieval accuracy benchmark runner
-├── evaluation_queries.json                # 150 curated benchmark test cases
-├── requirements.txt                       # Project dependencies
-├── README.md                              # Complete documentation
-├── LICENSE                                # MIT License
-├── .gitignore                             # Git ignore rules
+├── app.py                     # Streamlit web application with embedded video player
+├── main.py                    # Interactive CLI search tool
+├── rag_pipeline.py            # End-to-end RAG orchestrator with query enhancement
+├── retrieval.py               # Hybrid Search: BM25 (sparse) + FAISS (dense) via RRF
+├── reranker.py                # Cross-encoder reranker with candidate pre-pruning
+├── prompt_builder.py          # Token-optimized navigation prompts & timestamp formatting
+├── llm.py                     # OpenAI client with retries & graceful fallback
+├── response_parser.py         # Structured parsing of recommendations and timestamps
+├── query_normalizer.py        # Extracts LeetCode titles, expands acronyms & enhances queries
+├── config.py                  # Centralized configuration & lazy secrets loader
+├── logger.py                  # Telemetry logger writing structured JSONL records
+├── analyse_logs.py            # Telemetry analysis script for latencies and query stats
+├── evaluate.py                # Retrieval & pipeline benchmark evaluation runner
+├── evaluation_queries.json    # 150 curated benchmark test cases
+├── requirements.txt           # Project dependencies
+├── README.md                  # Project documentation
+├── LICENSE                    # MIT License
+├── .gitignore                 # Git ignore rules
 │
-├── tests/                                 # Automated unit test suite (16 tests)
+├── tests/                     # Automated unit test suite (20 unit tests)
 │   ├── test_response_parser.py
 │   ├── test_query_normalizer.py
 │   ├── test_prompt_builder.py
 │   └── test_config.py
 │
-├── lecture_embeddings/                    # Runtime vector indices
-│   ├── faiss_index.bin                    # 5,752 indexed passage vectors
-│   ├── all_lecture_embeddings.pkl         # Complete chunks & metadata
-│   └── faiss_info.json
+├── lecture_embeddings/        # Runtime vector indices
+│   ├── faiss_index.bin        # 5,752 indexed passage vectors
+│   ├── all_lecture_embeddings.pkl # Complete chunks & metadata
+│   └── faiss_info.json        # Index metadata
 │
-└── scripts/                               # One-time data prep pipelines
-    ├── videos_metadata.py                 # Metadata scraper using yt-dlp
-    ├── create_chunks.py                   # Whisper ASR transcription
-    ├── merge_chunks.py                    # Subtitle grouping & token bounding
-    ├── absorb_tiny_chunks.py              # Tiny chunk absorption
-    ├── chunk_analyzer.py                  # Statistical inspection of chunks
-    └── create_faiss_index.py              # FAISS index builder
+└── scripts/                   # Data preprocessing pipelines
+    ├── videos_metadata.py     # Playlist metadata scraper using yt-dlp
+    ├── create_chunks.py       # Whisper ASR transcription
+    ├── merge_chunks.py        # Subtitle grouping & token bounding
+    ├── absorb_tiny_chunks.py  # Tiny chunk absorption
+    ├── chunk_analyzer.py      # Statistical inspection of chunks
+    └── create_faiss_index.py  # FAISS index builder
 ```
 
 ---
@@ -90,28 +92,29 @@ Project Gandalf/
 ## 🚀 Quickstart Guide
 
 ### 1. Prerequisites
-- Python 3.10+
-- OpenAI API Key
+- Python 3.10 or higher
+- An OpenAI API Key (optional for pure retrieval/fallback mode, recommended for full synthesis)
 
 ### 2. Installation
 ```powershell
-# Clone repository
+# Clone the repository
 git clone https://github.com/krshnsaboo/Project-Gandalf.git
 cd "Project Gandalf"
 
-# Create and activate virtual environment
+# Create and activate a virtual environment
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 
-# Install dependencies
+# Install required dependencies
 pip install -r requirements.txt
 ```
 
-### 3. Configure Environment Variables
+### 3. Environment Configuration
 Create a `.env` file in the root directory:
 ```env
 OPENAI_API_KEY=sk-your-openai-api-key-here
 ```
+*(Note: If running on Streamlit Cloud, you can also provide `OPENAI_API_KEY` via Streamlit Secrets.)*
 
 ---
 
@@ -121,7 +124,7 @@ OPENAI_API_KEY=sk-your-openai-api-key-here
 ```powershell
 streamlit run app.py
 ```
-Open `http://localhost:8501`. Enter any DSA problem name or paste a LeetCode URL to view the exact video timestamp with playable in-app playback.
+Open `http://localhost:8501` in your browser. Enter any DSA concept (e.g. *"Dijkstra with Priority Queue"*, *"Trapping Rain Water Optimal"*) or paste a LeetCode problem URL to view the exact video timestamp with playable in-app playback.
 
 ### Run Interactive CLI
 ```powershell
@@ -130,36 +133,42 @@ python main.py
 
 ### Run Automated Unit Tests
 ```powershell
-python -m unittest discover -s tests -p "test_*.py"
+python -m unittest discover -s tests -v
 ```
 
-### Run Retrieval Evaluation Benchmark
+### Run Evaluation Benchmark
 ```powershell
+# Evaluate retrieval stage (Dense + BM25 RRF)
 python evaluate.py
+
+# Evaluate full pipeline with Cross-Encoder Reranking
+python evaluate.py --rerank
 ```
 
-### View Real-Time Search Analytics & Latency Telemetry
+### Analyze Search Telemetry
 ```powershell
 python analyse_logs.py
 ```
 
 ---
 
-## ⚙️ Configuration (`config.py`)
+## ⚙️ Configuration Reference (`config.py`)
 
-| Setting | Default | Description |
+| Parameter | Default Value | Description |
 | :--- | :--- | :--- |
-| `OPENAI_MODEL` | `"gpt-4o-mini"` | OpenAI model for structuring navigation responses |
-| `RERANKER_MODEL` | `"cross-encoder/ms-marco-MiniLM-L-6-v2"` | Cross-encoder model (switch to `"BAAI/bge-reranker-v2-m3"` for GPU) |
+| `OPENAI_MODEL` | `"gpt-4o-mini"` | OpenAI model used for timestamp navigation responses |
+| `RERANKER_MODEL` | `"cross-encoder/ms-marco-MiniLM-L-6-v2"` | Cross-encoder model (switch to `"BAAI/bge-reranker-v2-m3"` for heavy GPU setups) |
 | `FAISS_TOP_K` | `30` | Candidate pool size retrieved from dense vector search |
-| `RERANK_TOP_K` | `5` | Top reranked segments presented to prompt builder |
-| `RERANK_MIN_SCORE` | `-5.0` | Threshold score to prune irrelevant candidate chunks |
+| `RERANK_TOP_K` | `5` | Top reranked segments presented to the prompt builder |
+| `RERANK_MIN_SCORE` | `-5.0` | Logit threshold to prune irrelevant candidate chunks |
 | `USE_HYBRID_SEARCH` | `True` | Enable combined BM25 + FAISS Reciprocal Rank Fusion |
 | `RRF_K` | `60` | Reciprocal Rank Fusion smoothing constant |
+| `MAX_TOKENS` | `700` | Maximum token limit for LLM generation |
+| `TEMPERATURE` | `0.2` | Sampling temperature for factual timestamp extraction |
 
 ---
 
 ## 📄 License & Acknowledgements
 
-- **Course Content**: Huge thanks to **Raj Vikramaditya (Striver)** for creating the incredible [Take U Forward A2Z DSA Course](https://takeuforward.org).
+- **Course Content**: Special thanks to **Raj Vikramaditya (Striver)** for creating the [TakeUForward A2Z DSA Course](https://takeuforward.org).
 - **License**: Released under the [MIT License](LICENSE).

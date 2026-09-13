@@ -1,6 +1,5 @@
 import sys
 
-# Ensure UTF-8 output on Windows consoles
 if sys.platform == "win32":
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -11,7 +10,6 @@ from rag_pipeline import RAGPipeline
 
 
 def main():
-
     print("=" * 70)
     print("        Striver A2Z DSA Lecture Navigator")
     print("=" * 70)
@@ -22,7 +20,6 @@ def main():
     )
 
     while True:
-
         query = input("\nAsk a question (type 'exit' to quit): ").strip()
 
         if query.lower() in {"exit", "quit"}:

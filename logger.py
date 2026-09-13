@@ -11,7 +11,6 @@ class SearchLogger:
         self.log_dir.mkdir(parents=True, exist_ok=True)
 
         self.log_file = self.log_dir / "search_logs.jsonl"
-        print(self.log_file.resolve())
 
     def log(
         self,
@@ -45,7 +44,7 @@ class SearchLogger:
                 "timestamp_start": round(selected_result.get("start", 0), 2),
                 "timestamp_end": round(selected_result.get("end", 0), 2),
                 "youtube_url": selected_result.get("timestamp_url"),
-                "faiss_score": round(selected_result.get("score", 0.0), 4),
+                "faiss_score": round(selected_result.get("dense_score", selected_result.get("score", 0.0)), 4),
                 "rerank_score": round(selected_result.get("rerank_score", 0.0), 4),
             },
         }

@@ -39,16 +39,11 @@ class Reranker:
         batch_size: int = 32,
         pre_prune_k: int = 20,
     ) -> list[dict]:
-        """
-        Reranks candidates using the cross-encoder model.
-        Applies pre-pruning to limit CPU work and post-filtering based on min_score threshold.
-        """
         if not candidates:
             return []
 
         t0 = time.perf_counter()
 
-        # Pre-rerank pruning: take top candidate pool to save CPU cycles
         pruned_candidates = candidates[:pre_prune_k]
 
         scores = []
@@ -80,12 +75,9 @@ class Reranker:
         for candidate, score in zip(pruned_candidates, scores):
             candidate["rerank_score"] = float(score)
 
-        # Sort descending by rerank score
         pruned_candidates.sort(key=lambda x: x["rerank_score"], reverse=True)
 
-        # Score threshold filtering: prune candidates that fall below min_score
         filtered = [c for c in pruned_candidates if c["rerank_score"] >= self.min_score]
-        # Always retain at least top 1 result if available
         if not filtered and pruned_candidates:
             filtered = [pruned_candidates[0]]
 
