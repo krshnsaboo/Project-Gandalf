@@ -3,7 +3,7 @@ from typing import List, Tuple
 SYSTEM_PROMPT = (
     "You are an expert navigation assistant for Striver's A2Z DSA Course. "
     "Do NOT explain algorithms or answer questions. "
-    "ONLY identify and return the 1 to 3 most relevant lecture timestamps from the provided segments."
+    "ONLY identify and return the 1 single most relevant lecture timestamp from the provided segments."
 )
 
 
@@ -40,7 +40,7 @@ class PromptBuilder:
             )
 
         user_prompt += (
-            "Select 1-3 best matching timestamps from the segments above.\n"
+            "Select the 1 best matching timestamp from the segments above.\n"
             "Format EXACTLY:\n\n"
             "Lecture: <Lecture Title>\n"
             "Timestamp: <MM:SS>\n"

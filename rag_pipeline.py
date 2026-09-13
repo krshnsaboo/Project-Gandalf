@@ -75,7 +75,7 @@ class RAGPipeline:
 
         t4 = time.perf_counter()
 
-        parsed = ResponseParser.parse(raw_response)
+        parsed = ResponseParser.parse(raw_response)[:1]
 
         for i, rec in enumerate(parsed):
             if i < len(contexts):
