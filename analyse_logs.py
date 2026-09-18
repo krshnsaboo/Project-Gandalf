@@ -1,7 +1,13 @@
+import sys
 import json
 from pathlib import Path
 from collections import Counter
 from statistics import mean, median
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
 
 LOG_FILE = Path("logs/search_logs.jsonl")
 
@@ -139,6 +145,41 @@ print_section("RETRIEVAL QUALITY")
 
 print(f"{'Average FAISS Score':30}: {safe_mean(faiss_scores):.4f}")
 print(f"{'Average Rerank Score':30}: {safe_mean(rerank_scores):.4f}")
+
+costs_inr = [
+    x["cost"]["cost_inr"]
+    for x in logs
+    if "cost" in x and "cost_inr" in x["cost"]
+]
+costs_usd = [
+    x["cost"]["cost_usd"]
+    for x in logs
+    if "cost" in x and "cost_usd" in x["cost"]
+]
+total_tokens = [
+    x["cost"]["total_tokens"]
+    for x in logs
+    if "cost" in x and "total_tokens" in x["cost"]
+]
+prompt_tokens = [
+    x["cost"]["prompt_tokens"]
+    for x in logs
+    if "cost" in x and "prompt_tokens" in x["cost"]
+]
+completion_tokens = [
+    x["cost"]["completion_tokens"]
+    for x in logs
+    if "cost" in x and "completion_tokens" in x["cost"]
+]
+
+if costs_inr:
+    print_section("COST & TOKEN ECONOMICS (OpenAI gpt-4o-mini)")
+    print(f"{'Queries with Cost Data':30}: {len(costs_inr)}")
+    print(f"{'Average Cost per Query (INR)':30}: Rs {safe_mean(costs_inr):.4f} (~{safe_mean(costs_inr) * 100:.2f} paise)")
+    print(f"{'Average Cost per Query (USD)':30}: ${safe_mean(costs_usd):.6f}")
+    print(f"{'Average Total Tokens':30}: {safe_mean(total_tokens):.1f} (Prompt: {safe_mean(prompt_tokens):.1f}, Output: {safe_mean(completion_tokens):.1f})")
+    print(f"{'Total Cost for Logged Queries':30}: Rs {sum(costs_inr):.2f} (${sum(costs_usd):.4f})")
+    print(f"{'Est. Cost for 1,000 Queries':30}: Rs {safe_mean(costs_inr) * 1000:.2f} (${safe_mean(costs_usd) * 1000:.2f})")
 
 print_section("LOWEST RERANK SCORE SEARCHES")
 

@@ -56,8 +56,9 @@ class RAGPipeline:
         )
         t3 = time.perf_counter()
 
+        cost_info = None
         try:
-            raw_response = self.llm.generate(
+            raw_response, cost_info = self.llm.generate_with_cost(
                 system_prompt=system_prompt,
                 user_prompt=user_prompt,
             )
@@ -72,6 +73,13 @@ class RAGPipeline:
                 )
             else:
                 raw_response = "No matching lecture found."
+            cost_info = {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0,
+                "cost_usd": 0.0,
+                "cost_inr": 0.0,
+            }
 
         t4 = time.perf_counter()
 
@@ -96,6 +104,7 @@ class RAGPipeline:
                 llm_time=llm_time,
                 total_time=total_time,
                 selected_result=contexts[0],
+                cost_info=cost_info,
             )
 
         print("\n========== TIMINGS ==========")
@@ -104,6 +113,8 @@ class RAGPipeline:
         print(f"Prompt Builder : {t3 - t2:.3f} sec")
         print(f"LLM            : {llm_time:.3f} sec")
         print(f"Total          : {total_time:.3f} sec")
+        if cost_info:
+            print(f"Cost           : Rs. {cost_info.get('cost_inr', 0):.4f} (${cost_info.get('cost_usd', 0):.6f}) | Tokens: {cost_info.get('total_tokens', 0)}")
         print("=============================\n")
 
         return {
@@ -113,6 +124,7 @@ class RAGPipeline:
             "response": raw_response,
             "recommendations": parsed,
             "contexts": contexts,
+            "cost_info": cost_info,
             "timings": {
                 "retrieval": retrieval_time,
                 "rerank": rerank_time,

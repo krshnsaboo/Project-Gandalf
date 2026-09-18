@@ -20,6 +20,7 @@ class SearchLogger:
         llm_time,
         total_time,
         selected_result,
+        cost_info=None,
     ):
         """
         Append one search record to logs/search_logs.jsonl
@@ -48,6 +49,15 @@ class SearchLogger:
                 "rerank_score": round(selected_result.get("rerank_score", 0.0), 4),
             },
         }
+
+        if cost_info:
+            record["cost"] = {
+                "prompt_tokens": int(cost_info.get("prompt_tokens", 0)),
+                "completion_tokens": int(cost_info.get("completion_tokens", 0)),
+                "total_tokens": int(cost_info.get("total_tokens", 0)),
+                "cost_usd": round(float(cost_info.get("cost_usd", 0.0)), 6),
+                "cost_inr": round(float(cost_info.get("cost_inr", 0.0)), 4),
+            }
 
         with open(self.log_file, "a", encoding="utf-8") as f:
             f.write(json.dumps(record, ensure_ascii=False))

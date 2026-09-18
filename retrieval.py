@@ -18,7 +18,10 @@ class Retriever:
         model_name: str = "BAAI/bge-m3",
     ):
         print("Loading embedding model...")
-        self.model = SentenceTransformer(model_name)
+        try:
+            self.model = SentenceTransformer(model_name, local_files_only=True)
+        except Exception:
+            self.model = SentenceTransformer(model_name)
 
         print("Loading FAISS index...")
         self.index = faiss.read_index(index_path)

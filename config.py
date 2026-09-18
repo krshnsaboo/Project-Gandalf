@@ -33,7 +33,7 @@ def get_openai_api_key(required: bool = False) -> str | None:
 OPENAI_API_KEY = get_openai_api_key(required=False)
 
 OPENAI_MODEL = "gpt-4o-mini"
-RERANKER_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+RERANKER_MODEL = os.getenv("RERANKER_MODEL", "cross-encoder/ms-marco-MiniLM-L-6-v2")
 
 FAISS_TOP_K = 30
 RERANK_TOP_K = 5
